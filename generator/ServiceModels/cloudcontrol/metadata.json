@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Initial release of the SDK for AWS Cloud Control API",
   "generate-client-constructors": true,
+  "base-name": "CloudControlApi",
   "legacy-service-id": "CloudControl"
 }

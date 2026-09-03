@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Amazon RDS Data Service API is an HTTP endpoint to run SQL statements on an Amazon Aurora Serverless DB cluster.",
   "generate-client-constructors": true,
+  "base-name": "RDSDataService",
   "legacy-service-id": "RDS Data"
 }

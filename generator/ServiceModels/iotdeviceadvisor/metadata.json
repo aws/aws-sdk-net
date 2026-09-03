@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "AWS IoT Core Device Advisor is fully managed test capability for IoT devices. Device manufacturers can use Device Advisor to test their IoT devices for reliable and secure connectivity with AWS IoT.",
   "generate-client-constructors": true,
+  "base-name": "IoTDeviceAdvisor",
   "legacy-service-id": "IotDeviceAdvisor"
 }

@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Initial release of the SDK for Amazon Managed Grafana API.",
   "generate-client-constructors": true,
+  "base-name": "ManagedGrafana",
   "legacy-service-id": "grafana"
 }
