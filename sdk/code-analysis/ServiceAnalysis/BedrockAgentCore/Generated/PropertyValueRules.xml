@@ -1551,6 +1551,20 @@
     <pattern>[a-zA-Z0-9._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.CloudWatchOutputConfig.LogGroupName</property>
+    <pattern>$|^[.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.CloudWatchOutputConfig.LogStreamName</property>
+    <pattern>[^:*]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.CloudWatchOutputConfig.MetricsNamespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9._#/:-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CodeInterpreterSessionSummary.Name</property>
     <min>1</min>
     <max>100</max>

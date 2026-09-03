@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class CloudWatchLogsSource
     {
         private CloudWatchFilterConfig _filterConfig;
+        private List<string> _logGroupNamePrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _serviceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -57,6 +58,33 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogGroupNamePrefixes. 
+        /// <para>
+        /// The list of CloudWatch log group name prefixes to read agent traces from. Specify
+        /// this instead of <c>logGroupNames</c> to match log groups by prefix. Maximum of 5 prefixes.
+        /// Specify either <c>logGroupNames</c> or <c>logGroupNamePrefixes</c>, not both. One
+        /// of the two is required.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> LogGroupNamePrefixes
+        {
+            get { return this._logGroupNamePrefixes; }
+            set { this._logGroupNamePrefixes = value; }
+        }
+
+        // Check to see if LogGroupNamePrefixes property is set
+        internal bool IsSetLogGroupNamePrefixes()
+        {
+            return this._logGroupNamePrefixes != null && (this._logGroupNamePrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogGroupNames. 
         /// <para>
         /// The list of CloudWatch log group names to read agent traces from. Maximum of 10 log
@@ -68,7 +96,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public List<string> LogGroupNames
         {
             get { return this._logGroupNames; }

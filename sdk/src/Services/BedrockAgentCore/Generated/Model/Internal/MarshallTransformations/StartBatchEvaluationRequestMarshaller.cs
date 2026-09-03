@@ -156,6 +156,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
             }
 
+            if(publicRequest.IsSetOutputConfig())
+            {
+                context.Writer.WritePropertyName("outputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
