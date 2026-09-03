@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
         private List<DaemonDeploymentCapacityProvider> _capacityProviders = AWSConfigs.InitializeCollections ? new List<DaemonDeploymentCapacityProvider>() : null;
         private int? _totalDrainingInstanceCount;
         private int? _totalRunningInstanceCount;
+        private int? _totalWithoutDaemonInstanceCount;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -115,6 +116,25 @@ namespace Amazon.ECS.Model
         internal bool IsSetTotalRunningInstanceCount()
         {
             return this._totalRunningInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalWithoutDaemonInstanceCount. 
+        /// <para>
+        /// The total number of instances running without the daemon task for this revision, across
+        /// all capacity providers. These instances aren't included in <c>totalRunningInstanceCount</c>.
+        /// </para>
+        /// </summary>
+        public int? TotalWithoutDaemonInstanceCount
+        {
+            get { return this._totalWithoutDaemonInstanceCount; }
+            set { this._totalWithoutDaemonInstanceCount = value; }
+        }
+
+        // Check to see if TotalWithoutDaemonInstanceCount property is set
+        internal bool IsSetTotalWithoutDaemonInstanceCount()
+        {
+            return this._totalWithoutDaemonInstanceCount.HasValue; 
         }
 
     }

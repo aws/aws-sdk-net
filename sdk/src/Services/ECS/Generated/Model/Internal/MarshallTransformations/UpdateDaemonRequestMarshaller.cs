@@ -86,6 +86,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetCritical())
+            {
+                context.Writer.WritePropertyName("critical");
+                context.Writer.WriteBooleanValue(publicRequest.Critical.Value);
+            }
+
             if(publicRequest.IsSetDaemonArn())
             {
                 context.Writer.WritePropertyName("daemonArn");
