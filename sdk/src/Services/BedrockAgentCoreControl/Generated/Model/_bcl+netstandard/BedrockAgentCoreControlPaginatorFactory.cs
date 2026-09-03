@@ -125,6 +125,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListConsentPortals operation
+        ///</summary>
+        public IListConsentPortalsPaginator ListConsentPortals(ListConsentPortalsRequest request) 
+        {
+            return new ListConsentPortalsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatasetExamples operation
         ///</summary>
         public IListDatasetExamplesPaginator ListDatasetExamples(ListDatasetExamplesRequest request) 

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CloudWatchLogsInputConfig Object
+    /// Response Unmarshaller for ConsentPortalSource Object
     /// </summary>  
-    public class CloudWatchLogsInputConfigUnmarshaller : IJsonUnmarshaller<CloudWatchLogsInputConfig, JsonUnmarshallerContext>
+    public class ConsentPortalSourceUnmarshaller : IJsonUnmarshaller<ConsentPortalSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CloudWatchLogsInputConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConsentPortalSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CloudWatchLogsInputConfig unmarshalledObject = new CloudWatchLogsInputConfig();
+            ConsentPortalSource unmarshalledObject = new ConsentPortalSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("logGroupNamePrefixes", targetDepth, ref reader))
+                if (context.TestExpression("identifier", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LogGroupNamePrefixes = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("logGroupNames", targetDepth, ref reader))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LogGroupNames = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("serviceNames", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ServiceNames = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static CloudWatchLogsInputConfigUnmarshaller _instance = new CloudWatchLogsInputConfigUnmarshaller();        
+        private static ConsentPortalSourceUnmarshaller _instance = new ConsentPortalSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CloudWatchLogsInputConfigUnmarshaller Instance
+        public static ConsentPortalSourceUnmarshaller Instance
         {
             get
             {

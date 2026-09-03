@@ -138,6 +138,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListConfigurationBundleVersionsPaginator ListConfigurationBundleVersions(ListConfigurationBundleVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListConsentPortals operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConsentPortalsPaginator ListConsentPortals(ListConsentPortalsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatasetExamples operation
         ///</summary>
         [AWSPaginator(

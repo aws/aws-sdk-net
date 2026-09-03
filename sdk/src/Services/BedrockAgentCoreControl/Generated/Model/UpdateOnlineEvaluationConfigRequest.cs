@@ -45,6 +45,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private OnlineEvaluationExecutionStatus _executionStatus;
         private List<Insight> _insights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
         private string _onlineEvaluationConfigId;
+        private OutputConfig _outputConfig;
         private Rule _rule;
 
         /// <summary>
@@ -229,6 +230,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOnlineEvaluationConfigId()
         {
             return this._onlineEvaluationConfigId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputConfig.
+        /// </summary>
+        public OutputConfig OutputConfig
+        {
+            get { return this._outputConfig; }
+            set { this._outputConfig = value; }
+        }
+
+        // Check to see if OutputConfig property is set
+        internal bool IsSetOutputConfig()
+        {
+            return this._outputConfig != null;
         }
 
         /// <summary>

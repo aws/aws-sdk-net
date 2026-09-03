@@ -296,6 +296,54 @@
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalRequest.Description</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalRequest.ExecutionRoleArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalRequest.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_-]{1,50}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.ConsentPortalArn</property>
+    <pattern>arn:aws[^:]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:consent-portal/[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.ConsentPortalId</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.Description</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.ExecutionRoleArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_-]{1,50}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.PortalUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateConsentPortalResponse.StatusReason</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreateDatasetRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
@@ -1103,6 +1151,10 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.DeleteConsentPortalRequest.ConsentPortalIdentifier</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.DeleteDatasetRequest.DatasetId</property>
     <pattern>[a-zA-Z0-9_-]{1,110}</pattern>
   </property-value-rule>
@@ -1706,6 +1758,43 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetConfigurationBundleVersionResponse.VersionId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalRequest.ConsentPortalIdentifier</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.ConsentPortalArn</property>
+    <pattern>arn:aws[^:]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:consent-portal/[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.ConsentPortalId</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.Description</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.ExecutionRoleArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_-]{1,50}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.PortalUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetConsentPortalResponse.StatusReason</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetDatasetRequest.DatasetId</property>
@@ -2553,6 +2642,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ListConsentPortalsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ListDatasetExamplesRequest.DatasetId</property>
     <pattern>[a-zA-Z0-9_-]{1,110}</pattern>
   </property-value-rule>
@@ -3322,6 +3416,52 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdateConfigurationBundleResponse.VersionId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalRequest.ConsentPortalIdentifier</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalRequest.Description</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalRequest.ExecutionRoleArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.ConsentPortalArn</property>
+    <pattern>arn:aws[^:]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:consent-portal/[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.ConsentPortalId</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.Description</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.ExecutionRoleArn</property>
+    <pattern>arn:aws(-[a-z-]+)?:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@\-_/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_-]{1,50}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.PortalUrl</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateConsentPortalResponse.StatusReason</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdateDatasetRequest.ClientToken</property>
@@ -4252,7 +4392,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CloudWatchOutputConfig.LogGroupName</property>
-    <pattern>[.\-_/#A-Za-z0-9]+</pattern>
+    <pattern>$|^[.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CloudWatchOutputConfig.MetricsNamespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9._#/:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CodeInterpreterSummary.CodeInterpreterArn</property>
@@ -4364,6 +4510,38 @@
     <min>5</min>
     <max>32</max>
     <pattern>(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalIdpConfig.CredentialProviderArn</property>
+    <pattern>arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-e|aws-iso-f|aws-eusc):bedrock-agentcore:[a-z0-9-]{1,32}:[0-9]{12}:token-vault/[a-zA-Z0-9_-]{1,64}/oauth2credentialprovider/[a-zA-Z0-9_-]{1,128}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalSource.Identifier</property>
+    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}$|^arn:aws(-[a-z-]+)?:bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalSummary.ConsentPortalArn</property>
+    <pattern>arn:aws[^:]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:consent-portal/[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalSummary.ConsentPortalId</property>
+    <pattern>[a-zA-Z0-9\-_]{1,50}-[A-Za-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalSummary.Description</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalSummary.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[a-zA-Z0-9_-]{1,50}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ConsentPortalSummary.PortalUrl</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.ContainerConfiguration.ContainerUri</property>

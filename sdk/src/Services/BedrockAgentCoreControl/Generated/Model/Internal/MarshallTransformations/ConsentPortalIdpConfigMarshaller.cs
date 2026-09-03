@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CloudWatchLogsInputConfig Marshaller
+    /// ConsentPortalIdpConfig Marshaller
     /// </summary>
-    public class CloudWatchLogsInputConfigMarshaller : IRequestMarshaller<CloudWatchLogsInputConfig, JsonMarshallerContext> 
+    public class ConsentPortalIdpConfigMarshaller : IRequestMarshaller<ConsentPortalIdpConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +42,29 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CloudWatchLogsInputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ConsentPortalIdpConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetLogGroupNamePrefixes())
+            if(requestObject.IsSetAudience())
             {
-                context.Writer.WritePropertyName("logGroupNamePrefixes");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectLogGroupNamePrefixesListValue in requestObject.LogGroupNamePrefixes)
-                {
-                        context.Writer.WriteStringValue(requestObjectLogGroupNamePrefixesListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("audience");
+                context.Writer.WriteStringValue(requestObject.Audience);
             }
 
-            if(requestObject.IsSetLogGroupNames())
+            if(requestObject.IsSetCredentialProviderArn())
             {
-                context.Writer.WritePropertyName("logGroupNames");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectLogGroupNamesListValue in requestObject.LogGroupNames)
-                {
-                        context.Writer.WriteStringValue(requestObjectLogGroupNamesListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("credentialProviderArn");
+                context.Writer.WriteStringValue(requestObject.CredentialProviderArn);
             }
 
-            if(requestObject.IsSetServiceNames())
+            if(requestObject.IsSetScopes())
             {
-                context.Writer.WritePropertyName("serviceNames");
+                context.Writer.WritePropertyName("scopes");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectServiceNamesListValue in requestObject.ServiceNames)
+                foreach(var requestObjectScopesListValue in requestObject.Scopes)
                 {
-                        context.Writer.WriteStringValue(requestObjectServiceNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectScopesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -84,7 +74,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CloudWatchLogsInputConfigMarshaller Instance = new CloudWatchLogsInputConfigMarshaller();
+        public readonly static ConsentPortalIdpConfigMarshaller Instance = new ConsentPortalIdpConfigMarshaller();
 
     }
 }

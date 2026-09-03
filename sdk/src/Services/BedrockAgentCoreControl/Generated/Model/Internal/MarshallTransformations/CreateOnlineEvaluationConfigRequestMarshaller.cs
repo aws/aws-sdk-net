@@ -162,6 +162,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.OnlineEvaluationConfigName);
             }
 
+            if(publicRequest.IsSetOutputConfig())
+            {
+                context.Writer.WritePropertyName("outputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetRule())
             {
                 context.Writer.WritePropertyName("rule");

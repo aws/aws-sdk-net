@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private List<EvaluatorReference> _evaluators = AWSConfigs.InitializeCollections ? new List<EvaluatorReference>() : null;
         private List<Insight> _insights = AWSConfigs.InitializeCollections ? new List<Insight>() : null;
         private string _onlineEvaluationConfigName;
+        private OutputConfig _outputConfig;
         private Rule _rule;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -242,6 +243,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetOnlineEvaluationConfigName()
         {
             return this._onlineEvaluationConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputConfig.
+        /// </summary>
+        public OutputConfig OutputConfig
+        {
+            get { return this._outputConfig; }
+            set { this._outputConfig = value; }
+        }
+
+        // Check to see if OutputConfig property is set
+        internal bool IsSetOutputConfig()
+        {
+            return this._outputConfig != null;
         }
 
         /// <summary>
