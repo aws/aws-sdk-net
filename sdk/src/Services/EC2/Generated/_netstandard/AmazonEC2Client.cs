@@ -35090,6 +35090,48 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  ValidateSecurityGroupQuotasForInterface
+
+        internal virtual ValidateSecurityGroupQuotasForInterfaceResponse ValidateSecurityGroupQuotasForInterface(ValidateSecurityGroupQuotasForInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidateSecurityGroupQuotasForInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateSecurityGroupQuotasForInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateSecurityGroupQuotasForInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Validates whether the specified security groups can be associated with a single network
+        /// interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas for
+        /// inbound or outbound rules per security group and security groups per network interface.
+        /// Only authorized AWS services can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups">Amazon
+        /// VPC quotas</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateSecurityGroupQuotasForInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateSecurityGroupQuotasForInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ValidateSecurityGroupQuotasForInterface">REST API Reference for ValidateSecurityGroupQuotasForInterface Operation</seealso>
+        public virtual Task<ValidateSecurityGroupQuotasForInterfaceResponse> ValidateSecurityGroupQuotasForInterfaceAsync(ValidateSecurityGroupQuotasForInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidateSecurityGroupQuotasForInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateSecurityGroupQuotasForInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidateSecurityGroupQuotasForInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  WithdrawByoipCidr
 
         internal virtual WithdrawByoipCidrResponse WithdrawByoipCidr(WithdrawByoipCidrRequest request)
