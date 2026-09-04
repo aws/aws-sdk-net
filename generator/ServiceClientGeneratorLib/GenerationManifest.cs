@@ -103,7 +103,7 @@ namespace ServiceClientGenerator
         public DefaultConfiguration.DefaultConfigurationModel DefaultConfiguration { get; set; }
 
         //This should be the same version number as SdkVersioning.DefaultAssemblyVersion in BuildTasks
-        private const string DefaultAssemblyVersion = "4.1";
+        private const string DefaultAssemblyVersion = "4.0";
 
         /// <summary>
         /// Processes the control manifest to yield the set of services available to

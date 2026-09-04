@@ -1,0 +1,12 @@
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Diagnostics;
+
+using Amazon.CodeAnalysis.Shared;
+
+namespace Amazon.WorkSpaces.CodeAnalysis
+{
+    [DiagnosticAnalyzer(LanguageNames.CSharp)]
+    public class DeprecatedTargetFrameworkAnalyzer : AbstractDeprecatedTargetFrameworkAnalyzer
+    {
+    }
+}
