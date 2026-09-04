@@ -61,6 +61,7 @@ namespace Amazon.MediaTailor.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _transcodeProfileName;
         private string _videoContentSourceUrl;
+        private YieldOptimizationConfiguration _yieldOptimizationConfiguration;
 
         /// <summary>
         /// Gets and sets the property AdConditioningConfiguration. 
@@ -305,8 +306,8 @@ namespace Amazon.MediaTailor.Model
         /// <para>
         /// A map of lifecycle hook event names to function identifiers. The function mapping
         /// specifies which function MediaTailor executes at each lifecycle hook during ad insertion.
-        /// Valid keys are <c>PRE_SESSION_INITIALIZATION</c> and <c>PRE_ADS_REQUEST</c>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions
+        /// Valid keys are <c>PRE_SESSION_INITIALIZATION</c>, <c>PRE_ADS_REQUEST</c>, <c>POST_ADS_RESPONSE</c>,
+        /// and <c>PRE_MANIFEST_INSERTION</c>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions
         /// lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.
         /// </para>
         /// <para />
@@ -606,6 +607,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetVideoContentSourceUrl()
         {
             return this._videoContentSourceUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property YieldOptimizationConfiguration. 
+        /// <para>
+        /// Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks
+        /// with programmatic ads from Amazon Publisher Services (APS).
+        /// </para>
+        /// </summary>
+        public YieldOptimizationConfiguration YieldOptimizationConfiguration
+        {
+            get { return this._yieldOptimizationConfiguration; }
+            set { this._yieldOptimizationConfiguration = value; }
+        }
+
+        // Check to see if YieldOptimizationConfiguration property is set
+        internal bool IsSetYieldOptimizationConfiguration()
+        {
+            return this._yieldOptimizationConfiguration != null;
         }
 
     }

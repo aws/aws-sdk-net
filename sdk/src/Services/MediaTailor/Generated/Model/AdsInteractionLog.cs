@@ -72,8 +72,11 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PublishOptInEventTypes. 
         /// <para>
-        /// Indicates that MediaTailor emits <c>RAW_ADS_RESPONSE</c> logs for playback sessions
-        /// that are initialized with this configuration.
+        /// Indicates that MediaTailor will emit the selected events in the logs for playback
+        /// sessions that are initialized with this configuration. These events are not emitted
+        /// by default and must be explicitly opted in. For descriptions of each event type, see
+        /// <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor
+        /// ADS logs description and event types</a> in Elemental MediaTailor User Guide.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

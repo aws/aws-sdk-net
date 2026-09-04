@@ -146,6 +146,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetVastRequestConfiguration())
+            {
+                context.Writer.WritePropertyName("VastRequestConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VastRequestConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VastRequestConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

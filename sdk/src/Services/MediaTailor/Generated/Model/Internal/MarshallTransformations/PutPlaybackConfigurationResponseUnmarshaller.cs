@@ -214,6 +214,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.VideoContentSourceUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("YieldOptimizationConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = YieldOptimizationConfigurationUnmarshaller.Instance;
+                    response.YieldOptimizationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

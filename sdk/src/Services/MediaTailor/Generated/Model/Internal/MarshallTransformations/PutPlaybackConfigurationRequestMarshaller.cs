@@ -275,6 +275,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.VideoContentSourceUrl);
             }
 
+            if(publicRequest.IsSetYieldOptimizationConfiguration())
+            {
+                context.Writer.WritePropertyName("YieldOptimizationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = YieldOptimizationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.YieldOptimizationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

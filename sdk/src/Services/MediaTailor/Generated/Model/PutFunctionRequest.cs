@@ -46,6 +46,7 @@ namespace Amazon.MediaTailor.Model
         private HttpRequestConfiguration _httpRequestConfiguration;
         private SequentialExecutorConfiguration _sequentialExecutorConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private VastRequestConfiguration _vastRequestConfiguration;
 
         /// <summary>
         /// Gets and sets the property ConcurrentExecutorConfiguration. 
@@ -129,9 +130,12 @@ namespace Amazon.MediaTailor.Model
         /// The type of the function. The function type determines what the function can do at
         /// runtime. Valid values: <c>CUSTOM_OUTPUT</c> evaluates expressions and produces output
         /// bindings with no external calls. <c>HTTP_REQUEST</c> makes an HTTP call to an external
-        /// service and evaluates output expressions that can reference the response. <c>SEQUENTIAL_EXECUTOR</c>
-        /// runs a sequence of child functions in order, passing data between steps through temporary
-        /// data. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
+        /// service and evaluates output expressions that can reference the response. <c>VAST_REQUEST</c>
+        /// calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available
+        /// to output expressions. <c>SEQUENTIAL_EXECUTOR</c> runs a sequence of child functions
+        /// in order, passing data between steps through temporary data. <c>CONCURRENT_EXECUTOR</c>
+        /// runs a set of child functions in parallel, up to a maximum concurrency, and combines
+        /// their output when all functions complete. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
         /// types and composition</a> in the <i>MediaTailor User Guide</i>.
         /// </para>
         /// </summary>
@@ -212,6 +216,26 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VastRequestConfiguration. 
+        /// <para>
+        /// The configuration for a <c>VAST_REQUEST</c> function. Specifies the HTTP method, URL,
+        /// headers, body, timeout, and output expressions. Required when <c>FunctionType</c>
+        /// is <c>VAST_REQUEST</c>.
+        /// </para>
+        /// </summary>
+        public VastRequestConfiguration VastRequestConfiguration
+        {
+            get { return this._vastRequestConfiguration; }
+            set { this._vastRequestConfiguration = value; }
+        }
+
+        // Check to see if VastRequestConfiguration property is set
+        internal bool IsSetVastRequestConfiguration()
+        {
+            return this._vastRequestConfiguration != null;
         }
 
     }

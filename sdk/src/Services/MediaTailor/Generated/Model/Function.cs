@@ -46,6 +46,7 @@ namespace Amazon.MediaTailor.Model
         private HttpRequestConfiguration _httpRequestConfiguration;
         private SequentialExecutorConfiguration _sequentialExecutorConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private VastRequestConfiguration _vastRequestConfiguration;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -217,6 +218,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VastRequestConfiguration. 
+        /// <para>
+        /// The configuration for a <c>VAST_REQUEST</c> function.
+        /// </para>
+        /// </summary>
+        public VastRequestConfiguration VastRequestConfiguration
+        {
+            get { return this._vastRequestConfiguration; }
+            set { this._vastRequestConfiguration = value; }
+        }
+
+        // Check to see if VastRequestConfiguration property is set
+        internal bool IsSetVastRequestConfiguration()
+        {
+            return this._vastRequestConfiguration != null;
         }
 
     }

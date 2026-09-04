@@ -321,6 +321,14 @@ namespace Amazon.MediaTailor
         /// </summary>
         public static readonly AdsInteractionExcludeEventType NON_AD_MARKER_FOUND = new AdsInteractionExcludeEventType("NON_AD_MARKER_FOUND");
         /// <summary>
+        /// Constant POST_ADS_RESPONSE_FUNCTION_ERROR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType POST_ADS_RESPONSE_FUNCTION_ERROR = new AdsInteractionExcludeEventType("POST_ADS_RESPONSE_FUNCTION_ERROR");
+        /// <summary>
+        /// Constant POST_ADS_RESPONSE_HOOK_ERROR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType POST_ADS_RESPONSE_HOOK_ERROR = new AdsInteractionExcludeEventType("POST_ADS_RESPONSE_HOOK_ERROR");
+        /// <summary>
         /// Constant PRE_ADS_REQUEST_FUNCTION_ERROR for AdsInteractionExcludeEventType
         /// </summary>
         public static readonly AdsInteractionExcludeEventType PRE_ADS_REQUEST_FUNCTION_ERROR = new AdsInteractionExcludeEventType("PRE_ADS_REQUEST_FUNCTION_ERROR");
@@ -328,6 +336,14 @@ namespace Amazon.MediaTailor
         /// Constant PRE_ADS_REQUEST_HOOK_ERROR for AdsInteractionExcludeEventType
         /// </summary>
         public static readonly AdsInteractionExcludeEventType PRE_ADS_REQUEST_HOOK_ERROR = new AdsInteractionExcludeEventType("PRE_ADS_REQUEST_HOOK_ERROR");
+        /// <summary>
+        /// Constant PRE_MANIFEST_INSERTION_FUNCTION_ERROR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType PRE_MANIFEST_INSERTION_FUNCTION_ERROR = new AdsInteractionExcludeEventType("PRE_MANIFEST_INSERTION_FUNCTION_ERROR");
+        /// <summary>
+        /// Constant PRE_MANIFEST_INSERTION_HOOK_ERROR for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType PRE_MANIFEST_INSERTION_HOOK_ERROR = new AdsInteractionExcludeEventType("PRE_MANIFEST_INSERTION_HOOK_ERROR");
         /// <summary>
         /// Constant REDIRECTED_VAST_RESPONSE for AdsInteractionExcludeEventType
         /// </summary>
@@ -407,6 +423,14 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant POST_ADS_RESPONSE_FUNCTION_COMPLETED for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType POST_ADS_RESPONSE_FUNCTION_COMPLETED = new AdsInteractionPublishOptInEventType("POST_ADS_RESPONSE_FUNCTION_COMPLETED");
+        /// <summary>
+        /// Constant POST_ADS_RESPONSE_HOOK_SUMMARY for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType POST_ADS_RESPONSE_HOOK_SUMMARY = new AdsInteractionPublishOptInEventType("POST_ADS_RESPONSE_HOOK_SUMMARY");
+        /// <summary>
         /// Constant PRE_ADS_REQUEST_FUNCTION_COMPLETED for AdsInteractionPublishOptInEventType
         /// </summary>
         public static readonly AdsInteractionPublishOptInEventType PRE_ADS_REQUEST_FUNCTION_COMPLETED = new AdsInteractionPublishOptInEventType("PRE_ADS_REQUEST_FUNCTION_COMPLETED");
@@ -415,6 +439,14 @@ namespace Amazon.MediaTailor
         /// </summary>
         public static readonly AdsInteractionPublishOptInEventType PRE_ADS_REQUEST_HOOK_SUMMARY = new AdsInteractionPublishOptInEventType("PRE_ADS_REQUEST_HOOK_SUMMARY");
         /// <summary>
+        /// Constant PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED = new AdsInteractionPublishOptInEventType("PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED");
+        /// <summary>
+        /// Constant PRE_MANIFEST_INSERTION_HOOK_SUMMARY for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType PRE_MANIFEST_INSERTION_HOOK_SUMMARY = new AdsInteractionPublishOptInEventType("PRE_MANIFEST_INSERTION_HOOK_SUMMARY");
+        /// <summary>
         /// Constant RAW_ADS_REQUEST for AdsInteractionPublishOptInEventType
         /// </summary>
         public static readonly AdsInteractionPublishOptInEventType RAW_ADS_REQUEST = new AdsInteractionPublishOptInEventType("RAW_ADS_REQUEST");
@@ -422,6 +454,14 @@ namespace Amazon.MediaTailor
         /// Constant RAW_ADS_RESPONSE for AdsInteractionPublishOptInEventType
         /// </summary>
         public static readonly AdsInteractionPublishOptInEventType RAW_ADS_RESPONSE = new AdsInteractionPublishOptInEventType("RAW_ADS_RESPONSE");
+        /// <summary>
+        /// Constant RAW_BID_REQUEST for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType RAW_BID_REQUEST = new AdsInteractionPublishOptInEventType("RAW_BID_REQUEST");
+        /// <summary>
+        /// Constant RAW_BID_RESPONSE for AdsInteractionPublishOptInEventType
+        /// </summary>
+        public static readonly AdsInteractionPublishOptInEventType RAW_BID_RESPONSE = new AdsInteractionPublishOptInEventType("RAW_BID_RESPONSE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -506,6 +546,60 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AlertCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApsRegion.
+    /// </summary>
+    public class ApsRegion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMERICAS for ApsRegion
+        /// </summary>
+        public static readonly ApsRegion AMERICAS = new ApsRegion("AMERICAS");
+        /// <summary>
+        /// Constant ASIA_PACIFIC for ApsRegion
+        /// </summary>
+        public static readonly ApsRegion ASIA_PACIFIC = new ApsRegion("ASIA_PACIFIC");
+        /// <summary>
+        /// Constant EUROPE for ApsRegion
+        /// </summary>
+        public static readonly ApsRegion EUROPE = new ApsRegion("EUROPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApsRegion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApsRegion FindValue(string value)
+        {
+            return FindValue<ApsRegion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApsRegion(string value)
         {
             return FindValue(value);
         }
@@ -619,9 +713,17 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant POST_ADS_RESPONSE for EventName
+        /// </summary>
+        public static readonly EventName POST_ADS_RESPONSE = new EventName("POST_ADS_RESPONSE");
+        /// <summary>
         /// Constant PRE_ADS_REQUEST for EventName
         /// </summary>
         public static readonly EventName PRE_ADS_REQUEST = new EventName("PRE_ADS_REQUEST");
+        /// <summary>
+        /// Constant PRE_MANIFEST_INSERTION for EventName
+        /// </summary>
+        public static readonly EventName PRE_MANIFEST_INSERTION = new EventName("PRE_MANIFEST_INSERTION");
         /// <summary>
         /// Constant PRE_SESSION_INITIALIZATION for EventName
         /// </summary>
@@ -734,6 +836,10 @@ namespace Amazon.MediaTailor
         /// Constant SEQUENTIAL_EXECUTOR for FunctionType
         /// </summary>
         public static readonly FunctionType SEQUENTIAL_EXECUTOR = new FunctionType("SEQUENTIAL_EXECUTOR");
+        /// <summary>
+        /// Constant VAST_REQUEST for FunctionType
+        /// </summary>
+        public static readonly FunctionType VAST_REQUEST = new FunctionType("VAST_REQUEST");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

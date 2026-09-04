@@ -61,4 +61,20 @@
     <property>Amazon.MediaTailor.Model.PlaybackConfiguration.PersonalizationThresholdSeconds</property>
     <min>1</min>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.YieldOptimizationConfiguration.MinimumUnfilledDuration</property>
+    <min>6</min>
+    <max>3600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.YieldOptimizationConfiguration.OpenRtbTemplate</property>
+    <min>1</min>
+    <max>102400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.YieldOptimizationConfiguration.PublisherId</property>
+    <min>1</min>
+    <max>36</max>
+    <pattern>[a-z0-9-]+</pattern>
+  </property-value-rule>
 </property-value-rules>

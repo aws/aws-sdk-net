@@ -110,6 +110,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VastRequestConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = VastRequestConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VastRequestConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
