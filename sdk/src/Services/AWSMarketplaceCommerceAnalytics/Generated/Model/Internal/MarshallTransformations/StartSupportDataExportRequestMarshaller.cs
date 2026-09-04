@@ -110,7 +110,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
             if(publicRequest.IsSetFromDate())
             {
                 context.Writer.WritePropertyName("fromDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.FromDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.FromDate.Value));
             }
 
             if(publicRequest.IsSetRoleNameArn())

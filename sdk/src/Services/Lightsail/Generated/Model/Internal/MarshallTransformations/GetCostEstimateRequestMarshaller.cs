@@ -78,7 +78,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("endTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTime.Value));
             }
 
             if(publicRequest.IsSetResourceName())
@@ -90,7 +90,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
             }
 
             writer.WriteEndObject();

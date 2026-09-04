@@ -66,7 +66,7 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadFromTimestamp())
             {
                 context.Writer.WritePropertyName("ReadFromTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ReadFromTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ReadFromTimestamp.Value));
             }
 
             if(requestObject.IsSetTopicName())

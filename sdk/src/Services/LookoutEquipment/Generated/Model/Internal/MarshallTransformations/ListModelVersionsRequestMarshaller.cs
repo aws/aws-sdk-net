@@ -78,13 +78,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCreatedAtEndTime())
             {
                 context.Writer.WritePropertyName("CreatedAtEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAtEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreatedAtEndTime.Value));
             }
 
             if(publicRequest.IsSetCreatedAtStartTime())
             {
                 context.Writer.WritePropertyName("CreatedAtStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAtStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreatedAtStartTime.Value));
             }
 
             if(publicRequest.IsSetMaxModelVersion())

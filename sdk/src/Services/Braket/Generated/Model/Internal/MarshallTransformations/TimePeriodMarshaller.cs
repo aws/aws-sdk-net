@@ -49,13 +49,13 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndAt())
             {
                 context.Writer.WritePropertyName("endAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.EndAt.Value));
             }
 
             if(requestObject.IsSetStartAt())
             {
                 context.Writer.WritePropertyName("startAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.StartAt.Value));
             }
 
         }

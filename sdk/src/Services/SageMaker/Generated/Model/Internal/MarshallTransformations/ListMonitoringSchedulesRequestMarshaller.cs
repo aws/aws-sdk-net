@@ -78,13 +78,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCreationTimeAfter())
             {
                 context.Writer.WritePropertyName("CreationTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreationTimeAfter.Value));
             }
 
             if(publicRequest.IsSetCreationTimeBefore())
             {
                 context.Writer.WritePropertyName("CreationTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreationTimeBefore.Value));
             }
 
             if(publicRequest.IsSetEndpointName())
@@ -96,13 +96,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetLastModifiedTimeAfter())
             {
                 context.Writer.WritePropertyName("LastModifiedTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LastModifiedTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.LastModifiedTimeAfter.Value));
             }
 
             if(publicRequest.IsSetLastModifiedTimeBefore())
             {
                 context.Writer.WritePropertyName("LastModifiedTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LastModifiedTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.LastModifiedTimeBefore.Value));
             }
 
             if(publicRequest.IsSetMaxResults())

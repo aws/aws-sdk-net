@@ -106,7 +106,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetLastModifiedTime())
             {
                 context.Writer.WritePropertyName("LastModifiedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LastModifiedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.LastModifiedTime.Value));
             }
 
             writer.WriteEndObject();

@@ -137,7 +137,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetReportedIncidentStartDate())
             {
                 context.Writer.WritePropertyName("reportedIncidentStartDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ReportedIncidentStartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ReportedIncidentStartDate.Value));
             }
 
             if(publicRequest.IsSetResolverType())

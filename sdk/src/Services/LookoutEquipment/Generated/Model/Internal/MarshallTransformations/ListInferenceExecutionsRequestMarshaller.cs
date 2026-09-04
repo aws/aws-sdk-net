@@ -78,13 +78,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetDataEndTimeBefore())
             {
                 context.Writer.WritePropertyName("DataEndTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.DataEndTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.DataEndTimeBefore.Value));
             }
 
             if(publicRequest.IsSetDataStartTimeAfter())
             {
                 context.Writer.WritePropertyName("DataStartTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.DataStartTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.DataStartTimeAfter.Value));
             }
 
             if(publicRequest.IsSetInferenceSchedulerName())

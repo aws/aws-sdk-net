@@ -49,13 +49,13 @@ namespace Amazon.SupportAuthZ.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowAfter())
             {
                 context.Writer.WritePropertyName("allowAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.AllowAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.AllowAfter.Value));
             }
 
             if(requestObject.IsSetAllowBefore())
             {
                 context.Writer.WritePropertyName("allowBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.AllowBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.AllowBefore.Value));
             }
 
         }

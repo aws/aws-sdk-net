@@ -79,7 +79,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEffectiveTime())
             {
                 context.Writer.WritePropertyName("effectiveTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EffectiveTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EffectiveTime.Value));
             }
 
             if(publicRequest.IsSetProfileVersion())

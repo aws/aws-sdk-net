@@ -106,7 +106,7 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
             }
 
             if(publicRequest.IsSetTimeZoneId())

@@ -84,13 +84,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEarlierTime())
             {
                 context.Writer.WritePropertyName("earlierTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EarlierTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EarlierTime.Value));
             }
 
             if(publicRequest.IsSetLaterTime())
             {
                 context.Writer.WritePropertyName("laterTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LaterTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.LaterTime.Value));
             }
 
             if(publicRequest.IsSetLimit())

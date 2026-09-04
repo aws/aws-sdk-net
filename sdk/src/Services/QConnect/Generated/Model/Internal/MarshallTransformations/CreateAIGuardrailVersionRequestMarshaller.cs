@@ -93,7 +93,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetModifiedTime())
             {
                 context.Writer.WritePropertyName("modifiedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ModifiedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ModifiedTime.Value));
             }
 
             writer.WriteEndObject();

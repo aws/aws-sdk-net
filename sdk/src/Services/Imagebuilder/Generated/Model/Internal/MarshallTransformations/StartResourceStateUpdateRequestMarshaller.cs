@@ -132,7 +132,7 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetUpdateAt())
             {
                 context.Writer.WritePropertyName("updateAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.UpdateAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.UpdateAt.Value));
             }
 
             writer.WriteEndObject();

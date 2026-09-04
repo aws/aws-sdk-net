@@ -118,13 +118,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartTimeAfter())
             {
                 context.Writer.WritePropertyName("StartTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTimeAfter.Value));
             }
 
             if(publicRequest.IsSetStartTimeBefore())
             {
                 context.Writer.WritePropertyName("StartTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTimeBefore.Value));
             }
 
             writer.WriteEndObject();

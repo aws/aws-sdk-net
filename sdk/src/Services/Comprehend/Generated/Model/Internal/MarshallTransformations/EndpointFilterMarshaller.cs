@@ -49,13 +49,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreationTimeAfter())
             {
                 context.Writer.WritePropertyName("CreationTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreationTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreationTimeAfter.Value));
             }
 
             if(requestObject.IsSetCreationTimeBefore())
             {
                 context.Writer.WritePropertyName("CreationTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreationTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreationTimeBefore.Value));
             }
 
             if(requestObject.IsSetModelArn())

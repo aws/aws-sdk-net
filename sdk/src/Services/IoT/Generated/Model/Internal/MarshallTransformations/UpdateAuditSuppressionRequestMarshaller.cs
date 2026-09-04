@@ -88,7 +88,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpirationDate())
             {
                 context.Writer.WritePropertyName("expirationDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpirationDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpirationDate.Value));
             }
 
             if(publicRequest.IsSetResourceIdentifier())

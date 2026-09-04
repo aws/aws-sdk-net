@@ -120,7 +120,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Timestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Timestamp.Value));
             }
 
             if(publicRequest.IsSetWiFiAccessPoints())

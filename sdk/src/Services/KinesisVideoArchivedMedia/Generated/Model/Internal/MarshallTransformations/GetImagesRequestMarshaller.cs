@@ -76,7 +76,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             if(publicRequest.IsSetEndTimestamp())
             {
                 context.Writer.WritePropertyName("EndTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTimestamp.Value));
             }
 
             if(publicRequest.IsSetFormat())
@@ -132,7 +132,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model.Internal.MarshallTransformation
             if(publicRequest.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("StartTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTimestamp.Value));
             }
 
             if(publicRequest.IsSetStreamARN())

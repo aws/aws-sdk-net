@@ -55,13 +55,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("FirstExecutionFrom");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FirstExecutionFrom.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.FirstExecutionFrom.Value));
             }
 
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("ScheduleEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ScheduleEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ScheduleEndTime.Value));
             }
 
             if(requestObject.IsSetScheduleExpression())
@@ -79,7 +79,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduleStartTime())
             {
                 context.Writer.WritePropertyName("ScheduleStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ScheduleStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ScheduleStartTime.Value));
             }
 
             if(requestObject.IsSetTimezone())

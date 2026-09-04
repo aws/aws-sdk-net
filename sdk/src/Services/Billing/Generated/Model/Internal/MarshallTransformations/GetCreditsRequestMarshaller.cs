@@ -84,7 +84,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("endDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndDate.Value));
             }
 
             if(publicRequest.IsSetPayerAccountFlag())
@@ -96,7 +96,7 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("startDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartDate.Value));
             }
 
             writer.WriteEndObject();

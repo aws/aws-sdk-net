@@ -61,7 +61,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastUpdateTime())
             {
                 context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastUpdateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastUpdateTime.Value));
             }
 
             if(requestObject.IsSetName())

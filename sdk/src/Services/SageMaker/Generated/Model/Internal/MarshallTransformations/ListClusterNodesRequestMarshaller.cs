@@ -84,13 +84,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCreationTimeAfter())
             {
                 context.Writer.WritePropertyName("CreationTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreationTimeAfter.Value));
             }
 
             if(publicRequest.IsSetCreationTimeBefore())
             {
                 context.Writer.WritePropertyName("CreationTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreationTimeBefore.Value));
             }
 
             if(publicRequest.IsSetIncludeNodeLogicalIds())

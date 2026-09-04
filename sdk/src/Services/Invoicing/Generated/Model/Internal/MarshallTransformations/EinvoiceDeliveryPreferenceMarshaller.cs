@@ -55,7 +55,7 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEinvoiceDeliveryActivationDate())
             {
                 context.Writer.WritePropertyName("EinvoiceDeliveryActivationDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EinvoiceDeliveryActivationDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.EinvoiceDeliveryActivationDate.Value));
             }
 
             if(requestObject.IsSetEinvoiceDeliveryAttachmentTypes())

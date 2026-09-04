@@ -78,7 +78,7 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetAsOf())
             {
                 context.Writer.WritePropertyName("AsOf");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.AsOf.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.AsOf.Value));
             }
 
             if(publicRequest.IsSetInvoiceUnitArn())

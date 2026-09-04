@@ -49,7 +49,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestorePointTime())
             {
                 context.Writer.WritePropertyName("RestorePointTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.RestorePointTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.RestorePointTime.Value));
             }
 
         }

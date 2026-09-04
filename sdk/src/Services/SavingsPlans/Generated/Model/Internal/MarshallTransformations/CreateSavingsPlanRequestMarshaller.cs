@@ -93,7 +93,7 @@ namespace Amazon.SavingsPlans.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPurchaseTime())
             {
                 context.Writer.WritePropertyName("purchaseTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.PurchaseTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.PurchaseTime.Value));
             }
 
             if(publicRequest.IsSetSavingsPlanOfferingId())

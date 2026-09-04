@@ -49,7 +49,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentEndTime())
             {
                 context.Writer.WritePropertyName("DeploymentEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DeploymentEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.DeploymentEndTime.Value));
             }
 
             if(requestObject.IsSetDeploymentModels())
@@ -77,7 +77,7 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentStartTime())
             {
                 context.Writer.WritePropertyName("DeploymentStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DeploymentStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.DeploymentStartTime.Value));
             }
 
             if(requestObject.IsSetDeploymentStatus())

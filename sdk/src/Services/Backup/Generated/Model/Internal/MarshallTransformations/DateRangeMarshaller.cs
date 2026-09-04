@@ -49,13 +49,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromDate())
             {
                 context.Writer.WritePropertyName("FromDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FromDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.FromDate.Value));
             }
 
             if(requestObject.IsSetToDate())
             {
                 context.Writer.WritePropertyName("ToDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ToDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ToDate.Value));
             }
 
         }

@@ -96,7 +96,7 @@ namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetUpdateDateTime())
             {
                 context.Writer.WritePropertyName("UpdateDateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.UpdateDateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.UpdateDateTime.Value));
             }
 
             writer.WriteEndObject();

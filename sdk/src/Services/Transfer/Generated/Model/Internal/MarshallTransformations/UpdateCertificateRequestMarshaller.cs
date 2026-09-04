@@ -78,7 +78,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetActiveDate())
             {
                 context.Writer.WritePropertyName("ActiveDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ActiveDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ActiveDate.Value));
             }
 
             if(publicRequest.IsSetCertificateId())
@@ -96,7 +96,7 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetInactiveDate())
             {
                 context.Writer.WritePropertyName("InactiveDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.InactiveDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.InactiveDate.Value));
             }
 
             writer.WriteEndObject();

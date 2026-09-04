@@ -78,7 +78,7 @@ namespace Amazon.Organizations.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndTimestamp())
             {
                 context.Writer.WritePropertyName("EndTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTimestamp.Value));
             }
 
             if(publicRequest.IsSetId())

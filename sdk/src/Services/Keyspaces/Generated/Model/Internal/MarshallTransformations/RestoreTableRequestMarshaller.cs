@@ -138,7 +138,7 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetRestoreTimestamp())
             {
                 context.Writer.WritePropertyName("restoreTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.RestoreTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.RestoreTimestamp.Value));
             }
 
             if(publicRequest.IsSetSourceKeyspaceName())

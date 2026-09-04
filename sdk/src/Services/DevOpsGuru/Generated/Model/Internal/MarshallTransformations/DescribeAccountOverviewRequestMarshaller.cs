@@ -76,13 +76,13 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetFromTime())
             {
                 context.Writer.WritePropertyName("FromTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.FromTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.FromTime.Value));
             }
 
             if(publicRequest.IsSetToTime())
             {
                 context.Writer.WritePropertyName("ToTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ToTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ToTime.Value));
             }
 
             writer.WriteEndObject();

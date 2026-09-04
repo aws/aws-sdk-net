@@ -106,7 +106,7 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSyncedAt())
             {
                 context.Writer.WritePropertyName("SyncedAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.SyncedAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SyncedAt.Value));
             }
 
             writer.WriteEndObject();

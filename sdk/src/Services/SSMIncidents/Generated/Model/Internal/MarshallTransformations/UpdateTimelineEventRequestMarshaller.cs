@@ -115,7 +115,7 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEventTime())
             {
                 context.Writer.WritePropertyName("eventTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EventTime.Value));
             }
 
             if(publicRequest.IsSetEventType())

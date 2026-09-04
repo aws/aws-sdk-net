@@ -78,7 +78,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpiryTimestamp())
             {
                 context.Writer.WritePropertyName("ExpiryTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpiryTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpiryTimestamp.Value));
             }
 
             if(publicRequest.IsSetId())

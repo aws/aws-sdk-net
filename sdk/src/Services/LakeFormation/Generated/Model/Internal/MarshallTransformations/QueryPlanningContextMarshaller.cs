@@ -61,7 +61,7 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryAsOfTime())
             {
                 context.Writer.WritePropertyName("QueryAsOfTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.QueryAsOfTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.QueryAsOfTime.Value));
             }
 
             if(requestObject.IsSetQueryParameters())

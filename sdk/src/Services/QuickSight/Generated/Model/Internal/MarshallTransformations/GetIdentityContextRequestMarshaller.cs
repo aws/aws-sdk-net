@@ -91,7 +91,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSessionExpiresAt())
             {
                 context.Writer.WritePropertyName("SessionExpiresAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.SessionExpiresAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SessionExpiresAt.Value));
             }
 
             if(publicRequest.IsSetUserIdentifier())

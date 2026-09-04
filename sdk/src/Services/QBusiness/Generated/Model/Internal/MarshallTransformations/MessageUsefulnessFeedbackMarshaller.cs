@@ -61,7 +61,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubmittedAt())
             {
                 context.Writer.WritePropertyName("submittedAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubmittedAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.SubmittedAt.Value));
             }
 
             if(requestObject.IsSetUsefulness())

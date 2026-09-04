@@ -85,13 +85,13 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetQueryEndDate())
             {
                 context.Writer.WritePropertyName("QueryEndDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.QueryEndDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.QueryEndDate.Value));
             }
 
             if(publicRequest.IsSetQueryStartDate())
             {
                 context.Writer.WritePropertyName("QueryStartDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.QueryStartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.QueryStartDate.Value));
             }
 
             if(publicRequest.IsSetStatus())

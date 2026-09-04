@@ -76,13 +76,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetContentCreatedTimestamp())
             {
                 context.Writer.WritePropertyName("ContentCreatedTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ContentCreatedTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ContentCreatedTimestamp.Value));
             }
 
             if(publicRequest.IsSetContentModifiedTimestamp())
             {
                 context.Writer.WritePropertyName("ContentModifiedTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ContentModifiedTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ContentModifiedTimestamp.Value));
             }
 
             if(publicRequest.IsSetContentType())

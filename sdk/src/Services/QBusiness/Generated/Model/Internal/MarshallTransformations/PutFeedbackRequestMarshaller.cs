@@ -88,7 +88,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetMessageCopiedAt())
             {
                 context.Writer.WritePropertyName("messageCopiedAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.MessageCopiedAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.MessageCopiedAt.Value));
             }
 
             if(publicRequest.IsSetMessageUsefulness())

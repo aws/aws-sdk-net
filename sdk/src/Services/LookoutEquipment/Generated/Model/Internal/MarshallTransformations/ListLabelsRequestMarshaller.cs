@@ -90,13 +90,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetIntervalEndTime())
             {
                 context.Writer.WritePropertyName("IntervalEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.IntervalEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.IntervalEndTime.Value));
             }
 
             if(publicRequest.IsSetIntervalStartTime())
             {
                 context.Writer.WritePropertyName("IntervalStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.IntervalStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.IntervalStartTime.Value));
             }
 
             if(publicRequest.IsSetLabelGroupName())

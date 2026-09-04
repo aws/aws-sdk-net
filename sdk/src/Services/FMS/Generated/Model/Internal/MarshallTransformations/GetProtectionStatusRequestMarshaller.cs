@@ -78,7 +78,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndTime())
             {
                 context.Writer.WritePropertyName("EndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTime.Value));
             }
 
             if(publicRequest.IsSetMaxResults())
@@ -108,7 +108,7 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("StartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
             }
 
             writer.WriteEndObject();

@@ -108,7 +108,7 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetRestoreTime())
             {
                 context.Writer.WritePropertyName("restoreTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.RestoreTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.RestoreTime.Value));
             }
 
             if(publicRequest.IsSetSourceRelationalDatabaseName())

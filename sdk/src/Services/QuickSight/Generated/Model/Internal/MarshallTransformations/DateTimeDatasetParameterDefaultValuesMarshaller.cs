@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var requestObjectStaticValuesListValue in requestObject.StaticValues)
                 {
-                        context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObjectStaticValuesListValue)));
+                        context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObjectStaticValuesListValue));
                 }
                 context.Writer.WriteEndArray();
             }

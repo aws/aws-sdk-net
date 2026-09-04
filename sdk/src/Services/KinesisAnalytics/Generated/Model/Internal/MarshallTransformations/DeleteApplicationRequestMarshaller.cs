@@ -84,7 +84,7 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCreateTimestamp())
             {
                 context.Writer.WritePropertyName("CreateTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreateTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreateTimestamp.Value));
             }
 
             writer.WriteEndObject();

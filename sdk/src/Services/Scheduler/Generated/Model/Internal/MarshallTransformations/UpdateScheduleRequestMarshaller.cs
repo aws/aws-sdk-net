@@ -102,7 +102,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndDate.Value));
             }
 
             if(publicRequest.IsSetFlexibleTimeWindow())
@@ -143,7 +143,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartDate.Value));
             }
 
             if(publicRequest.IsSetState())

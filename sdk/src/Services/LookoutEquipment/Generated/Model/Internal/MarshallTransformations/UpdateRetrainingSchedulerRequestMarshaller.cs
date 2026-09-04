@@ -102,7 +102,7 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetRetrainingStartDate())
             {
                 context.Writer.WritePropertyName("RetrainingStartDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.RetrainingStartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.RetrainingStartDate.Value));
             }
 
             writer.WriteEndObject();

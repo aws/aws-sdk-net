@@ -49,13 +49,13 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBeginDate())
             {
                 context.Writer.WritePropertyName("beginDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.BeginDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.BeginDate.Value));
             }
 
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("endDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.EndDate.Value));
             }
 
         }

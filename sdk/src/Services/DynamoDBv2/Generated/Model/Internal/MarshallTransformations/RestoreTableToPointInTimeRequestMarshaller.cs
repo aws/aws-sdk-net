@@ -138,7 +138,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetRestoreDateTime())
             {
                 context.Writer.WritePropertyName("RestoreDateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.RestoreDateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.RestoreDateTime.Value));
             }
 
             if(publicRequest.IsSetSourceTableArn())

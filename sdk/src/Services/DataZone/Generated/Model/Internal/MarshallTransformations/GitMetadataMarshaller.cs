@@ -67,7 +67,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommittedAt())
             {
                 context.Writer.WritePropertyName("committedAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CommittedAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CommittedAt.Value));
             }
 
             if(requestObject.IsSetConnectionId())

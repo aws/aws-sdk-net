@@ -49,7 +49,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastFreshStart())
             {
                 context.Writer.WritePropertyName("LastFreshStart");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastFreshStart.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastFreshStart.Value));
             }
 
             if(requestObject.IsSetReputationMetricsEnabled())

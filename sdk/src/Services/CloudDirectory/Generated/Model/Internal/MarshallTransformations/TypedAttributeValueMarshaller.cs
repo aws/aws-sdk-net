@@ -61,7 +61,7 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatetimeValue())
             {
                 context.Writer.WritePropertyName("DatetimeValue");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DatetimeValue.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.DatetimeValue.Value));
             }
 
             if(requestObject.IsSetNumberValue())

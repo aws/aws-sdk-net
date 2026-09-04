@@ -55,7 +55,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstExecutionFrom())
             {
                 context.Writer.WritePropertyName("firstExecutionFrom");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FirstExecutionFrom.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.FirstExecutionFrom.Value));
             }
 
             if(requestObject.IsSetFlowErrorDeactivationThreshold())
@@ -67,7 +67,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduleEndTime())
             {
                 context.Writer.WritePropertyName("scheduleEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ScheduleEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ScheduleEndTime.Value));
             }
 
             if(requestObject.IsSetScheduleExpression())
@@ -85,7 +85,7 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScheduleStartTime())
             {
                 context.Writer.WritePropertyName("scheduleStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ScheduleStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ScheduleStartTime.Value));
             }
 
             if(requestObject.IsSetTimezone())

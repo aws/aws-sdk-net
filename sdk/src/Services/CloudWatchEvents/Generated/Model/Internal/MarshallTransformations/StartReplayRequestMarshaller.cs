@@ -95,7 +95,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEventEndTime())
             {
                 context.Writer.WritePropertyName("EventEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EventEndTime.Value));
             }
 
             if(publicRequest.IsSetEventSourceArn())
@@ -107,7 +107,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEventStartTime())
             {
                 context.Writer.WritePropertyName("EventStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EventStartTime.Value));
             }
 
             if(publicRequest.IsSetReplayName())

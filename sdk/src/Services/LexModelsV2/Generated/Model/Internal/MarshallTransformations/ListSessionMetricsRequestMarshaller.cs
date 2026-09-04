@@ -95,7 +95,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndDateTime())
             {
                 context.Writer.WritePropertyName("endDateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndDateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndDateTime.Value));
             }
 
             if(publicRequest.IsSetFilters())
@@ -161,7 +161,7 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartDateTime())
             {
                 context.Writer.WritePropertyName("startDateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartDateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartDateTime.Value));
             }
 
             writer.WriteEndObject();

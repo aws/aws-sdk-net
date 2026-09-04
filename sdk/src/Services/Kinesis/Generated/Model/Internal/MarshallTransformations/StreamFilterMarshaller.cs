@@ -55,7 +55,7 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStreamCreationTimestamp())
             {
                 context.Writer.WritePropertyName("StreamCreationTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StreamCreationTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.StreamCreationTimestamp.Value));
             }
 
         }

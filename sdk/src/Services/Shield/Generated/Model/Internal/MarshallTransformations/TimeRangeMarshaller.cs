@@ -49,13 +49,13 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromInclusive())
             {
                 context.Writer.WritePropertyName("FromInclusive");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FromInclusive.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.FromInclusive.Value));
             }
 
             if(requestObject.IsSetToExclusive())
             {
                 context.Writer.WritePropertyName("ToExclusive");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ToExclusive.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ToExclusive.Value));
             }
 
         }

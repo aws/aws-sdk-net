@@ -93,7 +93,7 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpirationTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpirationTime.Value));
             }
 
             if(publicRequest.IsSetKmsKeyArn())

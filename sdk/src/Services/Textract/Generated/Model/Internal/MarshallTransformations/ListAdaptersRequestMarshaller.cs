@@ -78,13 +78,13 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetAfterCreationTime())
             {
                 context.Writer.WritePropertyName("AfterCreationTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.AfterCreationTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.AfterCreationTime.Value));
             }
 
             if(publicRequest.IsSetBeforeCreationTime())
             {
                 context.Writer.WritePropertyName("BeforeCreationTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.BeforeCreationTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.BeforeCreationTime.Value));
             }
 
             if(publicRequest.IsSetMaxResults())

@@ -79,7 +79,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetActualIncidentStartDate())
             {
                 context.Writer.WritePropertyName("actualIncidentStartDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ActualIncidentStartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ActualIncidentStartDate.Value));
             }
 
             if(publicRequest.IsSetCaseMetadata())
@@ -189,7 +189,7 @@ namespace Amazon.SecurityIR.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetReportedIncidentStartDate())
             {
                 context.Writer.WritePropertyName("reportedIncidentStartDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ReportedIncidentStartDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ReportedIncidentStartDate.Value));
             }
 
             if(publicRequest.IsSetThreatActorIpAddressesToAdd())

@@ -78,25 +78,25 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCreationTimeAfter())
             {
                 context.Writer.WritePropertyName("creationTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreationTimeAfter.Value));
             }
 
             if(publicRequest.IsSetCreationTimeBefore())
             {
                 context.Writer.WritePropertyName("creationTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreationTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreationTimeBefore.Value));
             }
 
             if(publicRequest.IsSetEndTimeAfter())
             {
                 context.Writer.WritePropertyName("endTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTimeAfter.Value));
             }
 
             if(publicRequest.IsSetEndTimeBefore())
             {
                 context.Writer.WritePropertyName("endTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTimeBefore.Value));
             }
 
             if(publicRequest.IsSetMaxResult())
