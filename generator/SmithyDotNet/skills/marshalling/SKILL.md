@@ -242,7 +242,7 @@ An explicit `@timestampFormat` (on the member or its target) always wins. When u
 |---|---|---|
 | `date-time` | `WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(value))` | `StringUtils.FromDateTimeToISO8601WithOptionalMs(value)` |
 | `http-date` | `WriteStringValue(StringUtils.FromDateTimeToRFC822(value))` | `StringUtils.FromDateTimeToRFC822(value)` |
-| `epoch-seconds` | `WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(value.Value)))` | `StringUtils.FromDateTimeToUnixTimestamp(value)` |
+| `epoch-seconds` | `WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(value.Value))` | `StringUtils.FromDateTimeToUnixTimestamp(value)` |
 
 restJson1 binding defaults when `@timestampFormat` is unset (matches the C2J generator's output):
 
@@ -254,6 +254,11 @@ restJson1 binding defaults when `@timestampFormat` is unset (matches the C2J gen
 
 String forms pass the nullable `DateTime?` straight to the `StringUtils` overload; the epoch form
 unwraps with `.Value`.
+
+`epoch-seconds` in a **body** is a JSON number that may carry a fraction, so it goes through
+`ConvertToUnixEpochSecondsDecimal` (millisecond precision, `decimal` for identical digits on every
+TFM) — not the whole-second `StringUtils.FromDateTimeToUnixTimestamp`. Header/query/label positions
+are still whole seconds, matching C2J.
 
 ## Error Dispatch
 

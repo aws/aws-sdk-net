@@ -91,6 +91,8 @@ public static class JsonScalarMarshaller
 
     // The string forms take a DateTime? (a non-nullable DateTime converts implicitly), so only the epoch
     // form differs by nullability - a nullable member unwraps with .Value, a non-nullable leaf does not.
+    // epoch-seconds is a JSON number that may carry a fraction, so it goes through the decimal
+    // conversion (millisecond precision) rather than truncating to whole seconds.
     private static void WriteTimestamp(CodeWriter writer, string format, string expression, bool nullable)
     {
         var epochValue = nullable ? $"{expression}.Value" : expression;
@@ -98,7 +100,7 @@ public static class JsonScalarMarshaller
         {
             "date-time" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs({expression}));",
             "http-date" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822({expression}));",
-            "epoch-seconds" => $"context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp({epochValue})));",
+            "epoch-seconds" => $"context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal({epochValue}));",
             _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
         });
     }
