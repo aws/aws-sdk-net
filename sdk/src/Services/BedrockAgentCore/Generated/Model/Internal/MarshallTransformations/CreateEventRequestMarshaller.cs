@@ -107,7 +107,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEventTimestamp())
             {
                 context.Writer.WritePropertyName("eventTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EventTimestamp.Value));
             }
 
             if(publicRequest.IsSetExtractionConfig())

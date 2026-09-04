@@ -49,7 +49,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateTimeValue())
             {
                 context.Writer.WritePropertyName("dateTimeValue");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DateTimeValue.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.DateTimeValue.Value));
             }
 
             if(requestObject.IsSetNumberValue())

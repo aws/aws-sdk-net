@@ -1,4 +1,4 @@
-using SmithyDotNet.Generator.Writers.Serialization;
+﻿using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
 
@@ -200,7 +200,7 @@ public class CollectionElementCodegenTests
     public void RequestMarshaller_WritesTimestampListElements_DefaultsToEpochSeconds()
     {
         Assert.Contains("foreach (var publicRequestEpochTimesListValue in publicRequest.EpochTimes)", _requestMarshaller);
-        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequestEpochTimesListValue)));", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequestEpochTimesListValue));", _requestMarshaller);
     }
 
     [Fact]

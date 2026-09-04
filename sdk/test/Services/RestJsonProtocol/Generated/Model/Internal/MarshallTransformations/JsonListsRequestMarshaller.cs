@@ -177,7 +177,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.WriteStartArray();
                 foreach(var publicRequestTimestampListListValue in publicRequest.TimestampList)
                 {
-                        context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequestTimestampListListValue)));
+                        context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequestTimestampListListValue));
                 }
                 context.Writer.WriteEndArray();
             }

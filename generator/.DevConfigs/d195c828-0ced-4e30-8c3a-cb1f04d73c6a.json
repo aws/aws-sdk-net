@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Timestamps serialized as numeric epoch-seconds in JSON request bodies now preserve millisecond precision (e.g. `1756149554.123` instead of `1756149554`) rather than truncating to whole seconds."
+    ]
+  }
+}
