@@ -1,3 +1,16 @@
+### 4.0.328.0 (2026-09-04 18:15 UTC)
+* Bedrock (4.0.102.0)
+	* New AWS REVIEW mode as supported data retention mode for Bedrock models
+* EC2 (4.0.117.0)
+	* Adds support for ValidateSecurityGroupQuotasForInterface, an API that specifically authorized AWS services use to validate security group rule quotas before creating an elastic network interface.
+* MediaTailor (4.0.105.0)
+	* Elemental MediaTailor now supports two new Monetization Functions lifecycle hooks, Post Ads Response and Pre Manifest Insertion, and a VAST Request function type that calls a VAST or VMAP ad server. This release also adds Yield Optimization with demand from Amazon Publisher Services.
+* ServiceQuotas (4.0.101.0)
+	* Service Quotas adds the AdjustableAtLevel property to QuotaContext, indicating whether a quota is adjustable at the account or resource level.
+* Core 4.0.102.3
+	* Timestamps serialized as numeric epoch-seconds in JSON request bodies now preserve millisecond precision (e.g. `1756149554.123` instead of `1756149554`) rather than truncating to whole seconds.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.327.0 (2026-09-03 18:16 UTC)
 * BedrockAgentCore (4.0.110.0)
 	* Adds log group name prefix trace source selection, custom or source log group result destinations, and metrics namespace customization

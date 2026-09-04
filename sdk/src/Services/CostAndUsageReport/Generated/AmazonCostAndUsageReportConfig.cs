@@ -33,7 +33,7 @@ namespace Amazon.CostAndUsageReport
     public partial class AmazonCostAndUsageReportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "4.0.100.11");
+            InternalSDKUtils.BuildUserAgentString("Cost and Usage Report Service", "4.0.100.12");
 
         private static readonly AmazonCostAndUsageReportEndpointResolver EndpointResolver =
             new AmazonCostAndUsageReportEndpointResolver();
