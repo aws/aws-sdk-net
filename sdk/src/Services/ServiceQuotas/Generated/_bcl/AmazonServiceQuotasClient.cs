@@ -945,6 +945,9 @@ namespace Amazon.ServiceQuotas
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
         /// Invalid input was provided.
         /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidPaginationTokenException">
+        /// Invalid input was provided.
+        /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
         /// The specified resource does not exist.
         /// </exception>
@@ -996,6 +999,9 @@ namespace Amazon.ServiceQuotas
         /// You do not have sufficient permission to perform this action.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.IllegalArgumentException">
+        /// Invalid input was provided.
+        /// </exception>
+        /// <exception cref="Amazon.ServiceQuotas.Model.InvalidPaginationTokenException">
         /// Invalid input was provided.
         /// </exception>
         /// <exception cref="Amazon.ServiceQuotas.Model.NoSuchResourceException">
