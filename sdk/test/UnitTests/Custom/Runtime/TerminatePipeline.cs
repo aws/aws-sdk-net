@@ -14,17 +14,17 @@ namespace AWSSDK.UnitTests
     /// <code>
     /// <![CDATA[
     /// <summary>
-    /// Wraps the real <see cref="AmazonBearerTokenAuthTestClient"/>, but tweaks said client to make it more test friendly
+    /// Wraps the real <see cref="AmazonS3Client"/>, but tweaks said client to make it more test friendly
     /// by adding a <see cref="TerminatePipeline"/> handler to 1) prevent an actual outbound http request as well as
     /// 2) capturing the final request's <see cref="IExecutionContext"/> so Tests can assert against it.
     /// </summary>
-    /// private class AmazonBearerTokenAuthTestClientTestFixture : AmazonBearerTokenAuthTestClient
+    /// private class AmazonS3ClientTestFixture : AmazonS3Client
     /// {
     ///     private readonly TerminatePipeline _terminatePipeline = new TerminatePipeline();
-    /// 
+    ///
     ///     public IExecutionContext CapturedContext => _terminatePipeline.CapturedContext;
-    /// 
-    ///     public AmazonBearerTokenAuthTestClientTestFixture(AmazonBearerTokenAuthTestConfig config) : base(config)
+    ///
+    ///     public AmazonS3ClientTestFixture(AmazonS3Config config) : base(config)
     ///     {
     ///         RuntimePipeline.AddHandlerBefore<HttpHandler<Stream>>(_terminatePipeline);
     ///     }
