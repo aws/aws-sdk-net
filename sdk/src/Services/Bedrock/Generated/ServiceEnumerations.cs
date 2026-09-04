@@ -1187,6 +1187,10 @@ namespace Amazon.Bedrock
     {
 
         /// <summary>
+        /// Constant Aws_review for DataRetentionMode
+        /// </summary>
+        public static readonly DataRetentionMode Aws_review = new DataRetentionMode("aws_review");
+        /// <summary>
         /// Constant Default for DataRetentionMode
         /// </summary>
         public static readonly DataRetentionMode Default = new DataRetentionMode("default");
