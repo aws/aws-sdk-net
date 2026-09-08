@@ -1,3 +1,25 @@
+### 4.0.329.0 (2026-09-08 18:15 UTC)
+* Appflow (4.0.101.0)
+	* Amazon AppFlow now supports key pair (RSA private key) authentication for the Snowflake connector. You can provide a privateKey in SnowflakeConnectorProfileCredentials, and password is no longer required. This is a non-breaking, additive change available via the AWS SDK and CLI.
+* CloudTrail (4.0.101.0)
+	* Adds support for the RecursiveLogging trail setting, which suppresses recursive events generated when CloudTrail delivers logs to a trail's destinations.
+* Connect (4.0.115.0)
+	* Releasing workload types feature. A proper launch announcement or details will follow up.
+* EC2 (4.0.118.0)
+	* Adds the InterfaceTypes field to NetworkCardInfo in the DescribeInstanceTypes response. This field identifies the network interface types supported by each network card.
+* Mgn (4.0.102.0)
+	* This release adds support for configuring the EBS volume initialization rate and delete on termination behavior in launch configuration template
+* Omics (4.0.102.0)
+	* Added support for session policies in AWS HealthOmics Workflows, allowing customers to scope down IAM permissions for individual workflow runs without modifying the service role.
+* PinpointSMSVoiceV2 (4.0.102.0)
+	* This feature will allow customers to specify an area-code when requesting a 10DLC number. Why it matters- Customers can now select a number that matches where their business is located.
+* S3 (4.0.103.0)
+	* Adds support for Amazon S3 Object Lock variable retention.  Existing S3 APIs that support S3 Object Lock parameters now support two new parameters EventHold and EventHoldDuration at the object level, and DefaultEventHoldDuration at the bucket level.
+* S3Control (4.0.101.0)
+	* Adds support for Amazon S3 Object Lock variable retention.  Existing S3 APIs that support S3 Object Lock parameters now support two new parameters EventHold and EventHoldDuration at the object level, and DefaultEventHoldDuration at the bucket level.
+* SageMaker (4.0.114.0)
+	* Add support for InstancePreferences list for multiple instance type input support on SageMaker Training and Processing
+
 ### 4.0.328.0 (2026-09-04 18:15 UTC)
 * Bedrock (4.0.102.0)
 	* New AWS REVIEW mode as supported data retention mode for Bedrock models
