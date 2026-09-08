@@ -73,6 +73,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DefaultEnaQueueCountPerInterface = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("interfaceTypeSet/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.InterfaceTypes == null)
+                        {
+                            unmarshalledObject.InterfaceTypes = new List<string>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.InterfaceTypes.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("maximumEnaQueueCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

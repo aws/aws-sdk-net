@@ -16443,8 +16443,7 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<c>standard</c>
         /// or <c>unlimited</c>) of those instances. If you specify an instance ID that is not
-        /// valid, such as an instance that is not a burstable performance instance, an error
-        /// is returned.
+        /// a burstable performance instance, Amazon EC2 returns the <c>standard</c> credit option.
         /// </para>
         ///  
         /// <para>
@@ -16487,8 +16486,7 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<c>standard</c>
         /// or <c>unlimited</c>) of those instances. If you specify an instance ID that is not
-        /// valid, such as an instance that is not a burstable performance instance, an error
-        /// is returned.
+        /// a burstable performance instance, Amazon EC2 returns the <c>standard</c> credit option.
         /// </para>
         ///  
         /// <para>
