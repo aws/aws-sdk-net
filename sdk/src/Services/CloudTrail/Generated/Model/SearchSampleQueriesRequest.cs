@@ -31,8 +31,19 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchSampleQueries operation.
-    /// Searches sample queries and returns a list of sample queries that are sorted by relevance.
+    /// <important> 
+    /// <para>
+    /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+    /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+    /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+    /// Lake availability change</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    ///  Searches sample queries and returns a list of sample queries that are sorted by relevance.
     /// To search for sample queries, provide a natural language <c>SearchPhrase</c> in English.
+    /// 
+    /// </para>
     /// </summary>
     public partial class SearchSampleQueriesRequest : AmazonCloudTrailRequest
     {

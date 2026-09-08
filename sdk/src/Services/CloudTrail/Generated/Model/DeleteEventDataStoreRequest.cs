@@ -31,6 +31,15 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventDataStore operation.
+    /// <important> 
+    /// <para>
+    /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+    /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+    /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+    /// Lake availability change</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Disables the event data store specified by <c>EventDataStore</c>, which accepts an
     /// event data store ARN. After you run <c>DeleteEventDataStore</c>, the event data store
     /// enters a <c>PENDING_DELETION</c> state, and is automatically deleted after a wait
@@ -38,7 +47,7 @@ namespace Amazon.CloudTrail.Model
     /// on the event data store and the <c>FederationStatus</c> must be <c>DISABLED</c>. You
     /// cannot delete an event data store if <c>TerminationProtectionEnabled</c> is <c>True</c>
     /// or the <c>FederationStatus</c> is <c>ENABLED</c>.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// After you run <c>DeleteEventDataStore</c> on an event data store, you cannot run <c>ListQueries</c>,

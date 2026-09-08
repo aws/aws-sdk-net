@@ -42,6 +42,7 @@ namespace Amazon.CloudTrail.Model
         private string _kmsKeyId;
         private bool? _logFileValidationEnabled;
         private string _name;
+        private bool? _recursiveLogging;
         private string _s3BucketName;
         private string _s3KeyPrefix;
         private string _snsTopicARN;
@@ -90,7 +91,9 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property IncludeGlobalServiceEvents. 
         /// <para>
         /// Specifies whether the trail is publishing events from global services such as IAM
-        /// to the log files.
+        /// to the log files. Setting this value to <c>true</c> only delivers global service events
+        /// to the trail if the trail is multi-Region or if the trail's home Region is the partition
+        /// leader Region (for example, us-east-1).
         /// </para>
         /// </summary>
         public bool? IncludeGlobalServiceEvents
@@ -199,6 +202,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecursiveLogging. 
+        /// <para>
+        /// Specifies whether recursive logging is enabled for the trail.
+        /// </para>
+        /// </summary>
+        public bool? RecursiveLogging
+        {
+            get { return this._recursiveLogging; }
+            set { this._recursiveLogging = value; }
+        }
+
+        // Check to see if RecursiveLogging property is set
+        internal bool IsSetRecursiveLogging()
+        {
+            return this._recursiveLogging.HasValue; 
         }
 
         /// <summary>
