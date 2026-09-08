@@ -34,9 +34,29 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class LaunchTemplateDiskConf
     {
+        private bool? _deleteOnTermination;
         private long? _iops;
         private long? _throughput;
+        private long? _volumeInitializationRate;
         private VolumeType _volumeType;
+
+        /// <summary>
+        /// Gets and sets the property DeleteOnTermination. 
+        /// <para>
+        /// Launch template disk delete on termination configuration.
+        /// </para>
+        /// </summary>
+        public bool? DeleteOnTermination
+        {
+            get { return this._deleteOnTermination; }
+            set { this._deleteOnTermination = value; }
+        }
+
+        // Check to see if DeleteOnTermination property is set
+        internal bool IsSetDeleteOnTermination()
+        {
+            return this._deleteOnTermination.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Iops. 
@@ -63,7 +83,7 @@ namespace Amazon.Mgn.Model
         /// Launch template disk throughput configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=125, Max=1000)]
+        [AWSProperty(Min=125, Max=2000)]
         public long? Throughput
         {
             get { return this._throughput; }
@@ -74,6 +94,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetThroughput()
         {
             return this._throughput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeInitializationRate. 
+        /// <para>
+        /// Launch template disk volume initialization rate configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=100, Max=300)]
+        public long? VolumeInitializationRate
+        {
+            get { return this._volumeInitializationRate; }
+            set { this._volumeInitializationRate = value; }
+        }
+
+        // Check to see if VolumeInitializationRate property is set
+        internal bool IsSetVolumeInitializationRate()
+        {
+            return this._volumeInitializationRate.HasValue; 
         }
 
         /// <summary>

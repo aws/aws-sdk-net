@@ -46,6 +46,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDeleteOnTermination())
+            {
+                context.Writer.WritePropertyName("deleteOnTermination");
+                context.Writer.WriteBooleanValue(requestObject.DeleteOnTermination.Value);
+            }
+
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
@@ -56,6 +62,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("throughput");
                 context.Writer.WriteNumberValue(requestObject.Throughput.Value);
+            }
+
+            if(requestObject.IsSetVolumeInitializationRate())
+            {
+                context.Writer.WritePropertyName("volumeInitializationRate");
+                context.Writer.WriteNumberValue(requestObject.VolumeInitializationRate.Value);
             }
 
             if(requestObject.IsSetVolumeType())
