@@ -38,8 +38,49 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class S3Retention
     {
+        private S3ObjectLockRetentionEventHold _eventHold;
+        private S3ObjectLockRetentionEventHoldDuration _eventHoldDuration;
         private S3ObjectLockRetentionMode _mode;
         private DateTime? _retainUntilDate;
+
+        /// <summary>
+        /// Gets and sets the property EventHold. 
+        /// <para>
+        /// The event hold status to be applied to all objects in the Batch Operations job. Set
+        /// to <c>ON</c> to enable an event hold or <c>OFF</c> to disable it.
+        /// </para>
+        /// </summary>
+        public S3ObjectLockRetentionEventHold EventHold
+        {
+            get { return this._eventHold; }
+            set { this._eventHold = value; }
+        }
+
+        // Check to see if EventHold property is set
+        internal bool IsSetEventHold()
+        {
+            return this._eventHold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventHoldDuration. 
+        /// <para>
+        /// The event hold duration to be applied to all objects in the Batch Operations job.
+        /// The duration specifies how long the object remains protected after the event hold
+        /// is released.
+        /// </para>
+        /// </summary>
+        public S3ObjectLockRetentionEventHoldDuration EventHoldDuration
+        {
+            get { return this._eventHoldDuration; }
+            set { this._eventHoldDuration = value; }
+        }
+
+        // Check to see if EventHoldDuration property is set
+        internal bool IsSetEventHoldDuration()
+        {
+            return this._eventHoldDuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Mode. 

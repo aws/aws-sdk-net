@@ -53,6 +53,9 @@ namespace Amazon.S3.Model
         private Expiration _expiration;
         private DateTime? _lastModified;
         private int? _missingMeta;
+        private ObjectLockEventHold _objectLockEventHold;
+        private int? _objectLockEventHoldDurationDays;
+        private int? _objectLockEventHoldDurationYears;
         private ObjectLockLegalHoldStatus _objectLockLegalHoldStatus;
         private ObjectLockMode _objectLockMode;
         private DateTime? _objectLockRetainUntilDate;
@@ -110,7 +113,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ChecksumCRC32. 
         /// <para>
         /// The Base64 encoded, 32-bit <c>CRC32</c> checksum of the object. This checksum is only
-        /// present if the object was uploaded with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
+        /// present if the checksum was uploaded with the object. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -476,6 +480,78 @@ namespace Amazon.S3.Model
         internal bool IsSetMissingMeta()
         {
             return this._missingMeta.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHold. 
+        /// <para>
+        /// The event hold status for this object. This header is only returned if the requester
+        /// has the <c>s3:GetObjectRetention</c> permission.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ObjectLockEventHold ObjectLockEventHold
+        {
+            get { return this._objectLockEventHold; }
+            set { this._objectLockEventHold = value; }
+        }
+
+        // Check to see if ObjectLockEventHold property is set
+        internal bool IsSetObjectLockEventHold()
+        {
+            return this._objectLockEventHold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHoldDurationDays. 
+        /// <para>
+        /// The event hold duration in days for this object. Only returned when the event hold
+        /// is enabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int? ObjectLockEventHoldDurationDays
+        {
+            get { return this._objectLockEventHoldDurationDays; }
+            set { this._objectLockEventHoldDurationDays = value; }
+        }
+
+        // Check to see if ObjectLockEventHoldDurationDays property is set
+        internal bool IsSetObjectLockEventHoldDurationDays()
+        {
+            return this._objectLockEventHoldDurationDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHoldDurationYears. 
+        /// <para>
+        /// The event hold duration in years for this object. Only returned when the event hold
+        /// is enabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int? ObjectLockEventHoldDurationYears
+        {
+            get { return this._objectLockEventHoldDurationYears; }
+            set { this._objectLockEventHoldDurationYears = value; }
+        }
+
+        // Check to see if ObjectLockEventHoldDurationYears property is set
+        internal bool IsSetObjectLockEventHoldDurationYears()
+        {
+            return this._objectLockEventHoldDurationYears.HasValue; 
         }
 
         /// <summary>

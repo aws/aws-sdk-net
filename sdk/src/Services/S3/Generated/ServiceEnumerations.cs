@@ -1153,6 +1153,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly EventType S3ObjectRestoreDelete = new EventType("s3:ObjectRestore:Delete");
         /// <summary>
+        /// Constant S3ObjectRetentionPut for EventType
+        /// </summary>
+        public static readonly EventType S3ObjectRetentionPut = new EventType("s3:ObjectRetention:Put");
+        /// <summary>
         /// Constant S3ObjectTaggingAll for EventType
         /// </summary>
         public static readonly EventType S3ObjectTaggingAll = new EventType("s3:ObjectTagging:*");
@@ -1905,6 +1909,14 @@ namespace Amazon.S3
         /// </summary>
         public static readonly InventoryOptionalField ObjectAccessControlList = new InventoryOptionalField("ObjectAccessControlList");
         /// <summary>
+        /// Constant ObjectLockEventHoldDuration for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ObjectLockEventHoldDuration = new InventoryOptionalField("ObjectLockEventHoldDuration");
+        /// <summary>
+        /// Constant ObjectLockEventHoldStatus for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField ObjectLockEventHoldStatus = new InventoryOptionalField("ObjectLockEventHoldStatus");
+        /// <summary>
         /// Constant ObjectLockLegalHoldStatus for InventoryOptionalField
         /// </summary>
         public static readonly InventoryOptionalField ObjectLockLegalHoldStatus = new InventoryOptionalField("ObjectLockLegalHoldStatus");
@@ -2270,6 +2282,56 @@ namespace Amazon.S3
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ObjectLockEnabled(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObjectLockEventHold.
+    /// </summary>
+    public partial class ObjectLockEventHold : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFF for ObjectLockEventHold
+        /// </summary>
+        public static readonly ObjectLockEventHold OFF = new ObjectLockEventHold("OFF");
+        /// <summary>
+        /// Constant ON for ObjectLockEventHold
+        /// </summary>
+        public static readonly ObjectLockEventHold ON = new ObjectLockEventHold("ON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObjectLockEventHold(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObjectLockEventHold FindValue(string value)
+        {
+            return FindValue<ObjectLockEventHold>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObjectLockEventHold(string value)
         {
             return FindValue(value);
         }

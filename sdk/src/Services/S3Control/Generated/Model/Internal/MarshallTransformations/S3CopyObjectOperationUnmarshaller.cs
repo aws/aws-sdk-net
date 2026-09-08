@@ -66,6 +66,12 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         unmarshalledObject.AccessControlGrants.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
+                    if (context.TestExpression("AnnotationDirective", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AnnotationDirective = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("BucketKeyEnabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -110,6 +116,18 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         }
                         var unmarshaller = S3TagUnmarshaller.Instance;
                         unmarshalledObject.NewObjectTagging.Add(unmarshaller.Unmarshall(context));
+                        continue;
+                    }
+                    if (context.TestExpression("ObjectLockEventHold", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ObjectLockEventHold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ObjectLockEventHoldDuration", targetDepth))
+                    {
+                        var unmarshaller = S3ObjectLockEventHoldDurationUnmarshaller.Instance;
+                        unmarshalledObject.ObjectLockEventHoldDuration = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("ObjectLockLegalHoldStatus", targetDepth))

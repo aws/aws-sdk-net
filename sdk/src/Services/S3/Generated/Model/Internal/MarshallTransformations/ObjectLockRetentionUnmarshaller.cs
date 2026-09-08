@@ -56,6 +56,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("EventHold", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EventHold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("EventHoldDuration", targetDepth))
+                    {
+                        var unmarshaller = EventHoldDurationUnmarshaller.Instance;
+                        unmarshalledObject.EventHoldDuration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Mode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

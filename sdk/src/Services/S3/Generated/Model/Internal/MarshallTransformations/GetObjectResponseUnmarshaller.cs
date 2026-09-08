@@ -100,6 +100,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             MetadataCustomUnmarshall(context, response);
             if (context.ResponseData.IsHeaderPresent("x-amz-missing-meta"))
                 response.MissingMeta = int.Parse(context.ResponseData.GetHeaderValue("x-amz-missing-meta"), CultureInfo.InvariantCulture);
+            if (context.ResponseData.IsHeaderPresent("x-amz-object-lock-event-hold"))
+                response.ObjectLockEventHold = context.ResponseData.GetHeaderValue("x-amz-object-lock-event-hold");
+            if (context.ResponseData.IsHeaderPresent("x-amz-object-lock-event-hold-duration-days"))
+                response.ObjectLockEventHoldDurationDays = int.Parse(context.ResponseData.GetHeaderValue("x-amz-object-lock-event-hold-duration-days"), CultureInfo.InvariantCulture);
+            if (context.ResponseData.IsHeaderPresent("x-amz-object-lock-event-hold-duration-years"))
+                response.ObjectLockEventHoldDurationYears = int.Parse(context.ResponseData.GetHeaderValue("x-amz-object-lock-event-hold-duration-years"), CultureInfo.InvariantCulture);
             if (context.ResponseData.IsHeaderPresent("x-amz-object-lock-legal-hold"))
                 response.ObjectLockLegalHoldStatus = context.ResponseData.GetHeaderValue("x-amz-object-lock-legal-hold");
             if (context.ResponseData.IsHeaderPresent("x-amz-object-lock-mode"))

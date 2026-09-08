@@ -424,6 +424,8 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }            
                             xmlWriter.WriteEndElement();            
                         }
+                        if(publicRequest.Operation.S3PutObjectCopy.IsSetAnnotationDirective())
+                            xmlWriter.WriteElementString("AnnotationDirective", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.AnnotationDirective));
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetBucketKeyEnabled())
                             xmlWriter.WriteElementString("BucketKeyEnabled", StringUtils.FromBool(publicRequest.Operation.S3PutObjectCopy.BucketKeyEnabled.Value));
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetCannedAccessControlList())
@@ -490,6 +492,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                             }            
                             xmlWriter.WriteEndElement();            
                         }
+                        if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockEventHold())
+                            xmlWriter.WriteElementString("ObjectLockEventHold", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockEventHold));
+                        if (publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockEventHoldDuration())
+                        {
+                            xmlWriter.WriteStartElement("ObjectLockEventHoldDuration");
+                            if(publicRequest.Operation.S3PutObjectCopy.ObjectLockEventHoldDuration.IsSetDays())
+                                xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.Operation.S3PutObjectCopy.ObjectLockEventHoldDuration.Days.Value));
+                            if(publicRequest.Operation.S3PutObjectCopy.ObjectLockEventHoldDuration.IsSetYears())
+                                xmlWriter.WriteElementString("Years", StringUtils.FromInt(publicRequest.Operation.S3PutObjectCopy.ObjectLockEventHoldDuration.Years.Value));
+                            xmlWriter.WriteEndElement();
+                        }
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockLegalHoldStatus())
                             xmlWriter.WriteElementString("ObjectLockLegalHoldStatus", StringUtils.FromString(publicRequest.Operation.S3PutObjectCopy.ObjectLockLegalHoldStatus));
                         if(publicRequest.Operation.S3PutObjectCopy.IsSetObjectLockMode())
@@ -532,6 +545,17 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                         if (publicRequest.Operation.S3PutObjectRetention.IsSetRetention())
                         {
                             xmlWriter.WriteStartElement("Retention");
+                            if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetEventHold())
+                                xmlWriter.WriteElementString("EventHold", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.EventHold));
+                            if (publicRequest.Operation.S3PutObjectRetention.Retention.IsSetEventHoldDuration())
+                            {
+                                xmlWriter.WriteStartElement("EventHoldDuration");
+                                if(publicRequest.Operation.S3PutObjectRetention.Retention.EventHoldDuration.IsSetDays())
+                                    xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.Operation.S3PutObjectRetention.Retention.EventHoldDuration.Days.Value));
+                                if(publicRequest.Operation.S3PutObjectRetention.Retention.EventHoldDuration.IsSetYears())
+                                    xmlWriter.WriteElementString("Years", StringUtils.FromInt(publicRequest.Operation.S3PutObjectRetention.Retention.EventHoldDuration.Years.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                             if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetMode())
                                 xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Operation.S3PutObjectRetention.Retention.Mode));
                             if(publicRequest.Operation.S3PutObjectRetention.Retention.IsSetRetainUntilDate())

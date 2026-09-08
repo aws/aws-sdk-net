@@ -284,6 +284,9 @@ namespace Amazon.S3.Model
         private MetadataCollection _metadata = AWSConfigs.InitializeCollections ? new MetadataCollection() : null;
         private S3MetadataDirective _metadataDirective;
         private DateTime? _modifiedSinceDate;
+        private ObjectLockEventHold _objectLockEventHold;
+        private int? _objectLockEventHoldDurationDays;
+        private int? _objectLockEventHoldDurationYears;
         private ObjectLockLegalHoldStatus _objectLockLegalHoldStatus;
         private ObjectLockMode _objectLockMode;
         private DateTime? _objectLockRetainUntilDate;
@@ -1146,6 +1149,76 @@ namespace Amazon.S3.Model
         internal bool IsSetModifiedSinceDate()
         {
             return this._modifiedSinceDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHold. 
+        /// <para>
+        /// The event hold status to apply to the object copy. Set to <c>ON</c> to enable or <c>OFF</c>
+        /// to disable.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ObjectLockEventHold ObjectLockEventHold
+        {
+            get { return this._objectLockEventHold; }
+            set { this._objectLockEventHold = value; }
+        }
+
+        // Check to see if ObjectLockEventHold property is set
+        internal bool IsSetObjectLockEventHold()
+        {
+            return this._objectLockEventHold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHoldDurationDays. 
+        /// <para>
+        /// The event hold duration in days to apply to the object copy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int? ObjectLockEventHoldDurationDays
+        {
+            get { return this._objectLockEventHoldDurationDays; }
+            set { this._objectLockEventHoldDurationDays = value; }
+        }
+
+        // Check to see if ObjectLockEventHoldDurationDays property is set
+        internal bool IsSetObjectLockEventHoldDurationDays()
+        {
+            return this._objectLockEventHoldDurationDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHoldDurationYears. 
+        /// <para>
+        /// The event hold duration in years to apply to the object copy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported for directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int? ObjectLockEventHoldDurationYears
+        {
+            get { return this._objectLockEventHoldDurationYears; }
+            set { this._objectLockEventHoldDurationYears = value; }
+        }
+
+        // Check to see if ObjectLockEventHoldDurationYears property is set
+        internal bool IsSetObjectLockEventHoldDurationYears()
+        {
+            return this._objectLockEventHoldDurationYears.HasValue; 
         }
 
         /// <summary>

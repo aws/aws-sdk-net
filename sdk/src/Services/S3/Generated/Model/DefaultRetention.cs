@@ -47,6 +47,7 @@ namespace Amazon.S3.Model
     public partial class DefaultRetention
     {
         private int? _days;
+        private EventHoldDuration _defaultEventHold;
         private ObjectLockRetentionMode _mode;
         private int? _years;
 
@@ -67,6 +68,26 @@ namespace Amazon.S3.Model
         internal bool IsSetDays()
         {
             return this._days.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultEventHold. 
+        /// <para>
+        /// The default event hold duration to be applied to new objects placed in the specified
+        /// bucket. When configured, new objects will automatically have an event hold enabled
+        /// with this duration.
+        /// </para>
+        /// </summary>
+        public EventHoldDuration DefaultEventHold
+        {
+            get { return this._defaultEventHold; }
+            set { this._defaultEventHold = value; }
+        }
+
+        // Check to see if DefaultEventHold property is set
+        internal bool IsSetDefaultEventHold()
+        {
+            return this._defaultEventHold != null;
         }
 
         /// <summary>

@@ -106,6 +106,18 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetRetention())
                 {
                     xmlWriter.WriteStartElement("Retention", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    if(publicRequest.Retention.IsSetEventHold())
+                        xmlWriter.WriteElementString("EventHold", StringUtils.FromString(publicRequest.Retention.EventHold));
+
+                    if (publicRequest.Retention.IsSetEventHoldDuration())
+                    {
+                        xmlWriter.WriteStartElement("EventHoldDuration");
+                        if(publicRequest.Retention.EventHoldDuration.IsSetDays())
+                            xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.Retention.EventHoldDuration.Days.Value));
+                        if(publicRequest.Retention.EventHoldDuration.IsSetYears())
+                            xmlWriter.WriteElementString("Years", StringUtils.FromInt(publicRequest.Retention.EventHoldDuration.Years.Value));
+                        xmlWriter.WriteEndElement();
+                    }
                     if(publicRequest.Retention.IsSetMode())
                         xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.Retention.Mode));
 

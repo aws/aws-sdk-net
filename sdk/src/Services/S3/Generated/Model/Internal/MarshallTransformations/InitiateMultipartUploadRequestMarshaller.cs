@@ -90,6 +90,21 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers["Expires"] = StringUtils.FromString(publicRequest.Expires);
             }
         
+            if (publicRequest.IsSetObjectLockEventHold()) 
+            {
+                request.Headers["x-amz-object-lock-event-hold"] = publicRequest.ObjectLockEventHold;
+            }
+        
+            if (publicRequest.IsSetObjectLockEventHoldDurationDays()) 
+            {
+                request.Headers["x-amz-object-lock-event-hold-duration-days"] = StringUtils.FromInt(publicRequest.ObjectLockEventHoldDurationDays);
+            }
+        
+            if (publicRequest.IsSetObjectLockEventHoldDurationYears()) 
+            {
+                request.Headers["x-amz-object-lock-event-hold-duration-years"] = StringUtils.FromInt(publicRequest.ObjectLockEventHoldDurationYears);
+            }
+        
             if (publicRequest.IsSetObjectLockLegalHoldStatus()) 
             {
                 request.Headers["x-amz-object-lock-legal-hold"] = publicRequest.ObjectLockLegalHoldStatus;

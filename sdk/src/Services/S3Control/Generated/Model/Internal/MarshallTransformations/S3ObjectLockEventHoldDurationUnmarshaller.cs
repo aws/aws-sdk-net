@@ -34,18 +34,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for S3Retention Object
+    /// Response Unmarshaller for S3ObjectLockEventHoldDuration Object
     /// </summary>  
-    public partial class S3RetentionUnmarshaller : IXmlUnmarshaller<S3Retention, XmlUnmarshallerContext>
+    public partial class S3ObjectLockEventHoldDurationUnmarshaller : IXmlUnmarshaller<S3ObjectLockEventHoldDuration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public S3Retention Unmarshall(XmlUnmarshallerContext context)
+        public S3ObjectLockEventHoldDuration Unmarshall(XmlUnmarshallerContext context)
         {
-            S3Retention unmarshalledObject = new S3Retention();
+            S3ObjectLockEventHoldDuration unmarshalledObject = new S3ObjectLockEventHoldDuration();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -56,28 +56,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("EventHold", targetDepth))
+                    if (context.TestExpression("Days", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.EventHold = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("EventHoldDuration", targetDepth))
+                    if (context.TestExpression("Years", targetDepth))
                     {
-                        var unmarshaller = S3ObjectLockRetentionEventHoldDurationUnmarshaller.Instance;
-                        unmarshalledObject.EventHoldDuration = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("Mode", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.Mode = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("RetainUntilDate", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.RetainUntilDate = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.Years = unmarshaller.Unmarshall(context);
                         continue;
                     }
 
@@ -91,14 +79,14 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3Retention unmarshalledObject, int targetDepth);
+        partial void XmlStructureUnmarshallCustomization(XmlUnmarshallerContext context, S3ObjectLockEventHoldDuration unmarshalledObject, int targetDepth);
 
-        private static S3RetentionUnmarshaller _instance = new S3RetentionUnmarshaller();        
+        private static S3ObjectLockEventHoldDurationUnmarshaller _instance = new S3ObjectLockEventHoldDurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static S3RetentionUnmarshaller Instance
+        public static S3ObjectLockEventHoldDurationUnmarshaller Instance
         {
             get
             {
