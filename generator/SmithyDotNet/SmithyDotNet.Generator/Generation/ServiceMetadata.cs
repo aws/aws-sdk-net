@@ -60,6 +60,15 @@ public record ServiceMetadata
     public NugetDependencies? NugetDependencies { get; init; }
 
     /// <summary>
+    /// Extra framework assembly references a service's hand-written <c>Custom\</c> code needs
+    /// (e.g. RDS/DSQL reference <c>System.Net.Http</c> for their auth-token generators), or
+    /// <c>null</c> when the service declares none. Additive to the framework references every
+    /// service carries.
+    /// </summary>
+    [JsonPropertyName("reference-dependencies")]
+    public ReferenceDependencies? ReferenceDependencies { get; init; }
+
+    /// <summary>
     /// Whether or not the service supports netstandard. Currently only false for MobilAnalytics Service.
     /// </summary>
     [JsonPropertyName("netstandard-support")]
@@ -88,6 +97,29 @@ public record NugetDependencies
     /// <summary>Dependencies applied to .NET Framework targets.</summary>
     [JsonPropertyName("NetFramework")]
     public IReadOnlyList<NugetDependency> NetFramework { get; init; } = [];
+}
+
+/// <summary>
+/// Extra framework assembly references grouped by target framework family, as declared under a
+/// service's <c>reference-dependencies</c> key.
+/// </summary>
+public record ReferenceDependencies
+{
+    /// <summary>References added to .NET Standard / .NET (Core) targets.</summary>
+    [JsonPropertyName("NetStandard")]
+    public IReadOnlyList<ReferenceDependency> NetStandard { get; init; } = [];
+
+    /// <summary>References added to .NET Framework targets.</summary>
+    [JsonPropertyName("NetFramework")]
+    public IReadOnlyList<ReferenceDependency> NetFramework { get; init; } = [];
+}
+
+/// <summary>A single framework assembly reference declared under <c>reference-dependencies</c>.</summary>
+public record ReferenceDependency
+{
+    /// <summary>The assembly name to reference (e.g. "System.Net.Http").</summary>
+    [JsonPropertyName("name")]
+    public required string Name { get; init; }
 }
 
 /// <summary>A single NuGet package dependency and the target frameworks it applies to.</summary>

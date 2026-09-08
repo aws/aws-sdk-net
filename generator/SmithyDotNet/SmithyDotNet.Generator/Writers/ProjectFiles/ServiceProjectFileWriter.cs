@@ -17,16 +17,23 @@ namespace SmithyDotNet.Generator.Writers.ProjectFiles;
 /// </summary>
 public sealed class ServiceProjectFileWriter(GenerationContext context)
 {
+    // Extra framework references a service's Custom\ code needs, per its metadata reference-dependencies.
+    private IReadOnlyList<ReferenceDependency> NetFrameworkReferenceDependencies =>
+        context.Metadata?.ReferenceDependencies?.NetFramework ?? [];
+
+    private IReadOnlyList<ReferenceDependency> NetStandardReferenceDependencies =>
+        context.Metadata?.ReferenceDependencies?.NetStandard ?? [];
+
     /// <summary>Writes <c>AWSSDK.{Service}.NetFramework.csproj</c>.</summary>
     public string WriteNetFramework()
     {
-        return WriteProject(ServiceProjectConfigurations.NetFramework);
+        return WriteProject(ServiceProjectConfigurations.NetFramework, NetFrameworkReferenceDependencies);
     }
 
     /// <summary>Writes <c>AWSSDK.{Service}.NetStandard.csproj</c>.</summary>
     public string WriteNetStandard()
     {
-        return WriteProject(ServiceProjectConfigurations.NetStandard);
+        return WriteProject(ServiceProjectConfigurations.NetStandard, NetStandardReferenceDependencies);
     }
 
     /// <summary>
@@ -60,9 +67,16 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         sections.Add(w => WriteAnalyzerPackageReferences(w, ns));
 
         // net472 needs the same framework references the NetFramework variant carries.
-        if (fw.FrameworkReferences.Count > 0)
+        if (fw.FrameworkReferences.Count > 0 || NetFrameworkReferenceDependencies.Count > 0)
         {
-            sections.Add(w => WriteConditionalFrameworkReferences(w, fw));
+            sections.Add(w => WriteConditionalFrameworkReferences(w, fw, NetFrameworkReferenceDependencies));
+        }
+
+        // netstandard/net8 targets need the same references the NetStandard variant carries.
+        // (ns.FrameworkReferences is empty, so only the metadata reference-dependencies apply.)
+        if (NetStandardReferenceDependencies.Count > 0)
+        {
+            sections.Add(w => WriteConditionalNetStandardReferences(w, NetStandardReferenceDependencies));
         }
 
         var writer = new CodeWriter();
@@ -128,7 +142,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteConditionalFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration frameworkConfig)
+    private static void WriteConditionalFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration frameworkConfig, IReadOnlyList<ReferenceDependency> referenceDependencies)
     {
         writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () =>
         {
@@ -136,10 +150,29 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             {
                 writer.WriteLine($"""<Reference Include="{reference}"/>""");
             }
+            WriteReferenceDependencies(writer, referenceDependencies);
         });
     }
 
-    private string WriteProject(ServiceProjectConfiguration config)
+    private static void WriteConditionalNetStandardReferences(CodeWriter writer, IReadOnlyList<ReferenceDependency> referenceDependencies)
+    {
+        writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNotNetFramework}">""", "ItemGroup", () =>
+        {
+            WriteReferenceDependencies(writer, referenceDependencies);
+        });
+    }
+
+    // Single emitter for service-specific reference-dependencies so a format change (e.g. adding a
+    // HintPath) lands in one place across every variant.
+    private static void WriteReferenceDependencies(CodeWriter writer, IReadOnlyList<ReferenceDependency> referenceDependencies)
+    {
+        foreach (var dependency in referenceDependencies)
+        {
+            writer.WriteLine($"""<Reference Include="{dependency.Name}"/>""");
+        }
+    }
+
+    private string WriteProject(ServiceProjectConfiguration config, IReadOnlyList<ReferenceDependency> referenceDependencies)
     {
         var sections = new List<Action<CodeWriter>>
         {
@@ -157,9 +190,9 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             sections.Add(w => WriteAnalyzerPackageReferences(w, config));
         }
 
-        if (config.FrameworkReferences.Count > 0)
+        if (config.FrameworkReferences.Count > 0 || referenceDependencies.Count > 0)
         {
-            sections.Add(w => WriteFrameworkReferences(w, config));
+            sections.Add(w => WriteFrameworkReferences(w, config, referenceDependencies));
         }
 
         var writer = new CodeWriter();
@@ -196,7 +229,9 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration config)
+    // Emits the project-type framework references (e.g. System.Configuration) followed by any
+    // service-specific reference-dependencies, matching C2J which merges both into one ItemGroup.
+    private static void WriteFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration config, IReadOnlyList<ReferenceDependency> referenceDependencies)
     {
         writer.OpenXmlBlock("ItemGroup", () =>
         {
@@ -204,6 +239,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             {
                 writer.WriteLine($"""<Reference Include="{reference}"/>""");
             }
+            WriteReferenceDependencies(writer, referenceDependencies);
         });
     }
 

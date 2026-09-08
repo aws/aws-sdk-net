@@ -129,6 +129,29 @@ public class ServiceProjectFileWriterTests
         Assert.Contains("AWSSDK.Core.NetStandard.csproj", _unified);
     }
 
+    // A service's reference-dependencies (e.g. System.Net.Http for DSQL's Custom\ auth-token generator)
+    // are added to the matching variant alongside the framework references every service carries.
+    [Fact]
+    public void ReferenceDependenciesAreAddedToTheirVariant()
+    {
+        var metadata = new ServiceMetadata
+        {
+            ReferenceDependencies = new ReferenceDependencies
+            {
+                NetFramework = [new ReferenceDependency { Name = "System.Net.Http" }],
+            },
+        };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata);
+        var writer = new ServiceProjectFileWriter(context);
+
+        var netFramework = writer.WriteNetFramework();
+        Assert.Contains("""<Reference Include="System.Configuration"/>""", netFramework);
+        Assert.Contains("""<Reference Include="System.Net.Http"/>""", netFramework);
+
+        // NetStandard declares no reference-dependencies, so it gets no framework references at all.
+        Assert.DoesNotContain("System.Net.Http", writer.WriteNetStandard());
+    }
+
     // A service that opts out of NetStandard drops the non-Framework target, define, and Core reference.
     [Fact]
     public void UnifiedIsFrameworkOnlyWhenNetStandardUnsupported()
