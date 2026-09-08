@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
         private Channel _channel;
         private int? _concurrency;
         private CrossChannelBehavior _crossChannelBehavior;
+        private List<WorkloadTypeConcurrency> _workloadTypeConcurrencies = AWSConfigs.InitializeCollections ? new List<WorkloadTypeConcurrency>() : null;
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -76,7 +77,7 @@ namespace Amazon.Connect.Model
         /// Valid Range for <c>TASK</c>: Minimum value of 1. Maximum value of 10.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=0, Max=10)]
         public int? Concurrency
         {
             get { return this._concurrency; }
@@ -107,6 +108,31 @@ namespace Amazon.Connect.Model
         internal bool IsSetCrossChannelBehavior()
         {
             return this._crossChannelBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkloadTypeConcurrencies. 
+        /// <para>
+        /// Defines the list of workload type concurrency configurations for a channel. When provided,
+        /// enables granular concurrency control based on workload type values.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<WorkloadTypeConcurrency> WorkloadTypeConcurrencies
+        {
+            get { return this._workloadTypeConcurrencies; }
+            set { this._workloadTypeConcurrencies = value; }
+        }
+
+        // Check to see if WorkloadTypeConcurrencies property is set
+        internal bool IsSetWorkloadTypeConcurrencies()
+        {
+            return this._workloadTypeConcurrencies != null && (this._workloadTypeConcurrencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

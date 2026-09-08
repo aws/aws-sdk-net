@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MediaConcurrency Marshaller
+    /// WorkloadTypeConcurrency Marshaller
     /// </summary>
-    public class MediaConcurrencyMarshaller : IRequestMarshaller<MediaConcurrency, JsonMarshallerContext> 
+    public class WorkloadTypeConcurrencyMarshaller : IRequestMarshaller<WorkloadTypeConcurrency, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,47 +42,31 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MediaConcurrency requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkloadTypeConcurrency requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetChannel())
-            {
-                context.Writer.WritePropertyName("Channel");
-                context.Writer.WriteStringValue(requestObject.Channel);
-            }
-
             if(requestObject.IsSetConcurrency())
             {
                 context.Writer.WritePropertyName("Concurrency");
                 context.Writer.WriteNumberValue(requestObject.Concurrency.Value);
             }
 
-            if(requestObject.IsSetCrossChannelBehavior())
+            if(requestObject.IsSetCrossChannelWorkloadBehavior())
             {
-                context.Writer.WritePropertyName("CrossChannelBehavior");
+                context.Writer.WritePropertyName("CrossChannelWorkloadBehavior");
                 context.Writer.WriteStartObject();
 
-                var marshaller = CrossChannelBehaviorMarshaller.Instance;
-                marshaller.Marshall(requestObject.CrossChannelBehavior, context);
+                var marshaller = CrossChannelWorkloadBehaviorMarshaller.Instance;
+                marshaller.Marshall(requestObject.CrossChannelWorkloadBehavior, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetWorkloadTypeConcurrencies())
+            if(requestObject.IsSetWorkloadType())
             {
-                context.Writer.WritePropertyName("WorkloadTypeConcurrencies");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectWorkloadTypeConcurrenciesListValue in requestObject.WorkloadTypeConcurrencies)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = WorkloadTypeConcurrencyMarshaller.Instance;
-                    marshaller.Marshall(requestObjectWorkloadTypeConcurrenciesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("WorkloadType");
+                context.Writer.WriteStringValue(requestObject.WorkloadType);
             }
 
         }
@@ -90,7 +74,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MediaConcurrencyMarshaller Instance = new MediaConcurrencyMarshaller();
+        public readonly static WorkloadTypeConcurrencyMarshaller Instance = new WorkloadTypeConcurrencyMarshaller();
 
     }
 }

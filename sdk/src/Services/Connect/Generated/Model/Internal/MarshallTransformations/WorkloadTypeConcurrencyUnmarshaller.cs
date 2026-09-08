@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MediaConcurrency Object
+    /// Response Unmarshaller for WorkloadTypeConcurrency Object
     /// </summary>  
-    public class MediaConcurrencyUnmarshaller : IJsonUnmarshaller<MediaConcurrency, JsonUnmarshallerContext>
+    public class WorkloadTypeConcurrencyUnmarshaller : IJsonUnmarshaller<WorkloadTypeConcurrency, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MediaConcurrency Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WorkloadTypeConcurrency Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MediaConcurrency unmarshalledObject = new MediaConcurrency();
+            WorkloadTypeConcurrency unmarshalledObject = new WorkloadTypeConcurrency();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Channel", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Channel = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("Concurrency", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Concurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CrossChannelBehavior", targetDepth, ref reader))
+                if (context.TestExpression("CrossChannelWorkloadBehavior", targetDepth, ref reader))
                 {
-                    var unmarshaller = CrossChannelBehaviorUnmarshaller.Instance;
-                    unmarshalledObject.CrossChannelBehavior = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = CrossChannelWorkloadBehaviorUnmarshaller.Instance;
+                    unmarshalledObject.CrossChannelWorkloadBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("WorkloadTypeConcurrencies", targetDepth, ref reader))
+                if (context.TestExpression("WorkloadType", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<WorkloadTypeConcurrency, WorkloadTypeConcurrencyUnmarshaller>(WorkloadTypeConcurrencyUnmarshaller.Instance);
-                    unmarshalledObject.WorkloadTypeConcurrencies = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WorkloadType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MediaConcurrencyUnmarshaller _instance = new MediaConcurrencyUnmarshaller();        
+        private static WorkloadTypeConcurrencyUnmarshaller _instance = new WorkloadTypeConcurrencyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MediaConcurrencyUnmarshaller Instance
+        public static WorkloadTypeConcurrencyUnmarshaller Instance
         {
             get
             {

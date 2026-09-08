@@ -7028,7 +7028,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.MediaConcurrency.Concurrency</property>
-    <min>1</min>
+    <min>0</min>
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
@@ -8408,6 +8408,11 @@
     <property>Amazon.Connect.Model.WidgetDestination.WidgetId</property>
     <min>1</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.WorkloadTypeConcurrency.Concurrency</property>
+    <min>1</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Workspace.Description</property>

@@ -1187,6 +1187,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelWorkloadBehaviorType.
+    /// </summary>
+    public class ChannelWorkloadBehaviorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE for ChannelWorkloadBehaviorType
+        /// </summary>
+        public static readonly ChannelWorkloadBehaviorType ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE = new ChannelWorkloadBehaviorType("ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE");
+        /// <summary>
+        /// Constant ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY for ChannelWorkloadBehaviorType
+        /// </summary>
+        public static readonly ChannelWorkloadBehaviorType ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY = new ChannelWorkloadBehaviorType("ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY");
+        /// <summary>
+        /// Constant ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY for ChannelWorkloadBehaviorType
+        /// </summary>
+        public static readonly ChannelWorkloadBehaviorType ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY = new ChannelWorkloadBehaviorType("ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelWorkloadBehaviorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelWorkloadBehaviorType FindValue(string value)
+        {
+            return FindValue<ChannelWorkloadBehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelWorkloadBehaviorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChatEventType.
     /// </summary>
     public class ChatEventType : ConstantClass
