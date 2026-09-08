@@ -164,6 +164,81 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void TestFailedRegionLookupIsCachedUntilReset()
+        {
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            // A profile name that doesn't exist in ProfileText, so every non-metadata source
+            // (app config, environment variable, profile) fails to resolve a region.
+            using (new FallbackFactoryTestFixture(ProfileText, "doesNotExist", newEnvVariables))
+            {
+                var region = FallbackRegionFactory.GetRegionEndpoint(false);
+                Assert.IsNull(region);
+
+                var originalRegionEnvVar = Environment.GetEnvironmentVariable(EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION);
+                try
+                {
+                    // A region now becomes available. Before caching a failed lookup, the SDK
+                    // re-ran the full (exception-throwing) probe on every call and would have
+                    // picked this up; it must now stay cached as "not found" until Reset().
+                    Environment.SetEnvironmentVariable(EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, "us-west-2");
+
+                    region = FallbackRegionFactory.GetRegionEndpoint(false);
+                    Assert.IsNull(region, "A previously-failed lookup should remain cached until Reset() is called.");
+
+                    FallbackRegionFactory.Reset();
+
+                    region = FallbackRegionFactory.GetRegionEndpoint(false);
+                    Assert.AreEqual(RegionEndpoint.USWest2, region, "After Reset(), the lookup should run again and pick up the now-available region.");
+                }
+                finally
+                {
+                    Environment.SetEnvironmentVariable(EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, originalRegionEnvVar);
+                }
+            }
+        }
+
+        [TestMethod]
+        public void TestFailedNonMetadataRegionLookupDoesNotBlockMetadataInclusiveLookup()
+        {
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+                // Makes EC2InstanceMetadata fail fast with no network call, so the metadata-inclusive
+                // lookup below is deterministic (and fast) whether or not this actually runs on EC2.
+                { EC2InstanceMetadata.AWS_EC2_METADATA_DISABLED, "true" },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "doesNotExist", newEnvVariables))
+            {
+                var region = FallbackRegionFactory.GetRegionEndpoint(false);
+                Assert.IsNull(region);
+
+                var nonMetadataLookupFailed = (bool)ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "nonMetadataLookupFailed");
+                var allSourcesLookupFailed = (bool)ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "allSourcesLookupFailed");
+
+                Assert.IsTrue(nonMetadataLookupFailed, "A failed non-metadata-only lookup should be cached.");
+                Assert.IsFalse(allSourcesLookupFailed,
+                    "A non-metadata-only failure must not be cached as a metadata-inclusive failure too, " +
+                    "since EC2 instance metadata (only probed when includeInstanceMetadata is true) might still resolve a region.");
+
+                // Now that the non-metadata-only failure is confirmed cached, actually get the value
+                // again via the metadata-inclusive overload: it must still run its own probe (including
+                // InstanceProfileAWSRegion) rather than being short-circuited by the cached flag above.
+                region = FallbackRegionFactory.GetRegionEndpoint(true);
+                Assert.IsNull(region);
+
+                allSourcesLookupFailed = (bool)ReflectionHelpers.Invoke(typeof(FallbackRegionFactory), "allSourcesLookupFailed");
+                Assert.IsTrue(allSourcesLookupFailed, "Once the metadata-inclusive probe has also found nothing, that failure should be cached too.");
+            }
+        }
+
+        [TestMethod]
         public void TestOther2Profile()
         {
             using (new FallbackFactoryTestFixture(ProfileText, "other2"))

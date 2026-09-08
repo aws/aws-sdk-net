@@ -196,6 +196,8 @@ namespace Amazon.Runtime
         public static void Reset()
         {
             cachedRegion = null;
+            nonMetadataLookupFailed = false;
+            allSourcesLookupFailed = false;
             AllGenerators = new List<RegionGenerator>
             {
                 () => new AppConfigAWSRegion(),
@@ -214,6 +216,15 @@ namespace Amazon.Runtime
 
         private static AWSRegion cachedRegion;
 
+        // Remembers that a generator set was already probed and found nothing, so repeated calls
+        // (e.g. once per request, from RegionFinder, for a client whose ServiceURL never resolves
+        // to a region from any source) don't re-run the same failing - and sometimes exception
+        // throwing, disk-IO performing - probe every time. A failure of the metadata-inclusive set
+        // implies the non-metadata subset also failed; the reverse doesn't hold, since
+        // InstanceProfileAWSRegion (EC2 instance metadata) might still find a region.
+        private static bool nonMetadataLookupFailed;
+        private static bool allSourcesLookupFailed;
+
         public static RegionEndpoint GetRegionEndpoint()
         {
             return GetRegionEndpoint(true);
@@ -225,6 +236,9 @@ namespace Amazon.Runtime
             {
                 if (cachedRegion != null)
                     return cachedRegion.Region;
+
+                if (allSourcesLookupFailed || (!includeInstanceMetadata && nonMetadataLookupFailed))
+                    return null;
 
                 IEnumerable<RegionGenerator> generators
                     = includeInstanceMetadata ? AllGenerators : NonMetadataGenerators;
@@ -246,6 +260,13 @@ namespace Amazon.Runtime
 
                     if (cachedRegion != null)
                         break;
+                }
+
+                if (cachedRegion == null)
+                {
+                    nonMetadataLookupFailed = true;
+                    if (includeInstanceMetadata)
+                        allSourcesLookupFailed = true;
                 }
 
                 return cachedRegion != null ? cachedRegion.Region : null;

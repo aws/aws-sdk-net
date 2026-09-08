@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Fixed `FallbackRegionFactory.GetRegionEndpoint` re-running its full region probe on every call when no source resolves a region."
+    ]
+  }
+}
