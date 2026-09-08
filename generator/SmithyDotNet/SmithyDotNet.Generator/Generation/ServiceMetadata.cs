@@ -78,9 +78,15 @@ public record ServiceMetadata
     /// </summary>
     public static ServiceMetadata Load(string metadataPath)
     {
-        using var stream = File.OpenRead(metadataPath);
-        return JsonSerializer.Deserialize<ServiceMetadata>(stream)
-            ?? throw new GeneratorException($"'{metadataPath}' deserialized to null.");
+        try
+        {
+            using var stream = File.OpenRead(metadataPath);
+            return JsonSerializer.Deserialize<ServiceMetadata>(stream) ?? throw new GeneratorException($"'{metadataPath}' deserialized to null.");
+        }
+        catch (JsonException e)
+        {
+            throw new GeneratorException($"'{metadataPath}': {e.Message}");
+        }
     }
 }
 

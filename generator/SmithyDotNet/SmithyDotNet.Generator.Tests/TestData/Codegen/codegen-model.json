@@ -113,7 +113,9 @@
         "AWS":     { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "amazon-web-services" } },
         "EQ":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "Equals" } },
         "GP":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "GENERAL_PURPOSE" } },
-        "AB":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a.b" } }
+        "AB":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a.b" } },
+        "ZERO":    { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "0" } },
+        "ONE":     { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "1" } }
       }
     },
     "com.example#Status": {

@@ -179,18 +179,26 @@ public class GenerationContext
     public SdkVersionManifest Manifest { get; }
 
     /// <summary>
+    /// The service's customizations, for hooks applied at generation time (enum constant names,
+    /// and later code injection / pipeline overrides). Structure-shaped hooks never surface here —
+    /// <see cref="CustomizationTransform"/> merges them into the model before the index is built.
+    /// </summary>
+    public CustomizationsModel Customizations { get; }
+
+    /// <summary>
     /// The name of the Assembly for the service, without the dll suffix i.e. AWSSDK.CloudTrailData.
     /// </summary>
     public string AssemblyName { get; }
 
     // TODO: Accept SmithyModel for shapes not reachable from operations (e.g. shared error shapes).
     // TODO: Add enum values to AWSProtocol as protocols are implemented.
-    // TODO: Add customization layer hook in constructor (renames, shape modifiers).
-    public GenerationContext(ServiceIndex index, SdkVersionManifest manifest, ServiceMetadata? metadata = null)
+    public GenerationContext(ServiceIndex index, SdkVersionManifest manifest, ServiceMetadata? metadata = null, CustomizationsModel? customizations = null)
     {
         _index = index;
         Metadata = metadata;
         Manifest = manifest;
+        Customizations = customizations ?? new CustomizationsModel();
+
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException("Service shape is missing the aws.api#service trait.");
         SdkId = serviceTrait.SdkId;
         BaseName = ResolveBaseName(SdkId, metadata);
@@ -325,9 +333,9 @@ public class GenerationContext
     /// <remarks>
     /// Future phases will layer in:
     /// 1. ServiceShape.Rename map (Smithy service-level renames to avoid conflicts)
-    /// 2. Customization renames (shapeModifiers[shapeName].rename from customizations.json)
-    /// 3. Member-level property name overrides (customization propertyModifier.emitName)
-    /// 4. EC2 query name (aws.protocols#ec2QueryName trait for protocol-specific naming)
+    /// 2. EC2 query name (aws.protocols#ec2QueryName trait for protocol-specific naming)
+    /// Customization renames don't belong here — <see cref="CustomizationTransform"/> merges them
+    /// into the model.
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
 

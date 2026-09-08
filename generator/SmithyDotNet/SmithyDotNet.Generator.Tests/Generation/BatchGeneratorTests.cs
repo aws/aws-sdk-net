@@ -87,6 +87,36 @@ public class BatchGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void BadCustomizationsFileFailsTheBatch()
+    {
+        WriteControlFile("CloudTrailData");
+        SeedFile(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data", "cloudtrail-data.customizations.json"), """{ "runtimePipelineOverride": {} }""");
+
+        var ex = Assert.Throws<GeneratorException>(() => new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken));
+        Assert.Contains("[CloudTrailData]", ex.Message);
+    }
+
+    [Fact]
+    public void MalformedMetadataFailsTheBatch()
+    {
+        WriteControlFile("CloudTrailData");
+        SeedFile(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data", "metadata.json"), "{ not json");
+
+        var ex = Assert.Throws<GeneratorException>(() => new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken));
+        Assert.Contains("metadata.json", ex.Message);
+    }
+
+    [Fact]
+    public void MissingMetadataFailsTheBatch()
+    {
+        WriteControlFile("CloudTrailData");
+        File.Delete(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data", "metadata.json"));
+
+        var ex = Assert.Throws<GeneratorException>(() => new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken));
+        Assert.Contains("metadata.json", ex.Message);
+    }
+
+    [Fact]
     public void UnlistedModelIsSkipped()
     {
         WriteControlFile();

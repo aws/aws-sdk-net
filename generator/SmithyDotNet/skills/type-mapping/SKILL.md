@@ -89,8 +89,10 @@ An `intEnum` element maps to a plain non-nullable `int` (like `IntegerShape`), s
 `blob`, which is supported as an `@httpPayload` body and a JSON body member but has no collection-element
 form. A `document` element is supported and passes the check.
 
-C2J's `Customizations.OverrideTreatEnumsAsString` can flip this per shape. There is no customization layer
-here yet, so the default (`true`, i.e. `string`) is the only behavior.
+C2J's `Customizations.OverrideTreatEnumsAsString` can flip this per shape. That hook is not implemented
+(the loader rejects it), so the default (`true`, i.e. `string`) is the only behavior. The one enum
+customization that is implemented is `emitPropertyName` (keyed by wire value): `TypeMapper.EnumMemberName`
+returns it over the derived constant name.
 
 ## Constrained Shapes
 

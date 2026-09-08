@@ -1,7 +1,6 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
-using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers.Shapes;
 
@@ -12,12 +11,6 @@ namespace SmithyDotNet.Generator.Writers.Shapes;
 /// </summary>
 public sealed class ServiceEnumerationsWriter(GenerationContext context, string modelFileName)
 {
-    /// <summary>
-    /// A resolved enum member: the munged C# member name and the raw wire value C2J stores verbatim
-    /// as the <c>ConstantClass</c> constructor argument.
-    /// </summary>
-    private readonly record struct EnumMember(string PropertyName, string WireValue);
-
     /// <summary>
     /// Emits the complete formatted enumerations source for the service.
     /// </summary>
@@ -44,7 +37,9 @@ public sealed class ServiceEnumerationsWriter(GenerationContext context, string 
     private void WriteEnum(CodeWriter writer, ShapeId id, EnumShape shape)
     {
         var className = TypeMapper.EnumTypeName(id, context);
-        var members = ResolveMembers(shape);
+
+        // Ordered by member name for stable output; the API does not depend on declaration order.
+        var members = TypeMapper.ResolveEnumMembers(id, shape, context).OrderBy(m => m.PropertyName, StringComparer.Ordinal).ToList();
 
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Constants used for properties of type {className}.");
@@ -76,28 +71,6 @@ public sealed class ServiceEnumerationsWriter(GenerationContext context, string 
             writer.WriteLine();
             WriteImplicitOperator(writer, className);
         });
-    }
-
-    // The wire value is the smithy.api#enumValue trait, which C2J stores verbatim as the ConstantClass
-    // constructor argument; the member name is that value munged (SdkNaming.ToEnumMemberName). A missing
-    // value throws rather than defaulting to the Smithy member name: C2J has no such value to carry, so
-    // a reverted service would silently change its API.
-    // TODO: enum property customizations (C2J's GetPropertyModifier(...).EmitName in SimpleModels.cs,
-    // e.g. s3's BZIP2 -> Bzip2) are not applied yet; the wire value is emitted verbatim.
-    // TODO: revisit the throw once more services are migrated - past a maturity bar new values could be
-    // generated from Smithy directly (muhammad-othman's "freeze" suggestion).
-    private static List<EnumMember> ResolveMembers(EnumShape shape)
-    {
-        var members = new List<EnumMember>(shape.Members.Count);
-        foreach (var (memberName, member) in shape.Members)
-        {
-            var wireValue = member.GetEnumValue()
-                ?? throw new GeneratorException($"Enum member '{memberName}' has no smithy.api#enumValue trait; C2J has no value to fall back to.");
-            members.Add(new EnumMember(SdkNaming.ToEnumMemberName(wireValue), wireValue));
-        }
-
-        // Ordered by member name for stable output; the API does not depend on declaration order.
-        return members.OrderBy(m => m.PropertyName, StringComparer.Ordinal).ToList();
     }
 
     private static void WriteConstructor(CodeWriter writer, string className)

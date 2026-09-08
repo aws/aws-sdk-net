@@ -79,6 +79,8 @@ Structured trait records use STJ deserialization via `TraitHelpers.DeserializeTr
 
 [Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait) have an empty object as their value: `"traits": { "smithy.api#required": {} }`.
 
+Trait setters (e.g. `SetJsonName`) are for `CustomizationTransform` only, which mutates the model in place before `ServiceIndex` is built; downstream of the index the model is read-only.
+
 ## Deserialization Setup
 
 Register `ShapeConverter` via `JsonSerializerOptions.Converters` — not via `[JsonConverter]` attribute on `Shape` (see Shape Type Hierarchy above for why) — with `PropertyNameCaseInsensitive = false` (Smithy JSON uses exact camelCase keys).

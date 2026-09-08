@@ -131,6 +131,12 @@ public sealed record Member(
 }
 
 /// <summary>
+/// A resolved enum member: the emitted constant name and the raw wire value C2J stores verbatim
+/// as the <c>ConstantClass</c> constructor argument.
+/// </summary>
+public readonly record struct EnumMember(string PropertyName, string WireValue);
+
+/// <summary>
 /// Maps Smithy shapes to .NET type names and resolves <c>[AWSProperty]</c> attributes.
 /// Shared by all writers that emit members.
 /// </summary>
@@ -287,6 +293,42 @@ public static class TypeMapper
     /// </summary>
     public static string EnumTypeName(ShapeId shapeId, GenerationContext context) =>
         SdkNaming.ToUpperFirstCharacter(context.ToDotNetName(shapeId));
+
+    /// <summary>
+    /// Resolves every member of an <c>enum</c> shape into its emitted constant name and wire value.
+    /// The name is the customization's <c>emitPropertyName</c> for the wire value when one exists
+    /// (C2J keys enum entries by value, not member name), otherwise derived from the value. A
+    /// customization entry matching no wire value, or a member without a value, throws — C2J has
+    /// nothing to fall back to, and silently skipping either would diverge from its output.
+    /// </summary>
+    public static List<EnumMember> ResolveEnumMembers(ShapeId shapeId, EnumShape shape, GenerationContext context)
+    {
+        var renames = new Dictionary<string, string>();
+        if (context.Customizations.ShapeModifiers.TryGetValue(shapeId.Name, out var modifier))
+        {
+            foreach (var (value, property) in modifier.Modify.SelectMany(entry => entry))
+            {
+                if (property.EmitPropertyName is { } name)
+                {
+                    renames[value] = name;
+                }
+            }
+        }
+
+        var members = new List<EnumMember>(shape.Members.Count);
+        foreach (var (memberName, member) in shape.Members)
+        {
+            var wireValue = member.GetEnumValue() ?? throw new GeneratorException($"Enum member '{memberName}' has no smithy.api#enumValue trait; C2J has no value to fall back to.");
+            members.Add(new EnumMember(renames.Remove(wireValue, out var custom) ? custom : SdkNaming.ToEnumMemberName(wireValue), wireValue));
+        }
+
+        if (renames.Count > 0)
+        {
+            throw new GeneratorException($"shapeModifiers['{shapeId.Name}'] modifies enum value(s) {string.Join(", ", renames.Keys)}, which the shape does not have.");
+        }
+
+        return members;
+    }
 
     /// <summary>
     /// The .NET type for a string or value-type scalar, or null when the shape is not a primitive.
@@ -459,8 +501,8 @@ public static class TypeMapper
             return null;
         }
 
-        // TODO: fall back to the customization file's deprecation message (c2j's PropertyModifier.DeprecationMessage)
-        // once the customization layer is implemented.
+        // TODO: CustomizationTransform doesn't merge deprecatedMessage into @deprecated yet; a
+        // member relying on that customization fails here.
         var message = deprecated.Message
             ?? throw new GeneratorException(
                 $"The 'message' property of the @deprecated trait is missing for member '{memberName}'. " +
