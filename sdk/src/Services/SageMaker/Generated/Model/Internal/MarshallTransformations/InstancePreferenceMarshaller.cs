@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProcessingClusterConfig Marshaller
+    /// InstancePreference Marshaller
     /// </summary>
-    public class ProcessingClusterConfigMarshaller : IRequestMarshaller<ProcessingClusterConfig, JsonMarshallerContext> 
+    public class InstancePreferenceMarshaller : IRequestMarshaller<InstancePreference, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProcessingClusterConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(InstancePreference requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -52,50 +52,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
-            if(requestObject.IsSetInstancePreferences())
-            {
-                context.Writer.WritePropertyName("InstancePreferences");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectInstancePreferencesListValue in requestObject.InstancePreferences)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ProcessingInstancePreferenceMarshaller.Instance;
-                    marshaller.Marshall(requestObjectInstancePreferencesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
-            if(requestObject.IsSetSelectedInstanceCount())
+            if(requestObject.IsSetTrainingPlanArns())
             {
-                context.Writer.WritePropertyName("SelectedInstanceCount");
-                context.Writer.WriteNumberValue(requestObject.SelectedInstanceCount.Value);
-            }
-
-            if(requestObject.IsSetSelectedInstanceType())
-            {
-                context.Writer.WritePropertyName("SelectedInstanceType");
-                context.Writer.WriteStringValue(requestObject.SelectedInstanceType);
-            }
-
-            if(requestObject.IsSetVolumeKmsKeyId())
-            {
-                context.Writer.WritePropertyName("VolumeKmsKeyId");
-                context.Writer.WriteStringValue(requestObject.VolumeKmsKeyId);
-            }
-
-            if(requestObject.IsSetVolumeSizeInGB())
-            {
-                context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.WriteNumberValue(requestObject.VolumeSizeInGB.Value);
+                context.Writer.WritePropertyName("TrainingPlanArns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTrainingPlanArnsListValue in requestObject.TrainingPlanArns)
+                {
+                        context.Writer.WriteStringValue(requestObjectTrainingPlanArnsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -103,7 +74,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProcessingClusterConfigMarshaller Instance = new ProcessingClusterConfigMarshaller();
+        public readonly static InstancePreferenceMarshaller Instance = new InstancePreferenceMarshaller();
 
     }
 }

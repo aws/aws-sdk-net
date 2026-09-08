@@ -38,8 +38,11 @@ namespace Amazon.SageMaker.Model
         private int? _instanceCount;
         private List<InstanceGroup> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroup>() : null;
         private InstancePlacementConfig _instancePlacementConfig;
+        private List<InstancePreference> _instancePreferences = AWSConfigs.InitializeCollections ? new List<InstancePreference>() : null;
         private TrainingInstanceType _instanceType;
         private int? _keepAlivePeriodInSeconds;
+        private int? _selectedInstanceCount;
+        private TrainingInstanceType _selectedInstanceType;
         private string _trainingPlanArn;
         private string _volumeKmsKeyId;
         private int? _volumeSizeInGB;
@@ -108,6 +111,39 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstancePreferences. 
+        /// <para>
+        /// An ordered list of ML compute instance types for the training job, in priority order.
+        /// SageMaker launches the training job on the first instance type in the list that has
+        /// available capacity. If capacity is insufficient, SageMaker evaluates the next instance
+        /// type in the preferred list. Exactly one instance type is selected for the job.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>InstancePreferences</c> is mutually exclusive with <c>InstanceType</c>, <c>InstanceGroups</c>,
+        /// <c>InstancePlacementConfig</c>, and <c>EnableManagedSpotTraining</c>, and supports
+        /// only Flexible Training Plans (FTP) and On-Demand capacity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<InstancePreference> InstancePreferences
+        {
+            get { return this._instancePreferences; }
+            set { this._instancePreferences = value; }
+        }
+
+        // Check to see if InstancePreferences property is set
+        internal bool IsSetInstancePreferences()
+        {
+            return this._instancePreferences != null && (this._instancePreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The ML compute instance type. 
@@ -143,6 +179,49 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetKeepAlivePeriodInSeconds()
         {
             return this._keepAlivePeriodInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectedInstanceCount. 
+        /// <para>
+        /// The number of instances of <c>SelectedInstanceType</c> that the training job launched
+        /// with. The job is billed for this instance type and count. Returned by <c>DescribeTrainingJob</c>
+        /// after an instance type is selected. This field is read-only and isn't accepted in
+        /// <c>CreateTrainingJob</c> requests.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? SelectedInstanceCount
+        {
+            get { return this._selectedInstanceCount; }
+            set { this._selectedInstanceCount = value; }
+        }
+
+        // Check to see if SelectedInstanceCount property is set
+        internal bool IsSetSelectedInstanceCount()
+        {
+            return this._selectedInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectedInstanceType. 
+        /// <para>
+        /// The instance type that SageMaker selected for the job from the provided <c>InstancePreferences</c>.
+        /// The job is billed for this instance type and count. Returned by <c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>
+        /// </c> after an instance type is selected. This field is read-only and isn't accepted
+        /// in <c>CreateTrainingJob</c> requests.
+        /// </para>
+        /// </summary>
+        public TrainingInstanceType SelectedInstanceType
+        {
+            get { return this._selectedInstanceType; }
+            set { this._selectedInstanceType = value; }
+        }
+
+        // Check to see if SelectedInstanceType property is set
+        internal bool IsSetSelectedInstanceType()
+        {
+            return this._selectedInstanceType != null;
         }
 
         /// <summary>

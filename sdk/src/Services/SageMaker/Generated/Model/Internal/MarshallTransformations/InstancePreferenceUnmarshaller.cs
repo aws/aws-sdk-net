@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProcessingClusterConfig Object
+    /// Response Unmarshaller for InstancePreference Object
     /// </summary>  
-    public class ProcessingClusterConfigUnmarshaller : IJsonUnmarshaller<ProcessingClusterConfig, JsonUnmarshallerContext>
+    public class InstancePreferenceUnmarshaller : IJsonUnmarshaller<InstancePreference, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProcessingClusterConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InstancePreference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ProcessingClusterConfig unmarshalledObject = new ProcessingClusterConfig();
+            InstancePreference unmarshalledObject = new InstancePreference();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -62,40 +62,16 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("InstancePreferences", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ProcessingInstancePreference, ProcessingInstancePreferenceUnmarshaller>(ProcessingInstancePreferenceUnmarshaller.Instance);
-                    unmarshalledObject.InstancePreferences = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("InstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("SelectedInstanceCount", targetDepth, ref reader))
+                if (context.TestExpression("TrainingPlanArns", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SelectedInstanceCount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SelectedInstanceType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectedInstanceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VolumeKmsKeyId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VolumeSizeInGB", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VolumeSizeInGB = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TrainingPlanArns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -103,12 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProcessingClusterConfigUnmarshaller _instance = new ProcessingClusterConfigUnmarshaller();        
+        private static InstancePreferenceUnmarshaller _instance = new InstancePreferenceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProcessingClusterConfigUnmarshaller Instance
+        public static InstancePreferenceUnmarshaller Instance
         {
             get
             {
