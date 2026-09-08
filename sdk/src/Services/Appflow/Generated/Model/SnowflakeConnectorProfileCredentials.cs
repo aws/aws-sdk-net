@@ -35,6 +35,7 @@ namespace Amazon.Appflow.Model
     public partial class SnowflakeConnectorProfileCredentials
     {
         private string _password;
+        private string _privateKey;
         private string _username;
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Appflow.Model
         ///  The password that corresponds to the user name. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=512)]
+        [AWSProperty(Sensitive=true, Max=512)]
         public string Password
         {
             get { return this._password; }
@@ -54,6 +55,26 @@ namespace Amazon.Appflow.Model
         internal bool IsSetPassword()
         {
             return this._password != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateKey. 
+        /// <para>
+        ///  The RSA private key used for key pair authentication with Snowflake. Provide this
+        /// instead of a password when your Snowflake account uses key pair authentication. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=8192)]
+        public string PrivateKey
+        {
+            get { return this._privateKey; }
+            set { this._privateKey = value; }
+        }
+
+        // Check to see if PrivateKey property is set
+        internal bool IsSetPrivateKey()
+        {
+            return this._privateKey != null;
         }
 
         /// <summary>

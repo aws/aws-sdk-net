@@ -52,6 +52,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AuthCode);
             }
 
+            if(requestObject.IsSetCodeVerifier())
+            {
+                context.Writer.WritePropertyName("codeVerifier");
+                context.Writer.WriteStringValue(requestObject.CodeVerifier);
+            }
+
             if(requestObject.IsSetRedirectUri())
             {
                 context.Writer.WritePropertyName("redirectUri");

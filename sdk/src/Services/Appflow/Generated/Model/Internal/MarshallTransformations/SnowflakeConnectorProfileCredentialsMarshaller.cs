@@ -52,6 +52,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Password);
             }
 
+            if(requestObject.IsSetPrivateKey())
+            {
+                context.Writer.WritePropertyName("privateKey");
+                context.Writer.WriteStringValue(requestObject.PrivateKey);
+            }
+
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("username");

@@ -556,6 +556,12 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Appflow.Model.ConnectorOAuthRequest.CodeVerifier</property>
+    <min>43</min>
+    <max>128</max>
+    <pattern>^[A-Za-z0-9\-._~]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorOAuthRequest.RedirectUri</property>
     <max>512</max>
     <pattern>\S+</pattern>
@@ -1259,6 +1265,12 @@
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileCredentials.Password</property>
     <max>512</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SnowflakeConnectorProfileCredentials.PrivateKey</property>
+    <min>1</min>
+    <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>

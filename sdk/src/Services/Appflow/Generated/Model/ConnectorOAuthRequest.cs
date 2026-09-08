@@ -36,6 +36,7 @@ namespace Amazon.Appflow.Model
     public partial class ConnectorOAuthRequest
     {
         private string _authCode;
+        private string _codeVerifier;
         private string _redirectUri;
 
         /// <summary>
@@ -56,6 +57,25 @@ namespace Amazon.Appflow.Model
         internal bool IsSetAuthCode()
         {
             return this._authCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeVerifier. 
+        /// <para>
+        ///  The code verifier used in the PKCE (Proof Key for Code Exchange) OAuth flow. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=43, Max=128)]
+        public string CodeVerifier
+        {
+            get { return this._codeVerifier; }
+            set { this._codeVerifier = value; }
+        }
+
+        // Check to see if CodeVerifier property is set
+        internal bool IsSetCodeVerifier()
+        {
+            return this._codeVerifier != null;
         }
 
         /// <summary>
