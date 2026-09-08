@@ -150,6 +150,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ScratchStorageMode);
             }
 
+            if(requestObject.IsSetSessionPolicy())
+            {
+                context.Writer.WritePropertyName("sessionPolicy");
+                context.Writer.WriteStringValue(requestObject.SessionPolicy);
+            }
+
             if(requestObject.IsSetStorageCapacity())
             {
                 context.Writer.WritePropertyName("storageCapacity");

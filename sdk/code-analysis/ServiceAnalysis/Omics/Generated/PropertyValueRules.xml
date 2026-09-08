@@ -1364,6 +1364,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.SessionPolicy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}\t\n\r]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.StartedBy</property>
     <min>1</min>
     <max>128</max>
@@ -2685,6 +2691,12 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.SessionPolicy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}\t\n\r]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.StorageCapacity</property>
     <min>0</min>
     <max>100000</max>
@@ -3297,6 +3309,12 @@
     <property>Amazon.Omics.Model.DefaultRunSetting.ScratchStorageMode</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.SessionPolicy</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}\t\n\r]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DefaultRunSetting.StorageCapacity</property>

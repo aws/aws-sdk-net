@@ -86,7 +86,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property OutputBucketOwnerId. 
         /// <para>
-        /// The expected AWS account ID of the owner of the output S3 bucket for this run.
+        /// The expected Amazon Web Services account ID of the owner of the output S3 bucket for
+        /// this run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -183,8 +184,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunTags. 
         /// <para>
-        /// Per-run AWS tags. Merged with <c>defaultRunSetting.runTags</c>; values in this object
-        /// take precedence when keys overlap.
+        /// Per-run Amazon Web Services tags. Merged with <c>defaultRunSetting.runTags</c>; values
+        /// in this object take precedence when keys overlap.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

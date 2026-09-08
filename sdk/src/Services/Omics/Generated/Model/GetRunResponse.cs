@@ -61,6 +61,7 @@ namespace Amazon.Omics.Model
         private string _runId;
         private string _runOutputUri;
         private ScratchStorageMode _scratchStorageMode;
+        private string _sessionPolicy;
         private string _startedBy;
         private DateTime? _startTime;
         private RunStatus _status;
@@ -588,6 +589,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetScratchStorageMode()
         {
             return this._scratchStorageMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionPolicy. 
+        /// <para>
+        /// Inline policy json for scoping down permissions via a session policy on the IAM role.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string SessionPolicy
+        {
+            get { return this._sessionPolicy; }
+            set { this._sessionPolicy = value; }
+        }
+
+        // Check to see if SessionPolicy property is set
+        internal bool IsSetSessionPolicy()
+        {
+            return this._sessionPolicy != null;
         }
 
         /// <summary>

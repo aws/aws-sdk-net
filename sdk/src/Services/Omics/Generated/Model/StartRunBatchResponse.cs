@@ -101,7 +101,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// AWS tags associated with the run batch.
+        /// Amazon Web Services tags associated with the run batch.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

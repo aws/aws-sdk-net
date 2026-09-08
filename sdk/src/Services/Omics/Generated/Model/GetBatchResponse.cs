@@ -224,7 +224,8 @@ namespace Amazon.Omics.Model
         /// <c>PENDING</c> (ready to submit runs), <c>SUBMITTING</c> (submitting runs), <c>INPROGRESS</c>
         /// (runs executing), <c>STOPPING</c> (cancellation in progress), <c>PROCESSED</c> (all
         /// runs completed), <c>CANCELLED</c> (batch cancelled), <c>FAILED</c> (batch failed),
-        /// <c>RUNS_DELETING</c> (deleting runs), <c>RUNS_DELETED</c> (runs deleted).
+        /// <c>RUNS_DELETING</c> (deleting runs), <c>RUNS_DELETE_FAILED</c> (run deletion failed
+        /// for some or all runs), <c>RUNS_DELETED</c> (runs deleted).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -279,7 +280,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// AWS tags associated with the run batch.
+        /// Amazon Web Services tags associated with the run batch.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

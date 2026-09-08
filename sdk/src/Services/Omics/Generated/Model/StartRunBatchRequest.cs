@@ -133,8 +133,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// AWS tags to associate with the batch resource. These tags are not inherited by individual
-        /// runs. To tag individual runs, use <c>defaultRunSetting.runTags</c>.
+        /// Amazon Web Services tags to associate with the batch resource. These tags are not
+        /// inherited by individual runs. To tag individual runs, use <c>defaultRunSetting.runTags</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

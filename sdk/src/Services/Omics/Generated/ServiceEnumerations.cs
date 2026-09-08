@@ -171,6 +171,10 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly BatchStatus PROCESSED = new BatchStatus("PROCESSED");
         /// <summary>
+        /// Constant RUNS_DELETE_FAILED for BatchStatus
+        /// </summary>
+        public static readonly BatchStatus RUNS_DELETE_FAILED = new BatchStatus("RUNS_DELETE_FAILED");
+        /// <summary>
         /// Constant RUNS_DELETED for BatchStatus
         /// </summary>
         public static readonly BatchStatus RUNS_DELETED = new BatchStatus("RUNS_DELETED");

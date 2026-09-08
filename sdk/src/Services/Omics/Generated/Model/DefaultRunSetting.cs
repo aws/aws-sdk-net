@@ -53,6 +53,7 @@ namespace Amazon.Omics.Model
         private string _runGroupId;
         private Dictionary<string, string> _runTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ScratchStorageMode _scratchStorageMode;
+        private string _sessionPolicy;
         private int? _storageCapacity;
         private StorageType _storageType;
         private string _workflowId;
@@ -197,8 +198,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property OutputBucketOwnerId. 
         /// <para>
-        /// The expected AWS account ID of the owner of the output S3 bucket. Can be overridden
-        /// per run.
+        /// The expected Amazon Web Services account ID of the owner of the output S3 bucket.
+        /// Can be overridden per run.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -295,9 +296,9 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role ARN that grants HealthOmics permissions to access required AWS resources
-        /// such as Amazon S3 and CloudWatch. The role must have the same permissions required
-        /// for individual <c>StartRun</c> calls.
+        /// The IAM role ARN that grants HealthOmics permissions to access required Amazon Web
+        /// Services resources such as Amazon S3 and CloudWatch. The role must have the same permissions
+        /// required for individual <c>StartRun</c> calls.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -335,8 +336,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunTags. 
         /// <para>
-        /// AWS tags to associate with each workflow run. Merged with per-run <c>runTags</c>;
-        /// run-specific values take precedence when keys overlap.
+        /// Amazon Web Services tags to associate with each workflow run. Merged with per-run
+        /// <c>runTags</c>; run-specific values take precedence when keys overlap.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -375,6 +376,26 @@ namespace Amazon.Omics.Model
         internal bool IsSetScratchStorageMode()
         {
             return this._scratchStorageMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionPolicy. 
+        /// <para>
+        /// Optional inline policy json for scoping down permissions via a session policy on the
+        /// IAM role provided in the roleArn parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string SessionPolicy
+        {
+            get { return this._sessionPolicy; }
+            set { this._sessionPolicy = value; }
+        }
+
+        // Check to see if SessionPolicy property is set
+        internal bool IsSetSessionPolicy()
+        {
+            return this._sessionPolicy != null;
         }
 
         /// <summary>
@@ -438,7 +459,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property WorkflowOwnerId. 
         /// <para>
-        /// The AWS account ID of the workflow owner, used for cross-account workflow sharing.
+        /// The Amazon Web Services account ID of the workflow owner, used for cross-account workflow
+        /// sharing.
         /// </para>
         /// </summary>
         public string WorkflowOwnerId

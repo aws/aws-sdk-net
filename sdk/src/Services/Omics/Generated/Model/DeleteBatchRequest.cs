@@ -38,10 +38,10 @@ namespace Amazon.Omics.Model
     ///  
     /// <para>
     ///  <c>DeleteBatch</c> requires the batch to be in a terminal state: <c>PROCESSED</c>,
-    /// <c>FAILED</c>, <c>CANCELLED</c>, or <c>RUNS_DELETED</c>. After <c>DeleteBatch</c>
-    /// completes, the batch metadata is no longer accessible. You cannot call <c>GetBatch</c>,
-    /// <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c> on a deleted
-    /// batch.
+    /// <c>FAILED</c>, <c>CANCELLED</c>, <c>RUNS_DELETE_FAILED</c>, or <c>RUNS_DELETED</c>.
+    /// After <c>DeleteBatch</c> completes, the batch metadata is no longer accessible. You
+    /// cannot call <c>GetBatch</c>, <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c>
+    /// on a deleted batch.
     /// </para>
     /// </summary>
     public partial class DeleteBatchRequest : AmazonOmicsRequest

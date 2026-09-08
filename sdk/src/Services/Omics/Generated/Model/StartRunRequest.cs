@@ -136,6 +136,7 @@ namespace Amazon.Omics.Model
         private string _runGroupId;
         private string _runId;
         private ScratchStorageMode _scratchStorageMode;
+        private string _sessionPolicy;
         private int? _storageCapacity;
         private StorageType _storageType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -405,7 +406,8 @@ namespace Amazon.Omics.Model
         /// <para>
         /// A service role for the run. The <c>roleArn</c> requires access to Amazon Web Services
         /// HealthOmics, S3, Cloudwatch logs, and EC2. An example <c>roleArn</c> is <c>arn:aws:iam::123456789012:role/omics-service-role-serviceRole-W8O1XMPL7QZ</c>.
-        /// In this example, the AWS account ID is <c>123456789012</c> and the role name is <c>omics-service-role-serviceRole-W8O1XMPL7QZ</c>.
+        /// In this example, the Amazon Web Services account ID is <c>123456789012</c> and the
+        /// role name is <c>omics-service-role-serviceRole-W8O1XMPL7QZ</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -479,6 +481,26 @@ namespace Amazon.Omics.Model
         internal bool IsSetScratchStorageMode()
         {
             return this._scratchStorageMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionPolicy. 
+        /// <para>
+        /// Optional inline policy json for scoping down permissions via a session policy on the
+        /// IAM role provided in the roleArn parameter.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string SessionPolicy
+        {
+            get { return this._sessionPolicy; }
+            set { this._sessionPolicy = value; }
+        }
+
+        // Check to see if SessionPolicy property is set
+        internal bool IsSetSessionPolicy()
+        {
+            return this._sessionPolicy != null;
         }
 
         /// <summary>

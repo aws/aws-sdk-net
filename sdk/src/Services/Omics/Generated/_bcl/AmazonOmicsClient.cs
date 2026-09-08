@@ -308,7 +308,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
         public virtual AbortMultipartReadSetUploadResponse AbortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest request)
@@ -355,7 +355,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
         public virtual Task<AbortMultipartReadSetUploadResponse> AbortMultipartReadSetUploadAsync(AbortMultipartReadSetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -397,7 +397,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">REST API Reference for AcceptShare Operation</seealso>
         public virtual AcceptShareResponse AcceptShare(AcceptShareRequest request)
@@ -438,7 +438,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare">REST API Reference for AcceptShare Operation</seealso>
         public virtual Task<AcceptShareResponse> AcceptShareAsync(AcceptShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -482,7 +482,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/BatchDeleteReadSet">REST API Reference for BatchDeleteReadSet Operation</seealso>
         public virtual BatchDeleteReadSetResponse BatchDeleteReadSet(BatchDeleteReadSetRequest request)
@@ -525,7 +525,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/BatchDeleteReadSet">REST API Reference for BatchDeleteReadSet Operation</seealso>
         public virtual Task<BatchDeleteReadSetResponse> BatchDeleteReadSetAsync(BatchDeleteReadSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -573,7 +573,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelAnnotationImportJob">REST API Reference for CancelAnnotationImportJob Operation</seealso>
         public virtual CancelAnnotationImportJobResponse CancelAnnotationImportJob(CancelAnnotationImportJobRequest request)
@@ -620,7 +620,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelAnnotationImportJob">REST API Reference for CancelAnnotationImportJob Operation</seealso>
         public virtual Task<CancelAnnotationImportJobResponse> CancelAnnotationImportJobAsync(CancelAnnotationImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -667,7 +667,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRun">REST API Reference for CancelRun Operation</seealso>
         public virtual CancelRunResponse CancelRun(CancelRunRequest request)
@@ -713,7 +713,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRun">REST API Reference for CancelRun Operation</seealso>
         public virtual Task<CancelRunResponse> CancelRunAsync(CancelRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -769,7 +769,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRunBatch">REST API Reference for CancelRunBatch Operation</seealso>
         public virtual CancelRunBatchResponse CancelRunBatch(CancelRunBatchRequest request)
@@ -824,7 +824,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelRunBatch">REST API Reference for CancelRunBatch Operation</seealso>
         public virtual Task<CancelRunBatchResponse> CancelRunBatchAsync(CancelRunBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -872,7 +872,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelVariantImportJob">REST API Reference for CancelVariantImportJob Operation</seealso>
         public virtual CancelVariantImportJobResponse CancelVariantImportJob(CancelVariantImportJobRequest request)
@@ -919,7 +919,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CancelVariantImportJob">REST API Reference for CancelVariantImportJob Operation</seealso>
         public virtual Task<CancelVariantImportJobResponse> CancelVariantImportJobAsync(CancelVariantImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -974,7 +974,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
         public virtual CompleteMultipartReadSetUploadResponse CompleteMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest request)
@@ -1028,7 +1028,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
         public virtual Task<CompleteMultipartReadSetUploadResponse> CompleteMultipartReadSetUploadAsync(CompleteMultipartReadSetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1082,7 +1082,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStore">REST API Reference for CreateAnnotationStore Operation</seealso>
         public virtual CreateAnnotationStoreResponse CreateAnnotationStore(CreateAnnotationStoreRequest request)
@@ -1135,7 +1135,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStore">REST API Reference for CreateAnnotationStore Operation</seealso>
         public virtual Task<CreateAnnotationStoreResponse> CreateAnnotationStoreAsync(CreateAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1177,7 +1177,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">REST API Reference for CreateAnnotationStoreVersion Operation</seealso>
         public virtual CreateAnnotationStoreVersionResponse CreateAnnotationStoreVersion(CreateAnnotationStoreVersionRequest request)
@@ -1218,7 +1218,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion">REST API Reference for CreateAnnotationStoreVersion Operation</seealso>
         public virtual Task<CreateAnnotationStoreVersionResponse> CreateAnnotationStoreVersionAsync(CreateAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1263,7 +1263,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual CreateConfigurationResponse CreateConfiguration(CreateConfigurationRequest request)
@@ -1307,7 +1307,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateConfiguration">REST API Reference for CreateConfiguration Operation</seealso>
         public virtual Task<CreateConfigurationResponse> CreateConfigurationAsync(CreateConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1383,7 +1383,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
         public virtual CreateMultipartReadSetUploadResponse CreateMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request)
@@ -1458,7 +1458,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
         public virtual Task<CreateMultipartReadSetUploadResponse> CreateMultipartReadSetUploadAsync(CreateMultipartReadSetUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1506,7 +1506,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateReferenceStore">REST API Reference for CreateReferenceStore Operation</seealso>
         public virtual CreateReferenceStoreResponse CreateReferenceStore(CreateReferenceStoreRequest request)
@@ -1553,7 +1553,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateReferenceStore">REST API Reference for CreateReferenceStore Operation</seealso>
         public virtual Task<CreateReferenceStoreResponse> CreateReferenceStoreAsync(CreateReferenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1609,7 +1609,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">REST API Reference for CreateRunCache Operation</seealso>
         public virtual CreateRunCacheResponse CreateRunCache(CreateRunCacheRequest request)
@@ -1664,7 +1664,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunCache">REST API Reference for CreateRunCache Operation</seealso>
         public virtual Task<CreateRunCacheResponse> CreateRunCacheAsync(CreateRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1710,7 +1710,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">REST API Reference for CreateRunGroup Operation</seealso>
         public virtual CreateRunGroupResponse CreateRunGroup(CreateRunGroupRequest request)
@@ -1755,7 +1755,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateRunGroup">REST API Reference for CreateRunGroup Operation</seealso>
         public virtual Task<CreateRunGroupResponse> CreateRunGroupAsync(CreateRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1831,7 +1831,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateSequenceStore">REST API Reference for CreateSequenceStore Operation</seealso>
         public virtual CreateSequenceStoreResponse CreateSequenceStore(CreateSequenceStoreRequest request)
@@ -1906,7 +1906,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateSequenceStore">REST API Reference for CreateSequenceStore Operation</seealso>
         public virtual Task<CreateSequenceStoreResponse> CreateSequenceStoreAsync(CreateSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1925,8 +1925,8 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Creates a cross-account shared resource. The resource owner makes an offer to share
-        /// the resource with the principal subscriber (an AWS user with a different account than
-        /// the resource owner).
+        /// the resource with the principal subscriber (an Amazon Web Services user with a different
+        /// account than the resource owner).
         /// 
         ///  
         /// <para>
@@ -1968,7 +1968,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">REST API Reference for CreateShare Operation</seealso>
         public virtual CreateShareResponse CreateShare(CreateShareRequest request)
@@ -1983,8 +1983,8 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Creates a cross-account shared resource. The resource owner makes an offer to share
-        /// the resource with the principal subscriber (an AWS user with a different account than
-        /// the resource owner).
+        /// the resource with the principal subscriber (an Amazon Web Services user with a different
+        /// account than the resource owner).
         /// 
         ///  
         /// <para>
@@ -2029,7 +2029,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare">REST API Reference for CreateShare Operation</seealso>
         public virtual Task<CreateShareResponse> CreateShareAsync(CreateShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2083,7 +2083,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateVariantStore">REST API Reference for CreateVariantStore Operation</seealso>
         public virtual CreateVariantStoreResponse CreateVariantStore(CreateVariantStoreRequest request)
@@ -2136,7 +2136,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateVariantStore">REST API Reference for CreateVariantStore Operation</seealso>
         public virtual Task<CreateVariantStoreResponse> CreateVariantStoreAsync(CreateVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2223,7 +2223,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual CreateWorkflowResponse CreateWorkflow(CreateWorkflowRequest request)
@@ -2309,7 +2309,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflow">REST API Reference for CreateWorkflow Operation</seealso>
         public virtual Task<CreateWorkflowResponse> CreateWorkflowAsync(CreateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2377,7 +2377,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
         public virtual CreateWorkflowVersionResponse CreateWorkflowVersion(CreateWorkflowVersionRequest request)
@@ -2444,7 +2444,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateWorkflowVersion">REST API Reference for CreateWorkflowVersion Operation</seealso>
         public virtual Task<CreateWorkflowVersionResponse> CreateWorkflowVersionAsync(CreateWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2495,7 +2495,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStore">REST API Reference for DeleteAnnotationStore Operation</seealso>
         public virtual DeleteAnnotationStoreResponse DeleteAnnotationStore(DeleteAnnotationStoreRequest request)
@@ -2545,7 +2545,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStore">REST API Reference for DeleteAnnotationStore Operation</seealso>
         public virtual Task<DeleteAnnotationStoreResponse> DeleteAnnotationStoreAsync(DeleteAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2584,7 +2584,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">REST API Reference for DeleteAnnotationStoreVersions Operation</seealso>
         public virtual DeleteAnnotationStoreVersionsResponse DeleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest request)
@@ -2622,7 +2622,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions">REST API Reference for DeleteAnnotationStoreVersions Operation</seealso>
         public virtual Task<DeleteAnnotationStoreVersionsResponse> DeleteAnnotationStoreVersionsAsync(DeleteAnnotationStoreVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2647,10 +2647,10 @@ namespace Amazon.Omics
         ///  
         /// <para>
         ///  <c>DeleteBatch</c> requires the batch to be in a terminal state: <c>PROCESSED</c>,
-        /// <c>FAILED</c>, <c>CANCELLED</c>, or <c>RUNS_DELETED</c>. After <c>DeleteBatch</c>
-        /// completes, the batch metadata is no longer accessible. You cannot call <c>GetBatch</c>,
-        /// <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c> on a deleted
-        /// batch.
+        /// <c>FAILED</c>, <c>CANCELLED</c>, <c>RUNS_DELETE_FAILED</c>, or <c>RUNS_DELETED</c>.
+        /// After <c>DeleteBatch</c> completes, the batch metadata is no longer accessible. You
+        /// cannot call <c>GetBatch</c>, <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c>
+        /// on a deleted batch.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBatch service method.</param>
@@ -2678,7 +2678,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteBatch">REST API Reference for DeleteBatch Operation</seealso>
         public virtual DeleteBatchResponse DeleteBatch(DeleteBatchRequest request)
@@ -2699,10 +2699,10 @@ namespace Amazon.Omics
         ///  
         /// <para>
         ///  <c>DeleteBatch</c> requires the batch to be in a terminal state: <c>PROCESSED</c>,
-        /// <c>FAILED</c>, <c>CANCELLED</c>, or <c>RUNS_DELETED</c>. After <c>DeleteBatch</c>
-        /// completes, the batch metadata is no longer accessible. You cannot call <c>GetBatch</c>,
-        /// <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c> on a deleted
-        /// batch.
+        /// <c>FAILED</c>, <c>CANCELLED</c>, <c>RUNS_DELETE_FAILED</c>, or <c>RUNS_DELETED</c>.
+        /// After <c>DeleteBatch</c> completes, the batch metadata is no longer accessible. You
+        /// cannot call <c>GetBatch</c>, <c>ListRunsInBatch</c>, <c>DeleteRunBatch</c>, or <c>CancelRunBatch</c>
+        /// on a deleted batch.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBatch service method.</param>
@@ -2733,7 +2733,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteBatch">REST API Reference for DeleteBatch Operation</seealso>
         public virtual Task<DeleteBatchResponse> DeleteBatchAsync(DeleteBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2778,7 +2778,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
@@ -2822,7 +2822,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         public virtual Task<DeleteConfigurationResponse> DeleteConfigurationAsync(DeleteConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2874,7 +2874,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReference">REST API Reference for DeleteReference Operation</seealso>
         public virtual DeleteReferenceResponse DeleteReference(DeleteReferenceRequest request)
@@ -2925,7 +2925,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReference">REST API Reference for DeleteReference Operation</seealso>
         public virtual Task<DeleteReferenceResponse> DeleteReferenceAsync(DeleteReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2976,7 +2976,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReferenceStore">REST API Reference for DeleteReferenceStore Operation</seealso>
         public virtual DeleteReferenceStoreResponse DeleteReferenceStore(DeleteReferenceStoreRequest request)
@@ -3026,7 +3026,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteReferenceStore">REST API Reference for DeleteReferenceStore Operation</seealso>
         public virtual Task<DeleteReferenceStoreResponse> DeleteReferenceStoreAsync(DeleteReferenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3089,7 +3089,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         public virtual DeleteRunResponse DeleteRun(DeleteRunRequest request)
@@ -3151,7 +3151,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRun">REST API Reference for DeleteRun Operation</seealso>
         public virtual Task<DeleteRunResponse> DeleteRunAsync(DeleteRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3206,7 +3206,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunBatch">REST API Reference for DeleteRunBatch Operation</seealso>
         public virtual DeleteRunBatchResponse DeleteRunBatch(DeleteRunBatchRequest request)
@@ -3260,7 +3260,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunBatch">REST API Reference for DeleteRunBatch Operation</seealso>
         public virtual Task<DeleteRunBatchResponse> DeleteRunBatchAsync(DeleteRunBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3315,7 +3315,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">REST API Reference for DeleteRunCache Operation</seealso>
         public virtual DeleteRunCacheResponse DeleteRunCache(DeleteRunCacheRequest request)
@@ -3369,7 +3369,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunCache">REST API Reference for DeleteRunCache Operation</seealso>
         public virtual Task<DeleteRunCacheResponse> DeleteRunCacheAsync(DeleteRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3428,7 +3428,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunGroup">REST API Reference for DeleteRunGroup Operation</seealso>
         public virtual DeleteRunGroupResponse DeleteRunGroup(DeleteRunGroupRequest request)
@@ -3486,7 +3486,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteRunGroup">REST API Reference for DeleteRunGroup Operation</seealso>
         public virtual Task<DeleteRunGroupResponse> DeleteRunGroupAsync(DeleteRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3528,7 +3528,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
         public virtual DeleteS3AccessPolicyResponse DeleteS3AccessPolicy(DeleteS3AccessPolicyRequest request)
@@ -3569,7 +3569,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteS3AccessPolicy">REST API Reference for DeleteS3AccessPolicy Operation</seealso>
         public virtual Task<DeleteS3AccessPolicyResponse> DeleteS3AccessPolicyAsync(DeleteS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3625,7 +3625,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteSequenceStore">REST API Reference for DeleteSequenceStore Operation</seealso>
         public virtual DeleteSequenceStoreResponse DeleteSequenceStore(DeleteSequenceStoreRequest request)
@@ -3680,7 +3680,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteSequenceStore">REST API Reference for DeleteSequenceStore Operation</seealso>
         public virtual Task<DeleteSequenceStoreResponse> DeleteSequenceStoreAsync(DeleteSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3724,7 +3724,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">REST API Reference for DeleteShare Operation</seealso>
         public virtual DeleteShareResponse DeleteShare(DeleteShareRequest request)
@@ -3767,7 +3767,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare">REST API Reference for DeleteShare Operation</seealso>
         public virtual Task<DeleteShareResponse> DeleteShareAsync(DeleteShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3818,7 +3818,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteVariantStore">REST API Reference for DeleteVariantStore Operation</seealso>
         public virtual DeleteVariantStoreResponse DeleteVariantStore(DeleteVariantStoreRequest request)
@@ -3868,7 +3868,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteVariantStore">REST API Reference for DeleteVariantStore Operation</seealso>
         public virtual Task<DeleteVariantStoreResponse> DeleteVariantStoreAsync(DeleteVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3928,7 +3928,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual DeleteWorkflowResponse DeleteWorkflow(DeleteWorkflowRequest request)
@@ -3987,7 +3987,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflow">REST API Reference for DeleteWorkflow Operation</seealso>
         public virtual Task<DeleteWorkflowResponse> DeleteWorkflowAsync(DeleteWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4040,7 +4040,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
         public virtual DeleteWorkflowVersionResponse DeleteWorkflowVersion(DeleteWorkflowVersionRequest request)
@@ -4092,7 +4092,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteWorkflowVersion">REST API Reference for DeleteWorkflowVersion Operation</seealso>
         public virtual Task<DeleteWorkflowVersionResponse> DeleteWorkflowVersionAsync(DeleteWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4140,7 +4140,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationImportJob">REST API Reference for GetAnnotationImportJob Operation</seealso>
         public virtual GetAnnotationImportJobResponse GetAnnotationImportJob(GetAnnotationImportJobRequest request)
@@ -4187,7 +4187,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationImportJob">REST API Reference for GetAnnotationImportJob Operation</seealso>
         public virtual Task<GetAnnotationImportJobResponse> GetAnnotationImportJobAsync(GetAnnotationImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4235,7 +4235,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStore">REST API Reference for GetAnnotationStore Operation</seealso>
         public virtual GetAnnotationStoreResponse GetAnnotationStore(GetAnnotationStoreRequest request)
@@ -4282,7 +4282,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStore">REST API Reference for GetAnnotationStore Operation</seealso>
         public virtual Task<GetAnnotationStoreResponse> GetAnnotationStoreAsync(GetAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4318,7 +4318,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">REST API Reference for GetAnnotationStoreVersion Operation</seealso>
         public virtual GetAnnotationStoreVersionResponse GetAnnotationStoreVersion(GetAnnotationStoreVersionRequest request)
@@ -4353,7 +4353,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion">REST API Reference for GetAnnotationStoreVersion Operation</seealso>
         public virtual Task<GetAnnotationStoreVersionResponse> GetAnnotationStoreVersionAsync(GetAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4393,7 +4393,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetBatch">REST API Reference for GetBatch Operation</seealso>
         public virtual GetBatchResponse GetBatch(GetBatchRequest request)
@@ -4432,7 +4432,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetBatch">REST API Reference for GetBatch Operation</seealso>
         public virtual Task<GetBatchResponse> GetBatchAsync(GetBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4477,7 +4477,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual GetConfigurationResponse GetConfiguration(GetConfigurationRequest request)
@@ -4521,7 +4521,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4568,7 +4568,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSet">REST API Reference for GetReadSet Operation</seealso>
         public virtual GetReadSetResponse GetReadSet(GetReadSetRequest request)
@@ -4614,7 +4614,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSet">REST API Reference for GetReadSet Operation</seealso>
         public virtual Task<GetReadSetResponse> GetReadSetAsync(GetReadSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4654,7 +4654,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetActivationJob">REST API Reference for GetReadSetActivationJob Operation</seealso>
         public virtual GetReadSetActivationJobResponse GetReadSetActivationJob(GetReadSetActivationJobRequest request)
@@ -4693,7 +4693,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetActivationJob">REST API Reference for GetReadSetActivationJob Operation</seealso>
         public virtual Task<GetReadSetActivationJobResponse> GetReadSetActivationJobAsync(GetReadSetActivationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4733,7 +4733,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetExportJob">REST API Reference for GetReadSetExportJob Operation</seealso>
         public virtual GetReadSetExportJobResponse GetReadSetExportJob(GetReadSetExportJobRequest request)
@@ -4772,7 +4772,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetExportJob">REST API Reference for GetReadSetExportJob Operation</seealso>
         public virtual Task<GetReadSetExportJobResponse> GetReadSetExportJobAsync(GetReadSetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4812,7 +4812,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetImportJob">REST API Reference for GetReadSetImportJob Operation</seealso>
         public virtual GetReadSetImportJobResponse GetReadSetImportJob(GetReadSetImportJobRequest request)
@@ -4851,7 +4851,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetImportJob">REST API Reference for GetReadSetImportJob Operation</seealso>
         public virtual Task<GetReadSetImportJobResponse> GetReadSetImportJobAsync(GetReadSetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4892,7 +4892,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetMetadata">REST API Reference for GetReadSetMetadata Operation</seealso>
         public virtual GetReadSetMetadataResponse GetReadSetMetadata(GetReadSetMetadataRequest request)
@@ -4932,7 +4932,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReadSetMetadata">REST API Reference for GetReadSetMetadata Operation</seealso>
         public virtual Task<GetReadSetMetadataResponse> GetReadSetMetadataAsync(GetReadSetMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4981,7 +4981,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReference">REST API Reference for GetReference Operation</seealso>
         public virtual GetReferenceResponse GetReference(GetReferenceRequest request)
@@ -5029,7 +5029,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReference">REST API Reference for GetReference Operation</seealso>
         public virtual Task<GetReferenceResponse> GetReferenceAsync(GetReferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5069,7 +5069,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceImportJob">REST API Reference for GetReferenceImportJob Operation</seealso>
         public virtual GetReferenceImportJobResponse GetReferenceImportJob(GetReferenceImportJobRequest request)
@@ -5108,7 +5108,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceImportJob">REST API Reference for GetReferenceImportJob Operation</seealso>
         public virtual Task<GetReferenceImportJobResponse> GetReferenceImportJobAsync(GetReferenceImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5149,7 +5149,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceMetadata">REST API Reference for GetReferenceMetadata Operation</seealso>
         public virtual GetReferenceMetadataResponse GetReferenceMetadata(GetReferenceMetadataRequest request)
@@ -5189,7 +5189,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceMetadata">REST API Reference for GetReferenceMetadata Operation</seealso>
         public virtual Task<GetReferenceMetadataResponse> GetReferenceMetadataAsync(GetReferenceMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5228,7 +5228,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceStore">REST API Reference for GetReferenceStore Operation</seealso>
         public virtual GetReferenceStoreResponse GetReferenceStore(GetReferenceStoreRequest request)
@@ -5266,7 +5266,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetReferenceStore">REST API Reference for GetReferenceStore Operation</seealso>
         public virtual Task<GetReferenceStoreResponse> GetReferenceStoreAsync(GetReferenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5320,7 +5320,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">REST API Reference for GetRun Operation</seealso>
         public virtual GetRunResponse GetRun(GetRunRequest request)
@@ -5373,7 +5373,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRun">REST API Reference for GetRun Operation</seealso>
         public virtual Task<GetRunResponse> GetRunAsync(GetRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5425,7 +5425,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">REST API Reference for GetRunCache Operation</seealso>
         public virtual GetRunCacheResponse GetRunCache(GetRunCacheRequest request)
@@ -5476,7 +5476,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunCache">REST API Reference for GetRunCache Operation</seealso>
         public virtual Task<GetRunCacheResponse> GetRunCacheAsync(GetRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5521,7 +5521,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunGroup">REST API Reference for GetRunGroup Operation</seealso>
         public virtual GetRunGroupResponse GetRunGroup(GetRunGroupRequest request)
@@ -5565,7 +5565,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunGroup">REST API Reference for GetRunGroup Operation</seealso>
         public virtual Task<GetRunGroupResponse> GetRunGroupAsync(GetRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5610,7 +5610,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunTask">REST API Reference for GetRunTask Operation</seealso>
         public virtual GetRunTaskResponse GetRunTask(GetRunTaskRequest request)
@@ -5654,7 +5654,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetRunTask">REST API Reference for GetRunTask Operation</seealso>
         public virtual Task<GetRunTaskResponse> GetRunTaskAsync(GetRunTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5699,7 +5699,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
         public virtual GetS3AccessPolicyResponse GetS3AccessPolicy(GetS3AccessPolicyRequest request)
@@ -5743,7 +5743,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetS3AccessPolicy">REST API Reference for GetS3AccessPolicy Operation</seealso>
         public virtual Task<GetS3AccessPolicyResponse> GetS3AccessPolicyAsync(GetS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5782,7 +5782,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetSequenceStore">REST API Reference for GetSequenceStore Operation</seealso>
         public virtual GetSequenceStoreResponse GetSequenceStore(GetSequenceStoreRequest request)
@@ -5820,7 +5820,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetSequenceStore">REST API Reference for GetSequenceStore Operation</seealso>
         public virtual Task<GetSequenceStoreResponse> GetSequenceStoreAsync(GetSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5862,7 +5862,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">REST API Reference for GetShare Operation</seealso>
         public virtual GetShareResponse GetShare(GetShareRequest request)
@@ -5903,7 +5903,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare">REST API Reference for GetShare Operation</seealso>
         public virtual Task<GetShareResponse> GetShareAsync(GetShareRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5951,7 +5951,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantImportJob">REST API Reference for GetVariantImportJob Operation</seealso>
         public virtual GetVariantImportJobResponse GetVariantImportJob(GetVariantImportJobRequest request)
@@ -5998,7 +5998,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantImportJob">REST API Reference for GetVariantImportJob Operation</seealso>
         public virtual Task<GetVariantImportJobResponse> GetVariantImportJobAsync(GetVariantImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6046,7 +6046,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantStore">REST API Reference for GetVariantStore Operation</seealso>
         public virtual GetVariantStoreResponse GetVariantStore(GetVariantStoreRequest request)
@@ -6093,7 +6093,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetVariantStore">REST API Reference for GetVariantStore Operation</seealso>
         public virtual Task<GetVariantStoreResponse> GetVariantStoreAsync(GetVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6148,7 +6148,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual GetWorkflowResponse GetWorkflow(GetWorkflowRequest request)
@@ -6202,7 +6202,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflow">REST API Reference for GetWorkflow Operation</seealso>
         public virtual Task<GetWorkflowResponse> GetWorkflowAsync(GetWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6249,7 +6249,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
         public virtual GetWorkflowVersionResponse GetWorkflowVersion(GetWorkflowVersionRequest request)
@@ -6295,7 +6295,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetWorkflowVersion">REST API Reference for GetWorkflowVersion Operation</seealso>
         public virtual Task<GetWorkflowVersionResponse> GetWorkflowVersionAsync(GetWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6343,7 +6343,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs">REST API Reference for ListAnnotationImportJobs Operation</seealso>
         public virtual ListAnnotationImportJobsResponse ListAnnotationImportJobs(ListAnnotationImportJobsRequest request)
@@ -6390,7 +6390,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationImportJobs">REST API Reference for ListAnnotationImportJobs Operation</seealso>
         public virtual Task<ListAnnotationImportJobsResponse> ListAnnotationImportJobsAsync(ListAnnotationImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6438,7 +6438,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStores">REST API Reference for ListAnnotationStores Operation</seealso>
         public virtual ListAnnotationStoresResponse ListAnnotationStores(ListAnnotationStoresRequest request)
@@ -6485,7 +6485,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStores">REST API Reference for ListAnnotationStores Operation</seealso>
         public virtual Task<ListAnnotationStoresResponse> ListAnnotationStoresAsync(ListAnnotationStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6521,7 +6521,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">REST API Reference for ListAnnotationStoreVersions Operation</seealso>
         public virtual ListAnnotationStoreVersionsResponse ListAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request)
@@ -6556,7 +6556,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions">REST API Reference for ListAnnotationStoreVersions Operation</seealso>
         public virtual Task<ListAnnotationStoreVersionsResponse> ListAnnotationStoreVersionsAsync(ListAnnotationStoreVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6593,7 +6593,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListBatch">REST API Reference for ListBatch Operation</seealso>
         public virtual ListBatchResponse ListBatch(ListBatchRequest request)
@@ -6629,7 +6629,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListBatch">REST API Reference for ListBatch Operation</seealso>
         public virtual Task<ListBatchResponse> ListBatchAsync(ListBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6674,7 +6674,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual ListConfigurationsResponse ListConfigurations(ListConfigurationsRequest request)
@@ -6718,7 +6718,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListConfigurations">REST API Reference for ListConfigurations Operation</seealso>
         public virtual Task<ListConfigurationsResponse> ListConfigurationsAsync(ListConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6765,7 +6765,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
         public virtual ListMultipartReadSetUploadsResponse ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request)
@@ -6811,7 +6811,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
         public virtual Task<ListMultipartReadSetUploadsResponse> ListMultipartReadSetUploadsAsync(ListMultipartReadSetUploadsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6852,7 +6852,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetActivationJobs">REST API Reference for ListReadSetActivationJobs Operation</seealso>
         public virtual ListReadSetActivationJobsResponse ListReadSetActivationJobs(ListReadSetActivationJobsRequest request)
@@ -6892,7 +6892,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetActivationJobs">REST API Reference for ListReadSetActivationJobs Operation</seealso>
         public virtual Task<ListReadSetActivationJobsResponse> ListReadSetActivationJobsAsync(ListReadSetActivationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6933,7 +6933,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetExportJobs">REST API Reference for ListReadSetExportJobs Operation</seealso>
         public virtual ListReadSetExportJobsResponse ListReadSetExportJobs(ListReadSetExportJobsRequest request)
@@ -6973,7 +6973,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetExportJobs">REST API Reference for ListReadSetExportJobs Operation</seealso>
         public virtual Task<ListReadSetExportJobsResponse> ListReadSetExportJobsAsync(ListReadSetExportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7012,7 +7012,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetImportJobs">REST API Reference for ListReadSetImportJobs Operation</seealso>
         public virtual ListReadSetImportJobsResponse ListReadSetImportJobs(ListReadSetImportJobsRequest request)
@@ -7050,7 +7050,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetImportJobs">REST API Reference for ListReadSetImportJobs Operation</seealso>
         public virtual Task<ListReadSetImportJobsResponse> ListReadSetImportJobsAsync(ListReadSetImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7090,7 +7090,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSets">REST API Reference for ListReadSets Operation</seealso>
         public virtual ListReadSetsResponse ListReadSets(ListReadSetsRequest request)
@@ -7129,7 +7129,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSets">REST API Reference for ListReadSets Operation</seealso>
         public virtual Task<ListReadSetsResponse> ListReadSetsAsync(ListReadSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7175,7 +7175,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
         public virtual ListReadSetUploadPartsResponse ListReadSetUploadParts(ListReadSetUploadPartsRequest request)
@@ -7220,7 +7220,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
         public virtual Task<ListReadSetUploadPartsResponse> ListReadSetUploadPartsAsync(ListReadSetUploadPartsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7259,7 +7259,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceImportJobs">REST API Reference for ListReferenceImportJobs Operation</seealso>
         public virtual ListReferenceImportJobsResponse ListReferenceImportJobs(ListReferenceImportJobsRequest request)
@@ -7297,7 +7297,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceImportJobs">REST API Reference for ListReferenceImportJobs Operation</seealso>
         public virtual Task<ListReferenceImportJobsResponse> ListReferenceImportJobsAsync(ListReferenceImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7342,7 +7342,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferences">REST API Reference for ListReferences Operation</seealso>
         public virtual ListReferencesResponse ListReferences(ListReferencesRequest request)
@@ -7386,7 +7386,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferences">REST API Reference for ListReferences Operation</seealso>
         public virtual Task<ListReferencesResponse> ListReferencesAsync(ListReferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7429,7 +7429,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceStores">REST API Reference for ListReferenceStores Operation</seealso>
         public virtual ListReferenceStoresResponse ListReferenceStores(ListReferenceStoresRequest request)
@@ -7471,7 +7471,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReferenceStores">REST API Reference for ListReferenceStores Operation</seealso>
         public virtual Task<ListReferenceStoresResponse> ListReferenceStoresAsync(ListReferenceStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7516,7 +7516,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">REST API Reference for ListRunCaches Operation</seealso>
         public virtual ListRunCachesResponse ListRunCaches(ListRunCachesRequest request)
@@ -7560,7 +7560,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunCaches">REST API Reference for ListRunCaches Operation</seealso>
         public virtual Task<ListRunCachesResponse> ListRunCachesAsync(ListRunCachesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7605,7 +7605,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">REST API Reference for ListRunGroups Operation</seealso>
         public virtual ListRunGroupsResponse ListRunGroups(ListRunGroupsRequest request)
@@ -7649,7 +7649,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunGroups">REST API Reference for ListRunGroups Operation</seealso>
         public virtual Task<ListRunGroupsResponse> ListRunGroupsAsync(ListRunGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7703,7 +7703,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">REST API Reference for ListRuns Operation</seealso>
         public virtual ListRunsResponse ListRuns(ListRunsRequest request)
@@ -7756,7 +7756,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRuns">REST API Reference for ListRuns Operation</seealso>
         public virtual Task<ListRunsResponse> ListRunsAsync(ListRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7803,7 +7803,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunsInBatch">REST API Reference for ListRunsInBatch Operation</seealso>
         public virtual ListRunsInBatchResponse ListRunsInBatch(ListRunsInBatchRequest request)
@@ -7849,7 +7849,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunsInBatch">REST API Reference for ListRunsInBatch Operation</seealso>
         public virtual Task<ListRunsInBatchResponse> ListRunsInBatchAsync(ListRunsInBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7895,7 +7895,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunTasks">REST API Reference for ListRunTasks Operation</seealso>
         public virtual ListRunTasksResponse ListRunTasks(ListRunTasksRequest request)
@@ -7940,7 +7940,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListRunTasks">REST API Reference for ListRunTasks Operation</seealso>
         public virtual Task<ListRunTasksResponse> ListRunTasksAsync(ListRunTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7982,7 +7982,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListSequenceStores">REST API Reference for ListSequenceStores Operation</seealso>
         public virtual ListSequenceStoresResponse ListSequenceStores(ListSequenceStoresRequest request)
@@ -8023,7 +8023,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListSequenceStores">REST API Reference for ListSequenceStores Operation</seealso>
         public virtual Task<ListSequenceStoresResponse> ListSequenceStoresAsync(ListSequenceStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8066,7 +8066,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">REST API Reference for ListShares Operation</seealso>
         public virtual ListSharesResponse ListShares(ListSharesRequest request)
@@ -8108,7 +8108,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares">REST API Reference for ListShares Operation</seealso>
         public virtual Task<ListSharesResponse> ListSharesAsync(ListSharesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8153,7 +8153,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
@@ -8197,7 +8197,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8245,7 +8245,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobs">REST API Reference for ListVariantImportJobs Operation</seealso>
         public virtual ListVariantImportJobsResponse ListVariantImportJobs(ListVariantImportJobsRequest request)
@@ -8292,7 +8292,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantImportJobs">REST API Reference for ListVariantImportJobs Operation</seealso>
         public virtual Task<ListVariantImportJobsResponse> ListVariantImportJobsAsync(ListVariantImportJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8340,7 +8340,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantStores">REST API Reference for ListVariantStores Operation</seealso>
         public virtual ListVariantStoresResponse ListVariantStores(ListVariantStoresRequest request)
@@ -8387,7 +8387,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListVariantStores">REST API Reference for ListVariantStores Operation</seealso>
         public virtual Task<ListVariantStoresResponse> ListVariantStoresAsync(ListVariantStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8436,7 +8436,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual ListWorkflowsResponse ListWorkflows(ListWorkflowsRequest request)
@@ -8484,7 +8484,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflows">REST API Reference for ListWorkflows Operation</seealso>
         public virtual Task<ListWorkflowsResponse> ListWorkflowsAsync(ListWorkflowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8532,7 +8532,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
         public virtual ListWorkflowVersionsResponse ListWorkflowVersions(ListWorkflowVersionsRequest request)
@@ -8579,7 +8579,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListWorkflowVersions">REST API Reference for ListWorkflowVersions Operation</seealso>
         public virtual Task<ListWorkflowVersionsResponse> ListWorkflowVersionsAsync(ListWorkflowVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8621,7 +8621,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
         public virtual PutS3AccessPolicyResponse PutS3AccessPolicy(PutS3AccessPolicyRequest request)
@@ -8662,7 +8662,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/PutS3AccessPolicy">REST API Reference for PutS3AccessPolicy Operation</seealso>
         public virtual Task<PutS3AccessPolicyResponse> PutS3AccessPolicyAsync(PutS3AccessPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8713,7 +8713,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartAnnotationImportJob">REST API Reference for StartAnnotationImportJob Operation</seealso>
         public virtual StartAnnotationImportJobResponse StartAnnotationImportJob(StartAnnotationImportJobRequest request)
@@ -8763,7 +8763,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartAnnotationImportJob">REST API Reference for StartAnnotationImportJob Operation</seealso>
         public virtual Task<StartAnnotationImportJobResponse> StartAnnotationImportJobAsync(StartAnnotationImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8782,8 +8782,8 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Activates an archived read set and returns its metadata in a JSON formatted output.
-        /// AWS HealthOmics automatically archives unused read sets after 30 days. To monitor
-        /// the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
+        /// Amazon Web Services HealthOmics automatically archives unused read sets after 30 days.
+        /// To monitor the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
         /// operation.
         /// 
         ///  
@@ -8814,7 +8814,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetActivationJob">REST API Reference for StartReadSetActivationJob Operation</seealso>
         public virtual StartReadSetActivationJobResponse StartReadSetActivationJob(StartReadSetActivationJobRequest request)
@@ -8829,8 +8829,8 @@ namespace Amazon.Omics
 
         /// <summary>
         /// Activates an archived read set and returns its metadata in a JSON formatted output.
-        /// AWS HealthOmics automatically archives unused read sets after 30 days. To monitor
-        /// the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
+        /// Amazon Web Services HealthOmics automatically archives unused read sets after 30 days.
+        /// To monitor the status of your read set activation job, use the <c>GetReadSetActivationJob</c>
         /// operation.
         /// 
         ///  
@@ -8864,7 +8864,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetActivationJob">REST API Reference for StartReadSetActivationJob Operation</seealso>
         public virtual Task<StartReadSetActivationJobResponse> StartReadSetActivationJobAsync(StartReadSetActivationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -8914,7 +8914,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetExportJob">REST API Reference for StartReadSetExportJob Operation</seealso>
         public virtual StartReadSetExportJobResponse StartReadSetExportJob(StartReadSetExportJobRequest request)
@@ -8963,7 +8963,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetExportJob">REST API Reference for StartReadSetExportJob Operation</seealso>
         public virtual Task<StartReadSetExportJobResponse> StartReadSetExportJobAsync(StartReadSetExportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9007,7 +9007,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetImportJob">REST API Reference for StartReadSetImportJob Operation</seealso>
         public virtual StartReadSetImportJobResponse StartReadSetImportJob(StartReadSetImportJobRequest request)
@@ -9050,7 +9050,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReadSetImportJob">REST API Reference for StartReadSetImportJob Operation</seealso>
         public virtual Task<StartReadSetImportJobResponse> StartReadSetImportJobAsync(StartReadSetImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9095,7 +9095,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReferenceImportJob">REST API Reference for StartReferenceImportJob Operation</seealso>
         public virtual StartReferenceImportJobResponse StartReferenceImportJob(StartReferenceImportJobRequest request)
@@ -9139,7 +9139,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartReferenceImportJob">REST API Reference for StartReferenceImportJob Operation</seealso>
         public virtual Task<StartReferenceImportJobResponse> StartReferenceImportJobAsync(StartReferenceImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9269,7 +9269,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">REST API Reference for StartRun Operation</seealso>
         public virtual StartRunResponse StartRun(StartRunRequest request)
@@ -9398,7 +9398,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRun">REST API Reference for StartRun Operation</seealso>
         public virtual Task<StartRunResponse> StartRunAsync(StartRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9454,7 +9454,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRunBatch">REST API Reference for StartRunBatch Operation</seealso>
         public virtual StartRunBatchResponse StartRunBatch(StartRunBatchRequest request)
@@ -9509,7 +9509,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRunBatch">REST API Reference for StartRunBatch Operation</seealso>
         public virtual Task<StartRunBatchResponse> StartRunBatchAsync(StartRunBatchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9560,7 +9560,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartVariantImportJob">REST API Reference for StartVariantImportJob Operation</seealso>
         public virtual StartVariantImportJobResponse StartVariantImportJob(StartVariantImportJobRequest request)
@@ -9610,7 +9610,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartVariantImportJob">REST API Reference for StartVariantImportJob Operation</seealso>
         public virtual Task<StartVariantImportJobResponse> StartVariantImportJobAsync(StartVariantImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9655,7 +9655,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -9699,7 +9699,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9744,7 +9744,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -9788,7 +9788,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9836,7 +9836,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStore">REST API Reference for UpdateAnnotationStore Operation</seealso>
         public virtual UpdateAnnotationStoreResponse UpdateAnnotationStore(UpdateAnnotationStoreRequest request)
@@ -9883,7 +9883,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStore">REST API Reference for UpdateAnnotationStore Operation</seealso>
         public virtual Task<UpdateAnnotationStoreResponse> UpdateAnnotationStoreAsync(UpdateAnnotationStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -9919,7 +9919,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">REST API Reference for UpdateAnnotationStoreVersion Operation</seealso>
         public virtual UpdateAnnotationStoreVersionResponse UpdateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest request)
@@ -9954,7 +9954,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion">REST API Reference for UpdateAnnotationStoreVersion Operation</seealso>
         public virtual Task<UpdateAnnotationStoreVersionResponse> UpdateAnnotationStoreVersionAsync(UpdateAnnotationStoreVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10009,7 +10009,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">REST API Reference for UpdateRunCache Operation</seealso>
         public virtual UpdateRunCacheResponse UpdateRunCache(UpdateRunCacheRequest request)
@@ -10063,7 +10063,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunCache">REST API Reference for UpdateRunCache Operation</seealso>
         public virtual Task<UpdateRunCacheResponse> UpdateRunCacheAsync(UpdateRunCacheRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10140,7 +10140,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunGroup">REST API Reference for UpdateRunGroup Operation</seealso>
         public virtual UpdateRunGroupResponse UpdateRunGroup(UpdateRunGroupRequest request)
@@ -10216,7 +10216,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateRunGroup">REST API Reference for UpdateRunGroup Operation</seealso>
         public virtual Task<UpdateRunGroupResponse> UpdateRunGroupAsync(UpdateRunGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10258,7 +10258,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
         public virtual UpdateSequenceStoreResponse UpdateSequenceStore(UpdateSequenceStoreRequest request)
@@ -10299,7 +10299,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateSequenceStore">REST API Reference for UpdateSequenceStore Operation</seealso>
         public virtual Task<UpdateSequenceStoreResponse> UpdateSequenceStoreAsync(UpdateSequenceStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10347,7 +10347,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateVariantStore">REST API Reference for UpdateVariantStore Operation</seealso>
         public virtual UpdateVariantStoreResponse UpdateVariantStore(UpdateVariantStoreRequest request)
@@ -10394,7 +10394,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateVariantStore">REST API Reference for UpdateVariantStore Operation</seealso>
         public virtual Task<UpdateVariantStoreResponse> UpdateVariantStoreAsync(UpdateVariantStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10470,7 +10470,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual UpdateWorkflowResponse UpdateWorkflow(UpdateWorkflowRequest request)
@@ -10545,7 +10545,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflow">REST API Reference for UpdateWorkflow Operation</seealso>
         public virtual Task<UpdateWorkflowResponse> UpdateWorkflowAsync(UpdateWorkflowRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10592,7 +10592,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
         public virtual UpdateWorkflowVersionResponse UpdateWorkflowVersion(UpdateWorkflowVersionRequest request)
@@ -10638,7 +10638,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateWorkflowVersion">REST API Reference for UpdateWorkflowVersion Operation</seealso>
         public virtual Task<UpdateWorkflowVersionResponse> UpdateWorkflowVersionAsync(UpdateWorkflowVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -10692,7 +10692,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
         public virtual UploadReadSetPartResponse UploadReadSetPart(UploadReadSetPartRequest request)
@@ -10745,7 +10745,7 @@ namespace Amazon.Omics
         /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.Omics.Model.ValidationException">
-        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
         public virtual Task<UploadReadSetPartResponse> UploadReadSetPartAsync(UploadReadSetPartRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
