@@ -80,6 +80,14 @@ namespace Amazon.Runtime.Internal
         private IDictionary<string, object> _contextAttributes;
         private UserAgentDetails _userAgentDetails;
 
+        /// <summary>
+        /// Fast-path storage for the Clock Skew Correction specification's per-attempt candidate
+        /// skew (see <see cref="ClockSkewPipelineHelper"/>). Recorded from every response, so it
+        /// is kept as a typed field rather than boxed into <see cref="ContextAttributes"/> to
+        /// avoid a per-request heap allocation.
+        /// </summary>
+        internal TimeSpan? ClockSkewAttemptCandidate;
+
         public RequestContext(bool enableMetric)
             : this(enableMetric, null)
         {
@@ -167,6 +175,16 @@ namespace Amazon.Runtime.Internal
                 return _contextAttributes;
             }
         }
+
+        /// <summary>
+        /// Returns the backing <see cref="ContextAttributes"/> dictionary without forcing it to be
+        /// created, or null if nothing has used it yet. Lets <see cref="ClockSkewPipelineHelper"/>
+        /// check for a directly-set <see cref="ClockSkewPipelineHelper.AttemptSkewCandidateKey"/>
+        /// entry (e.g. from tests, or other pipeline handlers) without allocating a dictionary that
+        /// the normal request flow, which uses <see cref="ClockSkewAttemptCandidate"/> instead,
+        /// would otherwise never need.
+        /// </summary>
+        internal IDictionary<string, object> ContextAttributesIfCreated => _contextAttributes;
 
         public IHttpRequestStreamHandle RequestStreamHandle { get; set; }
     }
