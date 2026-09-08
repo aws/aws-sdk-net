@@ -49,6 +49,18 @@ namespace Amazon.Runtime.Internal.Util
             return value == null ? "" : value.Intern().Value;
         }
 
+        /// <summary>
+        /// Returns the contents of a MemoryStream as a Base64-encoded string.
+        /// </summary>
+        /// <remarks>
+        /// This method always encodes the entire contents of the MemoryStream, regardless of
+        /// the current <see cref="MemoryStream.Position"/>. When <see cref="MemoryStream.TryGetBuffer"/>
+        /// succeeds, the underlying buffer is accessed directly without modifying the stream.
+        /// When TryGetBuffer fails (e.g., for MemoryStreams wrapping a byte array), the stream's
+        /// <see cref="MemoryStream.Position"/> is reset to 0 before reading. In this fallback case,
+        /// the caller's stream position will be modified as a side effect.
+        /// </remarks>
+        /// <param name="value">The MemoryStream containing the binary data to encode.</param>
         public static string FromMemoryStream(MemoryStream value)
         {
             if (value.TryGetBuffer(out var buffer))
@@ -60,6 +72,7 @@ namespace Amazon.Runtime.Internal.Util
                 var array = ArrayPool<byte>.Shared.Rent((int)value.Length);
                 try
                 {
+                    value.Position = 0;
                     value.Read(array, 0, (int)value.Length);
                     return Convert.ToBase64String(array, 0, (int)value.Length);
                 }
