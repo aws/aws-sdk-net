@@ -43,6 +43,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _isoCountryCode;
         private MessageType _messageType;
         private List<string> _numberCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<NumberPreferenceItem> _numberPreference = AWSConfigs.InitializeCollections ? new List<NumberPreferenceItem>() : null;
         private RequestableNumberType _numberType;
         private string _optOutListName;
         private string _poolId;
@@ -169,6 +170,33 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetNumberCapabilities()
         {
             return this._numberCapabilities != null && (this._numberCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NumberPreference. 
+        /// <para>
+        /// An optional selection preference used to request a specific phone number, such as
+        /// a number that starts with, ends with, or contains a particular digit pattern. You
+        /// can specify at most one preference. Number preferences apply only to <c>TEN_DLC</c>
+        /// requests in the <c>US</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<NumberPreferenceItem> NumberPreference
+        {
+            get { return this._numberPreference; }
+            set { this._numberPreference = value; }
+        }
+
+        // Check to see if NumberPreference property is set
+        internal bool IsSetNumberPreference()
+        {
+            return this._numberPreference != null && (this._numberPreference.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

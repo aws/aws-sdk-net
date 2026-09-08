@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RequestPhoneNumber Request Marshaller
+    /// ListAvailablePhoneNumbers Request Marshaller
     /// </summary>       
-    public class RequestPhoneNumberRequestMarshaller : IMarshaller<IRequest, RequestPhoneNumberRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListAvailablePhoneNumbersRequestMarshaller : IMarshaller<IRequest, ListAvailablePhoneNumbersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((RequestPhoneNumberRequest)input);
+            return this.Marshall((ListAvailablePhoneNumbersRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(RequestPhoneNumberRequest publicRequest)
+        public IRequest Marshall(ListAvailablePhoneNumbersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PinpointSMSVoiceV2");
-            string target = "PinpointSMSVoiceV2.RequestPhoneNumber";
+            string target = "PinpointSMSVoiceV2.ListAvailablePhoneNumbers";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-03-31";
@@ -75,39 +75,22 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetDeletionProtectionEnabled())
-            {
-                context.Writer.WritePropertyName("DeletionProtectionEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.DeletionProtectionEnabled.Value);
-            }
-
-            if(publicRequest.IsSetInternationalSendingEnabled())
-            {
-                context.Writer.WritePropertyName("InternationalSendingEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.InternationalSendingEnabled.Value);
-            }
-
             if(publicRequest.IsSetIsoCountryCode())
             {
                 context.Writer.WritePropertyName("IsoCountryCode");
                 context.Writer.WriteStringValue(publicRequest.IsoCountryCode);
             }
 
-            if(publicRequest.IsSetMessageType())
+            if(publicRequest.IsSetMaxResults())
             {
-                context.Writer.WritePropertyName("MessageType");
-                context.Writer.WriteStringValue(publicRequest.MessageType);
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
             if(publicRequest.IsSetNumberCapabilities())
@@ -143,38 +126,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NumberType);
             }
 
-            if(publicRequest.IsSetOptOutListName())
-            {
-                context.Writer.WritePropertyName("OptOutListName");
-                context.Writer.WriteStringValue(publicRequest.OptOutListName);
-            }
-
-            if(publicRequest.IsSetPoolId())
-            {
-                context.Writer.WritePropertyName("PoolId");
-                context.Writer.WriteStringValue(publicRequest.PoolId);
-            }
-
             if(publicRequest.IsSetRegistrationId())
             {
                 context.Writer.WritePropertyName("RegistrationId");
                 context.Writer.WriteStringValue(publicRequest.RegistrationId);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();
@@ -187,9 +142,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static RequestPhoneNumberRequestMarshaller _instance = new RequestPhoneNumberRequestMarshaller();        
+        private static ListAvailablePhoneNumbersRequestMarshaller _instance = new ListAvailablePhoneNumbersRequestMarshaller();        
 
-        internal static RequestPhoneNumberRequestMarshaller GetInstance()
+        internal static ListAvailablePhoneNumbersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -197,7 +152,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RequestPhoneNumberRequestMarshaller Instance
+        public static ListAvailablePhoneNumbersRequestMarshaller Instance
         {
             get
             {

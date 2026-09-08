@@ -221,6 +221,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListAvailablePhoneNumbers operation
+        ///</summary>
+        public IListAvailablePhoneNumbersPaginator ListAvailablePhoneNumbers(ListAvailablePhoneNumbersRequest request) 
+        {
+            return new ListAvailablePhoneNumbersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNotifyCountries operation
         ///</summary>
         public IListNotifyCountriesPaginator ListNotifyCountries(ListNotifyCountriesRequest request) 
