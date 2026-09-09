@@ -126,6 +126,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.OutpostArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("size", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -171,6 +177,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("volumeArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.VolumeArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("volumeId", targetDepth))
