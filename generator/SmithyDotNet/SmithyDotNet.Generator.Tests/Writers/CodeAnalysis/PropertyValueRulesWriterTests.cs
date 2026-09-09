@@ -44,6 +44,24 @@ public class PropertyValueRulesWriterTests
         AssertHelper("<pattern>^[-_A-Za-z0-9]+$</pattern>");
     }
 
+    // The analyzer requires a rule's regex match to cover the whole value, so an unanchored pattern
+    // must be padded with .* to keep Smithy's match-anywhere semantics; anchored ends stay verbatim.
+    [Theory]
+    [InlineData("\\S", ".*\\S.*")]
+    [InlineData("^\\S+$", "^\\S+$")]
+    [InlineData("^arn:aws:.*", "^arn:aws:.*")]
+    [InlineData("^abc", "^abc.*")]
+    [InlineData("arn:.*", ".*arn:.*")]
+    [InlineData(".*\\S.*", ".*\\S.*")]
+    [InlineData("([1-9][0-9]{0,4})|([a-zA-Z][a-zA-Z0-9_]{0,47})", ".*([1-9][0-9]{0,4})|([a-zA-Z][a-zA-Z0-9_]{0,47}).*")]
+    [InlineData("^$", "^$")]
+    [InlineData("^", "^")]
+    [InlineData("$", "$")]
+    public void PadsUnanchoredPatterns(string smithyPattern, string expected)
+    {
+        Assert.Equal(expected, PropertyValueRulesWriter.ConvertSmithyPattern(smithyPattern));
+    }
+
     [Fact]
     public void MinMaxOnlyRulesCorrect()
     {

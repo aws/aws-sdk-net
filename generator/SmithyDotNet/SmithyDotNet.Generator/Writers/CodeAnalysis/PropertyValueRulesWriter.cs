@@ -1,6 +1,7 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 using System.Globalization;
 using System.Text;
 using System.Xml;
@@ -49,7 +50,8 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
                     continue;
                 }
 
-                WriteShapeRules(writer, shapeId.Name, structure);
+                // An error shape's rules go under its generated exception class name.
+                WriteShapeRules(writer, structure.IsError() ? ExceptionWriter.ToExceptionName(shapeId.Name) : shapeId.Name, structure);
             }
 
             writer.WriteEndElement();
@@ -68,6 +70,13 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
 
         foreach (var (property, member) in members)
         {
+            // An exception class never declares Message: it flows to the base Exception via the
+            // constructor, so a rule for it could never match an assignment.
+            if (structure.IsError() && property == "Message")
+            {
+                continue;
+            }
+
             var target = context.Resolve(member.Target);
             if (!TypeMapper.IsScalar(target))
             {
@@ -106,10 +115,45 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
             // today; revisit only if that stops being true.
             if (pattern is not null)
             {
-                writer.WriteElementString("pattern", pattern);
+                writer.WriteElementString("pattern", ConvertSmithyPattern(pattern));
             }
 
             writer.WriteEndElement();
         }
+    }
+
+    /// <summary>
+    /// A Smithy pattern matches anywhere in the input, but the consuming analyzer requires its match to
+    /// cover the whole value, so an unanchored pattern like <c>\S</c> would flag every constant longer
+    /// than one character. Padding unanchored ends with <c>.*</c> preserves the Smithy match-anywhere
+    /// semantics — the same translation the C2J models carry for such patterns (<c>\S</c> appears there
+    /// as <c>.*\S.*</c>).
+    /// <para />
+    /// This intentionally diverges from the C2J translation in one way: that translation also strips
+    /// <c>^</c>/<c>$</c> anchors, which is a no-op under the analyzer's whole-value comparison. Keeping
+    /// them emits anchored patterns exactly as the smithy.json states them and leaves the already-shipped
+    /// XML of previously migrated services unchanged.
+    /// <para />
+    /// Edge cases, all matching the C2J translation's behavior:
+    /// <list type="bullet">
+    /// <item>An end already padded with <c>.*</c> is not padded again, so re-translation is stable.</item>
+    /// <item>Patterns that are only anchors (<c>^</c>, <c>$</c>, <c>^$</c>) are returned untouched.</item>
+    /// <item>The anchor checks are textual: an escaped trailing <c>\$</c> counts as an anchor, and a
+    /// padded top-level alternation is not grouped first (<c>a|b</c> becomes <c>.*a|b.*</c>).</item>
+    /// </list>
+    /// </summary>
+    public static string ConvertSmithyPattern(string pattern)
+    {
+        var anchoredStart = pattern.StartsWith('^');
+        var anchoredEnd = pattern.EndsWith('$');
+        var coreLength = pattern.Length - (anchoredStart ? 1 : 0) - (anchoredEnd ? 1 : 0);
+        if (coreLength <= 0)
+        {
+            return pattern; // Don't try to do anything to unexpected patterns
+        }
+
+        var prefix = !anchoredStart && !pattern.StartsWith(".*", StringComparison.Ordinal) ? ".*" : "";
+        var suffix = !anchoredEnd && !pattern.EndsWith(".*", StringComparison.Ordinal) ? ".*" : "";
+        return prefix + pattern + suffix;
     }
 }
