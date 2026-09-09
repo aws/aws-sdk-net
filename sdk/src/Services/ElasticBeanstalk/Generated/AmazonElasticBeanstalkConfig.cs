@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk
     public partial class AmazonElasticBeanstalkConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Elastic Beanstalk", "4.0.100.12");
+            InternalSDKUtils.BuildUserAgentString("Elastic Beanstalk", "4.0.100.13");
 
         private static readonly AmazonElasticBeanstalkEndpointResolver EndpointResolver =
             new AmazonElasticBeanstalkEndpointResolver();

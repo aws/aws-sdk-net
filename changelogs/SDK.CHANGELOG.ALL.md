@@ -1,3 +1,24 @@
+### 4.0.330.0 (2026-09-09 18:14 UTC)
+* Connect (4.0.116.0)
+	* Add metric configuration field to evaluation forms and ListEvaluationFormAIVersions API for retrieving AI-generated evaluation form versions
+* EC2 (4.0.119.0)
+	* This release adds support for sharing Amazon EBS volumes across AWS accounts using AWS Resource Access Manager (RAM). Consuming accounts can view shared volume metadata and create copies of shared volumes within the same Availability Zone, with optional re-encryption using their own KMS key.
+* ElementalInference (4.0.105.0)
+	* This release adds contextual metadata, a feed output type that generates a descriptive summary of your media content along with IAB taxonomy and GARM suitability classifications. It also adds feed resource policies for granting cross-account access to a feed.
+* Lambda (4.0.108.0)
+	* Updates documentation for lambda function timeout.
+* MediaLive (4.0.105.0)
+	* MediaLive now supports Manual Style Control for vertical caption positioning in TTML, WebVTT, and Embedded captions, Contextual Metadata Enrichment via Elemental Inference, and an Output Usage field on MediaPackage v2 for Dynamic Multiview validation.
+* MediaPackageV2 (4.0.103.0)
+	* Dynamic Multiview enables viewers to watch multiple live video streams in a single combined output. Viewers can select from 6 preset tiled layouts. Create MediaPackage channels with Input Type MULTIVIEW and configure Available Layouts and Available Sources. See the API Documentation for details.
+* MediaTailor (4.0.106.0)
+	* Added the AWS Service Request function type for MediaTailor Functions, enabling authenticated requests to AWS Elemental Inference for contextual ad targeting during ad insertion.
+* PCS (4.0.102.0)
+	* This release adds support for custom Gres.conf configuration and Slurm version 26.05 in AWS PCS. Customers can now specify generic resource (GRES) settings to control how GPUs and other resources are configured and shared on their compute node groups.
+* Core 4.0.102.4
+	* Fixed `StringUtils.FromMemoryStream` to always encode the entire stream contents regardless of the stream's current `Position`, making it consistent with streams whose buffers are exposable
+	* All service and extension packages updated to require new Core
+
 ### 4.0.329.0 (2026-09-08 18:15 UTC)
 * Appflow (4.0.101.0)
 	* Amazon AppFlow now supports key pair (RSA private key) authentication for the Snowflake connector. You can provide a privateKey in SnowflakeConnectorProfileCredentials, and password is no longer required. This is a non-breaking, additive change available via the AWS SDK and CLI.

@@ -33,7 +33,7 @@ namespace Amazon.PartnerCentralBenefits
     public partial class AmazonPartnerCentralBenefitsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("PartnerCentral Benefits", "4.0.100.12");
+            InternalSDKUtils.BuildUserAgentString("PartnerCentral Benefits", "4.0.100.13");
 
         private static readonly AmazonPartnerCentralBenefitsEndpointResolver EndpointResolver =
             new AmazonPartnerCentralBenefitsEndpointResolver();

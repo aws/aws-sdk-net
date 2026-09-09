@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Fixed `StringUtils.FromMemoryStream` to always encode the entire stream contents regardless of the stream's current `Position`, making it consistent with streams whose buffers are exposable"
-    ]
-  }
-}
