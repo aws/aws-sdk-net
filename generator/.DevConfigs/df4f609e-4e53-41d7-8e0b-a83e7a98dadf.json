@@ -1,0 +1,39 @@
+{
+  "services": [
+    {
+      "serviceName": "ConnectContactLens",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectContactLens is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "GeoMaps",
+      "type": "patch",
+      "changeLogMessages": [
+        "GeoMaps is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "IAMToolbox",
+      "type": "patch",
+      "changeLogMessages": [
+        "IAMToolbox is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PricingPlanManager",
+      "type": "patch",
+      "changeLogMessages": [
+        "PricingPlanManager is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SageMakerFeatureStoreRuntime",
+      "type": "patch",
+      "changeLogMessages": [
+        "SageMakerFeatureStoreRuntime is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
