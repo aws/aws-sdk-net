@@ -36,6 +36,7 @@ namespace Amazon.ElementalInference.Model
     public partial class OutputConfig
     {
         private ClippingConfig _clipping;
+        private ContextualMetadataConfig _contextualMetadata;
         private CroppingConfig _cropping;
         private SubtitlingConfig _subtitling;
 
@@ -55,6 +56,24 @@ namespace Amazon.ElementalInference.Model
         internal bool IsSetClipping()
         {
             return this._clipping != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContextualMetadata. 
+        /// <para>
+        /// The output config type that applies to the contextual metadata feature.
+        /// </para>
+        /// </summary>
+        public ContextualMetadataConfig ContextualMetadata
+        {
+            get { return this._contextualMetadata; }
+            set { this._contextualMetadata = value; }
+        }
+
+        // Check to see if ContextualMetadata property is set
+        internal bool IsSetContextualMetadata()
+        {
+            return this._contextualMetadata != null;
         }
 
         /// <summary>

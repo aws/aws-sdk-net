@@ -318,6 +318,45 @@ namespace Amazon.ElementalInference
 
         #endregion
                 
+        #region  DeleteFeedPolicy
+
+
+
+        /// <summary>
+        /// Deletes the resource-based policy attached to the specified feed. After you delete
+        /// the policy, the operation revokes the cross-account access that the policy granted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFeedPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteFeedPolicy service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/DeleteFeedPolicy">REST API Reference for DeleteFeedPolicy Operation</seealso>
+        Task<DeleteFeedPolicyResponse> DeleteFeedPolicyAsync(DeleteFeedPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateFeed
 
 
@@ -466,6 +505,44 @@ namespace Amazon.ElementalInference
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFeed">REST API Reference for GetFeed Operation</seealso>
         Task<GetFeedResponse> GetFeedAsync(GetFeedRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetFeedPolicy
+
+
+
+        /// <summary>
+        /// Retrieves the resource-based policy attached to the specified feed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFeedPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFeedPolicy service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFeedPolicy">REST API Reference for GetFeedPolicy Operation</seealso>
+        Task<GetFeedPolicyResponse> GetFeedPolicyAsync(GetFeedPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -625,6 +702,48 @@ namespace Amazon.ElementalInference
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutFeedPolicy
+
+
+
+        /// <summary>
+        /// Attaches or replaces a resource-based policy on the specified feed. A resource-based
+        /// policy grants cross-account access to the feed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutFeedPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutFeedPolicy service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ConflictException">
+        /// The request could not be completed due to a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/PutFeedPolicy">REST API Reference for PutFeedPolicy Operation</seealso>
+        Task<PutFeedPolicyResponse> PutFeedPolicyAsync(PutFeedPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

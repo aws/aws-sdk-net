@@ -57,6 +57,17 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetContextualMetadata())
+            {
+                context.Writer.WritePropertyName("contextualMetadata");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContextualMetadataConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContextualMetadata, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCropping())
             {
                 context.Writer.WritePropertyName("cropping");

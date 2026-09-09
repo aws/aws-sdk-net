@@ -78,6 +78,10 @@
     <pattern>[a-z0-9]{19}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.DeleteFeedPolicyRequest.Id</property>
+    <pattern>[a-z0-9]{19}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.DisassociateFeedRequest.AssociatedResourceName</property>
     <min>1</min>
     <max>2048</max>
@@ -137,6 +141,15 @@
     <pattern>[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.GetFeedPolicyRequest.Id</property>
+    <pattern>[a-z0-9]{19}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.GetFeedPolicyResponse.Policy</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.GetFixtureRequest.FixtureId</property>
     <min>1</min>
     <max>128</max>
@@ -159,6 +172,15 @@
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.ListTagsForResourceRequest.ResourceArn</property>
     <pattern>arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:(feed|dictionary)/[a-zA-Z0-9]{1,19}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.PutFeedPolicyRequest.Id</property>
+    <pattern>[a-z0-9]{19}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.PutFeedPolicyRequest.Policy</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.SearchFixturesRequest.EndDate</property>
