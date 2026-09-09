@@ -46,6 +46,25 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetGresCustomSettings())
+            {
+                context.Writer.WritePropertyName("gresCustomSettings");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectGresCustomSettingsListValue in requestObject.GresCustomSettings)
+                {
+                    context.Writer.WriteStartObject();
+                    foreach (var requestObjectGresCustomSettingsListValueKvp in requestObjectGresCustomSettingsListValue)
+                    {
+                        context.Writer.WritePropertyName(requestObjectGresCustomSettingsListValueKvp.Key);
+                        var requestObjectGresCustomSettingsListValueValue = requestObjectGresCustomSettingsListValueKvp.Value;
+
+                            context.Writer.WriteStringValue(requestObjectGresCustomSettingsListValueValue);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetScaleDownIdleTimeInSeconds())
             {
                 context.Writer.WritePropertyName("scaleDownIdleTimeInSeconds");
