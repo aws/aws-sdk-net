@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private string _audioRenditionSets;
         private HlsAutoSelect _hlsAutoSelect;
         private HlsDefault _hlsDefault;
+        private List<string> _outputUsage = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioGroupId. Applies only to an output that contains audio.
@@ -119,6 +120,33 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetHlsDefault()
         {
             return this._hlsDefault != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputUsage. List of usage tags declaring how this MediaPackage
+        /// V2 output is used. Currently these are all multiview-related (multiviewPrimaryView,
+        /// multiviewSecondaryView, multiviewEqualSizeView) and enable multiview validations and
+        /// augmentations to help ensure proper multiview configuration and compatibility with
+        /// MediaPackage. Leave empty (the default) if this output has no multiview role. If any
+        /// video-carrying MediaPackage V2 output in an output group specifies a multiview value,
+        /// every video-carrying MediaPackage V2 output in the group must also specify a multiview
+        /// value; place standalone video outputs in a separate output group.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> OutputUsage
+        {
+            get { return this._outputUsage; }
+            set { this._outputUsage = value; }
+        }
+
+        // Check to see if OutputUsage property is set
+        internal bool IsSetOutputUsage()
+        {
+            return this._outputUsage != null && (this._outputUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

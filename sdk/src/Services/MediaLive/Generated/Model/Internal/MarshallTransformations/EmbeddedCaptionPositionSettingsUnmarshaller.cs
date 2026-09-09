@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EmbeddedDestinationSettings Object
+    /// Response Unmarshaller for EmbeddedCaptionPositionSettings Object
     /// </summary>  
-    public class EmbeddedDestinationSettingsUnmarshaller : IJsonUnmarshaller<EmbeddedDestinationSettings, JsonUnmarshallerContext>
+    public class EmbeddedCaptionPositionSettingsUnmarshaller : IJsonUnmarshaller<EmbeddedCaptionPositionSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EmbeddedDestinationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EmbeddedCaptionPositionSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            EmbeddedDestinationSettings unmarshalledObject = new EmbeddedDestinationSettings();
+            EmbeddedCaptionPositionSettings unmarshalledObject = new EmbeddedCaptionPositionSettings();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("position", targetDepth, ref reader))
+                if (context.TestExpression("yPositionLine", targetDepth, ref reader))
                 {
-                    var unmarshaller = EmbeddedCaptionPositionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Position = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("styleControl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StyleControl = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.YPositionLine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static EmbeddedDestinationSettingsUnmarshaller _instance = new EmbeddedDestinationSettingsUnmarshaller();        
+        private static EmbeddedCaptionPositionSettingsUnmarshaller _instance = new EmbeddedCaptionPositionSettingsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EmbeddedDestinationSettingsUnmarshaller Instance
+        public static EmbeddedCaptionPositionSettingsUnmarshaller Instance
         {
             get
             {

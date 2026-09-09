@@ -62,6 +62,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetEnrichmentMethods())
+            {
+                context.Writer.WritePropertyName("enrichmentMethods");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEnrichmentMethodsListValue in requestObject.EnrichmentMethods)
+                {
+                        context.Writer.WriteStringValue(requestObjectEnrichmentMethodsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetFeedArn())
             {
                 context.Writer.WritePropertyName("feedArn");

@@ -34,6 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class VideoDescription
     {
+        private int? _border;
         private VideoCodecSettings _codecSettings;
         private VideoPositionRectangle _cropRectangle;
         private int? _height;
@@ -43,6 +44,25 @@ namespace Amazon.MediaLive.Model
         private VideoDescriptionScalingBehavior _scalingBehavior;
         private int? _sharpness;
         private int? _width;
+
+        /// <summary>
+        /// Gets and sets the property Border. Specifies the number of pixels of black border
+        /// that will be inserted around the edgeof the encoded picture. Must be an even integer
+        /// from 0 (no border, the default) upto 100. The width and height of the VideoDescription
+        /// must each be greater than twicethis value. Cannot be used together with {@link outputPositionRectangle}
+        /// -- bothgovern the position of the encoded content within the output frame.
+        /// </summary>
+        public int? Border
+        {
+            get { return this._border; }
+            set { this._border = value; }
+        }
+
+        // Check to see if Border property is set
+        internal bool IsSetBorder()
+        {
+            return this._border.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CodecSettings. Video codec settings.

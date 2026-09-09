@@ -34,11 +34,31 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class TtmlDestinationSettings
     {
+        private TextCaptionPositionSettings _position;
         private TtmlDestinationStyleControl _styleControl;
 
         /// <summary>
-        /// Gets and sets the property StyleControl. This field is not currently supported and
-        /// will not affect the output styling. Leave the default value.
+        /// Gets and sets the property Position. Specifies the position of the output captions.
+        /// Applies only when styleControl is set to manual.
+        /// </summary>
+        public TextCaptionPositionSettings Position
+        {
+            get { return this._position; }
+            set { this._position = value; }
+        }
+
+        // Check to see if Position property is set
+        internal bool IsSetPosition()
+        {
+            return this._position != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StyleControl. Controls the source of style and position
+        /// information for the output captions.  PASSTHROUGH - Preserve the style and position
+        /// from the source captions.  USE_CONFIGURED - Don't pass through the style. The output
+        /// captions will use the default styling.  MANUAL - Applies the specified styling and
+        /// positioning. All other styling and positioning is given default values.
         /// </summary>
         public TtmlDestinationStyleControl StyleControl
         {
