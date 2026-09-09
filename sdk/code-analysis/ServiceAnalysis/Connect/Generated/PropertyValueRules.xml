@@ -625,6 +625,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateEvaluationFormRequest.AIVersion</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateEvaluationFormRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -2676,6 +2681,16 @@
     <property>Amazon.Connect.Model.ListEntitySecurityProfilesResponse.NextToken</property>
     <min>1</min>
     <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListEvaluationFormAIVersionsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListEvaluationFormAIVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListEvaluationFormsRequest.InstanceId</property>
@@ -4938,6 +4953,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateEvaluationFormRequest.AIVersion</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -6617,9 +6637,24 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationForm.AIVersion</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationForm.EvaluationFormId</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormAIVersionSummary.AIVersionName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormContent.AIVersion</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormContent.EvaluationFormId</property>
@@ -6627,9 +6662,20 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormMetricConfiguration.MetricName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[^\p{C}]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormMultiSelectQuestionOption.Text</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.EvaluationFormSearchSummary.AIVersion</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSearchSummary.EvaluationFormId</property>

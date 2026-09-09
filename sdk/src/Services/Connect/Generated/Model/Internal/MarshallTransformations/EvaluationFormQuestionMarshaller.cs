@@ -63,6 +63,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Instructions);
             }
 
+            if(requestObject.IsSetMetricConfiguration())
+            {
+                context.Writer.WritePropertyName("MetricConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormMetricConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MetricConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetNotApplicableEnabled())
             {
                 context.Writer.WritePropertyName("NotApplicableEnabled");

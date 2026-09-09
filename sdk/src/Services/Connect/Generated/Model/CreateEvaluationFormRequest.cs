@@ -38,6 +38,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class CreateEvaluationFormRequest : AmazonConnectRequest
     {
+        private string _aiVersion;
         private bool? _asDraft;
         private EvaluationFormAutoEvaluationConfiguration _autoEvaluationConfiguration;
         private string _clientToken;
@@ -50,6 +51,26 @@ namespace Amazon.Connect.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private EvaluationFormTargetConfiguration _targetConfiguration;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AIVersion. 
+        /// <para>
+        /// The AI version to use for the evaluation form. This specifies which AI model version
+        /// is used for automated evaluations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AIVersion
+        {
+            get { return this._aiVersion; }
+            set { this._aiVersion = value; }
+        }
+
+        // Check to see if AIVersion property is set
+        internal bool IsSetAIVersion()
+        {
+            return this._aiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AsDraft. 

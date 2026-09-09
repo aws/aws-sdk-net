@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     {
         private EvaluationFormItemEnablementConfiguration _enablement;
         private string _instructions;
+        private EvaluationFormMetricConfiguration _metricConfiguration;
         private bool? _notApplicableEnabled;
         private EvaluationFormQuestionType _questionType;
         private EvaluationFormQuestionTypeProperties _questionTypeProperties;
@@ -78,6 +79,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetInstructions()
         {
             return this._instructions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricConfiguration. 
+        /// <para>
+        /// The metric configuration for the question. Use this to associate a business outcome
+        /// metric with the question.
+        /// </para>
+        /// </summary>
+        public EvaluationFormMetricConfiguration MetricConfiguration
+        {
+            get { return this._metricConfiguration; }
+            set { this._metricConfiguration = value; }
+        }
+
+        // Check to see if MetricConfiguration property is set
+        internal bool IsSetMetricConfiguration()
+        {
+            return this._metricConfiguration != null;
         }
 
         /// <summary>

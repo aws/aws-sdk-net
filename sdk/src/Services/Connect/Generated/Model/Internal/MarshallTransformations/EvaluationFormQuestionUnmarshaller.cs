@@ -68,6 +68,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Instructions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MetricConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = EvaluationFormMetricConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.MetricConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NotApplicableEnabled", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;

@@ -12421,6 +12421,52 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListEvaluationFormAIVersions
+
+        internal virtual ListEvaluationFormAIVersionsResponse ListEvaluationFormAIVersions(ListEvaluationFormAIVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEvaluationFormAIVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEvaluationFormAIVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEvaluationFormAIVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the available AI versions for evaluation forms in the specified Connect Customer
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationFormAIVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEvaluationFormAIVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormAIVersions">REST API Reference for ListEvaluationFormAIVersions Operation</seealso>
+        public virtual Task<ListEvaluationFormAIVersionsResponse> ListEvaluationFormAIVersionsAsync(ListEvaluationFormAIVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEvaluationFormAIVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEvaluationFormAIVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEvaluationFormAIVersionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListEvaluationForms
 
         internal virtual ListEvaluationFormsResponse ListEvaluationForms(ListEvaluationFormsRequest request)
@@ -17496,14 +17542,7 @@ namespace Amazon.Connect
         /// Starts an empty evaluation in the specified Connect Customer instance, using the given
         /// evaluation form for the particular contact. The evaluation form version used for the
         /// contact evaluation corresponds to the currently activated version. If no version is
-        /// activated for the evaluation form, the contact evaluation cannot be started. 
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Evaluations created through the public API do not contain answer values suggested
-        /// from automation.
-        /// </para>
-        ///  </note>
+        /// activated for the evaluation form, the contact evaluation cannot be started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartContactEvaluation service method.</param>
         /// <param name="cancellationToken">

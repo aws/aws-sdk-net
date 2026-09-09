@@ -3093,6 +3093,64 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type EvaluationFormAIVersionStatus.
+    /// </summary>
+    public class EvaluationFormAIVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus ACTIVE = new EvaluationFormAIVersionStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEPRECATED for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus DEPRECATED = new EvaluationFormAIVersionStatus("DEPRECATED");
+        /// <summary>
+        /// Constant LATEST for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus LATEST = new EvaluationFormAIVersionStatus("LATEST");
+        /// <summary>
+        /// Constant PREVIEW for EvaluationFormAIVersionStatus
+        /// </summary>
+        public static readonly EvaluationFormAIVersionStatus PREVIEW = new EvaluationFormAIVersionStatus("PREVIEW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationFormAIVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormAIVersionStatus FindValue(string value)
+        {
+            return FindValue<EvaluationFormAIVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormAIVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationFormItemEnablementAction.
     /// </summary>
     public class EvaluationFormItemEnablementAction : ConstantClass
@@ -3418,6 +3476,52 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EvaluationFormLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EvaluationFormMetricType.
+    /// </summary>
+    public class EvaluationFormMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUSINESS_OUTCOME for EvaluationFormMetricType
+        /// </summary>
+        public static readonly EvaluationFormMetricType BUSINESS_OUTCOME = new EvaluationFormMetricType("BUSINESS_OUTCOME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EvaluationFormMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EvaluationFormMetricType FindValue(string value)
+        {
+            return FindValue<EvaluationFormMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EvaluationFormMetricType(string value)
         {
             return FindValue(value);
         }

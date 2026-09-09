@@ -56,6 +56,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AIVersion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AIVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AutoEvaluationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EvaluationFormAutoEvaluationConfigurationUnmarshaller.Instance;
