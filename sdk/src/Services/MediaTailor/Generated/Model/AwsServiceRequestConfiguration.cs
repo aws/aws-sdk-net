@@ -30,13 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The configuration for a <c>VAST_REQUEST</c> function. Specifies the HTTP method, URL,
-    /// headers, body, timeout, and output expressions for a request to a VAST endpoint. MediaTailor
-    /// parses the response as VAST and resolves wrapper redirects, then makes the parsed
-    /// ads available to the function's output expressions. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
-    /// types and composition</a> in the <i>MediaTailor User Guide</i>.
+    /// The configuration for an <c>AWS_SERVICE_REQUEST</c> function. Contains the target
+    /// service, target Region, and request parameters that the function uses to call an AWS
+    /// service API. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types-aws-service-request.html">AWS_SERVICE_REQUEST</a>
+    /// in the <i>MediaTailor User Guide</i>.
     /// </summary>
-    public partial class VastRequestConfiguration
+    public partial class AwsServiceRequestConfiguration
     {
         private string _body;
         private Dictionary<string, string> _headers = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -44,14 +43,17 @@ namespace Amazon.MediaTailor.Model
         private Dictionary<string, string> _output = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _requestTimeoutMilliseconds;
         private RuntimeType _runtime;
+        private string _targetRegion;
+        private string _targetService;
         private string _url;
 
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// An expression that evaluates to the request body, for example to send an OpenRTB bid
-        /// request. The expression can be up to 100,000 characters, and the body after evaluation
-        /// can be up to 64 KB.
+        /// An expression that evaluates to the request body for the AWS service API call. The
+        /// body must conform to the input format that the target service operation expects. Applies
+        /// only when the target operation accepts a request body. The maximum size after evaluation
+        /// is 64 KB.
         /// </para>
         /// </summary>
         public string Body
@@ -70,9 +72,9 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property Headers. 
         /// <para>
         /// A map of HTTP header names to expression values. MediaTailor evaluates each header
-        /// value expression at runtime and includes the result in the outbound request. Headers
-        /// beginning with <c>X-Amz-</c> are reserved by the service, and method override headers
-        /// are not allowed.
+        /// value expression at runtime and includes the result in the outbound request to the
+        /// AWS service. Use this to pass any headers required by the target service operation.
+        /// You can include a maximum of 50 headers.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -95,9 +97,18 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property MethodType. 
         /// <para>
-        /// The HTTP method for the request to the VAST endpoint. Valid values: <c>GET</c> and
-        /// <c>POST</c>. Use <c>POST</c> to send a bid request body, such as an OpenRTB payload.
+        /// Specifies how the function sends the request to the target service. The value must
+        /// match what the target service operation requires. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>GET</c> – Retrieves data from the target service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>POST</c> – Submits a request body to the target service.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public MethodType MethodType
@@ -115,12 +126,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// A map of output bindings. Each key is a namespaced output path (such as <c>temp.wrappedAds</c>),
-        /// and each value is an expression that MediaTailor evaluates at runtime. Output expressions
-        /// in a <c>VAST_REQUEST</c> function can reference the <c>response</c> object, which
-        /// exposes <c>response.parsedAds</c> — the ads parsed from the VAST response after schema
-        /// validation and wrapper resolution — and <c>response.statusCode</c>. For more information
-        /// about expression syntax, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-jsonata.html">JSONata
+        /// A map of output bindings. Each key is a namespaced output path, such as <c>player_params.device_type</c>.
+        /// Each value is an expression that MediaTailor evaluates at runtime and can reference
+        /// the <c>response</c> object from the target service. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-jsonata.html">JSONata
         /// expression reference</a> in the <i>MediaTailor User Guide</i>.
         /// </para>
         /// <para />
@@ -145,10 +153,9 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property RequestTimeoutMilliseconds. 
         /// <para>
         /// The maximum time, in milliseconds, that MediaTailor waits for a response from the
-        /// VAST endpoint. The timeout covers the entire response, including any wrapper redirects
-        /// that MediaTailor follows. If the call exceeds this timeout, MediaTailor proceeds with
-        /// an empty ad list and continues output expression evaluation. Valid values: <c>100</c>
-        /// to <c>2000</c>.
+        /// AWS service. If the call exceeds this timeout, MediaTailor sets the response status
+        /// code to <c>null</c> and proceeds with output expression evaluation. Valid values:
+        /// <c>100</c> to <c>2000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,7 +175,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property Runtime. 
         /// <para>
         /// The expression language used to evaluate expressions in the function configuration.
-        /// Set this to <c>JSONata</c>.
+        /// The only supported value is <c>JSONata</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,11 +192,52 @@ namespace Amazon.MediaTailor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TargetRegion. 
+        /// <para>
+        /// The AWS Region for the target service. Specify a static Region code (for example,
+        /// <c>us-east-1</c>) or a JSONata expression that resolves to a Region code at runtime
+        /// (for example, <c>{%inference.region%}</c>).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string TargetRegion
+        {
+            get { return this._targetRegion; }
+            set { this._targetRegion = value; }
+        }
+
+        // Check to see if TargetRegion property is set
+        internal bool IsSetTargetRegion()
+        {
+            return this._targetRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetService. 
+        /// <para>
+        /// The AWS service to call. Valid value: <c>elemental-inference</c> (AWS Elemental Inference).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=63)]
+        public string TargetService
+        {
+            get { return this._targetService; }
+            set { this._targetService = value; }
+        }
+
+        // Check to see if TargetService property is set
+        internal bool IsSetTargetService()
+        {
+            return this._targetService != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// An expression that evaluates to the VAST endpoint URL. Use <c>{%...%}</c> delimiters
-        /// for dynamic expressions. A literal value must be an <c>https://</c> URL. The expression
-        /// can be up to 25,000 characters, and the URL after evaluation can be up to 2,048 characters.
+        /// An expression that evaluates to the endpoint URL for the target AWS service API operation.
+        /// Use <c>{%...%}</c> delimiters for dynamic expressions. The URL must correspond to
+        /// a valid endpoint for the service specified in <c>TargetService</c>. The maximum length
+        /// after evaluation is 2,048 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

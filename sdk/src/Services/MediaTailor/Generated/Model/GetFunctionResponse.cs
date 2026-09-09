@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     public partial class GetFunctionResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private AwsServiceRequestConfiguration _awsServiceRequestConfiguration;
         private ConcurrentExecutorConfiguration _concurrentExecutorConfiguration;
         private CustomOutputConfiguration _customOutputConfiguration;
         private string _description;
@@ -61,6 +62,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsServiceRequestConfiguration. 
+        /// <para>
+        /// The configuration for an <c>AWS_SERVICE_REQUEST</c> function. Specifies the target
+        /// service, target Region, and request parameters.
+        /// </para>
+        /// </summary>
+        public AwsServiceRequestConfiguration AwsServiceRequestConfiguration
+        {
+            get { return this._awsServiceRequestConfiguration; }
+            set { this._awsServiceRequestConfiguration = value; }
+        }
+
+        // Check to see if AwsServiceRequestConfiguration property is set
+        internal bool IsSetAwsServiceRequestConfiguration()
+        {
+            return this._awsServiceRequestConfiguration != null;
         }
 
         /// <summary>

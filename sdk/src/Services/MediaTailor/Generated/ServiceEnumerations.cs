@@ -821,6 +821,10 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant AWS_SERVICE_REQUEST for FunctionType
+        /// </summary>
+        public static readonly FunctionType AWS_SERVICE_REQUEST = new FunctionType("AWS_SERVICE_REQUEST");
+        /// <summary>
         /// Constant CONCURRENT_EXECUTOR for FunctionType
         /// </summary>
         public static readonly FunctionType CONCURRENT_EXECUTOR = new FunctionType("CONCURRENT_EXECUTOR");

@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class PutFunctionRequest : AmazonMediaTailorRequest
     {
+        private AwsServiceRequestConfiguration _awsServiceRequestConfiguration;
         private ConcurrentExecutorConfiguration _concurrentExecutorConfiguration;
         private CustomOutputConfiguration _customOutputConfiguration;
         private string _description;
@@ -47,6 +48,25 @@ namespace Amazon.MediaTailor.Model
         private SequentialExecutorConfiguration _sequentialExecutorConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VastRequestConfiguration _vastRequestConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AwsServiceRequestConfiguration. 
+        /// <para>
+        /// The configuration for an <c>AWS_SERVICE_REQUEST</c> function. You must specify this
+        /// parameter when <c>FunctionType</c> is <c>AWS_SERVICE_REQUEST</c>.
+        /// </para>
+        /// </summary>
+        public AwsServiceRequestConfiguration AwsServiceRequestConfiguration
+        {
+            get { return this._awsServiceRequestConfiguration; }
+            set { this._awsServiceRequestConfiguration = value; }
+        }
+
+        // Check to see if AwsServiceRequestConfiguration property is set
+        internal bool IsSetAwsServiceRequestConfiguration()
+        {
+            return this._awsServiceRequestConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConcurrentExecutorConfiguration. 
@@ -127,15 +147,42 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property FunctionType. 
         /// <para>
-        /// The type of the function. The function type determines what the function can do at
-        /// runtime. Valid values: <c>CUSTOM_OUTPUT</c> evaluates expressions and produces output
-        /// bindings with no external calls. <c>HTTP_REQUEST</c> makes an HTTP call to an external
-        /// service and evaluates output expressions that can reference the response. <c>VAST_REQUEST</c>
-        /// calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available
-        /// to output expressions. <c>SEQUENTIAL_EXECUTOR</c> runs a sequence of child functions
-        /// in order, passing data between steps through temporary data. <c>CONCURRENT_EXECUTOR</c>
-        /// runs a set of child functions in parallel, up to a maximum concurrency, and combines
-        /// their output when all functions complete. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
+        /// The type of the function, which determines what the function can do at runtime. Valid
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOM_OUTPUT</c> – Evaluates expressions and produces output bindings with no
+        /// external calls.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HTTP_REQUEST</c> – Makes an HTTP call to an external service and evaluates output
+        /// expressions that can reference the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_SERVICE_REQUEST</c> – Makes an authenticated request to a supported AWS service
+        /// API and evaluates output expressions that can reference the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VAST_REQUEST</c> – Calls a VAST endpoint, parses the response as VAST, and makes
+        /// the parsed ads available to output expressions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SEQUENTIAL_EXECUTOR</c> – Runs a sequence of child functions in order, passing
+        /// data between steps through temporary data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONCURRENT_EXECUTOR</c> – Runs a set of child functions in parallel, up to a maximum
+        /// concurrency, and combines their output when all functions complete.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function
         /// types and composition</a> in the <i>MediaTailor User Guide</i>.
         /// </para>
         /// </summary>

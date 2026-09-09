@@ -58,6 +58,17 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaTailor.Model.AwsServiceRequestConfiguration.TargetRegion</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaTailor.Model.AwsServiceRequestConfiguration.TargetService</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaTailor.Model.PlaybackConfiguration.PersonalizationThresholdSeconds</property>
     <min>1</min>
   </property-value-rule>

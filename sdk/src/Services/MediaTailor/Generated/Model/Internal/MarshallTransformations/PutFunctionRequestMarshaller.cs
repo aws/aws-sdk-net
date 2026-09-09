@@ -76,6 +76,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAwsServiceRequestConfiguration())
+            {
+                context.Writer.WritePropertyName("AwsServiceRequestConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AwsServiceRequestConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AwsServiceRequestConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetConcurrentExecutorConfiguration())
             {
                 context.Writer.WritePropertyName("ConcurrentExecutorConfiguration");

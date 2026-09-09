@@ -58,6 +58,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AwsServiceRequestConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = AwsServiceRequestConfigurationUnmarshaller.Instance;
+                    response.AwsServiceRequestConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ConcurrentExecutorConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ConcurrentExecutorConfigurationUnmarshaller.Instance;
