@@ -35,12 +35,14 @@ namespace Amazon.MediaPackageV2.Model
     public partial class ChannelListConfiguration
     {
         private string _arn;
+        private List<string> _attachedMultiviewChannels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _channelGroupName;
         private string _channelName;
         private DateTime? _createdAt;
         private string _description;
         private InputType _inputType;
         private DateTime? _modifiedAt;
+        private MultiviewConfiguration _multiviewConfiguration;
         private OutputLockingMode _outputLockingMode;
 
         /// <summary>
@@ -60,6 +62,30 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttachedMultiviewChannels. 
+        /// <para>
+        /// The multiview channels, in the same channel group, that list this channel as an available
+        /// source. This is a read-only field.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AttachedMultiviewChannels
+        {
+            get { return this._attachedMultiviewChannels; }
+            set { this._attachedMultiviewChannels = value; }
+        }
+
+        // Check to see if AttachedMultiviewChannels property is set
+        internal bool IsSetAttachedMultiviewChannels()
+        {
+            return this._attachedMultiviewChannels != null && (this._attachedMultiviewChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,9 +170,9 @@ namespace Amazon.MediaPackageV2.Model
         /// <summary>
         /// Gets and sets the property InputType. 
         /// <para>
-        /// The input type will be an immutable field which will be used to define whether the
-        /// channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS
-        /// to preserve current behavior.
+        /// The input type is an immutable field. It defines whether the channel allows CMAF ingest,
+        /// HLS ingest, or server-side multiview output. Multiview channels receive no ingest
+        /// of their own. If unprovided, the value defaults to HLS.
         /// </para>
         ///  
         /// <para>
@@ -161,6 +187,12 @@ namespace Amazon.MediaPackageV2.Model
         /// <para>
         ///  <c>CMAF</c> - The DASH-IF CMAF Ingest specification (which defines CMAF segments
         /// with optional DASH manifests).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MULTIVIEW</c> – Server-side multiview. The channel receives no ingest of its own.
+        /// Instead, it composites video from the source channels in its <c>MultiviewConfiguration</c>
+        /// into a single tiled output stream.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -193,6 +225,25 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetModifiedAt()
         {
             return this._modifiedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiviewConfiguration. 
+        /// <para>
+        /// The multiview configuration for the channel. This is present only when <c>InputType</c>
+        /// is <c>MULTIVIEW</c>.
+        /// </para>
+        /// </summary>
+        public MultiviewConfiguration MultiviewConfiguration
+        {
+            get { return this._multiviewConfiguration; }
+            set { this._multiviewConfiguration = value; }
+        }
+
+        // Check to see if MultiviewConfiguration property is set
+        internal bool IsSetMultiviewConfiguration()
+        {
+            return this._multiviewConfiguration != null;
         }
 
         /// <summary>

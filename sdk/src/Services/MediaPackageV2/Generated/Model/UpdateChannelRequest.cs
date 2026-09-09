@@ -48,6 +48,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _description;
         private string _eTag;
         private InputSwitchConfiguration _inputSwitchConfiguration;
+        private MultiviewConfiguration _multiviewConfiguration;
         private OutputHeaderConfiguration _outputHeaderConfiguration;
 
         /// <summary>
@@ -148,6 +149,27 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetInputSwitchConfiguration()
         {
             return this._inputSwitchConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiviewConfiguration. 
+        /// <para>
+        /// The multiview configuration for the channel. This setting is required when the channel's
+        /// <c>InputType</c> is <c>MULTIVIEW</c>, and can't be set for any other input type. Because
+        /// <c>InputType</c> is immutable, you can change a multiview channel's sources and layouts.
+        /// You can't add or remove the multiview configuration itself.
+        /// </para>
+        /// </summary>
+        public MultiviewConfiguration MultiviewConfiguration
+        {
+            get { return this._multiviewConfiguration; }
+            set { this._multiviewConfiguration = value; }
+        }
+
+        // Check to see if MultiviewConfiguration property is set
+        internal bool IsSetMultiviewConfiguration()
+        {
+            return this._multiviewConfiguration != null;
         }
 
         /// <summary>

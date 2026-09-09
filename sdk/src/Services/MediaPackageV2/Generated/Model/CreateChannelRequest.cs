@@ -47,6 +47,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _description;
         private InputSwitchConfiguration _inputSwitchConfiguration;
         private InputType _inputType;
+        private MultiviewConfiguration _multiviewConfiguration;
         private OutputHeaderConfiguration _outputHeaderConfiguration;
         private OutputLockingMode _outputLockingMode;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -153,9 +154,9 @@ namespace Amazon.MediaPackageV2.Model
         /// <summary>
         /// Gets and sets the property InputType. 
         /// <para>
-        /// The input type will be an immutable field which will be used to define whether the
-        /// channel will allow CMAF ingest or HLS ingest. If unprovided, it will default to HLS
-        /// to preserve current behavior.
+        /// The input type is an immutable field. It defines whether the channel allows CMAF ingest,
+        /// HLS ingest, or server-side multiview output. Multiview channels receive no ingest
+        /// of their own. If unprovided, the value defaults to HLS.
         /// </para>
         ///  
         /// <para>
@@ -171,6 +172,12 @@ namespace Amazon.MediaPackageV2.Model
         ///  <c>CMAF</c> - The DASH-IF CMAF Ingest specification (which defines CMAF segments
         /// with optional DASH manifests).
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MULTIVIEW</c> – Server-side multiview. The channel receives no ingest of its own.
+        /// Instead, it composites video from the source channels in its <c>MultiviewConfiguration</c>
+        /// into a single tiled output stream.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public InputType InputType
@@ -183,6 +190,25 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetInputType()
         {
             return this._inputType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiviewConfiguration. 
+        /// <para>
+        /// The multiview configuration for the channel. This setting is required when <c>InputType</c>
+        /// is <c>MULTIVIEW</c>, and can't be set for any other input type.
+        /// </para>
+        /// </summary>
+        public MultiviewConfiguration MultiviewConfiguration
+        {
+            get { return this._multiviewConfiguration; }
+            set { this._multiviewConfiguration = value; }
+        }
+
+        // Check to see if MultiviewConfiguration property is set
+        internal bool IsSetMultiviewConfiguration()
+        {
+            return this._multiviewConfiguration != null;
         }
 
         /// <summary>

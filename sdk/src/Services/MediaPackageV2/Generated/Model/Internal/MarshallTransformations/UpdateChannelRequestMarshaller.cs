@@ -96,6 +96,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMultiviewConfiguration())
+            {
+                context.Writer.WritePropertyName("MultiviewConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MultiviewConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MultiviewConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetOutputHeaderConfiguration())
             {
                 context.Writer.WritePropertyName("OutputHeaderConfiguration");

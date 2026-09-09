@@ -956,6 +956,10 @@ namespace Amazon.MediaPackageV2
         /// Constant HLS for InputType
         /// </summary>
         public static readonly InputType HLS = new InputType("HLS");
+        /// <summary>
+        /// Constant MULTIVIEW for InputType
+        /// </summary>
+        public static readonly InputType MULTIVIEW = new InputType("MULTIVIEW");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1082,6 +1086,72 @@ namespace Amazon.MediaPackageV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MssManifestLayout(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MultiviewLayoutType.
+    /// </summary>
+    public class MultiviewLayoutType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LAYOUT_2EH for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_2EH = new MultiviewLayoutType("LAYOUT_2EH");
+        /// <summary>
+        /// Constant LAYOUT_2PL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_2PL = new MultiviewLayoutType("LAYOUT_2PL");
+        /// <summary>
+        /// Constant LAYOUT_3EL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_3EL = new MultiviewLayoutType("LAYOUT_3EL");
+        /// <summary>
+        /// Constant LAYOUT_3PL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_3PL = new MultiviewLayoutType("LAYOUT_3PL");
+        /// <summary>
+        /// Constant LAYOUT_4E for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_4E = new MultiviewLayoutType("LAYOUT_4E");
+        /// <summary>
+        /// Constant LAYOUT_4PL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_4PL = new MultiviewLayoutType("LAYOUT_4PL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MultiviewLayoutType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiviewLayoutType FindValue(string value)
+        {
+            return FindValue<MultiviewLayoutType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiviewLayoutType(string value)
         {
             return FindValue(value);
         }
@@ -2082,6 +2152,102 @@ namespace Amazon.MediaPackageV2
         /// Constant MISSING_CERTIFICATE_DOMAIN_NAME for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType MISSING_CERTIFICATE_DOMAIN_NAME = new ValidationExceptionType("MISSING_CERTIFICATE_DOMAIN_NAME");
+        /// <summary>
+        /// Constant MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED");
+        /// <summary>
+        /// Constant MULTIVIEW_CONFIGURATION_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_CONFIGURATION_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_CONFIGURATION_NOT_ALLOWED");
+        /// <summary>
+        /// Constant MULTIVIEW_CONFIGURATION_REQUIRED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_CONFIGURATION_REQUIRED = new ValidationExceptionType("MULTIVIEW_CONFIGURATION_REQUIRED");
+        /// <summary>
+        /// Constant MULTIVIEW_DUPLICATE_LAYOUT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_DUPLICATE_LAYOUT = new ValidationExceptionType("MULTIVIEW_DUPLICATE_LAYOUT");
+        /// <summary>
+        /// Constant MULTIVIEW_DUPLICATE_SOURCE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_DUPLICATE_SOURCE = new ValidationExceptionType("MULTIVIEW_DUPLICATE_SOURCE");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION");
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_START_TAG for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_START_TAG = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_START_TAG");
+        /// <summary>
+        /// Constant MULTIVIEW_INVALID_TIME_DELAY_SECONDS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INVALID_TIME_DELAY_SECONDS = new ValidationExceptionType("MULTIVIEW_INVALID_TIME_DELAY_SECONDS");
+        /// <summary>
+        /// Constant MULTIVIEW_MANIFEST_WINDOW_TOO_LONG for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_MANIFEST_WINDOW_TOO_LONG = new ValidationExceptionType("MULTIVIEW_MANIFEST_WINDOW_TOO_LONG");
+        /// <summary>
+        /// Constant MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED");
+        /// <summary>
+        /// Constant MULTIVIEW_RESET_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_RESET_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_RESET_NOT_ALLOWED");
+        /// <summary>
+        /// Constant MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER = new ValidationExceptionType("MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER");
+        /// <summary>
+        /// Constant MULTIVIEW_SOURCE_INVALID_INPUT_TYPE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_INVALID_INPUT_TYPE = new ValidationExceptionType("MULTIVIEW_SOURCE_INVALID_INPUT_TYPE");
+        /// <summary>
+        /// Constant MULTIVIEW_SOURCE_NON_EPOCH_LOCKED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_NON_EPOCH_LOCKED = new ValidationExceptionType("MULTIVIEW_SOURCE_NON_EPOCH_LOCKED");
+        /// <summary>
+        /// Constant MULTIVIEW_SOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_NOT_FOUND = new ValidationExceptionType("MULTIVIEW_SOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED");
         /// <summary>
         /// Constant NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION for ValidationExceptionType
         /// </summary>

@@ -58,6 +58,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AttachedMultiviewChannels", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.AttachedMultiviewChannels = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ChannelGroupName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.ModifiedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MultiviewConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = MultiviewConfigurationUnmarshaller.Instance;
+                    response.MultiviewConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputHeaderConfiguration", targetDepth, ref reader))
