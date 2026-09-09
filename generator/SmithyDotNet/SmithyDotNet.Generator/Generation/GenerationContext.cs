@@ -94,10 +94,17 @@ public class GenerationContext
     public EndpointRuleSet? EndpointRuleSet { get; }
 
     /// <summary>
-    /// Whether any shape carries an endpoint context-parameter trait (service <c>clientContextParams</c>,
-    /// operation <c>staticContextParams</c>, or member <c>contextParam</c>).
+    /// The service's <c>clientContextParams</c> as client-config properties, empty when the trait is
+    /// absent. The config writer emits a property per entry; the endpoint resolver assigns from it.
     /// </summary>
-    public bool HasEndpointContextParams { get; }
+    public IReadOnlyList<ClientContextParameter> ClientContextParameters { get; }
+
+    /// <summary>
+    /// Per-operation endpoint parameter assignments from <c>staticContextParams</c>,
+    /// <c>operationContextParams</c>, and member <c>contextParam</c>. Only operations that contribute
+    /// an assignment appear, so this is empty for a service using none.
+    /// </summary>
+    public IReadOnlyList<OperationEndpointContext> OperationEndpointContexts { get; }
 
     /// <summary>
     /// Whether the service carries a Smithy endpoint test suite (<c>smithy.rules#endpointTests</c>).
@@ -223,7 +230,7 @@ public class GenerationContext
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
-        HasEndpointContextParams = DetectEndpointContextParams(index);
+        ClientContextParameters = EndpointContextResolver.ResolveClientParameters(index, SdkId);
 
         EndpointTests = index.Service.GetEndpointTests();
         HasEndpointTests = EndpointTests is not null;
@@ -240,6 +247,7 @@ public class GenerationContext
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index);
+        OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
@@ -338,26 +346,6 @@ public class GenerationContext
     /// into the model.
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
-
-    // Context params live on the service, on operations, or on structure members, so all three are
-    // scanned. Members are only reachable through the shapes index.
-    private static bool DetectEndpointContextParams(ServiceIndex index)
-    {
-        if (index.Service.HasEndpointContextParams())
-        {
-            return true;
-        }
-
-        if (index.Operations.Any(operation => operation.Shape.HasEndpointContextParams()))
-        {
-            return true;
-        }
-
-        return index.Shapes.Values
-            .OfType<StructureShape>()
-            .SelectMany(structure => structure.Members.Values)
-            .Any(member => member.HasEndpointContextParams());
-    }
 
     // AWS protocol trait IDs in the legacy generator's resolution priority
     // (smithy-rpc-v2-cbor > json > rest-json > rest-xml > query > ec2). A service that models several

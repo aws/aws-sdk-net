@@ -56,16 +56,36 @@ public static class AWSTraits
     public static EndpointRuleSet? GetEndpointRuleSet(this Shape shape) => DeserializeTrait<EndpointRuleSet>(shape, "smithy.rules#endpointRuleSet");
 
     /// <summary>
-    /// Whether the shape carries an endpoint context-parameter trait: <c>clientContextParams</c>
-    /// (service), <c>staticContextParams</c> (operation), or <c>contextParam</c> (member). These feed
-    /// per-operation endpoint parameter assignment, which the resolver writer doesn't emit yet, so it
-    /// fails loud when one is present.
+    /// The service's <c>clientContextParams</c>, keyed by rule-set parameter name, or <c>null</c> when
+    /// the trait is absent. Each entry becomes a settable property on the generated client config.
     /// </summary>
-    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/parameters.html" /></remarks>
-    public static bool HasEndpointContextParams(this Shape shape) =>
-        shape.Traits.ContainsKey("smithy.rules#clientContextParams")
-        || shape.Traits.ContainsKey("smithy.rules#staticContextParams")
-        || shape.Traits.ContainsKey("smithy.rules#contextParam");
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/parameters.html#smithy-rules-clientcontextparams-trait" /></remarks>
+    public static IReadOnlyDictionary<string, ClientContextParam>? GetClientContextParams(this Shape shape) =>
+        DeserializeTrait<Dictionary<string, ClientContextParam>>(shape, "smithy.rules#clientContextParams");
+
+    /// <summary>
+    /// The operation's <c>staticContextParams</c>, keyed by rule-set parameter name, or <c>null</c>
+    /// when the trait is absent.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/parameters.html#smithy-rules-staticcontextparams-trait" /></remarks>
+    public static IReadOnlyDictionary<string, StaticContextParam>? GetStaticContextParams(this Shape shape) =>
+        DeserializeTrait<Dictionary<string, StaticContextParam>>(shape, "smithy.rules#staticContextParams");
+
+    /// <summary>
+    /// The operation's <c>operationContextParams</c>, keyed by rule-set parameter name, or <c>null</c>
+    /// when the trait is absent.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/parameters.html#smithy-rules-operationcontextparams-trait" /></remarks>
+    public static IReadOnlyDictionary<string, OperationContextParam>? GetOperationContextParams(this Shape shape) =>
+        DeserializeTrait<Dictionary<string, OperationContextParam>>(shape, "smithy.rules#operationContextParams");
+
+    /// <summary>
+    /// The member's <c>contextParam</c>, or <c>null</c> when the trait is absent. Names the rule-set
+    /// parameter the member's value feeds.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/parameters.html#smithy-rules-contextparam-trait" /></remarks>
+    public static ContextParamTrait? GetContextParam(this Shape shape) =>
+        DeserializeTrait<ContextParamTrait>(shape, "smithy.rules#contextParam");
 
     /// <summary>
     /// Whether the service shape carries Smithy endpoint tests. The endpoint provider tests writer

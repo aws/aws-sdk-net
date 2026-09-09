@@ -137,11 +137,13 @@ public class GenerationContextTests
     }
 
     [Fact]
-    public void HasEndpointContextParams_IsFalseForCloudTrailData()
+    public void EndpointContextParams_AreEmptyForCloudTrailData()
     {
-        // CloudTrailData uses no context params. If detection over-fires, the resolver writer throws
-        // and no real service can be generated, so guard the common case explicitly.
-        Assert.False(_context.HasEndpointContextParams);
+        // CloudTrailData uses no context params. If resolution over-fires, the resolver gains
+        // per-operation blocks and the config gains properties that C2J never emitted, so guard the
+        // common case explicitly.
+        Assert.Empty(_context.ClientContextParameters);
+        Assert.Empty(_context.OperationEndpointContexts);
     }
 
     [Fact]

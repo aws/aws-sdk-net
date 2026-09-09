@@ -58,6 +58,15 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
                 WriteUserAgent(writer);
                 if (context.HasEndpointRuleSet)
                 {
+                    // clientContextParams extend the config with a settable property each, which the
+                    // endpoint resolver then reads. Gated on the rule set, like C2J: without one there
+                    // is nothing to feed.
+                    foreach (var parameter in context.ClientContextParameters)
+                    {
+                        writer.WriteLine();
+                        WriteClientContextParameter(writer, parameter);
+                    }
+
                     writer.WriteLine();
                     WriteDetermineServiceOperationEndpoint(writer);
                 }
@@ -137,6 +146,14 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.WriteLine("/// Gets the value of UserAgent property.");
         writer.WriteLine("/// </summary>");
         writer.WriteLine("public override string UserAgent => _userAgent;");
+    }
+
+    private static void WriteClientContextParameter(CodeWriter writer, ClientContextParameter parameter)
+    {
+        writer.WriteLine("/// <summary>");
+        DocumentationFormatter.WriteCommentBlock(writer, DocumentationFormatter.Cleanup(parameter.Documentation));
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {parameter.NativeType} {parameter.Name} {{ get; set; }}");
     }
 
     private static void WriteDetermineServiceOperationEndpoint(CodeWriter writer)
