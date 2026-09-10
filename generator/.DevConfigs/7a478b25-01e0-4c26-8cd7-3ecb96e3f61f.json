@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduced allocations in the clock skew correction pipeline by avoiding boxing of TimeSpan values and repeated Uri.ToString() calls for the request endpoint."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}

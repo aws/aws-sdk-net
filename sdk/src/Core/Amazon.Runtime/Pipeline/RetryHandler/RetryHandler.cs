@@ -309,7 +309,7 @@ namespace Amazon.Runtime.Internal
                 Logger.InfoFormat("WebException ({1}) making request {2} to {3}. Attempting retry {4} of {5}.",
                           webException.Status,
                           requestContext.RequestName,
-                          requestContext.Request.Endpoint.ToString(),
+                          requestContext.Request.GetEndpointString(),
                           requestContext.Retries,
                           this.RetryPolicy.MaxRetries);
             }
@@ -319,7 +319,7 @@ namespace Amazon.Runtime.Internal
                 Logger.InfoFormat("{0} making request {1} to {2}. Attempting retry {3} of {4}.",
                               exception.GetType().Name,
                               requestContext.RequestName,
-                              requestContext.Request.Endpoint.ToString(),
+                              requestContext.Request.GetEndpointString(),
                               requestContext.Retries,
                               this.RetryPolicy.MaxRetries);
 #if !NETSTANDARD
@@ -332,7 +332,7 @@ namespace Amazon.Runtime.Internal
             Logger.Error(exception, "{0} making request {1} to {2}. Attempt {3}.",
                           exception.GetType().Name,
                           requestContext.RequestName,
-                          requestContext.Request.Endpoint.ToString(),
+                          requestContext.Request.GetEndpointString(),
                           requestContext.Retries + 1);
         }
 

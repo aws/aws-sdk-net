@@ -43,6 +43,7 @@ namespace Amazon.Runtime.Internal
         readonly List<EventStreamHeader> eventHeaders = new List<EventStreamHeader>();
 
         Uri endpoint;
+        string endpointString;
         string resourcePath;
         string serviceName;
         readonly AmazonWebServiceRequest originalRequest;
@@ -239,8 +240,19 @@ namespace Amazon.Runtime.Internal
             set
             {
                 this.endpoint = value;
+                this.endpointString = null;
             }
         }
+
+        /// <summary>
+        /// The <see cref="Endpoint"/>, materialized to a string and cached for the lifetime of
+        /// this request instance (invalidated whenever <see cref="Endpoint"/> is reassigned).
+        /// Signing, retry logging and clock skew tracking all need the endpoint as a string at
+        /// least once per attempt; <see cref="Uri.ToString()"/> recomputes it on every call, so
+        /// callers on those hot paths should use this instead of calling
+        /// <c>Endpoint.ToString()</c> themselves. Internal use only, via <see cref="RequestExtensions.GetEndpointString"/>.
+        /// </summary>
+        internal string EndpointString => this.endpointString ?? (this.endpointString = this.endpoint.ToString());
 
         /// <summary>
         /// Gets and Sets the resource path added on to the endpoint.
