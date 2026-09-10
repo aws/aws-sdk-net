@@ -1,3 +1,29 @@
+### 4.0.331.0 (2026-09-10 18:14 UTC)
+* BedrockAgent (4.0.102.0)
+	* TwelveLabs Marengo 3.0 is now an embedding model option in Amazon Bedrock Managed Knowledge Base. Create multimodal embeddings for video, audio, and image content that capture visual scenes, speech, and video cues, not just transcribed text.
+* ConnectContactLens (4.0.101.3)
+	* ConnectContactLens is now generated from its Smithy model. There are no changes to the public API.
+* EC2 (4.0.120.0)
+	* The CreateImage API now supports a BootModeOverride parameter to explicitly set UEFI boot mode on a new AMI, overriding the source instance's inherited boot mode.
+* GeoMaps (4.0.101.6)
+	* GeoMaps is now generated from its Smithy model. There are no changes to the public API.
+* IAMToolbox (4.0.100.3)
+	* IAMToolbox is now generated from its Smithy model. There are no changes to the public API.
+* Outposts (4.0.104.0)
+	* Added fields to identify Outpost generation and rack scaling configuration on Outpost and CatalogItem resources.
+* PricingPlanManager (4.0.100.7)
+	* PricingPlanManager is now generated from its Smithy model. There are no changes to the public API.
+* Resiliencehubv2 (4.0.103.0)
+	* This release adds the ListTestRunSourceEvents and ListTestRunDependencies APIs, which return the alarm state changes during a test run and the dependencies the run blocked.
+* RTBFabric (4.0.102.0)
+	* AWS RTB Fabric now lets you control how traffic is routed to your responder gateway across Availability Zones. Set the new clientRoutingPolicy parameter  to keep traffic within the same Availability Zone or distribute traffic across all Availability Zones.
+* SageMaker (4.0.115.0)
+	* This release adds the ability for customers to attach customer owned Elastic Network Interfaces (ENIs) to HyperPod cluster nodes.
+* SageMakerFeatureStoreRuntime (4.0.101.3)
+	* SageMakerFeatureStoreRuntime is now generated from its Smithy model. There are no changes to the public API.
+* Core 4.0.102.5
+	* Reduced allocations in the clock skew correction pipeline by avoiding boxing of TimeSpan values and repeated Uri.ToString() calls for the request endpoint.
+
 ### 4.0.330.0 (2026-09-09 18:14 UTC)
 * Connect (4.0.116.0)
 	* Add metric configuration field to evaluation forms and ListEvaluationFormAIVersions API for retrieving AI-generated evaluation form versions
