@@ -38,6 +38,7 @@ namespace Amazon.Outposts.Model
         private List<EC2Capacity> _ec2Capacities = AWSConfigs.InitializeCollections ? new List<EC2Capacity>() : null;
         private CatalogItemStatus _itemStatus;
         private float? _powerKva;
+        private RackScalingType _rackScalingType;
         private List<string> _supportedStorage = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<int> _supportedUplinkGbps = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _weightLbs;
@@ -118,6 +119,25 @@ namespace Amazon.Outposts.Model
         internal bool IsSetPowerKva()
         {
             return this._powerKva.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RackScalingType. 
+        /// <para>
+        /// The rack scaling type supported by the catalog item. Valid values are <c>SINGLE_RACK</c>
+        /// and <c>MULTI_RACK</c>.
+        /// </para>
+        /// </summary>
+        public RackScalingType RackScalingType
+        {
+            get { return this._rackScalingType; }
+            set { this._rackScalingType = value; }
+        }
+
+        // Check to see if RackScalingType property is set
+        internal bool IsSetRackScalingType()
+        {
+            return this._rackScalingType != null;
         }
 
         /// <summary>

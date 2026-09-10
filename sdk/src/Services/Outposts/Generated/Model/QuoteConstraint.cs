@@ -41,7 +41,7 @@ namespace Amazon.Outposts.Model
         /// Gets and sets the property QuoteConstraintType. 
         /// <para>
         /// The type of constraint. Valid values are <c>RACK_MAXIMUM</c>, <c>RACK_MAX_POWER_KVA</c>,
-        /// and <c>RACK_MAX_WEIGHT_LBS</c>.
+        /// <c>RACK_MAX_WEIGHT_LBS</c>, and <c>RACK_SPACE_CONSTRAINED</c>.
         /// </para>
         /// </summary>
         public QuoteConstraintType QuoteConstraintType

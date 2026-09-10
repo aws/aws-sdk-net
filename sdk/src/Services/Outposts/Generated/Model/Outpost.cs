@@ -37,11 +37,13 @@ namespace Amazon.Outposts.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private string _description;
+        private OutpostGeneration _generation;
         private string _lifeCycleStatus;
         private string _name;
         private string _outpostArn;
         private string _outpostId;
         private string _ownerId;
+        private RackScalingType _rackScalingType;
         private string _siteArn;
         private string _siteId;
         private SupportedHardwareType _supportedHardwareType;
@@ -93,6 +95,25 @@ namespace Amazon.Outposts.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Generation. 
+        /// <para>
+        /// The Outpost generation. Valid values are <c>GENERATION_1</c> for first-generation
+        /// rack deployments and <c>GENERATION_2</c> for second-generation rack deployments.
+        /// </para>
+        /// </summary>
+        public OutpostGeneration Generation
+        {
+            get { return this._generation; }
+            set { this._generation = value; }
+        }
+
+        // Check to see if Generation property is set
+        internal bool IsSetGeneration()
+        {
+            return this._generation != null;
         }
 
         /// <summary>
@@ -176,6 +197,25 @@ namespace Amazon.Outposts.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RackScalingType. 
+        /// <para>
+        /// The rack scaling type. Valid values are <c>SINGLE_RACK</c> for single-rack Outposts
+        /// and <c>MULTI_RACK</c> for multi-rack Outposts that can expand across multiple racks.
+        /// </para>
+        /// </summary>
+        public RackScalingType RackScalingType
+        {
+            get { return this._rackScalingType; }
+            set { this._rackScalingType = value; }
+        }
+
+        // Check to see if RackScalingType property is set
+        internal bool IsSetRackScalingType()
+        {
+            return this._rackScalingType != null;
         }
 
         /// <summary>

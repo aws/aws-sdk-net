@@ -1908,6 +1908,10 @@ namespace Amazon.Outposts
         /// Constant RACK_MAXIMUM for QuoteConstraintType
         /// </summary>
         public static readonly QuoteConstraintType RACK_MAXIMUM = new QuoteConstraintType("RACK_MAXIMUM");
+        /// <summary>
+        /// Constant RACK_SPACE_CONSTRAINED for QuoteConstraintType
+        /// </summary>
+        public static readonly QuoteConstraintType RACK_SPACE_CONSTRAINED = new QuoteConstraintType("RACK_SPACE_CONSTRAINED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2146,6 +2150,56 @@ namespace Amazon.Outposts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QuoteStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RackScalingType.
+    /// </summary>
+    public class RackScalingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_RACK for RackScalingType
+        /// </summary>
+        public static readonly RackScalingType MULTI_RACK = new RackScalingType("MULTI_RACK");
+        /// <summary>
+        /// Constant SINGLE_RACK for RackScalingType
+        /// </summary>
+        public static readonly RackScalingType SINGLE_RACK = new RackScalingType("SINGLE_RACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RackScalingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RackScalingType FindValue(string value)
+        {
+            return FindValue<RackScalingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RackScalingType(string value)
         {
             return FindValue(value);
         }
