@@ -112,10 +112,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 base.CustomizeRuntimePipeline(pipeline);
 
                 var retryHandler = pipeline.Handlers.Find(h => h is RetryHandler) as RetryHandler;
-                if (retryHandler.RetryPolicy is StandardRetryPolicy standardPolicy)
+                if (retryHandler == null)
                 {
-                    standardPolicy.MaxBackoffInMilliseconds = 1;
+                    throw new InvalidOperationException(
+                        "CapacityManagerTests expected a RetryHandler in the runtime pipeline so retry backoff could be reduced for deterministic test performance.");
                 }
+
+                if (!(retryHandler.RetryPolicy is StandardRetryPolicy standardPolicy))
+                {
+                    throw new InvalidOperationException(
+                        "CapacityManagerTests expected RetryHandler.RetryPolicy to be StandardRetryPolicy so retry backoff could be reduced for deterministic test performance.");
+                }
+
+                standardPolicy.MaxBackoffInMilliseconds = 1;
             }
         }
 
