@@ -1,3 +1,4 @@
+using Amazon.Runtime.Internal;
 using Amazon.S3;
 using AWSSDK_DotNet.CommonTest.Utils;
 using System;
@@ -76,8 +77,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     }
                 };
 
-                using (var client = new AmazonS3Client(new AmazonS3Config 
-                { 
+                using (var client = new MinimalBackoffS3Client(new AmazonS3Config
+                {
                     ServiceURL = "http://localhost:" + servlet.Port,
                     MaxErrorRetry = 1
                 }))
@@ -93,6 +94,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                     retryFlag = true;
                     requestCount = 0;
                     FailureRetryRequests(TotalRequests, RetryRequests, ExtraRequests, client);
+                }
+            }
+        }
+
+        /// <summary>
+        /// S3 client whose retry policy sleeps at most 1ms between retries. Capacity
+        /// accounting is independent of backoff duration; without this the ~1000
+        /// retries against the local servlet each sleep a real backoff.
+        /// </summary>
+        private class MinimalBackoffS3Client : AmazonS3Client
+        {
+            public MinimalBackoffS3Client(AmazonS3Config config) : base(config) { }
+
+            protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
+            {
+                base.CustomizeRuntimePipeline(pipeline);
+
+                var retryHandler = pipeline.Handlers.Find(h => h is RetryHandler) as RetryHandler;
+                if (retryHandler.RetryPolicy is StandardRetryPolicy standardPolicy)
+                {
+                    standardPolicy.MaxBackoffInMilliseconds = 1;
                 }
             }
         }
