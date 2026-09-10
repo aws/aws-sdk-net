@@ -41,6 +41,7 @@ namespace Amazon.RTBFabric.Model
     /// </summary>
     public partial class CreateResponderGatewayRequest : AmazonRTBFabricRequest
     {
+        private ClientRoutingPolicy _clientRoutingPolicy;
         private string _clientToken;
         private string _description;
         private string _domainName;
@@ -56,9 +57,66 @@ namespace Amazon.RTBFabric.Model
         private string _vpcId;
 
         /// <summary>
+        /// Gets and sets the property ClientRoutingPolicy. 
+        /// <para>
+        /// The client routing policy of the gateway. This policy controls which Availability
+        /// Zones RTB Fabric uses to reach the gateway for the requester gateways that send traffic
+        /// to it. Valid values are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AVAILABILITY_ZONE_AFFINITY</c>: RTB Fabric routes each requester's traffic to
+        /// gateway capacity in the requester's own Availability Zone when the gateway has capacity
+        /// available there. Otherwise, RTB Fabric routes the traffic to gateway capacity in the
+        /// other Availability Zones of the gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ANY_AVAILABILITY_ZONE</c>: RTB Fabric routes each requester's traffic to gateway
+        /// capacity in every Availability Zone that the subnets of the gateway span. The Availability
+        /// Zone that the requester is in does not change this.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, RTB Fabric uses <c>AVAILABILITY_ZONE_AFFINITY</c>. To
+        /// get the behavior of <c>ANY_AVAILABILITY_ZONE</c>, create the gateway with subnets
+        /// in more than one Availability Zone. RTB Fabric does not support partial Availability
+        /// Zone affinity, so <c>PARTIAL_AVAILABILITY_ZONE_AFFINITY</c> is not a valid value.
+        /// For more information, see <a href="https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-gateways.html#configuring-availability-zone-affinity">Configuring
+        /// Availability Zone affinity</a> in the <i>Amazon Web Services RTB Fabric User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ClientRoutingPolicy ClientRoutingPolicy
+        {
+            get { return this._clientRoutingPolicy; }
+            set { this._clientRoutingPolicy = value; }
+        }
+
+        // Check to see if ClientRoutingPolicy property is set
+        internal bool IsSetClientRoutingPolicy()
+        {
+            return this._clientRoutingPolicy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The unique client token.
+        /// Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency
+        /// of the request. This lets you safely retry the request without accidentally performing
+        /// the same operation a second time. Passing the same value to a later call to an operation
+        /// requires that you also pass the same value for all other parameters. We recommend
+        /// that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID
+        /// type of value</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't provide this value, then Amazon Web Services generates a random one for
+        /// you.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <c>clientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -227,7 +285,9 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// The unique identifiers of the subnets.
+        /// Unique identifiers of the subnets. A service quota for your account sets the number
+        /// of Availability Zones that your subnets can span. By default, this quota is one Availability
+        /// Zone. To span more Availability Zones, request a quota increase.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -107,7 +107,10 @@ namespace Amazon.RTBFabric.Model
         /// <summary>
         /// Gets and sets the property LogSettings. 
         /// <para>
-        /// Settings for the application logs.
+        /// Application log settings for the link. This value is required. Under <c>applicationLogs.sampling</c>,
+        /// the <c>errorLog</c> and <c>filterLog</c> fields set the percentage of eligible events
+        /// to log. Valid values range from <c>0</c> through <c>100</c>. To turn off application
+        /// logs, set both fields to <c>0</c>, as in <c>{"applicationLogs":{"sampling":{"errorLog":0,"filterLog":0}}}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

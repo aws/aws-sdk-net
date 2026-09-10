@@ -58,6 +58,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
                     response.ActiveLinksCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("clientRoutingPolicy", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ClientRoutingPolicy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

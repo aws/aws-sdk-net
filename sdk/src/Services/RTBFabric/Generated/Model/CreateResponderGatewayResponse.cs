@@ -34,10 +34,32 @@ namespace Amazon.RTBFabric.Model
     /// </summary>
     public partial class CreateResponderGatewayResponse : AmazonWebServiceResponse
     {
+        private ClientRoutingPolicy _clientRoutingPolicy;
         private string _externalInboundEndpoint;
         private string _gatewayId;
         private ListenerConfig _listenerConfig;
         private ResponderGatewayStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ClientRoutingPolicy. 
+        /// <para>
+        /// The client routing policy of the gateway. This policy controls which Availability
+        /// Zones RTB Fabric uses to reach the gateway for the requester gateways that send traffic
+        /// to it. For more information, see <a href="https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-gateways.html#configuring-availability-zone-affinity">Configuring
+        /// Availability Zone affinity</a> in the <i>Amazon Web Services RTB Fabric User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ClientRoutingPolicy ClientRoutingPolicy
+        {
+            get { return this._clientRoutingPolicy; }
+            set { this._clientRoutingPolicy = value; }
+        }
+
+        // Check to see if ClientRoutingPolicy property is set
+        internal bool IsSetClientRoutingPolicy()
+        {
+            return this._clientRoutingPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ExternalInboundEndpoint. 

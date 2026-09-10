@@ -34,8 +34,30 @@ namespace Amazon.RTBFabric.Model
     /// </summary>
     public partial class UpdateResponderGatewayResponse : AmazonWebServiceResponse
     {
+        private ClientRoutingPolicy _clientRoutingPolicy;
         private string _gatewayId;
         private ResponderGatewayStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property ClientRoutingPolicy. 
+        /// <para>
+        /// The client routing policy of the gateway. If the operation changed this policy, the
+        /// gateway uses the new policy after its status returns to <c>ACTIVE</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-gateways.html#configuring-availability-zone-affinity">Configuring
+        /// Availability Zone affinity</a> in the <i>Amazon Web Services RTB Fabric User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ClientRoutingPolicy ClientRoutingPolicy
+        {
+            get { return this._clientRoutingPolicy; }
+            set { this._clientRoutingPolicy = value; }
+        }
+
+        // Check to see if ClientRoutingPolicy property is set
+        internal bool IsSetClientRoutingPolicy()
+        {
+            return this._clientRoutingPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GatewayId. 

@@ -75,7 +75,7 @@ namespace Amazon.RTBFabric.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// If you retry the operation with the same <c>clientToken</c>, but with different parameters,
         /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>

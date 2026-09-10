@@ -1456,7 +1456,16 @@ namespace Amazon.RTBFabric
 
 
         /// <summary>
-        /// Updates a responder gateway.
+        /// Updates the description, Auto Scaling group managed endpoint configuration, trust
+        /// store configuration, and client routing policy of a responder gateway. This operation
+        /// also updates the <c>protocols</c> list in the listener configuration.
+        /// 
+        ///  
+        /// <para>
+        /// You cannot change the <c>domainName</c>, <c>port</c>, and <c>protocol</c> values that
+        /// you set when you create a responder gateway. To change any of them, delete the gateway
+        /// and create a new one.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResponderGateway service method.</param>
         /// <param name="cancellationToken">

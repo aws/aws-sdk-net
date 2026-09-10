@@ -73,6 +73,12 @@ namespace Amazon.RTBFabric.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientRoutingPolicy())
+            {
+                context.Writer.WritePropertyName("clientRoutingPolicy");
+                context.Writer.WriteStringValue(publicRequest.ClientRoutingPolicy);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
