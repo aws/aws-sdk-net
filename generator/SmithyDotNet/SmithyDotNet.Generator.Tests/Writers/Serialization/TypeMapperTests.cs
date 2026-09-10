@@ -212,18 +212,26 @@ public class TypeMapperTests
         Assert.False(body.Type.IsScalar);
     }
 
-    [Theory]
-    [InlineData("smithy.api#Blob")] // blob element -> MemoryStream, only valid as an @httpPayload body
-    public void UnsupportedCollectionElement_Throws(string elementTarget)
+    [Fact]
+    public void NonStreamingBlobCollectionElement_ResolvesToMemoryStream()
+    {
+        // A non-streaming blob element base64-encodes like a blob body member, so it maps to
+        // List<MemoryStream> rather than failing loud.
+        var list = TestModels.DeserializeShape("""{ "type": "list", "member": { "target": "smithy.api#Blob" } }""");
+        Assert.Equal("List<MemoryStream>", TypeMapper.MapType(ShapeId.Parse("com.example#BlobList"), list, _context));
+    }
+
+    [Fact]
+    public void StreamingBlobCollectionElement_Throws()
     {
         // The collection writers route string, value-type scalar (intEnum included, as a plain int), enum
-        // (collapsed to string), structure, document, and nested-collection elements. Only a blob can't
-        // ride those leaf paths - it's body/@httpPayload-only. MapType must fail loud on such a leaf rather
-        // than mapping the type and blowing up deep in the writer. (Nested list/map elements are fine -
-        // they recurse; enum/intEnum/value-type scalars are supported - see the resolves theories below.)
-        var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
-        var id = ShapeId.Parse("com.example#EnumList");
-        Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
+        // (collapsed to string), structure, document, non-streaming blob (base64), and nested-collection
+        // elements. Only a @streaming blob can't ride those leaf paths - it maps to Stream and is
+        // @httpPayload-only, and WriteBase64StringValue takes a MemoryStream. MapType must fail loud on
+        // such a leaf rather than emitting code that won't compile.
+        var context = TestModels.Context("Codegen/payload-model.json");
+        var list = TestModels.DeserializeShape("""{ "type": "list", "member": { "target": "com.example#StreamingBlob" } }""");
+        Assert.Throws<GeneratorException>(() => TypeMapper.MapType(ShapeId.Parse("com.example#StreamList"), list, context));
     }
 
     [Theory]

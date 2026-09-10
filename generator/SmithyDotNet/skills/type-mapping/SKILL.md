@@ -19,11 +19,11 @@ description: Smithy shape to .NET type mapping, nullability, and collection defa
 | `short` | — | Not supported yet — throws |
 | `bigInteger` | — | Not supported yet — throws. Wider-numeric types are earmarked for a dedicated numerics extension |
 | `bigDecimal` | — | Not supported yet — throws |
-| `blob` | `MemoryStream` | Supported as an `@httpPayload` body or a JSON body member (base64 string on the wire). A header, query, or collection-element blob still throws. Target: streaming blobs → `Stream` |
-| `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type; (un)marshals wholesale through the runtime document transforms. Supported as a body member, list element, or map value; an `@httpPayload` document throws |
+| `blob` | `MemoryStream` | Supported as an `@httpPayload` body, a JSON body member, or a list element / map value (base64 string on the wire). A header or query blob still throws. Streaming blobs → `Stream` (`@httpPayload`-only; throws as a collection element) |
+| `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type; (un)marshals wholesale through the runtime document transforms. Supported as a body member, list element, or map value; |
 | `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J. **Only as a member's own type** — inside a collection it is plain `string`; see Enums in Collections |
 | `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` (non-nullable `int` as a collection element) |
-| `list` | `List<T>` | V4 default: `null`; see Collection Defaults. Elements: string/value-type/timestamp/enum/intEnum/structure/document or a nested list/map; value-type/timestamp elements are **non-nullable** (`List<int>`, via `MapNonNullableScalar` — the all-value-types-nullable rule is members-only), flipped back to nullable when the list is `@sparse` (`List<int?>`, matching C2J). An enum element collapses to `string` and an intEnum to plain `int` (`int?` when sparse). Only blob elements throw via `RejectUnsupportedCollectionElement` |
+| `list` | `List<T>` | V4 default: `null`; see Collection Defaults. Elements: string/value-type/timestamp/enum/intEnum/structure/document or a nested list/map; value-type/timestamp elements are **non-nullable** (`List<int>`, via `MapNonNullableScalar` — the all-value-types-nullable rule is members-only), flipped back to nullable when the list is `@sparse` (`List<int?>`, matching C2J). An enum element collapses to `string` and an intEnum to plain `int` (`int?` when sparse). A non-streaming blob element maps to `MemoryStream` (base64 on the wire); only `@streaming` blob elements throw via `RejectUnsupportedCollectionElement` |
 | `map` | `Dictionary<string, TValue>` | V4 default: `null`; see Collection Defaults. Key is always `string` (Smithy requires it; C2J flattens enum keys too). Values follow the same rules as list elements, including `@sparse` nullability |
 | `structure` | Generated class | See structure rules below |
 | `union` | Generated class | Generated as regular structure (matches current SDK) |
@@ -85,9 +85,11 @@ A paginator's `items` element type is a collection element, so it follows the sa
 is `@sparse`), the same call the property type goes through.
 
 An `intEnum` element maps to a plain non-nullable `int` (like `IntegerShape`), so `list<intEnum>` is
-`List<int>` — it does *not* fail loud. The only leaf `RejectUnsupportedCollectionElement` still rejects is
-`blob`, which is supported as an `@httpPayload` body and a JSON body member but has no collection-element
-form. A `document` element is supported and passes the check.
+`List<int>` — it does *not* fail loud. A non-streaming `blob` element maps to `MemoryStream` and
+base64-encodes exactly like a blob body member (`list<blob>` → `List<MemoryStream>`). A `document` element
+is supported and passes the check. The only leaf `RejectUnsupportedCollectionElement` still rejects is a
+`@streaming` blob: it maps to `Stream`, is `@httpPayload`-only, and `StringUtils.WriteBase64StringValue`
+takes a `MemoryStream`, so it can't ride the element path.
 
 C2J's `Customizations.OverrideTreatEnumsAsString` can flip this per shape. That hook is not implemented
 (the loader rejects it), so the default (`true`, i.e. `string`) is the only behavior. The one enum
@@ -149,8 +151,8 @@ To get the .NET type for a structure member:
 ## Prelude Shape Mapping
 
 These shapes are implicit (not in the model JSON) and map directly. See the Type Mapping Table above
-for the positions each one is supported in — `Blob` and `Document` map here but are not accepted
-everywhere:
+for the positions each one is supported in — `Blob` (non-streaming) and `Document` map here and are
+accepted as body members and collection elements, but not everywhere (e.g. a header/query blob throws):
 
 | Prelude shape ID | .NET type |
 |---|---|

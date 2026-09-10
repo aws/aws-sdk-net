@@ -414,10 +414,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     // A @httpPayload member is serialized as the ENTIRE request body, with no wrapping JSON object or
     // property name. A structure payload writes its own object braces around the target's marshaller;
-    // a string/enum payload is the raw UTF-8 body (text/plain; an enum is a string shape in C2J and its
-    // ConstantClass converts implicitly to string); a blob payload is the raw octet-stream body. Matches
-    // C2J output. A union is a structure (structure path); document throws earlier in TypeMapper; a
-    // list/map payload fails loud below.
+    // a document payload delegates the whole body to the runtime DocumentMarshaller (no braces — the
+    // document IS the complete JSON value); a string/enum payload is the raw UTF-8 body (text/plain; an
+    // enum is a string shape in C2J and its ConstantClass converts implicitly to string); a blob payload
+    // is the raw octet-stream body. Matches C2J output where one exists. A union is a structure (structure
+    // path); a list/map payload fails loud below.
     private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
     {
         if (payload.Type.MarshalsAsString)
@@ -441,13 +442,27 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             return;
         }
 
+        if (payload.Type.IsDocument)
+        {
+            // No C2J precedent — C2J represents a document as a structure and no model binds one to
+            // @httpPayload. The runtime DocumentMarshaller writes the whole JSON value itself (object,
+            // array, or scalar), so unlike the structure path there is no WriteStartObject/WriteEndObject
+            // wrapping; it mirrors the document body-member marshaller (JsonBodyMemberMarshaller) over
+            // the shared body scaffold. Content-Type stays application/json (WriteContentType).
+            WriteBodyScaffolding(writer, () =>
+            {
+                writer.WriteLine($"Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.{payload.PropertyName});");
+            });
+            return;
+        }
+
         if (payload.Type.IsBlob)
         {
             WriteBlobPayloadSerialization(writer, payload, unsignedPayload);
             return;
         }
 
-        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
     // A blob payload is the raw body stream; the final Content-Type overrides the one set earlier.

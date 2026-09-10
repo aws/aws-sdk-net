@@ -104,11 +104,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
     // Unmarshalls a @httpPayload response member — the ENTIRE body: a string/enum via StreamReader (an
     // enum is a string shape in C2J and its ConstantClass converts implicitly from string), a structure
-    // via its unmarshaller over a fresh reader (empty-body early-return), a @streaming blob as the raw
-    // response stream (unbuffered), a non-streaming blob copied into a buffered
-    // MemoryStream. Matches C2J output. A union is a structure (structure path); document throws
-    // earlier in TypeMapper; list/map fail loud here. Response-only: JsonExceptionUnmarshallerWriter
-    // fails loud on an @httpPayload error member.
+    // or document via a JSON unmarshaller over a fresh reader (empty-body early-return), a @streaming blob
+    // as the raw response stream (unbuffered), a non-streaming blob copied into a buffered
+    // MemoryStream. Matches C2J output. A union is a structure (structure path); a document takes the
+    // same reader scaffold but the runtime DocumentUnmarshaller (C2J models a document as a structure, so
+    // it too takes the unmarshallPayload branch — see bedrock-agentcore GetAgentCardResponse); list/map
+    // fail loud here. Response-only: JsonExceptionUnmarshallerWriter fails loud on an @httpPayload error member.
     private static void WritePayloadUnmarshall(CodeWriter writer, Member payload)
     {
         if (payload.Type.MarshalsAsString)
@@ -120,11 +121,16 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             return;
         }
 
-        if (payload.Type.IsStructure)
+        if (payload.Type.IsStructure || payload.Type.IsDocument)
         {
+            // A document reuses the DocumentUnmarshaller that body-member and collection-element documents
+            // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
+            var unmarshaller = payload.Type.IsDocument
+                ? "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller"
+                : $"{payload.Type.DotNetType}Unmarshaller";
             writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
             writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
-            writer.WriteLine($"var unmarshaller = {payload.Type.DotNetType}Unmarshaller.Instance;");
+            writer.WriteLine($"var unmarshaller = {unmarshaller}.Instance;");
             writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
             return;
         }
@@ -149,7 +155,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             return;
         }
 
-        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
     // The JSON body reader loop over the in-scope `reader`, shared by the response and exception

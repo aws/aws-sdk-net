@@ -96,8 +96,10 @@ member is `IsSet`-guarded, then written per Type → Marshal/Unmarshal under its
 
 - Structures dispatch to `{Shape}Marshaller.Instance`; lists/maps loop and recurse to any depth
   (`JsonBodyMemberMarshaller.WriteCollectionValue`). Map keys are always strings.
-- Collection leaves: string, value-type scalar, structure, or document. An enum leaf collapses to a
-  string, an intEnum to a plain `int`; blob leaves fail loud in `TypeMapper`. Non-sparse value-type
+- Collection leaves: string, value-type scalar, structure, document, or non-streaming blob (base64 via
+  `StringUtils.WriteBase64StringValue`). An enum leaf collapses to a string, an intEnum to a plain `int`;
+  only `@streaming` blob leaves fail loud in `TypeMapper`. A `@sparse` blob leaf is null-guarded (the
+  base64 helper dereferences its argument), unlike a null string which already writes JSON null. Non-sparse value-type
   leaves are non-nullable (`List<int>` — the all-value-types-nullable rule is members-only), so they
   write bare: no `.Value` unwrap, no float/double NaN guard (both member-only). `@timestampFormat`
   is honored on leaves.
@@ -114,6 +116,7 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
 
 - **String** → `text/plain` (or the target's `@mediaType` value when present), no scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
 - **Structure** → `application/json`; the scaffold above, then the target's marshaller as the body object (`WriteStartObject` → `{Type}Marshaller.Instance.Marshall(publicRequest.{Prop}, context)` → `WriteEndObject`).
+- **Document** → `application/json`; the scaffold above, then `Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.{Prop});` — NO `WriteStartObject`/`WriteEndObject` wrapping (the document is the whole JSON value, object/array/scalar). No C2J precedent (C2J represents a document as a structure and no model binds one to `@httpPayload`); designed to mirror the document body-member marshaller.
 - **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (or the target's `@mediaType` value when present; overrides the top `application/json`); adds `using System.Globalization;`. Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`; emitted code is pinned in `BlobCodegenTests`):
   - **`@streaming` + `@unsignedPayload`, no `@requiresLength`** → seek to start and set Content-Length when the stream is seekable, else `Transfer-Encoding: chunked` (length unknown up front, and signing is off anyway).
   - **`@streaming` + `@requiresLength`** → stream MUST be seekable (throws `InvalidOperationException` otherwise), then always sets Content-Length. `@requiresLength` wins over the unsigned chunked path.
@@ -121,9 +124,8 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
 
   Separately, `aws.auth#unsignedPayload` on the operation emits `request.DisablePayloadSigning = true;` after the body block, for **any** body kind (not just blobs).
 
-List, map, and document payloads all fail loud in the writer — a document maps in `TypeMapper` (it is a
-supported body member) but has no `@httpPayload` form. A union derives from `StructureShape`, so a union
-payload takes the structure path.
+List and map payloads fail loud in the writer. A union derives from `StructureShape`, so a union payload
+takes the structure path; a document takes the document path above.
 
 ### `@endpoint` host prefix (request)
 
@@ -154,7 +156,8 @@ The body loop is `while (context.ReadAtDepth(targetDepth, ref reader))` with a
 - Nested collections compose recursively (`JsonBodyMemberUnmarshaller.CollectionUnmarshaller`): a map-of-list
   is `JsonDictionaryUnmarshaller<string, List<T>, StringUnmarshaller, JsonListUnmarshaller<T, TU>>(...)`. An
   enum leaf (and an enum key) is `string`/`StringUnmarshaller` — never a ConstantClass generic arg; an intEnum
-  leaf is a plain `int`/`IntUnmarshaller`. Only blob leaves fail loud in `TypeMapper`.
+  leaf is a plain `int`/`IntUnmarshaller`; a non-streaming blob leaf is `MemoryStream`/`MemoryStreamUnmarshaller`.
+  Only `@streaming` blob leaves fail loud in `TypeMapper`.
 
 ### `@httpPayload` (response)
 
@@ -162,6 +165,7 @@ A `@httpPayload` output member IS the whole body (replaces the named-field loop;
 
 - **String** → `using (var sr = new StreamReader(context.Stream)) { unmarshalledObject.Body = sr.ReadToEnd(); }`
 - **Structure** → reader + `if (reader.Reader.IsFinalBlock) return unmarshalledObject;` + `{Type}Unmarshaller.Instance.Unmarshall(context, ref reader)`.
+- **Document** → same reader scaffold as structure but the runtime `Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance` (the unmarshaller every other document position uses). Smithy has a distinct `DocumentShape` (`type: "document"`); C2J instead represents a document as a `type: "structure"` carrying `document: true`, so C2J's `IsStructure` is true for it and its response template takes the `unmarshallPayload` branch — we match that output on the Smithy side via the explicit `IsDocument` case (bedrock-agentcore `GetAgentCardResponse`). The request side has a matching document-payload form (see the request `@httpPayload` section above).
 - **Blob** (non-streaming, `MemoryStream`) → `Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms)` into a new `MemoryStream`; assigned only when `ms.Length > 0`, so an empty body leaves the property null (matches C2J).
 - **Streaming blob** (`@streaming`, `Stream`) → assigns the raw `context.Stream` unbuffered (`unmarshalledObject.{Prop} = context.Stream;`) and the unmarshaller class overrides `public override bool HasStreamingProperty => true` (matches C2J — see Polly `SynthesizeSpeech`). Never copies into a `MemoryStream`.
 

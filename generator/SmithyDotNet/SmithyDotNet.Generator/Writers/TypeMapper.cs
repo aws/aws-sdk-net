@@ -18,7 +18,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsBlob">True if this targets a blob shape. A non-streaming blob maps to <c>MemoryStream</c>
 /// (supported as an <c>@httpPayload</c> body or a JSON body member — base64 string on the wire); a
 /// <c>@streaming</c> blob (<see cref="IsStreaming"/>) maps to <c>Stream</c> and is only an <c>@httpPayload</c>
-/// body. Not supported as a header, query, or collection element.</param>
+/// body. A non-streaming blob is also a valid list element / map value (base64, like a body member); a
+/// streaming blob is not. Not supported as a header or query.</param>
 /// <param name="IsStreaming">True if this targets a <c>@streaming</c> blob (maps to <c>Stream</c>, not
 /// <c>MemoryStream</c>). The request marshals identically to a non-streaming blob payload, but the response
 /// assigns the raw response stream instead of buffering it into a <c>MemoryStream</c>.</param>
@@ -262,11 +263,11 @@ public static class TypeMapper
         if (target is BlobShape)
         {
             // A blob maps to MemoryStream, matching C2J. Supported as an @httpPayload body (the
-            // marshaller/unmarshaller payload paths) or a JSON body member (base64 string on the
-            // wire). A blob in a header/query position maps here but fails loud in the writer; as a
-            // collection element it never gets here (RejectUnsupportedCollectionElement throws first).
-            // A @streaming blob instead maps to Stream (the caller reads/writes it without buffering);
-            // Smithy requires it to be the @httpPayload, so it never reaches a body/header/collection path.
+            // marshaller/unmarshaller payload paths), a JSON body member, or a list element / map value
+            // (all base64 string on the wire). A blob in a header/query position maps here but fails loud
+            // in the writer. A @streaming blob instead maps to Stream (the caller reads/writes it without
+            // buffering); Smithy requires it to be the @httpPayload, so it never reaches a body/header/
+            // collection path (RejectUnsupportedCollectionElement fails loud if a model puts one there).
             return target.IsStreaming() ? "Stream" : "MemoryStream";
         }
 
@@ -420,16 +421,16 @@ public static class TypeMapper
     }
 
     // The writers handle string, value-type scalar (bool/int/long/float/double/timestamp), intEnum (as a
-    // plain int), structure, document, and nested-collection (list/map) collection elements. A blob is only
-    // supported as a body member or an @httpPayload body, so it can't ride the leaf paths. Fail here so a
-    // model like list<Blob> doesn't silently map the type then blow up in the writer with a confusing error.
-    // (A list/map element that is itself a list/map is fine - it recurses; only blob leaves are rejected. An
-    // enum element is already a string by the time it gets here - see ElementTarget.)
+    // plain int), structure, document, non-streaming blob (base64 string, like a blob body member), and
+    // nested-collection (list/map) collection elements. A @streaming blob maps to Stream and is valid only
+    // as an @httpPayload body (Smithy forbids it elsewhere), and StringUtils.WriteBase64StringValue takes a
+    // MemoryStream, so it can't ride the element path - fail loud rather than emit code that won't compile.
+    // (An enum element is already a string by the time it gets here - see ElementTarget.)
     private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
     {
-        if (elementTarget is BlobShape)
+        if (elementTarget is BlobShape && elementTarget.IsStreaming())
         {
-            throw new GeneratorException($"Elements of type '{elementTarget.Type}' in a {collectionKind} are not supported yet.");
+            throw new GeneratorException($"A @streaming blob element in a {collectionKind} is not supported; a streaming blob is only valid as an @httpPayload body.");
         }
     }
 

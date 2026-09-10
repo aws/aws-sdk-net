@@ -76,16 +76,22 @@ public static class JsonBodyMemberUnmarshaller
     }
 
     // The runtime unmarshaller type name and an instance expression for a scalar, structure, document,
-    // list, or map type - recursing for nested collections. Scalar leaves resolve via ScalarUnmarshaller on
-    // the element's non-nullable MarshalType (e.g. "int" → IntUnmarshaller), matching the non-sparse element
-    // type; an enum leaf is already a string here (see TypeMapper) so it uses StringUnmarshaller. Map keys
-    // are always strings (see TypeMapper.MapType), so the key unmarshaller is StringUnmarshaller. Only blob
-    // leaves are rejected in TypeMapper (a blob is body/@httpPayload-only).
+    // blob, list, or map type - recursing for nested collections. Scalar leaves resolve via ScalarUnmarshaller
+    // on the element's non-nullable MarshalType (e.g. "int" → IntUnmarshaller), matching the non-sparse element
+    // type; an enum leaf is already a string here (see TypeMapper) so it uses StringUnmarshaller; a blob leaf
+    // uses MemoryStreamUnmarshaller. Map keys are always strings (see TypeMapper.MapType), so the key
+    // unmarshaller is StringUnmarshaller. Only @streaming blob leaves are rejected in TypeMapper.
     private static (string Type, string Instance) CollectionUnmarshaller(TypeDescriptor type)
     {
         if (ScalarUnmarshaller(type.MarshalType) is string scalar)
         {
             return (scalar, $"{scalar}.Instance");
+        }
+        if (type.IsBlob)
+        {
+            // A non-streaming blob element reads a base64 JSON string into a MemoryStream, exactly like a
+            // blob body member (a @streaming blob leaf is rejected in TypeMapper).
+            return ("MemoryStreamUnmarshaller", "MemoryStreamUnmarshaller.Instance");
         }
         if (type.IsDocument)
         {
