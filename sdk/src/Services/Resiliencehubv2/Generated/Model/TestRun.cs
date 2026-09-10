@@ -61,7 +61,8 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property AccountTargeting. 
         /// <para>
-        /// Indicates whether this test run targets a single account or multiple accounts.
+        /// Indicates whether the test run targets resources in a single AWS account or across
+        /// multiple accounts.
         /// </para>
         /// </summary>
         public AccountTargeting AccountTargeting
@@ -338,7 +339,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The IAM execution role name snapshotted from the test when the run was started.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=60)]
+        [AWSProperty(Min=1, Max=576)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -437,7 +438,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The identifier of the test that was run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string TestId
         {
             get { return this._testId; }
@@ -456,7 +457,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The unique identifier of the test run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string TestRunId
         {
             get { return this._testRunId; }

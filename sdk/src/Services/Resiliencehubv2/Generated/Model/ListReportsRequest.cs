@@ -114,6 +114,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property TestRunId.
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TestRunId
         {
             get { return this._testRunId; }

@@ -46,7 +46,8 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property AccountTargeting. 
         /// <para>
-        /// Indicates whether this test run targets a single account or multiple accounts.
+        /// Indicates whether the test run targets resources in a single AWS account or across
+        /// multiple accounts.
         /// </para>
         /// </summary>
         public AccountTargeting AccountTargeting
@@ -161,7 +162,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The unique identifier of the test run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string TestRunId
         {
             get { return this._testRunId; }

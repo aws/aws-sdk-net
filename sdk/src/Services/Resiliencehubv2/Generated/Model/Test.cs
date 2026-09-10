@@ -156,7 +156,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The name of the IAM execution role used to run the test.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=60)]
+        [AWSProperty(Min=1, Max=576)]
         public string RoleName
         {
             get { return this._roleName; }
@@ -236,7 +236,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The unique identifier of the test.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string TestId
         {
             get { return this._testId; }

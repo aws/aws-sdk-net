@@ -175,6 +175,60 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type AlarmState.
+    /// </summary>
+    public class AlarmState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALARM for AlarmState
+        /// </summary>
+        public static readonly AlarmState ALARM = new AlarmState("ALARM");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATA for AlarmState
+        /// </summary>
+        public static readonly AlarmState INSUFFICIENT_DATA = new AlarmState("INSUFFICIENT_DATA");
+        /// <summary>
+        /// Constant OK for AlarmState
+        /// </summary>
+        public static readonly AlarmState OK = new AlarmState("OK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AlarmState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlarmState FindValue(string value)
+        {
+            return FindValue<AlarmState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlarmState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssertionSource.
     /// </summary>
     public class AssertionSource : ConstantClass
@@ -670,6 +724,64 @@ namespace Amazon.Resiliencehubv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DependencyDiscoveryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EksLabelSelectorOperator.
+    /// </summary>
+    public class EksLabelSelectorOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOES_NOT_EXIST for EksLabelSelectorOperator
+        /// </summary>
+        public static readonly EksLabelSelectorOperator DOES_NOT_EXIST = new EksLabelSelectorOperator("DOES_NOT_EXIST");
+        /// <summary>
+        /// Constant EXISTS for EksLabelSelectorOperator
+        /// </summary>
+        public static readonly EksLabelSelectorOperator EXISTS = new EksLabelSelectorOperator("EXISTS");
+        /// <summary>
+        /// Constant IN for EksLabelSelectorOperator
+        /// </summary>
+        public static readonly EksLabelSelectorOperator IN = new EksLabelSelectorOperator("IN");
+        /// <summary>
+        /// Constant NOT_IN for EksLabelSelectorOperator
+        /// </summary>
+        public static readonly EksLabelSelectorOperator NOT_IN = new EksLabelSelectorOperator("NOT_IN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EksLabelSelectorOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksLabelSelectorOperator FindValue(string value)
+        {
+            return FindValue<EksLabelSelectorOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksLabelSelectorOperator(string value)
         {
             return FindValue(value);
         }
@@ -1928,6 +2040,152 @@ namespace Amazon.Resiliencehubv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SystemEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestRunDependencySource.
+    /// </summary>
+    public class TestRunDependencySource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISCOVERED for TestRunDependencySource
+        /// </summary>
+        public static readonly TestRunDependencySource DISCOVERED = new TestRunDependencySource("DISCOVERED");
+        /// <summary>
+        /// Constant MANUAL for TestRunDependencySource
+        /// </summary>
+        public static readonly TestRunDependencySource MANUAL = new TestRunDependencySource("MANUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestRunDependencySource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestRunDependencySource FindValue(string value)
+        {
+            return FindValue<TestRunDependencySource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestRunDependencySource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestRunSourceEventErrorCode.
+    /// </summary>
+    public class TestRunSourceEventErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for TestRunSourceEventErrorCode
+        /// </summary>
+        public static readonly TestRunSourceEventErrorCode ACCESS_DENIED = new TestRunSourceEventErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for TestRunSourceEventErrorCode
+        /// </summary>
+        public static readonly TestRunSourceEventErrorCode INTERNAL_ERROR = new TestRunSourceEventErrorCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestRunSourceEventErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestRunSourceEventErrorCode FindValue(string value)
+        {
+            return FindValue<TestRunSourceEventErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestRunSourceEventErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestRunSourceEventType.
+    /// </summary>
+    public class TestRunSourceEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALARM for TestRunSourceEventType
+        /// </summary>
+        public static readonly TestRunSourceEventType ALARM = new TestRunSourceEventType("ALARM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestRunSourceEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestRunSourceEventType FindValue(string value)
+        {
+            return FindValue<TestRunSourceEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestRunSourceEventType(string value)
         {
             return FindValue(value);
         }

@@ -35,6 +35,7 @@ namespace Amazon.Resiliencehubv2.Model
     public partial class EksSource
     {
         private string _clusterArn;
+        private EksLabelSelector _labelSelector;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -51,6 +52,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetClusterArn()
         {
             return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelSelector. 
+        /// <para>
+        /// Filters discovery to the Kubernetes objects whose labels match the selector. When
+        /// omitted, all supported objects in the specified namespaces are discovered.
+        /// </para>
+        /// </summary>
+        public EksLabelSelector LabelSelector
+        {
+            get { return this._labelSelector; }
+            set { this._labelSelector = value; }
+        }
+
+        // Check to see if LabelSelector property is set
+        internal bool IsSetLabelSelector()
+        {
+            return this._labelSelector != null;
         }
 
         /// <summary>

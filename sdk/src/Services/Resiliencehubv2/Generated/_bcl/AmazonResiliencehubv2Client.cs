@@ -3428,6 +3428,75 @@ namespace Amazon.Resiliencehubv2
 
         #endregion
         
+        #region  ListTestRunDependencies
+
+
+        /// <summary>
+        /// Lists the dependencies that a test run blocked. Each dependency reflects the discovered
+        /// classification captured when the run started, so results do not change if a dependency
+        /// is reclassified after the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRunDependencies service method.</param>
+        /// 
+        /// <returns>The response from the ListTestRunDependencies service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunDependencies">REST API Reference for ListTestRunDependencies Operation</seealso>
+        public virtual ListTestRunDependenciesResponse ListTestRunDependencies(ListTestRunDependenciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestRunDependenciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestRunDependenciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestRunDependenciesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the dependencies that a test run blocked. Each dependency reflects the discovered
+        /// classification captured when the run started, so results do not change if a dependency
+        /// is reclassified after the run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRunDependencies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestRunDependencies service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunDependencies">REST API Reference for ListTestRunDependencies Operation</seealso>
+        public virtual Task<ListTestRunDependenciesResponse> ListTestRunDependenciesAsync(ListTestRunDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestRunDependenciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestRunDependenciesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTestRunDependenciesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTestRunEvents
 
 
@@ -3554,6 +3623,73 @@ namespace Amazon.Resiliencehubv2
             options.ResponseUnmarshaller = ListTestRunsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTestRunsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTestRunSourceEvents
+
+
+        /// <summary>
+        /// Lists the state-change events observed for a test run monitoring source. Events are
+        /// returned for one source per call, in chronological order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRunSourceEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListTestRunSourceEvents service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunSourceEvents">REST API Reference for ListTestRunSourceEvents Operation</seealso>
+        public virtual ListTestRunSourceEventsResponse ListTestRunSourceEvents(ListTestRunSourceEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestRunSourceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestRunSourceEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTestRunSourceEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the state-change events observed for a test run monitoring source. Events are
+        /// returned for one source per call, in chronological order.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRunSourceEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestRunSourceEvents service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunSourceEvents">REST API Reference for ListTestRunSourceEvents Operation</seealso>
+        public virtual Task<ListTestRunSourceEventsResponse> ListTestRunSourceEventsAsync(ListTestRunSourceEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTestRunSourceEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTestRunSourceEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTestRunSourceEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion

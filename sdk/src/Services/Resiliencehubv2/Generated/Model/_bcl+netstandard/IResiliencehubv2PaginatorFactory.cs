@@ -178,6 +178,16 @@ namespace Amazon.Resiliencehubv2.Model
         IListSystemsPaginator ListSystems(ListSystemsRequest request);
 
         /// <summary>
+        /// Paginator for ListTestRunDependencies operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestRunDependenciesPaginator ListTestRunDependencies(ListTestRunDependenciesRequest request);
+
+        /// <summary>
         /// Paginator for ListTestRunEvents operation
         ///</summary>
         [AWSPaginator(
@@ -196,6 +206,16 @@ namespace Amazon.Resiliencehubv2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTestRunsPaginator ListTestRuns(ListTestRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestRunSourceEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestRunSourceEventsPaginator ListTestRunSourceEvents(ListTestRunSourceEventsRequest request);
 
         /// <summary>
         /// Paginator for ListTestRunSources operation

@@ -157,6 +157,14 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
+        /// Paginator for ListTestRunDependencies operation
+        ///</summary>
+        public IListTestRunDependenciesPaginator ListTestRunDependencies(ListTestRunDependenciesRequest request) 
+        {
+            return new ListTestRunDependenciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTestRunEvents operation
         ///</summary>
         public IListTestRunEventsPaginator ListTestRunEvents(ListTestRunEventsRequest request) 
@@ -170,6 +178,14 @@ namespace Amazon.Resiliencehubv2.Model
         public IListTestRunsPaginator ListTestRuns(ListTestRunsRequest request) 
         {
             return new ListTestRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestRunSourceEvents operation
+        ///</summary>
+        public IListTestRunSourceEventsPaginator ListTestRunSourceEvents(ListTestRunSourceEventsRequest request) 
+        {
+            return new ListTestRunSourceEventsPaginator(this.client, request);
         }
 
         /// <summary>
