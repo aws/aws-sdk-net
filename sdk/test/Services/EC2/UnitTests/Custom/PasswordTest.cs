@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.EC2.Model;
@@ -8,6 +11,11 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
     [TestClass]
     public class PasswordTest
     {
+        private const int KeySizeInBits = 2048;
+
+        // Around one key in forty qualifies, so the cap only exists to fail loudly instead of
+        // spinning forever if key generation ever stops behaving randomly.
+        private const int MaxKeyGenerationAttempts = 2000;
 
         // Test an issue with certain combination of private key and encrypted passwords that were causing a encoding issue while decrypting the password.
         [TestMethod]
@@ -15,12 +23,146 @@ namespace AWSSDK_DotNet35.UnitTests.EC2
         [TestCategory("EC2")]
         public void TestMissingLeadingZeroIssue()
         {
-            string encryptedPassword = "Oxaop1Qz5TWS3U4J82qZSVX9WHrA7zaheUugP/Fsa2iq/9XjEPzAWRcnYCZ4icBeS/az/adyOb3b5nLYVMcr2yFANnEYNPWTtypISbuXfrBdqalG6+E45T/yu+Ti3iJo3zaMXvtcR3qQwQ2bFdt8Xo7W9wXwwTjisQbUKe7dHMfjYa/c6knEz+nVj4qyOG5QaLGhkbH7XBnekd/xpatuH4wtgfdvcOlYWeBnxWCmFigaKdhkEXmZavIU05sV5CIvsgiW79LorLpeat3i+pyrJ/x7349f6SyFSS2uOnbDei1nr1JiO4erkJjN6py6RxSsKmNzBCUo8q0+EXTVg5g6SA==";
-            string privateKey = "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAmOMJ9AIxkXBhPK+0dU0CfgqP+uMUnwPa8TwnY9+pl49s2+BGrGVIl+qccYl+\nZ0mu7MDd0MZsQBH2ZNDl+7464sqpA5PlWkl4a3/Mgc/OC00kU2o4aslLGoHUgFfIRtiA40bXEif8\nnHWQR4AWJCGS3w1oLlW4qvUwDzvLZ5dJ6n/erThZAFJa1XEPZgh3vjdLQEkxb1pkgo831niNPC5B\nZYVpr+MfBFgdVt4LdY3B7o6jkA1h7QxeZp9Au84Ag7nE3RELU7ll4U3Z9WK+8NZ+5/mJQ5LrSN47\n2KRR3Z+KBM2GYLo4U1LutL/ajUbZe1IJeTgdZMb1DMvyLu2283uiOwIDAQABAoIBAQCFzn9RjfHw\nBlk0Edtwplu+EGR/Aet0WJ1wcGNRJ9l4ClEOBzYTf/mO7AjL3bhBkd2E3C/Gn0LyuEXbanE+aPmE\nsDZIKVKcOJ0qCInmOwdsILHgR6Dk5RPUOTjQswNX7fiv8bod691M2h/SVCoMqU2v5j39/4xGI51S\nV9Tn7yMEFk5/Lmu9NNAtIrFF5ywsVbT5so6MbGqBRI8KNX71/T9KTJjXxGR9RnrKRv9zrygDw1yB\nNaJW2/HiOfbcACvehqlwBEyRRMNKZ8t+GnwnSbq30V4ojj7DlJ1piM2+11NUpIbXI1chR2iFRvyp\nP2QMp2YDlqvw5pKo8v53YYRJ5CCxAoGBAPg6lN8C39aBPJHgKgH7VtkV1QQudjHWFPRkXeixuKYi\nOZrdqrEKHt69T2aXcazqaJNNMfT3QxLtg8afe3c4Kz7TuIZI5EtKi0Ny6Wx2QhKa/Lq0YAjoAdQO\nlONf3p0eW4367fezegvZeNazKl0M4RAcW1qje5iqU42bSrPrGgq3AoGBAJ2sV/bM7g+ZRgmsbdOS\nJeoKf9n0+iA9/arhnn0/ygkYYOegQP9vOfefafLmKuImRu3mo1D7iuVhk/p7Mkkse0mQ68aZg88H\n3JBuZgf2WokN/lw0JdP40VUPobGZ9xS/a233+cRUn0Idrtslh7aIeR7yhzHIjuQYP7aAX6nnxXCd\nAoGBAOpSGoAebYBGxQ+LRPxT71rDgi8NUOOgjG1bZU6onX6uZiRrxZqTzCpFGHPm2Bb7vDX4tATj\neHygmzlfCSS0cBZBtDmHC4KLXsUP74tEYwC/L31rkhA2OqucDC5LLJCyvIhdbE/cK4SOCMTbokzu\nQHJ94jrAgobNmkvdYPpQH2gnAoGAR5MSo1BHyQD1EDMb7+zqFSILA6/3U2eQnV+qCIVKe3J7mune\nV5XwJH5TJBZj5SEnFZubC4oEdTgkapI+M4VjufN1dEP/151j/JSA8KBeXNTjYIuzmFPdAtYDupF/\n3gU/CT6GPR+E5AiBda3Fu5CcGvZRdMHsS5LOaVRBGOnDcOkCgYAA06F5y5/pdOFGrCGEoF4KOn43\nXbOG4I4WvjYP5u+CHhu4ipKvLT1TzbugO7fV8ilVU1R7R9Ur7MTCiSc7tO8QMkZbBGvUu3LAe3Hb\nAWdLBliOrgOyAjFWervBecbP9h4gn8fOALcQJqnqg2BRRhbN/lTGPsZpaLwRkS4MuQLGnw==\n-----END RSA PRIVATE KEY-----";
+            const string expectedPassword = "test-p@ssw0rd";
 
-            GetPasswordDataResponse response = new GetPasswordDataResponse { PasswordData = encryptedPassword };
-            string decryptedPassword = response.GetDecryptedPassword(privateKey);
-            Assert.IsNotNull(decryptedPassword);
+            using (var rsa = CreateKeyWithShortCrtParameter())
+            {
+                // false selects PKCS#1 v1.5 padding, matching the padding GetDecryptedPassword decrypts with.
+                var encryptedPassword = Convert.ToBase64String(
+                    rsa.Encrypt(Encoding.UTF8.GetBytes(expectedPassword), false));
+
+                var response = new GetPasswordDataResponse { PasswordData = encryptedPassword };
+
+                Assert.AreEqual(expectedPassword, response.GetDecryptedPassword(ExportPkcs1Pem(rsa)));
+            }
+        }
+
+        /// <summary>
+        /// Generates a key holding the condition this test exists for: a CRT parameter whose value is
+        /// shorter than its field width. Such a parameter is DER-encoded without its leading zero byte,
+        /// which is what used to break key parsing and leave the decrypted password mangled.
+        /// </summary>
+        private static RSACryptoServiceProvider CreateKeyWithShortCrtParameter()
+        {
+            for (var attempt = 0; attempt < MaxKeyGenerationAttempts; attempt++)
+            {
+                var rsa = new RSACryptoServiceProvider(KeySizeInBits);
+
+                // Discarded keys must not be left behind in the machine's key store.
+                rsa.PersistKeyInCsp = false;
+
+                if (HasShortParameter(rsa.ExportParameters(includePrivateParameters: true)))
+                {
+                    return rsa;
+                }
+
+                rsa.Dispose();
+            }
+
+            throw new InvalidOperationException(
+                string.Format("Could not generate an RSA key with a short CRT parameter in {0} attempts.",
+                    MaxKeyGenerationAttempts));
+        }
+
+        private static bool HasShortParameter(RSAParameters parameters)
+        {
+            // ExportParameters pads every value to its full field width, so a leading zero byte means
+            // the value itself needs fewer bytes than the field it sits in.
+            var values = new[]
+            {
+                parameters.D, parameters.P, parameters.Q,
+                parameters.DP, parameters.DQ, parameters.InverseQ
+            };
+
+            foreach (var value in values)
+            {
+                if (value.Length > 0 && value[0] == 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static string ExportPkcs1Pem(RSACryptoServiceProvider rsa)
+        {
+            // .NET Framework has no PEM or PKCS#1 export, so the key is encoded by hand.
+            var base64 = Convert.ToBase64String(EncodePkcs1PrivateKey(rsa.ExportParameters(includePrivateParameters: true)));
+            var pem = new StringBuilder("-----BEGIN RSA PRIVATE KEY-----\n");
+
+            for (var offset = 0; offset < base64.Length; offset += 64)
+            {
+                pem.Append(base64, offset, Math.Min(64, base64.Length - offset)).Append('\n');
+            }
+
+            return pem.Append("-----END RSA PRIVATE KEY-----").ToString();
+        }
+
+        /// <summary>
+        /// Encodes the key as a DER RSAPrivateKey (RFC 3447 appendix A.1.2), the structure a
+        /// "BEGIN RSA PRIVATE KEY" PEM body carries.
+        /// </summary>
+        private static byte[] EncodePkcs1PrivateKey(RSAParameters parameters)
+        {
+            var body = new List<byte>();
+            WriteInteger(body, new byte[] { 0 }); // version
+            WriteInteger(body, parameters.Modulus);
+            WriteInteger(body, parameters.Exponent);
+            WriteInteger(body, parameters.D);
+            WriteInteger(body, parameters.P);
+            WriteInteger(body, parameters.Q);
+            WriteInteger(body, parameters.DP);
+            WriteInteger(body, parameters.DQ);
+            WriteInteger(body, parameters.InverseQ);
+
+            var der = new List<byte> { 0x30 }; // SEQUENCE
+            WriteLength(der, body.Count);
+            der.AddRange(body);
+
+            return der.ToArray();
+        }
+
+        private static void WriteInteger(List<byte> output, byte[] value)
+        {
+            var start = 0;
+            while (start < value.Length - 1 && value[start] == 0)
+            {
+                start++; // DER carries the shortest form, so field padding comes off
+            }
+
+            var needsSignByte = (value[start] & 0x80) != 0; // a leading 1 bit would read as negative
+
+            output.Add(0x02); // INTEGER
+            WriteLength(output, value.Length - start + (needsSignByte ? 1 : 0));
+
+            if (needsSignByte)
+            {
+                output.Add(0x00);
+            }
+
+            for (var i = start; i < value.Length; i++)
+            {
+                output.Add(value[i]);
+            }
+        }
+
+        private static void WriteLength(List<byte> output, int length)
+        {
+            if (length < 0x80)
+            {
+                output.Add((byte)length);
+                return;
+            }
+
+            var lengthBytes = new List<byte>();
+            for (var remaining = length; remaining > 0; remaining >>= 8)
+            {
+                lengthBytes.Insert(0, (byte)remaining);
+            }
+
+            output.Add((byte)(0x80 | lengthBytes.Count));
+            output.AddRange(lengthBytes);
         }
     }
 }
