@@ -59,7 +59,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ManagedKnowledgeBaseConfiguration.
+        /// Gets and sets the property ManagedKnowledgeBaseConfiguration. 
+        /// <para>
+        /// Contains configuration details for a knowledge base that uses a vector store fully
+        /// managed by Amazon Bedrock. Specify this object when the knowledge base type is MANAGED.
+        /// </para>
         /// </summary>
         public ManagedKnowledgeBaseConfiguration ManagedKnowledgeBaseConfiguration
         {

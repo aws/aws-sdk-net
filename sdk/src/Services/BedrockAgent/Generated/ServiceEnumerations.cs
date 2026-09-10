@@ -3097,6 +3097,10 @@ namespace Amazon.BedrockAgent
         /// </summary>
         public static readonly ParsingStrategy BEDROCK_FOUNDATION_MODEL = new ParsingStrategy("BEDROCK_FOUNDATION_MODEL");
         /// <summary>
+        /// Constant MULTI_MODAL_EMBEDDINGS for ParsingStrategy
+        /// </summary>
+        public static readonly ParsingStrategy MULTI_MODAL_EMBEDDINGS = new ParsingStrategy("MULTI_MODAL_EMBEDDINGS");
+        /// <summary>
         /// Constant SMART_PARSING for ParsingStrategy
         /// </summary>
         public static readonly ParsingStrategy SMART_PARSING = new ParsingStrategy("SMART_PARSING");

@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgent.Model
         private EmbeddingModelConfiguration _embeddingModelConfiguration;
         private EmbeddingModelType _embeddingModelType;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
+        private SupplementalDataStorageConfiguration _supplementalDataStorageConfiguration;
 
         /// <summary>
         /// Gets and sets the property EmbeddingModelArn. 
@@ -59,7 +60,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmbeddingModelConfiguration.
+        /// Gets and sets the property EmbeddingModelConfiguration. 
+        /// <para>
+        /// The configuration details for the embeddings model. Not required when choosing the
+        /// MANAGED embeddingModelType.
+        /// </para>
         /// </summary>
         public EmbeddingModelConfiguration EmbeddingModelConfiguration
         {
@@ -74,7 +79,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmbeddingModelType.
+        /// Gets and sets the property EmbeddingModelType. 
+        /// <para>
+        /// Choose CUSTOM to provide your own Bedrock embedding model ARN. Choose MANAGED to use
+        /// a service-managed embedding model.
+        /// </para>
         /// </summary>
         public EmbeddingModelType EmbeddingModelType
         {
@@ -89,7 +98,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerSideEncryptionConfiguration.
+        /// Gets and sets the property ServerSideEncryptionConfiguration. 
+        /// <para>
+        /// Contains the configuration for server-side encryption for your managed knowledge base.
+        /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
         {
@@ -101,6 +113,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetServerSideEncryptionConfiguration()
         {
             return this._serverSideEncryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupplementalDataStorageConfiguration. 
+        /// <para>
+        /// Use this object to specify the Amazon S3 location that the knowledge base uses to
+        /// process and ingest multimodal content. This field is required when you use a native
+        /// multimodal embedding model.
+        /// </para>
+        /// </summary>
+        public SupplementalDataStorageConfiguration SupplementalDataStorageConfiguration
+        {
+            get { return this._supplementalDataStorageConfiguration; }
+            set { this._supplementalDataStorageConfiguration = value; }
+        }
+
+        // Check to see if SupplementalDataStorageConfiguration property is set
+        internal bool IsSetSupplementalDataStorageConfiguration()
+        {
+            return this._supplementalDataStorageConfiguration != null;
         }
 
     }

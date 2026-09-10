@@ -80,6 +80,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.ServerSideEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("supplementalDataStorageConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = SupplementalDataStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SupplementalDataStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

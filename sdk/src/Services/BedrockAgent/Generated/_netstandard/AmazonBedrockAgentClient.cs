@@ -45,7 +45,20 @@ namespace Amazon.BedrockAgent
     /// for the lifetime of your application.
     /// </para>
     ///
+    /// <note> 
+    /// <para>
+    /// Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no longer open to new
+    /// customers. For capabilities similar to Bedrock Agents Classic, explore Amazon Bedrock
+    /// AgentCore. Existing customers can continue to use the service as normal. For more
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+    /// Bedrock Agents Classic availability change</a>.
+    /// 
+    ///  </note> 
+    /// <para>
     /// Describes the API operations for creating and managing Amazon Bedrock agents.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class AmazonBedrockAgentClient : AmazonServiceClient, IAmazonBedrockAgent
     {
@@ -394,9 +407,19 @@ namespace Amazon.BedrockAgent
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no longer open to new
+        /// customers. For capabilities similar to Bedrock Agents Classic, explore Amazon Bedrock
+        /// AgentCore. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+        /// Bedrock Agents Classic availability change</a>.
+        /// 
+        ///  </note> 
+        /// <para>
         /// Creates an agent that orchestrates interactions between foundation models, data sources,
         /// software applications, user conversations, and APIs to carry out tasks to help customers.
-        /// 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Specify the following fields for security purposes.
@@ -441,6 +464,7 @@ namespace Amazon.BedrockAgent
         /// uses default prompts, has no action group, and user input is disabled.
         /// </para>
         ///  </li> </ul>
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAgent service method.</param>
         /// <param name="cancellationToken">

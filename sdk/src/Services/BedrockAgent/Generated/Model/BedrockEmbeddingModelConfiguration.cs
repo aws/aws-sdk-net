@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgent.Model
         private List<AudioConfiguration> _audio = AWSConfigs.InitializeCollections ? new List<AudioConfiguration>() : null;
         private int? _dimensions;
         private EmbeddingDataType _embeddingDataType;
+        private Amazon.Runtime.Documents.Document _modelConfiguration;
         private List<VideoConfiguration> _video = AWSConfigs.InitializeCollections ? new List<VideoConfiguration>() : null;
 
         /// <summary>
@@ -44,12 +45,18 @@ namespace Amazon.BedrockAgent.Model
         /// <para>
         /// Configuration settings for processing audio content in multimodal knowledge bases.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field is deprecated. Use <c>modelConfiguration</c> instead.
+        /// </para>
+        ///  </important>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Use Managed Knowledge Base's modelConfiguration field. https://docs.aws.amazon.com/bedrock/latest/userguide/kb-build-managed.html")]
         [AWSProperty(Min=1, Max=1)]
         public List<AudioConfiguration> Audio
         {
@@ -107,16 +114,47 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ModelConfiguration. 
+        /// <para>
+        /// Model-specific configuration for the embedding model, provided as a JSON object. Use
+        /// this field to specify settings that apply to the embedding model that you selected,
+        /// such as how audio and video files are divided into segments.
+        /// </para>
+        ///  
+        /// <para>
+        /// The fields that this object accepts depend on the embedding model. For the settings
+        /// that each model accepts, see the documentation for that model.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document ModelConfiguration
+        {
+            get { return this._modelConfiguration; }
+            set { this._modelConfiguration = value; }
+        }
+
+        // Check to see if ModelConfiguration property is set
+        internal bool IsSetModelConfiguration()
+        {
+            return !this._modelConfiguration.IsNull();
+        }
+
+        /// <summary>
         /// Gets and sets the property Video. 
         /// <para>
         /// Configuration settings for processing video content in multimodal knowledge bases.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This field is deprecated. Use <c>modelConfiguration</c> instead.
+        /// </para>
+        ///  </important>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Use Managed Knowledge Base's modelConfiguration field. https://docs.aws.amazon.com/bedrock/latest/userguide/kb-build-managed.html")]
         [AWSProperty(Min=1, Max=1)]
         public List<VideoConfiguration> Video
         {

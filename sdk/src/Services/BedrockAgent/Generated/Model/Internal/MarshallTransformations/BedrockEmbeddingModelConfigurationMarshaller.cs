@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EmbeddingDataType);
             }
 
+            if(requestObject.IsSetModelConfiguration())
+            {
+                context.Writer.WritePropertyName("modelConfiguration");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.ModelConfiguration);
+            }
+
             if(requestObject.IsSetVideo())
             {
                 context.Writer.WritePropertyName("video");

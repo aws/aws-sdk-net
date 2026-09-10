@@ -100,7 +100,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property Strict. 
         /// <para>
-        /// Whether to enforce strict JSON schema adherence for the tool input
+        /// Whether the tool schema is strictly enforced.
         /// </para>
         /// </summary>
         public bool? Strict
