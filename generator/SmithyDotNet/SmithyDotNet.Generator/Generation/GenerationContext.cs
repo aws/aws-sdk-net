@@ -164,7 +164,8 @@ public class GenerationContext
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
 
     /// <summary>
-    /// Every <c>enum</c> shape in the model paired with its <see cref="ShapeId"/>, ordered by name for
+    /// The service's <c>enum</c> shapes (<see cref="ServiceIndex.AllEnums"/>: reachable ones plus
+    /// same-namespace orphans) paired with their <see cref="ShapeId"/>, ordered by name for
     /// stable output (the API does not depend on declaration order). <c>intEnum</c> shapes are excluded:
     /// C2J emits a <c>ConstantClass</c> only for string enums, so an <c>intEnum</c>-typed member maps to
     /// a plain integer with no enumeration entry.
@@ -177,6 +178,12 @@ public class GenerationContext
     /// express.
     /// </summary>
     public ServiceMetadata? Metadata { get; }
+
+    /// <summary>
+    /// Whether this is a test-only service (metadata.json <c>test-service</c>): generated into
+    /// <c>sdk/test/Services/{Name}</c>, with no packaging or code-analysis artifacts.
+    /// </summary>
+    public bool IsTestService => Metadata?.TestService == true;
 
     private readonly ServiceIndex _index;
 
@@ -282,9 +289,8 @@ public class GenerationContext
         Structures = structures;
         Errors = errors;
 
-        // Every model enum shape emits a ConstantClass, ordered by shape name for stable output.
-        // Scanning all shapes (not just the reachable set) matches C2J: some models carry orphan
-        // *ExceptionReason enums that no operation references.
+        // Ordered by shape name for stable output. AllEnums already scopes the set: reachable
+        // enums plus same-namespace orphans, matching C2J's *ExceptionReason enums.
         Enums = index.AllEnums
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();

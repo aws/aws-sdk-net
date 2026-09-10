@@ -78,6 +78,43 @@ public class BatchGeneratorTests : IDisposable
     }
 
     [Fact]
+    public void GeneratesTestServiceIntoTestTree()
+    {
+        ConvertModelToTestService();
+        WriteControlFile("CloudTrailData");
+
+        var generated = new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
+        Assert.Equal(["CloudTrailData"], generated);
+
+        var testsRoot = Path.Combine(_repoRoot, "sdk", "test", "Services", "CloudTrailData");
+        Assert.True(File.Exists(Path.Combine(testsRoot, "Generated", "IAmazonCloudTrailData.g.cs")));
+        Assert.True(File.Exists(Path.Combine(testsRoot, "AWSSDK.CloudTrailData.NetFramework.csproj")));
+
+        // No shipping artifacts: no src tree, no code-analysis project, no nuspec, no solution.
+        Assert.False(Directory.Exists(Path.Combine(_repoRoot, "sdk", "src", "Services", "CloudTrailData")));
+        Assert.False(Directory.Exists(Path.Combine(_repoRoot, "sdk", "code-analysis", "ServiceAnalysis", "CloudTrailData")));
+        Assert.False(File.Exists(Path.Combine(testsRoot, "AWSSDK.CloudTrailData.nuspec")));
+        Assert.False(File.Exists(Path.Combine(testsRoot, "CloudTrailData.slnx")));
+    }
+
+    [Fact]
+    public void TestServiceWipesOnlyItsGeneratedTrees()
+    {
+        ConvertModelToTestService();
+        WriteControlFile("CloudTrailData");
+
+        var testsRoot = Path.Combine(_repoRoot, "sdk", "test", "Services", "CloudTrailData");
+        SeedFile(Path.Combine(testsRoot, "Generated", "Stale.cs"), "// stale");
+        SeedFile(Path.Combine(testsRoot, "UnitTests", "Generated", "Stale.cs"), "// stale");
+        SeedFile(Path.Combine(testsRoot, "UnitTests", "Custom", "HandWritten.cs"), "// keep me");
+
+        new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
+        Assert.False(File.Exists(Path.Combine(testsRoot, "Generated", "Stale.cs")));
+        Assert.False(File.Exists(Path.Combine(testsRoot, "UnitTests", "Generated", "Stale.cs")));
+        Assert.True(File.Exists(Path.Combine(testsRoot, "UnitTests", "Custom", "HandWritten.cs")));
+    }
+
+    [Fact]
     public void UnmatchedListedServiceThrows()
     {
         WriteControlFile("NoSuchService");
@@ -152,6 +189,16 @@ public class BatchGeneratorTests : IDisposable
         Directory.CreateDirectory(coreDir);
         File.Copy("TestData/sdk-default-configuration.json", Path.Combine(coreDir, "sdk-default-configuration.json"));
         File.Copy("TestData/Directory.Build.props", Path.Combine(SdkTreeLayout.SdkRoot(_repoRoot), "Directory.Build.props"));
+    }
+
+    // Relocates the seeded CloudTrailData model into TestServiceModels and marks it test-service.
+    private void ConvertModelToTestService()
+    {
+        var testModelsRoot = SdkTreeLayout.TestModelsRoot(_repoRoot);
+        Directory.CreateDirectory(testModelsRoot);
+        var modelDir = Path.Combine(testModelsRoot, "cloudtrail-data");
+        Directory.Move(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data"), modelDir);
+        File.WriteAllText(Path.Combine(modelDir, "metadata.json"), """{ "test-service": true }""");
     }
 
     private void WriteControlFile(params string[] services)

@@ -1,0 +1,54 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#MyService": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [{ "target": "com.example#DoIt" }]
+    },
+    "com.example#DoIt": {
+      "type": "operation",
+      "input": { "target": "com.example#DoItInput" }
+    },
+    "com.example#DoItInput": {
+      "type": "structure",
+      "members": {
+        "status": { "target": "com.example#Status" }
+      }
+    },
+    "com.example#Status": {
+      "type": "enum",
+      "members": {
+        "OK": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "OK" } }
+      }
+    },
+    "com.example#OrphanReason": {
+      "type": "enum",
+      "members": {
+        "UNKNOWN": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "UNKNOWN" } }
+      }
+    },
+    "smithy.test#HttpMessageMixin": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "smithy.api#String" }
+      },
+      "traits": {
+        "smithy.api#mixin": {}
+      }
+    },
+    "smithy.test#HttpRequestTestCase": {
+      "type": "structure",
+      "mixins": [{ "target": "smithy.test#HttpMessageMixin" }],
+      "members": {
+        "method": { "target": "smithy.api#String" }
+      }
+    },
+    "smithy.test#AppliesTo": {
+      "type": "enum",
+      "members": {
+        "CLIENT": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "client" } }
+      }
+    }
+  }
+}

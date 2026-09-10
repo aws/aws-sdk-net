@@ -70,4 +70,35 @@ public class ServiceIndexTests(CloudTrailModelFixture fixture)
 
         Assert.Contains("ServiceError", index.Shapes.Keys.Select(k => k.Name));
     }
+
+    [Fact]
+    public void ReachableMixinConsumer_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => new ServiceIndex(TestModels.Load("Model/mixin-reachable-model.json")));
+
+        Assert.Contains("mixins", ex.Message);
+        Assert.Contains("DoItInput", ex.Message);
+    }
+
+    [Fact]
+    public void UnreachableMixinShapes_AreIgnored()
+    {
+        // Unflattened test models carry mixin definitions/consumers in trait-definition namespaces
+        // (smithy.test, aws.protocols); they never enter the closure, so the index builds fine.
+        var index = new ServiceIndex(TestModels.Load("Model/mixin-unreachable-model.json"));
+
+        Assert.Single(index.Operations);
+    }
+
+    [Fact]
+    public void AllEnums_ExcludesUnreachableEnumsOutsideServiceNamespace()
+    {
+        var index = new ServiceIndex(TestModels.Load("Model/mixin-unreachable-model.json"));
+        var enumNames = index.AllEnums.Select(e => e.Id.ToString()).ToList();
+
+        // Reachable enums and same-namespace orphans emit; trait-definition enums do not.
+        Assert.Contains("com.example#Status", enumNames);
+        Assert.Contains("com.example#OrphanReason", enumNames);
+        Assert.DoesNotContain("smithy.test#AppliesTo", enumNames);
+    }
 }

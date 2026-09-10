@@ -20,17 +20,7 @@ public static class ModelValidator
             throw new GeneratorException($"Model must contain exactly one service shape, but found {serviceCount}.");
         }
 
-        var mixinShapes = model.Shapes
-            .Where(kvp => kvp.Value is not null && kvp.Value.Traits.ContainsKey("smithy.api#mixin"))
-            .Select(kvp => kvp.Key)
-            .ToList();
-
-        if (mixinShapes.Count > 0)
-        {
-            throw new GeneratorException(
-                $"Model contains mixin shapes which are not supported:\n" +
-                string.Join("\n", mixinShapes.Select(id => $"  - {id}"))
-            );
-        }
+        // Mixins are not rejected here; ServiceIndex rejects them only when reachable from the
+        // service. The raw test models carry mixins in their trait-definition namespaces.
     }
 }

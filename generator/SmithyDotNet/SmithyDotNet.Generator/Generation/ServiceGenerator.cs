@@ -102,23 +102,27 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var metadataWriter = new MetadataWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
 
-        var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
-        EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
+        // Test services ship no code-analysis project (matching the C2J generator's IsTestService skip).
+        if (!context.IsTestService)
+        {
+            var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
+            EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
 
-        var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
-        EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
+            var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
+            EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
 
-        var propertyValueRulesWriter = new PropertyValueRulesWriter(context);
-        EmitCodeAnalysis(Path.Combine(generated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
+            var propertyValueRulesWriter = new PropertyValueRulesWriter(context);
+            EmitCodeAnalysis(Path.Combine(generated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
 
-        var codeAnalysisAssemblyInfoWriter = new CodeAnalysisAssemblyInfoWriter(context);
-        EmitCodeAnalysis(Path.Combine("Properties", "AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
+            var codeAnalysisAssemblyInfoWriter = new CodeAnalysisAssemblyInfoWriter(context);
+            EmitCodeAnalysis(Path.Combine("Properties", "AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
 
-        // The writer probes the existing csproj to preserve its ProjectGuid, so it needs the full
-        // on-disk path, not the root-relative one used for emission.
-        var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
-        var codeAnalysisProjectFileName = $"{context.AssemblyName}.CodeAnalysis.csproj";
-        EmitCodeAnalysis(codeAnalysisProjectFileName, codeAnalysisProjectFileWriter.Write(Path.Combine(codeAnalysisPath, codeAnalysisProjectFileName)));
+            // The writer probes the existing csproj to preserve its ProjectGuid, so it needs the full
+            // on-disk path, not the root-relative one used for emission.
+            var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
+            var codeAnalysisProjectFileName = $"{context.AssemblyName}.CodeAnalysis.csproj";
+            EmitCodeAnalysis(codeAnalysisProjectFileName, codeAnalysisProjectFileWriter.Write(Path.Combine(codeAnalysisPath, codeAnalysisProjectFileName)));
+        }
 
         // Endpoint files are emitted only when the service carries an endpoint rule set. The
         // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the
@@ -168,13 +172,18 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var serviceProjectFileWriter = new ServiceProjectFileWriter(context);
 
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
-        Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
-        // The NuGet README is the service documentation converted to Markdown, falling back to the
-        // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
-        // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
-        // catching hand-written READMEs.
-        var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
-        Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
+
+        // Test services are never packaged, so they get no nuspec or NuGet readme.
+        if (!context.IsTestService)
+        {
+            Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+            // The NuGet README is the service documentation converted to Markdown, falling back to the
+            // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
+            // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
+            // catching hand-written READMEs.
+            var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
+            Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
+        }
 
         Emit($"{context.AssemblyName}.NetFramework.csproj", serviceProjectFileWriter.WriteNetFramework());
         if (context.Metadata?.NetStandardSupport ?? true)
@@ -320,9 +329,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // Last on purpose: the solution writer scans outputPath for the service csprojs to build
         // the /Services/ dependency folder, so it must run after every csproj has been emitted —
         // otherwise a clean first run produces a .slnx missing the service dependencies that a
-        // re-run would then pick up.
-        var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
-        Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
+        // re-run would then pick up. Test services get no per-service solution (C2J emits none;
+        // they build through sdk/test consumers like AWSSDK.ProtocolTests).
+        if (!context.IsTestService)
+        {
+            var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
+            Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
+        }
 
         return written.Keys.ToList();
     }

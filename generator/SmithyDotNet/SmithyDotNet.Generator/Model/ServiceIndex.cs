@@ -37,10 +37,11 @@ public class ServiceIndex
     public IReadOnlyDictionary<ShapeId, Shape> Shapes { get; }
 
     /// <summary>
-    /// Every <c>enum</c> shape in the model, reachable from an operation or not, paired with its
-    /// <see cref="ShapeId"/>. C2J emits a <c>ConstantClass</c> for every string-enum shape regardless of
-    /// reachability, and some models carry orphan <c>*ExceptionReason</c> enums that no operation
-    /// references, so enum collection cannot use the reachable <see cref="Shapes"/> set.
+    /// Every <c>enum</c> shape that is reachable from an operation or declared in the service's own
+    /// namespace, paired with its <see cref="ShapeId"/>. Unreachable same-namespace enums are kept
+    /// because C2J ships orphan <c>*ExceptionReason</c> enums that no operation references; enums in
+    /// other namespaces (trait definitions like <c>smithy.test#AppliesTo</c> in the raw test models)
+    /// are dropped.
     /// </summary>
     public IReadOnlyList<(ShapeId Id, EnumShape Shape)> AllEnums { get; }
 
@@ -54,19 +55,56 @@ public class ServiceIndex
 
         Service = service;
         ServiceId = ShapeId.Parse(serviceEntry.Key);
+
         Operations = CollectOperations(model, Service);
         Shapes = CollectReachableShapes(model, Service, Operations);
-        AllEnums = CollectAllEnums(model);
+        AllEnums = CollectAllEnums(model, Shapes, ServiceId.Namespace);
+
+        RequireNoMixins();
     }
 
-    private static List<(ShapeId Id, EnumShape Shape)> CollectAllEnums(SmithyModel model)
+    // The generator does not resolve mixins (production models arrive pre-flattened), so
+    // generating from a consumer would silently drop its inherited members. Consumers outside
+    // the closure (trait definitions in the raw test models) are ignored.
+    private void RequireNoMixins()
+    {
+        RequireNoMixins(ServiceId, Service);
+
+        foreach (var (id, operation) in Operations)
+        {
+            RequireNoMixins(id, operation);
+        }
+
+        foreach (var (id, shape) in Shapes)
+        {
+            RequireNoMixins(id, shape);
+        }
+    }
+
+    private static void RequireNoMixins(ShapeId id, Shape shape)
+    {
+        if (shape.Mixins.Count > 0)
+        {
+            throw new GeneratorException($"Shape '{id}' is reachable from the service and uses mixins, which are not supported.");
+        }
+    }
+
+    private static List<(ShapeId Id, EnumShape Shape)> CollectAllEnums(SmithyModel model, IReadOnlyDictionary<ShapeId, Shape> reachable, string serviceNamespace)
     {
         var enums = new List<(ShapeId Id, EnumShape Shape)>();
         foreach (var (name, shape) in model.Shapes)
         {
-            if (shape is EnumShape enumShape)
+            if (shape is not EnumShape enumShape)
             {
-                enums.Add((ShapeId.Parse(name), enumShape));
+                continue;
+            }
+
+            // An unreachable enum emits only from the service's own namespace: C2J ships orphan
+            // *ExceptionReason enums, but trait-definition enums (smithy.test#AppliesTo) must not emit.
+            var id = ShapeId.Parse(name);
+            if (reachable.ContainsKey(id) || id.Namespace == serviceNamespace)
+            {
+                enums.Add((id, enumShape));
             }
         }
 
@@ -90,6 +128,7 @@ public class ServiceIndex
                 throw new GeneratorException($"Service references operation '{operationId}' which is missing or not an operation shape.");
             }
 
+            RequireNoMixins(operationId, operation);
             operations.Add((operationId, operation));
         }
 
@@ -177,6 +216,7 @@ public class ServiceIndex
             return;
         }
 
+        RequireNoMixins(shapeId, shape);
         reachable[shapeId] = shape;
 
         switch (shape)

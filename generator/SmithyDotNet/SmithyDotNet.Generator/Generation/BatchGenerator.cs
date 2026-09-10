@@ -33,6 +33,7 @@ public sealed class BatchGenerator(string repoRoot)
     };
 
     private readonly string _modelsRoot = SdkTreeLayout.ModelsRoot(repoRoot);
+    private readonly string _testModelsRoot = SdkTreeLayout.TestModelsRoot(repoRoot);
     private readonly string _sdkRoot = SdkTreeLayout.SdkRoot(repoRoot);
 
     /// <summary>
@@ -101,13 +102,18 @@ public sealed class BatchGenerator(string repoRoot)
         return file.Services;
     }
 
-    private sealed record DiscoveredModel(string Name, string ModelPath, SmithyModel Model, ServiceMetadata Metadata);
+    private sealed record DiscoveredModel(string Name, string ModelPath, SmithyModel Model, ServiceMetadata Metadata)
+    {
+        /// <summary>Test services (metadata.json <c>test-service</c>) generate into sdk/test/Services/{Name} and skip the shipping artifacts.</summary>
+        public bool IsTestService => Metadata.TestService;
+    }
 
-    // Scans generator/ServiceModels/*/ for the single all-inclusive Smithy model each migrated
-    // service carries at a fixed name, smithy.json (unlike C2J's versioned api/docs/endpoints split).
-    // A model has to be parsed to learn its name, so a model this generator can't yet handle is
-    // skipped here rather than aborting the batch; MatchListedServices below still fails loudly if
-    // that model belongs to a service actually listed in the control file.
+    // Scans generator/ServiceModels/*/ and generator/TestServiceModels/*/ for the single
+    // all-inclusive Smithy model each migrated service carries at a fixed name, smithy.json (unlike
+    // C2J's versioned api/docs/endpoints split). A model has to be parsed to learn its name, so a
+    // model this generator can't yet handle is skipped here rather than aborting the batch;
+    // MatchListedServices below still fails loudly if that model belongs to a service actually
+    // listed in the control file.
     private Dictionary<string, DiscoveredModel> DiscoverModels(CancellationToken ct)
     {
         if (!Directory.Exists(_modelsRoot))
@@ -115,8 +121,14 @@ public sealed class BatchGenerator(string repoRoot)
             throw new GeneratorException($"Service models directory not found: '{_modelsRoot}'.");
         }
 
+        var modelDirectories = Directory.EnumerateDirectories(_modelsRoot);
+        if (Directory.Exists(_testModelsRoot))
+        {
+            modelDirectories = modelDirectories.Concat(Directory.EnumerateDirectories(_testModelsRoot));
+        }
+
         var discovered = new Dictionary<string, DiscoveredModel>(StringComparer.OrdinalIgnoreCase);
-        foreach (var directory in Directory.EnumerateDirectories(_modelsRoot))
+        foreach (var directory in modelDirectories)
         {
             ct.ThrowIfCancellationRequested();
 
@@ -194,9 +206,9 @@ public sealed class BatchGenerator(string repoRoot)
 
     private void GenerateService(DiscoveredModel service, SdkVersionManifest versionManifest, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, CancellationToken ct)
     {
-        var sourceRoot = SdkTreeLayout.ServiceSourceRoot(repoRoot, service.Name);
         var codeAnalysisRoot = SdkTreeLayout.ServiceCodeAnalysisRoot(repoRoot, service.Name);
         var testsRoot = SdkTreeLayout.ServiceTestsRoot(repoRoot, service.Name);
+        var sourceRoot = service.IsTestService ? testsRoot : SdkTreeLayout.ServiceSourceRoot(repoRoot, service.Name);
 
         try
         {
@@ -213,10 +225,13 @@ public sealed class BatchGenerator(string repoRoot)
             var context = new GenerationContext(index, versionManifest, service.Metadata, customizations);
             UnsupportedTraitValidator.Validate(index);
 
-            var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);
+            // Test services have no _sdk-versions.json entry; they get the default assembly version, matching C2J.
+            var serviceFileVersion = service.IsTestService
+                ? versionManifest.DefaultAssemblyVersion ?? throw new GeneratorException($"'{versionManifest.SourcePath}' has no 'DefaultAssemblyVersion' for test service '{context.ServiceName}'.")
+                : versionManifest.GetServiceVersion(context.ServiceName);
             var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
 
-            WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot);
+            WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot, service.IsTestService);
 
             var written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
             Log.Info($"Generated {written.Count} files for {service.Name} under '{Relative(sourceRoot)}'.");
@@ -231,14 +246,21 @@ public sealed class BatchGenerator(string repoRoot)
     // Deletion is the destructive step, so every tree/file actually removed is logged. Only the
     // generated trees and the superseded C2J solution file are touched — never Custom/ or anything
     // hand-written.
-    private void WipeStaleOutput(string serviceName, string sourceRoot, string codeAnalysisRoot, string testsRoot)
+    private void WipeStaleOutput(string serviceName, string sourceRoot, string codeAnalysisRoot, string testsRoot, bool isTestService)
     {
-        string[] staleTrees =
-        [
-            Path.Combine(sourceRoot, "Generated"),
-            Path.Combine(codeAnalysisRoot, "Generated"),
-            Path.Combine(testsRoot, "UnitTests", "Generated"),
-        ];
+        // Test services have no code-analysis tree (and sourceRoot == testsRoot), so only the two generated trees under the test root are wiped.
+        string[] staleTrees = isTestService
+            ?
+            [
+                Path.Combine(testsRoot, "Generated"),
+                Path.Combine(testsRoot, "UnitTests", "Generated"),
+            ]
+            :
+            [
+                Path.Combine(sourceRoot, "Generated"),
+                Path.Combine(codeAnalysisRoot, "Generated"),
+                Path.Combine(testsRoot, "UnitTests", "Generated"),
+            ];
 
         foreach (var tree in staleTrees)
         {

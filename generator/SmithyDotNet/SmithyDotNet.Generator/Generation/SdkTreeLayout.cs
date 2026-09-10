@@ -10,6 +10,9 @@ public static class SdkTreeLayout
     /// <summary>generator/ServiceModels — model dirs, the control file, and _sdk-versions.json.</summary>
     public static string ModelsRoot(string repoRoot) => Path.Combine(repoRoot, "generator", "ServiceModels");
 
+    /// <summary>generator/TestServiceModels — model dirs for the test-only services (protocol test clients, benchmark data planes).</summary>
+    public static string TestModelsRoot(string repoRoot) => Path.Combine(repoRoot, "generator", "TestServiceModels");
+
     /// <summary>The all-inclusive Smithy model each service directory under ModelsRoot carries at a fixed name.</summary>
     public const string SmithyModelFileName = "smithy.json";
 
@@ -27,7 +30,7 @@ public static class SdkTreeLayout
     /// <summary>sdk/code-analysis/ServiceAnalysis/{Name} — the service's code-analysis project.</summary>
     public static string ServiceCodeAnalysisRoot(string repoRoot, string serviceName) => Path.Combine(SdkRoot(repoRoot), "code-analysis", "ServiceAnalysis", serviceName);
 
-    /// <summary>sdk/test/Services/{Name} — the service test tree; the unit-test csproj lands under UnitTests/.</summary>
+    /// <summary>sdk/test/Services/{Name} — the service test tree; the unit-test csproj lands under UnitTests/. For a test service this is also its source root (there is no sdk/src tree).</summary>
     public static string ServiceTestsRoot(string repoRoot, string serviceName) => Path.Combine(SdkRoot(repoRoot), "test", "Services", serviceName);
 
     // Relative prefixes embedded in generated files. Forward-slash so the generated references are
@@ -38,6 +41,9 @@ public static class SdkTreeLayout
 
     /// <summary>From sdk/src/Services/{Name}/ up to sdk/src/.</summary>
     public const string SrcRootFromServiceSource = "../..";
+
+    /// <summary>From sdk/test/Services/{Name}/ up to sdk/src/ — a test service's Core reference crosses into the src tree.</summary>
+    public const string SrcRootFromServiceTests = "../../../src";
 
     /// <summary>From sdk/test/Services/{Name}/UnitTests/ up to sdk/.</summary>
     public const string SdkRootFromUnitTests = "../../../..";

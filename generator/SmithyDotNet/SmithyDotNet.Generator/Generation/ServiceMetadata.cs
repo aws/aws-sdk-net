@@ -32,6 +32,14 @@ public record ServiceMetadata
     [JsonPropertyName("legacy-service-id")]
     public string? LegacyServiceId { get; init; }
 
+    /// <summary>
+    /// Whether this is a test-only service (protocol test client, benchmark data plane). Test
+    /// services generate into <c>sdk/test/Services/{Name}</c>, are never packaged, and carry no
+    /// <c>_sdk-versions.json</c> entry.
+    /// </summary>
+    [JsonPropertyName("test-service")]
+    public bool TestService { get; init; }
+
     /// <summary>The service base name override used for the assembly/package name (e.g. "DynamoDBv2").</summary>
     [JsonPropertyName("base-name")]
     public string? BaseName { get; init; }

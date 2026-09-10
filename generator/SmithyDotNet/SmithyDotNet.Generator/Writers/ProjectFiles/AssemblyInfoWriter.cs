@@ -20,7 +20,11 @@ public sealed class AssemblyInfoWriter(GenerationContext context, string service
         var writer = new CodeWriter();
         FileHeader.WriteUsings(writer, FileHeader.AssemblyInfoUsings);
 
-        var assemblyVersion = context.Manifest.GetServiceAssemblyVersion(context.ServiceName);
+        // Test services have no _sdk-versions.json entry; they get the default assembly version,
+        // matching C2J.
+        var assemblyVersion = context.IsTestService
+            ? context.Manifest.DefaultAssemblyVersion ?? throw new GeneratorException($"'{context.Manifest.SourcePath}' has no 'DefaultAssemblyVersion' for test service '{context.ServiceName}'.")
+            : context.Manifest.GetServiceAssemblyVersion(context.ServiceName);
 
         FileHeader.WriteAssemblyInfoBody(
             writer,

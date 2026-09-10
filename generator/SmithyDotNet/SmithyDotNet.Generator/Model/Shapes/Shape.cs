@@ -25,6 +25,16 @@ public abstract record Shape
     /// <remarks><see href="https://smithy.io/2.0/spec/model.html#applying-traits" /></remarks>
     [JsonPropertyName("traits")]
     public Dictionary<string, JsonElement> Traits { get; init; } = [];
+
+    /// <summary>
+    /// The mixin shapes this shape consumes. The generator does not resolve mixins (production
+    /// models arrive pre-flattened), so <see cref="ServiceIndex"/> rejects mixin consumers
+    /// reachable from the service.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/mixins.html" /></remarks>
+    [JsonPropertyName("mixins")]
+    [JsonConverter(typeof(ShapeTargetListConverter))]
+    public List<ShapeId> Mixins { get; init; } = [];
 }
 
 /// <summary>

@@ -27,13 +27,13 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
     /// <summary>Writes <c>AWSSDK.{Service}.NetFramework.csproj</c>.</summary>
     public string WriteNetFramework()
     {
-        return WriteProject(ServiceProjectConfigurations.NetFramework, NetFrameworkReferenceDependencies);
+        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetFrameworkTestService : ServiceProjectConfigurations.NetFramework, NetFrameworkReferenceDependencies);
     }
 
     /// <summary>Writes <c>AWSSDK.{Service}.NetStandard.csproj</c>.</summary>
     public string WriteNetStandard()
     {
-        return WriteProject(ServiceProjectConfigurations.NetStandard, NetStandardReferenceDependencies);
+        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetStandardTestService : ServiceProjectConfigurations.NetStandard, NetStandardReferenceDependencies);
     }
 
     /// <summary>
@@ -61,7 +61,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         sections.Add(w => WriteRuleSetProperties(w, ns));
         sections.Add(w => WriteSigningChoose(w, ns.KeyFilePath));
         sections.Add(w => WriteAnalyzerItems(w, ns));
-        sections.Add(WriteCompileExcludes);
+        sections.Add(WriteServiceCompileExcludes);
         sections.Add(WriteReadmePackaging);
         sections.Add(w => WriteConditionalCoreReferences(w, fw, ns, netStandardSupport));
         sections.Add(w => WriteAnalyzerPackageReferences(w, ns));
@@ -181,7 +181,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             w => WriteRuleSetProperties(w, config),
             w => WriteSigningChoose(w, config.KeyFilePath),
             w => WriteAnalyzerItems(w, config),
-            WriteCompileExcludes,
+            WriteServiceCompileExcludes,
             w => WriteCoreReference(w, config)
         };
 
@@ -218,6 +218,20 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             writer.WriteLine("<TreatWarningsAsErrors>true</TreatWarningsAsErrors>");
             writer.WriteLine();
             writer.WriteLine($"<NoWarn>{config.NoWarn}</NoWarn>");
+        });
+    }
+
+    // A test service's unit tests compile in their own project under UnitTests/; exclude them from the client csproj.
+    private void WriteServiceCompileExcludes(CodeWriter writer)
+    {
+        writer.OpenXmlBlock("ItemGroup", () =>
+        {
+            writer.WriteLine("""<Compile Remove="**/obj/**"/>""");
+            writer.WriteLine("""<None Remove="**/obj/**" />""");
+            if (context.IsTestService)
+            {
+                writer.WriteLine("""<Compile Remove="**/UnitTests/**"/>""");
+            }
         });
     }
 

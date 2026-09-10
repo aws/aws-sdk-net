@@ -121,5 +121,6 @@ smithy select --selector '<selector>' --show type --allow-unknown-traits <path-t
 - `OperationShape.Input` and `Output` default to `smithy.api#Unit` when absent
 - Member names in `StructureShape.Members` are the **Smithy member names** (camelCase), not .NET names
 - The `@jsonName` trait overrides the wire name; the member key is the model name
-- Mixin shapes (`smithy.api#mixin` trait) are not supported — skip them during shape traversal
+- The generator doesn't resolve mixins — production models arrive pre-flattened — so `ServiceIndex` throws when a shape reachable from the service declares `mixins`; unreachable consumers (the `smithy.test`/`aws.protocols` trait definitions in the raw test models) are ignored. The restJson1 test model has no reachable consumers; the restXml one does (operation inputs/outputs), so it will need flattening or mixin support before it can generate
+- `AllEnums` skips enums that are unreachable *and* outside the service's namespace, so trait-definition enums like `smithy.test#AppliesTo` don't become `ConstantClass`es. Unreachable enums in the service's own namespace still emit, matching C2J's orphan `*ExceptionReason` enums
 - Input/output shapes are identified by their reference from `OperationShape.Input`/`Output`, not solely by `@input`/`@output` traits (some models don't have these traits). Error shapes are identified by the `@error` trait.

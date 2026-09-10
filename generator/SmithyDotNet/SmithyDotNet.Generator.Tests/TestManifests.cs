@@ -21,6 +21,7 @@ internal static class TestManifests
     public static SdkVersionManifest CloudTrailData() => new()
     {
         CoreVersion = "4.0.100.3",
+        DefaultAssemblyVersion = "4.0",
         ServiceVersions = new Dictionary<string, ServiceVersion>
         {
             ["CloudTrailData"] = new()

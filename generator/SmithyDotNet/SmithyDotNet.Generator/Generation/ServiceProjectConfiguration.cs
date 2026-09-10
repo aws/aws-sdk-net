@@ -104,4 +104,16 @@ public static class ServiceProjectConfigurations
         ],
         FrameworkReferences = [],
     };
+
+    // A test service csproj sits at sdk/test/Services/{Name}/ — the same depth as the src tree, so
+    // every relative path holds except the Core reference, which must cross into sdk/src/.
+    public static ServiceProjectConfiguration NetFrameworkTestService { get; } = NetFramework with
+    {
+        CoreProjectReference = Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceTests, "Core", "AWSSDK.Core.NetFramework.csproj"),
+    };
+
+    public static ServiceProjectConfiguration NetStandardTestService { get; } = NetStandard with
+    {
+        CoreProjectReference = Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceTests, "Core", "AWSSDK.Core.NetStandard.csproj"),
+    };
 }

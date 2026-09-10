@@ -224,9 +224,14 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         {
             // Base handler set, emitted for every service. Per-service extra handlers (e.g. S3,
             // EC2, SQS) come from {service}.customizations.json (runtimePipelineOverride.overrides),
-            // which the Smithy model does not carry.
-            writer.WriteLine("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();");
-            writer.WriteLine($"pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new {_clientName}EndpointResolver());");
+            // which the Smithy model does not carry. The endpoint-resolver swap exists only for
+            // services with an endpoint rule set (test services have none), matching C2J.
+            if (context.HasEndpointRuleSet)
+            {
+                writer.WriteLine("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();");
+                writer.WriteLine($"pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new {_clientName}EndpointResolver());");
+            }
+
             writer.WriteLine($"pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new {_clientName}AuthSchemeHandler());");
         });
         writer.WriteLine();
