@@ -54,4 +54,8 @@ public static class AnnotationTraits
     /// </summary>
     /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#requireslength-trait" /></remarks>
     public static bool RequiresLength(this Shape shape) => shape.Traits.ContainsKey("smithy.api#requiresLength");
+
+    /// <summary>The legacy MD5-only trait, not the flexible <c>aws.protocols#httpChecksum</c>.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpchecksumrequired-trait" /></remarks>
+    public static bool RequiresHttpChecksum(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpChecksumRequired");
 }

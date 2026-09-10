@@ -13,8 +13,6 @@ public static class UnsupportedTraitValidator
 {
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
-        ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
-        ["smithy.api#requestCompression"] = "@requestCompression",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
         ["aws.protocols#httpChecksum"] = "httpChecksum",
     };

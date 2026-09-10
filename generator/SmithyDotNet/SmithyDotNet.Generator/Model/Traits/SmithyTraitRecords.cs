@@ -81,6 +81,13 @@ public record RetryableTrait : TraitRecord
     public bool Throttling { get; init; }
 }
 
+/// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#requestcompression-trait" /></remarks>
+public record RequestCompressionTrait : TraitRecord
+{
+    [JsonPropertyName("encodings")]
+    public required IReadOnlyList<string> Encodings { get; init; }
+}
+
 /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#paginated-trait" /></remarks>
 public record PaginatedTrait : TraitRecord
 {

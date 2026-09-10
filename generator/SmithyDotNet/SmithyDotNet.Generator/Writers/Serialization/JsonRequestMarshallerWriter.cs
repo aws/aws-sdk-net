@@ -26,6 +26,23 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
         var partitioned = PartitionMembers(operation.Input, members);
 
+        // The client takes the first encoding it supports, so unsupported entries are skipped rather
+        // than rejected. gzip is the whole supported set: it's emitted verbatim as an enum member and
+        // CompressionEncodingAlgorithm has only NONE and gzip.
+        var compression = operation.Shape.GetRequestCompression();
+        var compressionEncoding = compression?.Encodings.FirstOrDefault(encoding => encoding == "gzip");
+        if (compression is not null && compressionEncoding is null)
+        {
+            throw new GeneratorException($"Operation '{operation.Name}' requests compression encodings '{string.Join(", ", compression.Encodings)}'; only 'gzip' is supported.");
+        }
+
+        // Smithy forbids the combination: the compressed length isn't known until the whole stream
+        // has been read, which is exactly what @requiresLength rules out.
+        if (compressionEncoding is not null && partitioned.PayloadMember is { Type: { IsStreaming: true, RequiresLength: true } })
+        {
+            throw new GeneratorException($"Operation '{operation.Name}' combines @requestCompression with a @streaming @requiresLength payload.");
+        }
+
         var writer = new CodeWriter();
 
         FileHeader.WriteLicense(writer, modelFileName);
@@ -39,7 +56,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
-                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload());
+                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload(), compressionEncoding, operation.Shape.RequiresHttpChecksum());
                 writer.WriteLine("");
                 WriteSingleton(writer, className);
             });
@@ -64,7 +81,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         HttpTrait httpTrait,
         PartitionedMembers partitioned,
         string? hostPrefix,
-        bool unsignedPayload)
+        bool unsignedPayload,
+        string? compressionEncoding,
+        bool requiresChecksum)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -72,6 +91,10 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
+            if (compressionEncoding is not null)
+            {
+                writer.WriteLine($"CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.{compressionEncoding});");
+            }
             WriteContentType(writer, httpTrait, partitioned);
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
@@ -103,6 +126,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             else if (partitioned.BodyMembers.Count > 0)
             {
                 WriteBodySerialization(writer, partitioned.BodyMembers);
+            }
+
+            // The checksum covers the body, so it has to follow serialization (same spot as C2J).
+            if (requiresChecksum)
+            {
+                writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
             }
 
             // @unsignedPayload disables SigV4 body signing regardless of body kind (matches C2J).

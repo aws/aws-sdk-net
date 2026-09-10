@@ -127,6 +127,26 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
 List and map payloads fail loud in the writer. A union derives from `StructureShape`, so a union payload
 takes the structure path; a document takes the document path above.
 
+### `@requestCompression` and `@httpChecksumRequired` (request)
+
+Both are one emitted call to a runtime helper in `Amazon.Runtime.Internal.Util` (already in the
+marshaller usings), sitting at opposite ends of the body. Pinned in `CompressionChecksumCodegenTests`.
+
+- `@requestCompression` → `CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.{encoding});`
+  right after `new DefaultRequest(...)`, before the `Content-Type` header. `encodings` is a preference
+  list, so the first **supported** entry wins and unsupported ones are skipped (`["br", "gzip"]` emits
+  gzip); `gzip` is the whole supported set, since the value is emitted verbatim as the enum member and
+  `CompressionEncodingAlgorithm` has only `NONE` and `gzip`. When nothing in the list is supported we
+  throw, where C2J warns and emits no call — silently dropping compression changes wire behavior with
+  no signal. Also rejects a `@streaming` `@requiresLength` payload, which Smithy forbids here and C2J
+  rejects too, because the compressed length isn't known until the whole stream has been read.
+- `@httpChecksumRequired` → `ChecksumUtils.SetChecksumData(request);` **after** body serialization
+  (the checksum covers the body), before the `@unsignedPayload` `DisablePayloadSigning` line. This is
+  the legacy MD5-only trait. C2J's `Operation.HttpChecksumRequired` returns true for the flexible
+  `aws.protocols#httpChecksum` too, which we deliberately don't copy — that trait stays denied in
+  `UnsupportedTraitValidator`, so reading only the legacy one keeps flexible-checksum operations off
+  the MD5 path.
+
 ### `@endpoint` host prefix (request)
 
 An operation's `@endpoint` trait sets `request.HostPrefix` (the resolver's `InjectHostPrefix` prepends it to the endpoint host). Emitted last, after `UseQueryString`, before `return`.

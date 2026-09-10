@@ -40,4 +40,8 @@ public static class StructuredTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#paginated-trait" /></remarks>
     public static PaginatedTrait? GetPaginated(this Shape shape) => DeserializeTrait<PaginatedTrait>(shape, "smithy.api#paginated");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#requestcompression-trait" /></remarks>
+    public static RequestCompressionTrait? GetRequestCompression(this Shape shape) =>
+        DeserializeTrait<RequestCompressionTrait>(shape, "smithy.api#requestCompression");
 }

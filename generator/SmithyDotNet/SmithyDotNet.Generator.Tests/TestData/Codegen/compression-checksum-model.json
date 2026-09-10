@@ -1,0 +1,88 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoCompression" },
+        { "target": "com.example#DoChecksum" },
+        { "target": "com.example#DoNeither" },
+        { "target": "com.example#DoUnsupportedEncoding" },
+        { "target": "com.example#DoMixedEncodings" },
+        { "target": "com.example#DoCompressedFixedLengthStream" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#DoCompression": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/compression", "method": "POST" },
+        "smithy.api#requestCompression": { "encodings": ["gzip"] }
+      }
+    },
+    "com.example#DoChecksum": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/checksum", "method": "POST" },
+        "smithy.api#httpChecksumRequired": {}
+      }
+    },
+    "com.example#DoNeither": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/plain", "method": "POST" } }
+    },
+    "com.example#DoUnsupportedEncoding": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/unsupported", "method": "POST" },
+        "smithy.api#requestCompression": { "encodings": ["br"] }
+      }
+    },
+    "com.example#DoMixedEncodings": {
+      "type": "operation",
+      "input": { "target": "com.example#DataRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/mixed", "method": "POST" },
+        "smithy.api#requestCompression": { "encodings": ["br", "gzip"] }
+      }
+    },
+    "com.example#DoCompressedFixedLengthStream": {
+      "type": "operation",
+      "input": { "target": "com.example#StreamRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/compressed-stream", "method": "POST" },
+        "smithy.api#requestCompression": { "encodings": ["gzip"] }
+      }
+    },
+    "com.example#StreamRequest": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#FixedLengthStream", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#FixedLengthStream": {
+      "type": "blob",
+      "traits": { "smithy.api#streaming": {}, "smithy.api#requiresLength": {} }
+    },
+    "com.example#DataRequest": {
+      "type": "structure",
+      "members": {
+        "data": { "target": "smithy.api#String" }
+      }
+    }
+  }
+}
