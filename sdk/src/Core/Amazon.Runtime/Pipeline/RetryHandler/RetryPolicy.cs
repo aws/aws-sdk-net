@@ -539,9 +539,10 @@ namespace Amazon.Runtime
             if (!ClockSkewPipelineHelper.AttemptSkewExceedsThreshold(executionContext))
                 return false;
 
+            var endpointString = executionContext.RequestContext.Request.GetEndpointString();
             Logger.InfoFormat(clockSkewUpdatedFormat,
-                CorrectClockSkew.GetClockCorrectionForEndpoint(executionContext.RequestContext.Request.Endpoint.ToString()),
-                executionContext.RequestContext.Request.Endpoint.ToString());
+                CorrectClockSkew.GetClockCorrectionForEndpoint(endpointString),
+                endpointString);
             executionContext.RequestContext.IsSigned = false;
             return true;
         }
