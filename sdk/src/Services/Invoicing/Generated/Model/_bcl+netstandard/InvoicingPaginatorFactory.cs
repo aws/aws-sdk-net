@@ -59,5 +59,21 @@ namespace Amazon.Invoicing.Model
         {
             return new ListProcurementPortalPreferencesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListProcurementPortals operation
+        ///</summary>
+        public IListProcurementPortalsPaginator ListProcurementPortals(ListProcurementPortalsRequest request) 
+        {
+            return new ListProcurementPortalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProcurementPortalSuppliers operation
+        ///</summary>
+        public IListProcurementPortalSuppliersPaginator ListProcurementPortalSuppliers(ListProcurementPortalSuppliersRequest request) 
+        {
+            return new ListProcurementPortalSuppliersPaginator(this.client, request);
+        }
     }
 }

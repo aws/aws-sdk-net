@@ -1245,6 +1245,150 @@ namespace Amazon.Invoicing
 
         #endregion
         
+        #region  ListProcurementPortals
+
+
+        /// <summary>
+        /// Returns the Amazon Web Services-supported procurement portals for e-invoice delivery
+        /// and purchase order retrieval. Each entry includes the portal identifier, name, and
+        /// default feature configurations, which define the supported document and attachment
+        /// types. For faster, more reliable responses, use pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortals service method.</param>
+        /// 
+        /// <returns>The response from the ListProcurementPortals service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortals">REST API Reference for ListProcurementPortals Operation</seealso>
+        public virtual ListProcurementPortalsResponse ListProcurementPortals(ListProcurementPortalsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProcurementPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProcurementPortalsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProcurementPortalsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the Amazon Web Services-supported procurement portals for e-invoice delivery
+        /// and purchase order retrieval. Each entry includes the portal identifier, name, and
+        /// default feature configurations, which define the supported document and attachment
+        /// types. For faster, more reliable responses, use pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProcurementPortals service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortals">REST API Reference for ListProcurementPortals Operation</seealso>
+        public virtual Task<ListProcurementPortalsResponse> ListProcurementPortalsAsync(ListProcurementPortalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProcurementPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProcurementPortalsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListProcurementPortalsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListProcurementPortalSuppliers
+
+
+        /// <summary>
+        /// Returns the suppliers configured for a specified procurement portal, including supplier
+        /// identifiers and associated metadata. For faster, more reliable responses, use pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalSuppliers service method.</param>
+        /// 
+        /// <returns>The response from the ListProcurementPortalSuppliers service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalSuppliers">REST API Reference for ListProcurementPortalSuppliers Operation</seealso>
+        public virtual ListProcurementPortalSuppliersResponse ListProcurementPortalSuppliers(ListProcurementPortalSuppliersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProcurementPortalSuppliersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProcurementPortalSuppliersResponseUnmarshaller.Instance;
+
+            return Invoke<ListProcurementPortalSuppliersResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the suppliers configured for a specified procurement portal, including supplier
+        /// identifiers and associated metadata. For faster, more reliable responses, use pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProcurementPortalSuppliers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProcurementPortalSuppliers service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalSuppliers">REST API Reference for ListProcurementPortalSuppliers Operation</seealso>
+        public virtual Task<ListProcurementPortalSuppliersResponse> ListProcurementPortalSuppliersAsync(ListProcurementPortalSuppliersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListProcurementPortalSuppliersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProcurementPortalSuppliersResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListProcurementPortalSuppliersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
