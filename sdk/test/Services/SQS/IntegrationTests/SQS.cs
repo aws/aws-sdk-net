@@ -6,7 +6,6 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -246,6 +245,23 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.NotNull(result.QueueUrl);
             _createdQueueUrls.Add(result.QueueUrl);
 
+            // CreateQueue's contract allows up to a second before a new queue is usable.
+            // Poll a queue-addressed call until the queue resolves rather than gating on
+            // ListQueues visibility, which is eventually consistent and can lag creation
+            // by 30+ seconds (and which no caller asserts on).
+            for (int i = 0; ; i++)
+            {
+                try
+                {
+                    await _client.GetQueueUrlAsync(new GetQueueUrlRequest { QueueName = name });
+                    break;
+                }
+                catch (QueueDoesNotExistException) when (i < 30)
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                }
+            }
+
             var attrResults = await _client.GetQueueAttributesAsync(new GetQueueAttributesRequest
             {
                 QueueUrl = result.QueueUrl,
@@ -260,19 +276,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             Assert.False(attrResults.ContentBasedDeduplication.HasValue);
             Assert.Null(attrResults.ContentBasedDeduplication);
 
-            for (int i = 0; i < 30; i++)
-            {
-                var listResult = await _client.ListQueuesAsync(new ListQueuesRequest { QueueNamePrefix = prefix });
-                if (listResult.QueueUrls.FirstOrDefault(x => x == result.QueueUrl) != null)
-                {
-                    return result.QueueUrl;
-                }
-
-                await Task.Delay(TimeSpan.FromSeconds(2));
-            }
-
-            Assert.Fail("Queue never created");
-            return "fail";
+            return result.QueueUrl;
         }
 
         [Fact]
