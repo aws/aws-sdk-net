@@ -86,6 +86,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.ContentLightLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("displayAspectRatio", targetDepth, ref reader))
+                {
+                    var unmarshaller = AspectRatioUnmarshaller.Instance;
+                    unmarshalledObject.DisplayAspectRatio = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("dolbyVision", targetDepth, ref reader))
+                {
+                    var unmarshaller = DolbyVisionMetadataUnmarshaller.Instance;
+                    unmarshalledObject.DolbyVision = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("fieldOrder", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -126,6 +138,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.Rotation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sampleAspectRatio", targetDepth, ref reader))
+                {
+                    var unmarshaller = AspectRatioUnmarshaller.Instance;
+                    unmarshalledObject.SampleAspectRatio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanType", targetDepth, ref reader))

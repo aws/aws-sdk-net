@@ -42,6 +42,8 @@ namespace Amazon.MediaConvert.Model
         private FrameRate _codedFrameRate;
         private ColorPrimaries _colorPrimaries;
         private ContentLightLevel _contentLightLevel;
+        private AspectRatio _displayAspectRatio;
+        private DolbyVisionMetadata _dolbyVision;
         private string _fieldOrder;
         private Hdr10PlusPresence _hdr10PlusPresence;
         private int? _height;
@@ -49,6 +51,7 @@ namespace Amazon.MediaConvert.Model
         private MatrixCoefficients _matrixCoefficients;
         private string _profile;
         private int? _rotation;
+        private AspectRatio _sampleAspectRatio;
         private string _scanType;
         private TransferCharacteristics _transferCharacteristics;
         private int? _width;
@@ -136,6 +139,49 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetContentLightLevel()
         {
             return this._contentLightLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayAspectRatio. An aspect ratio expressed as a fraction
+        /// with numerator and denominator values, reduced to lowest terms. Used for the sample
+        /// (pixel) aspect ratio and the display aspect ratio of a video track. For example, a
+        /// 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect
+        /// ratio of 16 / 9. A video track can declare an aspect ratio in two independent places,
+        /// and MediaConvert reports each one where it was found rather than choosing between
+        /// them. The ratio declared by the container appears on the video track itself, and the
+        /// ratio declared by the video essence appears under codecMetadata. When a file declares
+        /// an aspect ratio in only one of the two places, the other is null; when it declares
+        /// both and they disagree, you can compare them and decide which to use.
+        /// </summary>
+        public AspectRatio DisplayAspectRatio
+        {
+            get { return this._displayAspectRatio; }
+            set { this._displayAspectRatio = value; }
+        }
+
+        // Check to see if DisplayAspectRatio property is set
+        internal bool IsSetDisplayAspectRatio()
+        {
+            return this._displayAspectRatio != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DolbyVision. Dolby Vision characteristics of the video
+        /// track: the profile and level, and whether the RPU (dynamic metadata), base layer,
+        /// and enhancement layer are present. Use this to distinguish Dolby Vision content from
+        /// standard HEVC and to choose your encoding or passthrough settings. Omitted when the
+        /// content is not Dolby Vision.
+        /// </summary>
+        public DolbyVisionMetadata DolbyVision
+        {
+            get { return this._dolbyVision; }
+            set { this._dolbyVision = value; }
+        }
+
+        // Check to see if DolbyVision property is set
+        internal bool IsSetDolbyVision()
+        {
+            return this._dolbyVision != null;
         }
 
         /// <summary>
@@ -257,6 +303,30 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetRotation()
         {
             return this._rotation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleAspectRatio. An aspect ratio expressed as a fraction
+        /// with numerator and denominator values, reduced to lowest terms. Used for the sample
+        /// (pixel) aspect ratio and the display aspect ratio of a video track. For example, a
+        /// 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect
+        /// ratio of 16 / 9. A video track can declare an aspect ratio in two independent places,
+        /// and MediaConvert reports each one where it was found rather than choosing between
+        /// them. The ratio declared by the container appears on the video track itself, and the
+        /// ratio declared by the video essence appears under codecMetadata. When a file declares
+        /// an aspect ratio in only one of the two places, the other is null; when it declares
+        /// both and they disagree, you can compare them and decide which to use.
+        /// </summary>
+        public AspectRatio SampleAspectRatio
+        {
+            get { return this._sampleAspectRatio; }
+            set { this._sampleAspectRatio = value; }
+        }
+
+        // Check to see if SampleAspectRatio property is set
+        internal bool IsSetSampleAspectRatio()
+        {
+            return this._sampleAspectRatio != null;
         }
 
         /// <summary>

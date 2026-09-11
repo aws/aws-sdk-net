@@ -1760,6 +1760,9 @@ namespace Amazon.MediaConvert
         /// Too many requests have been sent in too short of a time. The service limits the rate
         /// at which it will accept requests.
         /// </exception>
+        /// <exception cref="Amazon.MediaConvert.Model.UnprocessableEntityException">
+        /// The input file was recognized but appears to be malformed or corrupt.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Probe">REST API Reference for Probe Operation</seealso>
         public virtual Task<ProbeResponse> ProbeAsync(ProbeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {

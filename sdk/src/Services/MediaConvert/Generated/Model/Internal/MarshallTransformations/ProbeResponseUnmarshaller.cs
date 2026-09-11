@@ -111,6 +111,10 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     return TooManyRequestsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnprocessableEntityException"))
+                {
+                    return UnprocessableEntityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
             }
             return new AmazonMediaConvertException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
