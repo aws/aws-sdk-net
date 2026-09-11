@@ -43,8 +43,11 @@ namespace Amazon.Lightsail.Model
         private List<CacheBehaviorPerPath> _cacheBehaviors = AWSConfigs.InitializeCollections ? new List<CacheBehaviorPerPath>() : null;
         private CacheSettings _cacheBehaviorSettings;
         private string _certificateName;
+        private List<DistributionCustomErrorResponse> _customErrorResponses = AWSConfigs.InitializeCollections ? new List<DistributionCustomErrorResponse>() : null;
         private CacheBehavior _defaultCacheBehavior;
+        private string _defaultRootObject;
         private string _distributionName;
+        private bool? _enablePrivateOriginAccess;
         private bool? _isEnabled;
         private InputOrigin _origin;
         private bool? _useDefaultCertificate;
@@ -125,6 +128,32 @@ namespace Amazon.Lightsail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomErrorResponses. 
+        /// <para>
+        /// An array of objects that describe the custom error responses for the distribution.
+        /// With a custom error response, you can specify the page to return when the origin responds
+        /// with a given HTTP error code. You can also specify the HTTP status code to send to
+        /// the viewer.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DistributionCustomErrorResponse> CustomErrorResponses
+        {
+            get { return this._customErrorResponses; }
+            set { this._customErrorResponses = value; }
+        }
+
+        // Check to see if CustomErrorResponses property is set
+        internal bool IsSetCustomErrorResponses()
+        {
+            return this._customErrorResponses != null && (this._customErrorResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. 
         /// <para>
         /// An object that describes the default cache behavior for the distribution.
@@ -140,6 +169,26 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetDefaultCacheBehavior()
         {
             return this._defaultCacheBehavior != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultRootObject. 
+        /// <para>
+        /// The object (for example, <c>index.html</c>) that the distribution returns when a viewer
+        /// requests the root URL of the distribution (<c>/</c>) instead of a specific object.
+        /// The object that you specify must be available from the origin.
+        /// </para>
+        /// </summary>
+        public string DefaultRootObject
+        {
+            get { return this._defaultRootObject; }
+            set { this._defaultRootObject = value; }
+        }
+
+        // Check to see if DefaultRootObject property is set
+        internal bool IsSetDefaultRootObject()
+        {
+            return this._defaultRootObject != null;
         }
 
         /// <summary>
@@ -164,6 +213,43 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetDistributionName()
         {
             return this._distributionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablePrivateOriginAccess. 
+        /// <para>
+        /// Specifies whether to enable private origin access for the distribution. With private
+        /// origin access, the distribution can serve objects that aren't publicly accessible
+        /// from a Lightsail bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// Lightsail grants the distribution permission to read the bucket's objects. Enabling
+        /// private origin access doesn't change the bucket's access settings, and you can still
+        /// retrieve publicly accessible objects directly from the bucket's endpoint.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you include this parameter, you must also include the <c>origin</c> parameter
+        /// with the resource name, even if the origin is not changing.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can enable private origin access only when the distribution's origin is a Lightsail
+        /// bucket. If the origin is another resource type, the request fails.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? EnablePrivateOriginAccess
+        {
+            get { return this._enablePrivateOriginAccess; }
+            set { this._enablePrivateOriginAccess = value; }
+        }
+
+        // Check to see if EnablePrivateOriginAccess property is set
+        internal bool IsSetEnablePrivateOriginAccess()
+        {
+            return this._enablePrivateOriginAccess.HasValue; 
         }
 
         /// <summary>

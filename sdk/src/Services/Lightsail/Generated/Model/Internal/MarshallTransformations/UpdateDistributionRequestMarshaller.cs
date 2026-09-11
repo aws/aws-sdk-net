@@ -108,6 +108,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CertificateName);
             }
 
+            if(publicRequest.IsSetCustomErrorResponses())
+            {
+                context.Writer.WritePropertyName("customErrorResponses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCustomErrorResponsesListValue in publicRequest.CustomErrorResponses)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DistributionCustomErrorResponseMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCustomErrorResponsesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDefaultCacheBehavior())
             {
                 context.Writer.WritePropertyName("defaultCacheBehavior");
@@ -119,10 +135,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetDefaultRootObject())
+            {
+                context.Writer.WritePropertyName("defaultRootObject");
+                context.Writer.WriteStringValue(publicRequest.DefaultRootObject);
+            }
+
             if(publicRequest.IsSetDistributionName())
             {
                 context.Writer.WritePropertyName("distributionName");
                 context.Writer.WriteStringValue(publicRequest.DistributionName);
+            }
+
+            if(publicRequest.IsSetEnablePrivateOriginAccess())
+            {
+                context.Writer.WritePropertyName("enablePrivateOriginAccess");
+                context.Writer.WriteBooleanValue(publicRequest.EnablePrivateOriginAccess.Value);
             }
 
             if(publicRequest.IsSetIsEnabled())

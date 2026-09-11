@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Origin Object
+    /// Response Unmarshaller for DistributionCustomErrorResponse Object
     /// </summary>  
-    public class OriginUnmarshaller : IJsonUnmarshaller<Origin, JsonUnmarshallerContext>
+    public class DistributionCustomErrorResponseUnmarshaller : IJsonUnmarshaller<DistributionCustomErrorResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Origin Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DistributionCustomErrorResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Origin unmarshalledObject = new Origin();
+            DistributionCustomErrorResponse unmarshalledObject = new DistributionCustomErrorResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,46 +56,28 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ipAddressType", targetDepth, ref reader))
+                if (context.TestExpression("errorCachingMinTTL", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.ErrorCachingMinTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isPrivateOriginAccessEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsPrivateOriginAccessEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("protocolPolicy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProtocolPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("regionName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("resourceType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("responseTimeout", targetDepth, ref reader))
+                if (context.TestExpression("errorCode", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ResponseTimeout = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ErrorCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("responseCode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResponseCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("responsePagePath", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResponsePagePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -103,12 +85,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
         }
 
 
-        private static OriginUnmarshaller _instance = new OriginUnmarshaller();        
+        private static DistributionCustomErrorResponseUnmarshaller _instance = new DistributionCustomErrorResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static OriginUnmarshaller Instance
+        public static DistributionCustomErrorResponseUnmarshaller Instance
         {
             get
             {
