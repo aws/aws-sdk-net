@@ -420,6 +420,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortals(Amazon.Invoicing.Model.ListProcurementPortalsRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortals(Amazon.Invoicing.Model.ListProcurementPortalsRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalsRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListProcurementPortals"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListProcurementPortalSuppliers(Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListProcurementPortalSuppliers(Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest)" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest" />
+            <member name="T:Amazon.Invoicing.Model.ListProcurementPortalSuppliersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="ListProcurementPortalSuppliers"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Invoicing.IAmazonInvoicing.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
             <member name="M:Amazon.Invoicing.AmazonInvoicingClient.ListTagsForResource(Amazon.Invoicing.Model.ListTagsForResourceRequest)" />
             <member name="T:Amazon.Invoicing.Model.ListTagsForResourceRequest" />
