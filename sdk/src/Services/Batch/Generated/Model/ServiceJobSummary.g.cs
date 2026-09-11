@@ -68,6 +68,20 @@ namespace Amazon.Batch.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
+        /// Gets and sets the property IsTerminated. 
+        /// <para>
+        /// Indicates whether a termination request has been accepted for the service job. This
+        /// field is only present when the value is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? IsTerminated { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IsTerminated property is set.
+        /// </summary>
+        internal bool IsSetIsTerminated() => this.IsTerminated.HasValue;
+
+        /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service job.

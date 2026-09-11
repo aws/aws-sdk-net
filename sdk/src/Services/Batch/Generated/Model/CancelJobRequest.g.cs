@@ -33,13 +33,14 @@ namespace Amazon.Batch.Model
     /// Container for the parameters to the CancelJob operation. Cancels a job in an Batch
     /// job queue. Jobs that are in a <c>SUBMITTED</c>, <c>PENDING</c>, or <c>RUNNABLE</c>
     /// state are cancelled and the job status is updated to <c>FAILED</c>. <note> <para>
-    /// A <c>PENDING</c> job is canceled after all dependency jobs are completed. Therefore,
-    /// it may take longer than expected to cancel a job in <c>PENDING</c> status. </para>
+    /// A <c>PENDING</c> job is cancelled after all dependency jobs are completed. Therefore,
+    /// it might take longer than expected to cancel a job in <c>PENDING</c> status. </para>
     /// <para> When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts
-    /// to cancel all child jobs. The array parent job is canceled when all child jobs are
+    /// to cancel all child jobs. The array parent job is cancelled when all child jobs are
     /// completed. </para> </note> <para> Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c>
-    /// state aren't canceled. However, the API operation still succeeds, even if no job is
-    /// canceled. These jobs must be terminated with the <a>TerminateJob</a> operation. </para>
+    /// state aren't cancelled. However, the API operation still succeeds, even if no job
+    /// is cancelled. These jobs must be terminated with the <a>TerminateJob</a> or <a>TerminateJobs</a>
+    /// operation. </para>
     /// </summary>
     public partial class CancelJobRequest : AmazonBatchRequest
     {
@@ -60,13 +61,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A message to attach to the job that explains the reason for canceling it. This message
+        /// A message to attach to the job that explains the reason for cancelling it. This message
         /// is returned by future <a>DescribeJobs</a> operations on the job. It is also recorded
         /// in the Batch activity logs.
         /// </para>
         ///  
         /// <para>
-        /// This parameter has as limit of 1024 characters.
+        /// This parameter has a limit of 1024 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

@@ -271,19 +271,19 @@ namespace Amazon.Batch
         /// 
         ///  <note> 
         /// <para>
-        /// A <c>PENDING</c> job is canceled after all dependency jobs are completed. Therefore,
-        /// it may take longer than expected to cancel a job in <c>PENDING</c> status.
+        /// A <c>PENDING</c> job is cancelled after all dependency jobs are completed. Therefore,
+        /// it might take longer than expected to cancel a job in <c>PENDING</c> status.
         /// </para>
         ///  
         /// <para>
         /// When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts to cancel
-        /// all child jobs. The array parent job is canceled when all child jobs are completed.
+        /// all child jobs. The array parent job is cancelled when all child jobs are completed.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't canceled.
-        /// However, the API operation still succeeds, even if no job is canceled. These jobs
-        /// must be terminated with the <a>TerminateJob</a> operation.
+        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't cancelled.
+        /// However, the API operation still succeeds, even if no job is cancelled. These jobs
+        /// must be terminated with the <a>TerminateJob</a> or <a>TerminateJobs</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
@@ -322,19 +322,19 @@ namespace Amazon.Batch
         /// 
         ///  <note> 
         /// <para>
-        /// A <c>PENDING</c> job is canceled after all dependency jobs are completed. Therefore,
-        /// it may take longer than expected to cancel a job in <c>PENDING</c> status.
+        /// A <c>PENDING</c> job is cancelled after all dependency jobs are completed. Therefore,
+        /// it might take longer than expected to cancel a job in <c>PENDING</c> status.
         /// </para>
         ///  
         /// <para>
         /// When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts to cancel
-        /// all child jobs. The array parent job is canceled when all child jobs are completed.
+        /// all child jobs. The array parent job is cancelled when all child jobs are completed.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't canceled.
-        /// However, the API operation still succeeds, even if no job is canceled. These jobs
-        /// must be terminated with the <a>TerminateJob</a> operation.
+        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't cancelled.
+        /// However, the API operation still succeeds, even if no job is cancelled. These jobs
+        /// must be terminated with the <a>TerminateJob</a> or <a>TerminateJobs</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
@@ -358,6 +358,120 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = CancelJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CancelJobResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Cancels up to 50 jobs in an Batch job queue. This is a bulk version of <a>CancelJob</a>.
+        /// Jobs that are in a <c>SUBMITTED</c>, <c>PENDING</c>, or <c>RUNNABLE</c> state are
+        /// cancelled and the job status is updated to <c>FAILED</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A <c>PENDING</c> job is cancelled after all dependency jobs are completed. Therefore,
+        /// it might take longer than expected to cancel a job in <c>PENDING</c> status.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts to cancel
+        /// all child jobs. The array parent job is cancelled when all child jobs are completed.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't cancelled.
+        /// These jobs must be terminated with the <a>TerminateJob</a> or <a>TerminateJobs</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Batch reports the result for each job individually in the response. Jobs that were
+        /// processed successfully are reported in the <c>successful</c> list. Jobs that encountered
+        /// errors are reported in the <c>errors</c> list. The response returns an HTTP status
+        /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
+        /// list. Jobs that can't be found are treated as successfully processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobs service method.</param>
+        /// <returns>The response from the CancelJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJobs">REST API Reference for CancelJobs Operation</seealso>
+        public virtual CancelJobsResponse CancelJobs(CancelJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJobsResponse>(request, options);
+        }
+#else
+        internal virtual CancelJobsResponse CancelJobs(CancelJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobsResponseUnmarshaller.Instance;
+
+            return Invoke<CancelJobsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Cancels up to 50 jobs in an Batch job queue. This is a bulk version of <a>CancelJob</a>.
+        /// Jobs that are in a <c>SUBMITTED</c>, <c>PENDING</c>, or <c>RUNNABLE</c> state are
+        /// cancelled and the job status is updated to <c>FAILED</c>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A <c>PENDING</c> job is cancelled after all dependency jobs are completed. Therefore,
+        /// it might take longer than expected to cancel a job in <c>PENDING</c> status.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts to cancel
+        /// all child jobs. The array parent job is cancelled when all child jobs are completed.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't cancelled.
+        /// These jobs must be terminated with the <a>TerminateJob</a> or <a>TerminateJobs</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Batch reports the result for each job individually in the response. Jobs that were
+        /// processed successfully are reported in the <c>successful</c> list. Jobs that encountered
+        /// errors are reported in the <c>errors</c> list. The response returns an HTTP status
+        /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
+        /// list. Jobs that can't be found are treated as successfully processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CancelJobs">REST API Reference for CancelJobs Operation</seealso>
+        public virtual Task<CancelJobsResponse> CancelJobsAsync(CancelJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelJobsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -2730,6 +2844,90 @@ namespace Amazon.Batch
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Terminates up to 50 jobs in a job queue. This is a bulk version of <a>TerminateJob</a>.
+        /// Jobs that are in the <c>STARTING</c> or <c>RUNNING</c> state are terminated, which
+        /// causes them to transition to <c>FAILED</c>. Jobs that have not progressed to the <c>STARTING</c>
+        /// state are cancelled.
+        /// 
+        ///  
+        /// <para>
+        /// Batch reports the result for each job individually in the response. Jobs that were
+        /// processed successfully are reported in the <c>successful</c> list. Jobs that encountered
+        /// errors are reported in the <c>errors</c> list. The response returns an HTTP status
+        /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
+        /// list. Jobs that can't be found are treated as successfully processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateJobs service method.</param>
+        /// <returns>The response from the TerminateJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJobs">REST API Reference for TerminateJobs Operation</seealso>
+        public virtual TerminateJobsResponse TerminateJobs(TerminateJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateJobsResponse>(request, options);
+        }
+#else
+        internal virtual TerminateJobsResponse TerminateJobs(TerminateJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateJobsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Terminates up to 50 jobs in a job queue. This is a bulk version of <a>TerminateJob</a>.
+        /// Jobs that are in the <c>STARTING</c> or <c>RUNNING</c> state are terminated, which
+        /// causes them to transition to <c>FAILED</c>. Jobs that have not progressed to the <c>STARTING</c>
+        /// state are cancelled.
+        /// 
+        ///  
+        /// <para>
+        /// Batch reports the result for each job individually in the response. Jobs that were
+        /// processed successfully are reported in the <c>successful</c> list. Jobs that encountered
+        /// errors are reported in the <c>errors</c> list. The response returns an HTTP status
+        /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
+        /// list. Jobs that can't be found are treated as successfully processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TerminateJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateJobs">REST API Reference for TerminateJobs Operation</seealso>
+        public virtual Task<TerminateJobsResponse> TerminateJobsAsync(TerminateJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateJobsResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Terminates a service job in a job queue.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJob service method.</param>
@@ -2786,6 +2984,86 @@ namespace Amazon.Batch
             options.ResponseUnmarshaller = TerminateServiceJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<TerminateServiceJobResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Terminates up to 50 service jobs in a job queue. This is a bulk version of <a>TerminateServiceJob</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Batch reports the result for each service job individually in the response. Service
+        /// jobs that were processed successfully are reported in the <c>successful</c> list.
+        /// Service jobs that encountered errors are reported in the <c>errors</c> list. The response
+        /// returns an HTTP status code of <c>200</c> even when some service jobs encountered
+        /// errors, so check the <c>errors</c> list. Service jobs that can't be found are treated
+        /// as successfully processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJobs service method.</param>
+        /// <returns>The response from the TerminateServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJobs">REST API Reference for TerminateServiceJobs Operation</seealso>
+        public virtual TerminateServiceJobsResponse TerminateServiceJobs(TerminateServiceJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateServiceJobsResponse>(request, options);
+        }
+#else
+        internal virtual TerminateServiceJobsResponse TerminateServiceJobs(TerminateServiceJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateServiceJobsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Terminates up to 50 service jobs in a job queue. This is a bulk version of <a>TerminateServiceJob</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Batch reports the result for each service job individually in the response. Service
+        /// jobs that were processed successfully are reported in the <c>successful</c> list.
+        /// Service jobs that encountered errors are reported in the <c>errors</c> list. The response
+        /// returns an HTTP status code of <c>200</c> even when some service jobs encountered
+        /// errors, so check the <c>errors</c> list. Service jobs that can't be found are treated
+        /// as successfully processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TerminateServiceJobs service method, as returned by Batch.</returns>
+        /// <exception cref="Amazon.Batch.Model.ClientException">
+        /// These errors are usually caused by a client action. One example cause is using an
+        /// action or resource on behalf of a user that doesn't have permissions to use the action
+        /// or resource. Another cause is specifying an identifier that's not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Batch.Model.ServerException">
+        /// These errors are usually caused by a server issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/TerminateServiceJobs">REST API Reference for TerminateServiceJobs Operation</seealso>
+        public virtual Task<TerminateServiceJobsResponse> TerminateServiceJobsAsync(TerminateServiceJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = TerminateServiceJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = TerminateServiceJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateServiceJobsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
