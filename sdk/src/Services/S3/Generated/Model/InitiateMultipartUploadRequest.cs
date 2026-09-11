@@ -599,7 +599,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectLockEventHoldDurationDays. 
         /// <para>
-        /// Specifies the event hold duration in days to apply to the uploaded object.
+        /// Specifies the event hold duration in days to apply to the uploaded object. You cannot
+        /// specify a duration in both days and years.
         /// </para>
         ///  <note> 
         /// <para>
@@ -622,7 +623,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectLockEventHoldDurationYears. 
         /// <para>
-        /// Specifies the event hold duration in years to apply to the uploaded object.
+        /// Specifies the event hold duration in years to apply to the uploaded object. You cannot
+        /// specify a duration in both days and years.
         /// </para>
         ///  <note> 
         /// <para>

@@ -1178,7 +1178,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectLockEventHoldDurationDays. 
         /// <para>
-        /// The event hold duration in days to apply to the object copy.
+        /// The event hold duration in days to apply to the object copy. You cannot specify a
+        /// duration in both days and years.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1201,7 +1202,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property ObjectLockEventHoldDurationYears. 
         /// <para>
-        /// The event hold duration in years to apply to the object copy.
+        /// The event hold duration in years to apply to the object copy. You cannot specify a
+        /// duration in both days and years.
         /// </para>
         ///  <note> 
         /// <para>

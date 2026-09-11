@@ -39,10 +39,21 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property DefaultRetention. 
         /// <para>
-        /// The default Object Lock retention mode and period that you want to apply to new objects
-        /// placed in the specified bucket. Bucket settings require both a mode and a period.
-        /// The period can be either <c>Days</c> or <c>Years</c> but you must select one. You
-        /// cannot specify <c>Days</c> and <c>Years</c> at the same time.
+        /// The default Object Lock retention settings for new objects in this bucket. You can
+        /// specify:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A default retention period, by using <c>Days</c> or <c>Years</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A default event hold duration, by using <c>DefaultEventHold</c>. This setting also
+        /// uses days or years.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can set one or both. You cannot use days and years in the same setting.
         /// </para>
         /// </summary>
         public DefaultRetention DefaultRetention
