@@ -1,3 +1,43 @@
+### 4.0.333.0 (2026-09-14 19:02 UTC)
+* AgentRegistry (4.0.102.3)
+	* AgentRegistry is now generated from its Smithy model. There are no changes to the public API.
+* AgentRegistryControl (4.0.101.3)
+	* AgentRegistryControl is now generated from its Smithy model. There are no changes to the public API.
+* Billing (4.0.103.0)
+	* Increased the maximum number of services returned in the supportEligibleSpendByService field of ListEnterpriseSupportLinkedAccountCharges
+* BillingConductor (4.0.101.0)
+	* This release adds support for custom volume tiering. You can now define custom tiers on a pricing rule's tiering configuration, where each tier specifies a usage range and the rate applied to usage in that range.
+* CodeDeploy (4.0.102.0)
+	* AWS CodeDeploy now returns the deployment mode on GetDeployment and BatchGetDeployments. The new deploymentMode field on DeploymentInfo indicates whether a deployment used the standard deployment process or restarted the application using a previously installed revision (RESTART mode).
+* DSQL (4.0.103.3)
+	* DSQL is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to HTTP response headers (such as `ThrottlingException.RetryAfterSeconds`) are now populated. Previously they were always null because the value was read from the response body instead of the header.
+* ElementalInference (4.0.105.1)
+	* ElementalInference is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.105.0)
+	* Amazon Glue releasing the new API ListIntegrationTableProperties and adding IntegrationArn to TargetTableConfig
+* Imagebuilder (4.0.101.0)
+	* This release adds a dryRun option to Image Builder create APIs (except CreateImage), structured failure context on failed images including component and distribution failure details, and step retry attempt tracking.
+* Kafka (4.0.103.3)
+	* Kafka is now generated from its Smithy model. There are no changes to the public API.
+* LaunchWizard (4.0.101.3)
+	* LaunchWizard is now generated from its Smithy model. There are no changes to the public API.
+* MediaConvert (4.0.104.1)
+	* MediaConvert is now generated from its Smithy model. There are no changes to the public API.
+* MWAA (4.0.101.3)
+	* MWAA is now generated from its Smithy model. There are no changes to the public API.
+* ObservabilityAdmin (4.0.104.6)
+	* ObservabilityAdmin is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to HTTP response headers (such as `ThrottlingException.RetryAfterSeconds`) are now populated. Previously they were always null because the value was read from the response body instead of the header.
+* SecurityToken (4.0.101.0)
+	* Increases the maximum session token size to 4,096 bytes and removes the packed policy size limit. Adds SessionTokenSize and SessionTokenUtilization fields and a new MinimumSessionTokenSize parameter. PackedPolicySize is deprecated.
+* VPCLattice (4.0.101.5)
+	* VPCLattice is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to HTTP response headers (such as `ThrottlingException.RetryAfterSeconds`) are now populated. Previously they were always null because the value was read from the response body instead of the header.
+* Core 4.0.102.6
+	* Added MinimumSessionTokenSize to AssumeRoleAWSCredentialsOptions for AssumeRole credential requests.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.332.0 (2026-09-11 18:15 UTC)
 * Batch (4.0.103.0)
 	* Added new bulk job APIs (CancelJobs, TerminateJobs, TerminateServiceJobs) and new fields on ListJobs and ListServiceJobs responses. This allows customers to cancel or terminate multiple jobs in a single request. ListJobs and ListServiceJobs responses now include isCancelled and isTerminated fields.

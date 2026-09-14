@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Added MinimumSessionTokenSize to AssumeRoleAWSCredentialsOptions for AssumeRole credential requests."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
