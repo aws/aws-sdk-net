@@ -256,9 +256,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property EnhancedImageMetadataEnabled. 
         /// <para>
-        /// Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.
+        /// Specifies whether to collect additional information about the image being created,
+        /// including the operating system (OS) version and package list. Defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? EnhancedImageMetadataEnabled

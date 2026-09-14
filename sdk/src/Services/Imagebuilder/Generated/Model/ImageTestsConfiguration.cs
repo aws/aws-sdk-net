@@ -41,8 +41,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTestsEnabled. 
         /// <para>
-        /// Determines if tests should run after building the image. Image Builder defaults to
-        /// enable tests to run following the image build, before image distribution.
+        /// Specifies whether tests run after building the image. When enabled, tests run after
+        /// the image build and before image distribution. Defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? ImageTestsEnabled

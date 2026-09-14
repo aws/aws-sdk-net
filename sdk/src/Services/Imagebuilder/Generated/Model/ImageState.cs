@@ -34,8 +34,28 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ImageState
     {
+        private ImageFailureContext _failureContext;
         private string _reason;
         private ImageStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property FailureContext. 
+        /// <para>
+        /// The details about the failure, for images that failed to complete. Image Builder only
+        /// sets this property when the image status is <c>FAILED</c>.
+        /// </para>
+        /// </summary>
+        public ImageFailureContext FailureContext
+        {
+            get { return this._failureContext; }
+            set { this._failureContext = value; }
+        }
+
+        // Check to see if FailureContext property is set
+        internal bool IsSetFailureContext()
+        {
+            return this._failureContext != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Reason. 

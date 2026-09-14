@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImageState Object
+    /// Response Unmarshaller for DistributionFailureContext Object
     /// </summary>  
-    public class ImageStateUnmarshaller : IJsonUnmarshaller<ImageState, JsonUnmarshallerContext>
+    public class DistributionFailureContextUnmarshaller : IJsonUnmarshaller<DistributionFailureContext, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImageState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DistributionFailureContext Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ImageState unmarshalledObject = new ImageState();
+            DistributionFailureContext unmarshalledObject = new DistributionFailureContext();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failureContext", targetDepth, ref reader))
-                {
-                    var unmarshaller = ImageFailureContextUnmarshaller.Instance;
-                    unmarshalledObject.FailureContext = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth, ref reader))
+                if (context.TestExpression("errorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth, ref reader))
+                if (context.TestExpression("regionFailures", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<RegionFailure, RegionFailureUnmarshaller>(RegionFailureUnmarshaller.Instance);
+                    unmarshalledObject.RegionFailures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImageStateUnmarshaller _instance = new ImageStateUnmarshaller();        
+        private static DistributionFailureContextUnmarshaller _instance = new DistributionFailureContextUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImageStateUnmarshaller Instance
+        public static DistributionFailureContextUnmarshaller Instance
         {
             get
             {

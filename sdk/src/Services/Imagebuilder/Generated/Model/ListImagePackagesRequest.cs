@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImagePackages operation.
-    /// List the Packages that are associated with an Image Build Version, as determined by
-    /// Amazon Web Services Systems Manager Inventory at build time.
+    /// Lists the packages that are associated with an image build version, as determined
+    /// by Amazon Web Services Systems Manager Inventory at build time.
     /// </summary>
     public partial class ListImagePackagesRequest : AmazonImagebuilderRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specify the maximum number of items to return in a request.
+        /// The maximum number of items to return in a single request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -81,8 +81,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the nextToken from a previously
-        /// truncated response.
+        /// A token to specify where to start paginating. Use the <c>nextToken</c> value from
+        /// a previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

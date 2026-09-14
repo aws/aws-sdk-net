@@ -84,8 +84,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
+        /// no more than one time. If this token matches a previous request, the service ignores
+        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -145,9 +146,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Validates the required permissions for the operation and the request parameters, without
-        /// actually making the request, and provides an error response. Upon a successful request,
-        /// the error response is <c>DryRunOperationException</c>.
+        /// Validates the required permissions and request parameters without making the request.
+        /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
+        /// response.
         /// </para>
         /// </summary>
         public bool? DryRun
@@ -234,9 +235,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Assignment:</b> For the first three nodes you can assign any positive integer
-        /// value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node.
-        /// Image Builder automatically assigns the build number to the fourth node.
+        ///  <b>Assignment:</b> For the first three nodes, you can assign any positive integer
+        /// value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image
+        /// Builder automatically assigns the build number to the fourth node.
         /// </para>
         ///  
         /// <para>
@@ -313,8 +314,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Uri. 
         /// <para>
         /// The <c>uri</c> of a YAML component document file. This must be an S3 URL (<c>s3://bucket/key</c>),
-        /// and the requester must have permission to access the S3 bucket it points to. If you
-        /// use Amazon S3, you can specify component content up to your service quota.
+        /// and you must have permission to access the S3 bucket it points to. If you use Amazon
+        /// S3, you can specify component content up to your service quota.
         /// </para>
         ///  
         /// <para>

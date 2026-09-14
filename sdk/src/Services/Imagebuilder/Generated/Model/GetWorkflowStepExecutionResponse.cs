@@ -35,10 +35,12 @@ namespace Amazon.Imagebuilder.Model
     public partial class GetWorkflowStepExecutionResponse : AmazonWebServiceResponse
     {
         private string _action;
+        private int? _attemptNumber;
         private string _description;
         private string _endTime;
         private string _imageBuildVersionArn;
         private string _inputs;
+        private int? _maxAttempts;
         private string _message;
         private string _name;
         private string _onFailure;
@@ -68,6 +70,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttemptNumber. 
+        /// <para>
+        /// The current attempt number for the specified runtime instance of the workflow step.
+        /// The first run is attempt one. The number increases by one for each retry.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? AttemptNumber
+        {
+            get { return this._attemptNumber; }
+            set { this._attemptNumber = value; }
+        }
+
+        // Check to see if AttemptNumber property is set
+        internal bool IsSetAttemptNumber()
+        {
+            return this._attemptNumber.HasValue; 
         }
 
         /// <summary>
@@ -143,6 +165,27 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAttempts. 
+        /// <para>
+        /// The maximum number of attempts allowed for the specified runtime instance of the workflow
+        /// step, based on the retry configuration in the workflow document. If the step doesn't
+        /// configure retries, the maximum is one attempt.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MaxAttempts
+        {
+            get { return this._maxAttempts; }
+            set { this._maxAttempts = value; }
+        }
+
+        // Check to see if MaxAttempts property is set
+        internal bool IsSetMaxAttempts()
+        {
+            return this._maxAttempts.HasValue; 
         }
 
         /// <summary>

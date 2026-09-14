@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetImagePipeline operation.
-    /// Gets an image pipeline.
+    /// Retrieves an image pipeline.
     /// </summary>
     public partial class GetImagePipelineRequest : AmazonImagebuilderRequest
     {

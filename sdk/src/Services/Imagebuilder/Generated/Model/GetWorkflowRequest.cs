@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkflow operation.
-    /// Get a workflow resource object.
+    /// Retrieves a workflow resource object.
     /// </summary>
     public partial class GetWorkflowRequest : AmazonImagebuilderRequest
     {

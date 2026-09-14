@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImageState Object
+    /// Response Unmarshaller for RegionFailure Object
     /// </summary>  
-    public class ImageStateUnmarshaller : IJsonUnmarshaller<ImageState, JsonUnmarshallerContext>
+    public class RegionFailureUnmarshaller : IJsonUnmarshaller<RegionFailure, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImageState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RegionFailure Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ImageState unmarshalledObject = new ImageState();
+            RegionFailure unmarshalledObject = new RegionFailure();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failureContext", targetDepth, ref reader))
-                {
-                    var unmarshaller = ImageFailureContextUnmarshaller.Instance;
-                    unmarshalledObject.FailureContext = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth, ref reader))
+                if (context.TestExpression("errorMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("imageConfigurationStep", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImageConfigurationStep = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("region", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth, ref reader))
@@ -74,17 +80,23 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("targetAccountId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TargetAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
 
 
-        private static ImageStateUnmarshaller _instance = new ImageStateUnmarshaller();        
+        private static RegionFailureUnmarshaller _instance = new RegionFailureUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImageStateUnmarshaller Instance
+        public static RegionFailureUnmarshaller Instance
         {
             get
             {

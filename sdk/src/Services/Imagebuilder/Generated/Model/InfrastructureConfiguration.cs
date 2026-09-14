@@ -244,7 +244,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Placement. 
         /// <para>
         /// The instance placement settings that define where the instances that are launched
-        /// from your image will run.
+        /// from your image run.
         /// </para>
         /// </summary>
         public Placement Placement
@@ -309,8 +309,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the SNS topic to which we send image build event
-        /// notifications.
+        /// The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image
+        /// build event notifications.
         /// </para>
         ///  <note> 
         /// <para>

@@ -222,9 +222,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SupportedOsVersions. 
         /// <para>
-        /// he operating system (OS) version supported by the component. If the OS information
-        /// is available, a prefix match is performed against the base image OS version during
-        /// image recipe creation.
+        /// The operating system (OS) version supported by the component. If OS information is
+        /// available, Image Builder performs a prefix match against the base image OS version
+        /// during image recipe creation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -276,9 +276,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Assignment:</b> For the first three nodes you can assign any positive integer
-        /// value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node.
-        /// Image Builder automatically assigns the build number to the fourth node.
+        ///  <b>Assignment:</b> For the first three nodes, you can assign any positive integer
+        /// value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image
+        /// Builder automatically assigns the build number to the fourth node.
         /// </para>
         ///  
         /// <para>
@@ -288,10 +288,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the base image or
-        /// components for your recipe. When you use a wildcard in any node, all nodes to the
-        /// right of the first wildcard must also be wildcards.
+        ///  <b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or
+        /// nodes when selecting the base image or components for your recipe. When you use a
+        /// wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.
         /// </para>
         ///  </note>
         /// </summary>

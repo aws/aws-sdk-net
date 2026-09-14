@@ -762,6 +762,10 @@
     <pattern>^[A-Za-z][A-Za-z0-9-_]{1,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse.AttemptNumber</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse.Description</property>
     <min>0</min>
     <max>500</max>
@@ -769,6 +773,10 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse.ImageBuildVersionArn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):image/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse.MaxAttempts</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse.Message</property>
@@ -1830,6 +1838,30 @@
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):component/[a-z0-9-_]+/(?:(?:([0-9]+|x)\.([0-9]+|x)\.([0-9]+|x))|(?:[0-9]+\.[0-9]+\.[0-9]+/[0-9]+))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentFailureContext.Action</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentFailureContext.ComponentArn</property>
+    <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):component/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentFailureContext.ErrorMessage</property>
+    <min>1</min>
+    <max>384000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentFailureContext.PhaseName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ComponentFailureContext.StepName</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ComponentParameter.Name</property>
     <min>1</min>
     <max>256</max>
@@ -2072,6 +2104,11 @@
     <pattern>^[-_A-Za-z-0-9][-_A-Za-z0-9 ]{1,126}[-_A-Za-z-0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.DistributionFailureContext.ErrorMessage</property>
+    <min>1</min>
+    <max>384000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.EbsInstanceBlockDeviceSpecification.Iops</property>
     <min>100</min>
     <max>64000</max>
@@ -2165,6 +2202,23 @@
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageAggregation.ImageBuildVersionArn</property>
     <pattern>^arn:aws[^:]*:imagebuilder:[^:]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):image/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImageFailureContext.FailedStep</property>
+    <pattern>^[A-Za-z][A-Za-z0-9-_]{1,99}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImageFailureContext.StepExecutionId</property>
+    <pattern>^step-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImageFailureContext.WorkflowArn</property>
+    <max>1024</max>
+    <pattern>^arn:aws(?:-[a-z]+)*:imagebuilder:[a-z]{2,}(?:-[a-z]+)+-[0-9]+:(?:[0-9]{12}|aws(?:-[a-z-]+)?):workflow/(build|test|distribution)/[a-z0-9-_]+/[0-9]+\.[0-9]+\.[0-9]+/[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.ImageFailureContext.WorkflowExecutionId</property>
+    <pattern>^wf-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.ImageLoggingConfiguration.LogGroupName</property>
@@ -2626,6 +2680,20 @@
     <pattern>^[A-Za-z0-9]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.RegionFailure.ErrorMessage</property>
+    <min>1</min>
+    <max>384000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.RegionFailure.Region</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.RegionFailure.TargetAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.RegisterImageOptions.UefiData</property>
     <min>0</min>
     <max>64000</max>
@@ -2858,9 +2926,17 @@
     <pattern>^[A-Za-z][A-Za-z0-9-_]{1,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.WorkflowStepMetadata.AttemptNumber</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowStepMetadata.Description</property>
     <min>0</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Imagebuilder.Model.WorkflowStepMetadata.MaxAttempts</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Imagebuilder.Model.WorkflowStepMetadata.Message</property>

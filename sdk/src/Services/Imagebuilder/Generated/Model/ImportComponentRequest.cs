@@ -72,8 +72,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
+        /// no more than one time. If this token matches a previous request, the service ignores
+        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -220,10 +221,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the base image or
-        /// components for your recipe. When you use a wildcard in any node, all nodes to the
-        /// right of the first wildcard must also be wildcards.
+        ///  <b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or
+        /// nodes when selecting the base image or components for your recipe. When you use a
+        /// wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.
         /// </para>
         ///  </note>
         /// </summary>
@@ -287,8 +287,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// The uri of the component. Must be an Amazon S3 URL and the requester must have permission
-        /// to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content
+        /// The uri of the component. Must be an Amazon S3 URL and you must have permission to
+        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content
         /// up to your service quota. Either <c>data</c> or <c>uri</c> can be used to specify
         /// the data within the component.
         /// </para>

@@ -31,9 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateImagePipeline operation.
-    /// Updates an image pipeline. Image pipelines enable you to automate the creation and
-    /// distribution of images. You must specify exactly one recipe for your image, using
-    /// either a <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
+    /// Updates an image pipeline. Use image pipelines to automate the creation and distribution
+    /// of images. You must specify exactly one recipe for your image, using either a <c>containerRecipeArn</c>
+    /// or an <c>imageRecipeArn</c>.
     /// 
     ///  <note> 
     /// <para>
@@ -65,8 +65,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
+        /// no more than one time. If this token matches a previous request, the service ignores
+        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -142,9 +143,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property EnhancedImageMetadataEnabled. 
         /// <para>
-        /// Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.
+        /// Specifies whether to collect additional information about the image being created,
+        /// including the operating system (OS) version and package list. Defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? EnhancedImageMetadataEnabled
@@ -201,8 +201,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image recipe that will be used to configure
-        /// images updated by this image pipeline.
+        /// The Amazon Resource Name (ARN) of the image recipe that configures images updated
+        /// by this image pipeline.
         /// </para>
         /// </summary>
         public string ImageRecipeArn

@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDistributionConfiguration operation.
-    /// Gets a distribution configuration.
+    /// Retrieves a distribution configuration.
     /// </summary>
     public partial class GetDistributionConfigurationRequest : AmazonImagebuilderRequest
     {

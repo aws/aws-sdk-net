@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInfrastructureConfiguration operation.
-    /// Updates a new infrastructure configuration. An infrastructure configuration defines
-    /// the environment in which your image will be built and tested.
+    /// Updates an infrastructure configuration. An infrastructure configuration defines the
+    /// environment in which Image Builder builds and tests your image.
     /// </summary>
     public partial class UpdateInfrastructureConfigurationRequest : AmazonImagebuilderRequest
     {
@@ -54,8 +54,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
+        /// no more than one time. If this token matches a previous request, the service ignores
+        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -168,8 +169,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property InstanceTypes. 
         /// <para>
         /// The instance types of the infrastructure configuration. You can specify one or more
-        /// instance types to use for this build. The service will pick one of these instance
-        /// types based on availability.
+        /// instance types to use for this build. Image Builder picks one of these instance types
+        /// based on availability.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -231,7 +232,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Placement. 
         /// <para>
         /// The instance placement settings that define where the instances that are launched
-        /// from your image will run.
+        /// from your image run.
         /// </para>
         /// </summary>
         public Placement Placement
@@ -297,8 +298,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the SNS topic to which we send image build event
-        /// notifications.
+        /// The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image
+        /// build event notifications.
         /// </para>
         ///  <note> 
         /// <para>
@@ -342,9 +343,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TerminateInstanceOnFailure. 
         /// <para>
-        /// The terminate instance on failure setting of the infrastructure configuration. Set
-        /// to false if you want Image Builder to retain the instance used to configure your AMI
-        /// if the build or test phase of your workflow fails.
+        /// Specifies whether to terminate the instance on failure. Set to false if you want Image
+        /// Builder to retain the instance used to configure your AMI if the build or test phase
+        /// of your workflow fails. Defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? TerminateInstanceOnFailure

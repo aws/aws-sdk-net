@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComponentPolicy operation.
-    /// Gets a component policy.
+    /// Retrieves a component policy.
     /// </summary>
     public partial class GetComponentPolicyRequest : AmazonImagebuilderRequest
     {

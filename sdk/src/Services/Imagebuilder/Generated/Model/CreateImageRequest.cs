@@ -31,9 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImage operation.
-    /// Creates a new image. This request will create a new image along with all of the configured
-    /// output resources defined in the distribution configuration. You must specify exactly
-    /// one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.
+    /// Creates a new image along with all configured output resources defined in the distribution
+    /// configuration. You must specify exactly one recipe for your image, using either a
+    /// ContainerRecipeArn or an ImageRecipeArn.
     /// </summary>
     public partial class CreateImageRequest : AmazonImagebuilderRequest
     {
@@ -53,8 +53,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
+        /// no more than one time. If this token matches a previous request, the service ignores
+        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -112,9 +113,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property EnhancedImageMetadataEnabled. 
         /// <para>
-        /// Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.
+        /// Specifies whether to collect additional information about the image being created,
+        /// including the operating system (OS) version and package list. Defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? EnhancedImageMetadataEnabled
@@ -227,7 +227,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// Define logging configuration for the image build process.
+        /// The logging configuration for the image build process.
         /// </para>
         /// </summary>
         public ImageLoggingConfiguration LoggingConfiguration

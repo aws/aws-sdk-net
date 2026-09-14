@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetImageRecipe operation.
-    /// Gets an image recipe.
+    /// Retrieves an image recipe.
     /// </summary>
     public partial class GetImageRecipeRequest : AmazonImagebuilderRequest
     {

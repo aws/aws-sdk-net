@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ImageState Object
+    /// Response Unmarshaller for ComponentFailureContext Object
     /// </summary>  
-    public class ImageStateUnmarshaller : IJsonUnmarshaller<ImageState, JsonUnmarshallerContext>
+    public class ComponentFailureContextUnmarshaller : IJsonUnmarshaller<ComponentFailureContext, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImageState Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ComponentFailureContext Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ImageState unmarshalledObject = new ImageState();
+            ComponentFailureContext unmarshalledObject = new ComponentFailureContext();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("failureContext", targetDepth, ref reader))
-                {
-                    var unmarshaller = ImageFailureContextUnmarshaller.Instance;
-                    unmarshalledObject.FailureContext = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth, ref reader))
+                if (context.TestExpression("action", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("status", targetDepth, ref reader))
+                if (context.TestExpression("componentArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ComponentArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("errorMessage", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("phaseName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PhaseName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("stepName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StepName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
         }
 
 
-        private static ImageStateUnmarshaller _instance = new ImageStateUnmarshaller();        
+        private static ComponentFailureContextUnmarshaller _instance = new ComponentFailureContextUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ImageStateUnmarshaller Instance
+        public static ComponentFailureContextUnmarshaller Instance
         {
             get
             {

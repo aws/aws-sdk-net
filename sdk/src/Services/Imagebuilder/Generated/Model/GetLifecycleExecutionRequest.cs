@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLifecycleExecution operation.
-    /// Get the runtime information that was logged for a specific runtime instance of the
-    /// lifecycle policy.
+    /// Retrieves the runtime information for a specific runtime instance of the lifecycle
+    /// policy.
     /// </summary>
     public partial class GetLifecycleExecutionRequest : AmazonImagebuilderRequest
     {
@@ -41,8 +41,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LifecycleExecutionId. 
         /// <para>
-        /// Use the unique identifier for a runtime instance of the lifecycle policy to get runtime
-        /// details.
+        /// The unique identifier for a runtime instance of the lifecycle policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

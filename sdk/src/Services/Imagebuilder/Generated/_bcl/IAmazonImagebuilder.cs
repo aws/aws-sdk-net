@@ -32,10 +32,9 @@ namespace Amazon.Imagebuilder
     /// <summary>
     /// <para>Interface for accessing Imagebuilder</para>
     ///
-    /// EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier
-    /// to automate the creation, management, and deployment of customized, secure, and up-to-date
-    /// "golden" server images that are pre-installed and pre-configured with software and
-    /// settings to meet specific IT standards.
+    /// EC2 Image Builder automates the creation, management, and deployment of customized,
+    /// secure, and up-to-date "golden" server images that are pre-installed and pre-configured
+    /// with software and settings to meet specific IT standards.
     /// </summary>
     public partial interface IAmazonImagebuilder : IAmazonService, IDisposable
     {
@@ -50,8 +49,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// CancelImageCreation cancels the creation of Image. This operation can only be used
-        /// on images in a non-terminal state.
+        /// Cancels the creation of an image. This operation can only be used on images in a non-terminal
+        /// state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageCreation service method.</param>
         /// 
@@ -90,8 +89,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// CancelImageCreation cancels the creation of Image. This operation can only be used
-        /// on images in a non-terminal state.
+        /// Cancels the creation of an image. This operation can only be used on images in a non-terminal
+        /// state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageCreation service method.</param>
         /// <param name="cancellationToken">
@@ -136,7 +135,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Cancel a specific image lifecycle policy runtime instance.
+        /// Cancels a specific image lifecycle policy runtime instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelLifecycleExecution service method.</param>
         /// 
@@ -175,7 +174,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Cancel a specific image lifecycle policy runtime instance.
+        /// Cancels a specific image lifecycle policy runtime instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelLifecycleExecution service method.</param>
         /// <param name="cancellationToken">
@@ -376,6 +375,10 @@ namespace Amazon.Imagebuilder
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
@@ -430,6 +433,10 @@ namespace Amazon.Imagebuilder
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
@@ -483,6 +490,10 @@ namespace Amazon.Imagebuilder
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -539,6 +550,10 @@ namespace Amazon.Imagebuilder
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
@@ -580,9 +595,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new image. This request will create a new image along with all of the configured
-        /// output resources defined in the distribution configuration. You must specify exactly
-        /// one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.
+        /// Creates a new image along with all configured output resources defined in the distribution
+        /// configuration. You must specify exactly one recipe for your image, using either a
+        /// ContainerRecipeArn or an ImageRecipeArn.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// 
@@ -626,9 +641,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new image. This request will create a new image along with all of the configured
-        /// output resources defined in the distribution configuration. You must specify exactly
-        /// one recipe for your image, using either a ContainerRecipeArn or an ImageRecipeArn.
+        /// Creates a new image along with all configured output resources defined in the distribution
+        /// configuration. You must specify exactly one recipe for your image, using either a
+        /// ContainerRecipeArn or an ImageRecipeArn.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// <param name="cancellationToken">
@@ -678,8 +693,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new image pipeline. Image pipelines enable you to automate the creation
-        /// and distribution of images.
+        /// Creates a new image pipeline. Use image pipelines to automate the creation and distribution
+        /// of images.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImagePipeline service method.</param>
         /// 
@@ -691,6 +706,10 @@ namespace Amazon.Imagebuilder
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -726,8 +745,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new image pipeline. Image pipelines enable you to automate the creation
-        /// and distribution of images.
+        /// Creates a new image pipeline. Use image pipelines to automate the creation and distribution
+        /// of images.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImagePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -742,6 +761,10 @@ namespace Amazon.Imagebuilder
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -793,6 +816,10 @@ namespace Amazon.Imagebuilder
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -848,6 +875,10 @@ namespace Amazon.Imagebuilder
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
@@ -902,6 +933,10 @@ namespace Amazon.Imagebuilder
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
@@ -953,6 +988,10 @@ namespace Amazon.Imagebuilder
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
         /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
+        /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
@@ -990,7 +1029,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Create a lifecycle policy resource.
+        /// Creates a lifecycle policy resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
         /// 
@@ -1002,6 +1041,10 @@ namespace Amazon.Imagebuilder
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -1037,7 +1080,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Create a lifecycle policy resource.
+        /// Creates a lifecycle policy resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1052,6 +1095,10 @@ namespace Amazon.Imagebuilder
         /// These errors are usually caused by a client action, such as using an action or resource
         /// on behalf of a user that doesn't have permissions to use the action or resource, or
         /// specifying an invalid resource identifier.
+        /// </exception>
+        /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
+        /// The dry run operation of the resource was successful, and no resources or mutations
+        /// were actually performed due to the dry run flag in the request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -1090,7 +1137,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Create a new workflow or a new version of an existing workflow.
+        /// Creates a new workflow or a new version of an existing workflow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
         /// 
@@ -1145,7 +1192,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Create a new workflow or a new version of an existing workflow.
+        /// Creates a new workflow or a new version of an existing workflow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -1778,7 +1825,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Delete the specified lifecycle policy resource.
+        /// Deletes the specified lifecycle policy resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// 
@@ -1813,7 +1860,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Delete the specified lifecycle policy resource.
+        /// Deletes the specified lifecycle policy resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2046,7 +2093,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a component object.
+        /// Retrieves a component object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
         /// 
@@ -2077,7 +2124,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a component object.
+        /// Retrieves a component object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponent service method.</param>
         /// <param name="cancellationToken">
@@ -2114,7 +2161,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a component policy.
+        /// Retrieves a component policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentPolicy service method.</param>
         /// 
@@ -2143,7 +2190,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a component policy.
+        /// Retrieves a component policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetComponentPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2310,7 +2357,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a distribution configuration.
+        /// Retrieves a distribution configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfiguration service method.</param>
         /// 
@@ -2341,7 +2388,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets a distribution configuration.
+        /// Retrieves a distribution configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDistributionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2378,7 +2425,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image.
+        /// Retrieves an image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImage service method.</param>
         /// 
@@ -2409,7 +2456,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image.
+        /// Retrieves an image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImage service method.</param>
         /// <param name="cancellationToken">
@@ -2446,7 +2493,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image pipeline.
+        /// Retrieves an image pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImagePipeline service method.</param>
         /// 
@@ -2477,7 +2524,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image pipeline.
+        /// Retrieves an image pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImagePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -2514,7 +2561,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image policy.
+        /// Retrieves an image policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImagePolicy service method.</param>
         /// 
@@ -2543,7 +2590,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image policy.
+        /// Retrieves an image policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImagePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2578,7 +2625,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image recipe.
+        /// Retrieves an image recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImageRecipe service method.</param>
         /// 
@@ -2609,7 +2656,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image recipe.
+        /// Retrieves an image recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImageRecipe service method.</param>
         /// <param name="cancellationToken">
@@ -2646,7 +2693,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image recipe policy.
+        /// Retrieves an image recipe policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImageRecipePolicy service method.</param>
         /// 
@@ -2675,7 +2722,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an image recipe policy.
+        /// Retrieves an image recipe policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImageRecipePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2710,7 +2757,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an infrastructure configuration.
+        /// Retrieves an infrastructure configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInfrastructureConfiguration service method.</param>
         /// 
@@ -2741,7 +2788,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Gets an infrastructure configuration.
+        /// Retrieves an infrastructure configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetInfrastructureConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2778,8 +2825,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the runtime information that was logged for a specific runtime instance of the
-        /// lifecycle policy.
+        /// Retrieves the runtime information for a specific runtime instance of the lifecycle
+        /// policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleExecution service method.</param>
         /// 
@@ -2810,8 +2857,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the runtime information that was logged for a specific runtime instance of the
-        /// lifecycle policy.
+        /// Retrieves the runtime information for a specific runtime instance of the lifecycle
+        /// policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleExecution service method.</param>
         /// <param name="cancellationToken">
@@ -2848,7 +2895,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get details for the specified image lifecycle policy.
+        /// Retrieves details for the specified image lifecycle policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
         /// 
@@ -2879,7 +2926,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get details for the specified image lifecycle policy.
+        /// Retrieves details for the specified image lifecycle policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2916,8 +2963,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Verify the subscription and perform resource dependency checks on the requested Amazon
-        /// Web Services Marketplace resource. For Amazon Web Services Marketplace components,
+        /// Verifies the subscription and performs resource dependency checks on the requested
+        /// Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components,
         /// the response contains fields to download the components and their artifacts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
@@ -2949,8 +2996,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Verify the subscription and perform resource dependency checks on the requested Amazon
-        /// Web Services Marketplace resource. For Amazon Web Services Marketplace components,
+        /// Verifies the subscription and performs resource dependency checks on the requested
+        /// Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components,
         /// the response contains fields to download the components and their artifacts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
@@ -2988,7 +3035,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get a workflow resource object.
+        /// Retrieves a workflow resource object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
         /// 
@@ -3019,7 +3066,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get a workflow resource object.
+        /// Retrieves a workflow resource object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -3056,8 +3103,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the runtime information that was logged for a specific runtime instance of the
-        /// workflow.
+        /// Retrieves runtime information for a specific runtime instance of the workflow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecution service method.</param>
         /// 
@@ -3088,8 +3134,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the runtime information that was logged for a specific runtime instance of the
-        /// workflow.
+        /// Retrieves runtime information for a specific runtime instance of the workflow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowExecution service method.</param>
         /// <param name="cancellationToken">
@@ -3126,8 +3171,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the runtime information that was logged for a specific runtime instance of the
-        /// workflow step.
+        /// Retrieves runtime information for a specific runtime instance of the workflow step.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowStepExecution service method.</param>
         /// 
@@ -3158,8 +3202,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the runtime information that was logged for a specific runtime instance of the
-        /// workflow step.
+        /// Retrieves runtime information for a specific runtime instance of the workflow step.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkflowStepExecution service method.</param>
         /// <param name="cancellationToken">
@@ -3294,8 +3337,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Import a Windows operating system image from a verified Microsoft ISO disk file. The
-        /// following disk images are supported:
+        /// Imports a Windows operating system image from a verified Microsoft ISO disk file.
+        /// The following disk images are supported:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -3329,8 +3372,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Import a Windows operating system image from a verified Microsoft ISO disk file. The
-        /// following disk images are supported:
+        /// Imports a Windows operating system image from a verified Microsoft ISO disk file.
+        /// The following disk images are supported:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -3529,10 +3572,9 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  
         /// <para>
-        ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the base image or
-        /// components for your recipe. When you use a wildcard in any node, all nodes to the
-        /// right of the first wildcard must also be wildcards.
+        ///  <b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or
+        /// nodes when selecting the base image or components for your recipe. When you use a
+        /// wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3579,10 +3621,9 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  
         /// <para>
-        ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-        /// (x) to specify the most recent versions or nodes when selecting the base image or
-        /// components for your recipe. When you use a wildcard in any node, all nodes to the
-        /// right of the first wildcard must also be wildcards.
+        ///  <b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or
+        /// nodes when selecting the base image or components for your recipe. When you use a
+        /// wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3846,8 +3887,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// List the Packages that are associated with an Image Build Version, as determined by
-        /// Amazon Web Services Systems Manager Inventory at build time.
+        /// Lists the packages that are associated with an image build version, as determined
+        /// by Amazon Web Services Systems Manager Inventory at build time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImagePackages service method.</param>
         /// 
@@ -3884,8 +3925,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// List the Packages that are associated with an Image Build Version, as determined by
-        /// Amazon Web Services Systems Manager Inventory at build time.
+        /// Lists the packages that are associated with an image build version, as determined
+        /// by Amazon Web Services Systems Manager Inventory at build time.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImagePackages service method.</param>
         /// <param name="cancellationToken">
@@ -4506,7 +4547,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// List resources that the runtime instance of the image lifecycle identified for lifecycle
+        /// Lists resources that the runtime instance of the image lifecycle identified for lifecycle
         /// actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLifecycleExecutionResources service method.</param>
@@ -4541,7 +4582,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// List resources that the runtime instance of the image lifecycle identified for lifecycle
+        /// Lists resources that the runtime instance of the image lifecycle identified for lifecycle
         /// actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLifecycleExecutionResources service method.</param>
@@ -4582,7 +4623,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the lifecycle runtime history for the specified resource.
+        /// Retrieves the lifecycle runtime history for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLifecycleExecutions service method.</param>
         /// 
@@ -4616,7 +4657,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get the lifecycle runtime history for the specified resource.
+        /// Retrieves the lifecycle runtime history for the specified resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLifecycleExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -4656,7 +4697,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get a list of lifecycle policies in your Amazon Web Services account.
+        /// Retrieves a list of lifecycle policies in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLifecyclePolicies service method.</param>
         /// 
@@ -4690,7 +4731,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get a list of lifecycle policies in your Amazon Web Services account.
+        /// Retrieves a list of lifecycle policies in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLifecyclePolicies service method.</param>
         /// <param name="cancellationToken">
@@ -4776,8 +4817,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get a list of workflow steps that are waiting for action for workflows in your Amazon
-        /// Web Services account.
+        /// Retrieves a list of workflow steps that are waiting for action for workflows in your
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWaitingWorkflowSteps service method.</param>
         /// 
@@ -4811,8 +4852,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Get a list of workflow steps that are waiting for action for workflows in your Amazon
-        /// Web Services account.
+        /// Retrieves a list of workflow steps that are waiting for action for workflows in your
+        /// Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWaitingWorkflowSteps service method.</param>
         /// <param name="cancellationToken">
@@ -5152,11 +5193,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <c>PutComponentPolicy</c>, you
-        /// must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to a component. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutComponentPolicy service method.</param>
         /// 
@@ -5193,11 +5232,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <c>PutComponentPolicy</c>, you
-        /// must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to a component. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutComponentPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5240,12 +5277,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
-        /// (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
-        /// to share resources. If you call the Image Builder API <c>PutContainerImagePolicy</c>,
-        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to a container image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContainerRecipePolicy service method.</param>
         /// 
@@ -5282,12 +5316,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
-        /// (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
-        /// to share resources. If you call the Image Builder API <c>PutContainerImagePolicy</c>,
-        /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to a container image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContainerRecipePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5330,11 +5361,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <c>PutImagePolicy</c>, you must
-        /// also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to an image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImagePolicy service method.</param>
         /// 
@@ -5371,11 +5400,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <c>PutImagePolicy</c>, you must
-        /// also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to an image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImagePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5418,11 +5445,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <c>PutImageRecipePolicy</c>,
-        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to an image recipe. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageRecipePolicy service method.</param>
         /// 
@@ -5459,11 +5484,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <c>PutImageRecipePolicy</c>,
-        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// in order for the resource to be visible to all principals with whom the resource is
-        /// shared.
+        /// Applies a policy to an image recipe. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// so that the resource is visible to all principals with whom the resource is shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageRecipePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5506,7 +5529,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// RetryImage retries an image distribution without rebuilding the image.
+        /// Retries an image distribution or test without rebuilding the image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryImage service method.</param>
         /// 
@@ -5545,7 +5568,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// RetryImage retries an image distribution without rebuilding the image.
+        /// Retries an image distribution or test without rebuilding the image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryImage service method.</param>
         /// <param name="cancellationToken">
@@ -5778,8 +5801,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Begin asynchronous resource state update for lifecycle changes to the specified image
-        /// resources.
+        /// Begins an asynchronous resource state update for lifecycle changes to the specified
+        /// image resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceStateUpdate service method.</param>
         /// 
@@ -5821,8 +5844,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Begin asynchronous resource state update for lifecycle changes to the specified image
-        /// resources.
+        /// Begins an asynchronous resource state update for lifecycle changes to the specified
+        /// image resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceStateUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -5962,7 +5985,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new distribution configuration. Distribution configurations define and configure
+        /// Updates a distribution configuration. Distribution configurations define and configure
         /// the outputs of your pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionConfiguration service method.</param>
@@ -6006,7 +6029,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new distribution configuration. Distribution configurations define and configure
+        /// Updates a distribution configuration. Distribution configurations define and configure
         /// the outputs of your pipeline.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionConfiguration service method.</param>
@@ -6056,9 +6079,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates an image pipeline. Image pipelines enable you to automate the creation and
-        /// distribution of images. You must specify exactly one recipe for your image, using
-        /// either a <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
+        /// Updates an image pipeline. Use image pipelines to automate the creation and distribution
+        /// of images. You must specify exactly one recipe for your image, using either a <c>containerRecipeArn</c>
+        /// or an <c>imageRecipeArn</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -6105,9 +6128,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates an image pipeline. Image pipelines enable you to automate the creation and
-        /// distribution of images. You must specify exactly one recipe for your image, using
-        /// either a <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
+        /// Updates an image pipeline. Use image pipelines to automate the creation and distribution
+        /// of images. You must specify exactly one recipe for your image, using either a <c>containerRecipeArn</c>
+        /// or an <c>imageRecipeArn</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -6160,8 +6183,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new infrastructure configuration. An infrastructure configuration defines
-        /// the environment in which your image will be built and tested.
+        /// Updates an infrastructure configuration. An infrastructure configuration defines the
+        /// environment in which Image Builder builds and tests your image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInfrastructureConfiguration service method.</param>
         /// 
@@ -6200,8 +6223,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates a new infrastructure configuration. An infrastructure configuration defines
-        /// the environment in which your image will be built and tested.
+        /// Updates an infrastructure configuration. An infrastructure configuration defines the
+        /// environment in which Image Builder builds and tests your image.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInfrastructureConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -6246,7 +6269,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Update the specified lifecycle policy.
+        /// Updates the specified lifecycle policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// 
@@ -6289,7 +6312,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Update the specified lifecycle policy.
+        /// Updates the specified lifecycle policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">

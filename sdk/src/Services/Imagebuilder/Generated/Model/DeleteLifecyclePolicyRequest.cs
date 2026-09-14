@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteLifecyclePolicy operation.
-    /// Delete the specified lifecycle policy resource.
+    /// Deletes the specified lifecycle policy resource.
     /// </summary>
     public partial class DeleteLifecyclePolicyRequest : AmazonImagebuilderRequest
     {

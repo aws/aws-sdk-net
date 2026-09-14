@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateImagePipeline operation.
-    /// Creates a new image pipeline. Image pipelines enable you to automate the creation
-    /// and distribution of images.
+    /// Creates a new image pipeline. Use image pipelines to automate the creation and distribution
+    /// of images.
     /// </summary>
     public partial class CreateImagePipelineRequest : AmazonImagebuilderRequest
     {
@@ -40,6 +40,7 @@ namespace Amazon.Imagebuilder.Model
         private string _containerRecipeArn;
         private string _description;
         private string _distributionConfigurationArn;
+        private bool? _dryRun;
         private bool? _enhancedImageMetadataEnabled;
         private string _executionRole;
         private string _imageRecipeArn;
@@ -57,8 +58,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
+        /// no more than one time. If this token matches a previous request, the service ignores
+        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -116,8 +118,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the distribution configuration that will be used
-        /// to configure and distribute images created by this image pipeline.
+        /// The Amazon Resource Name (ARN) of the distribution configuration that configures and
+        /// distributes images created by this image pipeline.
         /// </para>
         /// </summary>
         public string DistributionConfigurationArn
@@ -133,11 +135,30 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Validates the required permissions and request parameters without making the request.
+        /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnhancedImageMetadataEnabled. 
         /// <para>
-        /// Collects additional information about the image being created, including the operating
-        /// system (OS) version and package list. This information is used to enhance the overall
-        /// experience of using EC2 Image Builder. Enabled by default.
+        /// Specifies whether to collect additional information about the image being created,
+        /// including the operating system (OS) version and package list. Defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool? EnhancedImageMetadataEnabled
@@ -175,8 +196,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image recipe that will be used to configure
-        /// images created by this image pipeline.
+        /// The Amazon Resource Name (ARN) of the image recipe that configures images created
+        /// by this image pipeline.
         /// </para>
         /// </summary>
         public string ImageRecipeArn
@@ -254,8 +275,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property InfrastructureConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the infrastructure configuration that will be used
-        /// to build images created by this image pipeline.
+        /// The Amazon Resource Name (ARN) of the infrastructure configuration that builds images
+        /// created by this image pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

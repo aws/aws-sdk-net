@@ -449,6 +449,68 @@ namespace Amazon.Imagebuilder
 
 
     /// <summary>
+    /// Constants used for properties of type ImageConfigurationStep.
+    /// </summary>
+    public class ImageConfigurationStep : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATE_LICENSES for ImageConfigurationStep
+        /// </summary>
+        public static readonly ImageConfigurationStep ASSOCIATE_LICENSES = new ImageConfigurationStep("ASSOCIATE_LICENSES");
+        /// <summary>
+        /// Constant EXPORT_AMI for ImageConfigurationStep
+        /// </summary>
+        public static readonly ImageConfigurationStep EXPORT_AMI = new ImageConfigurationStep("EXPORT_AMI");
+        /// <summary>
+        /// Constant PUT_SSM_PARAMETERS for ImageConfigurationStep
+        /// </summary>
+        public static readonly ImageConfigurationStep PUT_SSM_PARAMETERS = new ImageConfigurationStep("PUT_SSM_PARAMETERS");
+        /// <summary>
+        /// Constant UPDATE_FAST_LAUNCH_CONFIGURATIONS for ImageConfigurationStep
+        /// </summary>
+        public static readonly ImageConfigurationStep UPDATE_FAST_LAUNCH_CONFIGURATIONS = new ImageConfigurationStep("UPDATE_FAST_LAUNCH_CONFIGURATIONS");
+        /// <summary>
+        /// Constant UPDATE_LAUNCH_TEMPLATES for ImageConfigurationStep
+        /// </summary>
+        public static readonly ImageConfigurationStep UPDATE_LAUNCH_TEMPLATES = new ImageConfigurationStep("UPDATE_LAUNCH_TEMPLATES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageConfigurationStep(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageConfigurationStep FindValue(string value)
+        {
+            return FindValue<ImageConfigurationStep>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageConfigurationStep(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ImageScanStatus.
     /// </summary>
     public class ImageScanStatus : ConstantClass
@@ -1516,6 +1578,60 @@ namespace Amazon.Imagebuilder
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProductCodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RegionFailureStatus.
+    /// </summary>
+    public class RegionFailureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for RegionFailureStatus
+        /// </summary>
+        public static readonly RegionFailureStatus CANCELLED = new RegionFailureStatus("CANCELLED");
+        /// <summary>
+        /// Constant FAILED for RegionFailureStatus
+        /// </summary>
+        public static readonly RegionFailureStatus FAILED = new RegionFailureStatus("FAILED");
+        /// <summary>
+        /// Constant TIMED_OUT for RegionFailureStatus
+        /// </summary>
+        public static readonly RegionFailureStatus TIMED_OUT = new RegionFailureStatus("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RegionFailureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegionFailureStatus FindValue(string value)
+        {
+            return FindValue<RegionFailureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegionFailureStatus(string value)
         {
             return FindValue(value);
         }
