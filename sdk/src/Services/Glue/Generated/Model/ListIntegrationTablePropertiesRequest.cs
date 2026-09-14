@@ -30,20 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListIntegrationResourceProperties operation.
-    /// List integration resource properties for a single customer. It supports the filters,
-    /// maxRecords and markers.
+    /// Container for the parameters to the ListIntegrationTableProperties operation.
+    /// Lists the integration table properties in your account. This operation supports filtering
+    /// and pagination.
     /// </summary>
-    public partial class ListIntegrationResourcePropertiesRequest : AmazonGlueRequest
+    public partial class ListIntegrationTablePropertiesRequest : AmazonGlueRequest
     {
-        private List<IntegrationResourcePropertyFilter> _filters = AWSConfigs.InitializeCollections ? new List<IntegrationResourcePropertyFilter>() : null;
+        private List<IntegrationTablePropertiesFilter> _filters = AWSConfigs.InitializeCollections ? new List<IntegrationTablePropertiesFilter>() : null;
         private string _marker;
         private int? _maxRecords;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A list of filters, supported filter Key is <c>SourceArn</c> and <c>TargetArn</c>.
+        /// A list of filters. Supported filter keys are <c>SourceArn</c>, <c>TargetArn</c>, <c>SourceTableName</c>,
+        /// and <c>TargetTableName</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<IntegrationResourcePropertyFilter> Filters
+        public List<IntegrationTablePropertiesFilter> Filters
         {
             get { return this._filters; }
             set { this._filters = value; }
@@ -66,7 +67,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// This is the pagination token for next page, initial value is <c>null</c>.
+        /// The pagination token for the next page of results. The initial value is <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -85,7 +86,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// This is total number of items to be evaluated.
+        /// The maximum number of records to return in the response.
         /// </para>
         /// </summary>
         public int? MaxRecords

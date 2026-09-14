@@ -10649,6 +10649,61 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  ListIntegrationTableProperties
+
+        internal virtual ListIntegrationTablePropertiesResponse ListIntegrationTableProperties(ListIntegrationTablePropertiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntegrationTablePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationTablePropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListIntegrationTablePropertiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the integration table properties in your account. This operation supports filtering
+        /// and pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationTableProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationTableProperties">REST API Reference for ListIntegrationTableProperties Operation</seealso>
+        public virtual Task<ListIntegrationTablePropertiesResponse> ListIntegrationTablePropertiesAsync(ListIntegrationTablePropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIntegrationTablePropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIntegrationTablePropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListIntegrationTablePropertiesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListIterableForms
 
         internal virtual ListIterableFormsResponse ListIterableForms(ListIterableFormsRequest request)

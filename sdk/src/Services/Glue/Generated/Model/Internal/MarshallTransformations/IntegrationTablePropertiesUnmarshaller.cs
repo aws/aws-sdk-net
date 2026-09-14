@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TargetTableConfig Object
+    /// Response Unmarshaller for IntegrationTableProperties Object
     /// </summary>  
-    public class TargetTableConfigUnmarshaller : IJsonUnmarshaller<TargetTableConfig, JsonUnmarshallerContext>
+    public class IntegrationTablePropertiesUnmarshaller : IJsonUnmarshaller<IntegrationTableProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TargetTableConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IntegrationTableProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TargetTableConfig unmarshalledObject = new TargetTableConfig();
+            IntegrationTableProperties unmarshalledObject = new IntegrationTableProperties();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IntegrationArn", targetDepth, ref reader))
+                if (context.TestExpression("ResourceArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntegrationArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PartitionSpec", targetDepth, ref reader))
+                if (context.TestExpression("SourceTableConfig", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<IntegrationPartition, IntegrationPartitionUnmarshaller>(IntegrationPartitionUnmarshaller.Instance);
-                    unmarshalledObject.PartitionSpec = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = SourceTableConfigUnmarshaller.Instance;
+                    unmarshalledObject.SourceTableConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("TargetTableName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetTableName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UnnestSpec", targetDepth, ref reader))
+                if (context.TestExpression("TableName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UnnestSpec = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TargetTableConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = TargetTableConfigUnmarshaller.Instance;
+                    unmarshalledObject.TargetTableConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +85,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static TargetTableConfigUnmarshaller _instance = new TargetTableConfigUnmarshaller();        
+        private static IntegrationTablePropertiesUnmarshaller _instance = new IntegrationTablePropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TargetTableConfigUnmarshaller Instance
+        public static IntegrationTablePropertiesUnmarshaller Instance
         {
             get
             {

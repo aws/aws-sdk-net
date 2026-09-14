@@ -66,7 +66,7 @@ namespace Amazon.Glue.Model
         /// This is the pagination token for the next page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=4096)]
         public string Marker
         {
             get { return this._marker; }

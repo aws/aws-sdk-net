@@ -34,9 +34,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class TargetTableConfig
     {
+        private string _integrationArn;
         private List<IntegrationPartition> _partitionSpec = AWSConfigs.InitializeCollections ? new List<IntegrationPartition>() : null;
         private string _targetTableName;
         private UnnestSpec _unnestSpec;
+
+        /// <summary>
+        /// Gets and sets the property IntegrationArn. 
+        /// <para>
+        /// The ARN of the integration that owns this target table configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string IntegrationArn
+        {
+            get { return this._integrationArn; }
+            set { this._integrationArn = value; }
+        }
+
+        // Check to see if IntegrationArn property is set
+        internal bool IsSetIntegrationArn()
+        {
+            return this._integrationArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PartitionSpec. 

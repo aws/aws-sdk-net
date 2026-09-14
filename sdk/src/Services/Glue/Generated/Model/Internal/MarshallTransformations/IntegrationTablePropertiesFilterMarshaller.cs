@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TargetTableConfig Marshaller
+    /// IntegrationTablePropertiesFilter Marshaller
     /// </summary>
-    public class TargetTableConfigMarshaller : IRequestMarshaller<TargetTableConfig, JsonMarshallerContext> 
+    public class IntegrationTablePropertiesFilterMarshaller : IRequestMarshaller<IntegrationTablePropertiesFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TargetTableConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(IntegrationTablePropertiesFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetIntegrationArn())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("IntegrationArn");
-                context.Writer.WriteStringValue(requestObject.IntegrationArn);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
-            if(requestObject.IsSetPartitionSpec())
+            if(requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("PartitionSpec");
+                context.Writer.WritePropertyName("Values");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectPartitionSpecListValue in requestObject.PartitionSpec)
+                foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = IntegrationPartitionMarshaller.Instance;
-                    marshaller.Marshall(requestObjectPartitionSpecListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetTargetTableName())
-            {
-                context.Writer.WritePropertyName("TargetTableName");
-                context.Writer.WriteStringValue(requestObject.TargetTableName);
-            }
-
-            if(requestObject.IsSetUnnestSpec())
-            {
-                context.Writer.WritePropertyName("UnnestSpec");
-                context.Writer.WriteStringValue(requestObject.UnnestSpec);
             }
 
         }
@@ -85,7 +68,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TargetTableConfigMarshaller Instance = new TargetTableConfigMarshaller();
+        public readonly static IntegrationTablePropertiesFilterMarshaller Instance = new IntegrationTablePropertiesFilterMarshaller();
 
     }
 }

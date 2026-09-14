@@ -30,20 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListIntegrationResourceProperties operation.
-    /// List integration resource properties for a single customer. It supports the filters,
-    /// maxRecords and markers.
+    /// This is the response object from the ListIntegrationTableProperties operation.
     /// </summary>
-    public partial class ListIntegrationResourcePropertiesRequest : AmazonGlueRequest
+    public partial class ListIntegrationTablePropertiesResponse : AmazonWebServiceResponse
     {
-        private List<IntegrationResourcePropertyFilter> _filters = AWSConfigs.InitializeCollections ? new List<IntegrationResourcePropertyFilter>() : null;
+        private List<IntegrationTableProperties> _integrationTablePropertiesList = AWSConfigs.InitializeCollections ? new List<IntegrationTableProperties>() : null;
         private string _marker;
-        private int? _maxRecords;
 
         /// <summary>
-        /// Gets and sets the property Filters. 
+        /// Gets and sets the property IntegrationTablePropertiesList. 
         /// <para>
-        /// A list of filters, supported filter Key is <c>SourceArn</c> and <c>TargetArn</c>.
+        /// A list of integration table properties meeting the filter criteria.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -51,22 +48,22 @@ namespace Amazon.Glue.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<IntegrationResourcePropertyFilter> Filters
+        public List<IntegrationTableProperties> IntegrationTablePropertiesList
         {
-            get { return this._filters; }
-            set { this._filters = value; }
+            get { return this._integrationTablePropertiesList; }
+            set { this._integrationTablePropertiesList = value; }
         }
 
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
+        // Check to see if IntegrationTablePropertiesList property is set
+        internal bool IsSetIntegrationTablePropertiesList()
         {
-            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._integrationTablePropertiesList != null && (this._integrationTablePropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// This is the pagination token for next page, initial value is <c>null</c>.
+        /// The pagination token for the next page. Returns <c>null</c> if there are no more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -80,24 +77,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetMarker()
         {
             return this._marker != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxRecords. 
-        /// <para>
-        /// This is total number of items to be evaluated.
-        /// </para>
-        /// </summary>
-        public int? MaxRecords
-        {
-            get { return this._maxRecords; }
-            set { this._maxRecords = value; }
-        }
-
-        // Check to see if MaxRecords property is set
-        internal bool IsSetMaxRecords()
-        {
-            return this._maxRecords.HasValue; 
         }
 
     }
