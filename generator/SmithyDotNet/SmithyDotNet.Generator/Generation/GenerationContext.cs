@@ -115,6 +115,12 @@ public class GenerationContext
     public bool HasEndpointTests { get; }
 
     /// <summary>
+    /// Whether any operation returns a <c>@streaming</c> union, i.e. an output event stream. Gates the
+    /// per-service event stream exception.
+    /// </summary>
+    public bool HasEventStreamOutput { get; }
+
+    /// <summary>
     /// The parsed endpoint test suite, or <c>null</c> when <see cref="HasEndpointTests"/> is false.
     /// </summary>
     public EndpointTestSuite? EndpointTests { get; }
@@ -250,6 +256,8 @@ public class GenerationContext
         ServiceTitle = index.Service.GetTitle();
         Protocol = DetectProtocol(index.Service, SdkId);
         Operations = ResolveOperations(index);
+        HasEventStreamOutput = Operations.Any(operation =>
+            operation.Output.Members.Values.Any(member => Resolve(member.Target) is UnionShape union && union.IsStreaming()));
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);

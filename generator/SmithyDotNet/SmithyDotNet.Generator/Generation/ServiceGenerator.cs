@@ -1,8 +1,10 @@
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
+using SmithyDotNet.Generator.Writers.EventStreams;
 using SmithyDotNet.Generator.Writers.NuGet;
 using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
@@ -161,6 +163,12 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
+
+        if (context.HasEventStreamOutput)
+        {
+            var eventStreamExceptionWriter = new EventStreamExceptionWriter(context, modelFileName);
+            Emit(Path.Combine(model, $"{context.BaseName}EventStreamException.g.cs"), eventStreamExceptionWriter.Write(cancellationToken));
+        }
 
         var operationWriter = new OperationWriter(context, modelFileName);
         var requestMarshaller = new JsonRequestMarshallerWriter(context, modelFileName);
@@ -364,6 +372,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             if (context.Resolve(structureId) is StructureShape structure)
             {
+                if (structure.IsError())
+                {
+                    continue;
+                }
+
                 yield return (structureId, structure);
                 foreach (var nested in ReferencedStructuresRecursive(structure, visited))
                 {

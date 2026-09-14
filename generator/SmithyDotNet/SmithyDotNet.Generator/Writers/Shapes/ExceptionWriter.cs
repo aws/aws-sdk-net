@@ -136,7 +136,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         return [.. members.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
     }
 
-    private static void WriteSerializableAttribute(CodeWriter writer)
+    internal static void WriteSerializableAttribute(CodeWriter writer)
     {
         writer.WriteLine("#if !NETSTANDARD");
         writer.WriteLine("[Serializable]");
@@ -232,7 +232,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
     }
 
-    private static void WriteSerializationBlock(CodeWriter writer, string className, IReadOnlyList<Member> members, bool includeGetObjectData)
+    internal static void WriteSerializationBlock(CodeWriter writer, string className, IReadOnlyList<Member> members, bool includeGetObjectData)
     {
         writer.WriteLine("#if !NETSTANDARD");
         writer.WriteLine("/// <summary>");
