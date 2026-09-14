@@ -9,7 +9,7 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// of the existing AWS SDK for .NET.
 /// <para />
 /// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
-/// bool, numeric, timestamp), list&lt;string&gt; @httpQuery/@httpHeader, an @httpQueryParams map
+/// bool, numeric, timestamp), list @httpQuery/@httpHeader (string, enum, and value-type elements), an @httpQueryParams map
 /// (map&lt;string,string&gt; or map&lt;string,list&lt;string&gt;&gt;), an @httpPrefixHeaders
 /// map&lt;string,string&gt;, body lists of strings or
 /// structures, an @httpPayload string/structure/blob body, and the operation's @endpoint host
@@ -226,22 +226,46 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         "long?" => $"StringUtils.FromLong({expression}.Value)",
         "float?" => $"StringUtils.FromFloat({expression}.Value)",
         "double?" => $"StringUtils.FromDouble({expression}.Value)",
-        "DateTime?" => TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
+        "DateTime?" => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
         _ => null,
     };
 
-    // The StringUtils call that renders a timestamp as a string for a header/query/label position.
-    private static string TimestampStringConversion(string format, string expression) => format switch
+    // The bare StringUtils.From* method name (no argument) for a non-nullable value-type collection
+    // element, or null when the element has no scalar string form. Used as the lambda body in a query
+    // ConvertAll<string>(item => X(item)); elements are non-nullable (List<int>), so no .Value.
+    // Timestamps use the query/label default (ISO8601) unless the element carries an explicit format.
+    private static string? QueryElementConverter(TypeDescriptor element) => element.DotNetType switch
     {
-        "date-time" => $"StringUtils.FromDateTimeToISO8601WithOptionalMs({expression})",
-        "http-date" => $"StringUtils.FromDateTimeToRFC822({expression})",
-        "epoch-seconds" => $"StringUtils.FromDateTimeToUnixTimestamp({expression})",
-        _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
+        "bool" => "StringUtils.FromBool",
+        "int" => "StringUtils.FromInt",
+        "long" => "StringUtils.FromLong",
+        "float" => "StringUtils.FromFloat",
+        "double" => "StringUtils.FromDouble",
+        "DateTime" => HttpBindingConversions.TimestampConverter(element.TimestampFormat ?? QueryLabelTimestampDefault),
+        _ => null,
     };
+
+    // A list<string>/list<enum> adds its List<string> to the typed ParameterCollection directly; a
+    // value-type list converts each element to a string via ConvertAll (repeated params, matching C2J).
+    // A non-scalar element (blob, structure, nested collection) fails loud as it's not supported according to smithy spec
+    // https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
+    private void WriteQueryListMember(CodeWriter writer, Member member, string queryName, TypeDescriptor element)
+    {
+        if (element.MarshalsAsString)
+        {
+            writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName});""");
+            return;
+        }
+
+        var converter = QueryElementConverter(element)
+            ?? throw new GeneratorException($"Unsupported query list element type '{element.DotNetType}' (member: {member.PropertyName}).");
+        writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName}.ConvertAll<string>(item => {converter}(item)));""");
+    }
 
     //https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
     private void WriteQueryStringMembers(CodeWriter writer, List<(Member Member, string QueryName)> queryMembers)
     {
+        // TODO: handle customizations, such as exclusions in marshalling 
         foreach (var (member, queryName) in queryMembers)
         {
             // An idempotency token is auto-populated, so it is never "required from the customer".
@@ -261,13 +285,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A list<string> adds repeated params via the typed ParameterCollection overload;
+                // A list adds repeated params via the typed ParameterCollection overload;
                 // request.Parameters is a string-only IDictionary facade over the same collection and
                 // cannot take a List<string>. Scalars stay on StringConversion, which still throws for
                 // any unsupported type.
-                if (member.Type.ListElement is { IsString: true })
+                if (member.Type.ListElement is { } element)
                 {
-                    writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName});""");
+                    WriteQueryListMember(writer, member, queryName, element);
                 }
                 else
                 {
@@ -349,13 +373,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         {
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A list<string> header joins to one comma-separated value via StringUtils.FromList
-                // (RFC-7230 quoting). A string/enum header is assigned directly (an enum's ConstantClass
-                // converts implicitly to string). Other scalars go through StringUtils; an unsupported
-                // type throws.
-                if (member.Type.ListElement is { IsString: true })
+                // A list header joins to one value: a list<string>/list<enum> via StringUtils.FromList
+                // (RFC-7230 quoting), a value-type list via StringUtils.FromValueTypeList (bool
+                // lowercased, DateTime forced to RFC822). A non-scalar element fails loud. A string/enum
+                // scalar header is assigned directly (an enum's ConstantClass converts implicitly to
+                // string). Other scalars go through StringUtils; an unsupported type throws.
+                if (member.Type.ListElement is { } element)
                 {
-                    writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
+                    WriteHeaderListMember(writer, member, headerName, element);
                 }
                 else if (member.Type is { IsString: true, MediaType: not null })
                 {
@@ -375,6 +400,31 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             });
             writer.WriteLine("");
         }
+    }
+
+    // A list<string>/list<enum> comma-joins via StringUtils.FromList; a value-type list (int, long,
+    // bool, double, timestamp, ...) via StringUtils.FromValueTypeList, whose List<T> overload lowercases
+    // bool and forces DateTime to RFC822 (matching C2J's untyped call — the element type is inferred). A
+    // non-scalar element (blob, structure, nested collection) fails loud.
+    private void WriteHeaderListMember(CodeWriter writer, Member member, string headerName, TypeDescriptor element)
+    {
+        if (element.MarshalsAsString)
+        {
+            writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
+            return;
+        }
+        if (!element.IsScalar || element.IsSparse)
+        {
+            throw new GeneratorException($"Unsupported header list element type '{element.DotNetType}' (member: {member.PropertyName}).");
+        }
+        // FromValueTypeList always emits RFC822 for DateTime, which matches the http-date header default.
+        // An element with an explicit @timestampFormat other than http-date would be silently sent as
+        // RFC822, so fail loud rather than send the wrong value (no AWS service binds such a list today).
+        if (element.IsTimestamp && element.TimestampFormat is { } format && format != "http-date")
+        {
+            throw new GeneratorException($"@httpHeader list of timestamps with @timestampFormat '{format}' is not supported (StringUtils.FromValueTypeList always emits RFC822); member: {member.PropertyName}.");
+        }
+        writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromValueTypeList(publicRequest.{member.PropertyName});""");
     }
 
     // https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait

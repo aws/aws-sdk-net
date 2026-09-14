@@ -326,12 +326,20 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// </summary>
     internal static string HeaderValueConversion(Member member, string value)
     {
+        // A list<T> @httpHeader is a multi-value header parsed by MultiValueHeaderParser (matches C2J):
+        // strings/enums via ToStringList, timestamps via ToDateTimeList with the C2J format name,
+        // other value types via the generic ToValueTypeList<T>. Handled before the scalar switch.
+        if (member.Type.ListElement is { } element)
+        {
+            return MultiValueHeaderConversion(member, element, value);
+        }
+
         // A timestamp needs a second axis — its resolved @timestampFormat — so it is handled before the
         // scalar switch. restJson1's header default when unset (null) is http-date; epoch-seconds is an
         // integer count fed to the Unix-epoch helper, while date-time and http-date both parse via
         // DateTime.Parse (the wire forms differ but the parser handles both).
         // https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html
-        if (member.Type.MarshalType == "DateTime?")
+        if (member.Type.IsTimestamp)
         {
             return member.TimestampFormat switch
             {
@@ -349,11 +357,35 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             "long?" => $"long.Parse({value}, CultureInfo.InvariantCulture)",
             "float?" => $"float.Parse({value}, CultureInfo.InvariantCulture)",
             "double?" => $"double.Parse({value}, CultureInfo.InvariantCulture)",
-            // TODO: a list/set bound to @httpHeader (a multi-value header) has a List<T> MarshalType and
-            // falls through here. C2J parses these via MultiValueHeaderParser (ToStringList /
-            // ToValueTypeList<T> / ToDateTimeList).
             _ => throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName})."),
         };
+    }
+
+    /// <summary>
+    /// The right-hand side that reads a <c>list&lt;T&gt;</c> multi-value header from
+    /// <paramref name="value"/> via <c>MultiValueHeaderParser</c> (matches C2J). A string/enum element
+    /// uses <c>ToStringList</c>; a timestamp element uses <c>ToDateTimeList</c> with the C2J format name
+    /// (header default RFC822 when unset); another value type uses the generic <c>ToValueTypeList&lt;T&gt;</c>
+    /// over the non-nullable element type. A non-scalar element (blob, structure, nested collection) fails loud.
+    /// </summary>
+    private static string MultiValueHeaderConversion(Member member, TypeDescriptor element, string value)
+    {
+        if (element.MarshalsAsString)
+        {
+            return $"MultiValueHeaderParser.ToStringList({value})";
+        }
+        if (element.IsTimestamp)
+        {
+            // A header timestamp list defaults to http-date when the element carries no @timestampFormat
+            // (restJson1's header binding default); the shared helper maps it to the runtime parser's name.
+            var format = HttpBindingConversions.TimestampFormatName(element.TimestampFormat ?? "http-date");
+            return $"""MultiValueHeaderParser.ToDateTimeList({value}, "{format}")""";
+        }
+        if (element is { IsScalar: true, IsSparse: false })
+        {
+            return $"MultiValueHeaderParser.ToValueTypeList<{element.DotNetType}>({value})";
+        }
+        throw new GeneratorException($"Unsupported header list element type '{element.DotNetType}' (member: {member.PropertyName}).");
     }
 
     private void WriteUnmarshallExceptionMethod(CodeWriter writer, Operation operation)

@@ -27,6 +27,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// blob payload then requires a seekable stream so the marshaller can set Content-Length (no chunked body).</param>
 /// <param name="IsDocument">True if this targets a document shape (maps to <c>Amazon.Runtime.Documents.Document</c>);
 /// (un)marshals wholesale through the runtime document transforms.</param>
+/// <param name="IsTimestamp">True if this targets a timestamp shape (maps to <c>DateTime</c>/<c>DateTime?</c>).
+/// A timestamp's wire form is format-dependent (see <see cref="TimestampFormat"/>), so writers branch on it
+/// rather than on the .NET type name.</param>
 /// <param name="ListElement">The list element's type; set only for a list, null otherwise. An enum element
 /// is described as a plain <c>string</c>, so <see cref="IsEnum"/> is never set on an element descriptor.</param>
 /// <param name="MapValue">The map value's type; set only for a map, null otherwise. A map's key always
@@ -51,6 +54,7 @@ public sealed record TypeDescriptor(
     bool IsStreaming = false,
     bool RequiresLength = false,
     bool IsDocument = false,
+    bool IsTimestamp = false,
     TypeDescriptor? ListElement = null,
     TypeDescriptor? MapValue = null,
     string? TimestampFormat = null,
@@ -209,6 +213,7 @@ public static class TypeMapper
             IsStreaming: target is BlobShape && target.IsStreaming(),
             RequiresLength: target is BlobShape && target.RequiresLength(),
             IsDocument: target is DocumentShape,
+            IsTimestamp: target is TimestampShape,
             ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),

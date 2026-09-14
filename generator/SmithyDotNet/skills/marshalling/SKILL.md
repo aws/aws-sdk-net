@@ -37,23 +37,30 @@ code is pinned in `JsonRequestMarshallerWriterTests`.
 |---|---|---|
 | `@httpQuery("name")` scalar | Query string | `request.Parameters.Add("name", StringUtils.FromString(...))` |
 | `@httpQuery("name")` `list<string>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop)` (repeated params, ordinal-sorted at runtime) |
+| `@httpQuery("name")` `list<value-type>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop.ConvertAll<string>(item => StringUtils.FromX(item)))` (per-element conversion; timestamps default to `date-time`) |
 | `@httpQueryParams` map | Query string | Loop entries into query params (see below); `@httpQuery` wins on key collision |
 | `@httpLabel` | URI segment | Replace `{member}` in `request.ResourcePath` |
 | `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
 | `@httpHeader("name")` `@mediaType` string | Header | Base64: `Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(...))`; read side decodes (C2J "jsonvalue"). Body-bound `@mediaType` strings are plain. Pinned in `ScalarMemberCodegenTests` |
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
+| `@httpHeader("name")` `list<value-type>` | Header | `request.Headers["name"] = StringUtils.FromValueTypeList(publicRequest.Prop)` (its `List<T>` overload lowercases bool and forces `DateTime` to RFC822) |
 | `@httpPrefixHeaders("prefix")` map | Multiple headers | Loop `map<string,string>`, emit `{prefix}{key}` headers (see below); request & response |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
 | `@hostLabel` | Endpoint host prefix | Additive: `request.HostPrefix` label + its normal binding (see below) |
 | `@httpResponseCode` | (response only) | `unmarshalledObject.{Prop} = (int)context.ResponseData.StatusCode;` (see below) |
 | No HTTP trait | Body | Protocol-specific serialization |
 
-List query/header bindings are `list<string>` only — which covers `list<enum>` too, because an enum
-collection element resolves to plain `string` (see the type-mapping skill). `request.ParameterCollection` (not the string-only `request.Parameters` facade) carries the
-`List<string>` query overload. A list of a value-type element (int, long, bool, double, timestamp,
-intEnum) *is* now allowed as a **body** member, but in a query/header binding position it falls through to
-`StringConversion`, which returns null for a collection type and so fails loud (`?? throw` in
-`WriteQueryStringMembers`/`WriteHeaderMembers`); no restJson1 service binds one to query/header today.
+List query/header bindings cover `list<string>`/`list<enum>` (an enum collection element resolves to
+plain `string` — see the type-mapping skill) *and* value-type element lists (int, long, bool, double,
+float, timestamp, intEnum), matching C2J. `request.ParameterCollection` (not the string-only
+`request.Parameters` facade) carries the query overload: a string/enum list is added directly, a
+value-type list per-element via `ConvertAll<string>(item => StringUtils.FromX(item))` (the bare
+`StringUtils.From*` name comes from `QueryElementConverter`; timestamps use the query default
+`date-time`). A header string/enum list joins via `StringUtils.FromList`, a value-type list via
+`StringUtils.FromValueTypeList` (its `List<T>` overload lowercases bool and forces `DateTime` to RFC822,
+so no per-element/format branch is emitted). A **non-scalar** element (blob, structure, nested
+list/map) fails loud in both positions (`WriteQueryListMember`/`WriteHeaderListMember`), matching C2J's
+`NotImplementedException`. Pinned in `ListMemberCodegenTests`.
 
 A single member may carry `@httpQueryParams` (structurally exclusive): a `map<string, string>` or
 `map<string, list<string>>` whose entries each become query params, reusing the `@httpQuery`
@@ -226,6 +233,15 @@ the response path):
 | `double?` | `double.Parse(value, CultureInfo.InvariantCulture)` |
 | `DateTime?` date-time / http-date | `DateTime.Parse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal \| DateTimeStyles.AdjustToUniversal)` |
 | `DateTime?` epoch-seconds | `Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(value, CultureInfo.InvariantCulture))` |
+| `List<string>` / `List<enum>` | `MultiValueHeaderParser.ToStringList(value)` |
+| `List<value-type>` (int/long/bool/double/float) | `MultiValueHeaderParser.ToValueTypeList<T>(value)` (T = the non-nullable element type, e.g. `int`) |
+| `List<DateTime>` | `MultiValueHeaderParser.ToDateTimeList(value, "FMT")` — `FMT` is the C2J format name (`RFC822`/`ISO8601`/`UnixTimestamp`; header default `RFC822`), **not** the Smithy token |
+
+A `list<T>` header is a multi-value header parsed by `MultiValueHeaderParser` (`MultiValueHeaderConversion`,
+handled before the scalar switch); a non-scalar element fails loud. `HttpBindingConversions.TimestampFormatName`
+maps the Smithy `@timestampFormat` (`http-date`→`RFC822`, `date-time`→`ISO8601`, `epoch-seconds`→`UnixTimestamp`)
+to the enum name the runtime parser expects (the caller resolves the `http-date` header default first). `MultiValueHeaderParser` lives in `Amazon.Runtime.Internal.Util`,
+already imported. Pinned in `ListMemberCodegenTests`.
 
 Header timestamps default to `http-date` when `@timestampFormat` is unset (see the binding-default
 table below). On the unmarshal side `date-time` and `http-date` produce identical `DateTime.Parse`

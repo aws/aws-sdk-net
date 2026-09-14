@@ -250,7 +250,7 @@
     "com.example#DoLists": {
       "type": "operation",
       "input": { "target": "com.example#DoListsRequest" },
-      "output": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#DoListsResponse" },
       "traits": { "smithy.api#http": { "uri": "/lists", "method": "POST" } }
     },
     "com.example#DoListsRequest": {
@@ -258,12 +258,32 @@
       "members": {
         "tagKeys":      { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "tagKeys" } },
         "requiredKeys": { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "requiredKeys", "smithy.api#required": {} } },
-        "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } }
+        "counts":       { "target": "com.example#IntList", "traits": { "smithy.api#httpQuery": "counts" } },
+        "stamps":       { "target": "com.example#TimestampList", "traits": { "smithy.api#httpQuery": "stamps" } },
+        "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } },
+        "amounts":      { "target": "com.example#IntList", "traits": { "smithy.api#httpHeader": "x-amounts" } },
+        "when":         { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-when" } }
+      }
+    },
+    "com.example#DoListsResponse": {
+      "type": "structure",
+      "members": {
+        "stringHeader":    { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-strs" } },
+        "intHeader":       { "target": "com.example#IntList", "traits": { "smithy.api#httpHeader": "x-ints" } },
+        "timestampHeader": { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-stamps" } }
       }
     },
     "com.example#StringList": {
       "type": "list",
       "member": { "target": "smithy.api#String" }
+    },
+    "com.example#IntList": {
+      "type": "list",
+      "member": { "target": "smithy.api#Integer" }
+    },
+    "com.example#TimestampList": {
+      "type": "list",
+      "member": { "target": "smithy.api#Timestamp" }
     },
     "com.example#DoShadow": {
       "type": "operation",
