@@ -38,6 +38,8 @@ namespace Amazon.SecurityToken.Model
         private AssumedRoleUser _assumedRoleUser;
         private Credentials _credentials;
         private int? _packedPolicySize;
+        private int? _sessionTokenSize;
+        private int? _sessionTokenUtilization;
         private string _sourceIdentity;
 
         /// <summary>
@@ -95,6 +97,7 @@ namespace Amazon.SecurityToken.Model
         /// than 100 percent, which means the policies and tags exceeded the allowed space.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. Replaced by SessionTokenUtilization.")]
         [AWSProperty(Min=0)]
         public int? PackedPolicySize
         {
@@ -106,6 +109,38 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetPackedPolicySize()
         {
             return this._packedPolicySize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTokenSize.
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? SessionTokenSize
+        {
+            get { return this._sessionTokenSize; }
+            set { this._sessionTokenSize = value; }
+        }
+
+        // Check to see if SessionTokenSize property is set
+        internal bool IsSetSessionTokenSize()
+        {
+            return this._sessionTokenSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTokenUtilization.
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? SessionTokenUtilization
+        {
+            get { return this._sessionTokenUtilization; }
+            set { this._sessionTokenUtilization = value; }
+        }
+
+        // Check to see if SessionTokenUtilization property is set
+        internal bool IsSetSessionTokenUtilization()
+        {
+            return this._sessionTokenUtilization.HasValue; 
         }
 
         /// <summary>

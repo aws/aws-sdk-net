@@ -162,6 +162,7 @@ namespace Amazon.SecurityToken.Model
     public partial class GetFederationTokenRequest : AmazonSecurityTokenServiceRequest
     {
         private int? _durationSeconds;
+        private int? _minimumSessionTokenSize;
         private string _name;
         private string _policy;
         private List<PolicyDescriptorType> _policyArns = AWSConfigs.InitializeCollections ? new List<PolicyDescriptorType>() : null;
@@ -203,6 +204,22 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetDurationSeconds()
         {
             return this._durationSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumSessionTokenSize.
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public int? MinimumSessionTokenSize
+        {
+            get { return this._minimumSessionTokenSize; }
+            set { this._minimumSessionTokenSize = value; }
+        }
+
+        // Check to see if MinimumSessionTokenSize property is set
+        internal bool IsSetMinimumSessionTokenSize()
+        {
+            return this._minimumSessionTokenSize.HasValue; 
         }
 
         /// <summary>

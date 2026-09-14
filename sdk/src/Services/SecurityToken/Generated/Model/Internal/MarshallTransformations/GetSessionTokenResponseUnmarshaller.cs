@@ -88,6 +88,18 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                         response.Credentials = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SessionTokenSize", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        response.SessionTokenSize = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("SessionTokenUtilization", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        response.SessionTokenUtilization = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

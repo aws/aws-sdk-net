@@ -82,6 +82,7 @@ namespace Amazon.SecurityToken.Model
         /// attached to the session. If the packed size exceeds 100%, the request fails.
         /// </para>
         /// </summary>
+        [Obsolete("Deprecated. This field is not populated for GetDelegatedAccessToken.")]
         [AWSProperty(Min=0)]
         public int? PackedPolicySize
         {
