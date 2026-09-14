@@ -1,0 +1,150 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DSQL.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateCluster operation. The <i>UpdateCluster</i>
+    /// API allows you to modify both single-Region and multi-Region cluster configurations.
+    /// With the <i>multiRegionProperties</i> parameter, you can add or modify witness Region
+    /// support and manage peer relationships with clusters in other Regions. <note> <para>
+    /// Note that updating multi-Region clusters requires additional IAM permissions beyond
+    /// those needed for standard cluster updates, as detailed in the Permissions section.
+    /// </para> </note> <para> <b>Required permissions</b> </para> <dl> <dt>dsql:UpdateCluster</dt>
+    /// <dd> <para> Permission to update a DSQL cluster. </para> <para> Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+    /// </c> </para> </dd> </dl> <dl> <dt>dsql:PutMultiRegionProperties</dt> <dd> <para> Permission
+    /// to configure multi-Region properties for a cluster. </para> <para> Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+    /// </c> </para> </dd> </dl> <dl> <dt>dsql:GetCluster</dt> <dd> <para> Permission to retrieve
+    /// cluster information. </para> <para> Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+    /// </c> </para> </dd> <dt>dsql:AddPeerCluster</dt> <dd> <para> Permission to add peer
+    /// clusters. </para> <para> Resources: </para> <ul> <li> <para> Local cluster: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+    /// </c> </para> </li> <li> <para> Each peer cluster: exact ARN of each specified peer
+    /// cluster </para> </li> </ul> </dd> <dt>dsql:RemovePeerCluster</dt> <dd> <para> Permission
+    /// to remove peer clusters. When you list peer clusters in <c>multiRegionProperties.clusters</c>,
+    /// you need this permission for each current peer cluster that your list omits. </para>
+    /// <para> Resources: </para> <ul> <li> <para> Each removed peer cluster: exact ARN of
+    /// each removed peer cluster, in its own Region </para> </li> </ul> </dd> </dl> <dl>
+    /// <dt>dsql:PutWitnessRegion</dt> <dd> <para> Permission to set a witness Region. </para>
+    /// <para> Resources: <c>arn:aws:dsql:<i>region</i>:<i>account-id</i>:cluster/<i>cluster-id</i>
+    /// </c> </para> <para> Condition Keys: dsql:WitnessRegion (matching the specified witness
+    /// Region) </para> <para> <b>This permission is checked both in the cluster Region and
+    /// in the witness Region.</b> </para> </dd> </dl> <important> <ul> <li> <para> The witness
+    /// Region specified in <c>multiRegionProperties.witnessRegion</c> cannot be the same
+    /// as the cluster's Region. </para> </li> <li> <para> When you list peer clusters in
+    /// <c>multiRegionProperties.clusters</c>, you need <c>dsql:AddPeerCluster</c> for every
+    /// peer cluster in your request. You need <c>dsql:RemovePeerCluster</c> only for the
+    /// peer clusters that the update removes. </para> </li> </ul> </important>
+    /// </summary>
+    public partial class UpdateClusterRequest : AmazonDSQLRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. Idempotency ensures that an API request completes only once. With an
+        /// idempotent request, if the original request completes successfully. The subsequent
+        /// retries with the same client token return the result from the original successful
+        /// request and they have no additional effect.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a client token, the Amazon Web Services SDK automatically generates
+        /// one.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Specifies whether to enable deletion protection in your cluster.
+        /// </para>
+        /// </summary>
+        public bool? DeletionProtectionEnabled { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DeletionProtectionEnabled property is set.
+        /// </summary>
+        internal bool IsSetDeletionProtectionEnabled() => this.DeletionProtectionEnabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The ID of the cluster you want to update.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Identifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Identifier property is set.
+        /// </summary>
+        internal bool IsSetIdentifier() => this.Identifier != null;
+
+        /// <summary>
+        /// Gets and sets the property KmsEncryptionKey. 
+        /// <para>
+        /// The KMS key that encrypts and protects the data on your cluster. You can specify the
+        /// ARN, ID, or alias of an existing key or have Amazon Web Services create a default
+        /// key for you.
+        /// </para>
+        ///  
+        /// <para>
+        /// To switch to the key owned by Amazon Web Services, specify the reserved value <c>AWS_OWNED_KMS_KEY</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string KmsEncryptionKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsEncryptionKey property is set.
+        /// </summary>
+        internal bool IsSetKmsEncryptionKey() => this.KmsEncryptionKey != null;
+
+        /// <summary>
+        /// Gets and sets the property MultiRegionProperties. 
+        /// <para>
+        /// The new multi-Region cluster configuration settings to be applied during an update
+        /// operation.
+        /// </para>
+        /// </summary>
+        public MultiRegionProperties MultiRegionProperties { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MultiRegionProperties property is set.
+        /// </summary>
+        internal bool IsSetMultiRegionProperties() => this.MultiRegionProperties != null;
+    }
+}

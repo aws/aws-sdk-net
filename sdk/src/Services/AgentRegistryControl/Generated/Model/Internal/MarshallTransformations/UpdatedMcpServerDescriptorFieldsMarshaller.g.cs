@@ -1,0 +1,98 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.AgentRegistryControl.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdatedMcpServerDescriptorFields Marshaller
+    /// </summary>
+    public partial class UpdatedMcpServerDescriptorFieldsMarshaller : IRequestMarshaller<UpdatedMcpServerDescriptorFields, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(UpdatedMcpServerDescriptorFields requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAdditionalData())
+            {
+                context.Writer.WritePropertyName("additionalData");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedMcpServerAdditionalDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdditionalData, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetData())
+            {
+                context.Writer.WritePropertyName("data");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedDescriptorDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.Data, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetDataSchemaVersion())
+            {
+                context.Writer.WritePropertyName("dataSchemaVersion");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedDataSchemaVersionMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataSchemaVersion, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedDescriptorSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Source, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static UpdatedMcpServerDescriptorFieldsMarshaller Instance = new UpdatedMcpServerDescriptorFieldsMarshaller();
+    }
+}

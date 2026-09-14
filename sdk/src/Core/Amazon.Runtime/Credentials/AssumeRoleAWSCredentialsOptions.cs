@@ -40,6 +40,12 @@ namespace Amazon.Runtime
         public int? DurationSeconds { get; set; }
 
         /// <summary>
+        /// The minimum size, in bytes, that the issued session token should be. Callers can use this to request a larger session token.
+        /// The requested value must not exceed the maximum supported token size.
+        /// </summary>
+        public int? MinimumSessionTokenSize { get; set; }
+
+        /// <summary>
         /// The proxy settings to use when calling AssumeRole.
         /// </summary>
 #if NETFRAMEWORK

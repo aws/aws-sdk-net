@@ -4,7 +4,7 @@
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRequest.Description</property>
@@ -15,19 +15,19 @@
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRecordRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRecordRequest.Description</property>
@@ -43,49 +43,49 @@
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRecordRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRecordRequest.RecordVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRecordRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CreateRegistryRecordResponse.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.DeleteRegistryRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.DeleteRegistryRecordRequest.RecordId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.DeleteRegistryRecordRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryResponse.Description</property>
@@ -96,37 +96,37 @@
     <property>Amazon.AgentRegistryControl.Model.GetRegistryResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryResponse.RegistryId</property>
     <min>12</min>
     <max>16</max>
-    <pattern>[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordRequest.RecordId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.CreatedBy</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.Description</property>
@@ -142,31 +142,31 @@
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.RecordId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9]{12}</pattern>
+    <pattern>^[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.RecordVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListRegistriesRequest.MaxResults</property>
@@ -177,13 +177,13 @@
     <property>Amazon.AgentRegistryControl.Model.ListRegistriesRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListRegistriesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListRegistryRecordsRequest.MaxResults</property>
@@ -194,19 +194,19 @@
     <property>Amazon.AgentRegistryControl.Model.ListRegistryRecordsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListRegistryRecordsRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListRegistryRecordsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -217,31 +217,31 @@
     <property>Amazon.AgentRegistryControl.Model.SubmitRegistryRecordForApprovalRequest.RecordId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.SubmitRegistryRecordForApprovalRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.SubmitRegistryRecordForApprovalResponse.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.SubmitRegistryRecordForApprovalResponse.RecordId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9]{12}</pattern>
+    <pattern>^[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.SubmitRegistryRecordForApprovalResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.TagResourceRequest.ResourceArn</property>
@@ -257,13 +257,13 @@
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRequest.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryResponse.Description</property>
@@ -274,49 +274,49 @@
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryResponse.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryResponse.RegistryId</property>
     <min>12</min>
     <max>16</max>
-    <pattern>[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordRequest.RecordId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordRequest.RecordVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.CreatedBy</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.Description</property>
@@ -332,43 +332,43 @@
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.RecordId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9]{12}</pattern>
+    <pattern>^[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.RecordVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordStatusRequest.RecordId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/)?[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordStatusRequest.RegistryId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordStatusRequest.StatusReason</property>
@@ -379,19 +379,19 @@
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordStatusResponse.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordStatusResponse.RecordId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9]{12}</pattern>
+    <pattern>^[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordStatusResponse.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.A2aAgentCardDescriptor.Data</property>
@@ -427,13 +427,13 @@
     <property>Amazon.AgentRegistryControl.Model.ClaimMatchValueType.MatchValueString</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9_.:/-]+</pattern>
+    <pattern>^[A-Za-z0-9_.:/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CustomClaimValidationType.InboundTokenClaimName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9_.-:]+</pattern>
+    <pattern>^[A-Za-z0-9_.-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.CustomDescriptor.Data</property>
@@ -444,19 +444,19 @@
     <property>Amazon.AgentRegistryControl.Model.CustomJWTAuthorizerConfiguration.DiscoveryUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>.+/\.well-known/openid-configuration</pattern>
+    <pattern>^.+/\.well-known/openid-configuration$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.DescriptorSourceFromUrl.Url</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>https://.*</pattern>
+    <pattern>^https://.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.EncryptionConfiguration.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ManagedVpcResource.RoutingDomain</property>
@@ -467,7 +467,7 @@
     <property>Amazon.AgentRegistryControl.Model.ManagedVpcResource.VpcIdentifier</property>
     <min>10</min>
     <max>48</max>
-    <pattern>vpc-(([0-9a-z]{8})|([0-9a-z]{17}))</pattern>
+    <pattern>^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.McpServerDescriptor.Data</property>
@@ -498,43 +498,43 @@
     <property>Amazon.AgentRegistryControl.Model.Provenance.SourceId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ProvenanceSummary.SourceId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordIamCredentialProvider.Region</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordIamCredentialProvider.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordIamCredentialProvider.Service</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordOAuthCredentialProvider.ProviderArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:.*</pattern>
+    <pattern>^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.CreatedBy</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.Description</property>
@@ -550,31 +550,31 @@
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.RecordId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9]{12}</pattern>
+    <pattern>^[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.RecordVersion</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistrySummary.Description</property>
@@ -585,25 +585,25 @@
     <property>Amazon.AgentRegistryControl.Model.RegistrySummary.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistrySummary.RegistryArn</property>
     <min>46</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistrySummary.RegistryId</property>
     <min>12</min>
     <max>16</max>
-    <pattern>[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.SelfManagedLatticeResource.ResourceConfigurationIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))</pattern>
+    <pattern>^((rcfg-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:resourceconfiguration/rcfg-[0-9a-z]{17}))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdatedDataSchemaVersion.OptionalValue</property>

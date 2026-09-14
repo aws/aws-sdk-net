@@ -1016,6 +1016,7 @@ namespace AWSSDK.UnitTests
                     request.TokenCode = options.MfaTokenCode;
                     request.Policy = options.Policy;
                     request.SourceIdentity = options.SourceIdentity;
+                    request.MinimumSessionTokenSize = options.MinimumSessionTokenSize;
 
                     if (options.DurationSeconds.HasValue)
                     {
@@ -1108,6 +1109,7 @@ namespace AWSSDK.UnitTests
                     request.TokenCode = options.MfaTokenCode;
                     request.Policy = options.Policy;
                     request.SourceIdentity = options.SourceIdentity;
+                    request.MinimumSessionTokenSize = options.MinimumSessionTokenSize;
 
                     if (options.DurationSeconds.HasValue)
                     {

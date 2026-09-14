@@ -1,0 +1,227 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.VPCLattice.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateResourceGateway operation. A resource gateway
+    /// is a point of ingress into the VPC where a resource resides. It spans multiple Availability
+    /// Zones. For your resource to be accessible from all Availability Zones, you should
+    /// create your resource gateways to span as many Availability Zones as possible. A VPC
+    /// can have multiple resource gateways.
+    /// </summary>
+    public partial class CreateResourceGatewayRequest : AmazonVPCLatticeRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If you retry a request that completed successfully using the same client
+        /// token and parameters, the retry succeeds without performing any actions. If the parameters
+        /// aren't identical, the retry fails.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 64)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// A resource gateway can have IPv4, IPv6 or dualstack addresses. The IP address type
+        /// of a resource gateway must be compatible with the subnets of the resource gateway
+        /// and the IP address type of the resource, as described here: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>IPv4</b>Assign IPv4 addresses to your resource gateway network interfaces. This
+        /// option is supported only if all selected subnets have IPv4 address ranges, and the
+        /// resource also has an IPv4 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>IPv6</b>Assign IPv6 addresses to your resource gateway network interfaces. This
+        /// option is supported only if all selected subnets are IPv6 only subnets, and the resource
+        /// also has an IPv6 address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Dualstack</b>Assign both IPv4 and IPv6 addresses to your resource gateway network
+        /// interfaces. This option is supported only if all selected subnets have both IPv4 and
+        /// IPv6 address ranges, and the resource either has an IPv4 or IPv6 address.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The IP address type of the resource gateway is independent of the IP address type
+        /// of the client or the VPC endpoint through which the resource is accessed.
+        /// </para>
+        /// </summary>
+        public ResourceGatewayIpAddressType IpAddressType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IpAddressType property is set.
+        /// </summary>
+        internal bool IsSetIpAddressType() => this.IpAddressType != null;
+
+        /// <summary>
+        /// Gets and sets the property Ipv4AddressesPerEni. 
+        /// <para>
+        /// The number of IPv4 addresses in each ENI for the resource gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 62)]
+        public int? Ipv4AddressesPerEni { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Ipv4AddressesPerEni property is set.
+        /// </summary>
+        internal bool IsSetIpv4AddressesPerEni() => this.Ipv4AddressesPerEni.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the resource gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 3, Max = 40)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceConfigDnsResolution. 
+        /// <para>
+        /// Indicates how DNS is resolved for resource configurations associated to this resource
+        /// gateway. ResourceConfigDnsResolution is set at creation time and cannot be changed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IN_VPC</c> - DNS resolution occurs privately within the resource gateway's VPC.
+        /// DNS queries for resources behind this resource gateway resolve using the DNS resolvers
+        /// defined in the VPC's DHCP option sets. Use this when your resource domain names are
+        /// hosted in private Route 53 hosted zones or on-premises DNS servers reachable from
+        /// the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PUBLIC</c> - DNS resolution occurs against public DNS resolvers. DNS queries for
+        /// resources behind this resource gateway resolve using standard public DNS. Use this
+        /// when your resource domain names are publicly resolvable.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceConfigDnsResolution ResourceConfigDnsResolution { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceConfigDnsResolution property is set.
+        /// </summary>
+        internal bool IsSetResourceConfigDnsResolution() => this.ResourceConfigDnsResolution != null;
+
+        /// <summary>
+        /// Gets and sets the property SecurityGroupIds. 
+        /// <para>
+        /// The IDs of the security groups to apply to the resource gateway. The security groups
+        /// must be in the same VPC.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 5)]
+        public List<string> SecurityGroupIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SecurityGroupIds property is set.
+        /// </summary>
+        internal bool IsSetSecurityGroupIds() => this.SecurityGroupIds != null && (this.SecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SubnetIds. 
+        /// <para>
+        /// The IDs of the VPC subnets in which to create the resource gateway.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> SubnetIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the SubnetIds property is set.
+        /// </summary>
+        internal bool IsSetSubnetIds() => this.SubnetIds != null && (this.SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags for the resource gateway.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 200)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property VpcIdentifier. 
+        /// <para>
+        /// The ID of the VPC for the resource gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 5, Max = 50)]
+        public string VpcIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the VpcIdentifier property is set.
+        /// </summary>
+        internal bool IsSetVpcIdentifier() => this.VpcIdentifier != null;
+    }
+}

@@ -4,13 +4,13 @@
     <property>Amazon.DSQL.Model.CreateClusterRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterRequest.KmsEncryptionKey</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterRequest.Policy</property>
@@ -19,111 +19,111 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterResponse.Endpoint</property>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateClusterResponse.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateStreamRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateStreamRequest.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateStreamResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateStreamResponse.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.CreateStreamResponse.StreamIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterResponse.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterPolicyRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteClusterPolicyRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteStreamRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteStreamRequest.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteStreamRequest.StreamIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteStreamResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteStreamResponse.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.DeleteStreamResponse.StreamIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterResponse.Endpoint</property>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterResponse.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterPolicyRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetClusterPolicyResponse.Policy</property>
@@ -132,37 +132,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetStreamRequest.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetStreamRequest.StreamIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetStreamResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetStreamResponse.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetStreamResponse.StreamIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ClusterVpcEndpoint</property>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ServiceName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>com\.amazonaws\.[a-z0-9-]+\.dsql[a-z0-9-]*</pattern>
+    <pattern>^com\.amazonaws\.[a-z0-9-]+\.dsql[a-z0-9-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ListClustersRequest.MaxResults</property>
@@ -171,7 +171,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ListStreamsRequest.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ListStreamsRequest.MaxResults</property>
@@ -182,17 +182,17 @@
     <property>Amazon.DSQL.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.PutClusterPolicyRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.PutClusterPolicyRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.PutClusterPolicyRequest.Policy</property>
@@ -203,73 +203,72 @@
     <property>Amazon.DSQL.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterRequest.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterRequest.KmsEncryptionKey</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9:/_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterResponse.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.UpdateClusterResponse.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ClusterSummary.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ClusterSummary.Identifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.KinesisTargetDefinition.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role(/[a-zA-Z0-9+=,.@_-]+)+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::[0-9]{12}:role(/[a-zA-Z0-9+=,.@_-]+)+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.KinesisTargetDefinition.StreamArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws[a-zA-Z-]*:kinesis:[a-z0-9-]*:[0-9]{12}:stream/[a-zA-Z0-9+=,.@_/\-]+</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:kinesis:[a-z0-9-]*:[0-9]{12}:stream/[a-zA-Z0-9+=,.@_/\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.MultiRegionProperties.WitnessRegion</property>
-    <min>0</min>
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.StreamSummary.Arn</property>
-    <pattern>arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:dsql:[a-z0-9-]{1,20}:[0-9]{12}:cluster/[a-z0-9]{26}/stream/[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.StreamSummary.ClusterIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.StreamSummary.StreamIdentifier</property>
-    <pattern>[a-z0-9]{26}</pattern>
+    <pattern>^[a-z0-9]{26}$</pattern>
   </property-value-rule>
 </property-value-rules>
