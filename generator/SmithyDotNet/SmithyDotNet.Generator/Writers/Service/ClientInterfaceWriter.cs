@@ -136,14 +136,24 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         // Synchronous overload. The synchronous API surface exists only on .NET Framework (the C2J
         // generator emits it in the _bcl file, which is excluded from the netstandard/net builds), so
         // guard it with #if NETFRAMEWORK in this single-file output.
+        var obsolete = TypeMapper.BuildObsolete(operation.Shape);
+
         writer.WriteLine("#if NETFRAMEWORK");
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.WriteLine($"{responseType} {operation.Name}({requestType} request);");
         writer.WriteLine("#endif");
         writer.WriteLine();
 
         // Asynchronous overload.
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
     }
 

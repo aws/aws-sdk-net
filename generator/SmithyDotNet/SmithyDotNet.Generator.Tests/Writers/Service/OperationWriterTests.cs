@@ -134,6 +134,16 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void DeprecatedOutputShape_EmitsClassLevelObsoleteOnResponse()
+    {
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoHeaderOnly");
+
+        var response = new OperationWriter(context, "example-2023-01-01.normal.json").WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("""[Obsolete("This type is deprecated.")]""", response);
+    }
+
+    [Fact]
     public void Response_OmitsContentLengthMember()
     {
         // AmazonWebServiceResponse already declares ContentLength, so the member is skipped; other members are unaffected.

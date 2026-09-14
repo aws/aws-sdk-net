@@ -271,14 +271,24 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         // `internal virtual` (no docs) to reduce the modern-TFM public surface. In this single-file
         // output that is a #if NETFRAMEWORK (public + docs) / #else (internal, no docs) pair. Both
         // arms share the same InvokeOptions body; the async overload below is unconditional.
+        var obsolete = TypeMapper.BuildObsolete(operation.Shape);
+
         writer.WriteLine("#if NETFRAMEWORK");
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.OpenBlock($"public virtual {responseType} {operation.Name}({requestType} request)", () =>
         {
             WriteInvokeOptions(writer, operation);
             writer.WriteLine($"return Invoke<{responseType}>(request, options);");
         });
         writer.WriteLine("#else");
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.OpenBlock($"internal virtual {responseType} {operation.Name}({requestType} request)", () =>
         {
             WriteInvokeOptions(writer, operation);
@@ -289,6 +299,10 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
 
         // Asynchronous method. Unconditional across all target frameworks.
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.OpenBlock($"public virtual Task<{responseType}> {operation.Name}Async({requestType} request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))", () =>
         {
             WriteInvokeOptions(writer, operation);

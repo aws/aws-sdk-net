@@ -32,6 +32,10 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace($"{context.Namespace}.Model", () =>
         {
             DocumentationFormatter.WriteClassSummary(writer, DocumentationFormatter.Cleanup(structure.GetDocumentation()));
+            if (TypeMapper.BuildObsolete(structure) is string obsolete)
+            {
+                writer.WriteLine(obsolete);
+            }
             writer.OpenBlock($"public partial class {className}", () => MemberWriter.WriteMembers(writer, members));
         });
 

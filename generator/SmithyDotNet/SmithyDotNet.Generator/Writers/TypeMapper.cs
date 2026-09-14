@@ -166,7 +166,7 @@ public static class TypeMapper
                 IsNullableValueType: scalarType is not null,
                 IsIdempotencyToken: member.IsIdempotencyToken(),
                 AwsProperty: BuildAwsProperty(member, target),
-                Obsolete: BuildObsolete(memberName, member, target),
+                Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
                 JsonName: member.GetJsonName(),
@@ -487,27 +487,21 @@ public static class TypeMapper
     }
 
     /// <summary>
-    /// Builds the <c>[Obsolete(...)]</c> attribute string for a @deprecated member, or null when the
-    /// member is not deprecated.
+    /// Builds the <c>[Obsolete(...)]</c> attribute string for a @deprecated shape (member, structure,
+    /// or operation), or null when the shape is not deprecated. Deprecation marks the shape's own
+    /// declaration only; it does not propagate onto properties targeting the shape (matches C2J).
     /// </summary>
-    /// <remarks>
-    /// A message is mandatory: <c>[Obsolete]</c> without one trips analyzer CA1041, so we throw rather
-    /// than emit a message-less attribute.
-    /// </remarks>
-    public static string? BuildObsolete(string memberName, MemberShape member, Shape target)
+    public static string? BuildObsolete(Shape shape)
     {
-        var deprecated = member.GetDeprecated() ?? target.GetDeprecated();
+        var deprecated = shape.GetDeprecated();
         if (deprecated is null)
         {
             return null;
         }
 
         // TODO: CustomizationTransform doesn't merge deprecatedMessage into @deprecated yet; a
-        // member relying on that customization fails here.
-        var message = deprecated.Message
-            ?? throw new GeneratorException(
-                $"The 'message' property of the @deprecated trait is missing for member '{memberName}'. " +
-                "[Obsolete] requires a message (CA1041); provide one in the model or via a customization.");
+        // shape relying on that customization fails here.
+        var message = deprecated.Message ?? throw new GeneratorException("The @deprecated trait is missing its 'message' property.");
 
         return $"[Obsolete({CodeWriter.Literal(message)})]";
     }

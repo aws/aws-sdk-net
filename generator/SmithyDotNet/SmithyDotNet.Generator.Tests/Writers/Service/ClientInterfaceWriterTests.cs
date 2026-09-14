@@ -17,6 +17,16 @@ public class ClientInterfaceWriterTests
     }
 
     [Fact]
+    public void DeprecatedOperation_EmitsObsoleteOnBothSignatures()
+    {
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var output = new ClientInterfaceWriter(context, "example-2023-01-01.normal.json").Write(TestContext.Current.CancellationToken);
+
+        // Sync (#if NETFRAMEWORK) and async signatures.
+        Assert.Equal(2, System.Text.RegularExpressions.Regex.Count(output, """\[Obsolete\("This operation is deprecated\."\)\]"""));
+    }
+
+    [Fact]
     public void EmitsInterfaceDeclarationInServiceNamespace()
     {
         Assert.Contains("namespace Amazon.CloudTrailData", _output);

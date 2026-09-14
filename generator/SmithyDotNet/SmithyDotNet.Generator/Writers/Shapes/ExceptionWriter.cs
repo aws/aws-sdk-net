@@ -67,6 +67,10 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace($"{context.Namespace}.Model", () =>
         {
             DocumentationFormatter.WriteClassSummary(writer, DocumentationFormatter.Cleanup(errorShape.GetDocumentation()));
+            if (TypeMapper.BuildObsolete(errorShape) is string obsolete)
+            {
+                writer.WriteLine(obsolete);
+            }
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : {baseClassName}", () =>
             {

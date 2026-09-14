@@ -18,6 +18,7 @@ public class TypeMapperTests
             "name":        { "target": "test#BoundedString", "traits": { "smithy.api#required": {} } },
             "legacy":      { "target": "smithy.api#String", "traits": { "smithy.api#deprecated": { "message": "Use name instead", "since": "2024-01-01" } } },
             "legacyBare":  { "target": "smithy.api#String", "traits": { "smithy.api#deprecated": {} } },
+            "viaTarget":   { "target": "test#DeprecatedString" },
             "ratio":       { "target": "test#FractionalRatio" },
             "percent":     { "target": "test#IntegralLiteralPercent" },
             "mixed":       { "target": "test#MixedRatio" },
@@ -31,6 +32,7 @@ public class TypeMapperTests
     {
         ["test#RangedInt"] = TestModels.DeserializeShape("""{ "type": "integer", "traits": { "smithy.api#range": { "min": 1, "max": 1000 } } }"""),
         ["test#SecretString"] = TestModels.DeserializeShape("""{ "type": "string", "traits": { "smithy.api#sensitive": {} } }"""),
+        ["test#DeprecatedString"] = TestModels.DeserializeShape("""{ "type": "string", "traits": { "smithy.api#deprecated": { "message": "Deprecated target" } } }"""),
         ["test#BoundedString"] = TestModels.DeserializeShape("""{ "type": "string", "traits": { "smithy.api#length": { "min": 1, "max": 64 } } }"""),
         ["test#FractionalRatio"] = TestModels.DeserializeShape("""{ "type": "float", "traits": { "smithy.api#range": { "min": 0.01, "max": 99.99 } } }"""),
         ["test#IntegralLiteralPercent"] = TestModels.DeserializeShape("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0.0, "max": 100.0 } } }"""),
@@ -59,8 +61,7 @@ public class TypeMapperTests
 
     private static string? Obsolete(string memberName)
     {
-        var member = Structure.Members[memberName];
-        return TypeMapper.BuildObsolete(memberName, member, Targets[member.Target.AbsoluteName]);
+        return TypeMapper.BuildObsolete(Structure.Members[memberName]);
     }
 
     [Fact]
@@ -128,6 +129,12 @@ public class TypeMapperTests
     public void Deprecated_WithoutMessage_Throws()
     {
         Assert.Throws<GeneratorException>(() => Obsolete("legacyBare"));
+    }
+
+    [Fact]
+    public void Deprecated_TargetTrait_DoesNotPropagateToMember()
+    {
+        Assert.Null(Obsolete("viaTarget"));
     }
 
     [Fact]

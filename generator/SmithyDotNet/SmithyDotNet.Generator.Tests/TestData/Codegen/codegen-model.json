@@ -72,7 +72,8 @@
       "type": "structure",
       "members": {
         "reason": { "target": "smithy.api#String" }
-      }
+      },
+      "traits": { "smithy.api#deprecated": { "message": "This type is deprecated." } }
     },
     "com.example#ResourceList": {
       "type": "list",
@@ -161,13 +162,14 @@
       "type": "operation",
       "input": { "target": "smithy.api#Unit" },
       "output": { "target": "com.example#DoHeaderOnlyResponse" },
-      "traits": { "smithy.api#http": { "uri": "/header-only?aws_iam=t", "method": "POST" } }
+      "traits": { "smithy.api#http": { "uri": "/header-only?aws_iam=t", "method": "POST" }, "smithy.api#deprecated": { "message": "This operation is deprecated." } }
     },
     "com.example#DoHeaderOnlyResponse": {
       "type": "structure",
       "members": {
         "token": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-token" } }
-      }
+      },
+      "traits": { "smithy.api#deprecated": { "message": "This type is deprecated." } }
     },
     "com.example#DoScalars": {
       "type": "operation",

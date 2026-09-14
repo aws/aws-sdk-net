@@ -44,7 +44,8 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var doc = $"Container for the parameters to the {operation.Name} operation. {cleanedOperationDoc}";
 
         var members = TypeMapper.ResolveMembers(operation.Input, context);
-        return WriteClass(new OperationRecord(className, baseClass, doc, members), cancellationToken);
+        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Input));
+        return WriteClass(record, cancellationToken);
     }
 
     /// <summary>
@@ -69,7 +70,8 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         }
         var doc = $"This is the response object from the {operation.Name} operation.";
 
-        return WriteClass(new OperationRecord(className, baseClass, doc, members, streamingMembers), cancellationToken);
+        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Output), streamingMembers);
+        return WriteClass(record, cancellationToken);
     }
 
     /// <summary>
@@ -81,6 +83,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         string BaseClass,
         string Doc,
         List<Member> Members,
+        string? Obsolete = null,
         List<Member>? StreamingMembers = null);
 
     private string WriteClass(OperationRecord opRecord, CancellationToken cancellationToken)
@@ -94,6 +97,10 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             writer.WriteLine("/// <summary>");
             DocumentationFormatter.WriteCommentBlock(writer, DocumentationFormatter.Cleanup(opRecord.Doc));
             writer.WriteLine("/// </summary>");
+            if (opRecord.Obsolete is string obsolete)
+            {
+                writer.WriteLine(obsolete);
+            }
             writer.OpenBlock($"public partial class {opRecord.ClassName} : {opRecord.BaseClass}", () =>
             {
                 MemberWriter.WriteMembers(writer, opRecord.Members);

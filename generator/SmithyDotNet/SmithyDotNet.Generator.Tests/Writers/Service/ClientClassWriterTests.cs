@@ -21,6 +21,16 @@ public class ClientClassWriterTests
     }
 
     [Fact]
+    public void DeprecatedOperation_EmitsObsoleteOnAllThreeMethods()
+    {
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var output = new ClientClassWriter(context, "example-2023-01-01.normal.json").Write(TestContext.Current.CancellationToken);
+
+        // Sync method in both #if arms plus the async method.
+        Assert.Equal(3, System.Text.RegularExpressions.Regex.Count(output, """\[Obsolete\("This operation is deprecated\."\)\]"""));
+    }
+
+    [Fact]
     public void EmitsClassDeclarationInServiceNamespace()
     {
         // Service-level namespace, NOT the .Model namespace (the client is interface-writer-shaped).
