@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateTieringInput Object
+    /// Response Unmarshaller for CustomTier Object
     /// </summary>  
-    public class UpdateTieringInputUnmarshaller : IJsonUnmarshaller<UpdateTieringInput, JsonUnmarshallerContext>
+    public class CustomTierUnmarshaller : IJsonUnmarshaller<CustomTier, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UpdateTieringInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CustomTier Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            UpdateTieringInput unmarshalledObject = new UpdateTieringInput();
+            CustomTier unmarshalledObject = new CustomTier();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CustomTiers", targetDepth, ref reader))
+                if (context.TestExpression("BeginRangeInclusive", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<CustomTier, CustomTierUnmarshaller>(CustomTierUnmarshaller.Instance);
-                    unmarshalledObject.CustomTiers = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.BeginRangeInclusive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FreeTier", targetDepth, ref reader))
+                if (context.TestExpression("EndRangeExclusive", targetDepth, ref reader))
                 {
-                    var unmarshaller = UpdateFreeTierConfigUnmarshaller.Instance;
-                    unmarshalledObject.FreeTier = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.EndRangeExclusive = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RateValue", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.RateValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         }
 
 
-        private static UpdateTieringInputUnmarshaller _instance = new UpdateTieringInputUnmarshaller();        
+        private static CustomTierUnmarshaller _instance = new CustomTierUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateTieringInputUnmarshaller Instance
+        public static CustomTierUnmarshaller Instance
         {
             get
             {

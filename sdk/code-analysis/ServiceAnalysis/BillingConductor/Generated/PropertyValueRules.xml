@@ -674,6 +674,18 @@
     <pattern>\d{4}-(0?[1-9]|1[012])</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CustomTier.BeginRangeInclusive</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CustomTier.EndRangeExclusive</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CustomTier.RateValue</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.DisassociateResourceResponseElement.Arn</property>
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:(customlineitem|billinggroup)/)?[a-zA-Z0-9]{10,12}</pattern>
   </property-value-rule>

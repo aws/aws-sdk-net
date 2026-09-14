@@ -56,6 +56,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("CustomTiers", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CustomTier, CustomTierUnmarshaller>(CustomTierUnmarshaller.Instance);
+                    unmarshalledObject.CustomTiers = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("FreeTier", targetDepth, ref reader))
                 {
                     var unmarshaller = FreeTierConfigUnmarshaller.Instance;

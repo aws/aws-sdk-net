@@ -34,7 +34,32 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class CreateTieringInput
     {
+        private List<CustomTier> _customTiers = AWSConfigs.InitializeCollections ? new List<CustomTier>() : null;
         private CreateFreeTierConfig _freeTier;
+
+        /// <summary>
+        /// Gets and sets the property CustomTiers. 
+        /// <para>
+        ///  The set of custom tiers for the pricing rule. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CustomTier> CustomTiers
+        {
+            get { return this._customTiers; }
+            set { this._customTiers = value; }
+        }
+
+        // Check to see if CustomTiers property is set
+        internal bool IsSetCustomTiers()
+        {
+            return this._customTiers != null && (this._customTiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property FreeTier. 
@@ -42,7 +67,6 @@ namespace Amazon.BillingConductor.Model
         ///  The possible Amazon Web Services Free Tier configurations. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public CreateFreeTierConfig FreeTier
         {
             get { return this._freeTier; }

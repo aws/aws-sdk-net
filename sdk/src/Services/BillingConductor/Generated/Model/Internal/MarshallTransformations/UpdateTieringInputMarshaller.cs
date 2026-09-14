@@ -46,6 +46,22 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCustomTiers())
+            {
+                context.Writer.WritePropertyName("CustomTiers");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCustomTiersListValue in requestObject.CustomTiers)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CustomTierMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomTiersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetFreeTier())
             {
                 context.Writer.WritePropertyName("FreeTier");
