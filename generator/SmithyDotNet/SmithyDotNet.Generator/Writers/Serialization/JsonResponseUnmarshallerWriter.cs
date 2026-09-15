@@ -70,10 +70,17 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         {
             writer.WriteLine($"var unmarshalledObject = new {className}();");
 
+            // An event-stream member IS the whole body: hand the raw response stream to the generated
+            // EnumerableEventOutputStream subclass (the union's own class), which decodes the frames
+            // lazily as the caller enumerates. Matches C2J's JsonRPCResponseUnmarshaller.
+            if (members.EventStreamMember is { } eventStream)
+            {
+                writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName} = new {eventStream.Type.DotNetType}(context.Stream);");
+            }
             // A @httpPayload member IS the whole body (it replaces normal body members); otherwise the
             // body members are read from the JSON payload. A response with only header (or no) members
             // emits no reader/loop.
-            if (members.PayloadMember is { } payload)
+            else if (members.PayloadMember is { } payload)
             {
                 WritePayloadUnmarshall(writer, payload);
             }
@@ -190,11 +197,24 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         var bodyMembers = new List<Member>();
         Member? payloadMember = null;
         Member? statusCodeMember = null;
+        Member? eventStreamMember = null;
         (Member Member, string Prefix)? prefixHeadersMember = null;
         foreach (var member in members)
         {
             var memberShape = structure.Members[member.ModeledName];
-            if (memberShape.GetHttpHeader() is string headerName)
+            if (member.Type.IsEventStream)
+            {
+                // A @streaming union/structure member is the event stream — it IS the body (like a
+                // payload): the unmarshaller hands the raw response stream to the generated
+                // EnumerableEventOutputStream subclass rather than reading JSON.
+                if (eventStreamMember is not null)
+                {
+                    throw new GeneratorException($"Structure has more than one event-stream member ('{eventStreamMember.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                eventStreamMember = member;
+            }
+            else if (memberShape.GetHttpHeader() is string headerName)
             {
                 headerMembers.Add((member, headerName));
             }
@@ -240,7 +260,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
         }
 
-        return new PartitionedMembers(headerMembers, bodyMembers, payloadMember, statusCodeMember, prefixHeadersMember);
+        return new PartitionedMembers(headerMembers, bodyMembers, payloadMember, statusCodeMember, prefixHeadersMember, eventStreamMember);
     }
 
     /// <summary>
@@ -254,7 +274,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         List<Member> BodyMembers,
         Member? PayloadMember,
         Member? StatusCodeMember,
-        (Member Member, string Prefix)? PrefixHeadersMember);
+        (Member Member, string Prefix)? PrefixHeadersMember,
+        Member? EventStreamMember);
 
     // Emits `if (context.ResponseData.IsHeaderPresent("name")) unmarshalledObject.Property = <conversion>;`
     // per header member. Shared with the exception unmarshaller (both use the `unmarshalledObject` local).

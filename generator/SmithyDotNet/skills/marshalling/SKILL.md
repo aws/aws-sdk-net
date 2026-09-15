@@ -210,6 +210,19 @@ operation's output; on an error it "is simply ignored" (Smithy spec), so `JsonEx
 passes `bindStatusCode: false` and the member falls through to the body like any ordinary member — unlike
 `@httpPayload`, which fails loud on an error.
 
+### Event streams (response)
+
+An output member targeting a `@streaming` union/structure is an event stream (`TypeDescriptor.IsEventStream`).
+`PartitionByBinding` pulls it out (`EventStreamMember`) and it IS the body: the unmarshaller emits
+`unmarshalledObject.{Prop} = new {UnionClass}(context.Stream);` instead of a JSON reader loop, matching C2J's
+`JsonRPCResponseUnmarshaller`.
+
+`EventStreamOutputWriter` emits `{UnionClass}` — the `EnumerableEventOutputStream` subclass (mirrors C2J's
+`EventStreamOutputGenerator`). Each union member is a mapping entry keyed on the member name verbatim (the wire
+`:event-type`; the dict is `OrdinalIgnoreCase`); `@error` members feed `ExceptionMapping`, the rest `EventMapping`
+plus a PascalCase `{Name}Received` handler. Pinned in `EventStreamCodegenTests`. Not yet wired into `ServiceGenerator`
+dispatch, so end-to-end event-stream generation is still incomplete.
+
 ## Response Header Unmarshalling
 
 Output and error members bound with `@httpHeader` are read from the HTTP response headers via

@@ -30,6 +30,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsTimestamp">True if this targets a timestamp shape (maps to <c>DateTime</c>/<c>DateTime?</c>).
 /// A timestamp's wire form is format-dependent (see <see cref="TimestampFormat"/>), so writers branch on it
 /// rather than on the .NET type name.</param>
+/// <param name="IsEventStream">True if this targets a <c>@streaming</c> union (or structure) — an event
+/// stream. The member maps to the generated <c>EnumerableEventOutputStream</c> subclass; the response
+/// unmarshaller assigns it a new instance wrapping the raw response stream rather than reading the body.</param>
 /// <param name="ListElement">The list element's type; set only for a list, null otherwise. An enum element
 /// is described as a plain <c>string</c>, so <see cref="IsEnum"/> is never set on an element descriptor.</param>
 /// <param name="MapValue">The map value's type; set only for a map, null otherwise. A map's key always
@@ -55,6 +58,7 @@ public sealed record TypeDescriptor(
     bool RequiresLength = false,
     bool IsDocument = false,
     bool IsTimestamp = false,
+    bool IsEventStream = false,
     TypeDescriptor? ListElement = null,
     TypeDescriptor? MapValue = null,
     string? TimestampFormat = null,
@@ -214,6 +218,8 @@ public static class TypeMapper
             RequiresLength: target is BlobShape && target.RequiresLength(),
             IsDocument: target is DocumentShape,
             IsTimestamp: target is TimestampShape,
+            // A @streaming union/structure is an event stream (UnionShape derives from StructureShape).
+            IsEventStream: target is StructureShape && target.IsStreaming(),
             ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
