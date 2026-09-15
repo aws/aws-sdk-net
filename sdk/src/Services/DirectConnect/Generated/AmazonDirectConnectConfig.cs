@@ -33,7 +33,7 @@ namespace Amazon.DirectConnect
     public partial class AmazonDirectConnectConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Direct Connect", "4.0.102.4");
+            InternalSDKUtils.BuildUserAgentString("Direct Connect", "4.0.103.0");
 
         private static readonly AmazonDirectConnectEndpointResolver EndpointResolver =
             new AmazonDirectConnectEndpointResolver();

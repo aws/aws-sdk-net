@@ -1,3 +1,13 @@
+### 4.0.334.0 (2026-09-15 18:15 UTC)
+* BedrockAgentCoreControl (4.0.115.0)
+	* Amazon Bedrock AgentCore Runtime now supports specifying the platform version of an agent runtime through the new platformVersion field on CreateAgentRuntime, UpdateAgentRuntime, and GetAgentRuntime.
+* DirectConnect (4.0.103.0)
+	* AWS Direct Connect is introducing flat-rate pricing, a simplified billing model that gives you a fixed monthly price for dedicated connectivity with no per-gigabyte data transfer out charges within the selected pricing tier.
+* Transfer (4.0.102.0)
+	* AWS Transfer Family now preserves the original source IP address using Proxy Protocol v2 when you place a Network Load Balancer in front of your server for SFTP connections.
+* WorkSpaces (4.0.103.0)
+	* Added support for 4 new graphics-optimized compute types - Graphics.g7 (2xlarge, 4xlarge, 8xlarge, 12xlarge).
+
 ### 4.0.333.0 (2026-09-14 19:02 UTC)
 * AgentRegistry (4.0.102.3)
 	* AgentRegistry is now generated from its Smithy model. There are no changes to the public API.
