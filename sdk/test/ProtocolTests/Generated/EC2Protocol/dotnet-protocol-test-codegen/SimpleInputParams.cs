@@ -412,6 +412,46 @@ namespace AWSSDK.ProtocolTests.AwsEc2
         }
 
         /// <summary>
+        /// ec2QueryName trait takes precedence when xmlName, default name,
+        /// and ec2QueryName all have distinct values.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("AwsEc2")]
+        public void Ec2QueryNameDistinctFromXmlNameAndMemberNameRequest()
+        {
+            // Arrange
+            var request = new SimpleInputParamsRequest
+            {
+                DistinctQueryName = "value1",
+                DistinctQueryAndXmlName = "value2",
+                DistinctXmlName = "value3",
+            };
+            var config = new AmazonEC2ProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new SimpleInputParamsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedParams = QueryTestUtils.ConvertBodyToParameters("Action=SimpleInputParams&Version=2020-01-08&QueryName=value1&queryAndXmlName=value2&XmlNameOnly=value3");
+            foreach(var queryParam in expectedParams.Keys)
+            {
+               Assert.IsTrue(marshalledRequest.Parameters.Keys.Contains(queryParam));
+               Assert.AreEqual(WebUtility.UrlDecode(expectedParams[queryParam].ToString()),WebUtility.UrlDecode(marshalledRequest.Parameters[queryParam].ToString()));
+            }
+
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/x-www-form-urlencoded; charset=utf-8",marshalledRequest.Headers["Content-Type"]);
+        }
+
+        /// <summary>
         /// Supports handling NaN float values.
         /// </summary>
         [TestMethod]

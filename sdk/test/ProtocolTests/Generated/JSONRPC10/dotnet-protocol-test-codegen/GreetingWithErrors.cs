@@ -314,6 +314,30 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         }
 
         /// <summary>
+        /// Because only the part after '#' is considered, an unrecognized
+        /// namespace should not make a difference.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("JsonRpc10")]
+        public void AwsJson10FooErrorWithDunderTypeAndDifferentNamespaceErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.different.namespace#FooError\"\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+        }
+
+        /// <summary>
         /// Some services serialize errors using __type, and it might contain
         /// a namespace. It also might contain a URI. Clients should just
         /// take the last part of the string after '#' and before ":". This

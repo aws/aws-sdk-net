@@ -44,6 +44,7 @@ namespace Amazon.RestJsonProtocol.Model
         private string _stringValue;
         private GreetingStruct _structureValue;
         private DateTime? _timestampValue;
+        private NestedUnion _unionValue;
 
         /// <summary>
         /// Gets and sets the property BlobValue.
@@ -203,6 +204,21 @@ namespace Amazon.RestJsonProtocol.Model
         internal bool IsSetTimestampValue()
         {
             return this._timestampValue.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnionValue.
+        /// </summary>
+        public NestedUnion UnionValue
+        {
+            get { return this._unionValue; }
+            set { this._unionValue = value; }
+        }
+
+        // Check to see if UnionValue property is set
+        internal bool IsSetUnionValue()
+        {
+            return this._unionValue != null;
         }
 
     }

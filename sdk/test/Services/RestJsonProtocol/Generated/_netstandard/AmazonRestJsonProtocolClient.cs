@@ -517,6 +517,75 @@ namespace Amazon.RestJsonProtocol
         }
         #endregion
         
+        #region  DuplexStream
+
+        internal virtual DuplexStreamResponse DuplexStream(DuplexStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DuplexStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DuplexStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DuplexStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DuplexStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DuplexStream service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DuplexStream">REST API Reference for DuplexStream Operation</seealso>
+        public virtual Task<DuplexStreamResponse> DuplexStreamAsync(DuplexStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DuplexStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DuplexStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DuplexStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DuplexStreamWithInitialMessages
+
+        internal virtual DuplexStreamWithInitialMessagesResponse DuplexStreamWithInitialMessages(DuplexStreamWithInitialMessagesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DuplexStreamWithInitialMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DuplexStreamWithInitialMessagesResponseUnmarshaller.Instance;
+
+            return Invoke<DuplexStreamWithInitialMessagesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DuplexStreamWithInitialMessages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DuplexStreamWithInitialMessages service method, as returned by RestJsonProtocol.</returns>
+        /// <exception cref="Amazon.RestJsonProtocol.Model.ServiceUnavailableErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DuplexStreamWithInitialMessages">REST API Reference for DuplexStreamWithInitialMessages Operation</seealso>
+        public virtual Task<DuplexStreamWithInitialMessagesResponse> DuplexStreamWithInitialMessagesAsync(DuplexStreamWithInitialMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DuplexStreamWithInitialMessagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DuplexStreamWithInitialMessagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DuplexStreamWithInitialMessagesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  EmptyInputAndEmptyOutput
 
         internal virtual EmptyInputAndEmptyOutputResponse EmptyInputAndEmptyOutput(EmptyInputAndEmptyOutputRequest request)
@@ -1345,6 +1414,72 @@ namespace Amazon.RestJsonProtocol
         }
         #endregion
         
+        #region  InputStream
+
+        internal virtual InputStreamResponse InputStream(InputStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InputStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InputStreamResponseUnmarshaller.Instance;
+
+            return Invoke<InputStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InputStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InputStream service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/InputStream">REST API Reference for InputStream Operation</seealso>
+        public virtual Task<InputStreamResponse> InputStreamAsync(InputStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InputStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InputStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InputStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  InputStreamWithInitialRequest
+
+        internal virtual InputStreamWithInitialRequestResponse InputStreamWithInitialRequest(InputStreamWithInitialRequestRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InputStreamWithInitialRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InputStreamWithInitialRequestResponseUnmarshaller.Instance;
+
+            return Invoke<InputStreamWithInitialRequestResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InputStreamWithInitialRequest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InputStreamWithInitialRequest service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/InputStreamWithInitialRequest">REST API Reference for InputStreamWithInitialRequest Operation</seealso>
+        public virtual Task<InputStreamWithInitialRequestResponse> InputStreamWithInitialRequestAsync(InputStreamWithInitialRequestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InputStreamWithInitialRequestRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InputStreamWithInitialRequestResponseUnmarshaller.Instance;
+
+            return InvokeAsync<InputStreamWithInitialRequestResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  JsonBlobs
 
         internal virtual JsonBlobsResponse JsonBlobs(JsonBlobsRequest request)
@@ -1813,6 +1948,75 @@ namespace Amazon.RestJsonProtocol
             options.ResponseUnmarshaller = OmitsSerializingEmptyListsResponseUnmarshaller.Instance;
 
             return InvokeAsync<OmitsSerializingEmptyListsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  OutputStream
+
+        internal virtual OutputStreamResponse OutputStream(OutputStreamRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = OutputStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OutputStreamResponseUnmarshaller.Instance;
+
+            return Invoke<OutputStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OutputStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OutputStream service method, as returned by RestJsonProtocol.</returns>
+        /// <exception cref="Amazon.RestJsonProtocol.Model.ServiceUnavailableErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/OutputStream">REST API Reference for OutputStream Operation</seealso>
+        public virtual Task<OutputStreamResponse> OutputStreamAsync(OutputStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = OutputStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OutputStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<OutputStreamResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  OutputStreamWithInitialResponse
+
+        internal virtual OutputStreamWithInitialResponseResponse OutputStreamWithInitialResponse(OutputStreamWithInitialResponseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = OutputStreamWithInitialResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OutputStreamWithInitialResponseResponseUnmarshaller.Instance;
+
+            return Invoke<OutputStreamWithInitialResponseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OutputStreamWithInitialResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OutputStreamWithInitialResponse service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/OutputStreamWithInitialResponse">REST API Reference for OutputStreamWithInitialResponse Operation</seealso>
+        public virtual Task<OutputStreamWithInitialResponseResponse> OutputStreamWithInitialResponseAsync(OutputStreamWithInitialResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = OutputStreamWithInitialResponseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = OutputStreamWithInitialResponseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<OutputStreamWithInitialResponseResponse>(request, options, cancellationToken);
         }
         #endregion
         

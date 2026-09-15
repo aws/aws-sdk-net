@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 namespace AWSSDK.ProtocolTests.AwsQuery
@@ -37,5 +38,33 @@ namespace AWSSDK.ProtocolTests.AwsQuery
     [TestClass]
     public class NoInputAndNoOutput
     {
+        /// <summary>
+        /// Empty output, but the server returns ResponseMetadata.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("AwsQuery")]
+        public void QueryNoInputAndNoOutputWithResponseMetadataResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            byte[] bytes = Encoding.ASCII.GetBytes("<NoInputAndNoOutputResponse>\n    <ResponseMetadata>\n        <RequestId>abc-123</RequestId>\n    </ResponseMetadata>\n</NoInputAndNoOutputResponse>\n");
+            var stream = new MemoryStream(bytes);
+            var context = new XmlUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new NoInputAndNoOutputResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new NoInputAndNoOutputResponse
+            {
+            };
+
+            // Assert
+            var actualResponse = (NoInputAndNoOutputResponse)unmarshalledResponse;
+            Comparer.CompareObjects<NoInputAndNoOutputResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
     }
 }
