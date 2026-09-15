@@ -102,7 +102,7 @@ namespace AWSSDK.UnitTests
         /// </summary>
         [TestMethod]
         [DataRow(HttpStatusCode.MovedPermanently)]
-        [DataRow(HttpStatusCode.PermanentRedirect)]
+        [DataRow((HttpStatusCode)308)] // PermanentRedirect (not defined on net472/netstandard2.0)
         [TestCategory("S3")]
         public void RedirectStatus_IsRoutedToRegionDetection(HttpStatusCode statusCode)
         {
