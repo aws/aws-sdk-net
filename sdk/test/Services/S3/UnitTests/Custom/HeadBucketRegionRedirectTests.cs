@@ -182,5 +182,32 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(result.Value, "A 404 should not be retried by the S3-specific logic.");
             Assert.IsTrue(baseInvoked, "A non-redirect status should defer to the base retry policy.");
         }
+
+        /// <summary>
+        /// The 301/308 region-redirect handling is limited to HeadBucket. A redirect returned for
+        /// any other operation (e.g. GetObject) must NOT be treated as inconclusive; it should defer
+        /// to the base retry policy so the prior behavior of surfacing the redirect as an error is
+        /// preserved. This protects customers that rely on the error response (e.g. to extract the
+        /// bucket region themselves).
+        /// </summary>
+        [TestMethod]
+        [DataRow(HttpStatusCode.MovedPermanently)]
+        [DataRow((HttpStatusCode)308)]
+        [TestCategory("S3")]
+        public void RedirectStatus_ForNonHeadBucketOperation_DefersToBaseRetryPolicy(HttpStatusCode statusCode)
+        {
+            var exception = CreateS3Exception(statusCode, BucketActualRegion);
+            var context = CreateContext(
+                new GetObjectRequest { BucketName = BucketName, Key = "test.txt" },
+                new Uri("https://" + BucketName + ".s3.us-west-1.amazonaws.com"));
+
+            var baseInvoked = false;
+            var result = AmazonS3RetryPolicy.SharedRetryForExceptionSync(
+                context, exception, Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(HeadBucketRegionRedirectTests)), (_, __) => { baseInvoked = true; return false; });
+
+            Assert.IsNotNull(result, "For a non-HeadBucket operation, a redirect must not be treated as inconclusive.");
+            Assert.IsFalse(result.Value, "For a non-HeadBucket operation, the redirect should not be retried by the S3-specific logic.");
+            Assert.IsTrue(baseInvoked, "For a non-HeadBucket operation, a redirect status should defer to the base retry policy.");
+        }
     }
 }

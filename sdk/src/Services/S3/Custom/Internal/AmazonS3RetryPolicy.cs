@@ -85,9 +85,11 @@ namespace Amazon.S3.Internal
                 // A bucket in a different Region can be answered with a redirect instead of a 400
                 // (301 when the bucket is in us-east-1 and the client is not; more rarely 308).
                 // These carry the correct Region in the x-amz-bucket-region header, so treat them
-                // as inconclusive.
-                if (serviceException.StatusCode == HttpStatusCode.MovedPermanently ||
-                    (int)serviceException.StatusCode == 308)
+                // as inconclusive. This is limited to HeadBucket so other operations preserve the
+                // prior behavior of surfacing the redirect as an error.
+                if (executionContext.RequestContext.OriginalRequest is HeadBucketRequest &&
+                    (serviceException.StatusCode == HttpStatusCode.MovedPermanently ||
+                     (int)serviceException.StatusCode == 308))
                 {
                     return null;
                 }
