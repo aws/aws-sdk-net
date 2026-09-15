@@ -44,6 +44,12 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreateAgentRuntimeRequest.PlatformVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[^\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreateAgentRuntimeRequest.RoleArn</property>
     <min>1</min>
     <max>2048</max>
@@ -1506,6 +1512,12 @@
     <property>Amazon.BedrockAgentCoreControl.Model.GetAgentRuntimeResponse.Description</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetAgentRuntimeResponse.PlatformVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetAgentRuntimeResponse.RoleArn</property>
@@ -3248,6 +3260,12 @@
     <property>Amazon.BedrockAgentCoreControl.Model.UpdateAgentRuntimeRequest.Description</property>
     <min>1</min>
     <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdateAgentRuntimeRequest.PlatformVersion</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[^\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdateAgentRuntimeRequest.RoleArn</property>

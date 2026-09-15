@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private LifecycleConfiguration _lifecycleConfiguration;
         private RuntimeMetadataConfiguration _metadataConfiguration;
         private NetworkConfiguration _networkConfiguration;
+        private string _platformVersion;
         private ProtocolConfiguration _protocolConfiguration;
         private RequestHeaderConfiguration _requestHeaderConfiguration;
         private string _roleArn;
@@ -263,6 +264,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlatformVersion. 
+        /// <para>
+        /// The updated version of the runtime platform to use for the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string PlatformVersion
+        {
+            get { return this._platformVersion; }
+            set { this._platformVersion = value; }
+        }
+
+        // Check to see if PlatformVersion property is set
+        internal bool IsSetPlatformVersion()
+        {
+            return this._platformVersion != null;
         }
 
         /// <summary>
