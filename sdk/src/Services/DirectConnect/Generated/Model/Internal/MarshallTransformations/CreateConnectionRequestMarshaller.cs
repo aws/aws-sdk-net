@@ -81,6 +81,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Bandwidth);
             }
 
+            if(publicRequest.IsSetBillingMode())
+            {
+                context.Writer.WritePropertyName("billingMode");
+                context.Writer.WriteStringValue(publicRequest.BillingMode);
+            }
+
             if(publicRequest.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("connectionName");

@@ -241,6 +241,92 @@ namespace Amazon.DirectConnect
 
 
     /// <summary>
+    /// Constants used for properties of type BillingMode.
+    /// </summary>
+    public class BillingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FlatRateTier1 for BillingMode
+        /// </summary>
+        public static readonly BillingMode FlatRateTier1 = new BillingMode("FlatRateTier1");
+        /// <summary>
+        /// Constant FlatRateTier2 for BillingMode
+        /// </summary>
+        public static readonly BillingMode FlatRateTier2 = new BillingMode("FlatRateTier2");
+        /// <summary>
+        /// Constant FlatRateTier3 for BillingMode
+        /// </summary>
+        public static readonly BillingMode FlatRateTier3 = new BillingMode("FlatRateTier3");
+        /// <summary>
+        /// Constant FlatRateTier4 for BillingMode
+        /// </summary>
+        public static readonly BillingMode FlatRateTier4 = new BillingMode("FlatRateTier4");
+        /// <summary>
+        /// Constant FlatRateTier5 for BillingMode
+        /// </summary>
+        public static readonly BillingMode FlatRateTier5 = new BillingMode("FlatRateTier5");
+        /// <summary>
+        /// Constant PayAsYouGo for BillingMode
+        /// </summary>
+        public static readonly BillingMode PayAsYouGo = new BillingMode("PayAsYouGo");
+        /// <summary>
+        /// Constant PortPairFlatRateTier1 for BillingMode
+        /// </summary>
+        public static readonly BillingMode PortPairFlatRateTier1 = new BillingMode("PortPairFlatRateTier1");
+        /// <summary>
+        /// Constant PortPairFlatRateTier2 for BillingMode
+        /// </summary>
+        public static readonly BillingMode PortPairFlatRateTier2 = new BillingMode("PortPairFlatRateTier2");
+        /// <summary>
+        /// Constant PortPairFlatRateTier3 for BillingMode
+        /// </summary>
+        public static readonly BillingMode PortPairFlatRateTier3 = new BillingMode("PortPairFlatRateTier3");
+        /// <summary>
+        /// Constant PortPairFlatRateTier4 for BillingMode
+        /// </summary>
+        public static readonly BillingMode PortPairFlatRateTier4 = new BillingMode("PortPairFlatRateTier4");
+        /// <summary>
+        /// Constant PortPairFlatRateTier5 for BillingMode
+        /// </summary>
+        public static readonly BillingMode PortPairFlatRateTier5 = new BillingMode("PortPairFlatRateTier5");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingMode FindValue(string value)
+        {
+            return FindValue<BillingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConnectionState.
     /// </summary>
     public class ConnectionState : ConstantClass
@@ -938,6 +1024,288 @@ namespace Amazon.DirectConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NniPartnerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RequestBillingMode.
+    /// </summary>
+    public class RequestBillingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FlatRateTier1 for RequestBillingMode
+        /// </summary>
+        public static readonly RequestBillingMode FlatRateTier1 = new RequestBillingMode("FlatRateTier1");
+        /// <summary>
+        /// Constant FlatRateTier2 for RequestBillingMode
+        /// </summary>
+        public static readonly RequestBillingMode FlatRateTier2 = new RequestBillingMode("FlatRateTier2");
+        /// <summary>
+        /// Constant FlatRateTier3 for RequestBillingMode
+        /// </summary>
+        public static readonly RequestBillingMode FlatRateTier3 = new RequestBillingMode("FlatRateTier3");
+        /// <summary>
+        /// Constant FlatRateTier4 for RequestBillingMode
+        /// </summary>
+        public static readonly RequestBillingMode FlatRateTier4 = new RequestBillingMode("FlatRateTier4");
+        /// <summary>
+        /// Constant FlatRateTier5 for RequestBillingMode
+        /// </summary>
+        public static readonly RequestBillingMode FlatRateTier5 = new RequestBillingMode("FlatRateTier5");
+        /// <summary>
+        /// Constant PayAsYouGo for RequestBillingMode
+        /// </summary>
+        public static readonly RequestBillingMode PayAsYouGo = new RequestBillingMode("PayAsYouGo");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RequestBillingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RequestBillingMode FindValue(string value)
+        {
+            return FindValue<RequestBillingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RequestBillingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResiliencyGroupAssociationState.
+    /// </summary>
+    public class ResiliencyGroupAssociationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for ResiliencyGroupAssociationState
+        /// </summary>
+        public static readonly ResiliencyGroupAssociationState Associated = new ResiliencyGroupAssociationState("associated");
+        /// <summary>
+        /// Constant Associating for ResiliencyGroupAssociationState
+        /// </summary>
+        public static readonly ResiliencyGroupAssociationState Associating = new ResiliencyGroupAssociationState("associating");
+        /// <summary>
+        /// Constant Disassociated for ResiliencyGroupAssociationState
+        /// </summary>
+        public static readonly ResiliencyGroupAssociationState Disassociated = new ResiliencyGroupAssociationState("disassociated");
+        /// <summary>
+        /// Constant Disassociating for ResiliencyGroupAssociationState
+        /// </summary>
+        public static readonly ResiliencyGroupAssociationState Disassociating = new ResiliencyGroupAssociationState("disassociating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResiliencyGroupAssociationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResiliencyGroupAssociationState FindValue(string value)
+        {
+            return FindValue<ResiliencyGroupAssociationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResiliencyGroupAssociationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResiliencyGroupState.
+    /// </summary>
+    public class ResiliencyGroupState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for ResiliencyGroupState
+        /// </summary>
+        public static readonly ResiliencyGroupState Available = new ResiliencyGroupState("available");
+        /// <summary>
+        /// Constant Deleted for ResiliencyGroupState
+        /// </summary>
+        public static readonly ResiliencyGroupState Deleted = new ResiliencyGroupState("deleted");
+        /// <summary>
+        /// Constant Deleting for ResiliencyGroupState
+        /// </summary>
+        public static readonly ResiliencyGroupState Deleting = new ResiliencyGroupState("deleting");
+        /// <summary>
+        /// Constant Pending for ResiliencyGroupState
+        /// </summary>
+        public static readonly ResiliencyGroupState Pending = new ResiliencyGroupState("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResiliencyGroupState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResiliencyGroupState FindValue(string value)
+        {
+            return FindValue<ResiliencyGroupState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResiliencyGroupState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResiliencyGroupType.
+    /// </summary>
+    public class ResiliencyGroupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Managed for ResiliencyGroupType
+        /// </summary>
+        public static readonly ResiliencyGroupType Managed = new ResiliencyGroupType("Managed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResiliencyGroupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResiliencyGroupType FindValue(string value)
+        {
+            return FindValue<ResiliencyGroupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResiliencyGroupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResiliencyModel.
+    /// </summary>
+    public class ResiliencyModel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BasicResiliency for ResiliencyModel
+        /// </summary>
+        public static readonly ResiliencyModel BasicResiliency = new ResiliencyModel("basic-resiliency");
+        /// <summary>
+        /// Constant HighResiliency for ResiliencyModel
+        /// </summary>
+        public static readonly ResiliencyModel HighResiliency = new ResiliencyModel("high-resiliency");
+        /// <summary>
+        /// Constant MaximumResiliency for ResiliencyModel
+        /// </summary>
+        public static readonly ResiliencyModel MaximumResiliency = new ResiliencyModel("maximum-resiliency");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResiliencyModel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResiliencyModel FindValue(string value)
+        {
+            return FindValue<ResiliencyModel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResiliencyModel(string value)
         {
             return FindValue(value);
         }

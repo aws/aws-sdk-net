@@ -49,6 +49,17 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectConnect.Model.AssociateConnectionsToResiliencyGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.AssociateConnectionsToResiliencyGroupRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectConnect.Model.AssociateConnectionWithLagResponse.PrefixPoolSizeIpv4</property>
     <min>0</min>
   </property-value-rule>
@@ -145,6 +156,17 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectConnect.Model.CreateResiliencyGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.CreateResiliencyGroupRequest.ResiliencyGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectConnect.Model.DeleteConnectionResponse.PrefixPoolSizeIpv4</property>
     <min>0</min>
   </property-value-rule>
@@ -177,6 +199,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DirectConnect.Model.DeleteResiliencyGroupRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DirectConnect.Model.DisassociateConnectionFromLagResponse.PrefixPoolSizeIpv4</property>
     <min>0</min>
   </property-value-rule>
@@ -191,6 +219,29 @@
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.DisassociateConnectionFromLagResponse.PrefixPoolUnallocatedCountIpv6</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.DisassociateConnectionsFromResiliencyGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.DisassociateConnectionsFromResiliencyGroupRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.GetResiliencyGroupRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ListResiliencyGroupAssociationsRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.UpdateConnectionResponse.PrefixPoolSizeIpv4</property>
@@ -223,6 +274,23 @@
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.UpdateLagResponse.PrefixPoolUnallocatedCountIpv6</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.UpdateResiliencyGroupRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.UpdateResiliencyGroupRequest.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.UpdateResiliencyGroupRequest.ResiliencyGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.UpdateVirtualInterfaceAttributesRequest.PrefixPoolAllocatedCountIpv4</property>
@@ -279,6 +347,53 @@
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.NewTransitVirtualInterface.PrefixPoolAllocatedCountIpv6</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroup.ResiliencyGroupArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):directconnect::[0-9]{12}:dx-resiliency-group/dxrg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroup.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroup.ResiliencyGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroupAssociation.ConnectionArn</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroupAssociation.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroupSummary.ResiliencyGroupArn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):directconnect::[0-9]{12}:dx-resiliency-group/dxrg-[0-9a-z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroupSummary.ResiliencyGroupId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^(dxrg|DXRG)-[0-9a-zA-Z]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DirectConnect.Model.ResiliencyGroupSummary.ResiliencyGroupName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DirectConnect.Model.Tag.Key</property>

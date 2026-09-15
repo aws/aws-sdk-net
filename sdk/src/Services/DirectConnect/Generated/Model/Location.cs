@@ -34,12 +34,37 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class Location
     {
+        private List<AvailableBillingMode> _availableBillingModes = AWSConfigs.InitializeCollections ? new List<AvailableBillingMode>() : null;
         private List<string> _availableMacSecPortSpeeds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _availablePortSpeeds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _availableProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _locationCode;
         private string _locationName;
         private string _region;
+
+        /// <summary>
+        /// Gets and sets the property AvailableBillingModes. 
+        /// <para>
+        /// The billing modes available at the location, including the port speeds and Amazon
+        /// Web Services Regions supported by each mode.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AvailableBillingMode> AvailableBillingModes
+        {
+            get { return this._availableBillingModes; }
+            set { this._availableBillingModes = value; }
+        }
+
+        // Check to see if AvailableBillingModes property is set
+        internal bool IsSetAvailableBillingModes()
+        {
+            return this._availableBillingModes != null && (this._availableBillingModes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AvailableMacSecPortSpeeds. 

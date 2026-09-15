@@ -795,6 +795,71 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  AssociateConnectionsToResiliencyGroup
+
+
+        /// <summary>
+        /// Associates one or more connections with the specified resiliency group. This operation
+        /// is atomic: either all of the specified connections are associated, or the operation
+        /// fails and no changes are made.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectionsToResiliencyGroup service method.</param>
+        /// 
+        /// <returns>The response from the AssociateConnectionsToResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionsToResiliencyGroup">REST API Reference for AssociateConnectionsToResiliencyGroup Operation</seealso>
+        public virtual AssociateConnectionsToResiliencyGroupResponse AssociateConnectionsToResiliencyGroup(AssociateConnectionsToResiliencyGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateConnectionsToResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectionsToResiliencyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateConnectionsToResiliencyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates one or more connections with the specified resiliency group. This operation
+        /// is atomic: either all of the specified connections are associated, or the operation
+        /// fails and no changes are made.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateConnectionsToResiliencyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateConnectionsToResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionsToResiliencyGroup">REST API Reference for AssociateConnectionsToResiliencyGroup Operation</seealso>
+        public virtual Task<AssociateConnectionsToResiliencyGroupResponse> AssociateConnectionsToResiliencyGroupAsync(AssociateConnectionsToResiliencyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateConnectionsToResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateConnectionsToResiliencyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateConnectionsToResiliencyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateConnectionWithLag
 
 
@@ -2307,6 +2372,81 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  CreateResiliencyGroup
+
+
+        /// <summary>
+        /// Creates a resiliency group. A resiliency group lets you group Direct Connect connections
+        /// together and manage them as a single unit to meet a target resiliency model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResiliencyGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateResiliencyGroup">REST API Reference for CreateResiliencyGroup Operation</seealso>
+        public virtual CreateResiliencyGroupResponse CreateResiliencyGroup(CreateResiliencyGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResiliencyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResiliencyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a resiliency group. A resiliency group lets you group Direct Connect connections
+        /// together and manage them as a single unit to meet a target resiliency model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResiliencyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
+        /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
+        /// You have reached the limit on the number of tags that can be assigned.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateResiliencyGroup">REST API Reference for CreateResiliencyGroup Operation</seealso>
+        public virtual Task<CreateResiliencyGroupResponse> CreateResiliencyGroupAsync(CreateResiliencyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResiliencyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateResiliencyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTransitVirtualInterface
 
 
@@ -2853,6 +2993,65 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = DeleteLagResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteLagResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResiliencyGroup
+
+
+        /// <summary>
+        /// Deletes the specified resiliency group. Deletion is asynchronous: the resiliency group
+        /// transitions through the <c>deleting</c> state before it reaches the <c>deleted</c>
+        /// state. The response returns the resiliency group so you can observe its current state
+        /// without a subsequent <a>GetResiliencyGroup</a> call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResiliencyGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteResiliencyGroup">REST API Reference for DeleteResiliencyGroup Operation</seealso>
+        public virtual DeleteResiliencyGroupResponse DeleteResiliencyGroup(DeleteResiliencyGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResiliencyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResiliencyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the specified resiliency group. Deletion is asynchronous: the resiliency group
+        /// transitions through the <c>deleting</c> state before it reaches the <c>deleted</c>
+        /// state. The response returns the resiliency group so you can observe its current state
+        /// without a subsequent <a>GetResiliencyGroup</a> call.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResiliencyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DeleteResiliencyGroup">REST API Reference for DeleteResiliencyGroup Operation</seealso>
+        public virtual Task<DeleteResiliencyGroupResponse> DeleteResiliencyGroupAsync(DeleteResiliencyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResiliencyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResiliencyGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4543,6 +4742,63 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  DisassociateConnectionsFromResiliencyGroup
+
+
+        /// <summary>
+        /// Disassociates one or more connections from the specified resiliency group. This operation
+        /// is atomic: either all of the specified connections are disassociated, or the operation
+        /// fails and no changes are made.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectionsFromResiliencyGroup service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateConnectionsFromResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionsFromResiliencyGroup">REST API Reference for DisassociateConnectionsFromResiliencyGroup Operation</seealso>
+        public virtual DisassociateConnectionsFromResiliencyGroupResponse DisassociateConnectionsFromResiliencyGroup(DisassociateConnectionsFromResiliencyGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectionsFromResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectionsFromResiliencyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateConnectionsFromResiliencyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates one or more connections from the specified resiliency group. This operation
+        /// is atomic: either all of the specified connections are disassociated, or the operation
+        /// fails and no changes are made.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateConnectionsFromResiliencyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateConnectionsFromResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateConnectionsFromResiliencyGroup">REST API Reference for DisassociateConnectionsFromResiliencyGroup Operation</seealso>
+        public virtual Task<DisassociateConnectionsFromResiliencyGroupResponse> DisassociateConnectionsFromResiliencyGroupAsync(DisassociateConnectionsFromResiliencyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateConnectionsFromResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateConnectionsFromResiliencyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateConnectionsFromResiliencyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateMacSecKey
 
 
@@ -4594,6 +4850,167 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = DisassociateMacSecKeyResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisassociateMacSecKeyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetResiliencyGroup
+
+
+        /// <summary>
+        /// Gets information about the specified resiliency group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResiliencyGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/GetResiliencyGroup">REST API Reference for GetResiliencyGroup Operation</seealso>
+        public virtual GetResiliencyGroupResponse GetResiliencyGroup(GetResiliencyGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResiliencyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetResiliencyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets information about the specified resiliency group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResiliencyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/GetResiliencyGroup">REST API Reference for GetResiliencyGroup Operation</seealso>
+        public virtual Task<GetResiliencyGroupResponse> GetResiliencyGroupAsync(GetResiliencyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResiliencyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResiliencyGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResiliencyGroupAssociations
+
+
+        /// <summary>
+        /// Lists the connection associations for the specified resiliency group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResiliencyGroupAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListResiliencyGroupAssociations service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListResiliencyGroupAssociations">REST API Reference for ListResiliencyGroupAssociations Operation</seealso>
+        public virtual ListResiliencyGroupAssociationsResponse ListResiliencyGroupAssociations(ListResiliencyGroupAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResiliencyGroupAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResiliencyGroupAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResiliencyGroupAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the connection associations for the specified resiliency group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResiliencyGroupAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResiliencyGroupAssociations service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListResiliencyGroupAssociations">REST API Reference for ListResiliencyGroupAssociations Operation</seealso>
+        public virtual Task<ListResiliencyGroupAssociationsResponse> ListResiliencyGroupAssociationsAsync(ListResiliencyGroupAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResiliencyGroupAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResiliencyGroupAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResiliencyGroupAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResiliencyGroups
+
+
+        /// <summary>
+        /// Lists the resiliency groups owned by your Amazon Web Services account in the current
+        /// Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResiliencyGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListResiliencyGroups service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListResiliencyGroups">REST API Reference for ListResiliencyGroups Operation</seealso>
+        public virtual ListResiliencyGroupsResponse ListResiliencyGroups(ListResiliencyGroupsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResiliencyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResiliencyGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListResiliencyGroupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the resiliency groups owned by your Amazon Web Services account in the current
+        /// Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResiliencyGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResiliencyGroups service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListResiliencyGroups">REST API Reference for ListResiliencyGroups Operation</seealso>
+        public virtual Task<ListResiliencyGroupsResponse> ListResiliencyGroupsAsync(ListResiliencyGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListResiliencyGroupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListResiliencyGroupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListResiliencyGroupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5083,6 +5500,61 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  UpdateConnectionsBillingMode
+
+
+        /// <summary>
+        /// Updates the billing mode for the specified Direct Connect connections. You can update
+        /// the billing mode for up to 200 connections in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionsBillingMode service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectionsBillingMode service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnectionsBillingMode">REST API Reference for UpdateConnectionsBillingMode Operation</seealso>
+        public virtual UpdateConnectionsBillingModeResponse UpdateConnectionsBillingMode(UpdateConnectionsBillingModeRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionsBillingModeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionsBillingModeResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectionsBillingModeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the billing mode for the specified Direct Connect connections. You can update
+        /// the billing mode for up to 200 connections in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectionsBillingMode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectionsBillingMode service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnectionsBillingMode">REST API Reference for UpdateConnectionsBillingMode Operation</seealso>
+        public virtual Task<UpdateConnectionsBillingModeResponse> UpdateConnectionsBillingModeAsync(UpdateConnectionsBillingModeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectionsBillingModeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectionsBillingModeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateConnectionsBillingModeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateDirectConnectGateway
 
 
@@ -5314,6 +5786,59 @@ namespace Amazon.DirectConnect
             options.ResponseUnmarshaller = UpdateLagResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateLagResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResiliencyGroup
+
+
+        /// <summary>
+        /// Updates the name of the specified resiliency group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResiliencyGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateResiliencyGroup">REST API Reference for UpdateResiliencyGroup Operation</seealso>
+        public virtual UpdateResiliencyGroupResponse UpdateResiliencyGroup(UpdateResiliencyGroupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResiliencyGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResiliencyGroupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the name of the specified resiliency group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResiliencyGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResiliencyGroup service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateResiliencyGroup">REST API Reference for UpdateResiliencyGroup Operation</seealso>
+        public virtual Task<UpdateResiliencyGroupResponse> UpdateResiliencyGroupAsync(UpdateResiliencyGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResiliencyGroupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResiliencyGroupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResiliencyGroupResponse>(request, options, cancellationToken);
         }
 
         #endregion

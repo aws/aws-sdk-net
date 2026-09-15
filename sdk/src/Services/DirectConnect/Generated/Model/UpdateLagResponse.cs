@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDevice;
         private string _awsDeviceV2;
         private string _awsLogicalDeviceId;
+        private BillingMode _billingMode;
         private List<Connection> _connections = AWSConfigs.InitializeCollections ? new List<Connection>() : null;
         private string _connectionsBandwidth;
         private string _encryptionMode;
@@ -132,6 +133,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsLogicalDeviceId()
         {
             return this._awsLogicalDeviceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// The billing mode of the LAG.
+        /// </para>
+        /// </summary>
+        public BillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
         }
 
         /// <summary>

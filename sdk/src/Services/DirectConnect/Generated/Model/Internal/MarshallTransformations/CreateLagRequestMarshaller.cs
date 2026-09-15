@@ -75,6 +75,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBillingMode())
+            {
+                context.Writer.WritePropertyName("billingMode");
+                context.Writer.WriteStringValue(publicRequest.BillingMode);
+            }
+
             if(publicRequest.IsSetChildConnectionTags())
             {
                 context.Writer.WritePropertyName("childConnectionTags");

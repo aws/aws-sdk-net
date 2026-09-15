@@ -76,6 +76,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.AwsLogicalDeviceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("billingMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BillingMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("connections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Connection, ConnectionUnmarshaller>(ConnectionUnmarshaller.Instance);
