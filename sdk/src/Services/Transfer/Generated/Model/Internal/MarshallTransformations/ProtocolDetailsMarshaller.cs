@@ -63,6 +63,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PassiveIp);
             }
 
+            if(requestObject.IsSetProxyConfig())
+            {
+                context.Writer.WritePropertyName("ProxyConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProxyConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProxyConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSetStatOption())
             {
                 context.Writer.WritePropertyName("SetStatOption");

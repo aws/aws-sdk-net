@@ -36,6 +36,7 @@ namespace Amazon.Transfer.Model
     {
         private List<string> _as2Transports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _passiveIp;
+        private ProxyConfig _proxyConfig;
         private SetStatOption _setStatOption;
         private TlsSessionResumptionMode _tlsSessionResumptionMode;
 
@@ -129,6 +130,26 @@ namespace Amazon.Transfer.Model
         internal bool IsSetPassiveIp()
         {
             return this._passiveIp != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxyConfig. 
+        /// <para>
+        /// The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family
+        /// server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working
+        /// with Network Load Balancers</a>.
+        /// </para>
+        /// </summary>
+        public ProxyConfig ProxyConfig
+        {
+            get { return this._proxyConfig; }
+            set { this._proxyConfig = value; }
+        }
+
+        // Check to see if ProxyConfig property is set
+        internal bool IsSetProxyConfig()
+        {
+            return this._proxyConfig != null;
         }
 
         /// <summary>

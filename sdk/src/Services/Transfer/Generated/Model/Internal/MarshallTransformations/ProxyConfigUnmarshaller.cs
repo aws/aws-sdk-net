@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ProtocolDetails Object
+    /// Response Unmarshaller for ProxyConfig Object
     /// </summary>  
-    public class ProtocolDetailsUnmarshaller : IJsonUnmarshaller<ProtocolDetails, JsonUnmarshallerContext>
+    public class ProxyConfigUnmarshaller : IJsonUnmarshaller<ProxyConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtocolDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProxyConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ProtocolDetails unmarshalledObject = new ProtocolDetails();
+            ProxyConfig unmarshalledObject = new ProxyConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,10 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("As2Transports", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.As2Transports = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PassiveIp", targetDepth, ref reader))
+                if (context.TestExpression("SftpMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PassiveIp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProxyConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProxyConfigUnmarshaller.Instance;
-                    unmarshalledObject.ProxyConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SetStatOption", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SetStatOption = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TlsSessionResumptionMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TlsSessionResumptionMode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.SftpMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +67,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
         }
 
 
-        private static ProtocolDetailsUnmarshaller _instance = new ProtocolDetailsUnmarshaller();        
+        private static ProxyConfigUnmarshaller _instance = new ProxyConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ProtocolDetailsUnmarshaller Instance
+        public static ProxyConfigUnmarshaller Instance
         {
             get
             {
