@@ -53,7 +53,10 @@ namespace Amazon.S3.Internal
                 AmazonS3Uri s3BucketUri;
                 if (AmazonS3Uri.TryParseAmazonS3Uri(executionContext.RequestContext.Request.Endpoint, out s3BucketUri))
                 {
-                    correctedRegion = await BucketRegionDetector.DetectMismatchWithHeadBucketFallbackAsync(s3BucketUri, serviceException, executionContext.RequestContext).ConfigureAwait(false);
+                    if (executionContext.RequestContext.Identity is AWSCredentials && !(executionContext.RequestContext.Identity is AnonymousAWSCredentials))
+                    {
+                        correctedRegion = await BucketRegionDetector.DetectMismatchWithHeadBucketFallbackAsync(s3BucketUri, serviceException, executionContext.RequestContext).ConfigureAwait(false);
+                    }
                 }
 
                 if (correctedRegion == null)

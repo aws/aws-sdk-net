@@ -17,6 +17,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
 using Amazon.Util;
@@ -53,7 +54,7 @@ namespace Amazon.S3.Internal
         /// when it must be deferred to <see cref="AmazonS3RetryPolicy.SharedRetryForExceptionAsync"/>
         /// for bucket/region-mismatch detection.
         /// </returns>
-        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        public bool? RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
         {
             return SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);            
         }
@@ -63,9 +64,9 @@ namespace Amazon.S3.Internal
         /// possible bucket/region mismatch (the async caller then resolves the bucket's
         /// Region from the x-amz-bucket-region header or a HEAD bucket fallback).
         /// </summary>
-        internal static bool? SharedRetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception, 
-            Runtime.Internal.Util.ILogger logger,
-            Func<Runtime.IExecutionContext, Exception, bool> baseRetryForException)
+        internal static bool? SharedRetryForExceptionSync(IExecutionContext executionContext, Exception exception, 
+            ILogger logger,
+            Func<IExecutionContext, Exception, bool> baseRetryForException)
         {
             var serviceException = exception as AmazonServiceException;
             if (serviceException != null)
@@ -153,7 +154,7 @@ namespace Amazon.S3.Internal
         /// Returns <c>false</c> when <paramref name="correctedRegion"/> (from the x-amz-bucket-region header)
         /// is not a valid hostname component.
         /// </summary>
-        internal static bool RedirectToRegion(Runtime.IExecutionContext executionContext, string correctedRegion)
+        internal static bool RedirectToRegion(IExecutionContext executionContext, string correctedRegion)
         {
             RegionEndpoint correctedEndpoint;
             try
@@ -180,7 +181,6 @@ namespace Amazon.S3.Internal
             }
 
             // Set the signing region and let the pipeline re-sign on retry.
-            requestContext.Request.AlternateEndpoint = correctedEndpoint;
             requestContext.Request.AuthenticationRegion = correctedRegion;
             requestContext.IsSigned = false;
             return true;
@@ -210,7 +210,7 @@ namespace Amazon.S3.Internal
         /// when it must be deferred to <see cref="AmazonS3RetryPolicy.SharedRetryForExceptionAsync"/>
         /// for bucket/region-mismatch detection.
         /// </returns>
-        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        public bool? RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
         {
             return AmazonS3RetryPolicy.SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);
         }
@@ -239,7 +239,7 @@ namespace Amazon.S3.Internal
         /// when it must be deferred to <see cref="AmazonS3RetryPolicy.SharedRetryForExceptionAsync"/>
         /// for bucket/region-mismatch detection.
         /// </returns>
-        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        public bool? RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
         {
             return AmazonS3RetryPolicy.SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);
         }

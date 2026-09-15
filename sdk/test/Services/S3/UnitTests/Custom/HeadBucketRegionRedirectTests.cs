@@ -89,7 +89,8 @@ namespace AWSSDK.UnitTests
             {
                 OriginalRequest = originalRequest,
                 Request = new DefaultRequest(originalRequest, "S3") { Endpoint = endpoint },
-                ClientConfig = new AmazonS3Config { RegionEndpoint = RegionEndpoint.USWest1 }
+                ClientConfig = new AmazonS3Config { RegionEndpoint = RegionEndpoint.USWest1 },
+                Identity = new BasicAWSCredentials("accessKey", "secretKey")
             };
             return new ExecutionContext(requestContext, new ResponseContext());
         }
@@ -157,9 +158,8 @@ namespace AWSSDK.UnitTests
                 "The retried request endpoint must target the bucket's actual Region.");
             Assert.IsFalse(endpointHost.Contains("us-west-1"),
                 "The retried request endpoint must no longer target the original (client) Region.");
-            Assert.AreEqual(RegionEndpoint.GetBySystemName(BucketActualRegion),
-                context.RequestContext.Request.AlternateEndpoint,
-                "AlternateEndpoint should reflect the corrected Region.");
+            Assert.AreEqual(BucketActualRegion, context.RequestContext.Request.AuthenticationRegion,
+                "The signing region should reflect the corrected Region.");
         }
 
         /// <summary>
