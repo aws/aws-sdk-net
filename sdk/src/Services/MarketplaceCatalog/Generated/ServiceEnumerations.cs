@@ -1303,6 +1303,10 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         public static readonly ResaleAuthorizationSortBy EntityId = new ResaleAuthorizationSortBy("EntityId");
         /// <summary>
+        /// Constant IssuerAccountId for ResaleAuthorizationSortBy
+        /// </summary>
+        public static readonly ResaleAuthorizationSortBy IssuerAccountId = new ResaleAuthorizationSortBy("IssuerAccountId");
+        /// <summary>
         /// Constant LastModifiedDate for ResaleAuthorizationSortBy
         /// </summary>
         public static readonly ResaleAuthorizationSortBy LastModifiedDate = new ResaleAuthorizationSortBy("LastModifiedDate");
@@ -1338,6 +1342,14 @@ namespace Amazon.MarketplaceCatalog
         /// Constant ResellerLegalName for ResaleAuthorizationSortBy
         /// </summary>
         public static readonly ResaleAuthorizationSortBy ResellerLegalName = new ResaleAuthorizationSortBy("ResellerLegalName");
+        /// <summary>
+        /// Constant ResellerRole for ResaleAuthorizationSortBy
+        /// </summary>
+        public static readonly ResaleAuthorizationSortBy ResellerRole = new ResaleAuthorizationSortBy("ResellerRole");
+        /// <summary>
+        /// Constant SourceAuthorization for ResaleAuthorizationSortBy
+        /// </summary>
+        public static readonly ResaleAuthorizationSortBy SourceAuthorization = new ResaleAuthorizationSortBy("SourceAuthorization");
         /// <summary>
         /// Constant Status for ResaleAuthorizationSortBy
         /// </summary>

@@ -79,6 +79,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetIssuerAccountId())
+            {
+                context.Writer.WritePropertyName("IssuerAccountId");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResaleAuthorizationIssuerAccountIdFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.IssuerAccountId, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLastModifiedDate())
             {
                 context.Writer.WritePropertyName("LastModifiedDate");
@@ -185,6 +196,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
                 var marshaller = ResaleAuthorizationResellerRoleFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResellerRole, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSourceAuthorization())
+            {
+                context.Writer.WritePropertyName("SourceAuthorization");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResaleAuthorizationSourceAuthorizationFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceAuthorization, context);
 
                 context.Writer.WriteEndObject();
             }

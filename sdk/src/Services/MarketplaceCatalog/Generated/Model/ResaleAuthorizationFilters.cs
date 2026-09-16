@@ -39,6 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private ResaleAuthorizationAvailabilityEndDateFilter _availabilityEndDate;
         private ResaleAuthorizationCreatedDateFilter _createdDate;
         private ResaleAuthorizationEntityIdFilter _entityId;
+        private ResaleAuthorizationIssuerAccountIdFilter _issuerAccountId;
         private ResaleAuthorizationLastModifiedDateFilter _lastModifiedDate;
         private ResaleAuthorizationManufacturerAccountIdFilter _manufacturerAccountId;
         private ResaleAuthorizationManufacturerLegalNameFilter _manufacturerLegalName;
@@ -49,6 +50,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private ResaleAuthorizationResellerAccountIDFilter _resellerAccountID;
         private ResaleAuthorizationResellerLegalNameFilter _resellerLegalName;
         private ResaleAuthorizationResellerRoleFilter _resellerRole;
+        private ResaleAuthorizationSourceAuthorizationFilter _sourceAuthorization;
         private ResaleAuthorizationStatusFilter _status;
 
         /// <summary>
@@ -103,6 +105,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetEntityId()
         {
             return this._entityId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerAccountId. 
+        /// <para>
+        /// Allows filtering on the <c>IssuerAccountId</c> of a ResaleAuthorization.
+        /// </para>
+        /// </summary>
+        public ResaleAuthorizationIssuerAccountIdFilter IssuerAccountId
+        {
+            get { return this._issuerAccountId; }
+            set { this._issuerAccountId = value; }
+        }
+
+        // Check to see if IssuerAccountId property is set
+        internal bool IsSetIssuerAccountId()
+        {
+            return this._issuerAccountId != null;
         }
 
         /// <summary>
@@ -283,6 +303,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetResellerRole()
         {
             return this._resellerRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAuthorization. 
+        /// <para>
+        /// Allows filtering on the <c>SourceAuthorization</c> of a ResaleAuthorization.
+        /// </para>
+        /// </summary>
+        public ResaleAuthorizationSourceAuthorizationFilter SourceAuthorization
+        {
+            get { return this._sourceAuthorization; }
+            set { this._sourceAuthorization = value; }
+        }
+
+        // Check to see if SourceAuthorization property is set
+        internal bool IsSetSourceAuthorization()
+        {
+            return this._sourceAuthorization != null;
         }
 
         /// <summary>

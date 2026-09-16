@@ -36,6 +36,7 @@ namespace Amazon.MarketplaceCatalog.Model
     {
         private string _availabilityEndDate;
         private string _createdDate;
+        private string _issuerAccountId;
         private string _manufacturerAccountId;
         private string _manufacturerLegalName;
         private string _name;
@@ -45,6 +46,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _resellerAccountID;
         private string _resellerLegalName;
         private ResaleAuthorizationResellerRoleString _resellerRole;
+        private string _sourceAuthorization;
         private ResaleAuthorizationStatusString _status;
 
         /// <summary>
@@ -83,6 +85,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssuerAccountId. 
+        /// <para>
+        /// The issuer account ID of the ResaleAuthorization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string IssuerAccountId
+        {
+            get { return this._issuerAccountId; }
+            set { this._issuerAccountId = value; }
+        }
+
+        // Check to see if IssuerAccountId property is set
+        internal bool IsSetIssuerAccountId()
+        {
+            return this._issuerAccountId != null;
         }
 
         /// <summary>
@@ -253,6 +274,25 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetResellerRole()
         {
             return this._resellerRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceAuthorization. 
+        /// <para>
+        /// The source authorization of the ResaleAuthorization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string SourceAuthorization
+        {
+            get { return this._sourceAuthorization; }
+            set { this._sourceAuthorization = value; }
+        }
+
+        // Check to see if SourceAuthorization property is set
+        internal bool IsSetSourceAuthorization()
+        {
+            return this._sourceAuthorization != null;
         }
 
         /// <summary>
