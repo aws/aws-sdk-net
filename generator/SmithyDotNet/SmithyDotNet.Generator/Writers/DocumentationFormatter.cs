@@ -78,6 +78,8 @@ public static partial class DocumentationFormatter
         // after the first-para strip, which would render as two blank comment lines.
         documentation = NewlineRunRegex().Replace(documentation, "\n\n");
 
+        documentation = EscapeMismatchedTags(documentation);
+
         // Insert line breaks around 80 character line length.
         var sb = new StringBuilder();
         var currentLineLength = 0;
@@ -251,6 +253,55 @@ public static partial class DocumentationFormatter
         writer.WriteLine("/// </exception>");
     }
 
+    // A tag with no matching close (e.g. a lone <port>) is an unescaped placeholder, not real
+    // markup, and breaks the doc comment's XML - so only unmatched tag names get escaped.
+    private static string EscapeMismatchedTags(string documentation)
+    {
+        var tagCounts = new Dictionary<string, (int Opens, int Closes)>();
+        foreach (Match match in TagRegex().Matches(documentation))
+        {
+            var name = match.Groups["name"].Value;
+            var counts = tagCounts.GetValueOrDefault(name);
+            if (match.Groups["close"].Success)
+            {
+                counts.Closes++;
+            }
+            else
+            {
+                counts.Opens++;
+            }
+
+            tagCounts[name] = counts;
+        }
+
+        var mismatchedTagNames = new HashSet<string>();
+        foreach (var (name, counts) in tagCounts)
+        {
+            if (counts.Opens != counts.Closes)
+            {
+                mismatchedTagNames.Add(name);
+            }
+        }
+
+        if (mismatchedTagNames.Count == 0)
+        {
+            return documentation;
+        }
+
+        return TagRegex().Replace(documentation, match =>
+        {
+            if (!mismatchedTagNames.Contains(match.Groups["name"].Value))
+            {
+                return match.Value;
+            }
+
+            // match.Value is the whole tag, e.g. "<port>" or "</filename>" - swap its outer
+            // angle brackets for entities so it renders as literal text instead of an XML tag.
+            var withoutAngleBrackets = match.Value[1..^1];
+            return $"&lt;{withoutAngleBrackets}&gt;";
+        });
+    }
+
     private static string RemoveSnippets(string documentation, string startToken, string endToken)
     {
         var startPos = documentation.IndexOf(startToken, StringComparison.Ordinal);
@@ -270,6 +321,9 @@ public static partial class DocumentationFormatter
 
     [GeneratedRegex("\n{3,}")]
     private static partial Regex NewlineRunRegex();
+
+    [GeneratedRegex(@"<(?<close>/)?(?<name>[A-Za-z][\w-]*)(?<rest>[^>]*)>")]
+    private static partial Regex TagRegex();
 
     // "<p [^>]*>" matches a <p> tag carrying extra attributes (e.g. <p class='title'>).
     [GeneratedRegex("<p [^>]*>")]

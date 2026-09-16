@@ -7,9 +7,9 @@ namespace SmithyDotNet.Generator.Tests.Writers;
 /// <summary>
 /// Covers <see cref="DocumentationFormatter.ToMarkdown"/> for the closed set of tags that appear in
 /// AWS service <c>@documentation</c> (p, br, a, code, b/strong, i/em, ul/ol/li, pre, and the
-/// structural wrappers fullname/note/important/dl/dt/dd).
+/// structural wrappers fullname/note/important/dl/dt/dd), plus <see cref="DocumentationFormatter.Cleanup"/>.
 /// </summary>
-public class DocumentationFormatterMarkdownTests
+public class DocumentationFormatterTests
 {
     [Theory]
     [InlineData(null)]
@@ -144,5 +144,30 @@ public class DocumentationFormatterMarkdownTests
         Assert.Contains("`PutAuditEvents`", result);
         Assert.Contains("[CloudTrail Lake](https://docs.aws.amazon.com/)", result);
         Assert.Contains("**details**", result);
+    }
+
+    [Fact]
+    public void CleanupLeavesMatchedCustomTagUntouched()
+    {
+        Assert.Equal(
+            "Contents of the <filename>server.properties</filename> file.",
+            DocumentationFormatter.Cleanup("<p>Contents of the <filename>server.properties</filename> file.</p>"));
+    }
+
+    [Fact]
+    public void CleanupEscapesUnmatchedTag()
+    {
+        // A lone <port> (no closing tag) is an unescaped placeholder, not real markup.
+        Assert.Equal(
+            "Specify the port as &lt;port&gt;.",
+            DocumentationFormatter.Cleanup("<p>Specify the port as <port>.</p>"));
+    }
+
+    [Fact]
+    public void CleanupEscapesUnmatchedTagNestedInRealMarkup()
+    {
+        Assert.Equal(
+            "An S3 URL in the format s3://<i>&lt;bucket_name&gt;</i>.",
+            DocumentationFormatter.Cleanup("<p>An S3 URL in the format s3://<i><bucket_name></i>.</p>"));
     }
 }
