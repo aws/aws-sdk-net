@@ -22,7 +22,8 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
     public string Write(CancellationToken cancellationToken = default)
     {
         var sb = new StringBuilder();
-        using (var writer = XmlWriter.Create(sb, new XmlWriterSettings { Indent = true }))
+        // Entitize preserves a raw \r in a pattern (e.g. Bedrock's ResourcePolicyDocument); default NewLineHandling drops it.
+        using (var writer = XmlWriter.Create(sb, new XmlWriterSettings { Indent = true, NewLineHandling = NewLineHandling.Entitize }))
         {
             writer.WriteStartElement("property-value-rules");
 

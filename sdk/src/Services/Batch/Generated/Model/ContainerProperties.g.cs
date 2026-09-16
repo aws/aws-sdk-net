@@ -179,7 +179,7 @@ namespace Amazon.Batch.Model
         ///  </li> <li> 
         /// <para>
         /// Images in Amazon ECR repositories use the full registry and repository URI (for example,
-        /// <c>123456789012.dkr.ecr.<region-name>.amazonaws.com/<repository-name></c>).
+        /// <c>123456789012.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

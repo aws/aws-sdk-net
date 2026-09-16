@@ -7,9 +7,9 @@ namespace SmithyDotNet.Generator.Tests.Writers;
 /// <summary>
 /// Covers <see cref="DocumentationFormatter.ToMarkdown"/> for the closed set of tags that appear in
 /// AWS service <c>@documentation</c> (p, br, a, code, b/strong, i/em, ul/ol/li, pre, and the
-/// structural wrappers fullname/note/important/dl/dt/dd).
+/// structural wrappers fullname/note/important/dl/dt/dd), plus <see cref="DocumentationFormatter.Cleanup"/>.
 /// </summary>
-public class DocumentationFormatterMarkdownTests
+public class DocumentationFormatterTests
 {
     [Theory]
     [InlineData(null)]
@@ -144,5 +144,82 @@ public class DocumentationFormatterMarkdownTests
         Assert.Contains("`PutAuditEvents`", result);
         Assert.Contains("[CloudTrail Lake](https://docs.aws.amazon.com/)", result);
         Assert.Contains("**details**", result);
+    }
+
+    [Fact]
+    public void CleanupLeavesMatchedCustomTagUntouched()
+    {
+        Assert.Equal(
+            "Contents of the <filename>server.properties</filename> file.",
+            DocumentationFormatter.Cleanup("<p>Contents of the <filename>server.properties</filename> file.</p>"));
+    }
+
+    [Fact]
+    public void CleanupEscapesUnmatchedTag()
+    {
+        // A lone <port> (no closing tag) is an unescaped placeholder, not real markup.
+        Assert.Equal(
+            "Specify the port as &lt;port&gt;.",
+            DocumentationFormatter.Cleanup("<p>Specify the port as <port>.</p>"));
+    }
+
+    [Fact]
+    public void CleanupEscapesUnmatchedTagNestedInRealMarkup()
+    {
+        Assert.Equal(
+            "An S3 URL in the format s3://<i>&lt;bucket_name&gt;</i>.",
+            DocumentationFormatter.Cleanup("<p>An S3 URL in the format s3://<i><bucket_name></i>.</p>"));
+    }
+
+    [Fact]
+    public void CleanupEscapesBareAmpersand()
+    {
+        // A bare '&' (not part of &amp;/&lt;/&gt;) is unescaped text, same defect as an unescaped tag.
+        Assert.Equal(
+            "Special characters -._~:/?#&amp;=,",
+            DocumentationFormatter.Cleanup("<p>Special characters -._~:/?#&=,</p>"));
+    }
+
+    [Fact]
+    public void CleanupLeavesAlreadyEscapedAmpersandUntouched()
+    {
+        // ApiGatewayV2's CreateStageRequest.StageVariables docs already escape this correctly.
+        Assert.Equal(
+            "Variable names must match [A-Za-z0-9-._~:/?#&amp;=,]+.",
+            DocumentationFormatter.Cleanup("<p>Variable names must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>"));
+    }
+
+    [Fact]
+    public void CleanupEscapesBareLessThan()
+    {
+        // SimpleEmailV2's MessageInsightsFilters.LastEngagementEvent docs use '<' as "comes before".
+        Assert.Equal(
+            "The ordering is as follows: <c>OPEN</c> &lt; <c>CLICK</c>.",
+            DocumentationFormatter.Cleanup("<p>The ordering is as follows: <code>OPEN</code> < <code>CLICK</code>.</p>"));
+    }
+
+    [Fact]
+    public void CleanupLeavesNumericCharacterReferenceUntouched()
+    {
+        // RDS's FailoverState.Status docs use &#150; (an en dash).
+        Assert.Equal(
+            "pending &#150; The service received a request to switch over.",
+            DocumentationFormatter.Cleanup("<p>pending &#150; The service received a request to switch over.</p>"));
+    }
+
+    [Theory]
+    // Standalone, the common case (IoT FleetWise, Neptune Data, Proton).
+    [InlineData("<p>Default: <code/></p>", "Default: <code/>")]
+    // Next to a real pair of the same name (SageMaker): must not tip the count and escape <i>record</i>.
+    [InlineData("<p>A <i>record</i> <i/> is a single unit of input data.</p>", "A <i>record</i> <i/> is a single unit of input data.")]
+    // Inside <code> (DocDB Elastic).
+    [InlineData("<p>Valid actions are <code>ENGINE_UPDATE<i/> </code>.</p>", "Valid actions are <c>ENGINE_UPDATE<i/> </c>.")]
+    // With attributes it is an XML example, not markup (MediaConvert): escaped like any unmatched tag.
+    [InlineData("<p>Adds <Accessibility value=\"caption\"/> to the manifest.</p>", "Adds &lt;Accessibility value=\"caption\"/&gt; to the manifest.")]
+    public void CleanupHandlesSelfClosingTags(string input, string expected)
+    {
+        // A bare self-closing tag is complete on its own and survives; one with attributes is an unescaped
+        // XML example and gets escaped.
+        Assert.Equal(expected, DocumentationFormatter.Cleanup(input));
     }
 }
