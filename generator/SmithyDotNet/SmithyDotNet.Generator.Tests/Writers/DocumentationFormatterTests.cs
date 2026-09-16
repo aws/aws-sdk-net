@@ -190,6 +190,15 @@ public class DocumentationFormatterTests
     }
 
     [Fact]
+    public void CleanupEscapesBareLessThan()
+    {
+        // SimpleEmailV2's MessageInsightsFilters.LastEngagementEvent docs use '<' as "comes before".
+        Assert.Equal(
+            "The ordering is as follows: <c>OPEN</c> &lt; <c>CLICK</c>.",
+            DocumentationFormatter.Cleanup("<p>The ordering is as follows: <code>OPEN</code> < <code>CLICK</code>.</p>"));
+    }
+
+    [Fact]
     public void CleanupLeavesNumericCharacterReferenceUntouched()
     {
         // RDS's FailoverState.Status docs use &#150; (an en dash).

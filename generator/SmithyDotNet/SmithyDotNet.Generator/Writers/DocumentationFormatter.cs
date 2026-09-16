@@ -78,10 +78,11 @@ public static partial class DocumentationFormatter
         // after the first-para strip, which would render as two blank comment lines.
         documentation = NewlineRunRegex().Replace(documentation, "\n\n");
 
+        // A bare '&', or a '<' that doesn't start a tag (e.g. "OPEN < CLICK"), is unescaped text and
+        // breaks the doc comment's XML.
         documentation = EscapeMismatchedTags(documentation);
-
-        // A bare '&' is unescaped text and breaks the doc comment's XML the same way a stray '<' does.
         documentation = BareAmpersandRegex().Replace(documentation, "&amp;");
+        documentation = BareLessThanRegex().Replace(documentation, "&lt;");
 
         // Insert line breaks around 80 character line length.
         var sb = new StringBuilder();
@@ -312,6 +313,10 @@ public static partial class DocumentationFormatter
     // An '&' not followed by an entity reference like "amp;" or "#150;".
     [GeneratedRegex(@"&(?![#\w]+;)")]
     private static partial Regex BareAmpersandRegex();
+
+    // A '<' not followed by a tag name or '/'.
+    [GeneratedRegex(@"<(?![A-Za-z/])")]
+    private static partial Regex BareLessThanRegex();
 
     // "<p [^>]*>" matches a <p> tag carrying extra attributes (e.g. <p class='title'>).
     [GeneratedRegex("<p [^>]*>")]
