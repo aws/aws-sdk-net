@@ -209,5 +209,36 @@ namespace AWSSDK.UnitTests
             Assert.IsFalse(result.Value, "For a non-HeadBucket operation, the redirect should not be retried by the S3-specific logic.");
             Assert.IsTrue(baseInvoked, "For a non-HeadBucket operation, a redirect status should defer to the base retry policy.");
         }
+
+        /// <summary>
+        /// The endpoint-redirect (host rewrite) behavior is limited to HeadBucket. The 400
+        /// AuthorizationHeaderMalformed / x-amz-bucket-region path is inconclusive for every
+        /// operation, so a non-HeadBucket operation (e.g. GetObject) still reaches the async
+        /// mismatch handling. It must NOT have its endpoint rewritten; it should preserve the prior
+        /// behavior of re-signing for the corrected Region against the original endpoint.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("S3")]
+        public async Task RegionMismatch_ForNonHeadBucketOperation_DoesNotRedirectEndpoint()
+        {
+            var endpoint = new Uri("https://" + BucketName + ".s3.us-west-1.amazonaws.com");
+            var exception = CreateS3Exception(HttpStatusCode.BadRequest, BucketActualRegion);
+            var context = CreateContext(
+                new GetObjectRequest { BucketName = BucketName, Key = "test.txt" },
+                endpoint);
+
+            var shouldRetry = await AmazonS3RetryPolicy.SharedRetryForExceptionAsync(
+                context,
+                exception,
+                (ctx, ex) => AmazonS3RetryPolicy.SharedRetryForExceptionSync(ctx, ex, Amazon.Runtime.Internal.Util.Logger.GetLogger(typeof(HeadBucketRegionRedirectTests)), (_, __) => false),
+                (_, __) => false);
+
+            Assert.IsTrue(shouldRetry, "The request should still be retried for the corrected Region.");
+            Assert.AreEqual(endpoint.Host, context.RequestContext.Request.Endpoint.Host,
+                "Only HeadBucket may be redirected to the bucket's Region; the endpoint host must be unchanged.");
+            Assert.AreEqual(BucketActualRegion, context.RequestContext.Request.AuthenticationRegion,
+                "The non-HeadBucket path must still re-sign for the corrected Region.");
+            Assert.IsFalse(context.RequestContext.IsSigned, "The retried request must be re-signed.");
+        }
     }
 }

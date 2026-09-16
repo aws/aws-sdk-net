@@ -71,12 +71,18 @@ namespace Amazon.S3.Internal
                 }
                 else
                 {
-                    // Redirect the retried request to the bucket's actual Region (endpoint + signing).
-                    if (RedirectToRegion(executionContext, correctedRegion))
+                    if (executionContext.RequestContext.OriginalRequest is HeadBucketRequest)
                     {
-                        return true;
+                        if (RedirectToRegion(executionContext, correctedRegion))
+                        {
+                            return true;
+                        }
+                        return baseRetryForException(executionContext, exception);
                     }
-                    return baseRetryForException(executionContext, exception);
+
+                    executionContext.RequestContext.Request.AuthenticationRegion = correctedRegion;
+                    executionContext.RequestContext.IsSigned = false;
+                    return true;
                 }
             }
         }
