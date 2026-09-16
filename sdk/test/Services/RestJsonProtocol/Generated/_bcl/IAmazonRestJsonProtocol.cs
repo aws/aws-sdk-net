@@ -1079,62 +1079,6 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
         
-        #region  InputStream
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the InputStream service method.</param>
-        /// 
-        /// <returns>The response from the InputStream service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/InputStream">REST API Reference for InputStream Operation</seealso>
-        InputStreamResponse InputStream(InputStreamRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the InputStream service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the InputStream service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/InputStream">REST API Reference for InputStream Operation</seealso>
-        Task<InputStreamResponse> InputStreamAsync(InputStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
-        #region  InputStreamWithInitialRequest
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the InputStreamWithInitialRequest service method.</param>
-        /// 
-        /// <returns>The response from the InputStreamWithInitialRequest service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/InputStreamWithInitialRequest">REST API Reference for InputStreamWithInitialRequest Operation</seealso>
-        InputStreamWithInitialRequestResponse InputStreamWithInitialRequest(InputStreamWithInitialRequestRequest request);
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the InputStreamWithInitialRequest service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the InputStreamWithInitialRequest service method, as returned by RestJsonProtocol.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/InputStreamWithInitialRequest">REST API Reference for InputStreamWithInitialRequest Operation</seealso>
-        Task<InputStreamWithInitialRequestResponse> InputStreamWithInitialRequestAsync(InputStreamWithInitialRequestRequest request, CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-        
         #region  JsonBlobs
 
 

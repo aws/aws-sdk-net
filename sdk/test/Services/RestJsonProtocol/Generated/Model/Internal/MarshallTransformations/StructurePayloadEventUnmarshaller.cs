@@ -49,7 +49,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             StructurePayloadEvent unmarshalledObject = new StructurePayloadEvent();
             if (context.IsEmptyResponse)
                 return null;
-            unmarshalledObject.Payload = context.Stream as MemoryStream;
+            var unmarshaller = PayloadStructureUnmarshaller.Instance;
+            unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);
             return unmarshalledObject;
         }
 

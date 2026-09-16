@@ -53,7 +53,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             {
                 unmarshalledObject.Header = context.ResponseData.GetEventStreamHeader("header").AsString();
             }
-            unmarshalledObject.Payload = context.Stream as MemoryStream;
+            var unmarshaller = PayloadStructureUnmarshaller.Instance;
+            unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);
             return unmarshalledObject;
         }
 

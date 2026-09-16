@@ -47,7 +47,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             OutputStreamWithInitialResponseResponse response = new OutputStreamWithInitialResponseResponse();
-            response.Stream = new EventStream(context.Stream);
+            response.Stream = new ServiceEventStream(context.Stream);
             if (context.ResponseData.IsHeaderPresent("initial-response-member"))
                 response.InitialResponseMember = context.ResponseData.GetHeaderValue("initial-response-member");
 

@@ -91,22 +91,19 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 
                 eventType = "<#=member.EventTypeName#>";
 <#
-            if (member.ModelShape.GetExplicitEventPayloadMember() != null)
+            if (member.ModelShape.GetExplicitEventPayloadMember() != null && member.ModelShape.GetExplicitEventPayloadMember().IsMemoryStream)
             {
-                if (member.ModelShape.GetExplicitEventPayloadMember().IsMemoryStream)
-                {
 #>
                 contentType = "application/octet-stream";
                 eventPayload = context.Request.Content;
 <#
-                }
-                else
-                {
+            }
+            else if (member.ModelShape.GetExplicitEventPayloadMember() != null && !member.ModelShape.GetExplicitEventPayloadMember().IsStructure)
+            {
 #>
                 contentType = "text/plain";
                 eventPayload = context.Request.Content;
 <#
-                }
             }
             else if (this.Config.ServiceModel.Type == ServiceType.Cbor)
             {

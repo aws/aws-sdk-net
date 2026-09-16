@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
+ * Do not modify this file. This file is generated from the rpcv2protocol-2020-07-14.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -23,18 +23,21 @@ using System.IO;
 using System.Text;
 using System.Xml.Serialization;
 
-using Amazon.RestJsonProtocol.Model;
+using Amazon.RpcV2Protocol.Model;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
-namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
+namespace Amazon.RpcV2Protocol.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HeadersAndExplicitPayloadEvent Marshaller
+    /// RpcV2CborNestedUnion Marshaller
     /// </summary>
-    public class HeadersAndExplicitPayloadEventMarshaller : IRequestMarshaller<HeadersAndExplicitPayloadEvent, JsonMarshallerContext> 
+    public class RpcV2CborNestedUnionMarshaller : IRequestMarshaller<RpcV2CborNestedUnion, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,22 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HeadersAndExplicitPayloadEvent requestObject, JsonMarshallerContext context)
+        public void Marshall(RpcV2CborNestedUnion requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetHeader())
+
+            if (requestObject.IsSetStringValue())
             {
-                var headerHeader = new Amazon.Runtime.EventStreams.EventStreamHeader("header");
-                headerHeader.SetString(requestObject.Header);
-                context.Request.EventHeaders.Add(headerHeader);
-            }
-            if(requestObject.IsSetPayload())
-            {
-                var structureMarshaller = PayloadStructureMarshaller.Instance;
-                structureMarshaller.Marshall(requestObject.Payload, context);
+                context.Writer.WriteTextString("stringValue");
+                context.Writer.WriteTextString(requestObject.StringValue);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HeadersAndExplicitPayloadEventMarshaller Instance = new HeadersAndExplicitPayloadEventMarshaller();
+        public readonly static RpcV2CborNestedUnionMarshaller Instance = new RpcV2CborNestedUnionMarshaller();
 
     }
 }

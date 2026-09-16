@@ -27,15 +27,15 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
     /// <summary>
     /// Marshalles the service events for the event stream to the low level IEventStreamMessage.
     /// </summary>
-    public partial class EventStreamPublisherMarshaller : EventStreamPublisher
+    public partial class ServiceEventStreamPublisherMarshaller : EventStreamPublisher
     {
-        Func< Task<IEventStreamEvent>> _publisher;
+        Func< Task<IServiceEventStreamEvent>> _publisher;
 
         /// <summary>
-        /// Creates instance of EventStreamPublisherMarshaller
+        /// Creates instance of ServiceEventStreamPublisherMarshaller
         /// </summary>
         /// <param name="publisher">The service event publisher provided by the consumer of the SDK.</param>
-        public EventStreamPublisherMarshaller(Func<Task<IEventStreamEvent>> publisher)
+        public ServiceEventStreamPublisherMarshaller(Func<Task<IServiceEventStreamEvent>> publisher)
         {
             _publisher = publisher;
         }

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
+ * Do not modify this file. This file is generated from the rpcv2protocol-2020-07-14.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -27,21 +27,29 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
-namespace Amazon.RestJsonProtocol.Model
+namespace Amazon.RpcV2Protocol.Model
 {
     /// <summary>
-    /// This is the response object from the InputStreamWithInitialRequest operation.
+    /// 
     /// </summary>
-    public partial class InputStreamWithInitialRequestResponse : AmazonWebServiceResponse, Amazon.Runtime.EventStreams.IEventInputStreamContextOwner, IDisposable
+    public partial class RpcV2CborNestedUnion
     {
+        private string _stringValue;
 
-#pragma warning disable CA1033
-
-        Amazon.Runtime.EventStreams.EventInputStreamContext _eventInputStreamContext;
-        void Amazon.Runtime.EventStreams.IEventInputStreamContextOwner.SetEventInputStreamContext(Amazon.Runtime.EventStreams.EventInputStreamContext eventInputStreamContext)
+        /// <summary>
+        /// Gets and sets the property StringValue.
+        /// </summary>
+        public string StringValue
         {
-            this._eventInputStreamContext = eventInputStreamContext;
+            get { return this._stringValue; }
+            set { this._stringValue = value; }
         }
-#pragma warning restore CA1033
+
+        // Check to see if StringValue property is set
+        internal bool IsSetStringValue()
+        {
+            return this._stringValue != null;
+        }
+
     }
 }

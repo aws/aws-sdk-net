@@ -21,7 +21,7 @@ namespace Amazon.RestJsonProtocol.Model
 {
 #pragma warning disable CA1040
     /// <summary>
-    /// Interface used to distinguish the events that can be sent to the service using the InputStreamWithInitialRequest service operation.
+    /// Interface used to distinguish the events that can be sent to the service using the DuplexStreamWithInitialMessages service operation.
     /// The types that implement this interface are:
     /// <list type="bullet">
     ///   <item><term><see cref="BlobPayloadEvent"/></term></item>
@@ -33,7 +33,7 @@ namespace Amazon.RestJsonProtocol.Model
     ///   <item><term><see cref="UnionPayloadEvent"/></term></item>
     /// </list>
     /// </summary>
-    public interface IEventStreamEvent
+    public interface IServiceEventStreamEvent
     {
     }
 #pragma warning restore CA1040

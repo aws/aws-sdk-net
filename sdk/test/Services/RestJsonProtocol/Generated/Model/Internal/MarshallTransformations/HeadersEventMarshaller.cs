@@ -49,14 +49,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlobHeader())
             {
                 var blobHeaderHeader = new Amazon.Runtime.EventStreams.EventStreamHeader("blobHeader");
-                if (requestObject.BlobHeader.TryGetBuffer(out var segment))
-                {
-                    context.Request.EventHeaders.Add(new EventStreamHeader("blobHeaderHeader", segment.Array, segment.Offset, segment.Count));
-                }
-                else
-                {
-                    headers.Add(new EventStreamHeader("blobHeaderHeader", requestObject.BlobHeader.ToArray()));
-                }
+                blobHeaderHeader.SetByteBuf(requestObject.BlobHeader.ToArray());
+                context.Request.EventHeaders.Add(blobHeaderHeader);
             }
             if(requestObject.IsSetBooleanHeader())
             {

@@ -59,6 +59,13 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 <#=new string(' ', level * 4)#>                context.Request.Content = requestObject.<#=member.PropertyName#>.ToArray();
 <#+
 				}
+				else if (member.IsStructure)
+				{
+#>
+<#=new string(' ', level * 4)#>                var structureMarshaller = <#=member.Shape.Name#>Marshaller.Instance;
+<#=new string(' ', level * 4)#>                structureMarshaller.Marshall(requestObject.<#=member.PropertyName#>, context);
+<#+
+				}
 				else
 				{
 #>
@@ -483,14 +490,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 		if (member.Shape.IsMemoryStream)
 		{
 #>
-<#=new string(' ', level * 4)#>				if (requestObject.<#=member.PropertyName#>.TryGetBuffer(out var segment))
-<#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					context.Request.EventHeaders.Add(new EventStreamHeader("<#=eventHeaderVariable#>", segment.Array, segment.Offset, segment.Count));
-<#=new string(' ', level * 4)#>				}
-<#=new string(' ', level * 4)#>				else
-<#=new string(' ', level * 4)#>				{
-<#=new string(' ', level * 4)#>					headers.Add(new EventStreamHeader("<#=eventHeaderVariable#>", requestObject.<#=member.PropertyName#>.ToArray()));
-<#=new string(' ', level * 4)#>				}
+<#=new string(' ', level * 4)#>                <#=eventHeaderVariable#>.SetByteBuf(requestObject.<#=member.PropertyName#>.ToArray());
+<#=new string(' ', level * 4)#>				context.Request.EventHeaders.Add(<#=eventHeaderVariable#>);
 <#+
 		}
 		if (member.Shape.IsTimeStamp)

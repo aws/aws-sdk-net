@@ -47,7 +47,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DuplexStreamResponse response = new DuplexStreamResponse();
-            response.Stream = new EventStream(context.Stream);
+            response.Stream = new ServiceEventStream(context.Stream);
 
             return response;
         }

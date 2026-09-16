@@ -10,5 +10,18 @@
         }
       ]
     }
+  },
+  "shapeSubstitutions":{
+    "EventStream":{
+      "renameShape": "ServiceEventStream"
+    }
+  },
+  "operationModifiers":{
+    "InputStream":{
+      "exclude" : true
+    },
+    "InputStreamWithInitialRequest":{
+      "exclude" : true
+    }
   }
 }

@@ -48,7 +48,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 return;
             if(requestObject.IsSetPayload())
             {
-                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.Payload);
+                var structureMarshaller = PayloadUnionMarshaller.Instance;
+                structureMarshaller.Marshall(requestObject.Payload, context);
             }
         }
 

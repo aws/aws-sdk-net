@@ -60,7 +60,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RestJsonProtocol");
             request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";
-            request.EventStreamPublisher = new EventStreamPublisherMarshaller(publicRequest.StreamPublisher);
+            request.EventStreamPublisher = new ServiceEventStreamPublisherMarshaller(publicRequest.StreamPublisher);
 
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-16";
             request.HttpMethod = "POST";

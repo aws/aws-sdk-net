@@ -19,7 +19,7 @@
 
 namespace Amazon.RestJsonProtocol.Model
 {
-    public partial class HeadersEvent : IEventStreamEvent
+    public partial class HeadersEvent : IServiceEventStreamEvent
     {
     }
 }

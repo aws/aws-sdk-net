@@ -34,12 +34,12 @@ namespace Amazon.RestJsonProtocol.Model
     /// </summary>
     public partial class DuplexStreamResponse : AmazonWebServiceResponse, Amazon.Runtime.EventStreams.IEventInputStreamContextOwner, IDisposable
     {
-        private EventStream _stream;
+        private ServiceEventStream _stream;
 
         /// <summary>
         /// Gets and sets the property Stream.
         /// </summary>
-        public EventStream Stream
+        public ServiceEventStream Stream
         {
             get { return this._stream; }
             set { this._stream = value; }

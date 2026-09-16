@@ -35,7 +35,7 @@ namespace Amazon.RestJsonProtocol.Model
     public partial class OutputStreamWithInitialResponseResponse : AmazonWebServiceResponse, IDisposable
     {
         private string _initialResponseMember;
-        private EventStream _stream;
+        private ServiceEventStream _stream;
 
         /// <summary>
         /// Gets and sets the property InitialResponseMember.
@@ -56,7 +56,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// <summary>
         /// Gets and sets the property Stream.
         /// </summary>
-        public EventStream Stream
+        public ServiceEventStream Stream
         {
             get { return this._stream; }
             set { this._stream = value; }

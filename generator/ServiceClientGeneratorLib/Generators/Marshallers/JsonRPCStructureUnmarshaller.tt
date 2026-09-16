@@ -57,6 +57,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 <#
 
                 }
+                else if(eventPayloadMember.IsStructure)
+                {
+#>
+            var unmarshaller = <#= eventPayloadMember.DetermineTypeUnmarshallerInstantiate() #>;
+            unmarshalledObject.<#=eventPayloadMember.PropertyName#> = unmarshaller.Unmarshall(context, ref reader);
+<#
+                }
                 else
                 {
 #>

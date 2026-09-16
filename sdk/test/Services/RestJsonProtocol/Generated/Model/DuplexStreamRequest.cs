@@ -42,7 +42,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// The Func set for this property by the consumer of the SDK is used to stream events into the service. Consumers
         /// provide a Func that the SDK will continue to call to get events to send. When the consumer is done streaming
         /// events to the service the Func can return null to stop the SDK calling the Func for new events. The Func must
-        /// return an event known by the service which can be identified by implementing the IEventStreamEvent
+        /// return an event known by the service which can be identified by implementing the IServiceEventStreamEvent
         /// interface. The known implementatons in the SDK for this interface are:
         /// <list type="bullet">
         ///   <item><term><see cref="BlobPayloadEvent"/></term></item>
@@ -56,7 +56,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// </para>
         /// 
         /// </summary>
-        public  Func<System.Threading.Tasks.Task<IEventStreamEvent>> StreamPublisher { get; set; }
+        public  Func<System.Threading.Tasks.Task<IServiceEventStreamEvent>> StreamPublisher { get; set; }
 
     }
 }

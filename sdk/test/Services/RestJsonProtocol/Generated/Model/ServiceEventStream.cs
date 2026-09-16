@@ -37,9 +37,9 @@ namespace Amazon.RestJsonProtocol.Model
     /// <summary>
     /// 
     /// </summary>
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "EventStreamCollection is not descriptive")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ServiceEventStreamCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]
-    public sealed class EventStream : EnumerableEventOutputStream<IEventStreamEvent, RestJsonProtocolEventStreamException>
+    public sealed class ServiceEventStream : EnumerableEventOutputStream<IEventStreamEvent, RestJsonProtocolEventStreamException>
     {
         /// <summary>
         ///The mapping of event message to a generator function to construct the matching EventStream event
@@ -171,7 +171,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// Construct an instance
         /// </summary>
         /// <param name="stream"></param>        
-        public EventStream(Stream stream) : this (stream, null)
+        public ServiceEventStream(Stream stream) : this (stream, null)
         {
         }
 
@@ -180,7 +180,7 @@ namespace Amazon.RestJsonProtocol.Model
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="eventStreamDecoder"></param>
-        public EventStream(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
+        public ServiceEventStream(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)
         {
             base.EventReceived += (sender,args) => EventReceived?.Invoke(this, args);
             base.ExceptionReceived += (sender,args) => ExceptionReceived?.Invoke(this, args);
