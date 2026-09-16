@@ -115,7 +115,21 @@ member is `IsSet`-guarded, then written per Type → Marshal/Unmarshal under its
   map null-guards every value kind. Pinned in `CollectionElementCodegenTests`.
 - Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization.
 
-Structure marshallers loop the structure's own members with the same rules.
+Structure marshallers loop the structure's own members with the same rules. A request event-stream
+**event** is the one exception: the publisher marshaller (C2J `EventStreamPublisherMarshaller`) calls
+`{Event}Marshaller` with the JSON object already open, then reads `context.Request.EventHeaders` and
+`context.Request.Content`. `JsonStructureMarshallerWriter` routes event members by trait (pinned in
+`EventMarshallerCodegenTests`):
+
+- `@eventHeader` → `IsSet`-guarded `EventStreamHeader("{memberName}")` (never `@jsonName`) with the typed
+  setter for the target shape (`SetString` string/enum, `SetBool`/`SetInt32`/`SetInt64`/`SetTimestamp`
+  with `.Value`, `SetByteBuf(….ToArray())` blob), added to `EventHeaders`. Byte/short are allowed by Smithy
+  but `TypeMapper` doesn't map them, so they fail loud.
+- `@eventPayload` → `IsSet`-guarded: blob `Request.Content = ….ToArray()`, string/enum
+  `Encoding.UTF8.GetBytes(…)` (publisher sends octet-stream / text/plain, C2J parity); structure/union
+  `{Type}Marshaller.Instance.Marshall(…, context)` into the open object (the protocol tests expect the bare
+  structure as the payload, not one wrapped under the member name). List/map fail loud.
+- Everything else is an ordinary body member (the implicit payload).
 
 ### `@httpPayload` (request)
 

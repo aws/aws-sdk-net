@@ -256,8 +256,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     continue;
                 }
 
-                // TODO: Emit an event unmarshaller (@eventHeader from the message headers, @eventPayload from the
-                // raw payload). The JSON structure unmarshaller the event stream class calls today is not it.
+                // TODO (separate task): drop this skip once JsonStructureUnmarshallerWriter mirrors the marshaller's event
+                // branches: @eventHeader via context.ResponseData.GetEventStreamHeader, blob/string @eventPayload from
+                // context.Stream, structure payload via its unmarshaller.
                 if (context.ResponseEventStreams.Any(stream => stream.Events.Contains(shapeId)))
                 {
                     continue;

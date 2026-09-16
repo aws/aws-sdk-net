@@ -93,7 +93,20 @@
       "type": "structure",
       "members": {
         "contentType": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "codec": { "target": "com.example#Codec", "traits": { "smithy.api#eventHeader": {} } },
+        "sequence": { "target": "smithy.api#Integer", "traits": { "smithy.api#eventHeader": {} } },
+        "offset": { "target": "smithy.api#Long", "traits": { "smithy.api#eventHeader": {} } },
+        "final": { "target": "smithy.api#Boolean", "traits": { "smithy.api#eventHeader": {} } },
+        "sentAt": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#eventHeader": {} } },
+        "checksum": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventHeader": {} } },
         "chunk": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#Codec": {
+      "type": "enum",
+      "members": {
+        "PCM": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "pcm" } },
+        "OPUS": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "opus" } }
       }
     },
     "com.example#ImplicitPayloadEvent": {
