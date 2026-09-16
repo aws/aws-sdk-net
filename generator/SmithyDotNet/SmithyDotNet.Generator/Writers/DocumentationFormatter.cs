@@ -80,6 +80,9 @@ public static partial class DocumentationFormatter
 
         documentation = EscapeMismatchedTags(documentation);
 
+        // A bare '&' is unescaped text and breaks the doc comment's XML the same way a stray '<' does.
+        documentation = BareAmpersandRegex().Replace(documentation, "&amp;");
+
         // Insert line breaks around 80 character line length.
         var sb = new StringBuilder();
         var currentLineLength = 0;
@@ -253,52 +256,32 @@ public static partial class DocumentationFormatter
         writer.WriteLine("/// </exception>");
     }
 
-    // A tag with no matching close (e.g. a lone <port>) is an unescaped placeholder, not real
-    // markup, and breaks the doc comment's XML - so only unmatched tag names get escaped.
+    // A tag whose name doesn't open and close the same number of times (e.g. a lone <port>) is an
+    // unescaped placeholder, not real markup, and breaks the doc comment's XML - so its angle
+    // brackets get swapped for entities and it reads as literal text.
     private static string EscapeMismatchedTags(string documentation)
     {
-        var tagCounts = new Dictionary<string, (int Opens, int Closes)>();
-        foreach (Match match in TagRegex().Matches(documentation))
+        var counts = new Dictionary<string, (int Opens, int Closes)>();
+        foreach (Match tag in TagRegex().Matches(documentation))
         {
-            var name = match.Groups["name"].Value;
-            var counts = tagCounts.GetValueOrDefault(name);
-            if (match.Groups["close"].Success)
+            var name = tag.Groups["name"].Value;
+            var count = counts.GetValueOrDefault(name);
+            if (tag.Value[1] == '/')
             {
-                counts.Closes++;
+                count.Closes++;
             }
             else
             {
-                counts.Opens++;
+                count.Opens++;
             }
 
-            tagCounts[name] = counts;
+            counts[name] = count;
         }
 
-        var mismatchedTagNames = new HashSet<string>();
-        foreach (var (name, counts) in tagCounts)
+        return TagRegex().Replace(documentation, tag =>
         {
-            if (counts.Opens != counts.Closes)
-            {
-                mismatchedTagNames.Add(name);
-            }
-        }
-
-        if (mismatchedTagNames.Count == 0)
-        {
-            return documentation;
-        }
-
-        return TagRegex().Replace(documentation, match =>
-        {
-            if (!mismatchedTagNames.Contains(match.Groups["name"].Value))
-            {
-                return match.Value;
-            }
-
-            // match.Value is the whole tag, e.g. "<port>" or "</filename>" - swap its outer
-            // angle brackets for entities so it renders as literal text instead of an XML tag.
-            var withoutAngleBrackets = match.Value[1..^1];
-            return $"&lt;{withoutAngleBrackets}&gt;";
+            var (opens, closes) = counts[tag.Groups["name"].Value];
+            return opens == closes ? tag.Value : $"&lt;{tag.Value[1..^1]}&gt;";
         });
     }
 
@@ -322,8 +305,13 @@ public static partial class DocumentationFormatter
     [GeneratedRegex("\n{3,}")]
     private static partial Regex NewlineRunRegex();
 
-    [GeneratedRegex(@"<(?<close>/)?(?<name>[A-Za-z][\w-]*)(?<rest>[^>]*)>")]
+    // An opening or closing tag; the name is what gets balance-counted.
+    [GeneratedRegex(@"</?(?<name>[A-Za-z][\w-]*)[^>]*>")]
     private static partial Regex TagRegex();
+
+    // An '&' not followed by an entity reference like "amp;" or "#150;".
+    [GeneratedRegex(@"&(?![#\w]+;)")]
+    private static partial Regex BareAmpersandRegex();
 
     // "<p [^>]*>" matches a <p> tag carrying extra attributes (e.g. <p class='title'>).
     [GeneratedRegex("<p [^>]*>")]

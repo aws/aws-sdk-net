@@ -170,4 +170,31 @@ public class DocumentationFormatterTests
             "An S3 URL in the format s3://<i>&lt;bucket_name&gt;</i>.",
             DocumentationFormatter.Cleanup("<p>An S3 URL in the format s3://<i><bucket_name></i>.</p>"));
     }
+
+    [Fact]
+    public void CleanupEscapesBareAmpersand()
+    {
+        // A bare '&' (not part of &amp;/&lt;/&gt;) is unescaped text, same defect as an unescaped tag.
+        Assert.Equal(
+            "Special characters -._~:/?#&amp;=,",
+            DocumentationFormatter.Cleanup("<p>Special characters -._~:/?#&=,</p>"));
+    }
+
+    [Fact]
+    public void CleanupLeavesAlreadyEscapedAmpersandUntouched()
+    {
+        // ApiGatewayV2's CreateStageRequest.StageVariables docs already escape this correctly.
+        Assert.Equal(
+            "Variable names must match [A-Za-z0-9-._~:/?#&amp;=,]+.",
+            DocumentationFormatter.Cleanup("<p>Variable names must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>"));
+    }
+
+    [Fact]
+    public void CleanupLeavesNumericCharacterReferenceUntouched()
+    {
+        // RDS's FailoverState.Status docs use &#150; (an en dash).
+        Assert.Equal(
+            "pending &#150; The service received a request to switch over.",
+            DocumentationFormatter.Cleanup("<p>pending &#150; The service received a request to switch over.</p>"));
+    }
 }
