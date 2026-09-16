@@ -355,6 +355,21 @@
     <pattern>\S{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.GetDependencyInsightsRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.GetDependencyInsightsResponse.ErrorMessage</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.GetDependencyInsightsResponse.Overview</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.GetFailureModeFindingRequest.FindingId</property>
     <min>36</min>
     <max>36</max>
@@ -562,6 +577,12 @@
     <pattern>\S{1,2000}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListPoliciesRequest.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.ListPoliciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -574,6 +595,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.ListPoliciesResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListPolicyEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListPolicyEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListPolicyEventsRequest.PolicyArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListPolicyEventsResponse.NextToken</property>
     <min>1</min>
     <max>2000</max>
     <pattern>\S{1,2000}</pattern>
@@ -1046,6 +1089,17 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.StartDependencyInsightsRequest.ClientToken</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[A-Za-z0-9_.-]{0,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.StartDependencyInsightsRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.StartFailureModeAssessmentRequest.ClientToken</property>
     <min>1</min>
     <max>63</max>
@@ -1323,6 +1377,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DependencyInsight.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.DependencySummary.DependencyId</property>
     <min>36</min>
     <max>36</max>
@@ -1466,7 +1525,46 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.Policy.OrganizationId</property>
+    <min>12</min>
+    <max>34</max>
+    <pattern>o-[a-z0-9]{10,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.Policy.PolicyArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicyAttachedToServiceMetadata.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicyAttachedToServiceMetadata.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicyDetachedFromServiceMetadata.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicyDetachedFromServiceMetadata.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicyEvent.EventId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicyEvent.PolicyArn</property>
     <min>31</min>
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
@@ -1475,6 +1573,12 @@
     <min>2</min>
     <max>60</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PolicySummary.OrganizationId</property>
+    <min>12</min>
+    <max>34</max>
+    <pattern>o-[a-z0-9]{10,32}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.PolicySummary.PolicyArn</property>

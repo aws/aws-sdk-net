@@ -30,16 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Resiliencehubv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListServiceEvents operation.
-    /// Lists events for a service.
+    /// Container for the parameters to the ListPolicyEvents operation.
+    /// Lists events for a resilience policy, including services that started or stopped using
+    /// it, changes to cross-account sharing, and deletion of the policy.
     /// </summary>
-    public partial class ListServiceEventsRequest : AmazonResiliencehubv2Request
+    public partial class ListPolicyEventsRequest : AmazonResiliencehubv2Request
     {
         private DateTime? _endTime;
         private List<string> _eventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private string _serviceArn;
+        private string _policyArn;
         private DateTime? _startTime;
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [AWSProperty(Min=0, Max=4)]
         public List<string> EventTypes
         {
             get { return this._eventTypes; }
@@ -116,19 +118,19 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceArn.
+        /// Gets and sets the property PolicyArn.
         /// </summary>
         [AWSProperty(Required=true, Min=31)]
-        public string ServiceArn
+        public string PolicyArn
         {
-            get { return this._serviceArn; }
-            set { this._serviceArn = value; }
+            get { return this._policyArn; }
+            set { this._policyArn = value; }
         }
 
-        // Check to see if ServiceArn property is set
-        internal bool IsSetServiceArn()
+        // Check to see if PolicyArn property is set
+        internal bool IsSetPolicyArn()
         {
-            return this._serviceArn != null;
+            return this._policyArn != null;
         }
 
         /// <summary>

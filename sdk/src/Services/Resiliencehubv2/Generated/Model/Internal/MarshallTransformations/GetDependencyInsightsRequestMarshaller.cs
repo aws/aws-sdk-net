@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListPolicies Request Marshaller
+    /// GetDependencyInsights Request Marshaller
     /// </summary>       
-    public class ListPoliciesRequestMarshaller : IMarshaller<IRequest, ListPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetDependencyInsightsRequestMarshaller : IMarshaller<IRequest, GetDependencyInsightsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListPoliciesRequest)input);
+            return this.Marshall((GetDependencyInsightsRequest)input);
         }
 
         /// <summary>
@@ -56,29 +56,25 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListPoliciesRequest publicRequest)
+        public IRequest Marshall(GetDependencyInsightsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Resiliencehubv2");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-02-17";
             request.HttpMethod = "GET";
 
+            if (string.IsNullOrEmpty(publicRequest.ServiceArn))
+                throw new AmazonResiliencehubv2Exception("Request object does not have required field ServiceArn set");
             
-            if (publicRequest.IsSetAccountId())
-                request.Parameters.Add("accountId", StringUtils.FromString(publicRequest.AccountId));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/v2/list-policies";
+            if (publicRequest.IsSetServiceArn())
+                request.Parameters.Add("serviceArn", StringUtils.FromString(publicRequest.ServiceArn));
+            request.ResourcePath = "/v2/get-dependency-insights";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListPoliciesRequestMarshaller _instance = new ListPoliciesRequestMarshaller();        
+        private static GetDependencyInsightsRequestMarshaller _instance = new GetDependencyInsightsRequestMarshaller();        
 
-        internal static ListPoliciesRequestMarshaller GetInstance()
+        internal static GetDependencyInsightsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +82,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPoliciesRequestMarshaller Instance
+        public static GetDependencyInsightsRequestMarshaller Instance
         {
             get
             {

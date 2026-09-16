@@ -88,6 +88,16 @@ namespace Amazon.Resiliencehubv2.Model
         IListPoliciesPaginator ListPolicies(ListPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListPolicyEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPolicyEventsPaginator ListPolicyEvents(ListPolicyEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListReports operation
         ///</summary>
         [AWSPaginator(

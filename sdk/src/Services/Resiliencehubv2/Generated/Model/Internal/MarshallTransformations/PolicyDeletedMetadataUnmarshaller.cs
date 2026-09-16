@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServicePolicyAssociatedMetadata Object
+    /// Response Unmarshaller for PolicyDeletedMetadata Object
     /// </summary>  
-    public class ServicePolicyAssociatedMetadataUnmarshaller : IJsonUnmarshaller<ServicePolicyAssociatedMetadata, JsonUnmarshallerContext>
+    public class PolicyDeletedMetadataUnmarshaller : IJsonUnmarshaller<PolicyDeletedMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServicePolicyAssociatedMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PolicyDeletedMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServicePolicyAssociatedMetadata unmarshalledObject = new ServicePolicyAssociatedMetadata();
+            PolicyDeletedMetadata unmarshalledObject = new PolicyDeletedMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("policyArn", targetDepth, ref reader))
+                if (context.TestExpression("affectedServiceCount", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policyName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policyOwnerAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyOwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policySource", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicySource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.AffectedServiceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServicePolicyAssociatedMetadataUnmarshaller _instance = new ServicePolicyAssociatedMetadataUnmarshaller();        
+        private static PolicyDeletedMetadataUnmarshaller _instance = new PolicyDeletedMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServicePolicyAssociatedMetadataUnmarshaller Instance
+        public static PolicyDeletedMetadataUnmarshaller Instance
         {
             get
             {

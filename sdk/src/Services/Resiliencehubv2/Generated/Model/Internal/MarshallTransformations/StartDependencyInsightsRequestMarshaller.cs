@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdatePolicy Request Marshaller
+    /// StartDependencyInsights Request Marshaller
     /// </summary>       
-    public class UpdatePolicyRequestMarshaller : IMarshaller<IRequest, UpdatePolicyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartDependencyInsightsRequestMarshaller : IMarshaller<IRequest, StartDependencyInsightsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdatePolicyRequest)input);
+            return this.Marshall((StartDependencyInsightsRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdatePolicyRequest publicRequest)
+        public IRequest Marshall(StartDependencyInsightsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Resiliencehubv2");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-02-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v2/update-policy";
+            request.ResourcePath = "/v2/start-dependency-insights";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -73,66 +73,21 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAvailabilitySlo())
+            if(publicRequest.IsSetClientToken())
             {
-                context.Writer.WritePropertyName("availabilitySlo");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AvailabilitySloMarshaller.Instance;
-                marshaller.Marshall(publicRequest.AvailabilitySlo, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
 
-            if(publicRequest.IsSetDataRecovery())
+            else if(!(publicRequest.IsSetClientToken()))
             {
-                context.Writer.WritePropertyName("dataRecovery");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DataRecoveryTargetsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.DataRecovery, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-
-            if(publicRequest.IsSetDescription())
+            if(publicRequest.IsSetServiceArn())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
-
-            if(publicRequest.IsSetMultiAz())
-            {
-                context.Writer.WritePropertyName("multiAz");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MultiAzTargetsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.MultiAz, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetMultiRegion())
-            {
-                context.Writer.WritePropertyName("multiRegion");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MultiRegionTargetsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.MultiRegion, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetPolicyArn())
-            {
-                context.Writer.WritePropertyName("policyArn");
-                context.Writer.WriteStringValue(publicRequest.PolicyArn);
-            }
-
-            if(publicRequest.IsSetSharingEnabled())
-            {
-                context.Writer.WritePropertyName("sharingEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.SharingEnabled.Value);
+                context.Writer.WritePropertyName("serviceArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceArn);
             }
 
             writer.WriteEndObject();
@@ -145,9 +100,9 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdatePolicyRequestMarshaller _instance = new UpdatePolicyRequestMarshaller();        
+        private static StartDependencyInsightsRequestMarshaller _instance = new StartDependencyInsightsRequestMarshaller();        
 
-        internal static UpdatePolicyRequestMarshaller GetInstance()
+        internal static StartDependencyInsightsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -155,7 +110,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePolicyRequestMarshaller Instance
+        public static StartDependencyInsightsRequestMarshaller Instance
         {
             get
             {

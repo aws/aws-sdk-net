@@ -30,19 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Resiliencehubv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListPolicies operation.
-    /// Lists resilience policies.
+    /// Contains details about the service that started using the policy, such as the account
+    /// that owns the service.
     /// </summary>
-    public partial class ListPoliciesRequest : AmazonResiliencehubv2Request
+    public partial class PolicyAttachedToServiceMetadata
     {
         private string _accountId;
-        private int? _maxResults;
-        private string _nextToken;
+        private string _serviceArn;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The identifier of the account that owns the policies to include in the results.
+        /// The account that owns the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -59,35 +58,19 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property ServiceArn.
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
+        [AWSProperty(Min=31)]
+        public string ServiceArn
         {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
+            get { return this._serviceArn; }
+            set { this._serviceArn = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if ServiceArn property is set
+        internal bool IsSetServiceArn()
         {
-            return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken.
-        /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
-        public string NextToken
-        {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
-        }
-
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
-        {
-            return this._nextToken != null;
+            return this._serviceArn != null;
         }
 
     }

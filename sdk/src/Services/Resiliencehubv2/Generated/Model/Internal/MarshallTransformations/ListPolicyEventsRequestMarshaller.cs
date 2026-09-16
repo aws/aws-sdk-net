@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListPolicies Request Marshaller
+    /// ListPolicyEvents Request Marshaller
     /// </summary>       
-    public class ListPoliciesRequestMarshaller : IMarshaller<IRequest, ListPoliciesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListPolicyEventsRequestMarshaller : IMarshaller<IRequest, ListPolicyEventsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListPoliciesRequest)input);
+            return this.Marshall((ListPolicyEventsRequest)input);
         }
 
         /// <summary>
@@ -56,29 +56,40 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListPoliciesRequest publicRequest)
+        public IRequest Marshall(ListPolicyEventsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Resiliencehubv2");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2026-02-17";
             request.HttpMethod = "GET";
 
             
-            if (publicRequest.IsSetAccountId())
-                request.Parameters.Add("accountId", StringUtils.FromString(publicRequest.AccountId));
+            if (publicRequest.IsSetEndTime())
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
+            
+            if (publicRequest.IsSetEventTypes())
+                request.ParameterCollection.Add("eventTypes", publicRequest.EventTypes);
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/v2/list-policies";
+            if (string.IsNullOrEmpty(publicRequest.PolicyArn))
+                throw new AmazonResiliencehubv2Exception("Request object does not have required field PolicyArn set");
+            
+            if (publicRequest.IsSetPolicyArn())
+                request.Parameters.Add("policyArn", StringUtils.FromString(publicRequest.PolicyArn));
+            
+            if (publicRequest.IsSetStartTime())
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
+            request.ResourcePath = "/v2/list-policy-events";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListPoliciesRequestMarshaller _instance = new ListPoliciesRequestMarshaller();        
+        private static ListPolicyEventsRequestMarshaller _instance = new ListPolicyEventsRequestMarshaller();        
 
-        internal static ListPoliciesRequestMarshaller GetInstance()
+        internal static ListPolicyEventsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +97,7 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListPoliciesRequestMarshaller Instance
+        public static ListPolicyEventsRequestMarshaller Instance
         {
             get
             {

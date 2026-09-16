@@ -731,6 +731,114 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type DependencyInsightsErrorCode.
+    /// </summary>
+    public class DependencyInsightsErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INSUFFICIENT_DATA for DependencyInsightsErrorCode
+        /// </summary>
+        public static readonly DependencyInsightsErrorCode INSUFFICIENT_DATA = new DependencyInsightsErrorCode("INSUFFICIENT_DATA");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for DependencyInsightsErrorCode
+        /// </summary>
+        public static readonly DependencyInsightsErrorCode INTERNAL_ERROR = new DependencyInsightsErrorCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant LLM_GENERATION_FAILED for DependencyInsightsErrorCode
+        /// </summary>
+        public static readonly DependencyInsightsErrorCode LLM_GENERATION_FAILED = new DependencyInsightsErrorCode("LLM_GENERATION_FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DependencyInsightsErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DependencyInsightsErrorCode FindValue(string value)
+        {
+            return FindValue<DependencyInsightsErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DependencyInsightsErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DependencyInsightsStatus.
+    /// </summary>
+    public class DependencyInsightsStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DependencyInsightsStatus
+        /// </summary>
+        public static readonly DependencyInsightsStatus COMPLETED = new DependencyInsightsStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for DependencyInsightsStatus
+        /// </summary>
+        public static readonly DependencyInsightsStatus FAILED = new DependencyInsightsStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DependencyInsightsStatus
+        /// </summary>
+        public static readonly DependencyInsightsStatus IN_PROGRESS = new DependencyInsightsStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DependencyInsightsStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DependencyInsightsStatus FindValue(string value)
+        {
+            return FindValue<DependencyInsightsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DependencyInsightsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EksLabelSelectorOperator.
     /// </summary>
     public class EksLabelSelectorOperator : ConstantClass
@@ -1025,6 +1133,68 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type InsightsCategory.
+    /// </summary>
+    public class InsightsCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_SERVICE for InsightsCategory
+        /// </summary>
+        public static readonly InsightsCategory AWS_SERVICE = new InsightsCategory("AWS_SERVICE");
+        /// <summary>
+        /// Constant CROSS_REGION for InsightsCategory
+        /// </summary>
+        public static readonly InsightsCategory CROSS_REGION = new InsightsCategory("CROSS_REGION");
+        /// <summary>
+        /// Constant NEW_DEPENDENCY for InsightsCategory
+        /// </summary>
+        public static readonly InsightsCategory NEW_DEPENDENCY = new InsightsCategory("NEW_DEPENDENCY");
+        /// <summary>
+        /// Constant THIRD_PARTY for InsightsCategory
+        /// </summary>
+        public static readonly InsightsCategory THIRD_PARTY = new InsightsCategory("THIRD_PARTY");
+        /// <summary>
+        /// Constant UNEVEN_USAGE for InsightsCategory
+        /// </summary>
+        public static readonly InsightsCategory UNEVEN_USAGE = new InsightsCategory("UNEVEN_USAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightsCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightsCategory FindValue(string value)
+        {
+            return FindValue<InsightsCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightsCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MultiAzDisasterRecoveryApproach.
     /// </summary>
     public class MultiAzDisasterRecoveryApproach : ConstantClass
@@ -1254,6 +1424,118 @@ namespace Amazon.Resiliencehubv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyComponent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyDisassociationReason.
+    /// </summary>
+    public class PolicyDisassociationReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POLICY_DELETED for PolicyDisassociationReason
+        /// </summary>
+        public static readonly PolicyDisassociationReason POLICY_DELETED = new PolicyDisassociationReason("POLICY_DELETED");
+        /// <summary>
+        /// Constant REPLACED_BY_UPDATE for PolicyDisassociationReason
+        /// </summary>
+        public static readonly PolicyDisassociationReason REPLACED_BY_UPDATE = new PolicyDisassociationReason("REPLACED_BY_UPDATE");
+        /// <summary>
+        /// Constant SHARING_REVOKED for PolicyDisassociationReason
+        /// </summary>
+        public static readonly PolicyDisassociationReason SHARING_REVOKED = new PolicyDisassociationReason("SHARING_REVOKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyDisassociationReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyDisassociationReason FindValue(string value)
+        {
+            return FindValue<PolicyDisassociationReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyDisassociationReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyEventType.
+    /// </summary>
+    public class PolicyEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant POLICY_ATTACHED_TO_SERVICE for PolicyEventType
+        /// </summary>
+        public static readonly PolicyEventType POLICY_ATTACHED_TO_SERVICE = new PolicyEventType("POLICY_ATTACHED_TO_SERVICE");
+        /// <summary>
+        /// Constant POLICY_DELETED for PolicyEventType
+        /// </summary>
+        public static readonly PolicyEventType POLICY_DELETED = new PolicyEventType("POLICY_DELETED");
+        /// <summary>
+        /// Constant POLICY_DETACHED_FROM_SERVICE for PolicyEventType
+        /// </summary>
+        public static readonly PolicyEventType POLICY_DETACHED_FROM_SERVICE = new PolicyEventType("POLICY_DETACHED_FROM_SERVICE");
+        /// <summary>
+        /// Constant POLICY_SHARING_REVOKED for PolicyEventType
+        /// </summary>
+        public static readonly PolicyEventType POLICY_SHARING_REVOKED = new PolicyEventType("POLICY_SHARING_REVOKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyEventType FindValue(string value)
+        {
+            return FindValue<PolicyEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyEventType(string value)
         {
             return FindValue(value);
         }

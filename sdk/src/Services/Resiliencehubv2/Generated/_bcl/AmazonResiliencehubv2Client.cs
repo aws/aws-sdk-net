@@ -1730,6 +1730,87 @@ namespace Amazon.Resiliencehubv2
 
         #endregion
         
+        #region  GetDependencyInsights
+
+
+        /// <summary>
+        /// Retrieves the dependency insights generated for a service. The response reports the
+        /// current generation status; insights are populated once generation has completed. If
+        /// generation failed, the response includes an error code, whose possible values are
+        /// listed under the response's errorCode field, and a message describing the cause. To
+        /// use this operation, you must have the <c>resiliencehub:GetDependencyInsights</c> permission
+        /// on the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDependencyInsights service method.</param>
+        /// 
+        /// <returns>The response from the GetDependencyInsights service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetDependencyInsights">REST API Reference for GetDependencyInsights Operation</seealso>
+        public virtual GetDependencyInsightsResponse GetDependencyInsights(GetDependencyInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDependencyInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDependencyInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDependencyInsightsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the dependency insights generated for a service. The response reports the
+        /// current generation status; insights are populated once generation has completed. If
+        /// generation failed, the response includes an error code, whose possible values are
+        /// listed under the response's errorCode field, and a message describing the cause. To
+        /// use this operation, you must have the <c>resiliencehub:GetDependencyInsights</c> permission
+        /// on the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDependencyInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDependencyInsights service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetDependencyInsights">REST API Reference for GetDependencyInsights Operation</seealso>
+        public virtual Task<GetDependencyInsightsResponse> GetDependencyInsightsAsync(GetDependencyInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDependencyInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDependencyInsightsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDependencyInsightsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetFailureModeFinding
 
 
@@ -2776,6 +2857,73 @@ namespace Amazon.Resiliencehubv2
             options.ResponseUnmarshaller = ListPoliciesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListPoliciesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPolicyEvents
+
+
+        /// <summary>
+        /// Lists events for a resilience policy, including services that started or stopped using
+        /// it, changes to cross-account sharing, and deletion of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListPolicyEvents service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListPolicyEvents">REST API Reference for ListPolicyEvents Operation</seealso>
+        public virtual ListPolicyEventsResponse ListPolicyEvents(ListPolicyEventsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPolicyEventsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists events for a resilience policy, including services that started or stopped using
+        /// it, changes to cross-account sharing, and deletion of the policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPolicyEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPolicyEvents service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListPolicyEvents">REST API Reference for ListPolicyEvents Operation</seealso>
+        public virtual Task<ListPolicyEventsResponse> ListPolicyEventsAsync(ListPolicyEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPolicyEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPolicyEventsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPolicyEventsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4092,6 +4240,89 @@ namespace Amazon.Resiliencehubv2
             options.ResponseUnmarshaller = PutTestSourcesResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutTestSourcesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDependencyInsights
+
+
+        /// <summary>
+        /// Starts generating dependency insights for a service. Generation runs asynchronously;
+        /// the response returns the initial status, and you retrieve the results with GetDependencyInsights.
+        /// To use this operation, you must have the <c>resiliencehub:StartDependencyInsights</c>
+        /// permission on the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDependencyInsights service method.</param>
+        /// 
+        /// <returns>The response from the StartDependencyInsights service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StartDependencyInsights">REST API Reference for StartDependencyInsights Operation</seealso>
+        public virtual StartDependencyInsightsResponse StartDependencyInsights(StartDependencyInsightsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDependencyInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDependencyInsightsResponseUnmarshaller.Instance;
+
+            return Invoke<StartDependencyInsightsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts generating dependency insights for a service. Generation runs asynchronously;
+        /// the response returns the initial status, and you retrieve the results with GetDependencyInsights.
+        /// To use this operation, you must have the <c>resiliencehub:StartDependencyInsights</c>
+        /// permission on the service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDependencyInsights service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDependencyInsights service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ThrottlingException">
+        /// Too many requests — rate limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StartDependencyInsights">REST API Reference for StartDependencyInsights Operation</seealso>
+        public virtual Task<StartDependencyInsightsResponse> StartDependencyInsightsAsync(StartDependencyInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartDependencyInsightsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDependencyInsightsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartDependencyInsightsResponse>(request, options, cancellationToken);
         }
 
         #endregion

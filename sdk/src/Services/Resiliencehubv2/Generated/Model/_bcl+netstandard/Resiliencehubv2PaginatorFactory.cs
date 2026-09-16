@@ -85,6 +85,14 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
+        /// Paginator for ListPolicyEvents operation
+        ///</summary>
+        public IListPolicyEventsPaginator ListPolicyEvents(ListPolicyEventsRequest request) 
+        {
+            return new ListPolicyEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListReports operation
         ///</summary>
         public IListReportsPaginator ListReports(ListReportsRequest request) 

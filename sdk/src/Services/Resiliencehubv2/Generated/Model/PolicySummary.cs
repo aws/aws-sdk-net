@@ -41,7 +41,9 @@ namespace Amazon.Resiliencehubv2.Model
         private MultiAzTargets _multiAz;
         private MultiRegionTargets _multiRegion;
         private string _name;
+        private string _organizationId;
         private string _policyArn;
+        private bool? _sharingEnabled;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -169,6 +171,25 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OrganizationId. 
+        /// <para>
+        /// The identifier of the organization this policy is shared with.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=34)]
+        public string OrganizationId
+        {
+            get { return this._organizationId; }
+            set { this._organizationId = value; }
+        }
+
+        // Check to see if OrganizationId property is set
+        internal bool IsSetOrganizationId()
+        {
+            return this._organizationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PolicyArn.
         /// </summary>
         [AWSProperty(Required=true, Min=31)]
@@ -182,6 +203,24 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetPolicyArn()
         {
             return this._policyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingEnabled. 
+        /// <para>
+        /// Specifies whether cross-account sharing is enabled.
+        /// </para>
+        /// </summary>
+        public bool? SharingEnabled
+        {
+            get { return this._sharingEnabled; }
+            set { this._sharingEnabled = value; }
+        }
+
+        // Check to see if SharingEnabled property is set
+        internal bool IsSetSharingEnabled()
+        {
+            return this._sharingEnabled.HasValue; 
         }
 
         /// <summary>

@@ -30,48 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Resiliencehubv2.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListPolicies operation.
-    /// Lists resilience policies.
+    /// This is the response object from the ListPolicyEvents operation.
     /// </summary>
-    public partial class ListPoliciesRequest : AmazonResiliencehubv2Request
+    public partial class ListPolicyEventsResponse : AmazonWebServiceResponse
     {
-        private string _accountId;
-        private int? _maxResults;
+        private List<PolicyEvent> _events = AWSConfigs.InitializeCollections ? new List<PolicyEvent>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
+        /// Gets and sets the property Events. 
         /// <para>
-        /// The identifier of the account that owns the policies to include in the results.
+        /// The list of policy events.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=12, Max=12)]
-        public string AccountId
+        [AWSProperty(Required=true)]
+        public List<PolicyEvent> Events
         {
-            get { return this._accountId; }
-            set { this._accountId = value; }
+            get { return this._events; }
+            set { this._events = value; }
         }
 
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
+        // Check to see if Events property is set
+        internal bool IsSetEvents()
         {
-            return this._accountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults.
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
-        {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

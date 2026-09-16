@@ -63,7 +63,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property EventTypes. 
         /// <para>
-        /// Filter events by type.
+        /// The type of events to include in the results.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

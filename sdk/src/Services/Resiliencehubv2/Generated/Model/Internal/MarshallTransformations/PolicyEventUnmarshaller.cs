@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ServicePolicyDisassociatedMetadata Object
+    /// Response Unmarshaller for PolicyEvent Object
     /// </summary>  
-    public class ServicePolicyDisassociatedMetadataUnmarshaller : IJsonUnmarshaller<ServicePolicyDisassociatedMetadata, JsonUnmarshallerContext>
+    public class PolicyEventUnmarshaller : IJsonUnmarshaller<PolicyEvent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServicePolicyDisassociatedMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PolicyEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ServicePolicyDisassociatedMetadata unmarshalledObject = new ServicePolicyDisassociatedMetadata();
+            PolicyEvent unmarshalledObject = new PolicyEvent();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,40 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("actor", targetDepth, ref reader))
+                {
+                    var unmarshaller = EventActorUnmarshaller.Instance;
+                    unmarshalledObject.Actor = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("eventDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = PolicyEventDetailsUnmarshaller.Instance;
+                    unmarshalledObject.EventDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("eventId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("eventType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EventType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("policyArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PolicyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("policyName", targetDepth, ref reader))
+                if (context.TestExpression("timestamp", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policyOwnerAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicyOwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("policySource", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PolicySource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.Timestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +97,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ServicePolicyDisassociatedMetadataUnmarshaller _instance = new ServicePolicyDisassociatedMetadataUnmarshaller();        
+        private static PolicyEventUnmarshaller _instance = new PolicyEventUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ServicePolicyDisassociatedMetadataUnmarshaller Instance
+        public static PolicyEventUnmarshaller Instance
         {
             get
             {
