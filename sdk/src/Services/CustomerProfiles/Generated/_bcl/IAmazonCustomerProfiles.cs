@@ -6672,6 +6672,86 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  SearchRecommendations
+
+
+        /// <summary>
+        /// Retrieves recommendations for a profile in a specific domain. The profile is identified
+        /// using a search key, which consists of a <c>KeyName</c> and a <c>KeyValues</c> list.
+        /// The <c>KeyName</c> can be a predefined key (for example, <c>_profileId</c>, <c>_phone</c>,
+        /// <c>_email</c>) or a custom-defined key.
+        /// 
+        ///  
+        /// <para>
+        /// The search key must match exactly one profile. If no profile matches the search key,
+        /// the operation returns a <c>ResourceNotFoundException</c>. If more than one profile
+        /// matches the search key, the operation returns a <c>BadRequestException</c>. You can
+        /// use the SearchProfiles API to review the matching profiles.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the SearchRecommendations service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchRecommendations">REST API Reference for SearchRecommendations Operation</seealso>
+        SearchRecommendationsResponse SearchRecommendations(SearchRecommendationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves recommendations for a profile in a specific domain. The profile is identified
+        /// using a search key, which consists of a <c>KeyName</c> and a <c>KeyValues</c> list.
+        /// The <c>KeyName</c> can be a predefined key (for example, <c>_profileId</c>, <c>_phone</c>,
+        /// <c>_email</c>) or a custom-defined key.
+        /// 
+        ///  
+        /// <para>
+        /// The search key must match exactly one profile. If no profile matches the search key,
+        /// the operation returns a <c>ResourceNotFoundException</c>. If more than one profile
+        /// matches the search key, the operation returns a <c>BadRequestException</c>. You can
+        /// use the SearchProfiles API to review the matching profiles.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchRecommendations service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SearchRecommendations">REST API Reference for SearchRecommendations Operation</seealso>
+        Task<SearchRecommendationsResponse> SearchRecommendationsAsync(SearchRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  StartRecommender
 
 
