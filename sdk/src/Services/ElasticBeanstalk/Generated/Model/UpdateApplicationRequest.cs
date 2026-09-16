@@ -86,7 +86,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: If not specified, AWS Elastic Beanstalk does not update the description.
+        /// Default: If not specified, Elastic Beanstalk does not update the description.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

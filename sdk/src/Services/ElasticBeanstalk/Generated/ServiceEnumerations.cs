@@ -253,6 +253,56 @@ namespace Amazon.ElasticBeanstalk
 
 
     /// <summary>
+    /// Constants used for properties of type ArchitectureType.
+    /// </summary>
+    public class ArchitectureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Amd64 for ArchitectureType
+        /// </summary>
+        public static readonly ArchitectureType Amd64 = new ArchitectureType("amd64");
+        /// <summary>
+        /// Constant Arm64 for ArchitectureType
+        /// </summary>
+        public static readonly ArchitectureType Arm64 = new ArchitectureType("arm64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ArchitectureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ArchitectureType FindValue(string value)
+        {
+            return FindValue<ArchitectureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ArchitectureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComputeType.
     /// </summary>
     public class ComputeType : ConstantClass
@@ -878,6 +928,56 @@ namespace Amazon.ElasticBeanstalk
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FailureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImageBuildType.
+    /// </summary>
+    public class ImageBuildType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Buildpack for ImageBuildType
+        /// </summary>
+        public static readonly ImageBuildType Buildpack = new ImageBuildType("buildpack");
+        /// <summary>
+        /// Constant Docker for ImageBuildType
+        /// </summary>
+        public static readonly ImageBuildType Docker = new ImageBuildType("docker");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImageBuildType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImageBuildType FindValue(string value)
+        {
+            return FindValue<ImageBuildType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImageBuildType(string value)
         {
             return FindValue(value);
         }

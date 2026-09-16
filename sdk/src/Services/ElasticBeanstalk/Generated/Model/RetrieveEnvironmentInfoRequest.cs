@@ -75,8 +75,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         /// Condition: You must specify either this or an EnvironmentName, or both. If you do
-        /// not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
-        /// error.
+        /// not specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -103,8 +102,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
-        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
-        /// 
+        /// specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]

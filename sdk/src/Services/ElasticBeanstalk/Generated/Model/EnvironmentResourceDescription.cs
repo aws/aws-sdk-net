@@ -30,11 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Describes the AWS resources in use by this environment. This data is live.
+    /// Describes the Amazon Web Services resources in use by this environment. This data
+    /// is live.
     /// </summary>
     public partial class EnvironmentResourceDescription
     {
         private List<AutoScalingGroup> _autoScalingGroups = AWSConfigs.InitializeCollections ? new List<AutoScalingGroup>() : null;
+        private Cluster _cluster;
         private string _environmentName;
         private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private List<LaunchConfiguration> _launchConfigurations = AWSConfigs.InitializeCollections ? new List<LaunchConfiguration>() : null;
@@ -69,6 +71,25 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetAutoScalingGroups()
         {
             return this._autoScalingGroups != null && (this._autoScalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Cluster. 
+        /// <para>
+        /// The Amazon EKS cluster that this environment runs on. This member is present only
+        /// for environments in the <i>Cluster</i> tier.
+        /// </para>
+        /// </summary>
+        public Cluster Cluster
+        {
+            get { return this._cluster; }
+            set { this._cluster = value; }
+        }
+
+        // Check to see if Cluster property is set
+        internal bool IsSetCluster()
+        {
+            return this._cluster != null;
         }
 
         /// <summary>

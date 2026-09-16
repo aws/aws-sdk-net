@@ -33,9 +33,28 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Container for the parameters to the DescribeEvents operation.
     /// Returns list of event descriptions matching criteria up to the last 6 weeks.
     /// 
-    ///  <note> 
+    ///  
     /// <para>
     /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// This action only returns information about resources that the calling principle has
+    /// IAM permissions to access. For example, consider a case where a user only has permission
+    /// to access one of three resources. When the user calls the this action, the response
+    /// will only include the one resource that the user has permission to access instead
+    /// of all three resources. If the user doesn’t have access to any of the resources an
+    /// empty result is returned.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+    /// managed policy allows operators to view information about resources related to Elastic
+    /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+    /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+    /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+    /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+    /// Controlling access with managed policies</a> in the same topic.
     /// </para>
     ///  </note>
     /// </summary>
@@ -62,8 +81,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
-        /// only those associated with this application.
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to include only
+        /// those associated with this application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,8 +101,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those
-        /// that occur up to, but not including, the <c>EndTime</c>. 
+        ///  If specified, Elastic Beanstalk restricts the returned descriptions to those that
+        /// occur up to, but not including, the <c>EndTime</c>. 
         /// </para>
         /// </summary>
         public DateTime? EndTime
@@ -101,7 +120,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to those associated
         /// with this environment.
         /// </para>
         /// </summary>
@@ -120,7 +139,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to those associated
         /// with this environment.
         /// </para>
         /// </summary>
@@ -178,8 +197,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformArn. 
         /// <para>
-        /// The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts
-        /// the returned descriptions to those associated with this custom platform version.
+        /// The ARN of a custom platform version. If specified, Elastic Beanstalk restricts the
+        /// returned descriptions to those associated with this custom platform version.
         /// </para>
         /// </summary>
         public string PlatformArn
@@ -197,8 +216,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the described events to include only
-        /// those associated with this request ID.
+        /// If specified, Elastic Beanstalk restricts the described events to include only those
+        /// associated with this request ID.
         /// </para>
         /// </summary>
         public string RequestId
@@ -235,7 +254,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to those that
         /// occur on or after this time.
         /// </para>
         /// </summary>
@@ -254,7 +273,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to those that
         /// are associated with this environment configuration.
         /// </para>
         /// </summary>
@@ -274,7 +293,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to those associated
         /// with this application version.
         /// </para>
         /// </summary>

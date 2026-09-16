@@ -30,29 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAccountAttributes operation.
+    /// Describes the Amazon EKS cluster that an environment runs on.
     /// </summary>
-    public partial class DescribeAccountAttributesResponse : AmazonWebServiceResponse
+    public partial class Cluster
     {
-        private ResourceQuotas _resourceQuotas;
+        private string _clusterArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceQuotas. 
+        /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services
-        /// account.
+        /// The Amazon Resource Name (ARN) of the Amazon EKS cluster.
         /// </para>
         /// </summary>
-        public ResourceQuotas ResourceQuotas
+        public string ClusterArn
         {
-            get { return this._resourceQuotas; }
-            set { this._resourceQuotas = value; }
+            get { return this._clusterArn; }
+            set { this._clusterArn = value; }
         }
 
-        // Check to see if ResourceQuotas property is set
-        internal bool IsSetResourceQuotas()
+        // Check to see if ClusterArn property is set
+        internal bool IsSetClusterArn()
         {
-            return this._resourceQuotas != null;
+            return this._clusterArn != null;
         }
 
     }

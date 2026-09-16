@@ -30,29 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeAccountAttributes operation.
+    /// The location of a container image.
     /// </summary>
-    public partial class DescribeAccountAttributesResponse : AmazonWebServiceResponse
+    public partial class ImageSource
     {
-        private ResourceQuotas _resourceQuotas;
+        private string _uri;
 
         /// <summary>
-        /// Gets and sets the property ResourceQuotas. 
+        /// Gets and sets the property Uri. 
         /// <para>
-        /// The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services
-        /// account.
+        /// The URI of the container image, including the registry, the repository, and the image
+        /// tag or digest. For example, <c>111122223333.dkr.ecr.us-east-1.amazonaws.com/my-repository:latest</c>.
         /// </para>
         /// </summary>
-        public ResourceQuotas ResourceQuotas
+        public string Uri
         {
-            get { return this._resourceQuotas; }
-            set { this._resourceQuotas = value; }
+            get { return this._uri; }
+            set { this._uri = value; }
         }
 
-        // Check to see if ResourceQuotas property is set
-        internal bool IsSetResourceQuotas()
+        // Check to see if Uri property is set
+        internal bool IsSetUri()
         {
-            return this._resourceQuotas != null;
+            return this._uri != null;
         }
 
     }

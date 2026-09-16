@@ -32,20 +32,20 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the CreateApplicationVersion operation.
     /// Creates an application version for the specified application. You can create an application
-    /// version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
-    /// of an AWS CodeBuild build as follows:
+    /// version from a source bundle in Amazon S3, a commit in CodeCommit, or the output of
+    /// an CodeBuild build as follows:
     /// 
     ///  
     /// <para>
-    /// Specify a commit in an AWS CodeCommit repository with <c>SourceBuildInformation</c>.
+    /// Specify a commit in an CodeCommit repository with <c>SourceBuildInformation</c>.
     /// </para>
     ///  
     /// <para>
-    /// Specify a build in an AWS CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
+    /// Specify a build in an CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
     /// </para>
     ///  
     /// <para>
-    /// Specify a source bundle in S3 with <c>SourceBundle</c> 
+    /// Specify a source bundle in Amazon S3 with <c>SourceBundle</c> 
     /// </para>
     ///  
     /// <para>
@@ -67,6 +67,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private bool? _autoCreateApplication;
         private BuildConfiguration _buildConfiguration;
         private string _description;
+        private ImageConfiguration _imageConfiguration;
         private bool? _process;
         private SourceBuildInformation _sourceBuildInformation;
         private S3Location _sourceBundle;
@@ -82,7 +83,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Instantiates CreateApplicationVersionRequest with the parameterized properties
         /// </summary>
         /// <param name="applicationName"> The name of the application. If no application is found with this name, and <c>AutoCreateApplication</c> is <c>false</c>, returns an <c>InvalidParameterValue</c> error. </param>
-        /// <param name="versionLabel">A label identifying this version. Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. </param>
+        /// <param name="versionLabel">A label identifying this version. Constraint: Must be unique per application. If an application version already exists with this label for the specified application, Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. </param>
         public CreateApplicationVersionRequest(string applicationName, string versionLabel)
         {
             _applicationName = applicationName;
@@ -131,7 +132,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property BuildConfiguration. 
         /// <para>
-        /// Settings for an AWS CodeBuild build.
+        /// Settings for an CodeBuild build.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't specify <c>BuildConfiguration</c> together with <c>ImageConfiguration</c>, which
+        /// configures a container image build instead.
         /// </para>
         /// </summary>
         public BuildConfiguration BuildConfiguration
@@ -166,6 +172,32 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageConfiguration. 
+        /// <para>
+        /// The source of the container image for this application version. You can specify an
+        /// image that you built and pushed to a container registry yourself, or settings for
+        /// Elastic Beanstalk to build one from your source bundle. Specify exactly one of the
+        /// <c>Source</c> and <c>Build</c> members.
+        /// </para>
+        ///  
+        /// <para>
+        /// Don't specify <c>ImageConfiguration</c> together with <c>BuildConfiguration</c>, which
+        /// configures an CodeBuild build instead.
+        /// </para>
+        /// </summary>
+        public ImageConfiguration ImageConfiguration
+        {
+            get { return this._imageConfiguration; }
+            set { this._imageConfiguration = value; }
+        }
+
+        // Check to see if ImageConfiguration property is set
+        internal bool IsSetImageConfiguration()
+        {
+            return this._imageConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Process. 
         /// <para>
         /// Pre-processes and validates the environment manifest (<c>env.yaml</c>) and configuration
@@ -175,9 +207,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// You must turn processing on for application versions that you create using AWS CodeBuild
-        /// or AWS CodeCommit. For application versions built from a source bundle in Amazon S3,
-        /// processing is optional.
+        /// You must turn processing on for application versions that you create using CodeBuild
+        /// or CodeCommit. For application versions built from a source bundle in Amazon S3, processing
+        /// is optional.
         /// </para>
         ///  <note> 
         /// <para>
@@ -201,8 +233,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SourceBuildInformation. 
         /// <para>
-        /// Specify a commit in an AWS CodeCommit Git repository to use as the source code for
-        /// the application version.
+        /// Specify a commit in an CodeCommit Git repository to use as the source code for the
+        /// application version.
         /// </para>
         /// </summary>
         public SourceBuildInformation SourceBuildInformation
@@ -227,11 +259,18 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The Amazon S3 bucket must be in the same region as the environment.
         /// </para>
+        ///  
+        /// <para>
+        /// Unless you're specifying a source bundle in the bucket that Elastic Beanstalk manages
+        /// in your account, you must assign a custom policy to your user, and grant <c>Allow</c>
+        /// permission to the <c>s3:Get*</c> actions on your S3 object resource, for example,
+        /// <c>arn:aws:s3:::your-bucket/your-source-bundle-object</c>.
+        /// </para>
         ///  </note> 
         /// <para>
-        /// Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <c>SourceBuildInformation</c>),
-        /// but not both. If neither <c>SourceBundle</c> nor <c>SourceBuildInformation</c> are
-        /// provided, Elastic Beanstalk uses a sample application.
+        /// Specify a source bundle in Amazon S3 or a commit in an CodeCommit repository (with
+        /// <c>SourceBuildInformation</c>), but not both. If neither <c>SourceBundle</c> nor <c>SourceBuildInformation</c>
+        /// are provided, Elastic Beanstalk uses a sample application.
         /// </para>
         /// </summary>
         public S3Location SourceBundle
@@ -282,7 +321,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         /// Constraint: Must be unique per application. If an application version already exists
-        /// with this label for the specified application, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c>
+        /// with this label for the specified application, Elastic Beanstalk returns an <c>InvalidParameterValue</c>
         /// error. 
         /// </para>
         /// </summary>

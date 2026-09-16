@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Settings for an AWS CodeBuild build.
+    /// Settings for an CodeBuild build.
     /// </summary>
     public partial class BuildConfiguration
     {
@@ -64,9 +64,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CodeBuildServiceRole. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that enables AWS CodeBuild to interact with dependent AWS services on behalf of the
-        /// AWS account.
+        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
+        /// enables CodeBuild to interact with dependent Amazon Web Services service on behalf
+        /// of the Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -135,8 +135,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing
-        /// out any related build that does not get marked as completed. The default is 60 minutes.
+        /// How long in minutes, from 5 to 480 (8 hours), for CodeBuild to wait until timing out
+        /// any related build that does not get marked as completed. The default is 60 minutes.
         /// </para>
         /// </summary>
         public int? TimeoutInMinutes

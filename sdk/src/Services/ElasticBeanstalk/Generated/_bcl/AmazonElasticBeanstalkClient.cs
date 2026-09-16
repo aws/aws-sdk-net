@@ -45,16 +45,16 @@ namespace Amazon.ElasticBeanstalk
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// AWS Elastic Beanstalk 
+    /// Elastic Beanstalk 
     /// <para>
-    /// AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable,
-    /// fault-tolerant applications running on the Amazon Web Services cloud.
+    /// Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant
+    /// applications running on the Amazon Web Services Cloud.
     /// </para>
     ///  
     /// <para>
-    /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS
-    /// Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk
-    /// WSDL is <a href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
+    /// For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">Elastic
+    /// Beanstalk</a> details page. The location of the latest Elastic Beanstalk WSDL is <a
+    /// href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>.
     /// To install the Software Development Kits (SDKs), Integrated Development Environment
     /// (IDE) Toolkits, and command line tools that enable you to access the API, go to <a
     /// href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.
@@ -65,8 +65,8 @@ namespace Amazon.ElasticBeanstalk
     /// </para>
     ///  
     /// <para>
-    /// For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
+    /// For a list of region-specific endpoints that Elastic Beanstalk supports, go to <a
+    /// href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions
     /// and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.
     /// </para>
     /// </summary>
@@ -297,7 +297,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
         public virtual AbortEnvironmentUpdateResponse AbortEnvironmentUpdate(AbortEnvironmentUpdateRequest request)
@@ -320,7 +321,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the AbortEnvironmentUpdate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AbortEnvironmentUpdate">REST API Reference for AbortEnvironmentUpdate Operation</seealso>
         public virtual Task<AbortEnvironmentUpdateResponse> AbortEnvironmentUpdateAsync(AbortEnvironmentUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -395,17 +397,24 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Add or change the operations role used by an environment. After this call is made,
         /// Elastic Beanstalk uses the associated operations role for permissions to downstream
-        /// services during subsequent calls acting on this environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// services during subsequent calls acting on this environment.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
         /// 
         /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
         public virtual AssociateEnvironmentOperationsRoleResponse AssociateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request)
@@ -419,11 +428,17 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Add or change the operations role used by an environment. After this call is made,
         /// Elastic Beanstalk uses the associated operations role for permissions to downstream
-        /// services during subsequent calls acting on this environment. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// services during subsequent calls acting on this environment.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateEnvironmentOperationsRole service method.</param>
         /// <param name="cancellationToken">
@@ -432,7 +447,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the AssociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/AssociateEnvironmentOperationsRole">REST API Reference for AssociateEnvironmentOperationsRole Operation</seealso>
         public virtual Task<AssociateEnvironmentOperationsRoleResponse> AssociateEnvironmentOperationsRoleAsync(AssociateEnvironmentOperationsRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -502,7 +518,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ComposeEnvironments service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
         /// The specified account has reached its limit of environments.
@@ -533,7 +550,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ComposeEnvironments service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
         /// The specified account has reached its limit of environments.
@@ -604,20 +622,20 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Creates an application version for the specified application. You can create an application
-        /// version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
-        /// of an AWS CodeBuild build as follows:
+        /// version from a source bundle in Amazon S3, a commit in CodeCommit, or the output of
+        /// an CodeBuild build as follows:
         /// 
         ///  
         /// <para>
-        /// Specify a commit in an AWS CodeCommit repository with <c>SourceBuildInformation</c>.
+        /// Specify a commit in an CodeCommit repository with <c>SourceBuildInformation</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a build in an AWS CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
+        /// Specify a build in an CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a source bundle in S3 with <c>SourceBundle</c> 
+        /// Specify a source bundle in Amazon S3 with <c>SourceBundle</c> 
         /// </para>
         ///  
         /// <para>
@@ -637,10 +655,11 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
-        /// AWS CodeBuild is not available in the specified region.
+        /// CodeBuild is not available in the specified region.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
@@ -679,20 +698,20 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Creates an application version for the specified application. You can create an application
-        /// version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output
-        /// of an AWS CodeBuild build as follows:
+        /// version from a source bundle in Amazon S3, a commit in CodeCommit, or the output of
+        /// an CodeBuild build as follows:
         /// 
         ///  
         /// <para>
-        /// Specify a commit in an AWS CodeCommit repository with <c>SourceBuildInformation</c>.
+        /// Specify a commit in an CodeCommit repository with <c>SourceBuildInformation</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a build in an AWS CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
+        /// Specify a build in an CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a source bundle in S3 with <c>SourceBundle</c> 
+        /// Specify a source bundle in Amazon S3 with <c>SourceBundle</c> 
         /// </para>
         ///  
         /// <para>
@@ -715,10 +734,11 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.CodeBuildNotInServiceRegionException">
-        /// AWS CodeBuild is not available in the specified region.
+        /// CodeBuild is not available in the specified region.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3LocationNotInServiceRegionException">
         /// The specified S3 bucket does not belong to the S3 region in which the service is running.
@@ -760,10 +780,10 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates an AWS Elastic Beanstalk configuration template, associated with a specific
-        /// Elastic Beanstalk application. You define application configuration settings in a
-        /// configuration template. You can then use the configuration template to deploy different
-        /// versions of the application with the same configuration settings.
+        /// Creates an Elastic Beanstalk configuration template, associated with a specific Elastic
+        /// Beanstalk application. You define application configuration settings in a configuration
+        /// template. You can then use the configuration template to deploy different versions
+        /// of the application with the same configuration settings.
         /// 
         ///  
         /// <para>
@@ -792,7 +812,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -812,10 +833,10 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates an AWS Elastic Beanstalk configuration template, associated with a specific
-        /// Elastic Beanstalk application. You define application configuration settings in a
-        /// configuration template. You can then use the configuration template to deploy different
-        /// versions of the application with the same configuration settings.
+        /// Creates an Elastic Beanstalk configuration template, associated with a specific Elastic
+        /// Beanstalk application. You define application configuration settings in a configuration
+        /// template. You can then use the configuration template to deploy different versions
+        /// of the application with the same configuration settings.
         /// 
         ///  
         /// <para>
@@ -847,7 +868,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -871,14 +893,15 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Launches an AWS Elastic Beanstalk environment for the specified application using
-        /// the specified configuration.
+        /// Launches an Elastic Beanstalk environment for the specified application using the
+        /// specified configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
         /// <returns>The response from the CreateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
         /// The specified account has reached its limit of environments.
@@ -895,8 +918,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Launches an AWS Elastic Beanstalk environment for the specified application using
-        /// the specified configuration.
+        /// Launches an Elastic Beanstalk environment for the specified application using the
+        /// specified configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -905,7 +928,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyEnvironmentsException">
         /// The specified account has reached its limit of environments.
@@ -935,7 +959,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
         /// You have exceeded the maximum number of allowed platforms associated with the account.
@@ -964,7 +989,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyPlatformsException">
         /// You have exceeded the maximum number of allowed platforms associated with the account.
@@ -994,7 +1020,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
         /// The specified account does not have a subscription to Amazon S3.
@@ -1020,7 +1047,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
         /// The specified account does not have a subscription to Amazon S3.
@@ -1052,7 +1080,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
         /// The specified account does not have a subscription to Amazon S3.
@@ -1080,7 +1109,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.S3SubscriptionRequiredException">
         /// The specified account does not have a subscription to Amazon S3.
@@ -1179,7 +1209,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DeleteApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation that effects an
@@ -1234,7 +1265,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DeleteApplicationVersion service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation that effects an
@@ -1413,7 +1445,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation that effects an
@@ -1447,7 +1480,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation that effects an
@@ -1473,19 +1507,40 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns attributes related to AWS Elastic Beanstalk that are associated with the calling
-        /// AWS account.
+        /// Returns attributes related to Elastic Beanstalk that are associated with the calling
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The result currently has one set of attributes—resource quotas.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual DescribeAccountAttributesResponse DescribeAccountAttributes(DescribeAccountAttributesRequest request)
@@ -1499,13 +1554,33 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns attributes related to AWS Elastic Beanstalk that are associated with the calling
-        /// AWS account.
+        /// Returns attributes related to Elastic Beanstalk that are associated with the calling
+        /// Amazon Web Services account.
         /// 
         ///  
         /// <para>
         /// The result currently has one set of attributes—resource quotas.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -1514,7 +1589,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         public virtual Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1533,6 +1609,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeApplications service method, as returned by ElasticBeanstalk.</returns>
@@ -1545,6 +1642,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
         /// 
@@ -1562,6 +1680,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1576,6 +1715,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns the descriptions of existing applications.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about applications that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access two of three applications. When the user calls the <i>DescribeApplications</i>
+        /// action, the response will only include the two applications that the user has permission
+        /// to access instead of all three applications. If the user doesn’t have access to any
+        /// of the applications an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplications service method.</param>
         /// <param name="cancellationToken">
@@ -1600,6 +1760,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeApplicationVersions service method, as returned by ElasticBeanstalk.</returns>
@@ -1612,6 +1793,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
         /// 
@@ -1629,6 +1831,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1643,6 +1866,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Retrieve a list of application versions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1670,6 +1914,27 @@ namespace Amazon.ElasticBeanstalk
         /// or environment, or that a specified solution stack defines. The description includes
         /// the values the options, their default values, and an indication of the required action
         /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeConfigurationOptions service method, as returned by ElasticBeanstalk.</returns>
@@ -1688,6 +1953,27 @@ namespace Amazon.ElasticBeanstalk
         /// or environment, or that a specified solution stack defines. The description includes
         /// the values the options, their default values, and an indication of the required action
         /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// 
@@ -1711,6 +1997,27 @@ namespace Amazon.ElasticBeanstalk
         /// or environment, or that a specified solution stack defines. The description includes
         /// the values the options, their default values, and an indication of the required action
         /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1731,6 +2038,27 @@ namespace Amazon.ElasticBeanstalk
         /// or environment, or that a specified solution stack defines. The description includes
         /// the values the options, their default values, and an indication of the required action
         /// on a running environment if an option value is changed.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConfigurationOptions service method.</param>
         /// <param name="cancellationToken">
@@ -1769,6 +2097,25 @@ namespace Amazon.ElasticBeanstalk
         /// process of deployment or that failed to deploy.
         /// </para>
         ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Related Topics
         /// </para>
@@ -1809,6 +2156,25 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  
         /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Related Topics
         /// </para>
         ///  <ul> <li> 
@@ -1843,7 +2209,28 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
-        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// operation is only available with Elastic Beanstalk Enhanced Health.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
         /// 
@@ -1868,7 +2255,28 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b>
-        /// operation is only available with AWS Elastic Beanstalk Enhanced Health.
+        /// operation is only available with Elastic Beanstalk Enhanced Health.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentHealth service method.</param>
         /// <param name="cancellationToken">
@@ -1947,6 +2355,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Lists an environment's upcoming and in-progress managed actions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
         /// 
@@ -1967,6 +2396,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Lists an environment's upcoming and in-progress managed actions.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentManagedActions service method.</param>
         /// <param name="cancellationToken">
@@ -1993,13 +2443,14 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns AWS resources for this environment.
+        /// Returns Amazon Web Services resources for this environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources service method.</param>
         /// 
         /// <returns>The response from the DescribeEnvironmentResources service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
         public virtual DescribeEnvironmentResourcesResponse DescribeEnvironmentResources(DescribeEnvironmentResourcesRequest request)
@@ -2013,7 +2464,7 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Returns AWS resources for this environment.
+        /// Returns Amazon Web Services resources for this environment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironmentResources service method.</param>
         /// <param name="cancellationToken">
@@ -2022,7 +2473,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DescribeEnvironmentResources service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironmentResources">REST API Reference for DescribeEnvironmentResources Operation</seealso>
         public virtual Task<DescribeEnvironmentResourcesResponse> DescribeEnvironmentResourcesAsync(DescribeEnvironmentResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2041,6 +2493,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeEnvironments service method, as returned by ElasticBeanstalk.</returns>
@@ -2053,6 +2526,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
         /// 
@@ -2070,6 +2564,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2084,6 +2599,27 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Returns descriptions for existing environments.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+        /// action, the response will only include the one environment that the user has permission
+        /// to access instead of all three environments. If the user doesn’t have access to any
+        /// of the environments an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEnvironments service method.</param>
         /// <param name="cancellationToken">
@@ -2109,9 +2645,28 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2127,9 +2682,28 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2150,9 +2724,28 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2170,9 +2763,28 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns list of event descriptions matching criteria up to the last 6 weeks.
         /// 
-        ///  <note> 
+        ///  
         /// <para>
         /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2198,9 +2810,30 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.
-        /// This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+        /// Retrieves detailed information about the health of instances in your Elastic Beanstalk
+        /// environments. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
         /// health reporting</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
         /// 
@@ -2224,9 +2857,30 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.
-        /// This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+        /// Retrieves detailed information about the health of instances in your Elastic Beanstalk
+        /// environments. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
         /// health reporting</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about environments that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of three environments. When the user calls this action, the
+        /// response will only include the one environment that the user has permission to access
+        /// instead of all three environments. If the user doesn’t have access to any of the environments
+        /// an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstancesHealth service method.</param>
         /// <param name="cancellationToken">
@@ -2262,9 +2916,29 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
         /// 
@@ -2273,7 +2947,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
         public virtual DescribePlatformVersionResponse DescribePlatformVersion(DescribePlatformVersionRequest request)
@@ -2292,9 +2967,29 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePlatformVersion service method.</param>
         /// <param name="cancellationToken">
@@ -2306,7 +3001,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">REST API Reference for DescribePlatformVersion Operation</seealso>
         public virtual Task<DescribePlatformVersionResponse> DescribePlatformVersionAsync(DescribePlatformVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2324,16 +3020,24 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Disassociate the operations role from an environment. After this call is made, Elastic
         /// Beanstalk uses the caller's permissions for permissions to downstream services during
-        /// subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// subsequent calls acting on this environment.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
         /// 
         /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
         public virtual DisassociateEnvironmentOperationsRoleResponse DisassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request)
@@ -2347,10 +3051,17 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Disassociate the operations role from an environment. After this call is made, Elastic
         /// Beanstalk uses the caller's permissions for permissions to downstream services during
-        /// subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// subsequent calls acting on this environment.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateEnvironmentOperationsRole service method.</param>
         /// <param name="cancellationToken">
@@ -2359,7 +3070,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the DisassociateEnvironmentOperationsRole service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DisassociateEnvironmentOperationsRole">REST API Reference for DisassociateEnvironmentOperationsRole Operation</seealso>
         public virtual Task<DisassociateEnvironmentOperationsRoleResponse> DisassociateEnvironmentOperationsRoleAsync(DisassociateEnvironmentOperationsRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2379,6 +3091,27 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns a list of the available solution stack names, with the public version first
         /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// 
         /// <returns>The response from the ListAvailableSolutionStacks service method, as returned by ElasticBeanstalk.</returns>
@@ -2392,6 +3125,27 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns a list of the available solution stack names, with the public version first
         /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
         /// 
@@ -2410,6 +3164,27 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns a list of the available solution stack names, with the public version first
         /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2425,6 +3200,27 @@ namespace Amazon.ElasticBeanstalk
         /// <summary>
         /// Returns a list of the available solution stack names, with the public version first
         /// and then in reverse chronological order.
+        /// 
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailableSolutionStacks service method.</param>
         /// <param name="cancellationToken">
@@ -2448,14 +3244,34 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Lists the platform branches available for your account in an AWS Region. Provides
-        /// summary information about each platform branch.
+        /// Lists the platform branches available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform branch.
         /// 
         ///  
         /// <para>
-        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches service method.</param>
         /// 
@@ -2472,14 +3288,34 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Lists the platform branches available for your account in an AWS Region. Provides
-        /// summary information about each platform branch.
+        /// Lists the platform branches available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform branch.
         /// 
         ///  
         /// <para>
-        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformBranches service method.</param>
         /// <param name="cancellationToken">
@@ -2503,14 +3339,33 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Lists the platform versions available for your account in an AWS Region. Provides
-        /// summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+        /// Lists the platform versions available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
         /// which provides full details about a single platform version.
         /// 
         ///  
         /// <para>
-        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// This action only returns information about platform versions that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of ten platform versions. When the user calls the <i>ListPlatformVersions</i>
+        /// action, the response will only include the one platform version that the user has
+        /// permission to access instead of all ten platform versions. If the user doesn’t have
+        /// access to any of the platform versions an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
@@ -2520,7 +3375,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
         public virtual ListPlatformVersionsResponse ListPlatformVersions(ListPlatformVersionsRequest request)
@@ -2534,14 +3390,33 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Lists the platform versions available for your account in an AWS Region. Provides
-        /// summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
+        /// Lists the platform versions available for your account in an Amazon Web Services Region.
+        /// Provides summary information about each platform version. Compare to <a>DescribePlatformVersion</a>,
         /// which provides full details about a single platform version.
         /// 
         ///  
         /// <para>
-        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
-        /// Elastic Beanstalk Platforms Glossary</a>.
+        /// This action only returns information about platform versions that the calling principle
+        /// has IAM permissions to access. For example, consider a case where a user only has
+        /// permission to access one of ten platform versions. When the user calls the <i>ListPlatformVersions</i>
+        /// action, the response will only include the one platform version that the user has
+        /// permission to access instead of all ten platform versions. If the user doesn’t have
+        /// access to any of the platform versions an empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information
+        /// about resources related to Elastic Beanstalk environments. For more information, see
+        /// <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">Elastic
+        /// Beanstalk Platforms Glossary</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlatformVersions service method.</param>
@@ -2554,7 +3429,8 @@ namespace Amazon.ElasticBeanstalk
         /// A generic service exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">REST API Reference for ListPlatformVersions Operation</seealso>
         public virtual Task<ListPlatformVersionsResponse> ListPlatformVersionsAsync(ListPlatformVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2572,8 +3448,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Return the tags applied to an AWS Elastic Beanstalk resource. The response contains
-        /// a list of tag key-value pairs.
+        /// Return the tags applied to an Elastic Beanstalk resource. The response contains a
+        /// list of tag key-value pairs.
         /// 
         ///  
         /// <para>
@@ -2581,12 +3457,33 @@ namespace Amazon.ElasticBeanstalk
         /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
         /// Application Resources</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
         /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
@@ -2606,8 +3503,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Return the tags applied to an AWS Elastic Beanstalk resource. The response contains
-        /// a list of tag key-value pairs.
+        /// Return the tags applied to an Elastic Beanstalk resource. The response contains a
+        /// list of tag key-value pairs.
         /// 
         ///  
         /// <para>
@@ -2615,6 +3512,26 @@ namespace Amazon.ElasticBeanstalk
         /// tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
         /// Application Resources</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This action only returns information about resources that the calling principle has
+        /// IAM permissions to access. For example, consider a case where a user only has permission
+        /// to access one of three resources. When the user calls the this action, the response
+        /// will only include the one resource that the user has permission to access instead
+        /// of all three resources. If the user doesn’t have access to any of the resources an
+        /// empty result is returned.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+        /// managed policy allows operators to view information about resources related to Elastic
+        /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+        /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+        /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+        /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+        /// Controlling access with managed policies</a> in the same topic.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2623,7 +3540,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.ResourceNotFoundException">
         /// A resource doesn't exist for the specified Amazon Resource Name (ARN).
@@ -2647,14 +3565,15 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
-        /// load balancer, etc.) for a specified environment and forces a restart.
+        /// Deletes and recreates all of the Amazon Web Services resources (for example: the Auto
+        /// Scaling group, load balancer, etc.) for a specified environment and forces a restart.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
         /// 
         /// <returns>The response from the RebuildEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
         public virtual RebuildEnvironmentResponse RebuildEnvironment(RebuildEnvironmentRequest request)
@@ -2668,8 +3587,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
-        /// load balancer, etc.) for a specified environment and forces a restart.
+        /// Deletes and recreates all of the Amazon Web Services resources (for example: the Auto
+        /// Scaling group, load balancer, etc.) for a specified environment and forces a restart.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RebuildEnvironment service method.</param>
         /// <param name="cancellationToken">
@@ -2678,7 +3597,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the RebuildEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/RebuildEnvironment">REST API Reference for RebuildEnvironment Operation</seealso>
         public virtual Task<RebuildEnvironmentResponse> RebuildEnvironmentAsync(RebuildEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2950,7 +3870,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the TerminateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
         public virtual TerminateEnvironmentResponse TerminateEnvironment(TerminateEnvironmentRequest request)
@@ -2973,7 +3894,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the TerminateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/TerminateEnvironment">REST API Reference for TerminateEnvironment Operation</seealso>
         public virtual Task<TerminateEnvironmentResponse> TerminateEnvironmentAsync(TerminateEnvironmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3052,7 +3974,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateApplicationResourceLifecycle service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
         public virtual UpdateApplicationResourceLifecycleResponse UpdateApplicationResourceLifecycle(UpdateApplicationResourceLifecycleRequest request)
@@ -3075,7 +3998,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateApplicationResourceLifecycle service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/UpdateApplicationResourceLifecycle">REST API Reference for UpdateApplicationResourceLifecycle Operation</seealso>
         public virtual Task<UpdateApplicationResourceLifecycleResponse> UpdateApplicationResourceLifecycleAsync(UpdateApplicationResourceLifecycleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3170,7 +4094,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -3212,7 +4137,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateConfigurationTemplate service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -3239,7 +4165,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
+        ///  Attempting to update both the release and configuration is not allowed and Elastic
         /// Beanstalk returns an <c>InvalidParameterCombination</c> error. 
         /// </para>
         ///  
@@ -3254,7 +4180,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -3277,7 +4204,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
+        ///  Attempting to update both the release and configuration is not allowed and Elastic
         /// Beanstalk returns an <c>InvalidParameterCombination</c> error. 
         /// </para>
         ///  
@@ -3295,7 +4222,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateEnvironment service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -3316,8 +4244,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
-        /// be passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
+        /// Update the list of tags applied to an Elastic Beanstalk resource. Two lists can be
+        /// passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
         /// 
         ///  
         /// <para>
@@ -3327,8 +4255,8 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  
         /// <para>
-        /// If you create a custom IAM user policy to control permission to this operation, specify
-        /// one of the following two virtual actions (or both) instead of the API operation name:
+        /// If you create a custom policy to control permission to this operation, specify one
+        /// of the following two virtual actions (or both) instead of the API operation name:
         /// </para>
         ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
         /// <para>
@@ -3350,7 +4278,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation that effects an
@@ -3384,8 +4313,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
-        /// be passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
+        /// Update the list of tags applied to an Elastic Beanstalk resource. Two lists can be
+        /// passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
         /// 
         ///  
         /// <para>
@@ -3395,8 +4324,8 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  
         /// <para>
-        /// If you create a custom IAM user policy to control permission to this operation, specify
-        /// one of the following two virtual actions (or both) instead of the API operation name:
+        /// If you create a custom policy to control permission to this operation, specify one
+        /// of the following two virtual actions (or both) instead of the API operation name:
         /// </para>
         ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
         /// <para>
@@ -3421,7 +4350,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the UpdateTagsForResource service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.OperationInProgressException">
         /// Unable to perform the specified operation because another operation that effects an
@@ -3472,7 +4402,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.
@@ -3505,7 +4436,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         /// <returns>The response from the ValidateConfigurationSettings service method, as returned by ElasticBeanstalk.</returns>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.InsufficientPrivilegesException">
-        /// The specified account does not have sufficient privileges for one or more AWS services.
+        /// The specified account does not have sufficient privileges for one or more Amazon Web
+        /// Services services.
         /// </exception>
         /// <exception cref="Amazon.ElasticBeanstalk.Model.TooManyBucketsException">
         /// The specified account has reached its limit of Amazon S3 buckets.

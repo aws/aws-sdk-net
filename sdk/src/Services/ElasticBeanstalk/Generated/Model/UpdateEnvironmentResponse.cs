@@ -277,8 +277,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Health. 
         /// <para>
-        /// Describes the health status of the environment. AWS Elastic Beanstalk indicates the
-        /// failure levels for a running environment:
+        /// Describes the health status of the environment. Elastic Beanstalk indicates the failure
+        /// levels for a running environment:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -338,11 +338,14 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationsRole. 
+        /// Gets and sets the property OperationsRole. <important> 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the environment's operations role. For more information,
-        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the environment's operations role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -379,7 +382,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The description of the AWS resources used by this environment.
+        /// The description of the Amazon Web Services resources used by this environment.
         /// </para>
         /// </summary>
         public EnvironmentResourcesDescription Resources
@@ -419,7 +422,23 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>Aborting</c>: Environment is in the process of aborting a deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>Launching</c>: Environment is in the process of initial deployment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LinkingFrom</c>: Environment is in the process of being linked to by another environment.
+        /// See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment
+        /// links</a> for details.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LinkingTo</c>: Environment is in the process of linking to another environment.
+        /// See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment
+        /// links</a> for details.
         /// </para>
         ///  </li> <li> 
         /// <para>

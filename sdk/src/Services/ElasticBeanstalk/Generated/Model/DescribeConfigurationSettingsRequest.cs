@@ -44,6 +44,25 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </para>
     ///  
     /// <para>
+    /// This action only returns information about resources that the calling principle has
+    /// IAM permissions to access. For example, consider a case where a user only has permission
+    /// to access one of three resources. When the user calls the this action, the response
+    /// will only include the one resource that the user has permission to access instead
+    /// of all three resources. If the user doesn’t have access to any of the resources an
+    /// empty result is returned.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+    /// managed policy allows operators to view information about resources related to Elastic
+    /// Beanstalk. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+    /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+    /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+    /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+    /// Controlling access with managed policies</a> in the same topic.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Related Topics
     /// </para>
     ///  <ul> <li> 
@@ -99,9 +118,9 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or a TemplateName, but not both. If you specify
-        /// both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If
-        /// you do not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
-        /// error. 
+        /// both, Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If you
+        /// do not specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -125,8 +144,8 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Conditional: You must specify either this parameter or an EnvironmentName, but not
-        /// both. If you specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c>
-        /// error. If you do not specify either, AWS Elastic Beanstalk returns a <c>MissingRequiredParameter</c>
+        /// both. If you specify both, Elastic Beanstalk returns an <c>InvalidParameterCombination</c>
+        /// error. If you do not specify either, Elastic Beanstalk returns a <c>MissingRequiredParameter</c>
         /// error. 
         /// </para>
         /// </summary>

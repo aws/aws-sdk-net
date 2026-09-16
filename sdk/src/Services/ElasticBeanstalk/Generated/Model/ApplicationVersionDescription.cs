@@ -40,6 +40,9 @@ namespace Amazon.ElasticBeanstalk.Model
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
+        private ImageBuildConfiguration _imageBuildConfiguration;
+        private ImageSource _imageSource;
+        private bool? _process;
         private SourceBuildInformation _sourceBuildInformation;
         private S3Location _sourceBundle;
         private ApplicationVersionStatus _status;
@@ -90,7 +93,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property BuildArn. 
         /// <para>
-        /// Reference to the artifact from the AWS CodeBuild build.
+        /// Reference to the artifact from the CodeBuild build.
         /// </para>
         /// </summary>
         public string BuildArn
@@ -161,10 +164,74 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageBuildConfiguration. 
+        /// <para>
+        /// The settings that Elastic Beanstalk uses to build a container image from the source
+        /// bundle of the application version. Not present for an application version created
+        /// from an image you provide.
+        /// </para>
+        /// </summary>
+        public ImageBuildConfiguration ImageBuildConfiguration
+        {
+            get { return this._imageBuildConfiguration; }
+            set { this._imageBuildConfiguration = value; }
+        }
+
+        // Check to see if ImageBuildConfiguration property is set
+        internal bool IsSetImageBuildConfiguration()
+        {
+            return this._imageBuildConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageSource. 
+        /// <para>
+        /// The location of the container image for the application version.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an application version created from an image you provide, this is that image.
+        /// For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk fills
+        /// this in with the image it pushed after the build succeeds.
+        /// </para>
+        /// </summary>
+        public ImageSource ImageSource
+        {
+            get { return this._imageSource; }
+            set { this._imageSource = value; }
+        }
+
+        // Check to see if ImageSource property is set
+        internal bool IsSetImageSource()
+        {
+            return this._imageSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Process. 
+        /// <para>
+        /// Indicates whether Elastic Beanstalk pre-processed and validated the environment manifest
+        /// (<c>env.yaml</c>) and configuration files (<c>*.config</c> files in the <c>.ebextensions</c>
+        /// folder) in the source bundle of the application version.
+        /// </para>
+        /// </summary>
+        public bool? Process
+        {
+            get { return this._process; }
+            set { this._process = value; }
+        }
+
+        // Check to see if Process property is set
+        internal bool IsSetProcess()
+        {
+            return this._process.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceBuildInformation. 
         /// <para>
-        /// If the version's source code was retrieved from AWS CodeCommit, the location of the
-        /// source code for the application version.
+        /// If the version's source code was retrieved from CodeCommit, the location of the source
+        /// code for the application version.
         /// </para>
         /// </summary>
         public SourceBuildInformation SourceBuildInformation
@@ -217,7 +284,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Building</c> – Application version is currently undergoing an AWS CodeBuild build.
+        ///  <c>Building</c> – Application version is currently undergoing an CodeBuild build.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -225,8 +292,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>Failed</c> – Either the AWS CodeBuild build failed or configuration files didn't
-        /// pass validation. This application version isn't usable.
+        ///  <c>Failed</c> – Either the CodeBuild build failed or configuration files didn't pass
+        /// validation. This application version isn't usable.
         /// </para>
         ///  </li> </ul>
         /// </summary>

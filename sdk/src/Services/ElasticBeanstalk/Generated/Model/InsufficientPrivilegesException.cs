@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// The specified account does not have sufficient privileges for one or more AWS services.
+    /// The specified account does not have sufficient privileges for one or more Amazon Web
+    /// Services services.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
