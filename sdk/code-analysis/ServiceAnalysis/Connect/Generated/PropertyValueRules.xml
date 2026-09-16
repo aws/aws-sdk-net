@@ -6067,6 +6067,16 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ContactAnalysisReference.Name</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ContactAnalysisReference.Value</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.ContactConfiguration.ContactId</property>
     <min>1</min>
     <max>256</max>

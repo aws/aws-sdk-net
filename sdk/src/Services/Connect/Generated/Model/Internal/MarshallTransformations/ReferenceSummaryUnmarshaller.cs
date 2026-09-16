@@ -62,6 +62,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Attachment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ContactAnalysis", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContactAnalysisReferenceUnmarshaller.Instance;
+                    unmarshalledObject.ContactAnalysis = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Date", targetDepth, ref reader))
                 {
                     var unmarshaller = DateReferenceUnmarshaller.Instance;
