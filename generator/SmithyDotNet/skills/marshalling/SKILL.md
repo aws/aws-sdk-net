@@ -260,6 +260,10 @@ is **not** an all-or-nothing branch (C2J's `JsonRPCStructureUnmarshaller` gets t
 protocol tests `HeadersEvent`/`HeadersAndImplicitPayloadEvent` cover it). Pinned in
 `EventStructureUnmarshallTests`.
 
+The body loop is skipped **only** for events (explicit payload, or headers alone). An ordinary structure with no
+members still runs it: the loop consumes the `{}` tokens so the reader lands after the object; without it the
+parent's remaining members are misread. Pinned by `EmptyOrdinaryStructure_StillReadsJsonBody`.
+
 Only `sagemakerruntimehttp2`'s `ResponsePayloadPart`/`RequestPayloadPart` use event headers today (blob
 payload `Bytes` + string headers). The union itself gets no unmarshaller (the response unmarshaller does
 `new {Union}(context.Stream)`); its event structures each get theirs, plus a plain model class.

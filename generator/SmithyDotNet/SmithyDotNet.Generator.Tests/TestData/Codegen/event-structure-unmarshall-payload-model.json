@@ -18,7 +18,14 @@
     },
     "com.example#StreamResponse": {
       "type": "structure",
-      "members": { "stream": { "target": "com.example#Output" } }
+      "members": {
+        "stream": { "target": "com.example#Output" },
+        "marker": { "target": "com.example#Marker" }
+      }
+    },
+    "com.example#Marker": {
+      "type": "structure",
+      "members": {}
     },
     "com.example#Output": {
       "type": "union",

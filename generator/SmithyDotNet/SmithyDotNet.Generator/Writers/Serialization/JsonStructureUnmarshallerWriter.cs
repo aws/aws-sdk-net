@@ -90,7 +90,10 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             {
                 WriteHeaderMember(writer, structure, member);
             }
-            if (bodyMembers.Count > 0)
+
+            // Only an event skips the body loop (explicit payload, or headers alone). A member-less ordinary
+            // structure still runs it to consume its {} tokens so the reader lands after the object.
+            if (payloadMember is null && (headerMembers.Count == 0 || bodyMembers.Count > 0))
             {
                 WriteBodyUnmarshall(writer, bodyMembers);
             }

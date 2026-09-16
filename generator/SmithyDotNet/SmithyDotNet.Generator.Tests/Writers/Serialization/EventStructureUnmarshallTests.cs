@@ -92,6 +92,18 @@ public class EventStructureUnmarshallTests
     }
 
     [Fact]
+    public void EmptyOrdinaryStructure_StillReadsJsonBody()
+    {
+        var source = Unmarshaller("Marker");
+        // A member-less structure is not an event: the loop must still consume its {} tokens so the reader
+        // lands after the object, otherwise the parent structure's remaining members are misread.
+        Assert.Contains("context.Read(ref reader);", source);
+        Assert.Contains("if (context.CurrentTokenType == JsonTokenType.Null) return null;", source);
+        Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", source);
+        Assert.DoesNotContain("IsEventHeaderPresent", source);
+    }
+
+    [Fact]
     public void HeadersAndImplicitPayload_ReadsEveryHeaderKindFromHeaders()
     {
         var source = Unmarshaller("HeadersAndImplicitPayloadEvent");
