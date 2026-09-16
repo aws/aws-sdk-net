@@ -24,6 +24,8 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
     {
         var className = context.ToDotNetName(shapeId);
         var members = TypeMapper.ResolveMembers(structure, context);
+        var isEventStreamEvent = context.RequestEventStreams.Any(stream => stream.Events.Contains(shapeId))
+            || context.ResponseEventStreams.Any(stream => stream.Events.Contains(shapeId));
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -36,7 +38,12 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
             {
                 writer.WriteLine(obsolete);
             }
-            writer.OpenBlock($"public partial class {className}", () => MemberWriter.WriteMembers(writer, members));
+            // Fully qualified so it can't clash with a same-service {Namespace}.Model.IEventStreamEvent
+            // (the per-stream interface generated for a union named "EventStream").
+            var declaration = isEventStreamEvent
+                ? $"public partial class {className} : Amazon.Runtime.EventStreams.IEventStreamEvent"
+                : $"public partial class {className}";
+            writer.OpenBlock(declaration, () => MemberWriter.WriteMembers(writer, members));
         });
 
         return writer.ToFormattedString(cancellationToken);

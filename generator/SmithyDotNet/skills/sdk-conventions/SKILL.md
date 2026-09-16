@@ -14,7 +14,9 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 
 ## What Must Match (Public API Contract)
 
-- Public class/interface names and their base types
+- Public class/interface names and their base types. An event structure (a non-error member of a
+  `@streaming` union) implements `Amazon.Runtime.EventStreams.IEventStreamEvent` (`StructureWriter`),
+  fully qualified (no `using`) so it can't clash with a per-stream `{Namespace}.Model.IEventStreamEvent`.
 - Public property names, types, and nullability
 - Public method signatures (name, parameters, return type)
 - `[AWSProperty]` attributes on public members (Required, Min, Max)
