@@ -34,7 +34,7 @@ using Moq;
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Verifies that a cross-Region HeadBucket (and any other S3 operation) issued against a
+    /// Verifies that a cross-Region HeadBucket issued against a
     /// client configured for a Region that differs from the bucket's Region follows the region
     /// redirect instead of surfacing the error. When the bucket is in us-east-1 and the client is
     /// not, S3 answers with a 301 MovedPermanently (rather than a 400) that carries the correct
