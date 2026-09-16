@@ -108,8 +108,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.Flush();
 
                 eventType = "headersAndExplicitPayload";
-                contentType = "text/plain";
-                eventPayload = context.Request.Content;
+                contentType = "application/json";
+                eventPayload = memoryStream.ToArray();
             }
             else if (evnt is HeadersAndImplicitPayloadEvent)
             {
@@ -150,8 +150,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.Flush();
 
                 eventType = "structurePayload";
-                contentType = "text/plain";
-                eventPayload = context.Request.Content;
+                contentType = "application/json";
+                eventPayload = memoryStream.ToArray();
             }
             else if (evnt is UnionPayloadEvent)
             {
@@ -164,8 +164,8 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.Flush();
 
                 eventType = "unionPayload";
-                contentType = "text/plain";
-                eventPayload = context.Request.Content;
+                contentType = "application/json";
+                eventPayload = memoryStream.ToArray();
             }
             else
             {
