@@ -1,3 +1,23 @@
+### 4.0.335.0 (2026-09-16 18:46 UTC)
+* Batch (4.0.103.2)
+	* Fixed broken XML documentation comments where an unescaped placeholder like `<aws_account_id>` was read as an unclosed tag instead of literal text.
+* BedrockAgentCoreControl (4.0.116.0)
+	* Adds support for a new DELETE FAILED status for Bedrock AgentCore Runtimes and Bedrock AgentCore Runtime Endpoints.
+* Connect (4.0.117.0)
+	* Adds support for ContactAnalysis via ListContactReferences.
+* CustomerProfiles (4.0.103.0)
+	* This release introduces the SearchRecommendations API, which retrieves recommendations for a profile identified by a search key.
+* EC2 (4.0.121.0)
+	* Releasing new EC2 R9g and R9gd memory-optimized instances powered by AWS Graviton5 processors, with up to 25 percent better compute performance than R8g instances, faster DDR5 memory, and up to 100 Gbps network and 72 Gbps EBS bandwidth. R9gd instances additionally provide local NVMe SSD storage.
+* ElasticBeanstalk (4.0.101.0)
+	* Adds support to create and manage Elastic Beanstalk Cluster Environments.
+* MarketplaceCatalog (4.0.104.0)
+	* This release enhances the ListEntities API to support issuerAccountId and SourceAuthorization filter for ResaleAuthorization entity.
+* MediaConvert (4.0.104.2)
+	* Fixed broken XML documentation comments where an unescaped placeholder like `<Accessibility>` was read as an unclosed tag instead of literal text.
+* Resiliencehubv2 (4.0.104.0)
+	* Next Gen Resilience Hub now supports dependency insights (LLM-based insights about customer's service dependencies) and organization-level policy sharing (provision to share policy with member accounts for an organization)
+
 ### 4.0.334.0 (2026-09-15 18:15 UTC)
 * BedrockAgentCoreControl (4.0.115.0)
 	* Amazon Bedrock AgentCore Runtime now supports specifying the platform version of an agent runtime through the new platformVersion field on CreateAgentRuntime, UpdateAgentRuntime, and GetAgentRuntime.
