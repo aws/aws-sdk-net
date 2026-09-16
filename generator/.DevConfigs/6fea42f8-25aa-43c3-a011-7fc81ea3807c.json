@@ -1,9 +1,0 @@
-{
-  "core": {
-    "updateMinimum": true,
-    "type": "patch",
-    "changeLogMessages": [
-      "Update protocol test generator to latest version and fix issues. Temp DevConfig delete later"
-    ]
-  }
-}
