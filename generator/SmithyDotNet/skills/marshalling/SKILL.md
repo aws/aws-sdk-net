@@ -215,13 +215,8 @@ passes `bindStatusCode: false` and the member falls through to the body like any
 An output member targeting a `@streaming` union/structure is an event stream (`TypeDescriptor.IsEventStream`).
 `PartitionByBinding` pulls it out (`EventStreamMember`) and it IS the body: the unmarshaller emits
 `unmarshalledObject.{Prop} = new {UnionClass}(context.Stream);` instead of a JSON reader loop, matching C2J's
-`JsonRPCResponseUnmarshaller`.
-
-`EventStreamOutputWriter` emits `{UnionClass}` — the `EnumerableEventOutputStream` subclass (mirrors C2J's
-`EventStreamOutputGenerator`). Each union member is a mapping entry keyed on the member name verbatim (the wire
-`:event-type`; the dict is `OrdinalIgnoreCase`); `@error` members feed `ExceptionMapping`, the rest `EventMapping`
-plus a PascalCase `{Name}Received` handler. Pinned in `EventStreamCodegenTests`. Not yet wired into `ServiceGenerator`
-dispatch, so end-to-end event-stream generation is still incomplete.
+`JsonRPCResponseUnmarshaller`. The `{UnionClass}` itself, and everything else event streams emit, is in
+`sdk-conventions` → Event Streams.
 
 ## Response Header Unmarshalling
 

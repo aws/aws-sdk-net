@@ -44,7 +44,7 @@ public class EventStreamOutputCodegenTests
     [Fact]
     public void EventStreamClass_HasSignatureAndSuppressions()
     {
-        Assert.Contains($"public sealed class ConverseStreamOutput : EnumerableEventOutputStream<IEventStreamEvent, {_context.BaseName}EventStreamException>", _eventStreamClass);
+        Assert.Contains($"public sealed class ConverseStreamOutput : EnumerableEventOutputStream<RuntimeEvent, {_context.BaseName}EventStreamException>", _eventStreamClass);
         Assert.Contains("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "ConverseStreamOutputCollection is not descriptive")]""", _eventStreamClass);
         Assert.Contains("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventOutputStream. Users need to be able to call Dispose.")]""", _eventStreamClass);
     }
@@ -52,7 +52,11 @@ public class EventStreamOutputCodegenTests
     [Fact]
     public void EventStreamClass_EventMapping_HasInitialResponseAndEvents()
     {
-        Assert.Contains("protected override IDictionary<string, Func<IEventStreamMessage, IEventStreamEvent>> EventMapping { get; } = new(StringComparer.OrdinalIgnoreCase)", _eventStreamClass);
+        Assert.Contains("protected override IDictionary<string, EventFactory> EventMapping { get; } = new Dictionary<string, EventFactory>(StringComparer.OrdinalIgnoreCase)", _eventStreamClass);
+        Assert.Contains("using EventFactory = System.Func<Amazon.Runtime.EventStreams.IEventStreamMessage, Amazon.Runtime.EventStreams.IEventStreamEvent>;", _eventStreamClass);
+        // A union named EventStream yields a same-namespace IEventStreamEvent marker that would shadow the runtime's.
+        Assert.Contains("using RuntimeEvent = Amazon.Runtime.EventStreams.IEventStreamEvent;", _eventStreamClass);
+        Assert.DoesNotContain(" IEventStreamEvent", _eventStreamClass.Replace("Amazon.Runtime.EventStreams.IEventStreamEvent", ""));
         Assert.Contains("""{"Initial-Response",payload=>newInitialResponseEvent(payload)},""", Collapse(_eventStreamClass));
         Assert.Contains("""{"contentBlockDelta",payload=>""", Collapse(_eventStreamClass));
         Assert.Contains("return new ContentBlockDeltaEventUnmarshaller().Unmarshall(context, ref reader);", _eventStreamClass);
@@ -65,7 +69,8 @@ public class EventStreamOutputCodegenTests
     [Fact]
     public void EventStreamClass_ExceptionMapping_UsesErrorMembers()
     {
-        Assert.Contains($"protected override IDictionary<string, Func<IEventStreamMessage, {_context.BaseName}EventStreamException>> ExceptionMapping {{ get; }} = new(StringComparer.OrdinalIgnoreCase)", _eventStreamClass);
+        Assert.Contains("protected override IDictionary<string, ExceptionFactory> ExceptionMapping { get; } = new Dictionary<string, ExceptionFactory>(StringComparer.OrdinalIgnoreCase)", _eventStreamClass);
+        Assert.Contains($"using ExceptionFactory = System.Func<Amazon.Runtime.EventStreams.IEventStreamMessage, {_context.Namespace}.{_context.BaseName}EventStreamException>;", _eventStreamClass);
         Assert.Contains("""{"validationException",payload=>""", Collapse(_eventStreamClass));
         Assert.Contains($"return new {_context.BaseName}EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(context, ref reader));", _eventStreamClass);
         // The exception ctor closes its own paren, then the lambda `}` and the dictionary element `},`.

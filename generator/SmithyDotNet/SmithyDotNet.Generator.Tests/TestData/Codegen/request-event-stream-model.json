@@ -1,0 +1,147 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#Talk" },
+        { "target": "com.example#TalkWithInitialRequest" },
+        { "target": "com.example#ConverseStream" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Example"
+      }
+    },
+    "com.example#Talk": {
+      "type": "operation",
+      "input": { "target": "com.example#TalkInput" },
+      "output": { "target": "com.example#TalkOutput" },
+      "traits": { "smithy.api#http": { "uri": "/talk", "method": "POST" } }
+    },
+    "com.example#TalkWithInitialRequest": {
+      "type": "operation",
+      "input": { "target": "com.example#TalkWithInitialRequestInput" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/talk-initial", "method": "POST" } }
+    },
+    "com.example#ConverseStream": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#ConverseStreamResponse" },
+      "traits": { "smithy.api#http": { "uri": "/converse", "method": "POST" } }
+    },
+    "com.example#TalkInput": {
+      "type": "structure",
+      "members": {
+        "stream": { "target": "com.example#ChatStream", "traits": { "smithy.api#httpPayload": {} } }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#TalkOutput": {
+      "type": "structure",
+      "members": {
+        "stream": { "target": "com.example#ChatStream", "traits": { "smithy.api#httpPayload": {} } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#TalkWithInitialRequestInput": {
+      "type": "structure",
+      "members": {
+        "sessionId": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-session-id" } },
+        "stream": { "target": "com.example#ChatStream", "traits": { "smithy.api#httpPayload": {} } }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#ConverseStreamResponse": {
+      "type": "structure",
+      "members": {
+        "stream": { "target": "com.example#ConverseStreamOutput", "traits": { "smithy.api#httpPayload": {} } },
+        "sessionId": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-session-id" } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#ChatStream": {
+      "type": "union",
+      "members": {
+        "text": { "target": "com.example#TextEvent" },
+        "audio": { "target": "com.example#AudioEvent" },
+        "implicit": { "target": "com.example#ImplicitPayloadEvent" },
+        "explicit": { "target": "com.example#ExplicitPayloadEvent" },
+        "error": { "target": "com.example#ChatError" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#ConverseStreamOutput": {
+      "type": "union",
+      "members": {
+        "contentBlockDelta": { "target": "com.example#ContentBlockDeltaEvent" },
+        "metadata": { "target": "com.example#ConverseStreamMetadataEvent" },
+        "validationException": { "target": "com.example#ValidationException" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#TextEvent": {
+      "type": "structure",
+      "members": {
+        "text": { "target": "smithy.api#String", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#AudioEvent": {
+      "type": "structure",
+      "members": {
+        "contentType": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "chunk": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#ImplicitPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "header": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "payloadMember1": { "target": "smithy.api#String" },
+        "payloadMember2": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#ExplicitPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "header": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "payload": { "target": "com.example#ExplicitPayload", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#ExplicitPayload": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#ChatError": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#ContentBlockDeltaEvent": {
+      "type": "structure",
+      "members": {
+        "delta": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#ConverseStreamMetadataEvent": {
+      "type": "structure",
+      "members": {
+        "latencyMs": { "target": "smithy.api#Long" }
+      }
+    },
+    "com.example#ValidationException": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client" }
+    }
+  }
+}

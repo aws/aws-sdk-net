@@ -107,6 +107,38 @@ class is emitted too, because member properties are typed with the plain class n
 drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not). Lives in
 `ServiceGenerator`'s model-class loop.
 
+## Event Streams
+
+Protocol-independent; only the per-event payload (un)marshalling and the response unmarshaller's body
+differ (see `marshalling`). `GenerationContext.RequestEventStreams` / `ResponseEventStreams` list the
+`@streaming` unions once each, however many operations share them.
+
+**Request** (union sent as an operation input):
+- Gets the marker interface `I{Union}Event` plus a `{Event} : I{Union}Event` partial per event. The name
+  comes from the **union**, never the operation (shipped: Lex V2 `IStartConversationRequestEventStreamEvent`),
+  and is emitted once per union even when several operations send it (the protocol test client shares one
+  union across four).
+- `@error` members get no partial: a client never sends an error event.
+
+**Response** (union returned as an operation output):
+- `EventStreamOutputWriter` emits `{Union}` as the `EnumerableEventOutputStream<IEventStreamEvent,
+  {BaseName}EventStreamException>` subclass (mirrors C2J's `EventStreamOutputGenerator`). Each union member
+  is a mapping entry keyed on the member name verbatim (the wire `:event-type`; the dict is
+  `OrdinalIgnoreCase`): `@error` members feed `ExceptionMapping`, the rest `EventMapping` plus a PascalCase
+  `{Name}Received` handler. Pinned in `EventStreamOutputCodegenTests`. The union gets no plain model class
+  and no structure unmarshaller (the response unmarshaller does `new {Union}(context.Stream)`); its events
+  keep theirs.
+- Any response event stream gates the per-service `{BaseName}EventStreamException` (`EventStreamExceptionWriter`).
+
+**Both:**
+- Names are never adjusted for collisions: the protocol test client's union is named `EventStream`, so its
+  marker is `IEventStreamEvent`, same simple name as the runtime's (the only runtime type an `I{Union}Event`
+  can shadow). Anywhere under the `.Model` namespace (model classes, `MarshallTransformations`) the service's
+  marker silently wins over the import; files outside it that import both namespaces (the client) hit CS0104.
+  **Every writer that needs the runtime's emits `using RuntimeEvent = Amazon.Runtime.EventStreams.IEventStreamEvent;`
+  and uses `RuntimeEvent`.** An alias named `IEventStreamEvent` would not help (a type in an enclosing
+  namespace beats it too); one no shape can be named after does.
+
 ## Base Types
 
 | Generated class | Inherits from |

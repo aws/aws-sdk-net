@@ -41,6 +41,28 @@ public record PaginatedOperation(
 );
 
 /// <summary>
+/// A <c>@streaming</c> union sent to the service as an operation input, resolved once however many
+/// operations share it. <see cref="Events"/> excludes <c>@error</c> members: a client never sends
+/// an error event. Both lists are ordered by name.
+/// </summary>
+public record RequestEventStream(ShapeId Id, IReadOnlyList<Operation> Operations, IReadOnlyList<ShapeId> Events)
+{
+    /// <summary>
+    /// The shipped marker-interface name, derived from the union, not the operation (Lex V2:
+    /// <c>IStartConversationRequestEventStreamEvent</c>). A union named <c>EventStream</c> (the
+    /// protocol test client) yields <c>IEventStreamEvent</c>, the runtime's own marker, so event
+    /// stream writers refer to the runtime's through a <c>using RuntimeEvent = ...</c> alias.
+    /// </summary>
+    public string InterfaceName => $"I{Id.Name}Event";
+}
+
+/// <summary>
+/// A <c>@streaming</c> union received from the service as an operation output. <see cref="Events"/>
+/// excludes <c>@error</c> members: those become exceptions. Ordered by name.
+/// </summary>
+public record ResponseEventStream(ShapeId Id, IReadOnlyList<ShapeId> Events);
+
+/// <summary>
 /// Aggregates everything code writers need about a single service: derived names,
 /// detected protocol, resolved operations, and partitioned reachable shapes.
 /// Built from a validated <see cref="ServiceIndex"/>.
@@ -115,12 +137,6 @@ public class GenerationContext
     public bool HasEndpointTests { get; }
 
     /// <summary>
-    /// Whether any operation returns a <c>@streaming</c> union, i.e. an output event stream. Gates the
-    /// per-service event stream exception.
-    /// </summary>
-    public bool HasEventStreamOutput { get; }
-
-    /// <summary>
     /// The parsed endpoint test suite, or <c>null</c> when <see cref="HasEndpointTests"/> is false.
     /// </summary>
     public EndpointTestSuite? EndpointTests { get; }
@@ -162,6 +178,12 @@ public class GenerationContext
 
     /// <summary>Whether the service has any paginated operations.</summary>
     public bool HasPaginators => PaginatedOperations.Count > 0;
+
+    /// <summary>The <c>@streaming</c> unions used as an operation input member, one entry per union (the protocol test client sends one union from four operations). Sorted by union name.</summary>
+    public IReadOnlyList<RequestEventStream> RequestEventStreams { get; }
+
+    /// <summary>The <c>@streaming</c> unions used as an operation output member, one entry per union. Any entry gates the per-service event stream exception. Sorted by union name.</summary>
+    public IReadOnlyList<ResponseEventStream> ResponseEventStreams { get; }
 
     /// <summary>Reachable structures excluding input, output, and error shapes, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Structures { get; }
@@ -256,12 +278,12 @@ public class GenerationContext
         ServiceTitle = index.Service.GetTitle();
         Protocol = DetectProtocol(index.Service, SdkId);
         Operations = ResolveOperations(index);
-        HasEventStreamOutput = Operations.Any(operation =>
-            operation.Output.Members.Values.Any(member => Resolve(member.Target) is UnionShape union && union.IsStreaming()));
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index);
+        RequestEventStreams = ResolveRequestEventStreams(Operations, index);
+        ResponseEventStreams = ResolveResponseEventStreams(Operations, index);
         OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
@@ -435,6 +457,42 @@ public class GenerationContext
         return resolved;
     }
 
+    private static List<RequestEventStream> ResolveRequestEventStreams(IReadOnlyList<Operation> operations, ServiceIndex index)
+    {
+        var unionIds = operations
+            .SelectMany(operation => EventStreams.In(operation.Input, index))
+            .Distinct();
+
+        var resolved = new List<RequestEventStream>();
+        foreach (var unionId in unionIds)
+        {
+            var senders = operations
+                .Where(op => EventStreams.In(op.Input, index).Contains(unionId))
+                .OrderBy(op => op.Name, StringComparer.Ordinal)
+                .ToList();
+            var events = EventStreams.EventsOf(unionId, index).OrderBy(target => target.Name, StringComparer.Ordinal).ToList();
+            resolved.Add(new RequestEventStream(unionId, senders, events));
+        }
+
+        return resolved.OrderBy(stream => stream.Id.Name, StringComparer.Ordinal).ToList();
+    }
+
+    private static List<ResponseEventStream> ResolveResponseEventStreams(IReadOnlyList<Operation> operations, ServiceIndex index)
+    {
+        var unionIds = operations
+            .SelectMany(operation => EventStreams.In(operation.Output, index))
+            .Distinct();
+
+        var resolved = new List<ResponseEventStream>();
+        foreach (var unionId in unionIds)
+        {
+            var events = EventStreams.EventsOf(unionId, index).OrderBy(target => target.Name, StringComparer.Ordinal).ToList();
+            resolved.Add(new ResponseEventStream(unionId, events));
+        }
+
+        return resolved.OrderBy(stream => stream.Id.Name, StringComparer.Ordinal).ToList();
+    }
+
     private static StructureShape ResolveStructure(ServiceIndex index, ShapeId shapeId, string property, ShapeId operationId)
     {
         if (index.Shapes.TryGetValue(shapeId, out var shape) && shape is StructureShape structure)
@@ -451,5 +509,4 @@ public class GenerationContext
 
         throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");
     }
-
 }

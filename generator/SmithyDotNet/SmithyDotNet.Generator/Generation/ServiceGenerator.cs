@@ -164,10 +164,19 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
 
-        if (context.HasEventStreamOutput)
+        if (context.ResponseEventStreams.Count > 0)
         {
+            // TODO: The response class must implement IDisposable and its unmarshaller override
+            // HasStreamingProperty / ShouldReadEntireResponse, or Core disposes the body before the caller reads the stream.
             var eventStreamExceptionWriter = new EventStreamExceptionWriter(context, modelFileName);
             Emit(Path.Combine(model, $"{context.BaseName}EventStreamException.g.cs"), eventStreamExceptionWriter.Write(cancellationToken));
+
+            // The union's model class is the event stream itself (see the structure loop below).
+            var eventStreamOutputWriter = new EventStreamOutputWriter(context, modelFileName);
+            foreach (var stream in context.ResponseEventStreams)
+            {
+                Emit(Path.Combine(model, $"{context.ToDotNetName(stream.Id)}.g.cs"), eventStreamOutputWriter.Write(context.Structures[stream.Id], stream.Id, cancellationToken));
+            }
         }
 
         var operationWriter = new OperationWriter(context, modelFileName);
@@ -240,6 +249,20 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Output, operation.Output))
             {
+                // A response event stream is read by its own class (new {Union}(context.Stream)), so the
+                // union gets no structure unmarshaller.
+                if (context.ResponseEventStreams.Any(stream => stream.Id == shapeId))
+                {
+                    continue;
+                }
+
+                // TODO: Emit an event unmarshaller (@eventHeader from the message headers, @eventPayload from the
+                // raw payload). The JSON structure unmarshaller the event stream class calls today is not it.
+                if (context.ResponseEventStreams.Any(stream => stream.Events.Contains(shapeId)))
+                {
+                    continue;
+                }
+
                 if (unmarshalledStructures.Add(shapeId))
                 {
                     Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
@@ -292,6 +315,16 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(model, $"{context.ServiceName}PaginatorFactory.g.cs"), factoryClassWriter.Write(cancellationToken));
         }
 
+        var eventInterfaceWriter = new EventStreamEventInterfaceWriter(context, modelFileName);
+        foreach (var eventStream in context.RequestEventStreams)
+        {
+            Emit(Path.Combine(model, $"{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteInterface(eventStream, cancellationToken));
+            foreach (var eventId in eventStream.Events)
+            {
+                Emit(Path.Combine(model, $"{context.ToDotNetName(eventId)}.{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteEventImplementation(eventStream, eventId, cancellationToken));
+            }
+        }
+
         var structureWriter = new StructureWriter(context, modelFileName);
 
         // A structure that doubles as an operation input/output normally gets only its
@@ -321,6 +354,12 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         foreach (var (shapeId, structure) in context.Structures)
         {
             if (operationShapes.Contains(shapeId) && !memberReferencedOperationShapes.Contains(shapeId))
+            {
+                continue;
+            }
+
+            // Emitted above as the EnumerableEventOutputStream subclass instead.
+            if (context.ResponseEventStreams.Any(stream => stream.Id == shapeId))
             {
                 continue;
             }

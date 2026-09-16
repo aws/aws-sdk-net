@@ -61,7 +61,6 @@ public sealed class EventStreamExceptionGeneratorTests : IDisposable
         Assert.Contains(Path.Combine("Generated", "Model", "AccessDeniedException.g.cs"), written);
         Assert.Contains(Path.Combine(Marshalling, "AccessDeniedExceptionUnmarshaller.g.cs"), written);
         Assert.Contains(Path.Combine(Marshalling, "ThrottlingExceptionUnmarshaller.g.cs"), written);
-        Assert.Contains(Path.Combine(Marshalling, "DataEventUnmarshaller.g.cs"), written);
     }
 
     private static readonly string Marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");

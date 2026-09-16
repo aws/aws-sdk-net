@@ -62,7 +62,9 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         {
             DocumentationFormatter.WriteClassSummary(writer, DocumentationFormatter.Cleanup(eventStream.GetDocumentation()));
             WriteSuppressions(writer, className);
-            writer.OpenBlock($"public sealed class {className} : EnumerableEventOutputStream<IEventStreamEvent, {exceptionType}>", () =>
+            // IEventStreamEvent is always fully qualified: a union named EventStream (the protocol test client)
+            // gets an I{Union}Event marker of the same name in this namespace, which would shadow the runtime's.
+            writer.OpenBlock($"public sealed class {className} : EnumerableEventOutputStream<RuntimeEvent, {exceptionType}>", () =>
             {
                 WriteEventMapping(writer, events);
                 writer.WriteLine();
@@ -85,6 +87,11 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         FileHeader.WriteUsings(writer, FileHeader.ModelUsings);
         FileHeader.WriteUsings(writer, FileHeader.EventStreamOutputUsings, emitTrailingNewLine: false);
         writer.WriteLine($"using {context.Namespace}.Model.Internal.MarshallTransformations;");
+        // A union named EventStream (the protocol test client) yields an I{Union}Event marker in this very
+        // namespace that shadows the runtime's IEventStreamEvent, so refer to it through an alias no shape name can hit.
+        writer.WriteLine("using RuntimeEvent = Amazon.Runtime.EventStreams.IEventStreamEvent;");
+        writer.WriteLine("using EventFactory = System.Func<Amazon.Runtime.EventStreams.IEventStreamMessage, Amazon.Runtime.EventStreams.IEventStreamEvent>;");
+        writer.WriteLine($"using ExceptionFactory = System.Func<Amazon.Runtime.EventStreams.IEventStreamMessage, {context.Namespace}.{context.BaseName}EventStreamException>;");
     }
 
     // CA1710 fires because the base type name ends in "Stream", not "Collection"; CA1063 fires on the
@@ -100,7 +107,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// The mapping of event message to a generator function to construct the matching EventStream event.");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock("protected override IDictionary<string, Func<IEventStreamMessage, IEventStreamEvent>> EventMapping { get; } = new(StringComparer.OrdinalIgnoreCase)", "};", () =>
+        writer.OpenBlock("protected override IDictionary<string, EventFactory> EventMapping { get; } = new Dictionary<string, EventFactory>(StringComparer.OrdinalIgnoreCase)", "};", () =>
         {
             // The initial (non-event) response is always present; its lambda is a single expression.
             writer.WriteLine("{");
@@ -121,7 +128,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// The mapping of event message to a generator function to construct the matching EventStream Exception");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"protected override IDictionary<string, Func<IEventStreamMessage, {exceptionType}>> ExceptionMapping {{ get; }} = new(StringComparer.OrdinalIgnoreCase)", "};", () =>
+        writer.OpenBlock("protected override IDictionary<string, ExceptionFactory> ExceptionMapping { get; } = new Dictionary<string, ExceptionFactory>(StringComparer.OrdinalIgnoreCase)", "};", () =>
         {
             foreach (var ex in exceptions)
             {
@@ -168,7 +175,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Event that encompasses all events.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine("public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;");
+        writer.WriteLine("public override event EventHandler<EventStreamEventReceivedArgs<RuntimeEvent>> EventReceived;");
         writer.WriteLine();
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Event that encompasses exceptions.");
@@ -208,19 +215,20 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
             writer.WriteLine("//Mapping the generic Event to more specific Events");
             writer.OpenBlock("Decoder.MessageReceived += (sender, args) =>", "};", () =>
             {
-                writer.WriteLine("IEventStreamEvent ev;");
+                writer.WriteLine("RuntimeEvent ev;");
                 writer.OpenBlock("try", () =>
                 {
                     writer.WriteLine("ev = ConvertMessageToEvent(args.Message);");
                 });
-                writer.OpenBlock("catch(UnknownEventStreamException)", () =>
+                writer.OpenBlock("catch (UnknownEventStreamException)", () =>
                 {
                     writer.WriteLine("""throw new UnknownEventStreamException("Received an unknown event stream type");""");
                 });
-                writer.WriteLine("EventReceived?.Invoke(this, new EventStreamEventReceivedArgs<IEventStreamEvent>(ev));");
+                writer.WriteLine("EventReceived?.Invoke(this, new EventStreamEventReceivedArgs<RuntimeEvent>(ev));");
                 writer.WriteLine();
                 writer.WriteLine("// Call RaiseEvent until it returns true or all calls complete. This way only a subset of casts are performed");
                 writer.WriteLine("// and we can avoid a cascade of nested if else statements. The result is thrown away");
+
                 // The chain always starts with the initial response, then each event in model order.
                 var chain = new List<string> { "RaiseEvent(InitialResponseReceived, ev)" };
                 chain.AddRange(events.Select(ev => $"RaiseEvent({ev.HandlerName}Received,ev)"));
@@ -236,7 +244,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
 
     private static void WriteRaiseEvent(CodeWriter writer)
     {
-        writer.OpenBlock("private bool RaiseEvent<T>(EventHandler<EventStreamEventReceivedArgs<T>> eventHandler, IEventStreamEvent ev) where T : class, IEventStreamEvent", () =>
+        writer.OpenBlock("private bool RaiseEvent<T>(EventHandler<EventStreamEventReceivedArgs<T>> eventHandler, RuntimeEvent ev) where T : class, RuntimeEvent", () =>
         {
             writer.WriteLine("var convertedEvent = ev as T;");
             writer.OpenBlock("if (convertedEvent != null)", () =>
