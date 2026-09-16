@@ -46,6 +46,19 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for the request event-stream publisher marshaller. Order matches C2J's
+    /// <c>EventStreamPublisherMarshaller</c> so the emitted <c>using</c> block is identical.
+    /// </summary>
+    public static IReadOnlyList<string> EventStreamPublisherUsings { get; } =
+    [
+        "System",
+        "System.IO",
+        "System.Threading.Tasks",
+        "Amazon.Runtime.EventStreams",
+        "System.Collections.Generic",
+    ];
+
+    /// <summary>
     /// Usings for paginator files (class, interface, and factory).
     /// </summary>
     public static IReadOnlyList<string> PaginatorUsings { get; } =

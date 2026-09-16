@@ -118,8 +118,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
 
             // A @httpPayload member IS the whole body, so it replaces (never coexists with) normal
-            // JSON body members.
-            if (partitioned.PayloadMember is { } payload)
+            // JSON body members. A @streaming union payload is an input event stream: the body is the
+            // consumer's event publisher, wired here instead of serialized.
+            if (partitioned.PayloadMember is { Type.IsEventStream: true } eventStreamPayload)
+            {
+                WriteEventStreamPublisher(writer, eventStreamPayload);
+            }
+            else if (partitioned.PayloadMember is { } payload)
             {
                 WritePayloadSerialization(writer, payload, unsignedPayload);
             }
@@ -190,6 +195,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // OverrideContentType and non-restJson (application/x-amz-json) are not handled yet.
     private static void WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned)
     {
+        // An input event stream sets its own application/vnd.amazon.eventstream Content-Type (see
+        // WriteEventStreamPublisher), so the normal body Content-Type is skipped.
+        if (partitioned.PayloadMember is { Type.IsEventStream: true })
+        {
+            return;
+        }
+
         var hasBody = partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0;
         if (httpTrait.Method is "GET" or "DELETE" || !hasBody)
         {
@@ -498,6 +510,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // enum is a string shape in C2J and its ConstantClass converts implicitly to string); a blob payload
     // is the raw octet-stream body. Matches C2J output where one exists. A union is a structure (structure
     // path); a list/map payload fails loud below.
+    // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
+    // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
+    private static void WriteEventStreamPublisher(CodeWriter writer, Member payload)
+    {
+        writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
+        writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
+    }
+
     private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
     {
         if (payload.Type.MarshalsAsString)

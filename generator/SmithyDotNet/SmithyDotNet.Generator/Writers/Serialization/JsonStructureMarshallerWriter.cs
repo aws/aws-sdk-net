@@ -93,9 +93,8 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
     }
 
     // Blob/string are the raw bytes the publisher sends as octet-stream/text-plain; a structure/union writes
-    // its members into the object the publisher opened (the protocol tests expect the bare structure).
-    // TODO (publisher task): {Union}PublisherMarshaller must pick the payload source and :content-type per
-    // event - Request.Content for blob/string, the JSON writer's stream otherwise - instead of always JSON.
+    // its members into the object the publisher opened (the protocol tests expect the bare structure). The
+    // publisher marshaller picks the payload source and :content-type per event (EventStreamPublisherMarshallerWriter).
     private static void WriteEventPayload(CodeWriter writer, Member member)
     {
         writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>

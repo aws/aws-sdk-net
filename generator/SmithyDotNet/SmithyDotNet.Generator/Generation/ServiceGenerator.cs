@@ -311,6 +311,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var eventInterfaceWriter = new EventStreamEventInterfaceWriter(context, modelFileName);
+        var publisherMarshallerWriter = new EventStreamPublisherMarshallerWriter(context, modelFileName);
         foreach (var eventStream in context.RequestEventStreams)
         {
             Emit(Path.Combine(model, $"{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteInterface(eventStream, cancellationToken));
@@ -318,6 +319,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 Emit(Path.Combine(model, $"{context.ToDotNetName(eventId)}.{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteEventImplementation(eventStream, eventId, cancellationToken));
             }
+            Emit(Path.Combine(marshalling, $"{eventStream.Id.Name}PublisherMarshaller.g.cs"), publisherMarshallerWriter.Write(eventStream, cancellationToken));
         }
 
         var structureWriter = new StructureWriter(context, modelFileName);
@@ -355,6 +357,12 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             // Emitted above as the EnumerableEventOutputStream subclass instead.
             if (context.ResponseEventStreams.Any(stream => stream.Id == shapeId))
+            {
+                continue;
+            }
+
+            // A request event stream's union is the publisher/interface, not a plain model class.
+            if (context.RequestEventStreams.Any(stream => stream.Id == shapeId))
             {
                 continue;
             }
@@ -408,6 +416,17 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 if (structure.IsError())
                 {
+                    continue;
+                }
+
+                // A request event stream's @streaming union is not a wire structure: its events still need
+                // their own marshallers, so recurse into them, but the union itself gets none.
+                if (context.RequestEventStreams.Any(stream => stream.Id == structureId))
+                {
+                    foreach (var nested in ReferencedStructuresRecursive(structure, visited))
+                    {
+                        yield return nested;
+                    }
                     continue;
                 }
 

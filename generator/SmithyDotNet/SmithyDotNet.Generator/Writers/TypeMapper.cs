@@ -103,6 +103,7 @@ public sealed record TypeDescriptor(
 /// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
 /// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
 /// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
+/// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
 public sealed record Member(
     string PropertyName,
     TypeDescriptor Type,
@@ -116,7 +117,8 @@ public sealed record Member(
     string? JsonName = null,
     bool HidesBaseMember = false,
     bool IsEventPayload = false,
-    bool IsEventHeader = false
+    bool IsEventHeader = false,
+    EventStreamPublisherInfo? EventStreamPublisher = null
 )
 {
     /// <summary>
@@ -148,6 +150,13 @@ public sealed record Member(
 /// as the <c>ConstantClass</c> constructor argument.
 /// </summary>
 public readonly record struct EnumMember(string PropertyName, string WireValue);
+
+/// <summary>
+/// The per-stream interface a request event-stream publisher property returns, and the event classes
+/// listed in its doc comment. Carried on the request member so <see cref="MemberWriter"/> emits the
+/// publisher property surface.
+/// </summary>
+public sealed record EventStreamPublisherInfo(string InterfaceName, IReadOnlyList<string> EventClasses);
 
 /// <summary>
 /// Maps Smithy shapes to .NET type names and resolves <c>[AWSProperty]</c> attributes.

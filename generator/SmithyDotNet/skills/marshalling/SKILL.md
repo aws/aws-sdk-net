@@ -268,6 +268,29 @@ Only `sagemakerruntimehttp2`'s `ResponsePayloadPart`/`RequestPayloadPart` use ev
 payload `Bytes` + string headers). The union itself gets no unmarshaller (the response unmarshaller does
 `new {Union}(context.Stream)`); its event structures each get theirs, plus a plain model class.
 
+### Event streams (request)
+
+A request event stream (`context.RequestEventStreams`) adds a publisher marshaller on top of the marker
+interface + per-event partials `EventStreamEventInterfaceWriter` already emits. The union gets no plain model
+class or structure marshaller (excluded in `ServiceGenerator`'s structure loop and `ReferencedStructures`), but
+its event members still get marshallers.
+
+- `{Union}PublisherMarshaller` (`EventStreamPublisherMarshallerWriter`) — `NextEventAsync` pulls the consumer's
+  next event, dispatches on `evnt is {Event}`, marshals it with `{Event}Marshaller.Instance`, and sets
+  `eventType` to the union member name verbatim (the wire `:event-type`, not the shape name). The wire
+  `:content-type` follows the event's `@eventPayload` member (`JsonStructureMarshallerWriter` writes headers to
+  `context.Request.EventHeaders` and a blob/string payload to `context.Request.Content`): a blob payload →
+  `application/octet-stream`, a string payload → `text/plain`, both read from `context.Request.Content`; a
+  structure payload or an implicit body → `application/json` from the JSON writer's stream. (C2J emits `text/plain`
+  for a structure payload too, but no service models one and the event marshaller writes it as JSON, so JSON is
+  kept here.) CBOR is not handled — restJson1 only.
+- The request member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property (`OperationWriter` +
+  `MemberWriter`) — keeps any modeled `[AWSProperty]`/`[Obsolete]`, no `IsSet`. The request marshaller wires it:
+  `request.EventStreamPublisher = new {Union}PublisherMarshaller(publicRequest.{Member}Publisher)` with
+  `Content-Type: application/vnd.amazon.eventstream`, replacing body serialization.
+
+Pinned in `EventStreamPublisherCodegenTests`.
+
 ## Response Header Unmarshalling
 
 Output and error members bound with `@httpHeader` are read from the HTTP response headers via

@@ -43,9 +43,35 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var cleanedOperationDoc = DocumentationFormatter.Cleanup(operation.Shape.GetDocumentation());
         var doc = $"Container for the parameters to the {operation.Name} operation. {cleanedOperationDoc}";
 
-        var members = TypeMapper.ResolveMembers(operation.Input, context);
+        var members = ApplyEventStreamPublisher(operation, TypeMapper.ResolveMembers(operation.Input, context));
         var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Input));
         return WriteClass(record, cancellationToken);
+    }
+
+    // A request event-stream member (target is a @streaming union) is emitted as a Func publisher property
+    // named {Member}Publisher — matching C2J, which replaces the normal member. The list is re-sorted
+    // because the rename can change alphabetical order relative to the other members.
+    private List<Member> ApplyEventStreamPublisher(Operation operation, List<Member> members)
+    {
+        var stream = context.RequestEventStreams.FirstOrDefault(candidate => candidate.Operations.Any(op => op.Name == operation.Name));
+        if (stream is null)
+        {
+            return members;
+        }
+
+        // The property keeps the input member's name (+ "Publisher"); the interface and event list are the union's.
+        var memberName = operation.Input.Members.First(member => member.Value.Target == stream.Id).Key;
+        var memberProperty = SdkNaming.ToUpperFirstCharacter(memberName);
+        var eventClasses = stream.Events.Select(context.ToDotNetName).ToList();
+        var publisher = new EventStreamPublisherInfo(stream.InterfaceName, eventClasses);
+        return members
+            // Clear HidesBaseMember: the "Publisher" suffix means a member named "equals" no longer
+            // shadows object.Equals, so it must not keep the `new` modifier (CS0109).
+            .Select(member => member.PropertyName == memberProperty && member.Type.IsEventStream
+                ? member with { PropertyName = $"{memberProperty}Publisher", EventStreamPublisher = publisher, HidesBaseMember = false }
+                : member)
+            .OrderBy(member => member.PropertyName, StringComparer.Ordinal)
+            .ToList();
     }
 
     /// <summary>

@@ -17,6 +17,9 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 - Public class/interface names and their base types. An event structure (a non-error member of a
   `@streaming` union) implements `Amazon.Runtime.EventStreams.IEventStreamEvent` (`StructureWriter`),
   fully qualified (no `using`) so it can't clash with a per-stream `{Namespace}.Model.IEventStreamEvent`.
+  A request event stream's input member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property
+  (`OperationWriter` + `MemberWriter`): it keeps any modeled `[AWSProperty]`/`[Obsolete]` but has no `IsSet`
+  (the marshaller wires the Func unconditionally). Its doc content matches C2J.
 - Public property names, types, and nullability
 - Public method signatures (name, parameters, return type)
 - `[AWSProperty]` attributes on public members (Required, Min, Max)

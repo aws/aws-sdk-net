@@ -35,7 +35,14 @@ public static class MemberWriter
         var cleanedDoc = DocumentationFormatter.Cleanup($"Gets and sets the property {member.PropertyName}. {member.Documentation}");
         DocumentationFormatter.WriteCommentBlock(writer, cleanedDoc);
 
-        if (member.Type.IsCollection)
+        // The doc's second paragraph: the Func explanation for a publisher, the V4 null-default note for
+        // a collection. Each is its own <para> sibling of the prefix above, so multi-paragraph member
+        // docs don't nest.
+        if (member.EventStreamPublisher is { } publisher)
+        {
+            WritePublisherDocBody(writer, publisher);
+        }
+        else if (member.Type.IsCollection)
         {
             writer.WriteLine("/// <para />");
             DocumentationFormatter.WriteCommentBlock(writer, DocumentationFormatter.Cleanup(CollectionDocParagraph));
@@ -55,6 +62,15 @@ public static class MemberWriter
 
         // `new` when the member shadows a base-class member (e.g., Equals or Retryable); empty otherwise.
         var modifier = member.HidesBaseMember ? "new " : string.Empty;
+
+        // A request event-stream member is a consumer-supplied Func the marshaller wires unconditionally,
+        // so it has no IsSet method.
+        if (member.EventStreamPublisher is { } eventStreamPublisher)
+        {
+            writer.WriteLine($"public {modifier}Func<System.Threading.Tasks.Task<{eventStreamPublisher.InterfaceName}>> {member.PropertyName} {{ get; set; }}");
+            return;
+        }
+
         if (member.Type.IsCollection)
         {
             writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
@@ -69,5 +85,23 @@ public static class MemberWriter
         writer.WriteLine($"/// Checks to see if the {member.PropertyName} property is set.");
         writer.WriteLine("/// </summary>");
         writer.WriteLine($"internal bool IsSet{member.PropertyName}() => {member.IsSetExpression};");
+    }
+
+    // The doc text matches C2J's GenerateEventPublisherDocumentation so it ships identically in the .xml.
+    private static void WritePublisherDocBody(CodeWriter writer, EventStreamPublisherInfo publisher)
+    {
+        writer.WriteLine("/// <para>");
+        writer.WriteLine("/// The Func set for this property by the consumer of the SDK is used to stream events into the service. Consumers");
+        writer.WriteLine("/// provide a Func that the SDK will continue to call to get events to send. When the consumer is done streaming");
+        writer.WriteLine("/// events to the service the Func can return null to stop the SDK calling the Func for new events. The Func must");
+        writer.WriteLine($"/// return an event known by the service which can be identified by implementing the {publisher.InterfaceName}");
+        writer.WriteLine("/// interface. The known implementatons in the SDK for this interface are:");
+        writer.WriteLine("""/// <list type="bullet">""");
+        foreach (var eventClass in publisher.EventClasses)
+        {
+            writer.WriteLine($"""///   <item><term><see cref="{eventClass}"/></term></item>""");
+        }
+        writer.WriteLine("/// </list>");
+        writer.WriteLine("/// </para>");
     }
 }
