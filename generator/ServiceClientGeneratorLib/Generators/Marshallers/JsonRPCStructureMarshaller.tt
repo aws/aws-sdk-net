@@ -62,10 +62,8 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				else if (member.IsStructure)
 				{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
-<#+
-					this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape, isSparse: false);
-#>
+<#=new string(' ', level * 4)#>                var structureMarshaller = <#=member.Shape.Name#>Marshaller.Instance;
+<#=new string(' ', level * 4)#>                structureMarshaller.Marshall(requestObject.<#=member.PropertyName#>, context);
 <#+
 				}
 				else if (member.Shape.IsString)
