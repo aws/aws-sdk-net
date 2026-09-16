@@ -38,8 +38,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property CaptionSelectorName. Specifies which "Caption Selector":#inputs-caption_selector
         /// to use from each input when generating captions. The name should be of the format
-        /// "Caption Selector <N>", which denotes that the Nth Caption Selector will be used from
-        /// each input.
+        /// "Caption Selector &lt;N&gt;", which denotes that the Nth Caption Selector will be
+        /// used from each input.
         /// </summary>
         [AWSProperty(Min = 1)]
         public string CaptionSelectorName { get; set; }
