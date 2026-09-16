@@ -14401,6 +14401,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M9gLarge = new InstanceType("m9g.large");
         /// <summary>
+        /// Constant M9gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType M9gMedium = new InstanceType("m9g.medium");
+        /// <summary>
         /// Constant M9gMetal24xl for InstanceType
         /// </summary>
         public static readonly InstanceType M9gMetal24xl = new InstanceType("m9g.metal-24xl");
@@ -15852,6 +15856,94 @@ namespace Amazon.EC2
         /// Constant R8iXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType R8iXlarge = new InstanceType("r8i.xlarge");
+        /// <summary>
+        /// Constant R9g12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g12xlarge = new InstanceType("r9g.12xlarge");
+        /// <summary>
+        /// Constant R9g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g16xlarge = new InstanceType("r9g.16xlarge");
+        /// <summary>
+        /// Constant R9g24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g24xlarge = new InstanceType("r9g.24xlarge");
+        /// <summary>
+        /// Constant R9g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g2xlarge = new InstanceType("r9g.2xlarge");
+        /// <summary>
+        /// Constant R9g48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g48xlarge = new InstanceType("r9g.48xlarge");
+        /// <summary>
+        /// Constant R9g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g4xlarge = new InstanceType("r9g.4xlarge");
+        /// <summary>
+        /// Constant R9g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9g8xlarge = new InstanceType("r9g.8xlarge");
+        /// <summary>
+        /// Constant R9gd12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd12xlarge = new InstanceType("r9gd.12xlarge");
+        /// <summary>
+        /// Constant R9gd16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd16xlarge = new InstanceType("r9gd.16xlarge");
+        /// <summary>
+        /// Constant R9gd24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd24xlarge = new InstanceType("r9gd.24xlarge");
+        /// <summary>
+        /// Constant R9gd2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd2xlarge = new InstanceType("r9gd.2xlarge");
+        /// <summary>
+        /// Constant R9gd48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd48xlarge = new InstanceType("r9gd.48xlarge");
+        /// <summary>
+        /// Constant R9gd4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd4xlarge = new InstanceType("r9gd.4xlarge");
+        /// <summary>
+        /// Constant R9gd8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gd8xlarge = new InstanceType("r9gd.8xlarge");
+        /// <summary>
+        /// Constant R9gdLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gdLarge = new InstanceType("r9gd.large");
+        /// <summary>
+        /// Constant R9gdMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gdMedium = new InstanceType("r9gd.medium");
+        /// <summary>
+        /// Constant R9gdMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gdMetal48xl = new InstanceType("r9gd.metal-48xl");
+        /// <summary>
+        /// Constant R9gdXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gdXlarge = new InstanceType("r9gd.xlarge");
+        /// <summary>
+        /// Constant R9gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gLarge = new InstanceType("r9g.large");
+        /// <summary>
+        /// Constant R9gMedium for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gMedium = new InstanceType("r9g.medium");
+        /// <summary>
+        /// Constant R9gMetal48xl for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gMetal48xl = new InstanceType("r9g.metal-48xl");
+        /// <summary>
+        /// Constant R9gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType R9gXlarge = new InstanceType("r9g.xlarge");
         /// <summary>
         /// Constant T1Micro for InstanceType
         /// </summary>
