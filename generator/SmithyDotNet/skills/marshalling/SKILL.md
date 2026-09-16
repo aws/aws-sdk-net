@@ -232,6 +232,38 @@ An output member targeting a `@streaming` union/structure is an event stream (`T
 `JsonRPCResponseUnmarshaller`. The `{UnionClass}` itself, and everything else event streams emit, is in
 `sdk-conventions` → Event Streams.
 
+Each non-error union member targets an **event structure** that gets its own `{Event}Unmarshaller`
+(`JsonStructureUnmarshallerWriter`, invoked per event from the event-stream class's `EventMapping`). The
+writer classifies each member by binding, **symmetric with `JsonStructureMarshallerWriter`** — a member
+carries at most one of `@eventPayload`/`@eventHeader` (`Member.IsEventPayload`/`IsEventHeader` from
+`smithy.api#eventPayload`/`eventHeader`), the three partitions are disjoint and independent:
+
+- **`@eventPayload`** (≤1 per event) → the raw message payload, no JSON body loop for it. Blob →
+  `unmarshalledObject.{Prop} = context.Stream as MemoryStream;`; string →
+  `using (var sr = new StreamReader(context.Stream)) { unmarshalledObject.{Prop} = sr.ReadToEnd(); }`;
+  structure → `unmarshalledObject.{Prop} = {Type}Unmarshaller.Instance.Unmarshall(context, ref reader);`
+  (C2J's template has no structure-payload branch — no shipping service uses one — but the SEP allows it).
+  The SEP requires all other members to carry `@eventHeader` when a payload member exists, so there are no
+  unbound body members in that case.
+- **`@eventHeader`** → read from the event-message header via `context.ResponseData`, guarded by
+  `IsEventHeaderPresent("{ModeledName}")` (the wire header key is the member name verbatim). The accessor on
+  `GetEventStreamHeader("{ModeledName}")` is chosen by **target shape**, mirroring the marshaller's setter
+  switch: string/enum → `AsString()`, boolean → `AsBool()`, integer/intEnum → `AsInt32()`, long →
+  `AsInt64()`, timestamp → `AsTimestamp()`, blob → `new MemoryStream(...AsByteBuf())`. Any other target
+  (double/float/byte/short — no runtime accessor, no service uses one) fails loud.
+- **unbound** → the JSON body, read through the ordinary reader loop.
+
+An event can carry `@eventHeader` members **without** an `@eventPayload` member — a headers-only event (only
+header reads, no reader loop) or an implicit-payload event (headers from headers, the remaining unbound
+members from the JSON body). The absence of `@eventPayload` does *not* mean the absence of headers, so this
+is **not** an all-or-nothing branch (C2J's `JsonRPCStructureUnmarshaller` gets this wrong; the Smithy
+protocol tests `HeadersEvent`/`HeadersAndImplicitPayloadEvent` cover it). Pinned in
+`EventStructureUnmarshallTests`.
+
+Only `sagemakerruntimehttp2`'s `ResponsePayloadPart`/`RequestPayloadPart` use event headers today (blob
+payload `Bytes` + string headers). The union itself gets no unmarshaller (the response unmarshaller does
+`new {Union}(context.Stream)`); its event structures each get theirs, plus a plain model class.
+
 ## Response Header Unmarshalling
 
 Output and error members bound with `@httpHeader` are read from the HTTP response headers via

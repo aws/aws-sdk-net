@@ -45,14 +45,18 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#streaming-trait" /></remarks>
     public static bool IsStreaming(this Shape shape) => shape.Traits.ContainsKey("smithy.api#streaming");
 
-    /// <remarks><see href="https://smithy.io/2.0/spec/type-refinement-traits.html#sparse-trait" /></remarks>
-    public static bool IsSparse(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sparse");
+    /// <summary>The event member carrying the message payload; every other member of the event then
+    /// carries <c>@eventHeader</c>. Targets a blob, string, or structure shape.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#eventpayload-trait" /></remarks>
+    public static bool IsEventPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#eventPayload");
 
+    /// <summary>An event member serialized as an event-message header. Targets a boolean, byte, short,
+    /// integer, long, float, double, blob, string, or timestamp shape.</summary>
     /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#eventheader-trait" /></remarks>
     public static bool IsEventHeader(this Shape shape) => shape.Traits.ContainsKey("smithy.api#eventHeader");
 
-    /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#eventpayload-trait" /></remarks>
-    public static bool IsEventPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#eventPayload");
+    /// <remarks><see href="https://smithy.io/2.0/spec/type-refinement-traits.html#sparse-trait" /></remarks>
+    public static bool IsSparse(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sparse");
 
     /// <summary>
     /// Whether a blob (or a member targeting one) requires the body length to be known up front,

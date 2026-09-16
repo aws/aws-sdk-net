@@ -101,6 +101,8 @@ public sealed record TypeDescriptor(
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
+/// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
+/// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
 public sealed record Member(
     string PropertyName,
     TypeDescriptor Type,
@@ -112,7 +114,9 @@ public sealed record Member(
     string Documentation,
     string ModeledName,
     string? JsonName = null,
-    bool HidesBaseMember = false
+    bool HidesBaseMember = false,
+    bool IsEventPayload = false,
+    bool IsEventHeader = false
 )
 {
     /// <summary>
@@ -179,7 +183,9 @@ public static class TypeMapper
                 ModeledName: memberName,
                 JsonName: member.GetJsonName(),
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
-                HidesBaseMember: propertyName == "Equals")
+                HidesBaseMember: propertyName == "Equals",
+                IsEventPayload: member.IsEventPayload(),
+                IsEventHeader: member.IsEventHeader())
             );
         }
 

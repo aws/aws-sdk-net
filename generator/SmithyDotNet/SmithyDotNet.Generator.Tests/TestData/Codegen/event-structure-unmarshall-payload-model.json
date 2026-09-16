@@ -1,0 +1,88 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [{ "target": "com.example#Stream" }],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#Stream": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#StreamResponse" },
+      "traits": { "smithy.api#http": { "uri": "/stream", "method": "POST" } }
+    },
+    "com.example#StreamResponse": {
+      "type": "structure",
+      "members": { "stream": { "target": "com.example#Output" } }
+    },
+    "com.example#Output": {
+      "type": "union",
+      "traits": { "smithy.api#streaming": {} },
+      "members": {
+        "BlobPayload": { "target": "com.example#BlobPayloadEvent" },
+        "StringPayload": { "target": "com.example#StringPayloadEvent" },
+        "StructPayload": { "target": "com.example#StructPayloadEvent" },
+        "NoPayload": { "target": "com.example#NoPayloadEvent" },
+        "HeadersOnly": { "target": "com.example#HeadersOnlyEvent" },
+        "HeadersAndImplicitPayload": { "target": "com.example#HeadersAndImplicitPayloadEvent" }
+      }
+    },
+    "com.example#BlobPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "Bytes": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventPayload": {} } },
+        "DataType": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "Count": { "target": "smithy.api#Integer", "traits": { "smithy.api#eventHeader": {} } },
+        "Total": { "target": "smithy.api#Long", "traits": { "smithy.api#eventHeader": {} } },
+        "Final": { "target": "smithy.api#Boolean", "traits": { "smithy.api#eventHeader": {} } },
+        "At": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#eventHeader": {} } },
+        "Raw": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventHeader": {} } }
+      }
+    },
+    "com.example#StringPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "Message": { "target": "smithy.api#String", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#StructPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "Body": { "target": "com.example#Detail", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#Detail": {
+      "type": "structure",
+      "members": { "name": { "target": "smithy.api#String" } }
+    },
+    "com.example#NoPayloadEvent": {
+      "type": "structure",
+      "members": { "value": { "target": "smithy.api#String" } }
+    },
+    "com.example#HeadersOnlyEvent": {
+      "type": "structure",
+      "members": {
+        "DataType": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "Count": { "target": "smithy.api#Integer", "traits": { "smithy.api#eventHeader": {} } }
+      }
+    },
+    "com.example#HeadersAndImplicitPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "DataType": { "target": "smithy.api#String", "traits": { "smithy.api#eventHeader": {} } },
+        "SeqNum": { "target": "smithy.api#Long", "traits": { "smithy.api#eventHeader": {} } },
+        "Final": { "target": "smithy.api#Boolean", "traits": { "smithy.api#eventHeader": {} } },
+        "At": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#eventHeader": {} } },
+        "Checksum": { "target": "smithy.api#Blob", "traits": { "smithy.api#eventHeader": {} } },
+        "value": { "target": "smithy.api#String" },
+        "count": { "target": "smithy.api#Integer" },
+        "detail": { "target": "com.example#Detail" }
+      }
+    }
+  }
+}

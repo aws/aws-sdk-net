@@ -250,16 +250,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Output, operation.Output))
             {
                 // A response event stream is read by its own class (new {Union}(context.Stream)), so the
-                // union gets no structure unmarshaller.
+                // union gets no structure unmarshaller. Its event structures DO get one — the event stream
+                // class calls {Event}Unmarshaller per message, and the structure unmarshaller handles the
+                // @eventPayload/@eventHeader split when the event carries an explicit payload member.
                 if (context.ResponseEventStreams.Any(stream => stream.Id == shapeId))
-                {
-                    continue;
-                }
-
-                // TODO (separate task): drop this skip once JsonStructureUnmarshallerWriter mirrors the marshaller's event
-                // branches: @eventHeader via context.ResponseData.GetEventStreamHeader, blob/string @eventPayload from
-                // context.Stream, structure payload via its unmarshaller.
-                if (context.ResponseEventStreams.Any(stream => stream.Events.Contains(shapeId)))
                 {
                     continue;
                 }
