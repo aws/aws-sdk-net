@@ -159,6 +159,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly AgentRuntimeEndpointStatus CREATING = new AgentRuntimeEndpointStatus("CREATING");
         /// <summary>
+        /// Constant DELETE_FAILED for AgentRuntimeEndpointStatus
+        /// </summary>
+        public static readonly AgentRuntimeEndpointStatus DELETE_FAILED = new AgentRuntimeEndpointStatus("DELETE_FAILED");
+        /// <summary>
         /// Constant DELETING for AgentRuntimeEndpointStatus
         /// </summary>
         public static readonly AgentRuntimeEndpointStatus DELETING = new AgentRuntimeEndpointStatus("DELETING");
@@ -224,6 +228,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CREATING for AgentRuntimeStatus
         /// </summary>
         public static readonly AgentRuntimeStatus CREATING = new AgentRuntimeStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus DELETE_FAILED = new AgentRuntimeStatus("DELETE_FAILED");
         /// <summary>
         /// Constant DELETING for AgentRuntimeStatus
         /// </summary>
