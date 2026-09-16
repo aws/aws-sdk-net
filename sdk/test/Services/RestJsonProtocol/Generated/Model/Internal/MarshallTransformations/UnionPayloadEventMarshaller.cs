@@ -48,8 +48,13 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 return;
             if(requestObject.IsSetPayload())
             {
-                var structureMarshaller = PayloadUnionMarshaller.Instance;
-                structureMarshaller.Marshall(requestObject.Payload, context);
+                context.Writer.WritePropertyName("payload");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PayloadUnionMarshaller.Instance;
+                marshaller.Marshall(requestObject.Payload, context);
+
+                context.Writer.WriteEndObject();
             }
         }
 

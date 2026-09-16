@@ -62,15 +62,21 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				else if (member.IsStructure)
 				{
 #>
-<#=new string(' ', level * 4)#>                var structureMarshaller = <#=member.Shape.Name#>Marshaller.Instance;
-<#=new string(' ', level * 4)#>                structureMarshaller.Marshall(requestObject.<#=member.PropertyName#>, context);
+<#=new string(' ', level * 4)#>                context.Writer.WritePropertyName("<#=member.MarshallName#>");
+<#+
+					this.ProcessStructure(level + 1, variableName + "." + member.PropertyName, member.Shape, isSparse: false);
+#>
 <#+
 				}
-				else
+				else if (member.Shape.IsString)
 				{
 #>
 <#=new string(' ', level * 4)#>                context.Request.Content = UTF8Encoding.UTF8.GetBytes(requestObject.<#=member.PropertyName#>);
 <#+
+				}
+				else
+				{
+					throw new ArgumentException("members which are eventPayload MUST be blob, string, or structure types");
 				}
 #>
 <#=new string(' ', level * 4)#>            }
