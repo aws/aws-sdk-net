@@ -206,4 +206,20 @@ public class DocumentationFormatterTests
             "pending &#150; The service received a request to switch over.",
             DocumentationFormatter.Cleanup("<p>pending &#150; The service received a request to switch over.</p>"));
     }
+
+    [Theory]
+    // Standalone, the common case (IoT FleetWise, Neptune Data, Proton).
+    [InlineData("<p>Default: <code/></p>", "Default: <code/>")]
+    // Next to a real pair of the same name (SageMaker): must not tip the count and escape <i>record</i>.
+    [InlineData("<p>A <i>record</i> <i/> is a single unit of input data.</p>", "A <i>record</i> <i/> is a single unit of input data.")]
+    // Inside <code> (DocDB Elastic).
+    [InlineData("<p>Valid actions are <code>ENGINE_UPDATE<i/> </code>.</p>", "Valid actions are <c>ENGINE_UPDATE<i/> </c>.")]
+    // With attributes it is an XML example, not markup (MediaConvert): escaped like any unmatched tag.
+    [InlineData("<p>Adds <Accessibility value=\"caption\"/> to the manifest.</p>", "Adds &lt;Accessibility value=\"caption\"/&gt; to the manifest.")]
+    public void CleanupHandlesSelfClosingTags(string input, string expected)
+    {
+        // A bare self-closing tag is complete on its own and survives; one with attributes is an unescaped
+        // XML example and gets escaped.
+        Assert.Equal(expected, DocumentationFormatter.Cleanup(input));
+    }
 }

@@ -306,8 +306,11 @@ public static partial class DocumentationFormatter
     [GeneratedRegex("\n{3,}")]
     private static partial Regex NewlineRunRegex();
 
-    // An opening or closing tag; the name is what gets balance-counted.
-    [GeneratedRegex(@"</?(?<name>[A-Za-z][\w-]*)[^>]*>")]
+    // An opening or closing tag; the name is what gets balance-counted. A bare self-closing tag (<i/>,
+    // <code/>) is stray markup that is complete on its own, so it is excluded rather than counted as an
+    // unmatched open. A self-closing tag with attributes (<Accessibility value="caption"/>) is an XML
+    // example in the prose and still gets counted, so it ends up escaped and reads as text.
+    [GeneratedRegex(@"</?(?<name>[A-Za-z][\w-]*)(?=[\s/>])(?!\s*/>)[^>]*>")]
     private static partial Regex TagRegex();
 
     // An '&' not followed by an entity reference like "amp;" or "#150;".
