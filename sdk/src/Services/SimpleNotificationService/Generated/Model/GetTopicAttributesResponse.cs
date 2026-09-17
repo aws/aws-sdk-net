@@ -48,12 +48,21 @@ namespace Amazon.SimpleNotificationService.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>DisplayName</c> – The human-readable name used in the <c>From</c> field for notifications
-        /// to <c>email</c> and <c>email-json</c> endpoints.
+        /// to <c>email</c> and <c>email-json</c> endpoints. For subscription confirmation and
+        /// unsubscribe confirmation emails, the sender name is always "Amazon Web Services Notifications"
+        /// regardless of this attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>EffectiveDeliveryPolicy</c> – The JSON serialization of the effective delivery
         /// policy, taking system defaults into account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MaximumMessageSize</c> – The maximum size, in bytes, of a message that can be
+        /// published to the topic. Amazon SNS returns this attribute only if you explicitly set
+        /// it. If Amazon SNS doesn't return it, the topic uses the default of <c>262144</c> (256
+        /// KiB).
         /// </para>
         ///  </li> <li> 
         /// <para>

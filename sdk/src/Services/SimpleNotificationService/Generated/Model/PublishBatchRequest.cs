@@ -50,9 +50,17 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  
     /// <para>
-    /// The maximum allowed individual message size and the maximum total payload size (the
-    /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
-    /// bytes).
+    /// By default, the maximum allowed individual message size and the maximum total payload
+    /// size (the sum of the individual lengths of all of the batched messages) are both 256
+    /// KiB (262,144 bytes). To publish larger batches, set the topic's <c>MaximumMessageSize</c>
+    /// attribute, which supports values up to 1 MiB (1,048,576 bytes). The combined size
+    /// of all messages in the batch, including each message's body and attributes, must not
+    /// exceed the topic's <c>MaximumMessageSize</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/large-message-payloads.html">Large
+    /// message payloads</a> in the <i>Amazon SNS Developer Guide.</i> 
     /// </para>
     ///  <important> 
     /// <para>

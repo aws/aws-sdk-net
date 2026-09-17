@@ -31,8 +31,17 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataProtectionPolicy operation.
+    /// <important> 
+    /// <para>
+    /// Amazon SNS message data protection is no longer available to new customers. For more
+    /// information and guidance on alternatives, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-data-protection-availability-change.html">Amazon
+    /// SNS message data protection availability change</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Retrieves the specified inline <c>DataProtectionPolicy</c> document that is stored
-    /// in the specified Amazon SNS topic.
+    /// in the specified Amazon SNS topic. 
+    /// </para>
     /// </summary>
     public partial class GetDataProtectionPolicyRequest : AmazonSimpleNotificationServiceRequest
     {
