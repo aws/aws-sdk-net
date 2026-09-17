@@ -133,6 +133,13 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         var responseType = $"{operation.Name}Response";
         var requestType = $"{operation.Name}Request";
 
+        // HTTP/2 operations exist only on net8+ (h2 is unavailable on .NET Framework and pre-net8
+        // netstandard); C2J omits them there entirely, so guard the whole operation.
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#if NET8_0_OR_GREATER");
+        }
+
         // Synchronous overload. The synchronous API surface exists only on .NET Framework (the C2J
         // generator emits it in the _bcl file, which is excluded from the netstandard/net builds), so
         // guard it with #if NETFRAMEWORK in this single-file output.
@@ -155,6 +162,11 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
             writer.WriteLine(obsolete);
         }
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
+
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#endif");
+        }
     }
 
 }

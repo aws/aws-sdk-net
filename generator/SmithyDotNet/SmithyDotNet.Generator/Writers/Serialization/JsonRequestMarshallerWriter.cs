@@ -56,7 +56,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
-                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload(), compressionEncoding, operation.Shape.RequiresHttpChecksum());
+                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload(), compressionEncoding, operation.Shape.RequiresHttpChecksum(), operation.RequiresHttp2);
                 writer.WriteLine("");
                 WriteSingleton(writer, className);
             });
@@ -83,7 +83,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         string? hostPrefix,
         bool unsignedPayload,
         string? compressionEncoding,
-        bool requiresChecksum)
+        bool requiresChecksum,
+        bool requiresHttp2)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -91,6 +92,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
+            if (requiresHttp2)
+            {
+                writer.WriteLine("#if NET8_0_OR_GREATER");
+                writer.WriteLine("request.HttpProtocolVersion = System.Net.HttpVersion.Version20;");
+                writer.WriteLine("#endif");
+            }
             if (compressionEncoding is not null)
             {
                 writer.WriteLine($"CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.{compressionEncoding});");

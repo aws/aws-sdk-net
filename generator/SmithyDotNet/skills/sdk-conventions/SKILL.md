@@ -298,6 +298,7 @@ public override RetryableDetails Retryable { get; } = new RetryableDetails(<thro
 Must expose:
 - **Sync method** (.NET Framework): `{Op}Response {Op}({Op}Request request)` per operation
 - **Async method** (all targets): `Task<{Op}Response> {Op}Async({Op}Request request, CancellationToken cancellationToken = default)`
+- **HTTP/2 operations** are the exception: the whole operation (sync + async, client + interface) is wrapped in `#if NET8_0_OR_GREATER`, since C2J omits h2 operations on .NET Framework and pre-net8 netstandard.
 - `Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request)`
 - **Static factory methods** (`#if NET8_0_OR_GREATER`): `CreateDefaultClientConfig()` and `CreateDefaultServiceClient(AWSCredentials, ClientConfig)`
 
@@ -309,6 +310,7 @@ Must expose:
 - All constructors matching the current SDK pattern (default, region, config, credentials variants — 10 constructors total)
 - **Sync method** (.NET Framework): `public virtual {Op}Response {Op}({Op}Request request)` per operation
 - **Async method** (all targets): `public virtual Task<{Op}Response> {Op}Async(...)` per operation
+- **HTTP/2 operations** are the exception: the whole operation is wrapped in `#if NET8_0_OR_GREATER`, since C2J omits h2 operations on .NET Framework and pre-net8 netstandard.
 - `DetermineServiceOperationEndpoint` implementation
 - `CustomizeRuntimePipeline` override
 - `ServiceMetadata` property override

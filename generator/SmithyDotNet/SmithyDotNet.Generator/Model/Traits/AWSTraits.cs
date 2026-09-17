@@ -18,6 +18,9 @@ public static class AWSTraits
 
     #region Structured traits
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html#aws-protocols-restjson1-trait" /></remarks>
+    public static RestJson1Trait? GetRestJson1(this Shape shape) => DeserializeTrait<RestJson1Trait>(shape, "aws.protocols#restJson1");
+
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-service-trait" /></remarks>
     public static AWSServiceTrait? GetAWSService(this Shape shape) => DeserializeTrait<AWSServiceTrait>(shape, "aws.api#service");
 

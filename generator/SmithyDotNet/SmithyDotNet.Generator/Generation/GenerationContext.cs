@@ -19,9 +19,17 @@ public record OperationError(StructureShape Shape, ShapeId Id);
 
 /// <summary>
 /// An operation with its input, output, and error shapes pre-resolved so writers
-/// don't need to perform lookups themselves.
+/// don't need to perform lookups themselves. <see cref="RequiresHttp2"/> pins the request to
+/// <c>HttpProtocolVersion.Version20</c> and excludes the operation below net8; input-only event
+/// streams follow C2J and are never pinned unless the whole service is h2-required.
 /// </summary>
-public record Operation(string Name, OperationShape Shape, StructureShape Input, StructureShape Output, IReadOnlyList<OperationError> Errors);
+public record Operation(
+    string Name,
+    OperationShape Shape,
+    StructureShape Input,
+    StructureShape Output,
+    IReadOnlyList<OperationError> Errors,
+    bool RequiresHttp2);
 
 /// <summary>
 /// A paginated operation with its trait resolved and token/items members mapped to .NET property names.
@@ -209,6 +217,7 @@ public class GenerationContext
     public bool IsTestService => Metadata?.TestService == true;
 
     private readonly ServiceIndex _index;
+
 
     /// <summary>
     /// The manifest for the service, read from _sdk-versions.json
@@ -410,6 +419,29 @@ public class GenerationContext
         throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet; only aws.protocols#restJson1 is implemented.");
     }
 
+    // How strongly a service requires HTTP/2, derived from the protocol trait's http/eventStreamHttp lists.
+    private enum H2SupportDegree { None, Optional, EventStream, Required }
+
+    // Derives the degree the way the C2J models' "protocolSettings":{"h2":...} value is derived from these
+    // lists: no h2 → None; h2 the only http version → Required; h2 alongside http/1.1 → Optional when event
+    // streams can fall back to http/1.1, EventStream when they can't. eventStreamHttp defaults to http
+    // when absent or empty, per spec.
+    private static H2SupportDegree ResolveH2Support(RestJson1Trait? trait)
+    {
+        var http = trait?.Http ?? [];
+        var eventStreamHttp = trait?.EventStreamHttp is { Count: > 0 } list ? list : http;
+
+        if (!http.Contains("h2"))
+        {
+            return H2SupportDegree.None;
+        }
+        if (!http.Contains("http/1.1"))
+        {
+            return H2SupportDegree.Required;
+        }
+        return eventStreamHttp.Contains("http/1.1") ? H2SupportDegree.Optional : H2SupportDegree.EventStream;
+    }
+
     // The highest-priority protocol trait the service carries, less any per-service skip, or null when
     // it models none.
     public static string? ResolveProtocol(IReadOnlyCollection<string> traitIds, string sdkId)
@@ -420,6 +452,8 @@ public class GenerationContext
 
     private static List<Operation> ResolveOperations(ServiceIndex index)
     {
+        // TODO: Update when more protocols are added, since this is hard-coding one trait.
+        var h2Support = ResolveH2Support(index.Service.GetRestJson1());
         var resolved = new List<Operation>(index.Operations.Count);
 
         foreach (var (operationId, operation) in index.Operations)
@@ -442,7 +476,15 @@ public class GenerationContext
                 errors.Add(new OperationError(ResolveStructure(index, errorId, "error", operationId), errorId));
             }
 
-            resolved.Add(new Operation(operationId.Name, operation, input, output, errors));
+            var requiresHttp2 = h2Support switch
+            {
+                H2SupportDegree.Required => true,
+                H2SupportDegree.EventStream => EventStreams.In(output, index).Any(),
+                H2SupportDegree.Optional => EventStreams.In(input, index).Any() && EventStreams.In(output, index).Any(),
+                _ => false,
+            };
+
+            resolved.Add(new Operation(operationId.Name, operation, input, output, errors, requiresHttp2));
         }
 
         return resolved;

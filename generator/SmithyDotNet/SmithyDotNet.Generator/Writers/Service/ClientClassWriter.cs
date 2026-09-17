@@ -266,11 +266,19 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         var responseType = $"{operation.Name}Response";
         var requestType = $"{operation.Name}Request";
 
+        // HTTP/2 operations exist only on net8+ (h2 is unavailable on .NET Framework and pre-net8
+        // netstandard); C2J omits them there entirely, so guard the whole operation.
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#if NET8_0_OR_GREATER");
+        }
+
         // Synchronous method. The SDK ships it at different visibility per TFM: the _bcl client
         // exposes it as `public virtual` (with full docs), while the _netstandard client keeps it
         // `internal virtual` (no docs) to reduce the modern-TFM public surface. In this single-file
         // output that is a #if NETFRAMEWORK (public + docs) / #else (internal, no docs) pair. Both
-        // arms share the same InvokeOptions body; the async overload below is unconditional.
+        // arms share the same InvokeOptions body; the async overload below is emitted on every target
+        // (unless the whole operation is h2-guarded above).
         var obsolete = TypeMapper.BuildObsolete(operation.Shape);
 
         writer.WriteLine("#if NETFRAMEWORK");
@@ -297,7 +305,8 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine("#endif");
         writer.WriteLine();
 
-        // Asynchronous method. Unconditional across all target frameworks.
+        // Asynchronous method. Emitted on every target framework (the h2 guard above, when present,
+        // still excludes it below net8).
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
         if (obsolete is not null)
         {
@@ -308,6 +317,11 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
             WriteInvokeOptions(writer, operation);
             writer.WriteLine($"return InvokeAsync<{responseType}>(request, options, cancellationToken);");
         });
+
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#endif");
+        }
         writer.WriteLine();
     }
 
