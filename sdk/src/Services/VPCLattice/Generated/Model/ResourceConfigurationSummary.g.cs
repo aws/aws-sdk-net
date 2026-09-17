@@ -223,6 +223,11 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         ///  <c>ARN</c> - An Amazon Web Services resource.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CIDR</c> - A network segment (a range of IP addresses) accessed through a <c>Tunnel</c>
+        /// VPC endpoint.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationType Type { get; set; }

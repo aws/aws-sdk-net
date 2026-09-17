@@ -81,6 +81,13 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("payerResponsibility", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PayerResponsibilityEntry, PayerResponsibilityEntryUnmarshaller>(PayerResponsibilityEntryUnmarshaller.Instance);
+                    unmarshalledObject.PayerResponsibility = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("resourceConfigurationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

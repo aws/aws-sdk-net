@@ -298,6 +298,13 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         ///  <b>ARN</b> - An Amazon Web Services resource.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block).
+        /// A consumer accesses the resources within the CIDR range through a <c>Tunnel</c> VPC
+        /// endpoint. A CIDR resource configuration must be associated with a resource gateway
+        /// whose DNS resolution is set to <c>IN_VPC</c>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationType Type { get; set; }

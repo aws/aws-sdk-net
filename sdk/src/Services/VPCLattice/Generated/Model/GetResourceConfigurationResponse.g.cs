@@ -279,7 +279,7 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         /// The ID of the resource gateway used to connect to the resource configuration in a
         /// given VPC. You can specify the resource gateway identifier only for resource configurations
-        /// with type SINGLE, GROUP, or ARN.
+        /// with type SINGLE, GROUP, ARN, or CIDR.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 21, Max = 21)]
@@ -323,6 +323,11 @@ namespace Amazon.VPCLattice.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>ARN</c> - An Amazon Web Services resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CIDR</c> - A network segment (a range of IP addresses) accessed through a <c>Tunnel</c>
+        /// VPC endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>

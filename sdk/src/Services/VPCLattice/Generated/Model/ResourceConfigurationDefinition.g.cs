@@ -48,6 +48,21 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetArnResource() => this.ArnResource != null;
 
         /// <summary>
+        /// Gets and sets the property CidrResource. 
+        /// <para>
+        /// The network segment for a resource configuration of type CIDR, specified as one or
+        /// more CIDR ranges (<c>cidrRanges</c>). Resources whose IP addresses fall within these
+        /// ranges are reachable through a <c>Tunnel</c> VPC endpoint.
+        /// </para>
+        /// </summary>
+        public CidrResource CidrResource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CidrResource property is set.
+        /// </summary>
+        internal bool IsSetCidrResource() => this.CidrResource != null;
+
+        /// <summary>
         /// Gets and sets the property DnsResource. 
         /// <para>
         /// The DNS name of the resource.

@@ -132,9 +132,10 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property PortRanges. 
         /// <para>
-        /// (SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource
+        /// (SINGLE, GROUP, CHILD, CIDR) The port ranges that a consumer can use to access a resource
         /// configuration (for example: 1-65535). You can separate port ranges using commas (for
-        /// example: 1,2,22-30).
+        /// example: 1,2,22-30). To resolve DNS through a CIDR resource configuration, include
+        /// port 53 in the port ranges.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -153,7 +154,9 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// (SINGLE, GROUP) The protocol accepted by the resource configuration.
+        /// (SINGLE, GROUP, CIDR) The protocol accepted by the resource configuration. The default
+        /// is <c>TCP</c>. <c>TCP_UDP</c> is supported only for CIDR resource configurations;
+        /// specify it for a CIDR resource configuration to allow DNS resolution, which uses UDP.
         /// </para>
         /// </summary>
         public ProtocolType Protocol { get; set; }
@@ -182,6 +185,16 @@ namespace Amazon.VPCLattice.Model
         /// <para>
         ///  <b>IP address</b> - For IPv4 and IPv6, only IP addresses in the VPC are supported.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CIDR range</b> - For a resource configuration of type CIDR, specify a <c>cidrResource</c>
+        /// with one or more <c>cidrRanges</c> (for example, <c>10.0.0.0/16</c>) that cover the
+        /// IP addresses of the resources you want to make accessible. You can specify up to 10
+        /// ranges, using IPv4, IPv6, or both, and each range must include a prefix length. To
+        /// represent your entire network, specify <c>0.0.0.0/0</c> (IPv4) or <c>::/0</c> (IPv6)
+        /// as the only range. You can't use reserved ranges such as <c>169.254.0.0/16</c>, <c>100.64.0.0/10</c>,
+        /// <c>224.0.0.0/4</c>, <c>fe80::/10</c>, or <c>ff00::/8</c>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ResourceConfigurationDefinition ResourceConfigurationDefinition { get; set; }
@@ -209,9 +222,11 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ResourceGatewayIdentifier. 
         /// <para>
-        /// (SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the
-        /// resource configuration. For a child resource configuration, this value is inherited
-        /// from the parent resource configuration.
+        /// (SINGLE, GROUP, ARN, CIDR) The ID or ARN of the resource gateway used to connect to
+        /// the resource configuration. For a child resource configuration, this value is inherited
+        /// from the parent resource configuration. For a CIDR resource configuration, the associated
+        /// resource gateway must have its DNS resolution set to <c>IN_VPC</c> so that DNS queries
+        /// resolve in the context of your VPC.
         /// </para>
         /// </summary>
         [AWSProperty(Min = 17, Max = 2048)]
@@ -264,6 +279,15 @@ namespace Amazon.VPCLattice.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>ARN</b> - An Amazon Web Services resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CIDR</b> - A network segment, expressed as a range of IP addresses (a CIDR block).
+        /// Use this type to share a portion of your network rather than an individual resource.
+        /// A consumer accesses the resources within the CIDR range through a <c>Tunnel</c> VPC
+        /// endpoint. You can't add a CIDR resource configuration to a service network. A CIDR
+        /// resource configuration must be associated with a resource gateway whose DNS resolution
+        /// is set to <c>IN_VPC</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

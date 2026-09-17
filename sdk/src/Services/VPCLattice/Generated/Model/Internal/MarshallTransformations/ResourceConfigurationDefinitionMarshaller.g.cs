@@ -56,6 +56,17 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetCidrResource())
+            {
+                context.Writer.WritePropertyName("cidrResource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CidrResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.CidrResource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetDnsResource())
             {
                 context.Writer.WritePropertyName("dnsResource");

@@ -184,7 +184,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsEntry. 
         /// <para>
-        /// The private DNS entry for the service.
+        /// The private DNS entry for the service. This entry includes only the domain name.
         /// </para>
         /// </summary>
         public DnsEntry PrivateDnsEntry { get; set; }

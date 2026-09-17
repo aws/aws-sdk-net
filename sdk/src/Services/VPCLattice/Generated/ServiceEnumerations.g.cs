@@ -273,6 +273,83 @@ namespace Amazon.VPCLattice
     }
 
     /// <summary>
+    /// Constants used for properties of type PayerResponsibilityPayer.
+    /// </summary>
+    public class PayerResponsibilityPayer : ConstantClass
+    {
+        /// <summary>
+        /// Constant ResourceGatewayAccount for PayerResponsibilityPayer
+        /// </summary>
+        public static readonly PayerResponsibilityPayer ResourceGatewayAccount = new PayerResponsibilityPayer("ResourceGatewayAccount");
+
+        /// <summary>
+        /// Constant VpcEndpointAccount for PayerResponsibilityPayer
+        /// </summary>
+        public static readonly PayerResponsibilityPayer VpcEndpointAccount = new PayerResponsibilityPayer("VpcEndpointAccount");
+
+        /// <summary>
+        /// Constructs a custom PayerResponsibilityPayer for a value not among the defined constants.
+        /// </summary>
+        public PayerResponsibilityPayer(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayerResponsibilityPayer FindValue(string value)
+        {
+            return FindValue<PayerResponsibilityPayer>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayerResponsibilityPayer(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PayerResponsibilityScope.
+    /// </summary>
+    public class PayerResponsibilityScope : ConstantClass
+    {
+        /// <summary>
+        /// Constant ResourceGatewayCharges for PayerResponsibilityScope
+        /// </summary>
+        public static readonly PayerResponsibilityScope ResourceGatewayCharges = new PayerResponsibilityScope("ResourceGatewayCharges");
+
+        /// <summary>
+        /// Constructs a custom PayerResponsibilityScope for a value not among the defined constants.
+        /// </summary>
+        public PayerResponsibilityScope(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PayerResponsibilityScope FindValue(string value)
+        {
+            return FindValue<PayerResponsibilityScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PayerResponsibilityScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PrivateDnsPreference.
     /// </summary>
     public class PrivateDnsPreference : ConstantClass
@@ -332,6 +409,11 @@ namespace Amazon.VPCLattice
         /// Constant TCP for ProtocolType
         /// </summary>
         public static readonly ProtocolType TCP = new ProtocolType("TCP");
+
+        /// <summary>
+        /// Constant TCP_UDP for ProtocolType
+        /// </summary>
+        public static readonly ProtocolType TCP_UDP = new ProtocolType("TCP_UDP");
 
         /// <summary>
         /// Constructs a custom ProtocolType for a value not among the defined constants.
@@ -526,6 +608,11 @@ namespace Amazon.VPCLattice
         /// Constant CHILD for ResourceConfigurationType
         /// </summary>
         public static readonly ResourceConfigurationType CHILD = new ResourceConfigurationType("CHILD");
+
+        /// <summary>
+        /// Constant CIDR for ResourceConfigurationType
+        /// </summary>
+        public static readonly ResourceConfigurationType CIDR = new ResourceConfigurationType("CIDR");
 
         /// <summary>
         /// Constant GROUP for ResourceConfigurationType

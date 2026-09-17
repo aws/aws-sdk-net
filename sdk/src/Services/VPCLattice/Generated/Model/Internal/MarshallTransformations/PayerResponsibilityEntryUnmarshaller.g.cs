@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ResourceConfigurationDefinition Object
+    /// Response Unmarshaller for PayerResponsibilityEntry Object
     /// </summary>
-    public partial class ResourceConfigurationDefinitionUnmarshaller : IJsonUnmarshaller<ResourceConfigurationDefinition, JsonUnmarshallerContext>
+    public partial class PayerResponsibilityEntryUnmarshaller : IJsonUnmarshaller<PayerResponsibilityEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ResourceConfigurationDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PayerResponsibilityEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new ResourceConfigurationDefinition();
+            var unmarshalledObject = new PayerResponsibilityEntry();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,42 +53,28 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arnResource", targetDepth, ref reader))
+                if (context.TestExpression("payerResponsibilityType", targetDepth, ref reader))
                 {
-                    var unmarshaller = ArnResourceUnmarshaller.Instance;
-                    unmarshalledObject.ArnResource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PayerResponsibilityType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("cidrResource", targetDepth, ref reader))
+                if (context.TestExpression("scope", targetDepth, ref reader))
                 {
-                    var unmarshaller = CidrResourceUnmarshaller.Instance;
-                    unmarshalledObject.CidrResource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("dnsResource", targetDepth, ref reader))
-                {
-                    var unmarshaller = DnsResourceUnmarshaller.Instance;
-                    unmarshalledObject.DnsResource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("ipResource", targetDepth, ref reader))
-                {
-                    var unmarshaller = IpResourceUnmarshaller.Instance;
-                    unmarshalledObject.IpResource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static ResourceConfigurationDefinitionUnmarshaller _instance = new ResourceConfigurationDefinitionUnmarshaller();
+        private static PayerResponsibilityEntryUnmarshaller _instance = new PayerResponsibilityEntryUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static ResourceConfigurationDefinitionUnmarshaller Instance => _instance;
+        public static PayerResponsibilityEntryUnmarshaller Instance => _instance;
     }
 }
