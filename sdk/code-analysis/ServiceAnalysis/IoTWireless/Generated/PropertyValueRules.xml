@@ -1437,6 +1437,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.GnssCapture.Payload</property>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.GsmLocalId.Bcch</property>
     <min>0</min>
     <max>1023</max>

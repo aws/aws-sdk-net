@@ -39,13 +39,16 @@ namespace Amazon.IoTWireless.Model
         private AdvancedConfiguration _advancedConfiguration;
         private CellTowers _cellTowers;
         private Gnss _gnss;
+        private GnssMultiFrame _gnssMultiFrame;
         private Ip _ip;
         private DateTime? _timestamp;
         private List<WiFiAccessPoint> _wiFiAccessPoints = AWSConfigs.InitializeCollections ? new List<WiFiAccessPoint>() : null;
 
         /// <summary>
-        /// Gets and sets the property AdvancedConfiguration. Optional configuration to customize
-        /// position estimates. If not provided, defaults are applied.
+        /// Gets and sets the property AdvancedConfiguration. 
+        /// <para>
+        /// Optional configuration for customizing position measurement data.
+        /// </para>
         /// </summary>
         public AdvancedConfiguration AdvancedConfiguration
         {
@@ -83,7 +86,7 @@ namespace Amazon.IoTWireless.Model
         /// <para>
         /// Retrieves an estimated device position by resolving the global navigation satellite
         /// system (GNSS) scan data. The position is resolved using the GNSS solver powered by
-        /// LoRa Cloud.
+        /// LoRa Cloud. This field is mutually exclusive with the GnssMultiFrame field.
         /// </para>
         /// </summary>
         public Gnss Gnss
@@ -96,6 +99,26 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetGnss()
         {
             return this._gnss != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GnssMultiFrame. 
+        /// <para>
+        /// Retrieves an estimated device position by resolving multiple global navigation satellite
+        /// system (GNSS) scan captures. The position is resolved using the multi-frame GNSS solver
+        /// powered by LoRa Cloud. This field is mutually exclusive with the Gnss field.
+        /// </para>
+        /// </summary>
+        public GnssMultiFrame GnssMultiFrame
+        {
+            get { return this._gnssMultiFrame; }
+            set { this._gnssMultiFrame = value; }
+        }
+
+        // Check to see if GnssMultiFrame property is set
+        internal bool IsSetGnssMultiFrame()
+        {
+            return this._gnssMultiFrame != null;
         }
 
         /// <summary>

@@ -106,6 +106,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetGnssMultiFrame())
+            {
+                context.Writer.WritePropertyName("GnssMultiFrame");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GnssMultiFrameMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GnssMultiFrame, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIp())
             {
                 context.Writer.WritePropertyName("Ip");

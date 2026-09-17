@@ -30,16 +30,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Configuration for WiFi and cellular location payloads.
+    /// Configuration for WiFi and cellular location payloads. Contains the confidence level
+    /// that determines the size of the uncertainty radius in the position estimate.
     /// </summary>
     public partial class WiFiCellular
     {
         private int? _confidencePercent;
 
         /// <summary>
-        /// Gets and sets the property ConfidencePercent. Confidence level for WiFi and cellular
-        /// position estimates, expressed as a percentage. Valid range: 50–99 inclusive. Defaults
-        /// to 68 if not specified.
+        /// Gets and sets the property ConfidencePercent. 
+        /// <para>
+        /// The confidence level for WiFi and cellular position estimates, expressed as a percentage.
+        /// This value determines the size of the confidence area or uncertainty radius for the
+        /// estimated position. A higher confidence level produces a larger uncertainty radius,
+        /// while a lower confidence level produces a smaller, more precise radius.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid range: 50 to 99 inclusive. If not specified, the default value of 68 is used,
+        /// which corresponds to approximately one standard deviation of the normal distribution.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=99)]
         public int? ConfidencePercent

@@ -30,15 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// Optional configuration to customize location estimates.
+    /// Optional configuration for customizing position estimates, including parameters that
+    /// affect the accuracy and uncertainty of WiFi and cellular-based location estimates.
     /// </summary>
     public partial class AdvancedConfiguration
     {
         private WiFiCellular _wiFiCellular;
 
         /// <summary>
-        /// Gets and sets the property WiFiCellular. Configuration for WiFi and cellular-based
-        /// payloads for location estimates.
+        /// Gets and sets the property WiFiCellular. 
+        /// <para>
+        /// Configuration for WiFi and cellular-based location estimate payloads resolved by HERE's
+        /// solvers.
+        /// </para>
         /// </summary>
         public WiFiCellular WiFiCellular
         {
