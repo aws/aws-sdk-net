@@ -98,7 +98,7 @@ namespace Amazon.Connect.Model
         /// The alias for the replicated instance. The <c>ReplicaAlias</c> must be unique.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=45)]
+        [AWSProperty(Sensitive=true, Min=1, Max=45)]
         public string ReplicaAlias
         {
             get { return this._replicaAlias; }
