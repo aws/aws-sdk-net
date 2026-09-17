@@ -37,6 +37,7 @@ namespace Amazon.Notifications.Model
         private string _completeDescription;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _headline;
+        private string _markupDescription;
         private string _paragraphSummary;
 
         /// <summary>
@@ -104,6 +105,26 @@ namespace Amazon.Notifications.Model
         internal bool IsSetHeadline()
         {
             return this._headline != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarkupDescription. 
+        /// <para>
+        /// A rich description in Portable Text format, which you can convert to markup formats
+        /// such as HTML, Markdown, or plain text. Channels that don't support rich rendering
+        /// ignore this field and use the plain text components instead.
+        /// </para>
+        /// </summary>
+        public string MarkupDescription
+        {
+            get { return this._markupDescription; }
+            set { this._markupDescription = value; }
+        }
+
+        // Check to see if MarkupDescription property is set
+        internal bool IsSetMarkupDescription()
+        {
+            return this._markupDescription != null;
         }
 
         /// <summary>

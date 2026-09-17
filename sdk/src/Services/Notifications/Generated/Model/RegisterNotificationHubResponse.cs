@@ -98,8 +98,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property StatusSummary. 
         /// <para>
-        /// Provides additional information about the current <c>NotificationConfiguration</c>
-        /// status information.
+        /// Provides additional information about the current <c>NotificationHub</c> status information.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

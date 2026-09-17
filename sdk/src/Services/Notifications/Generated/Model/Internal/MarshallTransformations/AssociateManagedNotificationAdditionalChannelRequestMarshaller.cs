@@ -76,6 +76,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIsSensitiveEventsSubscribed())
+            {
+                context.Writer.WritePropertyName("isSensitiveEventsSubscribed");
+                context.Writer.WriteBooleanValue(publicRequest.IsSensitiveEventsSubscribed.Value);
+            }
+
             if(publicRequest.IsSetManagedNotificationConfigurationArn())
             {
                 context.Writer.WritePropertyName("managedNotificationConfigurationArn");

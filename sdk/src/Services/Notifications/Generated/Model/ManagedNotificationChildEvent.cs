@@ -30,9 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// A ManagedNotificationChildEvent is a notification-focused representation of an event.
-    /// They contain semantic information used to create aggregated or non-aggregated end-user
-    /// notifications.
+    /// A notification-focused representation of an event. They contain semantic information
+    /// used to create aggregated or non-aggregated end-user notifications.
     /// </summary>
     public partial class ManagedNotificationChildEvent
     {

@@ -36,6 +36,7 @@ namespace Amazon.Notifications.Model
     {
         private string _channelIdentifier;
         private ChannelType _channelType;
+        private bool? _isSensitiveEventsSubscribed;
         private ChannelAssociationOverrideOption _overrideOption;
 
         /// <summary>
@@ -113,6 +114,25 @@ namespace Amazon.Notifications.Model
         internal bool IsSetChannelType()
         {
             return this._channelType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSensitiveEventsSubscribed. 
+        /// <para>
+        /// Specifies whether this channel association is subscribed to sensitive events. Defaults
+        /// to false for associations created without the flag.
+        /// </para>
+        /// </summary>
+        public bool? IsSensitiveEventsSubscribed
+        {
+            get { return this._isSensitiveEventsSubscribed; }
+            set { this._isSensitiveEventsSubscribed = value; }
+        }
+
+        // Check to see if IsSensitiveEventsSubscribed property is set
+        internal bool IsSetIsSensitiveEventsSubscribed()
+        {
+            return this._isSensitiveEventsSubscribed.HasValue; 
         }
 
         /// <summary>

@@ -66,6 +66,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetEndTime())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
+            if (publicRequest.IsSetIncludeSensitiveEvents())
+                request.Parameters.Add("includeSensitiveEvents", StringUtils.FromBool(publicRequest.IncludeSensitiveEvents));
+            
             if (publicRequest.IsSetLocale())
                 request.Parameters.Add("locale", StringUtils.FromString(publicRequest.Locale));
             

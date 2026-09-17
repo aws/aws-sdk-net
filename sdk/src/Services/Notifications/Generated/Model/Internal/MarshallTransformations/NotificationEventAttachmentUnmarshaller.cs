@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedNotificationChannelAssociationSummary Object
+    /// Response Unmarshaller for NotificationEventAttachment Object
     /// </summary>  
-    public class ManagedNotificationChannelAssociationSummaryUnmarshaller : IJsonUnmarshaller<ManagedNotificationChannelAssociationSummary, JsonUnmarshallerContext>
+    public class NotificationEventAttachmentUnmarshaller : IJsonUnmarshaller<NotificationEventAttachment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedNotificationChannelAssociationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public NotificationEventAttachment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ManagedNotificationChannelAssociationSummary unmarshalledObject = new ManagedNotificationChannelAssociationSummary();
+            NotificationEventAttachment unmarshalledObject = new NotificationEventAttachment();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("channelIdentifier", targetDepth, ref reader))
+                if (context.TestExpression("attachmentDownloadUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AttachmentDownloadUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("channelType", targetDepth, ref reader))
+                if (context.TestExpression("contentType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ContentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("isSensitiveEventsSubscribed", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsSensitiveEventsSubscribed = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("overrideOption", targetDepth, ref reader))
+                if (context.TestExpression("displayName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverrideOption = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedNotificationChannelAssociationSummaryUnmarshaller _instance = new ManagedNotificationChannelAssociationSummaryUnmarshaller();        
+        private static NotificationEventAttachmentUnmarshaller _instance = new NotificationEventAttachmentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedNotificationChannelAssociationSummaryUnmarshaller Instance
+        public static NotificationEventAttachmentUnmarshaller Instance
         {
             get
             {

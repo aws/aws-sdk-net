@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AssociateManagedNotificationAccountContact Request Marshaller
+    /// UpdateManagedNotificationChannelAssociation Request Marshaller
     /// </summary>       
-    public class AssociateManagedNotificationAccountContactRequestMarshaller : IMarshaller<IRequest, AssociateManagedNotificationAccountContactRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateManagedNotificationChannelAssociationRequestMarshaller : IMarshaller<IRequest, UpdateManagedNotificationChannelAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((AssociateManagedNotificationAccountContactRequest)input);
+            return this.Marshall((UpdateManagedNotificationChannelAssociationRequest)input);
         }
 
         /// <summary>
@@ -56,17 +56,14 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(AssociateManagedNotificationAccountContactRequest publicRequest)
+        public IRequest Marshall(UpdateManagedNotificationChannelAssociationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Notifications");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "PUT";
 
-            if (!publicRequest.IsSetContactIdentifier())
-                throw new AmazonNotificationsException("Request object does not have required field ContactIdentifier set");
-            request.AddPathResource("{contactIdentifier}", StringUtils.FromString(publicRequest.ContactIdentifier));
-            request.ResourcePath = "/contacts/associate-managed-notification/{contactIdentifier}";
+            request.ResourcePath = "/channels/update-managed-notification-channel-association";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -76,6 +73,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChannelIdentifier())
+            {
+                context.Writer.WritePropertyName("channelIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ChannelIdentifier);
+            }
+
             if(publicRequest.IsSetIsSensitiveEventsSubscribed())
             {
                 context.Writer.WritePropertyName("isSensitiveEventsSubscribed");
@@ -98,9 +101,9 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static AssociateManagedNotificationAccountContactRequestMarshaller _instance = new AssociateManagedNotificationAccountContactRequestMarshaller();        
+        private static UpdateManagedNotificationChannelAssociationRequestMarshaller _instance = new UpdateManagedNotificationChannelAssociationRequestMarshaller();        
 
-        internal static AssociateManagedNotificationAccountContactRequestMarshaller GetInstance()
+        internal static UpdateManagedNotificationChannelAssociationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -108,7 +111,7 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateManagedNotificationAccountContactRequestMarshaller Instance
+        public static UpdateManagedNotificationChannelAssociationRequestMarshaller Instance
         {
             get
             {

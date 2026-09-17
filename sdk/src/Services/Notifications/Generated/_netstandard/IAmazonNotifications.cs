@@ -388,14 +388,13 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Deregisters a <c>NotificationConfiguration</c> in the specified Region.
+        /// Deregisters a <c>NotificationHub</c> in the specified Region.
         /// 
         ///  <note> 
         /// <para>
         /// You can't deregister the last <c>NotificationHub</c> in the account. <c>NotificationEvents</c>
-        /// stored in the deregistered <c>NotificationConfiguration</c> are no longer be visible.
-        /// Recreating a new <c>NotificationConfiguration</c> in the same Region restores access
-        /// to those <c>NotificationEvents</c>.
+        /// stored in the deregistered <c>NotificationHub</c> are no longer visible. Recreating
+        /// a new <c>NotificationHub</c> in the same Region restores access to those <c>NotificationEvents</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1305,12 +1304,12 @@ namespace Amazon.Notifications
 
 
         /// <summary>
-        /// Registers a <c>NotificationConfiguration</c> in the specified Region.
+        /// Registers a <c>NotificationHub</c> in the specified Region.
         /// 
         ///  
         /// <para>
-        /// There is a maximum of one <c>NotificationConfiguration</c> per Region. You can have
-        /// a maximum of 3 <c>NotificationHub</c> resources at a time.
+        /// There is a maximum of one <c>NotificationHub</c> per Region. You can have a maximum
+        /// of 3 <c>NotificationHub</c> resources at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterNotificationHub service method.</param>
@@ -1460,6 +1459,43 @@ namespace Amazon.Notifications
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateEventRule">REST API Reference for UpdateEventRule Operation</seealso>
         Task<UpdateEventRuleResponse> UpdateEventRuleAsync(UpdateEventRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateManagedNotificationChannelAssociation
+
+
+
+        /// <summary>
+        /// Updates the <c>isSensitiveEventsSubscribed</c> property of a particular ManagedNotification
+        /// channel association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateManagedNotificationChannelAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateManagedNotificationChannelAssociation service method, as returned by Notifications.</returns>
+        /// <exception cref="Amazon.Notifications.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Notifications.Model.ValidationException">
+        /// This exception is thrown when the notification event fails validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/notifications-2018-05-10/UpdateManagedNotificationChannelAssociation">REST API Reference for UpdateManagedNotificationChannelAssociation Operation</seealso>
+        Task<UpdateManagedNotificationChannelAssociationResponse> UpdateManagedNotificationChannelAssociationAsync(UpdateManagedNotificationChannelAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

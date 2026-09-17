@@ -30,50 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Notifications.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateManagedNotificationAdditionalChannel operation.
-    /// Associates an additional Channel with a particular <c>ManagedNotificationConfiguration</c>.
-    /// 
-    ///  
-    /// <para>
-    /// Supported Channels include Amazon Q Developer in chat applications, the Console Mobile
-    /// Application, and emails (notifications-contacts).
-    /// </para>
+    /// Container for the parameters to the UpdateManagedNotificationChannelAssociation operation.
+    /// Updates the <c>isSensitiveEventsSubscribed</c> property of a particular ManagedNotification
+    /// channel association.
     /// </summary>
-    public partial class AssociateManagedNotificationAdditionalChannelRequest : AmazonNotificationsRequest
+    public partial class UpdateManagedNotificationChannelAssociationRequest : AmazonNotificationsRequest
     {
-        private string _channelArn;
+        private string _channelIdentifier;
         private bool? _isSensitiveEventsSubscribed;
         private string _managedNotificationConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property ChannelArn. 
+        /// Gets and sets the property ChannelIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Channel to associate with the <c>ManagedNotificationConfiguration</c>.
+        /// The identifier of the channel association to update. You can specify one of the following:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Supported ARNs include Amazon Q Developer in chat applications, the Console Mobile
-        /// Application, and email (notifications-contacts).
+        /// An Account contact identifier.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A Channel ARN.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string ChannelArn
+        public string ChannelIdentifier
         {
-            get { return this._channelArn; }
-            set { this._channelArn = value; }
+            get { return this._channelIdentifier; }
+            set { this._channelIdentifier = value; }
         }
 
-        // Check to see if ChannelArn property is set
-        internal bool IsSetChannelArn()
+        // Check to see if ChannelIdentifier property is set
+        internal bool IsSetChannelIdentifier()
         {
-            return this._channelArn != null;
+            return this._channelIdentifier != null;
         }
 
         /// <summary>
         /// Gets and sets the property IsSensitiveEventsSubscribed. 
         /// <para>
-        /// Specifies whether this channel is subscribed to sensitive events. The <c>notifications:SubscribeSensitiveEvents</c>
-        /// permission controls access to sensitive events. Defaults to false.
+        /// Specifies whether the association is subscribed to sensitive events. The <c>notifications:SubscribeSensitiveEvents</c>
+        /// permission controls access to sensitive events.
         /// </para>
         /// </summary>
         public bool? IsSensitiveEventsSubscribed
@@ -91,8 +90,8 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property ManagedNotificationConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <c>ManagedNotificationConfiguration</c> to associate
-        /// with the additional Channel.
+        /// The Amazon Resource Name (ARN) of the <c>ManagedNotificationConfiguration</c> whose
+        /// Channel association property you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
