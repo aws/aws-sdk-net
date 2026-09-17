@@ -39,9 +39,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Valid. 
         /// <para>
-        /// The operation returns <c>true</c> if the specified security groups can be associated
-        /// with a single network interface without exceeding the quotas. It returns an error
-        /// if associating the security groups would exceed a quota.
+        /// Specifies whether the specified security groups can be associated with a single network
+        /// interface without exceeding the quotas. If associating the security groups would exceed
+        /// a quota, the operation returns an error.
         /// </para>
         /// </summary>
         public bool? Valid

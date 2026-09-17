@@ -23307,6 +23307,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant ResourceGatewayCharges for PayerResponsibilityScope
+        /// </summary>
+        public static readonly PayerResponsibilityScope ResourceGatewayCharges = new PayerResponsibilityScope("resource-gateway-charges");
+        /// <summary>
         /// Constant VpcEndpointCharges for PayerResponsibilityScope
         /// </summary>
         public static readonly PayerResponsibilityScope VpcEndpointCharges = new PayerResponsibilityScope("vpc-endpoint-charges");
@@ -23352,6 +23356,10 @@ namespace Amazon.EC2
     public class PayerResponsibilityType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ResourceGatewayAccount for PayerResponsibilityType
+        /// </summary>
+        public static readonly PayerResponsibilityType ResourceGatewayAccount = new PayerResponsibilityType("resource-gateway-account");
         /// <summary>
         /// Constant VpcEndpointAccount for PayerResponsibilityType
         /// </summary>
@@ -32754,6 +32762,10 @@ namespace Amazon.EC2
         /// Constant ServiceNetwork for VpcEndpointType
         /// </summary>
         public static readonly VpcEndpointType ServiceNetwork = new VpcEndpointType("ServiceNetwork");
+        /// <summary>
+        /// Constant Tunnel for VpcEndpointType
+        /// </summary>
+        public static readonly VpcEndpointType Tunnel = new VpcEndpointType("Tunnel");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
