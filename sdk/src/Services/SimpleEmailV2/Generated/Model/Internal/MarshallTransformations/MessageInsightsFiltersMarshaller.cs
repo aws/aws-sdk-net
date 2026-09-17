@@ -112,6 +112,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTenantName())
+            {
+                context.Writer.WritePropertyName("TenantName");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTenantNameListValue in requestObject.TenantName)
+                {
+                        context.Writer.WriteStringValue(requestObjectTenantNameListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

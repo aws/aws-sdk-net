@@ -1912,6 +1912,10 @@ namespace Amazon.SimpleEmailV2
         /// Constant ISP for MetricDimensionName
         /// </summary>
         public static readonly MetricDimensionName ISP = new MetricDimensionName("ISP");
+        /// <summary>
+        /// Constant TENANT_NAME for MetricDimensionName
+        /// </summary>
+        public static readonly MetricDimensionName TENANT_NAME = new MetricDimensionName("TENANT_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

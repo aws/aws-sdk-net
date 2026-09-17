@@ -59,6 +59,7 @@ namespace Amazon.SimpleEmailV2.Model
         private List<string> _lastDeliveryEvent = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _lastEngagementEvent = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _subject = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tenantName = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -209,6 +210,30 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetSubject()
         {
             return this._subject != null && (this._subject.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TenantName. 
+        /// <para>
+        /// The name of the tenant used when sending the message.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=5)]
+        public List<string> TenantName
+        {
+            get { return this._tenantName; }
+            set { this._tenantName = value; }
+        }
+
+        // Check to see if TenantName property is set
+        internal bool IsSetTenantName()
+        {
+            return this._tenantName != null && (this._tenantName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
