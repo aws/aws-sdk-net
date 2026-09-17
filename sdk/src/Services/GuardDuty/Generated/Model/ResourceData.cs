@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
     {
         private AccessKey _accessKey;
         private AutoscalingAutoScalingGroup _autoscalingAutoScalingGroup;
+        private BedrockGuardrailResource _bedrockGuardrail;
         private CloudformationStack _cloudformationStack;
         private ContainerFindingResource _container;
         private Ec2Image _ec2Image;
@@ -88,6 +89,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAutoscalingAutoScalingGroup()
         {
             return this._autoscalingAutoScalingGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockGuardrail. 
+        /// <para>
+        /// Contains detailed information about the Amazon Bedrock guardrail associated with the
+        /// activity that prompted GuardDuty to generate a finding.
+        /// </para>
+        /// </summary>
+        public BedrockGuardrailResource BedrockGuardrail
+        {
+            get { return this._bedrockGuardrail; }
+            set { this._bedrockGuardrail = value; }
+        }
+
+        // Check to see if BedrockGuardrail property is set
+        internal bool IsSetBedrockGuardrail()
+        {
+            return this._bedrockGuardrail != null;
         }
 
         /// <summary>

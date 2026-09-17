@@ -2049,6 +2049,42 @@ namespace Amazon.GuardDuty
         /// </summary>
         public static readonly FindingResourceType AUTOSCALING_AUTO_SCALING_GROUP = new FindingResourceType("AUTOSCALING_AUTO_SCALING_GROUP");
         /// <summary>
+        /// Constant BEDROCK_APPLICATION_INFERENCE_PROFILE for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_APPLICATION_INFERENCE_PROFILE = new FindingResourceType("BEDROCK_APPLICATION_INFERENCE_PROFILE");
+        /// <summary>
+        /// Constant BEDROCK_CUSTOM_MODEL for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_CUSTOM_MODEL = new FindingResourceType("BEDROCK_CUSTOM_MODEL");
+        /// <summary>
+        /// Constant BEDROCK_CUSTOM_MODEL_DEPLOYMENT for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_CUSTOM_MODEL_DEPLOYMENT = new FindingResourceType("BEDROCK_CUSTOM_MODEL_DEPLOYMENT");
+        /// <summary>
+        /// Constant BEDROCK_GUARDRAIL for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_GUARDRAIL = new FindingResourceType("BEDROCK_GUARDRAIL");
+        /// <summary>
+        /// Constant BEDROCK_IMPORTED_MODEL for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_IMPORTED_MODEL = new FindingResourceType("BEDROCK_IMPORTED_MODEL");
+        /// <summary>
+        /// Constant BEDROCK_INFERENCE_PROFILE for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_INFERENCE_PROFILE = new FindingResourceType("BEDROCK_INFERENCE_PROFILE");
+        /// <summary>
+        /// Constant BEDROCK_PROMPT for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_PROMPT = new FindingResourceType("BEDROCK_PROMPT");
+        /// <summary>
+        /// Constant BEDROCK_PROMPT_ROUTER for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_PROMPT_ROUTER = new FindingResourceType("BEDROCK_PROMPT_ROUTER");
+        /// <summary>
+        /// Constant BEDROCK_PROVISIONED_MODEL for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType BEDROCK_PROVISIONED_MODEL = new FindingResourceType("BEDROCK_PROVISIONED_MODEL");
+        /// <summary>
         /// Constant CLOUDFORMATION_STACK for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType CLOUDFORMATION_STACK = new FindingResourceType("CLOUDFORMATION_STACK");
@@ -2104,6 +2140,10 @@ namespace Amazon.GuardDuty
         /// Constant S3_OBJECT for FindingResourceType
         /// </summary>
         public static readonly FindingResourceType S3_OBJECT = new FindingResourceType("S3_OBJECT");
+        /// <summary>
+        /// Constant SAGEMAKER_ENDPOINT for FindingResourceType
+        /// </summary>
+        public static readonly FindingResourceType SAGEMAKER_ENDPOINT = new FindingResourceType("SAGEMAKER_ENDPOINT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
