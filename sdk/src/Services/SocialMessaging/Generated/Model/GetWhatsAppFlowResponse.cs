@@ -111,7 +111,7 @@ namespace Amazon.SocialMessaging.Model
         /// <summary>
         /// Gets and sets the property EndpointUri. 
         /// <para>
-        /// The endpoint URI for data exchange Flows, if configured.
+        /// The HTTPS endpoint that Meta calls for a data exchange Flow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

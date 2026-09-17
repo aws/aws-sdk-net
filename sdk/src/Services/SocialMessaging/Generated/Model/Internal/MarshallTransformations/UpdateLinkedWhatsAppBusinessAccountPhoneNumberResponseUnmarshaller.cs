@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetLinkedWhatsAppBusinessAccountPhoneNumber operation
+    /// Response Unmarshaller for UpdateLinkedWhatsAppBusinessAccountPhoneNumber operation
     /// </summary>  
-    public class GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,28 +46,16 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetLinkedWhatsAppBusinessAccountPhoneNumberResponse response = new GetLinkedWhatsAppBusinessAccountPhoneNumberResponse();
+            UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponse response = new UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("callSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = WhatsAppCallSettingsUnmarshaller.Instance;
-                    response.CallSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("linkedWhatsAppBusinessAccountId", targetDepth, ref reader))
+                if (context.TestExpression("phoneNumberId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LinkedWhatsAppBusinessAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("phoneNumber", targetDepth, ref reader))
-                {
-                    var unmarshaller = WhatsAppPhoneNumberDetailUnmarshaller.Instance;
-                    response.PhoneNumber = unmarshaller.Unmarshall(context, ref reader);
+                    response.PhoneNumberId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -95,6 +83,10 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedByMetaException"))
+                {
+                    return AccessDeniedByMetaExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -127,9 +119,9 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             return new AmazonSocialMessagingException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller _instance = new GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller();        
+        private static UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller _instance = new UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller();        
 
-        internal static GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller GetInstance()
+        internal static UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -137,7 +129,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller Instance
+        public static UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponseUnmarshaller Instance
         {
             get
             {

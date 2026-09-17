@@ -1148,6 +1148,86 @@ namespace Amazon.SocialMessaging
 
         #endregion
         
+        #region  GetWhatsAppCallPermission
+
+
+        /// <summary>
+        /// Retrieves the current calling permission for a WhatsApp end user, along with the calling
+        /// actions the business is allowed to take with that user. Provide the destination phone
+        /// number or the business-scoped user ID to identify the end user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppCallPermission service method.</param>
+        /// 
+        /// <returns>The response from the GetWhatsAppCallPermission service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppCallPermission">REST API Reference for GetWhatsAppCallPermission Operation</seealso>
+        GetWhatsAppCallPermissionResponse GetWhatsAppCallPermission(GetWhatsAppCallPermissionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the current calling permission for a WhatsApp end user, along with the calling
+        /// actions the business is allowed to take with that user. Provide the destination phone
+        /// number or the business-scoped user ID to identify the end user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWhatsAppCallPermission service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWhatsAppCallPermission service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/GetWhatsAppCallPermission">REST API Reference for GetWhatsAppCallPermission Operation</seealso>
+        Task<GetWhatsAppCallPermissionResponse> GetWhatsAppCallPermissionAsync(GetWhatsAppCallPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetWhatsAppFlow
 
 
@@ -2194,6 +2274,96 @@ namespace Amazon.SocialMessaging
 
         #endregion
         
+        #region  SendWhatsAppCallEvent
+
+
+        /// <summary>
+        /// Sends a WhatsApp calling event, such as connecting or terminating a call, for a business
+        /// phone number. This operation passes the event through to Meta. To use this operation,
+        /// the origination phone number must belong to a WhatsApp Business Account that is linked
+        /// to your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendWhatsAppCallEvent service method.</param>
+        /// 
+        /// <returns>The response from the SendWhatsAppCallEvent service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppCallEvent">REST API Reference for SendWhatsAppCallEvent Operation</seealso>
+        SendWhatsAppCallEventResponse SendWhatsAppCallEvent(SendWhatsAppCallEventRequest request);
+
+
+
+        /// <summary>
+        /// Sends a WhatsApp calling event, such as connecting or terminating a call, for a business
+        /// phone number. This operation passes the event through to Meta. To use this operation,
+        /// the origination phone number must belong to a WhatsApp Business Account that is linked
+        /// to your Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendWhatsAppCallEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendWhatsAppCallEvent service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ConflictException">
+        /// Your request has conflicting operations. This can occur if you're trying to perform
+        /// more than one operation on the same resource at the same time.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppCallEvent">REST API Reference for SendWhatsAppCallEvent Operation</seealso>
+        Task<SendWhatsAppCallEventResponse> SendWhatsAppCallEventAsync(SendWhatsAppCallEventRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SendWhatsAppConversionEvent
 
 
@@ -2463,6 +2633,84 @@ namespace Amazon.SocialMessaging
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateLinkedWhatsAppBusinessAccountPhoneNumber
+
+
+        /// <summary>
+        /// Updates the calling settings for a linked WhatsApp business phone number, such as
+        /// whether calling is enabled and the hours during which the business accepts calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkedWhatsAppBusinessAccountPhoneNumber service method.</param>
+        /// 
+        /// <returns>The response from the UpdateLinkedWhatsAppBusinessAccountPhoneNumber service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateLinkedWhatsAppBusinessAccountPhoneNumber">REST API Reference for UpdateLinkedWhatsAppBusinessAccountPhoneNumber Operation</seealso>
+        UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponse UpdateLinkedWhatsAppBusinessAccountPhoneNumber(UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest request);
+
+
+
+        /// <summary>
+        /// Updates the calling settings for a linked WhatsApp business phone number, such as
+        /// whether calling is enabled and the hours during which the business accepts calls.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLinkedWhatsAppBusinessAccountPhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLinkedWhatsAppBusinessAccountPhoneNumber service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/UpdateLinkedWhatsAppBusinessAccountPhoneNumber">REST API Reference for UpdateLinkedWhatsAppBusinessAccountPhoneNumber Operation</seealso>
+        Task<UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponse> UpdateLinkedWhatsAppBusinessAccountPhoneNumberAsync(UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

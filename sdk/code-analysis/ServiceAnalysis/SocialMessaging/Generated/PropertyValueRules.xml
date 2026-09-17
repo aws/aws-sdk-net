@@ -190,6 +190,23 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppCallPermissionRequest.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+[1-9]\d{1,14}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppCallPermissionRequest.EndUserBsuid</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.GetWhatsAppCallPermissionRequest.OriginationPhoneNumberId</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.GetWhatsAppFlowRequest.FlowId</property>
     <min>1</min>
     <max>100</max>
@@ -448,6 +465,17 @@
     <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.SendWhatsAppCallEventRequest.CallEvent</property>
+    <min>1</min>
+    <max>2048000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.SendWhatsAppCallEventRequest.OriginationPhoneNumberId</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.SendWhatsAppConversionEventRequest.DatasetId</property>
     <min>10</min>
     <max>20</max>
@@ -486,6 +514,18 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest.Id</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.UpdateLinkedWhatsAppBusinessAccountPhoneNumberResponse.PhoneNumberId</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^phone-number-id-.*$)|(^arn:.*:phone-number-id/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.UpdateWhatsAppFlowRequest.EndpointUri</property>
@@ -930,6 +970,42 @@
     <pattern>arn:.*:iam::\d{12}:role\/[a-zA-Z0-9+=,.@\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppCallHours.Timezone</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppCallPermission.Status</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppCallPermissionAction.ActionName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppCallPermissionLimit.TimePeriod</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppCallSettings.CallbackPermissionStatus</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppCallSettings.CallIconVisibility</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppHolidayScheduleEntry.Date</property>
+    <min>10</min>
+    <max>10</max>
+    <pattern>[0-9]{4}-[0-9]{2}-[0-9]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.WhatsAppPhoneNumberDetail.Arn</property>
     <min>0</min>
     <max>2048</max>
@@ -1036,5 +1112,15 @@
     <property>Amazon.SocialMessaging.Model.WhatsAppSignupCallbackResult.AssociateInProgressToken</property>
     <min>0</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppTimeOfDay.Hours</property>
+    <min>0</min>
+    <max>23</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.WhatsAppTimeOfDay.Minutes</property>
+    <min>0</min>
+    <max>59</max>
   </property-value-rule>
 </property-value-rules>

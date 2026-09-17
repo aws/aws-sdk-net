@@ -40,7 +40,7 @@ namespace Amazon.SocialMessaging.Model
         /// <summary>
         /// Gets and sets the property BusinessPublicKey. 
         /// <para>
-        /// The stored RSA business public key (PEM), if present.
+        /// The stored PEM-encoded 2048-bit RSA public key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -59,7 +59,8 @@ namespace Amazon.SocialMessaging.Model
         /// <summary>
         /// Gets and sets the property BusinessPublicKeySignatureStatus. 
         /// <para>
-        /// Meta's signing status: &quot;VALID&quot; | &quot;MISMATCH&quot;.
+        /// The signature status of the stored business public key. Valid values are VALID and
+        /// MISMATCH.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

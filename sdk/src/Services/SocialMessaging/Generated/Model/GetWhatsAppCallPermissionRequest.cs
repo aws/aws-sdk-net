@@ -30,59 +30,61 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SocialMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutWhatsAppBusinessPublicKey operation.
-    /// Sets the business public key used to encrypt the data exchanged with the endpoint
-    /// of a data exchange Flow.
+    /// Container for the parameters to the GetWhatsAppCallPermission operation.
+    /// Retrieves the current calling permission for a WhatsApp end user, along with the calling
+    /// actions the business is allowed to take with that user. Provide the destination phone
+    /// number or the business-scoped user ID to identify the end user.
     /// </summary>
-    public partial class PutWhatsAppBusinessPublicKeyRequest : AmazonSocialMessagingRequest
+    public partial class GetWhatsAppCallPermissionRequest : AmazonSocialMessagingRequest
     {
-        private string _businessPublicKey;
-        private string _kmsKeyArn;
+        private string _destinationPhoneNumber;
+        private string _endUserBsuid;
         private string _originationPhoneNumberId;
 
         /// <summary>
-        /// Gets and sets the property BusinessPublicKey. 
+        /// Gets and sets the property DestinationPhoneNumber. 
         /// <para>
-        /// The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <c>kmsKeyArn</c>.
+        /// The end user's phone number, in E.164 format, for which to retrieve the calling permission.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8192)]
-        public string BusinessPublicKey
+        [AWSProperty(Sensitive=true, Min=1, Max=20)]
+        public string DestinationPhoneNumber
         {
-            get { return this._businessPublicKey; }
-            set { this._businessPublicKey = value; }
+            get { return this._destinationPhoneNumber; }
+            set { this._destinationPhoneNumber = value; }
         }
 
-        // Check to see if BusinessPublicKey property is set
-        internal bool IsSetBusinessPublicKey()
+        // Check to see if DestinationPhoneNumber property is set
+        internal bool IsSetDestinationPhoneNumber()
         {
-            return this._businessPublicKey != null;
+            return this._destinationPhoneNumber != null;
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property EndUserBsuid. 
         /// <para>
-        /// The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually
-        /// exclusive with <c>businessPublicKey</c>.
+        /// The business-scoped user identifier (BSUID) of the end user for which to retrieve
+        /// the calling permission.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string KmsKeyArn
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
+        public string EndUserBsuid
         {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
+            get { return this._endUserBsuid; }
+            set { this._endUserBsuid = value; }
         }
 
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
+        // Check to see if EndUserBsuid property is set
+        internal bool IsSetEndUserBsuid()
         {
-            return this._kmsKeyArn != null;
+            return this._endUserBsuid != null;
         }
 
         /// <summary>
         /// Gets and sets the property OriginationPhoneNumberId. 
         /// <para>
-        /// The unique identifier of the phone number to associate with the business public key.
+        /// The unique identifier of the business phone number for which to retrieve the calling
+        /// permission. The phone number identifiers are formatted as <c>phone-number-id-01234567890123456789012345678901</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=115)]

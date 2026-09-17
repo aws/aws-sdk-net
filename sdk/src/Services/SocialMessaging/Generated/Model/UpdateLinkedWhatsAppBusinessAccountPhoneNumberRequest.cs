@@ -30,21 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SocialMessaging.Model
 {
     /// <summary>
-    /// This is the response object from the GetLinkedWhatsAppBusinessAccountPhoneNumber operation.
+    /// Container for the parameters to the UpdateLinkedWhatsAppBusinessAccountPhoneNumber operation.
+    /// Updates the calling settings for a linked WhatsApp business phone number, such as
+    /// whether calling is enabled and the hours during which the business accepts calls.
     /// </summary>
-    public partial class GetLinkedWhatsAppBusinessAccountPhoneNumberResponse : AmazonWebServiceResponse
+    public partial class UpdateLinkedWhatsAppBusinessAccountPhoneNumberRequest : AmazonSocialMessagingRequest
     {
         private WhatsAppCallSettings _callSettings;
-        private string _linkedWhatsAppBusinessAccountId;
-        private WhatsAppPhoneNumberDetail _phoneNumber;
+        private string _id;
 
         /// <summary>
         /// Gets and sets the property CallSettings. 
         /// <para>
-        /// The calling settings configured for the phone number. This value is absent when calling
-        /// is not configured.
+        /// The calling settings to apply to the phone number.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public WhatsAppCallSettings CallSettings
         {
             get { return this._callSettings; }
@@ -58,37 +59,23 @@ namespace Amazon.SocialMessaging.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LinkedWhatsAppBusinessAccountId. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// The WABA identifier linked to the phone number, formatted as <c>waba-01234567890123456789012345678901</c>.
+        /// The unique identifier of the phone number to update. The phone number identifiers
+        /// are formatted as <c>phone-number-id-01234567890123456789012345678901</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=115)]
-        public string LinkedWhatsAppBusinessAccountId
+        [AWSProperty(Required=true, Min=1, Max=115)]
+        public string Id
         {
-            get { return this._linkedWhatsAppBusinessAccountId; }
-            set { this._linkedWhatsAppBusinessAccountId = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if LinkedWhatsAppBusinessAccountId property is set
-        internal bool IsSetLinkedWhatsAppBusinessAccountId()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._linkedWhatsAppBusinessAccountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PhoneNumber.
-        /// </summary>
-        public WhatsAppPhoneNumberDetail PhoneNumber
-        {
-            get { return this._phoneNumber; }
-            set { this._phoneNumber = value; }
-        }
-
-        // Check to see if PhoneNumber property is set
-        internal bool IsSetPhoneNumber()
-        {
-            return this._phoneNumber != null;
+            return this._id != null;
         }
 
     }

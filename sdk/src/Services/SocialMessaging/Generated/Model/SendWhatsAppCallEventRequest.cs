@@ -30,59 +30,63 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SocialMessaging.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutWhatsAppBusinessPublicKey operation.
-    /// Sets the business public key used to encrypt the data exchanged with the endpoint
-    /// of a data exchange Flow.
+    /// Container for the parameters to the SendWhatsAppCallEvent operation.
+    /// Sends a WhatsApp calling event, such as connecting or terminating a call, for a business
+    /// phone number. This operation passes the event through to Meta. To use this operation,
+    /// the origination phone number must belong to a WhatsApp Business Account that is linked
+    /// to your Amazon Web Services account.
     /// </summary>
-    public partial class PutWhatsAppBusinessPublicKeyRequest : AmazonSocialMessagingRequest
+    public partial class SendWhatsAppCallEventRequest : AmazonSocialMessagingRequest
     {
-        private string _businessPublicKey;
-        private string _kmsKeyArn;
+        private MemoryStream _callEvent;
+        private string _metaApiVersion;
         private string _originationPhoneNumberId;
 
         /// <summary>
-        /// Gets and sets the property BusinessPublicKey. 
+        /// Gets and sets the property CallEvent. 
         /// <para>
-        /// The PEM-encoded 2048-bit RSA public key to set. Mutually exclusive with <c>kmsKeyArn</c>.
+        /// The call event payload to send, as a JSON blob in the format defined by the Meta calling
+        /// API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8192)]
-        public string BusinessPublicKey
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2048000)]
+        public MemoryStream CallEvent
         {
-            get { return this._businessPublicKey; }
-            set { this._businessPublicKey = value; }
+            get { return this._callEvent; }
+            set { this._callEvent = value; }
         }
 
-        // Check to see if BusinessPublicKey property is set
-        internal bool IsSetBusinessPublicKey()
+        // Check to see if CallEvent property is set
+        internal bool IsSetCallEvent()
         {
-            return this._businessPublicKey != null;
+            return this._callEvent != null;
         }
 
         /// <summary>
-        /// Gets and sets the property KmsKeyArn. 
+        /// Gets and sets the property MetaApiVersion. 
         /// <para>
-        /// The ARN of a customer managed asymmetric RSA key in Amazon Web Services KMS. Mutually
-        /// exclusive with <c>businessPublicKey</c>.
+        /// The version of the Meta Graph API to use for the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string KmsKeyArn
+        [AWSProperty(Required=true)]
+        public string MetaApiVersion
         {
-            get { return this._kmsKeyArn; }
-            set { this._kmsKeyArn = value; }
+            get { return this._metaApiVersion; }
+            set { this._metaApiVersion = value; }
         }
 
-        // Check to see if KmsKeyArn property is set
-        internal bool IsSetKmsKeyArn()
+        // Check to see if MetaApiVersion property is set
+        internal bool IsSetMetaApiVersion()
         {
-            return this._kmsKeyArn != null;
+            return this._metaApiVersion != null;
         }
 
         /// <summary>
         /// Gets and sets the property OriginationPhoneNumberId. 
         /// <para>
-        /// The unique identifier of the phone number to associate with the business public key.
+        /// The unique identifier of the origination phone number for the call. The phone number
+        /// identifiers are formatted as <c>phone-number-id-01234567890123456789012345678901</c>.
+        /// Use <c>GetLinkedWhatsAppBusinessAccount</c> to find a phone number's ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=115)]

@@ -93,10 +93,7 @@ namespace Amazon.SocialMessaging.Model
         /// <summary>
         /// Gets and sets the property EndpointUri. 
         /// <para>
-        /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri
-        /// and called by Meta directly. When omitted, the Flow has no endpoint (static Flow).
-        /// Meta only calls the endpoint when the Flow JSON also declares data_api_version. To
-        /// verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+        /// The HTTPS endpoint that Meta calls for a data exchange Flow.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

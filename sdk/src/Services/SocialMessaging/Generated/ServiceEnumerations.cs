@@ -151,4 +151,74 @@ namespace Amazon.SocialMessaging
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type WhatsAppDayOfWeek.
+    /// </summary>
+    public class WhatsAppDayOfWeek : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRIDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek FRIDAY = new WhatsAppDayOfWeek("FRIDAY");
+        /// <summary>
+        /// Constant MONDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek MONDAY = new WhatsAppDayOfWeek("MONDAY");
+        /// <summary>
+        /// Constant SATURDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek SATURDAY = new WhatsAppDayOfWeek("SATURDAY");
+        /// <summary>
+        /// Constant SUNDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek SUNDAY = new WhatsAppDayOfWeek("SUNDAY");
+        /// <summary>
+        /// Constant THURSDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek THURSDAY = new WhatsAppDayOfWeek("THURSDAY");
+        /// <summary>
+        /// Constant TUESDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek TUESDAY = new WhatsAppDayOfWeek("TUESDAY");
+        /// <summary>
+        /// Constant WEDNESDAY for WhatsAppDayOfWeek
+        /// </summary>
+        public static readonly WhatsAppDayOfWeek WEDNESDAY = new WhatsAppDayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WhatsAppDayOfWeek(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WhatsAppDayOfWeek FindValue(string value)
+        {
+            return FindValue<WhatsAppDayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WhatsAppDayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }
