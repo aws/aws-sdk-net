@@ -1,3 +1,25 @@
+### 4.0.336.0 (2026-09-17 18:23 UTC)
+* BedrockAgentCore (4.0.111.0)
+	* Batch evaluation now supports evaluating specific traces within a session. Each session can specify up to 100 trace IDs to evaluate.
+* Connect (4.0.118.0)
+	* Made the replicaAlias attribute optional in the ReplicateInstance API to support Global routing for Amazon Connect Global Resiliency (ACGR) instances. This change maintains backward compatibility. When onboarding to ACGR without Global routing, you must specify a custom replicaAlias in your API call
+* EC2 (4.0.122.0)
+	* Adding support for "Tunnel" VPC Endpoint
+* GuardDuty (4.0.106.0)
+	* This change surfaces AI Protection resources on existing public IAM attack sequences. Customers will now see which model was accessed and whether a guardrail intervened as part of the credential-compromise sequence.
+* IoTWireless (4.0.102.0)
+	* Adds Multi-frame GNSS support to the AWS IoT Core Device Location GetPositionEstimate API. The new GnssMultiFrame measurement type improves location accuracy by combining multiple GNSS signal captures (2, 4, 8, 16, or 32) from the same device to estimate its position.
+* Notifications (4.0.101.0)
+	* Added support for attachments on managed notification events. Added support to access and subscribe sensitive managed notification events.
+* SimpleEmailV2 (4.0.105.0)
+	* Added support to query the tenant name for BatchGetMetricData and CreateExportJob APIs to filter metrics and messages at the tenant level.
+* SimpleNotificationService (4.0.100.15)
+	* SNS API reference documentation update
+* SocialMessaging (4.0.103.0)
+	* Add support for WhatsApp Calling APIs.
+* VPCLattice (4.0.102.0)
+	* Adding support for CIDR Resource Configuration
+
 ### 4.0.335.0 (2026-09-16 18:46 UTC)
 * Batch (4.0.103.2)
 	* Fixed broken XML documentation comments where an unescaped placeholder like `<aws_account_id>` was read as an unclosed tag instead of literal text.
