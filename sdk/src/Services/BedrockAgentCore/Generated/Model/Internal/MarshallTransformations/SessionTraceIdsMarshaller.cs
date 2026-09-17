@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CloudWatchFilterConfig Marshaller
+    /// SessionTraceIds Marshaller
     /// </summary>
-    public class CloudWatchFilterConfigMarshaller : IRequestMarshaller<CloudWatchFilterConfig, JsonMarshallerContext> 
+    public class SessionTraceIdsMarshaller : IRequestMarshaller<SessionTraceIds, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,46 +42,25 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CloudWatchFilterConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(SessionTraceIds requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetSessionIds())
+            if(requestObject.IsSetSessionId())
             {
-                context.Writer.WritePropertyName("sessionIds");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectSessionIdsListValue in requestObject.SessionIds)
-                {
-                        context.Writer.WriteStringValue(requestObjectSessionIdsListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("sessionId");
+                context.Writer.WriteStringValue(requestObject.SessionId);
             }
 
-            if(requestObject.IsSetSessionTraceIds())
+            if(requestObject.IsSetTraceIds())
             {
-                context.Writer.WritePropertyName("sessionTraceIds");
+                context.Writer.WritePropertyName("traceIds");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectSessionTraceIdsListValue in requestObject.SessionTraceIds)
+                foreach(var requestObjectTraceIdsListValue in requestObject.TraceIds)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = SessionTraceIdsMarshaller.Instance;
-                    marshaller.Marshall(requestObjectSessionTraceIdsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(requestObjectTraceIdsListValue);
                 }
                 context.Writer.WriteEndArray();
-            }
-
-            if(requestObject.IsSetTimeRange())
-            {
-                context.Writer.WritePropertyName("timeRange");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SessionFilterConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.TimeRange, context);
-
-                context.Writer.WriteEndObject();
             }
 
         }
@@ -89,7 +68,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CloudWatchFilterConfigMarshaller Instance = new CloudWatchFilterConfigMarshaller();
+        public readonly static SessionTraceIdsMarshaller Instance = new SessionTraceIdsMarshaller();
 
     }
 }

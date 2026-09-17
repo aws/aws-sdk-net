@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CloudWatchFilterConfig Object
+    /// Response Unmarshaller for SessionTraceIds Object
     /// </summary>  
-    public class CloudWatchFilterConfigUnmarshaller : IJsonUnmarshaller<CloudWatchFilterConfig, JsonUnmarshallerContext>
+    public class SessionTraceIdsUnmarshaller : IJsonUnmarshaller<SessionTraceIds, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CloudWatchFilterConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SessionTraceIds Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CloudWatchFilterConfig unmarshalledObject = new CloudWatchFilterConfig();
+            SessionTraceIds unmarshalledObject = new SessionTraceIds();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("sessionIds", targetDepth, ref reader))
+                if (context.TestExpression("sessionId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SessionId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("traceIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SessionIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sessionTraceIds", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<SessionTraceIds, SessionTraceIdsUnmarshaller>(SessionTraceIdsUnmarshaller.Instance);
-                    unmarshalledObject.SessionTraceIds = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("timeRange", targetDepth, ref reader))
-                {
-                    var unmarshaller = SessionFilterConfigUnmarshaller.Instance;
-                    unmarshalledObject.TimeRange = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TraceIds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         }
 
 
-        private static CloudWatchFilterConfigUnmarshaller _instance = new CloudWatchFilterConfigUnmarshaller();        
+        private static SessionTraceIdsUnmarshaller _instance = new SessionTraceIdsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CloudWatchFilterConfigUnmarshaller Instance
+        public static SessionTraceIdsUnmarshaller Instance
         {
             get
             {

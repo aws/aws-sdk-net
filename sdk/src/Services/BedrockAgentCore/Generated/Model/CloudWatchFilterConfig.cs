@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class CloudWatchFilterConfig
     {
         private List<string> _sessionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SessionTraceIds> _sessionTraceIds = AWSConfigs.InitializeCollections ? new List<SessionTraceIds>() : null;
         private SessionFilterConfig _timeRange;
 
         /// <summary>
@@ -60,6 +61,32 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetSessionIds()
         {
             return this._sessionIds != null && (this._sessionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTraceIds. 
+        /// <para>
+        /// A list of session and trace ID pairs that restrict evaluation to specific traces within
+        /// a session. If specified, only the listed traces are evaluated instead of the entire
+        /// session.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public List<SessionTraceIds> SessionTraceIds
+        {
+            get { return this._sessionTraceIds; }
+            set { this._sessionTraceIds = value; }
+        }
+
+        // Check to see if SessionTraceIds property is set
+        internal bool IsSetSessionTraceIds()
+        {
+            return this._sessionTraceIds != null && (this._sessionTraceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
