@@ -52,6 +52,7 @@ namespace Amazon.DataZone.Model
         private string _owningProjectId;
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private NotebookStatus _status;
+        private NotebookType _type;
         private DateTime? _updatedAt;
         private string _updatedBy;
 
@@ -402,6 +403,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the notebook.
+        /// </para>
+        /// </summary>
+        public NotebookType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

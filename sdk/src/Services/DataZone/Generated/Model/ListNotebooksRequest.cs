@@ -43,6 +43,7 @@ namespace Amazon.DataZone.Model
         private SortKey _sortBy;
         private SortOrder _sortOrder;
         private NotebookStatus _status;
+        private NotebookType _type;
 
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
@@ -177,6 +178,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type to filter notebooks by.
+        /// </para>
+        /// </summary>
+        public NotebookType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

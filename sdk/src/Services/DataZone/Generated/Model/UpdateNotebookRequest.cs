@@ -46,6 +46,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private NotebookStatus _status;
+        private NotebookType _type;
 
         /// <summary>
         /// Gets and sets the property CellOrder. 
@@ -250,6 +251,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The updated type of the notebook.
+        /// </para>
+        /// </summary>
+        public NotebookType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

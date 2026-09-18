@@ -85,6 +85,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStatus())
                 request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
+            
+            if (publicRequest.IsSetType())
+                request.Parameters.Add("type", StringUtils.FromString(publicRequest.Type));
             request.ResourcePath = "/v2/domains/{domainIdentifier}/notebooks";
             request.UseQueryString = true;
 

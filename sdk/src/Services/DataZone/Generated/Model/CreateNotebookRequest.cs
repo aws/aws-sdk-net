@@ -44,6 +44,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _owningProjectIdentifier;
         private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private NotebookType _type;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -190,6 +191,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the notebook.
+        /// </para>
+        /// </summary>
+        public NotebookType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }
