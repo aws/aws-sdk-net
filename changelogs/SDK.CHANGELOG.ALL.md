@@ -1,3 +1,58 @@
+### 4.0.337.0 (2026-09-18 19:03 UTC)
+* AppIntegrationsService (4.0.102.0)
+	* This release adds support for A2A servers via the ApplicationType and AuthConfig fields, allowing customers to register their agent-to-agent servers with API key authentication.
+* Bedrock (4.0.102.3)
+	* Bedrock is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgent (4.0.102.2)
+	* BedrockAgent is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.119.0)
+	* This release adds the ListSecurityProfileAIAgents API and updates the CreateSecurityProfile and UpdateSecurityProfile APIs to support the AllowedAIAgents field on security profiles, allowing customers to manage the 3P AI agents associated with a security profile for Agent-to-Agent interactions.
+* DataZone (4.0.106.0)
+	* Adds support for specifying Notebook type
+* DynamoDBv2 (4.0.104.0)
+	* Added IDynamoDBContextBuilder.AddDefaultConverter to register an IPropertyConverter that is applied by default to every property of a given .NET type, so a custom converter no longer needs to be declared per-property via DynamoDBPropertyAttribute or a per-property mapping. A converter set explicitly on an individual property still takes precedence.
+* EC2 (4.0.123.0)
+	* This release adds documentation for the T8i instance family to the EC2 ModifyDefaultCreditSpecification and GetDefaultCreditSpecification APIs.
+* EntityResolution (4.0.102.6)
+	* EntityResolution is now generated from its Smithy model. There are no changes to the public API.
+* GeoPlaces (4.0.101.12)
+	* GeoPlaces is now generated from its Smithy model. There are no changes to the public API.
+* GeoRoutes (4.0.100.15)
+	* GeoRoutes is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.106.0)
+	* Introducing AWS Glue Data Quality advanced rule recommendations for faster recommendations. This capability uses Amazon Athena to analyze a sample of table data and Amazon Bedrock to recommend DQDL rules.
+* IVSRealTime (4.0.101.0)
+	* GetParticipant, ListParticipantEvents, ListParticipantReplicas, StartParticipantReplication, and StopParticipantReplication now accept participant IDs containing underscores.
+* KafkaConnect (4.0.101.4)
+	* KafkaConnect is now generated from its Smithy model. There are no changes to the public API.
+* LambdaMicrovms (4.0.101.4)
+	* LambdaMicrovms is now generated from its Smithy model. There are no changes to the public API.
+	* The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* LicenseManagerUserSubscriptions (4.0.101.4)
+	* LicenseManagerUserSubscriptions is now generated from its Smithy model. There are no changes to the public API.
+* MediaPackageV2 (4.0.103.2)
+	* MediaPackageV2 is now generated from its Smithy model. There are no changes to the public API.
+* MediaTailor (4.0.106.2)
+	* MediaTailor is now generated from its Smithy model. There are no changes to the public API.
+* Mgn (4.0.102.3)
+	* Mgn is now generated from its Smithy model. There are no changes to the public API.
+	* The RetryAfterSeconds property on InternalServerException and ThrottlingException is now populated from the Retry-After response header.
+* QConnect (4.0.101.0)
+	* Amazon Connect AI Agents now support multi-agent orchestration and structured JSON input and output messaging for orchestration agents.
+* SageMaker (4.0.116.0)
+	* Adds support for the hub content resource in SageMaker Search.
+* SecurityAgent (4.0.105.4)
+	* SecurityAgent is now generated from its Smithy model. There are no changes to the public API.
+* SecurityHub (4.0.103.8)
+	* SecurityHub is now generated from its Smithy model. There are no changes to the public API.
+* SimpleEmailV2 (4.0.105.1)
+	* SimpleEmailV2 is now generated from its Smithy model. There are no changes to the public API.
+* TranscribeService (4.0.102.0)
+	* Amazon Transcribe now lets you encrypt your custom vocabularies, custom vocabulary filters, and custom language models with a customer managed AWS KMS key instead of an AWS owned key, and adds a new UpdateLanguageModel operation to transition CLM encryption to a different KMS key.
+* WellArchitected (4.0.101.7)
+	* WellArchitected is now generated from its Smithy model. There are no changes to the public API.
+	* Delete operations no longer throw when ClientRequestToken is not set; an idempotency token is generated automatically.
+
 ### 4.0.336.0 (2026-09-17 18:23 UTC)
 * BedrockAgentCore (4.0.111.0)
 	* Batch evaluation now supports evaluating specific traces within a session. Each session can specify up to 100 trace IDs to evaluate.
