@@ -38565,7 +38565,7 @@ namespace Amazon.EC2
         /// Validates whether the specified security groups can be associated with a single network
         /// interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas.
         /// It checks inbound or outbound rules per security group and security groups per network
-        /// interface. Only authorized AWS services can call this operation.
+        /// interface. Only authorized Amazon Web Services services can call this operation.
         /// 
         ///  
         /// <para>
@@ -38585,7 +38585,7 @@ namespace Amazon.EC2
         /// Validates whether the specified security groups can be associated with a single network
         /// interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas.
         /// It checks inbound or outbound rules per security group and security groups per network
-        /// interface. Only authorized AWS services can call this operation.
+        /// interface. Only authorized Amazon Web Services services can call this operation.
         /// 
         ///  
         /// <para>

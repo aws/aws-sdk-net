@@ -31208,6 +31208,10 @@ namespace Amazon.EC2
         /// Constant T4g for UnlimitedSupportedInstanceFamily
         /// </summary>
         public static readonly UnlimitedSupportedInstanceFamily T4g = new UnlimitedSupportedInstanceFamily("t4g");
+        /// <summary>
+        /// Constant T8i for UnlimitedSupportedInstanceFamily
+        /// </summary>
+        public static readonly UnlimitedSupportedInstanceFamily T8i = new UnlimitedSupportedInstanceFamily("t8i");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
