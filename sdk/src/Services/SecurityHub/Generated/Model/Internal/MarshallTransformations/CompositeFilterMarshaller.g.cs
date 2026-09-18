@@ -1,0 +1,172 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.SecurityHub.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CompositeFilter Marshaller
+    /// </summary>
+    public partial class CompositeFilterMarshaller : IRequestMarshaller<CompositeFilter, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(CompositeFilter requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetBooleanFilters())
+            {
+                context.Writer.WritePropertyName("BooleanFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectBooleanFiltersListValue in requestObject.BooleanFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfBooleanFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectBooleanFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetDateFilters())
+            {
+                context.Writer.WritePropertyName("DateFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectDateFiltersListValue in requestObject.DateFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfDateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectDateFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetIpFilters())
+            {
+                context.Writer.WritePropertyName("IpFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectIpFiltersListValue in requestObject.IpFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfIpFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectIpFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetMapFilters())
+            {
+                context.Writer.WritePropertyName("MapFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMapFiltersListValue in requestObject.MapFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfMapFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMapFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetNestedCompositeFilters())
+            {
+                context.Writer.WritePropertyName("NestedCompositeFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectNestedCompositeFiltersListValue in requestObject.NestedCompositeFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CompositeFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNestedCompositeFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetNumberFilters())
+            {
+                context.Writer.WritePropertyName("NumberFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectNumberFiltersListValue in requestObject.NumberFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfNumberFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNumberFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetOperator())
+            {
+                context.Writer.WritePropertyName("Operator");
+                context.Writer.WriteStringValue(requestObject.Operator);
+            }
+
+            if (requestObject.IsSetStringFilters())
+            {
+                context.Writer.WritePropertyName("StringFilters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectStringFiltersListValue in requestObject.StringFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OcsfStringFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStringFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static CompositeFilterMarshaller Instance = new CompositeFilterMarshaller();
+    }
+}

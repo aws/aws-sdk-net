@@ -1,0 +1,2317 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.MediaPackageV2
+{
+    /// <summary>
+    /// Constants used for properties of type AdMarkerDash.
+    /// </summary>
+    public class AdMarkerDash : ConstantClass
+    {
+        /// <summary>
+        /// Constant BINARY for AdMarkerDash
+        /// </summary>
+        public static readonly AdMarkerDash BINARY = new AdMarkerDash("BINARY");
+
+        /// <summary>
+        /// Constant XML for AdMarkerDash
+        /// </summary>
+        public static readonly AdMarkerDash XML = new AdMarkerDash("XML");
+
+        /// <summary>
+        /// Constructs a custom AdMarkerDash for a value not among the defined constants.
+        /// </summary>
+        public AdMarkerDash(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdMarkerDash FindValue(string value)
+        {
+            return FindValue<AdMarkerDash>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdMarkerDash(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AdMarkerHls.
+    /// </summary>
+    public class AdMarkerHls : ConstantClass
+    {
+        /// <summary>
+        /// Constant DATERANGE for AdMarkerHls
+        /// </summary>
+        public static readonly AdMarkerHls DATERANGE = new AdMarkerHls("DATERANGE");
+
+        /// <summary>
+        /// Constant SCTE35_ENHANCED for AdMarkerHls
+        /// </summary>
+        public static readonly AdMarkerHls SCTE35_ENHANCED = new AdMarkerHls("SCTE35_ENHANCED");
+
+        /// <summary>
+        /// Constructs a custom AdMarkerHls for a value not among the defined constants.
+        /// </summary>
+        public AdMarkerHls(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdMarkerHls FindValue(string value)
+        {
+            return FindValue<AdMarkerHls>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdMarkerHls(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CmafEncryptionMethod.
+    /// </summary>
+    public class CmafEncryptionMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant CBCS for CmafEncryptionMethod
+        /// </summary>
+        public static readonly CmafEncryptionMethod CBCS = new CmafEncryptionMethod("CBCS");
+
+        /// <summary>
+        /// Constant CENC for CmafEncryptionMethod
+        /// </summary>
+        public static readonly CmafEncryptionMethod CENC = new CmafEncryptionMethod("CENC");
+
+        /// <summary>
+        /// Constructs a custom CmafEncryptionMethod for a value not among the defined constants.
+        /// </summary>
+        public CmafEncryptionMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CmafEncryptionMethod FindValue(string value)
+        {
+            return FindValue<CmafEncryptionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CmafEncryptionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConflictExceptionType.
+    /// </summary>
+    public class ConflictExceptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFLICTING_OPERATION for ConflictExceptionType
+        /// </summary>
+        public static readonly ConflictExceptionType CONFLICTING_OPERATION = new ConflictExceptionType("CONFLICTING_OPERATION");
+
+        /// <summary>
+        /// Constant IDEMPOTENT_PARAMETER_MISMATCH for ConflictExceptionType
+        /// </summary>
+        public static readonly ConflictExceptionType IDEMPOTENT_PARAMETER_MISMATCH = new ConflictExceptionType("IDEMPOTENT_PARAMETER_MISMATCH");
+
+        /// <summary>
+        /// Constant RESOURCE_ALREADY_EXISTS for ConflictExceptionType
+        /// </summary>
+        public static readonly ConflictExceptionType RESOURCE_ALREADY_EXISTS = new ConflictExceptionType("RESOURCE_ALREADY_EXISTS");
+
+        /// <summary>
+        /// Constant RESOURCE_IN_USE for ConflictExceptionType
+        /// </summary>
+        public static readonly ConflictExceptionType RESOURCE_IN_USE = new ConflictExceptionType("RESOURCE_IN_USE");
+
+        /// <summary>
+        /// Constructs a custom ConflictExceptionType for a value not among the defined constants.
+        /// </summary>
+        public ConflictExceptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConflictExceptionType FindValue(string value)
+        {
+            return FindValue<ConflictExceptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConflictExceptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContainerType.
+    /// </summary>
+    public class ContainerType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CMAF for ContainerType
+        /// </summary>
+        public static readonly ContainerType CMAF = new ContainerType("CMAF");
+
+        /// <summary>
+        /// Constant ISM for ContainerType
+        /// </summary>
+        public static readonly ContainerType ISM = new ContainerType("ISM");
+
+        /// <summary>
+        /// Constant TS for ContainerType
+        /// </summary>
+        public static readonly ContainerType TS = new ContainerType("TS");
+
+        /// <summary>
+        /// Constructs a custom ContainerType for a value not among the defined constants.
+        /// </summary>
+        public ContainerType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerType FindValue(string value)
+        {
+            return FindValue<ContainerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CustomAdType.
+    /// </summary>
+    public class CustomAdType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALTERNATE_CONTENT_OPPORTUNITY for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType ALTERNATE_CONTENT_OPPORTUNITY = new CustomAdType("ALTERNATE_CONTENT_OPPORTUNITY");
+
+        /// <summary>
+        /// Constant CHAPTER for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType CHAPTER = new CustomAdType("CHAPTER");
+
+        /// <summary>
+        /// Constant NETWORK for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType NETWORK = new CustomAdType("NETWORK");
+
+        /// <summary>
+        /// Constant PROGRAM for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType PROGRAM = new CustomAdType("PROGRAM");
+
+        /// <summary>
+        /// Constant UNSCHEDULED_EVENT for CustomAdType
+        /// </summary>
+        public static readonly CustomAdType UNSCHEDULED_EVENT = new CustomAdType("UNSCHEDULED_EVENT");
+
+        /// <summary>
+        /// Constructs a custom CustomAdType for a value not among the defined constants.
+        /// </summary>
+        public CustomAdType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomAdType FindValue(string value)
+        {
+            return FindValue<CustomAdType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomAdType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashAudioTimelinePattern.
+    /// </summary>
+    public class DashAudioTimelinePattern : ConstantClass
+    {
+        /// <summary>
+        /// Constant NONE for DashAudioTimelinePattern
+        /// </summary>
+        public static readonly DashAudioTimelinePattern NONE = new DashAudioTimelinePattern("NONE");
+
+        /// <summary>
+        /// Constant PATTERNED for DashAudioTimelinePattern
+        /// </summary>
+        public static readonly DashAudioTimelinePattern PATTERNED = new DashAudioTimelinePattern("PATTERNED");
+
+        /// <summary>
+        /// Constructs a custom DashAudioTimelinePattern for a value not among the defined constants.
+        /// </summary>
+        public DashAudioTimelinePattern(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashAudioTimelinePattern FindValue(string value)
+        {
+            return FindValue<DashAudioTimelinePattern>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashAudioTimelinePattern(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashCompactness.
+    /// </summary>
+    public class DashCompactness : ConstantClass
+    {
+        /// <summary>
+        /// Constant NONE for DashCompactness
+        /// </summary>
+        public static readonly DashCompactness NONE = new DashCompactness("NONE");
+
+        /// <summary>
+        /// Constant STANDARD for DashCompactness
+        /// </summary>
+        public static readonly DashCompactness STANDARD = new DashCompactness("STANDARD");
+
+        /// <summary>
+        /// Constructs a custom DashCompactness for a value not among the defined constants.
+        /// </summary>
+        public DashCompactness(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashCompactness FindValue(string value)
+        {
+            return FindValue<DashCompactness>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashCompactness(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashDrmSignaling.
+    /// </summary>
+    public class DashDrmSignaling : ConstantClass
+    {
+        /// <summary>
+        /// Constant INDIVIDUAL for DashDrmSignaling
+        /// </summary>
+        public static readonly DashDrmSignaling INDIVIDUAL = new DashDrmSignaling("INDIVIDUAL");
+
+        /// <summary>
+        /// Constant REFERENCED for DashDrmSignaling
+        /// </summary>
+        public static readonly DashDrmSignaling REFERENCED = new DashDrmSignaling("REFERENCED");
+
+        /// <summary>
+        /// Constructs a custom DashDrmSignaling for a value not among the defined constants.
+        /// </summary>
+        public DashDrmSignaling(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashDrmSignaling FindValue(string value)
+        {
+            return FindValue<DashDrmSignaling>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashDrmSignaling(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashPeriodTrigger.
+    /// </summary>
+    public class DashPeriodTrigger : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILS for DashPeriodTrigger
+        /// </summary>
+        public static readonly DashPeriodTrigger AVAILS = new DashPeriodTrigger("AVAILS");
+
+        /// <summary>
+        /// Constant DRM_KEY_ROTATION for DashPeriodTrigger
+        /// </summary>
+        public static readonly DashPeriodTrigger DRM_KEY_ROTATION = new DashPeriodTrigger("DRM_KEY_ROTATION");
+
+        /// <summary>
+        /// Constant NONE for DashPeriodTrigger
+        /// </summary>
+        public static readonly DashPeriodTrigger NONE = new DashPeriodTrigger("NONE");
+
+        /// <summary>
+        /// Constant SOURCE_CHANGES for DashPeriodTrigger
+        /// </summary>
+        public static readonly DashPeriodTrigger SOURCE_CHANGES = new DashPeriodTrigger("SOURCE_CHANGES");
+
+        /// <summary>
+        /// Constant SOURCE_DISRUPTIONS for DashPeriodTrigger
+        /// </summary>
+        public static readonly DashPeriodTrigger SOURCE_DISRUPTIONS = new DashPeriodTrigger("SOURCE_DISRUPTIONS");
+
+        /// <summary>
+        /// Constructs a custom DashPeriodTrigger for a value not among the defined constants.
+        /// </summary>
+        public DashPeriodTrigger(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashPeriodTrigger FindValue(string value)
+        {
+            return FindValue<DashPeriodTrigger>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashPeriodTrigger(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashProfile.
+    /// </summary>
+    public class DashProfile : ConstantClass
+    {
+        /// <summary>
+        /// Constant DVB_DASH for DashProfile
+        /// </summary>
+        public static readonly DashProfile DVB_DASH = new DashProfile("DVB_DASH");
+
+        /// <summary>
+        /// Constructs a custom DashProfile for a value not among the defined constants.
+        /// </summary>
+        public DashProfile(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashProfile FindValue(string value)
+        {
+            return FindValue<DashProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashSegmentTemplateFormat.
+    /// </summary>
+    public class DashSegmentTemplateFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant NUMBER_WITH_TIMELINE for DashSegmentTemplateFormat
+        /// </summary>
+        public static readonly DashSegmentTemplateFormat NUMBER_WITH_TIMELINE = new DashSegmentTemplateFormat("NUMBER_WITH_TIMELINE");
+
+        /// <summary>
+        /// Constructs a custom DashSegmentTemplateFormat for a value not among the defined constants.
+        /// </summary>
+        public DashSegmentTemplateFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashSegmentTemplateFormat FindValue(string value)
+        {
+            return FindValue<DashSegmentTemplateFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashSegmentTemplateFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashTtmlProfile.
+    /// </summary>
+    public class DashTtmlProfile : ConstantClass
+    {
+        /// <summary>
+        /// Constant EBU_TT_D_101 for DashTtmlProfile
+        /// </summary>
+        public static readonly DashTtmlProfile EBU_TT_D_101 = new DashTtmlProfile("EBU_TT_D_101");
+
+        /// <summary>
+        /// Constant IMSC_1 for DashTtmlProfile
+        /// </summary>
+        public static readonly DashTtmlProfile IMSC_1 = new DashTtmlProfile("IMSC_1");
+
+        /// <summary>
+        /// Constructs a custom DashTtmlProfile for a value not among the defined constants.
+        /// </summary>
+        public DashTtmlProfile(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashTtmlProfile FindValue(string value)
+        {
+            return FindValue<DashTtmlProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashTtmlProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DashUtcTimingMode.
+    /// </summary>
+    public class DashUtcTimingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant HTTP_HEAD for DashUtcTimingMode
+        /// </summary>
+        public static readonly DashUtcTimingMode HTTP_HEAD = new DashUtcTimingMode("HTTP_HEAD");
+
+        /// <summary>
+        /// Constant HTTP_ISO for DashUtcTimingMode
+        /// </summary>
+        public static readonly DashUtcTimingMode HTTP_ISO = new DashUtcTimingMode("HTTP_ISO");
+
+        /// <summary>
+        /// Constant HTTP_XSDATE for DashUtcTimingMode
+        /// </summary>
+        public static readonly DashUtcTimingMode HTTP_XSDATE = new DashUtcTimingMode("HTTP_XSDATE");
+
+        /// <summary>
+        /// Constant UTC_DIRECT for DashUtcTimingMode
+        /// </summary>
+        public static readonly DashUtcTimingMode UTC_DIRECT = new DashUtcTimingMode("UTC_DIRECT");
+
+        /// <summary>
+        /// Constructs a custom DashUtcTimingMode for a value not among the defined constants.
+        /// </summary>
+        public DashUtcTimingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DashUtcTimingMode FindValue(string value)
+        {
+            return FindValue<DashUtcTimingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DashUtcTimingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DrmSystem.
+    /// </summary>
+    public class DrmSystem : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLEAR_KEY_AES_128 for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem CLEAR_KEY_AES_128 = new DrmSystem("CLEAR_KEY_AES_128");
+
+        /// <summary>
+        /// Constant FAIRPLAY for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem FAIRPLAY = new DrmSystem("FAIRPLAY");
+
+        /// <summary>
+        /// Constant IRDETO for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem IRDETO = new DrmSystem("IRDETO");
+
+        /// <summary>
+        /// Constant PLAYREADY for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem PLAYREADY = new DrmSystem("PLAYREADY");
+
+        /// <summary>
+        /// Constant WIDEVINE for DrmSystem
+        /// </summary>
+        public static readonly DrmSystem WIDEVINE = new DrmSystem("WIDEVINE");
+
+        /// <summary>
+        /// Constructs a custom DrmSystem for a value not among the defined constants.
+        /// </summary>
+        public DrmSystem(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DrmSystem FindValue(string value)
+        {
+            return FindValue<DrmSystem>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DrmSystem(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EndpointErrorCondition.
+    /// </summary>
+    public class EndpointErrorCondition : ConstantClass
+    {
+        /// <summary>
+        /// Constant INCOMPLETE_MANIFEST for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition INCOMPLETE_MANIFEST = new EndpointErrorCondition("INCOMPLETE_MANIFEST");
+
+        /// <summary>
+        /// Constant MISSING_DRM_KEY for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition MISSING_DRM_KEY = new EndpointErrorCondition("MISSING_DRM_KEY");
+
+        /// <summary>
+        /// Constant SLATE_INPUT for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition SLATE_INPUT = new EndpointErrorCondition("SLATE_INPUT");
+
+        /// <summary>
+        /// Constant STALE_MANIFEST for EndpointErrorCondition
+        /// </summary>
+        public static readonly EndpointErrorCondition STALE_MANIFEST = new EndpointErrorCondition("STALE_MANIFEST");
+
+        /// <summary>
+        /// Constructs a custom EndpointErrorCondition for a value not among the defined constants.
+        /// </summary>
+        public EndpointErrorCondition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointErrorCondition FindValue(string value)
+        {
+            return FindValue<EndpointErrorCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointErrorCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HarvestJobStatus.
+    /// </summary>
+    public class HarvestJobStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CANCELLED for HarvestJobStatus
+        /// </summary>
+        public static readonly HarvestJobStatus CANCELLED = new HarvestJobStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant COMPLETED for HarvestJobStatus
+        /// </summary>
+        public static readonly HarvestJobStatus COMPLETED = new HarvestJobStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for HarvestJobStatus
+        /// </summary>
+        public static readonly HarvestJobStatus FAILED = new HarvestJobStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for HarvestJobStatus
+        /// </summary>
+        public static readonly HarvestJobStatus IN_PROGRESS = new HarvestJobStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant QUEUED for HarvestJobStatus
+        /// </summary>
+        public static readonly HarvestJobStatus QUEUED = new HarvestJobStatus("QUEUED");
+
+        /// <summary>
+        /// Constructs a custom HarvestJobStatus for a value not among the defined constants.
+        /// </summary>
+        public HarvestJobStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarvestJobStatus FindValue(string value)
+        {
+            return FindValue<HarvestJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarvestJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type InputType.
+    /// </summary>
+    public class InputType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CMAF for InputType
+        /// </summary>
+        public static readonly InputType CMAF = new InputType("CMAF");
+
+        /// <summary>
+        /// Constant HLS for InputType
+        /// </summary>
+        public static readonly InputType HLS = new InputType("HLS");
+
+        /// <summary>
+        /// Constant MULTIVIEW for InputType
+        /// </summary>
+        public static readonly InputType MULTIVIEW = new InputType("MULTIVIEW");
+
+        /// <summary>
+        /// Constructs a custom InputType for a value not among the defined constants.
+        /// </summary>
+        public InputType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InputType FindValue(string value)
+        {
+            return FindValue<InputType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IsmEncryptionMethod.
+    /// </summary>
+    public class IsmEncryptionMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant CENC for IsmEncryptionMethod
+        /// </summary>
+        public static readonly IsmEncryptionMethod CENC = new IsmEncryptionMethod("CENC");
+
+        /// <summary>
+        /// Constructs a custom IsmEncryptionMethod for a value not among the defined constants.
+        /// </summary>
+        public IsmEncryptionMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IsmEncryptionMethod FindValue(string value)
+        {
+            return FindValue<IsmEncryptionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IsmEncryptionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MssManifestLayout.
+    /// </summary>
+    public class MssManifestLayout : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPACT for MssManifestLayout
+        /// </summary>
+        public static readonly MssManifestLayout COMPACT = new MssManifestLayout("COMPACT");
+
+        /// <summary>
+        /// Constant FULL for MssManifestLayout
+        /// </summary>
+        public static readonly MssManifestLayout FULL = new MssManifestLayout("FULL");
+
+        /// <summary>
+        /// Constructs a custom MssManifestLayout for a value not among the defined constants.
+        /// </summary>
+        public MssManifestLayout(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MssManifestLayout FindValue(string value)
+        {
+            return FindValue<MssManifestLayout>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MssManifestLayout(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MultiviewLayoutType.
+    /// </summary>
+    public class MultiviewLayoutType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LAYOUT_2EH for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_2EH = new MultiviewLayoutType("LAYOUT_2EH");
+
+        /// <summary>
+        /// Constant LAYOUT_2PL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_2PL = new MultiviewLayoutType("LAYOUT_2PL");
+
+        /// <summary>
+        /// Constant LAYOUT_3EL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_3EL = new MultiviewLayoutType("LAYOUT_3EL");
+
+        /// <summary>
+        /// Constant LAYOUT_3PL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_3PL = new MultiviewLayoutType("LAYOUT_3PL");
+
+        /// <summary>
+        /// Constant LAYOUT_4E for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_4E = new MultiviewLayoutType("LAYOUT_4E");
+
+        /// <summary>
+        /// Constant LAYOUT_4PL for MultiviewLayoutType
+        /// </summary>
+        public static readonly MultiviewLayoutType LAYOUT_4PL = new MultiviewLayoutType("LAYOUT_4PL");
+
+        /// <summary>
+        /// Constructs a custom MultiviewLayoutType for a value not among the defined constants.
+        /// </summary>
+        public MultiviewLayoutType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MultiviewLayoutType FindValue(string value)
+        {
+            return FindValue<MultiviewLayoutType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MultiviewLayoutType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OutputLockingMode.
+    /// </summary>
+    public class OutputLockingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EPOCH_LOCKED for OutputLockingMode
+        /// </summary>
+        public static readonly OutputLockingMode EPOCH_LOCKED = new OutputLockingMode("EPOCH_LOCKED");
+
+        /// <summary>
+        /// Constant NON_EPOCH_LOCKED for OutputLockingMode
+        /// </summary>
+        public static readonly OutputLockingMode NON_EPOCH_LOCKED = new OutputLockingMode("NON_EPOCH_LOCKED");
+
+        /// <summary>
+        /// Constructs a custom OutputLockingMode for a value not among the defined constants.
+        /// </summary>
+        public OutputLockingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputLockingMode FindValue(string value)
+        {
+            return FindValue<OutputLockingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputLockingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OutputTimestampMode.
+    /// </summary>
+    public class OutputTimestampMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant PASSTHROUGH for OutputTimestampMode
+        /// </summary>
+        public static readonly OutputTimestampMode PASSTHROUGH = new OutputTimestampMode("PASSTHROUGH");
+
+        /// <summary>
+        /// Constant REBASED_TO_CHANNEL_START for OutputTimestampMode
+        /// </summary>
+        public static readonly OutputTimestampMode REBASED_TO_CHANNEL_START = new OutputTimestampMode("REBASED_TO_CHANNEL_START");
+
+        /// <summary>
+        /// Constructs a custom OutputTimestampMode for a value not among the defined constants.
+        /// </summary>
+        public OutputTimestampMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputTimestampMode FindValue(string value)
+        {
+            return FindValue<OutputTimestampMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputTimestampMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PresetSpeke20Audio.
+    /// </summary>
+    public class PresetSpeke20Audio : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRESET_AUDIO_1 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESET_AUDIO_1 = new PresetSpeke20Audio("PRESET_AUDIO_1");
+
+        /// <summary>
+        /// Constant PRESET_AUDIO_2 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESET_AUDIO_2 = new PresetSpeke20Audio("PRESET_AUDIO_2");
+
+        /// <summary>
+        /// Constant PRESET_AUDIO_3 for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio PRESET_AUDIO_3 = new PresetSpeke20Audio("PRESET_AUDIO_3");
+
+        /// <summary>
+        /// Constant SHARED for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio SHARED = new PresetSpeke20Audio("SHARED");
+
+        /// <summary>
+        /// Constant UNENCRYPTED for PresetSpeke20Audio
+        /// </summary>
+        public static readonly PresetSpeke20Audio UNENCRYPTED = new PresetSpeke20Audio("UNENCRYPTED");
+
+        /// <summary>
+        /// Constructs a custom PresetSpeke20Audio for a value not among the defined constants.
+        /// </summary>
+        public PresetSpeke20Audio(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PresetSpeke20Audio FindValue(string value)
+        {
+            return FindValue<PresetSpeke20Audio>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PresetSpeke20Audio(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PresetSpeke20Video.
+    /// </summary>
+    public class PresetSpeke20Video : ConstantClass
+    {
+        /// <summary>
+        /// Constant PRESET_VIDEO_1 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_1 = new PresetSpeke20Video("PRESET_VIDEO_1");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_2 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_2 = new PresetSpeke20Video("PRESET_VIDEO_2");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_3 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_3 = new PresetSpeke20Video("PRESET_VIDEO_3");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_4 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_4 = new PresetSpeke20Video("PRESET_VIDEO_4");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_5 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_5 = new PresetSpeke20Video("PRESET_VIDEO_5");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_6 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_6 = new PresetSpeke20Video("PRESET_VIDEO_6");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_7 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_7 = new PresetSpeke20Video("PRESET_VIDEO_7");
+
+        /// <summary>
+        /// Constant PRESET_VIDEO_8 for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video PRESET_VIDEO_8 = new PresetSpeke20Video("PRESET_VIDEO_8");
+
+        /// <summary>
+        /// Constant SHARED for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video SHARED = new PresetSpeke20Video("SHARED");
+
+        /// <summary>
+        /// Constant UNENCRYPTED for PresetSpeke20Video
+        /// </summary>
+        public static readonly PresetSpeke20Video UNENCRYPTED = new PresetSpeke20Video("UNENCRYPTED");
+
+        /// <summary>
+        /// Constructs a custom PresetSpeke20Video for a value not among the defined constants.
+        /// </summary>
+        public PresetSpeke20Video(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PresetSpeke20Video FindValue(string value)
+        {
+            return FindValue<PresetSpeke20Video>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PresetSpeke20Video(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceTypeNotFound.
+    /// </summary>
+    public class ResourceTypeNotFound : ConstantClass
+    {
+        /// <summary>
+        /// Constant CHANNEL for ResourceTypeNotFound
+        /// </summary>
+        public static readonly ResourceTypeNotFound CHANNEL = new ResourceTypeNotFound("CHANNEL");
+
+        /// <summary>
+        /// Constant CHANNEL_GROUP for ResourceTypeNotFound
+        /// </summary>
+        public static readonly ResourceTypeNotFound CHANNEL_GROUP = new ResourceTypeNotFound("CHANNEL_GROUP");
+
+        /// <summary>
+        /// Constant HARVEST_JOB for ResourceTypeNotFound
+        /// </summary>
+        public static readonly ResourceTypeNotFound HARVEST_JOB = new ResourceTypeNotFound("HARVEST_JOB");
+
+        /// <summary>
+        /// Constant ORIGIN_ENDPOINT for ResourceTypeNotFound
+        /// </summary>
+        public static readonly ResourceTypeNotFound ORIGIN_ENDPOINT = new ResourceTypeNotFound("ORIGIN_ENDPOINT");
+
+        /// <summary>
+        /// Constructs a custom ResourceTypeNotFound for a value not among the defined constants.
+        /// </summary>
+        public ResourceTypeNotFound(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceTypeNotFound FindValue(string value)
+        {
+            return FindValue<ResourceTypeNotFound>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceTypeNotFound(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScteFilter.
+    /// </summary>
+    public class ScteFilter : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALTERNATE_CONTENT_OPPORTUNITY for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter ALTERNATE_CONTENT_OPPORTUNITY = new ScteFilter("ALTERNATE_CONTENT_OPPORTUNITY");
+
+        /// <summary>
+        /// Constant BREAK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter BREAK = new ScteFilter("BREAK");
+
+        /// <summary>
+        /// Constant CALL_AD_SERVER for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter CALL_AD_SERVER = new ScteFilter("CALL_AD_SERVER");
+
+        /// <summary>
+        /// Constant CHAPTER for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter CHAPTER = new ScteFilter("CHAPTER");
+
+        /// <summary>
+        /// Constant CONTENT_IDENTIFICATION for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter CONTENT_IDENTIFICATION = new ScteFilter("CONTENT_IDENTIFICATION");
+
+        /// <summary>
+        /// Constant DISTRIBUTOR_ADVERTISEMENT for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_ADVERTISEMENT = new ScteFilter("DISTRIBUTOR_ADVERTISEMENT");
+
+        /// <summary>
+        /// Constant DISTRIBUTOR_AD_BLOCK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_AD_BLOCK = new ScteFilter("DISTRIBUTOR_AD_BLOCK");
+
+        /// <summary>
+        /// Constant DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY = new ScteFilter("DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY");
+
+        /// <summary>
+        /// Constant DISTRIBUTOR_PLACEMENT_OPPORTUNITY for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_PLACEMENT_OPPORTUNITY = new ScteFilter("DISTRIBUTOR_PLACEMENT_OPPORTUNITY");
+
+        /// <summary>
+        /// Constant DISTRIBUTOR_PROMO for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter DISTRIBUTOR_PROMO = new ScteFilter("DISTRIBUTOR_PROMO");
+
+        /// <summary>
+        /// Constant NETWORK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter NETWORK = new ScteFilter("NETWORK");
+
+        /// <summary>
+        /// Constant PROGRAM for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROGRAM = new ScteFilter("PROGRAM");
+
+        /// <summary>
+        /// Constant PROVIDER_ADVERTISEMENT for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_ADVERTISEMENT = new ScteFilter("PROVIDER_ADVERTISEMENT");
+
+        /// <summary>
+        /// Constant PROVIDER_AD_BLOCK for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_AD_BLOCK = new ScteFilter("PROVIDER_AD_BLOCK");
+
+        /// <summary>
+        /// Constant PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY = new ScteFilter("PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY");
+
+        /// <summary>
+        /// Constant PROVIDER_PLACEMENT_OPPORTUNITY for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_PLACEMENT_OPPORTUNITY = new ScteFilter("PROVIDER_PLACEMENT_OPPORTUNITY");
+
+        /// <summary>
+        /// Constant PROVIDER_PROMO for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter PROVIDER_PROMO = new ScteFilter("PROVIDER_PROMO");
+
+        /// <summary>
+        /// Constant SPLICE_INSERT for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter SPLICE_INSERT = new ScteFilter("SPLICE_INSERT");
+
+        /// <summary>
+        /// Constant UNSCHEDULED_EVENT for ScteFilter
+        /// </summary>
+        public static readonly ScteFilter UNSCHEDULED_EVENT = new ScteFilter("UNSCHEDULED_EVENT");
+
+        /// <summary>
+        /// Constructs a custom ScteFilter for a value not among the defined constants.
+        /// </summary>
+        public ScteFilter(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScteFilter FindValue(string value)
+        {
+            return FindValue<ScteFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScteFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScteInManifests.
+    /// </summary>
+    public class ScteInManifests : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for ScteInManifests
+        /// </summary>
+        public static readonly ScteInManifests ALL = new ScteInManifests("ALL");
+
+        /// <summary>
+        /// Constant MATCHES_FILTER for ScteInManifests
+        /// </summary>
+        public static readonly ScteInManifests MATCHES_FILTER = new ScteInManifests("MATCHES_FILTER");
+
+        /// <summary>
+        /// Constructs a custom ScteInManifests for a value not among the defined constants.
+        /// </summary>
+        public ScteInManifests(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScteInManifests FindValue(string value)
+        {
+            return FindValue<ScteInManifests>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScteInManifests(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScteInSegments.
+    /// </summary>
+    public class ScteInSegments : ConstantClass
+    {
+        /// <summary>
+        /// Constant ALL for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments ALL = new ScteInSegments("ALL");
+
+        /// <summary>
+        /// Constant MATCHES_FILTER for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments MATCHES_FILTER = new ScteInSegments("MATCHES_FILTER");
+
+        /// <summary>
+        /// Constant NONE for ScteInSegments
+        /// </summary>
+        public static readonly ScteInSegments NONE = new ScteInSegments("NONE");
+
+        /// <summary>
+        /// Constructs a custom ScteInSegments for a value not among the defined constants.
+        /// </summary>
+        public ScteInSegments(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScteInSegments FindValue(string value)
+        {
+            return FindValue<ScteInSegments>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScteInSegments(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StreamNameOutputMode.
+    /// </summary>
+    public class StreamNameOutputMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant INDEX for StreamNameOutputMode
+        /// </summary>
+        public static readonly StreamNameOutputMode INDEX = new StreamNameOutputMode("INDEX");
+
+        /// <summary>
+        /// Constant PASSTHROUGH_NAME for StreamNameOutputMode
+        /// </summary>
+        public static readonly StreamNameOutputMode PASSTHROUGH_NAME = new StreamNameOutputMode("PASSTHROUGH_NAME");
+
+        /// <summary>
+        /// Constructs a custom StreamNameOutputMode for a value not among the defined constants.
+        /// </summary>
+        public StreamNameOutputMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamNameOutputMode FindValue(string value)
+        {
+            return FindValue<StreamNameOutputMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamNameOutputMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TsEncryptionMethod.
+    /// </summary>
+    public class TsEncryptionMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant AES_128 for TsEncryptionMethod
+        /// </summary>
+        public static readonly TsEncryptionMethod AES_128 = new TsEncryptionMethod("AES_128");
+
+        /// <summary>
+        /// Constant SAMPLE_AES for TsEncryptionMethod
+        /// </summary>
+        public static readonly TsEncryptionMethod SAMPLE_AES = new TsEncryptionMethod("SAMPLE_AES");
+
+        /// <summary>
+        /// Constructs a custom TsEncryptionMethod for a value not among the defined constants.
+        /// </summary>
+        public TsEncryptionMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TsEncryptionMethod FindValue(string value)
+        {
+            return FindValue<TsEncryptionMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TsEncryptionMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UriPathType.
+    /// </summary>
+    public class UriPathType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LEAF for UriPathType
+        /// </summary>
+        public static readonly UriPathType LEAF = new UriPathType("LEAF");
+
+        /// <summary>
+        /// Constant ROOT for UriPathType
+        /// </summary>
+        public static readonly UriPathType ROOT = new UriPathType("ROOT");
+
+        /// <summary>
+        /// Constructs a custom UriPathType for a value not among the defined constants.
+        /// </summary>
+        public UriPathType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UriPathType FindValue(string value)
+        {
+            return FindValue<UriPathType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UriPathType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UriSeparator.
+    /// </summary>
+    public class UriSeparator : ConstantClass
+    {
+        /// <summary>
+        /// Constant HYPHEN for UriSeparator
+        /// </summary>
+        public static readonly UriSeparator HYPHEN = new UriSeparator("HYPHEN");
+
+        /// <summary>
+        /// Constant UNDERSCORE for UriSeparator
+        /// </summary>
+        public static readonly UriSeparator UNDERSCORE = new UriSeparator("UNDERSCORE");
+
+        /// <summary>
+        /// Constructs a custom UriSeparator for a value not among the defined constants.
+        /// </summary>
+        public UriSeparator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UriSeparator FindValue(string value)
+        {
+            return FindValue<UriSeparator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UriSeparator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionType.
+    /// </summary>
+    public class ValidationExceptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BATCH_GET_SECRET_VALUE_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType BATCH_GET_SECRET_VALUE_DENIED = new ValidationExceptionType("BATCH_GET_SECRET_VALUE_DENIED");
+
+        /// <summary>
+        /// Constant CENC_IV_INCOMPATIBLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CENC_IV_INCOMPATIBLE = new ValidationExceptionType("CENC_IV_INCOMPATIBLE");
+
+        /// <summary>
+        /// Constant CERTIFICATE_ACCESS_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CERTIFICATE_ACCESS_DENIED = new ValidationExceptionType("CERTIFICATE_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant CERTIFICATE_RESOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CERTIFICATE_RESOURCE_NOT_FOUND = new ValidationExceptionType("CERTIFICATE_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant CLIP_START_TIME_WITH_START_OR_END for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CLIP_START_TIME_WITH_START_OR_END = new ValidationExceptionType("CLIP_START_TIME_WITH_START_OR_END");
+
+        /// <summary>
+        /// Constant CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST = new ValidationExceptionType("CMAF_CONTAINER_TYPE_WITH_MSS_MANIFEST");
+
+        /// <summary>
+        /// Constant CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE = new ValidationExceptionType("CMAF_EXCLUDE_SEGMENT_DRM_METADATA_INCOMPATIBLE_CONTAINER_TYPE");
+
+        /// <summary>
+        /// Constant CONTAINER_TYPE_IMMUTABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CONTAINER_TYPE_IMMUTABLE = new ValidationExceptionType("CONTAINER_TYPE_IMMUTABLE");
+
+        /// <summary>
+        /// Constant CUSTOM_AD_TYPES_INVALID_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CUSTOM_AD_TYPES_INVALID_CONFIGURATION = new ValidationExceptionType("CUSTOM_AD_TYPES_INVALID_CONFIGURATION");
+
+        /// <summary>
+        /// Constant DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE = new ValidationExceptionType("DASH_DVB_ATTRIBUTES_WITHOUT_DVB_DASH_PROFILE");
+
+        /// <summary>
+        /// Constant DECRYPT_SECRET_FAILED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DECRYPT_SECRET_FAILED = new ValidationExceptionType("DECRYPT_SECRET_FAILED");
+
+        /// <summary>
+        /// Constant DESCRIBE_CERTIFICATE_FAILED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DESCRIBE_CERTIFICATE_FAILED = new ValidationExceptionType("DESCRIBE_CERTIFICATE_FAILED");
+
+        /// <summary>
+        /// Constant DESCRIBE_SECRET_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DESCRIBE_SECRET_DENIED = new ValidationExceptionType("DESCRIBE_SECRET_DENIED");
+
+        /// <summary>
+        /// Constant DIRECT_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DIRECT_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("DIRECT_MODE_WITH_TIMING_SOURCE");
+
+        /// <summary>
+        /// Constant DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS = new ValidationExceptionType("DRM_SIGNALING_MISMATCH_SEGMENT_ENCRYPTION_STATUS");
+
+        /// <summary>
+        /// Constant DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE = new ValidationExceptionType("DRM_SYSTEMS_ENCRYPTION_METHOD_INCOMPATIBLE");
+
+        /// <summary>
+        /// Constant DUPLICATED_SECRET for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType DUPLICATED_SECRET = new ValidationExceptionType("DUPLICATED_SECRET");
+
+        /// <summary>
+        /// Constant ENCRYPTION_CONTRACT_SHARED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ENCRYPTION_CONTRACT_SHARED = new ValidationExceptionType("ENCRYPTION_CONTRACT_SHARED");
+
+        /// <summary>
+        /// Constant ENCRYPTION_CONTRACT_UNENCRYPTED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ENCRYPTION_CONTRACT_UNENCRYPTED = new ValidationExceptionType("ENCRYPTION_CONTRACT_UNENCRYPTED");
+
+        /// <summary>
+        /// Constant ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE = new ValidationExceptionType("ENCRYPTION_CONTRACT_WITHOUT_AUDIO_RENDITION_INCOMPATIBLE");
+
+        /// <summary>
+        /// Constant ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE = new ValidationExceptionType("ENCRYPTION_CONTRACT_WITH_ISM_CONTAINER_INCOMPATIBLE");
+
+        /// <summary>
+        /// Constant ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH = new ValidationExceptionType("ENCRYPTION_METHOD_CONTAINER_TYPE_MISMATCH");
+
+        /// <summary>
+        /// Constant END_TIME_EARLIER_THAN_START_TIME for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType END_TIME_EARLIER_THAN_START_TIME = new ValidationExceptionType("END_TIME_EARLIER_THAN_START_TIME");
+
+        /// <summary>
+        /// Constant GET_SECRET_VALUE_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType GET_SECRET_VALUE_DENIED = new ValidationExceptionType("GET_SECRET_VALUE_DENIED");
+
+        /// <summary>
+        /// Constant HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION = new ValidationExceptionType("HARVESTED_MANIFEST_HAS_START_END_FILTER_CONFIGURATION");
+
+        /// <summary>
+        /// Constant HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT = new ValidationExceptionType("HARVESTED_MANIFEST_NOT_FOUND_ON_ENDPOINT");
+
+        /// <summary>
+        /// Constant HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED = new ValidationExceptionType("HARVEST_JOB_CUSTOMER_ENDPOINT_READ_ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION = new ValidationExceptionType("HARVEST_JOB_INELIGIBLE_FOR_CANCELLATION");
+
+        /// <summary>
+        /// Constant HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE = new ValidationExceptionType("HARVEST_JOB_S3_DESTINATION_MISSING_OR_INCOMPLETE");
+
+        /// <summary>
+        /// Constant HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION = new ValidationExceptionType("HARVEST_JOB_UNABLE_TO_WRITE_TO_S3_DESTINATION");
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION = new ValidationExceptionType("INCOMPATIBLE_DASH_COMPACTNESS_CONFIGURATION");
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION = new ValidationExceptionType("INCOMPATIBLE_DASH_PROFILE_DVB_DASH_CONFIGURATION");
+
+        /// <summary>
+        /// Constant INCOMPATIBLE_XML_ENCODING for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INCOMPATIBLE_XML_ENCODING = new ValidationExceptionType("INCOMPATIBLE_XML_ENCODING");
+
+        /// <summary>
+        /// Constant INVALID_ARN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_ARN = new ValidationExceptionType("INVALID_ARN");
+
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_KEY_ALGORITHM for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_KEY_ALGORITHM = new ValidationExceptionType("INVALID_CERTIFICATE_KEY_ALGORITHM");
+
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_SIGNATURE_ALGORITHM for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_SIGNATURE_ALGORITHM = new ValidationExceptionType("INVALID_CERTIFICATE_SIGNATURE_ALGORITHM");
+
+        /// <summary>
+        /// Constant INVALID_CERTIFICATE_STATUS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_CERTIFICATE_STATUS = new ValidationExceptionType("INVALID_CERTIFICATE_STATUS");
+
+        /// <summary>
+        /// Constant INVALID_DRM_SETTINGS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_DRM_SETTINGS = new ValidationExceptionType("INVALID_DRM_SETTINGS");
+
+        /// <summary>
+        /// Constant INVALID_HARVEST_JOB_DURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_HARVEST_JOB_DURATION = new ValidationExceptionType("INVALID_HARVEST_JOB_DURATION");
+
+        /// <summary>
+        /// Constant INVALID_MANIFEST_FILTER for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_MANIFEST_FILTER = new ValidationExceptionType("INVALID_MANIFEST_FILTER");
+
+        /// <summary>
+        /// Constant INVALID_PAGINATION_MAX_RESULTS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_PAGINATION_MAX_RESULTS = new ValidationExceptionType("INVALID_PAGINATION_MAX_RESULTS");
+
+        /// <summary>
+        /// Constant INVALID_PAGINATION_TOKEN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_PAGINATION_TOKEN = new ValidationExceptionType("INVALID_PAGINATION_TOKEN");
+
+        /// <summary>
+        /// Constant INVALID_POLICY for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_POLICY = new ValidationExceptionType("INVALID_POLICY");
+
+        /// <summary>
+        /// Constant INVALID_ROLE_ARN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_ROLE_ARN = new ValidationExceptionType("INVALID_ROLE_ARN");
+
+        /// <summary>
+        /// Constant INVALID_SECRET for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET = new ValidationExceptionType("INVALID_SECRET");
+
+        /// <summary>
+        /// Constant INVALID_SECRET_FORMAT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET_FORMAT = new ValidationExceptionType("INVALID_SECRET_FORMAT");
+
+        /// <summary>
+        /// Constant INVALID_SECRET_KEY for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET_KEY = new ValidationExceptionType("INVALID_SECRET_KEY");
+
+        /// <summary>
+        /// Constant INVALID_SECRET_VALUE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_SECRET_VALUE = new ValidationExceptionType("INVALID_SECRET_VALUE");
+
+        /// <summary>
+        /// Constant INVALID_TIME_DELAY_SECONDS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType INVALID_TIME_DELAY_SECONDS = new ValidationExceptionType("INVALID_TIME_DELAY_SECONDS");
+
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_DASH_MANIFEST");
+
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_HLS_MANIFEST");
+
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_LL_HLS_MANIFEST");
+
+        /// <summary>
+        /// Constant ISM_CONTAINER_TYPE_WITH_SCTE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_TYPE_WITH_SCTE = new ValidationExceptionType("ISM_CONTAINER_TYPE_WITH_SCTE");
+
+        /// <summary>
+        /// Constant ISM_CONTAINER_WITH_KEY_ROTATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ISM_CONTAINER_WITH_KEY_ROTATION = new ValidationExceptionType("ISM_CONTAINER_WITH_KEY_ROTATION");
+
+        /// <summary>
+        /// Constant MALFORMED_SECRET_ARN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MALFORMED_SECRET_ARN = new ValidationExceptionType("MALFORMED_SECRET_ARN");
+
+        /// <summary>
+        /// Constant MANIFEST_DRM_SYSTEMS_INCOMPATIBLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MANIFEST_DRM_SYSTEMS_INCOMPATIBLE = new ValidationExceptionType("MANIFEST_DRM_SYSTEMS_INCOMPATIBLE");
+
+        /// <summary>
+        /// Constant MANIFEST_NAME_COLLISION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MANIFEST_NAME_COLLISION = new ValidationExceptionType("MANIFEST_NAME_COLLISION");
+
+        /// <summary>
+        /// Constant MEMBER_DOES_NOT_MATCH_PATTERN for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_DOES_NOT_MATCH_PATTERN = new ValidationExceptionType("MEMBER_DOES_NOT_MATCH_PATTERN");
+
+        /// <summary>
+        /// Constant MEMBER_INVALID for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_INVALID = new ValidationExceptionType("MEMBER_INVALID");
+
+        /// <summary>
+        /// Constant MEMBER_INVALID_ENUM_VALUE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_INVALID_ENUM_VALUE = new ValidationExceptionType("MEMBER_INVALID_ENUM_VALUE");
+
+        /// <summary>
+        /// Constant MEMBER_MAX_LENGTH for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_MAX_LENGTH = new ValidationExceptionType("MEMBER_MAX_LENGTH");
+
+        /// <summary>
+        /// Constant MEMBER_MAX_VALUE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_MAX_VALUE = new ValidationExceptionType("MEMBER_MAX_VALUE");
+
+        /// <summary>
+        /// Constant MEMBER_MIN_LENGTH for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_MIN_LENGTH = new ValidationExceptionType("MEMBER_MIN_LENGTH");
+
+        /// <summary>
+        /// Constant MEMBER_MIN_VALUE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_MIN_VALUE = new ValidationExceptionType("MEMBER_MIN_VALUE");
+
+        /// <summary>
+        /// Constant MEMBER_MISSING for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MEMBER_MISSING = new ValidationExceptionType("MEMBER_MISSING");
+
+        /// <summary>
+        /// Constant MISSING_CERTIFICATE_DOMAIN_NAME for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MISSING_CERTIFICATE_DOMAIN_NAME = new ValidationExceptionType("MISSING_CERTIFICATE_DOMAIN_NAME");
+
+        /// <summary>
+        /// Constant MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_CHANNEL_POLICY_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_CONFIGURATION_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_CONFIGURATION_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_CONFIGURATION_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_CONFIGURATION_REQUIRED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_CONFIGURATION_REQUIRED = new ValidationExceptionType("MULTIVIEW_CONFIGURATION_REQUIRED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_DUPLICATE_LAYOUT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_DUPLICATE_LAYOUT = new ValidationExceptionType("MULTIVIEW_DUPLICATE_LAYOUT");
+
+        /// <summary>
+        /// Constant MULTIVIEW_DUPLICATE_SOURCE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_DUPLICATE_SOURCE = new ValidationExceptionType("MULTIVIEW_DUPLICATE_SOURCE");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_FILTER_CONFIGURATION");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_HARVEST_JOB");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_IFRAME_ONLY_STREAMS");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_ISM_CONTAINER");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_LL_HLS_MANIFEST");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_MSS_MANIFEST");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_NON_EPOCH_LOCKED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_SEGMENT_DURATION");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INPUT_TYPE_WITH_START_TAG for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INPUT_TYPE_WITH_START_TAG = new ValidationExceptionType("MULTIVIEW_INPUT_TYPE_WITH_START_TAG");
+
+        /// <summary>
+        /// Constant MULTIVIEW_INVALID_TIME_DELAY_SECONDS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_INVALID_TIME_DELAY_SECONDS = new ValidationExceptionType("MULTIVIEW_INVALID_TIME_DELAY_SECONDS");
+
+        /// <summary>
+        /// Constant MULTIVIEW_MANIFEST_WINDOW_TOO_LONG for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_MANIFEST_WINDOW_TOO_LONG = new ValidationExceptionType("MULTIVIEW_MANIFEST_WINDOW_TOO_LONG");
+
+        /// <summary>
+        /// Constant MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_OUTPUT_HEADER_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_RESET_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_RESET_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_RESET_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER = new ValidationExceptionType("MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER");
+
+        /// <summary>
+        /// Constant MULTIVIEW_SOURCE_INVALID_INPUT_TYPE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_INVALID_INPUT_TYPE = new ValidationExceptionType("MULTIVIEW_SOURCE_INVALID_INPUT_TYPE");
+
+        /// <summary>
+        /// Constant MULTIVIEW_SOURCE_NON_EPOCH_LOCKED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_NON_EPOCH_LOCKED = new ValidationExceptionType("MULTIVIEW_SOURCE_NON_EPOCH_LOCKED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_SOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_NOT_FOUND = new ValidationExceptionType("MULTIVIEW_SOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant NONE_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType NONE_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("NONE_MODE_WITH_TIMING_SOURCE");
+
+        /// <summary>
+        /// Constant NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION = new ValidationExceptionType("NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+
+        /// <summary>
+        /// Constant NUM_MANIFESTS_HIGH for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType NUM_MANIFESTS_HIGH = new ValidationExceptionType("NUM_MANIFESTS_HIGH");
+
+        /// <summary>
+        /// Constant NUM_MANIFESTS_LOW for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType NUM_MANIFESTS_LOW = new ValidationExceptionType("NUM_MANIFESTS_LOW");
+
+        /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+
+        /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_INPUT_SWITCHING");
+
+        /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
+
+        /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE");
+
+        /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION");
+
+        /// <summary>
+        /// Constant ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE = new ValidationExceptionType("ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE");
+
+        /// <summary>
+        /// Constant ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE = new ValidationExceptionType("ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE");
+
+        /// <summary>
+        /// Constant OUTPUT_TIMESTAMP_MODE_IMMUTABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType OUTPUT_TIMESTAMP_MODE_IMMUTABLE = new ValidationExceptionType("OUTPUT_TIMESTAMP_MODE_IMMUTABLE");
+
+        /// <summary>
+        /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES = new ValidationExceptionType("PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES");
+
+        /// <summary>
+        /// Constant RESOURCE_NOT_IN_SAME_REGION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType RESOURCE_NOT_IN_SAME_REGION = new ValidationExceptionType("RESOURCE_NOT_IN_SAME_REGION");
+
+        /// <summary>
+        /// Constant ROLE_ARN_INVALID_FORMAT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ROLE_ARN_INVALID_FORMAT = new ValidationExceptionType("ROLE_ARN_INVALID_FORMAT");
+
+        /// <summary>
+        /// Constant ROLE_ARN_LENGTH_OUT_OF_RANGE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ROLE_ARN_LENGTH_OUT_OF_RANGE = new ValidationExceptionType("ROLE_ARN_LENGTH_OUT_OF_RANGE");
+
+        /// <summary>
+        /// Constant ROLE_ARN_NOT_ASSUMABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ROLE_ARN_NOT_ASSUMABLE = new ValidationExceptionType("ROLE_ARN_NOT_ASSUMABLE");
+
+        /// <summary>
+        /// Constant SCTE_IN_MANIFESTS_INVALID_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SCTE_IN_MANIFESTS_INVALID_CONFIGURATION = new ValidationExceptionType("SCTE_IN_MANIFESTS_INVALID_CONFIGURATION");
+
+        /// <summary>
+        /// Constant SECRET_ARN_RESOURCE_NOT_FOUND for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_ARN_RESOURCE_NOT_FOUND = new ValidationExceptionType("SECRET_ARN_RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constant SECRET_FROM_DIFFERENT_ACCOUNT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_FROM_DIFFERENT_ACCOUNT = new ValidationExceptionType("SECRET_FROM_DIFFERENT_ACCOUNT");
+
+        /// <summary>
+        /// Constant SECRET_FROM_DIFFERENT_REGION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_FROM_DIFFERENT_REGION = new ValidationExceptionType("SECRET_FROM_DIFFERENT_REGION");
+
+        /// <summary>
+        /// Constant SECRET_IS_NOT_ONE_KEY_VALUE_PAIR for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SECRET_IS_NOT_ONE_KEY_VALUE_PAIR = new ValidationExceptionType("SECRET_IS_NOT_ONE_KEY_VALUE_PAIR");
+
+        /// <summary>
+        /// Constant SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY = new ValidationExceptionType("SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY");
+
+        /// <summary>
+        /// Constant START_TAG_TIME_OFFSET_INVALID for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType START_TAG_TIME_OFFSET_INVALID = new ValidationExceptionType("START_TAG_TIME_OFFSET_INVALID");
+
+        /// <summary>
+        /// Constant STREAM_NAME_OUTPUT_MODE_IMMUTABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType STREAM_NAME_OUTPUT_MODE_IMMUTABLE = new ValidationExceptionType("STREAM_NAME_OUTPUT_MODE_IMMUTABLE");
+
+        /// <summary>
+        /// Constant TIMING_SOURCE_MISSING for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TIMING_SOURCE_MISSING = new ValidationExceptionType("TIMING_SOURCE_MISSING");
+
+        /// <summary>
+        /// Constant TOO_MANY_IN_PROGRESS_HARVEST_JOBS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TOO_MANY_IN_PROGRESS_HARVEST_JOBS = new ValidationExceptionType("TOO_MANY_IN_PROGRESS_HARVEST_JOBS");
+
+        /// <summary>
+        /// Constant TOO_MANY_SECRETS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TOO_MANY_SECRETS = new ValidationExceptionType("TOO_MANY_SECRETS");
+
+        /// <summary>
+        /// Constant TS_CONTAINER_TYPE_WITH_DASH_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TS_CONTAINER_TYPE_WITH_DASH_MANIFEST = new ValidationExceptionType("TS_CONTAINER_TYPE_WITH_DASH_MANIFEST");
+
+        /// <summary>
+        /// Constant TS_CONTAINER_TYPE_WITH_MSS_MANIFEST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType TS_CONTAINER_TYPE_WITH_MSS_MANIFEST = new ValidationExceptionType("TS_CONTAINER_TYPE_WITH_MSS_MANIFEST");
+
+        /// <summary>
+        /// Constant UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION = new ValidationExceptionType("UPDATE_PERIOD_SMALLER_THAN_SEGMENT_DURATION");
+
+        /// <summary>
+        /// Constant URL_INVALID for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_INVALID = new ValidationExceptionType("URL_INVALID");
+
+        /// <summary>
+        /// Constant URL_LINK_LOCAL_ADDRESS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_LINK_LOCAL_ADDRESS = new ValidationExceptionType("URL_LINK_LOCAL_ADDRESS");
+
+        /// <summary>
+        /// Constant URL_LOCAL_ADDRESS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_LOCAL_ADDRESS = new ValidationExceptionType("URL_LOCAL_ADDRESS");
+
+        /// <summary>
+        /// Constant URL_LOOPBACK_ADDRESS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_LOOPBACK_ADDRESS = new ValidationExceptionType("URL_LOOPBACK_ADDRESS");
+
+        /// <summary>
+        /// Constant URL_MULTICAST_ADDRESS for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_MULTICAST_ADDRESS = new ValidationExceptionType("URL_MULTICAST_ADDRESS");
+
+        /// <summary>
+        /// Constant URL_PORT for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_PORT = new ValidationExceptionType("URL_PORT");
+
+        /// <summary>
+        /// Constant URL_SCHEME for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_SCHEME = new ValidationExceptionType("URL_SCHEME");
+
+        /// <summary>
+        /// Constant URL_UNKNOWN_HOST for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_UNKNOWN_HOST = new ValidationExceptionType("URL_UNKNOWN_HOST");
+
+        /// <summary>
+        /// Constant URL_USER_INFO for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType URL_USER_INFO = new ValidationExceptionType("URL_USER_INFO");
+
+        /// <summary>
+        /// Constructs a custom ValidationExceptionType for a value not among the defined constants.
+        /// </summary>
+        public ValidationExceptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionType FindValue(string value)
+        {
+            return FindValue<ValidationExceptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

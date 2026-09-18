@@ -1,0 +1,103 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.BedrockAgent.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// DocumentMetadata Marshaller
+    /// </summary>
+    public partial class DocumentMetadataMarshaller : IRequestMarshaller<DocumentMetadata, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(DocumentMetadata requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAccessControlList())
+            {
+                context.Writer.WritePropertyName("accessControlList");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectAccessControlListListValue in requestObject.AccessControlList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DocumentAccessControlEntryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAccessControlListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetInlineAttributes())
+            {
+                context.Writer.WritePropertyName("inlineAttributes");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectInlineAttributesListValue in requestObject.InlineAttributes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MetadataAttributeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInlineAttributesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetS3Location())
+            {
+                context.Writer.WritePropertyName("s3Location");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomS3LocationMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Location, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(requestObject.Type);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static DocumentMetadataMarshaller Instance = new DocumentMetadataMarshaller();
+    }
+}

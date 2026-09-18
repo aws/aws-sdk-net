@@ -1,0 +1,199 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Bedrock.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateEvaluationJob operation. Creates an evaluation
+    /// job.
+    /// </summary>
+    public partial class CreateEvaluationJobRequest : AmazonBedrockRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ApplicationType. 
+        /// <para>
+        /// Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge
+        /// base (retrieval and response generation).
+        /// </para>
+        /// </summary>
+        public ApplicationType ApplicationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ApplicationType property is set.
+        /// </summary>
+        internal bool IsSetApplicationType() => this.ApplicationType != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string ClientRequestToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientRequestToken property is set.
+        /// </summary>
+        internal bool IsSetClientRequestToken() => this.ClientRequestToken != null;
+
+        /// <summary>
+        /// Gets and sets the property CustomerEncryptionKeyId. 
+        /// <para>
+        /// Specify your customer managed encryption key Amazon Resource Name (ARN) that will
+        /// be used to encrypt your evaluation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string CustomerEncryptionKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomerEncryptionKeyId property is set.
+        /// </summary>
+        internal bool IsSetCustomerEncryptionKeyId() => this.CustomerEncryptionKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property EvaluationConfig. 
+        /// <para>
+        /// Contains the configuration details of either an automated or human-based evaluation
+        /// job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public EvaluationConfig EvaluationConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EvaluationConfig property is set.
+        /// </summary>
+        internal bool IsSetEvaluationConfig() => this.EvaluationConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfig. 
+        /// <para>
+        /// Contains the configuration details of the inference model for the evaluation job.
+        /// </para>
+        ///  
+        /// <para>
+        /// For model evaluation jobs, automated jobs support a single model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
+        /// profile</a>, and jobs that use human workers support two models or inference profiles.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public EvaluationInferenceConfig InferenceConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InferenceConfig property is set.
+        /// </summary>
+        internal bool IsSetInferenceConfig() => this.InferenceConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property JobDescription. 
+        /// <para>
+        /// A description of the evaluation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 200)]
+        public string JobDescription { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobDescription property is set.
+        /// </summary>
+        internal bool IsSetJobDescription() => this.JobDescription != null;
+
+        /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// A name for the evaluation job. Names must unique with your Amazon Web Services account,
+        /// and your account's Amazon Web Services region.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 63)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
+        /// Gets and sets the property JobTags. 
+        /// <para>
+        /// Tags to attach to the model evaluation job.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 200)]
+        public List<Tag> JobTags { get; set; } = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Checks to see if the JobTags property is set.
+        /// </summary>
+        internal bool IsSetJobTags() => this.JobTags != null && (this.JobTags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        /// Contains the configuration details of the Amazon S3 bucket for storing the results
+        /// of the evaluation job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public EvaluationOutputDataConfig OutputDataConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputDataConfig property is set.
+        /// </summary>
+        internal bool IsSetOutputDataConfig() => this.OutputDataConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume
+        /// to perform tasks on your behalf. To learn more about the required permissions, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security.html">Required
+        /// permissions for model evaluations</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Max = 2048)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
+    }
+}

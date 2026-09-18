@@ -1,0 +1,102 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.WellArchitected.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// ListAgentRecommendations Request Marshaller
+    /// </summary>
+    public partial class ListAgentRecommendationsRequestMarshaller : IMarshaller<IRequest, ListAgentRecommendationsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((ListAgentRecommendationsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(ListAgentRecommendationsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.WellArchitected");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-03-31";
+            request.HttpMethod = "GET";
+
+            if (publicRequest.IsSetMaxResults())
+            {
+                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults.Value));
+            }
+
+            if (publicRequest.IsSetNextToken())
+            {
+                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            }
+
+            if (publicRequest.IsSetPillar())
+            {
+                request.Parameters.Add("pillar", StringUtils.FromString(publicRequest.Pillar));
+            }
+
+            if (publicRequest.IsSetState())
+            {
+                request.Parameters.Add("state", StringUtils.FromString(publicRequest.State));
+            }
+
+            if (!publicRequest.IsSetProfileArn())
+            {
+                throw new AmazonWellArchitectedException("Request object does not have required field ProfileArn set");
+            }
+            request.AddPathResource("{profileArn}", StringUtils.FromString(publicRequest.ProfileArn));
+
+            request.ResourcePath = "/api/v1/agent-profiles/{profileArn}/recommendations";
+
+            request.UseQueryString = true;
+
+            return request;
+        }
+
+        private static readonly ListAgentRecommendationsRequestMarshaller _instance = new();
+
+        internal static ListAgentRecommendationsRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static ListAgentRecommendationsRequestMarshaller Instance => _instance;
+    }
+}

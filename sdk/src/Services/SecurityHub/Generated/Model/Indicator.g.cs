@@ -1,0 +1,104 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// Contains information about the indicators observed in an Amazon GuardDuty Extended
+    /// Threat Detection attack sequence. Indicators include a set of signals, which can be
+    /// API activities or findings that GuardDuty uses to detect an attack sequence finding.
+    /// GuardDuty generates an attack sequence finding when multiple signals align to a potentially
+    /// suspicious activity. To receive GuardDuty attack sequence findings in Security Hub
+    /// CSPM, you must have GuardDuty and GuardDuty S3 Protection enabled. For more information,
+    /// see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-extended-threat-detection.html">GuardDuty
+    /// Extended Threat Detection </a> in the <i>Amazon GuardDuty User Guide</i>.
+    /// </summary>
+    public partial class Indicator
+    {
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        ///  The name of the indicator that’s present in the attack sequence finding. 
+        /// </para>
+        /// </summary>
+        public string Key { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Key property is set.
+        /// </summary>
+        internal bool IsSetKey() => this.Key != null;
+
+        /// <summary>
+        /// Gets and sets the property Title. 
+        /// <para>
+        ///  The title describing the indicator. 
+        /// </para>
+        /// </summary>
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Title property is set.
+        /// </summary>
+        internal bool IsSetTitle() => this.Title != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        ///  The type of indicator. 
+        /// </para>
+        /// </summary>
+        public string Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+
+        /// <summary>
+        /// Gets and sets the property Values. 
+        /// <para>
+        /// Values associated with each indicator key. For example, if the indicator key is <c>SUSPICIOUS_NETWORK</c>,
+        /// then the value will be the name of the network. If the indicator key is <c>ATTACK_TACTIC</c>,
+        /// then the value will be one of the MITRE tactics.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Values { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Values property is set.
+        /// </summary>
+        internal bool IsSetValues() => this.Values != null && (this.Values.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

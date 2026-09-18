@@ -1,0 +1,127 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// contains details about a rate-based rule for Regional resources. A rate-based rule
+    /// provides settings to indicate when to allow, block, or count a request. Rate-based
+    /// rules include the number of requests that arrive over a specified period of time.
+    /// </summary>
+    public partial class AwsWafRegionalRateBasedRuleDetails
+    {
+        /// <summary>
+        /// Gets and sets the property MatchPredicates. 
+        /// <para>
+        /// The predicates to include in the rate-based rule.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AwsWafRegionalRateBasedRuleMatchPredicate> MatchPredicates { get; set; } = AWSConfigs.InitializeCollections ? new List<AwsWafRegionalRateBasedRuleMatchPredicate>() : null;
+
+        /// <summary>
+        /// Checks to see if the MatchPredicates property is set.
+        /// </summary>
+        internal bool IsSetMatchPredicates() => this.MatchPredicates != null && (this.MatchPredicates.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MetricName. 
+        /// <para>
+        /// The name of the metrics for the rate-based rule.
+        /// </para>
+        /// </summary>
+        public string MetricName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MetricName property is set.
+        /// </summary>
+        internal bool IsSetMetricName() => this.MetricName != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the rate-based rule.
+        /// </para>
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property RateKey. 
+        /// <para>
+        /// The field that WAF uses to determine whether requests are likely arriving from single
+        /// source and are subject to rate monitoring.
+        /// </para>
+        /// </summary>
+        public string RateKey { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RateKey property is set.
+        /// </summary>
+        internal bool IsSetRateKey() => this.RateKey != null;
+
+        /// <summary>
+        /// Gets and sets the property RateLimit. 
+        /// <para>
+        /// The maximum number of requests that have an identical value for the field specified
+        /// in <c>RateKey</c> that are allowed within a five-minute period. If the number of requests
+        /// exceeds <c>RateLimit</c> and the other predicates specified in the rule are met, WAF
+        /// triggers the action for the rule.
+        /// </para>
+        /// </summary>
+        public long? RateLimit { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RateLimit property is set.
+        /// </summary>
+        internal bool IsSetRateLimit() => this.RateLimit.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RuleId. 
+        /// <para>
+        /// The unique identifier for the rate-based rule.
+        /// </para>
+        /// </summary>
+        public string RuleId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RuleId property is set.
+        /// </summary>
+        internal bool IsSetRuleId() => this.RuleId != null;
+    }
+}

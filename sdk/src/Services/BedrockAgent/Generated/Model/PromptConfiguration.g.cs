@@ -1,0 +1,184 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgent.Model
+{
+    /// <summary>
+    /// Contains configurations to override a prompt template in one part of an agent sequence.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+    /// prompts</a>.
+    /// </summary>
+    public partial class PromptConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property AdditionalModelRequestFields. 
+        /// <para>
+        /// If the Converse or ConverseStream operations support the model, <c>additionalModelRequestFields</c>
+        /// contains additional inference parameters, beyond the base set of inference parameters
+        /// in the <c>inferenceConfiguration</c> field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <i>Inference request parameters and response fields for
+        /// foundation models</i> in the Amazon Bedrock user guide.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalModelRequestFields { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AdditionalModelRequestFields property is set.
+        /// </summary>
+        internal bool IsSetAdditionalModelRequestFields() => !this.AdditionalModelRequestFields.IsNull();
+
+        /// <summary>
+        /// Gets and sets the property BasePromptTemplate. 
+        /// <para>
+        /// Defines the prompt template with which to replace the default prompt template. You
+        /// can use placeholder variables in the base prompt template to customize the prompt.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Prompt
+        /// template placeholder variables</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts-configure.html">Configure
+        /// the prompt templates</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 100000)]
+        public string BasePromptTemplate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BasePromptTemplate property is set.
+        /// </summary>
+        internal bool IsSetBasePromptTemplate() => this.BasePromptTemplate != null;
+
+        /// <summary>
+        /// Gets and sets the property FoundationModel. 
+        /// <para>
+        /// The agent's foundation model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string FoundationModel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FoundationModel property is set.
+        /// </summary>
+        internal bool IsSetFoundationModel() => this.FoundationModel != null;
+
+        /// <summary>
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// Contains inference parameters to use when the agent invokes a foundation model in
+        /// the part of the agent sequence defined by the <c>promptType</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// parameters for foundation models</a>.
+        /// </para>
+        /// </summary>
+        public InferenceConfiguration InferenceConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InferenceConfiguration property is set.
+        /// </summary>
+        internal bool IsSetInferenceConfiguration() => this.InferenceConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ParserMode. 
+        /// <para>
+        /// Specifies whether to override the default parser Lambda function when parsing the
+        /// raw foundation model output in the part of the agent sequence defined by the <c>promptType</c>.
+        /// If you set the field as <c>OVERRIDDEN</c>, the <c>overrideLambda</c> field in the
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// must be specified with the ARN of a Lambda function.
+        /// </para>
+        /// </summary>
+        public CreationMode ParserMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ParserMode property is set.
+        /// </summary>
+        internal bool IsSetParserMode() => this.ParserMode != null;
+
+        /// <summary>
+        /// Gets and sets the property PromptCreationMode. 
+        /// <para>
+        /// Specifies whether to override the default prompt template for this <c>promptType</c>.
+        /// Set this value to <c>OVERRIDDEN</c> to use the prompt that you provide in the <c>basePromptTemplate</c>.
+        /// If you leave it as <c>DEFAULT</c>, the agent uses a default prompt template.
+        /// </para>
+        /// </summary>
+        public CreationMode PromptCreationMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PromptCreationMode property is set.
+        /// </summary>
+        internal bool IsSetPromptCreationMode() => this.PromptCreationMode != null;
+
+        /// <summary>
+        /// Gets and sets the property PromptState. 
+        /// <para>
+        /// Specifies whether to allow the agent to carry out the step specified in the <c>promptType</c>.
+        /// If you set this value to <c>DISABLED</c>, the agent skips that step. The default state
+        /// for each <c>promptType</c> is as follows.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PRE_PROCESSING</c> – <c>DISABLED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ORCHESTRATION</c> – <c>ENABLED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KNOWLEDGE_BASE_RESPONSE_GENERATION</c> – <c>ENABLED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>POST_PROCESSING</c> – <c>DISABLED</c> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PromptState PromptState { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PromptState property is set.
+        /// </summary>
+        internal bool IsSetPromptState() => this.PromptState != null;
+
+        /// <summary>
+        /// Gets and sets the property PromptType. 
+        /// <para>
+        /// The step in the agent sequence that this prompt configuration applies to.
+        /// </para>
+        /// </summary>
+        public PromptType PromptType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PromptType property is set.
+        /// </summary>
+        internal bool IsSetPromptType() => this.PromptType != null;
+    }
+}

@@ -1,0 +1,97 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// Provides information about the way an organization is configured in Security Hub
+    /// CSPM.
+    /// </summary>
+    public partial class OrganizationConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property ConfigurationType. 
+        /// <para>
+        ///  Indicates whether the organization uses local or central configuration. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use local configuration, the Security Hub CSPM delegated administrator can
+        /// set <c>AutoEnable</c> to <c>true</c> and <c>AutoEnableStandards</c> to <c>DEFAULT</c>.
+        /// This automatically enables Security Hub CSPM and default security standards in new
+        /// organization accounts. These new account settings must be set separately in each Amazon
+        /// Web Services Region, and settings may be different in each Region. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you use central configuration, the delegated administrator can create configuration
+        /// policies. Configuration policies can be used to configure Security Hub CSPM, security
+        /// standards, and security controls in multiple accounts and Regions. If you want new
+        /// organization accounts to use a specific configuration, you can create a configuration
+        /// policy and associate it with the root or specific organizational units (OUs). New
+        /// accounts will inherit the policy from the root or their assigned OU. 
+        /// </para>
+        /// </summary>
+        public OrganizationConfigurationConfigurationType ConfigurationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ConfigurationType property is set.
+        /// </summary>
+        internal bool IsSetConfigurationType() => this.ConfigurationType != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  Describes whether central configuration could be enabled as the <c>ConfigurationType</c>
+        /// for the organization. If your <c>ConfigurationType</c> is local configuration, then
+        /// the value of <c>Status</c> is always <c>ENABLED</c>. 
+        /// </para>
+        /// </summary>
+        public OrganizationConfigurationStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        ///  Provides an explanation if the value of <c>Status</c> is equal to <c>FAILED</c> when
+        /// <c>ConfigurationType</c> is equal to <c>CENTRAL</c>. 
+        /// </para>
+        /// </summary>
+        public string StatusMessage { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StatusMessage property is set.
+        /// </summary>
+        internal bool IsSetStatusMessage() => this.StatusMessage != null;
+    }
+}

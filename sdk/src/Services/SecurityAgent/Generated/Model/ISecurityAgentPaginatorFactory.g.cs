@@ -1,0 +1,167 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.SecurityAgent.Model
+{
+    /// <summary>
+    /// Paginators for the SecurityAgent service
+    /// </summary>
+    public interface ISecurityAgentPaginatorFactory
+    {
+        /// <summary>
+        /// Paginator for ListAgentSpaces operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListAgentSpacesPaginator ListAgentSpaces(ListAgentSpacesRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListArtifacts operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListArtifactsPaginator ListArtifacts(ListArtifactsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCodeReviewJobTasks operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCodeReviewJobTasksPaginator ListCodeReviewJobTasks(ListCodeReviewJobTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListCodeReviewJobsForCodeReview operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCodeReviewJobsForCodeReviewPaginator ListCodeReviewJobsForCodeReview(ListCodeReviewJobsForCodeReviewRequest request);
+
+        /// <summary>
+        /// Paginator for ListCodeReviews operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListCodeReviewsPaginator ListCodeReviews(ListCodeReviewsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDiscoveredEndpoints operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDiscoveredEndpointsPaginator ListDiscoveredEndpoints(ListDiscoveredEndpointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListFindings operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListFindingsPaginator ListFindings(ListFindingsRequest request);
+
+        /// <summary>
+        /// Paginator for ListIntegratedResources operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListIntegratedResourcesPaginator ListIntegratedResources(ListIntegratedResourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListIntegrations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListIntegrationsPaginator ListIntegrations(ListIntegrationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMemberships operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListMembershipsPaginator ListMemberships(ListMembershipsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPentestJobTasks operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPentestJobTasksPaginator ListPentestJobTasks(ListPentestJobTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListPentestJobsForPentest operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPentestJobsForPentestPaginator ListPentestJobsForPentest(ListPentestJobsForPentestRequest request);
+
+        /// <summary>
+        /// Paginator for ListPentests operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPentestsPaginator ListPentests(ListPentestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPrivateConnections operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListPrivateConnectionsPaginator ListPrivateConnections(ListPrivateConnectionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityRequirementPacks operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListSecurityRequirementPacksPaginator ListSecurityRequirementPacks(ListSecurityRequirementPacksRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityRequirements operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListSecurityRequirementsPaginator ListSecurityRequirements(ListSecurityRequirementsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTargetDomains operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListTargetDomainsPaginator ListTargetDomains(ListTargetDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreatModelJobTasks operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListThreatModelJobTasksPaginator ListThreatModelJobTasks(ListThreatModelJobTasksRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreatModelJobs operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListThreatModelJobsPaginator ListThreatModelJobs(ListThreatModelJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreatModels operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListThreatModelsPaginator ListThreatModels(ListThreatModelsRequest request);
+
+        /// <summary>
+        /// Paginator for ListThreats operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListThreatsPaginator ListThreats(ListThreatsRequest request);
+    }
+}

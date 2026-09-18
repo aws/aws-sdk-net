@@ -1,0 +1,110 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.EntityResolution.Model
+{
+    /// <summary>
+    /// A list of <c>MatchingWorkflowSummary</c> objects, each of which contain the fields
+    /// <c>workflowName</c>, <c>workflowArn</c>, <c>resolutionType</c>, <c>createdAt</c>,
+    /// <c>updatedAt</c>.
+    /// </summary>
+    public partial class MatchingWorkflowSummary
+    {
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp of when the workflow was created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? CreatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreatedAt property is set.
+        /// </summary>
+        internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ResolutionType. 
+        /// <para>
+        /// The method that has been specified for data matching, either using matching provided
+        /// by Entity Resolution or through a provider service.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public ResolutionType ResolutionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResolutionType property is set.
+        /// </summary>
+        internal bool IsSetResolutionType() => this.ResolutionType != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp of when the workflow was last updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdatedAt property is set.
+        /// </summary>
+        internal bool IsSetUpdatedAt() => this.UpdatedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property WorkflowArn. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>MatchingWorkflow</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string WorkflowArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkflowArn property is set.
+        /// </summary>
+        internal bool IsSetWorkflowArn() => this.WorkflowArn != null;
+
+        /// <summary>
+        /// Gets and sets the property WorkflowName. 
+        /// <para>
+        /// The name of the workflow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        public string WorkflowName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WorkflowName property is set.
+        /// </summary>
+        internal bool IsSetWorkflowName() => this.WorkflowName != null;
+    }
+}

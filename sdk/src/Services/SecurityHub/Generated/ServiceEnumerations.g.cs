@@ -1,0 +1,5102 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.SecurityHub
+{
+    /// <summary>
+    /// Constants used for properties of type ActorSessionMfaStatus.
+    /// </summary>
+    public class ActorSessionMfaStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for ActorSessionMfaStatus
+        /// </summary>
+        public static readonly ActorSessionMfaStatus DISABLED = new ActorSessionMfaStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for ActorSessionMfaStatus
+        /// </summary>
+        public static readonly ActorSessionMfaStatus ENABLED = new ActorSessionMfaStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom ActorSessionMfaStatus for a value not among the defined constants.
+        /// </summary>
+        public ActorSessionMfaStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActorSessionMfaStatus FindValue(string value)
+        {
+            return FindValue<ActorSessionMfaStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActorSessionMfaStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AdminStatus.
+    /// </summary>
+    public class AdminStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLE_IN_PROGRESS for AdminStatus
+        /// </summary>
+        public static readonly AdminStatus DISABLE_IN_PROGRESS = new AdminStatus("DISABLE_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant ENABLED for AdminStatus
+        /// </summary>
+        public static readonly AdminStatus ENABLED = new AdminStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AdminStatus for a value not among the defined constants.
+        /// </summary>
+        public AdminStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdminStatus FindValue(string value)
+        {
+            return FindValue<AdminStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdminStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AllowedOperators.
+    /// </summary>
+    public class AllowedOperators : ConstantClass
+    {
+        /// <summary>
+        /// Constant AND for AllowedOperators
+        /// </summary>
+        public static readonly AllowedOperators AND = new AllowedOperators("AND");
+
+        /// <summary>
+        /// Constant OR for AllowedOperators
+        /// </summary>
+        public static readonly AllowedOperators OR = new AllowedOperators("OR");
+
+        /// <summary>
+        /// Constructs a custom AllowedOperators for a value not among the defined constants.
+        /// </summary>
+        public AllowedOperators(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AllowedOperators FindValue(string value)
+        {
+            return FindValue<AllowedOperators>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AllowedOperators(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AssociationStatus.
+    /// </summary>
+    public class AssociationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus DISABLED = new AssociationStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for AssociationStatus
+        /// </summary>
+        public static readonly AssociationStatus ENABLED = new AssociationStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AssociationStatus for a value not among the defined constants.
+        /// </summary>
+        public AssociationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationStatus FindValue(string value)
+        {
+            return FindValue<AssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AssociationType.
+    /// </summary>
+    public class AssociationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant APPLIED for AssociationType
+        /// </summary>
+        public static readonly AssociationType APPLIED = new AssociationType("APPLIED");
+
+        /// <summary>
+        /// Constant INHERITED for AssociationType
+        /// </summary>
+        public static readonly AssociationType INHERITED = new AssociationType("INHERITED");
+
+        /// <summary>
+        /// Constructs a custom AssociationType for a value not among the defined constants.
+        /// </summary>
+        public AssociationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationType FindValue(string value)
+        {
+            return FindValue<AssociationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AutoEnableStandards.
+    /// </summary>
+    public class AutoEnableStandards : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEFAULT for AutoEnableStandards
+        /// </summary>
+        public static readonly AutoEnableStandards DEFAULT = new AutoEnableStandards("DEFAULT");
+
+        /// <summary>
+        /// Constant NONE for AutoEnableStandards
+        /// </summary>
+        public static readonly AutoEnableStandards NONE = new AutoEnableStandards("NONE");
+
+        /// <summary>
+        /// Constructs a custom AutoEnableStandards for a value not among the defined constants.
+        /// </summary>
+        public AutoEnableStandards(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoEnableStandards FindValue(string value)
+        {
+            return FindValue<AutoEnableStandards>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoEnableStandards(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AutomationRulesActionType.
+    /// </summary>
+    public class AutomationRulesActionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant FINDING_FIELDS_UPDATE for AutomationRulesActionType
+        /// </summary>
+        public static readonly AutomationRulesActionType FINDING_FIELDS_UPDATE = new AutomationRulesActionType("FINDING_FIELDS_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom AutomationRulesActionType for a value not among the defined constants.
+        /// </summary>
+        public AutomationRulesActionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationRulesActionType FindValue(string value)
+        {
+            return FindValue<AutomationRulesActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationRulesActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AutomationRulesActionTypeV2.
+    /// </summary>
+    public class AutomationRulesActionTypeV2 : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXTERNAL_INTEGRATION for AutomationRulesActionTypeV2
+        /// </summary>
+        public static readonly AutomationRulesActionTypeV2 EXTERNAL_INTEGRATION = new AutomationRulesActionTypeV2("EXTERNAL_INTEGRATION");
+
+        /// <summary>
+        /// Constant FINDING_FIELDS_UPDATE for AutomationRulesActionTypeV2
+        /// </summary>
+        public static readonly AutomationRulesActionTypeV2 FINDING_FIELDS_UPDATE = new AutomationRulesActionTypeV2("FINDING_FIELDS_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom AutomationRulesActionTypeV2 for a value not among the defined constants.
+        /// </summary>
+        public AutomationRulesActionTypeV2(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationRulesActionTypeV2 FindValue(string value)
+        {
+            return FindValue<AutomationRulesActionTypeV2>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationRulesActionTypeV2(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AwsIamAccessKeyStatus.
+    /// </summary>
+    public class AwsIamAccessKeyStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Active for AwsIamAccessKeyStatus
+        /// </summary>
+        public static readonly AwsIamAccessKeyStatus Active = new AwsIamAccessKeyStatus("Active");
+
+        /// <summary>
+        /// Constant Inactive for AwsIamAccessKeyStatus
+        /// </summary>
+        public static readonly AwsIamAccessKeyStatus Inactive = new AwsIamAccessKeyStatus("Inactive");
+
+        /// <summary>
+        /// Constructs a custom AwsIamAccessKeyStatus for a value not among the defined constants.
+        /// </summary>
+        public AwsIamAccessKeyStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AwsIamAccessKeyStatus FindValue(string value)
+        {
+            return FindValue<AwsIamAccessKeyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AwsIamAccessKeyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AwsS3BucketNotificationConfigurationS3KeyFilterRuleName.
+    /// </summary>
+    public class AwsS3BucketNotificationConfigurationS3KeyFilterRuleName : ConstantClass
+    {
+        /// <summary>
+        /// Constant Prefix for AwsS3BucketNotificationConfigurationS3KeyFilterRuleName
+        /// </summary>
+        public static readonly AwsS3BucketNotificationConfigurationS3KeyFilterRuleName Prefix = new AwsS3BucketNotificationConfigurationS3KeyFilterRuleName("Prefix");
+
+        /// <summary>
+        /// Constant Suffix for AwsS3BucketNotificationConfigurationS3KeyFilterRuleName
+        /// </summary>
+        public static readonly AwsS3BucketNotificationConfigurationS3KeyFilterRuleName Suffix = new AwsS3BucketNotificationConfigurationS3KeyFilterRuleName("Suffix");
+
+        /// <summary>
+        /// Constructs a custom AwsS3BucketNotificationConfigurationS3KeyFilterRuleName for a value not among the defined constants.
+        /// </summary>
+        public AwsS3BucketNotificationConfigurationS3KeyFilterRuleName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AwsS3BucketNotificationConfigurationS3KeyFilterRuleName FindValue(string value)
+        {
+            return FindValue<AwsS3BucketNotificationConfigurationS3KeyFilterRuleName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AwsS3BucketNotificationConfigurationS3KeyFilterRuleName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BatchUpdateFindingsV2UnprocessedFindingErrorCode.
+    /// </summary>
+    public class BatchUpdateFindingsV2UnprocessedFindingErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ConflictException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode ConflictException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("ConflictException");
+
+        /// <summary>
+        /// Constant InternalServerException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode InternalServerException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("InternalServerException");
+
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode ResourceNotFoundException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("ResourceNotFoundException");
+
+        /// <summary>
+        /// Constant ValidationException for BatchUpdateFindingsV2UnprocessedFindingErrorCode
+        /// </summary>
+        public static readonly BatchUpdateFindingsV2UnprocessedFindingErrorCode ValidationException = new BatchUpdateFindingsV2UnprocessedFindingErrorCode("ValidationException");
+
+        /// <summary>
+        /// Constructs a custom BatchUpdateFindingsV2UnprocessedFindingErrorCode for a value not among the defined constants.
+        /// </summary>
+        public BatchUpdateFindingsV2UnprocessedFindingErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchUpdateFindingsV2UnprocessedFindingErrorCode FindValue(string value)
+        {
+            return FindValue<BatchUpdateFindingsV2UnprocessedFindingErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchUpdateFindingsV2UnprocessedFindingErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CloudProviderName.
+    /// </summary>
+    public class CloudProviderName : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS for CloudProviderName
+        /// </summary>
+        public static readonly CloudProviderName AWS = new CloudProviderName("AWS");
+
+        /// <summary>
+        /// Constant Azure for CloudProviderName
+        /// </summary>
+        public static readonly CloudProviderName Azure = new CloudProviderName("Azure");
+
+        /// <summary>
+        /// Constructs a custom CloudProviderName for a value not among the defined constants.
+        /// </summary>
+        public CloudProviderName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudProviderName FindValue(string value)
+        {
+            return FindValue<CloudProviderName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudProviderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ComplianceStatus.
+    /// </summary>
+    public class ComplianceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for ComplianceStatus
+        /// </summary>
+        public static readonly ComplianceStatus FAILED = new ComplianceStatus("FAILED");
+
+        /// <summary>
+        /// Constant NOT_AVAILABLE for ComplianceStatus
+        /// </summary>
+        public static readonly ComplianceStatus NOT_AVAILABLE = new ComplianceStatus("NOT_AVAILABLE");
+
+        /// <summary>
+        /// Constant PASSED for ComplianceStatus
+        /// </summary>
+        public static readonly ComplianceStatus PASSED = new ComplianceStatus("PASSED");
+
+        /// <summary>
+        /// Constant WARNING for ComplianceStatus
+        /// </summary>
+        public static readonly ComplianceStatus WARNING = new ComplianceStatus("WARNING");
+
+        /// <summary>
+        /// Constructs a custom ComplianceStatus for a value not among the defined constants.
+        /// </summary>
+        public ComplianceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ComplianceStatus FindValue(string value)
+        {
+            return FindValue<ComplianceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ComplianceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConfigurationPolicyAssociationStatus.
+    /// </summary>
+    public class ConfigurationPolicyAssociationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus FAILED = new ConfigurationPolicyAssociationStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus PENDING = new ConfigurationPolicyAssociationStatus("PENDING");
+
+        /// <summary>
+        /// Constant SUCCESS for ConfigurationPolicyAssociationStatus
+        /// </summary>
+        public static readonly ConfigurationPolicyAssociationStatus SUCCESS = new ConfigurationPolicyAssociationStatus("SUCCESS");
+
+        /// <summary>
+        /// Constructs a custom ConfigurationPolicyAssociationStatus for a value not among the defined constants.
+        /// </summary>
+        public ConfigurationPolicyAssociationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationPolicyAssociationStatus FindValue(string value)
+        {
+            return FindValue<ConfigurationPolicyAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationPolicyAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionDirection.
+    /// </summary>
+    public class ConnectionDirection : ConstantClass
+    {
+        /// <summary>
+        /// Constant INBOUND for ConnectionDirection
+        /// </summary>
+        public static readonly ConnectionDirection INBOUND = new ConnectionDirection("INBOUND");
+
+        /// <summary>
+        /// Constant OUTBOUND for ConnectionDirection
+        /// </summary>
+        public static readonly ConnectionDirection OUTBOUND = new ConnectionDirection("OUTBOUND");
+
+        /// <summary>
+        /// Constructs a custom ConnectionDirection for a value not among the defined constants.
+        /// </summary>
+        public ConnectionDirection(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionDirection FindValue(string value)
+        {
+            return FindValue<ConnectionDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorAuthStatus.
+    /// </summary>
+    public class ConnectorAuthStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for ConnectorAuthStatus
+        /// </summary>
+        public static readonly ConnectorAuthStatus ACTIVE = new ConnectorAuthStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant FAILED for ConnectorAuthStatus
+        /// </summary>
+        public static readonly ConnectorAuthStatus FAILED = new ConnectorAuthStatus("FAILED");
+
+        /// <summary>
+        /// Constructs a custom ConnectorAuthStatus for a value not among the defined constants.
+        /// </summary>
+        public ConnectorAuthStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorAuthStatus FindValue(string value)
+        {
+            return FindValue<ConnectorAuthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorAuthStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorProviderName.
+    /// </summary>
+    public class ConnectorProviderName : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZURE for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName AZURE = new ConnectorProviderName("AZURE");
+
+        /// <summary>
+        /// Constant JIRA_CLOUD for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName JIRA_CLOUD = new ConnectorProviderName("JIRA_CLOUD");
+
+        /// <summary>
+        /// Constant SERVICENOW for ConnectorProviderName
+        /// </summary>
+        public static readonly ConnectorProviderName SERVICENOW = new ConnectorProviderName("SERVICENOW");
+
+        /// <summary>
+        /// Constructs a custom ConnectorProviderName for a value not among the defined constants.
+        /// </summary>
+        public ConnectorProviderName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorProviderName FindValue(string value)
+        {
+            return FindValue<ConnectorProviderName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorProviderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConnectorStatus.
+    /// </summary>
+    public class ConnectorStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus CONNECTED = new ConnectorStatus("CONNECTED");
+
+        /// <summary>
+        /// Constant DEGRADED for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus DEGRADED = new ConnectorStatus("DEGRADED");
+
+        /// <summary>
+        /// Constant FAILED_TO_CONNECT for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus FAILED_TO_CONNECT = new ConnectorStatus("FAILED_TO_CONNECT");
+
+        /// <summary>
+        /// Constant PENDING_AUTHORIZATION for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus PENDING_AUTHORIZATION = new ConnectorStatus("PENDING_AUTHORIZATION");
+
+        /// <summary>
+        /// Constant PENDING_CONFIGURATION for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus PENDING_CONFIGURATION = new ConnectorStatus("PENDING_CONFIGURATION");
+
+        /// <summary>
+        /// Constant UNKNOWN for ConnectorStatus
+        /// </summary>
+        public static readonly ConnectorStatus UNKNOWN = new ConnectorStatus("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom ConnectorStatus for a value not among the defined constants.
+        /// </summary>
+        public ConnectorStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorStatus FindValue(string value)
+        {
+            return FindValue<ConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ControlFindingGenerator.
+    /// </summary>
+    public class ControlFindingGenerator : ConstantClass
+    {
+        /// <summary>
+        /// Constant SECURITY_CONTROL for ControlFindingGenerator
+        /// </summary>
+        public static readonly ControlFindingGenerator SECURITY_CONTROL = new ControlFindingGenerator("SECURITY_CONTROL");
+
+        /// <summary>
+        /// Constant STANDARD_CONTROL for ControlFindingGenerator
+        /// </summary>
+        public static readonly ControlFindingGenerator STANDARD_CONTROL = new ControlFindingGenerator("STANDARD_CONTROL");
+
+        /// <summary>
+        /// Constructs a custom ControlFindingGenerator for a value not among the defined constants.
+        /// </summary>
+        public ControlFindingGenerator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlFindingGenerator FindValue(string value)
+        {
+            return FindValue<ControlFindingGenerator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlFindingGenerator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ControlStatus.
+    /// </summary>
+    public class ControlStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for ControlStatus
+        /// </summary>
+        public static readonly ControlStatus DISABLED = new ControlStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for ControlStatus
+        /// </summary>
+        public static readonly ControlStatus ENABLED = new ControlStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom ControlStatus for a value not among the defined constants.
+        /// </summary>
+        public ControlStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlStatus FindValue(string value)
+        {
+            return FindValue<ControlStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CspmConnectorProviderName.
+    /// </summary>
+    public class CspmConnectorProviderName : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZURE for CspmConnectorProviderName
+        /// </summary>
+        public static readonly CspmConnectorProviderName AZURE = new CspmConnectorProviderName("AZURE");
+
+        /// <summary>
+        /// Constructs a custom CspmConnectorProviderName for a value not among the defined constants.
+        /// </summary>
+        public CspmConnectorProviderName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CspmConnectorProviderName FindValue(string value)
+        {
+            return FindValue<CspmConnectorProviderName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CspmConnectorProviderName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CspmConnectorStatus.
+    /// </summary>
+    public class CspmConnectorStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONNECTED for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus CONNECTED = new CspmConnectorStatus("CONNECTED");
+
+        /// <summary>
+        /// Constant DEGRADED for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus DEGRADED = new CspmConnectorStatus("DEGRADED");
+
+        /// <summary>
+        /// Constant FAILED_TO_CONNECT for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus FAILED_TO_CONNECT = new CspmConnectorStatus("FAILED_TO_CONNECT");
+
+        /// <summary>
+        /// Constant UNKNOWN for CspmConnectorStatus
+        /// </summary>
+        public static readonly CspmConnectorStatus UNKNOWN = new CspmConnectorStatus("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom CspmConnectorStatus for a value not among the defined constants.
+        /// </summary>
+        public CspmConnectorStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CspmConnectorStatus FindValue(string value)
+        {
+            return FindValue<CspmConnectorStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CspmConnectorStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CspmEnablementStatus.
+    /// </summary>
+    public class CspmEnablementStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENABLED for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus ENABLED = new CspmEnablementStatus("ENABLED");
+
+        /// <summary>
+        /// Constant PENDING_DELETION for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus PENDING_DELETION = new CspmEnablementStatus("PENDING_DELETION");
+
+        /// <summary>
+        /// Constant PENDING_ENABLEMENT for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus PENDING_ENABLEMENT = new CspmEnablementStatus("PENDING_ENABLEMENT");
+
+        /// <summary>
+        /// Constant PENDING_UPDATE for CspmEnablementStatus
+        /// </summary>
+        public static readonly CspmEnablementStatus PENDING_UPDATE = new CspmEnablementStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom CspmEnablementStatus for a value not among the defined constants.
+        /// </summary>
+        public CspmEnablementStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CspmEnablementStatus FindValue(string value)
+        {
+            return FindValue<CspmEnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CspmEnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DateRangeComparison.
+    /// </summary>
+    public class DateRangeComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant OLDER_THAN for DateRangeComparison
+        /// </summary>
+        public static readonly DateRangeComparison OLDER_THAN = new DateRangeComparison("OLDER_THAN");
+
+        /// <summary>
+        /// Constant WITHIN for DateRangeComparison
+        /// </summary>
+        public static readonly DateRangeComparison WITHIN = new DateRangeComparison("WITHIN");
+
+        /// <summary>
+        /// Constructs a custom DateRangeComparison for a value not among the defined constants.
+        /// </summary>
+        public DateRangeComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DateRangeComparison FindValue(string value)
+        {
+            return FindValue<DateRangeComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DateRangeComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DateRangeUnit.
+    /// </summary>
+    public class DateRangeUnit : ConstantClass
+    {
+        /// <summary>
+        /// Constant DAYS for DateRangeUnit
+        /// </summary>
+        public static readonly DateRangeUnit DAYS = new DateRangeUnit("DAYS");
+
+        /// <summary>
+        /// Constructs a custom DateRangeUnit for a value not among the defined constants.
+        /// </summary>
+        public DateRangeUnit(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DateRangeUnit FindValue(string value)
+        {
+            return FindValue<DateRangeUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DateRangeUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DiscoveryType.
+    /// </summary>
+    public class DiscoveryType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Managed for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType Managed = new DiscoveryType("Managed");
+
+        /// <summary>
+        /// Constant SelfHosted for DiscoveryType
+        /// </summary>
+        public static readonly DiscoveryType SelfHosted = new DiscoveryType("SelfHosted");
+
+        /// <summary>
+        /// Constructs a custom DiscoveryType for a value not among the defined constants.
+        /// </summary>
+        public DiscoveryType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DiscoveryType FindValue(string value)
+        {
+            return FindValue<DiscoveryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DiscoveryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EnablementStatus.
+    /// </summary>
+    public class EnablementStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENABLED for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus ENABLED = new EnablementStatus("ENABLED");
+
+        /// <summary>
+        /// Constant FAILED_TO_DELETE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED_TO_DELETE = new EnablementStatus("FAILED_TO_DELETE");
+
+        /// <summary>
+        /// Constant FAILED_TO_ENABLE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED_TO_ENABLE = new EnablementStatus("FAILED_TO_ENABLE");
+
+        /// <summary>
+        /// Constant FAILED_TO_UPDATE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus FAILED_TO_UPDATE = new EnablementStatus("FAILED_TO_UPDATE");
+
+        /// <summary>
+        /// Constant PENDING_DELETION for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus PENDING_DELETION = new EnablementStatus("PENDING_DELETION");
+
+        /// <summary>
+        /// Constant PENDING_ENABLEMENT for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus PENDING_ENABLEMENT = new EnablementStatus("PENDING_ENABLEMENT");
+
+        /// <summary>
+        /// Constant PENDING_UPDATE for EnablementStatus
+        /// </summary>
+        public static readonly EnablementStatus PENDING_UPDATE = new EnablementStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// Constructs a custom EnablementStatus for a value not among the defined constants.
+        /// </summary>
+        public EnablementStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnablementStatus FindValue(string value)
+        {
+            return FindValue<EnablementStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnablementStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FeatureName.
+    /// </summary>
+    public class FeatureName : ConstantClass
+    {
+        /// <summary>
+        /// Constant NETWORK_SCANNING for FeatureName
+        /// </summary>
+        public static readonly FeatureName NETWORK_SCANNING = new FeatureName("NETWORK_SCANNING");
+
+        /// <summary>
+        /// Constructs a custom FeatureName for a value not among the defined constants.
+        /// </summary>
+        public FeatureName(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureName FindValue(string value)
+        {
+            return FindValue<FeatureName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FeatureStatus.
+    /// </summary>
+    public class FeatureStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED = new FeatureStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED = new FeatureStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom FeatureStatus for a value not among the defined constants.
+        /// </summary>
+        public FeatureStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureStatus FindValue(string value)
+        {
+            return FindValue<FeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingHistoryUpdateSourceType.
+    /// </summary>
+    public class FindingHistoryUpdateSourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BATCH_IMPORT_FINDINGS for FindingHistoryUpdateSourceType
+        /// </summary>
+        public static readonly FindingHistoryUpdateSourceType BATCH_IMPORT_FINDINGS = new FindingHistoryUpdateSourceType("BATCH_IMPORT_FINDINGS");
+
+        /// <summary>
+        /// Constant BATCH_UPDATE_FINDINGS for FindingHistoryUpdateSourceType
+        /// </summary>
+        public static readonly FindingHistoryUpdateSourceType BATCH_UPDATE_FINDINGS = new FindingHistoryUpdateSourceType("BATCH_UPDATE_FINDINGS");
+
+        /// <summary>
+        /// Constructs a custom FindingHistoryUpdateSourceType for a value not among the defined constants.
+        /// </summary>
+        public FindingHistoryUpdateSourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingHistoryUpdateSourceType FindValue(string value)
+        {
+            return FindValue<FindingHistoryUpdateSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingHistoryUpdateSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FindingsTrendsStringField.
+    /// </summary>
+    public class FindingsTrendsStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account_id for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Account_id = new FindingsTrendsStringField("account_id");
+
+        /// <summary>
+        /// Constant Finding_activity_name for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_activity_name = new FindingsTrendsStringField("finding_activity_name");
+
+        /// <summary>
+        /// Constant Finding_class_name for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_class_name = new FindingsTrendsStringField("finding_class_name");
+
+        /// <summary>
+        /// Constant Finding_compliance_status for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_compliance_status = new FindingsTrendsStringField("finding_compliance_status");
+
+        /// <summary>
+        /// Constant Finding_control_id for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_control_id = new FindingsTrendsStringField("finding_control_id");
+
+        /// <summary>
+        /// Constant Finding_cve_ids for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_cve_ids = new FindingsTrendsStringField("finding_cve_ids");
+
+        /// <summary>
+        /// Constant Finding_provider for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_provider = new FindingsTrendsStringField("finding_provider");
+
+        /// <summary>
+        /// Constant Finding_status for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_status = new FindingsTrendsStringField("finding_status");
+
+        /// <summary>
+        /// Constant Finding_types for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Finding_types = new FindingsTrendsStringField("finding_types");
+
+        /// <summary>
+        /// Constant Region for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Region = new FindingsTrendsStringField("region");
+
+        /// <summary>
+        /// Constant Resource_cloud_providers for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_cloud_providers = new FindingsTrendsStringField("resource_cloud_providers");
+
+        /// <summary>
+        /// Constant Resource_owner_ids for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_owner_ids = new FindingsTrendsStringField("resource_owner_ids");
+
+        /// <summary>
+        /// Constant Resource_owner_organization_ids for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_owner_organization_ids = new FindingsTrendsStringField("resource_owner_organization_ids");
+
+        /// <summary>
+        /// Constant Resource_regions for FindingsTrendsStringField
+        /// </summary>
+        public static readonly FindingsTrendsStringField Resource_regions = new FindingsTrendsStringField("resource_regions");
+
+        /// <summary>
+        /// Constructs a custom FindingsTrendsStringField for a value not among the defined constants.
+        /// </summary>
+        public FindingsTrendsStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FindingsTrendsStringField FindValue(string value)
+        {
+            return FindValue<FindingsTrendsStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FindingsTrendsStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FreeTrialStatusValue.
+    /// </summary>
+    public class FreeTrialStatusValue : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for FreeTrialStatusValue
+        /// </summary>
+        public static readonly FreeTrialStatusValue ACTIVE = new FreeTrialStatusValue("ACTIVE");
+
+        /// <summary>
+        /// Constant INACTIVE for FreeTrialStatusValue
+        /// </summary>
+        public static readonly FreeTrialStatusValue INACTIVE = new FreeTrialStatusValue("INACTIVE");
+
+        /// <summary>
+        /// Constructs a custom FreeTrialStatusValue for a value not among the defined constants.
+        /// </summary>
+        public FreeTrialStatusValue(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FreeTrialStatusValue FindValue(string value)
+        {
+            return FindValue<FreeTrialStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FreeTrialStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FreeTrialType.
+    /// </summary>
+    public class FreeTrialType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SECURITY_HUB_V2 for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType SECURITY_HUB_V2 = new FreeTrialType("SECURITY_HUB_V2");
+
+        /// <summary>
+        /// Constant SECURITY_HUB_V2_MULTI_CLOUD_AZURE for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType SECURITY_HUB_V2_MULTI_CLOUD_AZURE = new FreeTrialType("SECURITY_HUB_V2_MULTI_CLOUD_AZURE");
+
+        /// <summary>
+        /// Constructs a custom FreeTrialType for a value not among the defined constants.
+        /// </summary>
+        public FreeTrialType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FreeTrialType FindValue(string value)
+        {
+            return FindValue<FreeTrialType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FreeTrialType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GranularityField.
+    /// </summary>
+    public class GranularityField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Daily for GranularityField
+        /// </summary>
+        public static readonly GranularityField Daily = new GranularityField("Daily");
+
+        /// <summary>
+        /// Constant Monthly for GranularityField
+        /// </summary>
+        public static readonly GranularityField Monthly = new GranularityField("Monthly");
+
+        /// <summary>
+        /// Constant Weekly for GranularityField
+        /// </summary>
+        public static readonly GranularityField Weekly = new GranularityField("Weekly");
+
+        /// <summary>
+        /// Constructs a custom GranularityField for a value not among the defined constants.
+        /// </summary>
+        public GranularityField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GranularityField FindValue(string value)
+        {
+            return FindValue<GranularityField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GranularityField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GroupByField.
+    /// </summary>
+    public class GroupByField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Activity_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField Activity_name = new GroupByField("activity_name");
+
+        /// <summary>
+        /// Constant Class_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField Class_name = new GroupByField("class_name");
+
+        /// <summary>
+        /// Constant CloudAccountName for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudAccountName = new GroupByField("cloud.account.name");
+
+        /// <summary>
+        /// Constant CloudAccountUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudAccountUid = new GroupByField("cloud.account.uid");
+
+        /// <summary>
+        /// Constant CloudProvider for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudProvider = new GroupByField("cloud.provider");
+
+        /// <summary>
+        /// Constant CloudRegion for GroupByField
+        /// </summary>
+        public static readonly GroupByField CloudRegion = new GroupByField("cloud.region");
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsName for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceAssessmentsName = new GroupByField("compliance.assessments.name");
+
+        /// <summary>
+        /// Constant ComplianceControl for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceControl = new GroupByField("compliance.control");
+
+        /// <summary>
+        /// Constant ComplianceStandards for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceStandards = new GroupByField("compliance.standards");
+
+        /// <summary>
+        /// Constant ComplianceStatus for GroupByField
+        /// </summary>
+        public static readonly GroupByField ComplianceStatus = new GroupByField("compliance.status");
+
+        /// <summary>
+        /// Constant Finding_infoAnalyticName for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoAnalyticName = new GroupByField("finding_info.analytic.name");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsTraitsCategory for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoRelated_eventsTraitsCategory = new GroupByField("finding_info.related_events.traits.category");
+
+        /// <summary>
+        /// Constant Finding_infoTitle for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoTitle = new GroupByField("finding_info.title");
+
+        /// <summary>
+        /// Constant Finding_infoTypes for GroupByField
+        /// </summary>
+        public static readonly GroupByField Finding_infoTypes = new GroupByField("finding_info.types");
+
+        /// <summary>
+        /// Constant MetadataProductName for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductName = new GroupByField("metadata.product.name");
+
+        /// <summary>
+        /// Constant MetadataProductUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductUid = new GroupByField("metadata.product.uid");
+
+        /// <summary>
+        /// Constant MetadataProductVendor_name for GroupByField
+        /// </summary>
+        public static readonly GroupByField MetadataProductVendor_name = new GroupByField("metadata.product.vendor_name");
+
+        /// <summary>
+        /// Constant ResourcesCloud_partition for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesCloud_partition = new GroupByField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesName for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesName = new GroupByField("resources.name");
+
+        /// <summary>
+        /// Constant ResourcesOwnerAccountName for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesOwnerAccountName = new GroupByField("resources.owner.account.name");
+
+        /// <summary>
+        /// Constant ResourcesOwnerAccountUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesOwnerAccountUid = new GroupByField("resources.owner.account.uid");
+
+        /// <summary>
+        /// Constant ResourcesOwnerOrgUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesOwnerOrgUid = new GroupByField("resources.owner.org.uid");
+
+        /// <summary>
+        /// Constant ResourcesProvider for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesProvider = new GroupByField("resources.provider");
+
+        /// <summary>
+        /// Constant ResourcesRegion for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesRegion = new GroupByField("resources.region");
+
+        /// <summary>
+        /// Constant ResourcesType for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesType = new GroupByField("resources.type");
+
+        /// <summary>
+        /// Constant ResourcesUid for GroupByField
+        /// </summary>
+        public static readonly GroupByField ResourcesUid = new GroupByField("resources.uid");
+
+        /// <summary>
+        /// Constant Severity for GroupByField
+        /// </summary>
+        public static readonly GroupByField Severity = new GroupByField("severity");
+
+        /// <summary>
+        /// Constant Status for GroupByField
+        /// </summary>
+        public static readonly GroupByField Status = new GroupByField("status");
+
+        /// <summary>
+        /// Constant Vendor_attributesSeverity for GroupByField
+        /// </summary>
+        public static readonly GroupByField Vendor_attributesSeverity = new GroupByField("vendor_attributes.severity");
+
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_packagesName for GroupByField
+        /// </summary>
+        public static readonly GroupByField VulnerabilitiesAffected_packagesName = new GroupByField("vulnerabilities.affected_packages.name");
+
+        /// <summary>
+        /// Constant VulnerabilitiesFix_coverage for GroupByField
+        /// </summary>
+        public static readonly GroupByField VulnerabilitiesFix_coverage = new GroupByField("vulnerabilities.fix_coverage");
+
+        /// <summary>
+        /// Constructs a custom GroupByField for a value not among the defined constants.
+        /// </summary>
+        public GroupByField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GroupByField FindValue(string value)
+        {
+            return FindValue<GroupByField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type HealthIssueCode.
+    /// </summary>
+    public class HealthIssueCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTHENTICATION_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode AUTHENTICATION_FAILURE = new HealthIssueCode("AUTHENTICATION_FAILURE");
+
+        /// <summary>
+        /// Constant DISCOVERY_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode DISCOVERY_FAILURE = new HealthIssueCode("DISCOVERY_FAILURE");
+
+        /// <summary>
+        /// Constant NO_HEALTH_DATA for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode NO_HEALTH_DATA = new HealthIssueCode("NO_HEALTH_DATA");
+
+        /// <summary>
+        /// Constant RECORDING_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode RECORDING_FAILURE = new HealthIssueCode("RECORDING_FAILURE");
+
+        /// <summary>
+        /// Constant STREAM_AUTHORIZATION_FAILURE for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode STREAM_AUTHORIZATION_FAILURE = new HealthIssueCode("STREAM_AUTHORIZATION_FAILURE");
+
+        /// <summary>
+        /// Constant STREAM_DISCONNECTED for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode STREAM_DISCONNECTED = new HealthIssueCode("STREAM_DISCONNECTED");
+
+        /// <summary>
+        /// Constant STREAM_LIMIT_EXCEEDED for HealthIssueCode
+        /// </summary>
+        public static readonly HealthIssueCode STREAM_LIMIT_EXCEEDED = new HealthIssueCode("STREAM_LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Constructs a custom HealthIssueCode for a value not among the defined constants.
+        /// </summary>
+        public HealthIssueCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthIssueCode FindValue(string value)
+        {
+            return FindValue<HealthIssueCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthIssueCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationType.
+    /// </summary>
+    public class IntegrationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant RECEIVE_FINDINGS_FROM_SECURITY_HUB for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType RECEIVE_FINDINGS_FROM_SECURITY_HUB = new IntegrationType("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
+
+        /// <summary>
+        /// Constant SEND_FINDINGS_TO_SECURITY_HUB for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType SEND_FINDINGS_TO_SECURITY_HUB = new IntegrationType("SEND_FINDINGS_TO_SECURITY_HUB");
+
+        /// <summary>
+        /// Constant UPDATE_FINDINGS_IN_SECURITY_HUB for IntegrationType
+        /// </summary>
+        public static readonly IntegrationType UPDATE_FINDINGS_IN_SECURITY_HUB = new IntegrationType("UPDATE_FINDINGS_IN_SECURITY_HUB");
+
+        /// <summary>
+        /// Constructs a custom IntegrationType for a value not among the defined constants.
+        /// </summary>
+        public IntegrationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationType FindValue(string value)
+        {
+            return FindValue<IntegrationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type IntegrationV2Type.
+    /// </summary>
+    public class IntegrationV2Type : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXTENDED_PLAN for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type EXTENDED_PLAN = new IntegrationV2Type("EXTENDED_PLAN");
+
+        /// <summary>
+        /// Constant RECEIVE_FINDINGS_FROM_SECURITY_HUB for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type RECEIVE_FINDINGS_FROM_SECURITY_HUB = new IntegrationV2Type("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
+
+        /// <summary>
+        /// Constant SEND_FINDINGS_TO_SECURITY_HUB for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type SEND_FINDINGS_TO_SECURITY_HUB = new IntegrationV2Type("SEND_FINDINGS_TO_SECURITY_HUB");
+
+        /// <summary>
+        /// Constant UPDATE_FINDINGS_IN_SECURITY_HUB for IntegrationV2Type
+        /// </summary>
+        public static readonly IntegrationV2Type UPDATE_FINDINGS_IN_SECURITY_HUB = new IntegrationV2Type("UPDATE_FINDINGS_IN_SECURITY_HUB");
+
+        /// <summary>
+        /// Constructs a custom IntegrationV2Type for a value not among the defined constants.
+        /// </summary>
+        public IntegrationV2Type(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IntegrationV2Type FindValue(string value)
+        {
+            return FindValue<IntegrationV2Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IntegrationV2Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MalwareState.
+    /// </summary>
+    public class MalwareState : ConstantClass
+    {
+        /// <summary>
+        /// Constant OBSERVED for MalwareState
+        /// </summary>
+        public static readonly MalwareState OBSERVED = new MalwareState("OBSERVED");
+
+        /// <summary>
+        /// Constant REMOVAL_FAILED for MalwareState
+        /// </summary>
+        public static readonly MalwareState REMOVAL_FAILED = new MalwareState("REMOVAL_FAILED");
+
+        /// <summary>
+        /// Constant REMOVED for MalwareState
+        /// </summary>
+        public static readonly MalwareState REMOVED = new MalwareState("REMOVED");
+
+        /// <summary>
+        /// Constructs a custom MalwareState for a value not among the defined constants.
+        /// </summary>
+        public MalwareState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MalwareState FindValue(string value)
+        {
+            return FindValue<MalwareState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MalwareState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MalwareType.
+    /// </summary>
+    public class MalwareType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ADWARE for MalwareType
+        /// </summary>
+        public static readonly MalwareType ADWARE = new MalwareType("ADWARE");
+
+        /// <summary>
+        /// Constant BLENDED_THREAT for MalwareType
+        /// </summary>
+        public static readonly MalwareType BLENDED_THREAT = new MalwareType("BLENDED_THREAT");
+
+        /// <summary>
+        /// Constant BOTNET_AGENT for MalwareType
+        /// </summary>
+        public static readonly MalwareType BOTNET_AGENT = new MalwareType("BOTNET_AGENT");
+
+        /// <summary>
+        /// Constant COIN_MINER for MalwareType
+        /// </summary>
+        public static readonly MalwareType COIN_MINER = new MalwareType("COIN_MINER");
+
+        /// <summary>
+        /// Constant EXPLOIT_KIT for MalwareType
+        /// </summary>
+        public static readonly MalwareType EXPLOIT_KIT = new MalwareType("EXPLOIT_KIT");
+
+        /// <summary>
+        /// Constant KEYLOGGER for MalwareType
+        /// </summary>
+        public static readonly MalwareType KEYLOGGER = new MalwareType("KEYLOGGER");
+
+        /// <summary>
+        /// Constant MACRO for MalwareType
+        /// </summary>
+        public static readonly MalwareType MACRO = new MalwareType("MACRO");
+
+        /// <summary>
+        /// Constant POTENTIALLY_UNWANTED for MalwareType
+        /// </summary>
+        public static readonly MalwareType POTENTIALLY_UNWANTED = new MalwareType("POTENTIALLY_UNWANTED");
+
+        /// <summary>
+        /// Constant RANSOMWARE for MalwareType
+        /// </summary>
+        public static readonly MalwareType RANSOMWARE = new MalwareType("RANSOMWARE");
+
+        /// <summary>
+        /// Constant REMOTE_ACCESS for MalwareType
+        /// </summary>
+        public static readonly MalwareType REMOTE_ACCESS = new MalwareType("REMOTE_ACCESS");
+
+        /// <summary>
+        /// Constant ROOTKIT for MalwareType
+        /// </summary>
+        public static readonly MalwareType ROOTKIT = new MalwareType("ROOTKIT");
+
+        /// <summary>
+        /// Constant SPYWARE for MalwareType
+        /// </summary>
+        public static readonly MalwareType SPYWARE = new MalwareType("SPYWARE");
+
+        /// <summary>
+        /// Constant TROJAN for MalwareType
+        /// </summary>
+        public static readonly MalwareType TROJAN = new MalwareType("TROJAN");
+
+        /// <summary>
+        /// Constant VIRUS for MalwareType
+        /// </summary>
+        public static readonly MalwareType VIRUS = new MalwareType("VIRUS");
+
+        /// <summary>
+        /// Constant WORM for MalwareType
+        /// </summary>
+        public static readonly MalwareType WORM = new MalwareType("WORM");
+
+        /// <summary>
+        /// Constructs a custom MalwareType for a value not among the defined constants.
+        /// </summary>
+        public MalwareType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MalwareType FindValue(string value)
+        {
+            return FindValue<MalwareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MalwareType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MapFilterComparison.
+    /// </summary>
+    public class MapFilterComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTAINS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison CONTAINS = new MapFilterComparison("CONTAINS");
+
+        /// <summary>
+        /// Constant EQUALS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison EQUALS = new MapFilterComparison("EQUALS");
+
+        /// <summary>
+        /// Constant NOT_CONTAINS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison NOT_CONTAINS = new MapFilterComparison("NOT_CONTAINS");
+
+        /// <summary>
+        /// Constant NOT_EQUALS for MapFilterComparison
+        /// </summary>
+        public static readonly MapFilterComparison NOT_EQUALS = new MapFilterComparison("NOT_EQUALS");
+
+        /// <summary>
+        /// Constructs a custom MapFilterComparison for a value not among the defined constants.
+        /// </summary>
+        public MapFilterComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapFilterComparison FindValue(string value)
+        {
+            return FindValue<MapFilterComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapFilterComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type NetworkDirection.
+    /// </summary>
+    public class NetworkDirection : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN for NetworkDirection
+        /// </summary>
+        public static readonly NetworkDirection IN = new NetworkDirection("IN");
+
+        /// <summary>
+        /// Constant OUT for NetworkDirection
+        /// </summary>
+        public static readonly NetworkDirection OUT = new NetworkDirection("OUT");
+
+        /// <summary>
+        /// Constructs a custom NetworkDirection for a value not among the defined constants.
+        /// </summary>
+        public NetworkDirection(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkDirection FindValue(string value)
+        {
+            return FindValue<NetworkDirection>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OcsfBooleanField.
+    /// </summary>
+    public class OcsfBooleanField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ComplianceAssessmentsMeets_criteria for OcsfBooleanField
+        /// </summary>
+        public static readonly OcsfBooleanField ComplianceAssessmentsMeets_criteria = new OcsfBooleanField("compliance.assessments.meets_criteria");
+
+        /// <summary>
+        /// Constant VulnerabilitiesIs_exploit_available for OcsfBooleanField
+        /// </summary>
+        public static readonly OcsfBooleanField VulnerabilitiesIs_exploit_available = new OcsfBooleanField("vulnerabilities.is_exploit_available");
+
+        /// <summary>
+        /// Constant VulnerabilitiesIs_fix_available for OcsfBooleanField
+        /// </summary>
+        public static readonly OcsfBooleanField VulnerabilitiesIs_fix_available = new OcsfBooleanField("vulnerabilities.is_fix_available");
+
+        /// <summary>
+        /// Constructs a custom OcsfBooleanField for a value not among the defined constants.
+        /// </summary>
+        public OcsfBooleanField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfBooleanField FindValue(string value)
+        {
+            return FindValue<OcsfBooleanField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfBooleanField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OcsfDateField.
+    /// </summary>
+    public class OcsfDateField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Finding_infoCreated_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoCreated_time_dt = new OcsfDateField("finding_info.created_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoFirst_seen_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoFirst_seen_time_dt = new OcsfDateField("finding_info.first_seen_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoLast_seen_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoLast_seen_time_dt = new OcsfDateField("finding_info.last_seen_time_dt");
+
+        /// <summary>
+        /// Constant Finding_infoModified_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField Finding_infoModified_time_dt = new OcsfDateField("finding_info.modified_time_dt");
+
+        /// <summary>
+        /// Constant ResourcesImageCreated_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField ResourcesImageCreated_time_dt = new OcsfDateField("resources.image.created_time_dt");
+
+        /// <summary>
+        /// Constant ResourcesImageLast_used_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField ResourcesImageLast_used_time_dt = new OcsfDateField("resources.image.last_used_time_dt");
+
+        /// <summary>
+        /// Constant ResourcesModified_time_dt for OcsfDateField
+        /// </summary>
+        public static readonly OcsfDateField ResourcesModified_time_dt = new OcsfDateField("resources.modified_time_dt");
+
+        /// <summary>
+        /// Constructs a custom OcsfDateField for a value not among the defined constants.
+        /// </summary>
+        public OcsfDateField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfDateField FindValue(string value)
+        {
+            return FindValue<OcsfDateField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfDateField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OcsfIpField.
+    /// </summary>
+    public class OcsfIpField : ConstantClass
+    {
+        /// <summary>
+        /// Constant EvidencesDst_endpointIp for OcsfIpField
+        /// </summary>
+        public static readonly OcsfIpField EvidencesDst_endpointIp = new OcsfIpField("evidences.dst_endpoint.ip");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointIp for OcsfIpField
+        /// </summary>
+        public static readonly OcsfIpField EvidencesSrc_endpointIp = new OcsfIpField("evidences.src_endpoint.ip");
+
+        /// <summary>
+        /// Constructs a custom OcsfIpField for a value not among the defined constants.
+        /// </summary>
+        public OcsfIpField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfIpField FindValue(string value)
+        {
+            return FindValue<OcsfIpField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfIpField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OcsfMapField.
+    /// </summary>
+    public class OcsfMapField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ComplianceControl_parameters for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField ComplianceControl_parameters = new OcsfMapField("compliance.control_parameters");
+
+        /// <summary>
+        /// Constant DatabucketTags for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField DatabucketTags = new OcsfMapField("databucket.tags");
+
+        /// <summary>
+        /// Constant Finding_infoTags for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField Finding_infoTags = new OcsfMapField("finding_info.tags");
+
+        /// <summary>
+        /// Constant ResourcesTags for OcsfMapField
+        /// </summary>
+        public static readonly OcsfMapField ResourcesTags = new OcsfMapField("resources.tags");
+
+        /// <summary>
+        /// Constructs a custom OcsfMapField for a value not among the defined constants.
+        /// </summary>
+        public OcsfMapField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfMapField FindValue(string value)
+        {
+            return FindValue<OcsfMapField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfMapField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OcsfNumberField.
+    /// </summary>
+    public class OcsfNumberField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Activity_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Activity_id = new OcsfNumberField("activity_id");
+
+        /// <summary>
+        /// Constant ComplianceStatus_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField ComplianceStatus_id = new OcsfNumberField("compliance.status_id");
+
+        /// <summary>
+        /// Constant Confidence_score for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Confidence_score = new OcsfNumberField("confidence_score");
+
+        /// <summary>
+        /// Constant EvidencesApiResponseCode for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesApiResponseCode = new OcsfNumberField("evidences.api.response.code");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointAutonomous_systemNumber for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesDst_endpointAutonomous_systemNumber = new OcsfNumberField("evidences.dst_endpoint.autonomous_system.number");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointPort for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesDst_endpointPort = new OcsfNumberField("evidences.dst_endpoint.port");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointAutonomous_systemNumber for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesSrc_endpointAutonomous_systemNumber = new OcsfNumberField("evidences.src_endpoint.autonomous_system.number");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointPort for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField EvidencesSrc_endpointPort = new OcsfNumberField("evidences.src_endpoint.port");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_events_count for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Finding_infoRelated_events_count = new OcsfNumberField("finding_info.related_events_count");
+
+        /// <summary>
+        /// Constant ResourcesImageIn_use_count for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField ResourcesImageIn_use_count = new OcsfNumberField("resources.image.in_use_count");
+
+        /// <summary>
+        /// Constant Severity_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Severity_id = new OcsfNumberField("severity_id");
+
+        /// <summary>
+        /// Constant Status_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Status_id = new OcsfNumberField("status_id");
+
+        /// <summary>
+        /// Constant Vendor_attributesSeverity_id for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField Vendor_attributesSeverity_id = new OcsfNumberField("vendor_attributes.severity_id");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveCvssBase_score for OcsfNumberField
+        /// </summary>
+        public static readonly OcsfNumberField VulnerabilitiesCveCvssBase_score = new OcsfNumberField("vulnerabilities.cve.cvss.base_score");
+
+        /// <summary>
+        /// Constructs a custom OcsfNumberField for a value not among the defined constants.
+        /// </summary>
+        public OcsfNumberField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfNumberField FindValue(string value)
+        {
+            return FindValue<OcsfNumberField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfNumberField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OcsfStringField.
+    /// </summary>
+    public class OcsfStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Activity_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Activity_name = new OcsfStringField("activity_name");
+
+        /// <summary>
+        /// Constant Class_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Class_name = new OcsfStringField("class_name");
+
+        /// <summary>
+        /// Constant CloudAccountName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudAccountName = new OcsfStringField("cloud.account.name");
+
+        /// <summary>
+        /// Constant CloudAccountUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudAccountUid = new OcsfStringField("cloud.account.uid");
+
+        /// <summary>
+        /// Constant CloudProvider for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudProvider = new OcsfStringField("cloud.provider");
+
+        /// <summary>
+        /// Constant CloudRegion for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField CloudRegion = new OcsfStringField("cloud.region");
+
+        /// <summary>
+        /// Constant Comment for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Comment = new OcsfStringField("comment");
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsCategory for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceAssessmentsCategory = new OcsfStringField("compliance.assessments.category");
+
+        /// <summary>
+        /// Constant ComplianceAssessmentsName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceAssessmentsName = new OcsfStringField("compliance.assessments.name");
+
+        /// <summary>
+        /// Constant ComplianceControl for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceControl = new OcsfStringField("compliance.control");
+
+        /// <summary>
+        /// Constant ComplianceStandards for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceStandards = new OcsfStringField("compliance.standards");
+
+        /// <summary>
+        /// Constant ComplianceStatus for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ComplianceStatus = new OcsfStringField("compliance.status");
+
+        /// <summary>
+        /// Constant DatabucketEncryption_detailsAlgorithm for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField DatabucketEncryption_detailsAlgorithm = new OcsfStringField("databucket.encryption_details.algorithm");
+
+        /// <summary>
+        /// Constant DatabucketEncryption_detailsKey_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField DatabucketEncryption_detailsKey_uid = new OcsfStringField("databucket.encryption_details.key_uid");
+
+        /// <summary>
+        /// Constant DatabucketFileData_classificationsClassifier_detailsType for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField DatabucketFileData_classificationsClassifier_detailsType = new OcsfStringField("databucket.file.data_classifications.classifier_details.type");
+
+        /// <summary>
+        /// Constant EvidencesActorUserAccountUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesActorUserAccountUid = new OcsfStringField("evidences.actor.user.account.uid");
+
+        /// <summary>
+        /// Constant EvidencesApiOperation for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesApiOperation = new OcsfStringField("evidences.api.operation");
+
+        /// <summary>
+        /// Constant EvidencesApiResponseError_message for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesApiResponseError_message = new OcsfStringField("evidences.api.response.error_message");
+
+        /// <summary>
+        /// Constant EvidencesApiServiceName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesApiServiceName = new OcsfStringField("evidences.api.service.name");
+
+        /// <summary>
+        /// Constant EvidencesConnection_infoDirection for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesConnection_infoDirection = new OcsfStringField("evidences.connection_info.direction");
+
+        /// <summary>
+        /// Constant EvidencesConnection_infoProtocol_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesConnection_infoProtocol_name = new OcsfStringField("evidences.connection_info.protocol_name");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointAutonomous_systemName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesDst_endpointAutonomous_systemName = new OcsfStringField("evidences.dst_endpoint.autonomous_system.name");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointLocationCity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesDst_endpointLocationCity = new OcsfStringField("evidences.dst_endpoint.location.city");
+
+        /// <summary>
+        /// Constant EvidencesDst_endpointLocationCountry for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesDst_endpointLocationCountry = new OcsfStringField("evidences.dst_endpoint.location.country");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointAutonomous_systemName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointAutonomous_systemName = new OcsfStringField("evidences.src_endpoint.autonomous_system.name");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointHostname for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointHostname = new OcsfStringField("evidences.src_endpoint.hostname");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointLocationCity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointLocationCity = new OcsfStringField("evidences.src_endpoint.location.city");
+
+        /// <summary>
+        /// Constant EvidencesSrc_endpointLocationCountry for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField EvidencesSrc_endpointLocationCountry = new OcsfStringField("evidences.src_endpoint.location.country");
+
+        /// <summary>
+        /// Constant Finding_infoAnalyticName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoAnalyticName = new OcsfStringField("finding_info.analytic.name");
+
+        /// <summary>
+        /// Constant Finding_infoDesc for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoDesc = new OcsfStringField("finding_info.desc");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsProductUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsProductUid = new OcsfStringField("finding_info.related_events.product.uid");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsTitle for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsTitle = new OcsfStringField("finding_info.related_events.title");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsTraitsCategory for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsTraitsCategory = new OcsfStringField("finding_info.related_events.traits.category");
+
+        /// <summary>
+        /// Constant Finding_infoRelated_eventsUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoRelated_eventsUid = new OcsfStringField("finding_info.related_events.uid");
+
+        /// <summary>
+        /// Constant Finding_infoSrc_url for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoSrc_url = new OcsfStringField("finding_info.src_url");
+
+        /// <summary>
+        /// Constant Finding_infoTitle for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoTitle = new OcsfStringField("finding_info.title");
+
+        /// <summary>
+        /// Constant Finding_infoTypes for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoTypes = new OcsfStringField("finding_info.types");
+
+        /// <summary>
+        /// Constant Finding_infoUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Finding_infoUid = new OcsfStringField("finding_info.uid");
+
+        /// <summary>
+        /// Constant MalwareName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MalwareName = new OcsfStringField("malware.name");
+
+        /// <summary>
+        /// Constant MalwareSeverity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MalwareSeverity = new OcsfStringField("malware.severity");
+
+        /// <summary>
+        /// Constant Malware_scan_infoUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Malware_scan_infoUid = new OcsfStringField("malware_scan_info.uid");
+
+        /// <summary>
+        /// Constant MetadataProductName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataProductName = new OcsfStringField("metadata.product.name");
+
+        /// <summary>
+        /// Constant MetadataProductUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataProductUid = new OcsfStringField("metadata.product.uid");
+
+        /// <summary>
+        /// Constant MetadataProductVendor_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataProductVendor_name = new OcsfStringField("metadata.product.vendor_name");
+
+        /// <summary>
+        /// Constant MetadataUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField MetadataUid = new OcsfStringField("metadata.uid");
+
+        /// <summary>
+        /// Constant RemediationDesc for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField RemediationDesc = new OcsfStringField("remediation.desc");
+
+        /// <summary>
+        /// Constant RemediationReferences for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField RemediationReferences = new OcsfStringField("remediation.references");
+
+        /// <summary>
+        /// Constant ResourcesCloud_functionLayersUid_alt for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_functionLayersUid_alt = new OcsfStringField("resources.cloud_function.layers.uid_alt");
+
+        /// <summary>
+        /// Constant ResourcesCloud_functionRuntime for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_functionRuntime = new OcsfStringField("resources.cloud_function.runtime");
+
+        /// <summary>
+        /// Constant ResourcesCloud_functionUserUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_functionUserUid = new OcsfStringField("resources.cloud_function.user.uid");
+
+        /// <summary>
+        /// Constant ResourcesCloud_partition for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesCloud_partition = new OcsfStringField("resources.cloud_partition");
+
+        /// <summary>
+        /// Constant ResourcesDeviceEncryption_detailsKey_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesDeviceEncryption_detailsKey_uid = new OcsfStringField("resources.device.encryption_details.key_uid");
+
+        /// <summary>
+        /// Constant ResourcesDeviceImageUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesDeviceImageUid = new OcsfStringField("resources.device.image.uid");
+
+        /// <summary>
+        /// Constant ResourcesImageArchitecture for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageArchitecture = new OcsfStringField("resources.image.architecture");
+
+        /// <summary>
+        /// Constant ResourcesImageRegistry_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageRegistry_uid = new OcsfStringField("resources.image.registry_uid");
+
+        /// <summary>
+        /// Constant ResourcesImageRepository_name for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageRepository_name = new OcsfStringField("resources.image.repository_name");
+
+        /// <summary>
+        /// Constant ResourcesImageUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesImageUid = new OcsfStringField("resources.image.uid");
+
+        /// <summary>
+        /// Constant ResourcesName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesName = new OcsfStringField("resources.name");
+
+        /// <summary>
+        /// Constant ResourcesOwnerAccountName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesOwnerAccountName = new OcsfStringField("resources.owner.account.name");
+
+        /// <summary>
+        /// Constant ResourcesOwnerAccountUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesOwnerAccountUid = new OcsfStringField("resources.owner.account.uid");
+
+        /// <summary>
+        /// Constant ResourcesOwnerOrgUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesOwnerOrgUid = new OcsfStringField("resources.owner.org.uid");
+
+        /// <summary>
+        /// Constant ResourcesProvider for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesProvider = new OcsfStringField("resources.provider");
+
+        /// <summary>
+        /// Constant ResourcesRegion for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesRegion = new OcsfStringField("resources.region");
+
+        /// <summary>
+        /// Constant ResourcesSubnet_infoUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesSubnet_infoUid = new OcsfStringField("resources.subnet_info.uid");
+
+        /// <summary>
+        /// Constant ResourcesType for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesType = new OcsfStringField("resources.type");
+
+        /// <summary>
+        /// Constant ResourcesUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesUid = new OcsfStringField("resources.uid");
+
+        /// <summary>
+        /// Constant ResourcesVpc_uid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField ResourcesVpc_uid = new OcsfStringField("resources.vpc_uid");
+
+        /// <summary>
+        /// Constant Severity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Severity = new OcsfStringField("severity");
+
+        /// <summary>
+        /// Constant Status for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Status = new OcsfStringField("status");
+
+        /// <summary>
+        /// Constant Vendor_attributesSeverity for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField Vendor_attributesSeverity = new OcsfStringField("vendor_attributes.severity");
+
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_codeFilePath for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesAffected_codeFilePath = new OcsfStringField("vulnerabilities.affected_code.file.path");
+
+        /// <summary>
+        /// Constant VulnerabilitiesAffected_packagesName for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesAffected_packagesName = new OcsfStringField("vulnerabilities.affected_packages.name");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveEpssScore for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesCveEpssScore = new OcsfStringField("vulnerabilities.cve.epss.score");
+
+        /// <summary>
+        /// Constant VulnerabilitiesCveUid for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesCveUid = new OcsfStringField("vulnerabilities.cve.uid");
+
+        /// <summary>
+        /// Constant VulnerabilitiesFix_coverage for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesFix_coverage = new OcsfStringField("vulnerabilities.fix_coverage");
+
+        /// <summary>
+        /// Constant VulnerabilitiesRelated_vulnerabilities for OcsfStringField
+        /// </summary>
+        public static readonly OcsfStringField VulnerabilitiesRelated_vulnerabilities = new OcsfStringField("vulnerabilities.related_vulnerabilities");
+
+        /// <summary>
+        /// Constructs a custom OcsfStringField for a value not among the defined constants.
+        /// </summary>
+        public OcsfStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OcsfStringField FindValue(string value)
+        {
+            return FindValue<OcsfStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OcsfStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationConfigurationConfigurationType.
+    /// </summary>
+    public class OrganizationConfigurationConfigurationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CENTRAL for OrganizationConfigurationConfigurationType
+        /// </summary>
+        public static readonly OrganizationConfigurationConfigurationType CENTRAL = new OrganizationConfigurationConfigurationType("CENTRAL");
+
+        /// <summary>
+        /// Constant LOCAL for OrganizationConfigurationConfigurationType
+        /// </summary>
+        public static readonly OrganizationConfigurationConfigurationType LOCAL = new OrganizationConfigurationConfigurationType("LOCAL");
+
+        /// <summary>
+        /// Constructs a custom OrganizationConfigurationConfigurationType for a value not among the defined constants.
+        /// </summary>
+        public OrganizationConfigurationConfigurationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationConfigurationConfigurationType FindValue(string value)
+        {
+            return FindValue<OrganizationConfigurationConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationConfigurationConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type OrganizationConfigurationStatus.
+    /// </summary>
+    public class OrganizationConfigurationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ENABLED for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus ENABLED = new OrganizationConfigurationStatus("ENABLED");
+
+        /// <summary>
+        /// Constant FAILED for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus FAILED = new OrganizationConfigurationStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for OrganizationConfigurationStatus
+        /// </summary>
+        public static readonly OrganizationConfigurationStatus PENDING = new OrganizationConfigurationStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom OrganizationConfigurationStatus for a value not among the defined constants.
+        /// </summary>
+        public OrganizationConfigurationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationConfigurationStatus FindValue(string value)
+        {
+            return FindValue<OrganizationConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParameterValueType.
+    /// </summary>
+    public class ParameterValueType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOM for ParameterValueType
+        /// </summary>
+        public static readonly ParameterValueType CUSTOM = new ParameterValueType("CUSTOM");
+
+        /// <summary>
+        /// Constant DEFAULT for ParameterValueType
+        /// </summary>
+        public static readonly ParameterValueType DEFAULT = new ParameterValueType("DEFAULT");
+
+        /// <summary>
+        /// Constructs a custom ParameterValueType for a value not among the defined constants.
+        /// </summary>
+        public ParameterValueType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterValueType FindValue(string value)
+        {
+            return FindValue<ParameterValueType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterValueType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Partition.
+    /// </summary>
+    public class Partition : ConstantClass
+    {
+        /// <summary>
+        /// Constant Aws for Partition
+        /// </summary>
+        public static readonly Partition Aws = new Partition("aws");
+
+        /// <summary>
+        /// Constant AwsCn for Partition
+        /// </summary>
+        public static readonly Partition AwsCn = new Partition("aws-cn");
+
+        /// <summary>
+        /// Constant AwsUsGov for Partition
+        /// </summary>
+        public static readonly Partition AwsUsGov = new Partition("aws-us-gov");
+
+        /// <summary>
+        /// Constant AwsUsIso for Partition
+        /// </summary>
+        public static readonly Partition AwsUsIso = new Partition("aws-us-iso");
+
+        /// <summary>
+        /// Constant AwsUsIsoB for Partition
+        /// </summary>
+        public static readonly Partition AwsUsIsoB = new Partition("aws-us-iso-b");
+
+        /// <summary>
+        /// Constant AzureCloud for Partition
+        /// </summary>
+        public static readonly Partition AzureCloud = new Partition("AzureCloud");
+
+        /// <summary>
+        /// Constructs a custom Partition for a value not among the defined constants.
+        /// </summary>
+        public Partition(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Partition FindValue(string value)
+        {
+            return FindValue<Partition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Partition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationStatus.
+    /// </summary>
+    public class RecommendationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus FAILED = new RecommendationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus IN_PROGRESS = new RecommendationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant SUCCEEDED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus SUCCEEDED = new RecommendationStatus("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom RecommendationStatus for a value not among the defined constants.
+        /// </summary>
+        public RecommendationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationStatus FindValue(string value)
+        {
+            return FindValue<RecommendationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationType.
+    /// </summary>
+    public class RecommendationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant UNUSED_PERMISSION_RECOMMENDATION for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType UNUSED_PERMISSION_RECOMMENDATION = new RecommendationType("UNUSED_PERMISSION_RECOMMENDATION");
+
+        /// <summary>
+        /// Constructs a custom RecommendationType for a value not among the defined constants.
+        /// </summary>
+        public RecommendationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationType FindValue(string value)
+        {
+            return FindValue<RecommendationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RecordState.
+    /// </summary>
+    public class RecordState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for RecordState
+        /// </summary>
+        public static readonly RecordState ACTIVE = new RecordState("ACTIVE");
+
+        /// <summary>
+        /// Constant ARCHIVED for RecordState
+        /// </summary>
+        public static readonly RecordState ARCHIVED = new RecordState("ARCHIVED");
+
+        /// <summary>
+        /// Constructs a custom RecordState for a value not among the defined constants.
+        /// </summary>
+        public RecordState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordState FindValue(string value)
+        {
+            return FindValue<RecordState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RegionAvailabilityStatus.
+    /// </summary>
+    public class RegionAvailabilityStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for RegionAvailabilityStatus
+        /// </summary>
+        public static readonly RegionAvailabilityStatus AVAILABLE = new RegionAvailabilityStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant UNAVAILABLE for RegionAvailabilityStatus
+        /// </summary>
+        public static readonly RegionAvailabilityStatus UNAVAILABLE = new RegionAvailabilityStatus("UNAVAILABLE");
+
+        /// <summary>
+        /// Constructs a custom RegionAvailabilityStatus for a value not among the defined constants.
+        /// </summary>
+        public RegionAvailabilityStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegionAvailabilityStatus FindValue(string value)
+        {
+            return FindValue<RegionAvailabilityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegionAvailabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceCategory.
+    /// </summary>
+    public class ResourceCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant AIML for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory AIML = new ResourceCategory("AI/ML");
+
+        /// <summary>
+        /// Constant Code for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Code = new ResourceCategory("Code");
+
+        /// <summary>
+        /// Constant Compute for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Compute = new ResourceCategory("Compute");
+
+        /// <summary>
+        /// Constant Database for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Database = new ResourceCategory("Database");
+
+        /// <summary>
+        /// Constant Identity for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Identity = new ResourceCategory("Identity");
+
+        /// <summary>
+        /// Constant Messaging for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Messaging = new ResourceCategory("Messaging");
+
+        /// <summary>
+        /// Constant Network for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Network = new ResourceCategory("Network");
+
+        /// <summary>
+        /// Constant Other for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Other = new ResourceCategory("Other");
+
+        /// <summary>
+        /// Constant Storage for ResourceCategory
+        /// </summary>
+        public static readonly ResourceCategory Storage = new ResourceCategory("Storage");
+
+        /// <summary>
+        /// Constructs a custom ResourceCategory for a value not among the defined constants.
+        /// </summary>
+        public ResourceCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCategory FindValue(string value)
+        {
+            return FindValue<ResourceCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceGroupByField.
+    /// </summary>
+    public class ResourceGroupByField : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccountId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField AccountId = new ResourceGroupByField("AccountId");
+
+        /// <summary>
+        /// Constant AccountName for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField AccountName = new ResourceGroupByField("AccountName");
+
+        /// <summary>
+        /// Constant DiscoveryType for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField DiscoveryType = new ResourceGroupByField("DiscoveryType");
+
+        /// <summary>
+        /// Constant FindingsSummaryFindingType for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField FindingsSummaryFindingType = new ResourceGroupByField("FindingsSummary.FindingType");
+
+        /// <summary>
+        /// Constant Region for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField Region = new ResourceGroupByField("Region");
+
+        /// <summary>
+        /// Constant ResourceCategory for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceCategory = new ResourceGroupByField("ResourceCategory");
+
+        /// <summary>
+        /// Constant ResourceCloudPartition for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceCloudPartition = new ResourceGroupByField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsCanonicalId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceInfoAIDetailsCanonicalId = new ResourceGroupByField("ResourceInfo.AIDetails.CanonicalId");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsHostResourceType for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceInfoAIDetailsHostResourceType = new ResourceGroupByField("ResourceInfo.AIDetails.HostResourceType");
+
+        /// <summary>
+        /// Constant ResourceName for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceName = new ResourceGroupByField("ResourceName");
+
+        /// <summary>
+        /// Constant ResourceOwnerAccountId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceOwnerAccountId = new ResourceGroupByField("ResourceOwnerAccountId");
+
+        /// <summary>
+        /// Constant ResourceOwnerOrgId for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceOwnerOrgId = new ResourceGroupByField("ResourceOwnerOrgId");
+
+        /// <summary>
+        /// Constant ResourceProvider for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceProvider = new ResourceGroupByField("ResourceProvider");
+
+        /// <summary>
+        /// Constant ResourceRegion for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceRegion = new ResourceGroupByField("ResourceRegion");
+
+        /// <summary>
+        /// Constant ResourceSubCategory for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceSubCategory = new ResourceGroupByField("ResourceSubCategory");
+
+        /// <summary>
+        /// Constant ResourceType for ResourceGroupByField
+        /// </summary>
+        public static readonly ResourceGroupByField ResourceType = new ResourceGroupByField("ResourceType");
+
+        /// <summary>
+        /// Constructs a custom ResourceGroupByField for a value not among the defined constants.
+        /// </summary>
+        public ResourceGroupByField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceGroupByField FindValue(string value)
+        {
+            return FindValue<ResourceGroupByField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceGroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourceSubCategory.
+    /// </summary>
+    public class ResourceSubCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant Agent for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Agent = new ResourceSubCategory("Agent");
+
+        /// <summary>
+        /// Constant AgentFramework for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory AgentFramework = new ResourceSubCategory("AgentFramework");
+
+        /// <summary>
+        /// Constant AgentToolsAndIdentity for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory AgentToolsAndIdentity = new ResourceSubCategory("AgentToolsAndIdentity");
+
+        /// <summary>
+        /// Constant Development for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Development = new ResourceSubCategory("Development");
+
+        /// <summary>
+        /// Constant ExternalEndpoint for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory ExternalEndpoint = new ResourceSubCategory("ExternalEndpoint");
+
+        /// <summary>
+        /// Constant KnowledgeAndData for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory KnowledgeAndData = new ResourceSubCategory("KnowledgeAndData");
+
+        /// <summary>
+        /// Constant Model for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Model = new ResourceSubCategory("Model");
+
+        /// <summary>
+        /// Constant ModelServing for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory ModelServing = new ResourceSubCategory("ModelServing");
+
+        /// <summary>
+        /// Constant OrchestrationAndPipeline for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory OrchestrationAndPipeline = new ResourceSubCategory("OrchestrationAndPipeline");
+
+        /// <summary>
+        /// Constant Other for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory Other = new ResourceSubCategory("Other");
+
+        /// <summary>
+        /// Constant SafetyAndGuardrail for ResourceSubCategory
+        /// </summary>
+        public static readonly ResourceSubCategory SafetyAndGuardrail = new ResourceSubCategory("SafetyAndGuardrail");
+
+        /// <summary>
+        /// Constructs a custom ResourceSubCategory for a value not among the defined constants.
+        /// </summary>
+        public ResourceSubCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSubCategory FindValue(string value)
+        {
+            return FindValue<ResourceSubCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceSubCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesDateField.
+    /// </summary>
+    public class ResourcesDateField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ResourceCreationTime for ResourcesDateField
+        /// </summary>
+        public static readonly ResourcesDateField ResourceCreationTime = new ResourcesDateField("ResourceCreationTime");
+
+        /// <summary>
+        /// Constant ResourceDetailCaptureTime for ResourcesDateField
+        /// </summary>
+        public static readonly ResourcesDateField ResourceDetailCaptureTime = new ResourcesDateField("ResourceDetailCaptureTime");
+
+        /// <summary>
+        /// Constructs a custom ResourcesDateField for a value not among the defined constants.
+        /// </summary>
+        public ResourcesDateField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesDateField FindValue(string value)
+        {
+            return FindValue<ResourcesDateField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesDateField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesMapField.
+    /// </summary>
+    public class ResourcesMapField : ConstantClass
+    {
+        /// <summary>
+        /// Constant ResourceTags for ResourcesMapField
+        /// </summary>
+        public static readonly ResourcesMapField ResourceTags = new ResourcesMapField("ResourceTags");
+
+        /// <summary>
+        /// Constructs a custom ResourcesMapField for a value not among the defined constants.
+        /// </summary>
+        public ResourcesMapField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesMapField FindValue(string value)
+        {
+            return FindValue<ResourcesMapField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesMapField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesNumberField.
+    /// </summary>
+    public class ResourcesNumberField : ConstantClass
+    {
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesCritical for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesCritical = new ResourcesNumberField("FindingsSummary.Severities.Critical");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesFatal for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesFatal = new ResourcesNumberField("FindingsSummary.Severities.Fatal");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesHigh for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesHigh = new ResourcesNumberField("FindingsSummary.Severities.High");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesInformational for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesInformational = new ResourcesNumberField("FindingsSummary.Severities.Informational");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesLow for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesLow = new ResourcesNumberField("FindingsSummary.Severities.Low");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesMedium for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesMedium = new ResourcesNumberField("FindingsSummary.Severities.Medium");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesOther for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesOther = new ResourcesNumberField("FindingsSummary.Severities.Other");
+
+        /// <summary>
+        /// Constant FindingsSummarySeveritiesUnknown for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummarySeveritiesUnknown = new ResourcesNumberField("FindingsSummary.Severities.Unknown");
+
+        /// <summary>
+        /// Constant FindingsSummaryTotalFindings for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField FindingsSummaryTotalFindings = new ResourcesNumberField("FindingsSummary.TotalFindings");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIAgentFrameworkResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIAgentFrameworkResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIAgentFrameworkResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIAgentResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIAgentResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIAgentResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIAgentToolsAndIdentityResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIAgentToolsAndIdentityResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIAgentToolsAndIdentityResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIDevelopmentResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIDevelopmentResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIDevelopmentResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIExternalEndpointResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIExternalEndpointResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIExternalEndpointResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIModelResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIModelResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIModelResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedAIModelServingResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedAIModelServingResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedAIModelServingResourceCount");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsSelfHostedTotalAIResourceCount for ResourcesNumberField
+        /// </summary>
+        public static readonly ResourcesNumberField ResourceInfoAIDetailsSelfHostedTotalAIResourceCount = new ResourcesNumberField("ResourceInfo.AIDetails.SelfHostedTotalAIResourceCount");
+
+        /// <summary>
+        /// Constructs a custom ResourcesNumberField for a value not among the defined constants.
+        /// </summary>
+        public ResourcesNumberField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesNumberField FindValue(string value)
+        {
+            return FindValue<ResourcesNumberField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesNumberField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesStringField.
+    /// </summary>
+    public class ResourcesStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant AccountId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField AccountId = new ResourcesStringField("AccountId");
+
+        /// <summary>
+        /// Constant AccountName for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField AccountName = new ResourcesStringField("AccountName");
+
+        /// <summary>
+        /// Constant DiscoveryType for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField DiscoveryType = new ResourcesStringField("DiscoveryType");
+
+        /// <summary>
+        /// Constant FindingsSummaryFindingType for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField FindingsSummaryFindingType = new ResourcesStringField("FindingsSummary.FindingType");
+
+        /// <summary>
+        /// Constant FindingsSummaryProductName for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField FindingsSummaryProductName = new ResourcesStringField("FindingsSummary.ProductName");
+
+        /// <summary>
+        /// Constant Region for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField Region = new ResourcesStringField("Region");
+
+        /// <summary>
+        /// Constant ResourceCategory for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceCategory = new ResourcesStringField("ResourceCategory");
+
+        /// <summary>
+        /// Constant ResourceCloudPartition for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceCloudPartition = new ResourcesStringField("ResourceCloudPartition");
+
+        /// <summary>
+        /// Constant ResourceGuid for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceGuid = new ResourcesStringField("ResourceGuid");
+
+        /// <summary>
+        /// Constant ResourceId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceId = new ResourcesStringField("ResourceId");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsCanonicalId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceInfoAIDetailsCanonicalId = new ResourcesStringField("ResourceInfo.AIDetails.CanonicalId");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsHostResourceGuid for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceInfoAIDetailsHostResourceGuid = new ResourcesStringField("ResourceInfo.AIDetails.HostResourceGuid");
+
+        /// <summary>
+        /// Constant ResourceInfoAIDetailsHostResourceType for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceInfoAIDetailsHostResourceType = new ResourcesStringField("ResourceInfo.AIDetails.HostResourceType");
+
+        /// <summary>
+        /// Constant ResourceName for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceName = new ResourcesStringField("ResourceName");
+
+        /// <summary>
+        /// Constant ResourceOwnerAccountId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceOwnerAccountId = new ResourcesStringField("ResourceOwnerAccountId");
+
+        /// <summary>
+        /// Constant ResourceOwnerOrgId for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceOwnerOrgId = new ResourcesStringField("ResourceOwnerOrgId");
+
+        /// <summary>
+        /// Constant ResourceProvider for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceProvider = new ResourcesStringField("ResourceProvider");
+
+        /// <summary>
+        /// Constant ResourceRegion for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceRegion = new ResourcesStringField("ResourceRegion");
+
+        /// <summary>
+        /// Constant ResourceSubCategory for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceSubCategory = new ResourcesStringField("ResourceSubCategory");
+
+        /// <summary>
+        /// Constant ResourceType for ResourcesStringField
+        /// </summary>
+        public static readonly ResourcesStringField ResourceType = new ResourcesStringField("ResourceType");
+
+        /// <summary>
+        /// Constructs a custom ResourcesStringField for a value not among the defined constants.
+        /// </summary>
+        public ResourcesStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesStringField FindValue(string value)
+        {
+            return FindValue<ResourcesStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ResourcesTrendsStringField.
+    /// </summary>
+    public class ResourcesTrendsStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Account_id for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Account_id = new ResourcesTrendsStringField("account_id");
+
+        /// <summary>
+        /// Constant Region for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Region = new ResourcesTrendsStringField("region");
+
+        /// <summary>
+        /// Constant Resource_category for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_category = new ResourcesTrendsStringField("resource_category");
+
+        /// <summary>
+        /// Constant Resource_cloud_provider for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_cloud_provider = new ResourcesTrendsStringField("resource_cloud_provider");
+
+        /// <summary>
+        /// Constant Resource_owner_id for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_owner_id = new ResourcesTrendsStringField("resource_owner_id");
+
+        /// <summary>
+        /// Constant Resource_owner_organization_id for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_owner_organization_id = new ResourcesTrendsStringField("resource_owner_organization_id");
+
+        /// <summary>
+        /// Constant Resource_region for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_region = new ResourcesTrendsStringField("resource_region");
+
+        /// <summary>
+        /// Constant Resource_type for ResourcesTrendsStringField
+        /// </summary>
+        public static readonly ResourcesTrendsStringField Resource_type = new ResourcesTrendsStringField("resource_type");
+
+        /// <summary>
+        /// Constructs a custom ResourcesTrendsStringField for a value not among the defined constants.
+        /// </summary>
+        public ResourcesTrendsStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourcesTrendsStringField FindValue(string value)
+        {
+            return FindValue<ResourcesTrendsStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourcesTrendsStringField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleStatus.
+    /// </summary>
+    public class RuleStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus DISABLED = new RuleStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus ENABLED = new RuleStatus("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom RuleStatus for a value not among the defined constants.
+        /// </summary>
+        public RuleStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleStatus FindValue(string value)
+        {
+            return FindValue<RuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RuleStatusV2.
+    /// </summary>
+    public class RuleStatusV2 : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for RuleStatusV2
+        /// </summary>
+        public static readonly RuleStatusV2 DISABLED = new RuleStatusV2("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for RuleStatusV2
+        /// </summary>
+        public static readonly RuleStatusV2 ENABLED = new RuleStatusV2("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom RuleStatusV2 for a value not among the defined constants.
+        /// </summary>
+        public RuleStatusV2(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleStatusV2 FindValue(string value)
+        {
+            return FindValue<RuleStatusV2>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleStatusV2(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScopeType.
+    /// </summary>
+    public class ScopeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant SUBSCRIPTION for ScopeType
+        /// </summary>
+        public static readonly ScopeType SUBSCRIPTION = new ScopeType("SUBSCRIPTION");
+
+        /// <summary>
+        /// Constant TENANT for ScopeType
+        /// </summary>
+        public static readonly ScopeType TENANT = new ScopeType("TENANT");
+
+        /// <summary>
+        /// Constructs a custom ScopeType for a value not among the defined constants.
+        /// </summary>
+        public ScopeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScopeType FindValue(string value)
+        {
+            return FindValue<ScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SecurityControlProperty.
+    /// </summary>
+    public class SecurityControlProperty : ConstantClass
+    {
+        /// <summary>
+        /// Constant Parameters for SecurityControlProperty
+        /// </summary>
+        public static readonly SecurityControlProperty Parameters = new SecurityControlProperty("Parameters");
+
+        /// <summary>
+        /// Constructs a custom SecurityControlProperty for a value not among the defined constants.
+        /// </summary>
+        public SecurityControlProperty(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityControlProperty FindValue(string value)
+        {
+            return FindValue<SecurityControlProperty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityControlProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SecurityControlsProvider.
+    /// </summary>
+    public class SecurityControlsProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS for SecurityControlsProvider
+        /// </summary>
+        public static readonly SecurityControlsProvider AWS = new SecurityControlsProvider("AWS");
+
+        /// <summary>
+        /// Constant Azure for SecurityControlsProvider
+        /// </summary>
+        public static readonly SecurityControlsProvider Azure = new SecurityControlsProvider("Azure");
+
+        /// <summary>
+        /// Constructs a custom SecurityControlsProvider for a value not among the defined constants.
+        /// </summary>
+        public SecurityControlsProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityControlsProvider FindValue(string value)
+        {
+            return FindValue<SecurityControlsProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityControlsProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SecurityHubFeature.
+    /// </summary>
+    public class SecurityHubFeature : ConstantClass
+    {
+        /// <summary>
+        /// Constant SecurityHub for SecurityHubFeature
+        /// </summary>
+        public static readonly SecurityHubFeature SecurityHub = new SecurityHubFeature("SecurityHub");
+
+        /// <summary>
+        /// Constant SecurityHubV2 for SecurityHubFeature
+        /// </summary>
+        public static readonly SecurityHubFeature SecurityHubV2 = new SecurityHubFeature("SecurityHubV2");
+
+        /// <summary>
+        /// Constructs a custom SecurityHubFeature for a value not among the defined constants.
+        /// </summary>
+        public SecurityHubFeature(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityHubFeature FindValue(string value)
+        {
+            return FindValue<SecurityHubFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityHubFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SeverityLabel.
+    /// </summary>
+    public class SeverityLabel : ConstantClass
+    {
+        /// <summary>
+        /// Constant CRITICAL for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel CRITICAL = new SeverityLabel("CRITICAL");
+
+        /// <summary>
+        /// Constant HIGH for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel HIGH = new SeverityLabel("HIGH");
+
+        /// <summary>
+        /// Constant INFORMATIONAL for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel INFORMATIONAL = new SeverityLabel("INFORMATIONAL");
+
+        /// <summary>
+        /// Constant LOW for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel LOW = new SeverityLabel("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for SeverityLabel
+        /// </summary>
+        public static readonly SeverityLabel MEDIUM = new SeverityLabel("MEDIUM");
+
+        /// <summary>
+        /// Constructs a custom SeverityLabel for a value not among the defined constants.
+        /// </summary>
+        public SeverityLabel(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SeverityLabel FindValue(string value)
+        {
+            return FindValue<SeverityLabel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SeverityLabel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SeverityRating.
+    /// </summary>
+    public class SeverityRating : ConstantClass
+    {
+        /// <summary>
+        /// Constant CRITICAL for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating CRITICAL = new SeverityRating("CRITICAL");
+
+        /// <summary>
+        /// Constant HIGH for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating HIGH = new SeverityRating("HIGH");
+
+        /// <summary>
+        /// Constant LOW for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating LOW = new SeverityRating("LOW");
+
+        /// <summary>
+        /// Constant MEDIUM for SeverityRating
+        /// </summary>
+        public static readonly SeverityRating MEDIUM = new SeverityRating("MEDIUM");
+
+        /// <summary>
+        /// Constructs a custom SeverityRating for a value not among the defined constants.
+        /// </summary>
+        public SeverityRating(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SeverityRating FindValue(string value)
+        {
+            return FindValue<SeverityRating>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SeverityRating(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+        /// <summary>
+        /// Constant Asc for SortOrder
+        /// </summary>
+        public static readonly SortOrder Asc = new SortOrder("asc");
+
+        /// <summary>
+        /// Constant Desc for SortOrder
+        /// </summary>
+        public static readonly SortOrder Desc = new SortOrder("desc");
+
+        /// <summary>
+        /// Constructs a custom SortOrder for a value not among the defined constants.
+        /// </summary>
+        public SortOrder(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StandardsControlsUpdatable.
+    /// </summary>
+    public class StandardsControlsUpdatable : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_READY_FOR_UPDATES for StandardsControlsUpdatable
+        /// </summary>
+        public static readonly StandardsControlsUpdatable NOT_READY_FOR_UPDATES = new StandardsControlsUpdatable("NOT_READY_FOR_UPDATES");
+
+        /// <summary>
+        /// Constant READY_FOR_UPDATES for StandardsControlsUpdatable
+        /// </summary>
+        public static readonly StandardsControlsUpdatable READY_FOR_UPDATES = new StandardsControlsUpdatable("READY_FOR_UPDATES");
+
+        /// <summary>
+        /// Constructs a custom StandardsControlsUpdatable for a value not among the defined constants.
+        /// </summary>
+        public StandardsControlsUpdatable(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandardsControlsUpdatable FindValue(string value)
+        {
+            return FindValue<StandardsControlsUpdatable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandardsControlsUpdatable(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StandardsProvider.
+    /// </summary>
+    public class StandardsProvider : ConstantClass
+    {
+        /// <summary>
+        /// Constant AWS for StandardsProvider
+        /// </summary>
+        public static readonly StandardsProvider AWS = new StandardsProvider("AWS");
+
+        /// <summary>
+        /// Constant Azure for StandardsProvider
+        /// </summary>
+        public static readonly StandardsProvider Azure = new StandardsProvider("Azure");
+
+        /// <summary>
+        /// Constructs a custom StandardsProvider for a value not among the defined constants.
+        /// </summary>
+        public StandardsProvider(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandardsProvider FindValue(string value)
+        {
+            return FindValue<StandardsProvider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandardsProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StandardsStatus.
+    /// </summary>
+    public class StandardsStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DELETING for StandardsStatus
+        /// </summary>
+        public static readonly StandardsStatus DELETING = new StandardsStatus("DELETING");
+
+        /// <summary>
+        /// Constant FAILED for StandardsStatus
+        /// </summary>
+        public static readonly StandardsStatus FAILED = new StandardsStatus("FAILED");
+
+        /// <summary>
+        /// Constant INCOMPLETE for StandardsStatus
+        /// </summary>
+        public static readonly StandardsStatus INCOMPLETE = new StandardsStatus("INCOMPLETE");
+
+        /// <summary>
+        /// Constant PENDING for StandardsStatus
+        /// </summary>
+        public static readonly StandardsStatus PENDING = new StandardsStatus("PENDING");
+
+        /// <summary>
+        /// Constant READY for StandardsStatus
+        /// </summary>
+        public static readonly StandardsStatus READY = new StandardsStatus("READY");
+
+        /// <summary>
+        /// Constructs a custom StandardsStatus for a value not among the defined constants.
+        /// </summary>
+        public StandardsStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StandardsStatus FindValue(string value)
+        {
+            return FindValue<StandardsStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StandardsStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StatusReasonCode.
+    /// </summary>
+    public class StatusReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant INTERNAL_ERROR for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode INTERNAL_ERROR = new StatusReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED = new StatusReasonCode("MAXIMUM_NUMBER_OF_CONFIG_RULES_EXCEEDED");
+
+        /// <summary>
+        /// Constant NO_AVAILABLE_CONFIGURATION_RECORDER for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode NO_AVAILABLE_CONFIGURATION_RECORDER = new StatusReasonCode("NO_AVAILABLE_CONFIGURATION_RECORDER");
+
+        /// <summary>
+        /// Constant NO_AVAILABLE_MULTICLOUD_CONNECTOR for StatusReasonCode
+        /// </summary>
+        public static readonly StatusReasonCode NO_AVAILABLE_MULTICLOUD_CONNECTOR = new StatusReasonCode("NO_AVAILABLE_MULTICLOUD_CONNECTOR");
+
+        /// <summary>
+        /// Constructs a custom StatusReasonCode for a value not among the defined constants.
+        /// </summary>
+        public StatusReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StatusReasonCode FindValue(string value)
+        {
+            return FindValue<StatusReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StatusReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StringFilterComparison.
+    /// </summary>
+    public class StringFilterComparison : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTAINS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison CONTAINS = new StringFilterComparison("CONTAINS");
+
+        /// <summary>
+        /// Constant CONTAINS_WORD for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison CONTAINS_WORD = new StringFilterComparison("CONTAINS_WORD");
+
+        /// <summary>
+        /// Constant EQUALS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison EQUALS = new StringFilterComparison("EQUALS");
+
+        /// <summary>
+        /// Constant NOT_CONTAINS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison NOT_CONTAINS = new StringFilterComparison("NOT_CONTAINS");
+
+        /// <summary>
+        /// Constant NOT_EQUALS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison NOT_EQUALS = new StringFilterComparison("NOT_EQUALS");
+
+        /// <summary>
+        /// Constant PREFIX for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison PREFIX = new StringFilterComparison("PREFIX");
+
+        /// <summary>
+        /// Constant PREFIX_NOT_EQUALS for StringFilterComparison
+        /// </summary>
+        public static readonly StringFilterComparison PREFIX_NOT_EQUALS = new StringFilterComparison("PREFIX_NOT_EQUALS");
+
+        /// <summary>
+        /// Constructs a custom StringFilterComparison for a value not among the defined constants.
+        /// </summary>
+        public StringFilterComparison(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StringFilterComparison FindValue(string value)
+        {
+            return FindValue<StringFilterComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StringFilterComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TargetType.
+    /// </summary>
+    public class TargetType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCOUNT for TargetType
+        /// </summary>
+        public static readonly TargetType ACCOUNT = new TargetType("ACCOUNT");
+
+        /// <summary>
+        /// Constant ORGANIZATIONAL_UNIT for TargetType
+        /// </summary>
+        public static readonly TargetType ORGANIZATIONAL_UNIT = new TargetType("ORGANIZATIONAL_UNIT");
+
+        /// <summary>
+        /// Constant ROOT for TargetType
+        /// </summary>
+        public static readonly TargetType ROOT = new TargetType("ROOT");
+
+        /// <summary>
+        /// Constructs a custom TargetType for a value not among the defined constants.
+        /// </summary>
+        public TargetType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetType FindValue(string value)
+        {
+            return FindValue<TargetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ThreatIntelIndicatorCategory.
+    /// </summary>
+    public class ThreatIntelIndicatorCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant BACKDOOR for ThreatIntelIndicatorCategory
+        /// </summary>
+        public static readonly ThreatIntelIndicatorCategory BACKDOOR = new ThreatIntelIndicatorCategory("BACKDOOR");
+
+        /// <summary>
+        /// Constant CARD_STEALER for ThreatIntelIndicatorCategory
+        /// </summary>
+        public static readonly ThreatIntelIndicatorCategory CARD_STEALER = new ThreatIntelIndicatorCategory("CARD_STEALER");
+
+        /// <summary>
+        /// Constant COMMAND_AND_CONTROL for ThreatIntelIndicatorCategory
+        /// </summary>
+        public static readonly ThreatIntelIndicatorCategory COMMAND_AND_CONTROL = new ThreatIntelIndicatorCategory("COMMAND_AND_CONTROL");
+
+        /// <summary>
+        /// Constant DROP_SITE for ThreatIntelIndicatorCategory
+        /// </summary>
+        public static readonly ThreatIntelIndicatorCategory DROP_SITE = new ThreatIntelIndicatorCategory("DROP_SITE");
+
+        /// <summary>
+        /// Constant EXPLOIT_SITE for ThreatIntelIndicatorCategory
+        /// </summary>
+        public static readonly ThreatIntelIndicatorCategory EXPLOIT_SITE = new ThreatIntelIndicatorCategory("EXPLOIT_SITE");
+
+        /// <summary>
+        /// Constant KEYLOGGER for ThreatIntelIndicatorCategory
+        /// </summary>
+        public static readonly ThreatIntelIndicatorCategory KEYLOGGER = new ThreatIntelIndicatorCategory("KEYLOGGER");
+
+        /// <summary>
+        /// Constructs a custom ThreatIntelIndicatorCategory for a value not among the defined constants.
+        /// </summary>
+        public ThreatIntelIndicatorCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatIntelIndicatorCategory FindValue(string value)
+        {
+            return FindValue<ThreatIntelIndicatorCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatIntelIndicatorCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ThreatIntelIndicatorType.
+    /// </summary>
+    public class ThreatIntelIndicatorType : ConstantClass
+    {
+        /// <summary>
+        /// Constant DOMAIN for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType DOMAIN = new ThreatIntelIndicatorType("DOMAIN");
+
+        /// <summary>
+        /// Constant EMAIL_ADDRESS for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType EMAIL_ADDRESS = new ThreatIntelIndicatorType("EMAIL_ADDRESS");
+
+        /// <summary>
+        /// Constant HASH_MD5 for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType HASH_MD5 = new ThreatIntelIndicatorType("HASH_MD5");
+
+        /// <summary>
+        /// Constant HASH_SHA1 for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType HASH_SHA1 = new ThreatIntelIndicatorType("HASH_SHA1");
+
+        /// <summary>
+        /// Constant HASH_SHA256 for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType HASH_SHA256 = new ThreatIntelIndicatorType("HASH_SHA256");
+
+        /// <summary>
+        /// Constant HASH_SHA512 for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType HASH_SHA512 = new ThreatIntelIndicatorType("HASH_SHA512");
+
+        /// <summary>
+        /// Constant IPV4_ADDRESS for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType IPV4_ADDRESS = new ThreatIntelIndicatorType("IPV4_ADDRESS");
+
+        /// <summary>
+        /// Constant IPV6_ADDRESS for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType IPV6_ADDRESS = new ThreatIntelIndicatorType("IPV6_ADDRESS");
+
+        /// <summary>
+        /// Constant MUTEX for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType MUTEX = new ThreatIntelIndicatorType("MUTEX");
+
+        /// <summary>
+        /// Constant PROCESS for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType PROCESS = new ThreatIntelIndicatorType("PROCESS");
+
+        /// <summary>
+        /// Constant URL for ThreatIntelIndicatorType
+        /// </summary>
+        public static readonly ThreatIntelIndicatorType URL = new ThreatIntelIndicatorType("URL");
+
+        /// <summary>
+        /// Constructs a custom ThreatIntelIndicatorType for a value not among the defined constants.
+        /// </summary>
+        public ThreatIntelIndicatorType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ThreatIntelIndicatorType FindValue(string value)
+        {
+            return FindValue<ThreatIntelIndicatorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ThreatIntelIndicatorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TicketCreationMode.
+    /// </summary>
+    public class TicketCreationMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DRYRUN for TicketCreationMode
+        /// </summary>
+        public static readonly TicketCreationMode DRYRUN = new TicketCreationMode("DRYRUN");
+
+        /// <summary>
+        /// Constructs a custom TicketCreationMode for a value not among the defined constants.
+        /// </summary>
+        public TicketCreationMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TicketCreationMode FindValue(string value)
+        {
+            return FindValue<TicketCreationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TicketCreationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UnprocessedErrorCode.
+    /// </summary>
+    public class UnprocessedErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCESS_DENIED for UnprocessedErrorCode
+        /// </summary>
+        public static readonly UnprocessedErrorCode ACCESS_DENIED = new UnprocessedErrorCode("ACCESS_DENIED");
+
+        /// <summary>
+        /// Constant INVALID_INPUT for UnprocessedErrorCode
+        /// </summary>
+        public static readonly UnprocessedErrorCode INVALID_INPUT = new UnprocessedErrorCode("INVALID_INPUT");
+
+        /// <summary>
+        /// Constant LIMIT_EXCEEDED for UnprocessedErrorCode
+        /// </summary>
+        public static readonly UnprocessedErrorCode LIMIT_EXCEEDED = new UnprocessedErrorCode("LIMIT_EXCEEDED");
+
+        /// <summary>
+        /// Constant NOT_FOUND for UnprocessedErrorCode
+        /// </summary>
+        public static readonly UnprocessedErrorCode NOT_FOUND = new UnprocessedErrorCode("NOT_FOUND");
+
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for UnprocessedErrorCode
+        /// </summary>
+        public static readonly UnprocessedErrorCode RESOURCE_NOT_FOUND = new UnprocessedErrorCode("RESOURCE_NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom UnprocessedErrorCode for a value not among the defined constants.
+        /// </summary>
+        public UnprocessedErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnprocessedErrorCode FindValue(string value)
+        {
+            return FindValue<UnprocessedErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnprocessedErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type UpdateStatus.
+    /// </summary>
+    public class UpdateStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant READY for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus READY = new UpdateStatus("READY");
+
+        /// <summary>
+        /// Constant UPDATING for UpdateStatus
+        /// </summary>
+        public static readonly UpdateStatus UPDATING = new UpdateStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom UpdateStatus for a value not among the defined constants.
+        /// </summary>
+        public UpdateStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateStatus FindValue(string value)
+        {
+            return FindValue<UpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VerificationState.
+    /// </summary>
+    public class VerificationState : ConstantClass
+    {
+        /// <summary>
+        /// Constant BENIGN_POSITIVE for VerificationState
+        /// </summary>
+        public static readonly VerificationState BENIGN_POSITIVE = new VerificationState("BENIGN_POSITIVE");
+
+        /// <summary>
+        /// Constant FALSE_POSITIVE for VerificationState
+        /// </summary>
+        public static readonly VerificationState FALSE_POSITIVE = new VerificationState("FALSE_POSITIVE");
+
+        /// <summary>
+        /// Constant TRUE_POSITIVE for VerificationState
+        /// </summary>
+        public static readonly VerificationState TRUE_POSITIVE = new VerificationState("TRUE_POSITIVE");
+
+        /// <summary>
+        /// Constant UNKNOWN for VerificationState
+        /// </summary>
+        public static readonly VerificationState UNKNOWN = new VerificationState("UNKNOWN");
+
+        /// <summary>
+        /// Constructs a custom VerificationState for a value not among the defined constants.
+        /// </summary>
+        public VerificationState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VerificationState FindValue(string value)
+        {
+            return FindValue<VerificationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VerificationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VulnerabilityExploitAvailable.
+    /// </summary>
+    public class VulnerabilityExploitAvailable : ConstantClass
+    {
+        /// <summary>
+        /// Constant NO for VulnerabilityExploitAvailable
+        /// </summary>
+        public static readonly VulnerabilityExploitAvailable NO = new VulnerabilityExploitAvailable("NO");
+
+        /// <summary>
+        /// Constant YES for VulnerabilityExploitAvailable
+        /// </summary>
+        public static readonly VulnerabilityExploitAvailable YES = new VulnerabilityExploitAvailable("YES");
+
+        /// <summary>
+        /// Constructs a custom VulnerabilityExploitAvailable for a value not among the defined constants.
+        /// </summary>
+        public VulnerabilityExploitAvailable(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VulnerabilityExploitAvailable FindValue(string value)
+        {
+            return FindValue<VulnerabilityExploitAvailable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VulnerabilityExploitAvailable(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VulnerabilityFixAvailable.
+    /// </summary>
+    public class VulnerabilityFixAvailable : ConstantClass
+    {
+        /// <summary>
+        /// Constant NO for VulnerabilityFixAvailable
+        /// </summary>
+        public static readonly VulnerabilityFixAvailable NO = new VulnerabilityFixAvailable("NO");
+
+        /// <summary>
+        /// Constant PARTIAL for VulnerabilityFixAvailable
+        /// </summary>
+        public static readonly VulnerabilityFixAvailable PARTIAL = new VulnerabilityFixAvailable("PARTIAL");
+
+        /// <summary>
+        /// Constant YES for VulnerabilityFixAvailable
+        /// </summary>
+        public static readonly VulnerabilityFixAvailable YES = new VulnerabilityFixAvailable("YES");
+
+        /// <summary>
+        /// Constructs a custom VulnerabilityFixAvailable for a value not among the defined constants.
+        /// </summary>
+        public VulnerabilityFixAvailable(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VulnerabilityFixAvailable FindValue(string value)
+        {
+            return FindValue<VulnerabilityFixAvailable>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VulnerabilityFixAvailable(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowState.
+    /// </summary>
+    public class WorkflowState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ASSIGNED for WorkflowState
+        /// </summary>
+        public static readonly WorkflowState ASSIGNED = new WorkflowState("ASSIGNED");
+
+        /// <summary>
+        /// Constant DEFERRED for WorkflowState
+        /// </summary>
+        public static readonly WorkflowState DEFERRED = new WorkflowState("DEFERRED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for WorkflowState
+        /// </summary>
+        public static readonly WorkflowState IN_PROGRESS = new WorkflowState("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant NEW for WorkflowState
+        /// </summary>
+        public static readonly WorkflowState NEW = new WorkflowState("NEW");
+
+        /// <summary>
+        /// Constant RESOLVED for WorkflowState
+        /// </summary>
+        public static readonly WorkflowState RESOLVED = new WorkflowState("RESOLVED");
+
+        /// <summary>
+        /// Constructs a custom WorkflowState for a value not among the defined constants.
+        /// </summary>
+        public WorkflowState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowState FindValue(string value)
+        {
+            return FindValue<WorkflowState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WorkflowStatus.
+    /// </summary>
+    public class WorkflowStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant NEW for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus NEW = new WorkflowStatus("NEW");
+
+        /// <summary>
+        /// Constant NOTIFIED for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus NOTIFIED = new WorkflowStatus("NOTIFIED");
+
+        /// <summary>
+        /// Constant RESOLVED for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus RESOLVED = new WorkflowStatus("RESOLVED");
+
+        /// <summary>
+        /// Constant SUPPRESSED for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus SUPPRESSED = new WorkflowStatus("SUPPRESSED");
+
+        /// <summary>
+        /// Constructs a custom WorkflowStatus for a value not among the defined constants.
+        /// </summary>
+        public WorkflowStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkflowStatus FindValue(string value)
+        {
+            return FindValue<WorkflowStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkflowStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}
