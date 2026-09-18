@@ -213,6 +213,14 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void ToDotNetName_AppliesServiceRename()
+    {
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        Assert.Equal("RenamedResource", context.ToDotNetName(ShapeId.Parse("com.example#RelatedResource")));
+        Assert.Equal("ConflictDetails", context.ToDotNetName(ShapeId.Parse("com.example#ConflictDetails")));
+    }
+
+    [Fact]
     public void OperationWithUnitInputAndOutput_ResolvesToEmptyStructures()
     {
         // smithy.api#Unit is the modeled form of "no input/output"; it is a prelude shape, so it

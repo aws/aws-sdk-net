@@ -13,7 +13,7 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
 {
     public string Write(StructureShape structure, ShapeId shapeId, CancellationToken cancellationToken = default)
     {
-        var exceptionName = ExceptionWriter.ToExceptionName(shapeId.Name);
+        var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(shapeId));
         var unmarshallerClassName = $"{exceptionName}Unmarshaller";
 
         // message is deserialized by JsonErrorResponseUnmarshaller into the base Exception.Message,

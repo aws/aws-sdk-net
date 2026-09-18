@@ -33,11 +33,23 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
-                if (members.PayloadMember is { Type.IsStreaming: true })
+
+                if (members.PayloadMember is { Type.IsStreaming: true } || members.EventStreamMember is not null)
                 {
                     WriteHasStreamingProperty(writer);
                     writer.WriteLine("");
                 }
+
+                if (members.EventStreamMember is not null)
+                {
+                    // Response logging asks Core to buffer the whole body, which never ends for an event stream.
+                    writer.WriteLine("/// <summary>");
+                    writer.WriteLine("/// Return false for reading the entire response");
+                    writer.WriteLine("/// </summary>");
+                    writer.WriteLine("protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;");
+                    writer.WriteLine("");
+                }
+
                 WriteSingleton(writer, unmarshallerClassName);
             });
         });
@@ -433,9 +445,10 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
                     foreach (var error in operation.Errors)
                     {
-                        var errorShapeName = error.Id.Name;
-                        var exceptionClassName = ExceptionWriter.ToExceptionName(errorShapeName);
-                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{errorShapeName}"))""", () =>
+                        // The wire code is the shape name even when the service renames the shape.
+                        var errorCode = error.Id.Name;
+                        var exceptionClassName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
+                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{errorCode}"))""", () =>
                         {
                             writer.WriteLine($"return {exceptionClassName}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);");
                         });
@@ -447,8 +460,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         });
     }
 
-    // Emitted only when the response's @httpPayload is a @streaming blob: the runtime checks this to
-    // hand the caller the live response stream rather than buffering the body. Matches C2J.
+    // Emitted when the response's @httpPayload is a @streaming blob or an event stream: the runtime
+    // checks this to hand the caller the live response stream rather than buffering the body. Matches C2J.
     private static void WriteHasStreamingProperty(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");

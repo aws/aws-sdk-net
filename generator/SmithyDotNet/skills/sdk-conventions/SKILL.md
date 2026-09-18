@@ -70,7 +70,9 @@ name to a writer, check the shipping SDK for which of the two it follows.
 
 ### Class and Member Names
 
-- **Shape names** → PascalCase class names (Smithy shape names are already PascalCase)
+- **Shape names** → PascalCase class names (Smithy shape names are already PascalCase). The service
+  `rename` map wins when it has an entry for the shape (`GenerationContext.ToDotNetName`); error codes
+  still use the shape name
 - **Member names** → PascalCase property names. Smithy uses camelCase (`eventData`), .NET uses PascalCase (`EventData`)
 - The conversion: capitalize the first letter of the Smithy member name
 - **Acronyms** are preserved as-is from the Smithy model. Example: `eventID` → `EventID` (not `EventId`)
@@ -133,6 +135,12 @@ differ (see `marshalling`). `GenerationContext.RequestEventStreams` / `ResponseE
   `{Name}Received` handler. Pinned in `EventStreamOutputCodegenTests`. The union gets no plain model class
   and no structure unmarshaller (the response unmarshaller does `new {Union}(context.Stream)`); its events
   keep theirs.
+- The `{Op}Response` implements `IDisposable` and its dispose pattern releases the event stream member.
+  Only when the operation also *sends* an event stream (bidi, or input-only) does it implement
+  `Amazon.Runtime.EventStreams.IEventInputStreamContextOwner` (explicit `SetEventInputStreamContext` under a
+  CA1033 suppression) and dispose the context first (`OperationWriter`; C2J keys this on
+  `Operation.IsEventStreamInput`, so Bedrock `ConverseStreamResponse` is `AmazonWebServiceResponse, IDisposable`
+  and Lex V2 `StartConversationResponse` adds the owner interface).
 - Any response event stream gates the per-service `{BaseName}EventStreamException` (`EventStreamExceptionWriter`).
 
 **Both:**

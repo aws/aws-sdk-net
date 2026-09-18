@@ -43,18 +43,13 @@ public record PaginatedOperation(
 /// <summary>
 /// A <c>@streaming</c> union sent to the service as an operation input, resolved once however many
 /// operations share it. <see cref="Events"/> excludes <c>@error</c> members: a client never sends
-/// an error event. Both lists are ordered by name.
+/// an error event. Both lists are ordered by name. <see cref="InterfaceName"/> is the shipped
+/// marker-interface name, derived from the union's generated name, not the operation (Lex V2:
+/// <c>IStartConversationRequestEventStreamEvent</c>). A union named <c>EventStream</c> (the
+/// protocol test client) yields <c>IEventStreamEvent</c>, the runtime's own marker, so event
+/// stream writers refer to the runtime's through a <c>using RuntimeEvent = ...</c> alias.
 /// </summary>
-public record RequestEventStream(ShapeId Id, IReadOnlyList<Operation> Operations, IReadOnlyList<ShapeId> Events)
-{
-    /// <summary>
-    /// The shipped marker-interface name, derived from the union, not the operation (Lex V2:
-    /// <c>IStartConversationRequestEventStreamEvent</c>). A union named <c>EventStream</c> (the
-    /// protocol test client) yields <c>IEventStreamEvent</c>, the runtime's own marker, so event
-    /// stream writers refer to the runtime's through a <c>using RuntimeEvent = ...</c> alias.
-    /// </summary>
-    public string InterfaceName => $"I{Id.Name}Event";
-}
+public record RequestEventStream(ShapeId Id, string InterfaceName, IReadOnlyList<Operation> Operations, IReadOnlyList<ShapeId> Events);
 
 /// <summary>
 /// A <c>@streaming</c> union received from the service as an operation output. <see cref="Events"/>
@@ -371,17 +366,13 @@ public class GenerationContext
         return PreludeShapes.Resolve(shapeId) ?? throw new GeneratorException($"Shape '{shapeId}' not found.");
     }
 
-    /// <summary>
-    /// Returns the .NET type/member name for a shape (currently just the shape name).
-    /// </summary>
+    /// <inheritdoc cref="ServiceIndex.ToDotNetName"/>
     /// <remarks>
-    /// Future phases will layer in:
-    /// 1. ServiceShape.Rename map (Smithy service-level renames to avoid conflicts)
-    /// 2. EC2 query name (aws.protocols#ec2QueryName trait for protocol-specific naming)
+    /// TODO: EC2 query name (aws.protocols#ec2QueryName) is not applied yet.
     /// Customization renames don't belong here — <see cref="CustomizationTransform"/> merges them
     /// into the model.
     /// </remarks>
-    public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
+    public string ToDotNetName(ShapeId shapeId) => _index.ToDotNetName(shapeId);
 
     // AWS protocol trait IDs in the legacy generator's resolution priority
     // (smithy-rpc-v2-cbor > json > rest-json > rest-xml > query > ec2). A service that models several
@@ -471,7 +462,7 @@ public class GenerationContext
                 .OrderBy(op => op.Name, StringComparer.Ordinal)
                 .ToList();
             var events = EventStreams.EventsOf(unionId, index).OrderBy(target => target.Name, StringComparer.Ordinal).ToList();
-            resolved.Add(new RequestEventStream(unionId, senders, events));
+            resolved.Add(new RequestEventStream(unionId, $"I{index.ToDotNetName(unionId)}Event", senders, events));
         }
 
         return resolved.OrderBy(stream => stream.Id.Name, StringComparer.Ordinal).ToList();

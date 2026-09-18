@@ -52,7 +52,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
     /// </summary>
     public string WriteException(StructureShape errorShape, ShapeId shapeId, CancellationToken cancellationToken = default)
     {
-        var className = ToExceptionName(shapeId.Name);
+        var className = ToExceptionName(context.ToDotNetName(shapeId));
         var baseClassName = $"{context.ClientName}Exception";
         var serializedMembers = ResolveSerializedMembers(errorShape, context);
         // Class properties are the serialized members minus base-owned RequestId/ErrorCode, which

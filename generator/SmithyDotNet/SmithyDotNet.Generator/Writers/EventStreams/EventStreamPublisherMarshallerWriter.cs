@@ -28,8 +28,8 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
     {
         var union = (UnionShape)context.Resolve(stream.Id);
 
-        // The marshaller class and Func interface derive from the union name, matching RequestEventStream.InterfaceName.
-        var streamName = stream.Id.Name;
+        // The marshaller class and Func interface derive from the union's generated name, matching RequestEventStream.InterfaceName.
+        var streamName = context.ToDotNetName(stream.Id);
         // Ordered by wire name so the branch order is deterministic and matches RequestEventStream.Events.
         // Branch order is behaviorally irrelevant (the checks are mutually exclusive), so this is safe.
         var events = union.Members
@@ -37,6 +37,12 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             .OrderBy(member => member.Key, StringComparer.Ordinal)
             .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), PayloadOf(member.Value.Target)))
             .ToList();
+
+        // Without this the loop below emits no branch and the trailing `else` doesn't compile.
+        if (events.Count == 0)
+        {
+            throw new GeneratorException($"Event stream '{stream.Id}' has no publishable events; every member is an @error.");
+        }
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);

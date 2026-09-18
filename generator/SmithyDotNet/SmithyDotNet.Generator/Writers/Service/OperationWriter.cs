@@ -86,17 +86,27 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         // AmazonWebServiceResponse already declares it, and the unmarshaller assigns the inherited property.
         members.RemoveAll(m => m.PropertyName == "ContentLength");
 
-        // A @streaming output member hands back the raw response stream the caller must dispose.
-        // The trait lives on the target blob shape, so detect it via the resolved member type.
-        var streamingMembers = members.Where(m => m.Type.IsStreaming).ToList();
+        // A @streaming output member (raw blob stream or event stream) hands back a stream the caller
+        // must dispose. The trait lives on the target shape, so detect it via the resolved member type.
+        var streamingMembers = members.Where(m => m.Type.IsStreaming || m.Type.IsEventStream).ToList();
+
+        // The response of an operation that sends an event stream owns the request handle Core gives it
+        // (C2J: `Operation.IsEventStreamInput`); an output-only stream doesn't.
+        var hasRequestEventStream = context.RequestEventStreams.Any(stream => stream.Operations.Contains(operation));
         var baseClass = "AmazonWebServiceResponse";
-        if (streamingMembers.Count > 0)
+
+        if (hasRequestEventStream)
+        {
+            baseClass = baseClass + ", Amazon.Runtime.EventStreams.IEventInputStreamContextOwner";
+        }
+
+        if (streamingMembers.Count > 0 || hasRequestEventStream)
         {
             baseClass = baseClass + ", IDisposable";
         }
-        var doc = $"This is the response object from the {operation.Name} operation.";
 
-        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Output), streamingMembers);
+        var doc = $"This is the response object from the {operation.Name} operation.";
+        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Output), streamingMembers, hasRequestEventStream);
         return WriteClass(record, cancellationToken);
     }
 
@@ -110,7 +120,8 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         string Doc,
         List<Member> Members,
         string? Obsolete = null,
-        List<Member>? StreamingMembers = null);
+        List<Member>? StreamingMembers = null,
+        bool HasRequestEventStream = false);
 
     private string WriteClass(OperationRecord opRecord, CancellationToken cancellationToken)
     {
@@ -130,9 +141,16 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             writer.OpenBlock($"public partial class {opRecord.ClassName} : {opRecord.BaseClass}", () =>
             {
                 MemberWriter.WriteMembers(writer, opRecord.Members);
-                if (opRecord.StreamingMembers is { Count: > 0 } streamingMembers)
+                if (opRecord.HasRequestEventStream)
                 {
-                    WriteDisposePattern(writer, streamingMembers);
+                    WriteEventInputStreamContextOwner(writer);
+                }
+
+                // Unlike C2J, also emitted for an input-only stream (it would otherwise declare IDisposable without implementing it).
+                var streamingMembers = opRecord.StreamingMembers ?? [];
+                if (streamingMembers.Count > 0 || opRecord.HasRequestEventStream)
+                {
+                    WriteDisposePattern(writer, streamingMembers, opRecord.HasRequestEventStream);
                 }
             });
         });
@@ -140,10 +158,24 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         return writer.ToFormattedString(cancellationToken);
     }
 
+    // Explicit interface implementation, so CA1033 (make it accessible to derived types) is suppressed like C2J does.
+    private static void WriteEventInputStreamContextOwner(CodeWriter writer)
+    {
+        writer.WriteLine();
+        writer.WriteLine("#pragma warning disable CA1033");
+        writer.WriteLine("Amazon.Runtime.EventStreams.EventInputStreamContext _eventInputStreamContext;");
+        writer.OpenBlock("void Amazon.Runtime.EventStreams.IEventInputStreamContextOwner.SetEventInputStreamContext(Amazon.Runtime.EventStreams.EventInputStreamContext eventInputStreamContext)", () =>
+        {
+            writer.WriteLine("this._eventInputStreamContext = eventInputStreamContext;");
+        });
+        writer.WriteLine("#pragma warning restore CA1033");
+    }
+
     /// <summary>
-    /// Emits the standard <see cref="IDisposable"/> region that releases each streaming member's stream.
+    /// Emits the standard <see cref="IDisposable"/> region that releases each streaming member's stream
+    /// (and the event input stream context first, when the response owns one).
     /// </summary>
-    private static void WriteDisposePattern(CodeWriter writer, List<Member> streamingMembers)
+    private static void WriteDisposePattern(CodeWriter writer, List<Member> streamingMembers, bool hasRequestEventStream)
     {
         writer.WriteLine();
         writer.WriteLine("#region Dispose Pattern");
@@ -168,6 +200,11 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             writer.WriteLine();
             writer.OpenBlock("if (disposing)", () =>
             {
+                if (hasRequestEventStream)
+                {
+                    writer.WriteLine("this._eventInputStreamContext?.Dispose();");
+                    writer.WriteLine("this._eventInputStreamContext = null;");
+                }
                 foreach (var member in streamingMembers)
                 {
                     writer.WriteLine($"this.{member.PropertyName}?.Dispose();");

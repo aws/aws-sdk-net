@@ -138,7 +138,7 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
 - **String** → `text/plain` (or the target's `@mediaType` value when present), no scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
 - **Structure** → `application/json`; the scaffold above, then the target's marshaller as the body object (`WriteStartObject` → `{Type}Marshaller.Instance.Marshall(publicRequest.{Prop}, context)` → `WriteEndObject`).
 - **Document** → `application/json`; the scaffold above, then `Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.{Prop});` — NO `WriteStartObject`/`WriteEndObject` wrapping (the document is the whole JSON value, object/array/scalar). No C2J precedent (C2J represents a document as a structure and no model binds one to `@httpPayload`); designed to mirror the document body-member marshaller.
-- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (or the target's `@mediaType` value when present; overrides the top `application/json`); adds `using System.Globalization;`. Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`; emitted code is pinned in `BlobCodegenTests`):
+- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (or the target's `@mediaType` value when present; overrides the top `application/json`); adds `using System.Globalization;`. Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override — except when the input also has an `@httpHeader("Content-Type")` member: that header is emitted before the blob block and must win, so the blob's type moves to the top `Content-Type` line and the trailing override is dropped (restJson1 `TestPayloadBlob`); the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`; emitted code is pinned in `BlobCodegenTests`):
   - **`@streaming` + `@unsignedPayload`, no `@requiresLength`** → seek to start and set Content-Length when the stream is seekable, else `Transfer-Encoding: chunked` (length unknown up front, and signing is off anyway).
   - **`@streaming` + `@requiresLength`** → stream MUST be seekable (throws `InvalidOperationException` otherwise), then always sets Content-Length. `@requiresLength` wins over the unsigned chunked path.
   - **otherwise** (every non-streaming blob; a streaming blob on a signed op) → seek when seekable, always set Content-Length (no chunked).
@@ -229,8 +229,9 @@ passes `bindStatusCode: false` and the member falls through to the body like any
 An output member targeting a `@streaming` union/structure is an event stream (`TypeDescriptor.IsEventStream`).
 `PartitionByBinding` pulls it out (`EventStreamMember`) and it IS the body: the unmarshaller emits
 `unmarshalledObject.{Prop} = new {UnionClass}(context.Stream);` instead of a JSON reader loop, matching C2J's
-`JsonRPCResponseUnmarshaller`. The `{UnionClass}` itself, and everything else event streams emit, is in
-`sdk-conventions` → Event Streams.
+`JsonRPCResponseUnmarshaller`, and the unmarshaller class overrides `HasStreamingProperty => true` and
+`ShouldReadEntireResponse(...) => false` so Core never buffers the body. The `{UnionClass}` itself, and
+everything else event streams emit, is in `sdk-conventions` → Event Streams.
 
 Each non-error union member targets an **event structure** that gets its own `{Event}Unmarshaller`
 (`JsonStructureUnmarshallerWriter`, invoked per event from the event-stream class's `EventMapping`). The

@@ -42,6 +42,13 @@ public class EventStreamOutputCodegenTests
     }
 
     [Fact]
+    public void ResponseUnmarshaller_StreamsInsteadOfBuffering()
+    {
+        Assert.Contains("public override bool HasStreamingProperty => true;", _responseUnmarshaller);
+        Assert.Contains("protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;", _responseUnmarshaller);
+    }
+
+    [Fact]
     public void EventStreamClass_HasSignatureAndSuppressions()
     {
         Assert.Contains($"public sealed class ConverseStreamOutput : EnumerableEventOutputStream<RuntimeEvent, {_context.BaseName}EventStreamException>", _eventStreamClass);

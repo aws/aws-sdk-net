@@ -166,8 +166,6 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         if (context.ResponseEventStreams.Count > 0)
         {
-            // TODO: The response class must implement IDisposable and its unmarshaller override
-            // HasStreamingProperty / ShouldReadEntireResponse, or Core disposes the body before the caller reads the stream.
             var eventStreamExceptionWriter = new EventStreamExceptionWriter(context, modelFileName);
             Emit(Path.Combine(model, $"{context.BaseName}EventStreamException.g.cs"), eventStreamExceptionWriter.Write(cancellationToken));
 
@@ -270,7 +268,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // eventstream operations do) should still be returnable.
         foreach (var (errorId, errorShape) in context.Errors)
         {
-            var name = ExceptionWriter.ToExceptionName(errorId.Name);
+            var name = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorId));
             Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, errorId, cancellationToken));
 
             // An exception's rich members can target structures (directly, or as list/map
@@ -319,7 +317,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 Emit(Path.Combine(model, $"{context.ToDotNetName(eventId)}.{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteEventImplementation(eventStream, eventId, cancellationToken));
             }
-            Emit(Path.Combine(marshalling, $"{eventStream.Id.Name}PublisherMarshaller.g.cs"), publisherMarshallerWriter.Write(eventStream, cancellationToken));
+            Emit(Path.Combine(marshalling, $"{context.ToDotNetName(eventStream.Id)}PublisherMarshaller.g.cs"), publisherMarshallerWriter.Write(eventStream, cancellationToken));
         }
 
         var structureWriter = new StructureWriter(context, modelFileName);
@@ -372,7 +370,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         foreach (var (shapeId, errorShape) in context.Errors)
         {
-            var exceptionName = ExceptionWriter.ToExceptionName(shapeId.Name);
+            var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(shapeId));
             Emit(Path.Combine(model, $"{exceptionName}.g.cs"), exceptionWriter.WriteException(errorShape, shapeId, cancellationToken));
         }
 

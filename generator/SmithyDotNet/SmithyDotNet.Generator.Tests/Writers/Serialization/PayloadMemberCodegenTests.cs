@@ -202,18 +202,41 @@ public class PayloadMemberCodegenTests
         Assert.DoesNotContain("context.TestExpression(", m);
     }
 
+    // GET/DELETE normally get no Content-Type, but a blob payload always carries one, so the modeled
+    // header must win there too: blob default first, modeled header after it, no trailing override.
+    // DeleteBlobPayload shares DoBlobPayload's input.
+    [Fact]
+    public void BlobPayload_WithModeledContentType_OnDelete_ModeledHeaderWins()
+    {
+        var m = Marshaller("DeleteBlobPayload");
+
+        var defaultContentType = """request.Headers["Content-Type"] = "application/octet-stream";""";
+        var modeledContentType = """request.Headers["Content-Type"] = publicRequest.ContentType;""";
+        Assert.Contains(defaultContentType, m);
+        Assert.Contains(modeledContentType, m);
+        Assert.True(m.IndexOf(defaultContentType, StringComparison.Ordinal) < m.IndexOf(modeledContentType, StringComparison.Ordinal));
+        Assert.DoesNotContain("request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader]", m);
+    }
+
     [Fact]
     public void BlobPayload_WritesRawContentStreamWithOctetStream()
     {
         var m = Marshaller("DoBlobPayload");
 
-        // Content-Type is application/json at the top, then overridden to octet-stream (matches C2J).
         Assert.Contains("request.ContentStream = publicRequest.Body ?? new MemoryStream();", m);
         Assert.Contains("if (request.ContentStream.CanSeek)", m);
         Assert.Contains("request.ContentStream.Seek(0, SeekOrigin.Begin);", m);
         Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);", m);
-        Assert.Contains("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""", m);
         Assert.Contains("using System.Globalization;", m);
+
+        // The modeled @httpHeader("Content-Type") must win over the blob default (restJson1 TestPayloadBlob).
+        var defaultContentType = """request.Headers["Content-Type"] = "application/octet-stream";""";
+        var modeledContentType = """request.Headers["Content-Type"] = publicRequest.ContentType;""";
+        Assert.Contains(defaultContentType, m);
+        Assert.Contains(modeledContentType, m);
+        Assert.True(m.IndexOf(defaultContentType, StringComparison.Ordinal) < m.IndexOf(modeledContentType, StringComparison.Ordinal));
+        Assert.DoesNotContain("""request.Headers["Content-Type"] = "application/json";""", m);
+        Assert.DoesNotContain("request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader]", m);
 
         // A raw blob body uses no JSON writer scaffold; the query sibling still marshals.
         Assert.DoesNotContain("Utf8JsonWriter", m);

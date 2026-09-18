@@ -95,7 +95,7 @@ public static class MemberWriter
         writer.WriteLine("/// provide a Func that the SDK will continue to call to get events to send. When the consumer is done streaming");
         writer.WriteLine("/// events to the service the Func can return null to stop the SDK calling the Func for new events. The Func must");
         writer.WriteLine($"/// return an event known by the service which can be identified by implementing the {publisher.InterfaceName}");
-        writer.WriteLine("/// interface. The known implementatons in the SDK for this interface are:");
+        writer.WriteLine("/// interface. The known implementations in the SDK for this interface are:");
         writer.WriteLine("""/// <list type="bullet">""");
         foreach (var eventClass in publisher.EventClasses)
         {

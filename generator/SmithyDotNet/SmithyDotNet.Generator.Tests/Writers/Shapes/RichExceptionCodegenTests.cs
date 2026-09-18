@@ -45,7 +45,7 @@ public class RichExceptionCodegenTests
         Assert.Contains("public string ResourceName { get; set; }", _exceptionClass);
         Assert.Contains("public int? AttemptCount { get; set; }", _exceptionClass);
         Assert.Contains("public ConflictDetails Details { get; set; }", _exceptionClass);
-        Assert.Contains("public List<RelatedResource> Related { get; set; } = AWSConfigs.InitializeCollections ? new List<RelatedResource>() : null;", _exceptionClass);
+        Assert.Contains("public List<RenamedResource> Related { get; set; } = AWSConfigs.InitializeCollections ? new List<RenamedResource>() : null;", _exceptionClass);
 
         Assert.DoesNotContain("IsSetMessage", _exceptionClass);
         Assert.DoesNotContain("public string Message", _exceptionClass);
@@ -59,7 +59,7 @@ public class RichExceptionCodegenTests
         Assert.Contains("""this.ResourceName = (string)info.GetValue("ResourceName", typeof(string));""", _exceptionClass);
         Assert.Contains("""this.AttemptCount = (int?)info.GetValue("AttemptCount", typeof(int?));""", _exceptionClass);
         Assert.Contains("""this.Details = (ConflictDetails)info.GetValue("Details", typeof(ConflictDetails));""", _exceptionClass);
-        Assert.Contains("""this.Related = (List<RelatedResource>)info.GetValue("Related", typeof(List<RelatedResource>));""", _exceptionClass);
+        Assert.Contains("""this.Related = (List<RenamedResource>)info.GetValue("Related", typeof(List<RenamedResource>));""", _exceptionClass);
 
         Assert.Contains("""info.AddValue("ResourceName", this.ResourceName);""", _exceptionClass);
         Assert.Contains("""info.AddValue("AttemptCount", this.AttemptCount);""", _exceptionClass);
@@ -178,7 +178,11 @@ public class RichExceptionCodegenTests
         // and body loop for the body member, plus the header reads (from context.ResponseData). This is
         // the only positive pin that the exception writer emits the reader scaffolding: the message-only
         // (ChannelInsufficientPermission) and header-only (Boom) cases both assert its absence.
-        var (_, unmarshaller) = Generate(TestModels.Load(SharedModel), "MixedError");
+        var (exceptionClass, unmarshaller) = Generate(TestModels.Load(SharedModel), "MixedError");
+
+        // The service renames MixedError; the class and its unmarshaller take the renamed name.
+        Assert.Contains("public partial class RenamedMixedErrorException : AmazonExampleException", exceptionClass);
+        Assert.Contains("public partial class RenamedMixedErrorExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<RenamedMixedErrorException, JsonUnmarshallerContext>", unmarshaller);
 
         Assert.Contains("if (context.Stream.Length > 0)", unmarshaller);
         Assert.Contains("context.Read(ref reader);", unmarshaller);

@@ -245,7 +245,7 @@ public static partial class DocumentationFormatter
     /// </summary>
     public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, OperationError error)
     {
-        var exceptionName = ExceptionWriter.ToExceptionName(error.Id.Name);
+        var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
         writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
 
         var cleaned = Cleanup(error.Shape.GetDocumentation());

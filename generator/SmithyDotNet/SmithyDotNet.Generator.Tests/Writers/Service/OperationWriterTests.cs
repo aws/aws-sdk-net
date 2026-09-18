@@ -108,6 +108,48 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void Response_WithOutputOnlyEventStream_DisposesStreamButOwnsNoContext()
+    {
+        var context = TestModels.Context("Codegen/event-stream-output-model.json");
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+        var operation = context.Operations.Single(o => o.Name == "ConverseStream");
+
+        var response = writer.WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("public partial class ConverseStreamResponse : AmazonWebServiceResponse, IDisposable", response);
+        Assert.DoesNotContain("IEventInputStreamContextOwner", response);
+        Assert.DoesNotContain("_eventInputStreamContext", response);
+        Assert.Contains("this.Stream?.Dispose();", response);
+    }
+
+    [Fact]
+    public void Response_WithBidirectionalEventStream_OwnsContextAndDisposesBoth()
+    {
+        var context = TestModels.Context("Codegen/request-event-stream-model.json");
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+        var operation = context.Operations.Single(o => o.Name == "Talk");
+
+        var response = writer.WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("public partial class TalkResponse : AmazonWebServiceResponse, Amazon.Runtime.EventStreams.IEventInputStreamContextOwner, IDisposable", response);
+        Assert.Contains("void Amazon.Runtime.EventStreams.IEventInputStreamContextOwner.SetEventInputStreamContext(Amazon.Runtime.EventStreams.EventInputStreamContext eventInputStreamContext)", response);
+        Assert.Contains("this._eventInputStreamContext?.Dispose();", response);
+        Assert.Contains("this.Stream?.Dispose();", response);
+    }
+
+    [Fact]
+    public void Response_WithInputOnlyEventStream_OwnsContextAndDisposesIt()
+    {
+        var context = TestModels.Context("Codegen/request-event-stream-model.json");
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+        var operation = context.Operations.Single(o => o.Name == "TalkWithInitialRequest");
+
+        var response = writer.WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("public partial class TalkWithInitialRequestResponse : AmazonWebServiceResponse, Amazon.Runtime.EventStreams.IEventInputStreamContextOwner, IDisposable", response);
+        Assert.Contains("#region Dispose Pattern", response);
+        Assert.Contains("this._eventInputStreamContext?.Dispose();", response);
+        Assert.DoesNotContain("this.Stream", response);
+    }
+
+    [Fact]
     public void Response_EmitsClassDocumentation()
     {
         Assert.Contains("This is the response object from the PutAuditEvents operation.", _response);

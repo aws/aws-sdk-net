@@ -95,7 +95,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 writer.WriteLine($"CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.{compressionEncoding});");
             }
-            WriteContentType(writer, httpTrait, partitioned);
+
+            // A modeled @httpHeader("Content-Type") is emitted between the default Content-Type and the
+            // blob payload block, so the block's trailing Content-Type override must not clobber it.
+            var modeledContentType = partitioned.HeaderMembers.Any(h => h.HeaderName.Equals("Content-Type", StringComparison.OrdinalIgnoreCase));
+            var blobContentTypeEmitted = WriteContentType(writer, httpTrait, partitioned, modeledContentType);
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
@@ -126,7 +130,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
             else if (partitioned.PayloadMember is { } payload)
             {
-                WritePayloadSerialization(writer, payload, unsignedPayload);
+                WritePayloadSerialization(writer, payload, unsignedPayload, blobContentTypeEmitted);
             }
             else if (partitioned.BodyMembers.Count > 0)
             {
@@ -191,21 +195,30 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine($"""request.HostPrefix = $"{interpolated}";""");
     }
 
-    // Omitted for GET/DELETE and for body-less operations, matching C2J. TODO: customization
-    // OverrideContentType and non-restJson (application/x-amz-json) are not handled yet.
-    private static void WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned)
+    // Omitted for GET/DELETE and for body-less operations, matching C2J. A blob payload is the
+    // exception: its block always sets Content-Type, so when a modeled Content-Type header must win
+    // the blob default is emitted here, ahead of the header, on every method. Returns whether that
+    // happened (see WriteBlobPayloadSerialization). TODO: customization OverrideContentType and
+    // non-restJson (application/x-amz-json) are not handled yet.
+    private static bool WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned, bool modeledContentType)
     {
         // An input event stream sets its own application/vnd.amazon.eventstream Content-Type (see
         // WriteEventStreamPublisher), so the normal body Content-Type is skipped.
         if (partitioned.PayloadMember is { Type.IsEventStream: true })
         {
-            return;
+            return false;
+        }
+
+        if (modeledContentType && partitioned.PayloadMember is { Type.IsBlob: true } blob)
+        {
+            writer.WriteLine($"""request.Headers["Content-Type"] = "{blob.Type.MediaType ?? "application/octet-stream"}";""");
+            return true;
         }
 
         var hasBody = partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0;
         if (httpTrait.Method is "GET" or "DELETE" || !hasBody)
         {
-            return;
+            return false;
         }
 
         var contentType = "application/json";
@@ -214,6 +227,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             contentType = payload.Type.MediaType ?? "text/plain";
         }
         writer.WriteLine($"""request.Headers["Content-Type"] = "{contentType}";""");
+        return false;
     }
 
     // restJson1 @timestampFormat defaults for HTTP bindings when unset: http-date on a header,
@@ -277,7 +291,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     //https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
     private void WriteQueryStringMembers(CodeWriter writer, List<(Member Member, string QueryName)> queryMembers)
     {
-        // TODO: handle customizations, such as exclusions in marshalling 
+        // TODO: handle customizations, such as exclusions in marshalling
         foreach (var (member, queryName) in queryMembers)
         {
             // An idempotency token is auto-populated, so it is never "required from the customer".
@@ -519,7 +533,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
     }
 
-    private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
+    private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload, bool blobContentTypeEmitted)
     {
         if (payload.Type.MarshalsAsString)
         {
@@ -558,17 +572,19 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
         if (payload.Type.IsBlob)
         {
-            WriteBlobPayloadSerialization(writer, payload, unsignedPayload);
+            WriteBlobPayloadSerialization(writer, payload, unsignedPayload, blobContentTypeEmitted);
             return;
         }
 
         throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
-    // A blob payload is the raw body stream; the final Content-Type overrides the one set earlier.
+    // A blob payload is the raw body stream; the final Content-Type overrides the one set earlier,
+    // unless WriteContentType already emitted the blob's type up front (it does so when a modeled
+    // Content-Type header sits between them, so the modeled header still wins when set).
     // A non-seekable stream can only fall back to chunked transfer when the body is unsigned and
     // no length is required; @requiresLength makes Content-Length mandatory, so it throws instead.
-    private static void WriteBlobPayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
+    private static void WriteBlobPayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload, bool blobContentTypeEmitted)
     {
         var streaming = payload.Type.IsStreaming;
         var requiresLength = payload.Type.RequiresLength;
@@ -603,7 +619,10 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             writer.WriteLine("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);");
         }
 
-        writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "{payload.Type.MediaType ?? "application/octet-stream"}";""");
+        if (!blobContentTypeEmitted)
+        {
+            writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "{payload.Type.MediaType ?? "application/octet-stream"}";""");
+        }
     }
 
     // The Utf8JsonWriter + Content/ContentStream scaffold shared by the normal JSON body and the
@@ -644,6 +663,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             var httpQuery = memberShape.GetHttpQuery();
             var httpHeader = memberShape.GetHttpHeader();
             var httpPrefixHeaders = memberShape.GetHttpPrefixHeaders();
+
+            // Anywhere else the publisher is never wired and the body path emits a marshaller that doesn't exist.
+            if (member.Type.IsEventStream && !memberShape.IsHttpPayload())
+            {
+                throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
+            }
 
             if (httpQuery is not null)
             {

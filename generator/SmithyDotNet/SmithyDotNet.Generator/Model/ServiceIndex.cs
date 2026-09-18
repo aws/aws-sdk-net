@@ -63,6 +63,13 @@ public class ServiceIndex
         RequireNoMixins();
     }
 
+    /// <summary>
+    /// The generated type name for a shape: the service's <c>rename</c> entry when it has one, otherwise
+    /// the shape name. Every emitted symbol goes through here; only wire error codes use <see cref="ShapeId.Name"/>,
+    /// because a rename does not change the shape ID.
+    /// </summary>
+    public string ToDotNetName(ShapeId shapeId) => Service.Rename.GetValueOrDefault(shapeId.AbsoluteName, shapeId.Name);
+
     // The generator does not resolve mixins (production models arrive pre-flattened), so
     // generating from a consumer would silently drop its inherited members. Consumers outside
     // the closure (trait definitions in the raw test models) are ignored.

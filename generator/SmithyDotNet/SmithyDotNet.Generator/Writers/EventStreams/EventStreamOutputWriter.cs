@@ -35,7 +35,8 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
 
         var events = new List<Entry>();
         var exceptions = new List<Entry>();
-        foreach (var (memberName, member) in eventStream.Members)
+        // Sorted so the emitted order is stable across generator runs.
+        foreach (var (memberName, member) in eventStream.Members.OrderBy(kvp => kvp.Key, StringComparer.Ordinal))
         {
             // The wire event name is the member name verbatim; the C# handler is its PascalCase form.
             var handlerName = SdkNaming.ToUpperFirstCharacter(memberName);
@@ -43,7 +44,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
             {
                 // An error member unmarshals to the generated exception class (ToExceptionName), wrapped
                 // in the service's event-stream exception.
-                var exClass = ExceptionWriter.ToExceptionName(member.Target.Name);
+                var exClass = ExceptionWriter.ToExceptionName(context.ToDotNetName(member.Target));
                 exceptions.Add(new Entry(memberName, handlerName, exClass, $"{exClass}Unmarshaller"));
             }
             else

@@ -55,7 +55,7 @@ public static class PaginationResolver
                     // paginator gets no flattened enumerable - same as C2J, which drops those result keys.
                     var elementTarget = TypeMapper.CollectionElementTarget(ResolveShape(index, list.Member.Target));
                     var elementType = elementTarget is StructureShape // includes UnionShape
-                        ? list.Member.Target.Name
+                        ? index.ToDotNetName(list.Member.Target)
                         : TypeMapper.MapScalarElement(elementTarget, list.IsSparse());
                     if (elementType is not null)
                     {

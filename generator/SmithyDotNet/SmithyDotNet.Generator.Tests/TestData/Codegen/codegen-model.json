@@ -14,6 +14,10 @@
         { "target": "com.example#DoScalars" },
         { "target": "com.example#DoShadow" }
       ],
+      "rename": {
+        "com.example#RelatedResource": "RenamedResource",
+        "com.example#MixedError": "RenamedMixedError"
+      },
       "traits": {
         "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
         "aws.protocols#restJson1": {},
@@ -82,7 +86,7 @@
     "com.example#RelatedResource": {
       "type": "structure",
       "members": {
-        "arn": { "target": "smithy.api#String" }
+        "arn": { "target": "smithy.api#String", "traits": { "smithy.api#length": { "min": 1 } } }
       }
     },
     "com.example#DoEnums": {

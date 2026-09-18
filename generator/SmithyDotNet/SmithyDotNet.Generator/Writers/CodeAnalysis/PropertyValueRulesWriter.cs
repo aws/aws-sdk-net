@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -33,27 +34,27 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
 
             // Input/output structures are named after the generated request/response classes, not
             // their modeled shape names, so they're emitted here and skipped in the sorted walk below.
-            var requestAndResponseShapes = new HashSet<string>();
+            var requestAndResponseShapes = new HashSet<ShapeId>();
             foreach (var operation in context.Operations)
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 WriteShapeRules(writer, $"{operation.Name}Request", operation.Input);
                 WriteShapeRules(writer, $"{operation.Name}Response", operation.Output);
-                requestAndResponseShapes.Add(operation.Shape.Input.Name);
-                requestAndResponseShapes.Add(operation.Shape.Output.Name);
+                requestAndResponseShapes.Add(operation.Shape.Input);
+                requestAndResponseShapes.Add(operation.Shape.Output);
             }
 
-            foreach (var (shapeId, structure) in context.Structures.Concat(context.Errors)
-                         .OrderBy(kvp => kvp.Key.Name, StringComparer.Ordinal))
+            foreach (var (shapeId, structure) in context.Structures.Concat(context.Errors).OrderBy(kvp => kvp.Key.Name, StringComparer.Ordinal))
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                if (requestAndResponseShapes.Contains(shapeId.Name))
+                if (requestAndResponseShapes.Contains(shapeId))
                 {
                     continue;
                 }
 
                 // An error shape's rules go under its generated exception class name.
-                WriteShapeRules(writer, structure.IsError() ? ExceptionWriter.ToExceptionName(shapeId.Name) : shapeId.Name, structure);
+                var name = context.ToDotNetName(shapeId);
+                WriteShapeRules(writer, structure.IsError() ? ExceptionWriter.ToExceptionName(name) : name, structure);
             }
 
             writer.WriteEndElement();

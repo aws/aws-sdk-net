@@ -79,6 +79,20 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
         Assert.DoesNotContain("evnt is ChatError", source);
     }
 
+    // The class and Func interface follow the union's renamed name; the request marshaller already
+    // references `new {Renamed}PublisherMarshaller`, so the raw name would not compile.
+    [Fact]
+    public void PublisherMarshaller_HonorsServiceRename()
+    {
+        // The fixture renames com.example#EventStream to RenamedStream.
+        var context = TestModels.Context("Codegen/event-stream-input-only-model.json");
+        var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(context.RequestEventStreams.Single(), TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class RenamedStreamPublisherMarshaller : EventStreamPublisher", source);
+        Assert.Contains("Func<Task<IRenamedStreamEvent>> _publisher;", source);
+        Assert.DoesNotContain("EventStreamPublisherMarshaller", source);
+    }
+
     // A member named "equals" sets HidesBaseMember (it shadows object.Equals). After the "Publisher" rename
     // it no longer shadows anything, so the flag must be cleared — otherwise MemberWriter emits `new` (CS0109).
     [Fact]

@@ -10,6 +10,7 @@
         { "target": "com.example#GetStructurePayload" },
         { "target": "com.example#GetStringPayload" },
         { "target": "com.example#DoBlobPayload" },
+        { "target": "com.example#DeleteBlobPayload" },
         { "target": "com.example#GetBlobPayload" },
         { "target": "com.example#DoEnumPayload" },
         { "target": "com.example#GetEnumPayload" },
@@ -94,9 +95,16 @@
     "com.example#DoBlobPayloadRequest": {
       "type": "structure",
       "members": {
-        "filter": { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "filter" } },
-        "body":   { "target": "com.example#PayloadBlob", "traits": { "smithy.api#httpPayload": {} } }
+        "filter":      { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "filter" } },
+        "contentType": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "Content-Type" } },
+        "body":        { "target": "com.example#PayloadBlob", "traits": { "smithy.api#httpPayload": {} } }
       }
+    },
+    "com.example#DeleteBlobPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoBlobPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/blob", "method": "DELETE" } }
     },
     "com.example#GetBlobPayload": {
       "type": "operation",

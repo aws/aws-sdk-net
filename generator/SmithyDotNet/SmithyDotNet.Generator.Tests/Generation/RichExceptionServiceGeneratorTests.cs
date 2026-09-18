@@ -21,7 +21,8 @@ public class RichExceptionServiceGeneratorTests : IDisposable
     public RichExceptionServiceGeneratorTests()
     {
         // ResourceConflict in the shared codegen model reaches two structures nothing else does:
-        // ConflictDetails (nested) and RelatedResource (list element). Both must get unmarshallers.
+        // ConflictDetails (nested) and RelatedResource (list element, renamed to RenamedResource by the
+        // service). Both must get unmarshallers.
         var context = TestModels.Context("Codegen/codegen-model.json");
         var defaultConfigurationModes = DefaultConfigurationManifest.Load("TestData/sdk-default-configuration.json");
 
@@ -49,7 +50,24 @@ public class RichExceptionServiceGeneratorTests : IDisposable
         var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
         AssertWritten(Path.Combine(marshalling, "ResourceConflictExceptionUnmarshaller.g.cs"));
         AssertWritten(Path.Combine(marshalling, "ConflictDetailsUnmarshaller.g.cs"));
-        AssertWritten(Path.Combine(marshalling, "RelatedResourceUnmarshaller.g.cs"));
+        AssertWritten(Path.Combine(marshalling, "RenamedResourceUnmarshaller.g.cs"));
+    }
+
+    [Fact]
+    public void RenamedError_UsesRenamedTypeEverywhereButTheWireCode()
+    {
+        var marshalling = Path.Combine("Generated", "Model", "Internal", "MarshallTransformations");
+        AssertWritten(Path.Combine("Generated", "Model", "RenamedMixedErrorException.g.cs"));
+        AssertWritten(Path.Combine(marshalling, "RenamedMixedErrorExceptionUnmarshaller.g.cs"));
+
+        var responseUnmarshaller = File.ReadAllText(Path.Combine(_outputDir, marshalling, "DoConflictResponseUnmarshaller.g.cs"));
+        Assert.Contains("""errorResponse.Code.Equals("MixedError")""", responseUnmarshaller);
+        Assert.Contains("return RenamedMixedErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);", responseUnmarshaller);
+
+        Assert.Contains("""<exception cref="Amazon.Example.Model.RenamedMixedErrorException">""", File.ReadAllText(Path.Combine(_outputDir, "Generated", "IAmazonExample.g.cs")));
+
+        var rules = File.ReadAllText(Path.Combine(_codeAnalysisDir, "Generated", "PropertyValueRules.xml"));
+        Assert.Contains("<property>Amazon.Example.Model.RenamedResource.Arn</property>", rules);
     }
 
     private void AssertWritten(string relativePath)
