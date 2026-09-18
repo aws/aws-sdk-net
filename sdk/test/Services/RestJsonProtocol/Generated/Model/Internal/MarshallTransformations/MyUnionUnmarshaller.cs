@@ -116,6 +116,12 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimestampValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("unionValue", targetDepth, ref reader))
+                {
+                    var unmarshaller = NestedUnionUnmarshaller.Instance;
+                    unmarshalledObject.UnionValue = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

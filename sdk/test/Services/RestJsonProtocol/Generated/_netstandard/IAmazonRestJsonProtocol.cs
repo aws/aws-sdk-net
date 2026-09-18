@@ -186,6 +186,45 @@ namespace Amazon.RestJsonProtocol
 
         #endregion
                 
+        #region  DuplexStream
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DuplexStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DuplexStream service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DuplexStream">REST API Reference for DuplexStream Operation</seealso>
+        Task<DuplexStreamResponse> DuplexStreamAsync(DuplexStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DuplexStreamWithInitialMessages
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DuplexStreamWithInitialMessages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DuplexStreamWithInitialMessages service method, as returned by RestJsonProtocol.</returns>
+        /// <exception cref="Amazon.RestJsonProtocol.Model.ServiceUnavailableErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/DuplexStreamWithInitialMessages">REST API Reference for DuplexStreamWithInitialMessages Operation</seealso>
+        Task<DuplexStreamWithInitialMessagesResponse> DuplexStreamWithInitialMessagesAsync(DuplexStreamWithInitialMessagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  EmptyInputAndEmptyOutput
 
 
@@ -912,6 +951,45 @@ namespace Amazon.RestJsonProtocol
         /// <returns>The response from the OmitsSerializingEmptyLists service method, as returned by RestJsonProtocol.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/OmitsSerializingEmptyLists">REST API Reference for OmitsSerializingEmptyLists Operation</seealso>
         Task<OmitsSerializingEmptyListsResponse> OmitsSerializingEmptyListsAsync(OmitsSerializingEmptyListsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  OutputStream
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OutputStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OutputStream service method, as returned by RestJsonProtocol.</returns>
+        /// <exception cref="Amazon.RestJsonProtocol.Model.ServiceUnavailableErrorException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/OutputStream">REST API Reference for OutputStream Operation</seealso>
+        Task<OutputStreamResponse> OutputStreamAsync(OutputStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  OutputStreamWithInitialResponse
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the OutputStreamWithInitialResponse service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the OutputStreamWithInitialResponse service method, as returned by RestJsonProtocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rest-json-protocol-2019-12-16/OutputStreamWithInitialResponse">REST API Reference for OutputStreamWithInitialResponse Operation</seealso>
+        Task<OutputStreamWithInitialResponseResponse> OutputStreamWithInitialResponseAsync(OutputStreamWithInitialResponseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

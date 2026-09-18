@@ -129,6 +129,17 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.TimestampValue.Value));
             }
 
+            if(requestObject.IsSetUnionValue())
+            {
+                context.Writer.WritePropertyName("unionValue");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NestedUnionMarshaller.Instance;
+                marshaller.Marshall(requestObject.UnionValue, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>
