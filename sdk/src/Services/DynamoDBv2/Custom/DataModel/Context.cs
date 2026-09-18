@@ -160,11 +160,26 @@ namespace Amazon.DynamoDBv2.DataModel
             : this(client, false, config) { }
 
         internal DynamoDBContext(IAmazonDynamoDB client, bool ownClient, DynamoDBContextConfig config)
+            : this(client, ownClient, config, null) { }
+
+        internal DynamoDBContext(IAmazonDynamoDB client, bool ownClient, DynamoDBContextConfig config,
+            IEnumerable<KeyValuePair<Type, IPropertyConverter>> defaultConverters)
         {
             if (client == null) throw new ArgumentNullException("client");
 
             this.ConverterCache = new Dictionary<Type, IPropertyConverter>();
             this.ConverterCache.Add(typeof(S3Link), new S3Link.S3LinkConverter(this));
+
+            if (defaultConverters != null)
+            {
+                foreach (var converter in defaultConverters)
+                {
+                    // Seed default converters registered via the builder. Using the indexer allows a caller to
+                    // override a built-in default (e.g. S3Link) if they intentionally register their own.
+                    this.ConverterCache[converter.Key] = converter.Value;
+                }
+            }
+
             this.Client = client;
             this.tablesMap = new Dictionary<string, Table>();
             this.ownClient = ownClient;

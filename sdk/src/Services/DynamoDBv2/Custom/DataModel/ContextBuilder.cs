@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace Amazon.DynamoDBv2.DataModel
 {
@@ -29,6 +30,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// A factory method for creating a <see cref="IAmazonDynamoDB"/> client
         /// </summary>
         private Func<IAmazonDynamoDB> _clientFactory;
+
+        /// <summary>
+        /// Default converters registered by .NET type that are seeded into the constructed <see cref="DynamoDBContext"/>
+        /// </summary>
+        private readonly Dictionary<Type, IPropertyConverter> _defaultConverters = new Dictionary<Type, IPropertyConverter>();
 
         /// <summary>
         /// Creates a builder object to construct a <see cref="DynamoDBContext"/>
@@ -56,6 +62,26 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <inheritdoc/>
+        public IDynamoDBContextBuilder AddDefaultConverter(Type type, IPropertyConverter converter)
+        {
+            if (type is null) throw new ArgumentNullException(nameof(type));
+            if (converter is null) throw new ArgumentNullException(nameof(converter));
+
+            if (_defaultConverters.ContainsKey(type))
+                throw new InvalidOperationException($"A default converter has already been registered for type '{type.FullName}'.");
+
+            _defaultConverters.Add(type, converter);
+
+            return this;
+        }
+
+        /// <inheritdoc/>
+        public IDynamoDBContextBuilder AddDefaultConverter<T>(IPropertyConverter converter)
+        {
+            return AddDefaultConverter(typeof(T), converter);
+        }
+
+        /// <inheritdoc/>
         public DynamoDBContext Build()
         {
             IAmazonDynamoDB client;
@@ -72,7 +98,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ownClient = false;
             }
 
-            return new DynamoDBContext(client, ownClient, _config);
+            return new DynamoDBContext(client, ownClient, _config, _defaultConverters);
         }
     }
 }
