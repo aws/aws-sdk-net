@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MessageData Marshaller
+    /// MultiAgentConfiguration Marshaller
     /// </summary>
-    public class MessageDataMarshaller : IRequestMarshaller<MessageData, JsonMarshallerContext> 
+    public class MultiAgentConfigurationMarshaller : IRequestMarshaller<MultiAgentConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +42,28 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MessageData requestObject, JsonMarshallerContext context)
+        public void Marshall(MultiAgentConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetData())
+            if(requestObject.IsSetDelegateAgentConfiguration())
             {
-                context.Writer.WritePropertyName("data");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Data);
-            }
-
-            if(requestObject.IsSetText())
-            {
-                context.Writer.WritePropertyName("text");
+                context.Writer.WritePropertyName("delegateAgentConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = TextMessageMarshaller.Instance;
-                marshaller.Marshall(requestObject.Text, context);
+                var marshaller = DelegateAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DelegateAgentConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetToolUseResult())
+            if(requestObject.IsSetHandoffAgentConfiguration())
             {
-                context.Writer.WritePropertyName("toolUseResult");
+                context.Writer.WritePropertyName("handoffAgentConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ToolUseResultDataMarshaller.Instance;
-                marshaller.Marshall(requestObject.ToolUseResult, context);
+                var marshaller = HandoffAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.HandoffAgentConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -79,7 +73,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MessageDataMarshaller Instance = new MessageDataMarshaller();
+        public readonly static MultiAgentConfigurationMarshaller Instance = new MultiAgentConfigurationMarshaller();
 
     }
 }

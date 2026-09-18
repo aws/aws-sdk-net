@@ -52,10 +52,37 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ConnectInstanceArn);
             }
 
+            if(requestObject.IsSetInputSchemas())
+            {
+                context.Writer.WritePropertyName("inputSchemas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInputSchemasListValue in requestObject.InputSchemas)
+                {
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectInputSchemasListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetLocale())
             {
                 context.Writer.WritePropertyName("locale");
                 context.Writer.WriteStringValue(requestObject.Locale);
+            }
+
+            if(requestObject.IsSetMultiAgentConfigurations())
+            {
+                context.Writer.WritePropertyName("multiAgentConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMultiAgentConfigurationsListValue in requestObject.MultiAgentConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MultiAgentConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMultiAgentConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOrchestrationAIGuardrailId())
@@ -68,6 +95,17 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("orchestrationAIPromptId");
                 context.Writer.WriteStringValue(requestObject.OrchestrationAIPromptId);
+            }
+
+            if(requestObject.IsSetOutputSchemas())
+            {
+                context.Writer.WritePropertyName("outputSchemas");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
+                {
+                    Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObjectOutputSchemasListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetToolConfigurations())

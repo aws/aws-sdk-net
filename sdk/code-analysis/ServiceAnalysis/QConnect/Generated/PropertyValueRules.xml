@@ -1506,6 +1506,16 @@
     <max>32767</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.AgentTarget.AiAgentId</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.AgentTarget.ApplicationId</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.AIAgentConfigurationData.AiAgentId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}</pattern>
   </property-value-rule>
@@ -3459,6 +3469,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.SpanAttributes.SessionName</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.SpanAttributes.TargetAgentId</property>
     <min>1</min>
     <max>4096</max>
   </property-value-rule>

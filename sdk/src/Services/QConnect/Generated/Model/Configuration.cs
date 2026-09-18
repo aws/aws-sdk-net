@@ -39,7 +39,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ConnectConfiguration. 
         /// <para>
-        /// The configuration information of the Amazon Connect data source.
+        /// The configuration information of the Connect Customer data source.
         /// </para>
         /// </summary>
         public ConnectConfiguration ConnectConfiguration

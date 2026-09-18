@@ -76,8 +76,8 @@ namespace Amazon.QConnect.Model
         ///  <ul> <li> 
         /// <para>
         /// When setting <c>criteria</c> to <c>RoutingProfileArn</c>, you need to provide a list
-        /// of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
-        /// Connect routing profiles</a> as values of this parameter.
+        /// of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Connect
+        /// Customer routing profiles</a> as values of this parameter.
         /// </para>
         ///  </li> </ul>
         /// <para />

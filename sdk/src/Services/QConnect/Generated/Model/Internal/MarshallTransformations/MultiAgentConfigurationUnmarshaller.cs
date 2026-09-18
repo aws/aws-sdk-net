@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MessageData Object
+    /// Response Unmarshaller for MultiAgentConfiguration Object
     /// </summary>  
-    public class MessageDataUnmarshaller : IJsonUnmarshaller<MessageData, JsonUnmarshallerContext>
+    public class MultiAgentConfigurationUnmarshaller : IJsonUnmarshaller<MultiAgentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MessageData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MultiAgentConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MessageData unmarshalledObject = new MessageData();
+            MultiAgentConfiguration unmarshalledObject = new MultiAgentConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("data", targetDepth, ref reader))
+                if (context.TestExpression("delegateAgentConfiguration", targetDepth, ref reader))
                 {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Data = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = DelegateAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DelegateAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("text", targetDepth, ref reader))
+                if (context.TestExpression("handoffAgentConfiguration", targetDepth, ref reader))
                 {
-                    var unmarshaller = TextMessageUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("toolUseResult", targetDepth, ref reader))
-                {
-                    var unmarshaller = ToolUseResultDataUnmarshaller.Instance;
-                    unmarshalledObject.ToolUseResult = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = HandoffAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HandoffAgentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static MessageDataUnmarshaller _instance = new MessageDataUnmarshaller();        
+        private static MultiAgentConfigurationUnmarshaller _instance = new MultiAgentConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MessageDataUnmarshaller Instance
+        public static MultiAgentConfigurationUnmarshaller Instance
         {
             get
             {

@@ -32,7 +32,7 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Container for the parameters to the CreateSession operation.
     /// Creates a session. A session is a contextual container used for generating recommendations.
-    /// Amazon Connect creates a new Amazon Q in Connect session for each contact on which
+    /// Connect Customer creates a new Amazon Q in Connect session for each contact on which
     /// Amazon Q in Connect is enabled.
     /// </summary>
     public partial class CreateSessionRequest : AmazonQConnectRequest
@@ -117,7 +117,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ContactArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the email contact in Amazon Connect. Used to retrieve
+        /// The Amazon Resource Name (ARN) of the email contact in Connect Customer. Used to retrieve
         /// email content and establish session context for AI-powered email assistance.
         /// </para>
         /// </summary>

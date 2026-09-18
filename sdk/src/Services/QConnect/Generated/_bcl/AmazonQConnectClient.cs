@@ -65,7 +65,7 @@ namespace Amazon.QConnect
     ///  </note> 
     /// <para>
     /// Amazon Q in Connect is a generative AI customer service assistant. It is an LLM-enhanced
-    /// evolution of Amazon Connect Wisdom that delivers real-time recommendations to help
+    /// evolution of Connect Customer Wisdom that delivers real-time recommendations to help
     /// contact center agents resolve customer issues quickly and accurately.
     /// </para>
     ///  
@@ -85,7 +85,7 @@ namespace Amazon.QConnect
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-q-connect.html">Use
     /// Amazon Q in Connect for generative AI powered agent assistance in real-time</a> in
-    /// the <i>Amazon Connect Administrator Guide</i>.
+    /// the <i>Connect Customer Administrator Guide</i>.
     /// </para>
     /// </summary>
     public partial class AmazonQConnectClient : AmazonServiceClient, IAmazonQConnect
@@ -1214,7 +1214,7 @@ namespace Amazon.QConnect
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>. 
         /// </para>
         /// </summary>
@@ -1285,7 +1285,7 @@ namespace Amazon.QConnect
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>. 
         /// </para>
         /// </summary>
@@ -1858,7 +1858,7 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Creates a session. A session is a contextual container used for generating recommendations.
-        /// Amazon Connect creates a new Amazon Q in Connect session for each contact on which
+        /// Connect Customer creates a new Amazon Q in Connect session for each contact on which
         /// Amazon Q in Connect is enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
@@ -1898,7 +1898,7 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Creates a session. A session is a contextual container used for generating recommendations.
-        /// Amazon Connect creates a new Amazon Q in Connect session for each contact on which
+        /// Connect Customer creates a new Amazon Q in Connect session for each contact on which
         /// Amazon Q in Connect is enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSession service method.</param>
@@ -2712,7 +2712,7 @@ namespace Amazon.QConnect
         /// <para>
         /// For more information about content associations--what they are and when they are used--see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>. 
         /// </para>
         /// </summary>
@@ -2749,7 +2749,7 @@ namespace Amazon.QConnect
         /// <para>
         /// For more information about content associations--what they are and when they are used--see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>. 
         /// </para>
         /// </summary>
@@ -3610,7 +3610,7 @@ namespace Amazon.QConnect
         /// <para>
         /// For more information about content associations--what they are and when they are used--see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -3647,7 +3647,7 @@ namespace Amazon.QConnect
         /// <para>
         /// For more information about content associations--what they are and when they are used--see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -4086,7 +4086,7 @@ namespace Amazon.QConnect
         /// <important> 
         /// <para>
         /// This API will be discontinued starting June 1, 2024. To receive generative responses
-        /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
+        /// after March 1, 2024, you will need to create a new Assistant in the Connect Customer
         /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
         /// into your applications.
         /// 
@@ -4129,7 +4129,7 @@ namespace Amazon.QConnect
         /// <important> 
         /// <para>
         /// This API will be discontinued starting June 1, 2024. To receive generative responses
-        /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
+        /// after March 1, 2024, you will need to create a new Assistant in the Connect Customer
         /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
         /// into your applications.
         /// 
@@ -4791,7 +4791,7 @@ namespace Amazon.QConnect
         /// <para>
         /// For more information about content associations--what they are and when they are used--see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -4828,7 +4828,7 @@ namespace Amazon.QConnect
         /// <para>
         /// For more information about content associations--what they are and when they are used--see
         /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/integrate-q-with-guides.html">Integrate
-        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Amazon Connect Administrator
+        /// Amazon Q in Connect with step-by-step guides</a> in the <i>Connect Customer Administrator
         /// Guide</i>.
         /// </para>
         /// </summary>
@@ -5605,7 +5605,7 @@ namespace Amazon.QConnect
         /// <important> 
         /// <para>
         /// This API will be discontinued starting June 1, 2024. To receive generative responses
-        /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
+        /// after March 1, 2024, you will need to create a new Assistant in the Connect Customer
         /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
         /// into your applications.
         /// 
@@ -5651,7 +5651,7 @@ namespace Amazon.QConnect
         /// <important> 
         /// <para>
         /// This API will be discontinued starting June 1, 2024. To receive generative responses
-        /// after March 1, 2024, you will need to create a new Assistant in the Amazon Connect
+        /// after March 1, 2024, you will need to create a new Assistant in the Connect Customer
         /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
         /// into your applications.
         /// 
@@ -7372,8 +7372,8 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Updates a session. A session is a contextual container used for generating recommendations.
-        /// Amazon Connect updates the existing Amazon Q in Connect session for each contact on
-        /// which Amazon Q in Connect is enabled.
+        /// Connect Customer updates the existing Amazon Q in Connect session for each contact
+        /// on which Amazon Q in Connect is enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSession service method.</param>
         /// 
@@ -7403,8 +7403,8 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Updates a session. A session is a contextual container used for generating recommendations.
-        /// Amazon Connect updates the existing Amazon Q in Connect session for each contact on
-        /// which Amazon Q in Connect is enabled.
+        /// Connect Customer updates the existing Amazon Q in Connect session for each contact
+        /// on which Amazon Q in Connect is enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSession service method.</param>
         /// <param name="cancellationToken">

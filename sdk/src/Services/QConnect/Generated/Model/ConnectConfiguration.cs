@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The configuration information of the Amazon Connect data source.
+    /// The configuration information of the Connect Customer data source.
     /// </summary>
     public partial class ConnectConfiguration
     {
@@ -39,7 +39,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
+        /// The identifier of the Connect Customer instance. You can find the instanceId in the
         /// ARN of the instance.
         /// </para>
         /// </summary>

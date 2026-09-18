@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MessageData Marshaller
+    /// AgentTarget Marshaller
     /// </summary>
-    public class MessageDataMarshaller : IRequestMarshaller<MessageData, JsonMarshallerContext> 
+    public class AgentTargetMarshaller : IRequestMarshaller<AgentTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,36 +42,20 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MessageData requestObject, JsonMarshallerContext context)
+        public void Marshall(AgentTarget requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetData())
+            if(requestObject.IsSetAiAgentId())
             {
-                context.Writer.WritePropertyName("data");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Data);
+                context.Writer.WritePropertyName("aiAgentId");
+                context.Writer.WriteStringValue(requestObject.AiAgentId);
             }
 
-            if(requestObject.IsSetText())
+            if(requestObject.IsSetApplicationId())
             {
-                context.Writer.WritePropertyName("text");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TextMessageMarshaller.Instance;
-                marshaller.Marshall(requestObject.Text, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetToolUseResult())
-            {
-                context.Writer.WritePropertyName("toolUseResult");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ToolUseResultDataMarshaller.Instance;
-                marshaller.Marshall(requestObject.ToolUseResult, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("applicationId");
+                context.Writer.WriteStringValue(requestObject.ApplicationId);
             }
 
         }
@@ -79,7 +63,7 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MessageDataMarshaller Instance = new MessageDataMarshaller();
+        public readonly static AgentTargetMarshaller Instance = new AgentTargetMarshaller();
 
     }
 }

@@ -355,8 +355,9 @@ namespace Amazon.QConnect.Model
         ///  
         /// <para>
         /// The SIN is formatted as three groups of three digits, such as <i> 123-456-789</i>.
-        /// A SIN can be validated through a simple check-digit process called the <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn
-        /// algorithm</a> .
+        /// A SIN can be validated through a simple check-digit process called the Luhn algorithm.
+        /// For more information, see <a href="https://www.wikipedia.org/wiki/Luhn_algorithm">Luhn
+        /// algorithm</a> on the Wikipedia website.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

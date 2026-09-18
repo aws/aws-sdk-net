@@ -40,7 +40,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property FlowId. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of an Amazon Connect flow. Step-by-step guides are
+        ///  The Amazon Resource Name (ARN) of an Connect Customer flow. Step-by-step guides are
         /// a type of flow.
         /// </para>
         /// </summary>

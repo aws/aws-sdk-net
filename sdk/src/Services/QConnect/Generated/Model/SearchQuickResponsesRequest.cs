@@ -46,7 +46,7 @@ namespace Amazon.QConnect.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-attrib-list.html#user-defined-attributes">user-defined
-        /// Amazon Connect contact attributes</a> to be resolved when search results are returned.
+        /// Connect Customer contact attributes</a> to be resolved when search results are returned.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

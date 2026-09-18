@@ -1897,6 +1897,56 @@ namespace Amazon.QConnect
 
 
     /// <summary>
+    /// Constants used for properties of type InteractionMode.
+    /// </summary>
+    public class InteractionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELEGATE for InteractionMode
+        /// </summary>
+        public static readonly InteractionMode DELEGATE = new InteractionMode("DELEGATE");
+        /// <summary>
+        /// Constant HANDOFF for InteractionMode
+        /// </summary>
+        public static readonly InteractionMode HANDOFF = new InteractionMode("HANDOFF");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InteractionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InteractionMode FindValue(string value)
+        {
+            return FindValue<InteractionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InteractionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KnowledgeBaseSearchType.
     /// </summary>
     public class KnowledgeBaseSearchType : ConstantClass
@@ -2288,6 +2338,10 @@ namespace Amazon.QConnect
     public class MessageType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DATA for MessageType
+        /// </summary>
+        public static readonly MessageType DATA = new MessageType("DATA");
         /// <summary>
         /// Constant TEXT for MessageType
         /// </summary>
@@ -3448,6 +3502,64 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelevanceLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReturnReason.
+    /// </summary>
+    public class ReturnReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for ReturnReason
+        /// </summary>
+        public static readonly ReturnReason COMPLETE = new ReturnReason("COMPLETE");
+        /// <summary>
+        /// Constant COMPLETE_WITH_ERROR for ReturnReason
+        /// </summary>
+        public static readonly ReturnReason COMPLETE_WITH_ERROR = new ReturnReason("COMPLETE_WITH_ERROR");
+        /// <summary>
+        /// Constant ESCALATE for ReturnReason
+        /// </summary>
+        public static readonly ReturnReason ESCALATE = new ReturnReason("ESCALATE");
+        /// <summary>
+        /// Constant OUT_OF_DOMAIN for ReturnReason
+        /// </summary>
+        public static readonly ReturnReason OUT_OF_DOMAIN = new ReturnReason("OUT_OF_DOMAIN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReturnReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReturnReason FindValue(string value)
+        {
+            return FindValue<ReturnReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReturnReason(string value)
         {
             return FindValue(value);
         }

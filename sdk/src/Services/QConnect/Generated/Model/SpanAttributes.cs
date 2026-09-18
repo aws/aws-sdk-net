@@ -51,6 +51,7 @@ namespace Amazon.QConnect.Model
         private string _initialContactId;
         private List<SpanMessage> _inputMessages = AWSConfigs.InitializeCollections ? new List<SpanMessage>() : null;
         private string _instanceArn;
+        private InteractionMode _interactionMode;
         private string _operationName;
         private List<SpanMessage> _outputMessages = AWSConfigs.InitializeCollections ? new List<SpanMessage>() : null;
         private string _promptArn;
@@ -63,8 +64,10 @@ namespace Amazon.QConnect.Model
         private string _requestModel;
         private List<string> _responseFinishReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _responseModel;
+        private ReturnReason _returnReason;
         private string _sessionName;
         private List<SpanMessageValue> _systemInstructions = AWSConfigs.InitializeCollections ? new List<SpanMessageValue>() : null;
+        private string _targetAgentId;
         private float? _temperature;
         private int? _timeToFirstTokenMs;
         private float? _topp;
@@ -379,6 +382,25 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InteractionMode. 
+        /// <para>
+        /// How the orchestrator engaged the collaborator agent. Present on spans that invoke
+        /// a collaborator agent.
+        /// </para>
+        /// </summary>
+        public InteractionMode InteractionMode
+        {
+            get { return this._interactionMode; }
+            set { this._interactionMode = value; }
+        }
+
+        // Check to see if InteractionMode property is set
+        internal bool IsSetInteractionMode()
+        {
+            return this._interactionMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OperationName. 
         /// <para>
         /// Action being performed
@@ -612,6 +634,25 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReturnReason. 
+        /// <para>
+        /// Reason a sub-agent returned control to the calling agent. Present on return_to_agent
+        /// spans.
+        /// </para>
+        /// </summary>
+        public ReturnReason ReturnReason
+        {
+            get { return this._returnReason; }
+            set { this._returnReason = value; }
+        }
+
+        // Check to see if ReturnReason property is set
+        internal bool IsSetReturnReason()
+        {
+            return this._returnReason != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SessionName. 
         /// <para>
         /// Session name
@@ -652,6 +693,27 @@ namespace Amazon.QConnect.Model
         internal bool IsSetSystemInstructions()
         {
             return this._systemInstructions != null && (this._systemInstructions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAgentId. 
+        /// <para>
+        /// Identifier of the collaborator agent being invoked. For first-party collaborators
+        /// this is the Amazon Connect AI agent ID; for third-party collaborators this is the
+        /// external application ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string TargetAgentId
+        {
+            get { return this._targetAgentId; }
+            set { this._targetAgentId = value; }
+        }
+
+        // Check to see if TargetAgentId property is set
+        internal bool IsSetTargetAgentId()
+        {
+            return this._targetAgentId != null;
         }
 
         /// <summary>

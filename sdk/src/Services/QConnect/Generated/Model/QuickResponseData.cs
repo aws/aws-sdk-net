@@ -56,7 +56,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property Channels. 
         /// <para>
-        /// The Amazon Connect contact channels this quick response applies to. The supported
+        /// The Connect Customer contact channels this quick response applies to. The supported
         /// contact channel types include <c>Chat</c>.
         /// </para>
         /// <para />

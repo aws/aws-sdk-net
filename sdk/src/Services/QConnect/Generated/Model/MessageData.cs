@@ -34,8 +34,29 @@ namespace Amazon.QConnect.Model
     /// </summary>
     public partial class MessageData
     {
+        private Amazon.Runtime.Documents.Document _data;
         private TextMessage _text;
         private ToolUseResultData _toolUseResult;
+
+        /// <summary>
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The message data as a structured JSON document. This is the payload for a message
+        /// of type <c>DATA</c>, and must be a JSON object at the root level.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public Amazon.Runtime.Documents.Document Data
+        {
+            get { return this._data; }
+            set { this._data = value; }
+        }
+
+        // Check to see if Data property is set
+        internal bool IsSetData()
+        {
+            return !this._data.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property Text. 
