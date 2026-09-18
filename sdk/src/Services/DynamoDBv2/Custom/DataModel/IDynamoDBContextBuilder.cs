@@ -51,6 +51,40 @@ namespace Amazon.DynamoDBv2.DataModel
         IDynamoDBContextBuilder ConfigureContext(Action<DynamoDBContextConfig> configure);
 
         /// <summary>
+        /// Registers an <see cref="IPropertyConverter"/> that is applied by default to every property of the
+        /// specified .NET type on the constructed <see cref="DynamoDBContext"/>, without having to set the
+        /// converter on each property via <see cref="DynamoDBPropertyAttribute"/> or a per-property mapping.
+        /// A converter explicitly set on an individual property still takes precedence over the default converter.
+        /// </summary>
+        /// <param name="type">The .NET type the converter is applied to.</param>
+        /// <param name="converter">The converter to use for properties of <paramref name="type"/>.</param>
+        /// <exception cref="System.ArgumentNullException">Thrown when <paramref name="type"/> or <paramref name="converter"/> is null.</exception>
+        /// <exception cref="System.InvalidOperationException">Thrown when a default converter has already been registered for <paramref name="type"/>.</exception>
+        IDynamoDBContextBuilder AddDefaultConverter(Type type, IPropertyConverter converter)
+#if NET8_0_OR_GREATER
+            => throw new NotImplementedException();
+#else
+        ;
+#endif
+
+        /// <summary>
+        /// Registers an <see cref="IPropertyConverter"/> that is applied by default to every property of type
+        /// <typeparamref name="T"/> on the constructed <see cref="DynamoDBContext"/>, without having to set the
+        /// converter on each property via <see cref="DynamoDBPropertyAttribute"/> or a per-property mapping.
+        /// A converter explicitly set on an individual property still takes precedence over the default converter.
+        /// </summary>
+        /// <typeparam name="T">The .NET type the converter is applied to.</typeparam>
+        /// <param name="converter">The converter to use for properties of type <typeparamref name="T"/>.</param>
+        /// <exception cref="System.ArgumentNullException">Thrown when <paramref name="converter"/> is null.</exception>
+        /// <exception cref="System.InvalidOperationException">Thrown when a default converter has already been registered for <typeparamref name="T"/>.</exception>
+        IDynamoDBContextBuilder AddDefaultConverter<T>(IPropertyConverter converter)
+#if NET8_0_OR_GREATER
+            => throw new NotImplementedException();
+#else
+        ;
+#endif
+
+        /// <summary>
         /// Call at the end to retrieve the new <see cref="DynamoDBContext"/>
         /// </summary>
         /// <returns>Built <see cref="DynamoDBContext"/></returns>
