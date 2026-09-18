@@ -80,6 +80,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FeatureMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("HubContent", targetDepth, ref reader))
+                {
+                    var unmarshaller = HubContentUnmarshaller.Instance;
+                    unmarshalledObject.HubContent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("HyperParameterTuningJob", targetDepth, ref reader))
                 {
                     var unmarshaller = HyperParameterTuningJobSearchEntityUnmarshaller.Instance;
