@@ -76,6 +76,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AuthConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = AuthConfigUnmarshaller.Instance;
+                    response.AuthConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatedTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

@@ -544,6 +544,12 @@
     <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppIntegrationsService.Model.AuthConfig.CredentialProviderIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^arn:aws:[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9_/.-]{0,63}:[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,1023}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.DataIntegrationAssociationSummary.ClientId</property>
     <min>1</min>
     <max>255</max>

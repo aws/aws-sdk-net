@@ -104,6 +104,17 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ApplicationType);
             }
 
+            if(publicRequest.IsSetAuthConfig())
+            {
+                context.Writer.WritePropertyName("AuthConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuthConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AuthConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");

@@ -31,6 +31,10 @@ namespace Amazon.AppIntegrationsService
     {
 
         /// <summary>
+        /// Constant A2A_SERVER for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType A2A_SERVER = new ApplicationType("A2A_SERVER");
+        /// <summary>
         /// Constant MCP_SERVER for ApplicationType
         /// </summary>
         public static readonly ApplicationType MCP_SERVER = new ApplicationType("MCP_SERVER");
@@ -72,6 +76,52 @@ namespace Amazon.AppIntegrationsService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ApplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AuthType.
+    /// </summary>
+    public class AuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_KEY for AuthType
+        /// </summary>
+        public static readonly AuthType API_KEY = new AuthType("API_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthType FindValue(string value)
+        {
+            return FindValue<AuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthType(string value)
         {
             return FindValue(value);
         }

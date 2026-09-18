@@ -38,6 +38,7 @@ namespace Amazon.AppIntegrationsService.Model
         private ApplicationSourceConfig _applicationSourceConfig;
         private ApplicationType _applicationType;
         private string _arn;
+        private AuthConfig _authConfig;
         private DateTime? _createdTime;
         private string _description;
         private string _id;
@@ -123,6 +124,24 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthConfig. 
+        /// <para>
+        /// The authentication settings that Connect Customer uses when calling the external application.
+        /// </para>
+        /// </summary>
+        public AuthConfig AuthConfig
+        {
+            get { return this._authConfig; }
+            set { this._authConfig = value; }
+        }
+
+        // Check to see if AuthConfig property is set
+        internal bool IsSetAuthConfig()
+        {
+            return this._authConfig != null;
         }
 
         /// <summary>

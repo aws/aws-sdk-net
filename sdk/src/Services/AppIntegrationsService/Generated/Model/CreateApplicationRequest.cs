@@ -38,6 +38,7 @@ namespace Amazon.AppIntegrationsService.Model
         private ApplicationConfig _applicationConfig;
         private ApplicationSourceConfig _applicationSourceConfig;
         private ApplicationType _applicationType;
+        private AuthConfig _authConfig;
         private string _clientToken;
         private string _description;
         private IframeConfig _iframeConfig;
@@ -103,6 +104,24 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetApplicationType()
         {
             return this._applicationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AuthConfig. 
+        /// <para>
+        /// The authentication settings that Connect Customer uses when calling the external application.
+        /// </para>
+        /// </summary>
+        public AuthConfig AuthConfig
+        {
+            get { return this._authConfig; }
+            set { this._authConfig = value; }
+        }
+
+        // Check to see if AuthConfig property is set
+        internal bool IsSetAuthConfig()
+        {
+            return this._authConfig != null;
         }
 
         /// <summary>
