@@ -59,6 +59,7 @@ namespace Amazon.TranscribeService.Model
     public partial class CreateLanguageModelRequest : AmazonTranscribeServiceRequest
     {
         private BaseModelName _baseModelName;
+        private EncryptionConfiguration _encryptionConfiguration;
         private InputDataConfig _inputDataConfig;
         private CLMLanguageCode _languageCode;
         private string _modelName;
@@ -89,6 +90,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetBaseModelName()
         {
             return this._baseModelName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Specifies the encryption configuration for your custom language model. Your model
+        /// artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key
+        /// is not supplied.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

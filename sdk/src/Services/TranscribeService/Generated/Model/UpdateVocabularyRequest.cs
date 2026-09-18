@@ -34,10 +34,18 @@ namespace Amazon.TranscribeService.Model
     /// Updates an existing custom vocabulary with new values. This operation overwrites all
     /// existing information with your new values; you cannot append new terms onto an existing
     /// custom vocabulary.
+    /// 
+    ///  
+    /// <para>
+    /// Your custom vocabulary must be in a terminal state (<c>READY</c> or <c>FAILED</c>)
+    /// before you can update it. You must include either <c>Phrases</c> or <c>VocabularyFileUri</c>
+    /// in your request.
+    /// </para>
     /// </summary>
     public partial class UpdateVocabularyRequest : AmazonTranscribeServiceRequest
     {
         private string _dataAccessRoleArn;
+        private EncryptionConfiguration _encryptionConfiguration;
         private LanguageCode _languageCode;
         private List<string> _phrases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vocabularyFileUri;
@@ -48,8 +56,9 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
         /// S3 bucket that contains your input files (in this case, your custom vocabulary). If
-        /// the role that you specify doesn’t have the appropriate permissions to access the specified
-        /// Amazon S3 location, your request fails.
+        /// you include <c>EncryptionConfiguration</c> in your request, this role must also have
+        /// permissions to access the specified KMS key. If the role that you specify doesn’t
+        /// have the appropriate permissions, your request fails.
         /// </para>
         ///  
         /// <para>
@@ -73,6 +82,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetDataAccessRoleArn()
         {
             return this._dataAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Specifies the new encryption configuration for your custom vocabulary. The vocabulary
+        /// artifacts are re-encrypted in place using the specified KMS key or with an AWS-owned
+        /// key if a key is not supplied.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

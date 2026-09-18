@@ -70,6 +70,7 @@ namespace Amazon.TranscribeService.Model
     {
         private BaseModelName _baseModelName;
         private DateTime? _createTime;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _failureReason;
         private InputDataConfig _inputDataConfig;
         private CLMLanguageCode _languageCode;
@@ -118,6 +119,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetCreateTime()
         {
             return this._createTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration used for your custom language model.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateVocabulary Request Marshaller
+    /// UpdateLanguageModel Request Marshaller
     /// </summary>       
-    public class CreateVocabularyRequestMarshaller : IMarshaller<IRequest, CreateVocabularyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateLanguageModelRequestMarshaller : IMarshaller<IRequest, UpdateLanguageModelRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateVocabularyRequest)input);
+            return this.Marshall((UpdateLanguageModelRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateVocabularyRequest publicRequest)
+        public IRequest Marshall(UpdateLanguageModelRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.TranscribeService");
-            string target = "Transcribe.CreateVocabulary";
+            string target = "Transcribe.UpdateLanguageModel";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-26";
@@ -92,49 +92,10 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetLanguageCode())
+            if(publicRequest.IsSetModelName())
             {
-                context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.WriteStringValue(publicRequest.LanguageCode);
-            }
-
-            if(publicRequest.IsSetPhrases())
-            {
-                context.Writer.WritePropertyName("Phrases");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPhrasesListValue in publicRequest.Phrases)
-                {
-                        context.Writer.WriteStringValue(publicRequestPhrasesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetVocabularyFileUri())
-            {
-                context.Writer.WritePropertyName("VocabularyFileUri");
-                context.Writer.WriteStringValue(publicRequest.VocabularyFileUri);
-            }
-
-            if(publicRequest.IsSetVocabularyName())
-            {
-                context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.WriteStringValue(publicRequest.VocabularyName);
+                context.Writer.WritePropertyName("ModelName");
+                context.Writer.WriteStringValue(publicRequest.ModelName);
             }
 
             writer.WriteEndObject();
@@ -147,9 +108,9 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateVocabularyRequestMarshaller _instance = new CreateVocabularyRequestMarshaller();        
+        private static UpdateLanguageModelRequestMarshaller _instance = new UpdateLanguageModelRequestMarshaller();        
 
-        internal static CreateVocabularyRequestMarshaller GetInstance()
+        internal static UpdateLanguageModelRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -157,7 +118,7 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateVocabularyRequestMarshaller Instance
+        public static UpdateLanguageModelRequestMarshaller Instance
         {
             get
             {

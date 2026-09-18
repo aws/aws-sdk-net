@@ -56,6 +56,7 @@ namespace Amazon.TranscribeService.Model
     public partial class CreateVocabularyRequest : AmazonTranscribeServiceRequest
     {
         private string _dataAccessRoleArn;
+        private EncryptionConfiguration _encryptionConfiguration;
         private LanguageCode _languageCode;
         private List<string> _phrases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
@@ -67,8 +68,9 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
         /// S3 bucket that contains your input files (in this case, your custom vocabulary). If
-        /// the role that you specify doesn’t have the appropriate permissions to access the specified
-        /// Amazon S3 location, your request fails.
+        /// you include <c>EncryptionConfiguration</c> in your request, this role must also have
+        /// permissions to access the specified KMS key. If the role that you specify doesn’t
+        /// have the appropriate permissions, your request fails.
         /// </para>
         ///  
         /// <para>
@@ -92,6 +94,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetDataAccessRoleArn()
         {
             return this._dataAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Specifies the encryption configuration for your custom vocabulary. Your vocabulary
+        /// artifacts are encrypted with the specified KMS key or with an AWS-owned key if a key
+        /// is not supplied.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

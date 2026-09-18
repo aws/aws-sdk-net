@@ -2768,6 +2768,74 @@ namespace Amazon.TranscribeService
         }
         #endregion
         
+        #region  UpdateLanguageModel
+
+        internal virtual UpdateLanguageModelResponse UpdateLanguageModel(UpdateLanguageModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLanguageModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLanguageModelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLanguageModelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the encryption configuration for an existing custom language model. You can
+        /// use this operation to change the KMS key used to encrypt your model artifacts. The
+        /// model artifacts are re-encrypted in place. No model training is required.
+        /// 
+        ///  
+        /// <para>
+        /// Your custom language model must not be in the <c>IN_PROGRESS</c> state when you call
+        /// this operation. You cannot submit another update while a previous update is in progress.
+        /// Use to check the current state of your model.
+        /// </para>
+        ///  
+        /// <para>
+        /// Your custom language model remains available for transcription jobs while the update
+        /// is being processed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLanguageModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLanguageModel service method, as returned by TranscribeService.</returns>
+        /// <exception cref="Amazon.TranscribeService.Model.BadRequestException">
+        /// Your request didn't pass one or more validation tests. This can occur when the entity
+        /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
+        /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// A resource already exists with this name. Resource names must be unique within an
+        /// Amazon Web Services account.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
+        /// There was an internal error. Check the error message, correct the issue, and try your
+        /// request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.LimitExceededException">
+        /// You've either sent too many requests or your input file is too long. Wait before retrying
+        /// your request, or use a smaller file and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.NotFoundException">
+        /// We can't find the requested resource. Check that the specified name is correct and
+        /// try your request again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateLanguageModel">REST API Reference for UpdateLanguageModel Operation</seealso>
+        public virtual Task<UpdateLanguageModelResponse> UpdateLanguageModelAsync(UpdateLanguageModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLanguageModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLanguageModelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLanguageModelResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateMedicalVocabulary
 
         internal virtual UpdateMedicalVocabularyResponse UpdateMedicalVocabulary(UpdateMedicalVocabularyRequest request)
@@ -2841,6 +2909,13 @@ namespace Amazon.TranscribeService
         /// Updates an existing custom vocabulary with new values. This operation overwrites all
         /// existing information with your new values; you cannot append new terms onto an existing
         /// custom vocabulary.
+        /// 
+        ///  
+        /// <para>
+        /// Your custom vocabulary must be in a terminal state (<c>READY</c> or <c>FAILED</c>)
+        /// before you can update it. You must include either <c>Phrases</c> or <c>VocabularyFileUri</c>
+        /// in your request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// <param name="cancellationToken">
@@ -2897,6 +2972,11 @@ namespace Amazon.TranscribeService
         /// Updates an existing custom vocabulary filter with a new list of words. The new list
         /// you provide overwrites all previous entries; you cannot append new terms onto an existing
         /// custom vocabulary filter.
+        /// 
+        ///  
+        /// <para>
+        /// You must include either <c>Words</c> or <c>VocabularyFilterFileUri</c> in your request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabularyFilter service method.</param>
         /// <param name="cancellationToken">
@@ -2908,6 +2988,10 @@ namespace Amazon.TranscribeService
         /// Your request didn't pass one or more validation tests. This can occur when the entity
         /// you're trying to delete doesn't exist or if it's in a non-terminal state (such as
         /// <c>IN PROGRESS</c>). See the exception message field for more information.
+        /// </exception>
+        /// <exception cref="Amazon.TranscribeService.Model.ConflictException">
+        /// A resource already exists with this name. Resource names must be unique within an
+        /// Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.TranscribeService.Model.InternalFailureException">
         /// There was an internal error. Check the error message, correct the issue, and try your

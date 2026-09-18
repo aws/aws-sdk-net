@@ -34,10 +34,16 @@ namespace Amazon.TranscribeService.Model
     /// Updates an existing custom vocabulary filter with a new list of words. The new list
     /// you provide overwrites all previous entries; you cannot append new terms onto an existing
     /// custom vocabulary filter.
+    /// 
+    ///  
+    /// <para>
+    /// You must include either <c>Words</c> or <c>VocabularyFilterFileUri</c> in your request.
+    /// </para>
     /// </summary>
     public partial class UpdateVocabularyFilterRequest : AmazonTranscribeServiceRequest
     {
         private string _dataAccessRoleArn;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _vocabularyFilterFileUri;
         private string _vocabularyFilterName;
         private List<string> _words = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -47,8 +53,9 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
         /// S3 bucket that contains your input files (in this case, your custom vocabulary filter).
-        /// If the role that you specify doesn’t have the appropriate permissions to access the
-        /// specified Amazon S3 location, your request fails.
+        /// If you include <c>EncryptionConfiguration</c> in your request, this role must also
+        /// have permissions to access the specified KMS key. If the role that you specify doesn’t
+        /// have the appropriate permissions, your request fails.
         /// </para>
         ///  
         /// <para>
@@ -72,6 +79,26 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetDataAccessRoleArn()
         {
             return this._dataAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// Specifies the new encryption configuration for your custom vocabulary filter. The
+        /// vocabulary filter artifacts are re-encrypted in place using the specified KMS key
+        /// or with an AWS-owned key if a key is not supplied.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
