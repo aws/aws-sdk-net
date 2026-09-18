@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
         private int? _executionTime;
         private DateTime? _lastModifiedOn;
         private int? _numberOfWorkers;
+        private RecommendationMode _recommendationMode;
         private string _recommendedRuleset;
         private string _role;
         private string _runId;
@@ -216,6 +217,28 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommendationMode. 
+        /// <para>
+        /// The mode that Glue Data Quality uses to recommend rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <c>BASIC</c>.
+        /// </para>
+        /// </summary>
+        public RecommendationMode RecommendationMode
+        {
+            get { return this._recommendationMode; }
+            set { this._recommendationMode = value; }
+        }
+
+        // Check to see if RecommendationMode property is set
+        internal bool IsSetRecommendationMode()
+        {
+            return this._recommendationMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RecommendedRuleset. 
         /// <para>
         /// When a start rule recommendation run completes, it creates a recommended ruleset (a
@@ -239,7 +262,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// An IAM role supplied to encrypt the results of the run.
+        /// The IAM role that Glue assumes to access resources for the run.
         /// </para>
         /// </summary>
         public string Role

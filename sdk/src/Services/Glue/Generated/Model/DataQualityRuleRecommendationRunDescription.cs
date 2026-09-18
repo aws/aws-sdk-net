@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _createdRulesetName;
         private DataSource _dataSource;
+        private RecommendationMode _recommendationMode;
         private string _runId;
         private DateTime? _startedOn;
         private TaskStatusType _status;
@@ -75,6 +76,28 @@ namespace Amazon.Glue.Model
         internal bool IsSetDataSource()
         {
             return this._dataSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationMode. 
+        /// <para>
+        /// The mode that Glue Data Quality uses to recommend rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <c>BASIC</c>.
+        /// </para>
+        /// </summary>
+        public RecommendationMode RecommendationMode
+        {
+            get { return this._recommendationMode; }
+            set { this._recommendationMode = value; }
+        }
+
+        // Check to see if RecommendationMode property is set
+        internal bool IsSetRecommendationMode()
+        {
+            return this._recommendationMode != null;
         }
 
         /// <summary>

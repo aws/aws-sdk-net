@@ -106,6 +106,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.NumberOfWorkers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RecommendationMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RecommendationMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RecommendedRuleset", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

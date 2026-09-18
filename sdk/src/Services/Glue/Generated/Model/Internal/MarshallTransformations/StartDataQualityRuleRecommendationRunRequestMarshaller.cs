@@ -121,6 +121,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.NumberOfWorkers.Value);
             }
 
+            if(publicRequest.IsSetRecommendationMode())
+            {
+                context.Writer.WritePropertyName("RecommendationMode");
+                context.Writer.WriteStringValue(publicRequest.RecommendationMode);
+            }
+
             if(publicRequest.IsSetRole())
             {
                 context.Writer.WritePropertyName("Role");
