@@ -99,6 +99,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAllowedAIAgents())
+            {
+                context.Writer.WritePropertyName("AllowedAIAgents");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedAIAgentsListValue in publicRequest.AllowedAIAgents)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AIAgentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAllowedAIAgentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetAllowedFlowModules())
             {
                 context.Writer.WritePropertyName("AllowedFlowModules");

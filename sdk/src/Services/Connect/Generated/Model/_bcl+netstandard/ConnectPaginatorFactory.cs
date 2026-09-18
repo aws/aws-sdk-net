@@ -437,6 +437,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListSecurityProfileAIAgents operation
+        ///</summary>
+        public IListSecurityProfileAIAgentsPaginator ListSecurityProfileAIAgents(ListSecurityProfileAIAgentsRequest request) 
+        {
+            return new ListSecurityProfileAIAgentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSecurityProfileApplications operation
         ///</summary>
         public IListSecurityProfileApplicationsPaginator ListSecurityProfileApplications(ListSecurityProfileApplicationsRequest request) 

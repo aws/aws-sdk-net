@@ -528,6 +528,16 @@ namespace Amazon.Connect.Model
         IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
 
         /// <summary>
+        /// Paginator for ListSecurityProfileAIAgents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSecurityProfileAIAgentsPaginator ListSecurityProfileAIAgents(ListSecurityProfileAIAgentsRequest request);
+
+        /// <summary>
         /// Paginator for ListSecurityProfileApplications operation
         ///</summary>
         [AWSPaginator(
