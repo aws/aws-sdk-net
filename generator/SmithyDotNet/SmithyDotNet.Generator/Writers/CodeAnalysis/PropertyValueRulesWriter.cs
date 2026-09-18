@@ -4,6 +4,7 @@ using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace SmithyDotNet.Generator.Writers.CodeAnalysis;
@@ -79,7 +80,10 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
             }
 
             var target = context.Resolve(member.Target);
-            if (!TypeMapper.IsScalar(target))
+            // Enums keep their rules: the ConstantClass converts implicitly from string, so a literal
+            // assigned to the property is still checked by the analyzer (C2J models an enum as a string
+            // and an intEnum as an integer).
+            if (!TypeMapper.IsScalar(target) && target is not EnumShape and not IntEnumShape)
             {
                 continue;
             }
@@ -110,13 +114,16 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
                 writer.WriteElementString("max", max.Value.ToString(CultureInfo.InvariantCulture));
             }
 
-            // The consuming analyzer (AbstractPropertyValueAssignmentAnalyzer) wraps its `new Regex(pattern)`
-            // in a try/catch and silently skips the rule on failure, so an invalid .NET regex here is a
-            // missed check, not a build break. Every pattern across the six migrated services compiles
-            // today; revisit only if that stops being true.
+            // A pattern .NET can't compile is omitted, matching C2J: the analyzer would skip it anyway
+            // (its `new Regex` is wrapped in a try/catch), so only the XML would differ. Real case:
+            // bedrock-agent#S3ObjectKey escapes an underscore (`\_`), which .NET rejects.
             if (pattern is not null)
             {
-                writer.WriteElementString("pattern", ConvertSmithyPattern(pattern));
+                var converted = ConvertSmithyPattern(pattern);
+                if (IsValidDotNetRegex(converted))
+                {
+                    writer.WriteElementString("pattern", converted);
+                }
             }
 
             writer.WriteEndElement();
@@ -156,5 +163,22 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
         var prefix = !anchoredStart && !pattern.StartsWith(".*", StringComparison.Ordinal) ? ".*" : "";
         var suffix = !anchoredEnd && !pattern.EndsWith(".*", StringComparison.Ordinal) ? ".*" : "";
         return prefix + pattern + suffix;
+    }
+
+    /// <summary>
+    /// Whether .NET can compile the pattern. Smithy patterns are ECMA-262 and may use escapes .NET
+    /// rejects (e.g. <c>\_</c>).
+    /// </summary>
+    public static bool IsValidDotNetRegex(string pattern)
+    {
+        try
+        {
+            _ = new Regex(pattern);
+            return true;
+        }
+        catch (ArgumentException)
+        {
+            return false;
+        }
     }
 }

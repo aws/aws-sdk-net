@@ -62,12 +62,35 @@ public class PropertyValueRulesWriterTests
         Assert.Equal(expected, PropertyValueRulesWriter.ConvertSmithyPattern(smithyPattern));
     }
 
+    // C2J omits a <pattern> that .NET cannot compile; the bedrock-agent S3ObjectKey pattern is the real case.
+    [Theory]
+    [InlineData(@"^[\.\-\!\*\_\'\(\)a-zA-Z0-9][\.\-\!\*\_\'\(\)\/a-zA-Z0-9]*$", false)]
+    [InlineData(@"^[\.\-!*_'()a-zA-Z0-9]+$", true)]
+    public void RejectsPatternsDotNetCannotCompile(string pattern, bool valid)
+    {
+        Assert.Equal(valid, PropertyValueRulesWriter.IsValidDotNetRegex(pattern));
+    }
+
     [Fact]
     public void MinMaxOnlyRulesCorrect()
     {
         AssertHelper("<property>Amazon.CloudTrailData.Model.ResultErrorEntry.ErrorCode</property>");
         AssertHelper("<property>Amazon.CloudTrailData.Model.ResultErrorEntry.ErrorMessage</property>");
         AssertHelper("<max>1024</max>");
+    }
+
+    [Fact]
+    public void EnumMemberKeepsRuleFromEnumShapeTraits()
+    {
+        // A ConstantClass property accepts a string literal, so the analyzer keeps checking it (C2J parity).
+        // Status carries no constraints and contributes no rule.
+        var rules = new PropertyValueRulesWriter(TestModels.Context("Codegen/codegen-model.json")).Write(TestContext.Current.CancellationToken);
+
+        Assert.Contains("<property>Amazon.Example.Model.DoEnumsRequest.Category</property>", rules);
+        Assert.Contains("<min>1</min>", rules);
+        Assert.Contains("<max>63</max>", rules);
+        Assert.Contains("<pattern>^[A-Za-z0-9]+$</pattern>", rules);
+        Assert.DoesNotContain("DoEnumsRequest.Filter", rules);
     }
 
     private void AssertHelper(string expected)

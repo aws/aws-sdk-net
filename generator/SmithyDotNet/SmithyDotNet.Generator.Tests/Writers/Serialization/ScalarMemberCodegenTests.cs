@@ -95,6 +95,10 @@ public class ScalarMemberCodegenTests
         // A required non-string query member is null-checked; IsSet alone would silently omit it.
         Assert.Contains("if (publicRequest.Token == null)", _requestMarshaller);
         Assert.Contains("""throw new AmazonExampleException("Request object does not have required field Token set");""", _requestMarshaller);
+
+        // A required enum query member gets the string guard, matching C2J (which models enums as strings).
+        Assert.Contains("if (string.IsNullOrEmpty(publicRequest.Mode))", _requestMarshaller);
+        Assert.Contains("""throw new AmazonExampleException("Request object does not have required field Mode set");""", _requestMarshaller);
     }
 
     [Fact]

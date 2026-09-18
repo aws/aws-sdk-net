@@ -11,11 +11,30 @@ namespace SmithyDotNet.Generator.Writers.Service;
 /// option(s) for each operation.
 /// <para />
 /// Each switch arm returns the auth list modeled on that operation's <c>smithy.api#auth</c> trait;
-/// the discard (<c>_</c>) arm returns the service-level list. The resolver returns the modeled schemes
-/// directly and does not evaluate an endpoint rule set.
+/// the discard (<c>_</c>) arm returns the service-level list. For the services in
+/// <see cref="EndpointAuthDelegatedServices"/> the handler first asks the endpoint resolver for the
+/// auth schemes its rule set attached to the resolved endpoint; every other service returns the
+/// modeled schemes directly.
 /// </summary>
 public sealed class AuthResolverWriter(GenerationContext context, string modelFileName)
 {
+    /// <summary>
+    /// Services whose endpoint rule set selects the auth scheme (e.g. SigV4a for SESv2 multi-region
+    /// endpoints). Many rule sets carry <c>authSchemes</c>, but C2J only delegates for these four
+    /// (<c>ModeledResolver.partial.cs</c>), so the list is kept by name rather than derived from the rules.
+    /// </summary>
+    private static readonly HashSet<string> EndpointAuthDelegatedServices =
+    [
+        "S3",
+        "EventBridge",
+        "SimpleEmailServiceV2",
+        "CloudFrontKeyValueStore",
+    ];
+
+    // The endpoint resolver type only exists when the model carries a rule set.
+    private bool DelegatesToEndpoint =>
+        context.HasEndpointRuleSet && EndpointAuthDelegatedServices.Contains(context.BaseName);
+
     /// <summary>
     /// Emits the complete formatted auth resolver source for the service.
     /// </summary>
@@ -68,6 +87,12 @@ public sealed class AuthResolverWriter(GenerationContext context, string modelFi
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public class {handlerName} : BaseAuthResolverHandler", () =>
         {
+            if (DelegatesToEndpoint)
+            {
+                writer.WriteLine($"private readonly {context.ClientName}EndpointResolver _endpointResolver = new();");
+                writer.WriteLine();
+            }
+
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Modeled auth scheme resolver for {context.BaseName}.");
             writer.WriteLine("/// </summary>");
@@ -76,6 +101,22 @@ public sealed class AuthResolverWriter(GenerationContext context, string modelFi
             writer.WriteLine("/// <inheritdoc />");
             writer.OpenBlock("protected override List<IAuthSchemeOption> ResolveAuthOptions(IExecutionContext executionContext)", () =>
             {
+                if (DelegatesToEndpoint)
+                {
+                    writer.WriteLine($"// Since {context.BaseName} includes auth schemes in its endpoint rules, we'll attempt to delegate resolution to the endpoint");
+                    writer.WriteLine("// resolver first (falling back to the modeled resolver if no options are returned).");
+                    writer.WriteLine("var endpoint = _endpointResolver.GetEndpoint(executionContext);");
+                    writer.WriteLine();
+                    writer.WriteLine("// This means the endpoints resolver is executed twice intentionally (at this point and then later in the pipeline");
+                    writer.WriteLine("// to determine which endpoint the SDK should use for the request).");
+                    writer.WriteLine("var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);");
+                    writer.OpenBlock("if (endpointAuthSchemes != null)", () =>
+                    {
+                        writer.WriteLine("return endpointAuthSchemes;");
+                    });
+                    writer.WriteLine();
+                }
+
                 writer.WriteLine("var requestContext = executionContext.RequestContext;");
                 writer.OpenBlock($"var mappedParameters = new {parametersName}", "};", () =>
                 {

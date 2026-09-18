@@ -1,0 +1,70 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.eventbridge#Service": {
+      "type": "service",
+      "version": "2015-10-07",
+      "operations": [
+        {
+          "target": "com.amazonaws.eventbridge#PutEvents"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "EventBridge",
+          "endpointPrefix": "events"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Amazon EventBridge",
+        "aws.auth#sigv4": {
+          "name": "events"
+        },
+        "smithy.rules#endpointRuleSet": {
+          "version": "1.0",
+          "parameters": {
+            "Region": { "type": "string", "builtIn": "AWS::Region", "required": false }
+          },
+          "rules": [
+            {
+              "conditions": [],
+              "type": "endpoint",
+              "endpoint": {
+                "url": "https://events.amazonaws.com",
+                "properties": { "authSchemes": [ { "name": "sigv4a", "signingRegionSet": [ "*" ], "signingName": "events" } ] }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "com.amazonaws.eventbridge#PutEvents": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.eventbridge#PutEventsRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.eventbridge#PutEventsResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/PutEvents",
+          "method": "POST"
+        }
+      }
+    },
+    "com.amazonaws.eventbridge#PutEventsRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.eventbridge#PutEventsResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

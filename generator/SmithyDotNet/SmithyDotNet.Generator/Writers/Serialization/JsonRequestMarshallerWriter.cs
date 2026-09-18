@@ -283,9 +283,10 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             // An idempotency token is auto-populated, so it is never "required from the customer".
             if (member.IsRequired && !member.IsIdempotencyToken)
             {
-                // A real string is checked for empty; anything else (an enum's ConstantClass, a list,
-                // a reference type) is checked for null.
-                var guard = member.Type.IsString
+                // Strings and enums are checked for empty: C2J models an enum as a string shape, and a
+                // ConstantClass converts implicitly to string. Anything else (a list, a reference type)
+                // is checked for null.
+                var guard = member.Type.MarshalsAsString
                     ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
                     : $"publicRequest.{member.PropertyName} == null";
                 writer.OpenBlock($"if ({guard})", () =>

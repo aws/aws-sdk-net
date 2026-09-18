@@ -7,7 +7,8 @@ namespace SmithyDotNet.Generator.Tests.Writers.Service;
 // (per-operation no-auth overrides), Bedrock (an inline multi-scheme default), CodeCatalyst (bearer
 // only, no Region), Dual Signing (a synthetic service with a derived multi-scheme default — no
 // explicit auth list), Dual Signing Explicit (the same schemes carried as an explicit auth list),
-// and Empty Auth (an explicitly empty auth list, normalized to noAuth).
+// Empty Auth (an explicitly empty auth list, normalized to noAuth), and EventBridge (an allowlisted
+// service that resolves auth from its endpoint rule set before the modeled switch).
 public class AuthResolverWriterTests
 {
     private static string Write(string modelFile, string modelFileName)
@@ -24,6 +25,7 @@ public class AuthResolverWriterTests
     private static readonly string DualSigningOutput = Write("dual-signing-model.json", "dual-signing-2024-01-01.normal.json");
     private static readonly string DualSigningExplicitOutput = Write("dual-signing-explicit-model.json", "dual-signing-explicit-2024-01-01.normal.json");
     private static readonly string EmptyAuthOutput = Write("empty-auth-model.json", "empty-auth-2024-01-01.normal.json");
+    private static readonly string EventBridgeOutput = Write("eventbridge-model.json", "eventbridge-2015-10-07.normal.json");
 
     private static readonly string[] CognitoNoAuthRequestNames =
     [
@@ -167,6 +169,30 @@ public class AuthResolverWriterTests
         // the derived fixture; the two differ only in which ModeledAuth.ServiceSchemes branch produces it.
         Assert.Contains("_ => AuthSchemeOption.DEFAULT_SIGV4_SIGV4A,", DualSigningExplicitOutput);
         Assert.DoesNotContain("new List<IAuthSchemeOption>", DualSigningExplicitOutput);
+    }
+
+    [Fact]
+    public void EndpointAuthDelegatedService_ResolvesFromEndpointFirst()
+    {
+        // EventBridge is one of the four services whose endpoint rule set selects the auth scheme, so
+        // the handler holds an endpoint resolver and returns the endpoint's schemes before the modeled
+        // switch - matching C2J's allowlisted output.
+        Assert.Contains("private readonly AmazonEventBridgeEndpointResolver _endpointResolver = new();", EventBridgeOutput);
+        Assert.Contains("var endpoint = _endpointResolver.GetEndpoint(executionContext);", EventBridgeOutput);
+        Assert.Contains("var endpointAuthSchemes = RetrieveSchemesFromEndpoint(endpoint);", EventBridgeOutput);
+        Assert.Contains("return endpointAuthSchemes;", EventBridgeOutput);
+        Assert.Contains("return AuthSchemeResolver.ResolveAuthScheme(mappedParameters);", EventBridgeOutput);
+        Assert.True(
+            EventBridgeOutput.IndexOf("RetrieveSchemesFromEndpoint", StringComparison.Ordinal)
+            < EventBridgeOutput.IndexOf("var requestContext = executionContext.RequestContext;", StringComparison.Ordinal)
+        );
+    }
+
+    [Fact]
+    public void OtherServices_DoNotConsultTheEndpointResolver()
+    {
+        Assert.DoesNotContain("_endpointResolver", KmsOutput);
+        Assert.DoesNotContain("RetrieveSchemesFromEndpoint", KmsOutput);
     }
 
     [Fact]

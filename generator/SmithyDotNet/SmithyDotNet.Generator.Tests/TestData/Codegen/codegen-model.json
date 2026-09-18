@@ -130,7 +130,8 @@
       "type": "enum",
       "members": {
         "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } }
-      }
+      },
+      "traits": { "smithy.api#length": { "min": 1, "max": 63 }, "smithy.api#pattern": "^[A-Za-z0-9]+$" }
     },
     "com.example#Priority": {
       "type": "intEnum",
@@ -185,6 +186,7 @@
         "when":       { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
         "count":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "count" } },
         "token":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "token", "smithy.api#required": {} } },
+        "mode":       { "target": "com.example#Status", "traits": { "smithy.api#httpQuery": "mode", "smithy.api#required": {} } },
         "since":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpQuery": "since", "smithy.api#timestampFormat": "epoch-seconds" } },
         "ratio":      { "target": "smithy.api#Double", "traits": { "smithy.api#httpHeader": "x-ratio" } },
         "stamp":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-stamp" } },
