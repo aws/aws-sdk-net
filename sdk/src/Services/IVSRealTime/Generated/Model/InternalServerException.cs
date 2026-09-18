@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// 
+    /// Unexpected error during processing of request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -149,25 +149,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateEncoderConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
         CreateEncoderConfigurationResponse CreateEncoderConfiguration(CreateEncoderConfigurationRequest request);
@@ -184,25 +184,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateEncoderConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateEncoderConfiguration">REST API Reference for CreateEncoderConfiguration Operation</seealso>
         Task<CreateEncoderConfigurationResponse> CreateEncoderConfigurationAsync(CreateEncoderConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -220,16 +220,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
         CreateIngestConfigurationResponse CreateIngestConfiguration(CreateIngestConfigurationRequest request);
@@ -247,16 +247,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateIngestConfiguration">REST API Reference for CreateIngestConfiguration Operation</seealso>
         Task<CreateIngestConfigurationResponse> CreateIngestConfigurationAsync(CreateIngestConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -279,19 +279,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateParticipantToken service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateParticipantToken">REST API Reference for CreateParticipantToken Operation</seealso>
         CreateParticipantTokenResponse CreateParticipantToken(CreateParticipantTokenRequest request);
@@ -314,19 +314,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateParticipantToken service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateParticipantToken">REST API Reference for CreateParticipantToken Operation</seealso>
         Task<CreateParticipantTokenResponse> CreateParticipantTokenAsync(CreateParticipantTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -343,16 +343,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStage">REST API Reference for CreateStage Operation</seealso>
         CreateStageResponse CreateStage(CreateStageRequest request);
@@ -369,16 +369,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStage">REST API Reference for CreateStage Operation</seealso>
         Task<CreateStageResponse> CreateStageAsync(CreateStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -398,25 +398,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateStorageConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
         CreateStorageConfigurationResponse CreateStorageConfiguration(CreateStorageConfigurationRequest request);
@@ -436,25 +436,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the CreateStorageConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/CreateStorageConfiguration">REST API Reference for CreateStorageConfiguration Operation</seealso>
         Task<CreateStorageConfigurationResponse> CreateStorageConfigurationAsync(CreateStorageConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -472,22 +472,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteEncoderConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
         DeleteEncoderConfigurationResponse DeleteEncoderConfiguration(DeleteEncoderConfigurationRequest request);
@@ -505,22 +505,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteEncoderConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteEncoderConfiguration">REST API Reference for DeleteEncoderConfiguration Operation</seealso>
         Task<DeleteEncoderConfigurationResponse> DeleteEncoderConfigurationAsync(DeleteEncoderConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -539,19 +539,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
         DeleteIngestConfigurationResponse DeleteIngestConfiguration(DeleteIngestConfigurationRequest request);
@@ -570,19 +570,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteIngestConfiguration">REST API Reference for DeleteIngestConfiguration Operation</seealso>
         Task<DeleteIngestConfigurationResponse> DeleteIngestConfigurationAsync(DeleteIngestConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -600,19 +600,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeletePublicKey service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         DeletePublicKeyResponse DeletePublicKey(DeletePublicKeyRequest request);
@@ -630,19 +630,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeletePublicKey service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeletePublicKey">REST API Reference for DeletePublicKey Operation</seealso>
         Task<DeletePublicKeyResponse> DeletePublicKeyAsync(DeletePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -661,19 +661,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         DeleteStageResponse DeleteStage(DeleteStageRequest request);
@@ -692,19 +692,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStage">REST API Reference for DeleteStage Operation</seealso>
         Task<DeleteStageResponse> DeleteStageAsync(DeleteStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -729,22 +729,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteStorageConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
         DeleteStorageConfigurationResponse DeleteStorageConfiguration(DeleteStorageConfigurationRequest request);
@@ -769,22 +769,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DeleteStorageConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DeleteStorageConfiguration">REST API Reference for DeleteStorageConfiguration Operation</seealso>
         Task<DeleteStorageConfigurationResponse> DeleteStorageConfigurationAsync(DeleteStorageConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -803,16 +803,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DisconnectParticipant service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DisconnectParticipant">REST API Reference for DisconnectParticipant Operation</seealso>
         DisconnectParticipantResponse DisconnectParticipant(DisconnectParticipantRequest request);
@@ -831,16 +831,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the DisconnectParticipant service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/DisconnectParticipant">REST API Reference for DisconnectParticipant Operation</seealso>
         Task<DisconnectParticipantResponse> DisconnectParticipantAsync(DisconnectParticipantRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -857,22 +857,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetComposition service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
         GetCompositionResponse GetComposition(GetCompositionRequest request);
@@ -889,22 +889,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetComposition service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetComposition">REST API Reference for GetComposition Operation</seealso>
         Task<GetCompositionResponse> GetCompositionAsync(GetCompositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -921,22 +921,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetEncoderConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
         GetEncoderConfigurationResponse GetEncoderConfiguration(GetEncoderConfigurationRequest request);
@@ -953,22 +953,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetEncoderConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetEncoderConfiguration">REST API Reference for GetEncoderConfiguration Operation</seealso>
         Task<GetEncoderConfigurationResponse> GetEncoderConfigurationAsync(GetEncoderConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -985,13 +985,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
         GetIngestConfigurationResponse GetIngestConfiguration(GetIngestConfigurationRequest request);
@@ -1008,13 +1008,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetIngestConfiguration">REST API Reference for GetIngestConfiguration Operation</seealso>
         Task<GetIngestConfigurationResponse> GetIngestConfigurationAsync(GetIngestConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1031,13 +1031,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetParticipant service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
         GetParticipantResponse GetParticipant(GetParticipantRequest request);
@@ -1054,13 +1054,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetParticipant service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
         Task<GetParticipantResponse> GetParticipantAsync(GetParticipantRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1077,13 +1077,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetPublicKey service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         GetPublicKeyResponse GetPublicKey(GetPublicKeyRequest request);
@@ -1100,13 +1100,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetPublicKey service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetPublicKey">REST API Reference for GetPublicKey Operation</seealso>
         Task<GetPublicKeyResponse> GetPublicKeyAsync(GetPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1123,13 +1123,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStage">REST API Reference for GetStage Operation</seealso>
         GetStageResponse GetStage(GetStageRequest request);
@@ -1146,13 +1146,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStage">REST API Reference for GetStage Operation</seealso>
         Task<GetStageResponse> GetStageAsync(GetStageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1169,13 +1169,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetStageSession service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
         GetStageSessionResponse GetStageSession(GetStageSessionRequest request);
@@ -1192,13 +1192,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetStageSession service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
         Task<GetStageSessionResponse> GetStageSessionAsync(GetStageSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1215,22 +1215,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetStorageConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
         GetStorageConfigurationResponse GetStorageConfiguration(GetStorageConfigurationRequest request);
@@ -1247,22 +1247,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the GetStorageConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStorageConfiguration">REST API Reference for GetStorageConfiguration Operation</seealso>
         Task<GetStorageConfigurationResponse> GetStorageConfigurationAsync(GetStorageConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1279,19 +1279,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ImportPublicKey service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ImportPublicKey">REST API Reference for ImportPublicKey Operation</seealso>
         ImportPublicKeyResponse ImportPublicKey(ImportPublicKeyRequest request);
@@ -1308,19 +1308,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ImportPublicKey service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ImportPublicKey">REST API Reference for ImportPublicKey Operation</seealso>
         Task<ImportPublicKeyResponse> ImportPublicKeyAsync(ImportPublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1338,19 +1338,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListCompositions service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
         ListCompositionsResponse ListCompositions(ListCompositionsRequest request);
@@ -1368,19 +1368,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListCompositions service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListCompositions">REST API Reference for ListCompositions Operation</seealso>
         Task<ListCompositionsResponse> ListCompositionsAsync(ListCompositionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1398,19 +1398,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListEncoderConfigurations service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
         ListEncoderConfigurationsResponse ListEncoderConfigurations(ListEncoderConfigurationsRequest request);
@@ -1428,19 +1428,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListEncoderConfigurations service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListEncoderConfigurations">REST API Reference for ListEncoderConfigurations Operation</seealso>
         Task<ListEncoderConfigurationsResponse> ListEncoderConfigurationsAsync(ListEncoderConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1458,10 +1458,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListIngestConfigurations service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
         ListIngestConfigurationsResponse ListIngestConfigurations(ListIngestConfigurationsRequest request);
@@ -1479,10 +1479,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListIngestConfigurations service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListIngestConfigurations">REST API Reference for ListIngestConfigurations Operation</seealso>
         Task<ListIngestConfigurationsResponse> ListIngestConfigurationsAsync(ListIngestConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1499,10 +1499,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListParticipantEvents service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
         ListParticipantEventsResponse ListParticipantEvents(ListParticipantEventsRequest request);
@@ -1519,10 +1519,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListParticipantEvents service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
         Task<ListParticipantEventsResponse> ListParticipantEventsAsync(ListParticipantEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1539,10 +1539,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListParticipantReplicas service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
         ListParticipantReplicasResponse ListParticipantReplicas(ListParticipantReplicasRequest request);
@@ -1559,10 +1559,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListParticipantReplicas service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantReplicas">REST API Reference for ListParticipantReplicas Operation</seealso>
         Task<ListParticipantReplicasResponse> ListParticipantReplicasAsync(ListParticipantReplicasRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1579,10 +1579,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListParticipants service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
         ListParticipantsResponse ListParticipants(ListParticipantsRequest request);
@@ -1599,10 +1599,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListParticipants service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
         Task<ListParticipantsResponse> ListParticipantsAsync(ListParticipantsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1620,10 +1620,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListPublicKeys service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         ListPublicKeysResponse ListPublicKeys(ListPublicKeysRequest request);
@@ -1641,10 +1641,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListPublicKeys service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListPublicKeys">REST API Reference for ListPublicKeys Operation</seealso>
         Task<ListPublicKeysResponse> ListPublicKeysAsync(ListPublicKeysRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1662,13 +1662,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListStages service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStages">REST API Reference for ListStages Operation</seealso>
         ListStagesResponse ListStages(ListStagesRequest request);
@@ -1686,13 +1686,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListStages service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStages">REST API Reference for ListStages Operation</seealso>
         Task<ListStagesResponse> ListStagesAsync(ListStagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1709,10 +1709,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListStageSessions service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
         ListStageSessionsResponse ListStageSessions(ListStageSessionsRequest request);
@@ -1729,10 +1729,10 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListStageSessions service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
         Task<ListStageSessionsResponse> ListStageSessionsAsync(ListStageSessionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1750,19 +1750,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListStorageConfigurations service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
         ListStorageConfigurationsResponse ListStorageConfigurations(ListStorageConfigurationsRequest request);
@@ -1780,19 +1780,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListStorageConfigurations service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStorageConfigurations">REST API Reference for ListStorageConfigurations Operation</seealso>
         Task<ListStorageConfigurationsResponse> ListStorageConfigurationsAsync(ListStorageConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1809,13 +1809,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -1832,13 +1832,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1883,25 +1883,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StartComposition service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
         StartCompositionResponse StartComposition(StartCompositionRequest request);
@@ -1946,25 +1946,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StartComposition service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartComposition">REST API Reference for StartComposition Operation</seealso>
         Task<StartCompositionResponse> StartCompositionAsync(StartCompositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1981,25 +1981,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StartParticipantReplication service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
         StartParticipantReplicationResponse StartParticipantReplication(StartParticipantReplicationRequest request);
@@ -2016,25 +2016,25 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StartParticipantReplication service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StartParticipantReplication">REST API Reference for StartParticipantReplication Operation</seealso>
         Task<StartParticipantReplicationResponse> StartParticipantReplicationAsync(StartParticipantReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2052,22 +2052,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StopComposition service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
         StopCompositionResponse StopComposition(StopCompositionRequest request);
@@ -2085,22 +2085,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StopComposition service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopComposition">REST API Reference for StopComposition Operation</seealso>
         Task<StopCompositionResponse> StopCompositionAsync(StopCompositionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2117,16 +2117,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StopParticipantReplication service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
         StopParticipantReplicationResponse StopParticipantReplication(StopParticipantReplicationRequest request);
@@ -2143,16 +2143,16 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the StopParticipantReplication service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/StopParticipantReplication">REST API Reference for StopParticipantReplication Operation</seealso>
         Task<StopParticipantReplicationResponse> StopParticipantReplicationAsync(StopParticipantReplicationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2169,13 +2169,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the TagResource service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -2192,13 +2192,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the TagResource service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2215,13 +2215,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -2238,13 +2238,13 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UntagResource service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.InternalServerException">
-        /// 
+        /// Unexpected error during processing of request.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2262,19 +2262,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
         UpdateIngestConfigurationResponse UpdateIngestConfiguration(UpdateIngestConfigurationRequest request);
@@ -2292,19 +2292,19 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateIngestConfiguration service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateIngestConfiguration">REST API Reference for UpdateIngestConfiguration Operation</seealso>
         Task<UpdateIngestConfigurationResponse> UpdateIngestConfigurationAsync(UpdateIngestConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2321,22 +2321,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         UpdateStageResponse UpdateStage(UpdateStageRequest request);
@@ -2353,22 +2353,22 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
-        /// 
+        /// User does not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">
-        /// 
+        /// Your account is pending verification.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
-        /// 
+        /// Request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ServiceQuotaExceededException">
-        /// 
+        /// Request would cause a service quota to be exceeded.
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
-        /// 
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/UpdateStage">REST API Reference for UpdateStage Operation</seealso>
         Task<UpdateStageResponse> UpdateStageAsync(UpdateStageRequest request, CancellationToken cancellationToken = default(CancellationToken));

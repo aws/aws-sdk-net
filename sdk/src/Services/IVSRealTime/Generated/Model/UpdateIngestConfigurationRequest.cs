@@ -63,7 +63,7 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property RedundantIngest. 
         /// <para>
         /// Indicates whether redundant ingest is enabled for the ingest configuration. Default:
-        /// <c>false</c>.
+        /// <c>false</c>. 
         /// </para>
         /// </summary>
         public bool? RedundantIngest
