@@ -63,6 +63,17 @@ namespace AWSSDK_DotNet.UnitTests
             public string Name { get; }
         }
 
+        // Abstract type with a public parameterized constructor. It cannot be instantiated, so it must be
+        // rejected with the normal unsupported-type error rather than selecting a binding constructor and
+        // failing later inside ConstructorInfo.Invoke.
+        public abstract class AbstractWithPublicCtor
+        {
+            public AbstractWithPublicCtor(string id) { Id = id; }
+
+            [DynamoDBHashKey]
+            public string Id { get; }
+        }
+
         // Disambiguated with [DynamoDBConstructor].
         public class MarkedCtor
         {
@@ -224,7 +235,29 @@ namespace AWSSDK_DotNet.UnitTests
             var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
                 context.FromDocument<AmbiguousCtors>(document));
 
+            StringAssert.Contains(ex.Message, "multiple bindable parameterized constructors");
             StringAssert.Contains(ex.Message, "[DynamoDBConstructor]");
+        }
+
+        [TestMethod]
+        public void AbstractType_WithPublicConstructor_ThrowsUnsupportedType()
+        {
+            // The abstract type must be rejected with the normal unsupported-type error at config build
+            // time, not select a binding constructor and fail later inside ConstructorInfo.Invoke.
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                new ItemStorageConfig(typeof(AbstractWithPublicCtor)));
+
+            StringAssert.Contains(ex.Message, "cannot be instantiated");
+        }
+
+        [TestMethod]
+        public void TryGetBindingConstructor_ReturnsFalseForAbstractType()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(AbstractWithPublicCtor), out var ctor);
+
+            Assert.IsFalse(selected);
+            Assert.IsNull(ctor);
         }
 
         [TestMethod]

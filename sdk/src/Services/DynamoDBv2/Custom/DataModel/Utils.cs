@@ -485,6 +485,13 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             bindingConstructor = null;
 
+            // Types that cannot be instantiated by reflection (abstract, interface, or open generic) must not
+            // select a binding constructor; otherwise they would bypass the existing CanInstantiate validation
+            // and fail later with a raw reflection exception from ConstructorInfo.Invoke. Returning false here
+            // lets the normal unsupported-type error path remain authoritative.
+            if (type.IsAbstract || type.IsInterface || type.IsGenericTypeDefinition || type.ContainsGenericParameters)
+                return false;
+
             var constructors = type
                 .GetConstructors(BindingFlags.Instance | BindingFlags.Public)
                 // Ignore the compiler-generated record copy constructor (single parameter of the declaring type).
@@ -554,7 +561,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             throw new InvalidOperationException(
-                $"Type {type.FullName} has multiple constructors and no parameterless constructor. " +
+                $"Type {type.FullName} has multiple bindable parameterized constructors. " +
                 "Mark the constructor to use for DynamoDB deserialization with [DynamoDBConstructor].");
         }
 #endif
