@@ -138,6 +138,13 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool IsIgnored { get; set; }
 
         /// <summary>
+        /// Whether this member's value is supplied through a parameterized (binding) constructor rather
+        /// than being set after construction. When <c>true</c>, the value is passed as a constructor argument
+        /// during deserialization and is not written via a property/field setter. Only used on the .NET 8+ target.
+        /// </summary>
+        public bool IsConstructorArgument { get; set; }
+
+        /// <summary>
         /// Whether to store DateTime as epoch seconds integer.
         /// </summary>
         public bool StoreAsEpoch { get; set; }
@@ -384,6 +391,40 @@ namespace Amazon.DynamoDBv2.DataModel
         // target type members
         public Dictionary<string, MemberInfo> TargetTypeMembers { get; private set; }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Pairs a constructor parameter with the <see cref="PropertyStorage"/> that supplies its value.
+        /// </summary>
+        internal readonly struct ConstructorArgument
+        {
+            public ConstructorArgument(ParameterInfo parameter, PropertyStorage storage)
+            {
+                Parameter = parameter;
+                Storage = storage;
+            }
+
+            public ParameterInfo Parameter { get; }
+            public PropertyStorage Storage { get; }
+        }
+
+        /// <summary>
+        /// The constructor used to populate instances of <see cref="TargetType"/> by binding stored attribute
+        /// values to its parameters, or <c>null</c> when the type is populated via the parameterless path.
+        /// </summary>
+        internal ConstructorInfo BindingConstructor { get; private set; }
+
+        /// <summary>
+        /// The binding-constructor parameters aligned with the <see cref="PropertyStorage"/> that supplies each value.
+        /// Populated by <see cref="ResolveConstructorArguments"/>.
+        /// </summary>
+        internal ConstructorArgument[] ConstructorArguments { get; private set; }
+
+        /// <summary>
+        /// The names of the binding constructor's parameters, used to surface get-only members during discovery.
+        /// </summary>
+        internal string[] ConstructorParameterNames { get; private set; }
+#endif
+
         // storage mappings
         private Dictionary<string, PropertyStorage> PropertyToPropertyStorageMapping { get; set; }
 
@@ -453,12 +494,12 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException(errorMessage);
         }
 
-        private static Dictionary<string, MemberInfo> GetMembersDictionary([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type)
+        private static Dictionary<string, MemberInfo> GetMembersDictionary([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, ICollection<string> constructorParameterNames)
         {
             Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
 
-            var members = Utils.GetMembersFromType(type);
-            
+            var members = Utils.GetMembersFromType(type, constructorParameterNames);
+
             foreach (var member in members)
             {
                 InternalSDKUtils.AddToDictionary(dictionary, member.Name, member);
@@ -472,14 +513,27 @@ namespace Amazon.DynamoDBv2.DataModel
         // constructor
         internal StorageConfig([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType)
         {
+            ICollection<string> constructorParameterNames = null;
+
+#if NET8_0_OR_GREATER
+            // Immutable types (e.g. record / record struct) are populated by binding stored values to a
+            // parameterized constructor rather than instantiating with a parameterless constructor.
+            if (Utils.TryGetBindingConstructor(targetType, out var bindingConstructor))
+            {
+                BindingConstructor = bindingConstructor;
+                ConstructorParameterNames = bindingConstructor.GetParameters().Select(p => p.Name).ToArray();
+                constructorParameterNames = ConstructorParameterNames;
+            }
+            else
+#endif
             if (!Utils.CanInstantiate(targetType))
             {
                 string errorMessage;
                 if (InternalSDKUtils.IsRunningNativeAot())
                 {
-                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " + 
+                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " +
                         "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
-                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." + 
+                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." +
                         "If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
                 }
                 else
@@ -493,12 +547,48 @@ namespace Amazon.DynamoDBv2.DataModel
             TargetType = targetType;
             Properties = new List<PropertyStorage>();
             PropertyToPropertyStorageMapping = new Dictionary<string, PropertyStorage>(StringComparer.Ordinal);
-            TargetTypeMembers = GetMembersDictionary(targetType);
+            TargetTypeMembers = GetMembersDictionary(targetType, constructorParameterNames);
 
             if (TargetTypeMembers.Count == 0)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Type {0} is unsupported, it has no supported members", targetType.FullName));
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Aligns the binding constructor's parameters with the <see cref="PropertyStorage"/> that supplies
+        /// each value (matched by property name, case-insensitive) and flags those members as constructor
+        /// arguments. Must be called after <see cref="Properties"/> has been populated.
+        /// </summary>
+        internal void ResolveConstructorArguments()
+        {
+            if (BindingConstructor == null)
+                return;
+
+            var parameters = BindingConstructor.GetParameters();
+            var arguments = new ConstructorArgument[parameters.Length];
+
+            for (int i = 0; i < parameters.Length; i++)
+            {
+                var parameter = parameters[i];
+                PropertyStorage match = Properties.FirstOrDefault(ps =>
+                    !ps.IsIgnored && string.Equals(ps.PropertyName, parameter.Name, StringComparison.OrdinalIgnoreCase));
+
+                if (match == null)
+                {
+                    throw new InvalidOperationException(
+                        $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} does not map to a modeled member. " +
+                        "Every binding constructor parameter must correspond to a readable property or field (matched by name, case-insensitive) " +
+                        "that is not marked with [DynamoDBIgnore].");
+                }
+
+                match.IsConstructorArgument = true;
+                arguments[i] = new ConstructorArgument(parameter, match);
+            }
+
+            ConstructorArguments = arguments;
+        }
+#endif
     }
 
     /// <summary>
@@ -1075,7 +1165,11 @@ namespace Amazon.DynamoDBv2.DataModel
             if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))
                 config.TableName = tableAlias;
 
-            var members = Utils.GetMembersFromType(type);
+            ICollection<string> baseConstructorParameterNames = null;
+#if NET8_0_OR_GREATER
+            baseConstructorParameterNames = config.BaseTypeStorageConfig.ConstructorParameterNames;
+#endif
+            var members = Utils.GetMembersFromType(type, baseConstructorParameterNames);
 
             foreach (var member in members)
             {
@@ -1088,6 +1182,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 config.BaseTypeStorageConfig.Properties.Add(propertyStorage);
             }
+
+#if NET8_0_OR_GREATER
+            config.BaseTypeStorageConfig.ResolveConstructorArguments();
+#endif
 
             DynamoDBPolymorphicTypeAttribute[] polymorphicTypeAttribute = Utils.GetPolymorphicTypesAttribute(type);
 
@@ -1107,13 +1205,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     var polymorphicStorageConfig = new StorageConfig(attribute.DerivedType);
 
-                    var polymorphicTypeMembers = Utils.GetMembersFromType(attribute.DerivedType);
+                    ICollection<string> polymorphicConstructorParameterNames = null;
+#if NET8_0_OR_GREATER
+                    polymorphicConstructorParameterNames = polymorphicStorageConfig.ConstructorParameterNames;
+#endif
+                    var polymorphicTypeMembers = Utils.GetMembersFromType(attribute.DerivedType, polymorphicConstructorParameterNames);
 
                     foreach (var member in polymorphicTypeMembers)
                     {
                         var propertyStorage = MemberInfoToPropertyStorage(config, member);
                         polymorphicStorageConfig.Properties.Add(propertyStorage);
                     }
+
+#if NET8_0_OR_GREATER
+                    polymorphicStorageConfig.ResolveConstructorArguments();
+#endif
 
                     config.AddPolymorphicPropertyStorageConfiguration(attribute.TypeDiscriminator, attribute.DerivedType, polymorphicStorageConfig);
 
