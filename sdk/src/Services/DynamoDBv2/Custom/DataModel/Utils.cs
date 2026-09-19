@@ -474,7 +474,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <list type="bullet">
         /// <item>The compiler-generated record copy constructor (a single parameter of the declaring type) is ignored.</item>
         /// <item>If a constructor is marked with <see cref="DynamoDBConstructorAttribute"/>, it is used (and multiple such markers are an error).</item>
-        /// <item>Otherwise, if a public parameterless constructor (or one accepting a <see cref="DynamoDBContext"/>) exists, no binding constructor is used and the existing instantiation path is kept.</item>
+        /// <item>Otherwise, for reference types only, if a public parameterless constructor (or one accepting a <see cref="DynamoDBContext"/>) exists, no binding constructor is used and the existing instantiation path is kept. Value types (e.g. record struct) cannot use that path (see <see cref="CanInstantiate"/>), so a parameterless constructor does not suppress binding for them.</item>
         /// <item>Otherwise, if exactly one parameterized constructor remains, it is used. If more than one remains, the caller must disambiguate with <see cref="DynamoDBConstructorAttribute"/>.</item>
         /// </list>
         /// </remarks>
@@ -515,19 +515,41 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // With no explicit marker, prefer the existing instantiation path when a parameterless constructor
             // (or one accepting a DynamoDBContext) is available. This preserves behavior for all existing types.
-            foreach (var constructor in constructors)
+            // This only applies to reference types: value types are rejected by CanInstantiate (which requires a
+            // class), so for a value type we must bind through a parameterized constructor even if it also declares
+            // an explicit parameterless constructor.
+            if (!type.IsValueType)
             {
-                var parameters = constructor.GetParameters();
-                if (parameters.Length == 0)
-                    return false;
-                if (parameters.Length == 1 && parameters[0].ParameterType == typeof(DynamoDBContext))
-                    return false;
+                foreach (var constructor in constructors)
+                {
+                    var parameters = constructor.GetParameters();
+                    if (parameters.Length == 0)
+                        return false;
+                    if (parameters.Length == 1 && parameters[0].ParameterType == typeof(DynamoDBContext))
+                        return false;
+                }
             }
 
-            // No parameterless constructor: fall back to a single parameterized constructor (e.g. a record primary constructor).
-            if (constructors.Count == 1)
+            // Consider only constructors that can be bound: those with parameters, excluding the
+            // parameterless and the DynamoDBContext-only constructors handled by the existing path.
+            var bindable = constructors
+                .Where(c =>
+                {
+                    var parameters = c.GetParameters();
+                    if (parameters.Length == 0)
+                        return false;
+                    if (parameters.Length == 1 && parameters[0].ParameterType == typeof(DynamoDBContext))
+                        return false;
+                    return true;
+                })
+                .ToList();
+
+            if (bindable.Count == 0)
+                return false;
+
+            if (bindable.Count == 1)
             {
-                bindingConstructor = constructors[0];
+                bindingConstructor = bindable[0];
                 return true;
             }
 

@@ -84,6 +84,45 @@ namespace AWSSDK_DotNet.UnitTests
             public string Name { get; set; }
         }
 
+        // Positional record with a flattened member supplied through the constructor.
+        public record FlattenedRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] FlattenedChild Child);
+
+        // The flattened member type is a mutable class (its children are stored at the top level).
+        public class FlattenedChild
+        {
+            public string ChildName { get; set; }
+            public int ChildValue { get; set; }
+        }
+
+        // record struct that also declares an explicit public parameterless constructor. The primary
+        // constructor must still be selected for binding because value types cannot use the
+        // parameterless instantiation path.
+        public readonly record struct StructWithParameterless(
+            [property: DynamoDBHashKey] string Id,
+            int Count)
+        {
+            public StructWithParameterless() : this(string.Empty, 0) { }
+        }
+
+        // Type with a parameterless constructor where [DynamoDBConstructor] forces constructor binding.
+        public class ForcedBindingType
+        {
+            public ForcedBindingType() { }
+
+            [DynamoDBConstructor]
+            public ForcedBindingType(string id, string name)
+            {
+                Id = id;
+                Name = name;
+            }
+
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public string Name { get; set; }
+        }
+
         private DynamoDBContext CreateContext()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -215,6 +254,63 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.IsFalse(selected);
             Assert.IsNull(ctor);
+        }
+
+        [TestMethod]
+        public void FlattenedMember_AsConstructorArgument_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new FlattenedRecord("id-8", new FlattenedChild { ChildName = "Frank", ChildValue = 11 });
+
+            var document = context.ToDocument(original);
+
+            // The flattened child's properties are stored as top-level attributes, not under "Child".
+            Assert.IsTrue(document.ContainsKey("ChildName"));
+            Assert.IsFalse(document.ContainsKey("Child"));
+
+            var result = context.FromDocument<FlattenedRecord>(document);
+
+            Assert.AreEqual("id-8", result.Id);
+            Assert.IsNotNull(result.Child, "Flattened member bound through the constructor must be materialized.");
+            Assert.AreEqual("Frank", result.Child.ChildName);
+            Assert.AreEqual(11, result.Child.ChildValue);
+        }
+
+        [TestMethod]
+        public void RecordStruct_WithExplicitParameterlessConstructor_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new StructWithParameterless("id-9", 5);
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<StructWithParameterless>(document);
+
+            Assert.AreEqual("id-9", result.Id);
+            Assert.AreEqual(5, result.Count);
+        }
+
+        [TestMethod]
+        public void TryGetBindingConstructor_SelectsPrimaryConstructorForRecordStructWithParameterless()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(StructWithParameterless), out var ctor);
+
+            Assert.IsTrue(selected);
+            Assert.IsNotNull(ctor);
+            Assert.AreEqual(2, ctor.GetParameters().Length);
+        }
+
+        [TestMethod]
+        public void MarkedConstructor_ForcesBinding_EvenWithParameterlessConstructor()
+        {
+            var context = CreateContext();
+            var original = new ForcedBindingType("id-10", "Grace");
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<ForcedBindingType>(document);
+
+            Assert.AreEqual("id-10", result.Id);
+            Assert.AreEqual("Grace", result.Name);
         }
 
         [TestMethod]

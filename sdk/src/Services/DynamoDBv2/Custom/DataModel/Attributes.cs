@@ -226,9 +226,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// and other types that are constructed through a parameterized constructor rather than a
     /// parameterless constructor.
     /// <para>
-    /// This attribute is only required to disambiguate when a type exposes more than one eligible
-    /// constructor. If a type has a single parameterized constructor (for example the primary
-    /// constructor of a positional record) it is selected automatically and this attribute is not needed.
+    /// A constructor is selected automatically (without this attribute) only when the type has no eligible
+    /// parameterless constructor — and, for reference types, no constructor accepting a <c>DynamoDBContext</c> —
+    /// and exactly one bindable parameterized constructor remains (for example the primary constructor of a
+    /// positional record). Use this attribute to choose the constructor when a type exposes more than one
+    /// eligible constructor, or to force constructor binding even though a parameterless/context constructor exists.
     /// </para>
     /// <para>
     /// Constructor parameters are matched to modeled members by name (case-insensitive). For positional

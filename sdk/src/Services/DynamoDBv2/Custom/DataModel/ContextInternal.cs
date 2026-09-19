@@ -475,7 +475,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 var argument = arguments[i];
                 var propertyStorage = argument.Storage;
 
-                if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
+                if (propertyStorage.ShouldFlattenChildProperties)
+                {
+                    // A flattened member's children are stored under their own top-level attributes rather
+                    // than under this member's attribute name, so materialize it from those child storages.
+                    values[i] = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
+                }
+                else if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
                 {
                     values[i] = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
 
@@ -492,6 +498,26 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return storageConfig.BindingConstructor.Invoke(values);
         }
+#endif
+
+        /// <summary>
+        /// Materializes a member marked <see cref="PropertyStorage.ShouldFlattenChildProperties"/> by creating
+        /// an instance of the member's type and populating it from the child properties that are stored at the
+        /// same (top) level as the parent.
+        /// </summary>
+        private object CreateFlattenedMember(ItemStorage storage, DynamoDBFlatConfig flatConfig, Document document, PropertyStorage propertyStorage)
+        {
+            var targetType = propertyStorage.MemberType;
+            object flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
+
+            foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
+            {
+                PopulateProperty(storage, flatConfig, document, flattenPropertyStorage.AttributeName, flattenPropertyStorage, flattenedPropertyInstance);
+            }
+
+            return flattenedPropertyInstance;
+        }
+#if NET8_0_OR_GREATER
 
         /// <summary>
         /// Returns the default value for <paramref name="type"/> (zero-initialized for value types, null for
@@ -534,17 +560,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     string attributeName = propertyStorage.AttributeName;
                     if (propertyStorage.ShouldFlattenChildProperties)
                     {
-                        //create instance of the flatten property
-                        var targetType = propertyStorage.MemberType;
-                        object flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
-
-                        //populate the flatten properties
-                        foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
-                        {
-                            string flattenedAttributeName = flattenPropertyStorage.AttributeName;
-
-                            PopulateProperty(storage, flatConfig, document, flattenedAttributeName, flattenPropertyStorage, flattenedPropertyInstance);
-                        }
+                        object flattenedPropertyInstance = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
                         if (!TrySetValue(instance, propertyStorage.Member, flattenedPropertyInstance))
                         {
                             throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
