@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "minor",
+            "changeLogMessages": [
+                "Added support for using .NET record types and other immutable types with the DynamoDB DataModel (object persistence) API. On the .NET 8 (and later) target, types are populated by binding stored attribute values to a parameterized constructor. Use the new [DynamoDBConstructor] attribute to disambiguate when a type has more than one eligible constructor."
+            ]
+        }
+    ]
+}

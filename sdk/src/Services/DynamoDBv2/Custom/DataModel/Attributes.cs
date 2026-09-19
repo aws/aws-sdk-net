@@ -219,6 +219,31 @@ namespace Amazon.DynamoDBv2.DataModel
     {
     }
 
+    /// <summary>
+    /// DynamoDB attribute that marks which constructor to use when populating an object from a
+    /// DynamoDB item by binding stored attribute values to constructor parameters. This enables
+    /// support for immutable types such as C# <c>record</c> types (including <c>record struct</c>)
+    /// and other types that are constructed through a parameterized constructor rather than a
+    /// parameterless constructor.
+    /// <para>
+    /// This attribute is only required to disambiguate when a type exposes more than one eligible
+    /// constructor. If a type has a single parameterized constructor (for example the primary
+    /// constructor of a positional record) it is selected automatically and this attribute is not needed.
+    /// </para>
+    /// <para>
+    /// Constructor parameters are matched to modeled members by name (case-insensitive). For positional
+    /// records, apply DynamoDB attributes to the generated property using the <c>property:</c> target
+    /// (for example <c>[property: DynamoDBHashKey]</c>).
+    /// </para>
+    /// <para>
+    /// Constructor-based population is only available for the .NET 8 (and later) target of the SDK.
+    /// </para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Constructor, Inherited = false, AllowMultiple = false)]
+    public sealed class DynamoDBConstructorAttribute : DynamoDBAttribute
+    {
+    }
+
 
     /// <summary>
     /// DynamoDB property attribute.
@@ -909,7 +934,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Typical usage: fields that should be initialized once and then left unchanged (e.g., created timestamps, initial version, immutable IDs).
         /// Notes:
         /// - If the attribute already exists on the item during update, its value is preserved and not overwritten.
-        /// - This behavior is analogous to using DynamoDB’s if_not_exists in update expressions for the attribute.
+        /// - This behavior is analogous to using DynamoDBï¿½s if_not_exists in update expressions for the attribute.
         /// </summary>
         IfNotExists
     }

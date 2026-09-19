@@ -440,11 +440,68 @@ namespace Amazon.DynamoDBv2.DataModel
             // If a valid derived type config was found, use it; otherwise, use the default object type
             var targetType = storageTypeConfig?.TargetType ?? objectType;
 
-            object instance = Utils.InstantiateConverter(targetType, this);
+            object instance;
+#if NET8_0_OR_GREATER
+            var resolvedConfig = storageTypeConfig ?? storage.Config.BaseTypeStorageConfig;
+            if (resolvedConfig.BindingConstructor != null)
+            {
+                instance = InstantiateWithConstructor(resolvedConfig, storage, flatConfig);
+            }
+            else
+#endif
+            {
+                instance = Utils.InstantiateConverter(targetType, this);
+            }
+
             PopulateInstance(storage, instance, flatConfig, storageTypeConfig);
 
             return instance;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Constructs an instance by binding stored attribute values to the parameters of the type's
+        /// binding constructor (used for immutable types such as records). Members not bound to a
+        /// constructor parameter are subsequently set by <see cref="PopulateInstance"/>.
+        /// </summary>
+        private object InstantiateWithConstructor(StorageConfig storageConfig, ItemStorage storage, DynamoDBFlatConfig flatConfig)
+        {
+            var arguments = storageConfig.ConstructorArguments;
+            var values = new object[arguments.Length];
+            var document = storage.Document;
+
+            for (int i = 0; i < arguments.Length; i++)
+            {
+                var argument = arguments[i];
+                var propertyStorage = argument.Storage;
+
+                if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
+                {
+                    values[i] = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+
+                    if (propertyStorage.IsVersion)
+                        storage.CurrentVersion = entry as Primitive;
+                }
+                else
+                {
+                    values[i] = argument.Parameter.HasDefaultValue
+                        ? argument.Parameter.DefaultValue
+                        : GetTypeDefaultValue(argument.Parameter.ParameterType);
+                }
+            }
+
+            return storageConfig.BindingConstructor.Invoke(values);
+        }
+
+        /// <summary>
+        /// Returns the default value for <paramref name="type"/> (zero-initialized for value types, null for
+        /// reference types) without generating dynamic code, keeping the path Native AOT compatible.
+        /// </summary>
+        private static object GetTypeDefaultValue(Type type)
+        {
+            return type.IsValueType ? Array.CreateInstance(type, 1).GetValue(0) : null;
+        }
+#endif
 
         internal class ObjectWithItemStorage
         {
@@ -471,6 +528,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
                     if (propertyStorage.IsFlattened) continue;
+                    // Members whose values were supplied through the binding constructor are already set;
+                    // do not attempt to overwrite them (they may be init-only or get-only).
+                    if (propertyStorage.IsConstructorArgument) continue;
                     string attributeName = propertyStorage.AttributeName;
                     if (propertyStorage.ShouldFlattenChildProperties)
                     {
