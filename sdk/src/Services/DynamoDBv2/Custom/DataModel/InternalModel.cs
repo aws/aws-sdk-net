@@ -1134,6 +1134,17 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
 
+#if NET8_0_OR_GREATER
+            // Resolve binding-constructor arguments only after type-mapping and table configuration have been
+            // applied, so that mapping-level flags (version/counter/timestamp/ignore) are already set on the
+            // property storages and are correctly honored (and rejected) during resolution.
+            config.BaseTypeStorageConfig.ResolveConstructorArguments();
+            foreach (var polymorphicStorageConfig in config.PolymorphicTypesStorageConfig.Values)
+            {
+                polymorphicStorageConfig.ResolveConstructorArguments();
+            }
+#endif
+
             config.Denormalize(Context, flatConfig.DerivedTypeAttributeName);
 
             if (flatConfig.DisableFetchingTableMetadata)
@@ -1196,10 +1207,6 @@ namespace Amazon.DynamoDBv2.DataModel
                 config.BaseTypeStorageConfig.Properties.Add(propertyStorage);
             }
 
-#if NET8_0_OR_GREATER
-            config.BaseTypeStorageConfig.ResolveConstructorArguments();
-#endif
-
             DynamoDBPolymorphicTypeAttribute[] polymorphicTypeAttribute = Utils.GetPolymorphicTypesAttribute(type);
 
             if (polymorphicTypeAttribute is not { Length: > 0 }) return;
@@ -1229,10 +1236,6 @@ namespace Amazon.DynamoDBv2.DataModel
                         var propertyStorage = MemberInfoToPropertyStorage(config, member);
                         polymorphicStorageConfig.Properties.Add(propertyStorage);
                     }
-
-#if NET8_0_OR_GREATER
-                    polymorphicStorageConfig.ResolveConstructorArguments();
-#endif
 
                     config.AddPolymorphicPropertyStorageConfiguration(attribute.TypeDiscriminator, attribute.DerivedType, polymorphicStorageConfig);
 
