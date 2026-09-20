@@ -595,6 +595,18 @@ namespace Amazon.DynamoDBv2.DataModel
                         "that is not possible for an immutable (constructor-populated) member. Make it a settable property on a type with a parameterless constructor instead.");
                 }
 
+                // UpdateBehavior.IfNotExists also reconciles the stored value onto the instance after a save/update
+                // (PrepareUpdateOperation requests AllNewAttributes and ApplyPostUpdate calls PopulateInstance). When
+                // the item already has the attribute, the returned value can differ from the constructor argument, so
+                // leaving an immutable member unreconciled would be stale. Reject it up front for the same reason.
+                if (match.UpdateBehaviorMode == UpdateBehavior.IfNotExists)
+                {
+                    throw new InvalidOperationException(
+                        $"Property '{match.PropertyName}' of type {TargetType.FullName} uses UpdateBehavior.IfNotExists and cannot be supplied through a constructor parameter. " +
+                        "The stored value is reconciled onto the instance after a save or update, which requires writing it back onto the instance; " +
+                        "that is not possible for an immutable (constructor-populated) member. Make it a settable property on a type with a parameterless constructor instead.");
+                }
+
                 match.IsConstructorArgument = true;
                 arguments[i] = new ConstructorArgument(parameter, match);
             }
