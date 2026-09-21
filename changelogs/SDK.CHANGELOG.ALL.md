@@ -1,3 +1,15 @@
+### 4.0.338.0 (2026-09-21 18:31 UTC)
+* BedrockAgentCore (4.0.112.0)
+	* Amazon Bedrock AgentCore Harness now supports lifecycle hooks for invocations and tool calls, with Lambda, SNS, and EventBridge targets. This release also adds apiBase for custom OpenAI-compatible endpoints.
+* BedrockAgentCoreControl (4.0.117.0)
+	* Amazon Bedrock AgentCore Harness now supports lifecycle hooks for invocations and tool calls, with Lambda, SNS, and EventBridge targets. This release also adds apiBase for custom OpenAI-compatible endpoints
+* BillingConductor (4.0.102.0)
+	* Launching Auto Billing Transfer Billing Group Creation Preference feature
+* DocDB (4.0.101.0)
+	* Add support for CopyTagsToSnapshot field in CreateDbCluster, ModifyDbCluster, RestoreDbClusterFromSnapshot and RestoreDbClusterToPointInTime for DocumentDB.
+* SageMaker (4.0.117.0)
+	* Add support for r6i, m8i, c8i, r8i instance types in Training and Processing
+
 ### 4.0.337.0 (2026-09-18 19:03 UTC)
 * AppIntegrationsService (4.0.102.0)
 	* This release adds support for A2A servers via the ApplicationType and AuthConfig fields, allowing customers to register their agent-to-agent servers with API key authentication.
