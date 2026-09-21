@@ -32,6 +32,7 @@
     "Mgn",
     "ObservabilityAdmin",
     "PricingPlanManager",
+    "RestJsonProtocol",
     "SSO",
     "SSOOIDC",
     "SageMakerFeatureStoreRuntime",

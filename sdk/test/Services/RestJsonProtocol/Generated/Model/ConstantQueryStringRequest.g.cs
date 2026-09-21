@@ -1,0 +1,51 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.RestJsonProtocol.Model
+{
+    /// <summary>
+    /// Container for the parameters to the ConstantQueryString operation. This example uses
+    /// a constant query string parameters and a label. This simply tests that labels and
+    /// query string parameters are compatible. The fixed query string parameter named "hello"
+    /// should in no way conflict with the label, `{hello}`.
+    /// </summary>
+    public partial class ConstantQueryStringRequest : AmazonRestJsonProtocolRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Hello.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Hello { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Hello property is set.
+        /// </summary>
+        internal bool IsSetHello() => this.Hello != null;
+    }
+}

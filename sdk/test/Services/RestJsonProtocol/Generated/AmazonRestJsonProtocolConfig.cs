@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the rest-json-protocol-2019-12-16.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -35,18 +34,13 @@ namespace Amazon.RestJsonProtocol
         private static readonly string UserAgentString =
             InternalSDKUtils.BuildUserAgentString("Rest Json Protocol", "4.0");
 
-
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Rest Json Protocol";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Rest Json Protocol";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -60,47 +54,28 @@ namespace Amazon.RestJsonProtocol
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "restjson";
-            }
-        }
+        public override string RegionEndpointServiceName => "restjson";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2019-12-16";
-            }
-        }
+        public override string ServiceVersion => "2019-12-16";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
         /// </summary>
         /// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>
         /// <returns>The resolved endpoint for the given request.</returns>
-        public override Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
+        public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)
         {
             // If the current service doesn't have an endpoint rule set (which is the case for configs
             // that are used for testing), we'll return a placeholder endpoint so that unit tests pass.
-            return new Endpoint(this.ServiceURL ?? "https://example.com");
+            return new Amazon.Runtime.Endpoints.Endpoint(this.ServiceURL ?? "https://example.com");
         }
-
     }
 }
