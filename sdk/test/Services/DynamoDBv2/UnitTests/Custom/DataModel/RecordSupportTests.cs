@@ -187,6 +187,26 @@ namespace AWSSDK_DotNet.UnitTests
             public FlattenValueChild Child { get; set; }
         }
 
+        // Constructor-bound flattened member whose type itself contains a nested [DynamoDBFlatten] member.
+        // The nested member's leaves are stored at the top level, so it must be materialized recursively.
+        public record NestedFlattenRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] OuterFlatten Outer);
+
+        public class OuterFlatten
+        {
+            public string OuterName { get; set; }
+
+            [DynamoDBFlatten]
+            public InnerFlatten Inner { get; set; }
+        }
+
+        public class InnerFlatten
+        {
+            public string InnerName { get; set; }
+            public int InnerValue { get; set; }
+        }
+
         // Flattening an immutable (constructor-populated) child type is not supported: it would serialize but
         // fail to load, since flattened values are reconstructed with a parameterless constructor.
         public record ImmutableFlattenChild(string ChildName, int ChildValue);
@@ -524,6 +544,34 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result.Child);
             Assert.AreEqual("Ivy", result.Child.ChildName);
             Assert.AreEqual(9, result.Child.ChildValue);
+        }
+
+        [TestMethod]
+        public void NestedFlattenedMember_AsConstructorArgument_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new NestedFlattenRecord("id-nf", new OuterFlatten
+            {
+                OuterName = "Outer",
+                Inner = new InnerFlatten { InnerName = "Leo", InnerValue = 7 }
+            });
+
+            var document = context.ToDocument(original);
+
+            // All flattened descendants are stored under their leaf attribute names.
+            Assert.IsTrue(document.ContainsKey("OuterName"));
+            Assert.IsTrue(document.ContainsKey("InnerName"));
+            Assert.IsFalse(document.ContainsKey("Outer"));
+            Assert.IsFalse(document.ContainsKey("Inner"));
+
+            var result = context.FromDocument<NestedFlattenRecord>(document);
+
+            Assert.AreEqual("id-nf", result.Id);
+            Assert.IsNotNull(result.Outer);
+            Assert.AreEqual("Outer", result.Outer.OuterName);
+            Assert.IsNotNull(result.Outer.Inner, "The nested flattened member must be materialized, not left null.");
+            Assert.AreEqual("Leo", result.Outer.Inner.InnerName);
+            Assert.AreEqual(7, result.Outer.Inner.InnerValue);
         }
 
         [TestMethod]

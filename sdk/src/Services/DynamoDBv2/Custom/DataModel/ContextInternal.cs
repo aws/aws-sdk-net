@@ -568,7 +568,20 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
             {
-                PopulateProperty(storage, flatConfig, document, flattenPropertyStorage.AttributeName, flattenPropertyStorage, flattenedPropertyInstance);
+                if (flattenPropertyStorage.ShouldFlattenChildProperties)
+                {
+                    // A nested flattened member's own children are also stored under their leaf attribute names,
+                    // so materialize it recursively rather than looking it up by its (never-present) attribute name.
+                    object nestedInstance = CreateFlattenedMember(storage, flatConfig, document, flattenPropertyStorage);
+                    if (!TrySetValue(flattenedPropertyInstance, flattenPropertyStorage.Member, nestedInstance))
+                    {
+                        throw new InvalidOperationException("Unable to set flattened member " + flattenPropertyStorage.PropertyName);
+                    }
+                }
+                else
+                {
+                    PopulateProperty(storage, flatConfig, document, flattenPropertyStorage.AttributeName, flattenPropertyStorage, flattenedPropertyInstance);
+                }
             }
 
             return flattenedPropertyInstance;
