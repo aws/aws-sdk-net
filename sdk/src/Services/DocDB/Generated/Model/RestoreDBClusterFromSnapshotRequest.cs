@@ -48,6 +48,7 @@ namespace Amazon.DocDB.Model
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonDocDBRequest
     {
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
@@ -86,6 +87,25 @@ namespace Amazon.DocDB.Model
         internal bool IsSetAvailabilityZones()
         {
             return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether to copy all tags from the restored DB cluster to snapshots of the
+        /// restored DB cluster. The default is not to copy them.
+        /// </para>
+        /// </summary>
+        public bool? CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot; }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -327,7 +347,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
         /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
         /// </para>
         ///  

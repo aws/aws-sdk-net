@@ -41,6 +41,7 @@ namespace Amazon.DocDB.Model
         private bool? _applyImmediately;
         private int? _backupRetentionPeriod;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private bool? _deletionProtection;
@@ -194,6 +195,25 @@ namespace Amazon.DocDB.Model
         internal bool IsSetCloudwatchLogsExportConfiguration()
         {
             return this._cloudwatchLogsExportConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster.
+        /// The default is not to copy them.
+        /// </para>
+        /// </summary>
+        public bool? CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot; }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -403,7 +423,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
         /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
         /// </para>
         ///  

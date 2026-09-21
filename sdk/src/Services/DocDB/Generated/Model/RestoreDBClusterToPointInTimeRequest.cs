@@ -39,6 +39,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonDocDBRequest
     {
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
@@ -54,6 +55,25 @@ namespace Amazon.DocDB.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useLatestRestorableTime;
         private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether to copy all tags from the restored DB cluster to snapshots of the
+        /// restored DB cluster. The default is not to copy them.
+        /// </para>
+        /// </summary>
+        public bool? CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot; }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
@@ -224,7 +244,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
         /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
         /// </para>
         ///  

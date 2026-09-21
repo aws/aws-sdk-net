@@ -628,12 +628,12 @@ namespace Amazon.DocDB
         /// database engine used by instances in the cluster. In Amazon DocumentDB, you cannot
         /// make modifications directly to the <c>default.docdb3.6</c> cluster parameter group.
         /// If your Amazon DocumentDB cluster is using the default cluster parameter group and
-        /// you want to modify a value in it, you must first <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
-        /// create a new parameter group</a> or <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
+        /// you want to modify a value in it, you must first <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/cluster_parameter_group-create.html">
+        /// create a new parameter group</a> or <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/cluster_parameter_group-copy.html">
         /// copy an existing parameter group</a>, modify it, and then apply the modified parameter
         /// group to your cluster. For the new cluster parameter group and associated settings
         /// to take effect, you must then reboot the instances in the cluster without failover.
-        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/cluster_parameter_group-modify.html">
         /// Modifying Amazon DocumentDB Cluster Parameter Groups</a>. 
         /// </para>
         /// </summary>
@@ -2920,7 +2920,7 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Restarts the stopped cluster that is specified by <c>DBClusterIdentifier</c>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+        /// more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/db-cluster-stop-start.html">Stopping
         /// and Starting an Amazon DocumentDB Cluster</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDBCluster service method.</param>
@@ -2964,7 +2964,7 @@ namespace Amazon.DocDB
 
         /// <summary>
         /// Stops the running cluster that is specified by <c>DBClusterIdentifier</c>. The cluster
-        /// must be in the <i>available</i> state. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+        /// must be in the <i>available</i> state. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/db-cluster-stop-start.html">Stopping
         /// and Starting an Amazon DocumentDB Cluster</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDBCluster service method.</param>

@@ -37,6 +37,7 @@ namespace Amazon.DocDB.Model
     {
         private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _backupRetentionPeriod;
+        private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
@@ -115,6 +116,25 @@ namespace Amazon.DocDB.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CopyTagsToSnapshot. 
+        /// <para>
+        /// Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster.
+        /// The default is not to copy them.
+        /// </para>
+        /// </summary>
+        public bool? CopyTagsToSnapshot
+        {
+            get { return this._copyTagsToSnapshot; }
+            set { this._copyTagsToSnapshot = value; }
+        }
+
+        // Check to see if CopyTagsToSnapshot property is set
+        internal bool IsSetCopyTagsToSnapshot()
+        {
+            return this._copyTagsToSnapshot.HasValue; 
         }
 
         /// <summary>
@@ -225,8 +245,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
         /// A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
-        /// You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html">
-        /// Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+        /// You can enable audit logs or profiler logs. For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/event-auditing.html">
+        /// Auditing Amazon DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/profiling.html">
         /// Profiling Amazon DocumentDB Operations</a>. 
         /// </para>
         /// <para />
@@ -483,7 +503,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html">DocumentDB
+        /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html">DocumentDB
         /// clusters in a VPC</a> in the Amazon DocumentDB Developer Guide.
         /// </para>
         ///  
