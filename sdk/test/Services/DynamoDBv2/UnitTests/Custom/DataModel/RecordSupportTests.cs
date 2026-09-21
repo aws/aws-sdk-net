@@ -93,6 +93,21 @@ namespace AWSSDK_DotNet.UnitTests
             [property: DynamoDBHashKey] string Id,
             [property: DynamoDbUpdateBehavior(UpdateBehavior.IfNotExists)] string Name);
 
+        // Flattened constructor argument whose descendant holds a server-managed (version) value. Because the
+        // flattened parent is skipped by PopulateInstance, the descendant would be left stale after a save/update,
+        // so the combination must be rejected by recursing into the flattened member's children.
+        public record FlattenedWithVersionRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] VersionedChild Meta);
+
+        public class VersionedChild
+        {
+            public string ChildName { get; set; }
+
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+        }
+
         // Plain positional record whose "Version" parameter is marked as a version via a type mapping
         // (not an attribute). Used to verify constructor-argument resolution runs after mappings are applied.
         public record MappingVersionedRecord(
@@ -335,6 +350,19 @@ namespace AWSSDK_DotNet.UnitTests
 
             StringAssert.Contains(ex.Message, "UpdateBehavior.IfNotExists");
             StringAssert.Contains(ex.Message, "cannot be supplied through a constructor parameter");
+        }
+
+        [TestMethod]
+        public void FlattenedMember_WithServerManagedDescendant_AsConstructorArgument_Throws()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<FlattenedWithVersionRecord>(flatConfig));
+
+            StringAssert.Contains(ex.Message, "version");
+            StringAssert.Contains(ex.Message, "flattened constructor parameter");
         }
 
         [TestMethod]
