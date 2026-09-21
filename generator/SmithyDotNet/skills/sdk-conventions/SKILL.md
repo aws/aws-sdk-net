@@ -15,11 +15,11 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 ## What Must Match (Public API Contract)
 
 - Public class/interface names and their base types. An event structure (a non-error member of a
-  `@streaming` union) implements `Amazon.Runtime.EventStreams.IEventStreamEvent` (`StructureWriter`),
-  fully qualified (no `using`) so it can't clash with a per-stream `{Namespace}.Model.IEventStreamEvent`.
-  A request event stream's input member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property
-  (`OperationWriter` + `MemberWriter`): it keeps any modeled `[AWSProperty]`/`[Obsolete]` but has no `IsSet`
-  (the marshaller wires the Func unconditionally). Its doc content matches C2J.
+  `@streaming` union) implements `Amazon.Runtime.EventStreams.IEventStreamEvent`, fully qualified (no
+  `using`) so it can't clash with a per-stream `{Namespace}.Model.IEventStreamEvent`. A request event
+  stream's input member becomes a `Func<Task<I{Union}Event>> {Member}Publisher` property: it keeps any
+  modeled `[AWSProperty]`/`[Obsolete]` but has no `IsSet` (the marshaller wires the Func unconditionally).
+  Its doc content matches C2J.
 - Public property names, types, and nullability
 - Public method signatures (name, parameters, return type)
 - `[AWSProperty]` attributes on public members (Required, Min, Max)
@@ -55,7 +55,7 @@ The exact text lives in `Writers/FileHeader.cs`.
 
 ### Which Name Goes Where
 
-A service has two derived names (see `GenerationContext`), equal for most services:
+A service has two derived names, equal for most services:
 
 - `BaseName` (C2J `ClassName`, metadata.json's `base-name`) → the generated type names: client,
   config, exception/request bases, endpoint types. Model classes go in `{Namespace}.Model`.
@@ -71,15 +71,13 @@ name to a writer, check the shipping SDK for which of the two it follows.
 ### Class and Member Names
 
 - **Shape names** → PascalCase class names (Smithy shape names are already PascalCase). The service
-  `rename` map wins when it has an entry for the shape (`GenerationContext.ToDotNetName`); error codes
-  still use the shape name
+  `rename` map wins when it has an entry for the shape; error codes still use the shape name
 - **Member names** → PascalCase property names. Smithy uses camelCase (`eventData`), .NET uses PascalCase (`EventData`)
 - The conversion: capitalize the first letter of the Smithy member name
 - **Acronyms** are preserved as-is from the Smithy model. Example: `eventID` → `EventID` (not `EventId`)
 - A response member named `ContentLength` is **omitted** from the response class —
   `AmazonWebServiceResponse` already declares it — but the response unmarshaller still assigns the
-  inherited property. Matches `StructureGenerator.tt`'s response-only skip (the MediaStoreData case);
-  lives in `OperationWriter.WriteResponse`.
+  inherited property. Response-only, matching C2J (the MediaStoreData case).
 
 ### Client Names
 
@@ -111,14 +109,12 @@ A structure that doubles as an operation input/output normally gets only its
 `{Op}Request`/`{Op}Response` wrappers — no `{ShapeName}.g.cs`. Exception: when other generated
 code references the shape through a member (directly or as a list/map element), the standalone
 class is emitted too, because member properties are typed with the plain class name (C2J parity:
-drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not). Lives in
-`ServiceGenerator`'s model-class loop.
+drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not).
 
 ## Event Streams
 
 Protocol-independent; only the per-event payload (un)marshalling and the response unmarshaller's body
-differ (see `marshalling`). `GenerationContext.RequestEventStreams` / `ResponseEventStreams` list the
-`@streaming` unions once each, however many operations share them.
+differ (see `marshalling`). Each `@streaming` union is emitted once, however many operations share it.
 
 **Request** (union sent as an operation input):
 - Gets the marker interface `I{Union}Event` plus a `{Event} : I{Union}Event` partial per event. The name
@@ -128,20 +124,17 @@ differ (see `marshalling`). `GenerationContext.RequestEventStreams` / `ResponseE
 - `@error` members get no partial: a client never sends an error event.
 
 **Response** (union returned as an operation output):
-- `EventStreamOutputWriter` emits `{Union}` as the `EnumerableEventOutputStream<IEventStreamEvent,
-  {BaseName}EventStreamException>` subclass (mirrors C2J's `EventStreamOutputGenerator`). Each union member
-  is a mapping entry keyed on the member name verbatim (the wire `:event-type`; the dict is
-  `OrdinalIgnoreCase`): `@error` members feed `ExceptionMapping`, the rest `EventMapping` plus a PascalCase
-  `{Name}Received` handler. Pinned in `EventStreamOutputCodegenTests`. The union gets no plain model class
-  and no structure unmarshaller (the response unmarshaller does `new {Union}(context.Stream)`); its events
-  keep theirs.
+- `{Union}` is emitted as the `EnumerableEventOutputStream<RuntimeEvent, {BaseName}EventStreamException>`
+  subclass (C2J parity; `RuntimeEvent` is the alias described under **Both**). Each union member is a mapping entry keyed on the member name verbatim (the wire
+  `:event-type`; the dict is `OrdinalIgnoreCase`): `@error` members feed `ExceptionMapping`, the rest
+  `EventMapping` plus a PascalCase `{Name}Received` handler. The union gets no plain model class and no
+  structure unmarshaller (the response unmarshaller does `new {Union}(context.Stream)`); its events keep theirs.
 - The `{Op}Response` implements `IDisposable` and its dispose pattern releases the event stream member.
   Only when the operation also *sends* an event stream (bidi, or input-only) does it implement
   `Amazon.Runtime.EventStreams.IEventInputStreamContextOwner` (explicit `SetEventInputStreamContext` under a
-  CA1033 suppression) and dispose the context first (`OperationWriter`; C2J keys this on
-  `Operation.IsEventStreamInput`, so Bedrock `ConverseStreamResponse` is `AmazonWebServiceResponse, IDisposable`
-  and Lex V2 `StartConversationResponse` adds the owner interface).
-- Any response event stream gates the per-service `{BaseName}EventStreamException` (`EventStreamExceptionWriter`).
+  CA1033 suppression) and dispose the context first (C2J parity: Bedrock `ConverseStreamResponse` is
+  `AmazonWebServiceResponse, IDisposable`, Lex V2 `StartConversationResponse` adds the owner interface).
+- Any response event stream gates the per-service `{BaseName}EventStreamException`.
 
 **Both:**
 - Names are never adjusted for collisions: the protocol test client's union is named `EventStream`, so its
@@ -164,7 +157,7 @@ differ (see `marshalling`). `GenerationContext.RequestEventStreams` / `ResponseE
 | Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream) |
 | Structure classes | No base type (plain class) |
 | Exception classes | `Amazon{BaseName}Exception` (the service exception base) |
-| Config class (`Amazon{BaseName}Config`) | `ClientConfig` (overrides are placeholder for now) |
+| Config class (`Amazon{BaseName}Config`) | `ClientConfig` |
 
 ## All Types Are `partial`
 
@@ -197,7 +190,7 @@ the reflection API) only needs the property and the IsSet method — a backing f
 required.
 
 **`[AWSProperty]` attribute rules:**
-- `Required=true` when member has `@required` trait
+- `Required=true` when member has `@required` trait, unless it also carries `@idempotencyToken` (the SDK fills it)
 - `Min=N` when member has `@length` trait with min, or `@range` trait with min
 - `Max=N` when member has `@length` trait with max, or `@range` trait with max
 - Omit the attribute entirely if none of these traits are present
@@ -221,6 +214,7 @@ When implementing transformation logic (HTML sanitization, naming rules, type ma
 - `GeneratorHelpers.cs` / `Utils.cs` — HTML processing, naming transforms
 - `Member.cs` — property naming, type resolution
 - `Shape.cs` / `ExceptionShape.cs` — shape naming conventions
+- `Generators/SourceFiles/StructureGenerator.tt`, `Generators/SourceFiles/Exceptions/ExceptionSerialization.t4` — model and exception class output
 - `Generators/Marshallers/*.tt` — T4 templates showing exact output patterns
 
 The new generator is a clean reimplementation, not a port — but the existing generator defines what "correct" looks like.
@@ -272,9 +266,9 @@ Must expose these public constructors:
 
 Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `[Serializable]` attribute on the class
-- `protected` serialization constructor `(SerializationInfo, StreamingContext)` — deserializes each serialized exception member (every modeled member except `message`) via `info.GetValue`, then calls `base(info, context)`
-- `public override void GetObjectData(SerializationInfo, StreamingContext)` carrying all three attributes as a unit (from `ExceptionSerialization.t4`): `[System.Security.SecurityCritical]` plus the CA2123 and CA2134 `SuppressMessage` attributes; body is `base.GetObjectData(info, context)` then `info.AddValue(...)` per additional member.
-  The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set — every modeled member except `message` (from `ExceptionSerialization.t4`), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). The constructor calls `info.GetValue` for each and `GetObjectData` calls `info.AddValue` for each, both keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
+- `protected` serialization constructor `(SerializationInfo, StreamingContext)` — deserializes each serialized exception member via `info.GetValue`, then calls `base(info, context)`
+- `public override void GetObjectData(SerializationInfo, StreamingContext)` carrying all three attributes as a unit: `[System.Security.SecurityCritical]` plus the CA2123 and CA2134 `SuppressMessage` attributes; body is `base.GetObjectData(info, context)` then `info.AddValue(...)` per additional member.
+  The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set, every modeled member except `message` (C2J parity), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). Both are keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
 
 The service-level exception base (`Amazon{BaseName}Exception`) inherits from `AmazonServiceException`, exposes the same six public constructors as operation exceptions, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
 

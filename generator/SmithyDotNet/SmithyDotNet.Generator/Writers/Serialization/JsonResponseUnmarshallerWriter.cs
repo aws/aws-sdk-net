@@ -355,8 +355,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// (e.g. <c>context.ResponseData.GetHeaderValue("x-foo")</c>). A string/enum takes the value
     /// directly; <c>bool</c> parses without a culture (its two literals are culture-invariant); numeric
     /// scalars parse with the invariant culture; a timestamp parses per its resolved
-    /// <c>@timestampFormat</c>. Dispatch is on <see cref="TypeDescriptor.MarshalType"/> so an enum
-    /// marshals as a <c>string</c> (implicit ConstantClass conversion).
+    /// <c>@timestampFormat</c>. Dispatch is on <see cref="TypeDescriptor.Target"/>; an enum reads as a
+    /// <c>string</c> (implicit ConstantClass conversion).
     /// </summary>
     internal static string HeaderValueConversion(Member member, string value)
     {
@@ -383,14 +383,14 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             };
         }
 
-        return member.Type.MarshalType switch
+        return member.Type.Target switch
         {
-            "string" => value,
-            "bool?" => $"bool.Parse({value})",
-            "int?" => $"int.Parse({value}, CultureInfo.InvariantCulture)",
-            "long?" => $"long.Parse({value}, CultureInfo.InvariantCulture)",
-            "float?" => $"float.Parse({value}, CultureInfo.InvariantCulture)",
-            "double?" => $"double.Parse({value}, CultureInfo.InvariantCulture)",
+            StringShape or EnumShape => value,
+            BooleanShape => $"bool.Parse({value})",
+            IntegerShape or IntEnumShape => $"int.Parse({value}, CultureInfo.InvariantCulture)",
+            LongShape => $"long.Parse({value}, CultureInfo.InvariantCulture)",
+            FloatShape => $"float.Parse({value}, CultureInfo.InvariantCulture)",
+            DoubleShape => $"double.Parse({value}, CultureInfo.InvariantCulture)",
             _ => throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName})."),
         };
     }
@@ -408,7 +408,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         {
             return $"MultiValueHeaderParser.ToStringList({value})";
         }
-        if (element.IsTimestamp)
+        if (element is { IsTimestamp: true, IsSparse: false })
         {
             // A header timestamp list defaults to http-date when the element carries no @timestampFormat
             // (restJson1's header binding default); the shared helper maps it to the runtime parser's name.

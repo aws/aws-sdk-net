@@ -14,7 +14,10 @@ public abstract record Shape
     /// <summary>
     /// The Smithy shape type (e.g. <c>structure</c>, <c>string</c>, <c>operation</c>).
     /// Each subclass returns a constant — not deserialized from JSON.
-    /// <see cref="Converters.ShapeConverter"/> reads the <c>type</c> field to pick the subclass.
+    /// <see cref="Converters.ShapeConverter"/> reads the <c>type</c> field to pick the subclass. It is
+    /// registered through <c>JsonSerializerOptions.Converters</c>, never as a <c>[JsonConverter]</c> on
+    /// this record: it deserializes the chosen subclass with the same options, so an attribute here
+    /// would re-enter the converter and recurse until the stack overflows.
     /// </summary>
     public abstract string Type { get; }
 

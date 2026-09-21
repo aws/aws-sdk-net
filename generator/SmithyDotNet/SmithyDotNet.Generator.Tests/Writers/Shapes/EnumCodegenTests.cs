@@ -122,7 +122,7 @@ public class EnumCodegenTests
     [Fact]
     public void RequestMarshaller_HeaderEnum_AssignedDirectly()
     {
-        // MarshalType is "string", so the enum is assigned directly (implicit ConstantClass->string).
+        // An enum marshals as a string, so it is assigned directly (implicit ConstantClass->string).
         Assert.Contains("""request.Headers["x-status"] = publicRequest.Tag;""", _requestMarshaller);
     }
 
@@ -136,7 +136,7 @@ public class EnumCodegenTests
     public void StructureMarshaller_RoutesEnumThroughStringAndIntEnumThroughNumber()
     {
         // A nested structure with an enum member (marshals as a string) and an intEnum member (a plain
-        // int). Without MarshalType dispatch the enum member would miss the "string" case and throw.
+        // int). Without the enum-as-string dispatch the enum member would miss the string case and throw.
         var detail = (StructureShape)TestModels.DeserializeShape("""
             { "type": "structure", "members": {
                 "state": { "target": "com.example#Status" },

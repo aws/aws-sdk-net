@@ -250,34 +250,43 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     /// unwrapped with <c>.Value</c> (timestamps keep the nullable overload); the caller guards each
     /// with an <c>IsSet</c> check first. <paramref name="timestampDefault"/> is the binding's
     /// <c>@timestampFormat</c> default, used when the member carries no explicit format.
-    /// Dispatch is on <see cref="TypeDescriptor.MarshalType"/> so an enum marshals as a <c>string</c>.
+    /// Dispatch is on <see cref="TypeDescriptor.Target"/>; an enum marshals as a <c>string</c>.
     /// </summary>
-    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.MarshalType switch
+    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.Target switch
     {
-        "string" => $"StringUtils.FromString({expression})",
-        "bool?" => $"StringUtils.FromBool({expression}.Value)",
-        "int?" => $"StringUtils.FromInt({expression}.Value)",
-        "long?" => $"StringUtils.FromLong({expression}.Value)",
-        "float?" => $"StringUtils.FromFloat({expression}.Value)",
-        "double?" => $"StringUtils.FromDouble({expression}.Value)",
-        "DateTime?" => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
+        StringShape or EnumShape => $"StringUtils.FromString({expression})",
+        BooleanShape => $"StringUtils.FromBool({expression}.Value)",
+        IntegerShape or IntEnumShape => $"StringUtils.FromInt({expression}.Value)",
+        LongShape => $"StringUtils.FromLong({expression}.Value)",
+        FloatShape => $"StringUtils.FromFloat({expression}.Value)",
+        DoubleShape => $"StringUtils.FromDouble({expression}.Value)",
+        TimestampShape => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
         _ => null,
     };
 
     // The bare StringUtils.From* method name (no argument) for a non-nullable value-type collection
-    // element, or null when the element has no scalar string form. Used as the lambda body in a query
-    // ConvertAll<string>(item => X(item)); elements are non-nullable (List<int>), so no .Value.
-    // Timestamps use the query/label default (ISO8601) unless the element carries an explicit format.
-    private static string? QueryElementConverter(TypeDescriptor element) => element.DotNetType switch
+    // element, or null when the element has no scalar string form or is a @sparse (nullable) element.
+    // Used as the lambda body in a query ConvertAll<string>(item => X(item)); elements are non-nullable
+    // (List<int>), so no .Value. Timestamps use the query/label default (ISO8601) unless the element
+    // carries an explicit format.
+    private static string? QueryElementConverter(TypeDescriptor element)
     {
-        "bool" => "StringUtils.FromBool",
-        "int" => "StringUtils.FromInt",
-        "long" => "StringUtils.FromLong",
-        "float" => "StringUtils.FromFloat",
-        "double" => "StringUtils.FromDouble",
-        "DateTime" => HttpBindingConversions.TimestampConverter(element.TimestampFormat ?? QueryLabelTimestampDefault),
-        _ => null,
-    };
+        if (element.IsNullableValueType)
+        {
+            return null;
+        }
+
+        return element.Target switch
+        {
+            BooleanShape => "StringUtils.FromBool",
+            IntegerShape or IntEnumShape => "StringUtils.FromInt",
+            LongShape => "StringUtils.FromLong",
+            FloatShape => "StringUtils.FromFloat",
+            DoubleShape => "StringUtils.FromDouble",
+            TimestampShape => HttpBindingConversions.TimestampConverter(element.TimestampFormat ?? QueryLabelTimestampDefault),
+            _ => null,
+        };
+    }
 
     // A list<string>/list<enum> adds its List<string> to the typed ParameterCollection directly; a
     // value-type list converts each element to a string via ConvertAll (repeated params, matching C2J).

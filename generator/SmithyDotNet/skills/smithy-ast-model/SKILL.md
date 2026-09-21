@@ -1,126 +1,72 @@
 ---
 name: smithy-ast-model
-description: How the SmithyDotNet generator deserializes Smithy JSON AST into typed C# records and navigates the shape graph. Use when touching Model/ (ShapeConverter, ServiceIndex, shapes, traits).
+description: The Smithy JSON AST facts and model invariants the SmithyDotNet generator relies on. Use when touching Model/ (shapes, traits, the service index).
 ---
 # Skill: Smithy AST Model
 
-## Smithy JSON AST Structure
+The model layer is a typed, read-only view of the [Smithy JSON AST](https://smithy.io/2.0/spec/json-ast.html):
+`smithy` (version `"2.0"`), `shapes` (keyed by absolute shape ID), `metadata`. How it is deserialized is an
+implementation detail documented in the code; this skill records what the rest of the generator may assume.
 
-A Smithy model JSON file has three top-level keys (see [Smithy JSON AST spec](https://smithy.io/2.0/spec/json-ast.html)): `smithy` (the version, `"2.0"`), `shapes` (a dictionary keyed by absolute shape ID), and `metadata`.
+## Shape IDs
 
-### Shape IDs
+Every shape has an absolute ID, `com.amazonaws.cloudtraildata#AuditEvent`; members append `$member`
+(`...#AuditEvent$id`). Parsing follows the [spec](https://smithy.io/2.0/spec/model.html#shape-id): exactly
+one `#`, an optional `$member`, every segment non-empty. The trap is the two string forms: the
+**absolute name omits** `$member` (it is the `shapes` dictionary key), while the canonical string form
+includes it.
 
-Every shape has an absolute ID: `com.amazonaws.cloudtraildata#AuditEvent`. Members append `$member`: `com.amazonaws.cloudtraildata#AuditEvent$id`.
+A shape ID appears as a value in two JSON forms: a plain string (`"target": "..."` inside a member) and a
+wrapper object (`"input": { "target": "..." }` for operation input/output and service operation lists).
+Both resolve to the same shape ID type.
 
-The `ShapeId` record (`Namespace`, `Name`, optional `Member`) parses these. The trap is the two string
-forms: `AbsoluteName` **omits** `$Member` (it's the `Shapes` dictionary key), while `ToString()` and the
-implicit string conversion return the full canonical ID including the member.
+## Shapes and Traits
 
-Parsing follows the [Smithy spec](https://smithy.io/2.0/spec/model.html#shape-id): exactly one `#`
-(namespace/name), an optional `$member`, every segment non-empty — invalid forms are pinned in
-`ShapeIdTests`. Prelude shapes use namespace `smithy.api` (e.g. `smithy.api#String`).
+- `union` derives from `structure` (same members) and is generated as a plain structure, unless it is
+  `@streaming` (an event stream, see sdk-conventions).
+- `enum`/`intEnum` member traits carry `@enumValue`; the wire value, not the member name, drives generation.
+  A `string` shape carrying the legacy `smithy.api#enum` trait is normalized to an `enum` shape at load;
+  nothing downstream sees `smithy.api#enum`.
+- An unknown shape `type` deserializes to `null` with a stderr warning (forward compatibility).
+- Traits stay as raw JSON on every shape, keyed by full trait ID (`smithy.api#required`, `aws.api#service`),
+  and are read through typed accessors. [Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait)
+  have an empty object as their value. Structured trait records tolerate unknown properties.
+- After load, only the customization transform mutates the model, and it runs before the service index is
+  built. Downstream of the index the model is read-only.
 
-### Shape References — Two Distinct Formats
+## Prelude Shapes
 
-The JSON AST has two ways a shape ID appears as a value:
+Shapes in namespace `smithy.api` (`smithy.api#String`, `smithy.api#Integer`, ...) are implicit: not in the
+model JSON, skipped by the service index's traversal (they are not part of a service's own closure), but
+still resolvable, so a member's target maps without special-casing. The Smithy 1.0 `Primitive*` shapes
+(`PrimitiveLong`, `PrimitiveBoolean`, ...) resolve to the same shapes as their plain counterparts; 1.0-era
+models reference them and the SDK types both identically.
 
-**1. Plain string** — inside a member object, `target` is a plain string property
-(`"id": { "target": "com.amazonaws...#Uuid", "traits": {...} }`); the whole containing object is a
-`MemberShape`.
-
-**2. Wrapper object** — for operation input/output, service operation lists, etc., the entire
-`{"target": "..."}` object is the value (`"input": { "target": "com.amazonaws...#PutAuditEventsRequest" }`).
-
-Three custom `JsonConverter`s in `SmithyDotNet.Generator.Model.Converters` handle these:
-- `ShapeIdConverter` — plain string → `ShapeId` (for `MemberShape.Target`)
-- `ShapeTargetConverter` — `{"target": "..."}` wrapper → `ShapeId` (for `OperationShape.Input`, etc.)
-- `ShapeTargetListConverter` — `[{"target": "..."}, ...]` → `List<ShapeId>` (for `ServiceShape.Operations`, etc.)
-
-All converters are read-only (`Write` throws `NotSupportedException`). The generator never serializes models back to JSON. Use `InvalidOperationException` (not null-forgiving `!`) when a value is unexpectedly null.
-
-## Shape Type Hierarchy
-
-All shapes derive from the abstract `Shape` record: an abstract `Type` string plus a
-`Traits` dictionary (`Dictionary<string, JsonElement>`).
-
-**Important**: Do NOT put `[JsonConverter(typeof(ShapeConverter))]` on `Shape`. This causes infinite recursion because `ShapeConverter.Read` calls `root.Deserialize<BlobShape>(options)`, and `BlobShape` inherits `Shape`, which triggers the converter again. Instead, register `ShapeConverter` via `JsonSerializerOptions.Converters`.
-
-Use `[JsonPropertyName]` on properties where the C# name differs in casing from the JSON key (e.g. `Traits` → `"traits"`, `Target` → `"target"`). STJ is case-sensitive by default.
-
-### ShapeConverter Dispatch
-
-`ShapeConverter` peeks at the `"type"` field and dispatches to the matching shape record (scalar types
-share field-less records; `list` has `Member`, `map` has `Key`/`Value`, aggregate/service shapes carry
-their member and binding dictionaries — see `ShapeConverter.cs`). Non-obvious:
-
-- `union` → `UnionShape`, which derives from `StructureShape` (inherits `Members`) and is generated as a plain structure
-- `enum`/`intEnum` member traits carry `@enumValue`
-- An unknown `type` returns `null` with a stderr warning (forward compatibility)
-
-### MemberShape
-
-`MemberShape` is **not** dispatched by `ShapeConverter`. It is deserialized inline by its parent shape (e.g. when STJ processes a `StructureShape.Members` dictionary). Its `Target` is a plain string in the JSON, so the property carries `[JsonConverter(typeof(ShapeIdConverter))]`.
-
-### Prelude Shapes
-
-Shapes in namespace `smithy.api` (e.g. `smithy.api#String`, `smithy.api#Boolean`, `smithy.api#Integer`) are prelude shapes. They are **not** present in the model JSON — they are implicit. `ServiceIndex` skips them during shape traversal (they aren't part of a service's own shape closure), but they are still *resolvable*: `GenerationContext.Resolve` falls back to the `PreludeShapes` table, so callers map a member's target without special-casing prelude references.
-
-The table also carries the Smithy 1.0 `Primitive*` shapes (`PrimitiveLong`, `PrimitiveBoolean`, etc.), which resolve to the same shape instances as their plain counterparts — 1.0-era models reference them, and the SDK types both identically (`long?`, `bool?`).
-
-`smithy.api#Unit` is the one prelude shape that can emit code: when a union member targets it, `GenerationContext` adds an empty `StructureShape` for Unit to `Structures`, producing a per-service empty model class (C2J ships one, and generated member properties reference it). Operation input/output references to Unit do **not** count — those emit empty `{Op}Request`/`{Op}Response` classes instead.
-
-## Traits
-
-Traits are stored as `Dictionary<string, JsonElement>` on every shape. The key is the full trait ID (e.g. `smithy.api#required`, `aws.api#service`). The value is raw JSON.
-
-Trait values are **not** deserialized at the model layer. They stay as `JsonElement` and are accessed via typed extension methods in `SmithyDotNet.Generator.Model.Traits`. Smithy trait accessors are organized by category: annotation traits (boolean presence checks), scalar traits (single value), and structured traits (typed records in `SmithyTraitRecords.cs`). AWS-specific traits (`aws.*` namespaces) live in `AWSTraits.cs` with records in `AWSTraitRecords.cs`. Use uppercase `AWS` in C# names to match .NET SDK conventions.
-
-Structured trait records use STJ deserialization via `TraitHelpers.DeserializeTrait<T>()` and inherit from `TraitRecord`, which uses `[JsonExtensionData]` to capture unknown properties for forward compatibility. Use `[JsonPropertyName]` on record properties, matching the pattern used by shape types. `ErrorTrait` is the exception — it wraps a plain string value, not a JSON object.
-
-[Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait) have an empty object as their value: `"traits": { "smithy.api#required": {} }`.
-
-Trait setters (e.g. `SetJsonName`) are for `CustomizationTransform` only, which mutates the model in place before `ServiceIndex` is built; downstream of the index the model is read-only.
-
-## Deserialization Setup
-
-Register `ShapeConverter` via `JsonSerializerOptions.Converters` — not via `[JsonConverter]` attribute on `Shape` (see Shape Type Hierarchy above for why) — with `PropertyNameCaseInsensitive = false` (Smithy JSON uses exact camelCase keys).
-
-`ShapeIdConverter`, `ShapeTargetConverter`, and `ShapeTargetListConverter` are registered via `[JsonConverter]` attributes on individual properties (e.g. `MemberShape.Target`, `OperationShape.Input`) — they do NOT need to go in the options.
-
-`SmithyModel.Shapes` is a `Dictionary<string, Shape?>` keyed by the absolute shape ID string (e.g. `"com.amazonaws.cloudtraildata#AuditEvent"`). Unknown shape types deserialize to `null` values for forward compatibility.
-
-## Validating Models with the Smithy CLI
-
-Install the Smithy CLI (`smithy`) to validate models and query shapes directly. See [Smithy CLI docs](https://smithy.io/2.0/guides/smithy-cli/cli_installation.html) for installation. Use it to verify shape counts, types, and structure instead of parsing JSON manually.
-
-**Validate a model:**
-```
-smithy validate --allow-unknown-traits <path-to-model.json>
-```
-
-**Query shapes with selectors** ([selector spec](https://smithy.io/2.0/spec/selectors.html)):
-```
-smithy select --selector '<selector>' --show type --allow-unknown-traits <path-to-model.json>
-```
-
-`--allow-unknown-traits` is needed because AWS trait definitions (e.g. `aws.api#service`) are not bundled with the CLI.
-
-**Useful selectors:**
-- `service` — all service shapes
-- `operation` — all operation shapes
-- `structure` — all structure shapes
-- `:is([id|namespace = com.amazonaws.cloudtraildata])` — shapes in a specific namespace (excludes prelude)
-- `service > operation` — operations directly bound to a service
-- `structure > member > string` — structure members targeting string shapes
-
-**PowerShell caveat:** selectors containing `[` or `$` must be single-quoted to prevent PowerShell interpretation. Use `:is(...)` instead of `[...]` attribute selectors when quoting is awkward.
+`smithy.api#Unit` is the one prelude shape that can emit code: when a union member targets it, a per-service
+empty `Unit` model class is generated (C2J ships one, and member properties reference it). Operation
+input/output references to Unit do **not** count; those emit empty `{Op}Request`/`{Op}Response` classes.
 
 ## Key Invariants
 
-- A valid model has exactly one `ServiceShape` (enforced by `ModelValidator`)
-- `OperationShape.Input` and `Output` default to `smithy.api#Unit` when absent
-- Member names in `StructureShape.Members` are the **Smithy member names** (camelCase), not .NET names
-- The `@jsonName` trait overrides the wire name; the member key is the model name
-- The generator doesn't resolve mixins — production models arrive pre-flattened — so `ServiceIndex` throws when a shape reachable from the service declares `mixins`; unreachable consumers (the `smithy.test`/`aws.protocols` trait definitions in the raw test models) are ignored. The restJson1 test model has no reachable consumers; the restXml one does (operation inputs/outputs), so it will need flattening or mixin support before it can generate
-- `AllEnums` skips enums that are unreachable *and* outside the service's namespace, so trait-definition enums like `smithy.test#AppliesTo` don't become `ConstantClass`es. Unreachable enums in the service's own namespace still emit, matching C2J's orphan `*ExceptionReason` enums
-- Input/output shapes are identified by their reference from `OperationShape.Input`/`Output`, not solely by `@input`/`@output` traits (some models don't have these traits). Error shapes are identified by the `@error` trait.
+- A valid model has exactly one service shape.
+- Operation input and output default to `smithy.api#Unit` when absent.
+- Member names in a structure's member map are the **Smithy member names** (camelCase), not .NET names.
+- `@jsonName` overrides the wire name; the member key stays the model name.
+- Mixins are not resolved (production models arrive pre-flattened). A shape reachable from the service that
+  declares `mixins` fails loud; unreachable consumers (the `smithy.test`/`aws.protocols` trait definitions
+  in the raw protocol-test models) are ignored. The restJson1 test model has no reachable consumers; the
+  restXml one does, so it needs flattening or mixin support before it can generate.
+- Enum collection skips enums that are unreachable *and* outside the service's namespace, so
+  trait-definition enums like `smithy.test#AppliesTo` don't become `ConstantClass`es. Unreachable enums in
+  the service's own namespace still emit, matching C2J's orphan `*ExceptionReason` enums.
+- Input/output structures are recognized two ways, and both matter: the `@input`/`@output` traits keep a
+  structure out of the plain model classes, and the reference from an operation's `input`/`output`
+  identifies the request/response pair (some models lack the traits). Error shapes are identified by `@error`.
+
+## Validating Models with the Smithy CLI
+
+`smithy validate --allow-unknown-traits <model.json>` validates a model; `smithy select --selector '<sel>'
+--show type --allow-unknown-traits <model.json>` queries shapes
+([selectors](https://smithy.io/2.0/spec/selectors.html), e.g. `service > operation`,
+`structure > member > string`). `--allow-unknown-traits` is needed because the AWS trait definitions are
+not bundled with the CLI.

@@ -118,7 +118,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
     // stream read to end, a structure is deserialized by its own unmarshaller off the JSON reader.
     private static void WritePayloadMember(CodeWriter writer, Member member)
     {
-        if (member.Type.IsString)
+        if (member.Type.MarshalsAsString)
         {
             writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", () =>
             {

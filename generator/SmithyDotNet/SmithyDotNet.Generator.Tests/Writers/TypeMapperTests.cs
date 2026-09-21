@@ -197,11 +197,14 @@ public class TypeMapperTests
         var category = members.Single(m => m.ModeledName == "category");
         Assert.Equal("Category", category.Type.DotNetType);
         Assert.True(category.Type.IsEnum);
-        Assert.Equal("string", category.Type.MarshalType);
+        Assert.True(category.Type.MarshalsAsString);
+        Assert.False(category.IsNullableValueType);
 
         var priority = members.Single(m => m.ModeledName == "priority");
         Assert.Equal("int?", priority.Type.DotNetType);
         Assert.False(priority.Type.IsEnum);
+        Assert.IsType<IntEnumShape>(priority.Type.Target);
+        Assert.True(priority.IsNullableValueType);
     }
 
     [Fact]

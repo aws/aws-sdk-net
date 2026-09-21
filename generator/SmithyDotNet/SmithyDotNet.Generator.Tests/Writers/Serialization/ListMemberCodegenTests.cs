@@ -228,7 +228,7 @@ public class ListMemberCodegenTests
     public void RequestMarshaller_HeaderFloatOrDoubleList_JoinsViaFromValueTypeList(string elementTarget)
     {
         // Float/double header lists join like any other value-type list via StringUtils.FromValueTypeList.
-        Assert.Contains("""request.Headers["x-values"] = StringUtils.FromValueTypeList(publicRequest.Values);""", MarshalHeaderScalarList(elementTarget));
+        Assert.Contains("""request.Headers["x-values"] = StringUtils.FromValueTypeList(publicRequest.Values);""", WriteHeaderScalarList(elementTarget));
     }
 
     [Theory]
@@ -238,13 +238,23 @@ public class ListMemberCodegenTests
     public void RequestMarshaller_HeaderSparseList_FailsLoud(string elementTarget)
     {
         // A @sparse header list has nullable value-type elements, which FromValueTypeList can't join - fail loud.
-        var ex = Assert.Throws<GeneratorException>(() => MarshalHeaderScalarList(elementTarget, sparse: true));
+        var ex = Assert.Throws<GeneratorException>(() => WriteHeaderScalarList(elementTarget, sparse: true));
         Assert.Contains("Unsupported header list element type", ex.Message);
     }
 
-    // Marshals an "Op" with a list @httpHeader member whose scalar element targets the given shape.
-    private static string MarshalHeaderScalarList(string elementTarget, bool sparse = false)
+    [Fact]
+    public void ResponseUnmarshaller_HeaderSparseTimestampList_FailsLoud()
     {
+        // ToDateTimeList returns a List<DateTime>, which can't be assigned to a @sparse List<DateTime?> - fail loud.
+        var ex = Assert.Throws<GeneratorException>(() => WriteHeaderScalarList("smithy.api#Timestamp", sparse: true, response: true));
+        Assert.Contains("Unsupported header list element type", ex.Message);
+    }
+
+    // Writes the request marshaller (or, with response, the response unmarshaller) of an "Op" whose one
+    // list @httpHeader member has a scalar element targeting the given shape.
+    private static string WriteHeaderScalarList(string elementTarget, bool sparse = false, bool response = false)
+    {
+        var structure = response ? "output" : "input";
         var json = $$"""
         {
           "smithy": "2.0",
@@ -260,11 +270,10 @@ public class ListMemberCodegenTests
             },
             "com.example#Op": {
               "type": "operation",
-              "input": { "target": "com.example#OpRequest" },
-              "output": { "target": "smithy.api#Unit" },
+              "{{structure}}": { "target": "com.example#OpStructure" },
               "traits": { "smithy.api#http": { "uri": "/op", "method": "POST" } }
             },
-            "com.example#OpRequest": {
+            "com.example#OpStructure": {
               "type": "structure",
               "members": { "values": { "target": "com.example#ScalarList", "traits": { "smithy.api#httpHeader": "x-values" } } }
             },
@@ -276,6 +285,8 @@ public class ListMemberCodegenTests
             ?? throw new InvalidOperationException("Model deserialized to null.");
         var context = TestModels.Context(model);
         var operation = context.Operations.Single(o => o.Name == "Op");
-        return new JsonRequestMarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+        return response
+            ? new JsonResponseUnmarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken)
+            : new JsonRequestMarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
     }
 }

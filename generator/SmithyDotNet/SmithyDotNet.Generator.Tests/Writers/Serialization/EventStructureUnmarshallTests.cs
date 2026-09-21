@@ -64,6 +64,14 @@ public class EventStructureUnmarshallTests
     }
 
     [Fact]
+    public void EnumPayload_ReadsStreamToEnd()
+    {
+        // An enum payload is a string on the wire; the implicit string->ConstantClass conversion assigns it.
+        var source = Unmarshaller("EnumPayloadEvent");
+        Assert.Contains("unmarshalledObject.Kind = sr.ReadToEnd();", source);
+    }
+
+    [Fact]
     public void StructPayload_DispatchesToNestedUnmarshaller()
     {
         var source = Unmarshaller("StructPayloadEvent");

@@ -33,6 +33,7 @@
       "members": {
         "BlobPayload": { "target": "com.example#BlobPayloadEvent" },
         "StringPayload": { "target": "com.example#StringPayloadEvent" },
+        "EnumPayload": { "target": "com.example#EnumPayloadEvent" },
         "StructPayload": { "target": "com.example#StructPayloadEvent" },
         "NoPayload": { "target": "com.example#NoPayloadEvent" },
         "HeadersOnly": { "target": "com.example#HeadersOnlyEvent" },
@@ -56,6 +57,16 @@
       "members": {
         "Message": { "target": "smithy.api#String", "traits": { "smithy.api#eventPayload": {} } }
       }
+    },
+    "com.example#EnumPayloadEvent": {
+      "type": "structure",
+      "members": {
+        "Kind": { "target": "com.example#Kind", "traits": { "smithy.api#eventPayload": {} } }
+      }
+    },
+    "com.example#Kind": {
+      "type": "enum",
+      "members": { "A": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a" } } }
     },
     "com.example#StructPayloadEvent": {
       "type": "structure",
