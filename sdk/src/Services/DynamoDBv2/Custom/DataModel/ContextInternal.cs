@@ -447,6 +447,13 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 instance = InstantiateWithConstructor(resolvedConfig, storage, flatConfig);
             }
+            else if (targetType.IsValueType)
+            {
+                // Value types (e.g. a non-positional record struct) have no binding constructor and cannot use
+                // the reference-type-only InstantiateConverter path. Start from a zero-initialized value and let
+                // PopulateInstance assign its init/settable members (reflection SetValue mutates the boxed value).
+                instance = GetTypeDefaultValue(targetType);
+            }
             else
 #endif
             {

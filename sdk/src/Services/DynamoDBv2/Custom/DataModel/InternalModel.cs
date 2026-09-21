@@ -514,6 +514,7 @@ namespace Amazon.DynamoDBv2.DataModel
         internal StorageConfig([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType)
         {
             ICollection<string> constructorParameterNames = null;
+            bool requiresParameterlessConstructor = true;
 
 #if NET8_0_OR_GREATER
             // Immutable types (e.g. record / record struct) are populated by binding stored values to a
@@ -523,10 +524,18 @@ namespace Amazon.DynamoDBv2.DataModel
                 BindingConstructor = bindingConstructor;
                 ConstructorParameterNames = bindingConstructor.GetParameters().Select(p => p.Name).ToArray();
                 constructorParameterNames = ConstructorParameterNames;
+                requiresParameterlessConstructor = false;
             }
-            else
+            else if (targetType.IsValueType)
+            {
+                // Value types (e.g. a non-positional record struct) that have no binding constructor are
+                // populated via zero-initialization (default(T)) followed by member assignment, so they do
+                // not require a parameterless constructor (CanInstantiate only accepts reference types).
+                requiresParameterlessConstructor = false;
+            }
 #endif
-            if (!Utils.CanInstantiate(targetType))
+
+            if (requiresParameterlessConstructor && !Utils.CanInstantiate(targetType))
             {
                 string errorMessage;
                 if (InternalSDKUtils.IsRunningNativeAot())

@@ -492,14 +492,11 @@ namespace Amazon.DynamoDBv2.DataModel
             if (type.IsAbstract || type.IsInterface || type.IsGenericTypeDefinition || type.ContainsGenericParameters)
                 return false;
 
+            // Only public instance constructors are considered. The compiler-generated record copy constructor is
+            // non-public (protected on a record class, private on a sealed record), so it is already excluded here
+            // and does not need special-casing — a legitimate public 'T(T source)' constructor must not be dropped.
             var constructors = type
                 .GetConstructors(BindingFlags.Instance | BindingFlags.Public)
-                // Ignore the compiler-generated record copy constructor (single parameter of the declaring type).
-                .Where(c =>
-                {
-                    var parameters = c.GetParameters();
-                    return !(parameters.Length == 1 && parameters[0].ParameterType == type);
-                })
                 .ToList();
 
             if (constructors.Count == 0)

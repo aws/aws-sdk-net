@@ -38,6 +38,24 @@ namespace AWSSDK_DotNet.UnitTests
             [property: DynamoDBHashKey] string Id,
             int Count);
 
+        // Non-positional record struct: only the synthesized parameterless constructor, populated via
+        // zero-initialization + member assignment.
+        public record struct NonPositionalRecordStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public int Count { get; set; }
+        }
+
+        // Class whose single public constructor takes the declaring type. This must NOT be treated as a
+        // (compiler-generated, non-public) copy constructor and dropped during binding-constructor selection.
+        public class SelfParamCtorType
+        {
+            public SelfParamCtorType(SelfParamCtorType other) { Other = other; }
+
+            public SelfParamCtorType Other { get; }
+        }
+
         // Immutable POCO with get-only properties supplied through a single parameterized constructor.
         public class ImmutablePoco
         {
@@ -515,6 +533,33 @@ namespace AWSSDK_DotNet.UnitTests
 
             Assert.AreEqual("id-9", result.Id);
             Assert.AreEqual(5, result.Count);
+        }
+
+        [TestMethod]
+        public void NonPositionalRecordStruct_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new NonPositionalRecordStruct { Id = "id-np", Count = 12 };
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<NonPositionalRecordStruct>(document);
+
+            Assert.AreEqual("id-np", result.Id);
+            Assert.AreEqual(12, result.Count);
+        }
+
+        [TestMethod]
+        public void TryGetBindingConstructor_DoesNotDropPublicConstructorOfDeclaringType()
+        {
+            // The single public constructor takes the declaring type; it must not be misidentified as the
+            // (non-public) compiler-generated copy constructor and excluded.
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(SelfParamCtorType), out var ctor);
+
+            Assert.IsTrue(selected);
+            Assert.IsNotNull(ctor);
+            Assert.AreEqual(1, ctor.GetParameters().Length);
+            Assert.AreEqual(typeof(SelfParamCtorType), ctor.GetParameters()[0].ParameterType);
         }
 
         [TestMethod]
