@@ -69,6 +69,13 @@ namespace Amazon.BedrockAgentCore.Model
                     return new HarnessContentBlockStopEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
+            {"HookEvent", payload => 
+                {
+                    var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    return new HarnessHookEventUnmarshaller().Unmarshall(context, ref reader);
+                }
+            },
             {"MessageStart", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
@@ -158,6 +165,10 @@ namespace Amazon.BedrockAgentCore.Model
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<HarnessContentBlockStopEvent>> ContentBlockStopReceived;
         ///<summary>
+        ///Raised when an HookEvent event is received
+        ///</summary>
+        public event EventHandler<EventStreamEventReceivedArgs<HarnessHookEvent>> HookEventReceived;
+        ///<summary>
         ///Raised when an MessageStart event is received
         ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<HarnessMessageStartEvent>> MessageStartReceived;
@@ -209,6 +220,7 @@ namespace Amazon.BedrockAgentCore.Model
                     RaiseEvent(ContentBlockDeltaReceived,ev) ||
                     RaiseEvent(ContentBlockStartReceived,ev) ||
                     RaiseEvent(ContentBlockStopReceived,ev) ||
+                    RaiseEvent(HookEventReceived,ev) ||
                     RaiseEvent(MessageStartReceived,ev) ||
                     RaiseEvent(MessageStopReceived,ev) ||
                     RaiseEvent(MetadataReceived,ev);

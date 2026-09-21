@@ -52,6 +52,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.AdditionalParams);
             }
 
+            if(requestObject.IsSetApiBase())
+            {
+                context.Writer.WritePropertyName("apiBase");
+                context.Writer.WriteStringValue(requestObject.ApiBase);
+            }
+
             if(requestObject.IsSetApiFormat())
             {
                 context.Writer.WritePropertyName("apiFormat");

@@ -1187,6 +1187,114 @@ namespace Amazon.BedrockAgentCore
 
 
     /// <summary>
+    /// Constants used for properties of type HarnessHookDecision.
+    /// </summary>
+    public class HarnessHookDecision : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for HarnessHookDecision
+        /// </summary>
+        public static readonly HarnessHookDecision Allow = new HarnessHookDecision("allow");
+        /// <summary>
+        /// Constant Deny for HarnessHookDecision
+        /// </summary>
+        public static readonly HarnessHookDecision Deny = new HarnessHookDecision("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessHookDecision(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessHookDecision FindValue(string value)
+        {
+            return FindValue<HarnessHookDecision>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessHookDecision(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessHookEventType.
+    /// </summary>
+    public class HarnessHookEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant After_invocation for HarnessHookEventType
+        /// </summary>
+        public static readonly HarnessHookEventType After_invocation = new HarnessHookEventType("after_invocation");
+        /// <summary>
+        /// Constant After_tool_call for HarnessHookEventType
+        /// </summary>
+        public static readonly HarnessHookEventType After_tool_call = new HarnessHookEventType("after_tool_call");
+        /// <summary>
+        /// Constant Before_invocation for HarnessHookEventType
+        /// </summary>
+        public static readonly HarnessHookEventType Before_invocation = new HarnessHookEventType("before_invocation");
+        /// <summary>
+        /// Constant Before_tool_call for HarnessHookEventType
+        /// </summary>
+        public static readonly HarnessHookEventType Before_tool_call = new HarnessHookEventType("before_tool_call");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessHookEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessHookEventType FindValue(string value)
+        {
+            return FindValue<HarnessHookEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessHookEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HarnessOpenAiApiFormat.
     /// </summary>
     public class HarnessOpenAiApiFormat : ConstantClass
@@ -1250,6 +1358,10 @@ namespace Amazon.BedrockAgentCore
         /// Constant End_turn for HarnessStopReason
         /// </summary>
         public static readonly HarnessStopReason End_turn = new HarnessStopReason("end_turn");
+        /// <summary>
+        /// Constant Hook_stopped for HarnessStopReason
+        /// </summary>
+        public static readonly HarnessStopReason Hook_stopped = new HarnessStopReason("hook_stopped");
         /// <summary>
         /// Constant Interrupted for HarnessStopReason
         /// </summary>
