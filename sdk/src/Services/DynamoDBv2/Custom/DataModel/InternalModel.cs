@@ -554,10 +554,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 // Populating a type through a parameterized constructor (records, other immutable types, and
                 // value types) is only available on the .NET 8 or later build of the SDK. Point users at that
                 // requirement instead of leaving them with a bare "cannot be instantiated" message.
-                errorMessage += " Types without a public parameterless constructor (for example C# record types and other" +
-                    " immutable types), as well as value types, can only be populated by the .NET 8 (or later) build of the" +
-                    " SDK, which binds stored attribute values to a parameterized constructor. Retarget the application to" +
-                    " .NET 8 or later, or give the type a public parameterless constructor and settable members.";
+                errorMessage += " Retargeting to .NET 8 (or later) can enable records and other types with a usable public parameterized constructor (selected with [DynamoDBConstructor] when necessary); otherwise, expose a public parameterless constructor and settable members.";
 #endif
 
                 throw new InvalidOperationException(errorMessage);
