@@ -38,7 +38,7 @@ public static class PreludeShapes
         ["PrimitiveFloat"] = new FloatShape(),
         ["PrimitiveDouble"] = new DoubleShape(),
         // Unit is the prelude's "no meaningful value" structure. As an operation input/output it
-        // is already special-cased in GenerationContext.ResolveStructure; resolving it here covers
+        // is already special-cased in OperationResolver.ResolveStructure; resolving it here covers
         // union members targeting it (lambda-microvms, bedrock-agentcore, supportauthz,
         // workspaces-web), which flow through the plain structure codepath and emit the same
         // per-service empty Unit class C2J ships.

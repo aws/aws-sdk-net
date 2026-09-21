@@ -1,6 +1,9 @@
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;

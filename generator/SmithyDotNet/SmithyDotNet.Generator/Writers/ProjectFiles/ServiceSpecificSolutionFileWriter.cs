@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 
 namespace SmithyDotNet.Generator.Writers.ProjectFiles;
 

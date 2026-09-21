@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Endpoints;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 

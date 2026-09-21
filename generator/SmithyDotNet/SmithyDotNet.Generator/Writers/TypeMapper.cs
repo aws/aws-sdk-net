@@ -380,7 +380,7 @@ public static class TypeMapper
     /// <summary>
     /// The .NET type for a string or scalar in collection-element position, or null for anything else
     /// (structures, nested collections, documents). Value types are non-nullable unless the collection
-    /// is <c>@sparse</c>. Context-free so <see cref="Generation.PaginationResolver"/> (which has no
+    /// is <c>@sparse</c>. Context-free so <see cref="Generation.Paginators.PaginationResolver"/> (which has no
     /// <see cref="GenerationContext"/>) shares the property types' rule.
     /// </summary>
     public static string? MapScalarElement(Shape target, bool isSparse)

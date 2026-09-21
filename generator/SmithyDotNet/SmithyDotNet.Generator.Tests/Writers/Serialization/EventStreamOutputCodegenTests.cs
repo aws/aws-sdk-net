@@ -20,7 +20,7 @@ public class EventStreamOutputCodegenTests
 
     public EventStreamOutputCodegenTests()
     {
-        _context = TestModels.Context("Codegen/event-stream-output-model.json");
+        _context = TestModels.Context("Codegen/EventStreams/event-stream-output-model.json");
 
         var union = (StructureShape)_context.Resolve(ShapeId.Parse("com.example#ConverseStreamOutput"));
         _eventStreamClass = new EventStreamOutputWriter(_context, ModelFileName)

@@ -110,7 +110,7 @@ public class OperationWriterTests
     [Fact]
     public void Response_WithOutputOnlyEventStream_DisposesStreamButOwnsNoContext()
     {
-        var context = TestModels.Context("Codegen/event-stream-output-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/event-stream-output-model.json");
         var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
         var operation = context.Operations.Single(o => o.Name == "ConverseStream");
 
@@ -124,7 +124,7 @@ public class OperationWriterTests
     [Fact]
     public void Response_WithBidirectionalEventStream_OwnsContextAndDisposesBoth()
     {
-        var context = TestModels.Context("Codegen/request-event-stream-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/request-event-stream-model.json");
         var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
         var operation = context.Operations.Single(o => o.Name == "Talk");
 
@@ -138,7 +138,7 @@ public class OperationWriterTests
     [Fact]
     public void Response_WithInputOnlyEventStream_OwnsContextAndDisposesIt()
     {
-        var context = TestModels.Context("Codegen/request-event-stream-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/request-event-stream-model.json");
         var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
         var operation = context.Operations.Single(o => o.Name == "TalkWithInitialRequest");
 

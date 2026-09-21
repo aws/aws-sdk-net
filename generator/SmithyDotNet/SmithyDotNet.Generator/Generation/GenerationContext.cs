@@ -1,69 +1,16 @@
+using SmithyDotNet.Generator.Generation.Auth;
+using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Generation.Endpoints;
+using SmithyDotNet.Generator.Generation.EventStreams;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Generation.Paginators;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Generation;
-
-/// <summary>
-/// The wire protocol used by an AWS service.
-/// </summary>
-public enum AWSProtocol { RestJson1 }
-
-/// <summary>
-/// An error shape paired with its <see cref="ShapeId"/>. A <see cref="StructureShape"/> does
-/// not carry its own ID, but writers need the error's name (e.g. to derive the
-/// <c>{Name}Exception</c> class referenced in an operation's <c>&lt;exception&gt;</c> doc tags),
-/// so the ID is resolved up front alongside the shape.
-/// </summary>
-public record OperationError(StructureShape Shape, ShapeId Id);
-
-/// <summary>
-/// An operation with its input, output, and error shapes pre-resolved so writers
-/// don't need to perform lookups themselves. <see cref="RequiresHttp2"/> pins the request to
-/// <c>HttpProtocolVersion.Version20</c> and excludes the operation below net8; input-only event
-/// streams follow C2J and are never pinned unless the whole service is h2-required.
-/// </summary>
-public record Operation(
-    string Name,
-    OperationShape Shape,
-    StructureShape Input,
-    StructureShape Output,
-    IReadOnlyList<OperationError> Errors,
-    bool RequiresHttp2);
-
-/// <summary>
-/// A paginated operation with its trait resolved and token/items members mapped to .NET property names.
-/// <see cref="ItemsProperty"/> is the leaf member name (the generated enumerable's name), while
-/// <see cref="ItemsPath"/> and <see cref="OutputTokenProperty"/> are full accessor paths off the
-/// response — they contain dots when the trait uses a dotted path (e.g. "DistributionList.NextMarker").
-/// </summary>
-public record PaginatedOperation(
-    Operation Operation,
-    PaginatedTrait Trait,
-    string InputTokenProperty,
-    string OutputTokenProperty,
-    string? PageSizeProperty,
-    string? ItemsProperty,
-    string? ItemsPath,
-    string? ItemsElementType
-);
-
-/// <summary>
-/// A <c>@streaming</c> union sent to the service as an operation input, resolved once however many
-/// operations share it. <see cref="Events"/> excludes <c>@error</c> members: a client never sends
-/// an error event. Both lists are ordered by name. <see cref="InterfaceName"/> is the shipped
-/// marker-interface name, derived from the union's generated name, not the operation (Lex V2:
-/// <c>IStartConversationRequestEventStreamEvent</c>). A union named <c>EventStream</c> (the
-/// protocol test client) yields <c>IEventStreamEvent</c>, the runtime's own marker, so event
-/// stream writers refer to the runtime's through a <c>using RuntimeEvent = ...</c> alias.
-/// </summary>
-public record RequestEventStream(ShapeId Id, string InterfaceName, IReadOnlyList<Operation> Operations, IReadOnlyList<ShapeId> Events);
-
-/// <summary>
-/// A <c>@streaming</c> union received from the service as an operation output. <see cref="Events"/>
-/// excludes <c>@error</c> members: those become exceptions. Ordered by name.
-/// </summary>
-public record ResponseEventStream(ShapeId Id, IReadOnlyList<ShapeId> Events);
 
 /// <summary>
 /// Aggregates everything code writers need about a single service: derived names,
@@ -218,7 +165,6 @@ public class GenerationContext
 
     private readonly ServiceIndex _index;
 
-
     /// <summary>
     /// The manifest for the service, read from _sdk-versions.json
     /// </summary>
@@ -280,14 +226,14 @@ public class GenerationContext
 
         ServiceDocumentation = index.Service.GetDocumentation();
         ServiceTitle = index.Service.GetTitle();
-        Protocol = DetectProtocol(index.Service, SdkId);
-        Operations = ResolveOperations(index);
+        Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
+        Operations = OperationResolver.Resolve(index);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
         PaginatedOperations = PaginationResolver.Resolve(Operations, index);
-        RequestEventStreams = ResolveRequestEventStreams(Operations, index);
-        ResponseEventStreams = ResolveResponseEventStreams(Operations, index);
+        RequestEventStreams = EventStreamResolver.ResolveRequestStreams(Operations, index);
+        ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(Operations, index);
         OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
@@ -383,163 +329,4 @@ public class GenerationContext
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => _index.ToDotNetName(shapeId);
 
-    // AWS protocol trait IDs in the legacy generator's resolution priority
-    // (smithy-rpc-v2-cbor > json > rest-json > rest-xml > query > ec2). A service that models several
-    // resolves to the highest-priority one; awsJson1_0/1_1 share C2J's single "json" slot.
-    private static readonly string[] ProtocolPriority =
-    [
-        "smithy.protocols#rpcv2Cbor",
-        "aws.protocols#awsJson1_0",
-        "aws.protocols#awsJson1_1",
-        "aws.protocols#restJson1",
-        "aws.protocols#restXml",
-        "aws.protocols#awsQuery",
-        "aws.protocols#ec2Query",
-    ];
-
-    // Per-service protocol skips, mirroring the legacy generator: ARC Region switch models CBOR but
-    // must resolve to its awsJson protocol. Keyed by sdkId (the raw aws.api#service value).
-    private static readonly Dictionary<string, string> SkipProtocolForService = new()
-    {
-        ["ARC Region switch"] = "smithy.protocols#rpcv2Cbor",
-    };
-
-    // Resolves the service's protocol the way the legacy generator does — highest-priority trait,
-    // less any per-service skip — then fails loudly unless it is restJson1, the only one implemented.
-    // TODO: return the resolved protocol (extend AWSProtocol) once a second protocol is implemented.
-    private static AWSProtocol DetectProtocol(ServiceShape service, string sdkId)
-    {
-        var resolved = ResolveProtocol(service.Traits.Keys, sdkId) ?? throw new GeneratorException("Service shape has no recognized AWS protocol trait.");
-
-        if (resolved == "aws.protocols#restJson1")
-        {
-            return AWSProtocol.RestJson1;
-        }
-
-        throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet; only aws.protocols#restJson1 is implemented.");
-    }
-
-    // How strongly a service requires HTTP/2, derived from the protocol trait's http/eventStreamHttp lists.
-    private enum H2SupportDegree { None, Optional, EventStream, Required }
-
-    // Derives the degree the way the C2J models' "protocolSettings":{"h2":...} value is derived from these
-    // lists: no h2 → None; h2 the only http version → Required; h2 alongside http/1.1 → Optional when event
-    // streams can fall back to http/1.1, EventStream when they can't. eventStreamHttp defaults to http
-    // when absent or empty, per spec.
-    private static H2SupportDegree ResolveH2Support(RestJson1Trait? trait)
-    {
-        var http = trait?.Http ?? [];
-        var eventStreamHttp = trait?.EventStreamHttp is { Count: > 0 } list ? list : http;
-
-        if (!http.Contains("h2"))
-        {
-            return H2SupportDegree.None;
-        }
-        if (!http.Contains("http/1.1"))
-        {
-            return H2SupportDegree.Required;
-        }
-        return eventStreamHttp.Contains("http/1.1") ? H2SupportDegree.Optional : H2SupportDegree.EventStream;
-    }
-
-    // The highest-priority protocol trait the service carries, less any per-service skip, or null when
-    // it models none.
-    public static string? ResolveProtocol(IReadOnlyCollection<string> traitIds, string sdkId)
-    {
-        var skip = SkipProtocolForService.GetValueOrDefault(sdkId);
-        return ProtocolPriority.FirstOrDefault(id => id != skip && traitIds.Contains(id));
-    }
-
-    private static List<Operation> ResolveOperations(ServiceIndex index)
-    {
-        // TODO: Update when more protocols are added, since this is hard-coding one trait.
-        var h2Support = ResolveH2Support(index.Service.GetRestJson1());
-        var resolved = new List<Operation>(index.Operations.Count);
-
-        foreach (var (operationId, operation) in index.Operations)
-        {
-            var input = ResolveStructure(index, operation.Input, "input", operationId);
-            var output = ResolveStructure(index, operation.Output, "output", operationId);
-
-            // A service's errors apply to every operation it contains, so they're folded into each
-            // operation's own list here. Deduped and sorted by name.
-            var errorIds = operation.Errors
-                .Concat(index.Service.Errors)
-                .Distinct()
-                .OrderBy(id => id.Name, StringComparer.Ordinal)
-                .ThenBy(id => id.Namespace, StringComparer.Ordinal)
-                .ThenBy(id => id.Member, StringComparer.Ordinal);
-
-            var errors = new List<OperationError>();
-            foreach (var errorId in errorIds)
-            {
-                errors.Add(new OperationError(ResolveStructure(index, errorId, "error", operationId), errorId));
-            }
-
-            var requiresHttp2 = h2Support switch
-            {
-                H2SupportDegree.Required => true,
-                H2SupportDegree.EventStream => EventStreams.In(output, index).Any(),
-                H2SupportDegree.Optional => EventStreams.In(input, index).Any() && EventStreams.In(output, index).Any(),
-                _ => false,
-            };
-
-            resolved.Add(new Operation(operationId.Name, operation, input, output, errors, requiresHttp2));
-        }
-
-        return resolved;
-    }
-
-    private static List<RequestEventStream> ResolveRequestEventStreams(IReadOnlyList<Operation> operations, ServiceIndex index)
-    {
-        var unionIds = operations
-            .SelectMany(operation => EventStreams.In(operation.Input, index))
-            .Distinct();
-
-        var resolved = new List<RequestEventStream>();
-        foreach (var unionId in unionIds)
-        {
-            var senders = operations
-                .Where(op => EventStreams.In(op.Input, index).Contains(unionId))
-                .OrderBy(op => op.Name, StringComparer.Ordinal)
-                .ToList();
-            var events = EventStreams.EventsOf(unionId, index).OrderBy(target => target.Name, StringComparer.Ordinal).ToList();
-            resolved.Add(new RequestEventStream(unionId, $"I{index.ToDotNetName(unionId)}Event", senders, events));
-        }
-
-        return resolved.OrderBy(stream => stream.Id.Name, StringComparer.Ordinal).ToList();
-    }
-
-    private static List<ResponseEventStream> ResolveResponseEventStreams(IReadOnlyList<Operation> operations, ServiceIndex index)
-    {
-        var unionIds = operations
-            .SelectMany(operation => EventStreams.In(operation.Output, index))
-            .Distinct();
-
-        var resolved = new List<ResponseEventStream>();
-        foreach (var unionId in unionIds)
-        {
-            var events = EventStreams.EventsOf(unionId, index).OrderBy(target => target.Name, StringComparer.Ordinal).ToList();
-            resolved.Add(new ResponseEventStream(unionId, events));
-        }
-
-        return resolved.OrderBy(stream => stream.Id.Name, StringComparer.Ordinal).ToList();
-    }
-
-    private static StructureShape ResolveStructure(ServiceIndex index, ShapeId shapeId, string property, ShapeId operationId)
-    {
-        if (index.Shapes.TryGetValue(shapeId, out var shape) && shape is StructureShape structure)
-        {
-            return structure;
-        }
-
-        // smithy.api#Unit marks an operation with no input or output; treat it as an empty
-        // structure so downstream writers emit the same empty request/response classes C2J does.
-        if (shapeId == ShapeId.Unit)
-        {
-            return new StructureShape();
-        }
-
-        throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");
-    }
 }

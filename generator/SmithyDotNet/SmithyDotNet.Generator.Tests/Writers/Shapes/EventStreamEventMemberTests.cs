@@ -15,7 +15,7 @@ public class EventStreamEventMemberTests
 
     public EventStreamEventMemberTests()
     {
-        _context = TestModels.Context("Codegen/event-stream-member-model.json");
+        _context = TestModels.Context("Codegen/EventStreams/event-stream-member-model.json");
         _writer = new StructureWriter(_context, ModelFileName);
     }
 

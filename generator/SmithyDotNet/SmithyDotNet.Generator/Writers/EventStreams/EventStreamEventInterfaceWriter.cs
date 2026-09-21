@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.EventStreams;
 using SmithyDotNet.Generator.Model;
 
 namespace SmithyDotNet.Generator.Writers.EventStreams;

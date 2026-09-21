@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Paginators;
 
 namespace SmithyDotNet.Generator.Writers.Paginators;
 

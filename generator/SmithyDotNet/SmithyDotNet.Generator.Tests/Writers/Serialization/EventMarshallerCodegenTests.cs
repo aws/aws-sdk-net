@@ -14,7 +14,7 @@ public class EventMarshallerCodegenTests
 {
     private const string ModelFileName = "example-2023-01-01.normal.json";
 
-    private readonly GenerationContext _context = TestModels.Context("Codegen/request-event-stream-model.json");
+    private readonly GenerationContext _context = TestModels.Context("Codegen/EventStreams/request-event-stream-model.json");
 
     private string Write(string shapeName)
     {

@@ -1,3 +1,5 @@
+using System.Collections.Concurrent;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -11,7 +13,6 @@ using SmithyDotNet.Generator.Writers.ProjectFiles;
 using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
 using SmithyDotNet.Generator.Writers.Shapes;
-using System.Collections.Concurrent;
 
 namespace SmithyDotNet.Generator.Generation;
 

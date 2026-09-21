@@ -12,7 +12,7 @@ public class EventStreamExceptionWriterTests
 
     public EventStreamExceptionWriterTests()
     {
-        var context = TestModels.Context("Codegen/event-stream-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/event-stream-model.json");
         _source = new EventStreamExceptionWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
     }
 

@@ -32,10 +32,10 @@ interpolated); then serializes members per the placement rules below and returns
 code is pinned in `JsonRequestMarshallerWriterTests`.
 
 Operations that require HTTP/2 pin `request.HttpProtocolVersion = System.Net.HttpVersion.Version20`
-(under `#if NET8_0_OR_GREATER`), right after the `DefaultRequest`. `GenerationContext.RequiresHttp2`
-decides per operation from the protocol trait's `http`/`eventStreamHttp` version lists (see
-`H2SupportDegree`): all operations when h2 is required, output event streams when h2 is event-stream-only,
-bidirectional event streams when h2 is optional. Pinned in `Http2ProtocolVersionTests`.
+(under `#if NET8_0_OR_GREATER`), right after the `DefaultRequest`. `Operation.RequiresHttp2` is resolved in
+`OperationResolver` from the protocol trait's `http`/`eventStreamHttp` version lists (see `H2SupportDegree`):
+all operations when h2 is required, output event streams when h2 is event-stream-only, bidirectional event
+streams when h2 is optional. Pinned in `Http2ProtocolVersionTests`.
 
 ## Member Placement
 

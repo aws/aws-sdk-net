@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 
 namespace SmithyDotNet.Generator;
 

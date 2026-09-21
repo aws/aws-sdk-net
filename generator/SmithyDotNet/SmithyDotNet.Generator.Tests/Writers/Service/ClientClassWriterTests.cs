@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 

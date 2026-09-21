@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
@@ -16,7 +17,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void Required_ForcesHttp2_OnEveryOperation()
     {
-        var context = TestModels.Context("Codegen/h2-required-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-required-model.json");
         Assert.True(Op(context, "Send").RequiresHttp2);
 
         var source = new JsonRequestMarshallerWriter(context, ModelFileName).Write(Op(context, "Send"), TestContext.Current.CancellationToken);
@@ -27,7 +28,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void None_NeverForcesHttp2()
     {
-        var context = TestModels.Context("Codegen/h2-none-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-none-model.json");
         Assert.False(Op(context, "Send").RequiresHttp2);
 
         var source = new JsonRequestMarshallerWriter(context, ModelFileName).Write(Op(context, "Send"), TestContext.Current.CancellationToken);
@@ -37,7 +38,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void EventStream_ForcesHttp2_OnOutputStreamsOnly()
     {
-        var context = TestModels.Context("Codegen/h2-eventstream-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-eventstream-model.json");
         Assert.True(Op(context, "Receive").RequiresHttp2);
         Assert.False(Op(context, "Ping").RequiresHttp2);
 
@@ -49,7 +50,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void Optional_ForcesHttp2_OnBidirectionalStreamsOnly()
     {
-        var context = TestModels.Context("Codegen/h2-optional-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-optional-model.json");
         Assert.True(Op(context, "Chat").RequiresHttp2);
         Assert.False(Op(context, "Receive").RequiresHttp2);
     }
@@ -59,7 +60,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void EmptyProtocolTrait_NeverForcesHttp2_EvenWithEventStreams()
     {
-        var context = TestModels.Context("Codegen/request-event-stream-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/request-event-stream-model.json");
         Assert.False(Op(context, "Talk").RequiresHttp2);
     }
 
@@ -68,7 +69,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void EventStreamHttpAllowingHttp11_IsOptional()
     {
-        var context = TestModels.Context("Codegen/h2-eventstream-excluded-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-eventstream-excluded-model.json");
         Assert.True(Op(context, "Chat").RequiresHttp2);
     }
 
@@ -77,7 +78,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void EventStreamHttpH2Only_IsEventStream_EvenWhenHttpPrefersH2()
     {
-        var context = TestModels.Context("Codegen/h2-eventstream-h2only-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-eventstream-h2only-model.json");
         Assert.True(Op(context, "Receive").RequiresHttp2);
     }
 
@@ -85,7 +86,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void MissingEventStreamHttp_DefaultsToHttp()
     {
-        var context = TestModels.Context("Codegen/h2-optional-default-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-optional-default-model.json");
         Assert.True(Op(context, "Chat").RequiresHttp2);
     }
 
@@ -93,7 +94,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void EmptyEventStreamHttp_DefaultsToHttp()
     {
-        var context = TestModels.Context("Codegen/h2-optional-empty-eventstream-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-optional-empty-eventstream-model.json");
         Assert.True(Op(context, "Chat").RequiresHttp2);
     }
 
@@ -104,7 +105,7 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void RequiredService_PutsOperationSignaturesInsideGuard()
     {
-        var context = TestModels.Context("Codegen/h2-required-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-required-model.json");
         var source = new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
 
         // Walk the preprocessor directives and assert every emission of the operation's sync/async
@@ -136,15 +137,15 @@ public class Http2ProtocolVersionTests
     [Fact]
     public void NoneService_DoesNotGuardClientClass()
     {
-        var context = TestModels.Context("Codegen/h2-none-model.json");
+        var context = TestModels.Context("Codegen/Http2/h2-none-model.json");
         Assert.DoesNotContain("#if NET8_0_OR_GREATER", new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken));
     }
 
     [Fact]
     public void RequiredService_AddsOperationGuardToInterface()
     {
-        var required = TestModels.Context("Codegen/h2-required-model.json");
-        var none = TestModels.Context("Codegen/h2-none-model.json");
+        var required = TestModels.Context("Codegen/Http2/h2-required-model.json");
+        var none = TestModels.Context("Codegen/Http2/h2-none-model.json");
         Assert.Equal(GuardCount(none) + 1, GuardCount(required));
 
         static int GuardCount(GenerationContext context) =>

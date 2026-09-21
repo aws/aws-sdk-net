@@ -1,4 +1,6 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using static SmithyDotNet.Generator.Writers.ProjectFiles.ProjectFileSections;
 
 namespace SmithyDotNet.Generator.Writers.ProjectFiles;

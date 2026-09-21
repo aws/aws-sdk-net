@@ -18,7 +18,7 @@ public class EventStructureUnmarshallTests
 
     public EventStructureUnmarshallTests()
     {
-        _context = TestModels.Context("Codegen/event-structure-unmarshall-payload-model.json");
+        _context = TestModels.Context("Codegen/EventStreams/event-structure-unmarshall-payload-model.json");
         _writer = new JsonStructureUnmarshallerWriter(_context, ModelFileName);
     }
 

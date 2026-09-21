@@ -13,7 +13,7 @@ namespace SmithyDotNet.Generator.Tests.Writers.Shapes;
 /// <see cref="ServiceEnumerationsWriter"/> emission (ConstantClass declarations, member naming, the
 /// <c>Equals</c>/<c>new</c> guard, intEnum exclusion, unreachable-enum collection, the throw on a
 /// missing value) plus the marshaller/unmarshaller writers that route an enum member through the
-/// string path. Type-mapping is covered by <see cref="Serialization.TypeMapperTests"/>.
+/// string path. Type-mapping is covered by <see cref="TypeMapperTests"/>.
 /// </summary>
 public class EnumCodegenTests
 {

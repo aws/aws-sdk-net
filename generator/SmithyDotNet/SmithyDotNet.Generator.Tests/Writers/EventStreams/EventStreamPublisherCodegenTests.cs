@@ -1,4 +1,6 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.EventStreams;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Writers.EventStreams;
 using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
@@ -22,7 +24,7 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
 
     public EventStreamPublisherCodegenTests()
     {
-        _context = TestModels.Context("Codegen/event-stream-input-model.json");
+        _context = TestModels.Context("Codegen/EventStreams/event-stream-input-model.json");
         _stream = _context.RequestEventStreams.Single();
     }
 
@@ -62,7 +64,7 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
     [Fact]
     public void PublisherMarshaller_PicksContentTypePerPayloadKind()
     {
-        var context = TestModels.Context("Codegen/request-event-stream-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/request-event-stream-model.json");
         var stream = context.RequestEventStreams.Single(candidate => candidate.Id.Name == "ChatStream");
         var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(stream, TestContext.Current.CancellationToken);
 
@@ -85,7 +87,7 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
     public void PublisherMarshaller_HonorsServiceRename()
     {
         // The fixture renames com.example#EventStream to RenamedStream.
-        var context = TestModels.Context("Codegen/event-stream-input-only-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/event-stream-input-only-model.json");
         var source = new EventStreamPublisherMarshallerWriter(context, ModelFileName).Write(context.RequestEventStreams.Single(), TestContext.Current.CancellationToken);
 
         Assert.Contains("public partial class RenamedStreamPublisherMarshaller : EventStreamPublisher", source);
@@ -98,7 +100,7 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
     [Fact]
     public void PublisherProperty_FromEqualsMember_DropsTheNewModifier()
     {
-        var context = TestModels.Context("Codegen/event-stream-equals-member-model.json");
+        var context = TestModels.Context("Codegen/EventStreams/event-stream-equals-member-model.json");
         var send = context.Operations.Single(operation => operation.Name == "Send");
         var source = new OperationWriter(context, ModelFileName).WriteRequest(send, TestContext.Current.CancellationToken);
 
@@ -145,7 +147,7 @@ public sealed class EventStreamPublisherCodegenTests : IDisposable
     [Fact]
     public void Generation_EmitsInputStreamFiles_AndExcludesTheUnionClass()
     {
-        var written = Generate("Codegen/event-stream-input-model.json");
+        var written = Generate("Codegen/EventStreams/event-stream-input-model.json");
 
         Assert.Contains(Path.Combine(Marshalling, "InputStreamPublisherMarshaller.g.cs"), written);
         Assert.Contains(Path.Combine(Model, "IInputStreamEvent.g.cs"), written);

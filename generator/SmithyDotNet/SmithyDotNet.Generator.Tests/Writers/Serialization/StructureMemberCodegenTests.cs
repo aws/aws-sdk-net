@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;

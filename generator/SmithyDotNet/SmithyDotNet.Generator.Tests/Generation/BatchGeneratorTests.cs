@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Generation;
