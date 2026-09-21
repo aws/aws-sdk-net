@@ -152,6 +152,19 @@ namespace AWSSDK_DotNet.UnitTests
             [property: DynamoDBHashKey] string Id,
             [property: DynamoDBFlatten] FlattenedChild Child = null);
 
+        // Flattening an immutable (constructor-populated) child type is not supported: it would serialize but
+        // fail to load, since flattened values are reconstructed with a parameterless constructor.
+        public record ImmutableFlattenChild(string ChildName, int ChildValue);
+
+        public class FlattenImmutableChildEntity
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ImmutableFlattenChild Child { get; set; }
+        }
+
         // record struct that also declares an explicit public parameterless constructor. The primary
         // constructor must still be selected for binding because value types cannot use the
         // parameterless instantiation path.
@@ -476,6 +489,19 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result.Child);
             Assert.AreEqual("Ivy", result.Child.ChildName);
             Assert.AreEqual(9, result.Child.ChildValue);
+        }
+
+        [TestMethod]
+        public void FlattenedImmutableChildType_Throws()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<FlattenImmutableChildEntity>(flatConfig));
+
+            StringAssert.Contains(ex.Message, "[DynamoDBFlatten]");
+            StringAssert.Contains(ex.Message, "immutable type populated through a constructor");
         }
 
         [TestMethod]

@@ -1312,6 +1312,20 @@ namespace Amazon.DynamoDBv2.DataModel
                         throw new InvalidOperationException("Cannot flatten primitive types or collections. Only complex objects are supported.");
                     }
 
+#if NET8_0_OR_GREATER
+                    // A flattened value is reconstructed with a parameterless constructor during loading
+                    // (see CreateFlattenedMember). A type that is populated through a binding constructor
+                    // (e.g. a record or other immutable type) cannot be created that way, so it would serialize
+                    // but fail to load. Reject the combination at configuration time to fail fast and symmetrically.
+                    if (Utils.TryGetBindingConstructor(type, out _))
+                    {
+                        throw new InvalidOperationException(
+                            $"Property '{propertyStorage.PropertyName}' is marked [DynamoDBFlatten] but its type {type.FullName} is an immutable type populated through a constructor. " +
+                            "Flattening is not supported for constructor-populated (e.g. record) types because a flattened value is reconstructed with a parameterless constructor when loading. " +
+                            "Use a type with a parameterless constructor and settable members, or store it as a nested (non-flattened) property.");
+                    }
+#endif
+
                     var members = Utils.GetMembersFromType(type);
 
                     foreach (var memberInfo in members)
