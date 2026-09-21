@@ -4,7 +4,8 @@
             "serviceName": "DynamoDBv2",
             "type": "minor",
             "changeLogMessages": [
-                "Added support for using .NET record types and other immutable types with the DynamoDB DataModel (object persistence) API. On the .NET 8 (and later) target, types are populated by binding stored attribute values to a parameterized constructor. Use the new [DynamoDBConstructor] attribute to disambiguate when a type has more than one eligible constructor."
+                "Added support for using .NET record types, other immutable types, and value types (struct and record struct) with the DynamoDB DataModel (object persistence) API. On the .NET 8 (and later) target, a type without a public parameterless constructor is populated by binding stored attribute values to a parameterized constructor, matched to members by name. Use the new [DynamoDBConstructor] attribute to select the constructor when a type has more than one eligible constructor. Items are stored using the same DynamoDB attributes as an equivalent type with settable members, so data written by any build of the SDK remains readable by any other.",
+                "Fixed [DynamoDBFlatten] members nested inside another [DynamoDBFlatten] member being left null when an item was loaded. The values were already saved correctly, so no stored data changes and existing items become readable without migration. This fix applies to all target frameworks. Two behavior changes follow from it: when none of a nested flattened member's attributes are present the member is now an empty instance rather than null, which matches how the outermost flattened member has always behaved; and a [DynamoDBFlatten] member whose type cannot be instantiated is now rejected when the type is first configured, with an error naming the property, instead of failing only on save and silently loading as null."
             ]
         }
     ]

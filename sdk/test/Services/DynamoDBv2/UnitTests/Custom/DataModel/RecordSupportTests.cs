@@ -688,6 +688,248 @@ namespace AWSSDK_DotNet.UnitTests
                 .Where(p => new[] { "Id", "Name", "Age", "Score" }.Contains(p.PropertyName))
                 .All(p => p.IsConstructorArgument));
         }
+
+        #region Ambiguous case-insensitive member matching
+
+        // Two read-only members match the single constructor parameter 'name' case-insensitively, and neither
+        // matches it exactly. Binding one of them arbitrarily would leave the other read-only member modeled but
+        // unbound: it would be written on save and then fail to be set on load, making stored items unreadable.
+        public class AmbiguousMemberMatch
+        {
+            public AmbiguousMemberMatch(string name) { Name = name; NAME = name; }
+
+            [DynamoDBHashKey]
+            public string Name { get; }
+            public string NAME { get; }
+        }
+
+        [TestMethod]
+        public void AmbiguousCaseInsensitiveMemberMatch_ThrowsOnSave()
+        {
+            var context = CreateContext();
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new AmbiguousMemberMatch("v")));
+
+            StringAssert.Contains(ex.Message, "matches more than one modeled member");
+            StringAssert.Contains(ex.Message, "'Name'");
+            StringAssert.Contains(ex.Message, "'NAME'");
+        }
+
+        [TestMethod]
+        public void AmbiguousCaseInsensitiveMemberMatch_ThrowsOnLoad()
+        {
+            var context = CreateContext();
+            var document = new Document { ["Name"] = "v", ["NAME"] = "v" };
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.FromDocument<AmbiguousMemberMatch>(document));
+
+            StringAssert.Contains(ex.Message, "matches more than one modeled member");
+        }
+
+        // An exact (case-sensitive) match disambiguates: 'Name' binds to the constructor and the settable
+        // 'name' member is populated afterwards, so both members round-trip.
+        public class ExactCaseWinsType
+        {
+            public ExactCaseWinsType(string id, string Name) { this.Id = id; this.Name = Name; }
+
+            [DynamoDBHashKey]
+            public string Id { get; }
+            public string Name { get; }
+#pragma warning disable IDE1006 // intentionally differs from 'Name' only by case
+            public string name { get; set; }
+#pragma warning restore IDE1006
+        }
+
+        [TestMethod]
+        public void ExactCaseMatch_DisambiguatesConstructorBinding()
+        {
+            var context = CreateContext();
+            var document = context.ToDocument(new ExactCaseWinsType("id-x", "Upper") { name = "lower" });
+
+            var result = context.FromDocument<ExactCaseWinsType>(document);
+
+            Assert.AreEqual("Upper", result.Name);
+            Assert.AreEqual("lower", result.name);
+        }
+
+        // A read-only member that no constructor parameter supplies must be rejected rather than silently
+        // written on save and then failing on load. (Only members matching a constructor parameter name are
+        // modeled at all, so this is reached when the parameter binds to a different, exactly-matching member.)
+        public class UnboundReadOnlyMember
+        {
+            public UnboundReadOnlyMember(string id, string value) { Id = id; this.value = value; }
+
+            [DynamoDBHashKey]
+            public string Id { get; }
+#pragma warning disable IDE1006 // intentionally differs from 'Value' only by case
+            public string value { get; }
+#pragma warning restore IDE1006
+            public string VALUE { get; }
+        }
+
+        [TestMethod]
+        public void UnboundReadOnlyMember_Throws()
+        {
+            var context = CreateContext();
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new UnboundReadOnlyMember("id-y", "v")));
+
+            // Either the ambiguity check or the loadability check may fire first; both prevent the
+            // "saved but cannot be loaded" outcome, so assert on the shared consequence.
+            Assert.IsTrue(
+                ex.Message.Contains("matches more than one modeled member") ||
+                ex.Message.Contains("is read-only and is not supplied through the constructor"),
+                "Unexpected message: " + ex.Message);
+        }
+
+        #endregion
+
+        #region Server-managed members on value types
+
+        public record struct VersionedStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+        }
+
+        public struct CounterStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            [DynamoDBAtomicCounter]
+            public long? Hits { get; set; }
+        }
+
+        public record struct TimestampStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            [DynamoDBAutoGeneratedTimestamp]
+            public DateTime CreatedAt { get; set; }
+        }
+
+        public record struct IfNotExistsStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            [DynamoDbUpdateBehavior(UpdateBehavior.IfNotExists)]
+            public string Owner { get; set; }
+        }
+
+        public class StructFlattenChildWithVersion
+        {
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+            public string Note { get; set; }
+        }
+
+        public record struct FlattenedVersionStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            [DynamoDBFlatten]
+            public StructFlattenChildWithVersion Child { get; set; }
+        }
+
+        private void AssertValueTypeServerManagedRejection<T>(string expectedKindFragment)
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<T>(flatConfig));
+
+            StringAssert.Contains(ex.Message, expectedKindFragment);
+            StringAssert.Contains(ex.Message, "cannot be declared on a value type");
+        }
+
+        [TestMethod]
+        public void VersionMember_OnRecordStruct_Throws()
+        {
+            // The SDK writes the new version onto the instance after a save, but a value type is boxed before
+            // that assignment, so the caller's value would keep the stale version and break optimistic locking.
+            AssertValueTypeServerManagedRejection<VersionedStruct>("a version property");
+        }
+
+        [TestMethod]
+        public void AtomicCounterMember_OnStruct_Throws()
+        {
+            AssertValueTypeServerManagedRejection<CounterStruct>("an atomic counter property");
+        }
+
+        [TestMethod]
+        public void AutoGeneratedTimestampMember_OnRecordStruct_Throws()
+        {
+            AssertValueTypeServerManagedRejection<TimestampStruct>("an auto-generated timestamp property");
+        }
+
+        [TestMethod]
+        public void IfNotExistsMember_OnRecordStruct_Throws()
+        {
+            AssertValueTypeServerManagedRejection<IfNotExistsStruct>("UpdateBehavior.IfNotExists");
+        }
+
+        [TestMethod]
+        public void FlattenedServerManagedDescendant_OnRecordStruct_Throws()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<FlattenedVersionStruct>(flatConfig));
+
+            StringAssert.Contains(ex.Message, "a version property");
+            StringAssert.Contains(ex.Message, "flattened member of value type");
+        }
+
+        // The same members on a reference type are supported and must not be rejected.
+        public class VersionedClass
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+            [DynamoDBAtomicCounter]
+            public long? Hits { get; set; }
+        }
+
+        [TestMethod]
+        public void ServerManagedMembers_OnClass_AreStillAllowed()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var config = context.StorageConfigCache.GetConfig<VersionedClass>(flatConfig);
+
+            Assert.IsTrue(config.HasVersion);
+        }
+
+        // A struct with no server-managed members remains fully supported.
+        public record struct PlainValueType
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public int Count { get; set; }
+        }
+
+        [TestMethod]
+        public void ValueTypeWithoutServerManagedMembers_RoundTrips()
+        {
+            var context = CreateContext();
+            var document = context.ToDocument(new PlainValueType { Id = "id-vt", Count = 11 });
+
+            var result = context.FromDocument<PlainValueType>(document);
+
+            Assert.AreEqual("id-vt", result.Id);
+            Assert.AreEqual(11, result.Count);
+        }
+
+        #endregion
     }
 }
 #endif

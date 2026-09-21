@@ -472,11 +472,22 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <remarks>
         /// Selection rules:
         /// <list type="bullet">
-        /// <item>The compiler-generated record copy constructor (a single parameter of the declaring type) is ignored.</item>
         /// <item>If a constructor is marked with <see cref="DynamoDBConstructorAttribute"/>, it is used (and multiple such markers are an error).</item>
-        /// <item>Otherwise, for reference types only, if a public parameterless constructor (or one accepting a <see cref="DynamoDBContext"/>) exists, no binding constructor is used and the existing instantiation path is kept. Value types (e.g. record struct) cannot use that path (see <see cref="CanInstantiate"/>), so a parameterless constructor does not suppress binding for them.</item>
+        /// <item>Otherwise, for reference types only, if a public parameterless constructor (or one accepting a <see cref="DynamoDBContext"/>) exists, no binding constructor is used and the type keeps the existing instantiation path. Value types (e.g. record struct) cannot use that path (see <see cref="CanInstantiate"/>), so a parameterless constructor does not suppress binding for them.</item>
         /// <item>Otherwise, if exactly one parameterized constructor remains, it is used. If more than one remains, the caller must disambiguate with <see cref="DynamoDBConstructorAttribute"/>.</item>
         /// </list>
+        /// <para>
+        /// The second rule is what keeps stored data compatible across target frameworks. A reference type with a
+        /// public parameterless constructor is the only shape that older builds of the SDK can populate, and such a
+        /// type never selects a binding constructor here unless the application opts in with
+        /// <see cref="DynamoDBConstructorAttribute"/> (which does not exist below .NET 8). Every type that this
+        /// method newly makes usable is a type that older builds rejected outright, so no existing item can change
+        /// shape when an application is retargeted to .NET 8 or later.
+        /// </para>
+        /// <para>
+        /// The compiler-generated record copy constructor needs no special handling: it is non-public (protected on
+        /// a record class, private on a sealed record) and only public constructors are considered.
+        /// </para>
         /// </remarks>
         /// <returns><c>true</c> when a binding constructor was selected; otherwise <c>false</c>.</returns>
         internal static bool TryGetBindingConstructor(

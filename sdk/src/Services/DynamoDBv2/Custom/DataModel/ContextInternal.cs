@@ -477,45 +477,58 @@ namespace Amazon.DynamoDBv2.DataModel
             var values = new object[arguments.Length];
             var document = storage.Document;
 
-            for (int i = 0; i < arguments.Length; i++)
+            // Track the document for the same reason PopulateInstance does: FromDynamoDBEntry recurses into
+            // nested documents, so constructor arguments must participate in circular-reference detection too.
+            using (flatConfig.State.Track(document))
             {
-                var argument = arguments[i];
-                var propertyStorage = argument.Storage;
-
-                if (propertyStorage.ShouldFlattenChildProperties)
+                for (int i = 0; i < arguments.Length; i++)
                 {
-                    // A flattened member's children are stored under their own top-level attributes rather than
-                    // under this member's attribute name. Only materialize it when at least one child attribute is
-                    // present; otherwise (e.g. loading an older item saved before this flattened field existed)
-                    // honor the constructor parameter default so an optional flattened parameter stays null/default
-                    // instead of becoming a newly constructed child (which would also fail for an immutable child).
-                    if (AnyFlattenedChildPresent(document, propertyStorage))
+                    var argument = arguments[i];
+                    var propertyStorage = argument.Storage;
+
+                    if (propertyStorage.ShouldFlattenChildProperties)
                     {
-                        values[i] = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
+                        // A flattened member's children are stored under their own top-level attributes rather than
+                        // under this member's attribute name. Only materialize it when at least one child attribute is
+                        // present; otherwise (e.g. loading an older item saved before this flattened field existed)
+                        // honor the constructor parameter default so an optional flattened parameter stays null/default
+                        // instead of becoming a newly constructed child (which would also fail for an immutable child).
+                        if (AnyFlattenedChildPresent(document, propertyStorage))
+                        {
+                            values[i] = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
+                        }
+                        else
+                        {
+                            values[i] = GetConstructorArgumentDefault(argument);
+                        }
+                    }
+                    else if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
+                    {
+                        // Version, atomic counter, auto-generated timestamp and UpdateBehavior.IfNotExists members
+                        // are rejected as constructor arguments by StorageConfig.ResolveConstructorArguments, so no
+                        // server-managed state (such as storage.CurrentVersion) needs to be captured here.
+                        values[i] = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
                     }
                     else
                     {
-                        values[i] = argument.Parameter.HasDefaultValue
-                            ? argument.Parameter.DefaultValue
-                            : GetTypeDefaultValue(argument.Parameter.ParameterType);
+                        values[i] = GetConstructorArgumentDefault(argument);
                     }
-                }
-                else if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
-                {
-                    values[i] = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
-
-                    if (propertyStorage.IsVersion)
-                        storage.CurrentVersion = entry as Primitive;
-                }
-                else
-                {
-                    values[i] = argument.Parameter.HasDefaultValue
-                        ? argument.Parameter.DefaultValue
-                        : GetTypeDefaultValue(argument.Parameter.ParameterType);
                 }
             }
 
             return storageConfig.BindingConstructor.Invoke(values);
+        }
+
+        /// <summary>
+        /// Returns the value to bind when the stored item has no value for a constructor parameter: the
+        /// parameter's own default when it declares one, otherwise the default of its type. This is what makes
+        /// adding a member to an existing type safe, since items saved before the member existed still load.
+        /// </summary>
+        private static object GetConstructorArgumentDefault(StorageConfig.ConstructorArgument argument)
+        {
+            return argument.Parameter.HasDefaultValue
+                ? argument.Parameter.DefaultValue
+                : GetTypeDefaultValue(argument.Parameter.ParameterType);
         }
 
         /// <summary>
@@ -575,7 +588,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     object nestedInstance = CreateFlattenedMember(storage, flatConfig, document, flattenPropertyStorage);
                     if (!TrySetValue(flattenedPropertyInstance, flattenPropertyStorage.Member, nestedInstance))
                     {
-                        throw new InvalidOperationException("Unable to set flattened member " + flattenPropertyStorage.PropertyName);
+                        throw UnableToSetMemberException(flattenPropertyStorage.Member, flattenPropertyStorage.AttributeName);
                     }
                 }
                 else
@@ -632,7 +645,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         object flattenedPropertyInstance = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
                         if (!TrySetValue(instance, propertyStorage.Member, flattenedPropertyInstance))
                         {
-                            throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                            throw UnableToSetMemberException(propertyStorage.Member, attributeName);
                         }
                     }
                     else
@@ -655,7 +668,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (!TrySetValue(instance, propertyStorage.Member, value))
                 {
-                    throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                    throw UnableToSetMemberException(propertyStorage.Member, attributeName);
                 }
             }
 
@@ -1197,6 +1210,11 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else if (propertyInfo != null)
             {
+                // Report a read-only property as a failure rather than letting reflection throw a bare
+                // "Property set method not found" ArgumentException, so the caller can name the member.
+                if (!propertyInfo.CanWrite)
+                    return false;
+
                 propertyInfo.SetValue(instance, value, null);
                 return true;
             }
@@ -1204,6 +1222,16 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Builds the exception thrown when a loaded value cannot be assigned to the member it belongs to.
+        /// </summary>
+        private static InvalidOperationException UnableToSetMemberException(MemberInfo member, string attributeName)
+        {
+            return new InvalidOperationException(
+                $"Unable to set member {member.DeclaringType?.FullName}.{member.Name} from attribute '{attributeName}'. " +
+                "The member must be a settable property or a public field.");
         }
 
         private static bool TryGetValue(object instance, MemberInfo member, out object value)

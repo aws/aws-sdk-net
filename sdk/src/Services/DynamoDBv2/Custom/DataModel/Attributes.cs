@@ -219,6 +219,7 @@ namespace Amazon.DynamoDBv2.DataModel
     {
     }
 
+#if NET8_0_OR_GREATER
     /// <summary>
     /// DynamoDB attribute that marks which constructor to use when populating an object from a
     /// DynamoDB item by binding stored attribute values to constructor parameters. This enables
@@ -238,13 +239,21 @@ namespace Amazon.DynamoDBv2.DataModel
     /// (for example <c>[property: DynamoDBHashKey]</c>).
     /// </para>
     /// <para>
-    /// Constructor-based population is only available for the .NET 8 (and later) target of the SDK.
+    /// Constructor-based population is only available for the .NET 8 (and later) target of the SDK, so this
+    /// attribute only exists in that build. Code that must also compile against the .NET Standard 2.0 or
+    /// .NET Framework build of the SDK should guard its use with <c>#if NET8_0_OR_GREATER</c>.
+    /// </para>
+    /// <para>
+    /// The attribute does not change how items are stored. A type populated through a constructor reads and
+    /// writes exactly the same DynamoDB attributes as the equivalent type with settable members, so data
+    /// written by any build of the SDK remains readable by any other.
     /// </para>
     /// </summary>
     [AttributeUsage(AttributeTargets.Constructor, Inherited = false, AllowMultiple = false)]
     public sealed class DynamoDBConstructorAttribute : DynamoDBAttribute
     {
     }
+#endif
 
 
     /// <summary>
