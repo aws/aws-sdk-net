@@ -929,6 +929,226 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(11, result.Count);
         }
 
+        // An open generic value type has no binding constructor and cannot be boxed, so it must not take the
+        // zero-initialization path; the normal unsupported-type error stays authoritative.
+        public struct OpenGenericValueType<T>
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public T Value { get; set; }
+        }
+
+        [TestMethod]
+        public void OpenGenericValueType_ThrowsUnsupportedType()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig(typeof(OpenGenericValueType<>), flatConfig, false));
+
+            StringAssert.Contains(ex.Message, "cannot be instantiated");
+        }
+
+        [TestMethod]
+        public void ClosedGenericValueType_RoundTrips()
+        {
+            var context = CreateContext();
+
+            var result = context.FromDocument<OpenGenericValueType<string>>(
+                context.ToDocument(new OpenGenericValueType<string> { Id = "g", Value = "v" }));
+
+            Assert.AreEqual("g", result.Id);
+            Assert.AreEqual("v", result.Value);
+        }
+
+        #endregion
+
+        #region Constructor parameter and member type compatibility
+
+        // The parameter type is narrower than the member type. The stored attribute is deserialized as the
+        // member's type, so the constructor call could never succeed.
+        public class NarrowerParameterType
+        {
+            public NarrowerParameterType(int id) { Id = id; }
+
+            [DynamoDBHashKey]
+            public long Id { get; }
+        }
+
+        // Wholly unrelated parameter and member types.
+        public class UnrelatedParameterType
+        {
+            public UnrelatedParameterType(Guid id) { Id = id.ToString(); }
+
+            [DynamoDBHashKey]
+            public string Id { get; }
+        }
+
+        [TestMethod]
+        public void ConstructorParameterNarrowerThanMember_IsRejectedOnSaveAndOnLoad()
+        {
+            var context = CreateContext();
+
+            var onSave = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new NarrowerParameterType(7)));
+            var onLoad = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.FromDocument<NarrowerParameterType>(new Document { ["Id"] = new Primitive("7", true) }));
+
+            StringAssert.Contains(onSave.Message, "System.Int32");
+            StringAssert.Contains(onSave.Message, "System.Int64");
+            StringAssert.Contains(onSave.Message, "would save successfully but fail to load");
+            Assert.AreEqual(onSave.Message, onLoad.Message);
+        }
+
+        [TestMethod]
+        public void ConstructorParameterUnrelatedToMember_IsRejected()
+        {
+            var context = CreateContext();
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new UnrelatedParameterType(Guid.Empty)));
+
+            StringAssert.Contains(ex.Message, "System.Guid");
+            StringAssert.Contains(ex.Message, "System.String");
+        }
+
+        // The combinations below are accepted by the reflection binder and must not be rejected.
+        public class WiderParameterType
+        {
+            public WiderParameterType(long id) { Id = (int)id; }
+
+            [DynamoDBHashKey]
+            public int Id { get; }
+        }
+
+        public class NullableMemberNonNullableParameter
+        {
+            public NullableMemberNonNullableParameter(int count) { Count = count; }
+
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public int? Count { get; }
+        }
+
+        public class Pet { public string Name { get; set; } }
+        public class Puppy : Pet { }
+
+        public class UpcastParameterType
+        {
+            public UpcastParameterType(Pet pet) { Pet = (Puppy)pet; }
+
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public Puppy Pet { get; }
+        }
+
+        public enum Shade { Red = 0, Blue = 1 }
+
+        public class EnumMemberType
+        {
+            public EnumMemberType(Shade shade) { Shade = shade; }
+
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public Shade Shade { get; }
+        }
+
+        [TestMethod]
+        public void ConstructorParameterWiderThanMember_RoundTrips()
+        {
+            var context = CreateContext();
+
+            var result = context.FromDocument<WiderParameterType>(context.ToDocument(new WiderParameterType(7)));
+
+            Assert.AreEqual(7, result.Id);
+        }
+
+        [TestMethod]
+        public void NullableMemberWithNonNullableParameter_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new NullableMemberNonNullableParameter(3) { Id = "n1" };
+
+            var result = context.FromDocument<NullableMemberNonNullableParameter>(context.ToDocument(original));
+
+            Assert.AreEqual(3, result.Count);
+        }
+
+        [TestMethod]
+        public void BaseTypeParameterWithDerivedMember_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new UpcastParameterType(new Puppy { Name = "Rex" }) { Id = "u1" };
+
+            var result = context.FromDocument<UpcastParameterType>(context.ToDocument(original));
+
+            Assert.AreEqual("Rex", result.Pet.Name);
+        }
+
+        [TestMethod]
+        public void EnumConstructorParameter_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new EnumMemberType(Shade.Blue) { Id = "e1" };
+
+            var result = context.FromDocument<EnumMemberType>(context.ToDocument(original));
+
+            Assert.AreEqual(Shade.Blue, result.Shade);
+        }
+
+        [TestMethod]
+        public void IsAssignableToConstructorParameter_MatchesTheReflectionBinder()
+        {
+            // Accepted: identity, nullable on either side, widening, reference upcast, enum/underlying.
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(int), typeof(int)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(int?), typeof(int)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(int), typeof(int?)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(int), typeof(long)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(float), typeof(double)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(char), typeof(int)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Puppy), typeof(Pet)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(string), typeof(object)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Shade), typeof(int)));
+            // Permissive on purpose: the run-time value may be of the narrower parameter type.
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Pet), typeof(Puppy)));
+
+            // Rejected: narrowing and unrelated types. Note the binder does not widen to decimal, unlike C#.
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(long), typeof(int)));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(double), typeof(float)));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(int), typeof(decimal)));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(string), typeof(Guid)));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(bool), typeof(int)));
+        }
+
+        // A custom converter decides the run-time type of the deserialized value, so the member's declared type
+        // says nothing useful and the check is skipped rather than rejecting a working model.
+        public class LongToIntConverter : IPropertyConverter
+        {
+            public DynamoDBEntry ToEntry(object value) => new Primitive(value.ToString(), true);
+            public object FromEntry(DynamoDBEntry entry) => entry.AsInt();
+        }
+
+        public class ConverterWithMismatchedTypes
+        {
+            public ConverterWithMismatchedTypes(int id) { Id = id; }
+
+            [DynamoDBHashKey]
+            [DynamoDBProperty(typeof(LongToIntConverter))]
+            public long Id { get; }
+        }
+
+        [TestMethod]
+        public void ConverterOnConstructorBoundMember_SkipsTypeValidation()
+        {
+            var context = CreateContext();
+
+            var result = context.FromDocument<ConverterWithMismatchedTypes>(
+                new Document { ["Id"] = new Primitive("7", true) });
+
+            Assert.AreEqual(7L, result.Id);
+        }
+
         #endregion
     }
 }

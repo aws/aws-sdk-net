@@ -526,11 +526,14 @@ namespace Amazon.DynamoDBv2.DataModel
                 constructorParameterNames = ConstructorParameterNames;
                 requiresParameterlessConstructor = false;
             }
-            else if (targetType.IsValueType)
+            else if (targetType.IsValueType && !targetType.ContainsGenericParameters && !targetType.IsByRefLike)
             {
                 // Value types (e.g. a non-positional record struct) that have no binding constructor are
                 // populated via zero-initialization (default(T)) followed by member assignment, so they do
                 // not require a parameterless constructor (CanInstantiate only accepts reference types).
+                // Open generic and byref-like value types cannot be boxed, so they must not take this path;
+                // leaving them to CanInstantiate keeps the normal unsupported-type error authoritative
+                // instead of failing later inside Array.CreateInstance.
                 requiresParameterlessConstructor = false;
             }
 #endif
@@ -596,6 +599,8 @@ namespace Amazon.DynamoDBv2.DataModel
                     // be silently left stale (the flattened parent is skipped by PopulateInstance).
                     ValidateConstructorBindableMember(match, viaFlatten: false);
 
+                    ValidateConstructorArgumentType(parameter, match);
+
                     match.IsConstructorArgument = true;
                     arguments[i] = new ConstructorArgument(parameter, match);
                 }
@@ -660,8 +665,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// through the binding constructor nor writable. Such a member is still written when the item is saved, so
         /// allowing it would produce stored items that fail to load.
         /// </summary>
-        private void ValidateAllMembersAreLoadable()
-        {
+        private void ValidateAllMembersAreLoadable()        {
             foreach (var property in Properties)
             {
                 if (property.IsIgnored || property.IsConstructorArgument) continue;
@@ -672,6 +676,30 @@ namespace Amazon.DynamoDBv2.DataModel
                     "used for DynamoDB deserialization, so it would be written when the item is saved but could never be populated when it is loaded. " +
                     "Mark it with [DynamoDBIgnore], make it settable, or select a constructor that includes it with [DynamoDBConstructor].");
             }
+        }
+
+        /// <summary>
+        /// Throws when a constructor parameter's type cannot accept the value produced for the member that supplies
+        /// it. A stored attribute is deserialized as its member's type and then handed to
+        /// <see cref="ConstructorInfo.Invoke(object[])"/>, so an incompatible pair (for example an <c>int</c>
+        /// parameter fed by a <c>long</c> member) saves successfully and then fails on every load.
+        /// </summary>
+        private void ValidateConstructorArgumentType(ParameterInfo parameter, PropertyStorage member)
+        {
+            // A custom converter decides the run-time type of the deserialized value, so the member's declared
+            // type says nothing useful about what the constructor will receive.
+            if (member.ConverterType != null)
+                return;
+
+            if (Utils.IsAssignableToConstructorParameter(member.MemberType, parameter.ParameterType))
+                return;
+
+            throw new InvalidOperationException(
+                $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} is declared as " +
+                $"{parameter.ParameterType.FullName}, but the member '{member.PropertyName}' that supplies it is " +
+                $"{member.MemberType.FullName}. A stored attribute is deserialized as its member's type and then passed to the " +
+                "constructor, so this combination would save successfully but fail to load with an argument-type error. " +
+                "Declare the parameter and the member with the same type, or use a type the member's type converts to implicitly.");
         }
 
         /// <summary>

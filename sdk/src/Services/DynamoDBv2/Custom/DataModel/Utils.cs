@@ -572,6 +572,74 @@ namespace Amazon.DynamoDBv2.DataModel
                 $"Type {type.FullName} has multiple bindable parameterized constructors. " +
                 "Mark the constructor to use for DynamoDB deserialization with [DynamoDBConstructor].");
         }
+
+        /// <summary>
+        /// The widening conversions the reflection binder performs when a value is passed to a constructor
+        /// parameter, keyed by the type of the value. This is the CLR's primitive widening table, which is
+        /// narrower than C#'s implicit numeric conversions: notably nothing widens to <see cref="decimal"/>.
+        /// </summary>
+        private static readonly Dictionary<Type, Type[]> PrimitiveWideningConversions = new Dictionary<Type, Type[]>
+        {
+            [typeof(sbyte)]  = new[] { typeof(short), typeof(int), typeof(long), typeof(float), typeof(double) },
+            [typeof(byte)]   = new[] { typeof(short), typeof(ushort), typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(char) },
+            [typeof(short)]  = new[] { typeof(int), typeof(long), typeof(float), typeof(double) },
+            [typeof(ushort)] = new[] { typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(char) },
+            [typeof(int)]    = new[] { typeof(long), typeof(float), typeof(double) },
+            [typeof(uint)]   = new[] { typeof(long), typeof(ulong), typeof(float), typeof(double) },
+            [typeof(long)]   = new[] { typeof(float), typeof(double) },
+            [typeof(ulong)]  = new[] { typeof(float), typeof(double) },
+            [typeof(char)]   = new[] { typeof(ushort), typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double) },
+            [typeof(float)]  = new[] { typeof(double) },
+        };
+
+        /// <summary>
+        /// Determines whether a value of <paramref name="memberType"/> can be passed to a constructor parameter
+        /// of <paramref name="parameterType"/>. A stored attribute is deserialized as its member's type and then
+        /// handed to <see cref="ConstructorInfo.Invoke(object[])"/>, so a combination that the reflection binder
+        /// rejects produces a model that saves successfully but fails on every load.
+        /// </summary>
+        /// <remarks>
+        /// Deliberately permissive: it returns <c>true</c> whenever the call could succeed at run time, so that
+        /// only combinations that can never work are reported. In particular it accepts a parameter type that is
+        /// narrower than the member type (for example a <c>List&lt;T&gt;</c> parameter for an
+        /// <c>IList&lt;T&gt;</c> member), because the deserialized value may well be of that narrower type.
+        /// </remarks>
+        internal static bool IsAssignableToConstructorParameter(Type memberType, Type parameterType)
+        {
+            if (memberType == null || parameterType == null)
+                return true;
+
+            if (memberType == parameterType)
+                return true;
+
+            // A non-null Nullable<T> boxes as T, and the binder accepts a boxed T for a T? parameter, so the
+            // nullability of either side does not affect whether the call succeeds.
+            var member = Nullable.GetUnderlyingType(memberType) ?? memberType;
+            var parameter = Nullable.GetUnderlyingType(parameterType) ?? parameterType;
+
+            if (member == parameter)
+                return true;
+
+            // Reference conversions and boxing to object or an interface.
+            if (parameter.IsAssignableFrom(member))
+                return true;
+
+            // The parameter is narrower than the member: the run-time value may still be of that type.
+            if (member.IsAssignableFrom(parameter))
+                return true;
+
+            // An enum is passed as, and accepted for, its underlying primitive type.
+            if (member.IsEnum)
+                member = Enum.GetUnderlyingType(member);
+            if (parameter.IsEnum)
+                parameter = Enum.GetUnderlyingType(parameter);
+
+            if (member == parameter)
+                return true;
+
+            return PrimitiveWideningConversions.TryGetValue(member, out var widensTo) &&
+                Array.IndexOf(widensTo, parameter) >= 0;
+        }
 #endif
 
         internal static Type GetType(MemberInfo member)
