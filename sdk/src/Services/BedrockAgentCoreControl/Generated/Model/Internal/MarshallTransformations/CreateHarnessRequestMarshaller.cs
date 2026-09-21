@@ -154,6 +154,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.HarnessName);
             }
 
+            if(publicRequest.IsSetHooks())
+            {
+                context.Writer.WritePropertyName("hooks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestHooksListValue in publicRequest.Hooks)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = HarnessHookMarshaller.Instance;
+                    marshaller.Marshall(publicRequestHooksListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetMaxIterations())
             {
                 context.Writer.WritePropertyName("maxIterations");

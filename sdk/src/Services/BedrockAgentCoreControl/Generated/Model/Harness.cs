@@ -46,6 +46,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _harnessId;
         private string _harnessName;
         private string _harnessVersion;
+        private List<HarnessHook> _hooks = AWSConfigs.InitializeCollections ? new List<HarnessHook>() : null;
         private int? _maxIterations;
         private int? _maxTokens;
         private HarnessMemoryConfiguration _memory;
@@ -288,6 +289,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetHarnessVersion()
         {
             return this._harnessVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hooks. 
+        /// <para>
+        /// The lifecycle hooks configured for the harness.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<HarnessHook> Hooks
+        {
+            get { return this._hooks; }
+            set { this._hooks = value; }
+        }
+
+        // Check to see if Hooks property is set
+        internal bool IsSetHooks()
+        {
+            return this._hooks != null && (this._hooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

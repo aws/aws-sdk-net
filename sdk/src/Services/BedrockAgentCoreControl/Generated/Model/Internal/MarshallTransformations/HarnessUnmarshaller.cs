@@ -128,6 +128,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.HarnessVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("hooks", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<HarnessHook, HarnessHookUnmarshaller>(HarnessHookUnmarshaller.Instance);
+                    unmarshalledObject.Hooks = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("maxIterations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

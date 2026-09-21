@@ -4959,6 +4959,18 @@
     <pattern>([1-9][0-9]{0,4})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessAfterInvocationHook.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessAfterToolCallHook.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.HarnessAgentCoreBrowserConfig.BrowserArn</property>
     <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):browser(-custom)?/(aws\.browser\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
@@ -4992,6 +5004,18 @@
     <property>Amazon.BedrockAgentCoreControl.Model.HarnessBedrockModelConfig.TopP</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessBeforeInvocationHook.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessBeforeToolCallHook.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.HarnessEndpoint.Arn</property>
@@ -5050,6 +5074,29 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessHookEventBridgeTarget.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:events:[a-z0-9-]+:[0-9]{12}:event-bus/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessHookLambdaTarget.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:lambda:[a-z0-9-]+:[0-9]{12}:function:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessHookLambdaTarget.TimeoutSeconds</property>
+    <min>1</min>
+    <max>900</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessHookSnsTarget.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:sns:[a-z0-9-]+:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.HarnessInlineFunctionConfig.Description</property>
     <min>1</min>
     <max>4096</max>
@@ -5091,6 +5138,11 @@
     <property>Amazon.BedrockAgentCoreControl.Model.HarnessManagedMemoryConfiguration.EventExpiryDuration</property>
     <min>3</min>
     <max>365</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.HarnessOpenAiModelConfig.ApiBase</property>
+    <min>1</min>
+    <max>16383</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.HarnessOpenAiModelConfig.ApiKeyArn</property>
