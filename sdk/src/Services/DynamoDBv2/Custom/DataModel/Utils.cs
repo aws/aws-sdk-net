@@ -498,9 +498,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // Types that cannot be instantiated by reflection (abstract, interface, or open generic) must not
             // select a binding constructor; otherwise they would bypass the existing CanInstantiate validation
-            // and fail later with a raw reflection exception from ConstructorInfo.Invoke. Returning false here
-            // lets the normal unsupported-type error path remain authoritative.
-            if (type.IsAbstract || type.IsInterface || type.IsGenericTypeDefinition || type.ContainsGenericParameters)
+            // and fail later with a raw reflection exception from ConstructorInfo.Invoke. A byref-like type
+            // (ref struct) is excluded for the same reason: it cannot be boxed into the object that Invoke
+            // returns. Returning false here lets the normal unsupported-type error path remain authoritative.
+            if (type.IsAbstract || type.IsInterface || type.IsGenericTypeDefinition || type.ContainsGenericParameters || type.IsByRefLike)
                 return false;
 
             // Only public instance constructors are considered. The compiler-generated record copy constructor is
@@ -598,13 +599,22 @@ namespace Amazon.DynamoDBv2.DataModel
         /// handed to <see cref="ConstructorInfo.Invoke(object[])"/>, so a combination that the reflection binder
         /// rejects produces a model that saves successfully but fails on every load.
         /// </summary>
+        /// <param name="memberType">The declared type of the member that supplies the parameter.</param>
+        /// <param name="parameterType">The declared type of the constructor parameter.</param>
+        /// <param name="polymorphicDerivedTypes">
+        /// Types the deserializer can produce for the member besides <paramref name="memberType"/>, that is the
+        /// derived types registered for polymorphic deserialization. A parameter type narrower than the member
+        /// type is only reachable through one of these.
+        /// </param>
         /// <remarks>
-        /// Deliberately permissive: it returns <c>true</c> whenever the call could succeed at run time, so that
-        /// only combinations that can never work are reported. In particular it accepts a parameter type that is
-        /// narrower than the member type (for example a <c>List&lt;T&gt;</c> parameter for an
-        /// <c>IList&lt;T&gt;</c> member), because the deserialized value may well be of that narrower type.
+        /// Only combinations that can never succeed are reported, so the check accepts identity, nullability on
+        /// either side, reference upcasts, boxing to object or an interface, enum and underlying-type pairs, and
+        /// primitive widening as the reflection binder performs it.
         /// </remarks>
-        internal static bool IsAssignableToConstructorParameter(Type memberType, Type parameterType)
+        internal static bool IsAssignableToConstructorParameter(
+            Type memberType,
+            Type parameterType,
+            IEnumerable<Type> polymorphicDerivedTypes = null)
         {
             if (memberType == null || parameterType == null)
                 return true;
@@ -624,9 +634,16 @@ namespace Amazon.DynamoDBv2.DataModel
             if (parameter.IsAssignableFrom(member))
                 return true;
 
-            // The parameter is narrower than the member: the run-time value may still be of that type.
-            if (member.IsAssignableFrom(parameter))
-                return true;
+            // The parameter is narrower than the member. The deserializer reconstructs the member's declared type,
+            // so the only way the call can succeed is a polymorphic mapping that produces a compatible type.
+            if (polymorphicDerivedTypes != null)
+            {
+                foreach (var derivedType in polymorphicDerivedTypes)
+                {
+                    if (parameter.IsAssignableFrom(derivedType))
+                        return true;
+                }
+            }
 
             // An enum is passed as, and accepted for, its underlying primitive type.
             if (member.IsEnum)
@@ -639,6 +656,23 @@ namespace Amazon.DynamoDBv2.DataModel
 
             return PrimitiveWideningConversions.TryGetValue(member, out var widensTo) &&
                 Array.IndexOf(widensTo, parameter) >= 0;
+        }
+
+        /// <summary>
+        /// The derived types declared with <see cref="DynamoDBPolymorphicTypeAttribute"/> on <paramref name="type"/>
+        /// itself. The loader can produce any of these for a member declared as that type, in addition to any
+        /// derived types declared on the member.
+        /// </summary>
+        internal static IEnumerable<Type> GetPolymorphicDerivedTypes(Type type)
+        {
+            if (type == null)
+                yield break;
+
+            foreach (var attribute in type.GetCustomAttributes<DynamoDBPolymorphicTypeAttribute>(inherit: false))
+            {
+                if (attribute.DerivedType != null)
+                    yield return attribute.DerivedType;
+            }
         }
 #endif
 

@@ -79,6 +79,17 @@ namespace Amazon.DynamoDBv2.DataModel
             return false;
         }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// The types the deserializer can produce for this member in addition to <c>MemberType</c>, that is the
+        /// derived types registered for polymorphic deserialization.
+        /// </summary>
+        internal IEnumerable<Type> PolymorphicDerivedTypes
+        {
+            get { return _derivedTypeKeysDictionary.Values; }
+        }
+#endif
+
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
         public bool TryGetDerivedType(string typeDiscriminator, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] out Type deriviedType)
@@ -691,7 +702,12 @@ namespace Amazon.DynamoDBv2.DataModel
             if (member.ConverterType != null)
                 return;
 
-            if (Utils.IsAssignableToConstructorParameter(member.MemberType, parameter.ParameterType))
+            // The loader can produce the member's declared type, any derived type declared on the member itself,
+            // and any declared on the member's type with [DynamoDBPolymorphicType].
+            var runtimeTypes = member.PolymorphicDerivedTypes
+                .Concat(Utils.GetPolymorphicDerivedTypes(member.MemberType));
+
+            if (Utils.IsAssignableToConstructorParameter(member.MemberType, parameter.ParameterType, runtimeTypes))
                 return;
 
             throw new InvalidOperationException(
@@ -699,7 +715,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 $"{parameter.ParameterType.FullName}, but the member '{member.PropertyName}' that supplies it is " +
                 $"{member.MemberType.FullName}. A stored attribute is deserialized as its member's type and then passed to the " +
                 "constructor, so this combination would save successfully but fail to load with an argument-type error. " +
-                "Declare the parameter and the member with the same type, or use a type the member's type converts to implicitly.");
+                "Declare the parameter and the member with the same type, or use a type the member's type converts to implicitly. " +
+                "A parameter type derived from the member's type is only supported when a [DynamoDBPolymorphicType] mapping " +
+                "lets the loader create that derived type.");
         }
 
         /// <summary>

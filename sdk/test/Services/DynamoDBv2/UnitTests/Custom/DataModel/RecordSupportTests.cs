@@ -1110,8 +1110,6 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Puppy), typeof(Pet)));
             Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(string), typeof(object)));
             Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Shade), typeof(int)));
-            // Permissive on purpose: the run-time value may be of the narrower parameter type.
-            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Pet), typeof(Puppy)));
 
             // Rejected: narrowing and unrelated types. Note the binder does not widen to decimal, unlike C#.
             Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(long), typeof(int)));
@@ -1119,6 +1117,14 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(int), typeof(decimal)));
             Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(string), typeof(Guid)));
             Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(bool), typeof(int)));
+
+            // A parameter type derived from the member type is rejected, because the loader reconstructs the
+            // member's declared type, unless a polymorphic mapping can produce a compatible type.
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(typeof(Pet), typeof(Puppy)));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(
+                typeof(Pet), typeof(Puppy), new[] { typeof(Puppy) }));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.IsAssignableToConstructorParameter(
+                typeof(Pet), typeof(Puppy), new[] { typeof(Pet) }));
         }
 
         // A custom converter decides the run-time type of the deserialized value, so the member's declared type
@@ -1147,6 +1153,93 @@ namespace AWSSDK_DotNet.UnitTests
                 new Document { ["Id"] = new Primitive("7", true) });
 
             Assert.AreEqual(7L, result.Id);
+        }
+
+        // A constructor parameter derived from the member's declared type. The loader reconstructs the declared
+        // type, so without a polymorphic mapping the value can never satisfy the parameter.
+        public class DerivedParameterNoMapping
+        {
+            public DerivedParameterNoMapping(Puppy pet) { Pet = pet; }
+
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public Pet Pet { get; }
+        }
+
+        [TestMethod]
+        public void DerivedConstructorParameterWithoutPolymorphicMapping_IsRejectedOnSaveAndOnLoad()
+        {
+            var context = CreateContext();
+
+            var onSave = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new DerivedParameterNoMapping(new Puppy { Name = "Rex" }) { Id = "d1" }));
+            var onLoad = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.FromDocument<DerivedParameterNoMapping>(new Document
+                {
+                    ["Id"] = new Primitive("d1"),
+                    ["Pet"] = new Document { ["Name"] = new Primitive("Rex") }
+                }));
+
+            StringAssert.Contains(onSave.Message, "[DynamoDBPolymorphicType]");
+            Assert.AreEqual(onSave.Message, onLoad.Message);
+        }
+
+        // The same shape is supported when a polymorphic mapping lets the loader create the derived type.
+        [DynamoDBPolymorphicType("mappedPuppy", typeof(MappedPuppy))]
+        public class MappedPet { public string Name { get; set; } }
+        public class MappedPuppy : MappedPet { public bool Small { get; set; } }
+
+        public class DerivedParameterWithMapping
+        {
+            public DerivedParameterWithMapping(MappedPuppy pet) { Pet = pet; }
+
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public MappedPet Pet { get; }
+        }
+
+        [TestMethod]
+        public void DerivedConstructorParameterWithPolymorphicMapping_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new DerivedParameterWithMapping(new MappedPuppy { Name = "Rex", Small = true }) { Id = "d2" };
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<DerivedParameterWithMapping>(document);
+
+            Assert.IsInstanceOfType(result.Pet, typeof(MappedPuppy));
+            Assert.AreEqual("Rex", result.Pet.Name);
+            Assert.IsTrue(((MappedPuppy)result.Pet).Small);
+        }
+
+        // A byref-like type cannot be boxed into the object that ConstructorInfo.Invoke returns, so it must not
+        // select a binding constructor and must keep taking the unsupported-type path.
+        public ref struct RefStructModel
+        {
+            public RefStructModel(string id) { Id = id; }
+            public string Id { get; set; }
+        }
+
+        [TestMethod]
+        public void RefStructType_DoesNotSelectBindingConstructor()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(RefStructModel), out var constructor);
+
+            Assert.IsFalse(selected);
+            Assert.IsNull(constructor);
+        }
+
+        [TestMethod]
+        public void RefStructType_ThrowsUnsupportedType()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig(typeof(RefStructModel), flatConfig, false));
+
+            StringAssert.Contains(ex.Message, "cannot be instantiated");
         }
 
         #endregion
