@@ -170,6 +170,23 @@ namespace AWSSDK_DotNet.UnitTests
             [property: DynamoDBHashKey] string Id,
             [property: DynamoDBFlatten] FlattenedChild Child = null);
 
+        // Mutable value-type (record struct) flattened child: has no binding constructor, so it is populated via
+        // zero-initialization + member assignment (must not go through the reference-type-only instantiation path).
+        public record struct FlattenValueChild
+        {
+            public string ChildName { get; set; }
+            public int ChildValue { get; set; }
+        }
+
+        public class FlattenValueChildEntity
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public FlattenValueChild Child { get; set; }
+        }
+
         // Flattening an immutable (constructor-populated) child type is not supported: it would serialize but
         // fail to load, since flattened values are reconstructed with a parameterless constructor.
         public record ImmutableFlattenChild(string ChildName, int ChildValue);
@@ -507,6 +524,29 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result.Child);
             Assert.AreEqual("Ivy", result.Child.ChildName);
             Assert.AreEqual(9, result.Child.ChildValue);
+        }
+
+        [TestMethod]
+        public void FlattenedValueTypeChild_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new FlattenValueChildEntity
+            {
+                Id = "id-fv",
+                Child = new FlattenValueChild { ChildName = "Kim", ChildValue = 5 }
+            };
+
+            var document = context.ToDocument(original);
+
+            // Flattened children are stored as top-level attributes.
+            Assert.IsTrue(document.ContainsKey("ChildName"));
+            Assert.IsFalse(document.ContainsKey("Child"));
+
+            var result = context.FromDocument<FlattenValueChildEntity>(document);
+
+            Assert.AreEqual("id-fv", result.Id);
+            Assert.AreEqual("Kim", result.Child.ChildName);
+            Assert.AreEqual(5, result.Child.ChildValue);
         }
 
         [TestMethod]

@@ -550,7 +550,21 @@ namespace Amazon.DynamoDBv2.DataModel
         private object CreateFlattenedMember(ItemStorage storage, DynamoDBFlatConfig flatConfig, Document document, PropertyStorage propertyStorage)
         {
             var targetType = propertyStorage.MemberType;
-            object flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
+            object flattenedPropertyInstance;
+#if NET8_0_OR_GREATER
+            if (targetType.IsValueType)
+            {
+                // Value types (e.g. a mutable/non-positional record struct) cannot use the reference-type-only
+                // InstantiateConverter path, so start from a zero-initialized value; the members below are then
+                // assigned via reflection SetValue, which mutates the boxed value. (Immutable value types that
+                // require a binding constructor are rejected during configuration in MemberInfoToPropertyStorage.)
+                flattenedPropertyInstance = GetTypeDefaultValue(targetType);
+            }
+            else
+#endif
+            {
+                flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
+            }
 
             foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
             {
