@@ -204,6 +204,14 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.GetBillingTransferPreferenceRequest.ResponsibilityTransferArn</property>
+    <pattern>arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:transfer/o-[a-z0-9]{10,32}/(billing)/(inbound|outbound)/rt-[0-9a-z]{8,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.GetBillingTransferPreferenceResponse.ResponsibilityTransferArn</property>
+    <pattern>arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:transfer/o-[a-z0-9]{10,32}/(billing)/(inbound|outbound)/rt-[0-9a-z]{8,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.ListAccountAssociationsRequest.BillingPeriod</property>
     <pattern>\d{4}-(0?[1-9]|1[012])</pattern>
   </property-value-rule>
@@ -389,6 +397,20 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.UpdateBillingTransferPreferenceRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.UpdateBillingTransferPreferenceRequest.ResponsibilityTransferArn</property>
+    <pattern>arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:transfer/o-[a-z0-9]{10,32}/(billing)/(inbound|outbound)/rt-[0-9a-z]{8,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.UpdateBillingTransferPreferenceResponse.ResponsibilityTransferArn</property>
+    <pattern>arn:[a-z0-9][a-z0-9-.]{0,62}:organizations::\d{12}:transfer/o-[a-z0-9]{10,32}/(billing)/(inbound|outbound)/rt-[0-9a-z]{8,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdateCustomLineItemRequest.Arn</property>
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:customlineitem/)?[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
@@ -539,6 +561,10 @@
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.AssociateResourceResponseElement.Arn</property>
     <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:(customlineitem|billinggroup)/)?[a-zA-Z0-9]{10,12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.AutoTransferBillingGroupCreationPreference.PricingPlanArn</property>
+    <pattern>(arn:aws(-cn)?:billingconductor::(aws|[0-9]{12}):pricingplan/)?(BasicPricingPlan|Passthrough|[a-zA-Z0-9]{10})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.BillingGroupCostReportElement.Arn</property>

@@ -1448,6 +1448,77 @@ namespace Amazon.BillingConductor
 
         #endregion
         
+        #region  GetBillingTransferPreference
+
+
+        /// <summary>
+        /// Retrieves the auto billing group creation preference for a billing transfer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingTransferPreference service method.</param>
+        /// 
+        /// <returns>The response from the GetBillingTransferPreference service method, as returned by BillingConductor.</returns>
+        /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ResourceNotFoundException">
+        /// The request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingTransferPreference">REST API Reference for GetBillingTransferPreference Operation</seealso>
+        public virtual GetBillingTransferPreferenceResponse GetBillingTransferPreference(GetBillingTransferPreferenceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBillingTransferPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingTransferPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<GetBillingTransferPreferenceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the auto billing group creation preference for a billing transfer.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBillingTransferPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBillingTransferPreference service method, as returned by BillingConductor.</returns>
+        /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ResourceNotFoundException">
+        /// The request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingTransferPreference">REST API Reference for GetBillingTransferPreference Operation</seealso>
+        public virtual Task<GetBillingTransferPreferenceResponse> GetBillingTransferPreferenceAsync(GetBillingTransferPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBillingTransferPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBillingTransferPreferenceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetBillingTransferPreferenceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAccountAssociations
 
 
@@ -2448,6 +2519,105 @@ namespace Amazon.BillingConductor
             options.ResponseUnmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateBillingGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBillingTransferPreference
+
+
+        /// <summary>
+        /// Sets the auto billing group creation preference for a billing transfer. When the preference
+        /// is enabled, Billing Conductor automatically creates an indirect billing transfer billing
+        /// group in your account, with the pricing plan that you specify, for each account that
+        /// transfers its bill to the bill source account of this billing transfer. The preference
+        /// applies only to billing groups that are created after you enable it.
+        /// 
+        ///  
+        /// <para>
+        /// Enabling the preference requires the <c>iam:CreateServiceLinkedRole</c> permission.
+        /// While a pricing plan is specified in an enabled preference, you can't delete that
+        /// pricing plan.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBillingTransferPreference service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBillingTransferPreference service method, as returned by BillingConductor.</returns>
+        /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ConflictException">
+        /// You can cause an inconsistent state by updating or deleting a resource.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ResourceNotFoundException">
+        /// The request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingTransferPreference">REST API Reference for UpdateBillingTransferPreference Operation</seealso>
+        public virtual UpdateBillingTransferPreferenceResponse UpdateBillingTransferPreference(UpdateBillingTransferPreferenceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBillingTransferPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingTransferPreferenceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBillingTransferPreferenceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets the auto billing group creation preference for a billing transfer. When the preference
+        /// is enabled, Billing Conductor automatically creates an indirect billing transfer billing
+        /// group in your account, with the pricing plan that you specify, for each account that
+        /// transfers its bill to the bill source account of this billing transfer. The preference
+        /// applies only to billing groups that are created after you enable it.
+        /// 
+        ///  
+        /// <para>
+        /// Enabling the preference requires the <c>iam:CreateServiceLinkedRole</c> permission.
+        /// While a pricing plan is specified in an enabled preference, you can't delete that
+        /// pricing plan.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBillingTransferPreference service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateBillingTransferPreference service method, as returned by BillingConductor.</returns>
+        /// <exception cref="Amazon.BillingConductor.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ConflictException">
+        /// You can cause an inconsistent state by updating or deleting a resource.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ResourceNotFoundException">
+        /// The request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.BillingConductor.Model.ValidationException">
+        /// The input doesn't match with the constraints specified by Amazon Web Services services.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/UpdateBillingTransferPreference">REST API Reference for UpdateBillingTransferPreference Operation</seealso>
+        public virtual Task<UpdateBillingTransferPreferenceResponse> UpdateBillingTransferPreferenceAsync(UpdateBillingTransferPreferenceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateBillingTransferPreferenceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateBillingTransferPreferenceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateBillingTransferPreferenceResponse>(request, options, cancellationToken);
         }
 
         #endregion

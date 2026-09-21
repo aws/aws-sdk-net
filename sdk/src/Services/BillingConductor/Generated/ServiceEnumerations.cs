@@ -251,6 +251,10 @@ namespace Amazon.BillingConductor
         /// </summary>
         public static readonly ConflictExceptionReason PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT = new ConflictExceptionReason("PRICING_PLAN_ATTACHED_TO_BILLING_GROUP_DELETE_CONFLICT");
         /// <summary>
+        /// Constant PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT = new ConflictExceptionReason("PRICING_PLAN_REFERENCED_BY_PREFERENCE_DELETE_CONFLICT");
+        /// <summary>
         /// Constant PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT = new ConflictExceptionReason("PRICING_RULE_ATTACHED_TO_PRICING_PLAN_DELETE_CONFLICT");
