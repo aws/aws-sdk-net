@@ -147,6 +147,11 @@ namespace AWSSDK_DotNet.UnitTests
             public int ChildValue { get; set; }
         }
 
+        // Optional flattened constructor parameter defaulting to null (schema-evolution scenario).
+        public record OptionalFlattenedRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] FlattenedChild Child = null);
+
         // record struct that also declares an explicit public parameterless constructor. The primary
         // constructor must still be selected for binding because value types cannot use the
         // parameterless instantiation path.
@@ -438,6 +443,39 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsNotNull(result.Child, "Flattened member bound through the constructor must be materialized.");
             Assert.AreEqual("Frank", result.Child.ChildName);
             Assert.AreEqual(11, result.Child.ChildValue);
+        }
+
+        [TestMethod]
+        public void FlattenedMember_AllChildAttributesAbsent_UsesConstructorDefault()
+        {
+            var context = CreateContext();
+
+            // Serialize a full record, then drop the flattened child's attributes to simulate an older item
+            // saved before the flattened field existed.
+            var document = context.ToDocument(
+                new OptionalFlattenedRecord("id-flat", new FlattenedChild { ChildName = "Hank", ChildValue = 3 }));
+            document.Remove("ChildName");
+            document.Remove("ChildValue");
+
+            var result = context.FromDocument<OptionalFlattenedRecord>(document);
+
+            Assert.AreEqual("id-flat", result.Id);
+            Assert.IsNull(result.Child,
+                "When all flattened child attributes are absent, the constructor default (null) must be used rather than a newly constructed child.");
+        }
+
+        [TestMethod]
+        public void FlattenedMember_WithChildAttributesPresent_IsMaterialized()
+        {
+            var context = CreateContext();
+            var original = new OptionalFlattenedRecord("id-flat2", new FlattenedChild { ChildName = "Ivy", ChildValue = 9 });
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<OptionalFlattenedRecord>(document);
+
+            Assert.IsNotNull(result.Child);
+            Assert.AreEqual("Ivy", result.Child.ChildName);
+            Assert.AreEqual(9, result.Child.ChildValue);
         }
 
         [TestMethod]

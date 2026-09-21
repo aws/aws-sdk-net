@@ -477,9 +477,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (propertyStorage.ShouldFlattenChildProperties)
                 {
-                    // A flattened member's children are stored under their own top-level attributes rather
-                    // than under this member's attribute name, so materialize it from those child storages.
-                    values[i] = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
+                    // A flattened member's children are stored under their own top-level attributes rather than
+                    // under this member's attribute name. Only materialize it when at least one child attribute is
+                    // present; otherwise (e.g. loading an older item saved before this flattened field existed)
+                    // honor the constructor parameter default so an optional flattened parameter stays null/default
+                    // instead of becoming a newly constructed child (which would also fail for an immutable child).
+                    if (AnyFlattenedChildPresent(document, propertyStorage))
+                    {
+                        values[i] = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
+                    }
+                    else
+                    {
+                        values[i] = argument.Parameter.HasDefaultValue
+                            ? argument.Parameter.DefaultValue
+                            : GetTypeDefaultValue(argument.Parameter.ParameterType);
+                    }
                 }
                 else if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
                 {
@@ -497,6 +509,29 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             return storageConfig.BindingConstructor.Invoke(values);
+        }
+
+        /// <summary>
+        /// Determines whether the document contains at least one attribute belonging to a flattened member,
+        /// descending through nested flattened members. Used to decide whether a flattened constructor argument
+        /// should be materialized or left at its constructor-parameter default.
+        /// </summary>
+        private static bool AnyFlattenedChildPresent(Document document, PropertyStorage propertyStorage)
+        {
+            foreach (var child in propertyStorage.FlattenProperties)
+            {
+                if (child.ShouldFlattenChildProperties)
+                {
+                    if (AnyFlattenedChildPresent(document, child))
+                        return true;
+                }
+                else if (document.ContainsKey(child.AttributeName))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 #endif
 
