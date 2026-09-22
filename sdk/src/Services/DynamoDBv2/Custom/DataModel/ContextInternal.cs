@@ -548,14 +548,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Returns the value to bind when the stored item has no value for a constructor parameter: the
-        /// parameter's own default when it declares one, otherwise the default of its type. This is what makes
-        /// adding a member to an existing type safe, since items saved before the member existed still load.
+        /// parameter's own default when it declares one, otherwise <c>null</c>. This is what makes adding a member
+        /// to an existing type safe, since items saved before the member existed still load.
         /// </summary>
+        /// <remarks>
+        /// <c>null</c> is correct even for a non-nullable value-type parameter. The reflection binder substitutes
+        /// <c>default(T)</c> for a null argument, which is also what <see cref="ParameterInfo.DefaultValue"/>
+        /// itself returns for a parameter declared <c>= default</c>.
+        /// </remarks>
         private static object GetConstructorArgumentDefault(StorageConfig.ConstructorArgument argument)
         {
             return argument.Parameter.HasDefaultValue
                 ? argument.Parameter.DefaultValue
-                : GetTypeDefaultValue(argument.Parameter.ParameterType);
+                : null;
         }
 
         /// <summary>
@@ -638,12 +643,29 @@ namespace Amazon.DynamoDBv2.DataModel
 #if NET8_0_OR_GREATER
 
         /// <summary>
-        /// Returns the default value for <paramref name="type"/> (zero-initialized for value types, null for
-        /// reference types) without generating dynamic code, keeping the path Native AOT compatible.
+        /// Returns the default value for <paramref name="type"/>, boxed: <c>null</c> for a reference type or a
+        /// <see cref="Nullable{T}"/>, and a zero-initialized instance for any other value type.
         /// </summary>
-        private static object GetTypeDefaultValue(Type type)
+        /// <remarks>
+        /// Uses <c>RuntimeHelpers.GetUninitializedObject</c> rather than creating a one-element array, because
+        /// <see cref="Array.CreateInstance(Type, int)"/> carries <c>RequiresDynamicCodeAttribute</c>: under Native
+        /// AOT the code for an array of an arbitrary type may not have been generated, which the AOT analyzer
+        /// reports as IL3050. A zero-initialized value type has no constructor to run, so there is nothing for
+        /// GetUninitializedObject to skip and the result is exactly <c>default(T)</c> boxed.
+        /// </remarks>
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
+            Justification = "GetUninitializedObject is only reached for a non-nullable value type. A value type is " +
+                "zero-initialized and has no constructor to run, so the constructor metadata the annotation asks for " +
+                "is not required; only the type structure itself is, and that is preserved because the type is " +
+                "reached from a modeled type annotated with InternalConstants.DataModelModeledType.")]
+        private static object GetTypeDefaultValue(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type)
         {
-            return type.IsValueType ? Array.CreateInstance(type, 1).GetValue(0) : null;
+            // A Nullable<T> with no value boxes as null, which is what default(T?) is.
+            if (!type.IsValueType || Nullable.GetUnderlyingType(type) != null)
+                return null;
+
+            return System.Runtime.CompilerServices.RuntimeHelpers.GetUninitializedObject(type);
         }
 #endif
 

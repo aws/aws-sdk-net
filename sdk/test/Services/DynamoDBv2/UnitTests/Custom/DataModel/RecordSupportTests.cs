@@ -1977,6 +1977,52 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         #endregion
+
+        #region Native AOT
+
+        [TestMethod]
+        public void DataModelDoesNotUseApisThatRequireDynamicCode()
+        {
+            // Array.CreateInstance(Type, int) carries RequiresDynamicCodeAttribute: under Native AOT the code for
+            // an array of an arbitrary type may not have been generated, which the AOT analyzer reports as IL3050.
+            // It was previously used to produce a boxed default(T), and a real Native AOT publish flagged it. The
+            // repository build only escalates trim (IL2xxx) codes, so nothing else catches a regression here.
+            var codeLines = System.IO.File.ReadAllLines(DataModelSourcePath("ContextInternal.cs"))
+                .Where(line =>
+                {
+                    var trimmed = line.TrimStart();
+                    // Ignore comments, so that naming the API in documentation does not trip the check.
+                    return !trimmed.StartsWith("//", StringComparison.Ordinal);
+                })
+                .ToList();
+
+            var offending = codeLines.Where(line => line.Contains("Array.CreateInstance")).ToList();
+
+            Assert.AreEqual(0, offending.Count,
+                "Array.CreateInstance requires dynamic code. Use RuntimeHelpers.GetUninitializedObject for a " +
+                "zero-initialized value type instead. Offending lines: " + string.Join(" | ", offending));
+        }
+
+        private static string DataModelSourcePath(string fileName)
+        {
+            // Walk up from the test assembly to the repository root, then into the DataModel folder.
+            var directory = new System.IO.DirectoryInfo(AppContext.BaseDirectory);
+            while (directory != null &&
+                !System.IO.Directory.Exists(System.IO.Path.Combine(directory.FullName, "sdk", "src", "Services", "DynamoDBv2")))
+            {
+                directory = directory.Parent;
+            }
+
+            Assert.IsNotNull(directory, "Could not locate the repository root from " + AppContext.BaseDirectory);
+
+            var path = System.IO.Path.Combine(directory.FullName,
+                "sdk", "src", "Services", "DynamoDBv2", "Custom", "DataModel", fileName);
+
+            Assert.IsTrue(System.IO.File.Exists(path), "Expected source file at " + path);
+            return path;
+        }
+
+        #endregion
     }
 }
 #endif
