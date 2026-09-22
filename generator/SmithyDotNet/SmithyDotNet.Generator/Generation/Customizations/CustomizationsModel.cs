@@ -22,10 +22,14 @@ public sealed record CustomizationsModel
     [JsonPropertyName("shapeModifiers")]
     public Dictionary<string, ShapeModifier> ShapeModifiers { get; init; } = [];
 
+    [JsonPropertyName("operationModifiers")]
+    public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
+
     /// <summary>Loads a service's customizations files into one model (C2J's CustomizationCompiler combines them the same way).</summary>
     public static CustomizationsModel Load(IEnumerable<string> paths)
     {
         var shapeModifiers = new Dictionary<string, ShapeModifier>();
+        var operationModifiers = new Dictionary<string, OperationModifier>();
         foreach (var path in paths)
         {
             CustomizationsModel file;
@@ -47,9 +51,17 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': shapeModifiers['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
+
+            foreach (var (operationName, modifier) in file.OperationModifiers)
+            {
+                if (!operationModifiers.TryAdd(operationName, modifier))
+                {
+                    throw new GeneratorException($"'{path}': operationModifiers['{operationName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
         }
 
-        return new CustomizationsModel { ShapeModifiers = shapeModifiers };
+        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers };
     }
 }
 
@@ -58,6 +70,10 @@ public sealed record ShapeModifier
 {
     [JsonPropertyName("modify")]
     public List<Dictionary<string, PropertyModifier>> Modify { get; init; } = [];
+
+    /// <summary>The <c>[Obsolete]</c> message for the shape (e.g. a request/response class); applied only when the shape is already <c>@deprecated</c>.</summary>
+    [JsonPropertyName("deprecatedMessage")]
+    public string? DeprecatedMessage { get; init; }
 }
 
 /// <summary>A single member's modifications inside a <c>modify</c> entry.</summary>
@@ -66,4 +82,16 @@ public sealed record PropertyModifier
     /// <summary>The .NET property name to emit instead of the modeled member name; the wire name is unaffected.</summary>
     [JsonPropertyName("emitPropertyName")]
     public string? EmitPropertyName { get; init; }
+
+    /// <summary>The <c>[Obsolete]</c> message for the member; applied only when the member is already <c>@deprecated</c>.</summary>
+    [JsonPropertyName("deprecatedMessage")]
+    public string? DeprecatedMessage { get; init; }
+}
+
+/// <summary>An <c>operationModifiers</c> entry, keyed by operation name.</summary>
+public sealed record OperationModifier
+{
+    /// <summary>The <c>[Obsolete]</c> message for the operation's client methods; applied only when the operation is already <c>@deprecated</c>.</summary>
+    [JsonPropertyName("deprecatedMessage")]
+    public string? DeprecatedMessage { get; init; }
 }

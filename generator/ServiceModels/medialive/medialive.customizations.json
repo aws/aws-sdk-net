@@ -1,12 +1,5 @@
 {
     "shapeModifiers": {
-        "CreateChannel": {
-            "modify": [
-                {
-                    "Reserved": { "deprecatedMessage": "Deprecated field that's only usable by whitelisted customers." }
-                }
-            ]
-        },
         "CreateChannelRequest": {
             "modify": [
                 {

@@ -208,6 +208,17 @@ public List<AuditEvent> AuditEvents { get; set; } = AWSConfigs.InitializeCollect
 internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvents.Count > 0 || !AWSConfigs.InitializeCollections);
 ```
 
+## Customizations (`*.customizations.json`)
+
+The .NET-owned override layer (not part of the shared, upstream Smithy model) is folded into the
+model in-memory by `CustomizationTransform` before the `ServiceIndex` is built, so writers stay
+unaware of it. An unknown hook key fails deserialization (fail-closed) rather than silently
+diverging from C2J.
+
+- What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
+  each hook's per-level behavior lives on that record and its `CustomizationTransform` application.
+- What each hook means (and every hook C2J has) is documented in `generator/customization-hooks.md`.
+
 ## Reference: Existing Generator
 
 When implementing transformation logic (HTML sanitization, naming rules, type mapping, etc.), consult the existing C2J generator at `generator/ServiceClientGeneratorLib/` to understand the correct behavior. Key files:

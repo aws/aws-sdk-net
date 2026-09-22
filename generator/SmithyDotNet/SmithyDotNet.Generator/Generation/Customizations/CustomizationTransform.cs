@@ -15,16 +15,21 @@ public static class CustomizationTransform
     {
         foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
         {
-            // Customizations key shapes by bare name (C2J has no namespaces).
-            var matches = model.Shapes.Keys.Where(k => ShapeId.Parse(k).Name == shapeName).ToList();
-            if (matches.Count != 1)
+            var shape = FindSingleShape(model, shapeName, $"shapeModifiers['{shapeName}']");
+
+            if (modifier.DeprecatedMessage is { } shapeMessage)
             {
-                throw new GeneratorException(matches.Count == 0
-                    ? $"shapeModifiers['{shapeName}'] does not match any shape in the model."
-                    : $"shapeModifiers['{shapeName}'] matches more than one shape: {string.Join(", ", matches)}.");
+                shape.SetDeprecatedMessage(shapeMessage);
             }
 
-            switch (model.Shapes[matches[0]])
+            // The structure/enum restriction only bites member modifications - a shape-level hook (e.g.
+            // deprecatedMessage on a string shape) applies to any shape.
+            if (modifier.Modify.Count == 0)
+            {
+                continue;
+            }
+
+            switch (shape)
             {
                 case StructureShape structure:
                     foreach (var (memberName, property) in modifier.Modify.SelectMany(entry => entry))
@@ -37,9 +42,37 @@ public static class CustomizationTransform
                     // check) by TypeMapper.ResolveEnumMembers, where the constant names are derived.
                     break;
                 default:
-                    throw new GeneratorException($"shapeModifiers['{shapeName}'] targets a '{model.Shapes[matches[0]]?.Type}' shape; only structures and enums are supported.");
+                    throw new GeneratorException($"shapeModifiers['{shapeName}'] modifies members of a '{shape.Type}' shape; only structures and enums are supported.");
             }
         }
+
+        foreach (var (operationName, modifier) in customizations.OperationModifiers)
+        {
+            var shape = FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
+            if (shape is not OperationShape)
+            {
+                throw new GeneratorException($"operationModifiers['{operationName}'] targets a '{shape.Type}' shape, not an operation.");
+            }
+
+            if (modifier.DeprecatedMessage is { } message)
+            {
+                shape.SetDeprecatedMessage(message);
+            }
+        }
+    }
+
+    // Customizations key shapes by bare name (C2J has no namespaces).
+    private static Shape FindSingleShape(SmithyModel model, string bareName, string context)
+    {
+        var matches = model.Shapes.Keys.Where(k => ShapeId.Parse(k).Name == bareName).ToList();
+        if (matches.Count != 1)
+        {
+            throw new GeneratorException(matches.Count == 0
+                ? $"{context} does not match any shape in the model."
+                : $"{context} matches more than one shape: {string.Join(", ", matches)}.");
+        }
+
+        return model.Shapes[matches[0]] ?? throw new GeneratorException($"{context} matched a null shape entry '{matches[0]}'.");
     }
 
     private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName)
@@ -47,6 +80,11 @@ public static class CustomizationTransform
         if (!structure.Members.TryGetValue(memberName, out var member))
         {
             throw new GeneratorException($"shapeModifiers['{shapeName}'] modifies member '{memberName}', which the shape does not have.");
+        }
+
+        if (property.DeprecatedMessage is { } message)
+        {
+            member.SetDeprecatedMessage(message);
         }
 
         if (property.EmitPropertyName is { } newName && newName != memberName)

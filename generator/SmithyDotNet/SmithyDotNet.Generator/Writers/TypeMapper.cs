@@ -525,8 +525,6 @@ public static class TypeMapper
             return null;
         }
 
-        // TODO: CustomizationTransform doesn't merge deprecatedMessage into @deprecated yet; a
-        // shape relying on that customization fails here.
         var message = deprecated.Message ?? throw new GeneratorException("The @deprecated trait is missing its 'message' property.");
 
         return $"[Obsolete({CodeWriter.Literal(message)})]";
