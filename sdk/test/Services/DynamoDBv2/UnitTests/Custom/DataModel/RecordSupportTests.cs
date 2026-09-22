@@ -1978,6 +1978,153 @@ namespace AWSSDK_DotNet.UnitTests
 
         #endregion
 
+        #region Missing items and convenience constructors
+
+        // Loading an item that does not exist yields no document. A reference type has always returned null;
+        // a value type cannot hold null, so it must yield default(T) rather than failing the cast.
+        public readonly record struct MissingItemRecordStruct(
+            [property: DynamoDBHashKey] string Id, int Count);
+
+        public struct MissingItemPlainStruct
+        {
+            [DynamoDBHashKey] public string Id { get; set; }
+            public int Count { get; set; }
+        }
+
+        public record MissingItemRecordClass([property: DynamoDBHashKey] string Id, int Count);
+
+        [TestMethod]
+        public void MissingItem_ForAValueType_YieldsTheDefaultValue()
+        {
+            var context = CreateContext();
+
+            var recordStruct = context.FromDocument<MissingItemRecordStruct>(null);
+            var plainStruct = context.FromDocument<MissingItemPlainStruct>(null);
+
+            Assert.IsNull(recordStruct.Id);
+            Assert.AreEqual(0, recordStruct.Count);
+            Assert.IsNull(plainStruct.Id);
+            Assert.AreEqual(0, plainStruct.Count);
+        }
+
+        [TestMethod]
+        public void MissingItem_ForAReferenceType_IsStillNull()
+        {
+            var context = CreateContext();
+
+            Assert.IsNull(context.FromDocument<MissingItemRecordClass>(null));
+        }
+
+        // A convenience constructor whose parameter names do not match the members it assigns. Every persisted
+        // member is settable, so the type does not need the constructor and must not be bound to it.
+        public struct ConvenienceConstructorStruct
+        {
+            public ConvenienceConstructorStruct(decimal amount, string currencyCode)
+            {
+                Amount = amount;
+                Currency = currencyCode;
+            }
+
+            [DynamoDBHashKey]
+            public string Currency { get; set; }
+            public decimal Amount { get; set; }
+        }
+
+        // The same shape with matching parameter names still binds, which is what preserves the declared
+        // constructor defaults for positional record structs.
+        public struct MatchingParameterNamesStruct
+        {
+            public MatchingParameterNamesStruct(decimal amount, string currency)
+            {
+                Amount = amount;
+                Currency = currency;
+            }
+
+            [DynamoDBHashKey]
+            public string Currency { get; set; }
+            public decimal Amount { get; set; }
+        }
+
+        // A genuinely immutable struct with a non-matching parameter name cannot be populated either way, so it
+        // must still be rejected rather than silently zero-initialized.
+        public struct ImmutableMismatchedStruct
+        {
+            public ImmutableMismatchedStruct(decimal amount, string currencyCode)
+            {
+                Amount = amount;
+                Currency = currencyCode;
+            }
+
+            [DynamoDBHashKey]
+            public string Currency { get; }
+            public decimal Amount { get; }
+        }
+
+        [TestMethod]
+        public void ConvenienceConstructorOnAWritableStruct_IsNotUsedForBinding()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(ConvenienceConstructorStruct), out var constructor);
+
+            Assert.IsFalse(selected,
+                "A parameter that does not name a modeled member means the constructor does not describe how to " +
+                "rebuild the value, and every member here is settable.");
+            Assert.IsNull(constructor);
+        }
+
+        [TestMethod]
+        public void ConvenienceConstructorOnAWritableStruct_RoundTrips()
+        {
+            var context = CreateContext();
+
+            var document = context.ToDocument(new ConvenienceConstructorStruct(9.5m, "USD"));
+            var result = context.FromDocument<ConvenienceConstructorStruct>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Currency", "Amount" }, document.Keys.ToArray());
+            Assert.AreEqual("USD", result.Currency);
+            Assert.AreEqual(9.5m, result.Amount);
+        }
+
+        [TestMethod]
+        public void MatchingParameterNamesStruct_StillBindsAndRoundTrips()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(MatchingParameterNamesStruct), out _);
+            Assert.IsTrue(selected, "Matching parameter names must still bind, so constructor defaults are honored.");
+
+            var context = CreateContext();
+            var result = context.FromDocument<MatchingParameterNamesStruct>(
+                context.ToDocument(new MatchingParameterNamesStruct(9.5m, "USD")));
+
+            Assert.AreEqual("USD", result.Currency);
+            Assert.AreEqual(9.5m, result.Amount);
+        }
+
+        [TestMethod]
+        public void ImmutableStructWithMismatchedParameterName_IsStillRejected()
+        {
+            var context = CreateContext();
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new ImmutableMismatchedStruct(9.5m, "USD")));
+
+            StringAssert.Contains(ex.Message, "does not map to a modeled member");
+        }
+
+        [TestMethod]
+        public void UnmappedParameterMessage_DoesNotClaimReadonlyFieldsAreModeled()
+        {
+            // A readonly field is excluded by Utils.IsReadWrite, so the remediation must not offer it.
+            var context = CreateContext();
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new ImmutableMismatchedStruct(9.5m, "USD")));
+
+            StringAssert.Contains(ex.Message, "a public field that is not readonly");
+        }
+
+        #endregion
+
         #region Native AOT
 
         [TestMethod]

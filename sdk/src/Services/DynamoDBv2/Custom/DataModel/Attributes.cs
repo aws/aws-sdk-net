@@ -227,11 +227,22 @@ namespace Amazon.DynamoDBv2.DataModel
     /// and other types that are constructed through a parameterized constructor rather than a
     /// parameterless constructor.
     /// <para>
-    /// A constructor is selected automatically (without this attribute) only when the type has no eligible
-    /// parameterless constructor — and, for reference types, no constructor accepting a <c>DynamoDBContext</c> —
-    /// and exactly one bindable parameterized constructor remains (for example the primary constructor of a
-    /// positional record). Use this attribute to choose the constructor when a type exposes more than one
-    /// eligible constructor, or to force constructor binding even though a parameterless/context constructor exists.
+    /// Selection without this attribute differs between reference types and value types. For a reference type a
+    /// constructor is selected only when there is no public parameterless constructor and no constructor accepting
+    /// a <c>DynamoDBContext</c>, and exactly one bindable parameterized constructor remains, for example the
+    /// primary constructor of a positional record.
+    /// </para>
+    /// <para>
+    /// A value type cannot use the parameterless instantiation path at all, so a parameterless constructor does
+    /// not suppress selection for one. A value type binds when exactly one bindable parameterized constructor
+    /// remains and every parameter names a modeled member. Otherwise it is populated by zero-initialization
+    /// followed by member assignment, which covers a struct with a convenience constructor whose parameter names
+    /// do not match its members, and a struct exposing several constructors. A value type with get-only members
+    /// that only a constructor can supply still needs this attribute when more than one constructor could be used.
+    /// </para>
+    /// <para>
+    /// Use this attribute to choose the constructor when a type exposes more than one eligible constructor, or to
+    /// force constructor binding even though a parameterless or <c>DynamoDBContext</c> constructor exists.
     /// </para>
     /// <para>
     /// Constructor parameters are matched to modeled members by name (case-insensitive). For positional

@@ -423,7 +423,11 @@ namespace Amazon.DynamoDBv2.DataModel
         private T DocumentToObject<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ItemStorage storage, DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
-            return (T)DocumentToObject(type, storage, flatConfig);
+            var instance = DocumentToObject(type, storage, flatConfig);
+
+            // There is no document when the item does not exist. A reference type yields null, as it always has;
+            // a value type cannot hold null, so it yields default(T) rather than failing the cast.
+            return instance == null ? default : (T)instance;
         }
 
         private object DocumentToObject([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type objectType, ItemStorage storage, DynamoDBFlatConfig flatConfig)

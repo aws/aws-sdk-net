@@ -565,6 +565,19 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (bindable.Count == 1)
             {
+                // A value type does not have to bind at all when zero-initialization plus member assignment can
+                // populate it. Prefer binding, because it honors the constructor's parameter defaults, but fall back
+                // when a parameter does not name a modeled member: that is a convenience constructor such as
+                // Money(decimal amount, string currencyCode) for a Currency property, not a description of how to
+                // rebuild the value. A type that genuinely needs its constructor still binds and is reported by
+                // ResolveConstructorArguments if a parameter cannot be supplied.
+                if (type.IsValueType &&
+                    !AllParametersMapToModeledMembers(type, bindable[0]) &&
+                    !ValueTypeRequiresBindingConstructor(type, bindable))
+                {
+                    return false;
+                }
+
                 bindingConstructor = bindable[0];
                 return true;
             }
@@ -580,6 +593,38 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException(
                 $"Type {type.FullName} has multiple bindable parameterized constructors. " +
                 "Mark the constructor to use for DynamoDB deserialization with [DynamoDBConstructor].");
+        }
+
+        /// <summary>
+        /// Whether every parameter of <paramref name="constructor"/> names a modeled member of
+        /// <paramref name="type"/>, matched case-insensitively. When one does not, the constructor cannot describe
+        /// how to rebuild the value from stored attributes.
+        /// </summary>
+        private static bool AllParametersMapToModeledMembers(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            ConstructorInfo constructor)
+        {
+            var parameters = constructor.GetParameters();
+            var parameterNames = parameters.Select(p => p.Name).ToArray();
+            var memberNames = GetMembersFromType(type, parameterNames).Select(m => m.Name).ToList();
+
+            foreach (var parameter in parameters)
+            {
+                bool matched = false;
+                foreach (var memberName in memberNames)
+                {
+                    if (string.Equals(memberName, parameter.Name, StringComparison.OrdinalIgnoreCase))
+                    {
+                        matched = true;
+                        break;
+                    }
+                }
+
+                if (!matched)
+                    return false;
+            }
+
+            return true;
         }
 
         /// <summary>

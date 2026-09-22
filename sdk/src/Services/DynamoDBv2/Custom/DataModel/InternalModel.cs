@@ -699,8 +699,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 throw new InvalidOperationException(
                     $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} does not map to a modeled member. " +
-                    "Every binding constructor parameter must correspond to a readable property or field (matched by name, case-insensitive), " +
-                    "or to a member marked with [DynamoDBIgnore], in which case the parameter always receives its default value.");
+                    "Every binding constructor parameter must correspond to a member of the same name (matched case-insensitively): " +
+                    "a property, or a public field that is not readonly. Alternatively the member may be marked with " +
+                    "[DynamoDBIgnore], in which case the parameter always receives its default value.");
             }
 
             if (candidates.Count == 1)
@@ -725,7 +726,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// through the binding constructor nor writable. Such a member is still written when the item is saved, so
         /// allowing it would produce stored items that fail to load.
         /// </summary>
-        private void ValidateAllMembersAreLoadable()        {
+        private void ValidateAllMembersAreLoadable()
+        {
             foreach (var property in Properties)
             {
                 if (property.IsIgnored || property.IsConstructorArgument) continue;
