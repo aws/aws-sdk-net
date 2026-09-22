@@ -631,15 +631,49 @@ namespace Amazon.DynamoDBv2.DataModel
                 ValidateAllMembersAreLoadable();
             }
 
-            if (TargetType.IsValueType)
+            foreach (var property in Properties)
             {
-                // A value type is boxed before the SDK reconciles server-produced values onto the instance, so the
-                // write-back updates a copy and the caller's value silently keeps the stale value.
-                foreach (var property in Properties)
+                if (property.IsIgnored) continue;
+
+                if (TargetType.IsValueType)
                 {
-                    if (property.IsIgnored) continue;
-                    ValidateValueTypeMember(property, viaFlatten: false);
+                    // A value type is boxed before the SDK reconciles server-produced values onto the instance, so the
+                    // write-back updates a copy and the caller's value silently keeps the stale value.
+                    ValidateValueTypeMember(property, viaFlatten: false, TargetType.FullName);
                 }
+                else
+                {
+                    // A reference type can still own a flattened value-type member. Its children are enumerated into
+                    // this configuration directly, so nothing here would reject a server-managed descendant and the
+                    // item would load, while saving reaches the value type's own configuration and fails. Checking it
+                    // here makes load and save reject the model consistently.
+                    ValidateFlattenedValueTypeMembers(property);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Applies the value-type rule to any flattened member whose type is a value type, at any depth. Such a
+        /// member is materialized by zero-initialization and assigned back to its parent when an item is loaded,
+        /// so the owning configuration accepts it even when the owner is a reference type.
+        /// </summary>
+        private void ValidateFlattenedValueTypeMembers(PropertyStorage member)
+        {
+            if (!member.ShouldFlattenChildProperties || member.FlattenProperties == null)
+                return;
+
+            if (member.MemberType != null && member.MemberType.IsValueType)
+            {
+                // This validates the member's whole flattened subtree, so there is nothing further to walk.
+                ValidateValueTypeMember(member, viaFlatten: false, member.MemberType.FullName);
+                return;
+            }
+
+            foreach (var child in member.FlattenProperties)
+            {
+                if (child.IsIgnored) continue;
+
+                ValidateFlattenedValueTypeMembers(child);
             }
         }
 
@@ -795,14 +829,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// rather than the caller's value: optimistic locking would silently break and atomic counter and
         /// UpdateBehavior.IfNotExists members would silently read a stale value after a save.
         /// </summary>
-        private void ValidateValueTypeMember(PropertyStorage member, bool viaFlatten)
+        /// <param name="member">The member to validate, together with its flattened descendants.</param>
+        /// <param name="viaFlatten">Whether <paramref name="member"/> was reached through a flattened member.</param>
+        /// <param name="valueTypeName">
+        /// The value type the rule is applied on behalf of: the configured type itself when that type is a value
+        /// type, or a flattened value-type member's type when the owner is a reference type.
+        /// </param>
+        private void ValidateValueTypeMember(PropertyStorage member, bool viaFlatten, string valueTypeName)
         {
             var kind = GetServerManagedMemberKind(member);
             if (kind != null)
             {
                 string location = viaFlatten
-                    ? $"reached through a flattened member of value type {TargetType.FullName}"
-                    : $"of value type {TargetType.FullName}";
+                    ? $"reached through a flattened member of value type {valueTypeName}"
+                    : $"of value type {valueTypeName}";
 
                 throw new InvalidOperationException(
                     $"Property '{member.PropertyName}' ({location}) is {kind} and cannot be declared on a value type (struct or record struct). " +
@@ -818,7 +858,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     // written back and cannot go stale.
                     if (child.IsIgnored) continue;
 
-                    ValidateValueTypeMember(child, viaFlatten: true);
+                    ValidateValueTypeMember(child, viaFlatten: true, valueTypeName);
                 }
             }
         }

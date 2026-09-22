@@ -1688,6 +1688,121 @@ namespace AWSSDK_DotNet.UnitTests
 
         #endregion
 
+        #region Flattened value-type descendants owned by a reference type
+
+        // A value type with a server-managed member. Its own configuration rejects it, but when it is flattened into
+        // a reference type its children are enumerated into the parent's configuration, which used to leave the
+        // parent free to load the item and then fail only when saving.
+        public record struct VersionedAuditStruct
+        {
+            public string Note { get; set; }
+
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+        }
+
+        public class ReferenceOwnerOfVersionedStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public VersionedAuditStruct Audit { get; set; }
+        }
+
+        // The same, one level deeper: reference owner, flattened reference member, flattened value-type member.
+        public class ReferenceMiddle
+        {
+            public string Source { get; set; }
+
+            [DynamoDBFlatten]
+            public VersionedAuditStruct Audit { get; set; }
+        }
+
+        public class DeepReferenceOwnerOfVersionedStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ReferenceMiddle Middle { get; set; }
+        }
+
+        // A flattened value type with no server-managed members must keep working.
+        public record struct PlainAuditStruct
+        {
+            public string Note { get; set; }
+            public int Count { get; set; }
+        }
+
+        public class ReferenceOwnerOfPlainStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public PlainAuditStruct Audit { get; set; }
+        }
+
+        [TestMethod]
+        public void FlattenedValueTypeWithServerManagedDescendant_IsRejectedOnSaveAndOnLoad()
+        {
+            var context = CreateContext();
+
+            var onSave = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new ReferenceOwnerOfVersionedStruct
+                {
+                    Id = "s1",
+                    Audit = new VersionedAuditStruct { Note = "n", Version = 3 }
+                }));
+            var onLoad = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.FromDocument<ReferenceOwnerOfVersionedStruct>(new Document
+                {
+                    ["Id"] = new Primitive("s1"),
+                    ["Note"] = new Primitive("n"),
+                    ["Version"] = new Primitive("3", true)
+                }));
+
+            StringAssert.Contains(onSave.Message, "a version property");
+            StringAssert.Contains(onSave.Message, "flattened member of value type");
+            StringAssert.Contains(onSave.Message, nameof(VersionedAuditStruct));
+            Assert.AreEqual(onSave.Message, onLoad.Message,
+                "Saving and loading must fail the same way, so the model cannot load and then fail only on save.");
+        }
+
+        [TestMethod]
+        public void NestedFlattenedValueTypeWithServerManagedDescendant_IsRejected()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<DeepReferenceOwnerOfVersionedStruct>(flatConfig));
+
+            StringAssert.Contains(ex.Message, "a version property");
+            StringAssert.Contains(ex.Message, nameof(VersionedAuditStruct));
+        }
+
+        [TestMethod]
+        public void FlattenedValueTypeWithoutServerManagedMembers_StillRoundTrips()
+        {
+            var context = CreateContext();
+            var original = new ReferenceOwnerOfPlainStruct
+            {
+                Id = "s2",
+                Audit = new PlainAuditStruct { Note = "n", Count = 2 }
+            };
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<ReferenceOwnerOfPlainStruct>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "Note", "Count" }, document.Keys.ToArray());
+            Assert.AreEqual("n", result.Audit.Note);
+            Assert.AreEqual(2, result.Audit.Count);
+        }
+
+        #endregion
+
         #region Effective converters and stored DynamoDB NULL
 
         // Returns int rather than the member's declared long, so the declared types are incompatible but the
