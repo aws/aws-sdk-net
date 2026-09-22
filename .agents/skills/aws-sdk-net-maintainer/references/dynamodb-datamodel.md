@@ -282,8 +282,5 @@ command line: as global properties they propagate into the SDK's `ProjectReferen
   `Amazon.DynamoDBv2.DataModel.Utils`.
 - Unit tests run on multiple .NET targets (`SdkMSTestAllTestTargets`). Code not inside
   `#if NET8_0_OR_GREATER` needs coverage that runs on the older targets too.
-- `AWSSDK.UnitTests.DynamoDBv2` has 4 pre-existing failures (`V1`/`V2_ConvertToEntry_Primitives` and
-  `ConvertFromEntry_Primitives`, a `decimal` formatting difference). Confirm any failure is one of
-  these before attributing it to a change.
 - After swapping a source file back and forth, `dotnet test` can build against a stale SDK assembly.
   Use `--no-incremental` when verifying that a fix is load-bearing.
