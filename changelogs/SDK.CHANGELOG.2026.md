@@ -1,3 +1,19 @@
+### 4.0.339.0 (2026-09-22 18:14 UTC)
+* APIGateway (4.0.101.0)
+	* API Gateway now supports two new security policies for REST APIs and custom domain names, SecurityPolicy-TLS13-1-2-Ext2-PQ-2025-09 (TLS 1.3 1.2 with post-quantum cryptography) and SecurityPolicy-TLS13-1-2-Ext2-FIPS-PQ-2025-09 (adds FIPS). Both retain legacy algorithms for backward compatibility.
+* CloudWatchOmni (4.0.100.0)
+	* Amazon CloudWatch Omni is now generally available, an AI-powered unified observability for AI agents, applications, and infrastructure. As part of it, organization centralization rules now support cross-account context graph centralization.
+* EC2 (4.0.124.0)
+	* Amazon EC2 now supports quote-based start date changes for future-dated Capacity Reservations
+* Glue (4.0.107.0)
+	* Adding two new fields for Glue Materialized Views feature - (1) SubObjectsStatistics and (2) SparkPipelineInfo.
+* ObservabilityAdmin (4.0.105.0)
+	* Amazon CloudWatch Omni is now generally available, an AI-powered unified observability for AI agents, applications, and infrastructure. Centralization now supports context graph for multi-account resource discovery, and dataset integrations makes logs available in CloudWatch datasets.
+* QuickSight (4.0.109.0)
+	* Adds support for granular custom permissions on 28 action connectors, including Gmail, Google Drive, Google Sheets, Airtable, and Dropbox. Administrators can now allow or deny individual connector operations instead of all action connectors at once.
+* SSOAdmin (4.0.103.0)
+	* AWS IAM Identity Center now returns PrimaryRegion and Regions in the DescribeInstance response, providing information about replicated instances, and returns IdentityStoreArn in both the ListInstances and DescribeInstance responses.
+
 ### 4.0.338.0 (2026-09-21 18:31 UTC)
 * BedrockAgentCore (4.0.112.0)
 	* Amazon Bedrock AgentCore Harness now supports lifecycle hooks for invocations and tool calls, with Lambda, SNS, and EventBridge targets. This release also adds apiBase for custom OpenAI-compatible endpoints.
