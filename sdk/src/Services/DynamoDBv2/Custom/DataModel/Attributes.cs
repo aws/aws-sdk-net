@@ -945,7 +945,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Typical usage: fields that should be initialized once and then left unchanged (e.g., created timestamps, initial version, immutable IDs).
         /// Notes:
         /// - If the attribute already exists on the item during update, its value is preserved and not overwritten.
-        /// - This behavior is analogous to using DynamoDB�s if_not_exists in update expressions for the attribute.
+        /// - This behavior is analogous to using DynamoDB's if_not_exists in update expressions for the attribute.
         /// </summary>
         IfNotExists
     }
