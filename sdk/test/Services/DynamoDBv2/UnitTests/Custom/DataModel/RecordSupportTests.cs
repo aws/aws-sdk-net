@@ -1803,6 +1803,70 @@ namespace AWSSDK_DotNet.UnitTests
 
         #endregion
 
+        #region Ignored descendants and flattened-member presence
+
+        public class ChildWithIgnoredSecret
+        {
+            public string Note { get; set; }
+
+            [DynamoDBIgnore]
+            public string Secret { get; set; }
+        }
+
+        // An optional flattened constructor parameter. Whether it is materialized depends on whether any of its
+        // persisted child attributes are present, so an ignored attribute must not count as evidence.
+        public record OptionalFlattenWithIgnoredLeafRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] ChildWithIgnoredSecret Child = null);
+
+        [TestMethod]
+        public void OnlyIgnoredChildAttributePresent_UsesTheConstructorDefault()
+        {
+            // An older item may still carry the attribute of a member that is now ignored. It is not persisted, so
+            // it is not evidence that the flattened member exists, and the declared default must win.
+            var context = CreateContext();
+
+            var result = context.FromDocument<OptionalFlattenWithIgnoredLeafRecord>(new Document
+            {
+                ["Id"] = new Primitive("g1"),
+                ["Secret"] = new Primitive("leaked")
+            });
+
+            Assert.IsNull(result.Child);
+        }
+
+        [TestMethod]
+        public void PersistedChildAttributePresent_StillMaterializesAndSkipsTheIgnoredLeaf()
+        {
+            // The complement: a persisted attribute does materialize the member, and the ignored leaf is still not
+            // populated even though its attribute is in the document.
+            var context = CreateContext();
+
+            var result = context.FromDocument<OptionalFlattenWithIgnoredLeafRecord>(new Document
+            {
+                ["Id"] = new Primitive("g2"),
+                ["Note"] = new Primitive("n"),
+                ["Secret"] = new Primitive("leaked")
+            });
+
+            Assert.IsNotNull(result.Child);
+            Assert.AreEqual("n", result.Child.Note);
+            Assert.IsNull(result.Child.Secret, "An ignored flattened descendant must not be populated on load.");
+        }
+
+        [TestMethod]
+        public void NoChildAttributesPresent_UsesTheConstructorDefault()
+        {
+            var context = CreateContext();
+
+            var result = context.FromDocument<OptionalFlattenWithIgnoredLeafRecord>(
+                new Document { ["Id"] = new Primitive("g3") });
+
+            Assert.IsNull(result.Child);
+        }
+
+        #endregion
+
         #region Effective converters and stored DynamoDB NULL
 
         // Returns int rather than the member's declared long, so the declared types are incompatible but the

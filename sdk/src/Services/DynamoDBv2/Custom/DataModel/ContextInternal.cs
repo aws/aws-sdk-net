@@ -567,6 +567,10 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             foreach (var child in propertyStorage.FlattenProperties)
             {
+                // Denormalize omits ignored descendants, so an ignored attribute left behind in an older item is
+                // not evidence that the flattened member exists.
+                if (child.IsIgnored) continue;
+
                 if (child.ShouldFlattenChildProperties)
                 {
                     if (AnyFlattenedChildPresent(document, child))
@@ -608,6 +612,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
             {
+                // [DynamoDBIgnore] excludes a member when loading as well as when saving. Denormalize keeps ignored
+                // members out of AllPropertyStorage, so the top-level path already skips them; FlattenProperties is
+                // the raw list and has to be filtered here for flattened members to behave the same way.
+                if (flattenPropertyStorage.IsIgnored) continue;
+
                 if (flattenPropertyStorage.ShouldFlattenChildProperties)
                 {
                     // A nested flattened member's own children are also stored under their leaf attribute names,

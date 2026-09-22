@@ -381,6 +381,74 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsFalse(result.Audit.Version.HasValue, "An ignored descendant is not populated on load.");
         }
 
+        // An ignored flattened descendant whose attribute is present in the stored item, for example because an
+        // older version of the model persisted it before it was ignored, or because another writer set it.
+        public class ChildWithIgnoredLeaf
+        {
+            public string Note { get; set; }
+
+            [DynamoDBIgnore]
+            public string Secret { get; set; }
+        }
+
+        public class MutableParentWithIgnoredLeaf
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ChildWithIgnoredLeaf Child { get; set; }
+        }
+
+        public class TopLevelIgnoredLeaf
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBIgnore]
+            public string Secret { get; set; }
+        }
+
+        [TestMethod]
+        public void IgnoredFlattenedDescendant_IsNotPopulatedOnLoad()
+        {
+            // [DynamoDBIgnore] excludes a member when loading as well as when saving. Denormalize keeps ignored
+            // members out of AllPropertyStorage, so a top-level ignored member was already excluded, but
+            // FlattenProperties is the raw list and used to populate flattened ones.
+            var context = CreateContext();
+            var stored = new Document
+            {
+                ["Id"] = new Primitive("g1"),
+                ["Note"] = new Primitive("n"),
+                ["Secret"] = new Primitive("leaked")
+            };
+
+            var result = context.FromDocument<MutableParentWithIgnoredLeaf>(stored);
+
+            Assert.AreEqual("n", result.Child.Note);
+            Assert.IsNull(result.Child.Secret, "An ignored flattened descendant must not be populated on load.");
+
+            // The same expectation at the top level, which has always held, so the two paths now agree.
+            var topLevel = context.FromDocument<TopLevelIgnoredLeaf>(
+                new Document { ["Id"] = new Primitive("g1"), ["Secret"] = new Primitive("leaked") });
+            Assert.IsNull(topLevel.Secret);
+        }
+
+        [TestMethod]
+        public void IgnoredFlattenedDescendant_IsNotSaved()
+        {
+            var context = CreateContext();
+
+            var document = context.ToDocument(new MutableParentWithIgnoredLeaf
+            {
+                Id = "g2",
+                Child = new ChildWithIgnoredLeaf { Note = "n", Secret = "should-not-persist" }
+            });
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "Note" }, document.Keys.ToArray(),
+                "Actual: " + string.Join(", ", document.Keys));
+        }
+
         #endregion
 
 #if NET8_0_OR_GREATER
