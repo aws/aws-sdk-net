@@ -607,7 +607,7 @@ namespace AWSSDK_DotNet.UnitTests
                 context.StorageConfigCache.GetConfig<FlattenImmutableChildEntity>(flatConfig));
 
             StringAssert.Contains(ex.Message, "[DynamoDBFlatten]");
-            StringAssert.Contains(ex.Message, "immutable type populated through a constructor");
+            StringAssert.Contains(ex.Message, "reference type populated through a constructor");
         }
 
         [TestMethod]
@@ -1240,6 +1240,131 @@ namespace AWSSDK_DotNet.UnitTests
                 context.StorageConfigCache.GetConfig(typeof(RefStructModel), flatConfig, false));
 
             StringAssert.Contains(ex.Message, "cannot be instantiated");
+        }
+
+        #endregion
+
+        #region Flattened value types with parameterized constructors
+
+        // A mutable struct that happens to have a parameterized constructor. The flatten load path does not use
+        // that constructor: it zero-initializes the value and assigns the members, so this is supported.
+        public struct WritableFlattenStruct
+        {
+            public WritableFlattenStruct(string name) { Name = name; Count = 0; }
+
+            public string Name { get; set; }
+            public int Count { get; set; }
+        }
+
+        public class WritableFlattenStructParent
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public WritableFlattenStruct Child { get; set; }
+        }
+
+        // A positional readonly record struct. Its members are get/init, and an init accessor is writable, so the
+        // flatten load path can assign them after zero-initialization.
+        public readonly record struct FlattenMoney(decimal Amount, string Currency);
+
+        public class FlattenMoneyParent
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public FlattenMoney Money { get; set; }
+        }
+
+        // A struct whose only member is get-only and supplied by the constructor. Its own model persists Amount,
+        // but the flatten load path cannot assign it, so the value would be written and never read back.
+        public struct ConstructorOnlyFlattenStruct
+        {
+            public ConstructorOnlyFlattenStruct(decimal amount) { Amount = amount; }
+
+            public decimal Amount { get; }
+        }
+
+        public class ConstructorOnlyFlattenStructParent
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ConstructorOnlyFlattenStruct Money { get; set; }
+        }
+
+        [TestMethod]
+        public void FlattenedWritableStructWithParameterizedConstructor_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new WritableFlattenStructParent
+            {
+                Id = "f1",
+                Child = new WritableFlattenStruct("widget") { Count = 3 }
+            };
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<WritableFlattenStructParent>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "Name", "Count" }, document.Keys.ToArray());
+            Assert.AreEqual("widget", result.Child.Name);
+            Assert.AreEqual(3, result.Child.Count);
+        }
+
+        [TestMethod]
+        public void FlattenedReadonlyRecordStruct_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new FlattenMoneyParent { Id = "f2", Money = new FlattenMoney(9.5m, "USD") };
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<FlattenMoneyParent>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "Amount", "Currency" }, document.Keys.ToArray());
+            Assert.AreEqual(9.5m, result.Money.Amount);
+            Assert.AreEqual("USD", result.Money.Currency);
+        }
+
+        [TestMethod]
+        public void FlattenedStructWithConstructorOnlyMembers_IsRejected()
+        {
+            var context = CreateContext();
+
+            var onSave = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new ConstructorOnlyFlattenStructParent
+                {
+                    Id = "f3",
+                    Money = new ConstructorOnlyFlattenStruct(9.5m)
+                }));
+            var onLoad = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.FromDocument<ConstructorOnlyFlattenStructParent>(
+                    new Document { ["Id"] = new Primitive("f3"), ["Amount"] = new Primitive("9.5", true) }));
+
+            StringAssert.Contains(onSave.Message, "only its constructor can populate");
+            Assert.AreEqual(onSave.Message, onLoad.Message);
+        }
+
+        [TestMethod]
+        public void HasConstructorOnlyMembers_DistinguishesWritableFromConstructorBoundShapes()
+        {
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(WritableFlattenStruct), out var writableCtor));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.HasConstructorOnlyMembers(
+                typeof(WritableFlattenStruct), writableCtor));
+
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(FlattenMoney), out var initCtor));
+            Assert.IsFalse(Amazon.DynamoDBv2.DataModel.Utils.HasConstructorOnlyMembers(
+                typeof(FlattenMoney), initCtor),
+                "An init accessor is writable, so a positional record struct has no constructor-only members.");
+
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(ConstructorOnlyFlattenStruct), out var getOnlyCtor));
+            Assert.IsTrue(Amazon.DynamoDBv2.DataModel.Utils.HasConstructorOnlyMembers(
+                typeof(ConstructorOnlyFlattenStruct), getOnlyCtor));
         }
 
         #endregion

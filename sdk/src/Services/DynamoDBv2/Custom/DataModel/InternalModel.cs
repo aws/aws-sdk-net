@@ -1478,16 +1478,28 @@ namespace Amazon.DynamoDBv2.DataModel
                     }
 
 #if NET8_0_OR_GREATER
-                    // A flattened value is reconstructed with a parameterless constructor during loading
-                    // (see CreateFlattenedMember). A type that is populated through a binding constructor
-                    // (e.g. a record or other immutable type) cannot be created that way, so it would serialize
-                    // but fail to load. Reject the combination at configuration time to fail fast and symmetrically.
-                    if (Utils.TryGetBindingConstructor(type, out _))
+                    // A flattened value is materialized without invoking its constructor: a reference type through
+                    // InstantiateConverter, which requires a parameterless constructor, and a value type by
+                    // zero-initialization followed by member assignment (see CreateFlattenedMember). A value type is
+                    // therefore usable as long as every member it persists can be assigned afterwards, which covers a
+                    // mutable struct with a parameterized constructor and a positional record struct, whose init
+                    // accessors are writable. A get-only constructor-bound member would be written when the item is
+                    // saved and never read back, so that shape is still rejected.
+                    if (Utils.TryGetBindingConstructor(type, out var flattenedBindingConstructor))
                     {
-                        throw new InvalidOperationException(
-                            $"Property '{propertyStorage.PropertyName}' is marked [DynamoDBFlatten] but its type {type.FullName} is an immutable type populated through a constructor. " +
-                            "Flattening is not supported for constructor-populated (e.g. record) types because a flattened value is reconstructed with a parameterless constructor when loading. " +
-                            "Use a type with a parameterless constructor and settable members, or store it as a nested (non-flattened) property.");
+                        bool constructorOnlyMembers = Utils.HasConstructorOnlyMembers(type, flattenedBindingConstructor);
+
+                        if (!type.IsValueType || constructorOnlyMembers)
+                        {
+                            string reason = !type.IsValueType
+                                ? "it is a reference type populated through a constructor, and a flattened value is reconstructed without invoking that constructor"
+                                : "it has members that only its constructor can populate (get-only properties matching a constructor parameter), which would be written when the item is saved and never read back";
+
+                            throw new InvalidOperationException(
+                                $"Property '{propertyStorage.PropertyName}' is marked [DynamoDBFlatten] but its type {type.FullName} cannot be flattened because {reason}. " +
+                                "Use a type with a parameterless constructor and settable members, a struct or record struct whose members are all settable (init counts as settable), " +
+                                "or store it as a nested (non-flattened) property.");
+                        }
                     }
 #endif
 

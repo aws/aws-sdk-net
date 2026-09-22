@@ -674,6 +674,31 @@ namespace Amazon.DynamoDBv2.DataModel
                     yield return attribute.DerivedType;
             }
         }
+
+        /// <summary>
+        /// Whether a type populated through <paramref name="bindingConstructor"/> exposes members that only that
+        /// constructor can populate, that is get-only properties matching one of its parameters. Such members are
+        /// persisted by the type's own model but cannot be assigned by a caller that creates the value without
+        /// invoking the constructor, so they would be written when an item is saved and never read back.
+        /// </summary>
+        /// <remarks>
+        /// An <c>init</c> accessor counts as writable, so a positional <c>record struct</c> or
+        /// <c>readonly record struct</c> has no constructor-only members.
+        /// </remarks>
+        internal static bool HasConstructorOnlyMembers(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            ConstructorInfo bindingConstructor)
+        {
+            var parameterNames = bindingConstructor.GetParameters().Select(p => p.Name).ToArray();
+
+            foreach (var member in GetMembersFromType(type, parameterNames))
+            {
+                if (!IsReadWrite(member))
+                    return true;
+            }
+
+            return false;
+        }
 #endif
 
         internal static Type GetType(MemberInfo member)
