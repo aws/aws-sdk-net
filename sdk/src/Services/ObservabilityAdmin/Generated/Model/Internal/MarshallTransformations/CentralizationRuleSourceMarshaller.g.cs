@@ -62,6 +62,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Scope);
             }
 
+            if (requestObject.IsSetSourceContextGraphConfiguration())
+            {
+                context.Writer.WritePropertyName("SourceContextGraphConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceContextGraphConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceContextGraphConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetSourceLogsConfiguration())
             {
                 context.Writer.WritePropertyName("SourceLogsConfiguration");

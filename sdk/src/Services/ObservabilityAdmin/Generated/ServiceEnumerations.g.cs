@@ -129,6 +129,52 @@ namespace Amazon.ObservabilityAdmin
     }
 
     /// <summary>
+    /// Constants used for properties of type ContextGraphStatus.
+    /// </summary>
+    public class ContextGraphStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Healthy for ContextGraphStatus
+        /// </summary>
+        public static readonly ContextGraphStatus Healthy = new ContextGraphStatus("Healthy");
+
+        /// <summary>
+        /// Constant Provisioning for ContextGraphStatus
+        /// </summary>
+        public static readonly ContextGraphStatus Provisioning = new ContextGraphStatus("Provisioning");
+
+        /// <summary>
+        /// Constant Unhealthy for ContextGraphStatus
+        /// </summary>
+        public static readonly ContextGraphStatus Unhealthy = new ContextGraphStatus("Unhealthy");
+
+        /// <summary>
+        /// Constructs a custom ContextGraphStatus for a value not among the defined constants.
+        /// </summary>
+        public ContextGraphStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContextGraphStatus FindValue(string value)
+        {
+            return FindValue<ContextGraphStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContextGraphStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type DestinationType.
     /// </summary>
     public class DestinationType : ConstantClass

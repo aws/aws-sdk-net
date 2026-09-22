@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CentralizationRuleSource Object
+    /// Response Unmarshaller for DatasetIntegrationSummary Object
     /// </summary>
-    public partial class CentralizationRuleSourceUnmarshaller : IJsonUnmarshaller<CentralizationRuleSource, JsonUnmarshallerContext>
+    public partial class DatasetIntegrationSummaryUnmarshaller : IJsonUnmarshaller<DatasetIntegrationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public CentralizationRuleSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DatasetIntegrationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new CentralizationRuleSource();
+            var unmarshalledObject = new DatasetIntegrationSummary();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,49 +53,42 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Regions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("Scope", targetDepth, ref reader))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("SourceContextGraphConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
-                    var unmarshaller = SourceContextGraphConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SourceContextGraphConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("SourceLogsConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = SourceLogsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SourceLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("SourceMetricsConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("UpdatedAt", targetDepth, ref reader))
                 {
-                    var unmarshaller = SourceMetricsConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SourceMetricsConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static CentralizationRuleSourceUnmarshaller _instance = new CentralizationRuleSourceUnmarshaller();
+        private static DatasetIntegrationSummaryUnmarshaller _instance = new DatasetIntegrationSummaryUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static CentralizationRuleSourceUnmarshaller Instance => _instance;
+        public static DatasetIntegrationSummaryUnmarshaller Instance => _instance;
     }
 }

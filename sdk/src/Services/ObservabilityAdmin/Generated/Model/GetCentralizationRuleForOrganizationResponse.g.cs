@@ -48,6 +48,22 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetCentralizationRule() => this.CentralizationRule != null;
 
         /// <summary>
+        /// Gets and sets the property ContextGraphStatus. 
+        /// <para>
+        /// The status of context graph centralization for this rule. Returns <c>Provisioning</c>
+        /// while the context graph is being set up, <c>Healthy</c> once it is active, or <c>Unhealthy</c>
+        /// if provisioning failed. This status is independent of the overall <c>RuleHealth</c>
+        /// for log delivery.
+        /// </para>
+        /// </summary>
+        public ContextGraphStatus ContextGraphStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextGraphStatus property is set.
+        /// </summary>
+        internal bool IsSetContextGraphStatus() => this.ContextGraphStatus != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedRegion. 
         /// <para>
         /// The Amazon Web Services region where the organization centralization rule was created.

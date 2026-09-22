@@ -70,6 +70,21 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetScope() => this.Scope != null;
 
         /// <summary>
+        /// Gets and sets the property SourceContextGraphConfiguration. 
+        /// <para>
+        /// Configuration that enables centralization of the context graph for the selected sources.
+        /// Including this configuration in a rule's source opts the rule into centralizing the
+        /// context graph for the selected sources.
+        /// </para>
+        /// </summary>
+        public SourceContextGraphConfiguration SourceContextGraphConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceContextGraphConfiguration property is set.
+        /// </summary>
+        internal bool IsSetSourceContextGraphConfiguration() => this.SourceContextGraphConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property SourceLogsConfiguration. 
         /// <para>
         /// Log specific configuration for centralization source log groups.

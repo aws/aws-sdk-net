@@ -36,103 +36,47 @@ using Amazon.Util;
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetCentralizationRuleForOrganization operation.
+    /// Response Unmarshaller for UpdateDatasetIntegration operation.
     /// </summary>
-    public partial class GetCentralizationRuleForOrganizationResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class UpdateDatasetIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            var unmarshalledObject = new GetCentralizationRuleForOrganizationResponse();
+            var unmarshalledObject = new UpdateDatasetIntegrationResponse();
             var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CentralizationRule", targetDepth, ref reader))
-                {
-                    var unmarshaller = CentralizationRuleUnmarshaller.Instance;
-                    unmarshalledObject.CentralizationRule = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("ContextGraphStatus", targetDepth, ref reader))
+                if (context.TestExpression("Arn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContextGraphStatus = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("CreatedRegion", targetDepth, ref reader))
+                if (context.TestExpression("CreatedAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RoleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedRegion = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("CreatedTimeStamp", targetDepth, ref reader))
+                if (context.TestExpression("UpdatedAt", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTimeStamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("CreatorAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatorAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("FailureReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("LastUpdateTimeStamp", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTimeStamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("RuleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("RuleHealth", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleHealth = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("RuleName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("TagPropagationFailureReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TagPropagationFailureReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("TagPropagationStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TagPropagationStatus = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -183,13 +127,13 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             return new AmazonObservabilityAdminException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetCentralizationRuleForOrganizationResponseUnmarshaller _instance = new GetCentralizationRuleForOrganizationResponseUnmarshaller();
+        private static UpdateDatasetIntegrationResponseUnmarshaller _instance = new UpdateDatasetIntegrationResponseUnmarshaller();
 
-        internal static GetCentralizationRuleForOrganizationResponseUnmarshaller GetInstance() => _instance;
+        internal static UpdateDatasetIntegrationResponseUnmarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static GetCentralizationRuleForOrganizationResponseUnmarshaller Instance => _instance;
+        public static UpdateDatasetIntegrationResponseUnmarshaller Instance => _instance;
     }
 }

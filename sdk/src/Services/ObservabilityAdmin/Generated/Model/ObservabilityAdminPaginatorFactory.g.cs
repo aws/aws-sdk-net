@@ -41,6 +41,14 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasetIntegrations operation
+        /// </summary>
+        public IListDatasetIntegrationsPaginator ListDatasetIntegrations(ListDatasetIntegrationsRequest request)
+        {
+            return new ListDatasetIntegrationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResourceTelemetry operation
         /// </summary>
         public IListResourceTelemetryPaginator ListResourceTelemetry(ListResourceTelemetryRequest request)

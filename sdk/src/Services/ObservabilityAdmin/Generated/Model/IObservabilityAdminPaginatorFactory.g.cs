@@ -39,6 +39,12 @@ namespace Amazon.ObservabilityAdmin.Model
         IListCentralizationRulesForOrganizationPaginator ListCentralizationRulesForOrganization(ListCentralizationRulesForOrganizationRequest request);
 
         /// <summary>
+        /// Paginator for ListDatasetIntegrations operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListDatasetIntegrationsPaginator ListDatasetIntegrations(ListDatasetIntegrationsRequest request);
+
+        /// <summary>
         /// Paginator for ListResourceTelemetry operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

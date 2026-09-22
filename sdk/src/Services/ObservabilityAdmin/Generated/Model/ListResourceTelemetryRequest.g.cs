@@ -106,9 +106,34 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         ///  A list of resource types used to filter resources supported by telemetry config.
-        /// If this parameter is provided, the resources will be returned in the same order used
-        /// in the request. 
+        /// If this parameter is provided, the service returns the resources in the same order
+        /// as specified in the request. Currently supported resource types for discovery are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AWS::EC2::Instance</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::EC2::VPC</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::Lambda::Function</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::EKS::Cluster</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::WAFv2::WebACL</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c> (Network Load Balancers only)
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

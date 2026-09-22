@@ -357,6 +357,114 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates a dataset integration for the caller's account in the current region and returns
+        /// its ARN.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have permission to access the dataset integration
+        /// resources through the IAM role specified in the <c>RoleArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a dataset integration already exists for the account, this operation fails with
+        /// a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetIntegration service method.</param>
+        /// <returns>The response from the CreateDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateDatasetIntegration">REST API Reference for CreateDatasetIntegration Operation</seealso>
+        public virtual CreateDatasetIntegrationResponse CreateDatasetIntegration(CreateDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetIntegrationResponse>(request, options);
+        }
+#else
+        internal virtual CreateDatasetIntegrationResponse CreateDatasetIntegration(CreateDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDatasetIntegrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Creates a dataset integration for the caller's account in the current region and returns
+        /// its ARN.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have permission to access the dataset integration
+        /// resources through the IAM role specified in the <c>RoleArn</c> parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a dataset integration already exists for the account, this operation fails with
+        /// a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDatasetIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ConflictException">
+        /// The requested operation conflicts with the current state of the specified resource
+        /// or with another request.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/CreateDatasetIntegration">REST API Reference for CreateDatasetIntegration Operation</seealso>
+        public virtual Task<CreateDatasetIntegrationResponse> CreateDatasetIntegrationAsync(CreateDatasetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDatasetIntegrationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates an integration between CloudWatch and S3 Tables for analytics. This integration
         /// enables querying CloudWatch telemetry data using analytics engines like Amazon Athena,
         /// Amazon Redshift, and Apache Spark.
@@ -827,6 +935,90 @@ namespace Amazon.ObservabilityAdmin
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Deletes a dataset integration for the caller's account in the current region. This
+        /// operation is idempotent; if you submit the same delete more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetIntegration service method.</param>
+        /// <returns>The response from the DeleteDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteDatasetIntegration">REST API Reference for DeleteDatasetIntegration Operation</seealso>
+        public virtual DeleteDatasetIntegrationResponse DeleteDatasetIntegration(DeleteDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetIntegrationResponse>(request, options);
+        }
+#else
+        internal virtual DeleteDatasetIntegrationResponse DeleteDatasetIntegration(DeleteDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDatasetIntegrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Deletes a dataset integration for the caller's account in the current region. This
+        /// operation is idempotent; if you submit the same delete more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDatasetIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/DeleteDatasetIntegration">REST API Reference for DeleteDatasetIntegration Operation</seealso>
+        public virtual Task<DeleteDatasetIntegrationResponse> DeleteDatasetIntegrationAsync(DeleteDatasetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDatasetIntegrationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Deletes an S3 Table integration and its associated data. This operation removes the
         /// connection between CloudWatch Observability Admin and S3 Tables.
         /// </summary>
@@ -1263,6 +1455,88 @@ namespace Amazon.ObservabilityAdmin
             options.ResponseUnmarshaller = GetCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCentralizationRuleForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the dataset integration for the caller's account in the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatasetIntegration service method.</param>
+        /// <returns>The response from the GetDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetDatasetIntegration">REST API Reference for GetDatasetIntegration Operation</seealso>
+        public virtual GetDatasetIntegrationResponse GetDatasetIntegration(GetDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetIntegrationResponse>(request, options);
+        }
+#else
+        internal virtual GetDatasetIntegrationResponse GetDatasetIntegration(GetDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetDatasetIntegrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the dataset integration for the caller's account in the current region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDatasetIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/GetDatasetIntegration">REST API Reference for GetDatasetIntegration Operation</seealso>
+        public virtual Task<GetDatasetIntegrationResponse> GetDatasetIntegrationAsync(GetDatasetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDatasetIntegrationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -1909,6 +2183,82 @@ namespace Amazon.ObservabilityAdmin
             options.ResponseUnmarshaller = ListCentralizationRulesForOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCentralizationRulesForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns the dataset integrations in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetIntegrations service method.</param>
+        /// <returns>The response from the ListDatasetIntegrations service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListDatasetIntegrations">REST API Reference for ListDatasetIntegrations Operation</seealso>
+        public virtual ListDatasetIntegrationsResponse ListDatasetIntegrations(ListDatasetIntegrationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetIntegrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetIntegrationsResponse>(request, options);
+        }
+#else
+        internal virtual ListDatasetIntegrationsResponse ListDatasetIntegrations(ListDatasetIntegrationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetIntegrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDatasetIntegrationsResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the dataset integrations in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDatasetIntegrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDatasetIntegrations service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/ListDatasetIntegrations">REST API Reference for ListDatasetIntegrations Operation</seealso>
+        public virtual Task<ListDatasetIntegrationsResponse> ListDatasetIntegrationsAsync(ListDatasetIntegrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDatasetIntegrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDatasetIntegrationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDatasetIntegrationsResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
@@ -3287,6 +3637,90 @@ namespace Amazon.ObservabilityAdmin
             options.ResponseUnmarshaller = UpdateCentralizationRuleForOrganizationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCentralizationRuleForOrganizationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a dataset integration for the caller's account in the current region. This
+        /// operation is idempotent; if you submit the same update more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetIntegration service method.</param>
+        /// <returns>The response from the UpdateDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateDatasetIntegration">REST API Reference for UpdateDatasetIntegration Operation</seealso>
+        public virtual UpdateDatasetIntegrationResponse UpdateDatasetIntegration(UpdateDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetIntegrationResponse>(request, options);
+        }
+#else
+        internal virtual UpdateDatasetIntegrationResponse UpdateDatasetIntegration(UpdateDatasetIntegrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDatasetIntegrationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Updates a dataset integration for the caller's account in the current region. This
+        /// operation is idempotent; if you submit the same update more than once, each call succeeds.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDatasetIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDatasetIntegration service method, as returned by ObservabilityAdmin.</returns>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.AccessDeniedException">
+        /// Indicates you don't have permissions to perform the requested operation. The user
+        /// or role that is making the request must have at least one IAM permissions policy attached
+        /// that grants the required permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management for Amazon Web Services resources</a> in the IAM user guide.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.InternalServerException">
+        /// Indicates the request has failed to process because of an unknown server error, exception,
+        /// or failure.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ResourceNotFoundException">
+        /// The specified resource (such as a telemetry rule) could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.TooManyRequestsException">
+        /// The request throughput limit was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.ObservabilityAdmin.Model.ValidationException">
+        /// Indicates input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/observabilityadmin-2018-05-10/UpdateDatasetIntegration">REST API Reference for UpdateDatasetIntegration Operation</seealso>
+        public virtual Task<UpdateDatasetIntegrationResponse> UpdateDatasetIntegrationAsync(UpdateDatasetIntegrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDatasetIntegrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDatasetIntegrationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDatasetIntegrationResponse>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK
