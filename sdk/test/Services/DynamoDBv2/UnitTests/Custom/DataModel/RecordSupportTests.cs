@@ -1489,6 +1489,205 @@ namespace AWSSDK_DotNet.UnitTests
 
         #endregion
 
+        #region Ignored members
+
+        // Two constructors plus a get-only property that is ignored and shares a name with the 'tag' parameter.
+        // Nothing persisted needs a constructor, so the ambiguity must not be reported.
+        public struct IgnoredGetOnlyMultiCtorStruct
+        {
+            public IgnoredGetOnlyMultiCtorStruct(string name, string tag) { Name = name; Count = 0; Tag = tag; }
+            public IgnoredGetOnlyMultiCtorStruct(string name, int count, string tag) { Name = name; Count = count; Tag = tag; }
+
+            public string Name { get; set; }
+            public int Count { get; set; }
+
+            [DynamoDBIgnore]
+            public string Tag { get; }
+        }
+
+        [TestMethod]
+        public void IgnoredGetOnlyMember_DoesNotRequireAValueTypeConstructor()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(IgnoredGetOnlyMultiCtorStruct), out _);
+
+            Assert.IsFalse(selected, "An ignored member is not persisted, so it cannot make a constructor necessary.");
+
+            var context = CreateContext();
+            var result = context.FromDocument<IgnoredGetOnlyMultiCtorStruct>(
+                context.ToDocument(new IgnoredGetOnlyMultiCtorStruct("n", "t") { Count = 3 }));
+
+            Assert.AreEqual("n", result.Name);
+            Assert.AreEqual(3, result.Count);
+        }
+
+        // A single constructor whose 'tag' parameter is supplied only by an ignored member.
+        public struct IgnoredGetOnlyFlattenStruct
+        {
+            public IgnoredGetOnlyFlattenStruct(decimal amount, string tag) { Amount = amount; Note = null; Tag = tag; }
+
+            public decimal Amount { get; set; }
+            public string Note { get; set; }
+
+            [DynamoDBIgnore]
+            public string Tag { get; }
+        }
+
+        public class IgnoredGetOnlyFlattenParent
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public IgnoredGetOnlyFlattenStruct Money { get; set; }
+        }
+
+        [TestMethod]
+        public void FlattenedStructWithIgnoredGetOnlyMember_RoundTrips()
+        {
+            var context = CreateContext();
+            var original = new IgnoredGetOnlyFlattenParent
+            {
+                Id = "i1",
+                Money = new IgnoredGetOnlyFlattenStruct(9.5m, "t") { Note = "x" }
+            };
+
+            var document = context.ToDocument(original);
+            var result = context.FromDocument<IgnoredGetOnlyFlattenParent>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "Amount", "Note" }, document.Keys.ToArray());
+            Assert.AreEqual(9.5m, result.Money.Amount);
+            Assert.AreEqual("x", result.Money.Note);
+        }
+
+        // An ignored member that supplies a constructor parameter has no stored value, so the parameter takes
+        // its declared default on every load rather than failing configuration.
+        public record IgnoredConstructorParameterRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBIgnore] string Secret = "fallback");
+
+        [TestMethod]
+        public void IgnoredConstructorParameter_IsNotPersistedAndTakesItsDefault()
+        {
+            var context = CreateContext();
+
+            var document = context.ToDocument(new IgnoredConstructorParameterRecord("i2", "sensitive"));
+            var result = context.FromDocument<IgnoredConstructorParameterRecord>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id" }, document.Keys.ToArray());
+            Assert.AreEqual("fallback", result.Secret);
+        }
+
+        [TestMethod]
+        public void ConstructorParameterWithNoMemberAtAll_StillThrows()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<UnmappedConstructorParameter>(flatConfig));
+
+            StringAssert.Contains(ex.Message, "does not map to a modeled member");
+        }
+
+        public class UnmappedConstructorParameter
+        {
+            public UnmappedConstructorParameter(string id, string missing) { Id = id; }
+
+            [DynamoDBHashKey]
+            public string Id { get; }
+        }
+
+        // A constructor-bound flattened member whose version child is ignored. The child is neither persisted nor
+        // written back, so it cannot go stale and must not be rejected.
+        public class AuditWithIgnoredVersion
+        {
+            public string ModifiedBy { get; set; }
+
+            [DynamoDBIgnore]
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+        }
+
+        public record FlattenedIgnoredVersionRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] AuditWithIgnoredVersion Audit);
+
+        // The same shape on a value type, which goes through the value-type validation instead.
+        public class ChildWithIgnoredCounter
+        {
+            public string Note { get; set; }
+
+            [DynamoDBIgnore]
+            [DynamoDBAtomicCounter]
+            public long? Hits { get; set; }
+        }
+
+        public record struct FlattenedIgnoredCounterStruct
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ChildWithIgnoredCounter Child { get; set; }
+        }
+
+        [TestMethod]
+        public void IgnoredServerManagedDescendant_IsNotRejected()
+        {
+            var context = CreateContext();
+
+            var document = context.ToDocument(
+                new FlattenedIgnoredVersionRecord("i3", new AuditWithIgnoredVersion { ModifiedBy = "bob" }));
+            var result = context.FromDocument<FlattenedIgnoredVersionRecord>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "ModifiedBy" }, document.Keys.ToArray());
+            Assert.AreEqual("bob", result.Audit.ModifiedBy);
+        }
+
+        [TestMethod]
+        public void IgnoredServerManagedDescendant_OnValueType_IsNotRejected()
+        {
+            var context = CreateContext();
+
+            var document = context.ToDocument(new FlattenedIgnoredCounterStruct
+            {
+                Id = "i4",
+                Child = new ChildWithIgnoredCounter { Note = "n" }
+            });
+            var result = context.FromDocument<FlattenedIgnoredCounterStruct>(document);
+
+            CollectionAssert.AreEquivalent(new[] { "Id", "Note" }, document.Keys.ToArray());
+            Assert.AreEqual("n", result.Child.Note);
+        }
+
+        // A non-ignored server-managed descendant must still be rejected.
+        public class AuditWithVersion
+        {
+            public string ModifiedBy { get; set; }
+
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+        }
+
+        public record FlattenedVersionRecord(
+            [property: DynamoDBHashKey] string Id,
+            [property: DynamoDBFlatten] AuditWithVersion Audit);
+
+        [TestMethod]
+        public void NonIgnoredServerManagedDescendant_IsStillRejected()
+        {
+            var context = CreateContext();
+            var flatConfig = new DynamoDBFlatConfig(new DynamoDBOperationConfig(), context.Config);
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.StorageConfigCache.GetConfig<FlattenedVersionRecord>(flatConfig));
+
+            StringAssert.Contains(ex.Message, "a version property");
+        }
+
+        #endregion
+
         #region Effective converters and stored DynamoDB NULL
 
         // Returns int rather than the member's declared long, so the declared types are incompatible but the

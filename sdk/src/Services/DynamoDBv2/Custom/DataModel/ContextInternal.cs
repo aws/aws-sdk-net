@@ -486,7 +486,12 @@ namespace Amazon.DynamoDBv2.DataModel
                     var argument = arguments[i];
                     var propertyStorage = argument.Storage;
 
-                    if (propertyStorage.ShouldFlattenChildProperties)
+                    if (propertyStorage == null)
+                    {
+                        // The parameter is only matched by an ignored member, so it never has a stored value.
+                        values[i] = GetConstructorArgumentDefault(argument);
+                    }
+                    else if (propertyStorage.ShouldFlattenChildProperties)
                     {
                         // A flattened member's children are stored under their own top-level attributes rather than
                         // under this member's attribute name. Only materialize it when at least one child attribute is
@@ -773,10 +778,12 @@ namespace Amazon.DynamoDBv2.DataModel
                                     document[pair.Key] = pair.Value;
                                 }
 
-                                if (propertyStorage.FlattenProperties.Any(p => p.IsVersion))
+                                // An ignored flattened descendant is excluded by Denormalize and never written to
+                                // the inner document, so looking it up here would fail.
+                                if (propertyStorage.FlattenProperties.Any(p => p.IsVersion && !p.IsIgnored))
                                 {
                                     var innerVersionProperty =
-                                        propertyStorage.FlattenProperties.First(p => p.IsVersion);
+                                        propertyStorage.FlattenProperties.First(p => p.IsVersion && !p.IsIgnored);
                                     storage.CurrentVersion =
                                         innerDocument[innerVersionProperty.AttributeName] as Primitive;
                                 }

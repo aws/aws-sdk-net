@@ -604,6 +604,14 @@ namespace Amazon.DynamoDBv2.DataModel
                     var parameter = parameters[i];
                     PropertyStorage match = FindConstructorArgumentMember(parameter);
 
+                    if (match == null)
+                    {
+                        // The parameter is supplied only by members that are not persisted, so there is never a
+                        // stored value for it. Bind it with no storage and let it take its default on every load.
+                        arguments[i] = new ConstructorArgument(parameter, null);
+                        continue;
+                    }
+
                     // Reject members whose value the SDK reconciles onto the instance after a save/update, since that
                     // write-back is impossible for an immutable constructor-populated member. This includes members
                     // nested inside a flattened constructor argument, whose server-managed descendants would otherwise
@@ -636,22 +644,29 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
-        /// Finds the single modeled member that supplies <paramref name="parameter"/>. Members are matched to
-        /// constructor parameters by name, case-insensitively; when more than one member matches, an exact
-        /// (case-sensitive) match wins, and anything else is rejected as ambiguous rather than guessed.
+        /// Finds the single modeled member that supplies <paramref name="parameter"/>, or <c>null</c> when the
+        /// parameter is only matched by members that are not persisted. Members are matched to constructor
+        /// parameters by name, case-insensitively; when more than one member matches, an exact (case-sensitive)
+        /// match wins, and anything else is rejected as ambiguous rather than guessed.
         /// </summary>
         private PropertyStorage FindConstructorArgumentMember(ParameterInfo parameter)
         {
-            var candidates = Properties
-                .Where(ps => !ps.IsIgnored && string.Equals(ps.PropertyName, parameter.Name, StringComparison.OrdinalIgnoreCase))
+            var named = Properties
+                .Where(ps => string.Equals(ps.PropertyName, parameter.Name, StringComparison.OrdinalIgnoreCase))
                 .ToList();
+
+            var candidates = named.Where(ps => !ps.IsIgnored).ToList();
 
             if (candidates.Count == 0)
             {
+                // A member exists but is marked [DynamoDBIgnore], so the parameter simply has no stored value.
+                if (named.Count > 0)
+                    return null;
+
                 throw new InvalidOperationException(
                     $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} does not map to a modeled member. " +
-                    "Every binding constructor parameter must correspond to a readable property or field (matched by name, case-insensitive) " +
-                    "that is not marked with [DynamoDBIgnore].");
+                    "Every binding constructor parameter must correspond to a readable property or field (matched by name, case-insensitive), " +
+                    "or to a member marked with [DynamoDBIgnore], in which case the parameter always receives its default value.");
             }
 
             if (candidates.Count == 1)
@@ -764,6 +779,10 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (var child in member.FlattenProperties)
                 {
+                    // Denormalize excludes ignored flattened descendants, so they are neither persisted nor
+                    // written back and cannot go stale.
+                    if (child.IsIgnored) continue;
+
                     ValidateConstructorBindableMember(child, viaFlatten: true);
                 }
             }
@@ -795,6 +814,10 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 foreach (var child in member.FlattenProperties)
                 {
+                    // Denormalize excludes ignored flattened descendants, so they are neither persisted nor
+                    // written back and cannot go stale.
+                    if (child.IsIgnored) continue;
+
                     ValidateValueTypeMember(child, viaFlatten: true);
                 }
             }

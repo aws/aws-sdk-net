@@ -583,6 +583,25 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Whether <paramref name="member"/> is excluded from persistence by <see cref="DynamoDBIgnoreAttribute"/>.
+        /// </summary>
+        /// <remarks>
+        /// Only the attribute is visible at this point. A member ignored through a
+        /// <see cref="Amazon.Util.TypeMapping"/> is not, because mappings are applied after the type's storage
+        /// configuration is created, so such a member is still treated as persisted here.
+        /// </remarks>
+        private static bool IsIgnoredMember(MemberInfo member)
+        {
+            foreach (var attribute in GetAttributes(member))
+            {
+                if (attribute is DynamoDBIgnoreAttribute)
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Whether a value type needs one of <paramref name="candidates"/> to populate at least one of the members
         /// it persists, that is whether it has a get-only property matching a parameter of any candidate. When it
         /// does not, zero-initialization followed by member assignment can populate the value completely.
@@ -599,6 +618,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (var member in GetMembersFromType(type, parameterNames))
             {
+                // An ignored member is not persisted, so it never needs the constructor to populate it.
+                if (IsIgnoredMember(member))
+                    continue;
+
                 if (!IsReadWrite(member))
                     return true;
             }
@@ -725,6 +748,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
             foreach (var member in GetMembersFromType(type, parameterNames))
             {
+                // An ignored member is not persisted, so it cannot be written and then lost on load.
+                if (IsIgnoredMember(member))
+                    continue;
+
                 if (!IsReadWrite(member))
                     return true;
             }
