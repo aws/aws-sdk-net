@@ -177,13 +177,6 @@
       ]
     },
     {
-      "serviceName": "Tnb",
-      "type": "patch",
-      "changeLogMessages": [
-        "Tnb is now generated from its Smithy model. There are no changes to the public API."
-      ]
-    },
-    {
       "serviceName": "XRay",
       "type": "patch",
       "changeLogMessages": [
