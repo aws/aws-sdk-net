@@ -62,6 +62,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IdentityStoreArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentityStoreArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IdentityStoreId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

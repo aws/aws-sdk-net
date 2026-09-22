@@ -64,6 +64,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     response.EncryptionConfigurationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("IdentityStoreArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IdentityStoreArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IdentityStoreId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +98,18 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
                     response.PermissionSetsEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("PrimaryRegion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PrimaryRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Regions", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RegionMetadata, RegionMetadataUnmarshaller>(RegionMetadataUnmarshaller.Instance);
+                    response.Regions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth, ref reader))

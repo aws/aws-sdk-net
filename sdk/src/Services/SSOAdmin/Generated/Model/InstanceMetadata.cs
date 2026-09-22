@@ -35,6 +35,7 @@ namespace Amazon.SSOAdmin.Model
     public partial class InstanceMetadata
     {
         private DateTime? _createdDate;
+        private string _identityStoreArn;
         private string _identityStoreId;
         private string _instanceArn;
         private string _name;
@@ -60,6 +61,25 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetCreatedDate()
         {
             return this._createdDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreArn. 
+        /// <para>
+        /// The ARN of the identity store that is connected to the Identity Center instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=62, Max=93)]
+        public string IdentityStoreArn
+        {
+            get { return this._identityStoreArn; }
+            set { this._identityStoreArn = value; }
+        }
+
+        // Check to see if IdentityStoreArn property is set
+        internal bool IsSetIdentityStoreArn()
+        {
+            return this._identityStoreArn != null;
         }
 
         /// <summary>

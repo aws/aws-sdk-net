@@ -429,6 +429,12 @@
     <pattern>arn:aws(-[a-z]{1,5}){0,3}:sso:::instance/(sso)?ins-[a-zA-Z0-9-.]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.DescribeInstanceResponse.IdentityStoreArn</property>
+    <min>62</min>
+    <max>93</max>
+    <pattern>arn:aws(-[a-z]{1,5}){0,3}:identitystore::\d{12}:identitystore/(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeInstanceResponse.IdentityStoreId</property>
     <min>1</min>
     <max>64</max>
@@ -451,6 +457,12 @@
     <min>12</min>
     <max>12</max>
     <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.DescribeInstanceResponse.PrimaryRegion</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>([a-z]+-){2,3}\d</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.DescribeInstanceResponse.StatusReason</property>
@@ -1532,6 +1544,12 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws(-[a-z]{1,5}){0,3}:kms:([a-z]{2,}(-[a-z0-9]+)+){1}:[0-9]{12}:key/(mrk-[a-f0-9]{32}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SSOAdmin.Model.InstanceMetadata.IdentityStoreArn</property>
+    <min>62</min>
+    <max>93</max>
+    <pattern>arn:aws(-[a-z]{1,5}){0,3}:identitystore::\d{12}:identitystore/(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SSOAdmin.Model.InstanceMetadata.IdentityStoreId</property>
