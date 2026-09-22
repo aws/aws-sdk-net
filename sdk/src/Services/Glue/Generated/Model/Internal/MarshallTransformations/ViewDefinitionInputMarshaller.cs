@@ -86,6 +86,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetSparkPipelineInfo())
+            {
+                context.Writer.WritePropertyName("SparkPipelineInfo");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectSparkPipelineInfoKvp in requestObject.SparkPipelineInfo)
+                {
+                    context.Writer.WritePropertyName(requestObjectSparkPipelineInfoKvp.Key);
+                    var requestObjectSparkPipelineInfoValue = requestObjectSparkPipelineInfoKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectSparkPipelineInfoValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSubObjects())
             {
                 context.Writer.WritePropertyName("SubObjects");
@@ -93,6 +107,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 foreach(var requestObjectSubObjectsListValue in requestObject.SubObjects)
                 {
                         context.Writer.WriteStringValue(requestObjectSubObjectsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetSubObjectsStatistics())
+            {
+                context.Writer.WritePropertyName("SubObjectsStatistics");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSubObjectsStatisticsListValue in requestObject.SubObjectsStatistics)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SubObjectStatisticsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSubObjectsStatisticsListValue, context);
+
+                    context.Writer.WriteEndObject();
                 }
                 context.Writer.WriteEndArray();
             }

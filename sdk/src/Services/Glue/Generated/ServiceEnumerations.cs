@@ -7977,6 +7977,72 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type SubObjectSourceType.
+    /// </summary>
+    public class SubObjectSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIVE_CSV for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_CSV = new SubObjectSourceType("HIVE_CSV");
+        /// <summary>
+        /// Constant HIVE_JSON for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_JSON = new SubObjectSourceType("HIVE_JSON");
+        /// <summary>
+        /// Constant HIVE_ORC for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_ORC = new SubObjectSourceType("HIVE_ORC");
+        /// <summary>
+        /// Constant HIVE_PARQUET for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_PARQUET = new SubObjectSourceType("HIVE_PARQUET");
+        /// <summary>
+        /// Constant ICEBERG for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType ICEBERG = new SubObjectSourceType("ICEBERG");
+        /// <summary>
+        /// Constant PLAIN_PARQUET for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType PLAIN_PARQUET = new SubObjectSourceType("PLAIN_PARQUET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubObjectSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubObjectSourceType FindValue(string value)
+        {
+            return FindValue<SubObjectSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubObjectSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TableAttributes.
     /// </summary>
     public class TableAttributes : ConstantClass
