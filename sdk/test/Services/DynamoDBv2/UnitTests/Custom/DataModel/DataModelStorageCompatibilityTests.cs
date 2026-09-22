@@ -335,6 +335,54 @@ namespace AWSSDK_DotNet.UnitTests
 
         #endregion
 
+        #region Ignored flattened descendants
+
+        // A flattened descendant that is both a version property and ignored. Denormalize excludes it, so it is
+        // never written to the inner document, and the save path must not try to read it back out.
+        public class AuditWithIgnoredVersion
+        {
+            public string ModifiedBy { get; set; }
+
+            [DynamoDBIgnore]
+            [DynamoDBVersion]
+            public int? Version { get; set; }
+        }
+
+        // A plain mutable parent, so this exercises the shared save path on every target framework rather than
+        // the .NET 8 constructor-binding path.
+        public class MutableParentWithIgnoredVersionDescendant
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public AuditWithIgnoredVersion Audit { get; set; }
+        }
+
+        [TestMethod]
+        public void FlattenedIgnoredVersionDescendant_RoundTripsOnEveryTargetFramework()
+        {
+            var context = CreateContext();
+
+            var document = context.ToDocument(new MutableParentWithIgnoredVersionDescendant
+            {
+                Id = "v1",
+                Audit = new AuditWithIgnoredVersion { ModifiedBy = "bob", Version = 7 }
+            });
+
+            CollectionAssert.AreEquivalent(
+                new[] { "Id", "ModifiedBy" },
+                document.Keys.ToArray(),
+                "The ignored descendant must not be stored. Actual: " + string.Join(", ", document.Keys));
+
+            var result = context.FromDocument<MutableParentWithIgnoredVersionDescendant>(document);
+
+            Assert.AreEqual("bob", result.Audit.ModifiedBy);
+            Assert.IsFalse(result.Audit.Version.HasValue, "An ignored descendant is not populated on load.");
+        }
+
+        #endregion
+
 #if NET8_0_OR_GREATER
         /// <summary>
         /// Immutable counterpart of <see cref="MutableOrder"/>, populated through its primary constructor. It
