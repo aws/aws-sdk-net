@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityReservationCommitmentInfo Object
+    /// Response Unmarshaller for ModificationReservationUpdate Object
     /// </summary>  
-    public class CapacityReservationCommitmentInfoUnmarshaller : IXmlUnmarshaller<CapacityReservationCommitmentInfo, XmlUnmarshallerContext>
+    public class ModificationReservationUpdateUnmarshaller : IXmlUnmarshaller<ModificationReservationUpdate, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityReservationCommitmentInfo Unmarshall(XmlUnmarshallerContext context)
+        public ModificationReservationUpdate Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityReservationCommitmentInfo unmarshalledObject = new CapacityReservationCommitmentInfo();
+            ModificationReservationUpdate unmarshalledObject = new ModificationReservationUpdate();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,22 +55,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("commitmentDuration", targetDepth))
-                    {
-                        var unmarshaller = NullableLongUnmarshaller.Instance;
-                        unmarshalledObject.CommitmentDuration = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("commitmentEndDate", targetDepth))
-                    {
-                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                        unmarshalledObject.CommitmentEndDate = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("committedInstanceCount", targetDepth))
+                    if (context.TestExpression("newCommitmentDuration", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.CommittedInstanceCount = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.NewCommitmentDuration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("newCommitmentEndDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NewCommitmentEndDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("newStartDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.NewStartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -83,12 +83,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static CapacityReservationCommitmentInfoUnmarshaller _instance = new CapacityReservationCommitmentInfoUnmarshaller();        
+        private static ModificationReservationUpdateUnmarshaller _instance = new ModificationReservationUpdateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityReservationCommitmentInfoUnmarshaller Instance
+        public static ModificationReservationUpdateUnmarshaller Instance
         {
             get
             {

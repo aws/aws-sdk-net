@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ModifyCapacityReservation operation
+    /// Response Unmarshaller for DescribeCapacityReservationDateChangeQuotes operation
     /// </summary>  
-    public class ModifyCapacityReservationResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            ModifyCapacityReservationResponse response = new ModifyCapacityReservationResponse();
+            DescribeCapacityReservationDateChangeQuotesResponse response = new DescribeCapacityReservationDateChangeQuotesResponse();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -56,22 +56,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("adjustmentDetails", targetDepth))
+                    if (context.TestExpression("capacityReservationModificationQuoteSet/item", targetDepth))
                     {
-                        var unmarshaller = CapacityReservationAdjustmentDetailsUnmarshaller.Instance;
-                        response.AdjustmentDetails = unmarshaller.Unmarshall(context);
+                        var unmarshaller = CapacityReservationModificationQuoteUnmarshaller.Instance;
+                        if (response.CapacityReservationModificationQuotes == null)
+                        {
+                            response.CapacityReservationModificationQuotes = new List<CapacityReservationModificationQuote>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        response.CapacityReservationModificationQuotes.Add(item);
                         continue;
                     }
-                    if (context.TestExpression("adjustmentStatus", targetDepth))
+                    if (context.TestExpression("nextToken", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        response.AdjustmentStatus = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("return", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        response.Return = unmarshaller.Unmarshall(context);
+                        response.NextToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -92,9 +91,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static ModifyCapacityReservationResponseUnmarshaller _instance = new ModifyCapacityReservationResponseUnmarshaller();        
+        private static DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller _instance = new DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller();        
 
-        internal static ModifyCapacityReservationResponseUnmarshaller GetInstance()
+        internal static DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +101,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ModifyCapacityReservationResponseUnmarshaller Instance
+        public static DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller Instance
         {
             get
             {

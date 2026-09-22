@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Accept", StringUtils.FromBool(publicRequest.Accept));
                 }
+                if(publicRequest.IsSetAcceptModificationTerms())
+                {
+                    request.Parameters.Add("AcceptModificationTerms", StringUtils.FromBool(publicRequest.AcceptModificationTerms));
+                }
                 if(publicRequest.IsSetAdditionalInfo())
                 {
                     request.Parameters.Add("AdditionalInfo", StringUtils.FromString(publicRequest.AdditionalInfo));
@@ -90,6 +94,14 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetInstanceMatchCriteria())
                 {
                     request.Parameters.Add("InstanceMatchCriteria", StringUtils.FromString(publicRequest.InstanceMatchCriteria));
+                }
+                if(publicRequest.IsSetQuoteId())
+                {
+                    request.Parameters.Add("QuoteId", StringUtils.FromString(publicRequest.QuoteId));
+                }
+                if(publicRequest.IsSetStartDate())
+                {
+                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDate));
                 }
             }
 

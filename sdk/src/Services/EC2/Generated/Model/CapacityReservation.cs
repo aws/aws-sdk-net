@@ -34,6 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CapacityReservation
     {
+        private CapacityReservationAdjustmentDetails _adjustmentDetails;
+        private CapacityReservationAdjustmentStatus _adjustmentStatus;
         private string _availabilityZone;
         private string _availabilityZoneId;
         private int? _availableInstanceCount;
@@ -55,6 +57,7 @@ namespace Amazon.EC2.Model
         private bool? _interruptible;
         private InterruptibleCapacityAllocation _interruptibleCapacityAllocation;
         private InterruptionInfo _interruptionInfo;
+        private DateTime? _originalStartDate;
         private string _outpostArn;
         private string _ownerId;
         private string _placementGroupArn;
@@ -66,6 +69,61 @@ namespace Amazon.EC2.Model
         private int? _totalInstanceCount;
         private string _unusedReservationBillingOwnerId;
         private ZeroSizePreference _zeroSizePreference;
+
+        /// <summary>
+        /// Gets and sets the property AdjustmentDetails. 
+        /// <para>
+        /// The configuration that the Capacity Reservation will have after the requested adjustment
+        /// is applied.
+        /// </para>
+        /// </summary>
+        public CapacityReservationAdjustmentDetails AdjustmentDetails
+        {
+            get { return this._adjustmentDetails; }
+            set { this._adjustmentDetails = value; }
+        }
+
+        // Check to see if AdjustmentDetails property is set
+        internal bool IsSetAdjustmentDetails()
+        {
+            return this._adjustmentDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdjustmentStatus. 
+        /// <para>
+        /// The status of the most recent modification to the Capacity Reservation. A Capacity
+        /// Reservation can have one of the following adjustment statuses:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>requested</c> - The modification was requested and is being processed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>applied</c> - The modification was applied to the Capacity Reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>rejected</c> - The modification was not applied and the Capacity Reservation keeps
+        /// its existing configuration.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This field is not returned if the Capacity Reservation has never been modified.
+        /// </para>
+        /// </summary>
+        public CapacityReservationAdjustmentStatus AdjustmentStatus
+        {
+            get { return this._adjustmentStatus; }
+            set { this._adjustmentStatus = value; }
+        }
+
+        // Check to see if AdjustmentStatus property is set
+        internal bool IsSetAdjustmentStatus()
+        {
+            return this._adjustmentStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -490,6 +548,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetInterruptionInfo()
         {
             return this._interruptionInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginalStartDate. 
+        /// <para>
+        /// The start date that you originally requested for the Capacity Reservation, in the
+        /// ISO8601 format in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>). This value
+        /// doesn't change when you push out the start date.
+        /// </para>
+        /// </summary>
+        public DateTime? OriginalStartDate
+        {
+            get { return this._originalStartDate; }
+            set { this._originalStartDate = value; }
+        }
+
+        // Check to see if OriginalStartDate property is set
+        internal bool IsSetOriginalStartDate()
+        {
+            return this._originalStartDate.HasValue; 
         }
 
         /// <summary>

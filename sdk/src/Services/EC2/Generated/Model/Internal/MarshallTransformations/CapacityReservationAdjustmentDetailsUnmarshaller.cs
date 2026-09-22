@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapacityReservationCommitmentInfo Object
+    /// Response Unmarshaller for CapacityReservationAdjustmentDetails Object
     /// </summary>  
-    public class CapacityReservationCommitmentInfoUnmarshaller : IXmlUnmarshaller<CapacityReservationCommitmentInfo, XmlUnmarshallerContext>
+    public class CapacityReservationAdjustmentDetailsUnmarshaller : IXmlUnmarshaller<CapacityReservationAdjustmentDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CapacityReservationCommitmentInfo Unmarshall(XmlUnmarshallerContext context)
+        public CapacityReservationAdjustmentDetails Unmarshall(XmlUnmarshallerContext context)
         {
-            CapacityReservationCommitmentInfo unmarshalledObject = new CapacityReservationCommitmentInfo();
+            CapacityReservationAdjustmentDetails unmarshalledObject = new CapacityReservationAdjustmentDetails();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -67,10 +67,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CommitmentEndDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("committedInstanceCount", targetDepth))
+                    if (context.TestExpression("endDate", targetDepth))
                     {
-                        var unmarshaller = NullableIntUnmarshaller.Instance;
-                        unmarshalledObject.CommittedInstanceCount = unmarshaller.Unmarshall(context);
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.EndDate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("endDateType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.EndDateType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("startDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.StartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -83,12 +95,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static CapacityReservationCommitmentInfoUnmarshaller _instance = new CapacityReservationCommitmentInfoUnmarshaller();        
+        private static CapacityReservationAdjustmentDetailsUnmarshaller _instance = new CapacityReservationAdjustmentDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CapacityReservationCommitmentInfoUnmarshaller Instance
+        public static CapacityReservationAdjustmentDetailsUnmarshaller Instance
         {
             get
             {

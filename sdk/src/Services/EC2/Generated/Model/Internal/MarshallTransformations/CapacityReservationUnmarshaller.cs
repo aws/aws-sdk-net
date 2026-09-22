@@ -55,6 +55,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("adjustmentDetails", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationAdjustmentDetailsUnmarshaller.Instance;
+                        unmarshalledObject.AdjustmentDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("adjustmentStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AdjustmentStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("availabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -184,6 +196,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = InterruptionInfoUnmarshaller.Instance;
                         unmarshalledObject.InterruptionInfo = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("originalStartDate", targetDepth))
+                    {
+                        var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                        unmarshalledObject.OriginalStartDate = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("outpostArn", targetDepth))

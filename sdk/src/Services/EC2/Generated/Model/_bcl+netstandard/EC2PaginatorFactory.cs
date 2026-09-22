@@ -125,6 +125,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCapacityReservationDateChangeQuotes operation
+        ///</summary>
+        public IDescribeCapacityReservationDateChangeQuotesPaginator DescribeCapacityReservationDateChangeQuotes(DescribeCapacityReservationDateChangeQuotesRequest request) 
+        {
+            return new DescribeCapacityReservationDateChangeQuotesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationFleets operation
         ///</summary>
         public IDescribeCapacityReservationFleetsPaginator DescribeCapacityReservationFleets(DescribeCapacityReservationFleetsRequest request) 

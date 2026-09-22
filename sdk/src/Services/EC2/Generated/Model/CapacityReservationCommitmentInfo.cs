@@ -34,8 +34,29 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CapacityReservationCommitmentInfo
     {
+        private long? _commitmentDuration;
         private DateTime? _commitmentEndDate;
         private int? _committedInstanceCount;
+
+        /// <summary>
+        /// Gets and sets the property CommitmentDuration. 
+        /// <para>
+        /// The commitment duration, in seconds, for the future-dated Capacity Reservation. This
+        /// is the minimum duration for which you commit to having the Capacity Reservation in
+        /// the <c>active</c> state in your account after it has been delivered.
+        /// </para>
+        /// </summary>
+        public long? CommitmentDuration
+        {
+            get { return this._commitmentDuration; }
+            set { this._commitmentDuration = value; }
+        }
+
+        // Check to see if CommitmentDuration property is set
+        internal bool IsSetCommitmentDuration()
+        {
+            return this._commitmentDuration.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CommitmentEndDate. 

@@ -138,6 +138,16 @@ namespace Amazon.EC2.Model
         IDescribeCapacityReservationBillingRequestsPaginator DescribeCapacityReservationBillingRequests(DescribeCapacityReservationBillingRequestsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeCapacityReservationDateChangeQuotes operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeCapacityReservationDateChangeQuotesPaginator DescribeCapacityReservationDateChangeQuotes(DescribeCapacityReservationDateChangeQuotesRequest request);
+
+        /// <summary>
         /// Paginator for DescribeCapacityReservationFleets operation
         ///</summary>
         [AWSPaginator(
