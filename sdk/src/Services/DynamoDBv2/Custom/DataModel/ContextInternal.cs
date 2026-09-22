@@ -128,15 +128,17 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static PropertyStorage[] GetCounterProperties(ItemStorage storage)
         {
+            // Ignored properties are excluded at every level: [DynamoDBIgnore] means the attribute is not persisted,
+            // so it must not appear in an update expression either, where it would change server-side state.
             var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.IsCounter).ToArray();
+                Where(propertyStorage => propertyStorage.IsCounter && !propertyStorage.IsIgnored).ToArray();
             var flatten = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.FlattenProperties.Any()).ToArray();
+                Where(propertyStorage => !propertyStorage.IsIgnored && propertyStorage.FlattenProperties.Any()).ToArray();
             while (flatten.Any())
             {
-                var flattenCounters = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.IsCounter)).ToArray();
+                var flattenCounters = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.IsCounter && !fp.IsIgnored)).ToArray();
                 counterProperties = counterProperties.Concat(flattenCounters).ToArray();
-                flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.FlattenProperties.Any())).ToArray();
+                flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => !fp.IsIgnored && fp.FlattenProperties.Any())).ToArray();
             }
 
             return counterProperties;
@@ -173,7 +175,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal static HashSet<string> GetUpdateIfNotExistsAttributeNames(ItemStorage storage)
         {
-            var baseProperties = storage.Config.BaseTypeStorageConfig.Properties;
+            // Ignored properties are excluded at every level, for the same reason as in GetCounterProperties.
+            var baseProperties = storage.Config.BaseTypeStorageConfig.Properties.Where(p => !p.IsIgnored).ToList();
             var ifNotExistsProperties = new List<PropertyStorage>();
             var stack = new Stack<PropertyStorage>(baseProperties.Where(p => p.FlattenProperties.Any()));
 
@@ -184,6 +187,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 var current = stack.Pop();
                 foreach (var fp in current.FlattenProperties)
                 {
+                    if (fp.IsIgnored) continue;
+
                     if (fp.UpdateBehaviorMode == UpdateBehavior.IfNotExists)
                         ifNotExistsProperties.Add(fp);
                     if (fp.FlattenProperties.Any())
@@ -778,14 +783,14 @@ namespace Amazon.DynamoDBv2.DataModel
                                     document[pair.Key] = pair.Value;
                                 }
 
-                                // An ignored flattened descendant is excluded by Denormalize and never written to
-                                // the inner document, so looking it up here would fail.
-                                if (propertyStorage.FlattenProperties.Any(p => p.IsVersion && !p.IsIgnored))
+                                // The version may be any depth down a nested [DynamoDBFlatten] chain. Every level
+                                // hoists its leaves to the top of its own serialized document, so once the property
+                                // is found the attribute is always at the top of innerDocument.
+                                var innerVersionProperty = FindFlattenedVersionProperty(propertyStorage);
+                                if (innerVersionProperty != null &&
+                                    innerDocument.TryGetValue(innerVersionProperty.AttributeName, out var innerVersionEntry))
                                 {
-                                    var innerVersionProperty =
-                                        propertyStorage.FlattenProperties.First(p => p.IsVersion && !p.IsIgnored);
-                                    storage.CurrentVersion =
-                                        innerDocument[innerVersionProperty.AttributeName] as Primitive;
+                                    storage.CurrentVersion = innerVersionEntry as Primitive;
                                 }
                             }
                             else
@@ -1256,6 +1261,35 @@ namespace Amazon.DynamoDBv2.DataModel
             return new InvalidOperationException(
                 $"Unable to set member {member.DeclaringType?.FullName}.{member.Name} from attribute '{attributeName}'. " +
                 "The member must be a settable property or a public field.");
+        }
+
+        /// <summary>
+        /// Finds the version property among a flattened member's descendants, at any depth and skipping ignored
+        /// ones. Returns <c>null</c> when the flattened member contains no version property that is persisted.
+        /// </summary>
+        private static PropertyStorage FindFlattenedVersionProperty(PropertyStorage propertyStorage)
+        {
+            if (propertyStorage.FlattenProperties == null)
+                return null;
+
+            foreach (var child in propertyStorage.FlattenProperties)
+            {
+                // An ignored descendant is excluded by Denormalize and never written, so it is not the version
+                // the optimistic-locking condition should be built from.
+                if (child.IsIgnored) continue;
+
+                if (child.IsVersion)
+                    return child;
+
+                if (child.FlattenProperties != null && child.FlattenProperties.Any())
+                {
+                    var nested = FindFlattenedVersionProperty(child);
+                    if (nested != null)
+                        return nested;
+                }
+            }
+
+            return null;
         }
 
         private static bool TryGetValue(object instance, MemberInfo member, out object value)
