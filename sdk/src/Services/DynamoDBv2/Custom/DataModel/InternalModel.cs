@@ -717,9 +717,12 @@ namespace Amazon.DynamoDBv2.DataModel
                 $"{parameter.ParameterType.FullName}, but the member '{member.PropertyName}' that supplies it is " +
                 $"{member.MemberType.FullName}. A stored attribute is deserialized as its member's type and then passed to the " +
                 "constructor, so this combination would save successfully but fail to load with an argument-type error. " +
-                "Declare the parameter and the member with the same type, or use a type the member's type converts to implicitly. " +
-                "A parameter type derived from the member's type is only supported when a [DynamoDBPolymorphicType] mapping " +
-                "lets the loader create that derived type.");
+                "Declare the parameter and the member with the same type. The constructor is called through reflection, which " +
+                "accepts only an identical type, a nullable and its underlying type in either direction, a reference conversion " +
+                "to a base type or interface, an enum and its underlying type, and a widening numeric conversion. It does not " +
+                "perform every C# implicit conversion: int to decimal, for example, is rejected because decimal is not a " +
+                "primitive type. A parameter type derived from the member's type is only supported when a " +
+                "[DynamoDBPolymorphicType] mapping lets the loader create that derived type.");
         }
 
         /// <summary>

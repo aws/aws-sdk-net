@@ -491,7 +491,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </remarks>
         /// <returns><c>true</c> when a binding constructor was selected; otherwise <c>false</c>.</returns>
         internal static bool TryGetBindingConstructor(
-            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type,
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
             out ConstructorInfo bindingConstructor)
         {
             bindingConstructor = null;
@@ -569,9 +569,41 @@ namespace Amazon.DynamoDBv2.DataModel
                 return true;
             }
 
+            // More than one constructor could be bound. A value type whose persisted members are all writable does
+            // not need a constructor at all: it is populated by zero-initialization followed by member assignment,
+            // so the ambiguity is irrelevant and reporting it would reject a type that works everywhere it is used
+            // (top level, nested and flattened). A value type that has constructor-only members, and any reference
+            // type, still needs the caller to disambiguate.
+            if (type.IsValueType && !ValueTypeRequiresBindingConstructor(type, bindable))
+                return false;
+
             throw new InvalidOperationException(
                 $"Type {type.FullName} has multiple bindable parameterized constructors. " +
                 "Mark the constructor to use for DynamoDB deserialization with [DynamoDBConstructor].");
+        }
+
+        /// <summary>
+        /// Whether a value type needs one of <paramref name="candidates"/> to populate at least one of the members
+        /// it persists, that is whether it has a get-only property matching a parameter of any candidate. When it
+        /// does not, zero-initialization followed by member assignment can populate the value completely.
+        /// </summary>
+        private static bool ValueTypeRequiresBindingConstructor(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            List<ConstructorInfo> candidates)
+        {
+            var parameterNames = candidates
+                .SelectMany(c => c.GetParameters())
+                .Select(p => p.Name)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            foreach (var member in GetMembersFromType(type, parameterNames))
+            {
+                if (!IsReadWrite(member))
+                    return true;
+            }
+
+            return false;
         }
 
         /// <summary>

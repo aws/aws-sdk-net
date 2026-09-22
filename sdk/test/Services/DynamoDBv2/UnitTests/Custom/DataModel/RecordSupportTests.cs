@@ -1369,6 +1369,126 @@ namespace AWSSDK_DotNet.UnitTests
 
         #endregion
 
+        #region Value types with multiple parameterized constructors
+
+        // A mutable struct with two public parameterized constructors. It needs none of them: every persisted
+        // member is writable, so zero-initialization plus member assignment populates it completely and the
+        // ambiguity is irrelevant.
+        public struct MultiCtorWritableStruct
+        {
+            public MultiCtorWritableStruct(string name) { Name = name; Count = 0; }
+            public MultiCtorWritableStruct(string name, int count) { Name = name; Count = count; }
+
+            public string Name { get; set; }
+            public int Count { get; set; }
+        }
+
+        public class MultiCtorStructParent
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public MultiCtorWritableStruct Child { get; set; }
+        }
+
+        public class MultiCtorStructNestedParent
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            public MultiCtorWritableStruct Child { get; set; }
+        }
+
+        // Two constructors and a member only a constructor can populate, so the ambiguity does matter here.
+        public struct MultiCtorConstructorOnlyStruct
+        {
+            public MultiCtorConstructorOnlyStruct(decimal amount) { Amount = amount; }
+            public MultiCtorConstructorOnlyStruct(decimal amount, int scale) { Amount = amount * scale; }
+
+            public decimal Amount { get; }
+        }
+
+        [TestMethod]
+        public void StructWithMultipleConstructorsAndWritableMembers_SelectsNoBindingConstructor()
+        {
+            var selected = Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                typeof(MultiCtorWritableStruct), out var constructor);
+
+            Assert.IsFalse(selected, "A writable value type does not need a constructor, so the ambiguity is not an error.");
+            Assert.IsNull(constructor);
+        }
+
+        [TestMethod]
+        public void StructWithMultipleConstructors_RoundTripsAtTopLevelNestedAndFlattened()
+        {
+            var context = CreateContext();
+
+            var topLevel = context.FromDocument<MultiCtorWritableStruct>(
+                context.ToDocument(new MultiCtorWritableStruct("n") { Count = 3 }));
+            Assert.AreEqual("n", topLevel.Name);
+            Assert.AreEqual(3, topLevel.Count);
+
+            var nested = context.FromDocument<MultiCtorStructNestedParent>(
+                context.ToDocument(new MultiCtorStructNestedParent
+                {
+                    Id = "m1",
+                    Child = new MultiCtorWritableStruct("n") { Count = 3 }
+                }));
+            Assert.AreEqual("n", nested.Child.Name);
+            Assert.AreEqual(3, nested.Child.Count);
+
+            var flattenedDocument = context.ToDocument(new MultiCtorStructParent
+            {
+                Id = "m1",
+                Child = new MultiCtorWritableStruct("n") { Count = 3 }
+            });
+            CollectionAssert.AreEquivalent(new[] { "Id", "Name", "Count" }, flattenedDocument.Keys.ToArray());
+
+            var flattened = context.FromDocument<MultiCtorStructParent>(flattenedDocument);
+            Assert.AreEqual("n", flattened.Child.Name);
+            Assert.AreEqual(3, flattened.Child.Count);
+        }
+
+        [TestMethod]
+        public void StructWithMultipleConstructorsAndConstructorOnlyMembers_StillRequiresDisambiguation()
+        {
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(
+                    typeof(MultiCtorConstructorOnlyStruct), out _));
+
+            StringAssert.Contains(ex.Message, "multiple bindable parameterized constructors");
+            StringAssert.Contains(ex.Message, "[DynamoDBConstructor]");
+        }
+
+        [TestMethod]
+        public void ClassWithMultipleConstructors_StillRequiresDisambiguation()
+        {
+            // Only value types can be populated without a constructor, so a reference type is unaffected.
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                Amazon.DynamoDBv2.DataModel.Utils.TryGetBindingConstructor(typeof(AmbiguousCtors), out _));
+
+            StringAssert.Contains(ex.Message, "multiple bindable parameterized constructors");
+        }
+
+        [TestMethod]
+        public void TypeMismatchMessage_DescribesTheAcceptedReflectionConversions()
+        {
+            // The remediation must not tell users to rely on C# implicit conversions, because the reflection
+            // binder does not perform all of them.
+            var context = CreateContext();
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() =>
+                context.ToDocument(new NarrowerParameterType(7)));
+
+            StringAssert.Contains(ex.Message, "widening numeric conversion");
+            StringAssert.Contains(ex.Message, "int to decimal");
+            Assert.IsFalse(ex.Message.Contains("converts to implicitly"),
+                "The message must not suggest that any C# implicit conversion is accepted.");
+        }
+
+        #endregion
+
         #region Effective converters and stored DynamoDB NULL
 
         // Returns int rather than the member's declared long, so the declared types are incompatible but the
