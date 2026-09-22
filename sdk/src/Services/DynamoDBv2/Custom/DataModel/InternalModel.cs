@@ -697,9 +697,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         private void ValidateConstructorArgumentType(ParameterInfo parameter, PropertyStorage member)
         {
-            // A custom converter decides the run-time type of the deserialized value, so the member's declared
-            // type says nothing useful about what the constructor will receive.
-            if (member.ConverterType != null)
+            // A converter decides the run-time type of the deserialized value, so the member's declared type says
+            // nothing useful about what the constructor will receive. Converter is the effective converter: it
+            // covers an attribute or type-mapping converter and a default converter registered on the context,
+            // which is why this runs after Denormalize has called PropertyStorage.Validate.
+            if (member.Converter != null || member.ConverterType != null)
                 return;
 
             // The loader can produce the member's declared type, any derived type declared on the member itself,
@@ -1327,18 +1329,19 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
 
+            config.Denormalize(Context, flatConfig.DerivedTypeAttributeName);
+
 #if NET8_0_OR_GREATER
-            // Resolve binding-constructor arguments only after type-mapping and table configuration have been
-            // applied, so that mapping-level flags (version/counter/timestamp/ignore) are already set on the
-            // property storages and are correctly honored (and rejected) during resolution.
+            // Resolve binding-constructor arguments after Denormalize, which is where PropertyStorage.Validate
+            // assigns the effective converter. Running earlier would miss a default converter registered on the
+            // context (DynamoDBContext.ConverterCache is only consulted there). Mapping-level flags such as
+            // version, counter and ignore are already final by this point as well.
             config.BaseTypeStorageConfig.ResolveConstructorArguments();
             foreach (var polymorphicStorageConfig in config.PolymorphicTypesStorageConfig.Values)
             {
                 polymorphicStorageConfig.ResolveConstructorArguments();
             }
 #endif
-
-            config.Denormalize(Context, flatConfig.DerivedTypeAttributeName);
 
             if (flatConfig.DisableFetchingTableMetadata)
             {

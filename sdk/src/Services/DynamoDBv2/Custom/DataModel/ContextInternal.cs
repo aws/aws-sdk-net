@@ -507,7 +507,15 @@ namespace Amazon.DynamoDBv2.DataModel
                         // Version, atomic counter, auto-generated timestamp and UpdateBehavior.IfNotExists members
                         // are rejected as constructor arguments by StorageConfig.ResolveConstructorArguments, so no
                         // server-managed state (such as storage.CurrentVersion) needs to be captured here.
-                        values[i] = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+                        var value = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+
+                        // A stored DynamoDB NULL deserializes to null, which a non-nullable value-type parameter
+                        // cannot represent. Treat it the same as a missing attribute so the parameter's declared
+                        // default is honored, rather than letting the reflection binder silently substitute
+                        // default(T) and discard that default.
+                        values[i] = value == null && IsNonNullableValueType(argument.Parameter.ParameterType)
+                            ? GetConstructorArgumentDefault(argument)
+                            : value;
                     }
                     else
                     {
@@ -517,6 +525,15 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             return storageConfig.BindingConstructor.Invoke(values);
+        }
+
+        /// <summary>
+        /// Whether <paramref name="type"/> is a value type that cannot hold null, that is a value type which is
+        /// not <see cref="Nullable{T}"/>.
+        /// </summary>
+        private static bool IsNonNullableValueType(Type type)
+        {
+            return type.IsValueType && Nullable.GetUnderlyingType(type) == null;
         }
 
         /// <summary>
