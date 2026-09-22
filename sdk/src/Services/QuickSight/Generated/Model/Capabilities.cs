@@ -37,6 +37,8 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _accessAppsNativeDataStore;
         private CapabilityState _action;
         private CapabilityState _addOrRunAnomalyDetectionForAnalyses;
+        private CapabilityState _adobeAction;
+        private CapabilityState _airtableAction;
         private CapabilityState _amazonBedrockARSAction;
         private CapabilityState _amazonBedrockFSAction;
         private CapabilityState _amazonBedrockKRSAction;
@@ -48,15 +50,20 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _automate;
         private CapabilityState _bambooHRAction;
         private CapabilityState _bedrockManagedKnowledgeBase;
+        private CapabilityState _beeAction;
         private CapabilityState _boxAgentAction;
         private CapabilityState _boxKnowledgeBase;
         private CapabilityState _buildCalculatedFieldWithQ;
         private CapabilityState _canvaAgentAction;
         private CapabilityState _chatAgent;
+        private CapabilityState _ciscoWebexMeetingsAction;
+        private CapabilityState _ciscoWebexVidcastAction;
         private CapabilityState _comprehendAction;
         private CapabilityState _comprehendMedicalAction;
         private CapabilityState _confluenceAction;
         private CapabilityState _confluenceKnowledgeBase;
+        private CapabilityState _createAndUpdateAdobeAction;
+        private CapabilityState _createAndUpdateAirtableAction;
         private CapabilityState _createAndUpdateAmazonBedrockARSAction;
         private CapabilityState _createAndUpdateAmazonBedrockFSAction;
         private CapabilityState _createAndUpdateAmazonBedrockKRSAction;
@@ -65,9 +72,12 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateAsanaAction;
         private CapabilityState _createAndUpdateBambooHRAction;
         private CapabilityState _createAndUpdateBedrockManagedKnowledgeBase;
+        private CapabilityState _createAndUpdateBeeAction;
         private CapabilityState _createAndUpdateBoxAgentAction;
         private CapabilityState _createAndUpdateBoxKnowledgeBase;
         private CapabilityState _createAndUpdateCanvaAgentAction;
+        private CapabilityState _createAndUpdateCiscoWebexMeetingsAction;
+        private CapabilityState _createAndUpdateCiscoWebexVidcastAction;
         private CapabilityState _createAndUpdateComprehendAction;
         private CapabilityState _createAndUpdateComprehendMedicalAction;
         private CapabilityState _createAndUpdateConfluenceAction;
@@ -75,11 +85,23 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateDashboardEmailReports;
         private CapabilityState _createAndUpdateDatasets;
         private CapabilityState _createAndUpdateDataSources;
+        private CapabilityState _createAndUpdateDropboxAction;
+        private CapabilityState _createAndUpdateDunAndBradstreetAction;
         private CapabilityState _createAndUpdateFactSetAction;
+        private CapabilityState _createAndUpdateFigmaAction;
         private CapabilityState _createAndUpdateGenericHTTPAction;
         private CapabilityState _createAndUpdateGithubAction;
+        private CapabilityState _createAndUpdateGmailAction;
+        private CapabilityState _createAndUpdateGoogleAnalyticsAction;
         private CapabilityState _createAndUpdateGoogleCalendarAction;
+        private CapabilityState _createAndUpdateGoogleChatAction;
+        private CapabilityState _createAndUpdateGoogleDocsAction;
+        private CapabilityState _createAndUpdateGoogleDriveAction;
         private CapabilityState _createAndUpdateGoogleDriveKnowledgeBase;
+        private CapabilityState _createAndUpdateGoogleMeetAction;
+        private CapabilityState _createAndUpdateGoogleSheetsAction;
+        private CapabilityState _createAndUpdateGoogleSlidesAction;
+        private CapabilityState _createAndUpdateHGInsightsAction;
         private CapabilityState _createAndUpdateHubspotAction;
         private CapabilityState _createAndUpdateHuggingFaceAction;
         private CapabilityState _createAndUpdateIDCKnowledgeBase;
@@ -89,15 +111,19 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateLinearAction;
         private CapabilityState _createAndUpdateMCPAction;
         private CapabilityState _createAndUpdateMondayAction;
+        private CapabilityState _createAndUpdateMoodysAction;
         private CapabilityState _createAndUpdateMSExchangeAction;
         private CapabilityState _createAndUpdateMSTeamsAction;
         private CapabilityState _createAndUpdateNewRelicAction;
         private CapabilityState _createAndUpdateNotionAction;
         private CapabilityState _createAndUpdateOneDriveAction;
         private CapabilityState _createAndUpdateOneDriveKnowledgeBase;
+        private CapabilityState _createAndUpdateOneNoteAction;
         private CapabilityState _createAndUpdateOpenAPIAction;
         private CapabilityState _createAndUpdatePagerDutyAction;
+        private CapabilityState _createAndUpdatePagerDutyAgentAction;
         private CapabilityState _createAndUpdateQBusinessKnowledgeBase;
+        private CapabilityState _createAndUpdateQuickBooksAction;
         private CapabilityState _createAndUpdateS3KnowledgeBase;
         private CapabilityState _createAndUpdateSalesforceAction;
         private CapabilityState _createAndUpdateSandPGlobalEnergyAction;
@@ -110,19 +136,28 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _createAndUpdateServiceNowAction;
         private CapabilityState _createAndUpdateSharePointAction;
         private CapabilityState _createAndUpdateSharePointKnowledgeBase;
+        private CapabilityState _createAndUpdateShopifyAction;
         private CapabilityState _createAndUpdateSlackAction;
         private CapabilityState _createAndUpdateSmartsheetAction;
+        private CapabilityState _createAndUpdateSnowFlakeAction;
         private CapabilityState _createAndUpdateTextractAction;
         private CapabilityState _createAndUpdateThemes;
         private CapabilityState _createAndUpdateThresholdAlerts;
+        private CapabilityState _createAndUpdateVisierAgentAction;
         private CapabilityState _createAndUpdateWebCrawlerKnowledgeBase;
+        private CapabilityState _createAndUpdateWhatsAppAction;
+        private CapabilityState _createAndUpdateZapierAction;
         private CapabilityState _createAndUpdateZendeskAction;
+        private CapabilityState _createAndUpdateZoomAction;
+        private CapabilityState _createAndUpdateZoomInfoAction;
         private CapabilityState _createChatAgents;
         private CapabilityState _createDashboardExecutiveSummaryWithQ;
         private CapabilityState _createSharedFolders;
         private CapabilityState _createSpaces;
         private CapabilityState _createSPICEDataset;
         private CapabilityState _dashboard;
+        private CapabilityState _dropboxAction;
+        private CapabilityState _dunAndBradstreetAction;
         private CapabilityState _editVisualWithQ;
         private CapabilityState _exportToCsv;
         private CapabilityState _exportToCsvInScheduledReports;
@@ -132,12 +167,22 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _exportToPdfInScheduledReports;
         private CapabilityState _extension;
         private CapabilityState _factSetAction;
+        private CapabilityState _figmaAction;
         private CapabilityState _flow;
         private CapabilityState _generateAnalyses;
         private CapabilityState _genericHTTPAction;
         private CapabilityState _githubAction;
+        private CapabilityState _gmailAction;
+        private CapabilityState _googleAnalyticsAction;
         private CapabilityState _googleCalendarAction;
+        private CapabilityState _googleChatAction;
+        private CapabilityState _googleDocsAction;
+        private CapabilityState _googleDriveAction;
         private CapabilityState _googleDriveKnowledgeBase;
+        private CapabilityState _googleMeetAction;
+        private CapabilityState _googleSheetsAction;
+        private CapabilityState _googleSlidesAction;
+        private CapabilityState _hgInsightsAction;
         private CapabilityState _hubspotAction;
         private CapabilityState _huggingFaceAction;
         private CapabilityState _idcKnowledgeBase;
@@ -151,18 +196,22 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _manageSharedFolders;
         private CapabilityState _mcpAction;
         private CapabilityState _mondayAction;
+        private CapabilityState _moodysAction;
         private CapabilityState _msExchangeAction;
         private CapabilityState _msTeamsAction;
         private CapabilityState _newRelicAction;
         private CapabilityState _notionAction;
         private CapabilityState _oneDriveAction;
         private CapabilityState _oneDriveKnowledgeBase;
+        private CapabilityState _oneNoteAction;
         private CapabilityState _openAPIAction;
         private CapabilityState _pagerDutyAction;
+        private CapabilityState _pagerDutyAgentAction;
         private CapabilityState _performFlowUiTask;
         private CapabilityState _printReports;
         private CapabilityState _publishWithoutApproval;
         private CapabilityState _qBusinessKnowledgeBase;
+        private CapabilityState _quickBooksAction;
         private CapabilityState _quickEventTrigger;
         private CapabilityState _renameSharedFolders;
         private CapabilityState _research;
@@ -179,6 +228,8 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _scheduleTrigger;
         private CapabilityState _selfUpgradeUserRole;
         private CapabilityState _serviceNowAction;
+        private CapabilityState _shareAdobeAction;
+        private CapabilityState _shareAirtableAction;
         private CapabilityState _shareAmazonBedrockARSAction;
         private CapabilityState _shareAmazonBedrockFSAction;
         private CapabilityState _shareAmazonBedrockKRSAction;
@@ -188,10 +239,13 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareAsanaAction;
         private CapabilityState _shareBambooHRAction;
         private CapabilityState _shareBedrockManagedKnowledgeBase;
+        private CapabilityState _shareBeeAction;
         private CapabilityState _shareBoxAgentAction;
         private CapabilityState _shareBoxKnowledgeBase;
         private CapabilityState _shareCanvaAgentAction;
         private CapabilityState _shareChatAgents;
+        private CapabilityState _shareCiscoWebexMeetingsAction;
+        private CapabilityState _shareCiscoWebexVidcastAction;
         private CapabilityState _shareComprehendAction;
         private CapabilityState _shareComprehendMedicalAction;
         private CapabilityState _shareConfluenceAction;
@@ -199,11 +253,23 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareDashboards;
         private CapabilityState _shareDatasets;
         private CapabilityState _shareDataSources;
+        private CapabilityState _shareDropboxAction;
+        private CapabilityState _shareDunAndBradstreetAction;
         private CapabilityState _shareFactSetAction;
+        private CapabilityState _shareFigmaAction;
         private CapabilityState _shareGenericHTTPAction;
         private CapabilityState _shareGithubAction;
+        private CapabilityState _shareGmailAction;
+        private CapabilityState _shareGoogleAnalyticsAction;
         private CapabilityState _shareGoogleCalendarAction;
+        private CapabilityState _shareGoogleChatAction;
+        private CapabilityState _shareGoogleDocsAction;
+        private CapabilityState _shareGoogleDriveAction;
         private CapabilityState _shareGoogleDriveKnowledgeBase;
+        private CapabilityState _shareGoogleMeetAction;
+        private CapabilityState _shareGoogleSheetsAction;
+        private CapabilityState _shareGoogleSlidesAction;
+        private CapabilityState _shareHGInsightsAction;
         private CapabilityState _shareHubspotAction;
         private CapabilityState _shareHuggingFaceAction;
         private CapabilityState _shareIDCKnowledgeBase;
@@ -213,17 +279,21 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareLinearAction;
         private CapabilityState _shareMCPAction;
         private CapabilityState _shareMondayAction;
+        private CapabilityState _shareMoodysAction;
         private CapabilityState _shareMSExchangeAction;
         private CapabilityState _shareMSTeamsAction;
         private CapabilityState _shareNewRelicAction;
         private CapabilityState _shareNotionAction;
         private CapabilityState _shareOneDriveAction;
         private CapabilityState _shareOneDriveKnowledgeBase;
+        private CapabilityState _shareOneNoteAction;
         private CapabilityState _shareOpenAPIAction;
         private CapabilityState _sharePagerDutyAction;
+        private CapabilityState _sharePagerDutyAgentAction;
         private CapabilityState _sharePointAction;
         private CapabilityState _sharePointKnowledgeBase;
         private CapabilityState _shareQBusinessKnowledgeBase;
+        private CapabilityState _shareQuickBooksAction;
         private CapabilityState _shareS3KnowledgeBase;
         private CapabilityState _shareSalesforceAction;
         private CapabilityState _shareSandPGlobalEnergyAction;
@@ -236,21 +306,32 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _shareServiceNowAction;
         private CapabilityState _shareSharePointAction;
         private CapabilityState _shareSharePointKnowledgeBase;
+        private CapabilityState _shareShopifyAction;
         private CapabilityState _shareSlackAction;
         private CapabilityState _shareSmartsheetAction;
+        private CapabilityState _shareSnowFlakeAction;
         private CapabilityState _shareSpaces;
         private CapabilityState _shareTextractAction;
+        private CapabilityState _shareVisierAgentAction;
         private CapabilityState _shareWebCrawlerKnowledgeBase;
+        private CapabilityState _shareWhatsAppAction;
+        private CapabilityState _shareZapierAction;
         private CapabilityState _shareZendeskAction;
+        private CapabilityState _shareZoomAction;
+        private CapabilityState _shareZoomInfoAction;
+        private CapabilityState _shopifyAction;
         private CapabilityState _slackAction;
         private CapabilityState _smartsheetAction;
+        private CapabilityState _snowFlakeAction;
         private CapabilityState _space;
         private CapabilityState _story;
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
         private CapabilityState _topic;
         private CapabilityState _trigger;
+        private CapabilityState _useAdobeAction;
         private CapabilityState _useAgentWebSearch;
+        private CapabilityState _useAirtableAction;
         private CapabilityState _useAmazonBedrockARSAction;
         private CapabilityState _useAmazonBedrockFSAction;
         private CapabilityState _useAmazonBedrockKRSAction;
@@ -259,20 +340,35 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useBambooHRAction;
         private CapabilityState _useBedrockManagedKnowledgeBase;
         private CapabilityState _useBedrockModels;
+        private CapabilityState _useBeeAction;
         private CapabilityState _useBoxAgentAction;
         private CapabilityState _useBoxKnowledgeBase;
         private CapabilityState _useBrowserExtension;
         private CapabilityState _useCanvaAgentAction;
+        private CapabilityState _useCiscoWebexMeetingsAction;
+        private CapabilityState _useCiscoWebexVidcastAction;
         private CapabilityState _useComprehendAction;
         private CapabilityState _useComprehendMedicalAction;
         private CapabilityState _useConfluenceAction;
         private CapabilityState _useConfluenceKnowledgeBase;
+        private CapabilityState _useDropboxAction;
+        private CapabilityState _useDunAndBradstreetAction;
         private CapabilityState _useExcelAddInExtension;
         private CapabilityState _useFactSetAction;
+        private CapabilityState _useFigmaAction;
         private CapabilityState _useGenericHTTPAction;
         private CapabilityState _useGithubAction;
+        private CapabilityState _useGmailAction;
+        private CapabilityState _useGoogleAnalyticsAction;
         private CapabilityState _useGoogleCalendarAction;
+        private CapabilityState _useGoogleChatAction;
+        private CapabilityState _useGoogleDocsAction;
+        private CapabilityState _useGoogleDriveAction;
         private CapabilityState _useGoogleDriveKnowledgeBase;
+        private CapabilityState _useGoogleMeetAction;
+        private CapabilityState _useGoogleSheetsAction;
+        private CapabilityState _useGoogleSlidesAction;
+        private CapabilityState _useHGInsightsAction;
         private CapabilityState _useHubspotAction;
         private CapabilityState _useHuggingFaceAction;
         private CapabilityState _useIDCKnowledgeBase;
@@ -281,17 +377,21 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useLinearAction;
         private CapabilityState _useMCPAction;
         private CapabilityState _useMondayAction;
+        private CapabilityState _useMoodysAction;
         private CapabilityState _useMSExchangeAction;
         private CapabilityState _useMSTeamsAction;
         private CapabilityState _useNewRelicAction;
         private CapabilityState _useNotionAction;
         private CapabilityState _useOneDriveAction;
         private CapabilityState _useOneDriveKnowledgeBase;
+        private CapabilityState _useOneNoteAction;
         private CapabilityState _useOpenAPIAction;
         private CapabilityState _useOutlookAddInExtension;
         private CapabilityState _usePagerDutyAction;
+        private CapabilityState _usePagerDutyAgentAction;
         private CapabilityState _usePowerpointAddInExtension;
         private CapabilityState _useQBusinessKnowledgeBase;
+        private CapabilityState _useQuickBooksAction;
         private CapabilityState _useS3KnowledgeBase;
         private CapabilityState _useSalesforceAction;
         private CapabilityState _useSandPGlobalEnergyAction;
@@ -304,15 +404,27 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useServiceNowAction;
         private CapabilityState _useSharePointAction;
         private CapabilityState _useSharePointKnowledgeBase;
+        private CapabilityState _useShopifyAction;
         private CapabilityState _useSlackAction;
         private CapabilityState _useSmartsheetAction;
+        private CapabilityState _useSnowFlakeAction;
         private CapabilityState _useTextractAction;
+        private CapabilityState _useVisierAgentAction;
         private CapabilityState _useWebCrawlerKnowledgeBase;
+        private CapabilityState _useWhatsAppAction;
         private CapabilityState _useWordAddInExtension;
+        private CapabilityState _useZapierAction;
         private CapabilityState _useZendeskAction;
+        private CapabilityState _useZoomAction;
+        private CapabilityState _useZoomInfoAction;
         private CapabilityState _viewAccountSPICECapacity;
+        private CapabilityState _visierAgentAction;
         private CapabilityState _webCrawlerKnowledgeBase;
+        private CapabilityState _whatsAppAction;
+        private CapabilityState _zapierAction;
         private CapabilityState _zendeskAction;
+        private CapabilityState _zoomAction;
+        private CapabilityState _zoomInfoAction;
 
         /// <summary>
         /// Gets and sets the property AccessAppsNativeDataStore. 
@@ -367,6 +479,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAddOrRunAnomalyDetectionForAnalyses()
         {
             return this._addOrRunAnomalyDetectionForAnalyses != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdobeAction. 
+        /// <para>
+        /// The ability to perform actions using Adobe Marketing Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState AdobeAction
+        {
+            get { return this._adobeAction; }
+            set { this._adobeAction = value; }
+        }
+
+        // Check to see if AdobeAction property is set
+        internal bool IsSetAdobeAction()
+        {
+            return this._adobeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AirtableAction. 
+        /// <para>
+        /// The ability to perform actions using Airtable connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState AirtableAction
+        {
+            get { return this._airtableAction; }
+            set { this._airtableAction = value; }
+        }
+
+        // Check to see if AirtableAction property is set
+        internal bool IsSetAirtableAction()
+        {
+            return this._airtableAction != null;
         }
 
         /// <summary>
@@ -565,6 +713,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BeeAction. 
+        /// <para>
+        /// The ability to perform actions using Bee connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState BeeAction
+        {
+            get { return this._beeAction; }
+            set { this._beeAction = value; }
+        }
+
+        // Check to see if BeeAction property is set
+        internal bool IsSetBeeAction()
+        {
+            return this._beeAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BoxAgentAction. 
         /// <para>
         /// The ability to perform actions using Box Agent connectors.
@@ -652,6 +818,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CiscoWebexMeetingsAction. 
+        /// <para>
+        /// The ability to perform actions using Cisco Webex Meetings connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState CiscoWebexMeetingsAction
+        {
+            get { return this._ciscoWebexMeetingsAction; }
+            set { this._ciscoWebexMeetingsAction = value; }
+        }
+
+        // Check to see if CiscoWebexMeetingsAction property is set
+        internal bool IsSetCiscoWebexMeetingsAction()
+        {
+            return this._ciscoWebexMeetingsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CiscoWebexVidcastAction. 
+        /// <para>
+        /// The ability to perform actions using Cisco Webex Video Messaging Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState CiscoWebexVidcastAction
+        {
+            get { return this._ciscoWebexVidcastAction; }
+            set { this._ciscoWebexVidcastAction = value; }
+        }
+
+        // Check to see if CiscoWebexVidcastAction property is set
+        internal bool IsSetCiscoWebexVidcastAction()
+        {
+            return this._ciscoWebexVidcastAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ComprehendAction. 
         /// <para>
         /// The ability to perform actions using Comprehend connectors.
@@ -718,6 +920,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetConfluenceKnowledgeBase()
         {
             return this._confluenceKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateAdobeAction. 
+        /// <para>
+        /// The ability to create and update Adobe Marketing Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateAdobeAction
+        {
+            get { return this._createAndUpdateAdobeAction; }
+            set { this._createAndUpdateAdobeAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateAdobeAction property is set
+        internal bool IsSetCreateAndUpdateAdobeAction()
+        {
+            return this._createAndUpdateAdobeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateAirtableAction. 
+        /// <para>
+        /// The ability to create and update Airtable actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateAirtableAction
+        {
+            get { return this._createAndUpdateAirtableAction; }
+            set { this._createAndUpdateAirtableAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateAirtableAction property is set
+        internal bool IsSetCreateAndUpdateAirtableAction()
+        {
+            return this._createAndUpdateAirtableAction != null;
         }
 
         /// <summary>
@@ -862,6 +1100,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateBeeAction. 
+        /// <para>
+        /// The ability to create and update Bee actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateBeeAction
+        {
+            get { return this._createAndUpdateBeeAction; }
+            set { this._createAndUpdateBeeAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateBeeAction property is set
+        internal bool IsSetCreateAndUpdateBeeAction()
+        {
+            return this._createAndUpdateBeeAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateBoxAgentAction. 
         /// <para>
         /// The ability to create and update Box Agent actions.
@@ -910,6 +1166,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateCanvaAgentAction()
         {
             return this._createAndUpdateCanvaAgentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateCiscoWebexMeetingsAction. 
+        /// <para>
+        /// The ability to create and update Cisco Webex Meetings actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateCiscoWebexMeetingsAction
+        {
+            get { return this._createAndUpdateCiscoWebexMeetingsAction; }
+            set { this._createAndUpdateCiscoWebexMeetingsAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateCiscoWebexMeetingsAction property is set
+        internal bool IsSetCreateAndUpdateCiscoWebexMeetingsAction()
+        {
+            return this._createAndUpdateCiscoWebexMeetingsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateCiscoWebexVidcastAction. 
+        /// <para>
+        /// The ability to create and update Cisco Webex Video Messaging Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateCiscoWebexVidcastAction
+        {
+            get { return this._createAndUpdateCiscoWebexVidcastAction; }
+            set { this._createAndUpdateCiscoWebexVidcastAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateCiscoWebexVidcastAction property is set
+        internal bool IsSetCreateAndUpdateCiscoWebexVidcastAction()
+        {
+            return this._createAndUpdateCiscoWebexVidcastAction != null;
         }
 
         /// <summary>
@@ -1036,6 +1328,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateDropboxAction. 
+        /// <para>
+        /// The ability to create and update Dropbox actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateDropboxAction
+        {
+            get { return this._createAndUpdateDropboxAction; }
+            set { this._createAndUpdateDropboxAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateDropboxAction property is set
+        internal bool IsSetCreateAndUpdateDropboxAction()
+        {
+            return this._createAndUpdateDropboxAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateDunAndBradstreetAction. 
+        /// <para>
+        /// The ability to create and update Dun and Bradstreet actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateDunAndBradstreetAction
+        {
+            get { return this._createAndUpdateDunAndBradstreetAction; }
+            set { this._createAndUpdateDunAndBradstreetAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateDunAndBradstreetAction property is set
+        internal bool IsSetCreateAndUpdateDunAndBradstreetAction()
+        {
+            return this._createAndUpdateDunAndBradstreetAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateFactSetAction. 
         /// <para>
         /// The ability to create and update FactSet actions.
@@ -1051,6 +1379,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateFactSetAction()
         {
             return this._createAndUpdateFactSetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateFigmaAction. 
+        /// <para>
+        /// The ability to create and update Figma actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateFigmaAction
+        {
+            get { return this._createAndUpdateFigmaAction; }
+            set { this._createAndUpdateFigmaAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateFigmaAction property is set
+        internal bool IsSetCreateAndUpdateFigmaAction()
+        {
+            return this._createAndUpdateFigmaAction != null;
         }
 
         /// <summary>
@@ -1090,6 +1436,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateGmailAction. 
+        /// <para>
+        /// The ability to create and update Gmail actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGmailAction
+        {
+            get { return this._createAndUpdateGmailAction; }
+            set { this._createAndUpdateGmailAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGmailAction property is set
+        internal bool IsSetCreateAndUpdateGmailAction()
+        {
+            return this._createAndUpdateGmailAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleAnalyticsAction. 
+        /// <para>
+        /// The ability to create and update Google Analytics actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleAnalyticsAction
+        {
+            get { return this._createAndUpdateGoogleAnalyticsAction; }
+            set { this._createAndUpdateGoogleAnalyticsAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleAnalyticsAction property is set
+        internal bool IsSetCreateAndUpdateGoogleAnalyticsAction()
+        {
+            return this._createAndUpdateGoogleAnalyticsAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateGoogleCalendarAction. 
         /// <para>
         /// The ability to create and update Google Calendar actions.
@@ -1108,6 +1490,60 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleChatAction. 
+        /// <para>
+        /// The ability to create and update Google Chat actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleChatAction
+        {
+            get { return this._createAndUpdateGoogleChatAction; }
+            set { this._createAndUpdateGoogleChatAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleChatAction property is set
+        internal bool IsSetCreateAndUpdateGoogleChatAction()
+        {
+            return this._createAndUpdateGoogleChatAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleDocsAction. 
+        /// <para>
+        /// The ability to create and update Google Docs actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleDocsAction
+        {
+            get { return this._createAndUpdateGoogleDocsAction; }
+            set { this._createAndUpdateGoogleDocsAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleDocsAction property is set
+        internal bool IsSetCreateAndUpdateGoogleDocsAction()
+        {
+            return this._createAndUpdateGoogleDocsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleDriveAction. 
+        /// <para>
+        /// The ability to create and update Google Drive actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleDriveAction
+        {
+            get { return this._createAndUpdateGoogleDriveAction; }
+            set { this._createAndUpdateGoogleDriveAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleDriveAction property is set
+        internal bool IsSetCreateAndUpdateGoogleDriveAction()
+        {
+            return this._createAndUpdateGoogleDriveAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateGoogleDriveKnowledgeBase.
         /// </summary>
         public CapabilityState CreateAndUpdateGoogleDriveKnowledgeBase
@@ -1120,6 +1556,78 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateGoogleDriveKnowledgeBase()
         {
             return this._createAndUpdateGoogleDriveKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleMeetAction. 
+        /// <para>
+        /// The ability to create and update Google Meet actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleMeetAction
+        {
+            get { return this._createAndUpdateGoogleMeetAction; }
+            set { this._createAndUpdateGoogleMeetAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleMeetAction property is set
+        internal bool IsSetCreateAndUpdateGoogleMeetAction()
+        {
+            return this._createAndUpdateGoogleMeetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleSheetsAction. 
+        /// <para>
+        /// The ability to create and update Google Sheets actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleSheetsAction
+        {
+            get { return this._createAndUpdateGoogleSheetsAction; }
+            set { this._createAndUpdateGoogleSheetsAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleSheetsAction property is set
+        internal bool IsSetCreateAndUpdateGoogleSheetsAction()
+        {
+            return this._createAndUpdateGoogleSheetsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateGoogleSlidesAction. 
+        /// <para>
+        /// The ability to create and update Google Slides actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateGoogleSlidesAction
+        {
+            get { return this._createAndUpdateGoogleSlidesAction; }
+            set { this._createAndUpdateGoogleSlidesAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateGoogleSlidesAction property is set
+        internal bool IsSetCreateAndUpdateGoogleSlidesAction()
+        {
+            return this._createAndUpdateGoogleSlidesAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateHGInsightsAction. 
+        /// <para>
+        /// The ability to create and update HG Insights Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateHGInsightsAction
+        {
+            get { return this._createAndUpdateHGInsightsAction; }
+            set { this._createAndUpdateHGInsightsAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateHGInsightsAction property is set
+        internal bool IsSetCreateAndUpdateHGInsightsAction()
+        {
+            return this._createAndUpdateHGInsightsAction != null;
         }
 
         /// <summary>
@@ -1279,6 +1787,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateMoodysAction. 
+        /// <para>
+        /// The ability to create and update Moody's GenAI Ready Data actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateMoodysAction
+        {
+            get { return this._createAndUpdateMoodysAction; }
+            set { this._createAndUpdateMoodysAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateMoodysAction property is set
+        internal bool IsSetCreateAndUpdateMoodysAction()
+        {
+            return this._createAndUpdateMoodysAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateMSExchangeAction. 
         /// <para>
         /// The ability to create and update Microsoft Outlook actions.
@@ -1384,6 +1910,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateOneNoteAction. 
+        /// <para>
+        /// The ability to create and update Microsoft OneNote actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateOneNoteAction
+        {
+            get { return this._createAndUpdateOneNoteAction; }
+            set { this._createAndUpdateOneNoteAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateOneNoteAction property is set
+        internal bool IsSetCreateAndUpdateOneNoteAction()
+        {
+            return this._createAndUpdateOneNoteAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateOpenAPIAction. 
         /// <para>
         /// The ability to create and update OpenAPI Specification actions.
@@ -1420,6 +1964,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdatePagerDutyAgentAction. 
+        /// <para>
+        /// The ability to create and update PagerDuty Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdatePagerDutyAgentAction
+        {
+            get { return this._createAndUpdatePagerDutyAgentAction; }
+            set { this._createAndUpdatePagerDutyAgentAction = value; }
+        }
+
+        // Check to see if CreateAndUpdatePagerDutyAgentAction property is set
+        internal bool IsSetCreateAndUpdatePagerDutyAgentAction()
+        {
+            return this._createAndUpdatePagerDutyAgentAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateQBusinessKnowledgeBase.
         /// </summary>
         public CapabilityState CreateAndUpdateQBusinessKnowledgeBase
@@ -1432,6 +1994,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateQBusinessKnowledgeBase()
         {
             return this._createAndUpdateQBusinessKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateQuickBooksAction. 
+        /// <para>
+        /// The ability to create and update QuickBooks actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateQuickBooksAction
+        {
+            get { return this._createAndUpdateQuickBooksAction; }
+            set { this._createAndUpdateQuickBooksAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateQuickBooksAction property is set
+        internal bool IsSetCreateAndUpdateQuickBooksAction()
+        {
+            return this._createAndUpdateQuickBooksAction != null;
         }
 
         /// <summary>
@@ -1645,6 +2225,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateShopifyAction. 
+        /// <para>
+        /// The ability to create and update Shopify actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateShopifyAction
+        {
+            get { return this._createAndUpdateShopifyAction; }
+            set { this._createAndUpdateShopifyAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateShopifyAction property is set
+        internal bool IsSetCreateAndUpdateShopifyAction()
+        {
+            return this._createAndUpdateShopifyAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateSlackAction. 
         /// <para>
         /// The ability to create and update Slack actions.
@@ -1678,6 +2276,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateSmartsheetAction()
         {
             return this._createAndUpdateSmartsheetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateSnowFlakeAction. 
+        /// <para>
+        /// The ability to create and update Snowflake Cortex Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateSnowFlakeAction
+        {
+            get { return this._createAndUpdateSnowFlakeAction; }
+            set { this._createAndUpdateSnowFlakeAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateSnowFlakeAction property is set
+        internal bool IsSetCreateAndUpdateSnowFlakeAction()
+        {
+            return this._createAndUpdateSnowFlakeAction != null;
         }
 
         /// <summary>
@@ -1735,6 +2351,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreateAndUpdateVisierAgentAction. 
+        /// <para>
+        /// The ability to create and update Visier Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateVisierAgentAction
+        {
+            get { return this._createAndUpdateVisierAgentAction; }
+            set { this._createAndUpdateVisierAgentAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateVisierAgentAction property is set
+        internal bool IsSetCreateAndUpdateVisierAgentAction()
+        {
+            return this._createAndUpdateVisierAgentAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreateAndUpdateWebCrawlerKnowledgeBase.
         /// </summary>
         public CapabilityState CreateAndUpdateWebCrawlerKnowledgeBase
@@ -1747,6 +2381,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateWebCrawlerKnowledgeBase()
         {
             return this._createAndUpdateWebCrawlerKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateWhatsAppAction. 
+        /// <para>
+        /// The ability to create and update WhatsApp actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateWhatsAppAction
+        {
+            get { return this._createAndUpdateWhatsAppAction; }
+            set { this._createAndUpdateWhatsAppAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateWhatsAppAction property is set
+        internal bool IsSetCreateAndUpdateWhatsAppAction()
+        {
+            return this._createAndUpdateWhatsAppAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateZapierAction. 
+        /// <para>
+        /// The ability to create and update Zapier Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateZapierAction
+        {
+            get { return this._createAndUpdateZapierAction; }
+            set { this._createAndUpdateZapierAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateZapierAction property is set
+        internal bool IsSetCreateAndUpdateZapierAction()
+        {
+            return this._createAndUpdateZapierAction != null;
         }
 
         /// <summary>
@@ -1765,6 +2435,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCreateAndUpdateZendeskAction()
         {
             return this._createAndUpdateZendeskAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateZoomAction. 
+        /// <para>
+        /// The ability to create and update Zoom actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateZoomAction
+        {
+            get { return this._createAndUpdateZoomAction; }
+            set { this._createAndUpdateZoomAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateZoomAction property is set
+        internal bool IsSetCreateAndUpdateZoomAction()
+        {
+            return this._createAndUpdateZoomAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateAndUpdateZoomInfoAction. 
+        /// <para>
+        /// The ability to create and update ZoomInfo Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState CreateAndUpdateZoomInfoAction
+        {
+            get { return this._createAndUpdateZoomInfoAction; }
+            set { this._createAndUpdateZoomInfoAction = value; }
+        }
+
+        // Check to see if CreateAndUpdateZoomInfoAction property is set
+        internal bool IsSetCreateAndUpdateZoomInfoAction()
+        {
+            return this._createAndUpdateZoomInfoAction != null;
         }
 
         /// <summary>
@@ -1873,6 +2579,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDashboard()
         {
             return this._dashboard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DropboxAction. 
+        /// <para>
+        /// The ability to perform actions using Dropbox connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState DropboxAction
+        {
+            get { return this._dropboxAction; }
+            set { this._dropboxAction = value; }
+        }
+
+        // Check to see if DropboxAction property is set
+        internal bool IsSetDropboxAction()
+        {
+            return this._dropboxAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DunAndBradstreetAction. 
+        /// <para>
+        /// The ability to perform actions using Dun and Bradstreet connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState DunAndBradstreetAction
+        {
+            get { return this._dunAndBradstreetAction; }
+            set { this._dunAndBradstreetAction = value; }
+        }
+
+        // Check to see if DunAndBradstreetAction property is set
+        internal bool IsSetDunAndBradstreetAction()
+        {
+            return this._dunAndBradstreetAction != null;
         }
 
         /// <summary>
@@ -2038,6 +2780,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FigmaAction. 
+        /// <para>
+        /// The ability to perform actions using Figma connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState FigmaAction
+        {
+            get { return this._figmaAction; }
+            set { this._figmaAction = value; }
+        }
+
+        // Check to see if FigmaAction property is set
+        internal bool IsSetFigmaAction()
+        {
+            return this._figmaAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Flow. 
         /// <para>
         /// The ability to perform flow-related actions.
@@ -2110,6 +2870,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GmailAction. 
+        /// <para>
+        /// The ability to perform actions using Gmail connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GmailAction
+        {
+            get { return this._gmailAction; }
+            set { this._gmailAction = value; }
+        }
+
+        // Check to see if GmailAction property is set
+        internal bool IsSetGmailAction()
+        {
+            return this._gmailAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleAnalyticsAction. 
+        /// <para>
+        /// The ability to perform actions using Google Analytics connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleAnalyticsAction
+        {
+            get { return this._googleAnalyticsAction; }
+            set { this._googleAnalyticsAction = value; }
+        }
+
+        // Check to see if GoogleAnalyticsAction property is set
+        internal bool IsSetGoogleAnalyticsAction()
+        {
+            return this._googleAnalyticsAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GoogleCalendarAction. 
         /// <para>
         /// The ability to perform actions using Google Calendar connectors.
@@ -2128,6 +2924,60 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GoogleChatAction. 
+        /// <para>
+        /// The ability to perform actions using Google Chat connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleChatAction
+        {
+            get { return this._googleChatAction; }
+            set { this._googleChatAction = value; }
+        }
+
+        // Check to see if GoogleChatAction property is set
+        internal bool IsSetGoogleChatAction()
+        {
+            return this._googleChatAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleDocsAction. 
+        /// <para>
+        /// The ability to perform actions using Google Docs connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleDocsAction
+        {
+            get { return this._googleDocsAction; }
+            set { this._googleDocsAction = value; }
+        }
+
+        // Check to see if GoogleDocsAction property is set
+        internal bool IsSetGoogleDocsAction()
+        {
+            return this._googleDocsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleDriveAction. 
+        /// <para>
+        /// The ability to perform actions using Google Drive connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleDriveAction
+        {
+            get { return this._googleDriveAction; }
+            set { this._googleDriveAction = value; }
+        }
+
+        // Check to see if GoogleDriveAction property is set
+        internal bool IsSetGoogleDriveAction()
+        {
+            return this._googleDriveAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GoogleDriveKnowledgeBase.
         /// </summary>
         public CapabilityState GoogleDriveKnowledgeBase
@@ -2140,6 +2990,78 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetGoogleDriveKnowledgeBase()
         {
             return this._googleDriveKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleMeetAction. 
+        /// <para>
+        /// The ability to perform actions using Google Meet connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleMeetAction
+        {
+            get { return this._googleMeetAction; }
+            set { this._googleMeetAction = value; }
+        }
+
+        // Check to see if GoogleMeetAction property is set
+        internal bool IsSetGoogleMeetAction()
+        {
+            return this._googleMeetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleSheetsAction. 
+        /// <para>
+        /// The ability to perform actions using Google Sheets connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleSheetsAction
+        {
+            get { return this._googleSheetsAction; }
+            set { this._googleSheetsAction = value; }
+        }
+
+        // Check to see if GoogleSheetsAction property is set
+        internal bool IsSetGoogleSheetsAction()
+        {
+            return this._googleSheetsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleSlidesAction. 
+        /// <para>
+        /// The ability to perform actions using Google Slides connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState GoogleSlidesAction
+        {
+            get { return this._googleSlidesAction; }
+            set { this._googleSlidesAction = value; }
+        }
+
+        // Check to see if GoogleSlidesAction property is set
+        internal bool IsSetGoogleSlidesAction()
+        {
+            return this._googleSlidesAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HGInsightsAction. 
+        /// <para>
+        /// The ability to perform actions using HG Insights Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState HGInsightsAction
+        {
+            get { return this._hgInsightsAction; }
+            set { this._hgInsightsAction = value; }
+        }
+
+        // Check to see if HGInsightsAction property is set
+        internal bool IsSetHGInsightsAction()
+        {
+            return this._hgInsightsAction != null;
         }
 
         /// <summary>
@@ -2382,6 +3304,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MoodysAction. 
+        /// <para>
+        /// The ability to perform actions using Moody's GenAI Ready Data connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState MoodysAction
+        {
+            get { return this._moodysAction; }
+            set { this._moodysAction = value; }
+        }
+
+        // Check to see if MoodysAction property is set
+        internal bool IsSetMoodysAction()
+        {
+            return this._moodysAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MSExchangeAction. 
         /// <para>
         /// The ability to perform actions using Microsoft Outlook connectors.
@@ -2487,6 +3427,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OneNoteAction. 
+        /// <para>
+        /// The ability to perform actions using Microsoft OneNote connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState OneNoteAction
+        {
+            get { return this._oneNoteAction; }
+            set { this._oneNoteAction = value; }
+        }
+
+        // Check to see if OneNoteAction property is set
+        internal bool IsSetOneNoteAction()
+        {
+            return this._oneNoteAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property OpenAPIAction. 
         /// <para>
         /// The ability to perform actions using OpenAPI Specification connectors.
@@ -2520,6 +3478,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPagerDutyAction()
         {
             return this._pagerDutyAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PagerDutyAgentAction. 
+        /// <para>
+        /// The ability to perform actions using PagerDuty Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState PagerDutyAgentAction
+        {
+            get { return this._pagerDutyAgentAction; }
+            set { this._pagerDutyAgentAction = value; }
+        }
+
+        // Check to see if PagerDutyAgentAction property is set
+        internal bool IsSetPagerDutyAgentAction()
+        {
+            return this._pagerDutyAgentAction != null;
         }
 
         /// <summary>
@@ -2589,6 +3565,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetQBusinessKnowledgeBase()
         {
             return this._qBusinessKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickBooksAction. 
+        /// <para>
+        /// The ability to perform actions using QuickBooks connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState QuickBooksAction
+        {
+            get { return this._quickBooksAction; }
+            set { this._quickBooksAction = value; }
+        }
+
+        // Check to see if QuickBooksAction property is set
+        internal bool IsSetQuickBooksAction()
+        {
+            return this._quickBooksAction != null;
         }
 
         /// <summary>
@@ -2879,6 +3873,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareAdobeAction. 
+        /// <para>
+        /// The ability to share Adobe Marketing Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareAdobeAction
+        {
+            get { return this._shareAdobeAction; }
+            set { this._shareAdobeAction = value; }
+        }
+
+        // Check to see if ShareAdobeAction property is set
+        internal bool IsSetShareAdobeAction()
+        {
+            return this._shareAdobeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareAirtableAction. 
+        /// <para>
+        /// The ability to share Airtable actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareAirtableAction
+        {
+            get { return this._shareAirtableAction; }
+            set { this._shareAirtableAction = value; }
+        }
+
+        // Check to see if ShareAirtableAction property is set
+        internal bool IsSetShareAirtableAction()
+        {
+            return this._shareAirtableAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareAmazonBedrockARSAction. 
         /// <para>
         /// The ability to share Bedrock Agent actions.
@@ -3038,6 +4068,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareBeeAction. 
+        /// <para>
+        /// The ability to share Bee actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareBeeAction
+        {
+            get { return this._shareBeeAction; }
+            set { this._shareBeeAction = value; }
+        }
+
+        // Check to see if ShareBeeAction property is set
+        internal bool IsSetShareBeeAction()
+        {
+            return this._shareBeeAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareBoxAgentAction. 
         /// <para>
         /// The ability to share Box Agent actions.
@@ -3104,6 +4152,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareChatAgents()
         {
             return this._shareChatAgents != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareCiscoWebexMeetingsAction. 
+        /// <para>
+        /// The ability to share Cisco Webex Meetings actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareCiscoWebexMeetingsAction
+        {
+            get { return this._shareCiscoWebexMeetingsAction; }
+            set { this._shareCiscoWebexMeetingsAction = value; }
+        }
+
+        // Check to see if ShareCiscoWebexMeetingsAction property is set
+        internal bool IsSetShareCiscoWebexMeetingsAction()
+        {
+            return this._shareCiscoWebexMeetingsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareCiscoWebexVidcastAction. 
+        /// <para>
+        /// The ability to share Cisco Webex Video Messaging Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareCiscoWebexVidcastAction
+        {
+            get { return this._shareCiscoWebexVidcastAction; }
+            set { this._shareCiscoWebexVidcastAction = value; }
+        }
+
+        // Check to see if ShareCiscoWebexVidcastAction property is set
+        internal bool IsSetShareCiscoWebexVidcastAction()
+        {
+            return this._shareCiscoWebexVidcastAction != null;
         }
 
         /// <summary>
@@ -3230,6 +4314,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareDropboxAction. 
+        /// <para>
+        /// The ability to share Dropbox actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDropboxAction
+        {
+            get { return this._shareDropboxAction; }
+            set { this._shareDropboxAction = value; }
+        }
+
+        // Check to see if ShareDropboxAction property is set
+        internal bool IsSetShareDropboxAction()
+        {
+            return this._shareDropboxAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareDunAndBradstreetAction. 
+        /// <para>
+        /// The ability to share Dun and Bradstreet actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareDunAndBradstreetAction
+        {
+            get { return this._shareDunAndBradstreetAction; }
+            set { this._shareDunAndBradstreetAction = value; }
+        }
+
+        // Check to see if ShareDunAndBradstreetAction property is set
+        internal bool IsSetShareDunAndBradstreetAction()
+        {
+            return this._shareDunAndBradstreetAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareFactSetAction. 
         /// <para>
         /// The ability to share FactSet actions.
@@ -3245,6 +4365,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareFactSetAction()
         {
             return this._shareFactSetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareFigmaAction. 
+        /// <para>
+        /// The ability to share Figma actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareFigmaAction
+        {
+            get { return this._shareFigmaAction; }
+            set { this._shareFigmaAction = value; }
+        }
+
+        // Check to see if ShareFigmaAction property is set
+        internal bool IsSetShareFigmaAction()
+        {
+            return this._shareFigmaAction != null;
         }
 
         /// <summary>
@@ -3284,6 +4422,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareGmailAction. 
+        /// <para>
+        /// The ability to share Gmail actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGmailAction
+        {
+            get { return this._shareGmailAction; }
+            set { this._shareGmailAction = value; }
+        }
+
+        // Check to see if ShareGmailAction property is set
+        internal bool IsSetShareGmailAction()
+        {
+            return this._shareGmailAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleAnalyticsAction. 
+        /// <para>
+        /// The ability to share Google Analytics actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleAnalyticsAction
+        {
+            get { return this._shareGoogleAnalyticsAction; }
+            set { this._shareGoogleAnalyticsAction = value; }
+        }
+
+        // Check to see if ShareGoogleAnalyticsAction property is set
+        internal bool IsSetShareGoogleAnalyticsAction()
+        {
+            return this._shareGoogleAnalyticsAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareGoogleCalendarAction. 
         /// <para>
         /// The ability to share Google Calendar actions.
@@ -3302,6 +4476,60 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareGoogleChatAction. 
+        /// <para>
+        /// The ability to share Google Chat actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleChatAction
+        {
+            get { return this._shareGoogleChatAction; }
+            set { this._shareGoogleChatAction = value; }
+        }
+
+        // Check to see if ShareGoogleChatAction property is set
+        internal bool IsSetShareGoogleChatAction()
+        {
+            return this._shareGoogleChatAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleDocsAction. 
+        /// <para>
+        /// The ability to share Google Docs actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleDocsAction
+        {
+            get { return this._shareGoogleDocsAction; }
+            set { this._shareGoogleDocsAction = value; }
+        }
+
+        // Check to see if ShareGoogleDocsAction property is set
+        internal bool IsSetShareGoogleDocsAction()
+        {
+            return this._shareGoogleDocsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleDriveAction. 
+        /// <para>
+        /// The ability to share Google Drive actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleDriveAction
+        {
+            get { return this._shareGoogleDriveAction; }
+            set { this._shareGoogleDriveAction = value; }
+        }
+
+        // Check to see if ShareGoogleDriveAction property is set
+        internal bool IsSetShareGoogleDriveAction()
+        {
+            return this._shareGoogleDriveAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareGoogleDriveKnowledgeBase.
         /// </summary>
         public CapabilityState ShareGoogleDriveKnowledgeBase
@@ -3314,6 +4542,78 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareGoogleDriveKnowledgeBase()
         {
             return this._shareGoogleDriveKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleMeetAction. 
+        /// <para>
+        /// The ability to share Google Meet actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleMeetAction
+        {
+            get { return this._shareGoogleMeetAction; }
+            set { this._shareGoogleMeetAction = value; }
+        }
+
+        // Check to see if ShareGoogleMeetAction property is set
+        internal bool IsSetShareGoogleMeetAction()
+        {
+            return this._shareGoogleMeetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleSheetsAction. 
+        /// <para>
+        /// The ability to share Google Sheets actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleSheetsAction
+        {
+            get { return this._shareGoogleSheetsAction; }
+            set { this._shareGoogleSheetsAction = value; }
+        }
+
+        // Check to see if ShareGoogleSheetsAction property is set
+        internal bool IsSetShareGoogleSheetsAction()
+        {
+            return this._shareGoogleSheetsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareGoogleSlidesAction. 
+        /// <para>
+        /// The ability to share Google Slides actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareGoogleSlidesAction
+        {
+            get { return this._shareGoogleSlidesAction; }
+            set { this._shareGoogleSlidesAction = value; }
+        }
+
+        // Check to see if ShareGoogleSlidesAction property is set
+        internal bool IsSetShareGoogleSlidesAction()
+        {
+            return this._shareGoogleSlidesAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareHGInsightsAction. 
+        /// <para>
+        /// The ability to share HG Insights Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareHGInsightsAction
+        {
+            get { return this._shareHGInsightsAction; }
+            set { this._shareHGInsightsAction = value; }
+        }
+
+        // Check to see if ShareHGInsightsAction property is set
+        internal bool IsSetShareHGInsightsAction()
+        {
+            return this._shareHGInsightsAction != null;
         }
 
         /// <summary>
@@ -3473,6 +4773,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareMoodysAction. 
+        /// <para>
+        /// The ability to share Moody's GenAI Ready Data actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareMoodysAction
+        {
+            get { return this._shareMoodysAction; }
+            set { this._shareMoodysAction = value; }
+        }
+
+        // Check to see if ShareMoodysAction property is set
+        internal bool IsSetShareMoodysAction()
+        {
+            return this._shareMoodysAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareMSExchangeAction. 
         /// <para>
         /// The ability to share Microsoft Outlook actions.
@@ -3578,6 +4896,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareOneNoteAction. 
+        /// <para>
+        /// The ability to share Microsoft OneNote actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareOneNoteAction
+        {
+            get { return this._shareOneNoteAction; }
+            set { this._shareOneNoteAction = value; }
+        }
+
+        // Check to see if ShareOneNoteAction property is set
+        internal bool IsSetShareOneNoteAction()
+        {
+            return this._shareOneNoteAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareOpenAPIAction. 
         /// <para>
         /// The ability to share OpenAPI Specification actions.
@@ -3611,6 +4947,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSharePagerDutyAction()
         {
             return this._sharePagerDutyAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharePagerDutyAgentAction. 
+        /// <para>
+        /// The ability to share PagerDuty Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState SharePagerDutyAgentAction
+        {
+            get { return this._sharePagerDutyAgentAction; }
+            set { this._sharePagerDutyAgentAction = value; }
+        }
+
+        // Check to see if SharePagerDutyAgentAction property is set
+        internal bool IsSetSharePagerDutyAgentAction()
+        {
+            return this._sharePagerDutyAgentAction != null;
         }
 
         /// <summary>
@@ -3659,6 +5013,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareQBusinessKnowledgeBase()
         {
             return this._shareQBusinessKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareQuickBooksAction. 
+        /// <para>
+        /// The ability to share QuickBooks actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareQuickBooksAction
+        {
+            get { return this._shareQuickBooksAction; }
+            set { this._shareQuickBooksAction = value; }
+        }
+
+        // Check to see if ShareQuickBooksAction property is set
+        internal bool IsSetShareQuickBooksAction()
+        {
+            return this._shareQuickBooksAction != null;
         }
 
         /// <summary>
@@ -3872,6 +5244,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareShopifyAction. 
+        /// <para>
+        /// The ability to share Shopify actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareShopifyAction
+        {
+            get { return this._shareShopifyAction; }
+            set { this._shareShopifyAction = value; }
+        }
+
+        // Check to see if ShareShopifyAction property is set
+        internal bool IsSetShareShopifyAction()
+        {
+            return this._shareShopifyAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareSlackAction. 
         /// <para>
         /// The ability to share Slack actions.
@@ -3905,6 +5295,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareSmartsheetAction()
         {
             return this._shareSmartsheetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareSnowFlakeAction. 
+        /// <para>
+        /// The ability to share Snowflake Cortex Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareSnowFlakeAction
+        {
+            get { return this._shareSnowFlakeAction; }
+            set { this._shareSnowFlakeAction = value; }
+        }
+
+        // Check to see if ShareSnowFlakeAction property is set
+        internal bool IsSetShareSnowFlakeAction()
+        {
+            return this._shareSnowFlakeAction != null;
         }
 
         /// <summary>
@@ -3944,6 +5352,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ShareVisierAgentAction. 
+        /// <para>
+        /// The ability to share Visier Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareVisierAgentAction
+        {
+            get { return this._shareVisierAgentAction; }
+            set { this._shareVisierAgentAction = value; }
+        }
+
+        // Check to see if ShareVisierAgentAction property is set
+        internal bool IsSetShareVisierAgentAction()
+        {
+            return this._shareVisierAgentAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ShareWebCrawlerKnowledgeBase.
         /// </summary>
         public CapabilityState ShareWebCrawlerKnowledgeBase
@@ -3956,6 +5382,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareWebCrawlerKnowledgeBase()
         {
             return this._shareWebCrawlerKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareWhatsAppAction. 
+        /// <para>
+        /// The ability to share WhatsApp actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareWhatsAppAction
+        {
+            get { return this._shareWhatsAppAction; }
+            set { this._shareWhatsAppAction = value; }
+        }
+
+        // Check to see if ShareWhatsAppAction property is set
+        internal bool IsSetShareWhatsAppAction()
+        {
+            return this._shareWhatsAppAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareZapierAction. 
+        /// <para>
+        /// The ability to share Zapier Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareZapierAction
+        {
+            get { return this._shareZapierAction; }
+            set { this._shareZapierAction = value; }
+        }
+
+        // Check to see if ShareZapierAction property is set
+        internal bool IsSetShareZapierAction()
+        {
+            return this._shareZapierAction != null;
         }
 
         /// <summary>
@@ -3974,6 +5436,60 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetShareZendeskAction()
         {
             return this._shareZendeskAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareZoomAction. 
+        /// <para>
+        /// The ability to share Zoom actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareZoomAction
+        {
+            get { return this._shareZoomAction; }
+            set { this._shareZoomAction = value; }
+        }
+
+        // Check to see if ShareZoomAction property is set
+        internal bool IsSetShareZoomAction()
+        {
+            return this._shareZoomAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShareZoomInfoAction. 
+        /// <para>
+        /// The ability to share ZoomInfo Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShareZoomInfoAction
+        {
+            get { return this._shareZoomInfoAction; }
+            set { this._shareZoomInfoAction = value; }
+        }
+
+        // Check to see if ShareZoomInfoAction property is set
+        internal bool IsSetShareZoomInfoAction()
+        {
+            return this._shareZoomInfoAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShopifyAction. 
+        /// <para>
+        /// The ability to perform actions using Shopify connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState ShopifyAction
+        {
+            get { return this._shopifyAction; }
+            set { this._shopifyAction = value; }
+        }
+
+        // Check to see if ShopifyAction property is set
+        internal bool IsSetShopifyAction()
+        {
+            return this._shopifyAction != null;
         }
 
         /// <summary>
@@ -4010,6 +5526,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSmartsheetAction()
         {
             return this._smartsheetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowFlakeAction. 
+        /// <para>
+        /// The ability to perform actions using Snowflake Cortex Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState SnowFlakeAction
+        {
+            get { return this._snowFlakeAction; }
+            set { this._snowFlakeAction = value; }
+        }
+
+        // Check to see if SnowFlakeAction property is set
+        internal bool IsSetSnowFlakeAction()
+        {
+            return this._snowFlakeAction != null;
         }
 
         /// <summary>
@@ -4121,6 +5655,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseAdobeAction. 
+        /// <para>
+        /// The ability to use Adobe Marketing Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseAdobeAction
+        {
+            get { return this._useAdobeAction; }
+            set { this._useAdobeAction = value; }
+        }
+
+        // Check to see if UseAdobeAction property is set
+        internal bool IsSetUseAdobeAction()
+        {
+            return this._useAdobeAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseAgentWebSearch. 
         /// <para>
         /// The ability to use internet to enhance results in Chat Agents, Flows, and Quick Research.
@@ -4137,6 +5689,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseAgentWebSearch()
         {
             return this._useAgentWebSearch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseAirtableAction. 
+        /// <para>
+        /// The ability to use Airtable actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseAirtableAction
+        {
+            get { return this._useAirtableAction; }
+            set { this._useAirtableAction = value; }
+        }
+
+        // Check to see if UseAirtableAction property is set
+        internal bool IsSetUseAirtableAction()
+        {
+            return this._useAirtableAction != null;
         }
 
         /// <summary>
@@ -4281,6 +5851,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseBeeAction. 
+        /// <para>
+        /// The ability to use Bee actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseBeeAction
+        {
+            get { return this._useBeeAction; }
+            set { this._useBeeAction = value; }
+        }
+
+        // Check to see if UseBeeAction property is set
+        internal bool IsSetUseBeeAction()
+        {
+            return this._useBeeAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseBoxAgentAction. 
         /// <para>
         /// The ability to use Box Agent actions.
@@ -4348,6 +5936,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseCanvaAgentAction()
         {
             return this._useCanvaAgentAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCiscoWebexMeetingsAction. 
+        /// <para>
+        /// The ability to use Cisco Webex Meetings actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseCiscoWebexMeetingsAction
+        {
+            get { return this._useCiscoWebexMeetingsAction; }
+            set { this._useCiscoWebexMeetingsAction = value; }
+        }
+
+        // Check to see if UseCiscoWebexMeetingsAction property is set
+        internal bool IsSetUseCiscoWebexMeetingsAction()
+        {
+            return this._useCiscoWebexMeetingsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCiscoWebexVidcastAction. 
+        /// <para>
+        /// The ability to use Cisco Webex Video Messaging Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseCiscoWebexVidcastAction
+        {
+            get { return this._useCiscoWebexVidcastAction; }
+            set { this._useCiscoWebexVidcastAction = value; }
+        }
+
+        // Check to see if UseCiscoWebexVidcastAction property is set
+        internal bool IsSetUseCiscoWebexVidcastAction()
+        {
+            return this._useCiscoWebexVidcastAction != null;
         }
 
         /// <summary>
@@ -4420,6 +6044,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseDropboxAction. 
+        /// <para>
+        /// The ability to use Dropbox actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseDropboxAction
+        {
+            get { return this._useDropboxAction; }
+            set { this._useDropboxAction = value; }
+        }
+
+        // Check to see if UseDropboxAction property is set
+        internal bool IsSetUseDropboxAction()
+        {
+            return this._useDropboxAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseDunAndBradstreetAction. 
+        /// <para>
+        /// The ability to use Dun and Bradstreet actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseDunAndBradstreetAction
+        {
+            get { return this._useDunAndBradstreetAction; }
+            set { this._useDunAndBradstreetAction = value; }
+        }
+
+        // Check to see if UseDunAndBradstreetAction property is set
+        internal bool IsSetUseDunAndBradstreetAction()
+        {
+            return this._useDunAndBradstreetAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseExcelAddInExtension. 
         /// <para>
         /// The ability to use Amazon Quick through the Microsoft Excel add-in.
@@ -4453,6 +6113,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseFactSetAction()
         {
             return this._useFactSetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseFigmaAction. 
+        /// <para>
+        /// The ability to use Figma actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseFigmaAction
+        {
+            get { return this._useFigmaAction; }
+            set { this._useFigmaAction = value; }
+        }
+
+        // Check to see if UseFigmaAction property is set
+        internal bool IsSetUseFigmaAction()
+        {
+            return this._useFigmaAction != null;
         }
 
         /// <summary>
@@ -4492,6 +6170,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseGmailAction. 
+        /// <para>
+        /// The ability to use Gmail actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGmailAction
+        {
+            get { return this._useGmailAction; }
+            set { this._useGmailAction = value; }
+        }
+
+        // Check to see if UseGmailAction property is set
+        internal bool IsSetUseGmailAction()
+        {
+            return this._useGmailAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGoogleAnalyticsAction. 
+        /// <para>
+        /// The ability to use Google Analytics actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleAnalyticsAction
+        {
+            get { return this._useGoogleAnalyticsAction; }
+            set { this._useGoogleAnalyticsAction = value; }
+        }
+
+        // Check to see if UseGoogleAnalyticsAction property is set
+        internal bool IsSetUseGoogleAnalyticsAction()
+        {
+            return this._useGoogleAnalyticsAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseGoogleCalendarAction. 
         /// <para>
         /// The ability to use Google Calendar actions.
@@ -4510,6 +6224,60 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseGoogleChatAction. 
+        /// <para>
+        /// The ability to use Google Chat actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleChatAction
+        {
+            get { return this._useGoogleChatAction; }
+            set { this._useGoogleChatAction = value; }
+        }
+
+        // Check to see if UseGoogleChatAction property is set
+        internal bool IsSetUseGoogleChatAction()
+        {
+            return this._useGoogleChatAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGoogleDocsAction. 
+        /// <para>
+        /// The ability to use Google Docs actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleDocsAction
+        {
+            get { return this._useGoogleDocsAction; }
+            set { this._useGoogleDocsAction = value; }
+        }
+
+        // Check to see if UseGoogleDocsAction property is set
+        internal bool IsSetUseGoogleDocsAction()
+        {
+            return this._useGoogleDocsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGoogleDriveAction. 
+        /// <para>
+        /// The ability to use Google Drive actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleDriveAction
+        {
+            get { return this._useGoogleDriveAction; }
+            set { this._useGoogleDriveAction = value; }
+        }
+
+        // Check to see if UseGoogleDriveAction property is set
+        internal bool IsSetUseGoogleDriveAction()
+        {
+            return this._useGoogleDriveAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseGoogleDriveKnowledgeBase.
         /// </summary>
         public CapabilityState UseGoogleDriveKnowledgeBase
@@ -4522,6 +6290,78 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseGoogleDriveKnowledgeBase()
         {
             return this._useGoogleDriveKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGoogleMeetAction. 
+        /// <para>
+        /// The ability to use Google Meet actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleMeetAction
+        {
+            get { return this._useGoogleMeetAction; }
+            set { this._useGoogleMeetAction = value; }
+        }
+
+        // Check to see if UseGoogleMeetAction property is set
+        internal bool IsSetUseGoogleMeetAction()
+        {
+            return this._useGoogleMeetAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGoogleSheetsAction. 
+        /// <para>
+        /// The ability to use Google Sheets actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleSheetsAction
+        {
+            get { return this._useGoogleSheetsAction; }
+            set { this._useGoogleSheetsAction = value; }
+        }
+
+        // Check to see if UseGoogleSheetsAction property is set
+        internal bool IsSetUseGoogleSheetsAction()
+        {
+            return this._useGoogleSheetsAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseGoogleSlidesAction. 
+        /// <para>
+        /// The ability to use Google Slides actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseGoogleSlidesAction
+        {
+            get { return this._useGoogleSlidesAction; }
+            set { this._useGoogleSlidesAction = value; }
+        }
+
+        // Check to see if UseGoogleSlidesAction property is set
+        internal bool IsSetUseGoogleSlidesAction()
+        {
+            return this._useGoogleSlidesAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseHGInsightsAction. 
+        /// <para>
+        /// The ability to use HG Insights Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseHGInsightsAction
+        {
+            get { return this._useHGInsightsAction; }
+            set { this._useHGInsightsAction = value; }
+        }
+
+        // Check to see if UseHGInsightsAction property is set
+        internal bool IsSetUseHGInsightsAction()
+        {
+            return this._useHGInsightsAction != null;
         }
 
         /// <summary>
@@ -4666,6 +6506,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseMoodysAction. 
+        /// <para>
+        /// The ability to use Moody's GenAI Ready Data actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseMoodysAction
+        {
+            get { return this._useMoodysAction; }
+            set { this._useMoodysAction = value; }
+        }
+
+        // Check to see if UseMoodysAction property is set
+        internal bool IsSetUseMoodysAction()
+        {
+            return this._useMoodysAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseMSExchangeAction. 
         /// <para>
         /// The ability to use Microsoft Outlook actions.
@@ -4771,6 +6629,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseOneNoteAction. 
+        /// <para>
+        /// The ability to use Microsoft OneNote actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseOneNoteAction
+        {
+            get { return this._useOneNoteAction; }
+            set { this._useOneNoteAction = value; }
+        }
+
+        // Check to see if UseOneNoteAction property is set
+        internal bool IsSetUseOneNoteAction()
+        {
+            return this._useOneNoteAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseOpenAPIAction. 
         /// <para>
         /// The ability to use OpenAPI Specification actions.
@@ -4825,6 +6701,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UsePagerDutyAgentAction. 
+        /// <para>
+        /// The ability to use PagerDuty Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UsePagerDutyAgentAction
+        {
+            get { return this._usePagerDutyAgentAction; }
+            set { this._usePagerDutyAgentAction = value; }
+        }
+
+        // Check to see if UsePagerDutyAgentAction property is set
+        internal bool IsSetUsePagerDutyAgentAction()
+        {
+            return this._usePagerDutyAgentAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UsePowerpointAddInExtension. 
         /// <para>
         /// The ability to use Amazon Quick through the Microsoft PowerPoint add-in.
@@ -4855,6 +6749,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseQBusinessKnowledgeBase()
         {
             return this._useQBusinessKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseQuickBooksAction. 
+        /// <para>
+        /// The ability to use QuickBooks actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseQuickBooksAction
+        {
+            get { return this._useQuickBooksAction; }
+            set { this._useQuickBooksAction = value; }
+        }
+
+        // Check to see if UseQuickBooksAction property is set
+        internal bool IsSetUseQuickBooksAction()
+        {
+            return this._useQuickBooksAction != null;
         }
 
         /// <summary>
@@ -5068,6 +6980,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseShopifyAction. 
+        /// <para>
+        /// The ability to use Shopify actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseShopifyAction
+        {
+            get { return this._useShopifyAction; }
+            set { this._useShopifyAction = value; }
+        }
+
+        // Check to see if UseShopifyAction property is set
+        internal bool IsSetUseShopifyAction()
+        {
+            return this._useShopifyAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseSlackAction. 
         /// <para>
         /// The ability to use Slack actions.
@@ -5104,6 +7034,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseSnowFlakeAction. 
+        /// <para>
+        /// The ability to use Snowflake Cortex Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseSnowFlakeAction
+        {
+            get { return this._useSnowFlakeAction; }
+            set { this._useSnowFlakeAction = value; }
+        }
+
+        // Check to see if UseSnowFlakeAction property is set
+        internal bool IsSetUseSnowFlakeAction()
+        {
+            return this._useSnowFlakeAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseTextractAction. 
         /// <para>
         /// The ability to use Textract actions.
@@ -5122,6 +7070,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseVisierAgentAction. 
+        /// <para>
+        /// The ability to use Visier Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseVisierAgentAction
+        {
+            get { return this._useVisierAgentAction; }
+            set { this._useVisierAgentAction = value; }
+        }
+
+        // Check to see if UseVisierAgentAction property is set
+        internal bool IsSetUseVisierAgentAction()
+        {
+            return this._useVisierAgentAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseWebCrawlerKnowledgeBase.
         /// </summary>
         public CapabilityState UseWebCrawlerKnowledgeBase
@@ -5134,6 +7100,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseWebCrawlerKnowledgeBase()
         {
             return this._useWebCrawlerKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseWhatsAppAction. 
+        /// <para>
+        /// The ability to use WhatsApp actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseWhatsAppAction
+        {
+            get { return this._useWhatsAppAction; }
+            set { this._useWhatsAppAction = value; }
+        }
+
+        // Check to see if UseWhatsAppAction property is set
+        internal bool IsSetUseWhatsAppAction()
+        {
+            return this._useWhatsAppAction != null;
         }
 
         /// <summary>
@@ -5155,6 +7139,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseZapierAction. 
+        /// <para>
+        /// The ability to use Zapier Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseZapierAction
+        {
+            get { return this._useZapierAction; }
+            set { this._useZapierAction = value; }
+        }
+
+        // Check to see if UseZapierAction property is set
+        internal bool IsSetUseZapierAction()
+        {
+            return this._useZapierAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseZendeskAction. 
         /// <para>
         /// The ability to use Zendesk actions.
@@ -5170,6 +7172,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseZendeskAction()
         {
             return this._useZendeskAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseZoomAction. 
+        /// <para>
+        /// The ability to use Zoom actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseZoomAction
+        {
+            get { return this._useZoomAction; }
+            set { this._useZoomAction = value; }
+        }
+
+        // Check to see if UseZoomAction property is set
+        internal bool IsSetUseZoomAction()
+        {
+            return this._useZoomAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseZoomInfoAction. 
+        /// <para>
+        /// The ability to use ZoomInfo Agent actions.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseZoomInfoAction
+        {
+            get { return this._useZoomInfoAction; }
+            set { this._useZoomInfoAction = value; }
+        }
+
+        // Check to see if UseZoomInfoAction property is set
+        internal bool IsSetUseZoomInfoAction()
+        {
+            return this._useZoomInfoAction != null;
         }
 
         /// <summary>
@@ -5191,6 +7229,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property VisierAgentAction. 
+        /// <para>
+        /// The ability to perform actions using Visier Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState VisierAgentAction
+        {
+            get { return this._visierAgentAction; }
+            set { this._visierAgentAction = value; }
+        }
+
+        // Check to see if VisierAgentAction property is set
+        internal bool IsSetVisierAgentAction()
+        {
+            return this._visierAgentAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property WebCrawlerKnowledgeBase.
         /// </summary>
         public CapabilityState WebCrawlerKnowledgeBase
@@ -5203,6 +7259,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetWebCrawlerKnowledgeBase()
         {
             return this._webCrawlerKnowledgeBase != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WhatsAppAction. 
+        /// <para>
+        /// The ability to perform actions using WhatsApp connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState WhatsAppAction
+        {
+            get { return this._whatsAppAction; }
+            set { this._whatsAppAction = value; }
+        }
+
+        // Check to see if WhatsAppAction property is set
+        internal bool IsSetWhatsAppAction()
+        {
+            return this._whatsAppAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZapierAction. 
+        /// <para>
+        /// The ability to perform actions using Zapier Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState ZapierAction
+        {
+            get { return this._zapierAction; }
+            set { this._zapierAction = value; }
+        }
+
+        // Check to see if ZapierAction property is set
+        internal bool IsSetZapierAction()
+        {
+            return this._zapierAction != null;
         }
 
         /// <summary>
@@ -5221,6 +7313,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetZendeskAction()
         {
             return this._zendeskAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoomAction. 
+        /// <para>
+        /// The ability to perform actions using Zoom connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState ZoomAction
+        {
+            get { return this._zoomAction; }
+            set { this._zoomAction = value; }
+        }
+
+        // Check to see if ZoomAction property is set
+        internal bool IsSetZoomAction()
+        {
+            return this._zoomAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoomInfoAction. 
+        /// <para>
+        /// The ability to perform actions using ZoomInfo Agent connectors.
+        /// </para>
+        /// </summary>
+        public CapabilityState ZoomInfoAction
+        {
+            get { return this._zoomInfoAction; }
+            set { this._zoomInfoAction = value; }
+        }
+
+        // Check to see if ZoomInfoAction property is set
+        internal bool IsSetZoomInfoAction()
+        {
+            return this._zoomInfoAction != null;
         }
 
     }

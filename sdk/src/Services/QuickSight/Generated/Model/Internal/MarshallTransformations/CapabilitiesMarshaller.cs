@@ -64,6 +64,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AddOrRunAnomalyDetectionForAnalyses);
             }
 
+            if(requestObject.IsSetAdobeAction())
+            {
+                context.Writer.WritePropertyName("AdobeAction");
+                context.Writer.WriteStringValue(requestObject.AdobeAction);
+            }
+
+            if(requestObject.IsSetAirtableAction())
+            {
+                context.Writer.WritePropertyName("AirtableAction");
+                context.Writer.WriteStringValue(requestObject.AirtableAction);
+            }
+
             if(requestObject.IsSetAmazonBedrockARSAction())
             {
                 context.Writer.WritePropertyName("AmazonBedrockARSAction");
@@ -130,6 +142,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.BedrockManagedKnowledgeBase);
             }
 
+            if(requestObject.IsSetBeeAction())
+            {
+                context.Writer.WritePropertyName("BeeAction");
+                context.Writer.WriteStringValue(requestObject.BeeAction);
+            }
+
             if(requestObject.IsSetBoxAgentAction())
             {
                 context.Writer.WritePropertyName("BoxAgentAction");
@@ -160,6 +178,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ChatAgent);
             }
 
+            if(requestObject.IsSetCiscoWebexMeetingsAction())
+            {
+                context.Writer.WritePropertyName("CiscoWebexMeetingsAction");
+                context.Writer.WriteStringValue(requestObject.CiscoWebexMeetingsAction);
+            }
+
+            if(requestObject.IsSetCiscoWebexVidcastAction())
+            {
+                context.Writer.WritePropertyName("CiscoWebexVidcastAction");
+                context.Writer.WriteStringValue(requestObject.CiscoWebexVidcastAction);
+            }
+
             if(requestObject.IsSetComprehendAction())
             {
                 context.Writer.WritePropertyName("ComprehendAction");
@@ -182,6 +212,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ConfluenceKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.ConfluenceKnowledgeBase);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateAdobeAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateAdobeAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateAdobeAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateAirtableAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateAirtableAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateAirtableAction);
             }
 
             if(requestObject.IsSetCreateAndUpdateAmazonBedrockARSAction())
@@ -232,6 +274,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateBedrockManagedKnowledgeBase);
             }
 
+            if(requestObject.IsSetCreateAndUpdateBeeAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateBeeAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateBeeAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateBoxAgentAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateBoxAgentAction");
@@ -248,6 +296,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreateAndUpdateCanvaAgentAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateCanvaAgentAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateCiscoWebexMeetingsAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateCiscoWebexMeetingsAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateCiscoWebexMeetingsAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateCiscoWebexVidcastAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateCiscoWebexVidcastAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateCiscoWebexVidcastAction);
             }
 
             if(requestObject.IsSetCreateAndUpdateComprehendAction())
@@ -292,10 +352,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateDataSources);
             }
 
+            if(requestObject.IsSetCreateAndUpdateDropboxAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateDropboxAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateDropboxAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateDunAndBradstreetAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateDunAndBradstreetAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateDunAndBradstreetAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateFactSetAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateFactSetAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateFactSetAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateFigmaAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateFigmaAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateFigmaAction);
             }
 
             if(requestObject.IsSetCreateAndUpdateGenericHTTPAction())
@@ -310,16 +388,70 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateGithubAction);
             }
 
+            if(requestObject.IsSetCreateAndUpdateGmailAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGmailAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGmailAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateGoogleAnalyticsAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleAnalyticsAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleAnalyticsAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateGoogleCalendarAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateGoogleCalendarAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleCalendarAction);
             }
 
+            if(requestObject.IsSetCreateAndUpdateGoogleChatAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleChatAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleChatAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateGoogleDocsAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleDocsAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleDocsAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateGoogleDriveAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleDriveAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleDriveAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateGoogleDriveKnowledgeBase())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateGoogleDriveKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleDriveKnowledgeBase);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateGoogleMeetAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleMeetAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleMeetAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateGoogleSheetsAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleSheetsAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleSheetsAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateGoogleSlidesAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateGoogleSlidesAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateGoogleSlidesAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateHGInsightsAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateHGInsightsAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateHGInsightsAction);
             }
 
             if(requestObject.IsSetCreateAndUpdateHubspotAction())
@@ -376,6 +508,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateMondayAction);
             }
 
+            if(requestObject.IsSetCreateAndUpdateMoodysAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateMoodysAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateMoodysAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateMSExchangeAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateMSExchangeAction");
@@ -412,6 +550,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateOneDriveKnowledgeBase);
             }
 
+            if(requestObject.IsSetCreateAndUpdateOneNoteAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateOneNoteAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateOneNoteAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateOpenAPIAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateOpenAPIAction");
@@ -424,10 +568,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdatePagerDutyAction);
             }
 
+            if(requestObject.IsSetCreateAndUpdatePagerDutyAgentAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdatePagerDutyAgentAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdatePagerDutyAgentAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateQBusinessKnowledgeBase())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateQBusinessKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateQBusinessKnowledgeBase);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateQuickBooksAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateQuickBooksAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateQuickBooksAction);
             }
 
             if(requestObject.IsSetCreateAndUpdateS3KnowledgeBase())
@@ -502,6 +658,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateSharePointKnowledgeBase);
             }
 
+            if(requestObject.IsSetCreateAndUpdateShopifyAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateShopifyAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateShopifyAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateSlackAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateSlackAction");
@@ -512,6 +674,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("CreateAndUpdateSmartsheetAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateSmartsheetAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateSnowFlakeAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateSnowFlakeAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateSnowFlakeAction);
             }
 
             if(requestObject.IsSetCreateAndUpdateTextractAction())
@@ -532,16 +700,46 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateThresholdAlerts);
             }
 
+            if(requestObject.IsSetCreateAndUpdateVisierAgentAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateVisierAgentAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateVisierAgentAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateWebCrawlerKnowledgeBase())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateWebCrawlerKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateWebCrawlerKnowledgeBase);
             }
 
+            if(requestObject.IsSetCreateAndUpdateWhatsAppAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateWhatsAppAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateWhatsAppAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateZapierAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateZapierAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateZapierAction);
+            }
+
             if(requestObject.IsSetCreateAndUpdateZendeskAction())
             {
                 context.Writer.WritePropertyName("CreateAndUpdateZendeskAction");
                 context.Writer.WriteStringValue(requestObject.CreateAndUpdateZendeskAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateZoomAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateZoomAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateZoomAction);
+            }
+
+            if(requestObject.IsSetCreateAndUpdateZoomInfoAction())
+            {
+                context.Writer.WritePropertyName("CreateAndUpdateZoomInfoAction");
+                context.Writer.WriteStringValue(requestObject.CreateAndUpdateZoomInfoAction);
             }
 
             if(requestObject.IsSetCreateChatAgents())
@@ -578,6 +776,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Dashboard");
                 context.Writer.WriteStringValue(requestObject.Dashboard);
+            }
+
+            if(requestObject.IsSetDropboxAction())
+            {
+                context.Writer.WritePropertyName("DropboxAction");
+                context.Writer.WriteStringValue(requestObject.DropboxAction);
+            }
+
+            if(requestObject.IsSetDunAndBradstreetAction())
+            {
+                context.Writer.WritePropertyName("DunAndBradstreetAction");
+                context.Writer.WriteStringValue(requestObject.DunAndBradstreetAction);
             }
 
             if(requestObject.IsSetEditVisualWithQ())
@@ -634,6 +844,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FactSetAction);
             }
 
+            if(requestObject.IsSetFigmaAction())
+            {
+                context.Writer.WritePropertyName("FigmaAction");
+                context.Writer.WriteStringValue(requestObject.FigmaAction);
+            }
+
             if(requestObject.IsSetFlow())
             {
                 context.Writer.WritePropertyName("Flow");
@@ -658,16 +874,70 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.GithubAction);
             }
 
+            if(requestObject.IsSetGmailAction())
+            {
+                context.Writer.WritePropertyName("GmailAction");
+                context.Writer.WriteStringValue(requestObject.GmailAction);
+            }
+
+            if(requestObject.IsSetGoogleAnalyticsAction())
+            {
+                context.Writer.WritePropertyName("GoogleAnalyticsAction");
+                context.Writer.WriteStringValue(requestObject.GoogleAnalyticsAction);
+            }
+
             if(requestObject.IsSetGoogleCalendarAction())
             {
                 context.Writer.WritePropertyName("GoogleCalendarAction");
                 context.Writer.WriteStringValue(requestObject.GoogleCalendarAction);
             }
 
+            if(requestObject.IsSetGoogleChatAction())
+            {
+                context.Writer.WritePropertyName("GoogleChatAction");
+                context.Writer.WriteStringValue(requestObject.GoogleChatAction);
+            }
+
+            if(requestObject.IsSetGoogleDocsAction())
+            {
+                context.Writer.WritePropertyName("GoogleDocsAction");
+                context.Writer.WriteStringValue(requestObject.GoogleDocsAction);
+            }
+
+            if(requestObject.IsSetGoogleDriveAction())
+            {
+                context.Writer.WritePropertyName("GoogleDriveAction");
+                context.Writer.WriteStringValue(requestObject.GoogleDriveAction);
+            }
+
             if(requestObject.IsSetGoogleDriveKnowledgeBase())
             {
                 context.Writer.WritePropertyName("GoogleDriveKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.GoogleDriveKnowledgeBase);
+            }
+
+            if(requestObject.IsSetGoogleMeetAction())
+            {
+                context.Writer.WritePropertyName("GoogleMeetAction");
+                context.Writer.WriteStringValue(requestObject.GoogleMeetAction);
+            }
+
+            if(requestObject.IsSetGoogleSheetsAction())
+            {
+                context.Writer.WritePropertyName("GoogleSheetsAction");
+                context.Writer.WriteStringValue(requestObject.GoogleSheetsAction);
+            }
+
+            if(requestObject.IsSetGoogleSlidesAction())
+            {
+                context.Writer.WritePropertyName("GoogleSlidesAction");
+                context.Writer.WriteStringValue(requestObject.GoogleSlidesAction);
+            }
+
+            if(requestObject.IsSetHGInsightsAction())
+            {
+                context.Writer.WritePropertyName("HGInsightsAction");
+                context.Writer.WriteStringValue(requestObject.HGInsightsAction);
             }
 
             if(requestObject.IsSetHubspotAction())
@@ -748,6 +1018,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MondayAction);
             }
 
+            if(requestObject.IsSetMoodysAction())
+            {
+                context.Writer.WritePropertyName("MoodysAction");
+                context.Writer.WriteStringValue(requestObject.MoodysAction);
+            }
+
             if(requestObject.IsSetMSExchangeAction())
             {
                 context.Writer.WritePropertyName("MSExchangeAction");
@@ -784,6 +1060,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.OneDriveKnowledgeBase);
             }
 
+            if(requestObject.IsSetOneNoteAction())
+            {
+                context.Writer.WritePropertyName("OneNoteAction");
+                context.Writer.WriteStringValue(requestObject.OneNoteAction);
+            }
+
             if(requestObject.IsSetOpenAPIAction())
             {
                 context.Writer.WritePropertyName("OpenAPIAction");
@@ -794,6 +1076,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PagerDutyAction");
                 context.Writer.WriteStringValue(requestObject.PagerDutyAction);
+            }
+
+            if(requestObject.IsSetPagerDutyAgentAction())
+            {
+                context.Writer.WritePropertyName("PagerDutyAgentAction");
+                context.Writer.WriteStringValue(requestObject.PagerDutyAgentAction);
             }
 
             if(requestObject.IsSetPerformFlowUiTask())
@@ -818,6 +1106,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("QBusinessKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.QBusinessKnowledgeBase);
+            }
+
+            if(requestObject.IsSetQuickBooksAction())
+            {
+                context.Writer.WritePropertyName("QuickBooksAction");
+                context.Writer.WriteStringValue(requestObject.QuickBooksAction);
             }
 
             if(requestObject.IsSetQuickEventTrigger())
@@ -916,6 +1210,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ServiceNowAction);
             }
 
+            if(requestObject.IsSetShareAdobeAction())
+            {
+                context.Writer.WritePropertyName("ShareAdobeAction");
+                context.Writer.WriteStringValue(requestObject.ShareAdobeAction);
+            }
+
+            if(requestObject.IsSetShareAirtableAction())
+            {
+                context.Writer.WritePropertyName("ShareAirtableAction");
+                context.Writer.WriteStringValue(requestObject.ShareAirtableAction);
+            }
+
             if(requestObject.IsSetShareAmazonBedrockARSAction())
             {
                 context.Writer.WritePropertyName("ShareAmazonBedrockARSAction");
@@ -970,6 +1276,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareBedrockManagedKnowledgeBase);
             }
 
+            if(requestObject.IsSetShareBeeAction())
+            {
+                context.Writer.WritePropertyName("ShareBeeAction");
+                context.Writer.WriteStringValue(requestObject.ShareBeeAction);
+            }
+
             if(requestObject.IsSetShareBoxAgentAction())
             {
                 context.Writer.WritePropertyName("ShareBoxAgentAction");
@@ -992,6 +1304,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareChatAgents");
                 context.Writer.WriteStringValue(requestObject.ShareChatAgents);
+            }
+
+            if(requestObject.IsSetShareCiscoWebexMeetingsAction())
+            {
+                context.Writer.WritePropertyName("ShareCiscoWebexMeetingsAction");
+                context.Writer.WriteStringValue(requestObject.ShareCiscoWebexMeetingsAction);
+            }
+
+            if(requestObject.IsSetShareCiscoWebexVidcastAction())
+            {
+                context.Writer.WritePropertyName("ShareCiscoWebexVidcastAction");
+                context.Writer.WriteStringValue(requestObject.ShareCiscoWebexVidcastAction);
             }
 
             if(requestObject.IsSetShareComprehendAction())
@@ -1036,10 +1360,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareDataSources);
             }
 
+            if(requestObject.IsSetShareDropboxAction())
+            {
+                context.Writer.WritePropertyName("ShareDropboxAction");
+                context.Writer.WriteStringValue(requestObject.ShareDropboxAction);
+            }
+
+            if(requestObject.IsSetShareDunAndBradstreetAction())
+            {
+                context.Writer.WritePropertyName("ShareDunAndBradstreetAction");
+                context.Writer.WriteStringValue(requestObject.ShareDunAndBradstreetAction);
+            }
+
             if(requestObject.IsSetShareFactSetAction())
             {
                 context.Writer.WritePropertyName("ShareFactSetAction");
                 context.Writer.WriteStringValue(requestObject.ShareFactSetAction);
+            }
+
+            if(requestObject.IsSetShareFigmaAction())
+            {
+                context.Writer.WritePropertyName("ShareFigmaAction");
+                context.Writer.WriteStringValue(requestObject.ShareFigmaAction);
             }
 
             if(requestObject.IsSetShareGenericHTTPAction())
@@ -1054,16 +1396,70 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareGithubAction);
             }
 
+            if(requestObject.IsSetShareGmailAction())
+            {
+                context.Writer.WritePropertyName("ShareGmailAction");
+                context.Writer.WriteStringValue(requestObject.ShareGmailAction);
+            }
+
+            if(requestObject.IsSetShareGoogleAnalyticsAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleAnalyticsAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleAnalyticsAction);
+            }
+
             if(requestObject.IsSetShareGoogleCalendarAction())
             {
                 context.Writer.WritePropertyName("ShareGoogleCalendarAction");
                 context.Writer.WriteStringValue(requestObject.ShareGoogleCalendarAction);
             }
 
+            if(requestObject.IsSetShareGoogleChatAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleChatAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleChatAction);
+            }
+
+            if(requestObject.IsSetShareGoogleDocsAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleDocsAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleDocsAction);
+            }
+
+            if(requestObject.IsSetShareGoogleDriveAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleDriveAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleDriveAction);
+            }
+
             if(requestObject.IsSetShareGoogleDriveKnowledgeBase())
             {
                 context.Writer.WritePropertyName("ShareGoogleDriveKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.ShareGoogleDriveKnowledgeBase);
+            }
+
+            if(requestObject.IsSetShareGoogleMeetAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleMeetAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleMeetAction);
+            }
+
+            if(requestObject.IsSetShareGoogleSheetsAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleSheetsAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleSheetsAction);
+            }
+
+            if(requestObject.IsSetShareGoogleSlidesAction())
+            {
+                context.Writer.WritePropertyName("ShareGoogleSlidesAction");
+                context.Writer.WriteStringValue(requestObject.ShareGoogleSlidesAction);
+            }
+
+            if(requestObject.IsSetShareHGInsightsAction())
+            {
+                context.Writer.WritePropertyName("ShareHGInsightsAction");
+                context.Writer.WriteStringValue(requestObject.ShareHGInsightsAction);
             }
 
             if(requestObject.IsSetShareHubspotAction())
@@ -1120,6 +1516,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareMondayAction);
             }
 
+            if(requestObject.IsSetShareMoodysAction())
+            {
+                context.Writer.WritePropertyName("ShareMoodysAction");
+                context.Writer.WriteStringValue(requestObject.ShareMoodysAction);
+            }
+
             if(requestObject.IsSetShareMSExchangeAction())
             {
                 context.Writer.WritePropertyName("ShareMSExchangeAction");
@@ -1156,6 +1558,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareOneDriveKnowledgeBase);
             }
 
+            if(requestObject.IsSetShareOneNoteAction())
+            {
+                context.Writer.WritePropertyName("ShareOneNoteAction");
+                context.Writer.WriteStringValue(requestObject.ShareOneNoteAction);
+            }
+
             if(requestObject.IsSetShareOpenAPIAction())
             {
                 context.Writer.WritePropertyName("ShareOpenAPIAction");
@@ -1166,6 +1574,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SharePagerDutyAction");
                 context.Writer.WriteStringValue(requestObject.SharePagerDutyAction);
+            }
+
+            if(requestObject.IsSetSharePagerDutyAgentAction())
+            {
+                context.Writer.WritePropertyName("SharePagerDutyAgentAction");
+                context.Writer.WriteStringValue(requestObject.SharePagerDutyAgentAction);
             }
 
             if(requestObject.IsSetSharePointAction())
@@ -1184,6 +1598,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareQBusinessKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.ShareQBusinessKnowledgeBase);
+            }
+
+            if(requestObject.IsSetShareQuickBooksAction())
+            {
+                context.Writer.WritePropertyName("ShareQuickBooksAction");
+                context.Writer.WriteStringValue(requestObject.ShareQuickBooksAction);
             }
 
             if(requestObject.IsSetShareS3KnowledgeBase())
@@ -1258,6 +1678,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareSharePointKnowledgeBase);
             }
 
+            if(requestObject.IsSetShareShopifyAction())
+            {
+                context.Writer.WritePropertyName("ShareShopifyAction");
+                context.Writer.WriteStringValue(requestObject.ShareShopifyAction);
+            }
+
             if(requestObject.IsSetShareSlackAction())
             {
                 context.Writer.WritePropertyName("ShareSlackAction");
@@ -1268,6 +1694,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ShareSmartsheetAction");
                 context.Writer.WriteStringValue(requestObject.ShareSmartsheetAction);
+            }
+
+            if(requestObject.IsSetShareSnowFlakeAction())
+            {
+                context.Writer.WritePropertyName("ShareSnowFlakeAction");
+                context.Writer.WriteStringValue(requestObject.ShareSnowFlakeAction);
             }
 
             if(requestObject.IsSetShareSpaces())
@@ -1282,16 +1714,52 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ShareTextractAction);
             }
 
+            if(requestObject.IsSetShareVisierAgentAction())
+            {
+                context.Writer.WritePropertyName("ShareVisierAgentAction");
+                context.Writer.WriteStringValue(requestObject.ShareVisierAgentAction);
+            }
+
             if(requestObject.IsSetShareWebCrawlerKnowledgeBase())
             {
                 context.Writer.WritePropertyName("ShareWebCrawlerKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.ShareWebCrawlerKnowledgeBase);
             }
 
+            if(requestObject.IsSetShareWhatsAppAction())
+            {
+                context.Writer.WritePropertyName("ShareWhatsAppAction");
+                context.Writer.WriteStringValue(requestObject.ShareWhatsAppAction);
+            }
+
+            if(requestObject.IsSetShareZapierAction())
+            {
+                context.Writer.WritePropertyName("ShareZapierAction");
+                context.Writer.WriteStringValue(requestObject.ShareZapierAction);
+            }
+
             if(requestObject.IsSetShareZendeskAction())
             {
                 context.Writer.WritePropertyName("ShareZendeskAction");
                 context.Writer.WriteStringValue(requestObject.ShareZendeskAction);
+            }
+
+            if(requestObject.IsSetShareZoomAction())
+            {
+                context.Writer.WritePropertyName("ShareZoomAction");
+                context.Writer.WriteStringValue(requestObject.ShareZoomAction);
+            }
+
+            if(requestObject.IsSetShareZoomInfoAction())
+            {
+                context.Writer.WritePropertyName("ShareZoomInfoAction");
+                context.Writer.WriteStringValue(requestObject.ShareZoomInfoAction);
+            }
+
+            if(requestObject.IsSetShopifyAction())
+            {
+                context.Writer.WritePropertyName("ShopifyAction");
+                context.Writer.WriteStringValue(requestObject.ShopifyAction);
             }
 
             if(requestObject.IsSetSlackAction())
@@ -1304,6 +1772,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("SmartsheetAction");
                 context.Writer.WriteStringValue(requestObject.SmartsheetAction);
+            }
+
+            if(requestObject.IsSetSnowFlakeAction())
+            {
+                context.Writer.WritePropertyName("SnowFlakeAction");
+                context.Writer.WriteStringValue(requestObject.SnowFlakeAction);
             }
 
             if(requestObject.IsSetSpace())
@@ -1342,10 +1816,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Trigger);
             }
 
+            if(requestObject.IsSetUseAdobeAction())
+            {
+                context.Writer.WritePropertyName("UseAdobeAction");
+                context.Writer.WriteStringValue(requestObject.UseAdobeAction);
+            }
+
             if(requestObject.IsSetUseAgentWebSearch())
             {
                 context.Writer.WritePropertyName("UseAgentWebSearch");
                 context.Writer.WriteStringValue(requestObject.UseAgentWebSearch);
+            }
+
+            if(requestObject.IsSetUseAirtableAction())
+            {
+                context.Writer.WritePropertyName("UseAirtableAction");
+                context.Writer.WriteStringValue(requestObject.UseAirtableAction);
             }
 
             if(requestObject.IsSetUseAmazonBedrockARSAction())
@@ -1396,6 +1882,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseBedrockModels);
             }
 
+            if(requestObject.IsSetUseBeeAction())
+            {
+                context.Writer.WritePropertyName("UseBeeAction");
+                context.Writer.WriteStringValue(requestObject.UseBeeAction);
+            }
+
             if(requestObject.IsSetUseBoxAgentAction())
             {
                 context.Writer.WritePropertyName("UseBoxAgentAction");
@@ -1418,6 +1910,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseCanvaAgentAction");
                 context.Writer.WriteStringValue(requestObject.UseCanvaAgentAction);
+            }
+
+            if(requestObject.IsSetUseCiscoWebexMeetingsAction())
+            {
+                context.Writer.WritePropertyName("UseCiscoWebexMeetingsAction");
+                context.Writer.WriteStringValue(requestObject.UseCiscoWebexMeetingsAction);
+            }
+
+            if(requestObject.IsSetUseCiscoWebexVidcastAction())
+            {
+                context.Writer.WritePropertyName("UseCiscoWebexVidcastAction");
+                context.Writer.WriteStringValue(requestObject.UseCiscoWebexVidcastAction);
             }
 
             if(requestObject.IsSetUseComprehendAction())
@@ -1444,6 +1948,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseConfluenceKnowledgeBase);
             }
 
+            if(requestObject.IsSetUseDropboxAction())
+            {
+                context.Writer.WritePropertyName("UseDropboxAction");
+                context.Writer.WriteStringValue(requestObject.UseDropboxAction);
+            }
+
+            if(requestObject.IsSetUseDunAndBradstreetAction())
+            {
+                context.Writer.WritePropertyName("UseDunAndBradstreetAction");
+                context.Writer.WriteStringValue(requestObject.UseDunAndBradstreetAction);
+            }
+
             if(requestObject.IsSetUseExcelAddInExtension())
             {
                 context.Writer.WritePropertyName("UseExcelAddInExtension");
@@ -1454,6 +1970,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseFactSetAction");
                 context.Writer.WriteStringValue(requestObject.UseFactSetAction);
+            }
+
+            if(requestObject.IsSetUseFigmaAction())
+            {
+                context.Writer.WritePropertyName("UseFigmaAction");
+                context.Writer.WriteStringValue(requestObject.UseFigmaAction);
             }
 
             if(requestObject.IsSetUseGenericHTTPAction())
@@ -1468,16 +1990,70 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseGithubAction);
             }
 
+            if(requestObject.IsSetUseGmailAction())
+            {
+                context.Writer.WritePropertyName("UseGmailAction");
+                context.Writer.WriteStringValue(requestObject.UseGmailAction);
+            }
+
+            if(requestObject.IsSetUseGoogleAnalyticsAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleAnalyticsAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleAnalyticsAction);
+            }
+
             if(requestObject.IsSetUseGoogleCalendarAction())
             {
                 context.Writer.WritePropertyName("UseGoogleCalendarAction");
                 context.Writer.WriteStringValue(requestObject.UseGoogleCalendarAction);
             }
 
+            if(requestObject.IsSetUseGoogleChatAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleChatAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleChatAction);
+            }
+
+            if(requestObject.IsSetUseGoogleDocsAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleDocsAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleDocsAction);
+            }
+
+            if(requestObject.IsSetUseGoogleDriveAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleDriveAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleDriveAction);
+            }
+
             if(requestObject.IsSetUseGoogleDriveKnowledgeBase())
             {
                 context.Writer.WritePropertyName("UseGoogleDriveKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.UseGoogleDriveKnowledgeBase);
+            }
+
+            if(requestObject.IsSetUseGoogleMeetAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleMeetAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleMeetAction);
+            }
+
+            if(requestObject.IsSetUseGoogleSheetsAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleSheetsAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleSheetsAction);
+            }
+
+            if(requestObject.IsSetUseGoogleSlidesAction())
+            {
+                context.Writer.WritePropertyName("UseGoogleSlidesAction");
+                context.Writer.WriteStringValue(requestObject.UseGoogleSlidesAction);
+            }
+
+            if(requestObject.IsSetUseHGInsightsAction())
+            {
+                context.Writer.WritePropertyName("UseHGInsightsAction");
+                context.Writer.WriteStringValue(requestObject.UseHGInsightsAction);
             }
 
             if(requestObject.IsSetUseHubspotAction())
@@ -1528,6 +2104,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseMondayAction);
             }
 
+            if(requestObject.IsSetUseMoodysAction())
+            {
+                context.Writer.WritePropertyName("UseMoodysAction");
+                context.Writer.WriteStringValue(requestObject.UseMoodysAction);
+            }
+
             if(requestObject.IsSetUseMSExchangeAction())
             {
                 context.Writer.WritePropertyName("UseMSExchangeAction");
@@ -1564,6 +2146,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseOneDriveKnowledgeBase);
             }
 
+            if(requestObject.IsSetUseOneNoteAction())
+            {
+                context.Writer.WritePropertyName("UseOneNoteAction");
+                context.Writer.WriteStringValue(requestObject.UseOneNoteAction);
+            }
+
             if(requestObject.IsSetUseOpenAPIAction())
             {
                 context.Writer.WritePropertyName("UseOpenAPIAction");
@@ -1582,6 +2170,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UsePagerDutyAction);
             }
 
+            if(requestObject.IsSetUsePagerDutyAgentAction())
+            {
+                context.Writer.WritePropertyName("UsePagerDutyAgentAction");
+                context.Writer.WriteStringValue(requestObject.UsePagerDutyAgentAction);
+            }
+
             if(requestObject.IsSetUsePowerpointAddInExtension())
             {
                 context.Writer.WritePropertyName("UsePowerpointAddInExtension");
@@ -1592,6 +2186,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseQBusinessKnowledgeBase");
                 context.Writer.WriteStringValue(requestObject.UseQBusinessKnowledgeBase);
+            }
+
+            if(requestObject.IsSetUseQuickBooksAction())
+            {
+                context.Writer.WritePropertyName("UseQuickBooksAction");
+                context.Writer.WriteStringValue(requestObject.UseQuickBooksAction);
             }
 
             if(requestObject.IsSetUseS3KnowledgeBase())
@@ -1666,6 +2266,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseSharePointKnowledgeBase);
             }
 
+            if(requestObject.IsSetUseShopifyAction())
+            {
+                context.Writer.WritePropertyName("UseShopifyAction");
+                context.Writer.WriteStringValue(requestObject.UseShopifyAction);
+            }
+
             if(requestObject.IsSetUseSlackAction())
             {
                 context.Writer.WritePropertyName("UseSlackAction");
@@ -1678,10 +2284,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseSmartsheetAction);
             }
 
+            if(requestObject.IsSetUseSnowFlakeAction())
+            {
+                context.Writer.WritePropertyName("UseSnowFlakeAction");
+                context.Writer.WriteStringValue(requestObject.UseSnowFlakeAction);
+            }
+
             if(requestObject.IsSetUseTextractAction())
             {
                 context.Writer.WritePropertyName("UseTextractAction");
                 context.Writer.WriteStringValue(requestObject.UseTextractAction);
+            }
+
+            if(requestObject.IsSetUseVisierAgentAction())
+            {
+                context.Writer.WritePropertyName("UseVisierAgentAction");
+                context.Writer.WriteStringValue(requestObject.UseVisierAgentAction);
             }
 
             if(requestObject.IsSetUseWebCrawlerKnowledgeBase())
@@ -1690,10 +2308,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseWebCrawlerKnowledgeBase);
             }
 
+            if(requestObject.IsSetUseWhatsAppAction())
+            {
+                context.Writer.WritePropertyName("UseWhatsAppAction");
+                context.Writer.WriteStringValue(requestObject.UseWhatsAppAction);
+            }
+
             if(requestObject.IsSetUseWordAddInExtension())
             {
                 context.Writer.WritePropertyName("UseWordAddInExtension");
                 context.Writer.WriteStringValue(requestObject.UseWordAddInExtension);
+            }
+
+            if(requestObject.IsSetUseZapierAction())
+            {
+                context.Writer.WritePropertyName("UseZapierAction");
+                context.Writer.WriteStringValue(requestObject.UseZapierAction);
             }
 
             if(requestObject.IsSetUseZendeskAction())
@@ -1702,10 +2332,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseZendeskAction);
             }
 
+            if(requestObject.IsSetUseZoomAction())
+            {
+                context.Writer.WritePropertyName("UseZoomAction");
+                context.Writer.WriteStringValue(requestObject.UseZoomAction);
+            }
+
+            if(requestObject.IsSetUseZoomInfoAction())
+            {
+                context.Writer.WritePropertyName("UseZoomInfoAction");
+                context.Writer.WriteStringValue(requestObject.UseZoomInfoAction);
+            }
+
             if(requestObject.IsSetViewAccountSPICECapacity())
             {
                 context.Writer.WritePropertyName("ViewAccountSPICECapacity");
                 context.Writer.WriteStringValue(requestObject.ViewAccountSPICECapacity);
+            }
+
+            if(requestObject.IsSetVisierAgentAction())
+            {
+                context.Writer.WritePropertyName("VisierAgentAction");
+                context.Writer.WriteStringValue(requestObject.VisierAgentAction);
             }
 
             if(requestObject.IsSetWebCrawlerKnowledgeBase())
@@ -1714,10 +2362,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.WebCrawlerKnowledgeBase);
             }
 
+            if(requestObject.IsSetWhatsAppAction())
+            {
+                context.Writer.WritePropertyName("WhatsAppAction");
+                context.Writer.WriteStringValue(requestObject.WhatsAppAction);
+            }
+
+            if(requestObject.IsSetZapierAction())
+            {
+                context.Writer.WritePropertyName("ZapierAction");
+                context.Writer.WriteStringValue(requestObject.ZapierAction);
+            }
+
             if(requestObject.IsSetZendeskAction())
             {
                 context.Writer.WritePropertyName("ZendeskAction");
                 context.Writer.WriteStringValue(requestObject.ZendeskAction);
+            }
+
+            if(requestObject.IsSetZoomAction())
+            {
+                context.Writer.WritePropertyName("ZoomAction");
+                context.Writer.WriteStringValue(requestObject.ZoomAction);
+            }
+
+            if(requestObject.IsSetZoomInfoAction())
+            {
+                context.Writer.WritePropertyName("ZoomInfoAction");
+                context.Writer.WriteStringValue(requestObject.ZoomInfoAction);
             }
 
         }
