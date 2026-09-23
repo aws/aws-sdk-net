@@ -462,6 +462,348 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Attempts to select a parameterized constructor to use when populating an instance of
+        /// <paramref name="type"/> by binding stored attribute values to constructor parameters.
+        /// This supports immutable types such as C# record types (including record struct) and any
+        /// type that is constructed through a parameterized constructor.
+        /// </summary>
+        /// <remarks>
+        /// Selection rules:
+        /// <list type="bullet">
+        /// <item>If a constructor is marked with <see cref="DynamoDBConstructorAttribute"/>, it is used (and multiple such markers are an error).</item>
+        /// <item>Otherwise, for reference types only, if a public parameterless constructor (or one accepting a <see cref="DynamoDBContext"/>) exists, no binding constructor is used and the type keeps the existing instantiation path. Value types (e.g. record struct) cannot use that path (see <see cref="CanInstantiate"/>), so a parameterless constructor does not suppress binding for them.</item>
+        /// <item>Otherwise, if exactly one parameterized constructor remains, it is used. If more than one remains, the caller must disambiguate with <see cref="DynamoDBConstructorAttribute"/>.</item>
+        /// </list>
+        /// <para>
+        /// The second rule is what keeps stored data compatible across target frameworks. A reference type with a
+        /// public parameterless constructor is the only shape that older builds of the SDK can populate, and such a
+        /// type never selects a binding constructor here unless the application opts in with
+        /// <see cref="DynamoDBConstructorAttribute"/> (which does not exist below .NET 8). Every type that this
+        /// method newly makes usable is a type that older builds rejected outright, so no existing item can change
+        /// shape when an application is retargeted to .NET 8 or later.
+        /// </para>
+        /// <para>
+        /// The compiler-generated record copy constructor needs no special handling: it is non-public (protected on
+        /// a record class, private on a sealed record) and only public constructors are considered.
+        /// </para>
+        /// </remarks>
+        /// <returns><c>true</c> when a binding constructor was selected; otherwise <c>false</c>.</returns>
+        internal static bool TryGetBindingConstructor(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            out ConstructorInfo bindingConstructor)
+        {
+            bindingConstructor = null;
+
+            // Types that cannot be instantiated by reflection (abstract, interface, or open generic) must not
+            // select a binding constructor; otherwise they would bypass the existing CanInstantiate validation
+            // and fail later with a raw reflection exception from ConstructorInfo.Invoke. A byref-like type
+            // (ref struct) is excluded for the same reason: it cannot be boxed into the object that Invoke
+            // returns. Returning false here lets the normal unsupported-type error path remain authoritative.
+            if (type.IsAbstract || type.IsInterface || type.IsGenericTypeDefinition || type.ContainsGenericParameters || type.IsByRefLike)
+                return false;
+
+            // Only public instance constructors are considered. The compiler-generated record copy constructor is
+            // non-public (protected on a record class, private on a sealed record), so it is already excluded here
+            // and does not need special-casing — a legitimate public 'T(T source)' constructor must not be dropped.
+            var constructors = type
+                .GetConstructors(BindingFlags.Instance | BindingFlags.Public)
+                .ToList();
+
+            if (constructors.Count == 0)
+                return false;
+
+            // An explicit [DynamoDBConstructor] marker takes precedence and disambiguates multiple constructors.
+            var marked = constructors.Where(c => c.GetCustomAttribute<DynamoDBConstructorAttribute>() != null).ToList();
+            if (marked.Count > 1)
+                throw new InvalidOperationException(
+                    $"Type {type.FullName} has multiple constructors marked with [DynamoDBConstructor]. Only one constructor may be marked.");
+            if (marked.Count == 1)
+            {
+                // A parameterless constructor marked with the attribute has nothing to bind; keep the existing path.
+                if (marked[0].GetParameters().Length == 0)
+                    return false;
+
+                bindingConstructor = marked[0];
+                return true;
+            }
+
+            // With no explicit marker, prefer the existing instantiation path when a parameterless constructor
+            // (or one accepting a DynamoDBContext) is available. This preserves behavior for all existing types.
+            // This only applies to reference types: value types are rejected by CanInstantiate (which requires a
+            // class), so for a value type we must bind through a parameterized constructor even if it also declares
+            // an explicit parameterless constructor.
+            if (!type.IsValueType)
+            {
+                foreach (var constructor in constructors)
+                {
+                    var parameters = constructor.GetParameters();
+                    if (parameters.Length == 0)
+                        return false;
+                    if (parameters.Length == 1 && parameters[0].ParameterType == typeof(DynamoDBContext))
+                        return false;
+                }
+            }
+
+            // Consider only constructors that can be bound: those with parameters, excluding the
+            // parameterless and the DynamoDBContext-only constructors handled by the existing path.
+            var bindable = constructors
+                .Where(c =>
+                {
+                    var parameters = c.GetParameters();
+                    if (parameters.Length == 0)
+                        return false;
+                    if (parameters.Length == 1 && parameters[0].ParameterType == typeof(DynamoDBContext))
+                        return false;
+                    return true;
+                })
+                .ToList();
+
+            if (bindable.Count == 0)
+                return false;
+
+            if (bindable.Count == 1)
+            {
+                // A value type does not have to bind at all when zero-initialization plus member assignment can
+                // populate it. Prefer binding, because it honors the constructor's parameter defaults, but fall back
+                // when a parameter does not name a modeled member: that is a convenience constructor such as
+                // Money(decimal amount, string currencyCode) for a Currency property, not a description of how to
+                // rebuild the value. A type that genuinely needs its constructor still binds and is reported by
+                // ResolveConstructorArguments if a parameter cannot be supplied.
+                if (type.IsValueType &&
+                    !AllParametersMapToModeledMembers(type, bindable[0]) &&
+                    !ValueTypeRequiresBindingConstructor(type, bindable))
+                {
+                    return false;
+                }
+
+                bindingConstructor = bindable[0];
+                return true;
+            }
+
+            // More than one constructor could be bound. A value type whose persisted members are all writable does
+            // not need a constructor at all: it is populated by zero-initialization followed by member assignment,
+            // so the ambiguity is irrelevant and reporting it would reject a type that works everywhere it is used
+            // (top level, nested and flattened). A value type that has constructor-only members, and any reference
+            // type, still needs the caller to disambiguate.
+            if (type.IsValueType && !ValueTypeRequiresBindingConstructor(type, bindable))
+                return false;
+
+            throw new InvalidOperationException(
+                $"Type {type.FullName} has multiple bindable parameterized constructors. " +
+                "Mark the constructor to use for DynamoDB deserialization with [DynamoDBConstructor].");
+        }
+
+        /// <summary>
+        /// Whether every parameter of <paramref name="constructor"/> names a modeled member of
+        /// <paramref name="type"/>, matched case-insensitively. When one does not, the constructor cannot describe
+        /// how to rebuild the value from stored attributes.
+        /// </summary>
+        private static bool AllParametersMapToModeledMembers(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            ConstructorInfo constructor)
+        {
+            var parameters = constructor.GetParameters();
+            var parameterNames = parameters.Select(p => p.Name).ToArray();
+            var memberNames = GetMembersFromType(type, parameterNames).Select(m => m.Name).ToList();
+
+            foreach (var parameter in parameters)
+            {
+                bool matched = false;
+                foreach (var memberName in memberNames)
+                {
+                    if (string.Equals(memberName, parameter.Name, StringComparison.OrdinalIgnoreCase))
+                    {
+                        matched = true;
+                        break;
+                    }
+                }
+
+                if (!matched)
+                    return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Whether <paramref name="member"/> is excluded from persistence by <see cref="DynamoDBIgnoreAttribute"/>.
+        /// </summary>
+        /// <remarks>
+        /// Only the attribute is visible at this point. A member ignored through a
+        /// <see cref="Amazon.Util.TypeMapping"/> is not, because mappings are applied after the type's storage
+        /// configuration is created, so such a member is still treated as persisted here.
+        /// </remarks>
+        private static bool IsIgnoredMember(MemberInfo member)
+        {
+            foreach (var attribute in GetAttributes(member))
+            {
+                if (attribute is DynamoDBIgnoreAttribute)
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Whether a value type needs one of <paramref name="candidates"/> to populate at least one of the members
+        /// it persists, that is whether it has a get-only property matching a parameter of any candidate. When it
+        /// does not, zero-initialization followed by member assignment can populate the value completely.
+        /// </summary>
+        private static bool ValueTypeRequiresBindingConstructor(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            List<ConstructorInfo> candidates)
+        {
+            var parameterNames = candidates
+                .SelectMany(c => c.GetParameters())
+                .Select(p => p.Name)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToArray();
+
+            foreach (var member in GetMembersFromType(type, parameterNames))
+            {
+                // An ignored member is not persisted, so it never needs the constructor to populate it.
+                if (IsIgnoredMember(member))
+                    continue;
+
+                if (!IsReadWrite(member))
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// The widening conversions the reflection binder performs when a value is passed to a constructor
+        /// parameter, keyed by the type of the value. This is the CLR's primitive widening table, which is
+        /// narrower than C#'s implicit numeric conversions: notably nothing widens to <see cref="decimal"/>.
+        /// </summary>
+        private static readonly Dictionary<Type, Type[]> PrimitiveWideningConversions = new Dictionary<Type, Type[]>
+        {
+            [typeof(sbyte)]  = new[] { typeof(short), typeof(int), typeof(long), typeof(float), typeof(double) },
+            [typeof(byte)]   = new[] { typeof(short), typeof(ushort), typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(char) },
+            [typeof(short)]  = new[] { typeof(int), typeof(long), typeof(float), typeof(double) },
+            [typeof(ushort)] = new[] { typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(char) },
+            [typeof(int)]    = new[] { typeof(long), typeof(float), typeof(double) },
+            [typeof(uint)]   = new[] { typeof(long), typeof(ulong), typeof(float), typeof(double) },
+            [typeof(long)]   = new[] { typeof(float), typeof(double) },
+            [typeof(ulong)]  = new[] { typeof(float), typeof(double) },
+            [typeof(char)]   = new[] { typeof(ushort), typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double) },
+            [typeof(float)]  = new[] { typeof(double) },
+        };
+
+        /// <summary>
+        /// Determines whether a value of <paramref name="memberType"/> can be passed to a constructor parameter
+        /// of <paramref name="parameterType"/>. A stored attribute is deserialized as its member's type and then
+        /// handed to <see cref="ConstructorInfo.Invoke(object[])"/>, so a combination that the reflection binder
+        /// rejects produces a model that saves successfully but fails on every load.
+        /// </summary>
+        /// <param name="memberType">The declared type of the member that supplies the parameter.</param>
+        /// <param name="parameterType">The declared type of the constructor parameter.</param>
+        /// <param name="polymorphicDerivedTypes">
+        /// Types the deserializer can produce for the member besides <paramref name="memberType"/>, that is the
+        /// derived types registered for polymorphic deserialization. A parameter type narrower than the member
+        /// type is only reachable through one of these.
+        /// </param>
+        /// <remarks>
+        /// Only combinations that can never succeed are reported, so the check accepts identity, nullability on
+        /// either side, reference upcasts, boxing to object or an interface, enum and underlying-type pairs, and
+        /// primitive widening as the reflection binder performs it.
+        /// </remarks>
+        internal static bool IsAssignableToConstructorParameter(
+            Type memberType,
+            Type parameterType,
+            IEnumerable<Type> polymorphicDerivedTypes = null)
+        {
+            if (memberType == null || parameterType == null)
+                return true;
+
+            if (memberType == parameterType)
+                return true;
+
+            // A non-null Nullable<T> boxes as T, and the binder accepts a boxed T for a T? parameter, so the
+            // nullability of either side does not affect whether the call succeeds.
+            var member = Nullable.GetUnderlyingType(memberType) ?? memberType;
+            var parameter = Nullable.GetUnderlyingType(parameterType) ?? parameterType;
+
+            if (member == parameter)
+                return true;
+
+            // Reference conversions and boxing to object or an interface.
+            if (parameter.IsAssignableFrom(member))
+                return true;
+
+            // The parameter is narrower than the member. The deserializer reconstructs the member's declared type,
+            // so the only way the call can succeed is a polymorphic mapping that produces a compatible type.
+            if (polymorphicDerivedTypes != null)
+            {
+                foreach (var derivedType in polymorphicDerivedTypes)
+                {
+                    if (parameter.IsAssignableFrom(derivedType))
+                        return true;
+                }
+            }
+
+            // An enum is passed as, and accepted for, its underlying primitive type.
+            if (member.IsEnum)
+                member = Enum.GetUnderlyingType(member);
+            if (parameter.IsEnum)
+                parameter = Enum.GetUnderlyingType(parameter);
+
+            if (member == parameter)
+                return true;
+
+            return PrimitiveWideningConversions.TryGetValue(member, out var widensTo) &&
+                Array.IndexOf(widensTo, parameter) >= 0;
+        }
+
+        /// <summary>
+        /// The derived types declared with <see cref="DynamoDBPolymorphicTypeAttribute"/> on <paramref name="type"/>
+        /// itself. The loader can produce any of these for a member declared as that type, in addition to any
+        /// derived types declared on the member.
+        /// </summary>
+        internal static IEnumerable<Type> GetPolymorphicDerivedTypes(Type type)
+        {
+            if (type == null)
+                yield break;
+
+            foreach (var attribute in type.GetCustomAttributes<DynamoDBPolymorphicTypeAttribute>(inherit: false))
+            {
+                if (attribute.DerivedType != null)
+                    yield return attribute.DerivedType;
+            }
+        }
+
+        /// <summary>
+        /// Whether a type populated through <paramref name="bindingConstructor"/> exposes members that only that
+        /// constructor can populate, that is get-only properties matching one of its parameters. Such members are
+        /// persisted by the type's own model but cannot be assigned by a caller that creates the value without
+        /// invoking the constructor, so they would be written when an item is saved and never read back.
+        /// </summary>
+        /// <remarks>
+        /// An <c>init</c> accessor counts as writable, so a positional <c>record struct</c> or
+        /// <c>readonly record struct</c> has no constructor-only members.
+        /// </remarks>
+        internal static bool HasConstructorOnlyMembers(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            ConstructorInfo bindingConstructor)
+        {
+            var parameterNames = bindingConstructor.GetParameters().Select(p => p.Name).ToArray();
+
+            foreach (var member in GetMembersFromType(type, parameterNames))
+            {
+                // An ignored member is not persisted, so it cannot be written and then lost on load.
+                if (IsIgnoredMember(member))
+                    continue;
+
+                if (!IsReadWrite(member))
+                    return true;
+            }
+
+            return false;
+        }
+#endif
 
         internal static Type GetType(MemberInfo member)
         {
@@ -530,6 +872,33 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
+        /// Determines whether <paramref name="member"/> is a readable, get-only property whose name matches
+        /// one of the supplied constructor parameter names. Such members are otherwise excluded by
+        /// <see cref="IsValidMemberInfo"/> (they are not writable), but are needed to support immutable types
+        /// whose values are supplied through a parameterized constructor.
+        /// </summary>
+        private static bool IsConstructorBoundReadOnlyProperty(MemberInfo member, ICollection<string> constructorParameterNames)
+        {
+            if (constructorParameterNames == null || constructorParameterNames.Count == 0)
+                return false;
+
+            if (!(member is PropertyInfo property))
+                return false;
+
+            // Only get-only properties need this special handling; read/write (incl. init) members already pass IsValidMemberInfo.
+            if (!property.CanRead || property.CanWrite)
+                return false;
+
+            foreach (var name in constructorParameterNames)
+            {
+                if (string.Equals(name, property.Name, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Retrieves a list of members that exist in a given type.
         /// The function goes over all the declared members of a given type
         /// and recurses into any base types and the declared members of those types.
@@ -538,7 +907,19 @@ namespace Amazon.DynamoDBv2.DataModel
         /// in base types to avoid returning duplicate members.
         /// </summary>
         internal static List<MemberInfo> GetMembersFromType([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type)
+        {
+            return GetMembersFromType(type, null);
+        }
 
+        /// <summary>
+        /// Retrieves a list of members that exist in a given type. In addition to the read/write members
+        /// returned by the parameterless overload, get-only properties whose name matches one of
+        /// <paramref name="constructorParameterNames"/> (case-insensitive) are included so their values
+        /// can be read for saving and bound to constructor parameters on load.
+        /// </summary>
+        internal static List<MemberInfo> GetMembersFromType(
+            [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type,
+            ICollection<string> constructorParameterNames)
         {
             Dictionary<string, MemberInfo> members = new Dictionary<string, MemberInfo>();
 
@@ -553,7 +934,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 // since the iteration is going over each base type separately.
                 var currentMembers = currentType
                     .GetMembers(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.DeclaredOnly)
-                    .Where(IsValidMemberInfo)
+                    .Where(m => IsValidMemberInfo(m) || IsConstructorBoundReadOnlyProperty(m, constructorParameterNames))
                     .ToList();
 
                 foreach (var member in currentMembers)

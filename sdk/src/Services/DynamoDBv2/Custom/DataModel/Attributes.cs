@@ -219,6 +219,53 @@ namespace Amazon.DynamoDBv2.DataModel
     {
     }
 
+#if NET8_0_OR_GREATER
+    /// <summary>
+    /// DynamoDB attribute that marks which constructor to use when populating an object from a
+    /// DynamoDB item by binding stored attribute values to constructor parameters. This enables
+    /// support for immutable types such as C# <c>record</c> types (including <c>record struct</c>)
+    /// and other types that are constructed through a parameterized constructor rather than a
+    /// parameterless constructor.
+    /// <para>
+    /// Selection without this attribute differs between reference types and value types. For a reference type a
+    /// constructor is selected only when there is no public parameterless constructor and no constructor accepting
+    /// a <c>DynamoDBContext</c>, and exactly one bindable parameterized constructor remains, for example the
+    /// primary constructor of a positional record.
+    /// </para>
+    /// <para>
+    /// A value type cannot use the parameterless instantiation path at all, so a parameterless constructor does
+    /// not suppress selection for one. A value type binds when exactly one bindable parameterized constructor
+    /// remains and every parameter names a modeled member. Otherwise it is populated by zero-initialization
+    /// followed by member assignment, which covers a struct with a convenience constructor whose parameter names
+    /// do not match its members, and a struct exposing several constructors. A value type with get-only members
+    /// that only a constructor can supply still needs this attribute when more than one constructor could be used.
+    /// </para>
+    /// <para>
+    /// Use this attribute to choose the constructor when a type exposes more than one eligible constructor, or to
+    /// force constructor binding even though a parameterless or <c>DynamoDBContext</c> constructor exists.
+    /// </para>
+    /// <para>
+    /// Constructor parameters are matched to modeled members by name (case-insensitive). For positional
+    /// records, apply DynamoDB attributes to the generated property using the <c>property:</c> target
+    /// (for example <c>[property: DynamoDBHashKey]</c>).
+    /// </para>
+    /// <para>
+    /// Constructor-based population is only available for the .NET 8 (and later) target of the SDK, so this
+    /// attribute only exists in that build. Code that must also compile against the .NET Standard 2.0 or
+    /// .NET Framework build of the SDK should guard its use with <c>#if NET8_0_OR_GREATER</c>.
+    /// </para>
+    /// <para>
+    /// The attribute does not change how items are stored. A type populated through a constructor reads and
+    /// writes exactly the same DynamoDB attributes as the equivalent type with settable members, so data
+    /// written by any build of the SDK remains readable by any other.
+    /// </para>
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Constructor, Inherited = false, AllowMultiple = false)]
+    public sealed class DynamoDBConstructorAttribute : DynamoDBAttribute
+    {
+    }
+#endif
+
 
     /// <summary>
     /// DynamoDB property attribute.
@@ -909,7 +956,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Typical usage: fields that should be initialized once and then left unchanged (e.g., created timestamps, initial version, immutable IDs).
         /// Notes:
         /// - If the attribute already exists on the item during update, its value is preserved and not overwritten.
-        /// - This behavior is analogous to using DynamoDB’s if_not_exists in update expressions for the attribute.
+        /// - This behavior is analogous to using DynamoDB's if_not_exists in update expressions for the attribute.
         /// </summary>
         IfNotExists
     }

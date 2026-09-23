@@ -79,6 +79,17 @@ namespace Amazon.DynamoDBv2.DataModel
             return false;
         }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// The types the deserializer can produce for this member in addition to <c>MemberType</c>, that is the
+        /// derived types registered for polymorphic deserialization.
+        /// </summary>
+        internal IEnumerable<Type> PolymorphicDerivedTypes
+        {
+            get { return _derivedTypeKeysDictionary.Values; }
+        }
+#endif
+
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
         public bool TryGetDerivedType(string typeDiscriminator, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] out Type deriviedType)
@@ -136,6 +147,13 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool IsGSIRangeKey { get; set; }
         public bool IsGSIKey { get { return IsGSIHashKey || IsGSIRangeKey; } }
         public bool IsIgnored { get; set; }
+
+        /// <summary>
+        /// Whether this member's value is supplied through a parameterized (binding) constructor rather
+        /// than being set after construction. When <c>true</c>, the value is passed as a constructor argument
+        /// during deserialization and is not written via a property/field setter. Only used on the .NET 8+ target.
+        /// </summary>
+        public bool IsConstructorArgument { get; set; }
 
         /// <summary>
         /// Whether to store DateTime as epoch seconds integer.
@@ -384,6 +402,40 @@ namespace Amazon.DynamoDBv2.DataModel
         // target type members
         public Dictionary<string, MemberInfo> TargetTypeMembers { get; private set; }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Pairs a constructor parameter with the <see cref="PropertyStorage"/> that supplies its value.
+        /// </summary>
+        internal readonly struct ConstructorArgument
+        {
+            public ConstructorArgument(ParameterInfo parameter, PropertyStorage storage)
+            {
+                Parameter = parameter;
+                Storage = storage;
+            }
+
+            public ParameterInfo Parameter { get; }
+            public PropertyStorage Storage { get; }
+        }
+
+        /// <summary>
+        /// The constructor used to populate instances of <see cref="TargetType"/> by binding stored attribute
+        /// values to its parameters, or <c>null</c> when the type is populated via the parameterless path.
+        /// </summary>
+        internal ConstructorInfo BindingConstructor { get; private set; }
+
+        /// <summary>
+        /// The binding-constructor parameters aligned with the <see cref="PropertyStorage"/> that supplies each value.
+        /// Populated by <see cref="ResolveConstructorArguments"/>.
+        /// </summary>
+        internal ConstructorArgument[] ConstructorArguments { get; private set; }
+
+        /// <summary>
+        /// The names of the binding constructor's parameters, used to surface get-only members during discovery.
+        /// </summary>
+        internal string[] ConstructorParameterNames { get; private set; }
+#endif
+
         // storage mappings
         private Dictionary<string, PropertyStorage> PropertyToPropertyStorageMapping { get; set; }
 
@@ -453,12 +505,12 @@ namespace Amazon.DynamoDBv2.DataModel
             throw new InvalidOperationException(errorMessage);
         }
 
-        private static Dictionary<string, MemberInfo> GetMembersDictionary([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type)
+        private static Dictionary<string, MemberInfo> GetMembersDictionary([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, ICollection<string> constructorParameterNames)
         {
             Dictionary<string, MemberInfo> dictionary = new Dictionary<string, MemberInfo>(StringComparer.Ordinal);
 
-            var members = Utils.GetMembersFromType(type);
-            
+            var members = Utils.GetMembersFromType(type, constructorParameterNames);
+
             foreach (var member in members)
             {
                 InternalSDKUtils.AddToDictionary(dictionary, member.Name, member);
@@ -472,20 +524,52 @@ namespace Amazon.DynamoDBv2.DataModel
         // constructor
         internal StorageConfig([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType)
         {
-            if (!Utils.CanInstantiate(targetType))
+            ICollection<string> constructorParameterNames = null;
+            bool requiresParameterlessConstructor = true;
+
+#if NET8_0_OR_GREATER
+            // Immutable types (e.g. record / record struct) are populated by binding stored values to a
+            // parameterized constructor rather than instantiating with a parameterless constructor.
+            if (Utils.TryGetBindingConstructor(targetType, out var bindingConstructor))
+            {
+                BindingConstructor = bindingConstructor;
+                ConstructorParameterNames = bindingConstructor.GetParameters().Select(p => p.Name).ToArray();
+                constructorParameterNames = ConstructorParameterNames;
+                requiresParameterlessConstructor = false;
+            }
+            else if (targetType.IsValueType && !targetType.ContainsGenericParameters && !targetType.IsByRefLike)
+            {
+                // Value types (e.g. a non-positional record struct) that have no binding constructor are
+                // populated via zero-initialization (default(T)) followed by member assignment, so they do
+                // not require a parameterless constructor (CanInstantiate only accepts reference types).
+                // Open generic and byref-like value types cannot be boxed, so they must not take this path;
+                // leaving them to CanInstantiate keeps the normal unsupported-type error authoritative
+                // instead of failing later inside Array.CreateInstance.
+                requiresParameterlessConstructor = false;
+            }
+#endif
+
+            if (requiresParameterlessConstructor && !Utils.CanInstantiate(targetType))
             {
                 string errorMessage;
                 if (InternalSDKUtils.IsRunningNativeAot())
                 {
-                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " + 
+                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated. Since the application is running in Native AOT mode the type could possibly be trimmed. " +
                         "This can happen if the type being created is a nested type of a type being used for saving and loading DynamoDB items. " +
-                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." + 
+                        $"This can be worked around by adding the \"[DynamicDependency(DynamicallyAccessedMemberTypes.All, typeof({targetType.FullName}))]\" attribute to the constructor of the parent type." +
                         "If the parent type can not be modified the attribute can also be used on the method invoking the DynamoDB sdk or some other method that you are sure is not being trimmed.";
                 }
                 else
                 {
-                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated";
+                    errorMessage = $"Type {targetType.FullName} is unsupported, it cannot be instantiated.";
                 }
+
+#if !NET8_0_OR_GREATER
+                // Populating a type through a parameterized constructor (records, other immutable types, and
+                // value types) is only available on the .NET 8 or later build of the SDK. Point users at that
+                // requirement instead of leaving them with a bare "cannot be instantiated" message.
+                errorMessage += " Retargeting to .NET 8 (or later) can enable records and other types with a usable public parameterized constructor (selected with [DynamoDBConstructor] when necessary); otherwise, expose a public parameterless constructor and settable members.";
+#endif
 
                 throw new InvalidOperationException(errorMessage);
             }
@@ -493,12 +577,294 @@ namespace Amazon.DynamoDBv2.DataModel
             TargetType = targetType;
             Properties = new List<PropertyStorage>();
             PropertyToPropertyStorageMapping = new Dictionary<string, PropertyStorage>(StringComparer.Ordinal);
-            TargetTypeMembers = GetMembersDictionary(targetType);
+            TargetTypeMembers = GetMembersDictionary(targetType, constructorParameterNames);
 
             if (TargetTypeMembers.Count == 0)
                 throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                     "Type {0} is unsupported, it has no supported members", targetType.FullName));
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Aligns the binding constructor's parameters with the <see cref="PropertyStorage"/> that supplies
+        /// each value (matched by property name, case-insensitive) and flags those members as constructor
+        /// arguments, then validates that every modeled member can actually be populated when an item is loaded.
+        /// Must be called after <see cref="Properties"/> has been populated and after type mappings and table
+        /// configuration have been applied.
+        /// </summary>
+        internal void ResolveConstructorArguments()
+        {
+            if (BindingConstructor != null)
+            {
+                var parameters = BindingConstructor.GetParameters();
+                var arguments = new ConstructorArgument[parameters.Length];
+
+                for (int i = 0; i < parameters.Length; i++)
+                {
+                    var parameter = parameters[i];
+                    PropertyStorage match = FindConstructorArgumentMember(parameter);
+
+                    if (match == null)
+                    {
+                        // The parameter is supplied only by members that are not persisted, so there is never a
+                        // stored value for it. Bind it with no storage and let it take its default on every load.
+                        arguments[i] = new ConstructorArgument(parameter, null);
+                        continue;
+                    }
+
+                    // Reject members whose value the SDK reconciles onto the instance after a save/update, since that
+                    // write-back is impossible for an immutable constructor-populated member. This includes members
+                    // nested inside a flattened constructor argument, whose server-managed descendants would otherwise
+                    // be silently left stale (the flattened parent is skipped by PopulateInstance).
+                    ValidateConstructorBindableMember(match, viaFlatten: false);
+
+                    ValidateConstructorArgumentType(parameter, match);
+
+                    match.IsConstructorArgument = true;
+                    arguments[i] = new ConstructorArgument(parameter, match);
+                }
+
+                ConstructorArguments = arguments;
+
+                // Every remaining member is set through a setter when an item is loaded, so a read-only member that
+                // was not bound to a constructor parameter could be saved but never loaded.
+                ValidateAllMembersAreLoadable();
+            }
+
+            foreach (var property in Properties)
+            {
+                if (property.IsIgnored) continue;
+
+                if (TargetType.IsValueType)
+                {
+                    // A value type is boxed before the SDK reconciles server-produced values onto the instance, so the
+                    // write-back updates a copy and the caller's value silently keeps the stale value.
+                    ValidateValueTypeMember(property, viaFlatten: false, TargetType.FullName);
+                }
+                else
+                {
+                    // A reference type can still own a flattened value-type member. Its children are enumerated into
+                    // this configuration directly, so nothing here would reject a server-managed descendant and the
+                    // item would load, while saving reaches the value type's own configuration and fails. Checking it
+                    // here makes load and save reject the model consistently.
+                    ValidateFlattenedValueTypeMembers(property);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Applies the value-type rule to any flattened member whose type is a value type, at any depth. Such a
+        /// member is materialized by zero-initialization and assigned back to its parent when an item is loaded,
+        /// so the owning configuration accepts it even when the owner is a reference type.
+        /// </summary>
+        private void ValidateFlattenedValueTypeMembers(PropertyStorage member)
+        {
+            if (!member.ShouldFlattenChildProperties || member.FlattenProperties == null)
+                return;
+
+            if (member.MemberType != null && member.MemberType.IsValueType)
+            {
+                // This validates the member's whole flattened subtree, so there is nothing further to walk.
+                ValidateValueTypeMember(member, viaFlatten: false, member.MemberType.FullName);
+                return;
+            }
+
+            foreach (var child in member.FlattenProperties)
+            {
+                if (child.IsIgnored) continue;
+
+                ValidateFlattenedValueTypeMembers(child);
+            }
+        }
+
+        /// <summary>
+        /// Finds the single modeled member that supplies <paramref name="parameter"/>, or <c>null</c> when the
+        /// parameter is only matched by members that are not persisted. Members are matched to constructor
+        /// parameters by name, case-insensitively; when more than one member matches, an exact (case-sensitive)
+        /// match wins, and anything else is rejected as ambiguous rather than guessed.
+        /// </summary>
+        private PropertyStorage FindConstructorArgumentMember(ParameterInfo parameter)
+        {
+            var named = Properties
+                .Where(ps => string.Equals(ps.PropertyName, parameter.Name, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            var candidates = named.Where(ps => !ps.IsIgnored).ToList();
+
+            if (candidates.Count == 0)
+            {
+                // A member exists but is marked [DynamoDBIgnore], so the parameter simply has no stored value.
+                if (named.Count > 0)
+                    return null;
+
+                throw new InvalidOperationException(
+                    $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} does not map to a modeled member. " +
+                    "Every binding constructor parameter must correspond to a member of the same name (matched case-insensitively): " +
+                    "a property, or a public field that is not readonly. Alternatively the member may be marked with " +
+                    "[DynamoDBIgnore], in which case the parameter always receives its default value.");
+            }
+
+            if (candidates.Count == 1)
+                return candidates[0];
+
+            var exactMatches = candidates
+                .Where(ps => string.Equals(ps.PropertyName, parameter.Name, StringComparison.Ordinal))
+                .ToList();
+
+            if (exactMatches.Count == 1)
+                return exactMatches[0];
+
+            throw new InvalidOperationException(
+                $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} matches more than one modeled member " +
+                $"({string.Join(", ", candidates.Select(ps => "'" + ps.PropertyName + "'"))}). Constructor parameters are matched to members " +
+                "by name, case-insensitively, so this mapping is ambiguous. Rename the parameter to exactly match the member that supplies it, " +
+                "or mark the members that should not be persisted with [DynamoDBIgnore].");
+        }
+
+        /// <summary>
+        /// Throws when a modeled member cannot be populated while loading an item because it is neither supplied
+        /// through the binding constructor nor writable. Such a member is still written when the item is saved, so
+        /// allowing it would produce stored items that fail to load.
+        /// </summary>
+        private void ValidateAllMembersAreLoadable()
+        {
+            foreach (var property in Properties)
+            {
+                if (property.IsIgnored || property.IsConstructorArgument) continue;
+                if (Utils.IsReadWrite(property.Member)) continue;
+
+                throw new InvalidOperationException(
+                    $"Property '{property.PropertyName}' of type {TargetType.FullName} is read-only and is not supplied through the constructor " +
+                    "used for DynamoDB deserialization, so it would be written when the item is saved but could never be populated when it is loaded. " +
+                    "Mark it with [DynamoDBIgnore], make it settable, or select a constructor that includes it with [DynamoDBConstructor].");
+            }
+        }
+
+        /// <summary>
+        /// Throws when a constructor parameter's type cannot accept the value produced for the member that supplies
+        /// it. A stored attribute is deserialized as its member's type and then handed to
+        /// <see cref="ConstructorInfo.Invoke(object[])"/>, so an incompatible pair (for example an <c>int</c>
+        /// parameter fed by a <c>long</c> member) saves successfully and then fails on every load.
+        /// </summary>
+        private void ValidateConstructorArgumentType(ParameterInfo parameter, PropertyStorage member)
+        {
+            // A converter decides the run-time type of the deserialized value, so the member's declared type says
+            // nothing useful about what the constructor will receive. Converter is the effective converter: it
+            // covers an attribute or type-mapping converter and a default converter registered on the context,
+            // which is why this runs after Denormalize has called PropertyStorage.Validate.
+            if (member.Converter != null || member.ConverterType != null)
+                return;
+
+            // The loader can produce the member's declared type, any derived type declared on the member itself,
+            // and any declared on the member's type with [DynamoDBPolymorphicType].
+            var runtimeTypes = member.PolymorphicDerivedTypes
+                .Concat(Utils.GetPolymorphicDerivedTypes(member.MemberType));
+
+            if (Utils.IsAssignableToConstructorParameter(member.MemberType, parameter.ParameterType, runtimeTypes))
+                return;
+
+            throw new InvalidOperationException(
+                $"Constructor parameter '{parameter.Name}' of type {TargetType.FullName} is declared as " +
+                $"{parameter.ParameterType.FullName}, but the member '{member.PropertyName}' that supplies it is " +
+                $"{member.MemberType.FullName}. A stored attribute is deserialized as its member's type and then passed to the " +
+                "constructor, so this combination would save successfully but fail to load with an argument-type error. " +
+                "Declare the parameter and the member with the same type. The constructor is called through reflection, which " +
+                "accepts only an identical type, a nullable and its underlying type in either direction, a reference conversion " +
+                "to a base type or interface, an enum and its underlying type, and a widening numeric conversion. It does not " +
+                "perform every C# implicit conversion: int to decimal, for example, is rejected because decimal is not a " +
+                "primitive type. A parameter type derived from the member's type is only supported when a " +
+                "[DynamoDBPolymorphicType] mapping lets the loader create that derived type.");
+        }
+
+        /// <summary>
+        /// Returns a description of why <paramref name="member"/> holds a value that the SDK reconciles onto the
+        /// instance after a save or update, or <c>null</c> when it holds no such value. The SDK writes a
+        /// server-produced value back onto the instance for these members once the request completes.
+        /// </summary>
+        private static string GetServerManagedMemberKind(PropertyStorage member)
+        {
+            if (member.IsVersion) return "a version property";
+            if (member.IsCounter) return "an atomic counter property";
+            if (member.IsAutoGeneratedTimestamp) return "an auto-generated timestamp property";
+            if (member.UpdateBehaviorMode == UpdateBehavior.IfNotExists) return "a property that uses UpdateBehavior.IfNotExists";
+            return null;
+        }
+
+        /// <summary>
+        /// Throws if <paramref name="member"/> (or, when it is flattened, any of its descendants) holds a value that
+        /// the SDK reconciles onto the instance after a save/update — a version, atomic counter, auto-generated
+        /// timestamp, or <see cref="UpdateBehavior.IfNotExists"/> member — because that write-back cannot be applied
+        /// to an immutable member supplied through the constructor.
+        /// </summary>
+        private void ValidateConstructorBindableMember(PropertyStorage member, bool viaFlatten)
+        {
+            var kind = GetServerManagedMemberKind(member);
+            if (kind != null)
+            {
+                string location = viaFlatten
+                    ? $"reached through a flattened constructor parameter of type {TargetType.FullName}"
+                    : $"of type {TargetType.FullName}";
+
+                throw new InvalidOperationException(
+                    $"Property '{member.PropertyName}' ({location}) is {kind} and cannot be supplied through a constructor parameter. " +
+                    "These properties are updated by the SDK after a save or update, which requires writing the new value back onto the instance; " +
+                    "that is not possible for an immutable (constructor-populated) member. Make it a settable property on a type with a parameterless constructor instead.");
+            }
+
+            if (member.ShouldFlattenChildProperties && member.FlattenProperties != null)
+            {
+                foreach (var child in member.FlattenProperties)
+                {
+                    // Denormalize excludes ignored flattened descendants, so they are neither persisted nor
+                    // written back and cannot go stale.
+                    if (child.IsIgnored) continue;
+
+                    ValidateConstructorBindableMember(child, viaFlatten: true);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Throws if <paramref name="member"/> (or, when it is flattened, any of its descendants) holds a value that
+        /// the SDK reconciles onto the instance after a save/update and the declaring type is a value type. The SDK
+        /// boxes the instance before assigning those values through reflection, so the assignment updates the box
+        /// rather than the caller's value: optimistic locking would silently break and atomic counter and
+        /// UpdateBehavior.IfNotExists members would silently read a stale value after a save.
+        /// </summary>
+        /// <param name="member">The member to validate, together with its flattened descendants.</param>
+        /// <param name="viaFlatten">Whether <paramref name="member"/> was reached through a flattened member.</param>
+        /// <param name="valueTypeName">
+        /// The value type the rule is applied on behalf of: the configured type itself when that type is a value
+        /// type, or a flattened value-type member's type when the owner is a reference type.
+        /// </param>
+        private void ValidateValueTypeMember(PropertyStorage member, bool viaFlatten, string valueTypeName)
+        {
+            var kind = GetServerManagedMemberKind(member);
+            if (kind != null)
+            {
+                string location = viaFlatten
+                    ? $"reached through a flattened member of value type {valueTypeName}"
+                    : $"of value type {valueTypeName}";
+
+                throw new InvalidOperationException(
+                    $"Property '{member.PropertyName}' ({location}) is {kind} and cannot be declared on a value type (struct or record struct). " +
+                    "The SDK writes the new value back onto the instance after a save or update, but a value type is boxed before that assignment, " +
+                    "so the caller's value would silently keep the stale value. Declare the type as a class instead.");
+            }
+
+            if (member.ShouldFlattenChildProperties && member.FlattenProperties != null)
+            {
+                foreach (var child in member.FlattenProperties)
+                {
+                    // Denormalize excludes ignored flattened descendants, so they are neither persisted nor
+                    // written back and cannot go stale.
+                    if (child.IsIgnored) continue;
+
+                    ValidateValueTypeMember(child, viaFlatten: true, valueTypeName);
+                }
+            }
+        }
+#endif
     }
 
     /// <summary>
@@ -1033,6 +1399,18 @@ namespace Amazon.DynamoDBv2.DataModel
 
             config.Denormalize(Context, flatConfig.DerivedTypeAttributeName);
 
+#if NET8_0_OR_GREATER
+            // Resolve binding-constructor arguments after Denormalize, which is where PropertyStorage.Validate
+            // assigns the effective converter. Running earlier would miss a default converter registered on the
+            // context (DynamoDBContext.ConverterCache is only consulted there). Mapping-level flags such as
+            // version, counter and ignore are already final by this point as well.
+            config.BaseTypeStorageConfig.ResolveConstructorArguments();
+            foreach (var polymorphicStorageConfig in config.PolymorphicTypesStorageConfig.Values)
+            {
+                polymorphicStorageConfig.ResolveConstructorArguments();
+            }
+#endif
+
             if (flatConfig.DisableFetchingTableMetadata)
             {
                 if (string.IsNullOrEmpty(actualTableName))
@@ -1075,7 +1453,11 @@ namespace Amazon.DynamoDBv2.DataModel
             if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))
                 config.TableName = tableAlias;
 
-            var members = Utils.GetMembersFromType(type);
+            ICollection<string> baseConstructorParameterNames = null;
+#if NET8_0_OR_GREATER
+            baseConstructorParameterNames = config.BaseTypeStorageConfig.ConstructorParameterNames;
+#endif
+            var members = Utils.GetMembersFromType(type, baseConstructorParameterNames);
 
             foreach (var member in members)
             {
@@ -1107,7 +1489,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     var polymorphicStorageConfig = new StorageConfig(attribute.DerivedType);
 
-                    var polymorphicTypeMembers = Utils.GetMembersFromType(attribute.DerivedType);
+                    ICollection<string> polymorphicConstructorParameterNames = null;
+#if NET8_0_OR_GREATER
+                    polymorphicConstructorParameterNames = polymorphicStorageConfig.ConstructorParameterNames;
+#endif
+                    var polymorphicTypeMembers = Utils.GetMembersFromType(attribute.DerivedType, polymorphicConstructorParameterNames);
 
                     foreach (var member in polymorphicTypeMembers)
                     {
@@ -1157,6 +1543,50 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (Utils.IsCollectionType(type) || Utils.IsPrimitive(type))
                     {
                         throw new InvalidOperationException("Cannot flatten primitive types or collections. Only complex objects are supported.");
+                    }
+
+#if NET8_0_OR_GREATER
+                    // A flattened value is materialized without invoking its constructor: a reference type through
+                    // InstantiateConverter, which requires a parameterless constructor, and a value type by
+                    // zero-initialization followed by member assignment (see CreateFlattenedMember). A value type is
+                    // therefore usable as long as every member it persists can be assigned afterwards, which covers a
+                    // mutable struct with a parameterized constructor and a positional record struct, whose init
+                    // accessors are writable. A get-only constructor-bound member would be written when the item is
+                    // saved and never read back, so that shape is still rejected.
+                    if (Utils.TryGetBindingConstructor(type, out var flattenedBindingConstructor))
+                    {
+                        bool constructorOnlyMembers = Utils.HasConstructorOnlyMembers(type, flattenedBindingConstructor);
+
+                        if (!type.IsValueType || constructorOnlyMembers)
+                        {
+                            string reason = !type.IsValueType
+                                ? "it is a reference type populated through a constructor, and a flattened value is reconstructed without invoking that constructor"
+                                : "it has members that only its constructor can populate (get-only properties matching a constructor parameter), which would be written when the item is saved and never read back";
+
+                            throw new InvalidOperationException(
+                                $"Property '{propertyStorage.PropertyName}' is marked [DynamoDBFlatten] but its type {type.FullName} cannot be flattened because {reason}. " +
+                                "Use a type with a parameterless constructor and settable members, a struct or record struct whose members are all settable (init counts as settable), " +
+                                "or store it as a nested (non-flattened) property.");
+                        }
+                    }
+#endif
+
+                    // A flattened value is materialized by CreateFlattenedMember when the item is loaded. Reject a
+                    // type it cannot materialize here, at configuration time, so that saving and loading fail the
+                    // same way with a message that names the property. Without this the failure surfaces only while
+                    // loading, as a bare "Cannot instantiate type" that does not say which member caused it.
+                    bool canMaterializeFlattenedType = Utils.CanInstantiateConverter(type);
+#if NET8_0_OR_GREATER
+                    // Value types are materialized by zero-initialization instead (see CreateFlattenedMember).
+                    canMaterializeFlattenedType = canMaterializeFlattenedType || type.IsValueType;
+#endif
+                    if (!canMaterializeFlattenedType)
+                    {
+                        throw new InvalidOperationException(
+                            $"Property '{propertyStorage.PropertyName}' is marked [DynamoDBFlatten] but its type {type.FullName} cannot be instantiated. " +
+                            "A flattened value is reconstructed when the item is loaded, which requires a public parameterless constructor " +
+                            "(or one accepting a DynamoDBContext) and settable members. Give the type such a constructor, or store it as a " +
+                            "nested (non-flattened) property.");
                     }
 
                     var members = Utils.GetMembersFromType(type);

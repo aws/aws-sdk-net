@@ -12,6 +12,7 @@ Use this skill when working on the AWS SDK for .NET source code itself.
 - changing Core runtime or service client implementations
 - working on the generator, templates, or service models
 - adding new AWS service support
+- working on a handwritten (`Custom/`) service library such as the DynamoDB DataModel
 - using the SDK build/validation and testing flows
 - managing version bumping and changelog generation (use the `aws-sdk-net-devconfig` skill for DevConfig creation)
 
@@ -35,6 +36,11 @@ Use this skill when working on the AWS SDK for .NET source code itself.
 
 - `references/technical-context.md`
   Technical context and system patterns related to generation, runtime architecture, and implementation paths.
+
+- `references/dynamodb-datamodel.md`
+  DynamoDB DataModel (object persistence) internals: configuration build order, constructor selection,
+  the member-collection and `[DynamoDBFlatten]` traps, save/load symmetry, reflection-binder behavior,
+  Native AOT constraints, and how to test it.
 
 - `references/dual-support.md`
   Dual-support branch structure, labels, and pull request targeting.
