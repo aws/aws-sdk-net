@@ -126,7 +126,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Inputs. 
         /// <para>
-        /// Input parameters that Image Builder provides for the workflow step.
+        /// Input parameters that Image Builder provides for the workflow step, as a JSON-encoded
+        /// string.
         /// </para>
         /// </summary>
         public string Inputs
@@ -202,8 +203,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// The file names that the workflow step created as output for this runtime instance
-        /// of the workflow.
+        /// The output values that the workflow step produced for this runtime instance of the
+        /// workflow, as a JSON-encoded string. For example, a step that launches an instance
+        /// outputs the instance ID. If the step failed, this field contains the error message.
         /// </para>
         /// </summary>
         public string Outputs

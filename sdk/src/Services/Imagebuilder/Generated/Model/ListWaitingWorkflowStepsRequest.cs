@@ -31,8 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWaitingWorkflowSteps operation.
-    /// Retrieves a list of workflow steps that are waiting for action for workflows in your
-    /// Amazon Web Services account.
+    /// Lists the workflow steps in your Amazon Web Services account that have paused at a
+    /// <c>WaitForAction</c> step, and are waiting for you to respond. To send a response,
+    /// call <a>SendWorkflowStepAction</a>.
     /// </summary>
     public partial class ListWaitingWorkflowStepsRequest : AmazonImagebuilderRequest
     {

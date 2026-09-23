@@ -40,7 +40,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LifecycleExecutionId. 
         /// <para>
-        /// Identifies the lifecycle runtime instance that started the resource state update.
+        /// Identifies the lifecycle execution that performs the resource state update. Image
+        /// Builder only returns this field when it started a lifecycle execution for the update.
+        /// Use it with <a>GetLifecycleExecution</a> to track progress.
         /// </para>
         /// </summary>
         public string LifecycleExecutionId

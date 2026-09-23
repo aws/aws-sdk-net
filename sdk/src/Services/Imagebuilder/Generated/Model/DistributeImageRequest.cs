@@ -47,9 +47,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -128,9 +129,27 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SourceImage. 
         /// <para>
-        /// The source image to distribute. Specify an AMI identifier, SSM parameter path, or
-        /// Image Builder image Amazon Resource Name (ARN). When you specify an Image Builder
-        /// image Amazon Resource Name (ARN), the image must be in the <c>AVAILABLE</c> state.
+        /// The source image to distribute. You can specify the source in any of the following
+        /// formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// An AMI ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon Web Services Systems Manager Parameter Store reference, prefixed by <c>ssm:</c>,
+        /// followed by the parameter name or ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Image Builder image Amazon Resource Name (ARN). An image version ARN resolves to
+        /// the latest available build version.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Whichever format you use, the source must resolve to an AMI in the current Amazon
+        /// Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -149,7 +168,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to apply to the distributed image.
+        /// The tags to apply to the new Image Builder image resource that this operation creates.
+        /// To tag the output AMIs, use <c>amiTags</c> in the distribution configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

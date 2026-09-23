@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Contains details for an image resource that was identified for a lifecycle action.
+    /// Contains an indicator that shows whether the lifecycle execution identified any resources
+    /// to take lifecycle actions on.
     /// </summary>
     public partial class LifecycleExecutionResourcesImpactedSummary
     {
@@ -39,8 +40,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property HasImpactedResources. 
         /// <para>
-        /// Indicates whether an image resource that was identified for a lifecycle action has
-        /// associated resources that are also impacted.
+        /// Indicates whether the lifecycle execution identified any resources to take lifecycle
+        /// actions on.
         /// </para>
         /// </summary>
         public bool? HasImpactedResources

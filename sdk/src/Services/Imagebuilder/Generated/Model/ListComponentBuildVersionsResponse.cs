@@ -41,7 +41,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentSummaryList. 
         /// <para>
-        /// The list of component summaries for the specified semantic version.
+        /// The list of component summaries. Each summary represents one build version of the
+        /// specified component version, or of the components that your account owns if you didn't
+        /// specify an ARN. Deprecated build versions aren't included.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

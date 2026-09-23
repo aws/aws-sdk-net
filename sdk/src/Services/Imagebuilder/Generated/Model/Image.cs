@@ -31,9 +31,10 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// An Image Builder image resource that keeps track of all of the settings used to create,
-    /// configure, and distribute output for that image. You must specify exactly one recipe
-    /// for the image – either a container recipe (<c>containerRecipe</c>), which creates
-    /// a container image, or an image recipe (<c>imageRecipe</c>), which creates an AMI.
+    /// configure, and distribute output for that image. An image that Image Builder built
+    /// from a recipe contains exactly one recipe – either a container recipe (<c>containerRecipe</c>),
+    /// which creates a container image, or an image recipe (<c>imageRecipe</c>), which creates
+    /// an AMI. Imported images don't contain a recipe.
     /// </summary>
     public partial class Image
     {
@@ -276,7 +277,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// Contains settings for vulnerability scans.
+        /// Settings for the vulnerability scans that Amazon Inspector runs for this image. For
+        /// AMI output, Amazon Inspector scans the test instance during image creation. For container
+        /// output, Amazon Inspector scans the container image in its Amazon ECR repository.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration
@@ -312,7 +315,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTestsConfiguration. 
         /// <para>
-        /// The image tests that ran when that Image Builder created this image.
+        /// The image test settings that Image Builder used when it created this image.
         /// </para>
         /// </summary>
         public ImageTestsConfiguration ImageTestsConfiguration
@@ -478,7 +481,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SourcePipelineArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image pipeline that created this image.
+        /// The Amazon Resource Name (ARN) of the image pipeline that created this image. This
+        /// field is only present for images that a pipeline execution created.
         /// </para>
         /// </summary>
         public string SourcePipelineArn
@@ -496,7 +500,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SourcePipelineName. 
         /// <para>
-        /// The name of the image pipeline that created this image.
+        /// The name of the image pipeline that created this image. Image Builder doesn't return
+        /// this field for new images. Use <c>sourcePipelineArn</c> instead.
         /// </para>
         /// </summary>
         public string SourcePipelineName
@@ -601,6 +606,7 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  </note>
         /// </summary>
+        [AWSProperty(Min=5, Max=64)]
         public string Version
         {
             get { return this._version; }
@@ -616,7 +622,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Workflows. 
         /// <para>
-        /// Contains the build and test workflows that are associated with the image.
+        /// The build, test, and distribution workflow configurations that are associated with
+        /// the image.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

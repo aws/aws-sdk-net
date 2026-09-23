@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A summary of a container recipe
+    /// A summary of a container recipe.
     /// </summary>
     public partial class ContainerRecipeSummary
     {
@@ -182,7 +182,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The system platform for the container, such as Windows or Linux.
+        /// The system platform for the container. Container recipes support only the Linux and
+        /// Windows platforms.
         /// </para>
         /// </summary>
         public Platform Platform

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The defining characteristics of a specific version of an Amazon Web Services TOE component.
+    /// The defining characteristics of a specific version of a component.
     /// </summary>
     public partial class ComponentVersion
     {
@@ -143,7 +143,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the component.
+        /// The owner of the component. The value is your account ID for components that you own,
+        /// the sharing account's ID for shared components, or <c>Amazon</c>, <c>ThirdParty</c>,
+        /// or <c>AWSMarketplace</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

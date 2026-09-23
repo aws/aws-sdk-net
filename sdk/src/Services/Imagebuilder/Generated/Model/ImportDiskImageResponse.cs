@@ -59,8 +59,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the output AMI that was created from the ISO disk
-        /// file.
+        /// The Amazon Resource Name (ARN) of the Image Builder image resource that this request
+        /// created. The AMI doesn't exist yet when the response returns. The import runs asynchronously,
+        /// and the output AMI appears in the image's output resources when the import completes.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn

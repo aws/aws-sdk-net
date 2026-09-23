@@ -107,7 +107,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Retried. 
         /// <para>
-        /// Indicates retry status for this runtime instance of the workflow.
+        /// Indicates whether a retry of the image build superseded this runtime instance of the
+        /// workflow. When you retry a failed image build, Image Builder sets this flag to <c>true</c>
+        /// on the original workflow executions that the retry re-ran.
         /// </para>
         /// </summary>
         public bool? Retried
@@ -161,8 +163,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TotalStepCount. 
         /// <para>
-        /// The total number of steps in the workflow. This should equal the sum of the step counts
-        /// for steps that succeeded, were skipped, and failed.
+        /// The total number of steps that the workflow document defines for this runtime instance
+        /// of the workflow. Image Builder sets this count before any steps run. The sum of succeeded,
+        /// skipped, and failed steps only reaches this total if every step finishes in one of
+        /// those states.
         /// </para>
         /// </summary>
         public int? TotalStepCount

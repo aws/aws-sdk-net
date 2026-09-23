@@ -137,7 +137,11 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the AMI, which includes the status and, if applicable, the reason for
+        /// that status.
+        /// </para>
         /// </summary>
         public ImageState State
         {

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The configuration details for a lifecycle policy resource.
+    /// Defines a lifecycle policy resource: its identity, status, execution role, resource
+    /// type, rules, resource selection, timestamps, and tags.
     /// </summary>
     public partial class LifecyclePolicy
     {
@@ -180,7 +181,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PolicyDetails. 
         /// <para>
-        /// The configuration details for a lifecycle policy resource.
+        /// The list of rules for the lifecycle policy. Each rule pairs an action with a filter
+        /// and optional exclusion rules. A policy can contain at most one rule per action type.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -240,7 +242,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates whether the lifecycle policy resource is enabled.
+        /// Indicates whether the lifecycle policy resource is enabled. Only enabled policies
+        /// run on their schedule. Disabling or deleting a policy removes its schedule and cancels
+        /// any in-flight lifecycle execution.
         /// </para>
         /// </summary>
         public LifecyclePolicyStatus Status

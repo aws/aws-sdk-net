@@ -33,8 +33,16 @@ namespace Amazon.Imagebuilder
     /// <para>Interface for accessing Imagebuilder</para>
     ///
     /// EC2 Image Builder automates the creation, management, and deployment of customized,
-    /// secure, and up-to-date "golden" server images that are pre-installed and pre-configured
-    /// with software and settings to meet specific IT standards.
+    /// secure, and up-to-date server images. You can build Amazon Machine Images (AMIs) and
+    /// container images that are pre-installed and pre-configured with software and settings
+    /// to meet specific IT standards.
+    /// 
+    ///  
+    /// <para>
+    /// For an introduction to the service concepts that these API operations work with, see
+    /// <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/how-image-builder-works.html">How
+    /// Image Builder works</a> in the <i>EC2 Image Builder User Guide</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonImagebuilder : IAmazonService, IDisposable
     {
@@ -50,18 +58,20 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Cancels the creation of an image. This operation can only be used on images in a non-terminal
-        /// state.
+        /// state. Cancellation is asynchronous: the request returns immediately, then Image Builder
+        /// stops the running build and moves the image to the <c>CANCELLED</c> state. Output
+        /// resources that the build already created, such as AMIs and snapshots, aren't removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageCreation service method.</param>
         /// 
         /// <returns>The response from the CancelImageCreation service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -71,14 +81,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -90,7 +101,9 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Cancels the creation of an image. This operation can only be used on images in a non-terminal
-        /// state.
+        /// state. Cancellation is asynchronous: the request returns immediately, then Image Builder
+        /// stops the running build and moves the image to the <c>CANCELLED</c> state. Output
+        /// resources that the build already created, such as AMIs and snapshots, aren't removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageCreation service method.</param>
         /// <param name="cancellationToken">
@@ -99,12 +112,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CancelImageCreation service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -114,14 +127,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -135,18 +149,21 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Cancels a specific image lifecycle policy runtime instance.
+        /// Cancels a lifecycle execution – a single run of lifecycle actions that a lifecycle
+        /// policy or a <a>StartResourceStateUpdate</a> request started. You can only cancel an
+        /// execution that hasn't reached a terminal state. Cancellation is asynchronous and doesn't
+        /// undo completed lifecycle actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelLifecycleExecution service method.</param>
         /// 
         /// <returns>The response from the CancelLifecycleExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -156,14 +173,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -174,7 +192,10 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Cancels a specific image lifecycle policy runtime instance.
+        /// Cancels a lifecycle execution – a single run of lifecycle actions that a lifecycle
+        /// policy or a <a>StartResourceStateUpdate</a> request started. You can only cancel an
+        /// execution that hasn't reached a terminal state. Cancellation is asynchronous and doesn't
+        /// undo completed lifecycle actions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelLifecycleExecution service method.</param>
         /// <param name="cancellationToken">
@@ -183,12 +204,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CancelLifecycleExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -198,14 +219,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -232,18 +254,23 @@ namespace Amazon.Imagebuilder
         /// A URL that points to a YAML document file stored in Amazon S3, using the <c>uri</c>
         /// property in the request body.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Image Builder determines the component type from the document. If the document contains
+        /// a single phase named <c>test</c>, the component type is <c>TEST</c>. Otherwise, the
+        /// component type is <c>BUILD</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
         /// 
         /// <returns>The response from the CreateComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -257,11 +284,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -271,7 +299,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -300,7 +329,12 @@ namespace Amazon.Imagebuilder
         /// A URL that points to a YAML document file stored in Amazon S3, using the <c>uri</c>
         /// property in the request body.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Image Builder determines the component type from the document. If the document contains
+        /// a single phase named <c>test</c>, the component type is <c>TEST</c>. Otherwise, the
+        /// component type is <c>BUILD</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateComponent service method.</param>
         /// <param name="cancellationToken">
@@ -309,12 +343,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -328,11 +362,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -342,7 +377,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -368,12 +404,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateContainerRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -387,7 +423,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -400,7 +436,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -426,12 +463,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateContainerRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -445,7 +482,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -458,7 +495,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -478,18 +516,19 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new distribution configuration. Distribution configurations define and configure
-        /// the outputs of your pipeline.
+        /// the outputs for your images, including the target Regions, accounts, and settings
+        /// for each Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistributionConfiguration service method.</param>
         /// 
         /// <returns>The response from the CreateDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -503,11 +542,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -517,7 +557,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -534,7 +575,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new distribution configuration. Distribution configurations define and configure
-        /// the outputs of your pipeline.
+        /// the outputs for your images, including the target Regions, accounts, and settings
+        /// for each Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDistributionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -543,12 +585,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -562,11 +604,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -576,7 +619,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -597,18 +641,25 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Creates a new image along with all configured output resources defined in the distribution
         /// configuration. You must specify exactly one recipe for your image, using either a
-        /// ContainerRecipeArn or an ImageRecipeArn.
+        /// <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The response returns as soon as Image Builder creates the new image resource. The
+        /// image build process runs asynchronously. To check its progress, call <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html">GetImage</a>
+        /// and check the image status.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// 
         /// <returns>The response from the CreateImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -618,14 +669,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -643,7 +695,14 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Creates a new image along with all configured output resources defined in the distribution
         /// configuration. You must specify exactly one recipe for your image, using either a
-        /// ContainerRecipeArn or an ImageRecipeArn.
+        /// <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
+        /// 
+        ///  
+        /// <para>
+        /// The response returns as soon as Image Builder creates the new image resource. The
+        /// image build process runs asynchronously. To check its progress, call <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html">GetImage</a>
+        /// and check the image status.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImage service method.</param>
         /// <param name="cancellationToken">
@@ -652,12 +711,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -667,14 +726,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -694,18 +754,19 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new image pipeline. Use image pipelines to automate the creation and distribution
-        /// of images.
+        /// of images. You must specify exactly one recipe for the pipeline, using either a <c>containerRecipeArn</c>
+        /// or an <c>imageRecipeArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImagePipeline service method.</param>
         /// 
         /// <returns>The response from the CreateImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -719,7 +780,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -729,7 +790,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -746,7 +808,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Creates a new image pipeline. Use image pipelines to automate the creation and distribution
-        /// of images.
+        /// of images. You must specify exactly one recipe for the pipeline, using either a <c>containerRecipeArn</c>
+        /// or an <c>imageRecipeArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImagePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -755,12 +818,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -774,7 +837,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -784,7 +847,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -810,12 +874,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateImageRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -829,7 +893,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -842,7 +906,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -868,12 +933,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateImageRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -887,7 +952,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -900,7 +965,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -926,12 +992,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -945,7 +1011,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -955,7 +1021,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -981,12 +1048,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -1000,7 +1067,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -1010,7 +1077,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -1035,12 +1103,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -1054,7 +1122,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -1064,7 +1132,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -1089,12 +1158,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -1108,7 +1177,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceAlreadyExistsException">
         /// The resource that you are trying to create already exists.
@@ -1118,7 +1187,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -1137,18 +1207,22 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new workflow or a new version of an existing workflow.
+        /// Creates a new workflow or a new version of an existing workflow. If a workflow with
+        /// the same name and semantic version already exists, and your request changes its configuration,
+        /// Image Builder creates a new build version. If the configuration is identical to the
+        /// latest build version, the request fails because that workflow configuration already
+        /// exists.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
         /// 
         /// <returns>The response from the CreateWorkflow service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -1162,11 +1236,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -1176,7 +1251,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -1192,7 +1268,11 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Creates a new workflow or a new version of an existing workflow.
+        /// Creates a new workflow or a new version of an existing workflow. If a workflow with
+        /// the same name and semantic version already exists, and your request changes its configuration,
+        /// Image Builder creates a new build version. If the configuration is identical to the
+        /// latest build version, the request fails because that workflow configuration already
+        /// exists.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -1201,12 +1281,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the CreateWorkflow service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.DryRunOperationException">
         /// The dry run operation of the resource was successful, and no resources or mutations
@@ -1220,11 +1300,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -1234,7 +1315,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -1253,31 +1335,34 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a component build version.
+        /// Deletes a component build version. The request fails with <c>ResourceDependencyException</c>
+        /// if an image recipe or container recipe references this component version. It also
+        /// fails if the component build version is shared with other accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
         /// 
         /// <returns>The response from the DeleteComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1288,7 +1373,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a component build version.
+        /// Deletes a component build version. The request fails with <c>ResourceDependencyException</c>
+        /// if an image recipe or container recipe references this component version. It also
+        /// fails if the component build version is shared with other accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteComponent service method.</param>
         /// <param name="cancellationToken">
@@ -1297,25 +1384,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1329,31 +1417,33 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a container recipe.
+        /// Deletes a container recipe. The request fails with <c>ResourceDependencyException</c>
+        /// if the recipe is shared with other accounts, or if an image pipeline references it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContainerRecipe service method.</param>
         /// 
         /// <returns>The response from the DeleteContainerRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1364,7 +1454,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a container recipe.
+        /// Deletes a container recipe. The request fails with <c>ResourceDependencyException</c>
+        /// if the recipe is shared with other accounts, or if an image pipeline references it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContainerRecipe service method.</param>
         /// <param name="cancellationToken">
@@ -1373,25 +1464,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteContainerRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1405,31 +1497,34 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a distribution configuration.
+        /// Deletes a distribution configuration. You can't delete a configuration that an image
+        /// pipeline still references. The request fails with <c>ResourceDependencyException</c>.
+        /// Update or delete the referencing pipelines first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1440,7 +1535,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a distribution configuration.
+        /// Deletes a distribution configuration. You can't delete a configuration that an image
+        /// pipeline still references. The request fails with <c>ResourceDependencyException</c>.
+        /// Update or delete the referencing pipelines first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDistributionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1449,25 +1546,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1486,6 +1584,13 @@ namespace Amazon.Imagebuilder
         /// up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or
         /// API or CLI commands.
         /// 
+        ///  
+        /// <para>
+        /// The request fails with <c>ResourceDependencyException</c> if the image is shared with
+        /// other accounts, or if other resources depend on it. It also fails while the image
+        /// build is still running. Cancel an in-progress build with <a>CancelImageCreation</a>
+        /// before you delete the image.
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
@@ -1507,25 +1612,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1541,6 +1647,13 @@ namespace Amazon.Imagebuilder
         /// up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or
         /// API or CLI commands.
         /// 
+        ///  
+        /// <para>
+        /// The request fails with <c>ResourceDependencyException</c> if the image is shared with
+        /// other accounts, or if other resources depend on it. It also fails while the image
+        /// build is still running. Cancel an in-progress build with <a>CancelImageCreation</a>
+        /// before you delete the image.
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister
@@ -1565,25 +1678,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1597,31 +1711,34 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes an image pipeline.
+        /// Deletes an image pipeline. Images that the pipeline created aren't deleted - remove
+        /// those separately with <a>DeleteImage</a>. You can delete a pipeline while a build
+        /// that it started is still running. The build continues independently.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImagePipeline service method.</param>
         /// 
         /// <returns>The response from the DeleteImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1632,7 +1749,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes an image pipeline.
+        /// Deletes an image pipeline. Images that the pipeline created aren't deleted - remove
+        /// those separately with <a>DeleteImage</a>. You can delete a pipeline while a build
+        /// that it started is still running. The build continues independently.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteImagePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -1641,25 +1760,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1679,25 +1799,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteImageRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1717,25 +1838,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteImageRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1749,31 +1871,34 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes an infrastructure configuration.
+        /// Deletes an infrastructure configuration. You can't delete a configuration that an
+        /// image pipeline still references. The request fails with <c>ResourceDependencyException</c>.
+        /// Update or delete the referencing pipelines first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInfrastructureConfiguration service method.</param>
         /// 
         /// <returns>The response from the DeleteInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1784,7 +1909,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes an infrastructure configuration.
+        /// Deletes an infrastructure configuration. You can't delete a configuration that an
+        /// image pipeline still references. The request fails with <c>ResourceDependencyException</c>.
+        /// Update or delete the referencing pipelines first.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInfrastructureConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1793,25 +1920,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1825,31 +1953,35 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes the specified lifecycle policy resource.
+        /// Deletes the specified lifecycle policy resource. Deleting the policy removes its schedule,
+        /// so no further lifecycle runs occur for that policy. If a lifecycle execution is in
+        /// progress for the policy, Image Builder cancels it. Deletion doesn't revert actions
+        /// that the policy already applied to your resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// 
         /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1860,7 +1992,10 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes the specified lifecycle policy resource.
+        /// Deletes the specified lifecycle policy resource. Deleting the policy removes its schedule,
+        /// so no further lifecycle runs occur for that policy. If a lifecycle execution is in
+        /// progress for the policy, Image Builder cancels it. Deletion doesn't revert actions
+        /// that the policy already applied to your resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1869,25 +2004,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1901,31 +2037,33 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a specific workflow resource.
+        /// Deletes a specific workflow resource. You can't delete a workflow build version while
+        /// an image pipeline references it. The request fails with <c>ResourceDependencyException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
         /// 
         /// <returns>The response from the DeleteWorkflow service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1936,7 +2074,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Deletes a specific workflow resource.
+        /// Deletes a specific workflow resource. You can't delete a workflow build version while
+        /// an image pipeline references it. The request fails with <c>ResourceDependencyException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -1945,25 +2084,26 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the DeleteWorkflow service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceDependencyException">
         /// You have attempted to mutate or delete a resource with a dependency that prohibits
         /// this action. See the error message for more details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -1988,12 +2128,12 @@ namespace Amazon.Imagebuilder
         /// You do not have permissions to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -2003,7 +2143,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -2013,7 +2153,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -2046,12 +2187,12 @@ namespace Amazon.Imagebuilder
         /// You do not have permissions to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -2061,7 +2202,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -2071,7 +2212,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceQuotaExceededException">
         /// You have exceeded the number of permitted resources or operations for this service.
@@ -2099,21 +2241,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2133,21 +2276,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2167,19 +2311,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetComponentPolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2199,19 +2345,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetComponentPolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2231,21 +2379,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetContainerRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2265,21 +2414,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetContainerRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2299,19 +2449,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetContainerRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2331,19 +2483,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetContainerRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2363,21 +2517,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2397,21 +2552,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2431,21 +2587,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2465,21 +2622,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2499,21 +2657,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2533,21 +2692,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2567,19 +2727,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImagePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2599,19 +2761,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImagePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2631,21 +2795,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImageRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2665,21 +2830,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImageRecipe service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2699,19 +2865,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImageRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2731,19 +2899,21 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetImageRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2763,21 +2933,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2797,21 +2968,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2825,28 +2997,29 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Retrieves the runtime information for a specific runtime instance of the lifecycle
-        /// policy.
+        /// Retrieves runtime information for a lifecycle execution – a single run of lifecycle
+        /// actions that a lifecycle policy or a <a>StartResourceStateUpdate</a> request started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleExecution service method.</param>
         /// 
         /// <returns>The response from the GetLifecycleExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2857,8 +3030,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Retrieves the runtime information for a specific runtime instance of the lifecycle
-        /// policy.
+        /// Retrieves runtime information for a lifecycle execution – a single run of lifecycle
+        /// actions that a lifecycle policy or a <a>StartResourceStateUpdate</a> request started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLifecycleExecution service method.</param>
         /// <param name="cancellationToken">
@@ -2867,21 +3040,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetLifecycleExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2901,21 +3075,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2935,21 +3110,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2964,28 +3140,30 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Verifies the subscription and performs resource dependency checks on the requested
-        /// Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components,
-        /// the response contains fields to download the components and their artifacts.
+        /// Amazon Web Services Marketplace resource. The caller must be entitled to the resource.
+        /// For Amazon Web Services Marketplace components, the response contains fields to download
+        /// the components and their artifacts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
         /// 
         /// <returns>The response from the GetMarketplaceResource service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -2997,8 +3175,9 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Verifies the subscription and performs resource dependency checks on the requested
-        /// Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components,
-        /// the response contains fields to download the components and their artifacts.
+        /// Amazon Web Services Marketplace resource. The caller must be entitled to the resource.
+        /// For Amazon Web Services Marketplace components, the response contains fields to download
+        /// the components and their artifacts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMarketplaceResource service method.</param>
         /// <param name="cancellationToken">
@@ -3007,21 +3186,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetMarketplaceResource service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3041,21 +3221,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetWorkflow service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3075,21 +3256,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetWorkflow service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3109,21 +3291,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetWorkflowExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3143,21 +3326,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetWorkflowExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3177,21 +3361,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetWorkflowStepExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3211,21 +3396,22 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the GetWorkflowStepExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3239,18 +3425,20 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Imports a component and transforms its data into a component document.
+        /// Imports a component and transforms its data into a component document. For the <c>SHELL</c>
+        /// format, Image Builder wraps your script in a component document with a single step
+        /// that runs the script.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportComponent service method.</param>
         /// 
         /// <returns>The response from the ImportComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3260,11 +3448,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -3274,7 +3463,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3285,7 +3475,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Imports a component and transforms its data into a component document.
+        /// Imports a component and transforms its data into a component document. For the <c>SHELL</c>
+        /// format, Image Builder wraps your script in a component document with a single step
+        /// that runs the script.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportComponent service method.</param>
         /// <param name="cancellationToken">
@@ -3294,12 +3486,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ImportComponent service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3309,11 +3501,12 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidVersionNumberException">
         /// Your version number is out of bounds or does not follow the required syntax.
@@ -3323,7 +3516,8 @@ namespace Amazon.Imagebuilder
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3344,7 +3538,12 @@ namespace Amazon.Imagebuilder
         /// <para>
         /// Windows 11 Enterprise
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The response returns as soon as Image Builder creates the new image resource in the
+        /// <c>PENDING</c> state. The conversion from ISO file to AMI then runs asynchronously
+        /// on an EC2 instance that Image Builder launches with the specified infrastructure configuration.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportDiskImage service method.</param>
         /// 
@@ -3353,12 +3552,12 @@ namespace Amazon.Imagebuilder
         /// You do not have permissions to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3379,7 +3578,12 @@ namespace Amazon.Imagebuilder
         /// <para>
         /// Windows 11 Enterprise
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// The response returns as soon as Image Builder creates the new image resource in the
+        /// <c>PENDING</c> state. The conversion from ISO file to AMI then runs asynchronously
+        /// on an EC2 instance that Image Builder launches with the specified infrastructure configuration.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportDiskImage service method.</param>
         /// <param name="cancellationToken">
@@ -3391,12 +3595,12 @@ namespace Amazon.Imagebuilder
         /// You do not have permissions to perform the requested operation.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3413,29 +3617,30 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// When you export your virtual machine (VM) from its virtualization environment, that
-        /// process creates a set of one or more disk container files that act as snapshots of
-        /// your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
-        /// action uses those files to import your VM and create an AMI. To import using the CLI
-        /// command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
-        /// 
+        /// Creates an Image Builder image resource from an Amazon EC2 VM import task. The response
+        /// returns as soon as Image Builder creates the image resource in the <c>PENDING</c>
+        /// state. Image Builder then monitors the import task asynchronously. When the task completes,
+        /// Image Builder records the AMI that it produced as the new image's output resource
+        /// and marks the image <c>AVAILABLE</c>. You can then use the imported image as the base
+        /// image for your recipes.
         /// 
         ///  
         /// <para>
-        /// You can reference the task ID from the VM import to pull in the AMI that the import
-        /// created as the base image for your Image Builder recipe.
+        /// To create the VM import task, use the Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+        /// operation, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+        /// CLI command.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportVmImage service method.</param>
         /// 
         /// <returns>The response from the ImportVmImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3446,17 +3651,18 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// When you export your virtual machine (VM) from its virtualization environment, that
-        /// process creates a set of one or more disk container files that act as snapshots of
-        /// your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
-        /// action uses those files to import your VM and create an AMI. To import using the CLI
-        /// command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
-        /// 
+        /// Creates an Image Builder image resource from an Amazon EC2 VM import task. The response
+        /// returns as soon as Image Builder creates the image resource in the <c>PENDING</c>
+        /// state. Image Builder then monitors the import task asynchronously. When the task completes,
+        /// Image Builder records the AMI that it produced as the new image's output resource
+        /// and marks the image <c>AVAILABLE</c>. You can then use the imported image as the base
+        /// image for your recipes.
         /// 
         ///  
         /// <para>
-        /// You can reference the task ID from the VM import to pull in the AMI that the import
-        /// created as the base image for your Image Builder recipe.
+        /// To create the VM import task, use the Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+        /// operation, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+        /// CLI command.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportVmImage service method.</param>
@@ -3466,12 +3672,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ImportVmImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3485,19 +3691,20 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of component build versions for the specified component version Amazon
-        /// Resource Name (ARN).
+        /// Returns a list of component build versions for the specified component version ARN.
+        /// You can only list build versions for components that your account owns. Deprecated
+        /// build versions aren't included in the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentBuildVersions service method.</param>
         /// 
         /// <returns>The response from the ListComponentBuildVersions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3506,10 +3713,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3520,8 +3728,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of component build versions for the specified component version Amazon
-        /// Resource Name (ARN).
+        /// Returns a list of component build versions for the specified component version ARN.
+        /// You can only list build versions for components that your account owns. Deprecated
+        /// build versions aren't included in the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListComponentBuildVersions service method.</param>
         /// <param name="cancellationToken">
@@ -3530,12 +3739,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListComponentBuildVersions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3544,10 +3753,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3561,9 +3771,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of components that can be filtered by name, or by using the listed
-        /// <c>filters</c> to streamline results. Newly created components can take up to two
-        /// minutes to appear in the ListComponents API Results.
+        /// Returns the list of components that you have access to. By default, the response doesn't
+        /// include components in the <c>DEPRECATED</c> state. To list deprecated components,
+        /// use the <c>status</c> filter with the value <c>DEPRECATED</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -3582,12 +3792,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListComponents service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3596,10 +3806,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3610,9 +3821,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of components that can be filtered by name, or by using the listed
-        /// <c>filters</c> to streamline results. Newly created components can take up to two
-        /// minutes to appear in the ListComponents API Results.
+        /// Returns the list of components that you have access to. By default, the response doesn't
+        /// include components in the <c>DEPRECATED</c> state. To list deprecated components,
+        /// use the <c>status</c> filter with the value <c>DEPRECATED</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -3634,12 +3845,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListComponents service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3648,10 +3859,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3671,12 +3883,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListContainerRecipes service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3685,10 +3897,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3708,12 +3921,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListContainerRecipes service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3722,10 +3935,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3745,12 +3959,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListDistributionConfigurations service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3759,10 +3973,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3782,12 +3997,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListDistributionConfigurations service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3796,10 +4011,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3819,12 +4035,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageBuildVersions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3833,10 +4049,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3856,12 +4073,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageBuildVersions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3870,10 +4087,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3894,12 +4112,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImagePackages service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3908,13 +4126,14 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3935,12 +4154,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImagePackages service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3949,13 +4168,14 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -3975,12 +4195,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImagePipelineImages service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -3989,13 +4209,14 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4015,12 +4236,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImagePipelineImages service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4029,13 +4250,14 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4055,12 +4277,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImagePipelines service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4069,10 +4291,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4092,12 +4315,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImagePipelines service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4106,10 +4329,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4129,12 +4353,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageRecipes service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4143,10 +4367,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4166,12 +4391,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageRecipes service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4180,10 +4405,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4197,19 +4423,18 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of images that you have access to. Newly created images can take
-        /// up to two minutes to appear in the ListImages API Results.
+        /// Returns the list of images that you have access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// 
         /// <returns>The response from the ListImages service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4218,10 +4443,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4232,8 +4458,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns the list of images that you have access to. Newly created images can take
-        /// up to two minutes to appear in the ListImages API Results.
+        /// Returns the list of images that you have access to.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
         /// <param name="cancellationToken">
@@ -4242,12 +4467,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImages service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4256,10 +4481,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4285,10 +4511,6 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>accountId</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>imageBuildVersionArn</c> 
         /// </para>
         ///  </li> <li> 
@@ -4305,12 +4527,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageScanFindingAggregations service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4319,10 +4541,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4345,10 +4568,6 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>accountId</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>imageBuildVersionArn</c> 
         /// </para>
         ///  </li> <li> 
@@ -4368,12 +4587,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageScanFindingAggregations service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4382,10 +4601,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4399,18 +4619,19 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns a list of image scan findings for your account.
+        /// Returns a list of image scan findings for your account. Amazon Inspector generates
+        /// the findings when it scans images that have scanning enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImageScanFindings service method.</param>
         /// 
         /// <returns>The response from the ListImageScanFindings service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4419,10 +4640,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4433,7 +4655,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Returns a list of image scan findings for your account.
+        /// Returns a list of image scan findings for your account. Amazon Inspector generates
+        /// the findings when it scans images that have scanning enabled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImageScanFindings service method.</param>
         /// <param name="cancellationToken">
@@ -4442,12 +4665,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListImageScanFindings service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4456,10 +4679,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4479,12 +4703,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListInfrastructureConfigurations service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4493,10 +4717,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4516,12 +4741,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListInfrastructureConfigurations service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4530,10 +4755,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4554,12 +4780,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListLifecycleExecutionResources service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4568,10 +4794,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4592,12 +4819,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListLifecycleExecutionResources service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4606,10 +4833,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4629,12 +4857,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListLifecycleExecutions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4643,10 +4871,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4666,12 +4895,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListLifecycleExecutions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4680,10 +4909,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4703,12 +4933,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListLifecyclePolicies service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4717,10 +4947,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4740,12 +4971,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListLifecyclePolicies service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4754,10 +4985,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4783,7 +5015,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
@@ -4806,7 +5039,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4817,19 +5051,20 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Retrieves a list of workflow steps that are waiting for action for workflows in your
-        /// Amazon Web Services account.
+        /// Lists the workflow steps in your Amazon Web Services account that have paused at a
+        /// <c>WaitForAction</c> step, and are waiting for you to respond. To send a response,
+        /// call <a>SendWorkflowStepAction</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWaitingWorkflowSteps service method.</param>
         /// 
         /// <returns>The response from the ListWaitingWorkflowSteps service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4838,10 +5073,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4852,8 +5088,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Retrieves a list of workflow steps that are waiting for action for workflows in your
-        /// Amazon Web Services account.
+        /// Lists the workflow steps in your Amazon Web Services account that have paused at a
+        /// <c>WaitForAction</c> step, and are waiting for you to respond. To send a response,
+        /// call <a>SendWorkflowStepAction</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWaitingWorkflowSteps service method.</param>
         /// <param name="cancellationToken">
@@ -4862,12 +5099,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWaitingWorkflowSteps service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4876,10 +5113,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4899,12 +5137,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflowBuildVersions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4913,10 +5151,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4936,12 +5175,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflowBuildVersions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4950,10 +5189,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -4974,12 +5214,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflowExecutions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -4988,10 +5228,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5012,12 +5253,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflowExecutions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5026,10 +5267,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5043,18 +5285,19 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Lists workflow build versions based on filtering parameters.
+        /// Lists workflow versions based on filtering parameters. To list the build versions
+        /// of a specific workflow version, call <a>ListWorkflowBuildVersions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// 
         /// <returns>The response from the ListWorkflows service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5063,10 +5306,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5077,7 +5321,8 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Lists workflow build versions based on filtering parameters.
+        /// Lists workflow versions based on filtering parameters. To list the build versions
+        /// of a specific workflow version, call <a>ListWorkflowBuildVersions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// <param name="cancellationToken">
@@ -5086,12 +5331,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflows service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5100,10 +5345,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5124,12 +5370,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflowStepExecutions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5138,10 +5384,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5162,12 +5409,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the ListWorkflowStepExecutions service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5176,10 +5423,11 @@ namespace Amazon.Imagebuilder
         /// You have provided an invalid pagination token in your request.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5193,20 +5441,22 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a component. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to a component. The preferred way to share resources is with the
+        /// RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutComponentPolicy operation instead, you must also call the RAM API
+        /// <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutComponentPolicy service method.</param>
         /// 
         /// <returns>The response from the PutComponentPolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5215,13 +5465,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5232,9 +5483,11 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a component. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to a component. The preferred way to share resources is with the
+        /// RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutComponentPolicy operation instead, you must also call the RAM API
+        /// <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutComponentPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5243,12 +5496,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the PutComponentPolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5257,13 +5510,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5277,20 +5531,22 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a container image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to a container recipe. The preferred way to share resources is with
+        /// the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutContainerRecipePolicy operation instead, you must also call the
+        /// RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContainerRecipePolicy service method.</param>
         /// 
         /// <returns>The response from the PutContainerRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5299,13 +5555,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5316,9 +5573,11 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to a container image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to a container recipe. The preferred way to share resources is with
+        /// the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutContainerRecipePolicy operation instead, you must also call the
+        /// RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutContainerRecipePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5327,12 +5586,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the PutContainerRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5341,13 +5600,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5361,20 +5621,22 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to an image. The preferred way to share resources is with the RAM
+        /// API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutImagePolicy operation instead, you must also call the RAM API <a
+        /// href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImagePolicy service method.</param>
         /// 
         /// <returns>The response from the PutImagePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5383,13 +5645,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5400,9 +5663,11 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to an image. The preferred way to share resources is with the RAM
+        /// API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutImagePolicy operation instead, you must also call the RAM API <a
+        /// href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImagePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5411,12 +5676,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the PutImagePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5425,13 +5690,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5445,20 +5711,22 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image recipe. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to an image recipe. The preferred way to share resources is with
+        /// the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutImageRecipePolicy operation instead, you must also call the RAM
+        /// API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageRecipePolicy service method.</param>
         /// 
         /// <returns>The response from the PutImageRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5467,13 +5735,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5484,9 +5753,11 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Applies a policy to an image recipe. To share resources, call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
-        /// If you call this API, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-        /// so that the resource is visible to all principals with whom the resource is shared.
+        /// Applies a policy to an image recipe. The preferred way to share resources is with
+        /// the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+        /// If you use the PutImageRecipePolicy operation instead, you must also call the RAM
+        /// API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+        /// Otherwise, the resource isn't visible to the principals that it's shared with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutImageRecipePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -5495,12 +5766,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the PutImageRecipePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5509,13 +5780,14 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceNotFoundException">
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5529,18 +5801,21 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Retries an image distribution or test without rebuilding the image.
+        /// Retries a failed or canceled image build without rebuilding the phases that already
+        /// completed. The image re-runs asynchronously in place: the same build version returns
+        /// to the test or distribution phase where it failed and continues from there. No new
+        /// image build version is created. Retry is only supported for AMI-based images.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryImage service method.</param>
         /// 
         /// <returns>The response from the RetryImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5550,14 +5825,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5568,7 +5844,10 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Retries an image distribution or test without rebuilding the image.
+        /// Retries a failed or canceled image build without rebuilding the phases that already
+        /// completed. The image re-runs asynchronously in place: the same build version returns
+        /// to the test or distribution phase where it failed and continues from there. No new
+        /// image build version is created. Retry is only supported for AMI-based images.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetryImage service method.</param>
         /// <param name="cancellationToken">
@@ -5577,12 +5856,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the RetryImage service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5592,14 +5871,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5613,19 +5893,20 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Pauses or resumes image creation when the associated workflow runs a <c>WaitForAction</c>
-        /// step.
+        /// Sends an action to a workflow step that has paused at a <c>WaitForAction</c> step,
+        /// so that image creation can continue. To find the steps that are waiting for an action,
+        /// call <a>ListWaitingWorkflowSteps</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendWorkflowStepAction service method.</param>
         /// 
         /// <returns>The response from the SendWorkflowStepAction service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5638,7 +5919,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -5648,7 +5929,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5659,8 +5941,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Pauses or resumes image creation when the associated workflow runs a <c>WaitForAction</c>
-        /// step.
+        /// Sends an action to a workflow step that has paused at a <c>WaitForAction</c> step,
+        /// so that image creation can continue. To find the steps that are waiting for an action,
+        /// call <a>ListWaitingWorkflowSteps</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendWorkflowStepAction service method.</param>
         /// <param name="cancellationToken">
@@ -5669,12 +5952,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the SendWorkflowStepAction service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5687,7 +5970,7 @@ namespace Amazon.Imagebuilder
         /// The value that you provided for the specified parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -5697,7 +5980,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5711,18 +5995,21 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Manually triggers a pipeline to create an image.
+        /// Manually triggers a pipeline to create an image. You can start a build this way whether
+        /// the pipeline is enabled or disabled. The response returns as soon as Image Builder
+        /// creates the new image resource and queues the build. Use the returned <c>imageBuildVersionArn</c>
+        /// with <a>GetImage</a> to track build progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImagePipelineExecution service method.</param>
         /// 
         /// <returns>The response from the StartImagePipelineExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5732,7 +6019,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -5742,7 +6029,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5753,7 +6041,10 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Manually triggers a pipeline to create an image.
+        /// Manually triggers a pipeline to create an image. You can start a build this way whether
+        /// the pipeline is enabled or disabled. The response returns as soon as Image Builder
+        /// creates the new image resource and queues the build. Use the returned <c>imageBuildVersionArn</c>
+        /// with <a>GetImage</a> to track build progress.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartImagePipelineExecution service method.</param>
         /// <param name="cancellationToken">
@@ -5762,12 +6053,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the StartImagePipelineExecution service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5777,7 +6068,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -5787,7 +6078,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5801,19 +6093,24 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Begins an asynchronous resource state update for lifecycle changes to the specified
-        /// image resources.
+        /// Begins an ad-hoc state change for the specified image build version. This is a one-time
+        /// operation - if you schedule the update, it runs only once. If the request includes
+        /// underlying resources, or schedules the update far enough in the future, Image Builder
+        /// runs the update as an asynchronous lifecycle execution and returns its identifier.
+        /// Otherwise, for target states other than <c>DELETED</c>, the state change applies immediately.
+        /// If a request that starts a lifecycle execution arrives while the image already has
+        /// one in progress, Image Builder rejects it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceStateUpdate service method.</param>
         /// 
         /// <returns>The response from the StartResourceStateUpdate service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5823,7 +6120,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -5833,7 +6130,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5844,8 +6142,13 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Begins an asynchronous resource state update for lifecycle changes to the specified
-        /// image resources.
+        /// Begins an ad-hoc state change for the specified image build version. This is a one-time
+        /// operation - if you schedule the update, it runs only once. If the request includes
+        /// underlying resources, or schedules the update far enough in the future, Image Builder
+        /// runs the update as an asynchronous lifecycle execution and returns its identifier.
+        /// Otherwise, for target states other than <c>DELETED</c>, the state change applies immediately.
+        /// If a request that starts a lifecycle execution arrives while the image already has
+        /// one in progress, Image Builder rejects it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartResourceStateUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -5854,12 +6157,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the StartResourceStateUpdate service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -5869,7 +6172,7 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
@@ -5879,7 +6182,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -5905,7 +6209,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         TagResourceResponse TagResource(TagResourceRequest request);
@@ -5928,7 +6233,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">REST API Reference for TagResource Operation</seealso>
         Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5951,7 +6257,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         UntagResourceResponse UntagResource(UntagResourceRequest request);
@@ -5974,7 +6281,8 @@ namespace Amazon.Imagebuilder
         /// At least one of the resources referenced by your request does not exist.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5986,18 +6294,26 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Updates a distribution configuration. Distribution configurations define and configure
-        /// the outputs of your pipeline.
+        /// the outputs for your images, including the target Regions, accounts, and settings
+        /// for each Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't support selective updates. The request replaces the stored
+        /// configuration, so include every setting that you want to keep.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6007,18 +6323,20 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6030,7 +6348,15 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Updates a distribution configuration. Distribution configurations define and configure
-        /// the outputs of your pipeline.
+        /// the outputs for your images, including the target Regions, accounts, and settings
+        /// for each Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't support selective updates. The request replaces the stored
+        /// configuration, so include every setting that you want to keep.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDistributionConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -6039,12 +6365,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the UpdateDistributionConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6054,18 +6380,20 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6081,13 +6409,14 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Updates an image pipeline. Use image pipelines to automate the creation and distribution
         /// of images. You must specify exactly one recipe for your image, using either a <c>containerRecipeArn</c>
-        /// or an <c>imageRecipeArn</c>.
+        /// or an <c>imageRecipeArn</c>. The recipe must be the same type, image or container,
+        /// as the pipeline's current recipe.
         /// 
         ///  <note> 
         /// <para>
-        /// UpdateImagePipeline does not support selective updates for the pipeline. You must
-        /// specify all of the required properties in the update request, not just the properties
-        /// that have changed.
+        /// UpdateImagePipeline does not support selective updates. The request replaces the pipeline's
+        /// entire configuration, so include every setting that you want to keep. Any optional
+        /// property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6095,12 +6424,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the UpdateImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6110,14 +6439,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6130,13 +6460,14 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Updates an image pipeline. Use image pipelines to automate the creation and distribution
         /// of images. You must specify exactly one recipe for your image, using either a <c>containerRecipeArn</c>
-        /// or an <c>imageRecipeArn</c>.
+        /// or an <c>imageRecipeArn</c>. The recipe must be the same type, image or container,
+        /// as the pipeline's current recipe.
         /// 
         ///  <note> 
         /// <para>
-        /// UpdateImagePipeline does not support selective updates for the pipeline. You must
-        /// specify all of the required properties in the update request, not just the properties
-        /// that have changed.
+        /// UpdateImagePipeline does not support selective updates. The request replaces the pipeline's
+        /// entire configuration, so include every setting that you want to keep. Any optional
+        /// property that you omit is removed or reset to its default.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6147,12 +6478,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the UpdateImagePipeline service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6162,14 +6493,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6185,17 +6517,24 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Updates an infrastructure configuration. An infrastructure configuration defines the
         /// environment in which Image Builder builds and tests your image.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't support selective updates. The request replaces the configuration,
+        /// so include every setting that you want to keep. Omitted optional properties are cleared.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInfrastructureConfiguration service method.</param>
         /// 
         /// <returns>The response from the UpdateInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6205,14 +6544,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6225,6 +6565,13 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Updates an infrastructure configuration. An infrastructure configuration defines the
         /// environment in which Image Builder builds and tests your image.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation doesn't support selective updates. The request replaces the configuration,
+        /// so include every setting that you want to keep. Omitted optional properties are cleared.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInfrastructureConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -6233,12 +6580,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the UpdateInfrastructureConfiguration service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6248,14 +6595,15 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6269,18 +6617,20 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates the specified lifecycle policy.
+        /// Updates the specified lifecycle policy. The request replaces the existing policy configuration
+        /// rather than merging changes, so re-specify every setting that you want to keep. The
+        /// <c>resourceType</c> must match the existing policy's value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// 
         /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6290,18 +6640,20 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.
@@ -6312,7 +6664,9 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Updates the specified lifecycle policy.
+        /// Updates the specified lifecycle policy. The request replaces the existing policy configuration
+        /// rather than merging changes, so re-specify every setting that you want to keep. The
+        /// <c>resourceType</c> must match the existing policy's value.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLifecyclePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -6321,12 +6675,12 @@ namespace Amazon.Imagebuilder
         /// 
         /// <returns>The response from the UpdateLifecyclePolicy service method, as returned by Imagebuilder.</returns>
         /// <exception cref="Amazon.Imagebuilder.Model.CallRateLimitExceededException">
-        /// You have exceeded the permitted request rate for the specific operation.
+        /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+        /// calls on your behalf. Retry with an increasing or variable delay between requests.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an invalid resource identifier.
+        /// A generic client error. This error usually indicates that the request failed a validation
+        /// check, such as when a downstream service rejects a configured value.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ForbiddenException">
         /// You are not authorized to perform the requested operation.
@@ -6336,18 +6690,20 @@ namespace Amazon.Imagebuilder
         /// from a previous request that used the same client token.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidParameterCombinationException">
-        /// You have specified two or more mutually exclusive parameters. Review the error message
-        /// for details.
+        /// You have specified a combination of parameters that isn't valid. For example, two
+        /// mutually exclusive parameters, or a parameter without its required companion parameter.
+        /// Review the error message for details.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.InvalidRequestException">
-        /// You have requested an action that that the service doesn't support.
+        /// The request is malformed or otherwise invalid. Verify the request and try again.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ResourceInUseException">
         /// The resource that you are trying to operate on is currently in use. Review the message
         /// details and retry later.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceException">
-        /// This exception is thrown when the service encounters an unrecoverable exception.
+        /// An internal server error occurred while Image Builder processed the request. Retrying
+        /// the request may succeed.
         /// </exception>
         /// <exception cref="Amazon.Imagebuilder.Model.ServiceUnavailableException">
         /// The service is unable to process your request at this time.

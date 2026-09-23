@@ -125,6 +125,8 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// Returns container recipes belonging to the specified owner, that have been shared
         /// with you. You can omit this field to return container recipes belonging to your account.
+        /// For container recipes, the valid owner values are <c>Self</c>, <c>Shared</c>, and
+        /// <c>Amazon</c>.
         /// </para>
         /// </summary>
         public Ownership Owner

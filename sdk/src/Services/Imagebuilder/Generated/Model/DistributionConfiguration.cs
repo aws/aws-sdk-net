@@ -30,7 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A distribution configuration.
+    /// Defines how Image Builder distributes the output of an image build. You can configure:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The Regions to distribute the image to.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The Region-specific settings to apply, such as output AMI names, launch permissions
+    /// for other Amazon Web Services accounts, and target container repositories.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class DistributionConfiguration
     {
@@ -185,7 +196,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TimeoutMinutes. 
         /// <para>
-        /// The maximum duration in minutes for this distribution configuration.
+        /// A property that Image Builder doesn't use. You can't set this property when you create
+        /// or update a distribution configuration, and it has no effect on distribution behavior.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=30, Max=720)]

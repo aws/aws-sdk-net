@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Contains details about a vulnerability scan finding.
+    /// Contains details about a vulnerability scan finding that Amazon Inspector generated
+    /// for an image.
     /// </summary>
     public partial class ImageScanFinding
     {
@@ -109,8 +110,22 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property FixAvailable. 
         /// <para>
         /// Details about whether a fix is available for any of the packages that are identified
-        /// in the finding through a version update.
+        /// in the finding through a version update. Valid values include:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YES</c> – A fix is available for all of the packages identified in the finding.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NO</c> – No fix is available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PARTIAL</c> – A fix is available for some, but not all, of the packages identified
+        /// in the finding.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
         public string FixAvailable
@@ -238,7 +253,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the finding.
+        /// The severity of the finding. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
+        /// levels for Amazon Inspector findings</a> in the <i>Amazon Inspector User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

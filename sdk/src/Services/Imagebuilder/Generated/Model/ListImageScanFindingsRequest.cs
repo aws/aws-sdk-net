@@ -31,7 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImageScanFindings operation.
-    /// Returns a list of image scan findings for your account.
+    /// Returns a list of image scan findings for your account. Amazon Inspector generates
+    /// the findings when it scans images that have scanning enabled.
     /// </summary>
     public partial class ListImageScanFindingsRequest : AmazonImagebuilderRequest
     {
@@ -47,19 +48,22 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>imageBuildVersionArn</c> 
+        ///  <c>imageBuildVersionArn</c> – Filters findings by the image build version that was
+        /// scanned.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>imagePipelineArn</c> 
+        ///  <c>imagePipelineArn</c> – Filters findings by the pipeline that created the scanned
+        /// image.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>vulnerabilityId</c> 
+        ///  <c>vulnerabilityId</c> – Filters findings by vulnerability ID, for example a CVE
+        /// ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>severity</c> 
+        ///  <c>severity</c> – Filters findings by severity level.
         /// </para>
         ///  </li> </ul> 
         /// <para>

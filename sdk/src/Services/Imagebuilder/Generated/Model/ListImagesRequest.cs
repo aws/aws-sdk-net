@@ -31,8 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImages operation.
-    /// Returns the list of images that you have access to. Newly created images can take
-    /// up to two minutes to appear in the ListImages API Results.
+    /// Returns the list of images that you have access to.
     /// </summary>
     public partial class ListImagesRequest : AmazonImagebuilderRequest
     {
@@ -46,7 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ByName. 
         /// <para>
-        /// Requests a list of images with a specific recipe name.
+        /// Specifies whether to return one entry per image name, with all versions of each image
+        /// aggregated. Defaults to <c>false</c>, which returns one entry per image version. You
+        /// can't combine this option with the <c>version</c> filter.
         /// </para>
         /// </summary>
         public bool? ByName
@@ -109,7 +110,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property IncludeDeprecated. 
         /// <para>
-        /// Includes deprecated images in the response list.
+        /// Specifies whether to include deprecated Amazon-managed images in the results. Deprecated
+        /// images that you own are always returned. Defaults to <c>false</c>.
         /// </para>
         /// </summary>
         public bool? IncludeDeprecated

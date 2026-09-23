@@ -60,7 +60,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of vulnerability scans for the image.
+        /// The current state of vulnerability scans for the image. The scan starts as <c>PENDING</c>
+        /// and moves through <c>SCANNING</c> and <c>COLLECTING</c> to <c>COMPLETED</c>. Image
+        /// Builder sets the status to <c>ABANDONED</c> if the image reaches a terminal state
+        /// before the scan finding collection completes. A scan can also end as <c>FAILED</c>
+        /// or <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
         public ImageScanStatus Status

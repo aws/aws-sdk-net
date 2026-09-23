@@ -32,7 +32,8 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the CreateDistributionConfiguration operation.
     /// Creates a new distribution configuration. Distribution configurations define and configure
-    /// the outputs of your pipeline.
+    /// the outputs for your images, including the target Regions, accounts, and settings
+    /// for each Region.
     /// </summary>
     public partial class CreateDistributionConfigurationRequest : AmazonImagebuilderRequest
     {
@@ -46,9 +47,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -87,7 +89,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Distributions. 
         /// <para>
-        /// The distributions of the distribution configuration.
+        /// The distribution settings for the configuration. Each entry defines how output images
+        /// are distributed in one target Amazon Web Services Region. A Region can appear at most
+        /// once in the list.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -111,7 +115,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Validates the required permissions and request parameters without making the request.
+        /// Validates the required permissions and request parameters without performing the operation.
         /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
         /// response.
         /// </para>
@@ -131,7 +135,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the distribution configuration.
+        /// The name of the distribution configuration. Distribution configuration names must
+        /// be unique to your account in each Amazon Web Services Region. Image Builder generates
+        /// the distribution configuration ARN from a normalized form of the name, so names that
+        /// differ only in case, spaces, or underscores count as the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

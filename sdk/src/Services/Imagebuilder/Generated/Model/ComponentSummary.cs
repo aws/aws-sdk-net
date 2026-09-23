@@ -70,7 +70,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ChangeDescription. 
         /// <para>
-        /// The change description for the current version of the component.
+        /// The change description for this version of the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -89,7 +89,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateCreated. 
         /// <para>
-        /// The original creation date of the component.
+        /// The date that Image Builder created this version of the component.
         /// </para>
         /// </summary>
         public string DateCreated
@@ -163,7 +163,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the component.
+        /// The owner of the component. The value is your account ID for components that you own,
+        /// the sharing account's ID for shared components, or <c>Amazon</c>, <c>ThirdParty</c>,
+        /// or <c>AWSMarketplace</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

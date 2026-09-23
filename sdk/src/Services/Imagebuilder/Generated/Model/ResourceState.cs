@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The current state of an impacted resource.
+    /// The state to apply to the image resource in a resource state update request.
     /// </summary>
     public partial class ResourceState
     {
@@ -39,7 +39,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Shows the current lifecycle policy action that was applied to an impacted resource.
+        /// The status to which you want to move the image resource. Set the status to <c>AVAILABLE</c>
+        /// to restore an image that's currently deprecated or disabled.
         /// </para>
         /// </summary>
         public ResourceStatus Status

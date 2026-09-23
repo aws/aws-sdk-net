@@ -79,7 +79,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property StepExecutionId. 
         /// <para>
-        /// The workflow step that sent the step action.
+        /// The unique identifier for the workflow step that received the action, as specified
+        /// in the request.
         /// </para>
         /// </summary>
         public string StepExecutionId

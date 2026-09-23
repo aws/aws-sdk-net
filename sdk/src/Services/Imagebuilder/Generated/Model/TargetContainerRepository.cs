@@ -40,9 +40,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// The name of the container repository where the output container image is stored. This
-        /// name is prefixed by the repository location. For example, <c>&lt;repository location
-        /// url&gt;/repository_name</c>.
+        /// The name of the container repository where the output container image is stored. Provide
+        /// the repository name only (a namespace path such as <c>team-a/my-repo</c> is allowed,
+        /// but not the registry hostname).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

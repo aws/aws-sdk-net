@@ -82,7 +82,9 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property WorkflowVersionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the workflow resource for which to get a list of
-        /// build versions.
+        /// build versions. The version segments can contain wildcards (<c>x</c>) to match multiple
+        /// versions of the workflow. If you don't specify an ARN, the response lists build versions
+        /// for all of the workflows in your account.
         /// </para>
         /// </summary>
         public string WorkflowVersionArn

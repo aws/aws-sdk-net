@@ -57,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         /// Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances
         /// to build and test your image configuration. Instance configuration adds a layer of
         /// control over those instances. You can define settings and add scripts to run when
-        /// an instance is launched from your AMI.
+        /// Image Builder launches your build instance.
         /// </para>
         /// </summary>
         public AdditionalInstanceConfiguration AdditionalInstanceConfiguration
@@ -167,9 +167,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// The components that are included in the image recipe. Recipes require a minimum of
-        /// one build component, and can have a maximum of 20 build and test components in any
-        /// combination.
+        /// The components that are included in the image recipe. A recipe can contain a maximum
+        /// of 20 build and test components in any combination, by default. This maximum is an
+        /// adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2
+        /// Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -347,7 +348,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies which type of image is created by the recipe - an AMI or a container image.
+        /// The output image type. For an image recipe, this is always AMI. Container images are
+        /// built from container recipes, a separate resource. This field isn't currently returned
+        /// in responses.
         /// </para>
         /// </summary>
         public ImageType Type
@@ -383,7 +386,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
-        /// The working directory to be used during build and test workflows.
+        /// The working directory used during build and test workflows. If you don't specify a
+        /// working directory, Image Builder uses <c>/tmp</c> for Linux and macOS build instances,
+        /// and <c>C:/</c> for Windows build instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

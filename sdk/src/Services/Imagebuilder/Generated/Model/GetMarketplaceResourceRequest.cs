@@ -32,8 +32,9 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the GetMarketplaceResource operation.
     /// Verifies the subscription and performs resource dependency checks on the requested
-    /// Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components,
-    /// the response contains fields to download the components and their artifacts.
+    /// Amazon Web Services Marketplace resource. The caller must be entitled to the resource.
+    /// For Amazon Web Services Marketplace components, the response contains fields to download
+    /// the components and their artifacts.
     /// </summary>
     public partial class GetMarketplaceResourceRequest : AmazonImagebuilderRequest
     {
@@ -64,7 +65,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceLocation. 
         /// <para>
-        /// The bucket path that you can specify to download the resource from Amazon S3.
+        /// The Amazon S3 location of the component artifact to retrieve, in <c>s3://bucket/key</c>
+        /// form.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

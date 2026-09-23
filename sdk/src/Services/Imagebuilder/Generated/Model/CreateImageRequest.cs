@@ -33,7 +33,14 @@ namespace Amazon.Imagebuilder.Model
     /// Container for the parameters to the CreateImage operation.
     /// Creates a new image along with all configured output resources defined in the distribution
     /// configuration. You must specify exactly one recipe for your image, using either a
-    /// ContainerRecipeArn or an ImageRecipeArn.
+    /// <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
+    /// 
+    ///  
+    /// <para>
+    /// The response returns as soon as Image Builder creates the new image resource. The
+    /// image build process runs asynchronously. To check its progress, call <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_GetImage.html">GetImage</a>
+    /// and check the image status.
+    /// </para>
     /// </summary>
     public partial class CreateImageRequest : AmazonImagebuilderRequest
     {
@@ -53,9 +60,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -76,7 +84,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ContainerRecipeArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the container recipe that defines how images are
-        /// configured and tested.
+        /// configured and tested. You must specify either this property or <c>imageRecipeArn</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string ContainerRecipeArn
@@ -95,7 +104,9 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property DistributionConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the distribution configuration that defines and
-        /// configures the outputs of your pipeline.
+        /// configures the outputs of the image build. If you don't specify a distribution configuration,
+        /// Image Builder creates the output image only in the account and Amazon Web Services
+        /// Region where the build runs.
         /// </para>
         /// </summary>
         public string DistributionConfigurationArn
@@ -133,7 +144,9 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ExecutionRole. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image
-        /// Builder access to perform workflow actions.
+        /// Builder access to perform workflow actions. This property is required if you specify
+        /// <c>workflows</c>. If you don't provide a role, Image Builder uses the Image Builder
+        /// service-linked role in your account, and creates it if it doesn't exist.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -153,7 +166,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the image recipe that defines how images are configured,
-        /// tested, and assessed.
+        /// tested, and assessed. You must specify either this property or <c>containerRecipeArn</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string ImageRecipeArn
@@ -171,7 +185,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// Contains settings for vulnerability scans.
+        /// Settings for vulnerability scans that Amazon Inspector runs during image creation.
+        /// For AMI output, Amazon Inspector scans the test instance. For container output, Amazon
+        /// Inspector scans the container image that Image Builder pushes to the Amazon ECR repository
+        /// specified in <c>ecrConfiguration</c>.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration
@@ -189,7 +206,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTestsConfiguration. 
         /// <para>
-        /// The image tests configuration of the image.
+        /// Settings that determine whether Image Builder runs tests on the image after building
+        /// it. Image tests are enabled by default.
         /// </para>
         /// </summary>
         public ImageTestsConfiguration ImageTestsConfiguration
@@ -227,7 +245,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// The logging configuration for the image build process.
+        /// The CloudWatch Logs log group where Image Builder sends the image build logs. If you
+        /// specify a log group name outside of the <c>/aws/imagebuilder/</c> namespace, you must
+        /// also provide an <c>executionRole</c> that has permission to write to that log group.
         /// </para>
         /// </summary>
         public ImageLoggingConfiguration LoggingConfiguration
@@ -269,7 +289,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Workflows. 
         /// <para>
-        /// Contains an array of workflow configuration objects.
+        /// The array of workflow configuration objects for the build. If you specify workflows,
+        /// they replace the default workflows that Image Builder otherwise runs for the build,
+        /// and you must also provide an <c>executionRole</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

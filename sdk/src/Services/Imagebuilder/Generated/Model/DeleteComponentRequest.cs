@@ -31,7 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteComponent operation.
-    /// Deletes a component build version.
+    /// Deletes a component build version. The request fails with <c>ResourceDependencyException</c>
+    /// if an image recipe or container recipe references this component version. It also
+    /// fails if the component build version is shared with other accounts.
     /// </summary>
     public partial class DeleteComponentRequest : AmazonImagebuilderRequest
     {

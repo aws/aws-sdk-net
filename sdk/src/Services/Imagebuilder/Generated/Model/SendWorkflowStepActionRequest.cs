@@ -31,8 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the SendWorkflowStepAction operation.
-    /// Pauses or resumes image creation when the associated workflow runs a <c>WaitForAction</c>
-    /// step.
+    /// Sends an action to a workflow step that has paused at a <c>WaitForAction</c> step,
+    /// so that image creation can continue. To find the steps that are waiting for an action,
+    /// call <a>ListWaitingWorkflowSteps</a>.
     /// </summary>
     public partial class SendWorkflowStepActionRequest : AmazonImagebuilderRequest
     {
@@ -45,9 +46,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to perform on the paused workflow step. The workflow step must be in a
-        /// waiting state to accept an action. The request fails if the step has already timed
-        /// out or been actioned.
+        /// The action to perform on the paused workflow step. <c>RESUME</c> completes the waiting
+        /// step, and the workflow continues. <c>STOP</c> fails the step, and the step's <c>onFailure</c>
+        /// setting determines whether the workflow continues or aborts. The workflow step must
+        /// be in a waiting state to accept an action. The request fails if the step has already
+        /// timed out or been actioned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,9 +69,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -130,7 +134,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property StepExecutionId. 
         /// <para>
-        /// Uniquely identifies the workflow step that sent the step action.
+        /// Uniquely identifies the waiting workflow step that you send the action to. To get
+        /// this identifier, call <a>ListWaitingWorkflowSteps</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

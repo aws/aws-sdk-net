@@ -132,8 +132,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image resource build version that the specified
-        /// runtime instance of the workflow step creates.
+        /// The Amazon Resource Name (ARN) of the image build version that owns the specified
+        /// runtime instance of the workflow step.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn
@@ -152,7 +152,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Inputs. 
         /// <para>
         /// Input parameters that Image Builder provided for the specified runtime instance of
-        /// the workflow step.
+        /// the workflow step, as a JSON-encoded string.
         /// </para>
         /// </summary>
         public string Inputs
@@ -228,7 +228,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property OnFailure. 
         /// <para>
-        /// The action to perform if the workflow step fails.
+        /// The action that the workflow takes if this step fails, as configured in the workflow
+        /// document. <c>Abort</c> fails the workflow and rolls back completed steps. <c>Continue</c>
+        /// proceeds to the next step. If the step doesn't set a value, it defaults to <c>Abort</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -247,8 +249,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// The file names that the specified runtime version of the workflow step created as
-        /// output.
+        /// The output values that the specified runtime instance of the workflow step produced,
+        /// as a JSON-encoded string. For example, a step that launches an instance outputs the
+        /// instance ID. If the step failed, this field contains the error message.
         /// </para>
         /// </summary>
         public string Outputs
@@ -285,8 +288,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property RollbackStatus. 
         /// <para>
-        /// Reports on the rollback status of the specified runtime version of the workflow step,
-        /// if applicable.
+        /// Reports on the rollback status of the specified runtime instance of the workflow step,
+        /// if applicable. Rollback runs when the workflow execution fails, and undoes the work
+        /// that completed steps performed.
         /// </para>
         /// </summary>
         public WorkflowStepExecutionRollbackStatus RollbackStatus
@@ -304,7 +308,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The timestamp when the specified runtime version of the workflow step started.
+        /// The timestamp when the specified runtime instance of the workflow step started.
         /// </para>
         /// </summary>
         public string StartTime
@@ -322,7 +326,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status for the specified runtime version of the workflow step.
+        /// The current status for the specified runtime instance of the workflow step.
         /// </para>
         /// </summary>
         public WorkflowStepExecutionStatus Status
@@ -340,7 +344,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property StepExecutionId. 
         /// <para>
-        /// The unique identifier for the runtime version of the workflow step that you specified
+        /// The unique identifier for the runtime instance of the workflow step that you specified
         /// in the request.
         /// </para>
         /// </summary>
@@ -359,7 +363,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TimeoutSeconds. 
         /// <para>
-        /// The maximum duration in seconds for this step to complete its action.
+        /// The maximum duration in seconds for this step to complete its action. If the workflow
+        /// document doesn't set a timeout for the step, Image Builder applies the default timeout
+        /// for the step's action. This field returns that value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=43200)]

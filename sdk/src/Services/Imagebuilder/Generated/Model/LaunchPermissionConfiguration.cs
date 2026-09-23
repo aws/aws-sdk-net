@@ -33,8 +33,8 @@ namespace Amazon.Imagebuilder.Model
     /// Describes the configuration for a launch permission. The launch permission modification
     /// request is sent to the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
     /// EC2 ModifyImageAttribute</a> API on behalf of the user for each Region they have selected
-    /// to distribute the AMI. To make an AMI public, set the launch permission authorized
-    /// accounts to <c>all</c>. See the examples for making an AMI public at <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
+    /// to distribute the AMI. To make an AMI public, set <c>userGroups</c> to the value <c>all</c>.
+    /// See the examples for making an AMI public at <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon
     /// EC2 ModifyImageAttribute</a>.
     /// </summary>
     public partial class LaunchPermissionConfiguration
@@ -99,7 +99,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The name of the group.
+        /// The name of the group that you want to grant launch permission to. The only supported
+        /// value is <c>all</c>, which makes the distributed AMI public.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -122,7 +123,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UserIds. 
         /// <para>
-        /// The Amazon Web Services account ID.
+        /// The Amazon Web Services account IDs to grant launch permission to. Each listed account
+        /// can use the distributed AMI to launch instances.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

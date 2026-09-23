@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Contains selection criteria for the lifecycle policy.
+    /// Contains the action configuration for a lifecycle policy rule: the action to take,
+    /// and which underlying resources the action extends to.
     /// </summary>
     public partial class LifecyclePolicyDetailAction
     {
@@ -40,7 +41,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property IncludeResources. 
         /// <para>
-        /// Specifies the resources that the lifecycle policy applies to.
+        /// Specifies which underlying resources the action extends to beyond the Image Builder
+        /// image resource itself: distributed AMIs, their snapshots, or distributed container
+        /// images. <c>DELETE</c> rules can include all three, <c>DEPRECATE</c> and <c>DISABLE</c>
+        /// rules can include AMIs only, and you can only include snapshots together with AMIs.
         /// </para>
         /// </summary>
         public LifecyclePolicyDetailActionIncludeResources IncludeResources
@@ -58,7 +62,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the lifecycle action to take.
+        /// Specifies the lifecycle action to take. <c>DELETE</c> deletes the image resource and,
+        /// with <c>includeResources</c>, also removes distributed AMIs, snapshots, or container
+        /// images. <c>DEPRECATE</c> and <c>DISABLE</c> set the corresponding status on the image
+        /// resource and, if <c>includeResources.amis</c> is set, on its distributed AMIs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

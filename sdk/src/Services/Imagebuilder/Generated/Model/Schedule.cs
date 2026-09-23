@@ -81,7 +81,13 @@ namespace Amazon.Imagebuilder.Model
         ///  <c>EXPRESSION_MATCH_ONLY</c> – This condition builds a new image every time the CRON
         /// expression matches the current time.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// If the recipe references its base image through an Amazon Web Services Systems Manager
+        /// Parameter Store parameter, a change in the parameter's value also counts as an available
+        /// dependency update.
+        /// </para>
+        ///  </note>
         /// </summary>
         public PipelineExecutionStartCondition PipelineExecutionStartCondition
         {
@@ -98,7 +104,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The cron expression determines how often EC2 Image Builder evaluates your <c>pipelineExecutionStartCondition</c>.
+        /// The expression determines how often EC2 Image Builder evaluates your <c>pipelineExecutionStartCondition</c>.
+        /// You can specify a cron expression, or a rate expression such as <c>rate(1 day)</c>.
         /// </para>
         ///  
         /// <para>
@@ -122,9 +129,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The timezone that applies to the scheduling expression. For example, "Etc/UTC", "America/Los_Angeles"
-        /// in the <a href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
-        /// If not specified this defaults to UTC.
+        /// The timezone that applies to the scheduling expression. Specify a value in <a href="https://www.joda.org/joda-time/timezones.html">IANA
+        /// timezone format</a>, for example <c>Etc/UTC</c> or <c>America/Los_Angeles</c>. If
+        /// not specified, this defaults to UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=100)]

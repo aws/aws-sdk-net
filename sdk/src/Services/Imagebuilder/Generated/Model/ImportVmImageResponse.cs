@@ -60,8 +60,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AMI that was created during the VM import process.
-        /// This AMI is used as the base image for the recipe that imported the VM.
+        /// The Amazon Resource Name (ARN) of the Image Builder image resource that this request
+        /// created. Image Builder records the AMI from the VM import task in the image's output
+        /// resources after the task completes.
         /// </para>
         /// </summary>
         public string ImageArn

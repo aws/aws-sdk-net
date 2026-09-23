@@ -128,7 +128,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// The block device mappings of the image recipe.
+        /// The block device mappings that Image Builder applies to the build instance and the
+        /// output AMI. For example, you can override the size of the base image's root volume
+        /// or attach additional EBS volumes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -151,9 +153,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -173,7 +176,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// The components included in the image recipe.
+        /// The components included in the image recipe. Components are optional. A recipe with
+        /// no components bakes the base image without additional customization. You can specify
+        /// each component only one time in a recipe. Components with a status of <c>DEPRECATED</c>
+        /// or <c>DISABLED</c> can't be added to new recipes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -216,7 +222,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Validates the required permissions and request parameters without making the request.
+        /// Validates the required permissions and request parameters without performing the operation.
         /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
         /// response.
         /// </para>
@@ -236,7 +242,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the image recipe.
+        /// The name of the image recipe. The recipe name, combined with the semantic version,
+        /// must be unique to your account in each Amazon Web Services Region. Image Builder generates
+        /// the image recipe ARN from a normalized form of the name, so names that differ only
+        /// in case, spaces, or underscores count as the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -278,7 +287,7 @@ namespace Amazon.Imagebuilder.Model
         ///  </li> </ul> 
         /// <para>
         /// If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have
-        /// access to the AMI, and the AMI must be in the source Region.
+        /// access to the AMI. The AMI must also be in the Region where you're creating the recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -359,7 +368,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
-        /// The working directory used during build and test workflows.
+        /// The working directory used during build and test workflows. If you don't specify a
+        /// working directory, Image Builder uses <c>/tmp</c> for Linux and macOS build instances,
+        /// and <c>C:/</c> for Windows build instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

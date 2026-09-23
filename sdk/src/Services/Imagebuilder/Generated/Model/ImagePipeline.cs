@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Details of an image pipeline.
+    /// Defines the automation configuration for building, testing, and distributing images.
+    /// A pipeline references the resources that its builds use, such as the recipe and infrastructure
+    /// configuration. It also holds the settings that control its builds, such as the schedule
+    /// and custom workflows.
     /// </summary>
     public partial class ImagePipeline
     {
@@ -91,7 +94,7 @@ namespace Amazon.Imagebuilder.Model
         ///  </li> <li> 
         /// <para>
         /// If the pipeline execution fails, Image Builder increments the number of consecutive
-        /// failures. If the failure count exceeds the limit defined in the <c>AutoDisablePolicy</c>,
+        /// failures. If the failure count reaches the limit defined in the <a>AutoDisablePolicy</a>,
         /// Image Builder disables the pipeline.
         /// </para>
         ///  </li> </ul> 
@@ -164,7 +167,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DateLastRun. 
         /// <para>
-        /// This is no longer supported, and does not return a value.
+        /// The date on which this image pipeline was last run.
         /// </para>
         /// </summary>
         public string DateLastRun
@@ -313,7 +316,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// Contains settings for vulnerability scans.
+        /// Contains settings for vulnerability scans that Amazon Inspector runs against the test
+        /// instance during image creation.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration
@@ -331,7 +335,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTags. 
         /// <para>
-        /// The tags to be applied to the images produced by this pipeline.
+        /// The tags that Image Builder applies to the Image Builder image resource that this
+        /// pipeline's scheduled executions create. These tags don't apply to the output AMI.
+        /// Builds that you start manually use the tags from the <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_StartImagePipelineExecution.html">StartImagePipelineExecution</a>
+        /// request instead.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -411,7 +418,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// Defines logging configuration for the output image.
+        /// The CloudWatch Logs configuration for the pipeline: the log group for image build
+        /// logs and the log group for pipeline execution logs.
         /// </para>
         /// </summary>
         public PipelineLoggingConfiguration LoggingConfiguration
@@ -447,7 +455,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the image pipeline.
+        /// The platform of the image pipeline, inherited from the recipe that the pipeline uses.
         /// </para>
         /// </summary>
         public Platform Platform
@@ -483,7 +491,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the image pipeline.
+        /// The status of the image pipeline. A disabled pipeline doesn't run on its schedule,
+        /// but you can still start builds manually. Image Builder can also disable a pipeline
+        /// automatically when consecutive scheduled builds fail.
         /// </para>
         /// </summary>
         public PipelineStatus Status

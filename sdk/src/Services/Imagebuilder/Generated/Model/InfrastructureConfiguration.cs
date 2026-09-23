@@ -207,7 +207,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Logging. 
         /// <para>
-        /// The logging configuration of the infrastructure configuration.
+        /// The logging configuration of the infrastructure configuration. When you configure
+        /// S3 logs, Image Builder writes logs from the build and test process to the specified
+        /// bucket under the key prefix.
         /// </para>
         /// </summary>
         public Logging Logging
@@ -243,8 +245,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
-        /// The instance placement settings that define where the instances that are launched
-        /// from your image run.
+        /// The instance placement settings that define where the build and test instances that
+        /// Image Builder launches during image creation run. These settings don't affect instances
+        /// that you launch from the output image.
         /// </para>
         /// </summary>
         public Placement Placement
@@ -262,7 +265,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// The tags attached to the resource created by Image Builder.
+        /// The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder
+        /// launches during image creation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -310,13 +314,14 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image
-        /// build event notifications.
+        /// build event notifications. Specify a standard topic. Image Builder doesn't support
+        /// FIFO topics.
         /// </para>
         ///  <note> 
         /// <para>
-        /// EC2 Image Builder is unable to send notifications to SNS topics that are encrypted
-        /// using keys from other accounts. The key that is used to encrypt the SNS topic must
-        /// reside in the account that the Image Builder service runs under.
+        /// EC2 Image Builder can't send notifications to SNS topics that are encrypted using
+        /// keys from other accounts. If your SNS topic is encrypted, the key must be owned by
+        /// the same account that owns your Image Builder resources.
         /// </para>
         ///  </note>
         /// </summary>
@@ -379,7 +384,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TerminateInstanceOnFailure. 
         /// <para>
-        /// The terminate instance on failure configuration of the infrastructure configuration.
+        /// Indicates whether Image Builder terminates the build and test instances when the image
+        /// build fails. When <c>false</c>, Image Builder retains the instance so that you can
+        /// debug it.
         /// </para>
         /// </summary>
         public bool? TerminateInstanceOnFailure

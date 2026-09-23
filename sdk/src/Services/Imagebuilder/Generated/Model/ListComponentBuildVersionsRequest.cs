@@ -31,8 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListComponentBuildVersions operation.
-    /// Returns the list of component build versions for the specified component version Amazon
-    /// Resource Name (ARN).
+    /// Returns a list of component build versions for the specified component version ARN.
+    /// You can only list build versions for components that your account owns. Deprecated
+    /// build versions aren't included in the results.
     /// </summary>
     public partial class ListComponentBuildVersionsRequest : AmazonImagebuilderRequest
     {
@@ -43,7 +44,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentVersionArn. 
         /// <para>
-        /// The component version Amazon Resource Name (ARN) whose versions you want to list.
+        /// The component version ARN whose build versions you want to list. The ARN must specify
+        /// an exact version, without a build number suffix. If you don't specify an ARN, Image
+        /// Builder returns build versions for the components that your account owns.
         /// </para>
         /// </summary>
         public string ComponentVersionArn

@@ -62,7 +62,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Steps. 
         /// <para>
         /// An array of the workflow steps that are waiting for action in your Amazon Web Services
-        /// account.
+        /// account. Each step is paused at a <c>WaitForAction</c> step, and remains in the list
+        /// until you respond with <a>SendWorkflowStepAction</a> or the wait times out.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

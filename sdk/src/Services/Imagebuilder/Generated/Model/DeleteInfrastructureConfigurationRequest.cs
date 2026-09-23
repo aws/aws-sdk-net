@@ -31,7 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInfrastructureConfiguration operation.
-    /// Deletes an infrastructure configuration.
+    /// Deletes an infrastructure configuration. You can't delete a configuration that an
+    /// image pipeline still references. The request fails with <c>ResourceDependencyException</c>.
+    /// Update or delete the referencing pipelines first.
     /// </summary>
     public partial class DeleteInfrastructureConfigurationRequest : AmazonImagebuilderRequest
     {

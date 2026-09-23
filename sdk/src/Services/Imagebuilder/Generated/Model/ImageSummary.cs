@@ -357,6 +357,7 @@ namespace Amazon.Imagebuilder.Model
         /// The version of the image.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=5, Max=64)]
         public string Version
         {
             get { return this._version; }

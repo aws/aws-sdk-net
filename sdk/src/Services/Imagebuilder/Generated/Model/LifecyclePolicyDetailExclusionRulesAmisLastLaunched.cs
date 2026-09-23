@@ -42,8 +42,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// Defines the unit of time that the lifecycle policy uses to calculate elapsed time
-        /// since the last instance launched from the AMI. For example: days, weeks, months, or
-        /// years.
+        /// since the last launch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

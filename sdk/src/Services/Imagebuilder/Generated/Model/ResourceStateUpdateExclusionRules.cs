@@ -38,7 +38,11 @@ namespace Amazon.Imagebuilder.Model
         private LifecyclePolicyDetailExclusionRulesAmis _amis;
 
         /// <summary>
-        /// Gets and sets the property Amis.
+        /// Gets and sets the property Amis. 
+        /// <para>
+        /// Defines criteria for AMIs that Image Builder should exclude from the resource state
+        /// update.
+        /// </para>
         /// </summary>
         public LifecyclePolicyDetailExclusionRulesAmis Amis
         {

@@ -31,7 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportComponent operation.
-    /// Imports a component and transforms its data into a component document.
+    /// Imports a component and transforms its data into a component document. For the <c>SHELL</c>
+    /// format, Image Builder wraps your script in a component document with a single step
+    /// that runs the script.
     /// </summary>
     public partial class ImportComponentRequest : AmazonImagebuilderRequest
     {
@@ -72,9 +74,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -94,8 +97,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data of the component. Used to specify the data inline. Either <c>data</c> or
-        /// <c>uri</c> can be used to specify the data within the component.
+        /// The data of the component. For the <c>SHELL</c> format, this is the plain script content.
+        /// You must specify exactly one of the <c>data</c> or <c>uri</c> properties. For scripts
+        /// that exceed the inline length constraint, use the <c>uri</c> property.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -152,10 +156,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies the KMS key used to encrypt
-        /// this component. This can be either the Key ARN or the Alias ARN. For more information,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
-        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.
+        /// The Amazon Resource Name (ARN) of the KMS key that is used to encrypt this component.
+        /// This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
+        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you
+        /// don't specify a key, Image Builder encrypts the component data with a KMS key that
+        /// Image Builder owns.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -174,7 +179,12 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the component.
+        /// The name of the component. Image Builder generates the component ARN from a normalized
+        /// form of the name, so names that differ only in case, spaces, or underscores count
+        /// as the same name. If a component with the same name and semantic version already exists
+        /// in your account in the same Amazon Web Services Region, the request creates a new
+        /// build version for it. If the content is also identical to the latest build version,
+        /// the request fails because the component already exists.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -221,9 +231,15 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or
-        /// nodes when selecting the base image or components for your recipe. When you use a
-        /// wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.
+        ///  <b>Assignment:</b> For the first three nodes, you can assign any positive integer
+        /// value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image
+        /// Builder automatically assigns the build number to the fourth node.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements
+        /// for the nodes that you can assign. For example, you might choose a software version
+        /// pattern, such as 1.0.0, or a date, such as 2021.01.01.
         /// </para>
         ///  </note>
         /// </summary>

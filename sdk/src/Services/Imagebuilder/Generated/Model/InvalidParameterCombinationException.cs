@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// You have specified two or more mutually exclusive parameters. Review the error message
-    /// for details.
+    /// You have specified a combination of parameters that isn't valid. For example, two
+    /// mutually exclusive parameters, or a parameter without its required companion parameter.
+    /// Review the error message for details.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

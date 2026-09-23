@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A container recipe.
+    /// Defines how Image Builder builds and tests a container image: the base image, components
+    /// to apply, the Dockerfile template, the build and test instance configuration, and
+    /// the target repository for the output image.
     /// </summary>
     public partial class ContainerRecipe
     {
@@ -94,9 +96,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// Build and test components that are included in the container recipe. Recipes require
-        /// a minimum of one build component, and can have a maximum of 20 build and test components
-        /// in any combination.
+        /// Build and test components that are included in the container recipe. A recipe can
+        /// contain a maximum of 20 build and test components in any combination, by default.
+        /// This maximum is an adjustable quota. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html">EC2
+        /// Image Builder endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -175,10 +178,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DockerfileTemplateData. 
         /// <para>
-        /// Dockerfiles are text documents that are used to build Docker containers, and ensure
-        /// that they contain all of the elements required by the application running inside.
-        /// The template data consists of contextual variables where Image Builder places build
-        /// information or scripts, based on your container image recipe.
+        /// The Dockerfile template that Image Builder uses to build the container image. The
+        /// template can include contextual variables that Image Builder replaces with build information
+        /// at build time. For the contextual variables that the template can include, see <a
+        /// href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create
+        /// a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.
         /// </para>
         /// </summary>
         public string DockerfileTemplateData
@@ -196,7 +200,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// A flag that indicates if the target container is encrypted.
+        /// Specifies whether the recipe's Dockerfile template data is encrypted at rest. Image
+        /// Builder encrypts all Dockerfile template data at rest, so this value is always <c>true</c>.
+        /// This field is retained for backward compatibility, and doesn't describe encryption
+        /// of the output container image.
         /// </para>
         /// </summary>
         public bool? Encrypted
@@ -233,10 +240,12 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that uniquely identifies which KMS key is used to encrypt
-        /// the container image for distribution to the target Region. This can be either the
-        /// Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
-        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.
+        /// The KMS key that Image Builder uses to encrypt the recipe's Dockerfile template data
+        /// at rest. This can be either the Key ARN or the Alias ARN. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key
+        /// identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>. If you
+        /// don't specify a key, Image Builder encrypts the template data with a KMS key that
+        /// Image Builder owns. This key isn't used to encrypt the output container image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -312,7 +321,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The system platform for the container, such as Windows or Linux.
+        /// The system platform for the container. Container recipes support only the Linux and
+        /// Windows platforms.
         /// </para>
         /// </summary>
         public Platform Platform

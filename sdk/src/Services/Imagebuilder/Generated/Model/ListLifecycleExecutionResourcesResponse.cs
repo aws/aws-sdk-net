@@ -42,7 +42,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LifecycleExecutionId. 
         /// <para>
-        /// Runtime details for the specified runtime instance of the lifecycle policy.
+        /// The unique identifier for the runtime instance of the lifecycle policy.
         /// </para>
         /// </summary>
         public string LifecycleExecutionId

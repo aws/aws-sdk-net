@@ -40,7 +40,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Amis. 
         /// <para>
-        /// The Amazon EC2 AMIs created by this image.
+        /// The Amazon EC2 AMIs created by this image. The list contains one entry per AMI, including
+        /// copies that distribution created in each target Amazon Web Services Region and account.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +64,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Containers. 
         /// <para>
-        /// Container images that the pipeline has generated and stored in the output repository.
+        /// The container images that Image Builder created when it built this image, stored in
+        /// the output Amazon ECR repository.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -40,7 +40,12 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image that you want to get.
+        /// The Amazon Resource Name (ARN) of the image that you want to get. You can specify
+        /// a full build version ARN, or a version ARN with or without wildcards (<c>x.x.x</c>,
+        /// <c>1.x.x</c>, or <c>1.0.x</c>). A version or wildcard ARN resolves to the latest matching
+        /// build version that has reached <c>AVAILABLE</c> status. Builds that were later deprecated,
+        /// disabled, or deleted don't resolve. To get an image in any other state, such as a
+        /// failed or in-progress build, specify the full build version ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

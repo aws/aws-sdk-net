@@ -79,7 +79,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the image.
+        /// The status of the image. A new image moves through build, test, and distribution statuses
+        /// during creation, and ends in the <c>AVAILABLE</c>, <c>FAILED</c>, or <c>CANCELLED</c>
+        /// state. The <c>DEPRECATED</c>, <c>DISABLED</c>, and <c>DELETED</c> statuses come from
+        /// later resource management actions.
         /// </para>
         /// </summary>
         public ImageStatus Status

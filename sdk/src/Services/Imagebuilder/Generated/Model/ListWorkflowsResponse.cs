@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowVersionList. 
         /// <para>
-        /// A list of workflow build versions that match the request criteria.
+        /// A list of workflow versions that match the request criteria.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

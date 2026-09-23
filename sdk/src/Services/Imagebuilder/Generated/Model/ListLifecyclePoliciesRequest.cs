@@ -42,7 +42,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Streamline results based on one of the following values: <c>Name</c>, <c>Status</c>.
+        /// Use the following filters to streamline results: <c>name</c>, <c>resourceType</c>,
+        /// and <c>status</c>. Filter names are matched exactly as shown.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

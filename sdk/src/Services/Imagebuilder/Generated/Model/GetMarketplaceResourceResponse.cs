@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The obfuscated S3 URL to download the component artifact from.
+        /// A time-limited presigned URL for downloading the component artifact from Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -32,7 +32,9 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the CancelImageCreation operation.
     /// Cancels the creation of an image. This operation can only be used on images in a non-terminal
-    /// state.
+    /// state. Cancellation is asynchronous: the request returns immediately, then Image Builder
+    /// stops the running build and moves the image to the <c>CANCELLED</c> state. Output
+    /// resources that the build already created, such as AMIs and snapshots, aren't removed.
     /// </summary>
     public partial class CancelImageCreationRequest : AmazonImagebuilderRequest
     {
@@ -42,9 +44,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>

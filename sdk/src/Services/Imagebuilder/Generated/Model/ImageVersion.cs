@@ -178,8 +178,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property OsVersion. 
         /// <para>
-        /// The operating system version of the Amazon EC2 build instance. For example, Amazon
-        /// Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.
+        /// The operating system version of the image. For example, Amazon Linux 2023 or Microsoft
+        /// Windows Server 2022.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -253,8 +253,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Details for a specific version of an Image Builder image. This version follows the
-        /// semantic version syntax.
+        /// The semantic version of the image. This version follows the semantic version syntax.
         /// </para>
         ///  <note> 
         /// <para>

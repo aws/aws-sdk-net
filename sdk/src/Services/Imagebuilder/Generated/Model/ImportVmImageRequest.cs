@@ -31,17 +31,18 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportVmImage operation.
-    /// When you export your virtual machine (VM) from its virtualization environment, that
-    /// process creates a set of one or more disk container files that act as snapshots of
-    /// your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
-    /// action uses those files to import your VM and create an AMI. To import using the CLI
-    /// command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
-    /// 
+    /// Creates an Image Builder image resource from an Amazon EC2 VM import task. The response
+    /// returns as soon as Image Builder creates the image resource in the <c>PENDING</c>
+    /// state. Image Builder then monitors the import task asynchronously. When the task completes,
+    /// Image Builder records the AMI that it produced as the new image's output resource
+    /// and marks the image <c>AVAILABLE</c>. You can then use the imported image as the base
+    /// image for your recipes.
     /// 
     ///  
     /// <para>
-    /// You can reference the task ID from the VM import to pull in the AMI that the import
-    /// created as the base image for your Image Builder recipe.
+    /// To create the VM import task, use the Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a>
+    /// operation, or the <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a>
+    /// CLI command.
     /// </para>
     /// </summary>
     public partial class ImportVmImageRequest : AmazonImagebuilderRequest
@@ -59,9 +60,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -100,7 +102,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// The logging configuration for the image build process.
+        /// The CloudWatch Logs log group where Image Builder sends the import logs. For ImportVmImage,
+        /// the log group name must be within the <c>/aws/imagebuilder/</c> namespace.
         /// </para>
         /// </summary>
         public ImageLoggingConfiguration LoggingConfiguration
@@ -118,7 +121,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the base image that is created by the import process.
+        /// The name of the base image that is created by the import process. Image Builder generates
+        /// the image ARN from a normalized form of the name, so names that differ only in case,
+        /// spaces, or underscores count as the same name. If an image with the same name and
+        /// semantic version already exists in your account in the same Amazon Web Services Region,
+        /// the import creates a new build version for it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -238,8 +245,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property VmImportTaskId. 
         /// <para>
         /// The <c>importTaskId</c> (API) or <c>ImportTaskId</c> (CLI) from the Amazon EC2 VM
-        /// import process. Image Builder retrieves information from the import process to pull
-        /// in the AMI that is created from the VM source as the base image for your recipe.
+        /// import process. The import task doesn't need to be complete when you call ImportVmImage
+        /// - Image Builder monitors the task and finishes creating the image when the task completes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

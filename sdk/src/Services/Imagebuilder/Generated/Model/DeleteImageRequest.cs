@@ -36,6 +36,13 @@ namespace Amazon.Imagebuilder.Model
     /// up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or
     /// API or CLI commands.
     /// 
+    ///  
+    /// <para>
+    /// The request fails with <c>ResourceDependencyException</c> if the image is shared with
+    /// other accounts, or if other resources depend on it. It also fails while the image
+    /// build is still running. Cancel an in-progress build with <a>CancelImageCreation</a>
+    /// before you delete the image.
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To deregister an EC2 Linux AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html">Deregister

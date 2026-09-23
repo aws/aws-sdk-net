@@ -64,7 +64,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Filter resources based on either <c>age</c> or <c>count</c>.
+        /// Filter resources based on either <c>AGE</c> or <c>COUNT</c>. You can only use the
+        /// count filter with the <c>DELETE</c> action type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

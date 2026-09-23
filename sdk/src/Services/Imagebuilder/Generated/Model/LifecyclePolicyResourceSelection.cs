@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Resource selection criteria for the lifecycle policy.
+    /// Resource selection criteria for the lifecycle policy. You must provide exactly one
+    /// selection criteria: either recipes or a tag map, not both.
     /// </summary>
     public partial class LifecyclePolicyResourceSelection
     {

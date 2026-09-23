@@ -32,7 +32,8 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the CreateImagePipeline operation.
     /// Creates a new image pipeline. Use image pipelines to automate the creation and distribution
-    /// of images.
+    /// of images. You must specify exactly one recipe for the pipeline, using either a <c>containerRecipeArn</c>
+    /// or an <c>imageRecipeArn</c>.
     /// </summary>
     public partial class CreateImagePipelineRequest : AmazonImagebuilderRequest
     {
@@ -58,9 +59,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -81,7 +83,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ContainerRecipeArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the container recipe that is used to configure images
-        /// created by this container pipeline.
+        /// created by this container pipeline. You must specify either this property or <c>imageRecipeArn</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string ContainerRecipeArn
@@ -137,7 +140,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Validates the required permissions and request parameters without making the request.
+        /// Validates the required permissions and request parameters without performing the operation.
         /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
         /// response.
         /// </para>
@@ -197,7 +200,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the image recipe that configures images created
-        /// by this image pipeline.
+        /// by this image pipeline. You must specify either this property or <c>containerRecipeArn</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         public string ImageRecipeArn
@@ -215,7 +219,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageScanningConfiguration. 
         /// <para>
-        /// Contains settings for vulnerability scans.
+        /// Contains settings for vulnerability scans that Amazon Inspector runs against the test
+        /// instance during image creation.
         /// </para>
         /// </summary>
         public ImageScanningConfiguration ImageScanningConfiguration
@@ -233,7 +238,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTags. 
         /// <para>
-        /// The tags to be applied to the images produced by this pipeline.
+        /// The tags that Image Builder applies to the Image Builder image resource that this
+        /// pipeline's scheduled executions create. These tags don't apply to the output AMI.
+        /// To tag output AMIs, use <c>amiTags</c> in the pipeline's distribution configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -257,7 +264,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageTestsConfiguration. 
         /// <para>
-        /// The image test configuration of the image pipeline.
+        /// Specifies the test settings that Image Builder applies to images that this pipeline
+        /// creates. If you don't provide test settings, Image Builder stores a default configuration
+        /// with image tests enabled.
         /// </para>
         /// </summary>
         public ImageTestsConfiguration ImageTestsConfiguration
@@ -317,7 +326,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the image pipeline.
+        /// The name of the image pipeline. Pipeline names must be unique to your account in each
+        /// Amazon Web Services Region. Image Builder generates the pipeline ARN from a normalized
+        /// form of the name, so names that differ only in case, spaces, or underscores count
+        /// as the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -336,7 +348,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule of the image pipeline.
+        /// The schedule of the image pipeline. If you don't provide a schedule, the pipeline
+        /// runs only when you call <a>StartImagePipelineExecution</a>.
         /// </para>
         /// </summary>
         public Schedule Schedule
@@ -354,7 +367,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the image pipeline.
+        /// The status of the image pipeline. If you don't specify a status, it defaults to <c>ENABLED</c>.
+        /// A disabled pipeline doesn't run on its schedule, but you can still start builds manually.
         /// </para>
         /// </summary>
         public PipelineStatus Status
@@ -396,7 +410,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Workflows. 
         /// <para>
-        /// Contains an array of workflow configuration objects.
+        /// The array of workflow configuration objects for builds that this pipeline starts.
+        /// You must also specify <c>executionRole</c> when you provide workflows.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

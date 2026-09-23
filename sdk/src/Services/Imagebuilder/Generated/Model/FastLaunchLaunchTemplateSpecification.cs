@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Identifies the launch template that the associated Windows AMI uses for launching
-    /// an instance when faster launching is enabled.
+    /// an instance when Windows fast launch is enabled.
     /// 
     ///  <note> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateId. 
         /// <para>
-        /// The ID of the launch template to use for faster launching for a Windows AMI.
+        /// The ID of the launch template to use for Windows fast launch for a Windows AMI.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -67,7 +67,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateName. 
         /// <para>
-        /// The name of the launch template to use for faster launching for a Windows AMI.
+        /// The name of the launch template to use for Windows fast launch for a Windows AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -86,7 +86,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplateVersion. 
         /// <para>
-        /// The version of the launch template to use for faster launching for a Windows AMI.
+        /// The version of the launch template to use for Windows fast launch for a Windows AMI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -62,7 +62,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The output message from the list action, if applicable.
+        /// The failure reason for the image build version, if it's in a failed state. This comes
+        /// from the image itself, not from an individual workflow, so it's available even when
+        /// no workflow executions remain for the image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -121,8 +123,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowExecutions. 
         /// <para>
-        /// Contains an array of runtime details that represents each time a workflow ran for
-        /// the requested image build version.
+        /// An array of runtime details that represents each time a workflow ran for the requested
+        /// image build version. Image Builder retains workflow execution records for a limited
+        /// time, so this array can be empty for older image build versions.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

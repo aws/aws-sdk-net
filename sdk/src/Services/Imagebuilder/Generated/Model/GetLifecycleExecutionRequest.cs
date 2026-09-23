@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLifecycleExecution operation.
-    /// Retrieves the runtime information for a specific runtime instance of the lifecycle
-    /// policy.
+    /// Retrieves runtime information for a lifecycle execution – a single run of lifecycle
+    /// actions that a lifecycle policy or a <a>StartResourceStateUpdate</a> request started.
     /// </summary>
     public partial class GetLifecycleExecutionRequest : AmazonImagebuilderRequest
     {

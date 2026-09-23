@@ -40,7 +40,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageRecipeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image recipe that you want to retrieve.
+        /// The Amazon Resource Name (ARN) of the image recipe that you want to retrieve. You
+        /// can use the <c>x</c> wildcard in trailing version positions to retrieve the latest
+        /// matching version, for example <c>x.x.x</c> or <c>1.x.x</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

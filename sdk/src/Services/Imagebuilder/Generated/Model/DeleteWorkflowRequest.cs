@@ -31,7 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWorkflow operation.
-    /// Deletes a specific workflow resource.
+    /// Deletes a specific workflow resource. You can't delete a workflow build version while
+    /// an image pipeline references it. The request fails with <c>ResourceDependencyException</c>.
     /// </summary>
     public partial class DeleteWorkflowRequest : AmazonImagebuilderRequest
     {

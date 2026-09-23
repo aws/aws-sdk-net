@@ -78,8 +78,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SetDefaultVersion. 
         /// <para>
-        /// Set the specified Amazon EC2 launch template as the default launch template for the
-        /// specified account.
+        /// Specifies whether to make the new launch template version that Image Builder creates
+        /// the default version of the launch template. If you don't set a value, Image Builder
+        /// treats it as <c>true</c>.
         /// </para>
         /// </summary>
         public bool? SetDefaultVersion

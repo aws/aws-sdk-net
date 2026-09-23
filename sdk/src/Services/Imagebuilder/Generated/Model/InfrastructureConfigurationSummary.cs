@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The infrastructure used when building Amazon EC2 AMIs.
+    /// Contains a high-level summary of an infrastructure configuration, including the environment
+    /// settings that Image Builder uses to build and test images.
     /// </summary>
     public partial class InfrastructureConfigurationSummary
     {
@@ -181,8 +182,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Placement. 
         /// <para>
-        /// The instance placement settings that define where the instances that are launched
-        /// from your image run.
+        /// The instance placement settings that define where the build and test instances that
+        /// Image Builder launches during image creation run. These settings don't affect instances
+        /// that you launch from the output image.
         /// </para>
         /// </summary>
         public Placement Placement
@@ -200,7 +202,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// The tags attached to the image created by Image Builder.
+        /// The metadata tags assigned to the Amazon EC2 build and test instances that Image Builder
+        /// launches during image creation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

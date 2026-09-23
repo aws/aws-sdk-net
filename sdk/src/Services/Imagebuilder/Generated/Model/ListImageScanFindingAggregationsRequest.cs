@@ -43,10 +43,6 @@ namespace Amazon.Imagebuilder.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>accountId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <c>imageBuildVersionArn</c> 
     /// </para>
     ///  </li> <li> 
@@ -65,7 +61,27 @@ namespace Amazon.Imagebuilder.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property Filter.
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// A filter name and value pair that determines the type of aggregation that Image Builder
+        /// returns. Use one of the following filter names:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>imageBuildVersionArn</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>imagePipelineArn</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>vulnerabilityId</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a filter, Image Builder returns an aggregation for your account.
+        /// </para>
         /// </summary>
         public Filter Filter
         {

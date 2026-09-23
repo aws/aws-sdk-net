@@ -32,7 +32,15 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the UpdateDistributionConfiguration operation.
     /// Updates a distribution configuration. Distribution configurations define and configure
-    /// the outputs of your pipeline.
+    /// the outputs for your images, including the target Regions, accounts, and settings
+    /// for each Region.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation doesn't support selective updates. The request replaces the stored
+    /// configuration, so include every setting that you want to keep.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateDistributionConfigurationRequest : AmazonImagebuilderRequest
     {
@@ -44,9 +52,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier you provide to ensure that the operation completes
-        /// no more than one time. If this token matches a previous request, the service ignores
-        /// the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -105,7 +114,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Distributions. 
         /// <para>
-        /// The distributions of the distribution configuration.
+        /// The distribution settings for the configuration. Each entry defines how output images
+        /// are distributed in one target Amazon Web Services Region. A Region can appear at most
+        /// once in the list. This list replaces the configuration's existing distributions entirely.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

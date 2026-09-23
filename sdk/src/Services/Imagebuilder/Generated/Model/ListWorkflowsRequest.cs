@@ -31,7 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkflows operation.
-    /// Lists workflow build versions based on filtering parameters.
+    /// Lists workflow versions based on filtering parameters. To list the build versions
+    /// of a specific workflow version, call <a>ListWorkflowBuildVersions</a>.
     /// </summary>
     public partial class ListWorkflowsRequest : AmazonImagebuilderRequest
     {
@@ -44,7 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ByName. 
         /// <para>
-        /// Specify all or part of the workflow name to streamline results.
+        /// Specifies whether to return one entry per workflow name, with all versions of each
+        /// workflow aggregated. Defaults to <c>false</c>, which returns one entry per workflow
+        /// version. You can't combine this option with the <c>version</c> filter.
         /// </para>
         /// </summary>
         public bool? ByName
@@ -62,7 +65,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Used to streamline search results.
+        /// Filters to narrow the list of workflows. You can filter on <c>name</c>, <c>version</c>,
+        /// <c>description</c>, and <c>type</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -125,7 +129,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// Used to get a list of workflow build version filtered by the identity of the creator.
+        /// Filters results based on the workflow owner. By default, this request returns the
+        /// workflows that your account owns (<c>Self</c>). Specify <c>Amazon</c> to list the
+        /// workflows that Image Builder manages. Image Builder rejects the <c>Shared</c> and
+        /// <c>ThirdParty</c> owner values for workflows, and <c>AWSMarketplace</c> returns no
+        /// results.
         /// </para>
         /// </summary>
         public Ownership Owner

@@ -40,8 +40,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property StepExecutionId. 
         /// <para>
-        /// Use the unique identifier for a specific runtime instance of the workflow step to
-        /// get runtime details for that step.
+        /// The unique identifier for the runtime instance of the workflow step that you want
+        /// to get runtime details for. To get the identifiers for the steps that ran in a workflow,
+        /// call <a>ListWorkflowStepExecutions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

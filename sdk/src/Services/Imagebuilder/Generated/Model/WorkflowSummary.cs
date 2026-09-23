@@ -51,6 +51,7 @@ namespace Amazon.Imagebuilder.Model
         /// The Amazon Resource Name (ARN) of the workflow resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=1024)]
         public string Arn
         {
             get { return this._arn; }
@@ -201,8 +202,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The image creation stage that this workflow applies to. Image Builder currently supports
-        /// build and test stage workflows.
+        /// The image creation stage that this workflow applies to.
         /// </para>
         /// </summary>
         public WorkflowType Type
