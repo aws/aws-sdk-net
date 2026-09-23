@@ -242,6 +242,52 @@ namespace Amazon.MediaPackageV2
     }
 
     /// <summary>
+    /// Constants used for properties of type ContentKeyPeriodTiming.
+    /// </summary>
+    public class ContentKeyPeriodTiming : ConstantClass
+    {
+        /// <summary>
+        /// Constant INDEX_ONLY for ContentKeyPeriodTiming
+        /// </summary>
+        public static readonly ContentKeyPeriodTiming INDEX_ONLY = new ContentKeyPeriodTiming("INDEX_ONLY");
+
+        /// <summary>
+        /// Constant INDEX_WITH_START_END for ContentKeyPeriodTiming
+        /// </summary>
+        public static readonly ContentKeyPeriodTiming INDEX_WITH_START_END = new ContentKeyPeriodTiming("INDEX_WITH_START_END");
+
+        /// <summary>
+        /// Constant START_END_ONLY for ContentKeyPeriodTiming
+        /// </summary>
+        public static readonly ContentKeyPeriodTiming START_END_ONLY = new ContentKeyPeriodTiming("START_END_ONLY");
+
+        /// <summary>
+        /// Constructs a custom ContentKeyPeriodTiming for a value not among the defined constants.
+        /// </summary>
+        public ContentKeyPeriodTiming(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentKeyPeriodTiming FindValue(string value)
+        {
+            return FindValue<ContentKeyPeriodTiming>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentKeyPeriodTiming(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type CustomAdType.
     /// </summary>
     public class CustomAdType : ConstantClass
@@ -1471,6 +1517,47 @@ namespace Amazon.MediaPackageV2
     }
 
     /// <summary>
+    /// Constants used for properties of type SpekeVersion.
+    /// </summary>
+    public class SpekeVersion : ConstantClass
+    {
+        /// <summary>
+        /// Constant V2_0 for SpekeVersion
+        /// </summary>
+        public static readonly SpekeVersion V2_0 = new SpekeVersion("V2_0");
+
+        /// <summary>
+        /// Constant V2_1 for SpekeVersion
+        /// </summary>
+        public static readonly SpekeVersion V2_1 = new SpekeVersion("V2_1");
+
+        /// <summary>
+        /// Constructs a custom SpekeVersion for a value not among the defined constants.
+        /// </summary>
+        public SpekeVersion(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SpekeVersion FindValue(string value)
+        {
+            return FindValue<SpekeVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SpekeVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type StreamNameOutputMode.
     /// </summary>
     public class StreamNameOutputMode : ConstantClass
@@ -1678,6 +1765,16 @@ namespace Amazon.MediaPackageV2
         /// Constant CONTAINER_TYPE_IMMUTABLE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType CONTAINER_TYPE_IMMUTABLE = new ValidationExceptionType("CONTAINER_TYPE_IMMUTABLE");
+
+        /// <summary>
+        /// Constant CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1 for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1 = new ValidationExceptionType("CONTENT_KEY_PERIOD_TIMING_REQUIRES_SPEKE_V2_1");
+
+        /// <summary>
+        /// Constant CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION = new ValidationExceptionType("CONTENT_KEY_PERIOD_TIMING_WITHOUT_KEY_ROTATION");
 
         /// <summary>
         /// Constant CUSTOM_AD_TYPES_INVALID_CONFIGURATION for ValidationExceptionType

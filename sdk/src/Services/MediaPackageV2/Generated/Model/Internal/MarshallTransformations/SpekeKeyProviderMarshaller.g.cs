@@ -51,6 +51,17 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
+            if (requestObject.IsSetContentKeyPeriodConfiguration())
+            {
+                context.Writer.WritePropertyName("ContentKeyPeriodConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContentKeyPeriodConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContentKeyPeriodConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetDrmSystems())
             {
                 context.Writer.WritePropertyName("DrmSystems");
@@ -83,6 +94,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RoleArn");
                 context.Writer.WriteStringValue(requestObject.RoleArn);
+            }
+
+            if (requestObject.IsSetSpekeVersion())
+            {
+                context.Writer.WritePropertyName("SpekeVersion");
+                context.Writer.WriteStringValue(requestObject.SpekeVersion);
             }
 
             if (requestObject.IsSetUrl())

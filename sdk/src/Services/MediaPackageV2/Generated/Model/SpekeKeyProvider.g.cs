@@ -51,6 +51,23 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetCertificateArn() => this.CertificateArn != null;
 
         /// <summary>
+        /// Gets and sets the property ContentKeyPeriodConfiguration. 
+        /// <para>
+        /// The configuration that controls whether MediaPackage signals the start and end times
+        /// a content key is used for, in the <c>ContentKeyPeriod</c> sent to your DRM key provider.
+        /// Signaling this timing is supported only when key rotation is enabled (<c>KeyRotationIntervalSeconds</c>
+        /// is set to a non-zero value) and <c>SpekeVersion</c> is <c>V2_1</c>. You can update
+        /// these settings on an existing origin endpoint.
+        /// </para>
+        /// </summary>
+        public ContentKeyPeriodConfiguration ContentKeyPeriodConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContentKeyPeriodConfiguration property is set.
+        /// </summary>
+        internal bool IsSetContentKeyPeriodConfiguration() => this.ContentKeyPeriodConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property DrmSystems. 
         /// <para>
         /// The DRM solution provider you're using to protect your content during distribution.
@@ -130,6 +147,39 @@ namespace Amazon.MediaPackageV2.Model
         /// Checks to see if the RoleArn property is set.
         /// </summary>
         internal bool IsSetRoleArn() => this.RoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property SpekeVersion. 
+        /// <para>
+        /// Specifies the SPEKE version used with your DRM key provider. If you don't specify
+        /// a value, the default is <c>V2_0</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>V2_0</c> - Follows the SPEKE Version 2.0 contract and signals only the content
+        /// key index in key requests. This is the default.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>V2_1</c> - Follows the SPEKE Version 2.1 contract and additionally supports signaling
+        /// the start and end times a content key is used for, using <c>ContentKeyPeriodConfiguration</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/speke/latest/documentation/standard-payload-components-v2.html">SPEKE
+        /// Version 2.0 payload</a>.
+        /// </para>
+        /// </summary>
+        public SpekeVersion SpekeVersion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SpekeVersion property is set.
+        /// </summary>
+        internal bool IsSetSpekeVersion() => this.SpekeVersion != null;
 
         /// <summary>
         /// Gets and sets the property Url. 

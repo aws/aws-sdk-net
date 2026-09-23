@@ -60,6 +60,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("ContentKeyPeriodConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ContentKeyPeriodConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ContentKeyPeriodConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("DrmSystems", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
@@ -85,6 +92,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SpekeVersion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SpekeVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
