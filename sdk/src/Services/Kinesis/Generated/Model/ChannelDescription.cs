@@ -185,7 +185,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// The server-side encryption configuration for the channel.
+        /// The Amazon Web Services KMS key configuration that Amazon Kinesis Data Streams uses
+        /// to encrypt data delivered to the channel's destination.
         /// </para>
         /// </summary>
         public ChannelEncryptionConfiguration EncryptionConfiguration

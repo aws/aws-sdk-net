@@ -30,32 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// The updated configuration for a general purpose Amazon S3 destination. Used in <a>UpdateChannel</a>.
-    /// Only <c>DataFreshnessInSeconds</c> can be updated.
+    /// This is the response object from the UpdateStreamRecordDistributionStrategy operation.
     /// </summary>
-    public partial class S3DestinationUpdateInput
+    public partial class UpdateStreamRecordDistributionStrategyResponse : AmazonWebServiceResponse
     {
-        private int? _dataFreshnessInSeconds;
-
-        /// <summary>
-        /// Gets and sets the property DataFreshnessInSeconds. 
-        /// <para>
-        /// The maximum age, in seconds, of undelivered data before the channel delivers it to
-        /// the destination.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public int? DataFreshnessInSeconds
-        {
-            get { return this._dataFreshnessInSeconds; }
-            set { this._dataFreshnessInSeconds = value; }
-        }
-
-        // Check to see if DataFreshnessInSeconds property is set
-        internal bool IsSetDataFreshnessInSeconds()
-        {
-            return this._dataFreshnessInSeconds.HasValue; 
-        }
 
     }
 }

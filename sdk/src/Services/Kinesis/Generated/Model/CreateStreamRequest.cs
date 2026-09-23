@@ -118,6 +118,7 @@ namespace Amazon.Kinesis.Model
     public partial class CreateStreamRequest : AmazonKinesisRequest
     {
         private int? _maxRecordSizeInKiB;
+        private RecordDistributionStrategy _recordDistributionStrategy;
         private int? _shardCount;
         private StreamModeDetails _streamModeDetails;
         private string _streamName;
@@ -142,6 +143,41 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetMaxRecordSizeInKiB()
         {
             return this._maxRecordSizeInKiB.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordDistributionStrategy. 
+        /// <para>
+        /// The record distribution strategy for the stream, which determines how Amazon Kinesis
+        /// Data Streams distributes records across shards. Specify one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AUTO</c> – Amazon Kinesis Data Streams distributes records evenly across shards
+        /// and ignores any partition key and <c>ExplicitHashKey</c> that producers supply. Use
+        /// this value for stateless workloads that do not require partition-key ordering.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>USER_PARTITION_KEY</c> – Producers must supply a partition key, which Amazon Kinesis
+        /// Data Streams uses to determine shard placement. This is the default.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The record distribution strategy is only supported for streams that use the on-demand
+        /// capacity mode. If you do not specify this parameter, the stream uses <c>USER_PARTITION_KEY</c>.
+        /// </para>
+        /// </summary>
+        public RecordDistributionStrategy RecordDistributionStrategy
+        {
+            get { return this._recordDistributionStrategy; }
+            set { this._recordDistributionStrategy = value; }
+        }
+
+        // Check to see if RecordDistributionStrategy property is set
+        internal bool IsSetRecordDistributionStrategy()
+        {
+            return this._recordDistributionStrategy != null;
         }
 
         /// <summary>

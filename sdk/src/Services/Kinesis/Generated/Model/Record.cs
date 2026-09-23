@@ -115,8 +115,15 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// Identifies which shard in the stream the data record is assigned to.
         /// </para>
+        ///  
+        /// <para>
+        /// For a stream that uses the <c>AUTO</c> record distribution strategy, this value is
+        /// not returned if the producer did not provide a partition key when writing the record.
+        /// If the producer provided a partition key, the original value is returned even though
+        /// it was not used to determine shard placement.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string PartitionKey
         {
             get { return this._partitionKey; }

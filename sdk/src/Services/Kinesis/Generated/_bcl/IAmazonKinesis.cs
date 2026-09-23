@@ -739,9 +739,8 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// A stream cannot be deleted while it has active channels. To delete the stream, first
-        /// delete all channels attached to it. To find them, use <a>ListChannels</a> with a stream
-        /// filter.
+        /// A stream cannot be deleted while it has active channels. Use <a>ListChannels</a> with
+        /// a stream filter to find the channels attached to a stream before deleting it.
         /// </para>
         ///  
         /// <para>
@@ -781,9 +780,8 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// A stream cannot be deleted while it has active channels. To delete the stream, first
-        /// delete all channels attached to it. To find them, use <a>ListChannels</a> with a stream
-        /// filter.
+        /// A stream cannot be deleted while it has active channels. Use <a>ListChannels</a> with
+        /// a stream filter to find the channels attached to a stream before deleting it.
         /// </para>
         ///  
         /// <para>
@@ -5447,6 +5445,152 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamMode">REST API Reference for UpdateStreamMode Operation</seealso>
         Task<UpdateStreamModeResponse> UpdateStreamModeAsync(UpdateStreamModeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateStreamRecordDistributionStrategy
+
+
+        /// <summary>
+        /// Updates the record distribution strategy for the specified Amazon Kinesis Data Streams
+        /// on-demand data stream. The record distribution strategy determines how Amazon Kinesis
+        /// Data Streams distributes records across the shards in a stream.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify the stream using the <c>StreamARN</c> parameter.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The record distribution strategy is a stream-level setting. You can switch between
+        /// the following strategies at any time, and the change takes effect immediately without
+        /// downtime, data loss, or disruption to producer or consumer applications:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AUTO</c> – Amazon Kinesis Data Streams distributes records evenly across shards
+        /// using service-managed algorithms, and ignores any partition key and <c>ExplicitHashKey</c>
+        /// that a producer provides. Use this strategy for stateless workloads that do not require
+        /// partition-key ordering.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>USER_PARTITION_KEY</c> – Producers must provide a partition key, and Amazon Kinesis
+        /// Data Streams uses the partition key to determine shard placement. Records that share
+        /// a partition key are sent to the same shard. This is the default strategy.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation is only supported for data streams that use the on-demand capacity
+        /// mode. Provisioned capacity mode streams do not support the record distribution strategy
+        /// setting. Attempting to set <c>AUTO</c> on a provisioned stream results in an <c>InvalidArgumentException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// New records that arrive after the change are distributed according to the new strategy.
+        /// Records already in the stream keep their original shard assignments and are not redistributed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamRecordDistributionStrategy service method.</param>
+        /// 
+        /// <returns>The response from the UpdateStreamRecordDistributionStrategy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamRecordDistributionStrategy">REST API Reference for UpdateStreamRecordDistributionStrategy Operation</seealso>
+        UpdateStreamRecordDistributionStrategyResponse UpdateStreamRecordDistributionStrategy(UpdateStreamRecordDistributionStrategyRequest request);
+
+
+
+        /// <summary>
+        /// Updates the record distribution strategy for the specified Amazon Kinesis Data Streams
+        /// on-demand data stream. The record distribution strategy determines how Amazon Kinesis
+        /// Data Streams distributes records across the shards in a stream.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify the stream using the <c>StreamARN</c> parameter.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The record distribution strategy is a stream-level setting. You can switch between
+        /// the following strategies at any time, and the change takes effect immediately without
+        /// downtime, data loss, or disruption to producer or consumer applications:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AUTO</c> – Amazon Kinesis Data Streams distributes records evenly across shards
+        /// using service-managed algorithms, and ignores any partition key and <c>ExplicitHashKey</c>
+        /// that a producer provides. Use this strategy for stateless workloads that do not require
+        /// partition-key ordering.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>USER_PARTITION_KEY</c> – Producers must provide a partition key, and Amazon Kinesis
+        /// Data Streams uses the partition key to determine shard placement. Records that share
+        /// a partition key are sent to the same shard. This is the default strategy.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This operation is only supported for data streams that use the on-demand capacity
+        /// mode. Provisioned capacity mode streams do not support the record distribution strategy
+        /// setting. Attempting to set <c>AUTO</c> on a provisioned stream results in an <c>InvalidArgumentException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// New records that arrive after the change are distributed according to the new strategy.
+        /// Records already in the stream keep their original shard assignments and are not redistributed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateStreamRecordDistributionStrategy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateStreamRecordDistributionStrategy service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateStreamRecordDistributionStrategy">REST API Reference for UpdateStreamRecordDistributionStrategy Operation</seealso>
+        Task<UpdateStreamRecordDistributionStrategyResponse> UpdateStreamRecordDistributionStrategyAsync(UpdateStreamRecordDistributionStrategyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

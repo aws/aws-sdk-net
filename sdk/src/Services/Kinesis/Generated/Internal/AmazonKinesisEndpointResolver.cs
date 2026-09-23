@@ -367,6 +367,13 @@ namespace Amazon.Kinesis.Internal
                 result.StreamId = request.StreamId;
                 return result;
             }
+            if (requestContext.RequestName == "UpdateStreamRecordDistributionStrategyRequest") {
+                result.OperationType = "control";
+                var request = (UpdateStreamRecordDistributionStrategyRequest)requestContext.OriginalRequest;
+                result.StreamARN = request.StreamARN;
+                result.StreamId = request.StreamId;
+                return result;
+            }
             if (requestContext.RequestName == "UpdateStreamWarmThroughputRequest") {
                 result.OperationType = "control";
                 var request = (UpdateStreamWarmThroughputRequest)requestContext.OriginalRequest;

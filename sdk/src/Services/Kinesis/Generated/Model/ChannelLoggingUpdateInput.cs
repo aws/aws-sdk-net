@@ -39,7 +39,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogs. 
         /// <para>
-        /// The updated Amazon CloudWatch Logs settings for the channel.
+        /// The updated Amazon CloudWatch Logs settings, including whether logging is enabled
+        /// and the target log group and log stream.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

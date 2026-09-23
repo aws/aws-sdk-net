@@ -39,7 +39,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ChannelDescription. 
         /// <para>
-        /// The configuration and current status of the channel.
+        /// The configuration and current status of the channel, including its ARN, destination
+        /// configuration, and lifecycle state. Immediately after creation, the state is <c>CREATING</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

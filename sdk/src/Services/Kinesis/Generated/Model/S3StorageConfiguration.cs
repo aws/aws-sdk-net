@@ -138,7 +138,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>STANDARD</c> - Default storage class for frequently accessed data. (default)
+        ///  <c>STANDARD</c> - The default storage class, for frequently accessed data.
         /// </para>
         ///  </li> <li> 
         /// <para>

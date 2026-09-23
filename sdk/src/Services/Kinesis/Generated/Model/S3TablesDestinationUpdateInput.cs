@@ -40,8 +40,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property DataFreshnessInSeconds. 
         /// <para>
-        /// The maximum age, in seconds, of undelivered data. Valid range is 300 to 900 seconds
-        /// (5 to 15 minutes).
+        /// The maximum age, in seconds, of undelivered data before the channel delivers it to
+        /// the destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

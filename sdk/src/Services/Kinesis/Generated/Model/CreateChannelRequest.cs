@@ -134,9 +134,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property S3DestinationConfiguration. 
         /// <para>
-        /// The configuration for delivery to a general purpose Amazon S3 bucket. You must specify
-        /// either <c>S3DestinationConfiguration</c> or <c>S3TablesDestinationConfiguration</c>,
-        /// but not both.
+        /// The configuration for delivery to a general purpose Amazon S3 bucket. Specify this
+        /// parameter when <c>S3TablesDestinationConfiguration</c> is not specified.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3DestinationConfiguration
@@ -155,8 +154,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property S3TablesDestinationConfiguration. 
         /// <para>
         /// The configuration for delivery to streaming tables on Apache Iceberg in Amazon S3
-        /// Tables. You must specify either <c>S3DestinationConfiguration</c> or <c>S3TablesDestinationConfiguration</c>,
-        /// but not both.
+        /// Tables. Specify this parameter when <c>S3DestinationConfiguration</c> is not specified.
         /// </para>
         /// </summary>
         public S3TablesDestinationConfiguration S3TablesDestinationConfiguration

@@ -76,8 +76,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The pagination token returned by a previous call. Specify this token to retrieve the
-        /// next page of results. This value is <c>null</c> when there are no more results to
-        /// return.
+        /// next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1048576)]

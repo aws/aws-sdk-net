@@ -41,6 +41,7 @@ namespace Amazon.Kinesis.Model
         private string _keyId;
         private int? _maxRecordSizeInKiB;
         private int? _openShardCount;
+        private RecordDistributionStrategy _recordDistributionStrategy;
         private int? _retentionPeriodHours;
         private string _streamARN;
         private DateTime? _streamCreationTimestamp;
@@ -220,6 +221,28 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetOpenShardCount()
         {
             return this._openShardCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecordDistributionStrategy. 
+        /// <para>
+        /// The record distribution strategy that the stream currently uses. A value of <c>AUTO</c>
+        /// indicates that Amazon Kinesis Data Streams distributes records across shards using
+        /// service-managed algorithms. A value of <c>USER_PARTITION_KEY</c> indicates that shard
+        /// placement is determined by the partition key that producers supply. This field is
+        /// only present for streams that use the on-demand capacity mode.
+        /// </para>
+        /// </summary>
+        public RecordDistributionStrategy RecordDistributionStrategy
+        {
+            get { return this._recordDistributionStrategy; }
+            set { this._recordDistributionStrategy = value; }
+        }
+
+        // Check to see if RecordDistributionStrategy property is set
+        internal bool IsSetRecordDistributionStrategy()
+        {
+            return this._recordDistributionStrategy != null;
         }
 
         /// <summary>
