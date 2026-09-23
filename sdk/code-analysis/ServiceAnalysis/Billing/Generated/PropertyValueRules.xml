@@ -136,6 +136,27 @@
     <pattern>[-a-zA-Z0-9+=/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewSegmentsRequest.Arn</property>
+    <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewSegmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewSegmentsRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.ListBillingViewSegmentsResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.ListEnterpriseSupportLinkedAccountChargesRequest.AccountId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
@@ -304,6 +325,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewListElement.SourceAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewSegmentsListElement.BillingGroupPrimaryAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewSegmentsListElement.BillingTransferAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingViewSegmentsListElement.ManagementAccountId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>

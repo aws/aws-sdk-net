@@ -53,6 +53,14 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Paginator for ListBillingViewSegments operation
+        ///</summary>
+        public IListBillingViewSegmentsPaginator ListBillingViewSegments(ListBillingViewSegmentsRequest request) 
+        {
+            return new ListBillingViewSegmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnterpriseSupportLinkedAccountCharges operation
         ///</summary>
         public IListEnterpriseSupportLinkedAccountChargesPaginator ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request) 
