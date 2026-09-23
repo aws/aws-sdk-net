@@ -34,11 +34,34 @@ namespace Amazon.PaymentCryptographyData.Model
     /// </summary>
     public partial class ReEncryptionAttributes
     {
+        private AsymmetricEncryptionAttributes _asymmetric;
         private DukptEncryptionAttributes _dukpt;
         private SymmetricEncryptionAttributes _symmetric;
 
         /// <summary>
-        /// Gets and sets the property Dukpt.
+        /// Gets and sets the property Asymmetric. 
+        /// <para>
+        /// Specifies the parameters required to encrypt data using an asymmetric key pair. You
+        /// must specify a <c>PaddingType</c>.
+        /// </para>
+        /// </summary>
+        public AsymmetricEncryptionAttributes Asymmetric
+        {
+            get { return this._asymmetric; }
+            set { this._asymmetric = value; }
+        }
+
+        // Check to see if Asymmetric property is set
+        internal bool IsSetAsymmetric()
+        {
+            return this._asymmetric != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dukpt. 
+        /// <para>
+        /// Specifies the parameters required to encrypt data using DUKPT.
+        /// </para>
         /// </summary>
         public DukptEncryptionAttributes Dukpt
         {
@@ -55,7 +78,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property Symmetric. 
         /// <para>
-        /// Parameters that are required to encrypt data using symmetric keys.
+        /// Specifies the parameters required to encrypt data using symmetric keys.
         /// </para>
         /// </summary>
         public SymmetricEncryptionAttributes Symmetric

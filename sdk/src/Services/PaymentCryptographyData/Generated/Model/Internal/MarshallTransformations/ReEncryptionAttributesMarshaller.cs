@@ -46,6 +46,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAsymmetric())
+            {
+                context.Writer.WritePropertyName("Asymmetric");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AsymmetricEncryptionAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Asymmetric, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDukpt())
             {
                 context.Writer.WritePropertyName("Dukpt");
