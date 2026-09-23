@@ -15,6 +15,17 @@
     <Compile Remove="generated-output/**/*.cs" />
   </ItemGroup>
 
+  <!-- Standalone runs (the model option) have no repo to read the default-configuration modes from, and the
+       Core NuGet package does not ship the file, so the repo copy is embedded at build time. -->
+  <ItemGroup>
+    <EmbeddedResource Include="../../../sdk/src/Core/sdk-default-configuration.json" LogicalName="SmithyDotNet.Generator.sdk-default-configuration.json" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>smithy-dotnet</ToolCommandName>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- Held at 5.0.0: 5.3.0 pulls an analyzer which is built against compiler 4.12 (and fails with .NET 8) -->
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.0.0" />

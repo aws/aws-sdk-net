@@ -86,6 +86,35 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         return writer.ToRawString();
     }
 
+    /// <summary>
+    /// Writes the standalone <c>AWSSDK.{Service}.csproj</c>: the requested modern-.NET targets and
+    /// AWSSDK.Core from NuGet, with none of the repo-only signing, analyzer, or ruleset wiring. The generated
+    /// source's <c>#if NETSTANDARD</c> branches are the non-Framework ones, so the define is
+    /// unconditional here, as is the async-enumerable API define.
+    /// </summary>
+    public string WriteStandalone(StandaloneOptions options)
+    {
+        var writer = new CodeWriter();
+        WriteProjectElement(writer,
+        [
+            w => w.OpenXmlBlock("PropertyGroup", () =>
+            {
+                w.WriteLine(options.TargetFrameworks.Count == 1
+                    ? $"<TargetFramework>{options.TargetFrameworks[0]}</TargetFramework>"
+                    : $"<TargetFrameworks>{string.Join(';', options.TargetFrameworks)}</TargetFrameworks>");
+                w.WriteLine($"<AssemblyName>{context.AssemblyName}</AssemblyName>");
+                w.WriteLine($"<Version>{options.Version}</Version>");
+                w.WriteLine("<DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_ENUMERABLES_API</DefineConstants>");
+            }),
+            WriteCompileExcludes,
+            w => w.OpenXmlBlock("ItemGroup", () =>
+            {
+                w.WriteLine($"""<PackageReference Include="AWSSDK.Core" Version="{options.CoreVersion}" />""");
+            }),
+        ]);
+        return writer.ToRawString();
+    }
+
     private void WriteUnifiedMainPropertyGroup(CodeWriter writer, bool netStandardSupport)
     {
         var fw = ServiceProjectConfigurations.NetFramework;

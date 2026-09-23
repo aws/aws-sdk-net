@@ -178,7 +178,7 @@ public sealed class BatchGenerator(string repoRoot)
         return discovered;
     }
 
-    private static SmithyModel LoadModel(string modelPath)
+    internal static SmithyModel LoadModel(string modelPath)
     {
         using var stream = File.OpenRead(modelPath);
         var model = JsonSerializer.Deserialize<SmithyModel>(stream, ModelOptions) ?? throw new GeneratorException($"'{modelPath}' deserialized to null.");
