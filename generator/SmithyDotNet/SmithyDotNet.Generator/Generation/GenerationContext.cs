@@ -120,6 +120,20 @@ public class GenerationContext
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
 
+    /// <summary>
+    /// Whether the protocol honors the HTTP binding traits (<c>@http</c>, <c>@httpHeader</c>, <c>@httpQuery</c>,
+    /// <c>@httpLabel</c>, <c>@httpPayload</c>, ...) and <c>@jsonName</c>. awsJson1.x sends every operation as
+    /// <c>POST /</c> with all members in the body and, per its spec, ignores those traits when present. The
+    /// writers consult this where the trait is read.
+    /// </summary>
+    public bool UsesHttpBindings { get; }
+
+    /// <summary>
+    /// The service shape's name (e.g. <c>Kinesis_20131202</c>). awsJson1.x routes requests with it:
+    /// <c>X-Amz-Target: {ServiceShapeName}.{OperationName}</c>. C2J equivalent: <c>targetPrefix</c>.
+    /// </summary>
+    public string ServiceShapeName { get; }
+
     /// <summary>All operations with their input/output/error shapes resolved.</summary>
     public IReadOnlyList<Operation> Operations { get; }
 
@@ -227,7 +241,10 @@ public class GenerationContext
         ServiceDocumentation = index.Service.GetDocumentation();
         ServiceTitle = index.Service.GetTitle();
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
-        Operations = OperationResolver.Resolve(index);
+        // TODO: restXml also honors the HTTP binding traits; add it here when that protocol lands.
+        UsesHttpBindings = Protocol == AWSProtocol.RestJson1;
+        ServiceShapeName = index.ServiceId.Name;
+        Operations = OperationResolver.Resolve(index, Protocol);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);

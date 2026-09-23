@@ -29,6 +29,14 @@ public class UnsupportedTraitValidatorTests
     }
 
     [Fact]
+    public void Validate_EndpointDiscovery_Throws()
+    {
+        var index = new ServiceIndex(TestModels.Load("Codegen/unsupported-trait-model.json"));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index));
+        Assert.Contains("clientEndpointDiscovery", ex.Message);
+    }
+
+    [Fact]
     public void Validate_EventStreamOnRestJson1Service_DoesNotThrow()
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/event-stream-restjson1-model.json"));

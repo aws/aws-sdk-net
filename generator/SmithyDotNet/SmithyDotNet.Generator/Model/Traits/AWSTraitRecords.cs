@@ -33,8 +33,11 @@ public record SigV4Trait : TraitRecord
     public required string SigningName { get; init; }
 }
 
-/// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html#aws-protocols-restjson1-trait" /></remarks>
-public record RestJson1Trait : TraitRecord
+/// <summary>
+/// The value of the protocol traits (such as restJson1 or awsJson1_0), which all carry
+/// the same HTTP version members.
+/// </summary>
+public record ProtocolTrait : TraitRecord
 {
     // Priority-ordered HTTP versions for normal / event-stream operations. eventStreamHttp is a subset of http.
     [JsonPropertyName("http")]

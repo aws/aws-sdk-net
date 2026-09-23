@@ -15,6 +15,9 @@ public static class UnsupportedTraitValidator
     {
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
         ["aws.protocols#httpChecksum"] = "httpChecksum",
+        // Endpoint discovery (DynamoDB, Timestream) has no codegen yet; without this the service would
+        // generate silently minus its *EndpointDiscoveryMarshaller classes.
+        ["aws.api#clientEndpointDiscovery"] = "clientEndpointDiscovery",
     };
 
     // Live on a member's resolved *target* shape, not the member reference.

@@ -20,9 +20,10 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         // so it is excluded here; every other member — including base-owned RequestId/ErrorCode — is
         // unmarshalled from the error body, except @httpHeader members (read from the headers).
         var members = ExceptionWriter.ResolveSerializedMembers(structure, context);
+
         // @httpResponseCode "is simply ignored" outside an operation's output (Smithy spec), so on an
         // error the member is treated as an ordinary body member — bindStatusCode: false.
-        var bindings = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members, bindStatusCode: false);
+        var bindings = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members, context.UsesHttpBindings, bindStatusCode: false);
 
         if (bindings.PayloadMember is not null)
         {

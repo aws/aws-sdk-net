@@ -94,7 +94,7 @@ structures. The map value must be a string (anything else fails loud).
 
 ## Wire Name Resolution
 
-`@jsonName` if present, else the Smithy member name verbatim. Other protocols differ, see Other Protocols.
+`@jsonName` if present, else the Smithy member name verbatim. awsJson1.x ignores `@jsonName` (see below).
 
 ## Request Body Serialization
 
@@ -353,16 +353,29 @@ request id, status code). When the error has body-bound members beyond `message`
 skips both. `@httpHeader` members are then read from `context.ResponseData` (see Response Header
 Unmarshalling).
 
+## awsJson1.0 / awsJson1.1
+
+Same JSON body (un)marshalling as restJson1. Every operation is `POST /` with
+`X-Amz-Target: {ServiceShapeName}.{OperationName}` (the service's shape name, not its sdkId) and
+`Content-Type: application/x-amz-json-1.0|1.1`; an operation with no input members sends `{}`. HTTP binding
+traits and `@jsonName` are ignored when a model carries them. Spec:
+[protocol behaviors](https://smithy.io/2.0/aws/protocols/aws-json-1_1-protocol.html#protocol-behaviors).
+
+1.0 and 1.1 differ only in the Content-Type version and the `__type` form of errors
+([differences](https://smithy.io/2.0/aws/protocols/aws-json-1_0-protocol.html#differences-between-awsjson1-0-and-awsjson1-1));
+Core handles the `__type` difference transparently, so the generator only varies the version string.
+
+Every one of those decisions is gated on `GenerationContext.UsesHttpBindings`; `AwsJsonCodegenTests`
+pins the emitted code and the JSONRPC10/JsonProtocol protocol tests verify it end to end.
+
 ## Other Protocols (not yet implemented)
 
-Only restJson1 is implemented. For awsJson1.x, restXml, awsQuery and ec2Query the target output is
-defined by the C2J templates (`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`).
-Contrasts to carry over when one lands: awsJson1.x routes via `X-Amz-Target: {ServiceName}.{Operation}`
-with all members in the body (Content-Type `application/x-amz-json-1.{0,1}`, no `UseQueryString`);
-awsQuery/ec2Query route via an `Action={Operation}` param with URL-encoded bodies; restXml keeps the HTTP
-binding traits with an XML body (`@xmlName`/`@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace`) and, per
-the Smithy spec, defaults body timestamps to `date-time`. The XML-response family uses
-`XmlResponseUnmarshaller`. Wire names: restXml `@xmlName`, awsQuery the member name verbatim, ec2Query
-`@ec2QueryName` or the member name with its first letter upper-cased.
+restXml, awsQuery, ec2Query and rpcv2Cbor: the target output is defined by the C2J templates
+(`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). awsQuery/ec2Query route via an
+`Action={Operation}` param with URL-encoded bodies; restXml keeps the HTTP binding traits with an XML
+body (`@xmlName`/`@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace`) and, per the Smithy spec, defaults
+body timestamps to `date-time`. The XML-response family uses `XmlResponseUnmarshaller`. Wire names:
+restXml `@xmlName`, awsQuery the member name verbatim, ec2Query `@ec2QueryName` or the member name with
+its first letter upper-cased.
 
 When implementing one, replace this note with the real patterns and pin the emitted code in codegen tests.

@@ -238,7 +238,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Input, operation.Input))
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
             {
                 if (marshalledStructures.Add(shapeId))
                 {
@@ -246,7 +246,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 }
             }
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Output, operation.Output))
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Output))
             {
                 // A response event stream is read by its own class (new {Union}(context.Stream)), so the
                 // union gets no structure unmarshaller. Its event structures DO get one — the event stream
@@ -277,7 +277,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             // structures need unmarshallers too. Exceptions are response-only, so only the
             // unmarshaller side is walked (never a marshaller), deduped against the shared set
             // so a structure also reachable from an output isn't emitted twice.
-            foreach (var (shapeId, structure) in ReferencedStructures(errorId, errorShape))
+            foreach (var (shapeId, structure) in ReferencedStructures(errorShape))
             {
                 if (unmarshalledStructures.Add(shapeId))
                 {
@@ -389,14 +389,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         return written.Keys.ToList();
     }
 
-    // Finds all structures transitively referenced from a request or response so each gets its own
-    // (un)marshaller. A member targets a structure directly, or indirectly via a list/map element.
-    // The visited set prevents infinite recursion on circular references.
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(ShapeId parentId, StructureShape parent)
-    {
-        var visited = new HashSet<ShapeId> { parentId };
-        return ReferencedStructuresRecursive(parent, visited);
-    }
+    // Every structure transitively referenced from a request or response (directly or as a list/map
+    // element) gets its own (un)marshaller. The parent itself is included when it is self-referencing.
+    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(StructureShape parent) =>
+        ReferencedStructuresRecursive(parent, new HashSet<ShapeId>());
 
     private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {

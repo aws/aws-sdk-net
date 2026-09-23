@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -32,10 +33,17 @@ public record Operation(
 /// </summary>
 public static class OperationResolver
 {
-    public static List<Operation> Resolve(ServiceIndex index)
+    public static List<Operation> Resolve(ServiceIndex index, AWSProtocol protocol)
     {
-        // TODO: Update when more protocols are added, since this is hard-coding one trait.
-        var h2Support = ResolveH2Support(index.Service.GetRestJson1());
+        var protocolTrait = protocol switch
+        {
+            AWSProtocol.RestJson1 => index.Service.GetRestJson1(),
+            AWSProtocol.AwsJson1_0 => index.Service.GetAwsJson1_0(),
+            AWSProtocol.AwsJson1_1 => index.Service.GetAwsJson1_1(),
+            _ => throw new GeneratorException($"Unsupported protocol '{protocol}'."),
+        };
+
+        var h2Support = ResolveH2Support(protocolTrait);
         var resolved = new List<Operation>(index.Operations.Count);
 
         foreach (var (operationId, operation) in index.Operations)
@@ -80,7 +88,7 @@ public static class OperationResolver
     // streams can fall back to http/1.1, EventStream when they can't. eventStreamHttp defaults to http
     // when absent (per spec); an explicitly empty list is treated the same way, as the legacy C2J
     // conversion does.
-    private static H2SupportDegree ResolveH2Support(RestJson1Trait? trait)
+    private static H2SupportDegree ResolveH2Support(ProtocolTrait? trait)
     {
         var http = trait?.Http ?? [];
         var eventStreamHttp = trait?.EventStreamHttp is { Count: > 0 } list ? list : http;

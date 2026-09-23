@@ -5,7 +5,7 @@ namespace SmithyDotNet.Generator.Generation.Protocols;
 /// <summary>
 /// The wire protocol used by an AWS service.
 /// </summary>
-public enum AWSProtocol { RestJson1 }
+public enum AWSProtocol { RestJson1, AwsJson1_0, AwsJson1_1 }
 
 /// <summary>
 /// Resolves the service's wire protocol from its protocol traits the way the legacy generator does:
@@ -35,17 +35,17 @@ public static class ProtocolResolver
     };
 
     // Resolves the service's protocol the way the legacy generator does — highest-priority trait,
-    // less any per-service skip — then fails loudly unless it is restJson1, the only one implemented.
-    // TODO: return the resolved protocol (extend AWSProtocol) once a second protocol is implemented.
+    // less any per-service skip — then fails loudly unless it is one of the implemented protocols.
     public static AWSProtocol Resolve(ServiceShape service, string sdkId)
     {
         var resolved = ResolveTraitId(service.Traits.Keys, sdkId) ?? throw new GeneratorException("Service shape has no recognized AWS protocol trait.");
-        if (resolved == "aws.protocols#restJson1")
+        return resolved switch
         {
-            return AWSProtocol.RestJson1;
-        }
-
-        throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet; only aws.protocols#restJson1 is implemented.");
+            "aws.protocols#restJson1" => AWSProtocol.RestJson1,
+            "aws.protocols#awsJson1_0" => AWSProtocol.AwsJson1_0,
+            "aws.protocols#awsJson1_1" => AWSProtocol.AwsJson1_1,
+            _ => throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet."),
+        };
     }
 
     // The highest-priority protocol trait the service carries, less any per-service skip, or null when

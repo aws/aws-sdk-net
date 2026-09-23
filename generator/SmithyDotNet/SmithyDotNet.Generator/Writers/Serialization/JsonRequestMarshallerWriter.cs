@@ -1,5 +1,6 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -9,7 +10,7 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// Emits the C# source for a JSON request marshaller matching the public API surface
 /// of the existing AWS SDK for .NET.
 /// <para />
-/// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
+/// Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
 /// bool, numeric, timestamp), list @httpQuery/@httpHeader (string, enum, and value-type elements), an @httpQueryParams map
 /// (map&lt;string,string&gt; or map&lt;string,list&lt;string&gt;&gt;), an @httpPrefixHeaders
 /// map&lt;string,string&gt;, body lists of strings or
@@ -21,11 +22,17 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     public string Write(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var httpTrait = operation.Shape.GetHttp() ?? throw new GeneratorException($"Operation '{operation.Name}' is missing the @http trait.");
+
+        // awsJson1.x sends every operation as POST / and ignores @http and the member binding traits when
+        // present (https://smithy.io/2.0/aws/protocols/aws-json-1_1-protocol.html#protocol-behaviors).
+        var httpBindings = context.UsesHttpBindings;
+        var httpTrait = httpBindings
+            ? operation.Shape.GetHttp() ?? throw new GeneratorException($"Operation '{operation.Name}' is missing the @http trait.")
+            : new HttpTrait { Method = "POST", Uri = "/" };
         var hostPrefix = operation.Shape.GetEndpoint()?.HostPrefix;
         var members = TypeMapper.ResolveMembers(operation.Input, context);
 
-        var partitioned = PartitionMembers(operation.Input, members);
+        var partitioned = PartitionMembers(operation.Input, members, httpBindings);
 
         // The client takes the first encoding it supports, so unsupported entries are skipped rather
         // than rejected. gzip is the whole supported set: it's emitted verbatim as an enum member and
@@ -57,7 +64,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
-                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload(), compressionEncoding, operation.Shape.RequiresHttpChecksum(), operation.RequiresHttp2);
+                WriteTypedMarshallMethod(writer, className, operation, httpTrait, partitioned, hostPrefix, compressionEncoding);
                 writer.WriteLine("");
                 WriteSingleton(writer, className);
             });
@@ -79,21 +86,22 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     private void WriteTypedMarshallMethod(
         CodeWriter writer,
         string className,
+        Operation operation,
         HttpTrait httpTrait,
         PartitionedMembers partitioned,
         string? hostPrefix,
-        bool unsignedPayload,
-        string? compressionEncoding,
-        bool requiresChecksum,
-        bool requiresHttp2)
+        string? compressionEncoding)
     {
+        var unsignedPayload = operation.Shape.HasUnsignedPayload();
+        var requiresChecksum = operation.Shape.RequiresHttpChecksum();
+
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
-            if (requiresHttp2)
+            if (operation.RequiresHttp2)
             {
                 writer.WriteLine("#if NET8_0_OR_GREATER");
                 writer.WriteLine("request.HttpProtocolVersion = System.Net.HttpVersion.Version20;");
@@ -107,7 +115,19 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             // A modeled @httpHeader("Content-Type") is emitted between the default Content-Type and the
             // blob payload block, so the block's trailing Content-Type override must not clobber it.
             var modeledContentType = partitioned.HeaderMembers.Any(h => h.HeaderName.Equals("Content-Type", StringComparison.OrdinalIgnoreCase));
-            var blobContentTypeEmitted = WriteContentType(writer, httpTrait, partitioned, modeledContentType);
+            var blobContentTypeEmitted = false;
+            if (context.UsesHttpBindings)
+            {
+                blobContentTypeEmitted = WriteContentType(writer, httpTrait, partitioned, modeledContentType);
+            }
+            else
+            {
+                // awsJson1.x routes on X-Amz-Target and always sends a JSON body (see below), so the
+                // Content-Type is unconditional. Same two-statement shape as C2J.
+                writer.WriteLine($"""string target = "{context.ServiceShapeName}.{operation.Name}";""");
+                writer.WriteLine("""request.Headers["X-Amz-Target"] = target;""");
+                writer.WriteLine($"""request.Headers["Content-Type"] = "application/x-amz-json-{JsonVersion(context.Protocol)}";""");
+            }
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
@@ -144,8 +164,18 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBodySerialization(writer, partitioned.BodyMembers);
             }
+            else if (!context.UsesHttpBindings)
+            {
+                // awsJson1.x: "a client MUST send an empty JSON object ({}) as the request body" when the
+                // operation has no input members.
+                writer.WriteLine("""var content = "{}";""");
+                writer.WriteLine("request.Content = System.Text.Encoding.UTF8.GetBytes(content);");
+            }
 
             // The checksum covers the body, so it has to follow serialization (same spot as C2J).
+            // TODO: flexible checksums (aws.protocols#httpChecksum, rejected by UnsupportedTraitValidator for now) need the
+            // algorithm member / header name / isRequestChecksumRequired handling from BaseMarshaller.tt GenerateRequestChecksumHandling;
+            // Once more protocols support it, the logic should be extracted to helper used by the request marshaller writers.
             if (requiresChecksum)
             {
                 writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
@@ -203,11 +233,18 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine($"""request.HostPrefix = $"{interpolated}";""");
     }
 
-    // Omitted for GET/DELETE and for body-less operations, matching C2J. A blob payload is the
-    // exception: its block always sets Content-Type, so when a modeled Content-Type header must win
-    // the blob default is emitted here, ahead of the header, on every method. Returns whether that
-    // happened (see WriteBlobPayloadSerialization). TODO: customization OverrideContentType and
-    // non-restJson (application/x-amz-json) are not handled yet.
+    private static string JsonVersion(AWSProtocol protocol) => protocol switch
+    {
+        AWSProtocol.AwsJson1_0 => "1.0",
+        AWSProtocol.AwsJson1_1 => "1.1",
+        _ => throw new GeneratorException($"Protocol '{protocol}' has no awsJson version."),
+    };
+
+    // restJson1 only. Omitted for GET/DELETE and for body-less operations, matching C2J. A blob payload
+    // is the exception: its block always sets Content-Type, so when a modeled Content-Type header must
+    // win the blob default is emitted here, ahead of the header, on every method. Returns whether that
+    // happened (see WriteBlobPayloadSerialization). TODO: customization OverrideContentType is not
+    // handled yet.
     private static bool WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned, bool modeledContentType)
     {
         // An input event stream sets its own application/vnd.amazon.eventstream Content-Type (see
@@ -663,7 +700,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine("#endif");
     }
 
-    private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members)
+    // With httpBindings false (awsJson1.x) every member is a body member and the binding traits are
+    // ignored, as the protocol requires; @hostLabel is not an HTTP binding and still applies.
+    private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members, bool httpBindings)
     {
         var queryMembers = new List<(Member Member, string QueryName)>();
         var headerMembers = new List<(Member Member, string HeaderName)>();
@@ -687,7 +726,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
             }
 
-            if (httpQuery is not null)
+            if (!httpBindings)
+            {
+                bodyMembers.Add(member);
+            }
+            else if (httpQuery is not null)
             {
                 queryMembers.Add((member, httpQuery));
             }

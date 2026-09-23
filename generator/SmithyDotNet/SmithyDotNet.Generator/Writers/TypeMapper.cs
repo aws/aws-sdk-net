@@ -190,7 +190,8 @@ public static class TypeMapper
                 Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                JsonName: member.GetJsonName(),
+                // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
+                JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
                 HidesBaseMember: propertyName == "Equals",
                 IsEventPayload: member.IsEventPayload(),

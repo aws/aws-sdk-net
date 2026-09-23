@@ -17,7 +17,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
         var resolvedMembers = TypeMapper.ResolveMembers(operation.Output, context);
-        var members = PartitionByBinding(operation.Output, resolvedMembers);
+        var members = PartitionByBinding(operation.Output, resolvedMembers, context.UsesHttpBindings);
 
         var writer = new CodeWriter();
 
@@ -202,9 +202,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// <para><c>@httpResponseCode</c> is only meaningful on an operation's output; on an error it "is
     /// simply ignored" per the Smithy spec, so the exception unmarshaller passes
     /// <paramref name="bindStatusCode"/> <c>false</c> and the member falls through to the body.</para>
+    ///
+    /// <para>With <paramref name="httpBindings"/> <c>false</c> (awsJson1.x) the binding traits are ignored,
+    /// as that protocol requires, and every member except an event stream is a body member.</para>
     /// </summary>
     internal static PartitionedMembers PartitionByBinding(
-        StructureShape structure, List<Member> members, bool bindStatusCode = true)
+        StructureShape structure, List<Member> members, bool httpBindings, bool bindStatusCode = true)
     {
         var headerMembers = new List<(Member, string)>();
         var bodyMembers = new List<Member>();
@@ -226,6 +229,10 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 }
 
                 eventStreamMember = member;
+            }
+            else if (!httpBindings)
+            {
+                bodyMembers.Add(member);
             }
             else if (memberShape.GetHttpHeader() is string headerName)
             {

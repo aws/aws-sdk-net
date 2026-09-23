@@ -1,0 +1,61 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example_20230101": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoScalars" },
+        { "target": "com.example#DoNothing" }
+      ],
+      "errors": [
+        { "target": "com.example#BadThing" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#awsJson1_1": {}
+      }
+    },
+    "com.example#DoScalars": {
+      "type": "operation",
+      "input": { "target": "com.example#DoScalarsRequest" },
+      "output": { "target": "com.example#DoScalarsResponse" },
+      "traits": {
+        "smithy.api#http": { "uri": "/do-scalars/{name}", "method": "PUT" }
+      }
+    },
+    "com.example#DoScalarsRequest": {
+      "type": "structure",
+      "members": {
+        "name":  { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {}, "smithy.api#jsonName": "Name" } },
+        "count": { "target": "smithy.api#Integer", "traits": { "smithy.api#httpHeader": "x-count" } },
+        "limit": { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "limit" } },
+        "note":  { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#DoScalarsResponse": {
+      "type": "structure",
+      "members": {
+        "id":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-id" } },
+        "name": { "target": "smithy.api#String", "traits": { "smithy.api#jsonName": "Name" } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#DoNothing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#BadThing": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" },
+        "reason":  { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-reason" } }
+      },
+      "traits": {
+        "smithy.api#error": "client"
+      }
+    }
+  }
+}
