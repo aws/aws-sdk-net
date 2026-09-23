@@ -30,6 +30,51 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
     /// <summary>
+    /// Controls how .NET property names are cased when mapped to DynamoDB attribute names
+    /// by the object persistence model. Set via <see cref="DynamoDBTableAttribute.AttributeCasing"/>.
+    /// </summary>
+    public enum CaseMode
+    {
+        /// <summary>
+        /// Attribute names use the .NET property names unchanged (PascalCase), at every level of the
+        /// object graph, including nested objects stored as DynamoDB Maps.
+        ///
+        /// This is the default and matches the behavior of the SDK when neither
+        /// <see cref="DynamoDBTableAttribute.AttributeCasing"/> nor the obsolete
+        /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> is set.
+        /// </summary>
+        PascalCase = 0,
+
+        /// <summary>
+        /// Attribute names are converted to camelCase (the first character is lower-cased) at every
+        /// level of the object graph. Unlike <see cref="LegacyCamelCase"/>, nested objects that do not
+        /// declare their own <see cref="DynamoDBTableAttribute"/> inherit this casing, so their Map keys
+        /// are also camelCased.
+        ///
+        /// This is the recommended value for consistent camelCase output and addresses the long-standing
+        /// gap where nested objects kept PascalCase attribute names.
+        /// </summary>
+        CamelCase,
+
+        /// <summary>
+        /// Reproduces the exact (asymmetric) behavior of the obsolete
+        /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> flag set to <c>true</c>:
+        /// only the root object's attribute names are camelCased, while nested objects stored as
+        /// DynamoDB Maps keep their PascalCase attribute names.
+        ///
+        /// This value exists solely as a compatibility escape hatch for applications whose existing
+        /// data already relies on this mixed casing. It is intentionally marked <c>[Obsolete]</c>
+        /// so new code is steered toward <see cref="CamelCase"/> or <see cref="PascalCase"/>. New
+        /// applications should not use it.
+        /// </summary>
+        [Obsolete("LegacyCamelCase reproduces the asymmetric casing of the obsolete " +
+                  "LowerCamelCaseProperties=true (camelCase root, PascalCase nested objects) and exists " +
+                  "only for backward compatibility with existing data. Use CamelCase for consistent " +
+                  "camelCase at all levels, or PascalCase for the default behavior.")]
+        LegacyCamelCase
+    }
+
+    /// <summary>
     /// DynamoDB attribute that marks a class.
     /// Specifies that this object can be stored in DynamoDB, the name
     /// of the target table, and if attribute names must be automatically
@@ -48,9 +93,37 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableName { get; set; }
 
         /// <summary>
-        /// Gets and sets the LowerCamelCaseProperties property.
+        /// Gets and sets the LowerCamelCaseProperties property. When <c>true</c>, only the root object's
+        /// attribute names are camelCased; nested objects keep their PascalCase names.
         /// </summary>
+        /// <remarks>
+        /// This flag only camelCases the root object's attribute names and cannot express casing for
+        /// nested objects. Use <see cref="AttributeCasing"/> instead: <see cref="CaseMode.CamelCase"/>
+        /// for consistent camelCase at every level, or <see cref="CaseMode.LegacyCamelCase"/> to preserve
+        /// this flag's exact (root-only) behavior for existing data.
+        /// </remarks>
+        [Obsolete("Use AttributeCasing instead. LowerCamelCaseProperties=true is equivalent to " +
+                  "AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase nested); for " +
+                  "consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
         public bool LowerCamelCaseProperties { get; set; }
+
+        /// <summary>
+        /// Gets and sets how .NET property names are cased when mapped to DynamoDB attribute names.
+        /// Defaults to <see cref="CaseMode.PascalCase"/>, which matches the SDK's behavior when no
+        /// casing is configured.
+        /// </summary>
+        /// <remarks>
+        /// When set to a non-default value, <see cref="AttributeCasing"/> takes precedence over the
+        /// obsolete <see cref="LowerCamelCaseProperties"/> flag. Setting <see cref="AttributeCasing"/>
+        /// to <see cref="CaseMode.CamelCase"/> or <see cref="CaseMode.LegacyCamelCase"/> while also
+        /// setting <see cref="LowerCamelCaseProperties"/> to <c>true</c> is redundant but allowed; a
+        /// conflicting combination (for example <see cref="AttributeCasing"/> =
+        /// <see cref="CaseMode.PascalCase"/> together with <see cref="LowerCamelCaseProperties"/> =
+        /// <c>true</c>) is resolved in favor of the explicitly set <see cref="LowerCamelCaseProperties"/>
+        /// flag, since <see cref="CaseMode.PascalCase"/> is the unset default and cannot be
+        /// distinguished from "not specified".
+        /// </remarks>
+        public CaseMode AttributeCasing { get; set; }
 
         /// <summary>
         /// Gets and sets the <see cref="ConversionSchema"/> used for mapping between .NET and DynamoDB types.
@@ -91,7 +164,9 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties, ConversionSchema conversion)
         {
             TableName = tableName;
+#pragma warning disable CS0618 // LowerCamelCaseProperties is obsolete but retained for this back-compat constructor overload.
             LowerCamelCaseProperties = lowerCamelCaseProperties;
+#pragma warning restore CS0618
             Conversion = conversion;
         }
     }

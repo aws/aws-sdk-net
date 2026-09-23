@@ -284,3 +284,92 @@ command line: as global properties they propagate into the SDK's `ProjectReferen
   `#if NET8_0_OR_GREATER` needs coverage that runs on the older targets too.
 - After swapping a source file back and forth, `dotnet test` can build against a stale SDK assembly.
   Use `--no-incremental` when verifying that a fix is load-bearing.
+
+## Attribute casing (AttributeCasing / CaseMode)
+
+Covers how the DynamoDB Object Persistence Model (the `DynamoDBContext` / `[DynamoDBTable]` mapping)
+decides the casing of DynamoDB attribute names, and the `AttributeCasing` / `CaseMode` feature that
+extends it. Handwritten code lives under
+`sdk/src/Services/DynamoDBv2/Custom/DataModel/`.
+
+### Where casing is decided
+
+- `DynamoDBTableAttribute` (`Custom/DataModel/Attributes.cs`) carries the casing configuration for a
+  mapped type.
+- `ItemStorageConfig` (`Custom/DataModel/InternalModel.cs`) is the per-type resolved config. Attribute
+  names are **baked into each `PropertyStorage.AttributeName` at config-build time** (in
+  `PopulateConfigFromType` via `GetAccurateCase`) and then cached per type by `ItemStorageConfigCache`.
+  Casing is therefore not re-evaluated on every serialize/deserialize — it is fixed when the config is
+  first built.
+- `GetAccurateCase` is the single application point: it either returns the .NET property name unchanged
+  (PascalCase) or camelCases the first character via `Utils.ToLowerCamelCase`.
+
+### CaseMode and AttributeCasing
+
+`CaseMode` (in `Attributes.cs`) has three values:
+
+- `PascalCase = 0` — attribute names match .NET property names unchanged, at every level (root and
+  nested Maps). This is the default **and** the "unset" sentinel — there is intentionally no separate
+  `Default` value, so an explicit `AttributeCasing = PascalCase` is indistinguishable from "not set".
+- `CamelCase` — camelCase at every level. Nested objects that do **not** declare their own casing
+  inherit this, so their Map keys are also camelCased. This is the recommended value and closes the
+  long-standing gap (GitHub issue #1162) where nested objects stayed PascalCase.
+- `LegacyCamelCase` — reproduces the exact asymmetric behavior of the obsolete
+  `LowerCamelCaseProperties = true`: camelCase root, PascalCase nested. Marked `[Obsolete]`; exists only
+  as a compatibility escape hatch for data already written under that behavior. Does **not** propagate
+  to nested objects.
+
+`DynamoDBTableAttribute.AttributeCasing` selects the mode. `LowerCamelCaseProperties` is now
+`[Obsolete]` and maps to `LegacyCamelCase` when `true`.
+
+### Precedence (ResolveCaseMode in InternalModel.cs)
+
+1. `AttributeCasing != PascalCase` wins (explicit non-default).
+2. Otherwise, obsolete `LowerCamelCaseProperties == true` → `LegacyCamelCase`.
+3. Otherwise → `PascalCase`.
+
+Because `PascalCase` is both default and unset sentinel, a conflicting combination of
+`AttributeCasing = PascalCase` plus `LowerCamelCaseProperties = true` resolves to the explicit legacy
+flag (`LegacyCamelCase`).
+
+### Nested-object inheritance
+
+Because attribute names are baked per-type and the config cache is keyed by `Type`, inheritance cannot
+be done purely at build time (a nested type used under both a camelCase and a PascalCase parent would
+need two different baked configs). It also cannot be done by mutating a shared config at serialize time.
+
+The implementation:
+
+- `DynamoDBFlatConfig.InheritedAttributeCasing` (nullable `CaseMode`) carries the enclosing type's
+  effective casing down the object graph while (de)serializing. It is set and restored (try/finally)
+  around member iteration in `PopulateItemStorage` (serialize) and `PopulateInstance` (deserialize) in
+  `Custom/DataModel/ContextInternal.cs`. Only `CamelCase` propagates; `PascalCase` and `LegacyCamelCase`
+  clear it.
+- `ItemStorageConfigCache.ConfigTableCache` keeps `InheritedCasingConfigs`, a
+  `Dictionary<CaseMode, ItemStorageConfig>` of variants built with a forced casing. When a nested type
+  does not declare its own casing (its resolved mode is `PascalCase`) and an inherited `CamelCase`
+  applies, `ResolveInheritedCasingConfig` builds/returns a variant with the names re-baked in camelCase.
+  `CreateStorageConfig` / `PopulateConfigFromType` take an optional `forcedCasing` that only applies to
+  types without their own explicit casing.
+
+### Designed limitation
+
+A nested type that explicitly sets `AttributeCasing = CaseMode.PascalCase` **still inherits** an
+enclosing `CamelCase`, because `PascalCase == 0` cannot be distinguished from "unset". A nested type
+that needs to stay PascalCase under a camelCase parent has no way to force it with the `PascalCase`
+value alone. This is an accepted consequence of not having a `Default` sentinel. A nested type
+declaring a *distinguishable* casing (e.g. `CamelCase`) is always honored.
+
+### Backward compatibility
+
+The default is unchanged: undecorated types and `PascalCase` behave exactly as before, so existing
+data round-trips on upgrade. `CamelCase`'s nested behavior is opt-in. `LegacyCamelCase` exists so that
+callers relying on the old asymmetric `LowerCamelCaseProperties = true` output are not silently
+re-cased.
+
+### Tests
+
+`sdk/test/Services/DynamoDBv2/UnitTests/Custom/DataModel/AttributeCasingTests.cs` uses a mocked
+`IAmazonDynamoDB` with `DisableFetchingTableMetadata = true` (no AWS calls) and exercises
+`ToDocument` / `FromDocument` for PascalCase, CamelCase (root + nested + round-trip), LegacyCamelCase,
+the obsolete-bool equivalence, and the designed nested-inheritance limitation.

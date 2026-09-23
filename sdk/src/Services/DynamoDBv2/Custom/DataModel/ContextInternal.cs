@@ -693,6 +693,14 @@ namespace Amazon.DynamoDBv2.DataModel
 
             storageConfig ??= config.BaseTypeStorageConfig;
 
+            // Mirror the serialization side: propagate CamelCase to nested undecorated types so their
+            // camelCased attribute names are looked up on read. Save/restore since flatConfig is shared.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing =
+                config.AttributeCasing == CaseMode.CamelCase ? CaseMode.CamelCase : (CaseMode?)null;
+            try
+            {
+
             using (flatConfig.State.Track(document))
             {
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
@@ -717,6 +725,11 @@ namespace Amazon.DynamoDBv2.DataModel
                         PopulateProperty(storage, flatConfig, document, attributeName, propertyStorage, instance);
                     }
                 }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
         }
 
@@ -769,6 +782,16 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             ItemStorageConfig config = storage.Config;
             Document document = storage.Document;
+
+            // Carry this type's casing down to nested objects that don't declare their own. Only
+            // CaseMode.CamelCase propagates; PascalCase and the obsolete LegacyCamelCase do not (the
+            // latter intentionally keeps nested objects PascalCase). Save/restore because flatConfig is
+            // shared across the recursive walk.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing =
+                config.AttributeCasing == CaseMode.CamelCase ? CaseMode.CamelCase : (CaseMode?)null;
+            try
+            {
 
             using (flatConfig.State.Track(toStore))
             {
@@ -857,6 +880,11 @@ namespace Amazon.DynamoDBv2.DataModel
                         throw new InvalidOperationException(
                             "Unable to retrieve value from property " + propertyName);
                 }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
         }
 

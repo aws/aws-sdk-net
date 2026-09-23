@@ -1,0 +1,247 @@
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
+
+using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
+
+
+namespace AWSSDK_DotNet.UnitTests
+{
+    /// <summary>
+    /// Tests for the <see cref="CaseMode"/> / <see cref="DynamoDBTableAttribute.AttributeCasing"/>
+    /// feature and its interaction with the obsolete <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/>
+    /// flag, including casing inheritance into nested objects (issue #1162).
+    ///
+    /// These tests use a mocked client with <see cref="DynamoDBContextConfig.DisableFetchingTableMetadata"/>
+    /// set to true so no AWS calls are made.
+    /// </summary>
+    [TestClass]
+    public class AttributeCasingTests
+    {
+        // ----- Test entities -----
+
+        public class Address
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+        }
+
+        // A nested type that declares its own casing; must never be overridden by an enclosing type.
+        [DynamoDBTable("AddressPascal", AttributeCasing = CaseMode.PascalCase)]
+        public class AddressPascal
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+        }
+
+        // A nested type that declares a distinguishable (non-default) casing.
+        [DynamoDBTable("AddressCamel", AttributeCasing = CaseMode.CamelCase)]
+        public class AddressCamel
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+        }
+
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelCase
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public string CustomerName { get; set; }
+            public Address ShippingAddress { get; set; }
+        }
+
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.PascalCase)]
+        public class OrderPascalCase
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public string CustomerName { get; set; }
+            public Address ShippingAddress { get; set; }
+        }
+
+#pragma warning disable CS0618 // Intentionally exercising the obsolete flag / mode.
+        [DynamoDBTable("Orders", LowerCamelCaseProperties = true)]
+        public class OrderLegacyBool
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public string CustomerName { get; set; }
+            public Address ShippingAddress { get; set; }
+        }
+
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.LegacyCamelCase)]
+        public class OrderLegacyMode
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public string CustomerName { get; set; }
+            public Address ShippingAddress { get; set; }
+        }
+#pragma warning restore CS0618
+
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithDeclaredNested
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public AddressPascal ShippingAddress { get; set; }
+        }
+
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.PascalCase)]
+        public class OrderPascalWithCamelNested
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public AddressCamel ShippingAddress { get; set; }
+        }
+
+        private DynamoDBContext CreateContext()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
+            mockClient.Setup(m => m.Config).Returns(new AmazonDynamoDBConfig());
+            return new DynamoDBContext(mockClient.Object,
+                new DynamoDBContextConfig { DisableFetchingTableMetadata = true });
+        }
+
+        private static Document BuildOrderDoc<T>(DynamoDBContext context, string id, string name, string street, string city)
+        {
+            dynamic order = System.Activator.CreateInstance(typeof(T));
+            order.Id = id;
+            order.CustomerName = name;
+            var addr = new Address { Street = street, City = city };
+            ((dynamic)order).ShippingAddress = addr;
+            return context.ToDocument((T)order);
+        }
+
+        // ----- PascalCase (default) -----
+
+        [TestMethod]
+        public void PascalCase_RootAndNested_StayPascalCase()
+        {
+            var context = CreateContext();
+            var doc = BuildOrderDoc<OrderPascalCase>(context, "1", "Alice", "Main", "Seattle");
+
+            Assert.IsTrue(doc.ContainsKey("CustomerName"));
+            Assert.IsTrue(doc.ContainsKey("ShippingAddress"));
+            var nested = doc["ShippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("Street"));
+            Assert.IsTrue(nested.ContainsKey("City"));
+        }
+
+        // ----- CamelCase: the #1162 fix (root AND nested) -----
+
+        [TestMethod]
+        public void CamelCase_RootAndNested_AreCamelCased()
+        {
+            var context = CreateContext();
+            var doc = BuildOrderDoc<OrderCamelCase>(context, "1", "Alice", "Main", "Seattle");
+
+            // Root is camelCased.
+            Assert.IsTrue(doc.ContainsKey("customerName"));
+            Assert.IsTrue(doc.ContainsKey("shippingAddress"));
+
+            // Nested Map keys are ALSO camelCased (this is the fix).
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("street"), "Nested Street should be camelCased under CamelCase");
+            Assert.IsTrue(nested.ContainsKey("city"), "Nested City should be camelCased under CamelCase");
+            Assert.IsFalse(nested.ContainsKey("Street"));
+        }
+
+        [TestMethod]
+        public void CamelCase_RoundTrip_ReadsBackNestedValues()
+        {
+            var context = CreateContext();
+            var doc = BuildOrderDoc<OrderCamelCase>(context, "1", "Alice", "Main", "Seattle");
+
+            var restored = context.FromDocument<OrderCamelCase>(doc);
+            Assert.AreEqual("Alice", restored.CustomerName);
+            Assert.IsNotNull(restored.ShippingAddress);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
+        }
+
+        [TestMethod]
+        public void CamelCase_NestedDeclaringPascalCase_StillInherits_ByDesign()
+        {
+            // AddressPascal declares AttributeCasing = CaseMode.PascalCase, but because PascalCase == 0
+            // is also the "unset" sentinel, it is indistinguishable from "no casing declared". By design
+            // (no separate Default sentinel), such a nested type therefore INHERITS the enclosing
+            // CamelCase. This documents the intended limitation of the PascalCase=0 choice.
+            var context = CreateContext();
+            var order = new OrderCamelWithDeclaredNested
+            {
+                Id = "1",
+                ShippingAddress = new AddressPascal { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            Assert.IsTrue(doc.ContainsKey("shippingAddress"));
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("street"), "PascalCase==unset, so nested inherits CamelCase by design");
+            Assert.IsTrue(nested.ContainsKey("city"));
+        }
+
+        [TestMethod]
+        public void PascalCaseRoot_NestedDeclaringCamelCase_IsHonored()
+        {
+            // The distinguishable case: a nested type declaring a NON-default casing (CamelCase) is
+            // always honored regardless of the (PascalCase) root, since CamelCase != the unset sentinel.
+            var context = CreateContext();
+            var order = new OrderPascalWithCamelNested
+            {
+                Id = "1",
+                ShippingAddress = new AddressCamel { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            // Root stays PascalCase.
+            Assert.IsTrue(doc.ContainsKey("ShippingAddress"));
+            // Nested explicitly declared CamelCase, so it is camelCased even though the root is not.
+            var nested = doc["ShippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("street"));
+            Assert.IsTrue(nested.ContainsKey("city"));
+        }
+
+        // ----- LegacyCamelCase: reproduces LowerCamelCaseProperties = true (root only) -----
+
+        [TestMethod]
+        public void LegacyCamelCase_CamelCasesRootButNotNested()
+        {
+            var context = CreateContext();
+            var doc = BuildOrderDoc<OrderLegacyMode>(context, "1", "Alice", "Main", "Seattle");
+
+            // Root camelCased.
+            Assert.IsTrue(doc.ContainsKey("customerName"));
+            Assert.IsTrue(doc.ContainsKey("shippingAddress"));
+
+            // Nested stays PascalCase (the legacy asymmetric behavior).
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("Street"));
+            Assert.IsTrue(nested.ContainsKey("City"));
+            Assert.IsFalse(nested.ContainsKey("street"));
+        }
+
+        [TestMethod]
+        public void ObsoleteBool_MatchesLegacyCamelCaseMode()
+        {
+            var context = CreateContext();
+            var legacyBoolDoc = BuildOrderDoc<OrderLegacyBool>(context, "1", "Alice", "Main", "Seattle");
+            var legacyModeDoc = BuildOrderDoc<OrderLegacyMode>(context, "1", "Alice", "Main", "Seattle");
+
+            // Root
+            Assert.AreEqual(legacyModeDoc.ContainsKey("customerName"), legacyBoolDoc.ContainsKey("customerName"));
+            Assert.IsTrue(legacyBoolDoc.ContainsKey("shippingAddress"));
+
+            // Nested identical (both PascalCase inside)
+            var boolNested = legacyBoolDoc["shippingAddress"].AsDocument();
+            var modeNested = legacyModeDoc["shippingAddress"].AsDocument();
+            Assert.IsTrue(boolNested.ContainsKey("Street"));
+            Assert.IsTrue(modeNested.ContainsKey("Street"));
+        }
+    }
+}
+

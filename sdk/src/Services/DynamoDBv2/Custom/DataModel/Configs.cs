@@ -594,6 +594,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public DynamoDBEntryConversion ItemConversion { get; set; }
 
+        /// <summary>
+        /// The effective <see cref="CaseMode"/> of the enclosing (parent) type when serializing or
+        /// deserializing a nested object. A nested type that does not declare its own casing inherits
+        /// this value, allowing <see cref="CaseMode.CamelCase"/> to camelCase nested Map attribute names.
+        ///
+        /// Null means "no inherited casing" (top-level item, or the parent's mode does not propagate,
+        /// e.g. PascalCase or the obsolete LegacyCamelCase which intentionally keeps nested objects
+        /// PascalCase).
+        /// </summary>
+        public CaseMode? InheritedAttributeCasing { get; set; }
+
         
         /// <summary>
         /// Operation Conversion specification which controls how conversion between
