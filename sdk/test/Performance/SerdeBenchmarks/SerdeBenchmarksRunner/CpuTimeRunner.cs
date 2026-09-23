@@ -39,14 +39,24 @@ public static class CpuTimeRunner
     /// Runs an async benchmark until EITHER minIterations OR minCpuSeconds is reached.
     /// Warmup is run first and discarded.
     /// </summary>
+    // Run-wide defaults, settable from the CLI (see Program). A caller may still override per invocation.
+    public static int DefaultWarmupIterations = 1000;
+    public static int DefaultMinIterations = 50000;
+    public static double DefaultMinCpuSeconds = 5.0;
+
     public static async Task<CpuTimeResult> MeasureAsync(
         string name,
         Func<Task> operation,
-        int warmupIterations = 100,
-        int minIterations = 50000,
-        double minCpuSeconds = 5.0,
+        int warmupIterations = -1,
+        int minIterations = -1,
+        double minCpuSeconds = -1,
         int checkInterval = 100)
     {
+        // Resolve configuration from the CLI-provided defaults unless the caller passed explicit values.
+        if (warmupIterations < 0) warmupIterations = DefaultWarmupIterations;
+        if (minIterations < 0) minIterations = DefaultMinIterations;
+        if (minCpuSeconds < 0) minCpuSeconds = DefaultMinCpuSeconds;
+
         // Warmup: let JIT, tiered compilation, and caches stabilize
         for (int i = 0; i < warmupIterations; i++)
         {

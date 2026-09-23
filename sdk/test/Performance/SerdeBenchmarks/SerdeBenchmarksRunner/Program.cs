@@ -69,8 +69,11 @@ internal class Program
         // Parse custom arguments before passing remaining args to BDN
         var suite = "e2e";
         var cpuTimeMode = false;
-        var iterations = 10000;
+        // ops/CPU-sec defaults (warmup 1000 — sits on .NET's JIT plateau per D2 sweep; min 50000
+        // iters OR 5s CPU, first wins).
         var warmup = 1000;
+        var minIterations = 50000;
+        var minCpuSeconds = 5.0;
         var bdnArgs = new List<string>();
 
         for (int i = 0; i < args.Length; i++)
@@ -83,9 +86,13 @@ internal class Program
             {
                 cpuTimeMode = true;
             }
-            else if (args[i] == "--iterations" && i + 1 < args.Length)
+            else if ((args[i] == "--iterations" || args[i] == "--min-iterations") && i + 1 < args.Length)
             {
-                iterations = int.Parse(args[++i]);
+                minIterations = int.Parse(args[++i]);
+            }
+            else if (args[i] == "--min-cpu-seconds" && i + 1 < args.Length)
+            {
+                minCpuSeconds = double.Parse(args[++i], System.Globalization.CultureInfo.InvariantCulture);
             }
             else if (args[i] == "--warmup" && i + 1 < args.Length)
             {
@@ -99,6 +106,10 @@ internal class Program
 
         if (cpuTimeMode)
         {
+            // Wire CLI config into the measurement runner (applies to all 71 cases).
+            CpuTimeRunner.DefaultWarmupIterations = warmup;
+            CpuTimeRunner.DefaultMinIterations = minIterations;
+            CpuTimeRunner.DefaultMinCpuSeconds = minCpuSeconds;
             await RunCpuTimeMode();
             return;
         }
@@ -145,9 +156,9 @@ internal class Program
     /// </summary>
     private static async Task RunCpuTimeMode()
     {
-        Console.WriteLine($"CPU Time Mode: min 1000 iterations OR 5 sec CPU (first met wins)");
+        Console.WriteLine($"CPU Time Mode: min {CpuTimeRunner.DefaultMinIterations} iterations OR {CpuTimeRunner.DefaultMinCpuSeconds} sec CPU (first met wins)");
         Console.WriteLine($"Check interval: every 100 iterations");
-        Console.WriteLine($"Warmup: 100 iterations");
+        Console.WriteLine($"Warmup: {CpuTimeRunner.DefaultWarmupIterations} iterations");
         Console.WriteLine($"Process: {Environment.ProcessPath}");
         Console.WriteLine($"Runtime: {System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription}");
         Console.WriteLine($"OS: {System.Runtime.InteropServices.RuntimeInformation.OSDescription}");

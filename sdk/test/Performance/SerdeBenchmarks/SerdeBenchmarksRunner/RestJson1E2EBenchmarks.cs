@@ -59,9 +59,10 @@ public class RestJson1E2EBenchmarks
     private static readonly byte[] CopyOutputM = Encoding.UTF8.GetBytes(
         "{\"ETag\":\"\\\"d41d8cd98f00b204e9800998ecf8427e\\\"\",\"LastModified\":1704067200," +
         "\"ChecksumCRC32\":\"abc123\",\"ServerSideEncryption\":\"aws:kms\",\"VersionId\":\"v1.0\"}");
-    private static readonly byte[] GetObjectS = new byte[1024];
-    private static readonly byte[] GetObjectM = new byte[100 * 1024];
-    private static readonly byte[] GetObjectL = new byte[1024 * 1024];
+    // S3 object body sizes match the shared benchmark model (payloads/ObjectBody_{S,M,L}): 1 / 1000 / 256000 bytes.
+    private static readonly byte[] GetObjectS = new byte[1];
+    private static readonly byte[] GetObjectM = new byte[1000];
+    private static readonly byte[] GetObjectL = new byte[256000];
     private static readonly byte[] EmptyJson = Encoding.UTF8.GetBytes("{}");
     private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricJson(5));
     private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricJson(50));
@@ -123,9 +124,9 @@ public class RestJson1E2EBenchmarks
             ServerSideEncryption = "aws:kms", StorageClass = "STANDARD_IA",
             SSEKMSKeyId = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
         };
-        _putObjectS = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1024]) };
-        _putObjectM = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[100 * 1024]) };
-        _putObjectL = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1024 * 1024]) };
+        _putObjectS = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1]) };
+        _putObjectM = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1000]) };
+        _putObjectL = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[256000]) };
         _getObjectRequest = new GetObjectRequest { Bucket = "bucket", Key = "key" };
         _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(5) };
         _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(50) };
