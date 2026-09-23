@@ -3,8 +3,7 @@ namespace SmithyDotNet.Generator.Generation;
 /// <summary>
 /// Inputs for generating one service from a single Smithy AST file into a self-contained project
 /// referencing <c>AWSSDK.Core</c> from NuGet: no metadata.json, _sdk-versions.json, or
-/// Directory.Build.props involved. Modern .NET only; .NET Framework is out of scope.
-/// Parsed from the command line by <c>Program</c>.
+/// Directory.Build.props involved. Parsed from the command line by <c>Program</c>.
 /// </summary>
 public sealed record StandaloneOptions
 {

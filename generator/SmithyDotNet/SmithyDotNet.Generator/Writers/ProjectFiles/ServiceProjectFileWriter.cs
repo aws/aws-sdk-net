@@ -87,10 +87,10 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
     }
 
     /// <summary>
-    /// Writes the standalone <c>AWSSDK.{Service}.csproj</c>: the requested modern-.NET targets and
-    /// AWSSDK.Core from NuGet, with none of the repo-only signing, analyzer, or ruleset wiring. The generated
-    /// source's <c>#if NETSTANDARD</c> branches are the non-Framework ones, so the define is
-    /// unconditional here, as is the async-enumerable API define.
+    /// Writes the standalone <c>AWSSDK.{Service}.csproj</c>: the requested targets and AWSSDK.Core
+    /// from NuGet, with none of the repo-only signing, analyzer, or ruleset wiring. The per-target
+    /// defines and the Framework-only System.Configuration reference use the same identifier
+    /// conditions as the repo csprojs, so any mix of Framework and modern targets works.
     /// </summary>
     public string WriteStandalone(StandaloneOptions options)
     {
@@ -103,7 +103,11 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
                     ? $"<TargetFramework>{options.TargetFrameworks[0]}</TargetFramework>"
                     : $"<TargetFrameworks>{string.Join(';', options.TargetFrameworks)}</TargetFrameworks>");
                 w.WriteLine($"<AssemblyName>{context.AssemblyName}</AssemblyName>");
-                w.WriteLine("<DefineConstants>$(DefineConstants);NETSTANDARD;AWS_ASYNC_ENUMERABLES_API</DefineConstants>");
+
+                // .NET Framework targets default to C# 7.3; the generated source needs (at least) C# 9.
+                w.WriteLine("<LangVersion>latest</LangVersion>");
+                w.WriteLine($"""<DefineConstants Condition="{IsNotNetFramework}">$(DefineConstants);NETSTANDARD</DefineConstants>""");
+                WriteAsyncEnumerablesDefine(w);
                 w.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");
                 w.WriteLine();
                 WritePackagingProperties(w, options.Version);
@@ -113,6 +117,10 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             w => w.OpenXmlBlock("ItemGroup", () =>
             {
                 w.WriteLine($"""<PackageReference Include="AWSSDK.Core" Version="{options.CoreVersion}" />""");
+            }),
+            w => w.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () =>
+            {
+                w.WriteLine("""<Reference Include="System.Configuration"/>""");
             }),
         ]);
         return writer.ToRawString();
