@@ -5055,6 +5055,10 @@ namespace Amazon.LexModelsV2
     {
 
         /// <summary>
+        /// Constant Advanced for SpeechModelPreference
+        /// </summary>
+        public static readonly SpeechModelPreference Advanced = new SpeechModelPreference("Advanced");
+        /// <summary>
         /// Constant Deepgram for SpeechModelPreference
         /// </summary>
         public static readonly SpeechModelPreference Deepgram = new SpeechModelPreference("Deepgram");

@@ -126,6 +126,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(publicRequest.IsSetSpeakerDiarizationSettings())
+            {
+                context.Writer.WritePropertyName("speakerDiarizationSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SpeakerDiarizationSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SpeakerDiarizationSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSpeechDetectionSensitivity())
             {
                 context.Writer.WritePropertyName("speechDetectionSensitivity");

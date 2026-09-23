@@ -44,6 +44,7 @@ namespace Amazon.LexModelsV2.Model
         private GenerativeAISettings _generativeaiSettings;
         private string _localeId;
         private double? _nluIntentConfidenceThreshold;
+        private SpeakerDiarizationSettings _speakerDiarizationSettings;
         private SpeechDetectionSensitivity _speechDetectionSensitivity;
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
@@ -209,6 +210,26 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetNluIntentConfidenceThreshold()
         {
             return this._nluIntentConfidenceThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeakerDiarizationSettings. 
+        /// <para>
+        /// The speaker diarization settings to configure for the new bot locale. When enabled,
+        /// Amazon Lex restricts speech detection to the primary (loudest) speaker during streaming
+        /// audio conversations.
+        /// </para>
+        /// </summary>
+        public SpeakerDiarizationSettings SpeakerDiarizationSettings
+        {
+            get { return this._speakerDiarizationSettings; }
+            set { this._speakerDiarizationSettings = value; }
+        }
+
+        // Check to see if SpeakerDiarizationSettings property is set
+        internal bool IsSetSpeakerDiarizationSettings()
+        {
+            return this._speakerDiarizationSettings != null;
         }
 
         /// <summary>
