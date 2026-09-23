@@ -2077,6 +2077,47 @@ namespace Amazon.MediaConvert
     }
 
     /// <summary>
+    /// Constants used for properties of type AudioSmpte337Passthrough.
+    /// </summary>
+    public class AudioSmpte337Passthrough : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for AudioSmpte337Passthrough
+        /// </summary>
+        public static readonly AudioSmpte337Passthrough DISABLED = new AudioSmpte337Passthrough("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for AudioSmpte337Passthrough
+        /// </summary>
+        public static readonly AudioSmpte337Passthrough ENABLED = new AudioSmpte337Passthrough("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom AudioSmpte337Passthrough for a value not among the defined constants.
+        /// </summary>
+        public AudioSmpte337Passthrough(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AudioSmpte337Passthrough FindValue(string value)
+        {
+            return FindValue<AudioSmpte337Passthrough>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AudioSmpte337Passthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type AudioTypeControl.
     /// </summary>
     public class AudioTypeControl : ConstantClass
@@ -9005,6 +9046,16 @@ namespace Amazon.MediaConvert
     public class Format : ConstantClass
     {
         /// <summary>
+        /// Constant Aac for Format
+        /// </summary>
+        public static readonly Format Aac = new Format("aac");
+
+        /// <summary>
+        /// Constant Ac3 for Format
+        /// </summary>
+        public static readonly Format Ac3 = new Format("ac3");
+
+        /// <summary>
         /// Constant Asf for Format
         /// </summary>
         public static readonly Format Asf = new Format("asf");
@@ -9013,6 +9064,11 @@ namespace Amazon.MediaConvert
         /// Constant Avi for Format
         /// </summary>
         public static readonly Format Avi = new Format("avi");
+
+        /// <summary>
+        /// Constant Eac3 for Format
+        /// </summary>
+        public static readonly Format Eac3 = new Format("eac3");
 
         /// <summary>
         /// Constant Flac for Format
@@ -9058,6 +9114,16 @@ namespace Amazon.MediaConvert
         /// Constant Quicktime for Format
         /// </summary>
         public static readonly Format Quicktime = new Format("quicktime");
+
+        /// <summary>
+        /// Constant Three_g2 for Format
+        /// </summary>
+        public static readonly Format Three_g2 = new Format("three_g2");
+
+        /// <summary>
+        /// Constant Three_gp for Format
+        /// </summary>
+        public static readonly Format Three_gp = new Format("three_gp");
 
         /// <summary>
         /// Constant Wave for Format
@@ -18610,6 +18676,52 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PadVideo(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PassthroughSegmentationMode.
+    /// </summary>
+    public class PassthroughSegmentationMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AUTO for PassthroughSegmentationMode
+        /// </summary>
+        public static readonly PassthroughSegmentationMode AUTO = new PassthroughSegmentationMode("AUTO");
+
+        /// <summary>
+        /// Constant DURATION_BASED for PassthroughSegmentationMode
+        /// </summary>
+        public static readonly PassthroughSegmentationMode DURATION_BASED = new PassthroughSegmentationMode("DURATION_BASED");
+
+        /// <summary>
+        /// Constant GOP_COUNT for PassthroughSegmentationMode
+        /// </summary>
+        public static readonly PassthroughSegmentationMode GOP_COUNT = new PassthroughSegmentationMode("GOP_COUNT");
+
+        /// <summary>
+        /// Constructs a custom PassthroughSegmentationMode for a value not among the defined constants.
+        /// </summary>
+        public PassthroughSegmentationMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PassthroughSegmentationMode FindValue(string value)
+        {
+            return FindValue<PassthroughSegmentationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PassthroughSegmentationMode(string value)
         {
             return FindValue(value);
         }

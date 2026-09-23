@@ -35,7 +35,9 @@ namespace Amazon.MediaConvert.Model
     public partial class AudioProperties
     {
         /// <summary>
-        /// Gets and sets the property BitDepth. The bit depth of the audio track.
+        /// Gets and sets the property BitDepth. The bit depth of the audio track. This value
+        /// is exact for PCM and FLAC audio. For lossy codecs, such as AAC, AC-3, and E-AC-3,
+        /// it is a nominal value and should be treated as approximate.
         /// </summary>
         public int? BitDepth { get; set; }
 
@@ -57,7 +59,8 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ChannelLayout. The audio channel layout of the track, such
         /// as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported
-        /// as "5.1.4" or "7.1.4".
+        /// as "5.1.4" or "7.1.4". The layout is exact for AC-3 and E-AC-3 audio. For other codecs,
+        /// it is inferred from the channel count and should be treated as approximate.
         /// </summary>
         public string ChannelLayout { get; set; }
 

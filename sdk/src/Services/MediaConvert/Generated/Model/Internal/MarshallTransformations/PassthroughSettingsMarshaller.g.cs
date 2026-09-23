@@ -51,6 +51,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FrameControl);
             }
 
+            if (requestObject.IsSetGopsPerSegment())
+            {
+                context.Writer.WritePropertyName("gopsPerSegment");
+                context.Writer.WriteNumberValue(requestObject.GopsPerSegment.Value);
+            }
+
+            if (requestObject.IsSetSegmentationMode())
+            {
+                context.Writer.WritePropertyName("segmentationMode");
+                context.Writer.WriteStringValue(requestObject.SegmentationMode);
+            }
+
             if (requestObject.IsSetVideoSelectorMode())
             {
                 context.Writer.WritePropertyName("videoSelectorMode");

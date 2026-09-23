@@ -163,6 +163,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetMotionImageInserter() => this.MotionImageInserter != null;
 
         /// <summary>
+        /// Gets and sets the property MotionImageInserters. Array of motion image inserters for
+        /// overlaying multiple independent motion graphics. Compositing order follows array index.
+        /// Mutually exclusive with motionImageInserter.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<MotionImageInserter> MotionImageInserters { get; set; } = AWSConfigs.InitializeCollections ? new List<MotionImageInserter>() : null;
+
+        /// <summary>
+        /// Checks to see if the MotionImageInserters property is set.
+        /// </summary>
+        internal bool IsSetMotionImageInserters() => this.MotionImageInserters != null && (this.MotionImageInserters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property NielsenConfiguration. Settings for your Nielsen configuration.
         /// If you don't do Nielsen measurement and analytics, ignore these settings. When you
         /// enable Nielsen configuration, MediaConvert enables PCM to ID3 tagging for all outputs

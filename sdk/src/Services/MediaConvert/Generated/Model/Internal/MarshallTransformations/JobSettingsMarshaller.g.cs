@@ -144,6 +144,22 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetMotionImageInserters())
+            {
+                context.Writer.WritePropertyName("motionImageInserters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectMotionImageInsertersListValue in requestObject.MotionImageInserters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MotionImageInserterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMotionImageInsertersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if (requestObject.IsSetNielsenConfiguration())
             {
                 context.Writer.WritePropertyName("nielsenConfiguration");

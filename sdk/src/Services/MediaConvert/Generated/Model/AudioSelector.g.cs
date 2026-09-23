@@ -219,6 +219,21 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetSelectorType() => this.SelectorType != null;
 
         /// <summary>
+        /// Gets and sets the property Smpte337Passthrough. Specify whether to pass SMPTE 337M-wrapped
+        /// audio (such as Dolby E) through without unwrapping. Choose Enabled to pass the SMPTE
+        /// 337M container through unchanged, treating the track as raw PCM. Choose Disabled (default)
+        /// to automatically detect and unwrap SMPTE 337M data, extracting the underlying Dolby
+        /// E programs as separate audio tracks for encoding. When this field is absent, the service
+        /// defaults to Disabled (auto-unwrap).
+        /// </summary>
+        public AudioSmpte337Passthrough Smpte337Passthrough { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Smpte337Passthrough property is set.
+        /// </summary>
+        internal bool IsSetSmpte337Passthrough() => this.Smpte337Passthrough != null;
+
+        /// <summary>
         /// Gets and sets the property Streams. Identify a track from the input audio to include
         /// in this selector by entering the stream index number. These numberings count all tracks
         /// in the input file, but only a track containing audio data may be used here. To include

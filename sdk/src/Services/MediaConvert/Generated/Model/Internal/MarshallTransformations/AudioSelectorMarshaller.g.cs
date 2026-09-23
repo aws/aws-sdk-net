@@ -126,6 +126,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.SelectorType);
             }
 
+            if (requestObject.IsSetSmpte337Passthrough())
+            {
+                context.Writer.WritePropertyName("smpte337Passthrough");
+                context.Writer.WriteStringValue(requestObject.Smpte337Passthrough);
+            }
+
             if (requestObject.IsSetStreams())
             {
                 context.Writer.WritePropertyName("streams");

@@ -1983,6 +1983,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConvert.Model.PassthroughSettings.GopsPerSegment</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConvert.Model.ProresSettings.FramerateDenominator</property>
     <min>1</min>
     <max>2147483647</max>
