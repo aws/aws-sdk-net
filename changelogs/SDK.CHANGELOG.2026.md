@@ -1,3 +1,83 @@
+### 4.0.340.0 (2026-09-23 18:16 UTC)
+* AppFabric (4.0.100.15)
+	* AppFabric is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* ApplicationCostProfiler (4.0.100.15)
+	* ApplicationCostProfiler is now generated from its Smithy model. There are no changes to the public API.
+* ApplicationSignals (4.0.100.15)
+	* ApplicationSignals is now generated from its Smithy model. There are no changes to the public API.
+* AppRegistry (4.0.100.15)
+	* AppRegistry is now generated from its Smithy model. There are no changes to the public API.
+* Billing (4.0.104.0)
+	* Added the ListBillingViewSegments API, which returns billing view segment information for a specified billing view ARN and time range. This API enables customers and integrated tools to programmatically determine the billing context of their accounts.
+* Chatbot (4.0.100.15)
+	* Chatbot is now generated from its Smithy model. There are no changes to the public API.
+* Chime (4.0.100.15)
+	* Chime is now generated from its Smithy model. There are no changes to the public API.
+* ChimeSDKIdentity (4.0.100.15)
+	* ChimeSDKIdentity is now generated from its Smithy model. There are no changes to the public API.
+* ChimeSDKMediaPipelines (4.0.100.15)
+	* ChimeSDKMediaPipelines is now generated from its Smithy model. There are no changes to the public API.
+* ChimeSDKMeetings (4.0.100.15)
+	* ChimeSDKMeetings is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* ChimeSDKMessaging (4.0.100.15)
+	* ChimeSDKMessaging is now generated from its Smithy model. There are no changes to the public API.
+* ChimeSDKVoice (4.0.101.11)
+	* ChimeSDKVoice is now generated from its Smithy model. There are no changes to the public API.
+	* Exception classes now expose the Code property, which was missing from the previous model.
+* CloudFrontKeyValueStore (4.0.100.15)
+	* CloudFrontKeyValueStore is now generated from its Smithy model. There are no changes to the public API.
+* CodeStarNotifications (4.0.100.15)
+	* CodeStarNotifications is now generated from its Smithy model. There are no changes to the public API.
+* ConnectHealth (4.0.101.0)
+	* Multi language support with code switching, custom template sectionHeader now allows underscores.
+* Imagebuilder (4.0.102.0)
+	* Documentation update for EC2 Image Builder - adds API request and response examples for all operations, improves descriptions throughout, and corrects response field patterns for image versions and workflow ARNs.
+* IVS (4.0.101.12)
+	* IVS is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* IVSRealTime (4.0.101.1)
+	* IVSRealTime is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* Kinesis (4.0.104.0)
+	* Amazon Kinesis Data Streams now supports service managed record distribution for on demand streams. Set the record distribution strategy to AUTO to evenly distribute records across shards. Configure it at stream creation with CreateStream or update anytime with UpdateStreamRecordDistributionStrategy
+* KinesisVideo (4.0.100.15)
+	* KinesisVideo is now generated from its Smithy model. There are no changes to the public API.
+* KinesisVideoSignalingChannels (4.0.100.15)
+	* KinesisVideoSignalingChannels is now generated from its Smithy model. There are no changes to the public API.
+* LexModelBuildingService (4.0.100.15)
+	* LexModelBuildingService is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* LexModelsV2 (4.0.101.0)
+	* Adds support for speaker diarization on Amazon Lex V2 bot locales. Speaker diarization keeps your bot on the primary (loudest) speaker during a streaming voice conversation, so background voices do not start a turn or interrupt a prompt.
+* Macie2 (4.0.100.15)
+	* Macie2 is now generated from its Smithy model. There are no changes to the public API.
+* MediaConvert (4.0.105.0)
+	* This release adds support for SMPTE 337M audio passthrough, compositing up to five motion graphic overlays in a single output, and controlling how passthrough video is segmented in ABR outputs. It also adds 3GP, 3G2, AAC, AC-3, and E-AC-3 as supported input containers for the Probe operation.
+* MediaPackageV2 (4.0.104.0)
+	* This release adds support for signalling start and end in the ContentKeyPeriod element in key request from MediaPackageV2
+* Neptunedata (4.0.100.15)
+	* Neptunedata is now generated from its Smithy model. There are no changes to the public API.
+* NetworkSecurityManager (4.0.100.0)
+	* AWS Network Security Manager is a new service that helps you centrally configure, deploy, and continuously enforce security policies on network security services across the accounts and resources in your AWS Organization.
+* NotificationsContacts (4.0.100.15)
+	* NotificationsContacts is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* OAM (4.0.100.15)
+	* OAM is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* PaymentCryptographyData (4.0.102.0)
+	* Adds asymmetric key support to ReEncryptData for re-encrypting data between RSA and symmetric data encryption keys.
+* ResilienceHub (4.0.100.15)
+	* ResilienceHub is now generated from its Smithy model. There are no changes to the public API.
+* S3 (4.0.103.4)
+	* Follow region redirect on cross-region HeadBucket.
+* SavingsPlans (4.0.100.15)
+	* SavingsPlans is now generated from its Smithy model. There are no changes to the public API.
+* XRay (4.0.100.15)
+	* XRay is now generated from its Smithy model. There are no changes to the public API.
+
 ### 4.0.339.0 (2026-09-22 18:14 UTC)
 * APIGateway (4.0.101.0)
 	* API Gateway now supports two new security policies for REST APIs and custom domain names, SecurityPolicy-TLS13-1-2-Ext2-PQ-2025-09 (TLS 1.3 1.2 with post-quantum cryptography) and SecurityPolicy-TLS13-1-2-Ext2-FIPS-PQ-2025-09 (adds FIPS). Both retain legacy algorithms for backward compatibility.

@@ -32,7 +32,7 @@ namespace Amazon.ChimeSDKMediaPipelines
     public partial class AmazonChimeSDKMediaPipelinesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Chime SDK Media Pipelines", "4.0.100.14");
+            InternalSDKUtils.BuildUserAgentString("Chime SDK Media Pipelines", "4.0.100.15");
 
         private static readonly AmazonChimeSDKMediaPipelinesEndpointResolver EndpointResolver =
             new AmazonChimeSDKMediaPipelinesEndpointResolver();
