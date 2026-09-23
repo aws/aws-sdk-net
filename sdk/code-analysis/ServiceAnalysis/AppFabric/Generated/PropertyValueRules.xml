@@ -4,19 +4,19 @@
     <property>Amazon.AppFabric.Model.BatchGetUserAccessTasksRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ConnectAppAuthorizationRequest.AppAuthorizationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ConnectAppAuthorizationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateAppAuthorizationRequest.App</property>
@@ -27,21 +27,21 @@
     <property>Amazon.AppFabric.Model.CreateAppAuthorizationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateAppAuthorizationRequest.ClientToken</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateAppBundleRequest.ClientToken</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateAppBundleRequest.CustomerManagedKeyIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateIngestionRequest.App</property>
@@ -52,11 +52,11 @@
     <property>Amazon.AppFabric.Model.CreateIngestionRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateIngestionRequest.ClientToken</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateIngestionRequest.TenantId</property>
@@ -67,119 +67,119 @@
     <property>Amazon.AppFabric.Model.CreateIngestionDestinationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateIngestionDestinationRequest.ClientToken</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.CreateIngestionDestinationRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteAppAuthorizationRequest.AppAuthorizationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteAppAuthorizationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteAppBundleRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteIngestionRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteIngestionRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteIngestionDestinationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteIngestionDestinationRequest.IngestionDestinationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.DeleteIngestionDestinationRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetAppAuthorizationRequest.AppAuthorizationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetAppAuthorizationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetAppBundleRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetIngestionRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetIngestionRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetIngestionDestinationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetIngestionDestinationRequest.IngestionDestinationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.GetIngestionDestinationRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ListAppAuthorizationsRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ListAppAuthorizationsRequest.MaxResults</property>
@@ -215,13 +215,13 @@
     <property>Amazon.AppFabric.Model.ListIngestionDestinationsRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ListIngestionDestinationsRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ListIngestionDestinationsRequest.MaxResults</property>
@@ -232,7 +232,7 @@
     <property>Amazon.AppFabric.Model.ListIngestionsRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ListIngestionsRequest.MaxResults</property>
@@ -243,85 +243,84 @@
     <property>Amazon.AppFabric.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.StartIngestionRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.StartIngestionRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.StartUserAccessTasksRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.StartUserAccessTasksRequest.Email</property>
-    <min>0</min>
     <max>320</max>
-    <pattern>[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*</pattern>
+    <pattern>^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.StopIngestionRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.StopIngestionRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UpdateAppAuthorizationRequest.AppAuthorizationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UpdateAppAuthorizationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UpdateIngestionDestinationRequest.AppBundleIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UpdateIngestionDestinationRequest.IngestionDestinationIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UpdateIngestionDestinationRequest.IngestionIdentifier</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^arn:.+$|^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.ApiKeyCredential.ApiKey</property>
@@ -337,13 +336,13 @@
     <property>Amazon.AppFabric.Model.AppAuthorization.AppAuthorizationArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AppAuthorization.AppBundleArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AppAuthorizationSummary.App</property>
@@ -354,31 +353,31 @@
     <property>Amazon.AppFabric.Model.AppAuthorizationSummary.AppAuthorizationArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AppAuthorizationSummary.AppBundleArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AppBundle.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AppBundle.CustomerManagedKeyArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AppBundleSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AuthRequest.Code</property>
@@ -387,9 +386,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.AuthRequest.RedirectUri</property>
-    <min>0</min>
     <max>1024</max>
-    <pattern>https://[-a-zA-Z0-9-._~:/?#@!$&amp;'()*+,;=]+</pattern>
+    <pattern>^https://[-a-zA-Z0-9-._~:/?#@!$&amp;'()*+,;=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.FirehoseStream.StreamName</property>
@@ -405,13 +403,13 @@
     <property>Amazon.AppFabric.Model.Ingestion.AppBundleArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.Ingestion.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.Ingestion.TenantId</property>
@@ -422,19 +420,19 @@
     <property>Amazon.AppFabric.Model.IngestionDestination.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.IngestionDestination.IngestionArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.IngestionDestinationSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.IngestionSummary.App</property>
@@ -445,7 +443,7 @@
     <property>Amazon.AppFabric.Model.IngestionSummary.Arn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:.+</pattern>
+    <pattern>^arn:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.IngestionSummary.TenantId</property>
@@ -499,13 +497,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UserAccessResultItem.Email</property>
-    <min>0</min>
     <max>320</max>
-    <pattern>[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*</pattern>
+    <pattern>^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UserAccessResultItem.TaskId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UserAccessResultItem.TenantDisplayName</property>
@@ -544,7 +541,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UserAccessTaskItem.TaskId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppFabric.Model.UserAccessTaskItem.TenantId</property>

@@ -1,0 +1,188 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CodeStarNotifications.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateNotificationRule operation. Creates a notification
+    /// rule for a resource. The rule specifies the events you want notifications about and
+    /// the targets (such as Amazon Q Developer in chat applications topics or Amazon Q Developer
+    /// in chat applications clients configured for Slack) where you want to receive them.
+    /// </summary>
+    public partial class CreateNotificationRuleRequest : AmazonCodeStarNotificationsRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientRequestToken. 
+        /// <para>
+        /// A unique, client-generated idempotency token that, when provided in a request, ensures
+        /// the request cannot be repeated with a changed parameter. If a request with the same
+        /// parameters is received and a token is included, the request returns information about
+        /// the initial request that used that token.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Amazon Web Services SDKs prepopulate client request tokens. If you are using an
+        /// Amazon Web Services SDK, an idempotency token is created for you.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string ClientRequestToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientRequestToken property is set.
+        /// </summary>
+        internal bool IsSetClientRequestToken() => this.ClientRequestToken != null;
+
+        /// <summary>
+        /// Gets and sets the property DetailType. 
+        /// <para>
+        /// The level of detail to include in the notifications for this resource. <c>BASIC</c>
+        /// will include only the contents of the event as it would appear in Amazon CloudWatch.
+        /// <c>FULL</c> will include any supplemental information provided by CodeStar Notifications
+        /// and/or the service for the resource for which the notification is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DetailType DetailType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DetailType property is set.
+        /// </summary>
+        internal bool IsSetDetailType() => this.DetailType != null;
+
+        /// <summary>
+        /// Gets and sets the property EventTypeIds. 
+        /// <para>
+        /// A list of event types associated with this notification rule. For a list of allowed
+        /// events, see <a>EventTypeSummary</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public List<string> EventTypeIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the EventTypeIds property is set.
+        /// </summary>
+        internal bool IsSetEventTypeIds() => this.EventTypeIds != null && (this.EventTypeIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name for the notification rule. Notification rule names must be unique in your
+        /// Amazon Web Services account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 64)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource to associate with the notification
+        /// rule. Supported resources include pipelines in CodePipeline, repositories in CodeCommit,
+        /// and build projects in CodeBuild.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string Resource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Resource property is set.
+        /// </summary>
+        internal bool IsSetResource() => this.Resource != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the notification rule. The default value is <c>ENABLED</c>. If the status
+        /// is set to <c>DISABLED</c>, notifications aren't sent for the notification rule.
+        /// </para>
+        /// </summary>
+        public NotificationRuleStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags to apply to this notification rule. Key names cannot start with "<c>aws</c>".
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Targets. 
+        /// <para>
+        /// A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics
+        /// and Amazon Q Developer in chat applications clients to associate with the notification
+        /// rule.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 10)]
+        public List<Target> Targets { get; set; } = AWSConfigs.InitializeCollections ? new List<Target>() : null;
+
+        /// <summary>
+        /// Checks to see if the Targets property is set.
+        /// </summary>
+        internal bool IsSetTargets() => this.Targets != null && (this.Targets.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

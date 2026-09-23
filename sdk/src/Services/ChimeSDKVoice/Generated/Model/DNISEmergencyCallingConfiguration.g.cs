@@ -1,0 +1,80 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ChimeSDKVoice.Model
+{
+    /// <summary>
+    /// The Dialed Number Identification Service (DNIS) emergency calling configuration details
+    /// associated with an Amazon Chime SDK Voice Connector's emergency calling configuration.
+    /// </summary>
+    public partial class DNISEmergencyCallingConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property CallingCountry. 
+        /// <para>
+        /// The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string CallingCountry { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CallingCountry property is set.
+        /// </summary>
+        internal bool IsSetCallingCountry() => this.CallingCountry != null;
+
+        /// <summary>
+        /// Gets and sets the property EmergencyPhoneNumber. 
+        /// <para>
+        /// The DNIS phone number that you route emergency calls to, in E.164 format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true)]
+        public string EmergencyPhoneNumber { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EmergencyPhoneNumber property is set.
+        /// </summary>
+        internal bool IsSetEmergencyPhoneNumber() => this.EmergencyPhoneNumber != null;
+
+        /// <summary>
+        /// Gets and sets the property TestPhoneNumber. 
+        /// <para>
+        /// The DNIS phone number for routing test emergency calls to, in E.164 format.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string TestPhoneNumber { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TestPhoneNumber property is set.
+        /// </summary>
+        internal bool IsSetTestPhoneNumber() => this.TestPhoneNumber != null;
+    }
+}

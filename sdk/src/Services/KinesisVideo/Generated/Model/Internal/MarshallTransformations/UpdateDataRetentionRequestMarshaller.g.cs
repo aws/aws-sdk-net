@@ -1,0 +1,115 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.KinesisVideo.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateDataRetention Request Marshaller
+    /// </summary>
+    public partial class UpdateDataRetentionRequestMarshaller : IMarshaller<IRequest, UpdateDataRetentionRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateDataRetentionRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateDataRetentionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.KinesisVideo");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-09-30";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/updateDataRetention";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCurrentVersion())
+            {
+                context.Writer.WritePropertyName("CurrentVersion");
+                context.Writer.WriteStringValue(publicRequest.CurrentVersion);
+            }
+            if (publicRequest.IsSetDataRetentionChangeInHours())
+            {
+                context.Writer.WritePropertyName("DataRetentionChangeInHours");
+                context.Writer.WriteNumberValue(publicRequest.DataRetentionChangeInHours.Value);
+            }
+            if (publicRequest.IsSetOperation())
+            {
+                context.Writer.WritePropertyName("Operation");
+                context.Writer.WriteStringValue(publicRequest.Operation);
+            }
+            if (publicRequest.IsSetStreamARN())
+            {
+                context.Writer.WritePropertyName("StreamARN");
+                context.Writer.WriteStringValue(publicRequest.StreamARN);
+            }
+            if (publicRequest.IsSetStreamName())
+            {
+                context.Writer.WritePropertyName("StreamName");
+                context.Writer.WriteStringValue(publicRequest.StreamName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly UpdateDataRetentionRequestMarshaller _instance = new();
+
+        internal static UpdateDataRetentionRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateDataRetentionRequestMarshaller Instance => _instance;
+    }
+}

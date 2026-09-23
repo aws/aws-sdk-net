@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.AssociatePhoneNumbersWithVoiceConnectorRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.AssociatePhoneNumbersWithVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
@@ -23,13 +23,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateProxySessionRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateSipMediaApplicationRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateSipMediaApplicationCallRequest.FromPhoneNumber</property>
@@ -47,7 +47,7 @@
     <property>Amazon.ChimeSDKVoice.Model.CreateSipRuleRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateSipRuleRequest.TriggerValue</property>
@@ -57,13 +57,13 @@
     <property>Amazon.ChimeSDKVoice.Model.CreateVoiceConnectorRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateVoiceConnectorGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CreateVoiceProfileRequest.SpeakerSearchTaskId</property>
@@ -84,7 +84,7 @@
     <property>Amazon.ChimeSDKVoice.Model.CreateVoiceProfileDomainRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeletePhoneNumberRequest.PhoneNumberId</property>
@@ -98,7 +98,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteProxySessionRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteSipMediaApplicationRequest.SipMediaApplicationId</property>
@@ -110,15 +110,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorExternalSystemsConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
@@ -126,23 +126,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorOriginationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorProxyRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorStreamingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorTerminationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DeleteVoiceProfileRequest.VoiceProfileId</property>
@@ -158,7 +158,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DisassociatePhoneNumbersFromVoiceConnectorRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DisassociatePhoneNumbersFromVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
@@ -170,7 +170,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetPhoneNumberOrderRequest.PhoneNumberOrderId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetPhoneNumberSettingsResponse.CallingName</property>
@@ -184,7 +184,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetProxySessionRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetSipMediaApplicationRequest.SipMediaApplicationId</property>
@@ -210,19 +210,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetSpeakerSearchTaskRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorExternalSystemsConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
@@ -230,27 +230,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorLoggingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorOriginationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorProxyRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorStreamingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorTerminationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceConnectorTerminationHealthRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceProfileRequest.VoiceProfileId</property>
@@ -266,7 +266,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceToneAnalysisTaskRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.GetVoiceToneAnalysisTaskRequest.VoiceToneAnalysisTaskId</property>
@@ -281,6 +281,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListPhoneNumberOrdersRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -295,14 +296,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListProxySessionsRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListProxySessionsRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListProxySessionsResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -312,10 +315,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListSipMediaApplicationsRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListSipMediaApplicationsResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -325,6 +330,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListSipRulesRequest.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -333,6 +339,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListSipRulesResponse.NextToken</property>
+    <min>0</min>
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
@@ -346,13 +353,13 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.ListVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListVoiceConnectorsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ChimeSDKVoice.Model.ListVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ListVoiceProfileDomainsRequest.MaxResults</property>
@@ -380,19 +387,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorEmergencyCallingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorExternalSystemsConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorLoggingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorOriginationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorProxyRequest.FallBackPhoneNumber</property>
@@ -400,19 +407,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorProxyRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorStreamingConfigurationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorTerminationRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PutVoiceConnectorTerminationCredentialsRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.RestorePhoneNumberRequest.PhoneNumberId</property>
@@ -420,7 +427,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SearchAvailablePhoneNumbersRequest.Country</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SearchAvailablePhoneNumbersRequest.MaxResults</property>
@@ -445,7 +452,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StartSpeakerSearchTaskRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StartSpeakerSearchTaskRequest.VoiceProfileDomainId</property>
@@ -465,7 +472,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StartVoiceToneAnalysisTaskRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StopSpeakerSearchTaskRequest.SpeakerSearchTaskId</property>
@@ -475,11 +482,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StopSpeakerSearchTaskRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StopVoiceToneAnalysisTaskRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.StopVoiceToneAnalysisTaskRequest.VoiceToneAnalysisTaskId</property>
@@ -526,13 +533,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateProxySessionRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipMediaApplicationRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipMediaApplicationRequest.SipMediaApplicationId</property>
@@ -550,7 +557,7 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipRuleRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateSipRuleRequest.SipRuleId</property>
@@ -560,17 +567,17 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorRequest.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorGroupRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceConnectorGroupRequest.VoiceConnectorGroupId</property>
@@ -597,7 +604,7 @@
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileDomainRequest.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.UpdateVoiceProfileDomainRequest.VoiceProfileDomainId</property>
@@ -647,15 +654,15 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ChimeSDKVoice.Model.Address.PostDirectional</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.Address.PostalCode</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.Address.PostalCodePlus4</property>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ChimeSDKVoice.Model.Address.PostDirectional</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -686,7 +693,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CallDetails.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.CandidateAddress.City</property>
@@ -718,7 +725,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DNISEmergencyCallingConfiguration.CallingCountry</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.DNISEmergencyCallingConfiguration.EmergencyPhoneNumber</property>
@@ -774,7 +781,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumber.Country</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumber.E164PhoneNumber</property>
@@ -787,7 +794,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumber.OrderId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumber.PhoneNumberArn</property>
@@ -799,7 +806,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumberCountry.CountryCode</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumberError.PhoneNumberId</property>
@@ -807,7 +814,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.PhoneNumberOrder.PhoneNumberOrderId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.Proxy.FallBackPhoneNumber</property>
@@ -819,6 +826,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ProxySession.Name</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -829,7 +837,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ProxySession.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.ServerSideEncryptionConfiguration.KmsKeyArn</property>
@@ -840,7 +848,7 @@
     <property>Amazon.ChimeSDKVoice.Model.SipMediaApplication.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipMediaApplication.SipMediaApplicationArn</property>
@@ -852,18 +860,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipMediaApplicationCall.TransactionId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipMediaApplicationEndpoint.LambdaArn</property>
+    <min>0</min>
     <max>10000</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipRule.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.SipRule.SipRuleId</property>
@@ -947,7 +956,7 @@
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnector.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnector.VoiceConnectorArn</property>
@@ -955,13 +964,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnector.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorGroup.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorGroup.VoiceConnectorGroupArn</property>
@@ -978,13 +987,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorItem.VoiceConnectorId</property>
-    <pattern>([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+    <pattern>^([a-z0-9]{21,22}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceConnectorSettings.CdrBucket</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$</pattern>
+    <pattern>^(?!(^xn--|.+-s3alias$))^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceProfile.VoiceProfileArn</property>
@@ -1012,7 +1021,7 @@
     <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomain.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomain.VoiceProfileDomainArn</property>
@@ -1034,7 +1043,7 @@
     <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomainSummary.Name</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9 _.-]+</pattern>
+    <pattern>^[a-zA-Z0-9 _.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ChimeSDKVoice.Model.VoiceProfileDomainSummary.VoiceProfileDomainArn</property>

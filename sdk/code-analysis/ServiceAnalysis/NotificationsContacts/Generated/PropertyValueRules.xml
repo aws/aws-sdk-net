@@ -2,19 +2,19 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.ActivateEmailContactRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.ActivateEmailContactRequest.Code</property>
     <min>7</min>
     <max>7</max>
-    <pattern>[a-z0-9]{7}</pattern>
+    <pattern>^[a-z0-9]{7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.CreateEmailContactRequest.EmailAddress</property>
     <min>6</min>
     <max>254</max>
-    <pattern>(.+)@(.+)</pattern>
+    <pattern>^(.+)@(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.CreateEmailContactRequest.Name</property>
@@ -24,15 +24,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.CreateEmailContactResponse.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.DeleteEmailContactRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.GetEmailContactRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.ListEmailContactsRequest.MaxResults</property>
@@ -41,29 +41,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.ListTagsForResourceRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.SendActivationCodeRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.TagResourceRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.UntagResourceRequest.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.EmailContact.Address</property>
     <min>6</min>
     <max>254</max>
-    <pattern>(.+)@(.+)</pattern>
+    <pattern>^(.+)@(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.EmailContact.Arn</property>
-    <pattern>arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}</pattern>
+    <pattern>^arn:aws:notifications-contacts::[0-9]{12}:emailcontact/[a-z0-9]{27}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NotificationsContacts.Model.EmailContact.Name</property>

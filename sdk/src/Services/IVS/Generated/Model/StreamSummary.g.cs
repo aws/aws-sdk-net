@@ -1,0 +1,122 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IVS.Model
+{
+    /// <summary>
+    /// Summary information about a stream.
+    /// </summary>
+    public partial class StreamSummary
+    {
+        /// <summary>
+        /// Gets and sets the property ChannelArn. 
+        /// <para>
+        /// Channel ARN for the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string ChannelArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ChannelArn property is set.
+        /// </summary>
+        internal bool IsSetChannelArn() => this.ChannelArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Health. 
+        /// <para>
+        /// The stream’s health.
+        /// </para>
+        /// </summary>
+        public StreamHealth Health { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Health property is set.
+        /// </summary>
+        internal bool IsSetHealth() => this.Health != null;
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this is returned
+        /// as a string</i>. 
+        /// </para>
+        /// </summary>
+        public DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartTime property is set.
+        /// </summary>
+        internal bool IsSetStartTime() => this.StartTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The stream’s state. Do not rely on the <c>OFFLINE</c> state, as the API may not return
+        /// it; instead, a "NotBroadcasting" error will indicate that the stream is not live.
+        /// </para>
+        /// </summary>
+        public StreamState State { get; set; }
+
+        /// <summary>
+        /// Checks to see if the State property is set.
+        /// </summary>
+        internal bool IsSetState() => this.State != null;
+
+        /// <summary>
+        /// Gets and sets the property StreamId. 
+        /// <para>
+        /// Unique identifier for a live or previously live stream in the specified channel.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 26, Max = 26)]
+        public string StreamId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StreamId property is set.
+        /// </summary>
+        internal bool IsSetStreamId() => this.StreamId != null;
+
+        /// <summary>
+        /// Gets and sets the property ViewerCount. 
+        /// <para>
+        /// A count of concurrent views of the stream. Typically, a new view appears in <c>viewerCount</c>
+        /// within 15 seconds of when video playback starts and a view is removed from <c>viewerCount</c>
+        /// within 1 minute of when video playback ends. A value of -1 indicates that the request
+        /// timed out; in this case, retry.
+        /// </para>
+        /// </summary>
+        public long? ViewerCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ViewerCount property is set.
+        /// </summary>
+        internal bool IsSetViewerCount() => this.ViewerCount.HasValue;
+    }
+}

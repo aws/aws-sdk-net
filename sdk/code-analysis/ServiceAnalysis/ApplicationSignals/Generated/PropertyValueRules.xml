@@ -9,17 +9,17 @@
     <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationRequest.Environment</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+    <pattern>^[A-Za-z0-9:/+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationRequest.Service</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+    <pattern>^[A-Za-z0-9:/+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationResponse.ARN</property>
-    <pattern>arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}</pattern>
+    <pattern>^arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationResponse.Environment</property>
@@ -43,7 +43,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CreateServiceLevelObjectiveRequest.Name</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.DeleteInstrumentationConfigurationRequest.Environment</property>
@@ -57,7 +57,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.DeleteServiceLevelObjectiveRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationRequest.Environment</property>
@@ -96,7 +96,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.GetServiceLevelObjectiveRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListAuditFindingsRequest.MaxResults</property>
@@ -110,13 +110,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListGroupingAttributeDefinitionsRequest.AwsAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsRequest.Environment</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+    <pattern>^[A-Za-z0-9:/+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsRequest.MaxResults</property>
@@ -127,7 +127,7 @@
     <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsRequest.Service</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+    <pattern>^[A-Za-z0-9:/+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsResponse.Environment</property>
@@ -155,7 +155,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectiveExclusionWindowsRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectiveExclusionWindowsRequest.MaxResults</property>
@@ -174,7 +174,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceLevelObjectivesRequest.SloOwnerAwsAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceOperationsRequest.MaxResults</property>
@@ -182,21 +182,21 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListServiceStatesRequest.AwsAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListServiceStatesRequest.MaxResults</property>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServicesRequest.AwsAccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServicesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationSignals.Model.ListServiceStatesRequest.AwsAccountId</property>
-    <pattern>[0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.ApplicationSignals.Model.ListServiceStatesRequest.MaxResults</property>
-    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -240,32 +240,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.UpdateServiceLevelObjectiveRequest.Id</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.AttributeFilter.AttributeFilterName</property>
-    <pattern>[A-Za-z0-9 :/-]+</pattern>
+    <pattern>^[A-Za-z0-9 :/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.AuditorResult.Description</property>
-    <min>0</min>
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BatchDeleteScope.Environment</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+    <pattern>^[A-Za-z0-9:/+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BatchDeleteScope.Service</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+    <pattern>^[A-Za-z0-9:/+=,.@_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BatchUpdateExclusionWindowsError.SloId</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BurnRateConfiguration.LookBackWindowMinutes</property>
@@ -318,7 +317,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ChangeEvent.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CodeLocation.ClassName</property>
@@ -373,17 +372,17 @@
     <property>Amazon.ApplicationSignals.Model.GroupingAttributeDefinition.DefaultGroupingValue</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\s+\-=\._:/@]*</pattern>
+    <pattern>^[a-zA-Z0-9\s+\-=\._:/@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.GroupingAttributeDefinition.GroupingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\s+\-=\._:/@]*</pattern>
+    <pattern>^[a-zA-Z0-9\s+\-=\._:/@]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.ARN</property>
-    <pattern>arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}</pattern>
+    <pattern>^arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.Description</property>
@@ -412,7 +411,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.InstrumentationConfigurationWithoutServiceEnv.ARN</property>
-    <pattern>arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}</pattern>
+    <pattern>^arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.InstrumentationConfigurationWithoutServiceEnv.Description</property>
@@ -461,7 +460,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.MetricReference.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.MetricReference.MetricName</property>
@@ -470,7 +469,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.MetricReference.MetricType</property>
-    <pattern>[A-Za-z0-9 -]+</pattern>
+    <pattern>^[A-Za-z0-9 -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.MetricReference.Namespace</property>
@@ -508,7 +507,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.SelectionConfig.Pattern</property>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceDependency.DependencyOperationName</property>
@@ -574,13 +573,13 @@
     <property>Amazon.ApplicationSignals.Model.ServiceLevelIndicatorMetricConfig.Statistic</property>
     <min>1</min>
     <max>20</max>
-    <pattern>[a-zA-Z0-9.]+</pattern>
+    <pattern>^[a-zA-Z0-9.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjective.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjective.Description</property>
@@ -589,37 +588,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjective.Name</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReport.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReport.Name</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReportError.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveBudgetReportError.Name</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveSummary.Arn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveSummary.Name</property>
-    <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+    <pattern>^[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ServiceLevelObjectiveSummary.OperationName</property>

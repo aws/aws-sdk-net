@@ -24,7 +24,7 @@
     <property>Amazon.XRay.Model.DeleteResourcePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetGroupRequest.GroupARN</property>
@@ -43,11 +43,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightRequest.InsightId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightEventsRequest.InsightId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightEventsRequest.MaxResults</property>
@@ -66,7 +66,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightImpactGraphRequest.InsightId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightImpactGraphRequest.NextToken</property>
@@ -75,7 +75,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightImpactGraphResponse.InsightId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.GetInsightImpactGraphResponse.NextToken</property>
@@ -166,18 +166,21 @@
     <property>Amazon.XRay.Model.PutResourcePolicyRequest.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.PutTelemetryRecordsRequest.EC2InstanceId</property>
+    <min>0</min>
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.PutTelemetryRecordsRequest.Hostname</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.PutTelemetryRecordsRequest.ResourceARN</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -222,7 +225,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.Insight.InsightId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.InsightSummary.GroupARN</property>
@@ -236,7 +239,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.InsightSummary.InsightId</property>
-    <pattern>[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.ResourceNotFoundException.ResourceName</property>
@@ -247,7 +250,7 @@
     <property>Amazon.XRay.Model.ResourcePolicy.PolicyName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\w+=,.@-]+</pattern>
+    <pattern>^[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.RetrievedTrace.Id</property>
@@ -269,6 +272,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingBoostStatisticsDocument.ServiceName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -290,12 +294,14 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.XRay.Model.SamplingRule.Host</property>
-    <max>64</max>
+    <property>Amazon.XRay.Model.SamplingRule.HTTPMethod</property>
+    <min>0</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.XRay.Model.SamplingRule.HTTPMethod</property>
-    <max>10</max>
+    <property>Amazon.XRay.Model.SamplingRule.Host</property>
+    <min>0</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.Priority</property>
@@ -308,6 +314,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.ResourceARN</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -317,14 +324,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.ServiceName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.ServiceType</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRule.URLPath</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -332,15 +342,18 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.XRay.Model.SamplingRuleUpdate.Host</property>
-    <max>64</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRuleUpdate.HTTPMethod</property>
+    <min>0</min>
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.XRay.Model.SamplingRuleUpdate.Host</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRuleUpdate.ResourceARN</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -350,14 +363,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRuleUpdate.ServiceName</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRuleUpdate.ServiceType</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.SamplingRuleUpdate.URLPath</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -388,6 +404,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.XRay.Model.Span.Document</property>
+    <min>0</min>
     <max>204800</max>
   </property-value-rule>
   <property-value-rule>
