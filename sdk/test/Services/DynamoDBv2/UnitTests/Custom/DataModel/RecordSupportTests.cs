@@ -247,6 +247,27 @@ namespace AWSSDK_DotNet.UnitTests
             public string Name { get; set; }
         }
 
+        // Complex user value type (a record struct with no built-in converter). Stored as a nested
+        // document whose attributes are the struct's members.
+        public readonly record struct GeoPoint(double Latitude, double Longitude);
+
+        // Entity with a NULLABLE complex-struct member. A Nullable<T> member must store and load with
+        // T's shape (a non-null Nullable<T> boxes as T), not Nullable<T>'s own get-only "Value" wrapper.
+        public class NullableStructMemberEntity
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public GeoPoint? Location { get; set; }
+        }
+
+        // Same member, non-nullable: the stored shape the nullable member must match.
+        public class StructMemberEntity
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public GeoPoint Location { get; set; }
+        }
+
         private DynamoDBContext CreateContext()
         {
             var mockClient = new Mock<IAmazonDynamoDB>();
@@ -2121,6 +2142,52 @@ namespace AWSSDK_DotNet.UnitTests
                 context.ToDocument(new ImmutableMismatchedStruct(9.5m, "USD")));
 
             StringAssert.Contains(ex.Message, "a public field that is not readonly");
+        }
+
+        [TestMethod]
+        public void NullableComplexStructMember_StoresWithUnderlyingTypeShape()
+        {
+            var context = CreateContext();
+            var original = new NullableStructMemberEntity
+            {
+                Id = "id-ncs",
+                Location = new GeoPoint(47.6062, -122.3321)
+            };
+
+            var document = context.ToDocument(original);
+
+            // The member must serialize like a non-nullable GeoPoint: a nested document whose attributes
+            // are the struct's members, NOT a Nullable<T> wrapper ({"Location":{"Value":{...}}}).
+            var location = document["Location"].AsDocument();
+            Assert.IsTrue(location.ContainsKey("Latitude"));
+            Assert.IsTrue(location.ContainsKey("Longitude"));
+            Assert.IsFalse(location.ContainsKey("Value"),
+                "A nullable complex-struct member must not be modeled through Nullable<T>'s get-only Value property.");
+
+            var result = context.FromDocument<NullableStructMemberEntity>(document);
+
+            Assert.AreEqual("id-ncs", result.Id);
+            Assert.AreEqual(original.Location, result.Location);
+        }
+
+        [TestMethod]
+        public void NullableComplexStructMember_ReadsItemStoredAsNonNullable()
+        {
+            var context = CreateContext();
+
+            // An item written with the (correct) non-nullable shape — the shape any other representation
+            // or an older item uses — must load into the nullable-member type without data loss.
+            var storedShape = context.ToDocument(new StructMemberEntity
+            {
+                Id = "id-cross",
+                Location = new GeoPoint(47.6062, -122.3321)
+            });
+
+            var result = context.FromDocument<NullableStructMemberEntity>(storedShape);
+
+            Assert.AreEqual("id-cross", result.Id);
+            Assert.IsNotNull(result.Location);
+            Assert.AreEqual(new GeoPoint(47.6062, -122.3321), result.Location);
         }
 
         #endregion

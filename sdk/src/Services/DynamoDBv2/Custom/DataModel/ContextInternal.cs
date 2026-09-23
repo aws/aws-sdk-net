@@ -698,9 +698,11 @@ namespace Amazon.DynamoDBv2.DataModel
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
                     if (propertyStorage.IsFlattened) continue;
+#if NET8_0_OR_GREATER
                     // Members whose values were supplied through the binding constructor are already set;
                     // do not attempt to overwrite them (they may be init-only or get-only).
                     if (propertyStorage.IsConstructorArgument) continue;
+#endif
                     string attributeName = propertyStorage.AttributeName;
                     if (propertyStorage.ShouldFlattenChildProperties)
                     {
@@ -1235,6 +1237,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         private object DeserializeFromDocument(Document document, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBFlatConfig flatConfig)
         {
+            // Symmetric to SerializeToDocument: read a Nullable<T> member as T. The DynamoDBNull case is
+            // already handled by the caller, so a document here always maps to a non-null T that assigns
+            // back to the T? member.
+            targetType = Nullable.GetUnderlyingType(targetType) ?? targetType;
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(targetType, flatConfig, conversionOnly: true);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = document;
@@ -1248,6 +1254,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, string typeDiscriminator)
         {
+            // A Nullable<T> member stores with T's shape: a non-null Nullable<T> boxes as T. Model against
+            // T so a nullable member serializes identically to a non-nullable T member (and older builds),
+            // instead of Nullable<T>'s own get-only Value wrapper.
+            type = Nullable.GetUnderlyingType(type) ?? type;
             ItemStorageConfig config = StorageConfigCache.GetConfig(type, flatConfig, conversionOnly: true);
             var itemStorage = ObjectToItemStorageHelper(value, config, flatConfig, keysOnly: false, ignoreNullValues: flatConfig.IgnoreNullValues.Value);
             var doc = itemStorage.Document;
@@ -1819,7 +1829,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        #endregion
+#endregion
 
         #region Scan/Query
 
