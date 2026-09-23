@@ -1,0 +1,187 @@
+{
+  "services": [
+    {
+      "serviceName": "AppFabric",
+      "type": "patch",
+      "changeLogMessages": [
+        "AppFabric is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "AppRegistry",
+      "type": "patch",
+      "changeLogMessages": [
+        "AppRegistry is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ApplicationCostProfiler",
+      "type": "patch",
+      "changeLogMessages": [
+        "ApplicationCostProfiler is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ApplicationSignals",
+      "type": "patch",
+      "changeLogMessages": [
+        "ApplicationSignals is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Chatbot",
+      "type": "patch",
+      "changeLogMessages": [
+        "Chatbot is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Chime",
+      "type": "patch",
+      "changeLogMessages": [
+        "Chime is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ChimeSDKIdentity",
+      "type": "patch",
+      "changeLogMessages": [
+        "ChimeSDKIdentity is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ChimeSDKMediaPipelines",
+      "type": "patch",
+      "changeLogMessages": [
+        "ChimeSDKMediaPipelines is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ChimeSDKMeetings",
+      "type": "patch",
+      "changeLogMessages": [
+        "ChimeSDKMeetings is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ChimeSDKMessaging",
+      "type": "patch",
+      "changeLogMessages": [
+        "ChimeSDKMessaging is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ChimeSDKVoice",
+      "type": "patch",
+      "changeLogMessages": [
+        "ChimeSDKVoice is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception classes now expose the Code property, which was missing from the previous model."
+      ]
+    },
+    {
+      "serviceName": "CloudFrontKeyValueStore",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudFrontKeyValueStore is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CodeStarNotifications",
+      "type": "patch",
+      "changeLogMessages": [
+        "CodeStarNotifications is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "IVS",
+      "type": "patch",
+      "changeLogMessages": [
+        "IVS is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "IVSRealTime",
+      "type": "patch",
+      "changeLogMessages": [
+        "IVSRealTime is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "KinesisVideo",
+      "type": "patch",
+      "changeLogMessages": [
+        "KinesisVideo is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "KinesisVideoSignalingChannels",
+      "type": "patch",
+      "changeLogMessages": [
+        "KinesisVideoSignalingChannels is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "LexModelBuildingService",
+      "type": "patch",
+      "changeLogMessages": [
+        "LexModelBuildingService is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "Macie2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Macie2 is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Neptunedata",
+      "type": "patch",
+      "changeLogMessages": [
+        "Neptunedata is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "NotificationsContacts",
+      "type": "patch",
+      "changeLogMessages": [
+        "NotificationsContacts is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "OAM",
+      "type": "patch",
+      "changeLogMessages": [
+        "OAM is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ResilienceHub",
+      "type": "patch",
+      "changeLogMessages": [
+        "ResilienceHub is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SavingsPlans",
+      "type": "patch",
+      "changeLogMessages": [
+        "SavingsPlans is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "XRay",
+      "type": "patch",
+      "changeLogMessages": [
+        "XRay is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}

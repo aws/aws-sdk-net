@@ -71,7 +71,15 @@ namespace Amazon.S3.Internal
                 }
                 else
                 {
-                    // change authentication region of request and signal the handler to sign again with the new region
+                    if (executionContext.RequestContext.OriginalRequest is HeadBucketRequest)
+                    {
+                        if (RedirectToRegion(executionContext, correctedRegion))
+                        {
+                            return true;
+                        }
+                        return baseRetryForException(executionContext, exception);
+                    }
+
                     executionContext.RequestContext.Request.AuthenticationRegion = correctedRegion;
                     executionContext.RequestContext.IsSigned = false;
                     return true;
