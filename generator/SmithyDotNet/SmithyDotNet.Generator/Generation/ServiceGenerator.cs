@@ -189,10 +189,14 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
 
-        // Test services are never packaged, so they get no nuspec or NuGet readme.
-        if (!context.IsTestService && standalone is null)
+        // Test services are never packaged, so they get no nuspec or NuGet readme. The nuspec is
+        // repo-only; the standalone csproj packs the readme itself.
+        if (!context.IsTestService)
         {
-            Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+            if (standalone is null)
+            {
+                Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+            }
             // The NuGet README is the service documentation converted to Markdown, falling back to the
             // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
             // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
