@@ -378,6 +378,10 @@ namespace Amazon.ConnectHealth
         /// Constant EnUS for MedicalScribeLanguageCode
         /// </summary>
         public static readonly MedicalScribeLanguageCode EnUS = new MedicalScribeLanguageCode("en-US");
+        /// <summary>
+        /// Constant Multi for MedicalScribeLanguageCode
+        /// </summary>
+        public static readonly MedicalScribeLanguageCode Multi = new MedicalScribeLanguageCode("multi");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
