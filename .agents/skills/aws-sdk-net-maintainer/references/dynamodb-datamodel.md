@@ -387,7 +387,11 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   property path like `e => e.ShippingAddress.City`. It seeds `InheritedAttributeCasing` from the root
   `ItemStorageConfig.AttributeCasing` and updates it from each nested config as it descends (with
   save/restore), so a `CamelCase` root emits `shippingAddress.city`, matching what is stored. Without
-  this the expression would resolve the nested type's PascalCase base config and emit `City`.
+  this the expression would resolve the nested type's PascalCase base config and emit `City`. The
+  resolver also reports the casing that encloses the resolved property, and `SetExpressionValueNode`
+  seeds it (save/restore) before serializing a comparison **value**, so `e.ShippingAddress == someAddress`
+  serializes the nested value's Map keys as `street`/`city` too — otherwise the value would be written
+  PascalCase and never match the stored item.
 - **Immutable / constructor-bound members** (net8+): `InstantiateWithConstructor` binds stored values to
   a type's constructor parameters *before* `PopulateInstance` runs, so it seeds `InheritedAttributeCasing`
   from the root `ItemStorageConfig.AttributeCasing` (restored afterward) before deserializing each

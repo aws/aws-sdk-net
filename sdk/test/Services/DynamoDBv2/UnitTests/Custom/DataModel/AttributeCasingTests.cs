@@ -5,6 +5,7 @@ using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Linq;
 using System.Linq.Expressions;
 
 using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
@@ -410,6 +411,30 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("Seattle", restored.ShippingAddress.City);
         }
 #endif
+
+        [TestMethod]
+        public void CamelCase_FilterExpressionNestedObjectValue_SerializesWithInheritedCasing()
+        {
+            // Regression: the comparison VALUE of a nested-object filter (e.ShippingAddress == new Address{..})
+            // is serialized after the name path is resolved. It must serialize with the casing inherited from
+            // the property's enclosing type, otherwise the value's Map is written with PascalCase keys
+            // (Street/City) and never matches the stored camelCased item.
+            var context = CreateContext();
+
+            var target = new Address { Street = "Main", City = "Seattle" };
+            Expression<Func<OrderCamelCase, bool>> expr = e => e.ShippingAddress == target;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+
+            var result = context.ConvertScan<OrderCamelCase>(filterExpr, null);
+            var values = result.Search.FilterExpression.ExpressionAttributeValues;
+
+            // The single value is the nested Address serialized as a Map; its keys must be camelCased.
+            var addressMap = values.Values.Single().AsDocument();
+            Assert.IsTrue(addressMap.ContainsKey("street"), "nested value Map key should be camelCased");
+            Assert.IsTrue(addressMap.ContainsKey("city"));
+            Assert.IsFalse(addressMap.ContainsKey("Street"));
+        }
     }
 }
 

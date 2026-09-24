@@ -2692,7 +2692,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var collectionExpr = expr.Arguments[0] as MemberExpression;
                 if (collectionExpr != null)
                 {
-                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
+                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig, out _);
                 }
                 else
                 {
@@ -2720,7 +2720,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var collectionExpr = expr.Arguments[0] as MemberExpression;
                 if (collectionExpr != null)
                 {
-                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
+                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig, out _);
                 }
                 else
                 {
@@ -2741,7 +2741,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (expr.Object is MemberExpression memberObj && expr.Arguments[0] is NewArrayExpression arrayExpr)
             {
-                var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig);
+                var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig, out var valueInheritedCasing);
 
                 foreach (var arg in arrayExpr.Expressions)
                 {
@@ -2749,7 +2749,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     node.FormatedExpression += "#c, ";
 
-                    SetExpressionValueNode(constExpr, node, propertyStorage, flatConfig);
+                    SetExpressionValueNode(constExpr, node, propertyStorage, flatConfig, valueInheritedCasing);
                 }
             }
             else
@@ -2782,10 +2782,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (collectionExpr != null && constExprLeft != null && constExprRight != null)
                 {
-                    var propertyStorage = SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
+                    var propertyStorage = SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig, out var valueInheritedCasing);
 
-                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprLeft), node, propertyStorage, flatConfig);
-                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprRight), node, propertyStorage, flatConfig);
+                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprLeft), node, propertyStorage, flatConfig, valueInheritedCasing);
+                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprRight), node, propertyStorage, flatConfig, valueInheritedCasing);
                 }
             }
             else
@@ -2896,13 +2896,26 @@ namespace Amazon.DynamoDBv2.DataModel
         private void SetExpressionNodeAttributes(ItemStorageConfig storageConfig, Expression memberObj,
             object argConst, ExpressionNode node, DynamoDBFlatConfig flatConfig)
         {
-            var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig);
-            SetExpressionValueNode(argConst, node, propertyStorage, flatConfig);
+            var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig, out var valueInheritedCasing);
+            SetExpressionValueNode(argConst, node, propertyStorage, flatConfig, valueInheritedCasing);
         }
 
-        private void SetExpressionValueNode(object argConst, ExpressionNode node, PropertyStorage propertyStorage, DynamoDBFlatConfig flatConfig)
+        private void SetExpressionValueNode(object argConst, ExpressionNode node, PropertyStorage propertyStorage, DynamoDBFlatConfig flatConfig, CaseMode? valueInheritedCasing = null)
         {
-            DynamoDBEntry entry = ToDynamoDBEntry(propertyStorage, argConst, flatConfig, canReturnScalarInsteadOfList: true);
+            // When the comparison value is itself a nested object (e.g. e.ShippingAddress == new Address { ... }),
+            // it must serialize with the casing inherited from the property's enclosing type so the value's Map
+            // keys match what is stored. Seed and restore InheritedAttributeCasing around the conversion.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = valueInheritedCasing;
+            DynamoDBEntry entry;
+            try
+            {
+                entry = ToDynamoDBEntry(propertyStorage, argConst, flatConfig, canReturnScalarInsteadOfList: true);
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
             var valuesNode = new ExpressionNode()
             {
                 FormatedExpression = ExpressionFormatConstants.Value
@@ -2912,7 +2925,7 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         private PropertyStorage ResolveNestedPropertyStorage(StorageConfig rootConfig, CaseMode rootCasing, DynamoDBFlatConfig flatConfig,
-            List<PathNode> path, Queue<string> namesNodeNames, out string formattedExpression)
+            List<PathNode> path, Queue<string> namesNodeNames, out string formattedExpression, out CaseMode? valueInheritedCasing)
         {
             StorageConfig currentConfig = rootConfig;
             // Track the enclosing type's casing as we descend so an undecorated nested type resolves with
@@ -2920,6 +2933,10 @@ namespace Amazon.DynamoDBv2.DataModel
             // stored "city"). This mirrors PopulateItemStorage / PopulateInstance. flatConfig is shared,
             // so save and restore InheritedAttributeCasing.
             CaseMode currentCasing = rootCasing;
+            // Casing of the type that ENCLOSES the finally-resolved property. When the comparison value is
+            // itself a nested object (e.g. e.ShippingAddress == new Address { ... }), it must serialize with
+            // this enclosing type's inheritable casing so the value's Map keys match what is stored.
+            CaseMode resolvedEnclosingCasing = rootCasing;
             var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
             try
             {
@@ -2943,6 +2960,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 propertyStorage = currentConfig.GetPropertyStorage(pathNode.Path);
                 if (propertyStorage == null)
                     throw new InvalidOperationException($"Property '{pathNode.Path}' not found in storage config.");
+                // The property just resolved is enclosed by the current type, so its value inherits the
+                // current type's casing.
+                resolvedEnclosingCasing = currentCasing;
                 // If the property is ignored, throw an exception
                 if (propertyStorage.IsIgnored)
                 {
@@ -3003,6 +3023,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             formattedExpression = string.Join(".", formatTokens);
+            valueInheritedCasing = Utils.GetInheritableCasing(resolvedEnclosingCasing);
             return propertyStorage;
             }
             finally
@@ -3068,7 +3089,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return null;
         }
         private PropertyStorage SetExpressionNameNode(ItemStorageConfig storageConfig, Expression memberObj,
-            ExpressionNode node, DynamoDBFlatConfig flatConfig)
+            ExpressionNode node, DynamoDBFlatConfig flatConfig, out CaseMode? valueInheritedCasing)
         {
             var path = ContextExpressionsUtils.ExtractPathNodes(memberObj);
             if (path.Count == 0)
@@ -3081,7 +3102,7 @@ namespace Amazon.DynamoDBv2.DataModel
             // which collapse multiple path segments into a single top-level attribute, emit exactly
             // one '#n' placeholder per enqueued name.
             var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, storageConfig.AttributeCasing, flatConfig, path,
-                namesNode.Names, out var formattedExpression);
+                namesNode.Names, out var formattedExpression, out valueInheritedCasing);
             namesNode.FormatedExpression = formattedExpression;
             node.Children.Enqueue(namesNode);
 
