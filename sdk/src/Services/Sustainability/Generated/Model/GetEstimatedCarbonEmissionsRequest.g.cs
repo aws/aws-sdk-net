@@ -1,0 +1,172 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Sustainability.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetEstimatedCarbonEmissions operation. Returns
+    /// estimated carbon emission values based on customer grouping and filtering parameters.
+    /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+    /// </summary>
+    public partial class GetEstimatedCarbonEmissionsRequest : AmazonSustainabilityRequest
+    {
+        /// <summary>
+        /// Gets and sets the property EmissionsTypes. 
+        /// <para>
+        /// The emission types to include in the results. If absent, returns <c>TOTAL_LBM_CARBON_EMISSIONS</c>
+        /// and <c>TOTAL_MBM_CARBON_EMISSIONS</c> emissions types. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EmissionsTypes { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the EmissionsTypes property is set.
+        /// </summary>
+        internal bool IsSetEmissionsTypes() => this.EmissionsTypes != null && (this.EmissionsTypes.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FilterBy. 
+        /// <para>
+        ///  The criteria for filtering estimated carbon emissions. To determine which dimensions
+        /// are available to be filtered by, you can first call <a>GetEstimatedCarbonEmissionsDimensionValues</a>
+        /// 
+        /// </para>
+        /// </summary>
+        public FilterExpression FilterBy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FilterBy property is set.
+        /// </summary>
+        internal bool IsSetFilterBy() => this.FilterBy != null;
+
+        /// <summary>
+        /// Gets and sets the property Granularity. 
+        /// <para>
+        ///  The time granularity for the results. If absent, uses <c>MONTHLY</c> time granularity.
+        /// The smallest supported granularity for carbon emissions is <c>MONTHLY</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If requesting partial time periods, data will be returned based on the smallest supported
+        /// granularity. For example, requesting <c>2025-04-01T00:00:00Z</c> to <c>2026-04-01T00:00:00Z</c>
+        /// with <c>YEARLY_CALENDAR</c> granularity will return the last 9 months for 2025 and
+        /// the first 3 months of 2026. 
+        /// </para>
+        /// </summary>
+        public TimeGranularity Granularity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Granularity property is set.
+        /// </summary>
+        internal bool IsSetGranularity() => this.Granularity != null;
+
+        /// <summary>
+        /// Gets and sets the property GranularityConfiguration. 
+        /// <para>
+        /// Configuration for fiscal year calculations when using <c>YEARLY_FISCAL</c> or <c>QUARTERLY_FISCAL</c>
+        /// granularity. 
+        /// </para>
+        /// </summary>
+        public GranularityConfiguration GranularityConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GranularityConfiguration property is set.
+        /// </summary>
+        internal bool IsSetGranularityConfiguration() => this.GranularityConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property GroupBy. 
+        /// <para>
+        /// The dimensions available for grouping estimated carbon emissions.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> GroupBy { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the GroupBy property is set.
+        /// </summary>
+        internal bool IsSetGroupBy() => this.GroupBy != null && (this.GroupBy.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. Default is 1000.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5000)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The pagination token specifying which page of results to return in the response. If
+        /// no token is provided, the default page is the first page. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2000)]
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property TimePeriod. 
+        /// <para>
+        ///  The date range for fetching estimated carbon emissions. The range must include the
+        /// start date of a month for that month's data to be included in the response. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public TimePeriod TimePeriod { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TimePeriod property is set.
+        /// </summary>
+        internal bool IsSetTimePeriod() => this.TimePeriod != null;
+    }
+}

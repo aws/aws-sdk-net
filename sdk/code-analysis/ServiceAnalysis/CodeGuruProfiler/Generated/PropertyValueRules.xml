@@ -83,7 +83,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.GetPolicyResponse.RevisionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.GetProfileRequest.MaxDepth</property>
@@ -196,15 +196,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.PutPermissionRequest.RevisionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.PutPermissionResponse.RevisionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.RemoveNotificationChannelRequest.ChannelId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.RemoveNotificationChannelRequest.ProfilingGroupName</property>
@@ -220,15 +220,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.RemovePermissionRequest.RevisionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.RemovePermissionResponse.RevisionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.SubmitFeedbackRequest.AnomalyInstanceId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.SubmitFeedbackRequest.ProfilingGroupName</property>
@@ -244,11 +244,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.Channel.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.FindingsReportSummary.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>.*[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruProfiler.Model.Pattern.ThresholdPercent</property>

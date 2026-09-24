@@ -68,6 +68,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateAssessmentRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -85,6 +86,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateAssessmentFrameworkRequest.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -108,6 +110,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateAssessmentReportRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -121,20 +124,23 @@
     <property>Amazon.AuditManager.Model.CreateAssessmentReportRequest.QueryStatement</property>
     <min>1</min>
     <max>10000</max>
-    <pattern>(?s).*</pattern>
+    <pattern>^(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlRequest.ActionPlanInstructions</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlRequest.ActionPlanTitle</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -146,6 +152,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlRequest.TestingInformation</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -348,7 +355,7 @@
     <property>Amazon.AuditManager.Model.GetEvidenceFileUploadUrlRequest.FileName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[^\/]*</pattern>
+    <pattern>^[^\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.GetEvidenceFileUploadUrlResponse.EvidenceFileName</property>
@@ -454,7 +461,7 @@
     <property>Amazon.AuditManager.Model.GetOrganizationAdminAccountResponse.OrganizationId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>o-[a-z0-9]{10,32}</pattern>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListAssessmentControlInsightsByControlDomainRequest.AssessmentId</property>
@@ -486,23 +493,6 @@
     <pattern>^[A-Za-z0-9+\/=]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AuditManager.Model.ListAssessmentFrameworksRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AuditManager.Model.ListAssessmentFrameworksRequest.NextToken</property>
-    <min>1</min>
-    <max>1000</max>
-    <pattern>^[A-Za-z0-9+\/=]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AuditManager.Model.ListAssessmentFrameworksResponse.NextToken</property>
-    <min>1</min>
-    <max>1000</max>
-    <pattern>^[A-Za-z0-9+\/=]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AuditManager.Model.ListAssessmentFrameworkShareRequestsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -515,6 +505,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListAssessmentFrameworkShareRequestsResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[A-Za-z0-9+\/=]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.ListAssessmentFrameworksRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.ListAssessmentFrameworksRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>^[A-Za-z0-9+\/=]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.ListAssessmentFrameworksResponse.NextToken</property>
     <min>1</min>
     <max>1000</max>
     <pattern>^[A-Za-z0-9+\/=]*$</pattern>
@@ -620,7 +627,7 @@
     <property>Amazon.AuditManager.Model.ListControlsRequest.ControlCatalogId</property>
     <min>13</min>
     <max>2048</max>
-    <pattern>^arn:.*:controlcatalog:.*|UNCATEGORIZED</pattern>
+    <pattern>^arn:.*:controlcatalog:.*|UNCATEGORIZED$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ListControlsRequest.MaxResults</property>
@@ -689,7 +696,7 @@
     <property>Amazon.AuditManager.Model.RegisterAccountRequest.KmsKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>^arn:.*:kms:.*|DEFAULT</pattern>
+    <pattern>^arn:.*:kms:.*|DEFAULT$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.RegisterOrganizationAdminAccountRequest.AdminAccountId</property>
@@ -707,10 +714,11 @@
     <property>Amazon.AuditManager.Model.RegisterOrganizationAdminAccountResponse.OrganizationId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>o-[a-z0-9]{10,32}</pattern>
+    <pattern>^o-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.StartAssessmentFrameworkShareRequest.Comment</property>
+    <min>0</min>
     <max>500</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -744,6 +752,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateAssessmentRequest.AssessmentDescription</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -767,6 +776,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateAssessmentControlRequest.CommentBody</property>
+    <min>0</min>
     <max>500</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -790,6 +800,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateAssessmentControlSetStatusRequest.Comment</property>
+    <min>0</min>
     <max>350</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -801,6 +812,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateAssessmentFrameworkRequest.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -836,11 +848,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateControlRequest.ActionPlanInstructions</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateControlRequest.ActionPlanTitle</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -852,6 +866,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateControlRequest.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -863,6 +878,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateControlRequest.TestingInformation</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -870,13 +886,13 @@
     <property>Amazon.AuditManager.Model.UpdateSettingsRequest.KmsKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>^arn:.*:kms:.*|DEFAULT</pattern>
+    <pattern>^arn:.*:kms:.*|DEFAULT$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.UpdateSettingsRequest.SnsTopic</property>
     <min>4</min>
     <max>2048</max>
-    <pattern>^arn:.*:sns:.*|NONE</pattern>
+    <pattern>^arn:.*:sns:.*|NONE$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ValidateAssessmentReportIntegrityRequest.S3RelativePath</property>
@@ -902,6 +918,30 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AuditManager.Model.AWSAccount.EmailAddress</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>^.*@.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.AWSAccount.Id</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.AWSAccount.Name</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>^[\u0020-\u007E]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.AWSService.ServiceName</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>^[a-zA-Z0-9-\s().]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AuditManager.Model.Assessment.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -909,6 +949,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentControl.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1004,6 +1045,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentFrameworkMetadata.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1033,11 +1075,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentFrameworkShareRequest.Comment</property>
+    <min>0</min>
     <max>500</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentFrameworkShareRequest.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1083,11 +1127,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentMetadata.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentMetadata.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1105,6 +1151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentMetadataItem.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1146,6 +1193,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentReport.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1165,10 +1213,11 @@
     <property>Amazon.AuditManager.Model.AssessmentReportEvidenceError.ErrorCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>[0-9]{3}</pattern>
+    <pattern>^[0-9]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentReportEvidenceError.ErrorMessage</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1198,6 +1247,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.AssessmentReportMetadata.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1219,37 +1269,14 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AuditManager.Model.AWSAccount.EmailAddress</property>
-    <min>1</min>
-    <max>320</max>
-    <pattern>^.*@.*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AuditManager.Model.AWSAccount.Id</property>
-    <min>12</min>
-    <max>12</max>
-    <pattern>^[0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AuditManager.Model.AWSAccount.Name</property>
-    <min>1</min>
-    <max>50</max>
-    <pattern>^[\u0020-\u007E]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AuditManager.Model.AWSService.ServiceName</property>
-    <min>1</min>
-    <max>40</max>
-    <pattern>^[a-zA-Z0-9-\s().]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AuditManager.Model.BatchCreateDelegationByAssessmentError.ErrorCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>[0-9]{3}</pattern>
+    <pattern>^[0-9]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.BatchCreateDelegationByAssessmentError.ErrorMessage</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1263,10 +1290,11 @@
     <property>Amazon.AuditManager.Model.BatchDeleteDelegationByAssessmentError.ErrorCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>[0-9]{3}</pattern>
+    <pattern>^[0-9]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.BatchDeleteDelegationByAssessmentError.ErrorMessage</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1274,10 +1302,11 @@
     <property>Amazon.AuditManager.Model.BatchImportEvidenceToAssessmentControlError.ErrorCode</property>
     <min>3</min>
     <max>3</max>
-    <pattern>[0-9]{3}</pattern>
+    <pattern>^[0-9]{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.BatchImportEvidenceToAssessmentControlError.ErrorMessage</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1295,11 +1324,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Control.ActionPlanInstructions</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Control.ActionPlanTitle</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1323,6 +1354,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Control.Description</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1346,6 +1378,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Control.TestingInformation</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1357,6 +1390,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlComment.CommentBody</property>
+    <min>0</min>
     <max>500</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1404,6 +1438,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlMappingSource.SourceDescription</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1420,6 +1455,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ControlMappingSource.TroubleshootingText</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1471,6 +1507,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlMappingSource.SourceDescription</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1481,11 +1518,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateControlMappingSource.TroubleshootingText</property>
+    <min>0</min>
     <max>1000</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.CreateDelegationRequest.Comment</property>
+    <min>0</min>
     <max>350</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1520,6 +1559,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Delegation.Comment</property>
+    <min>0</min>
     <max>350</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1609,6 +1649,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Evidence.EventName</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1650,6 +1691,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.EvidenceFinderEnablement.Error</property>
+    <min>0</min>
     <max>300</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1667,6 +1709,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Framework.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1714,6 +1757,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.FrameworkMetadata.ComplianceType</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[\w\W\s\S]*$</pattern>
   </property-value-rule>
@@ -1739,7 +1783,7 @@
     <property>Amazon.AuditManager.Model.ManualEvidence.EvidenceFileName</property>
     <min>1</min>
     <max>300</max>
-    <pattern>[^\/]*</pattern>
+    <pattern>^[^\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ManualEvidence.S3ResourcePath</property>
@@ -1858,7 +1902,7 @@
     <property>Amazon.AuditManager.Model.Settings.KmsKey</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>^arn:.*:kms:.*|DEFAULT</pattern>
+    <pattern>^arn:.*:kms:.*|DEFAULT$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.Settings.SnsTopic</property>
@@ -1873,16 +1917,6 @@
     <pattern>^[a-zA-Z_0-9-\s().:\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AuditManager.Model.UpdateAssessmentFrameworkControlSet.Id</property>
-    <min>1</min>
-    <max>300</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AuditManager.Model.UpdateAssessmentFrameworkControlSet.Name</property>
-    <min>1</min>
-    <max>300</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.AuditManager.Model.URL.HyperlinkName</property>
     <min>1</min>
     <max>200</max>
@@ -1893,6 +1927,16 @@
     <min>1</min>
     <max>8192</max>
     <pattern>^(https?:\/\/)?(www\.)?[a-zA-Z0-9-_]+([\.]+[a-zA-Z]+)+[\/\w]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.UpdateAssessmentFrameworkControlSet.Id</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AuditManager.Model.UpdateAssessmentFrameworkControlSet.Name</property>
+    <min>1</min>
+    <max>300</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AuditManager.Model.ValidationExceptionField.Message</property>

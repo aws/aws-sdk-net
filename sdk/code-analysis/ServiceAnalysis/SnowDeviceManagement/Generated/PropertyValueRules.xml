@@ -9,13 +9,13 @@
     <property>Amazon.SnowDeviceManagement.Model.CreateTaskRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>.*[!-~]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.CreateTaskRequest.Description</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9 _.,!#]*</pattern>
+    <pattern>.*[A-Za-z0-9 _.,!#]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.DescribeDeviceRequest.ManagedDeviceId</property>
@@ -66,7 +66,7 @@
     <property>Amazon.SnowDeviceManagement.Model.DescribeTaskResponse.Description</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9 _.,!#]*</pattern>
+    <pattern>.*[A-Za-z0-9 _.,!#]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListDeviceResourcesRequest.ManagedDeviceId</property>
@@ -82,7 +82,7 @@
     <property>Amazon.SnowDeviceManagement.Model.ListDeviceResourcesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListDeviceResourcesRequest.Type</property>
@@ -93,7 +93,7 @@
     <property>Amazon.SnowDeviceManagement.Model.ListDeviceResourcesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListDevicesRequest.JobId</property>
@@ -109,13 +109,13 @@
     <property>Amazon.SnowDeviceManagement.Model.ListDevicesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListDevicesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListExecutionsRequest.MaxResults</property>
@@ -126,7 +126,7 @@
     <property>Amazon.SnowDeviceManagement.Model.ListExecutionsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListExecutionsRequest.TaskId</property>
@@ -137,7 +137,7 @@
     <property>Amazon.SnowDeviceManagement.Model.ListExecutionsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListTasksRequest.MaxResults</property>
@@ -148,13 +148,13 @@
     <property>Amazon.SnowDeviceManagement.Model.ListTasksRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.ListTasksResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9+/=]*</pattern>
+    <pattern>.*[a-zA-Z0-9+/=]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SnowDeviceManagement.Model.Capacity.Name</property>

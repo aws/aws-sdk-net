@@ -2,6 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.PinpointEmail.Model.Template.TemplateData</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
 </property-value-rules>

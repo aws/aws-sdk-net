@@ -1,0 +1,72 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CodeCatalyst.Model
+{
+    /// <summary>
+    /// Information about the configuration of an integrated development environment (IDE)
+    /// for a Dev Environment.
+    /// </summary>
+    public partial class IdeConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the IDE. Valid values include <c>Cloud9</c>, <c>IntelliJ</c>, <c>PyCharm</c>,
+        /// <c>GoLand</c>, and <c>VSCode</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// A link to the IDE runtime image. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not required for <c>VSCode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 400)]
+        public string Runtime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Runtime property is set.
+        /// </summary>
+        internal bool IsSetRuntime() => this.Runtime != null;
+    }
+}

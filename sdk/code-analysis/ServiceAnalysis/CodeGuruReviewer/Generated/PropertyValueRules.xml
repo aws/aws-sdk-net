@@ -16,7 +16,7 @@
     <property>Amazon.CodeGuruReviewer.Model.CreateCodeReviewRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.CreateCodeReviewRequest.RepositoryAssociationArn</property>
@@ -287,7 +287,7 @@
     <property>Amazon.CodeGuruReviewer.Model.KMSKeyDetails.KMSKeyId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RecommendationFeedback.CodeReviewArn</property>
@@ -345,7 +345,7 @@
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociation.Name</property>
@@ -379,7 +379,7 @@
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RepositoryAssociationSummary.Name</property>
@@ -399,15 +399,15 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeGuruReviewer.Model.RequestMetadata.RequestId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RequestMetadata.Requester</property>
     <min>1</min>
     <max>100</max>
     <pattern>^\S(.*\S)?$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.CodeGuruReviewer.Model.RequestMetadata.RequestId</property>
-    <min>1</min>
-    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.RuleMetadata.LongDescription</property>
@@ -461,7 +461,7 @@
     <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.ConnectionArn</property>
     <min>0</min>
     <max>256</max>
-    <pattern>arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+</pattern>
+    <pattern>^arn:aws(-[\w]+)*:.+:.+:[0-9]{12}:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeGuruReviewer.Model.ThirdPartySourceRepository.Name</property>

@@ -1,0 +1,78 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Braket.Model
+{
+    /// <summary>
+    /// Contains metadata about the quantum task action, including the action type and program
+    /// statistics.
+    /// </summary>
+    public partial class ActionMetadata
+    {
+        /// <summary>
+        /// Gets and sets the property ActionType. 
+        /// <para>
+        /// The type of action associated with the quantum task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ActionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActionType property is set.
+        /// </summary>
+        internal bool IsSetActionType() => this.ActionType != null;
+
+        /// <summary>
+        /// Gets and sets the property ExecutableCount. 
+        /// <para>
+        /// The number of executables in a program set. This is only available for a program set.
+        /// </para>
+        /// </summary>
+        public long? ExecutableCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExecutableCount property is set.
+        /// </summary>
+        internal bool IsSetExecutableCount() => this.ExecutableCount.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ProgramCount. 
+        /// <para>
+        /// The number of programs in a program set. This is only available for a program set.
+        /// </para>
+        /// </summary>
+        public long? ProgramCount { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProgramCount property is set.
+        /// </summary>
+        internal bool IsSetProgramCount() => this.ProgramCount.HasValue;
+    }
+}

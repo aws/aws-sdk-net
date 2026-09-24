@@ -4,21 +4,23 @@
     <property>Amazon.SageMakerMetrics.Model.BatchPutMetricsRequest.TrialComponentName</property>
     <min>1</min>
     <max>120</max>
-    <pattern>^[a-z0-9](-*[a-z0-9]){0,119}</pattern>
+    <pattern>^[a-z0-9](-*[a-z0-9]){0,119}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerMetrics.Model.MetricQuery.MetricName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerMetrics.Model.MetricQuery.ResourceArn</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-].*/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:[a-z\-].*/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerMetrics.Model.MetricQueryResult.Message</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -26,7 +28,7 @@
     <property>Amazon.SageMakerMetrics.Model.RawMetricData.MetricName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>.+</pattern>
+    <pattern>^.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerMetrics.Model.RawMetricData.Step</property>

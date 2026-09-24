@@ -1,0 +1,67 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ManagedGrafana.Model
+{
+    /// <summary>
+    /// A structure containing the identity provider (IdP) metadata used to integrate the
+    /// identity provider with this workspace. You can specify the metadata either by providing
+    /// a URL to its location in the <c>url</c> parameter, or by specifying the full metadata
+    /// in XML format in the <c>xml</c> parameter. Specifying both will cause an error.
+    /// </summary>
+    public partial class IdpMetadata
+    {
+        /// <summary>
+        /// Gets and sets the property Url. 
+        /// <para>
+        /// The URL of the location containing the IdP metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string Url { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Url property is set.
+        /// </summary>
+        internal bool IsSetUrl() => this.Url != null;
+
+        /// <summary>
+        /// Gets and sets the property Xml. 
+        /// <para>
+        /// The full IdP metadata, in XML format.
+        /// </para>
+        /// </summary>
+        public string Xml { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Xml property is set.
+        /// </summary>
+        internal bool IsSetXml() => this.Xml != null;
+    }
+}

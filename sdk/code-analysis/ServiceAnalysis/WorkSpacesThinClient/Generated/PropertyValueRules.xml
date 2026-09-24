@@ -7,29 +7,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.CreateEnvironmentRequest.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.CreateEnvironmentRequest.DesktopArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.CreateEnvironmentRequest.DesktopEndpoint</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?</pattern>
+    <pattern>^(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.CreateEnvironmentRequest.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[0-9]{0,12}:key\/[a-zA-Z0-9-]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[0-9]{0,12}:key\/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.CreateEnvironmentRequest.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -39,7 +38,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeleteDeviceRequest.Id</property>
-    <pattern>[a-zA-Z0-9]{24}</pattern>
+    <pattern>^[a-zA-Z0-9]{24}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeleteEnvironmentRequest.ClientToken</property>
@@ -48,7 +47,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeleteEnvironmentRequest.Id</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeregisterDeviceRequest.ClientToken</property>
@@ -57,19 +56,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeregisterDeviceRequest.Id</property>
-    <pattern>[a-zA-Z0-9]{24}</pattern>
+    <pattern>^[a-zA-Z0-9]{24}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.GetDeviceRequest.Id</property>
-    <pattern>[a-zA-Z0-9]{24}</pattern>
+    <pattern>^[a-zA-Z0-9]{24}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.GetEnvironmentRequest.Id</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.GetSoftwareSetRequest.Id</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.ListDevicesRequest.MaxResults</property>
@@ -80,13 +79,13 @@
     <property>Amazon.WorkSpacesThinClient.Model.ListDevicesRequest.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.ListDevicesResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.ListEnvironmentsRequest.MaxResults</property>
@@ -97,13 +96,13 @@
     <property>Amazon.WorkSpacesThinClient.Model.ListEnvironmentsRequest.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.ListEnvironmentsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.ListSoftwareSetsRequest.MaxResults</property>
@@ -114,207 +113,201 @@
     <property>Amazon.WorkSpacesThinClient.Model.ListSoftwareSetsRequest.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.ListSoftwareSetsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateDeviceRequest.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateDeviceRequest.Id</property>
-    <pattern>[a-zA-Z0-9]{24}</pattern>
+    <pattern>^[a-zA-Z0-9]{24}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateDeviceRequest.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateEnvironmentRequest.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{0,9}</pattern>
+    <pattern>^[0-9]{0,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateEnvironmentRequest.DesktopArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateEnvironmentRequest.DesktopEndpoint</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?</pattern>
+    <pattern>^(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateEnvironmentRequest.Id</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateEnvironmentRequest.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.UpdateSoftwareSetRequest.Id</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.CurrentSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.EnvironmentId</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.Id</property>
-    <pattern>[a-zA-Z0-9]{24}</pattern>
+    <pattern>^[a-zA-Z0-9]{24}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[0-9]{0,12}:key\/[a-zA-Z0-9-]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[0-9]{0,12}:key\/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Device.PendingSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.CurrentSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.EnvironmentId</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.Id</property>
-    <pattern>[a-zA-Z0-9]{24}</pattern>
+    <pattern>^[a-zA-Z0-9]{24}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.DeviceSummary.PendingSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.ActivationCode</property>
-    <pattern>[a-z]{2}[a-z0-9]{6}</pattern>
+    <pattern>^[a-z]{2}[a-z0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.DesktopArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.DesktopEndpoint</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?</pattern>
+    <pattern>^(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.Id</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[0-9]{0,12}:key\/[a-zA-Z0-9-]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:kms:[a-zA-Z0-9\-]*:[0-9]{0,12}:key\/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.Environment.PendingSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.ActivationCode</property>
-    <pattern>[a-z]{2}[a-z0-9]{6}</pattern>
+    <pattern>^[a-z]{2}[a-z0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.DesiredSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.DesktopArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.DesktopEndpoint</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?</pattern>
+    <pattern>^(https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,32}(:[0-9]{1,5})?(\/.*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.Id</property>
-    <pattern>[a-z0-9]{9}</pattern>
+    <pattern>^[a-z0-9]{9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.Name</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.EnvironmentSummary.PendingSoftwareSetId</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.MaintenanceWindow.EndTimeHour</property>
@@ -340,20 +333,20 @@
     <property>Amazon.WorkSpacesThinClient.Model.SoftwareSet.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.SoftwareSet.Id</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.SoftwareSetSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+</pattern>
+    <pattern>^arn:[\w+=\/,.@-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:[0-9]{0,12}:[a-zA-Z0-9\-\/\._]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkSpacesThinClient.Model.SoftwareSetSummary.Id</property>
-    <pattern>[0-9]{1,9}</pattern>
+    <pattern>^[0-9]{1,9}$</pattern>
   </property-value-rule>
 </property-value-rules>
