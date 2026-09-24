@@ -1804,12 +1804,19 @@ namespace Amazon.DynamoDBv2.DataModel
                         flattenPropertyStorage.IsFlattened = true;
 
                         // Stamp the flattened child's effective casing onto each leaf. A condition
-                        // (ScanCondition/QueryCondition) can target a flattened complex leaf by its
-                        // property name; when its value is a complex object, the value's Map keys must be
-                        // cased with the flattened child's effective casing (which may differ from the
-                        // root's, e.g. an explicitly-PascalCase flattened child under a CamelCase root),
-                        // not the root's casing.
-                        flattenPropertyStorage.FlattenedEffectiveCasing = effectiveChildCasing;
+                        // (ScanCondition/QueryCondition) or expression can target a flattened complex leaf by
+                        // its property name; when its value is a complex object, the value's Map keys must be
+                        // cased with the flattened child's effective casing (which may differ from the root's,
+                        // e.g. an explicitly-PascalCase flattened child under a CamelCase root), not the
+                        // root's casing.
+                        //
+                        // A nested [DynamoDBFlatten] node is itself the result of a recursive
+                        // MemberInfoToPropertyStorage call above, which already computed and stored ITS own
+                        // effective casing. Do not overwrite that with the enclosing node's casing — otherwise
+                        // a complex leaf inside the nested flatten node is (de)serialized with the wrong
+                        // casing. Only stamp true leaves (those that are not themselves flatten nodes).
+                        if (!flattenPropertyStorage.ShouldFlattenChildProperties)
+                            flattenPropertyStorage.FlattenedEffectiveCasing = effectiveChildCasing;
 
                         propertyStorage.FlattenProperties.Add(flattenPropertyStorage);
                     }

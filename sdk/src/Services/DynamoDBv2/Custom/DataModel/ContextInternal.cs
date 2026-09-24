@@ -2997,6 +2997,11 @@ namespace Amazon.DynamoDBv2.DataModel
             // itself a nested object (e.g. e.ShippingAddress == new Address { ... }), it must serialize with
             // this enclosing type's inheritable casing so the value's Map keys match what is stored.
             CaseMode resolvedEnclosingCasing = rootCasing;
+            // When the resolved property is a flattened complex leaf (reached by descending through a
+            // [DynamoDBFlatten] member), its value's casing is the flattened child's effective casing
+            // (stamped on the leaf), NOT the enclosing root's. Capture the resolved flattened leaf so the
+            // value-node serialization uses the same casing the leaf was stored with.
+            PropertyStorage resolvedFlattenedLeaf = null;
             var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
             try
             {
@@ -3032,6 +3037,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (propertyStorage.ShouldFlattenChildProperties && i < path.Count - 1)
                 {
                     propertyStorage = ResolveFlattenedPropertyStorage(propertyStorage, path, i + 1, namesNodeNames);
+                    // The resolved property is a flattened leaf; its value uses the flattened child's
+                    // effective casing (stamped on the leaf), not the enclosing root's casing.
+                    resolvedFlattenedLeaf = propertyStorage;
                     // The flattened tail resolves to a single top-level attribute name.
                     formatTokens.Add(ExpressionFormatConstants.Name);
                     // The flattened path has been fully consumed by the helper.
@@ -3083,7 +3091,12 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             formattedExpression = string.Join(".", formatTokens);
-            valueInheritedCasing = Utils.GetInheritableCasing(resolvedEnclosingCasing);
+            // A flattened complex leaf's value must be cased with the flattened child's effective casing
+            // (mirrors ConditionValueCasing for scan/query conditions); otherwise the enclosing type's
+            // casing governs the value.
+            valueInheritedCasing = resolvedFlattenedLeaf != null
+                ? Utils.GetInheritableCasing(resolvedFlattenedLeaf.FlattenedEffectiveCasing)
+                : Utils.GetInheritableCasing(resolvedEnclosingCasing);
             return propertyStorage;
             }
             finally

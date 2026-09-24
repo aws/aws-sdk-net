@@ -399,7 +399,11 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   resolver also reports the casing that encloses the resolved property, and `SetExpressionValueNode`
   seeds it (save/restore) before serializing a comparison **value**, so `e.ShippingAddress == someAddress`
   serializes the nested value's Map keys as `street`/`city` too — otherwise the value would be written
-  PascalCase and never match the stored item.
+  PascalCase and never match the stored item. When the path descends through a `[DynamoDBFlatten]` member
+  to a flattened complex leaf (e.g. `e => e.Contact.HomeAddress == target`), the resolver returns that
+  flattened leaf and reports its `FlattenedEffectiveCasing` as the value casing (mirroring
+  `ConditionValueCasing` for scan/query), so the value uses the flattened child's casing rather than the
+  enclosing root's.
 - **Condition-based queries/scans** (`ScanCondition` / `QueryCondition` / `QueryFilter`): a condition
   targets a top-level property of the root **or a flattened complex leaf**. Both the scan path
   (`ComposeScanFilter`) and the query path (`ComposeQueryFilterHelper` → `ConvertConditionValues`) seed
@@ -429,7 +433,13 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   a PascalCase child on both sides. A non-flattened complex object *inside* a flattened child is handled
   too: the flattening `PropertyStorage.FlattenedEffectiveCasing` is recorded at build time and
   `CreateFlattenedMember` seeds it while populating leaves, so the nested Map resolves with the same
-  casing on load that save wrote.
+  casing on load that save wrote. The effective casing is also stamped onto each individual flattened
+  **leaf** (`FlattenedEffectiveCasing` on the leaf `PropertyStorage`) so scan/query/expression paths can
+  recover the right value casing for a condition/comparison that targets a flattened complex leaf by name.
+  For a **nested** `[DynamoDBFlatten]` chain, a nested flatten node computes its own effective casing
+  recursively, so the stamping only applies to *true* leaves (`!ShouldFlattenChildProperties`) — it must
+  not overwrite a nested flatten node's own casing, or a complex leaf inside that nested node would be
+  (de)serialized with the wrong casing.
 
 ### Explicit opt-out of inheritance
 

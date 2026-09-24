@@ -171,6 +171,36 @@ namespace AWSSDK_DotNet.UnitTests
             public ContactWithNested Contact { get; set; }
         }
 
+        // A nested [DynamoDBFlatten] chain. 'Inner' declares its own PascalCase and contains a
+        // non-flattened complex leaf (HomeAddress). 'Outer' is undecorated (inherits from the enclosing
+        // root). The nested-flatten node must keep ITS OWN effective casing (PascalCase from Inner), not
+        // be overwritten by the enclosing (Outer/root CamelCase) casing.
+        [DynamoDBTable("Inner", AttributeCasing = CaseMode.PascalCase)]
+        public class InnerFlatten
+        {
+            public string Nickname { get; set; }
+            public Address HomeAddress { get; set; }   // non-flattened complex leaf inside a flatten node
+        }
+
+        public class OuterFlatten
+        {
+            public string Label { get; set; }
+
+            [DynamoDBFlatten]
+            public InnerFlatten Inner { get; set; }
+        }
+
+        // CamelCase root -> undecorated flattened Outer -> PascalCase flattened Inner (with a complex leaf).
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithNestedFlatten
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public OuterFlatten Outer { get; set; }
+        }
+
 #if NET8_0_OR_GREATER
         // An immutable (constructor-bound) CamelCase root with an undecorated nested constructor argument.
         // On net8+ the root is populated via constructor binding before PopulateInstance runs, so the
@@ -630,8 +660,67 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(CaseMode.CamelCase, rootCasing, "a non-flattened property uses the root's casing");
         }
 
-        // --- reflection helpers for the private condition-composition members ---
+        [TestMethod]
+        public void FilterExpression_OnFlattenedComplexLeaf_UsesFlattenedChildCasing()
+        {
+            // Regression (Copilot): an expression comparing a flattened complex leaf value
+            // (e => e.Contact.HomeAddress == target) descends through the [DynamoDBFlatten] member and
+            // resolves the flattened leaf. The comparison VALUE must serialize with the flattened child's
+            // effective casing (PascalCase here, from the explicitly-PascalCase flattened child under a
+            // CamelCase root), not the root's CamelCase — otherwise the value's Map keys never match stored
+            // items.
+            var context = CreateContext();
+            var target = new Address { Street = "Main", City = "Seattle" };
+            Expression<Func<OrderCamelWithFlattenNested, bool>> expr = e => e.Contact.HomeAddress == target;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
 
+            var result = context.ConvertScan<OrderCamelWithFlattenNested>(filterExpr, null);
+            var addressMap = result.Search.FilterExpression.ExpressionAttributeValues.Values.Single().AsDocument();
+
+            Assert.IsTrue(addressMap.ContainsKey("Street"), "flattened PascalCase child leaf value must use PascalCase Map keys");
+            Assert.IsTrue(addressMap.ContainsKey("City"));
+            Assert.IsFalse(addressMap.ContainsKey("street"), "must NOT use the root's CamelCase for a flattened child's leaf value");
+        }
+
+        [TestMethod]
+        public void NestedFlatten_PreservesInnerNodeEffectiveCasing()
+        {
+            // Regression (Copilot): a nested [DynamoDBFlatten] chain (CamelCase root -> undecorated Outer ->
+            // PascalCase Inner). The Inner flatten node's own effective casing (PascalCase) must be preserved
+            // and not overwritten by the enclosing node's casing, so a non-flattened complex leaf inside
+            // Inner (HomeAddress) round-trips as PascalCase on both save and load.
+            var context = CreateContext();
+            var order = new OrderCamelWithNestedFlatten
+            {
+                Id = "1",
+                Outer = new OuterFlatten
+                {
+                    Label = "L",
+                    Inner = new InnerFlatten
+                    {
+                        Nickname = "Al",
+                        HomeAddress = new Address { Street = "Main", City = "Seattle" }
+                    }
+                }
+            };
+            var doc = context.ToDocument(order);
+
+            // Inner is PascalCase, so its complex leaf HomeAddress is a PascalCase Map.
+            Assert.IsTrue(doc.ContainsKey("HomeAddress"), "nested-flatten complex leaf must be hoisted to top level");
+            var homeAddress = doc["HomeAddress"].AsDocument();
+            Assert.IsTrue(homeAddress.ContainsKey("Street"), "Inner's own PascalCase must govern its complex leaf, not the CamelCase root");
+            Assert.IsFalse(homeAddress.ContainsKey("street"));
+
+            var restored = context.FromDocument<OrderCamelWithNestedFlatten>(doc);
+            Assert.IsNotNull(restored.Outer);
+            Assert.IsNotNull(restored.Outer.Inner);
+            Assert.IsNotNull(restored.Outer.Inner.HomeAddress);
+            Assert.AreEqual("Main", restored.Outer.Inner.HomeAddress.Street);
+            Assert.AreEqual("Seattle", restored.Outer.Inner.HomeAddress.City);
+        }
+
+        // --- reflection helpers for the private condition-composition members ---
         private static ScanFilter ComposeScanFilterViaReflection<T>(DynamoDBContext context, params ScanCondition[] conditions)
         {
             var flatConfig = new DynamoDBFlatConfig(null, context.Config);
