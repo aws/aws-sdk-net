@@ -84,7 +84,8 @@ namespace AWSSDK.UnitTests
             var stub = new CountingDelayStubImds(delayMs: 100);
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(1));
 
-            await Task.Delay(2000).ConfigureAwait(false);
+            // The background timer fetches as soon as the provider is created; give it time to finish.
+            await Task.Delay(500).ConfigureAwait(false);
 
             var tasks = Enumerable.Range(0, 5)
                 .Select(_ => provider.GetCredentialsAsync())
@@ -148,8 +149,8 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetCredentials_RecoverExpired()
         {
-            var endCheckForExpiration = DateTime.UtcNow.AddSeconds(3);
-            var stub = new SimulatedIMDSOutageStubImds(TimeSpan.FromSeconds(5));
+            var endCheckForExpiration = DateTime.UtcNow.AddMilliseconds(500);
+            var stub = new SimulatedIMDSOutageStubImds(TimeSpan.FromSeconds(1));
 
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(-1));
 
@@ -164,7 +165,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(stub.CombinedFetchCallCount > 0);
 
             stub.CombinedFetchCallCount = 0;
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            await Task.Delay(TimeSpan.FromSeconds(1));
 
             var currentCredentials = provider.GetCredentials();
             Assert.IsTrue(stub.CombinedFetchCallCount > 0);
@@ -177,8 +178,8 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public async Task GetCredentialsAsync_RecoverExpired()
         {
-            var endCheckForExpiration = DateTime.UtcNow.AddSeconds(3);
-            var stub = new SimulatedIMDSOutageStubImds(TimeSpan.FromSeconds(5));
+            var endCheckForExpiration = DateTime.UtcNow.AddMilliseconds(500);
+            var stub = new SimulatedIMDSOutageStubImds(TimeSpan.FromSeconds(1));
 
             var provider = DefaultInstanceProfileAWSCredentials.CreateTestDefaultInstanceProfileAWSCredentials(stub, TimeSpan.FromSeconds(-1));
 
@@ -193,7 +194,7 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(stub.CombinedFetchCallCount > 0);
 
             stub.CombinedFetchCallCount = 0;
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            await Task.Delay(TimeSpan.FromSeconds(1));
 
             var currentCredentials = await provider.GetCredentialsAsync();
             Assert.IsTrue(stub.CombinedFetchCallCount > 0);

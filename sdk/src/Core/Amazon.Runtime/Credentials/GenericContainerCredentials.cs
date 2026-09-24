@@ -66,6 +66,11 @@ namespace Amazon.Runtime
 
         internal Uri ResolvedEndpointUri { get; private set; }
 
+        /// <summary>
+        /// Base delay between retries. Internal so unit tests can skip the backoff.
+        /// </summary>
+        internal TimeSpan RetryBaseDelay { get; set; } = TimeSpan.FromMilliseconds(200);
+
         public GenericContainerCredentials()
         {
             PreemptExpiryTime = TimeSpan.FromMinutes(15);
@@ -76,7 +81,7 @@ namespace Amazon.Runtime
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
             SecurityCredentials credentials;
-            JitteredDelay retry = new JitteredDelay(TimeSpan.FromMilliseconds(200), TimeSpan.FromMilliseconds(50));
+            JitteredDelay retry = new JitteredDelay(RetryBaseDelay, TimeSpan.FromMilliseconds(50));
 
             // Attempt to get the credentials 4 times ignoring null return/exceptions and on the 5th try, escalate the exception if there is one.
             for (int i = 1; ; i++)
@@ -116,7 +121,7 @@ namespace Amazon.Runtime
         protected override async Task<CredentialsRefreshState> GenerateNewCredentialsAsync()
         {
             SecurityCredentials credentials;
-            JitteredDelay retry = new JitteredDelay(TimeSpan.FromMilliseconds(200), TimeSpan.FromMilliseconds(50));
+            JitteredDelay retry = new JitteredDelay(RetryBaseDelay, TimeSpan.FromMilliseconds(50));
 
             // Attempt to get the credentials 4 times ignoring null return/exceptions and on the 5th try, escalate the exception if there is one.
             for (int i = 1; ; i++)

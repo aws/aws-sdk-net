@@ -146,11 +146,13 @@ namespace AWSSDK.UnitTests
             var memoryStream = new MemoryStream();
             Task task = content.InvokeSerializeToStreamAsync(memoryStream);
 
-            await Task.Delay(2000);
+            await Task.Delay(200);
             Assert.IsFalse(task.IsCompletedSuccessfully);
 
             content.Dispose();
-            await Task.Delay(2000);
+            // Returns as soon as the task completes (normally immediately after Dispose);
+            // the 5s delay is only an upper bound so a regression fails the assert instead of hanging.
+            await Task.WhenAny(task, Task.Delay(5000));
             Assert.IsTrue(task.IsCompletedSuccessfully);
 
             Assert.AreEqual(3L, memoryStream.Length);

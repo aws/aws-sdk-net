@@ -486,11 +486,14 @@ namespace AWSSDK.UnitTests
                 httpHandler = new HttpHandler<Stream>(factory, new object());
             }
 
-            RetryPolicy retryPolicy = null;
+            StandardRetryPolicy retryPolicy = null;
             if (config.RetryMode == RequestRetryMode.Adaptive)
                 retryPolicy = new AmazonS3AdaptiveRetryPolicy(config);
             else
                 retryPolicy = new AmazonS3StandardRetryPolicy(config);
+
+            // No backoff between retries; these tests only inspect the request.
+            retryPolicy.MaxBackoffInMilliseconds = 0;
 
             var retryHandler = new RetryHandler(retryPolicy);
 

@@ -186,8 +186,6 @@ $@"{{
             // Unable to retrieve credentials. Message = "The remote server returned an error: (301) Moved Permanently Redirect."
             var errorMessageRegex = new Regex($"({statusCode})");
 
-            // These test cases also take longer (up to 30s) as the provider will attempt 4 times (on non-successful responses) before
-            // throwing an exception to the caller.
             using (var servlet = new ErrorServlet(statusCode))
             {
                 var fullUri = "http://localhost:" + servlet.Port;
@@ -199,7 +197,8 @@ $@"{{
                     servlet.Response = "{\"Code\":\"TokenNotFound\"}";
                 }
 
-                var provider = new GenericContainerCredentials();
+                // Skip the retry backoff; the provider still makes all attempts before throwing.
+                var provider = new GenericContainerCredentials { RetryBaseDelay = TimeSpan.Zero };
                 AssertExtensions.ExpectException(() => provider.GetCredentials(), typeof(AmazonServiceException), errorMessageRegex);
             }
         }
