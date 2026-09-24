@@ -132,6 +132,32 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetMaxTaskHours() => this.MaxTaskHours.HasValue;
 
         /// <summary>
+        /// Gets and sets the property ReportDestination. 
+        /// <para>
+        /// The destination for publishing scan reports to an integrated document provider.
+        /// </para>
+        /// </summary>
+        public ReportDestination ReportDestination { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReportDestination property is set.
+        /// </summary>
+        internal bool IsSetReportDestination() => this.ReportDestination != null;
+
+        /// <summary>
+        /// Gets and sets the property ReportFilters. 
+        /// <para>
+        /// The report-generation filters applied when the report is exported.
+        /// </para>
+        /// </summary>
+        public ReportFilters ReportFilters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReportFilters property is set.
+        /// </summary>
+        internal bool IsSetReportFilters() => this.ReportFilters != null;
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The IAM service role used for the code review.

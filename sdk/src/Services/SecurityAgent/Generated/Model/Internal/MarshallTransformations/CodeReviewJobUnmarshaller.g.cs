@@ -130,6 +130,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("reportDestination", targetDepth, ref reader))
+                {
+                    var unmarshaller = ReportDestinationUnmarshaller.Instance;
+                    unmarshalledObject.ReportDestination = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("serviceRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
