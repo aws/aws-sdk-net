@@ -1683,16 +1683,17 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         /// <summary>
-        /// Computes the <see cref="CaseMode"/> to serialize a condition value's Map keys with for a
-        /// <see cref="ScanCondition"/>/<see cref="QueryCondition"/> targeting <paramref name="conditionProperty"/>.
-        /// A condition property is normally a top-level member of the root, so its complex value inherits the
-        /// root's casing. But the property can be a flattened complex leaf (a member of a [DynamoDBFlatten]
-        /// child), whose effective casing may differ from the root's (e.g. an explicitly-PascalCase flattened
-        /// child under a CamelCase root). In that case the value must be cased with the flattened child's
-        /// effective casing so it matches what save wrote. Returns an inheritable casing (or null when the
-        /// resolved casing does not propagate, leaving values at their base casing).
+        /// Computes the <see cref="CaseMode"/> to seed for serializing a condition/comparison value's Map
+        /// keys for a <see cref="ScanCondition"/>/<see cref="QueryCondition"/> (or expression equality)
+        /// targeting <paramref name="conditionProperty"/>. This is only the *enclosing* inherited casing:
+        /// the flattened child's effective casing when the property is a flattened complex leaf, otherwise
+        /// the root's inheritable casing. The value is then serialized via <c>ToDynamoDBEntry</c> →
+        /// <c>SerializeToDocument</c> → <c>GetConfig</c>, which resolves the value's member type against
+        /// this seed and correctly honors an explicitly-declared child casing (an explicit child ignores
+        /// the seed via <c>DeclaresOwnCasing</c>) — so seeding the enclosing casing is sufficient and we do
+        /// not need to pre-resolve the member type here.
         /// </summary>
-        private static CaseMode? ConditionValueCasing(PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
+        private CaseMode? ConditionValueCasing(PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
         {
             // A flattened leaf carries its owning flattened child's effective casing; prefer it so a
             // condition value on that leaf is cased consistently with how the leaf was stored.
@@ -3091,9 +3092,10 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             formattedExpression = string.Join(".", formatTokens);
-            // A flattened complex leaf's value must be cased with the flattened child's effective casing
-            // (mirrors ConditionValueCasing for scan/query conditions); otherwise the enclosing type's
-            // casing governs the value.
+            // The comparison VALUE is serialized via ToDynamoDBEntry -> SerializeToDocument, which resolves
+            // the value's member type against this seed and honors an explicitly-declared child casing. So
+            // seeding the ENCLOSING casing is sufficient: the flattened child's effective casing for a
+            // flattened complex leaf, otherwise the casing of the type that encloses the resolved property.
             valueInheritedCasing = resolvedFlattenedLeaf != null
                 ? Utils.GetInheritableCasing(resolvedFlattenedLeaf.FlattenedEffectiveCasing)
                 : Utils.GetInheritableCasing(resolvedEnclosingCasing);

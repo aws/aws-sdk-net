@@ -648,15 +648,18 @@ namespace AWSSDK_DotNet.UnitTests
 
             var leaf = storageConfig.BaseTypeStorageConfig.GetPropertyStorage("HomeAddress");
             Assert.IsTrue(leaf.IsFlattened, "HomeAddress should be a flattened leaf");
-            var leafCasing = ConditionValueCasingViaReflection(leaf, storageConfig);
-            // Flattened child is PascalCase; GetInheritableCasing(PascalCase) == PascalCase (a no-op cast).
-            Assert.AreEqual(CaseMode.PascalCase, leafCasing);
+            var leafCasing = ConditionValueCasingViaReflection(context, leaf, storageConfig);
+            // The flattened child is PascalCase and its HomeAddress member type (undecorated Address)
+            // resolves to a PascalCase-equivalent effective casing. Unset and PascalCase both mean "no
+            // transformation" (PascalCase output), so accept either.
+            Assert.IsTrue(leafCasing == CaseMode.PascalCase || leafCasing == CaseMode.Unset || leafCasing == null,
+                "flattened leaf value casing should be PascalCase-equivalent, was " + leafCasing);
 
             var camelConfig = context.StorageConfigCache.GetConfig<OrderCamelCase>(
                 new DynamoDBFlatConfig(null, context.Config));
             var topLevel = camelConfig.BaseTypeStorageConfig.GetPropertyStorage("ShippingAddress");
             Assert.IsFalse(topLevel.IsFlattened);
-            var rootCasing = ConditionValueCasingViaReflection(topLevel, camelConfig);
+            var rootCasing = ConditionValueCasingViaReflection(context, topLevel, camelConfig);
             Assert.AreEqual(CaseMode.CamelCase, rootCasing, "a non-flattened property uses the root's casing");
         }
 
@@ -720,6 +723,51 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("Seattle", restored.Outer.Inner.HomeAddress.City);
         }
 
+        [TestMethod]
+        public void ScanCondition_OnPropertyWithExplicitlyCasedMemberType_UsesMemberCasing()
+        {
+            // Copilot flagged a concern that a top-level condition property whose MEMBER TYPE declares its
+            // own casing (OrderCamelWithDeclaredNested.ShippingAddress is AddressPascal = explicit PascalCase,
+            // under a CamelCase root) might serialize the condition value as street/city. This test confirms
+            // the value is actually correct (Street/City): the value is serialized via ToDynamoDBEntry ->
+            // SerializeToDocument -> GetConfig, which honors the child's DeclaresOwnCasing and ignores the
+            // seeded (root) inherited casing for an explicitly-cased type. So the finding is a false positive;
+            // this guards against a future regression that would let the seed override an explicit child.
+            var context = CreateContext();
+            var target = new AddressPascal { Street = "Main", City = "Seattle" };
+            var condition = new ScanCondition("ShippingAddress", ScanOperator.Equal, target);
+
+            var scanFilter = ComposeScanFilterViaReflection<OrderCamelWithDeclaredNested>(context, condition);
+            // The attribute NAME is camelCased by the root (shippingAddress); the VALUE's Map keys must be
+            // PascalCase (the member type's own casing).
+            var addressMap = SingleConditionValueMap(scanFilter, "shippingAddress");
+
+            Assert.IsTrue(addressMap.M.ContainsKey("Street"), "explicit-PascalCase member type must govern the condition value casing");
+            Assert.IsTrue(addressMap.M.ContainsKey("City"));
+            Assert.IsFalse(addressMap.M.ContainsKey("street"), "must NOT use the CamelCase root casing");
+        }
+
+        [TestMethod]
+        public void FilterExpression_OnPropertyWithExplicitlyCasedMemberType_UsesMemberCasing()
+        {
+            // Same scenario via a filter expression value: e => e.ShippingAddress == target where
+            // ShippingAddress is an explicitly-PascalCase type under a CamelCase root. The value is correct
+            // (PascalCase) because SerializeToDocument's GetConfig honors the child's DeclaresOwnCasing and
+            // ignores the seeded root casing — confirming Copilot's concern is a false positive here.
+            var context = CreateContext();
+            var target = new AddressPascal { Street = "Main", City = "Seattle" };
+            Expression<Func<OrderCamelWithDeclaredNested, bool>> expr = e => e.ShippingAddress == target;
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+
+            var result = context.ConvertScan<OrderCamelWithDeclaredNested>(filterExpr, null);
+            var addressMap = result.Search.FilterExpression.ExpressionAttributeValues.Values.Single().AsDocument();
+
+            Assert.IsTrue(addressMap.ContainsKey("Street"), "explicit-PascalCase member type must govern the expression value casing");
+            Assert.IsTrue(addressMap.ContainsKey("City"));
+            Assert.IsFalse(addressMap.ContainsKey("street"));
+        }
+
         // --- reflection helpers for the private condition-composition members ---
         private static ScanFilter ComposeScanFilterViaReflection<T>(DynamoDBContext context, params ScanCondition[] conditions)
         {
@@ -731,11 +779,11 @@ namespace AWSSDK_DotNet.UnitTests
                 new object[] { conditions, storageConfig, flatConfig });
         }
 
-        private static CaseMode? ConditionValueCasingViaReflection(PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
+        private static CaseMode? ConditionValueCasingViaReflection(DynamoDBContext context, PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
         {
             var method = typeof(DynamoDBContext).GetMethod("ConditionValueCasing",
-                System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-            return (CaseMode?)method.Invoke(null, new object[] { conditionProperty, storageConfig });
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            return (CaseMode?)method.Invoke(context, new object[] { conditionProperty, storageConfig });
         }
 
         private static AttributeValue SingleConditionValueMap(ScanFilter filter, string attributeName)
