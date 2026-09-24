@@ -37,9 +37,9 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOTelEnrichment operation
+    /// Response Unmarshaller for GetResourceMetricsConfiguration operation
     /// </summary>  
-    public class GetOTelEnrichmentResponseUnmarshaller : CborResponseUnmarshaller
+    public class GetResourceMetricsConfigurationResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,52 +48,20 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
-            GetOTelEnrichmentResponse response = new GetOTelEnrichmentResponse();
+            GetResourceMetricsConfigurationResponse response = new GetResourceMetricsConfigurationResponse();
             var reader = context.Reader;
-            context.AddPathSegment("GetOTelEnrichment");
+            context.AddPathSegment("GetResourceMetricsConfiguration");
             reader.ReadStartMap();
             while (reader.PeekState() != CborReaderState.EndMap)
             {
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
-                    case "CreatedAt":
+                    case "ResourceMetricsConfiguration":
                         {
-                            context.AddPathSegment("CreatedAt");
-                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
-                            response.CreatedAt = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "ExcludeFilters":
-                        {
-                            context.AddPathSegment("ExcludeFilters");
-                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
-                            response.ExcludeFilters = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "IncludeFilters":
-                        {
-                            context.AddPathSegment("IncludeFilters");
-                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
-                            response.IncludeFilters = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "Status":
-                        {
-                            context.AddPathSegment("Status");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            response.Status = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "UpdatedAt":
-                        {
-                            context.AddPathSegment("UpdatedAt");
-                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
-                            response.UpdatedAt = unmarshaller.Unmarshall(context);
+                            context.AddPathSegment("ResourceMetricsConfiguration");
+                            var unmarshaller = ResourceMetricsConfigurationUnmarshaller.Instance;
+                            response.ResourceMetricsConfiguration = unmarshaller.Unmarshall(context);
                             context.PopPathSegment();
                             break;
                         }
@@ -128,13 +96,17 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 var errorTypeName = errorResponse.Code;
                 Amazon.Runtime.Internal.Transform.AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, context.ResponseData);
+                if (errorTypeName != null && errorTypeName.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetOTelEnrichmentResponseUnmarshaller _instance = new GetOTelEnrichmentResponseUnmarshaller();        
+        private static GetResourceMetricsConfigurationResponseUnmarshaller _instance = new GetResourceMetricsConfigurationResponseUnmarshaller();        
 
-        internal static GetOTelEnrichmentResponseUnmarshaller GetInstance()
+        internal static GetResourceMetricsConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +114,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOTelEnrichmentResponseUnmarshaller Instance
+        public static GetResourceMetricsConfigurationResponseUnmarshaller Instance
         {
             get
             {

@@ -30,48 +30,39 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartOTelEnrichment operation.
-    /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
-    /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
-    /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
-    /// dimension) are enriched with resource ARN and resource tag labels and become queryable
-    /// using PromQL.
-    /// 
-    ///  
-    /// <para>
-    /// Before calling this operation, you must enable resource tags on telemetry for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
-    /// resource tags on telemetry</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
-    /// subset of the account's metrics. These filters are stored only when this operation
-    /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
-    /// is already running has no effect and does not modify the filters that are applied.
-    /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
-    /// </para>
+    /// This is the response object from the UpdateOTelEnrichment operation.
     /// </summary>
-    public partial class StartOTelEnrichmentRequest : AmazonCloudWatchRequest
+    public partial class UpdateOTelEnrichmentResponse : AmazonWebServiceResponse
     {
+        private DateTime? _createdAt;
         private List<OTelEnrichmentMetricSelector> _excludeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
         private List<OTelEnrichmentMetricSelector> _includeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time that enrichment started for the account.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExcludeFilters. 
         /// <para>
-        /// The metric namespaces, and the metric names, to leave unenriched. If this parameter
-        /// is omitted, nothing is excluded.
-        /// </para>
-        ///  
-        /// <para>
-        /// Amazon CloudWatch applies <c>ExcludeFilters</c> after <c>IncludeFilters</c>, so a
-        /// metric that both parameters match is not enriched.
-        /// </para>
-        ///  
-        /// <para>
-        /// A maximum of 100 filters is allowed across <c>IncludeFilters</c> and <c>ExcludeFilters</c>
-        /// combined.
+        /// The exclude filters that are stored for the account after the replacement. This parameter
+        /// is omitted when the request cleared the exclude filters, which means that nothing
+        /// is excluded.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -95,13 +86,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property IncludeFilters. 
         /// <para>
-        /// The metric namespaces, and the metric names, to enrich. If this parameter is omitted,
-        /// every namespace that Amazon CloudWatch supports for enrichment is in scope.
-        /// </para>
-        ///  
-        /// <para>
-        /// A maximum of 100 filters is allowed across <c>IncludeFilters</c> and <c>ExcludeFilters</c>
-        /// combined.
+        /// The include filters that are stored for the account after the replacement. This parameter
+        /// is omitted when the request cleared the include filters, which means that every supported
+        /// namespace is in scope.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -120,6 +107,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetIncludeFilters()
         {
             return this._includeFilters != null && (this._includeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time that the enrichment configuration for the account was last stored.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

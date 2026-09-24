@@ -36,9 +36,9 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartOTelEnrichment Request Marshaller
+    /// UpdateOTelEnrichment Request Marshaller
     /// </summary>       
-    public class StartOTelEnrichmentRequestMarshaller : IMarshaller<IRequest, StartOTelEnrichmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateOTelEnrichmentRequestMarshaller : IMarshaller<IRequest, UpdateOTelEnrichmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -47,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartOTelEnrichmentRequest)input);
+            return this.Marshall((UpdateOTelEnrichmentRequest)input);
         }
 
         /// <summary>
@@ -55,11 +55,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartOTelEnrichmentRequest publicRequest)
+        public IRequest Marshall(UpdateOTelEnrichmentRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
             request.Headers["smithy-protocol"] = "rpc-v2-cbor";
-            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/StartOTelEnrichment";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/UpdateOTelEnrichment";
             request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
             request.Headers["Content-Type"] = "application/cbor";
             request.Headers["Accept"] = "application/cbor";
@@ -123,9 +123,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             
             return request;
         }
-        private static StartOTelEnrichmentRequestMarshaller _instance = new StartOTelEnrichmentRequestMarshaller();        
+        private static UpdateOTelEnrichmentRequestMarshaller _instance = new UpdateOTelEnrichmentRequestMarshaller();        
 
-        internal static StartOTelEnrichmentRequestMarshaller GetInstance()
+        internal static UpdateOTelEnrichmentRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +133,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartOTelEnrichmentRequestMarshaller Instance
+        public static UpdateOTelEnrichmentRequestMarshaller Instance
         {
             get
             {

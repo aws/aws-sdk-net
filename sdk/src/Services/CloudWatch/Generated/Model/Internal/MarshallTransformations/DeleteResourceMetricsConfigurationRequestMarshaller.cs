@@ -36,9 +36,9 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartOTelEnrichment Request Marshaller
+    /// DeleteResourceMetricsConfiguration Request Marshaller
     /// </summary>       
-    public class StartOTelEnrichmentRequestMarshaller : IMarshaller<IRequest, StartOTelEnrichmentRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteResourceMetricsConfigurationRequestMarshaller : IMarshaller<IRequest, DeleteResourceMetricsConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -47,7 +47,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartOTelEnrichmentRequest)input);
+            return this.Marshall((DeleteResourceMetricsConfigurationRequest)input);
         }
 
         /// <summary>
@@ -55,11 +55,11 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartOTelEnrichmentRequest publicRequest)
+        public IRequest Marshall(DeleteResourceMetricsConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudWatch");
             request.Headers["smithy-protocol"] = "rpc-v2-cbor";
-            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/StartOTelEnrichment";
+            request.ResourcePath = "service/GraniteServiceVersion20100801/operation/DeleteResourceMetricsConfiguration";
             request.Headers[Amazon.Util.HeaderKeys.XAmzQueryMode] = "true";
             request.Headers["Content-Type"] = "application/cbor";
             request.Headers["Accept"] = "application/cbor";
@@ -71,35 +71,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
-                if (publicRequest.IsSetExcludeFilters())
+                if (publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WriteTextString("ExcludeFilters");
-                    context.Writer.WriteStartArray(publicRequest.ExcludeFilters.Count);
-                    foreach(var publicRequestExcludeFiltersListValue in publicRequest.ExcludeFilters)
-                    {
-                        context.Writer.WriteStartMap(null);
-
-                        var marshaller = OTelEnrichmentMetricSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestExcludeFiltersListValue, context);
-
-                        context.Writer.WriteEndMap();
-                    }
-                    context.Writer.WriteEndArray();
-                }
-                if (publicRequest.IsSetIncludeFilters())
-                {
-                    context.Writer.WriteTextString("IncludeFilters");
-                    context.Writer.WriteStartArray(publicRequest.IncludeFilters.Count);
-                    foreach(var publicRequestIncludeFiltersListValue in publicRequest.IncludeFilters)
-                    {
-                        context.Writer.WriteStartMap(null);
-
-                        var marshaller = OTelEnrichmentMetricSelectorMarshaller.Instance;
-                        marshaller.Marshall(publicRequestIncludeFiltersListValue, context);
-
-                        context.Writer.WriteEndMap();
-                    }
-                    context.Writer.WriteEndArray();
+                    context.Writer.WriteTextString("ResourceArn");
+                    context.Writer.WriteTextString(publicRequest.ResourceArn);
                 }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK
@@ -123,9 +98,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             
             return request;
         }
-        private static StartOTelEnrichmentRequestMarshaller _instance = new StartOTelEnrichmentRequestMarshaller();        
+        private static DeleteResourceMetricsConfigurationRequestMarshaller _instance = new DeleteResourceMetricsConfigurationRequestMarshaller();        
 
-        internal static StartOTelEnrichmentRequestMarshaller GetInstance()
+        internal static DeleteResourceMetricsConfigurationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -133,7 +108,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartOTelEnrichmentRequestMarshaller Instance
+        public static DeleteResourceMetricsConfigurationRequestMarshaller Instance
         {
             get
             {

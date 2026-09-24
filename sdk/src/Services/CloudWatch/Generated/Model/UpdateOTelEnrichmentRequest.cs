@@ -30,29 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartOTelEnrichment operation.
-    /// Enables enrichment and PromQL access for CloudWatch vended metrics for <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingResourceTagsForTelemetry.html">supported
-    /// Amazon Web Services resources</a> in the account. Once enabled, metrics that contain
-    /// a resource identifier dimension (for example, EC2 <c>CPUUtilization</c> with an <c>InstanceId</c>
-    /// dimension) are enriched with resource ARN and resource tag labels and become queryable
-    /// using PromQL.
+    /// Container for the parameters to the UpdateOTelEnrichment operation.
+    /// Replaces the filters that determine which CloudWatch vended metrics are enriched with
+    /// resource ARN and resource tag labels for the account. Enrichment must already be running
+    /// for the account. If it is not, this operation returns a <c>ResourceNotFoundException</c>.
+    /// To start enrichment, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartOTelEnrichment.html">StartOTelEnrichment</a>.
     /// 
     ///  
     /// <para>
-    /// Before calling this operation, you must enable resource tags on telemetry for your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
-    /// resource tags on telemetry</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
-    /// subset of the account's metrics. These filters are stored only when this operation
-    /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
-    /// is already running has no effect and does not modify the filters that are applied.
-    /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
+    /// The filters in the request completely replace the stored filters; they are not merged
+    /// with them. <c>IncludeFilters</c> and <c>ExcludeFilters</c> are replaced as a pair,
+    /// so a request that specifies only <c>IncludeFilters</c> also clears the stored <c>ExcludeFilters</c>,
+    /// and a request that specifies neither clears both.
     /// </para>
     /// </summary>
-    public partial class StartOTelEnrichmentRequest : AmazonCloudWatchRequest
+    public partial class UpdateOTelEnrichmentRequest : AmazonCloudWatchRequest
     {
         private List<OTelEnrichmentMetricSelector> _excludeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
         private List<OTelEnrichmentMetricSelector> _includeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;

@@ -13,6 +13,12 @@
     <pattern>arn:[a-zA-Z0-9-]+:kms:[a-zA-Z0-9-]+:\d{12}:key/[a-f0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.CreateResourceMetricsConfigurationRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteAlarmMuteRuleRequest.AlarmMuteRuleName</property>
     <min>1</min>
     <max>255</max>
@@ -43,6 +49,12 @@
     <property>Amazon.CloudWatch.Model.DeleteMetricStreamRequest.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteResourceMetricsConfigurationRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.DescribeAlarmContributorsRequest.AlarmName</property>
@@ -234,6 +246,12 @@
     <property>Amazon.CloudWatch.Model.GetMetricStreamResponse.RoleArn</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.GetResourceMetricsConfigurationRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ListAlarmMuteRulesRequest.AlarmName</property>
@@ -482,6 +500,12 @@
     <property>Amazon.CloudWatch.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.UpdateResourceMetricsConfigurationRequest.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.AlarmContributor.ContributorId</property>
@@ -860,6 +884,18 @@
     <min>1</min>
     <max>255</max>
     <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.OTelEnrichmentMetricSelector.Namespace</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[^:].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ResourceMetricsConfiguration.ResourceArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:\d{12}:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.Schedule.Duration</property>

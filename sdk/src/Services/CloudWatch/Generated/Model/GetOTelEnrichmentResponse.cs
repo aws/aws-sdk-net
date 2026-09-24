@@ -34,7 +34,82 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class GetOTelEnrichmentResponse : AmazonWebServiceResponse
     {
+        private DateTime? _createdAt;
+        private List<OTelEnrichmentMetricSelector> _excludeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
+        private List<OTelEnrichmentMetricSelector> _includeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
         private OTelEnrichmentStatus _status;
+        private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time that enrichment started for the account. This parameter is omitted
+        /// when enrichment is stopped.
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludeFilters. 
+        /// <para>
+        /// The metric namespaces, and the metric names, that are left unenriched. This parameter
+        /// is omitted when enrichment is stopped, and when enrichment is running with no exclude
+        /// filters, which means that nothing is excluded.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<OTelEnrichmentMetricSelector> ExcludeFilters
+        {
+            get { return this._excludeFilters; }
+            set { this._excludeFilters = value; }
+        }
+
+        // Check to see if ExcludeFilters property is set
+        internal bool IsSetExcludeFilters()
+        {
+            return this._excludeFilters != null && (this._excludeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFilters. 
+        /// <para>
+        /// The metric namespaces, and the metric names, that are enriched. This parameter is
+        /// omitted when enrichment is stopped, and when enrichment is running with no include
+        /// filters, which means that every supported namespace is in scope.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<OTelEnrichmentMetricSelector> IncludeFilters
+        {
+            get { return this._includeFilters; }
+            set { this._includeFilters = value; }
+        }
+
+        // Check to see if IncludeFilters property is set
+        internal bool IsSetIncludeFilters()
+        {
+            return this._includeFilters != null && (this._includeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 
@@ -54,6 +129,24 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time that the enrichment configuration for the account was last stored.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

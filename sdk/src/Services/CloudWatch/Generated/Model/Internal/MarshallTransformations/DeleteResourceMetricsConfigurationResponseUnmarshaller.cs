@@ -37,9 +37,9 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartOTelEnrichment operation
+    /// Response Unmarshaller for DeleteResourceMetricsConfiguration operation
     /// </summary>  
-    public class StartOTelEnrichmentResponseUnmarshaller : CborResponseUnmarshaller
+    public class DeleteResourceMetricsConfigurationResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,54 +48,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
-            StartOTelEnrichmentResponse response = new StartOTelEnrichmentResponse();
+            DeleteResourceMetricsConfigurationResponse response = new DeleteResourceMetricsConfigurationResponse();
             var reader = context.Reader;
-            context.AddPathSegment("StartOTelEnrichment");
-            reader.ReadStartMap();
-            while (reader.PeekState() != CborReaderState.EndMap)
-            {
-                string propertyName = reader.ReadTextString();
-                switch (propertyName)
-                {
-                    case "CreatedAt":
-                        {
-                            context.AddPathSegment("CreatedAt");
-                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
-                            response.CreatedAt = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "ExcludeFilters":
-                        {
-                            context.AddPathSegment("ExcludeFilters");
-                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
-                            response.ExcludeFilters = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "IncludeFilters":
-                        {
-                            context.AddPathSegment("IncludeFilters");
-                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
-                            response.IncludeFilters = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "UpdatedAt":
-                        {
-                            context.AddPathSegment("UpdatedAt");
-                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
-                            response.UpdatedAt = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    default:
-                        reader.SkipValue();
-                        break;
-                }
-            }
-            reader.ReadEndMap();
-            context.PopPathSegment();
+            context.AddPathSegment("DeleteResourceMetricsConfiguration");
 
             return response;
         }
@@ -120,17 +75,17 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 var errorTypeName = errorResponse.Code;
                 Amazon.Runtime.Internal.Transform.AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, context.ResponseData);
-                if (errorTypeName != null && errorTypeName.Equals("ValidationException"))
+                if (errorTypeName != null && errorTypeName.Equals("ResourceNotFoundException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartOTelEnrichmentResponseUnmarshaller _instance = new StartOTelEnrichmentResponseUnmarshaller();        
+        private static DeleteResourceMetricsConfigurationResponseUnmarshaller _instance = new DeleteResourceMetricsConfigurationResponseUnmarshaller();        
 
-        internal static StartOTelEnrichmentResponseUnmarshaller GetInstance()
+        internal static DeleteResourceMetricsConfigurationResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +93,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartOTelEnrichmentResponseUnmarshaller Instance
+        public static DeleteResourceMetricsConfigurationResponseUnmarshaller Instance
         {
             get
             {

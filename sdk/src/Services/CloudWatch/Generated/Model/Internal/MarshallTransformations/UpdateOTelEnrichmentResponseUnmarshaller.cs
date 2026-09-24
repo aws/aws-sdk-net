@@ -37,9 +37,9 @@ using Amazon.Extensions.CborProtocol.Internal.Transform;
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOTelEnrichment operation
+    /// Response Unmarshaller for UpdateOTelEnrichment operation
     /// </summary>  
-    public class GetOTelEnrichmentResponseUnmarshaller : CborResponseUnmarshaller
+    public class UpdateOTelEnrichmentResponseUnmarshaller : CborResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -48,9 +48,9 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(CborUnmarshallerContext context)
         {
-            GetOTelEnrichmentResponse response = new GetOTelEnrichmentResponse();
+            UpdateOTelEnrichmentResponse response = new UpdateOTelEnrichmentResponse();
             var reader = context.Reader;
-            context.AddPathSegment("GetOTelEnrichment");
+            context.AddPathSegment("UpdateOTelEnrichment");
             reader.ReadStartMap();
             while (reader.PeekState() != CborReaderState.EndMap)
             {
@@ -78,14 +78,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             context.AddPathSegment("IncludeFilters");
                             var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
                             response.IncludeFilters = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "Status":
-                        {
-                            context.AddPathSegment("Status");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            response.Status = unmarshaller.Unmarshall(context);
                             context.PopPathSegment();
                             break;
                         }
@@ -128,13 +120,21 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 var errorTypeName = errorResponse.Code;
                 Amazon.Runtime.Internal.Transform.AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, context.ResponseData);
+                if (errorTypeName != null && errorTypeName.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorTypeName != null && errorTypeName.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetOTelEnrichmentResponseUnmarshaller _instance = new GetOTelEnrichmentResponseUnmarshaller();        
+        private static UpdateOTelEnrichmentResponseUnmarshaller _instance = new UpdateOTelEnrichmentResponseUnmarshaller();        
 
-        internal static GetOTelEnrichmentResponseUnmarshaller GetInstance()
+        internal static UpdateOTelEnrichmentResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -142,7 +142,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOTelEnrichmentResponseUnmarshaller Instance
+        public static UpdateOTelEnrichmentResponseUnmarshaller Instance
         {
             get
             {

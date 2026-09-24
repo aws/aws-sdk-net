@@ -30,21 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// This is the response object from the StartOTelEnrichment operation.
+    /// Represents a resource metrics configuration for an Amazon Web Services resource. A
+    /// resource metrics configuration enables detailed metric collection for the resource
+    /// that is identified by its Amazon Resource Name (ARN). Each Amazon Web Services resource
+    /// can have only one resource metrics configuration.
+    /// 
+    ///  
+    /// <para>
+    /// This structure is returned by the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>,
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateResourceMetricsConfiguration.html">UpdateResourceMetricsConfiguration</a>,
+    /// and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetResourceMetricsConfiguration.html">GetResourceMetricsConfiguration</a>
+    /// operations.
+    /// </para>
     /// </summary>
-    public partial class StartOTelEnrichmentResponse : AmazonWebServiceResponse
+    public partial class ResourceMetricsConfiguration
     {
         private DateTime? _createdAt;
-        private List<OTelEnrichmentMetricSelector> _excludeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
-        private List<OTelEnrichmentMetricSelector> _includeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
+        private List<ResourceMetricSelection> _metricSelections = AWSConfigs.InitializeCollections ? new List<ResourceMetricSelection>() : null;
+        private string _resourceArn;
         private DateTime? _updatedAt;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time that enrichment started for the account.
+        /// The date and time that the resource metrics configuration was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime? CreatedAt
         {
             get { return this._createdAt; }
@@ -58,9 +70,10 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExcludeFilters. 
+        /// Gets and sets the property MetricSelections. 
         /// <para>
-        /// The exclude filters that are stored for the account.
+        /// The metrics that Amazon CloudWatch collects for the resource. If this field is not
+        /// present, Amazon CloudWatch collects all available detailed metrics for the resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -68,49 +81,47 @@ namespace Amazon.CloudWatch.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public List<OTelEnrichmentMetricSelector> ExcludeFilters
+        [AWSProperty(Min=1, Max=1)]
+        public List<ResourceMetricSelection> MetricSelections
         {
-            get { return this._excludeFilters; }
-            set { this._excludeFilters = value; }
+            get { return this._metricSelections; }
+            set { this._metricSelections = value; }
         }
 
-        // Check to see if ExcludeFilters property is set
-        internal bool IsSetExcludeFilters()
+        // Check to see if MetricSelections property is set
+        internal bool IsSetMetricSelections()
         {
-            return this._excludeFilters != null && (this._excludeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._metricSelections != null && (this._metricSelections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property IncludeFilters. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The include filters that are stored for the account.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services resource that this configuration
+        /// applies to.
         /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public List<OTelEnrichmentMetricSelector> IncludeFilters
+        [AWSProperty(Required=true, Min=20, Max=2048)]
+        public string ResourceArn
         {
-            get { return this._includeFilters; }
-            set { this._includeFilters = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if IncludeFilters property is set
-        internal bool IsSetIncludeFilters()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._includeFilters != null && (this._includeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._resourceArn != null;
         }
 
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time that the enrichment configuration for the account was last stored.
+        /// The date and time that the resource metrics configuration was last updated. When the
+        /// configuration is first created, this value is the same as <c>CreatedAt</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public DateTime? UpdatedAt
         {
             get { return this._updatedAt; }

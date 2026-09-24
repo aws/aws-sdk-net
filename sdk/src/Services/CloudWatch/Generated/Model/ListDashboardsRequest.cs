@@ -41,6 +41,16 @@ namespace Amazon.CloudWatch.Model
     /// 1000 dashboards, you can call <c>ListDashboards</c> again and include the value you
     /// received for <c>NextToken</c> in the first call, to receive the next 1000 results.
     /// </para>
+    ///  
+    /// <para>
+    /// You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+    /// Region (Region that is disabled by default)</a> for your account. In that Region,
+    /// <c>ListDashboards</c> can return an access denied error for up to 24 hours after you
+    /// enable the Region. This delay occurs while dashboard data propagates. The error does
+    /// not indicate a problem with your permissions. Because dashboards are global, you can
+    /// call <c>ListDashboards</c> in any other enabled Region, or retry after propagation
+    /// completes.
+    /// </para>
     /// </summary>
     public partial class ListDashboardsRequest : AmazonCloudWatchRequest
     {

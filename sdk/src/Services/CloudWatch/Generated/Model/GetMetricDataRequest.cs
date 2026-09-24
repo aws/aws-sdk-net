@@ -50,8 +50,10 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// If you include a Metrics Insights query, each <c>GetMetricData</c> operation can include
     /// only one query. But the same <c>GetMetricData</c> operation can also retrieve other
-    /// metrics. Metrics Insights queries can query only the most recent three hours of metric
-    /// data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+    /// metrics. Metrics Insights queries can query the most recent two weeks of metric data.
+    /// For alarm condition evaluations, Metrics Insights queries can query only the most
+    /// recent three hours of metric data. For more information about Metrics Insights, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
     /// your metrics with CloudWatch Metrics Insights</a>.
     /// </para>
     ///  
