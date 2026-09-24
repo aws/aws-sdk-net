@@ -114,7 +114,30 @@ namespace Amazon.DynamoDBv2.DataModel
         [Obsolete("Use AttributeCasing instead. LowerCamelCaseProperties=true is equivalent to " +
                   "AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase nested); for " +
                   "consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
-        public bool LowerCamelCaseProperties { get; set; }
+        public bool LowerCamelCaseProperties
+        {
+            get => _lowerCamelCaseProperties;
+            set
+            {
+                _lowerCamelCaseProperties = value;
+                // Record that the flag was explicitly assigned (via the named property or the bool
+                // constructor). An explicit assignment — even to false — is a deliberate casing choice and
+                // must be distinguished from an omitted flag: in V3, LowerCamelCaseProperties=false meant
+                // "PascalCase, do not camelCase", so a type declared that way must NOT inherit an enclosing
+                // CamelCase parent's casing in V4.
+                LowerCamelCasePropertiesExplicitlySet = true;
+            }
+        }
+        private bool _lowerCamelCaseProperties;
+
+        /// <summary>
+        /// Whether <see cref="LowerCamelCaseProperties"/> was explicitly assigned (via the named property or
+        /// the obsolete bool constructor), as opposed to being left at its default. An explicit
+        /// <c>false</c> is treated as an explicit <see cref="CaseMode.PascalCase"/> declaration so that a
+        /// type carrying V3's <c>LowerCamelCaseProperties=false</c> semantics does not silently inherit an
+        /// enclosing <see cref="CaseMode.CamelCase"/> parent's casing on upgrade.
+        /// </summary>
+        internal bool LowerCamelCasePropertiesExplicitlySet { get; private set; }
 
         /// <summary>
         /// Gets and sets how .NET property names are cased when mapped to DynamoDB attribute names.
@@ -207,18 +230,12 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             TableName = tableName;
 #pragma warning disable CS0618 // LowerCamelCaseProperties is obsolete but retained for this back-compat constructor overload.
+            // Assigning through the property marks LowerCamelCasePropertiesExplicitlySet = true, so
+            // ResolveCaseMode treats an explicit false as a deliberate PascalCase choice that blocks
+            // inheritance (preserving V3 semantics). true still maps to LegacyCamelCase. The one-argument
+            // (string) constructor never assigns this, so it stays non-explicit and remains inheritable.
             LowerCamelCaseProperties = lowerCamelCaseProperties;
 #pragma warning restore CS0618
-            // Preserve V3 semantics of an explicit lowerCamelCaseProperties=false: it meant "PascalCase, do
-            // not camelCase." With nested-casing inheritance in V4, leaving AttributeCasing=Unset would let
-            // such a type INHERIT an enclosing CamelCase parent's casing, silently changing existing stored
-            // attribute names on upgrade. Setting AttributeCasing=PascalCase makes the type declare its own
-            // casing (ResolveCaseMode precedence #1 -> declaresOwnCasing=true), which blocks inheritance and
-            // exactly preserves the old behavior. When true, leave AttributeCasing=Unset so the legacy flag
-            // maps to LegacyCamelCase (precedence #2). The one-argument (string) constructor is unaffected
-            // and stays Unset (allowing inheritance, the documented default).
-            if (!lowerCamelCaseProperties)
-                AttributeCasing = CaseMode.PascalCase;
             Conversion = conversion;
         }
     }

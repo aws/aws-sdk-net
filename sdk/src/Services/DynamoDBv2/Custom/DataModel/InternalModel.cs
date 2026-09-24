@@ -1504,6 +1504,10 @@ namespace Amazon.DynamoDBv2.DataModel
         ///    flag is <c>true</c>, the type maps to <see cref="CaseMode.LegacyCamelCase"/> (camelCase root,
         ///    PascalCase nested) to exactly preserve the historical behavior of existing data, and is
         ///    considered to declare its own casing.
+        /// 2b. Otherwise, if <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> was explicitly
+        ///    assigned <c>false</c> (via the named property or the obsolete bool constructor), the type maps
+        ///    to <see cref="CaseMode.PascalCase"/> and IS considered to declare its own casing — preserving
+        ///    the V3 "PascalCase, do not camelCase" semantics so it does not inherit a CamelCase parent.
         /// 3. Otherwise (<see cref="CaseMode.Unset"/> and no legacy flag) the type uses
         ///    <see cref="CaseMode.PascalCase"/> and does NOT declare its own casing, so a nested instance
         ///    may inherit an enclosing type's casing.
@@ -1526,6 +1530,16 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 declaresOwnCasing = true;
                 return CaseMode.LegacyCamelCase;
+            }
+
+            // An explicit LowerCamelCaseProperties=false (via the named property or the obsolete bool
+            // constructor) is a deliberate V3 "PascalCase, do not camelCase" choice, distinct from an
+            // omitted flag. Treat it as declaring its own casing so it blocks inheritance of an enclosing
+            // CamelCase parent (which would otherwise silently rename existing PascalCase attributes).
+            if (tableAttribute.LowerCamelCasePropertiesExplicitlySet)
+            {
+                declaresOwnCasing = true;
+                return CaseMode.PascalCase;
             }
 
             declaresOwnCasing = false;

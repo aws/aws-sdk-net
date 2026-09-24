@@ -103,6 +103,15 @@ namespace AWSSDK_DotNet.UnitTests
             public string Street { get; set; }
             public string City { get; set; }
         }
+
+        // Same V3 semantics via the NAMED property form: LowerCamelCaseProperties = false. An explicit
+        // false must be treated as a deliberate PascalCase choice that blocks inheritance.
+        [DynamoDBTable("AddressExplicitFalseNamed", LowerCamelCaseProperties = false)]
+        public class AddressExplicitFalseNamed
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+        }
 #pragma warning restore CS0618
 
         // A CamelCase root nesting a type declared via the obsolete (string, false) constructor. The nested
@@ -113,6 +122,15 @@ namespace AWSSDK_DotNet.UnitTests
             [DynamoDBHashKey]
             public string Id { get; set; }
             public AddressExplicitFalse ShippingAddress { get; set; }
+        }
+
+        // CamelCase root nesting a type declared via the NAMED LowerCamelCaseProperties = false form.
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithExplicitFalseNamedNested
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public AddressExplicitFalseNamed ShippingAddress { get; set; }
         }
 
         [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
@@ -810,6 +828,31 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsFalse(nested.ContainsKey("street"), "must not inherit the CamelCase parent's casing");
 
             var restored = context.FromDocument<OrderCamelWithExplicitFalseNested>(doc);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
+        }
+
+        [TestMethod]
+        public void NamedFalseProperty_BlocksInheritanceUnderCamelCaseParent()
+        {
+            // Regression (Copilot): the NAMED [DynamoDBTable("T", LowerCamelCaseProperties = false)] form has
+            // the same V3 "PascalCase, do not camelCase" semantics as the (string, false) constructor. Since
+            // the property setter records explicit assignment, ResolveCaseMode treats an explicit false as a
+            // PascalCase declaration, so the nested type does NOT inherit the CamelCase parent.
+            var context = CreateContext();
+            var order = new OrderCamelWithExplicitFalseNamedNested
+            {
+                Id = "1",
+                ShippingAddress = new AddressExplicitFalseNamed { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("Street"), "named explicit-false nested type must retain PascalCase");
+            Assert.IsTrue(nested.ContainsKey("City"));
+            Assert.IsFalse(nested.ContainsKey("street"), "must not inherit the CamelCase parent's casing");
+
+            var restored = context.FromDocument<OrderCamelWithExplicitFalseNamedNested>(doc);
             Assert.AreEqual("Main", restored.ShippingAddress.Street);
             Assert.AreEqual("Seattle", restored.ShippingAddress.City);
         }
