@@ -134,6 +134,15 @@ namespace AWSSDK_DotNet.UnitTests
             public AddressExplicitFalseNamed ShippingAddress { get; set; }
         }
 
+        // A type declared with an out-of-range CaseMode. Config build must reject this rather than let it
+        // fall through Utils.ApplyCasing and silently behave as PascalCase.
+        [DynamoDBTable("Orders", (CaseMode)999)]
+        public class OrderInvalidCasing
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+        }
+
         [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
         public class OrderCamelWithDeclaredNested
         {
@@ -858,6 +867,20 @@ namespace AWSSDK_DotNet.UnitTests
             var restored = context.FromDocument<OrderCamelWithExplicitFalseNamedNested>(doc);
             Assert.AreEqual("Main", restored.ShippingAddress.Street);
             Assert.AreEqual("Seattle", restored.ShippingAddress.City);
+        }
+
+        [TestMethod]
+        public void InvalidCaseMode_ThrowsAtConfigBuild()
+        {
+            // Regression (Copilot r4099268011): an out-of-range CaseMode (e.g. [DynamoDBTable("T",
+            // (CaseMode)999)]) was previously accepted and fell through Utils.ApplyCasing, silently behaving
+            // as PascalCase. ResolveCaseMode now rejects an undefined value at config-build time.
+            var context = CreateContext();
+            var order = new OrderInvalidCasing { Id = "1" };
+
+            var ex = Assert.ThrowsExactly<InvalidOperationException>(() => context.ToDocument(order));
+            StringAssert.Contains(ex.Message, "Invalid AttributeCasing");
+            StringAssert.Contains(ex.Message, "999");
         }
 
         // --- reflection helpers for the private condition-composition members ---

@@ -316,7 +316,9 @@ serialize/expression/condition paths).
 3. else `PascalCase`, does **not** declare own casing (so nested instances may inherit).
 
 The inheritance gate keys off `ItemStorageConfig.DeclaresOwnCasing`, not the resolved mode value —
-that is what makes an explicit `PascalCase` block inheritance while an `Unset` does not.
+that is what makes an explicit `PascalCase` block inheritance while an `Unset` does not. `ResolveCaseMode`
+also `Enum.IsDefined`-validates an explicit `AttributeCasing`, so an out-of-range value (e.g.
+`(CaseMode)999`) throws at config-build time instead of silently falling through to PascalCase.
 
 ### How inheritance works (the one hard design constraint)
 

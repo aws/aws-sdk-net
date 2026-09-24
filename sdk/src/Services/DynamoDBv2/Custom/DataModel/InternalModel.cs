@@ -1522,6 +1522,17 @@ namespace Amazon.DynamoDBv2.DataModel
 #pragma warning disable CS0618 // Reconciling the obsolete LowerCamelCaseProperties flag and LegacyCamelCase mode.
             if (tableAttribute.AttributeCasing != CaseMode.Unset)
             {
+                // Reject an out-of-range value (e.g. (CaseMode)999) rather than letting it fall through to
+                // Utils.ApplyCasing, where an unrecognized mode would silently behave as PascalCase. An
+                // invalid casing is a configuration error, so fail fast at config-build time with a clear
+                // message rather than producing confusing attribute names at runtime.
+                if (!Enum.IsDefined(typeof(CaseMode), tableAttribute.AttributeCasing))
+                {
+                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                        "Invalid AttributeCasing value '{0}' on type '{1}'. It must be a defined {2} value.",
+                        (int)tableAttribute.AttributeCasing, type.FullName, nameof(CaseMode)));
+                }
+
                 declaresOwnCasing = true;
                 return tableAttribute.AttributeCasing;
             }
