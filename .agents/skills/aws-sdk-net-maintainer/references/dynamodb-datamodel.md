@@ -401,10 +401,15 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   serializes the nested value's Map keys as `street`/`city` too — otherwise the value would be written
   PascalCase and never match the stored item.
 - **Condition-based queries/scans** (`ScanCondition` / `QueryCondition` / `QueryFilter`): a condition
-  targets a top-level property of the root, so a complex/nested condition value inherits the root's
-  casing. `ComposeScanFilter` and `ConvertConditionValues` seed `InheritedAttributeCasing` from
-  `storageConfig.AttributeCasing` (restored afterward) before serializing each condition value; primitive
-  key values are unaffected.
+  targets a top-level property of the root **or a flattened complex leaf**. Both the scan path
+  (`ComposeScanFilter`) and the query path (`ComposeQueryFilterHelper` → `ConvertConditionValues`) seed
+  `InheritedAttributeCasing` (restored afterward) before serializing each condition value, deriving the
+  casing from the **shared** `ConditionValueCasing(conditionProperty, storageConfig)` helper: the resolved
+  flattened leaf's `FlattenedEffectiveCasing` when the property is a flattened leaf, otherwise the root's
+  `storageConfig.AttributeCasing`. This matters when a condition targets a flattened complex leaf whose
+  effective casing differs from the root (e.g. a `PascalCase` `[DynamoDBFlatten]` child under a `CamelCase`
+  root) — the value's Map keys must match what save wrote, not the root's casing. Primitive key values are
+  unaffected. Keeping both paths on the one helper prevents scan/query drift.
 - **Immutable / constructor-bound members** (net8+): `InstantiateWithConstructor` binds stored values to
   a type's constructor parameters *before* `PopulateInstance` runs, so it seeds `InheritedAttributeCasing`
   from the root `ItemStorageConfig.AttributeCasing` (restored afterward) before deserializing each

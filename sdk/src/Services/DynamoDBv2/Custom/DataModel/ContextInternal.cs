@@ -1437,11 +1437,13 @@ namespace Amazon.DynamoDBv2.DataModel
                 PropertyStorage propertyStorage =
                     storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
                 List<AttributeValue> attributeValues = new List<AttributeValue>();
-                // A scan condition targets a top-level property of the root, so a complex/nested condition
-                // value inherits the root's casing (e.g. a CamelCase root writes the value's Map keys as
-                // street/city). Seed and restore InheritedAttributeCasing; primitives are unaffected.
+                // A scan condition targets a top-level property of the root (or a flattened complex leaf);
+                // a complex/nested condition value must be cased with the resolved property's effective
+                // casing (root casing normally, or the flattened child's casing for a flattened leaf) so the
+                // value's Map keys match what was stored. Seed and restore InheritedAttributeCasing;
+                // primitives are unaffected.
                 var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
-                flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(storageConfig.AttributeCasing);
+                flatConfig.InheritedAttributeCasing = ConditionValueCasing(propertyStorage, storageConfig);
                 try
                 {
                     foreach (var value in condition.Values)
@@ -1637,7 +1639,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         indexNames.AddRange(conditionProperty.IndexNames);
                     if (conditionProperty.IsRangeKey)
                         indexNames.Add(NO_INDEX);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, valueInheritedCasing: Utils.GetInheritableCasing(storageConfig.AttributeCasing));
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, valueInheritedCasing: ConditionValueCasing(conditionProperty, storageConfig));
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
@@ -1647,7 +1649,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     object[] conditionValues = condition.Values;
                     PropertyStorage conditionProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true, valueInheritedCasing: Utils.GetInheritableCasing(storageConfig.AttributeCasing));
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true, valueInheritedCasing: ConditionValueCasing(conditionProperty, storageConfig));
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
@@ -1678,6 +1680,26 @@ namespace Amazon.DynamoDBv2.DataModel
                 flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
             return attributeValues;
+        }
+
+        /// <summary>
+        /// Computes the <see cref="CaseMode"/> to serialize a condition value's Map keys with for a
+        /// <see cref="ScanCondition"/>/<see cref="QueryCondition"/> targeting <paramref name="conditionProperty"/>.
+        /// A condition property is normally a top-level member of the root, so its complex value inherits the
+        /// root's casing. But the property can be a flattened complex leaf (a member of a [DynamoDBFlatten]
+        /// child), whose effective casing may differ from the root's (e.g. an explicitly-PascalCase flattened
+        /// child under a CamelCase root). In that case the value must be cased with the flattened child's
+        /// effective casing so it matches what save wrote. Returns an inheritable casing (or null when the
+        /// resolved casing does not propagate, leaving values at their base casing).
+        /// </summary>
+        private static CaseMode? ConditionValueCasing(PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
+        {
+            // A flattened leaf carries its owning flattened child's effective casing; prefer it so a
+            // condition value on that leaf is cased consistently with how the leaf was stored.
+            if (conditionProperty != null && conditionProperty.IsFlattened)
+                return Utils.GetInheritableCasing(conditionProperty.FlattenedEffectiveCasing);
+
+            return Utils.GetInheritableCasing(storageConfig.AttributeCasing);
         }
 
         private static string GetQueryIndexName(DynamoDBFlatConfig flatConfig, List<string> indexNames)

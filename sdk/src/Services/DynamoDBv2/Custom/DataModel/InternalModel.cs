@@ -180,6 +180,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// the flattened child type is serialized with on save (its own declared casing, or the casing the
         /// enclosing type propagates to an undecorated child). Load must resolve any non-flattened complex
         /// leaf of the flattened child with this same casing so nested Map keys round-trip.
+        /// This is also stamped onto each flattened leaf (see <see cref="IsFlattened"/>) so that a
+        /// condition (ScanCondition/QueryCondition) targeting a flattened complex leaf serializes its
+        /// value's Map keys with the flattened child's casing rather than the root's.
         /// </summary>
         public CaseMode FlattenedEffectiveCasing { get; set; }
 
@@ -1799,6 +1802,14 @@ namespace Amazon.DynamoDBv2.DataModel
                         var flattenPropertyStorage = MemberInfoToPropertyStorage(flattenNameConfig, memberInfo);
 
                         flattenPropertyStorage.IsFlattened = true;
+
+                        // Stamp the flattened child's effective casing onto each leaf. A condition
+                        // (ScanCondition/QueryCondition) can target a flattened complex leaf by its
+                        // property name; when its value is a complex object, the value's Map keys must be
+                        // cased with the flattened child's effective casing (which may differ from the
+                        // root's, e.g. an explicitly-PascalCase flattened child under a CamelCase root),
+                        // not the root's casing.
+                        flattenPropertyStorage.FlattenedEffectiveCasing = effectiveChildCasing;
 
                         propertyStorage.FlattenProperties.Add(flattenPropertyStorage);
                     }

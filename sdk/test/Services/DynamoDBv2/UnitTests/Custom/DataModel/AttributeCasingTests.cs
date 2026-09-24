@@ -585,6 +585,76 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("Main", restored.Contact.HomeAddress.Street);
             Assert.AreEqual("Seattle", restored.Contact.HomeAddress.City);
         }
+
+        [TestMethod]
+        public void ScanCondition_OnFlattenedComplexLeaf_UsesFlattenedChildCasing()
+        {
+            // Regression (Copilot finding #2, scan path): a ScanCondition whose PropertyName is a flattened
+            // complex leaf (HomeAddress, from a PascalCase [DynamoDBFlatten] child under a CamelCase root)
+            // must serialize its complex value's Map keys with the flattened CHILD's effective casing
+            // (PascalCase), not the root's CamelCase — otherwise the condition never matches stored items.
+            var context = CreateContext();
+            var target = new Address { Street = "Main", City = "Seattle" };
+            var condition = new ScanCondition("HomeAddress", ScanOperator.Equal, target);
+
+            var scanFilter = ComposeScanFilterViaReflection<OrderCamelWithFlattenNested>(context, condition);
+            var addressMap = SingleConditionValueMap(scanFilter, "HomeAddress");
+
+            Assert.IsTrue(addressMap.M.ContainsKey("Street"), "flattened PascalCase child leaf value must use PascalCase Map keys");
+            Assert.IsTrue(addressMap.M.ContainsKey("City"));
+            Assert.IsFalse(addressMap.M.ContainsKey("street"), "must NOT use the root's CamelCase for a flattened child's leaf value");
+        }
+
+        [TestMethod]
+        public void QueryAndScanConditionCasing_SharedHelper_ResolvesFlattenedLeafAndRoot()
+        {
+            // Both the scan and query condition paths derive the condition value's casing from the same
+            // ConditionValueCasing helper. Verify the helper directly for the two cases that matter:
+            //  (1) a flattened complex leaf -> the flattened child's effective casing;
+            //  (2) an ordinary top-level property -> the root's casing.
+            var context = CreateContext();
+            var storageConfig = context.StorageConfigCache.GetConfig<OrderCamelWithFlattenNested>(
+                new DynamoDBFlatConfig(null, context.Config));
+
+            var leaf = storageConfig.BaseTypeStorageConfig.GetPropertyStorage("HomeAddress");
+            Assert.IsTrue(leaf.IsFlattened, "HomeAddress should be a flattened leaf");
+            var leafCasing = ConditionValueCasingViaReflection(leaf, storageConfig);
+            // Flattened child is PascalCase; GetInheritableCasing(PascalCase) == PascalCase (a no-op cast).
+            Assert.AreEqual(CaseMode.PascalCase, leafCasing);
+
+            var camelConfig = context.StorageConfigCache.GetConfig<OrderCamelCase>(
+                new DynamoDBFlatConfig(null, context.Config));
+            var topLevel = camelConfig.BaseTypeStorageConfig.GetPropertyStorage("ShippingAddress");
+            Assert.IsFalse(topLevel.IsFlattened);
+            var rootCasing = ConditionValueCasingViaReflection(topLevel, camelConfig);
+            Assert.AreEqual(CaseMode.CamelCase, rootCasing, "a non-flattened property uses the root's casing");
+        }
+
+        // --- reflection helpers for the private condition-composition members ---
+
+        private static ScanFilter ComposeScanFilterViaReflection<T>(DynamoDBContext context, params ScanCondition[] conditions)
+        {
+            var flatConfig = new DynamoDBFlatConfig(null, context.Config);
+            var storageConfig = context.StorageConfigCache.GetConfig<T>(flatConfig);
+            var method = typeof(DynamoDBContext).GetMethod("ComposeScanFilter",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
+            return (ScanFilter)method.Invoke(context,
+                new object[] { conditions, storageConfig, flatConfig });
+        }
+
+        private static CaseMode? ConditionValueCasingViaReflection(PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
+        {
+            var method = typeof(DynamoDBContext).GetMethod("ConditionValueCasing",
+                System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+            return (CaseMode?)method.Invoke(null, new object[] { conditionProperty, storageConfig });
+        }
+
+        private static AttributeValue SingleConditionValueMap(ScanFilter filter, string attributeName)
+        {
+            var conditions = filter.ToConditions();
+            Assert.IsTrue(conditions.ContainsKey(attributeName), "expected a condition on " + attributeName);
+            return conditions[attributeName].AttributeValueList.Single();
+        }
     }
 }
 
