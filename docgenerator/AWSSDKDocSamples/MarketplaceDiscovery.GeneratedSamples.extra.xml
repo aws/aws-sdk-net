@@ -154,6 +154,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferSet(Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferSet(Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get offer set with only required fields"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferSet(Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferSet(Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferSetResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get offer set that never expires from a first-party seller"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
             <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
             <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
@@ -488,7 +526,7 @@
                     
                 </para>
                 <code
-                    title="List CloudFormation Template Fulfillment Options"
+                    title="List API Fulfillment Options with Dynamic Endpoint"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-3" />
             </example>
@@ -507,7 +545,7 @@
                     
                 </para>
                 <code
-                    title="List Container Fulfillment Options"
+                    title="List CloudFormation Template Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-4" />
             </example>
@@ -526,7 +564,7 @@
                     
                 </para>
                 <code
-                    title="List Helm Fulfillment Options"
+                    title="List Container Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-5" />
             </example>
@@ -545,7 +583,7 @@
                     
                 </para>
                 <code
-                    title="List EKS Add-On Fulfillment Options"
+                    title="List Helm Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-6" />
             </example>
@@ -564,7 +602,7 @@
                     
                 </para>
                 <code
-                    title="List EC2 Image Builder Component Fulfillment Options"
+                    title="List EKS Add-On Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-7" />
             </example>
@@ -583,7 +621,7 @@
                     
                 </para>
                 <code
-                    title="List Data Exchange Fulfillment Options"
+                    title="List EC2 Image Builder Component Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-8" />
             </example>
@@ -602,7 +640,7 @@
                     
                 </para>
                 <code
-                    title="List Professional Services Fulfillment Options"
+                    title="List Data Exchange Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-9" />
             </example>
@@ -621,7 +659,7 @@
                     
                 </para>
                 <code
-                    title="List SaaS Fulfillment Options"
+                    title="List Professional Services Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-10" />
             </example>
@@ -640,7 +678,7 @@
                     
                 </para>
                 <code
-                    title="List SageMaker Algorithm Fulfillment Options"
+                    title="List SaaS Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-11" />
             </example>
@@ -659,9 +697,28 @@
                     
                 </para>
                 <code
-                    title="List SageMaker Model Fulfillment Options"
+                    title="List SageMaker Algorithm Fulfillment Options"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-12" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.ListFulfillmentOptions(Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List SageMaker Model Fulfillment Options"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-13" />
             </example>
         </value>
     </doc>
