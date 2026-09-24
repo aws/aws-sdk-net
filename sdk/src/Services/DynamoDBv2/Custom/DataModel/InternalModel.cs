@@ -1314,20 +1314,26 @@ namespace Amazon.DynamoDBv2.DataModel
                             flatConfig.ItemConversion = tableCache.BaseTypeConfig.Conversion;
 
                         // Fast path: return an already-resolved config under the read lock. If an inherited
-                        // casing variant is required but not yet built, fall through to the write lock.
+                        // casing variant is required but not yet built, TryResolveInheritedCasingConfig
+                        // returns false; drop to the write lock to build it. We must NOT fall through to the
+                        // table-cache lookup below, because if this nested type was previously converted as a
+                        // root its table config is already cached and would be returned with the wrong
+                        // (base) casing instead of the inherited variant.
                         if (TryResolveInheritedCasingConfig(type, tableCache, flatConfig, out var cachedConfig))
                             return cachedConfig;
                     }
-
-                    actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
-
-                    if (tableCache.Cache.TryGetValue(actualTableName, out config))
+                    else
                     {
-                        if (flatConfig == null)
-                            throw new ArgumentNullException("flatConfig");
+                        actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
 
-                        flatConfig.ItemConversion = config.Conversion;
-                        return config;
+                        if (tableCache.Cache.TryGetValue(actualTableName, out config))
+                        {
+                            if (flatConfig == null)
+                                throw new ArgumentNullException("flatConfig");
+
+                            flatConfig.ItemConversion = config.Conversion;
+                            return config;
+                        }
                     }
                 }
             }

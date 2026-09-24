@@ -473,6 +473,25 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsTrue(addressMap.ContainsKey("city"));
             Assert.IsFalse(addressMap.ContainsKey("Street"));
         }
+        [TestMethod]
+        public void CamelCase_NestedTypeUsedAsRootFirst_StillInheritsWhenNested()
+        {
+            // Cache-ordering regression: if the nested type is first converted as a root, its table config
+            // is cached. A later nested use under a CamelCase parent must still resolve the inherited
+            // (camelCased) variant, not the cached base PascalCase config.
+            var context = CreateContext();
+
+            // 1) Convert Address as a root first, populating its table-cache entry with PascalCase names.
+            var rootDoc = context.ToDocument(new Address { Street = "Main", City = "Seattle" });
+            Assert.IsTrue(rootDoc.ContainsKey("Street"));
+
+            // 2) Now convert an order whose CamelCase root nests the same Address type.
+            var doc = BuildOrderDoc<OrderCamelCase>(context, "1", "Alice", "Main", "Seattle");
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("street"), "nested Address must inherit CamelCase even after being cached as a root");
+            Assert.IsTrue(nested.ContainsKey("city"));
+            Assert.IsFalse(nested.ContainsKey("Street"));
+        }
     }
 }
 

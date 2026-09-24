@@ -383,7 +383,11 @@ The implementation:
   does not declare its own casing (`DeclaresOwnCasing == false`) and an inheritable casing
   applies, `ResolveInheritedCasingConfig` builds/returns a variant with the names re-baked in that casing.
   `CreateStorageConfig` / `PopulateConfigFromType` take an optional `forcedCasing` that only applies to
-  types without their own explicit casing.
+  types without their own explicit casing. In `GetConfig`'s read-lock fast path, a `conversionOnly`
+  lookup that needs an inherited variant which isn't cached yet must **not** fall through to the
+  table-cache lookup: if the nested type was previously converted as a root, its base (PascalCase) table
+  config is already cached and would be returned with the wrong casing. The read-lock path is gated so
+  `conversionOnly` drops to the write lock (which builds the variant) instead.
 
 Three non-serialization paths also honor inheritance so attribute names stay consistent:
 
