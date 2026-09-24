@@ -31,24 +31,33 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        [DataRow(@"c:\a\b\c\test.txt", @"c:\a\b\c", true)]
-        [DataRow(@"c:\a\b\c\..\test.txt", @"c:\a\b\c", false)]
-        [DataRow(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c", false)]
-        [DataRow(@"c:\a\b\c\test.txt", @"c:\a\b\c\", true)]
-        [DataRow(@"c:\a\b\c\..\test.txt", @"c:\a\b\c\", false)]
-        [DataRow(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c\", false)]
         [DataRow(@"/home/a/b/c/test.txt", @"/home/a/b/c", true)]
         [DataRow(@"/home/a/b/c/../test.txt", @"/home/a/b/c", false)]
         [DataRow(@"/home/a/b/c/../ctest.txt", @"/home/a/b/c", false)]
         [DataRow(@"/home/a/b/c/test.txt", @"/home/a/b/c/", true)]
         [DataRow(@"/home/a/b/c/../test.txt", @"/home/a/b/c/", false)]
         [DataRow(@"/home/a/b/c/../ctest.txt", @"/home/a/b/c/", false)]
+        public void IsFilePathRootedWithDirectoryPathTests(string filePath, string directoryPath, bool expectedResult)
+        {
+            var result = InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, directoryPath);
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        // Drive-letter paths are only rooted on Windows; elsewhere they resolve as relative paths under the current directory.
+        [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
+        [DataRow(@"c:\a\b\c\test.txt", @"c:\a\b\c", true)]
+        [DataRow(@"c:\a\b\c\..\test.txt", @"c:\a\b\c", false)]
+        [DataRow(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c", false)]
+        [DataRow(@"c:\a\b\c\test.txt", @"c:\a\b\c\", true)]
+        [DataRow(@"c:\a\b\c\..\test.txt", @"c:\a\b\c\", false)]
+        [DataRow(@"c:\a\b\c\..\ctest.txt", @"c:\a\b\c\", false)]
         [DataRow(@"c:\a\b\c\\test.txt", @"c:\a\b\c", true)]
         [DataRow(@"c:/a/b/c/test.txt", @"c:\a\b\c", true)]
         [DataRow(@"c:/a/b/c/test.txt", @"c:/a/b/c", true)]
         [DataRow(@"c:\a\b\c\d\test.txt", @"c:\a\b\c", true)]
         [DataRow(@"c:\a\b\c\d/test.txt", @"c:\a\b\c", true)]
-        public void IsFilePathRootedWithDirectoryPathTests(string filePath, string directoryPath, bool expectedResult)
+        public void IsFilePathRootedWithDirectoryPathWindowsTests(string filePath, string directoryPath, bool expectedResult)
         {
             var result = InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, directoryPath);
             Assert.AreEqual(expectedResult, result);

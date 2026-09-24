@@ -28,16 +28,16 @@ namespace AWSSDK.UnitTests
     public class AccountIdBasedEndpointsTest
     {
         private static readonly string ProjectPath =
-            Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=\\bin\\)").Captures[0].Value;
+            Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=[\\/]bin[\\/])").Captures[0].Value;
 
-        public static readonly string Executable = Path.Combine(ProjectPath, @"Custom\Util\get_credentials.sh");
+        public static readonly string Executable = Path.Combine(ProjectPath, "Custom", "Util", "get_credentials.sh");
         private static bool _isWindows = false;
 
         static AccountIdBasedEndpointsTest()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Executable = Path.Combine(ProjectPath, @"Custom\Util\get_credentials.bat");
+                Executable = Path.Combine(ProjectPath, "Custom", "Util", "get_credentials.bat");
                 _isWindows = true;
             }
         }
@@ -358,7 +358,7 @@ namespace AWSSDK.UnitTests
         private static string cfg4 = new StringBuilder()
             .AppendLine("[profile test-role]")
             .AppendLine("role_arn = arn:aws:iam::123456789003:role/MyRole")
-            .AppendLine("web_identity_token_file = C:\\temp\\")
+            .AppendLine($"web_identity_token_file = {Path.GetTempPath()}") // only has to be an absolute path; the STS call is mocked
             .AppendLine("credential_source = Environment")
             .AppendLine("aws_account_id = 123456789001")
             .ToString();
@@ -948,6 +948,23 @@ namespace AWSSDK.UnitTests
                 }
                 streamWriter.WriteLine("echo \'}\';");
             }
+            MakeExecutable(Executable);
+        }
+
+        // sh refuses to run a script the current user cannot execute, and File.CreateText leaves the file without the execute bit.
+        private static void MakeExecutable(string path)
+        {
+#if NET8_0_OR_GREATER
+            if (!OperatingSystem.IsWindows())
+            {
+                File.SetUnixFileMode(path, File.GetUnixFileMode(path) | UnixFileMode.UserExecute);
+            }
+#else
+            using (var chmod = System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("chmod", $"+x \"{path}\"") { UseShellExecute = false }))
+            {
+                chmod.WaitForExit();
+            }
+#endif
         }
 
         private static void WriteWindowsProcessCredentialScript(ProcessScript processScript)

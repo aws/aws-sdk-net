@@ -64,6 +64,7 @@ namespace AWSSDK.UnitTests
         /// the cached credentials are returned on the second call (same object reference).
         /// </summary>
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void NetSdkProfile_SecondSyncCall_ReturnsCachedInstance()
         {
             using (var fixture = new NetSDKCredentialsFileTestFixture(
@@ -91,6 +92,7 @@ namespace AWSSDK.UnitTests
         /// the cache detects the change and re-resolves, returning fresh credentials.
         /// </summary>
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void NetSdkProfile_FileModified_ReturnsNewCredentials()
         {
             using (var fixture = new NetSDKCredentialsFileTestFixture(
@@ -121,6 +123,7 @@ namespace AWSSDK.UnitTests
         /// Same as the sync test but exercises the async path.
         /// </summary>
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public async Task NetSdkProfile_FileModifiedAsync_ReturnsNewCredentials()
         {
             using (var fixture = new NetSDKCredentialsFileTestFixture(
@@ -152,6 +155,7 @@ namespace AWSSDK.UnitTests
         /// with no further file changes return the new cached credentials (same reference).
         /// </summary>
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void NetSdkProfile_FileModifiedThenStable_CachesAfterRefresh()
         {
             using (var fixture = new NetSDKCredentialsFileTestFixture(
@@ -186,6 +190,7 @@ namespace AWSSDK.UnitTests
         /// won't find the profile in the NetSDK store, so it should throw.
         /// </summary>
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void NetSdkProfile_DisableLegacyPersistenceStore_FallsBackToSharedFile()
         {
             var savedValue = AWSConfigs.DisableLegacyPersistenceStore;

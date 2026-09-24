@@ -30,6 +30,7 @@ using Amazon;
 namespace AWSSDK.UnitTests
 {
     [TestClass]
+    [OSCondition(OperatingSystems.Windows)] // exercises the .NET SDK encrypted credential store, which only exists on Windows
     public class NetSDKCredentialsFileTest
     {
         private const string ReservedFieldExceptionFormat = "The profile properties cannot contain reserved names as keys: {0}";

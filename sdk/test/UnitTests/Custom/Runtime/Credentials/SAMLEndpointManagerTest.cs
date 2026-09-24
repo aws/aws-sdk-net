@@ -24,6 +24,7 @@ using System.Text.RegularExpressions;
 namespace AWSSDK.UnitTests
 {
     [TestClass]
+    [OSCondition(OperatingSystems.Windows)] // exercises the .NET SDK encrypted credential store, which only exists on Windows
     public class SAMLEndpointManagerTest
     {
         private const string EndpointsFilename = SettingsConstants.RegisteredSAMLEndpoints + ".json";

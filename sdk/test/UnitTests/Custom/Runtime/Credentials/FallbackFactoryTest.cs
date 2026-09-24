@@ -16,6 +16,7 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Settings;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.SecurityToken;
 using Amazon.SecurityToken.Model;
@@ -942,7 +943,11 @@ namespace AWSSDK.UnitTests
             public FallbackFactoryTestFixture(string sharedCredsFileContent, string awsProfileValue, Dictionary<string, string> newEnvironmentVariables = null, bool setAwsConfigsProfileValue = false)
             {
                 sharedFixture = new SharedCredentialsFileTestFixture(sharedCredsFileContent);
-                netSdkFixture = new NetSDKCredentialsFileTestFixture();
+                // The .NET SDK encrypted store only exists on Windows; elsewhere the profile chain skips it.
+                if (UserCrypto.IsUserCryptAvailable)
+                {
+                    netSdkFixture = new NetSDKCredentialsFileTestFixture();
+                }
 
                 originalCredsChain = (CredentialProfileStoreChain)ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain");
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", new CredentialProfileStoreChain(sharedFixture.CredentialsFilePath));
@@ -1006,7 +1011,10 @@ namespace AWSSDK.UnitTests
                 ReflectionHelpers.Invoke(typeof(FallbackCredentialsFactory), "credentialProfileChain", originalCredsChain);
                 ReflectionHelpers.Invoke(typeof(FallbackInternalConfigurationFactory), "_credentialProfileChain", originalConfigurationChain);
 
-                netSdkFixture.Dispose();
+                if (netSdkFixture != null)
+                {
+                    netSdkFixture.Dispose();
+                }
                 sharedFixture.Dispose();
 
                 FallbackCredentialsFactory.Reset();
