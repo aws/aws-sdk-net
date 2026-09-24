@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Added an internal retry delay setting to GenericContainerCredentials so unit tests can skip the retry backoff. No customer-visible behavior change."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}

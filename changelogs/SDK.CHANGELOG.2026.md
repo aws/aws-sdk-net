@@ -1,3 +1,93 @@
+### 4.0.341.0 (2026-09-24 18:15 UTC)
+* Appflow (4.0.101.3)
+	* Appflow is now generated from its Smithy model. There are no changes to the public API.
+* Artifact (4.0.102.9)
+	* Artifact is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* AuditManager (4.0.100.15)
+	* AuditManager is now generated from its Smithy model. There are no changes to the public API.
+* Braket (4.0.100.15)
+	* Braket is now generated from its Smithy model. There are no changes to the public API.
+* CloudWatch (4.0.105.0)
+	* This release adds Create, Get, Update, and DeleteResourceMetricsConfiguration to enable detailed metric collection for an AWS resource, and adds UpdateOTelEnrichment plus include and exclude filters on StartOTelEnrichment so you can choose which metric namespaces CloudWatch enriches.
+* CodeCatalyst (4.0.100.15)
+	* CodeCatalyst is now generated from its Smithy model. There are no changes to the public API.
+* CodeGuruProfiler (4.0.100.15)
+	* CodeGuruProfiler is now generated from its Smithy model. There are no changes to the public API.
+* CodeGuruReviewer (4.0.100.15)
+	* CodeGuruReviewer is now generated from its Smithy model. There are no changes to the public API.
+* CodeGuruSecurity (4.0.100.15)
+	* CodeGuruSecurity is now generated from its Smithy model. There are no changes to the public API.
+* DataExchange (4.0.100.15)
+	* DataExchange is now generated from its Smithy model. There are no changes to the public API.
+* DataZone (4.0.107.0)
+	* Amazon DataZone now supports the TOOLING blueprint category on CreateEnvironmentBlueprint, UpdateEnvironmentBlueprint, GetEnvironmentBlueprint, and ListEnvironmentBlueprints, for custom tooling blueprints. CreateConnection now accepts roleArn in iamProperties.
+	* DataZone is now generated from its Smithy model. There are no changes to the public API.
+* DynamoDBv2 (4.0.105.0)
+	* Added support for using .NET record types, other immutable types, and value types (struct and record struct) with the DynamoDB DataModel (object persistence) API. On the .NET 8 (and later) target, a type without a public parameterless constructor is populated by binding stored attribute values to a parameterized constructor, matched to members by name. A value type is bound to a constructor only when every parameter names a modeled member, and is otherwise populated by zero-initialization followed by member assignment, so a struct with a convenience constructor whose parameter names differ from its members is supported. Use the new [DynamoDBConstructor] attribute to select the constructor when a type has more than one eligible constructor. Items are stored using the same DynamoDB attributes as an equivalent type with settable members, so data written by any build of the SDK remains readable by any other, and retargeting an application to .NET 8 does not change how an existing item is read or written.
+	* Models that cannot round-trip are now rejected when the type is first configured rather than failing later, so that saving and loading fail the same way instead of an item being written that cannot be read back. This applies to a constructor parameter whose type cannot accept the value produced for the member that supplies it, a read-only member that no constructor parameter supplies, a version, atomic counter, auto-generated timestamp or UpdateBehavior.IfNotExists member that the SDK cannot write back after a save, and [DynamoDBFlatten] on a type that cannot be reconstructed when an item is loaded.
+	* When loading an item into a type populated through a constructor, a missing attribute and an attribute stored as a DynamoDB NULL both fall back to the constructor parameter's declared default value, or to the default of its type when the parameter declares none. Parameters that can hold null receive the stored null. Matching is by parameter name rather than position, so adding a member, or reordering positional parameters, does not break existing items.
+	* Fixed [DynamoDBFlatten] members nested inside another [DynamoDBFlatten] member being left null when an item was loaded. The values were already saved correctly, so no stored data changes and existing items become readable without migration. This fix applies to all target frameworks. Two behavior changes follow from it: when none of a nested flattened member's attributes are present the member is now an empty instance rather than null, which matches how the outermost flattened member has always behaved; and a [DynamoDBFlatten] member whose type cannot be instantiated is now rejected when the type is first configured, with an error naming the property, instead of failing only on save and silently loading as null.
+	* Fixed [DynamoDBIgnore] not being honored when loading a member of a [DynamoDBFlatten] type. The member was correctly omitted when saving, but an attribute of the same name already present in the stored item was read back onto the object. Ignored members of a flattened type are now excluded on load as well as on save, matching how an ignored member of the top-level type has always behaved. This fix applies to all target frameworks.
+	* Fixed [DynamoDBIgnore] not being honored for atomic counter and UpdateBehavior.IfNotExists members when saving. An ignored [DynamoDBAtomicCounter] member was still included in the update expression, so DynamoDB incremented an attribute the model declares as not persisted, and an ignored UpdateBehavior.IfNotExists member caused the whole updated item to be requested and applied back onto the instance unnecessarily. This affected a property declared directly on the model as well as a member of a [DynamoDBFlatten] type at any depth. Ignored members are now excluded in both cases. This fix applies to all target frameworks.
+	* Fixed a [DynamoDBVersion] property inside a [DynamoDBFlatten] type not being used for optimistic locking when it was nested more than one level deep. The version was saved but not captured, so the conditional expression checked that the attribute did not exist and every update of an existing item failed its condition check. The version is now located through the whole flattened chain. Also fixed a KeyNotFoundException when a flattened type had a version property that was marked [DynamoDBIgnore]. Both fixes apply to all target frameworks.
+	* Loading an item that does not exist into a struct or record struct now returns the default value of the type instead of throwing a NullReferenceException. Loading a missing item into a class continues to return null.
+* ElastiCache (4.0.101.0)
+	* Added tagging support for ElastiCache Global DataStore.
+* EventBridge (4.0.101.0)
+	* Adds a ManagedBy field to the DescribeEventBus and ListEventBuses responses, identifying the AWS service that created an event bus on your behalf.
+* EventBridgeV2 (4.0.100.0)
+	* Introducing Amazon EventBridge enhanced Custom event bus, a new shareable event bus for organizational-scale event-driven applications feature ordered delivery, deduplication, open event formats, and cross-account bus sharing.
+* GroundStation (4.0.100.15)
+	* GroundStation is now generated from its Smithy model. There are no changes to the public API.
+* IoT (4.0.101.4)
+	* Fixed ListV2LoggingLevels and DeleteV2LoggingLevel documentation to include all supported target-types
+* Ivschat (4.0.100.15)
+	* Ivschat is now generated from its Smithy model. There are no changes to the public API.
+* ManagedGrafana (4.0.100.15)
+	* ManagedGrafana is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* MarketplaceDiscovery (4.0.103.0)
+	* AWS Marketplace Discovery API now supports localized responses and SigV4a request signing. It returns new fulfillment details, including AMI architecture, EBS volume and security group information, SaaS quick-launch status, and SageMaker input and output MIME types.
+* PaymentCryptographyData (4.0.102.1)
+	* PaymentCryptographyData is now generated from its Smithy model. There are no changes to the public API.
+* PinpointEmail (4.0.100.15)
+	* PinpointEmail is now generated from its Smithy model. There are no changes to the public API.
+* PinpointSMSVoice (4.0.100.15)
+	* PinpointSMSVoice is now generated from its Smithy model. There are no changes to the public API.
+* RedshiftDataAPIService (4.0.103.0)
+	* Updates to the ListDatabases and WorkgroupName validation
+* Route53Resolver (4.0.100.15)
+	* Documentation updates for Route 53 Resolver. Clarifies which Outpost Resolver operations apply to first-generation AWS Outposts and that Resolver is managed automatically on second-generation Outposts. Adds Local Network Interface subnet compatibility notes for Resolver endpoints.
+* SageMakerMetrics (4.0.100.15)
+	* SageMakerMetrics is now generated from its Smithy model. There are no changes to the public API.
+* SecurityAgent (4.0.106.0)
+	* Added support for Confluence export, enabling customers to publish security findings to Confluence pages.
+* ServerlessApplicationRepository (4.0.100.15)
+	* ServerlessApplicationRepository is now generated from its Smithy model. There are no changes to the public API.
+* Signer (4.0.100.15)
+	* Signer is now generated from its Smithy model. There are no changes to the public API.
+* SignerData (4.0.100.15)
+	* SignerData is now generated from its Smithy model. There are no changes to the public API.
+* SnowDeviceManagement (4.0.100.15)
+	* SnowDeviceManagement is now generated from its Smithy model. There are no changes to the public API.
+* SSMGuiConnect (4.0.100.15)
+	* SSMGuiConnect is now generated from its Smithy model. There are no changes to the public API.
+* SSMIncidents (4.0.100.15)
+	* SSMIncidents is now generated from its Smithy model. There are no changes to the public API.
+* SSMQuickSetup (4.0.100.15)
+	* SSMQuickSetup is now generated from its Smithy model. There are no changes to the public API.
+* Sustainability (4.0.101.11)
+	* Sustainability is now generated from its Smithy model. There are no changes to the public API.
+* WorkSpacesThinClient (4.0.100.15)
+	* WorkSpacesThinClient is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* WorkSpacesWeb (4.0.100.15)
+	* WorkSpacesWeb is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* Core 4.0.102.7
+	* Added an internal retry delay setting to GenericContainerCredentials so unit tests can skip the retry backoff. No customer-visible behavior change.
+
 ### 4.0.340.0 (2026-09-23 18:16 UTC)
 * AppFabric (4.0.100.15)
 	* AppFabric is now generated from its Smithy model. There are no changes to the public API.

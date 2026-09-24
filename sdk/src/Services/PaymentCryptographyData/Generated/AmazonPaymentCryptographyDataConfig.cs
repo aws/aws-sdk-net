@@ -32,7 +32,7 @@ namespace Amazon.PaymentCryptographyData
     public partial class AmazonPaymentCryptographyDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Payment Cryptography Data", "4.0.102.0");
+            InternalSDKUtils.BuildUserAgentString("Payment Cryptography Data", "4.0.102.1");
 
         private static readonly AmazonPaymentCryptographyDataEndpointResolver EndpointResolver =
             new AmazonPaymentCryptographyDataEndpointResolver();
