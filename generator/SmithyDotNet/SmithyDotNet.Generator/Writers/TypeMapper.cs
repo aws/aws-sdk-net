@@ -10,14 +10,15 @@ namespace SmithyDotNet.Generator.Writers;
 /// the type nested inside a collection. One definition shared by all of them instead of independent
 /// copies of the same flags.
 /// </summary>
-/// <param name="DotNetType">The .NET type name.</param>
-/// <param name="Target">The resolved shape this describes. The (un)marshaller writers pattern match on it
+/// <param name="DotNetType">The .NET type name; a <c>dataTypeSwap</c> member's swapped type.</param>
+/// <param name="Target">The resolved (modeled) shape this describes, even for a swapped member. The (un)marshaller writers pattern match on it
 /// (<c>IntegerShape</c>, <c>TimestampShape</c>, ...) rather than on the .NET type name. For a collection
 /// element/value an enum has already collapsed to a <c>StringShape</c> (see <see cref="TypeMapper.CollectionElementTarget"/>).</param>
 /// <param name="IsNullableValueType">True when a value-type scalar is nullable in this position: a standalone
 /// member (the V4 convention, <c>int?</c>) or a <c>@sparse</c> collection element. False for a non-sparse
 /// element (<c>List&lt;int&gt;</c>) and for anything that is not a value-type scalar. Selects <c>.Value</c>
-/// unwrapping in the writers and <c>.HasValue</c> in <see cref="Member.IsSetExpression"/>.</param>
+/// unwrapping in the writers and <c>.HasValue</c> in <see cref="Member.IsSetExpression"/>. For a swapped
+/// member it describes the swapped type (<c>DateTime?</c> is, <c>string</c> is not).</param>
 /// <param name="IsStructure">True if this targets a structure shape.</param>
 /// <param name="IsString">True if this targets a string shape.</param>
 /// <param name="IsCollection">True if this is itself a list or map.</param>
@@ -54,6 +55,10 @@ namespace SmithyDotNet.Generator.Writers;
 /// standalone member's descriptor.</param>
 /// <param name="MediaType">The target shape's <c>@mediaType</c> value, or null. A header-bound
 /// string is base64 on the wire (C2J's "jsonvalue"); a payload sends it as Content-Type.</param>
+/// <param name="MarshallerOverride">The <c>dataTypeSwap</c> marshaller method the writers call instead of the
+/// modeled conversion, or null.</param>
+/// <param name="UnmarshallerOverride">The <c>dataTypeSwap</c> unmarshaller the writers use instead of the
+/// modeled one, or null.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     Shape Target,
@@ -72,7 +77,9 @@ public sealed record TypeDescriptor(
     TypeDescriptor? MapValue = null,
     string? TimestampFormat = null,
     bool IsSparse = false,
-    string? MediaType = null)
+    string? MediaType = null,
+    string? MarshallerOverride = null,
+    string? UnmarshallerOverride = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -228,12 +235,15 @@ public static class TypeMapper
             isNullableValueType = false;
         }
 
+        // Only a structure member carries a swap (CustomizationTransform attaches it); element members never do.
+        var swap = member.DataTypeSwap;
+
         return new TypeDescriptor(
-            DotNetType: isCollectionValue
+            DotNetType: swap?.Type ?? (isCollectionValue
                 ? MapCollectionValueType(member.Target, target, context, isSparse)
-                : MapType(member.Target, target, context),
+                : MapType(member.Target, target, context)),
             Target: target,
-            IsNullableValueType: isNullableValueType,
+            IsNullableValueType: swap is null ? isNullableValueType : swap.Type.EndsWith('?'),
             IsStructure: target is StructureShape,
             IsString: target is StringShape,
             IsCollection: IsCollection(target),
@@ -249,7 +259,9 @@ public static class TypeMapper
             MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
             IsSparse: isSparse,
-            MediaType: target.GetMediaType());
+            MediaType: target.GetMediaType(),
+            MarshallerOverride: swap?.Marshaller,
+            UnmarshallerOverride: swap?.Unmarshaller);
     }
 
     /// <summary>

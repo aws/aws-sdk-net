@@ -303,6 +303,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     {
         foreach (var (member, headerName) in headerMembers)
         {
+            // TODO: no service names an unmarshaller for a response header swap yet; the header conversion would need it.
+            if (member.Type.UnmarshallerOverride is not null)
+            {
+                throw new GeneratorException($"dataTypeSwap on response header member '{member.PropertyName}' is not supported yet.");
+            }
+
             writer.OpenBlock($"""if (context.ResponseData.IsHeaderPresent("{headerName}"))""", () =>
             {
                 // A @mediaType string header is base64 on the wire.

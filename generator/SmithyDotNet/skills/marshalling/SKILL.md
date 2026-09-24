@@ -348,6 +348,23 @@ goes through `ConvertToUnixEpochSecondsDecimal` (millisecond precision, `decimal
 every TFM), not the whole-second `StringUtils.FromDateTimeToUnixTimestamp`. Header/query/label positions
 are whole seconds, matching C2J.
 
+## Data Type Swaps
+
+A `dataTypeSwap` member (see type-mapping → Data Type Swaps) carries `MarshallerOverride` /
+`UnmarshallerOverride` on its `TypeDescriptor`. Only the shared scalar helpers honor them, so a new protocol
+writer gets swaps by reusing those helpers; an omitted override keeps the modeled conversion:
+
+- JSON body (`JsonScalarMarshaller.WriteScalar`): `context.Writer.WriteStringValue({Marshaller}(x))`, or
+  `WriteNumberValue` when the marshaller is `Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds` (C2J
+  keys on the name, assuming every other returns a string). `.Value` is unwrapped first when the modeled type
+  is a value type and the swapped type is nullable.
+- Query / header (`JsonRequestMarshallerWriter.StringConversion`, and the header branch that assigns strings
+  directly): `{Marshaller}(publicRequest.X)`, passed the property as-is (no `.Value`). A required swapped
+  query member is checked with `== null`, since its type may not be a string.
+- Unmarshal (`JsonBodyMemberUnmarshaller.ScalarUnmarshaller`): `var unmarshaller = {Unmarshaller}.Instance;`,
+  emitted verbatim.
+- A response header swap that names an `Unmarshaller` fails loud (not supported yet).
+
 ## Error Dispatch
 
 In `{Operation}ResponseUnmarshaller.UnmarshallException`, each error is matched with

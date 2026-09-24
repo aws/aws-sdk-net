@@ -10,6 +10,10 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public static class JsonScalarMarshaller
 {
+    // The swap names the method to call but not whether it returns a number or a string, which picks the JSON
+    // token. C2J hardcodes this one method as the number case (JsonRPCStructureMarshaller.tt).
+    private const string EpochMillisecondsMarshaller = "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds";
+
     /// <summary>
     /// Emits the writer call(s) for <paramref name="expression"/> (a scalar value of <paramref name="type"/>).
     /// Dispatch is on <see cref="TypeDescriptor.Target"/> and <see cref="TypeDescriptor.IsNullableValueType"/>:
@@ -20,10 +24,21 @@ public static class JsonScalarMarshaller
     /// marshals as a <c>string</c> (implicit ConstantClass to string). A timestamp uses its explicit
     /// <c>@timestampFormat</c>, else <paramref name="timestampDefault"/> (the caller's binding default);
     /// this mirrors <see cref="JsonRequestMarshallerWriter.StringConversion"/>, keeping protocol/binding
-    /// defaults out of this writer.
+    /// defaults out of this writer. A <see cref="TypeDescriptor.MarshallerOverride"/> replaces all of this with a
+    /// call to the <c>dataTypeSwap</c> marshaller.
     /// </summary>
     public static void WriteScalar(CodeWriter writer, TypeDescriptor type, string expression, string timestampDefault)
     {
+        if (type.MarshallerOverride is { } marshaller)
+        {
+            // .Value when the modeled type is a value type (as C2J does; every swappable target but string/enum is)
+            // and the swapped type is nullable, so a swap to a reference type still compiles.
+            var swappedValue = type.Target is not (StringShape or EnumShape) && type.IsNullableValueType ? $"{expression}.Value" : expression;
+            var write = string.Equals(marshaller, EpochMillisecondsMarshaller, StringComparison.OrdinalIgnoreCase) ? "WriteNumberValue" : "WriteStringValue";
+            writer.WriteLine($"context.Writer.{write}({marshaller}({swappedValue}));");
+            return;
+        }
+
         var value = type.IsNullableValueType ? $"{expression}.Value" : expression;
         switch (type.Target)
         {

@@ -46,6 +46,20 @@ public static class CustomizationTransform
             }
         }
 
+        // After shapeModifiers: C2J keys a swap by the emitted property name, so it must see the renamed member.
+        foreach (var (shapeName, swaps) in customizations.DataTypeSwaps)
+        {
+            if (FindSingleShape(model, shapeName, $"dataTypeSwap['{shapeName}']") is not StructureShape structure)
+            {
+                throw new GeneratorException($"dataTypeSwap['{shapeName}'] targets a shape that is not a structure.");
+            }
+
+            foreach (var (memberName, swap) in swaps)
+            {
+                ApplyDataTypeSwap(model, structure, memberName, swap, shapeName);
+            }
+        }
+
         foreach (var (operationName, modifier) in customizations.OperationModifiers)
         {
             var shape = FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
@@ -74,6 +88,45 @@ public static class CustomizationTransform
 
         return model.Shapes[matches[0]] ?? throw new GeneratorException($"{context} matched a null shape entry '{matches[0]}'.");
     }
+
+    private static void ApplyDataTypeSwap(SmithyModel model, StructureShape structure, string memberName, DataTypeSwap swap, string shapeName)
+    {
+        if (!structure.Members.TryGetValue(memberName, out var member))
+        {
+            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which the shape does not have.");
+        }
+
+        if (string.IsNullOrWhiteSpace(swap.Type))
+        {
+            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}' without a 'Type'.");
+        }
+
+        // TODO: honor these when an XML protocol is supported; JSON has no flattening or element names.
+        if (swap.IsFlattened is not null || swap.AlternateLocationName is not null)
+        {
+            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}' with the XML-only 'isFlattened'/'alternateLocationName', which are not supported yet.");
+        }
+
+        var target = model.Shapes.GetValueOrDefault(member.Target.AbsoluteName) ?? PreludeShapes.Resolve(member.Target)
+            ?? throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', whose target '{member.Target}' is not in the model.");
+        if (!IsSwappable(member, target, swap.Type))
+        {
+            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which is not supported yet: only scalar body, query, and header members swapped to a non-collection type are handled so far.");
+        }
+
+        member.DataTypeSwap = new DataTypeOverride(swap.Type, swap.Marshaller, swap.Unmarshaller);
+    }
+
+    // TODO: C2J swaps any member (S3 swaps structures, lists and enums); these are the positions the writers
+    // honor so far. Elsewhere they would ignore the swapped type (a label's TrimStart or host-prefix substitution,
+    // an idempotency token's GUID fallback), and a List<>/Dictionary<> swap needs C2J's collection handling
+    // (Member.IsCollection: the InitializeCollections default and the IsSet count check).
+    private static bool IsSwappable(MemberShape member, Shape target, string swappedType) =>
+        target is (StringShape or EnumShape or BooleanShape or IntegerShape or IntEnumShape or LongShape or FloatShape or DoubleShape or TimestampShape)
+        && !member.IsHttpPayload() && !member.IsHttpResponseCode() && !member.IsHttpQueryParams() && member.GetHttpPrefixHeaders() is null
+        && !member.IsHttpLabel() && !member.IsHostLabel() && !member.IsIdempotencyToken()
+        && !member.IsEventHeader() && !member.IsEventPayload()
+        && !swappedType.StartsWith("List<", StringComparison.Ordinal) && !swappedType.StartsWith("Dictionary<", StringComparison.Ordinal);
 
     private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName)
     {

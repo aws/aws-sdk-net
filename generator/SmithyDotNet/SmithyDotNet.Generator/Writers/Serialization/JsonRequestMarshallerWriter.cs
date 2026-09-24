@@ -304,17 +304,19 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     /// <c>@timestampFormat</c> default, used when the member carries no explicit format.
     /// Dispatch is on <see cref="TypeDescriptor.Target"/>; an enum marshals as a <c>string</c>.
     /// </summary>
-    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.Target switch
-    {
-        StringShape or EnumShape => $"StringUtils.FromString({expression})",
-        BooleanShape => $"StringUtils.FromBool({expression}.Value)",
-        IntegerShape or IntEnumShape => $"StringUtils.FromInt({expression}.Value)",
-        LongShape => $"StringUtils.FromLong({expression}.Value)",
-        FloatShape => $"StringUtils.FromFloat({expression}.Value)",
-        DoubleShape => $"StringUtils.FromDouble({expression}.Value)",
-        TimestampShape => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
-        _ => null,
-    };
+    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.MarshallerOverride is { } marshaller
+        ? $"{marshaller}({expression})"
+        : member.Type.Target switch
+        {
+            StringShape or EnumShape => $"StringUtils.FromString({expression})",
+            BooleanShape => $"StringUtils.FromBool({expression}.Value)",
+            IntegerShape or IntEnumShape => $"StringUtils.FromInt({expression}.Value)",
+            LongShape => $"StringUtils.FromLong({expression}.Value)",
+            FloatShape => $"StringUtils.FromFloat({expression}.Value)",
+            DoubleShape => $"StringUtils.FromDouble({expression}.Value)",
+            TimestampShape => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
+            _ => null,
+        };
 
     // The bare StringUtils.From* method name (no argument) for a non-nullable value-type collection
     // element, or null when the element has no scalar string form or is a @sparse (nullable) element.
@@ -367,9 +369,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             if (member.IsRequired && !member.IsIdempotencyToken)
             {
                 // Strings and enums are checked for empty: C2J models an enum as a string shape, and a
-                // ConstantClass converts implicitly to string. Anything else (a list, a reference type)
-                // is checked for null.
-                var guard = member.Type.MarshalsAsString
+                // ConstantClass converts implicitly to string. Anything else (a list, a reference type, a
+                // member converted by its dataTypeSwap marshaller, whose type may not be a string) is checked for null.
+                var guard = member.Type.MarshalsAsString && member.Type.MarshallerOverride is null
                     ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
                     : $"publicRequest.{member.PropertyName} == null";
                 writer.OpenBlock($"if ({guard})", () =>
@@ -474,7 +476,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 // lowercased, DateTime forced to RFC822). A non-scalar element fails loud. A string/enum
                 // scalar header is assigned directly (an enum's ConstantClass converts implicitly to
                 // string). Other scalars go through StringUtils; an unsupported type throws.
-                if (member.Type.ListElement is { } element)
+                if (member.Type.MarshallerOverride is { } marshaller)
+                {
+                    writer.WriteLine($"""request.Headers["{headerName}"] = {marshaller}(publicRequest.{member.PropertyName});""");
+                }
+                else if (member.Type.ListElement is { } element)
                 {
                     WriteHeaderListMember(writer, member, headerName, element);
                 }

@@ -28,11 +28,19 @@ public sealed record CustomizationsModel
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
 
-    /// <summary>Loads a service's customizations files into one model (C2J's CustomizationCompiler combines them the same way).</summary>
+    /// <summary>Type overrides keyed by modeled shape name, then emitted member name (C2J's <c>dataTypeSwap</c>).</summary>
+    [JsonPropertyName("dataTypeSwap")]
+    public Dictionary<string, Dictionary<string, DataTypeSwap>> DataTypeSwaps { get; init; } = [];
+
+    /// <summary>
+    /// Loads a service's customizations files into one model, as C2J's CustomizationCompiler combines them, except
+    /// that a shape repeated across files throws instead of merging.
+    /// </summary>
     public static CustomizationsModel Load(IEnumerable<string> paths)
     {
         var shapeModifiers = new Dictionary<string, ShapeModifier>();
         var operationModifiers = new Dictionary<string, OperationModifier>();
+        var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
         foreach (var path in paths)
         {
             CustomizationsModel file;
@@ -62,9 +70,17 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': operationModifiers['{operationName}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
+
+            foreach (var (shapeName, swaps) in file.DataTypeSwaps)
+            {
+                if (!dataTypeSwaps.TryAdd(shapeName, swaps))
+                {
+                    throw new GeneratorException($"'{path}': dataTypeSwap['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
         }
 
-        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers };
+        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps };
     }
 }
 
@@ -97,4 +113,28 @@ public sealed record OperationModifier
     /// <summary>The <c>[Obsolete]</c> message for the operation's client methods; applied only when the operation is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
+}
+
+/// <summary>
+/// A <c>dataTypeSwap</c> entry: overrides a member's generated .NET type and optionally names the marshaller
+/// method and unmarshaller instance the generated code calls for it; an omitted one keeps the modeled conversion.
+/// </summary>
+public sealed record DataTypeSwap
+{
+    [JsonPropertyName("Type")]
+    public required string Type { get; init; }
+
+    [JsonPropertyName("Marshaller")]
+    public string? Marshaller { get; init; }
+
+    [JsonPropertyName("Unmarshaller")]
+    public string? Unmarshaller { get; init; }
+
+    /// <summary>XML-only: marks a swapped collection as flattened. Rejected until an XML protocol is supported.</summary>
+    [JsonPropertyName("isFlattened")]
+    public bool? IsFlattened { get; init; }
+
+    /// <summary>XML-only: overrides the member's XML element name. Rejected until an XML protocol is supported.</summary>
+    [JsonPropertyName("alternateLocationName")]
+    public string? AlternateLocationName { get; init; }
 }

@@ -43,6 +43,25 @@ The AWS SDK for .NET V4 convention:
 `!this.X.IsNull()` for a document (the runtime `Document` is a struct), the collection rule below for a
 list/map, `!= null` otherwise.
 
+## Data Type Swaps
+
+The `dataTypeSwap` customization (keyed by modeled shape name, then emitted member name) overrides a member's
+emitted .NET type and optionally names the marshaller method and unmarshaller instance generated code calls
+for it; an omitted one keeps the modeled conversion, as in C2J.
+
+`CustomizationTransform` validates each entry and sets it on the member (`MemberShape.DataTypeSwap`) after
+`shapeModifiers`, so a member renamed by `emitPropertyName` is named by its new name, as in C2J. `ResolveType` reads it into the
+`TypeDescriptor`: `DotNetType` is the swapped type, `IsNullableValueType` describes the swapped type, and
+`MarshallerOverride` / `UnmarshallerOverride` carry the conversion (see marshalling → Data Type Swaps).
+`Target` stays the modeled shape.
+
+`CustomizationTransform` rejects an entry that names no structure member or has a blank `Type`. C2J swaps
+any member, but these are not supported yet: a swap on a non-scalar member, on a payload, response-code,
+prefix-header, query-map, label, host-label, idempotency-token, or event member (the writers would ignore the
+swapped type there), or to a `List<>`/`Dictionary<>` type (C2J then treats the member as a collection).
+The XML-only entry fields `isFlattened` and `alternateLocationName` are rejected until an XML protocol is
+supported.
+
 ## Collection Defaults
 
 Collections default to `null` (V4) and to an empty list when `AWSConfigs.InitializeCollections` is on

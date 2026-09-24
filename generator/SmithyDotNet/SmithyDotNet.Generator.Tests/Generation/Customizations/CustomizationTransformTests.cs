@@ -245,6 +245,66 @@ public class CustomizationTransformTests
         Assert.DoesNotContain("This operation is deprecated.", output);
     }
 
+    // The entry fields (Type, Marshaller, Unmarshaller) are capitalized, unlike every other hook's; Unmarshaller may be omitted.
+    [Fact]
+    public void Load_DataTypeSwap_ParsesEntry()
+    {
+        var customizations = LoadFiles("""{ "dataTypeSwap": { "Spend": { "Amount": { "Type": "decimal?", "Marshaller": "M" } } } }""");
+
+        Assert.Equal(new DataTypeSwap { Type = "decimal?", Marshaller = "M" }, customizations.DataTypeSwaps["Spend"]["Amount"]);
+    }
+
+    [Fact]
+    public void Apply_DataTypeSwapOnMissingMember_Throws()
+    {
+        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Swap("Thing", "missing")));
+        Assert.Contains("missing", ex.Message);
+    }
+
+    // `required` only checks the key is present, so an explicit null or blank Type reaches Apply.
+    [Theory]
+    [InlineData("null")]
+    [InlineData("\" \"")]
+    public void Apply_DataTypeSwapWithoutType_Throws(string type)
+    {
+        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
+        var customizations = LoadFiles($$"""{ "dataTypeSwap": { "Thing": { "payload": { "Type": {{type}} } } } }""");
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
+        Assert.Contains("Type", ex.Message);
+    }
+
+    // C2J keys a swap by the emitted property name, so a renamed member is named by its new name.
+    [Fact]
+    public void Apply_DataTypeSwapOnRenamedMember_UsesEmittedName()
+    {
+        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
+        var customizations = Swap("Thing", "PayloadV2");
+        customizations.ShapeModifiers["Thing"] = new ShapeModifier { Modify = [new() { ["payload"] = new PropertyModifier { EmitPropertyName = "PayloadV2" } }] };
+
+        CustomizationTransform.Apply(model, customizations);
+
+        var thing = Assert.IsType<StructureShape>(model.Shapes["com.example#Thing"]);
+        Assert.Equal(new DataTypeOverride("DateTime?", "M", "U"), thing.Members["PayloadV2"].DataTypeSwap);
+    }
+
+    [Fact]
+    public void Apply_DataTypeSwapXmlOnlyField_Throws()
+    {
+        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
+        var customizations = new CustomizationsModel { DataTypeSwaps = { ["Thing"] = new() { ["payload"] = new DataTypeSwap { Type = "List<string>", IsFlattened = true } } } };
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
+        Assert.Contains("isFlattened", ex.Message);
+    }
+
+    private static CustomizationsModel Swap(string shape, string member) => new()
+    {
+        DataTypeSwaps = { [shape] = new() { [member] = new DataTypeSwap { Type = "DateTime?", Marshaller = "M", Unmarshaller = "U" } } },
+    };
+
     private static SmithyModel ModelWith(string bareName, Shape shape) => new()
     {
         Version = "2.0",

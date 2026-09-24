@@ -55,4 +55,14 @@ public record MemberShape : Shape
     [JsonPropertyName("target")]
     [JsonConverter(typeof(ShapeIdConverter))]
     public required ShapeId Target { get; init; }
+
+    /// <summary>Set by CustomizationTransform from the C2J dataTypeSwap customization; not part of the Smithy AST.</summary>
+    [JsonIgnore]
+    public DataTypeOverride? DataTypeSwap { get; set; }
 }
+
+/// <summary>
+/// A member's <c>dataTypeSwap</c>: its emitted .NET type and, optionally, the marshaller method and unmarshaller
+/// that replace the modeled conversion.
+/// </summary>
+public record DataTypeOverride(string Type, string? Marshaller, string? Unmarshaller);

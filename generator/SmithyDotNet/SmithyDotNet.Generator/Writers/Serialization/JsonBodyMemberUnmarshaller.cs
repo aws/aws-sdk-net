@@ -42,10 +42,15 @@ public static class JsonBodyMemberUnmarshaller
     /// <c>Nullable*</c> variant, so this one map serves both a standalone member (<c>int?</c> →
     /// <c>NullableIntUnmarshaller</c>) and a non-sparse collection element (<c>int</c> → <c>IntUnmarshaller</c>).
     /// Enums ride the string path (implicit string-to-ConstantClass conversion); timestamps auto-detect
-    /// the wire format.
+    /// the wire format. A <c>dataTypeSwap</c> <see cref="TypeDescriptor.UnmarshallerOverride"/> is returned as-is.
     /// </summary>
     internal static string? ScalarUnmarshaller(TypeDescriptor type)
     {
+        if (type.UnmarshallerOverride is { } unmarshaller)
+        {
+            return unmarshaller;
+        }
+
         var name = type.Target switch
         {
             StringShape or EnumShape => "String",
