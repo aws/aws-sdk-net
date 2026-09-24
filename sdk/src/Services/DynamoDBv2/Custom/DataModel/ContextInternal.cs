@@ -635,6 +635,14 @@ namespace Amazon.DynamoDBv2.DataModel
                 flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
             }
 
+            // On save the flattened child's members (including any non-flattened complex leaf) were
+            // serialized with the child's effective casing. Seed that here so a nested Map leaf resolves its
+            // config with the same casing on load; otherwise it would search the parent's casing and miss
+            // the stored keys. Save/restore because flatConfig is shared.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(propertyStorage.FlattenedEffectiveCasing);
+            try
+            {
             foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
             {
                 // [DynamoDBIgnore] excludes a member when loading as well as when saving. Denormalize keeps ignored
@@ -656,6 +664,11 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     PopulateProperty(storage, flatConfig, document, flattenPropertyStorage.AttributeName, flattenPropertyStorage, flattenedPropertyInstance);
                 }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
 
             return flattenedPropertyInstance;

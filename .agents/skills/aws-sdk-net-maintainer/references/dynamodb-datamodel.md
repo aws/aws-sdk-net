@@ -418,7 +418,13 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   `PropertyStorage.FlattenProperties`. To keep save and load symmetric, `PopulateConfigFromType` bakes
   `FlattenProperties` names with the child's **effective** casing (not blindly the parent's). This
   matters when a flattened child declares its own casing (e.g. a `PascalCase` child under a `CamelCase`
-  parent): both sides then use the child's PascalCase names, so no value is lost on round-trip.
+  parent): both sides then use the child's PascalCase names, so no value is lost on round-trip. The
+  child's effective casing for an *undecorated* child is `Utils.GetInheritableCasing(parent)` (falling
+  back to `PascalCase`), so a non-propagating parent mode (`LegacyCamelCase`/`PascalCase`/`Unset`) yields
+  a PascalCase child on both sides. A non-flattened complex object *inside* a flattened child is handled
+  too: the flattening `PropertyStorage.FlattenedEffectiveCasing` is recorded at build time and
+  `CreateFlattenedMember` seeds it while populating leaves, so the nested Map resolves with the same
+  casing on load that save wrote.
 
 ### Explicit opt-out of inheritance
 

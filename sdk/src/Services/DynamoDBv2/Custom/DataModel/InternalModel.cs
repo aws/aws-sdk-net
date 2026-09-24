@@ -176,6 +176,14 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool ShouldFlattenChildProperties { get; set; }
 
         /// <summary>
+        /// For a <see cref="ShouldFlattenChildProperties"/> member, the effective <see cref="CaseMode"/>
+        /// the flattened child type is serialized with on save (its own declared casing, or the casing the
+        /// enclosing type propagates to an undecorated child). Load must resolve any non-flattened complex
+        /// leaf of the flattened child with this same casing so nested Map keys round-trip.
+        /// </summary>
+        public CaseMode FlattenedEffectiveCasing { get; set; }
+
+        /// <summary>
         /// Whether to store property at parent level.
         /// </summary>
         public bool IsFlattened { get; set; }
@@ -1757,26 +1765,31 @@ namespace Amazon.DynamoDBv2.DataModel
                     var members = Utils.GetMembersFromType(type);
 
                     // Flattened children are serialized on save through their own resolved config
-                    // (SerializeToDocument), so their attribute names use the CHILD's effective casing: the
-                    // child's own declared casing if it has one, otherwise the parent's casing inherited into
-                    // an undecorated child. The FlattenProperties metadata read on load must be baked with the
-                    // same effective casing, or an explicitly-cased child (e.g. a PascalCase child under a
-                    // CamelCase parent) would save "Street" but load "street" and lose the value.
+                    // (SerializeToDocument), so their attribute names use the CHILD's effective casing. That
+                    // is: the child's own declared casing if it has one; otherwise the casing the parent
+                    // actually PROPAGATES to an undecorated child, i.e. Utils.GetInheritableCasing(parent).
+                    // The latter matters for non-propagating parent modes: a LegacyCamelCase (or PascalCase/
+                    // Unset) parent does not cascade, so an undecorated child serializes as PascalCase on
+                    // save and the FlattenProperties metadata must be baked as PascalCase to match on load.
                     var childTableAttribute = Utils.GetTableAttribute(type);
                     CaseMode effectiveChildCasing;
-                    if (childTableAttribute != null)
+                    if (childTableAttribute != null &&
+                        ResolveCaseMode(childTableAttribute, type, out var childDeclaresOwnCasing) is var childCasing &&
+                        childDeclaresOwnCasing)
                     {
-                        var childCasing = ResolveCaseMode(childTableAttribute, type, out var childDeclaresOwnCasing);
-                        effectiveChildCasing = childDeclaresOwnCasing ? childCasing : config.AttributeCasing;
+                        // Child declares its own casing; save uses it directly (inheritance is blocked).
+                        effectiveChildCasing = childCasing;
                     }
                     else
                     {
-                        // Undecorated child inherits the parent's casing (matches save's inherited seeding).
-                        effectiveChildCasing = config.AttributeCasing;
+                        // Undecorated child: adopt exactly what the parent propagates on save. Non-propagating
+                        // parent modes (LegacyCamelCase, PascalCase, Unset) leave the child at PascalCase.
+                        effectiveChildCasing = Utils.GetInheritableCasing(config.AttributeCasing) ?? CaseMode.PascalCase;
                     }
 
                     // Bake names with the child's effective casing. Reuse the parent config when the casing
                     // already matches; otherwise use a lightweight config carrying the child's casing.
+                    propertyStorage.FlattenedEffectiveCasing = effectiveChildCasing;
                     var flattenNameConfig = effectiveChildCasing == config.AttributeCasing
                         ? config
                         : new ItemStorageConfig(type) { AttributeCasing = effectiveChildCasing };

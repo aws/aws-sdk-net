@@ -135,6 +135,42 @@ namespace AWSSDK_DotNet.UnitTests
             public AddressPascal ShippingAddress { get; set; }
         }
 
+#pragma warning disable CS0618 // Intentionally exercising LegacyCamelCase.
+        // A LegacyCamelCase root with an undecorated flattened child. LegacyCamelCase does not propagate,
+        // so save serializes the flattened child as PascalCase; FlattenProperties must match (PascalCase).
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.LegacyCamelCase)]
+        public class OrderLegacyWithFlatten
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public Address ShippingAddress { get; set; }
+        }
+#pragma warning restore CS0618
+
+        // A complex type used as a flattened child that itself contains a non-flattened nested object.
+        // Declared PascalCase so its effective casing differs from a CamelCase parent, exercising the
+        // load-time seeding of the flattened child's casing for the nested leaf.
+        [DynamoDBTable("ContactWithNested", AttributeCasing = CaseMode.PascalCase)]
+        public class ContactWithNested
+        {
+            public string Name { get; set; }
+            public Address HomeAddress { get; set; }   // nested (non-flattened) complex object
+        }
+
+        // CamelCase root, flattened PascalCase ContactWithNested; the nested HomeAddress must round-trip
+        // as PascalCase (the child's effective casing), not the parent's CamelCase.
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithFlattenNested
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public ContactWithNested Contact { get; set; }
+        }
+
 #if NET8_0_OR_GREATER
         // An immutable (constructor-bound) CamelCase root with an undecorated nested constructor argument.
         // On net8+ the root is populated via constructor binding before PopulateInstance runs, so the
@@ -491,6 +527,63 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsTrue(nested.ContainsKey("street"), "nested Address must inherit CamelCase even after being cached as a root");
             Assert.IsTrue(nested.ContainsKey("city"));
             Assert.IsFalse(nested.ContainsKey("Street"));
+        }
+
+        [TestMethod]
+        public void LegacyCamelCaseParent_UndecoratedFlattenedChild_RoundTripsAsPascalCase()
+        {
+            // LegacyCamelCase does not propagate, so an undecorated flattened child is serialized with its
+            // base PascalCase config on save; FlattenProperties must be baked PascalCase so load matches.
+            var context = CreateContext();
+            var order = new OrderLegacyWithFlatten
+            {
+                Id = "1",
+                ShippingAddress = new Address { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            Assert.IsTrue(doc.ContainsKey("Street"), "LegacyCamelCase parent does not cascade; flattened child stays PascalCase");
+            Assert.IsFalse(doc.ContainsKey("street"));
+
+            var restored = context.FromDocument<OrderLegacyWithFlatten>(doc);
+            Assert.IsNotNull(restored.ShippingAddress);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
+        }
+
+        [TestMethod]
+        public void CamelCaseParent_FlattenedChildWithNestedObject_RoundTripsSymmetrically()
+        {
+            // A flattened child that itself contains a non-flattened nested object. The child is explicitly
+            // PascalCase, so save writes the nested Map with PascalCase keys; load must resolve the nested
+            // object with the child's effective (PascalCase) casing, not the parent's CamelCase — otherwise
+            // the nested values are silently left unset.
+            var context = CreateContext();
+            var order = new OrderCamelWithFlattenNested
+            {
+                Id = "1",
+                Contact = new ContactWithNested
+                {
+                    Name = "Alice",
+                    HomeAddress = new Address { Street = "Main", City = "Seattle" }
+                }
+            };
+            var doc = context.ToDocument(order);
+
+            // Flattened leaf 'Name' is PascalCase and top-level; the nested HomeAddress is a PascalCase Map.
+            Assert.IsTrue(doc.ContainsKey("Name"));
+            Assert.IsTrue(doc.ContainsKey("HomeAddress"));
+            var homeAddress = doc["HomeAddress"].AsDocument();
+            Assert.IsTrue(homeAddress.ContainsKey("Street"));
+            Assert.IsTrue(homeAddress.ContainsKey("City"));
+            Assert.IsFalse(homeAddress.ContainsKey("street"));
+
+            var restored = context.FromDocument<OrderCamelWithFlattenNested>(doc);
+            Assert.IsNotNull(restored.Contact);
+            Assert.AreEqual("Alice", restored.Contact.Name);
+            Assert.IsNotNull(restored.Contact.HomeAddress);
+            Assert.AreEqual("Main", restored.Contact.HomeAddress.Street);
+            Assert.AreEqual("Seattle", restored.Contact.HomeAddress.City);
         }
     }
 }
