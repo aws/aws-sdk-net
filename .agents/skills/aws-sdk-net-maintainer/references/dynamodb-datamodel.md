@@ -392,6 +392,11 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   seeds it (save/restore) before serializing a comparison **value**, so `e.ShippingAddress == someAddress`
   serializes the nested value's Map keys as `street`/`city` too — otherwise the value would be written
   PascalCase and never match the stored item.
+- **Condition-based queries/scans** (`ScanCondition` / `QueryCondition` / `QueryFilter`): a condition
+  targets a top-level property of the root, so a complex/nested condition value inherits the root's
+  casing. `ComposeScanFilter` and `ConvertConditionValues` seed `InheritedAttributeCasing` from
+  `storageConfig.AttributeCasing` (restored afterward) before serializing each condition value; primitive
+  key values are unaffected.
 - **Immutable / constructor-bound members** (net8+): `InstantiateWithConstructor` binds stored values to
   a type's constructor parameters *before* `PopulateInstance` runs, so it seeds `InheritedAttributeCasing`
   from the root `ItemStorageConfig.AttributeCasing` (restored afterward) before deserializing each

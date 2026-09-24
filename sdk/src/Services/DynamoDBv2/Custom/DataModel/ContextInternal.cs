@@ -1424,23 +1424,35 @@ namespace Amazon.DynamoDBv2.DataModel
                 PropertyStorage propertyStorage =
                     storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
                 List<AttributeValue> attributeValues = new List<AttributeValue>();
-                foreach (var value in condition.Values)
+                // A scan condition targets a top-level property of the root, so a complex/nested condition
+                // value inherits the root's casing (e.g. a CamelCase root writes the value's Map keys as
+                // street/city). Seed and restore InheritedAttributeCasing; primitives are unaffected.
+                var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+                flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(storageConfig.AttributeCasing);
+                try
                 {
-                    var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: true);
-                    if (entry == null)
-                        throw new InvalidOperationException(
-                            string.Format(CultureInfo.InvariantCulture,
-                                "Unable to convert value corresponding to property [{0}] to DynamoDB representation",
-                                condition.PropertyName));
-
-                    var attributeConversionConfig =
-                        new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion,
-                            flatConfig.IsEmptyStringValueEnabled);
-                    AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
-                    if (nativeValue != null)
+                    foreach (var value in condition.Values)
                     {
-                        attributeValues.Add(nativeValue);
+                        var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: true);
+                        if (entry == null)
+                            throw new InvalidOperationException(
+                                string.Format(CultureInfo.InvariantCulture,
+                                    "Unable to convert value corresponding to property [{0}] to DynamoDB representation",
+                                    condition.PropertyName));
+
+                        var attributeConversionConfig =
+                            new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion,
+                                flatConfig.IsEmptyStringValueEnabled);
+                        AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
+                        if (nativeValue != null)
+                        {
+                            attributeValues.Add(nativeValue);
+                        }
                     }
+                }
+                finally
+                {
+                    flatConfig.InheritedAttributeCasing = previousInheritedCasing;
                 }
 
                 filter.AddCondition(propertyStorage.AttributeName, condition.Operator, attributeValues);
@@ -1612,7 +1624,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         indexNames.AddRange(conditionProperty.IndexNames);
                     if (conditionProperty.IsRangeKey)
                         indexNames.Add(NO_INDEX);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, valueInheritedCasing: Utils.GetInheritableCasing(storageConfig.AttributeCasing));
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
@@ -1622,22 +1634,35 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     object[] conditionValues = condition.Values;
                     PropertyStorage conditionProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true, valueInheritedCasing: Utils.GetInheritableCasing(storageConfig.AttributeCasing));
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
             return filter;
         }
 
-        private List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList = false)
+        private List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList = false, CaseMode? valueInheritedCasing = null)
         {
             List<AttributeValue> attributeValues = new List<AttributeValue>();
-            foreach (var conditionValue in conditionValues)
+            // A condition property is a top-level member of the root type, so a complex/nested condition
+            // value inherits the root's casing (e.g. a CamelCase root writes the value's Map keys as
+            // street/city). Seed and restore InheritedAttributeCasing around the conversion; primitive
+            // key values are unaffected.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = valueInheritedCasing;
+            try
             {
-                DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue, flatConfig, canReturnScalarInsteadOfList);
-                var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
-                AttributeValue attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
-                attributeValues.Add(attributeValue);
+                foreach (var conditionValue in conditionValues)
+                {
+                    DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue, flatConfig, canReturnScalarInsteadOfList);
+                    var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
+                    AttributeValue attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
+                    attributeValues.Add(attributeValue);
+                }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
             return attributeValues;
         }
