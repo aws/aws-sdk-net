@@ -2895,10 +2895,18 @@ namespace Amazon.DynamoDBv2.DataModel
             node.Children.Enqueue(valuesNode);
         }
 
-        private PropertyStorage ResolveNestedPropertyStorage(StorageConfig rootConfig, DynamoDBFlatConfig flatConfig,
+        private PropertyStorage ResolveNestedPropertyStorage(StorageConfig rootConfig, CaseMode rootCasing, DynamoDBFlatConfig flatConfig,
             List<PathNode> path, Queue<string> namesNodeNames, out string formattedExpression)
         {
             StorageConfig currentConfig = rootConfig;
+            // Track the enclosing type's casing as we descend so an undecorated nested type resolves with
+            // the inherited casing (e.g. a CamelCase root makes e.ShippingAddress.City resolve to the
+            // stored "city"). This mirrors PopulateItemStorage / PopulateInstance. flatConfig is shared,
+            // so save and restore InheritedAttributeCasing.
+            CaseMode currentCasing = rootCasing;
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            try
+            {
             PropertyStorage propertyStorage = null;
             // Format tokens are accumulated per enqueued name so the resulting expression contains
             // exactly one '#n' placeholder for every name in namesNodeNames. Flattened properties
@@ -2969,12 +2977,22 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 elementType ??= propertyType;
 
+                // Propagate the enclosing type's inheritable casing so an undecorated nested type resolves
+                // with the inherited casing (matching the stored attribute names).
+                flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(currentCasing);
+
                 ItemStorageConfig config = StorageConfigCache.GetConfig(elementType, flatConfig, conversionOnly: true);
                 currentConfig = config.BaseTypeStorageConfig;
+                currentCasing = config.AttributeCasing;
             }
 
             formattedExpression = string.Join(".", formatTokens);
             return propertyStorage;
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
         }
 
        private PropertyStorage ResolveFlattenedPropertyStorage(PropertyStorage flatteningProperty,
@@ -3046,7 +3064,7 @@ namespace Amazon.DynamoDBv2.DataModel
             // The formatted expression is built by the resolver so that flattened properties,
             // which collapse multiple path segments into a single top-level attribute, emit exactly
             // one '#n' placeholder per enqueued name.
-            var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, flatConfig, path,
+            var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, storageConfig.AttributeCasing, flatConfig, path,
                 namesNode.Names, out var formattedExpression);
             namesNode.FormatedExpression = formattedExpression;
             node.Children.Enqueue(namesNode);

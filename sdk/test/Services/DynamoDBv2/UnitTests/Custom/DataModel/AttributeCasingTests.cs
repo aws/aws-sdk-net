@@ -4,6 +4,8 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System;
+using System.Linq.Expressions;
 
 using DynamoDBContextConfig = Amazon.DynamoDBv2.DataModel.DynamoDBContextConfig;
 
@@ -107,6 +109,17 @@ namespace AWSSDK_DotNet.UnitTests
             [DynamoDBHashKey]
             public string Id { get; set; }
             public AddressCamel ShippingAddress { get; set; }
+        }
+
+        // A CamelCase root with a [DynamoDBFlatten] member, to verify flatten round-trips symmetrically.
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithFlatten
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public Address ShippingAddress { get; set; }
         }
 
         private DynamoDBContext CreateContext()
@@ -301,6 +314,54 @@ namespace AWSSDK_DotNet.UnitTests
             var withConversion = new DynamoDBTableAttribute("T", CaseMode.PascalCase, ConversionSchema.V2);
             Assert.AreEqual(CaseMode.PascalCase, withConversion.AttributeCasing);
             Assert.AreEqual(ConversionSchema.V2, withConversion.Conversion);
+        }
+
+        [TestMethod]
+        public void CamelCase_FilterExpressionOnNestedProperty_UsesInheritedCasing()
+        {
+            // Regression for a filter/update expression referencing a nested property under a CamelCase
+            // root: the nested attribute name must resolve to the inherited (camelCased) name that is
+            // actually stored, not the nested type's PascalCase base config. Previously this path did not
+            // seed InheritedAttributeCasing while descending, so it emitted "City" instead of "city".
+            var context = CreateContext();
+
+            Expression<Func<OrderCamelCase, bool>> expr = e => e.ShippingAddress.City == "Seattle";
+            var filterExpr = new ContextExpression();
+            filterExpr.SetFilter(expr);
+
+            var result = context.ConvertScan<OrderCamelCase>(filterExpr, null);
+            var names = result.Search.FilterExpression.ExpressionAttributeNames;
+
+            // The path expands to two name placeholders (shippingAddress.city); both must be camelCased.
+            CollectionAssert.Contains(names.Values, "shippingAddress");
+            CollectionAssert.Contains(names.Values, "city");
+            CollectionAssert.DoesNotContain(names.Values, "City");
+            CollectionAssert.DoesNotContain(names.Values, "ShippingAddress");
+        }
+
+        [TestMethod]
+        public void CamelCase_FlattenedMember_RoundTripsSymmetrically()
+        {
+            // Flattened members follow the enclosing type's casing on BOTH save and load (they share the
+            // parent's FlattenProperties metadata), so a CamelCase root writes and reads camelCased
+            // flattened attribute names with no round-trip loss.
+            var context = CreateContext();
+            var order = new OrderCamelWithFlatten
+            {
+                Id = "1",
+                ShippingAddress = new Address { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            // Flattened attributes are top-level and camelCased.
+            Assert.IsTrue(doc.ContainsKey("street"));
+            Assert.IsTrue(doc.ContainsKey("city"));
+            Assert.IsFalse(doc.ContainsKey("Street"));
+
+            var restored = context.FromDocument<OrderCamelWithFlatten>(doc);
+            Assert.IsNotNull(restored.ShippingAddress);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
         }
     }
 }
