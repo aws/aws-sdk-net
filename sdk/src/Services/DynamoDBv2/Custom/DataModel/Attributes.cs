@@ -209,6 +209,16 @@ namespace Amazon.DynamoDBv2.DataModel
 #pragma warning disable CS0618 // LowerCamelCaseProperties is obsolete but retained for this back-compat constructor overload.
             LowerCamelCaseProperties = lowerCamelCaseProperties;
 #pragma warning restore CS0618
+            // Preserve V3 semantics of an explicit lowerCamelCaseProperties=false: it meant "PascalCase, do
+            // not camelCase." With nested-casing inheritance in V4, leaving AttributeCasing=Unset would let
+            // such a type INHERIT an enclosing CamelCase parent's casing, silently changing existing stored
+            // attribute names on upgrade. Setting AttributeCasing=PascalCase makes the type declare its own
+            // casing (ResolveCaseMode precedence #1 -> declaresOwnCasing=true), which blocks inheritance and
+            // exactly preserves the old behavior. When true, leave AttributeCasing=Unset so the legacy flag
+            // maps to LegacyCamelCase (precedence #2). The one-argument (string) constructor is unaffected
+            // and stays Unset (allowing inheritance, the documented default).
+            if (!lowerCamelCaseProperties)
+                AttributeCasing = CaseMode.PascalCase;
             Conversion = conversion;
         }
     }

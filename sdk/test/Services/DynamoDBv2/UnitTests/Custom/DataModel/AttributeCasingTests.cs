@@ -94,7 +94,26 @@ namespace AWSSDK_DotNet.UnitTests
             public string CustomerName { get; set; }
             public Address ShippingAddress { get; set; }
         }
+
+        // A nested type declared with the obsolete (string, false) bool constructor. In V3 this meant
+        // "PascalCase, do not camelCase". It must NOT inherit a CamelCase parent's casing on upgrade.
+        [DynamoDBTable("AddressExplicitFalse", false)]
+        public class AddressExplicitFalse
+        {
+            public string Street { get; set; }
+            public string City { get; set; }
+        }
 #pragma warning restore CS0618
+
+        // A CamelCase root nesting a type declared via the obsolete (string, false) constructor. The nested
+        // type must retain PascalCase (Street/City), not inherit the parent's CamelCase.
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithExplicitFalseNested
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public AddressExplicitFalse ShippingAddress { get; set; }
+        }
 
         [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
         public class OrderCamelWithDeclaredNested
@@ -766,6 +785,33 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsTrue(addressMap.ContainsKey("Street"), "explicit-PascalCase member type must govern the expression value casing");
             Assert.IsTrue(addressMap.ContainsKey("City"));
             Assert.IsFalse(addressMap.ContainsKey("street"));
+        }
+
+        [TestMethod]
+        public void ObsoleteFalseBoolConstructor_BlocksInheritanceUnderCamelCaseParent()
+        {
+            // Regression (Copilot): the obsolete (string, false) constructor meant "PascalCase, do not
+            // camelCase" in V3. With V4 nested-casing inheritance, a type declared that way and nested under
+            // a CamelCase parent must NOT inherit camelCase (which would silently rename existing stored
+            // attributes on upgrade). The false path sets AttributeCasing=PascalCase (declaresOwnCasing),
+            // so the nested type stays PascalCase.
+            var context = CreateContext();
+            var order = new OrderCamelWithExplicitFalseNested
+            {
+                Id = "1",
+                ShippingAddress = new AddressExplicitFalse { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            // Root is CamelCase (id, shippingAddress), but the nested type retains PascalCase (Street/City).
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("Street"), "explicit-false nested type must retain PascalCase, not inherit CamelCase");
+            Assert.IsTrue(nested.ContainsKey("City"));
+            Assert.IsFalse(nested.ContainsKey("street"), "must not inherit the CamelCase parent's casing");
+
+            var restored = context.FromDocument<OrderCamelWithExplicitFalseNested>(doc);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
         }
 
         // --- reflection helpers for the private condition-composition members ---
