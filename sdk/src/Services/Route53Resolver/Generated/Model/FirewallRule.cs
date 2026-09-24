@@ -372,13 +372,13 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>FirewallAdvancedContentCategory</c> — an AWS-managed content category (for example,
-        /// <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        ///  <c>FirewallAdvancedContentCategory</c> — an Amazon Web Services-managed content category
+        /// (for example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FirewallAdvancedThreatCategory</c> — an AWS-managed advanced threat category (for
-        /// example, <c>PHISHING</c>).
+        ///  <c>FirewallAdvancedThreatCategory</c> — an Amazon Web Services-managed advanced threat
+        /// category (for example, <c>PHISHING</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -387,8 +387,8 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PartnerThreatProtection</c> — a third-party threat feed delivered through AWS
-        /// Marketplace.
+        ///  <c>PartnerThreatProtection</c> — a third-party threat feed delivered through Amazon
+        /// Web Services Marketplace.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -572,8 +572,8 @@ namespace Amazon.Route53Resolver.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>CREATING</c> — DNS Firewall is provisioning the rule. Rules created with the <c>PartnerThreatProtection</c>
-        /// rule type begin in this state while DNS Firewall verifies the calling account's AWS
-        /// Marketplace entitlement.
+        /// rule type begin in this state while DNS Firewall verifies the calling account's Amazon
+        /// Web Services Marketplace entitlement.
         /// </para>
         ///  </li> <li> 
         /// <para>

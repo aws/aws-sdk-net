@@ -33,8 +33,8 @@ namespace Amazon.Route53Resolver.Model
     /// The configuration for a partner threat-protection rule. To enumerate the partners
     /// available in your account, call <a>ListFirewallRuleTypes</a> with <c>RuleType</c>
     /// set to <c>PartnerThreatProtection</c> — each returned <a>FirewallRuleTypeDefinition</a>
-    /// includes a <a>SubscriptionInfo</a> identifying the AWS Marketplace product that backs
-    /// it.
+    /// includes a <a>SubscriptionInfo</a> identifying the Amazon Web Services Marketplace
+    /// product that backs it.
     /// </summary>
     public partial class PartnerThreatProtectionConfig
     {
@@ -45,8 +45,8 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The identifier of the partner threat-protection product, exactly as returned in the
         /// <c>Value</c> field of a <a>FirewallRuleTypeDefinition</a> with <c>RuleType</c> set
-        /// to <c>PartnerThreatProtection</c>. The calling account must hold an active AWS Marketplace
-        /// subscription to this product.
+        /// to <c>PartnerThreatProtection</c>. The calling account must hold an active Amazon
+        /// Web Services Marketplace subscription to this product.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

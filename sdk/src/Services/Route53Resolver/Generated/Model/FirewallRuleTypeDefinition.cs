@@ -103,9 +103,9 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property SubscriptionInfo. 
         /// <para>
         /// For rule types that require an external subscription (today, only the <c>PartnerThreatProtection</c>
-        /// variant), describes the AWS Marketplace product that backs the rule type. Absent for
-        /// rule types that are managed by AWS and do not require a separate subscription. See
-        /// <a>SubscriptionInfo</a>.
+        /// variant), describes the Amazon Web Services Marketplace product that backs the rule
+        /// type. Absent for rule types that are managed by Amazon Web Services and do not require
+        /// a separate subscription. See <a>SubscriptionInfo</a>.
         /// </para>
         /// </summary>
         public SubscriptionInfo SubscriptionInfo

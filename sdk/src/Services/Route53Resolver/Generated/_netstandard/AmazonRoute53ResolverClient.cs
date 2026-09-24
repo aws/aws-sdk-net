@@ -334,8 +334,9 @@ namespace Amazon.Route53Resolver
         ///  
         /// <para>
         /// If the rule group contains any rule configured with the <c>PartnerThreatProtection</c>
-        /// rule type, the calling account must hold an active AWS Marketplace subscription to
-        /// the named partner. If the subscription is missing, the association request is rejected.
+        /// rule type, the calling account must hold an active Amazon Web Services Marketplace
+        /// subscription to the named partner. If the subscription is missing, the association
+        /// request is rejected.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFirewallRuleGroup service method.</param>
@@ -832,7 +833,8 @@ namespace Amazon.Route53Resolver
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <c>FirewallDomainListId</c> — match a customer-managed or AWS-managed domain list.
+        ///  <c>FirewallDomainListId</c> — match a customer-managed or Amazon Web Services-managed
+        /// domain list.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -844,7 +846,7 @@ namespace Amazon.Route53Resolver
         ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
         /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
         /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
-        /// an active AWS Marketplace subscription to the named partner product.
+        /// an active Amazon Web Services Marketplace subscription to the named partner product.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -971,6 +973,14 @@ namespace Amazon.Route53Resolver
 
         /// <summary>
         /// Creates a Route 53 Resolver on an Outpost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation applies to first-generation Outposts only. On second-generation Outposts,
+        /// Resolver is enabled by default and managed automatically by Amazon Web Services, so
+        /// you don't need to create it.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOutpostResolver service method.</param>
         /// <param name="cancellationToken">
@@ -1438,6 +1448,15 @@ namespace Amazon.Route53Resolver
 
         /// <summary>
         /// Deletes a Resolver on the Outpost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation applies to first-generation Outposts only. On second-generation Outposts,
+        /// Resolver is managed automatically by Amazon Web Services and can't be deleted directly.
+        /// To opt out of Resolver on second-generation Outposts, contact Amazon Web Services
+        /// Support.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOutpostResolver service method.</param>
         /// <param name="cancellationToken">
@@ -3227,8 +3246,9 @@ namespace Amazon.Route53Resolver
         /// <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>, and <c>PartnerThreatProtection</c>.
         /// When a returned definition's variant requires an external subscription (currently
         /// only <c>PartnerThreatProtection</c>), the response also includes a <a>SubscriptionInfo</a>
-        /// identifying the AWS Marketplace product that backs it; absence of <c>SubscriptionInfo</c>
-        /// means the variant is fully managed by AWS and requires no separate subscription.
+        /// identifying the Amazon Web Services Marketplace product that backs it; absence of
+        /// <c>SubscriptionInfo</c> means the variant is fully managed by Amazon Web Services
+        /// and requires no separate subscription.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleTypes service method.</param>
@@ -4350,6 +4370,13 @@ namespace Amazon.Route53Resolver
         /// <summary>
         /// You can use <c>UpdateOutpostResolver</c> to update the instance count, type, or name
         /// of a Resolver on an Outpost.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation applies to first-generation Outposts only. On second-generation Outposts,
+        /// Resolver is managed automatically by Amazon Web Services and can't be updated directly.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateOutpostResolver service method.</param>
         /// <param name="cancellationToken">

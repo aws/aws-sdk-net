@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// Identifies the AWS Marketplace product that backs a partner-managed rule type. Returned
-    /// as part of <a>FirewallRuleTypeDefinition</a> when the rule type variant requires an
-    /// active customer subscription to the named product.
+    /// Identifies the Amazon Web Services Marketplace product that backs a partner-managed
+    /// rule type. Returned as part of <a>FirewallRuleTypeDefinition</a> when the rule type
+    /// variant requires an active customer subscription to the named product.
     /// </summary>
     public partial class SubscriptionInfo
     {
@@ -42,8 +42,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The AWS Marketplace product identifier of the partner threat-protection product. Use
-        /// this value to verify or manage the calling account's subscription in AWS Marketplace.
+        /// The Amazon Web Services Marketplace product identifier of the partner threat-protection
+        /// product. Use this value to verify or manage the calling account's subscription in
+        /// Amazon Web Services Marketplace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -62,8 +63,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property VendorName. 
         /// <para>
-        /// The name of the AWS Marketplace seller (vendor) that publishes the partner threat-protection
-        /// product (for example, <c>Palo Alto Networks</c>).
+        /// The name of the Amazon Web Services Marketplace seller (vendor) that publishes the
+        /// partner threat-protection product (for example, <c>Palo Alto Networks</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
