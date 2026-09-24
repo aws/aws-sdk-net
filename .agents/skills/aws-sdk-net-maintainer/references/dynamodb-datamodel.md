@@ -301,8 +301,11 @@ extends it. Handwritten code lives under
   `PopulateConfigFromType` via `GetAccurateCase`) and then cached per type by `ItemStorageConfigCache`.
   Casing is therefore not re-evaluated on every serialize/deserialize — it is fixed when the config is
   first built.
-- `GetAccurateCase` is the single application point: it either returns the .NET property name unchanged
-  (PascalCase) or camelCases the first character via `Utils.ToLowerCamelCase`.
+- `GetAccurateCase` is the single application point during config build: it delegates to
+  `Utils.ApplyCasing(config.AttributeCasing, name)`, which is the extension point that maps each
+  `CaseMode` to its transform (e.g. `CamelCase`/`LegacyCamelCase` camelCase the first character via
+  `Utils.ToLowerCamelCase`; `PascalCase`/`Unset` return the name unchanged). Add new casings there, not
+  in `GetAccurateCase`.
 
 ### CaseMode and AttributeCasing
 
