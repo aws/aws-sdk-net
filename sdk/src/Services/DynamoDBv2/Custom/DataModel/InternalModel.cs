@@ -1750,9 +1750,34 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     var members = Utils.GetMembersFromType(type);
 
+                    // Flattened children are serialized on save through their own resolved config
+                    // (SerializeToDocument), so their attribute names use the CHILD's effective casing: the
+                    // child's own declared casing if it has one, otherwise the parent's casing inherited into
+                    // an undecorated child. The FlattenProperties metadata read on load must be baked with the
+                    // same effective casing, or an explicitly-cased child (e.g. a PascalCase child under a
+                    // CamelCase parent) would save "Street" but load "street" and lose the value.
+                    var childTableAttribute = Utils.GetTableAttribute(type);
+                    CaseMode effectiveChildCasing;
+                    if (childTableAttribute != null)
+                    {
+                        var childCasing = ResolveCaseMode(childTableAttribute, type, out var childDeclaresOwnCasing);
+                        effectiveChildCasing = childDeclaresOwnCasing ? childCasing : config.AttributeCasing;
+                    }
+                    else
+                    {
+                        // Undecorated child inherits the parent's casing (matches save's inherited seeding).
+                        effectiveChildCasing = config.AttributeCasing;
+                    }
+
+                    // Bake names with the child's effective casing. Reuse the parent config when the casing
+                    // already matches; otherwise use a lightweight config carrying the child's casing.
+                    var flattenNameConfig = effectiveChildCasing == config.AttributeCasing
+                        ? config
+                        : new ItemStorageConfig(type) { AttributeCasing = effectiveChildCasing };
+
                     foreach (var memberInfo in members)
                     {
-                        var flattenPropertyStorage = MemberInfoToPropertyStorage(config, memberInfo);
+                        var flattenPropertyStorage = MemberInfoToPropertyStorage(flattenNameConfig, memberInfo);
 
                         flattenPropertyStorage.IsFlattened = true;
 

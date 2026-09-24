@@ -123,6 +123,18 @@ namespace AWSSDK_DotNet.UnitTests
             public Address ShippingAddress { get; set; }
         }
 
+        // A CamelCase root with an explicitly PascalCase flattened child: save (via the child's own config)
+        // and load (via the parent's FlattenProperties) must agree on the child's attribute casing.
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class OrderCamelWithPascalFlatten
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBFlatten]
+            public AddressPascal ShippingAddress { get; set; }
+        }
+
 #if NET8_0_OR_GREATER
         // An immutable (constructor-bound) CamelCase root with an undecorated nested constructor argument.
         // On net8+ the root is populated via constructor binding before PopulateInstance runs, so the
@@ -381,6 +393,32 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.IsFalse(doc.ContainsKey("Street"));
 
             var restored = context.FromDocument<OrderCamelWithFlatten>(doc);
+            Assert.IsNotNull(restored.ShippingAddress);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
+        }
+
+        [TestMethod]
+        public void CamelCaseParent_ExplicitPascalCaseFlattenedChild_RoundTripsSymmetrically()
+        {
+            // A CamelCase parent with an explicitly PascalCase flattened child: save serializes the child
+            // via its own (PascalCase) config, so load must read the same PascalCase names. The
+            // FlattenProperties metadata is baked with the child's effective casing to keep save and load
+            // consistent — otherwise the values would be lost on round-trip.
+            var context = CreateContext();
+            var order = new OrderCamelWithPascalFlatten
+            {
+                Id = "1",
+                ShippingAddress = new AddressPascal { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            // The explicitly PascalCase child writes PascalCase top-level flattened attributes.
+            Assert.IsTrue(doc.ContainsKey("Street"));
+            Assert.IsTrue(doc.ContainsKey("City"));
+            Assert.IsFalse(doc.ContainsKey("street"));
+
+            var restored = context.FromDocument<OrderCamelWithPascalFlatten>(doc);
             Assert.IsNotNull(restored.ShippingAddress);
             Assert.AreEqual("Main", restored.ShippingAddress.Street);
             Assert.AreEqual("Seattle", restored.ShippingAddress.City);

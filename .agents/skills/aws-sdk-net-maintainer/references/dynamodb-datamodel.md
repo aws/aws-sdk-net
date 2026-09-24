@@ -407,11 +407,14 @@ Three non-serialization paths also honor inheritance so attribute names stay con
   argument. Without this, an undecorated nested object passed as a constructor argument of a `CamelCase`
   root would resolve PascalCase names, and — because a constructor-bound member is never revisited by
   `PopulateInstance` — the mismatch would be unrepairable.
-- **Flattened members** (`[DynamoDBFlatten]`): flattened child `PropertyStorage` is built with the
-  parent's config, so the child's attribute names take the parent's casing on BOTH save and load (both
-  iterate the same `FlattenProperties`). Flattening is symmetric and never loses data on round-trip; a
-  flattened child's own `[DynamoDBTable(AttributeCasing=...)]` is intentionally not consulted, consistent
-  with how `[DynamoDBFlatten]` collapses the child into the parent.
+- **Flattened members** (`[DynamoDBFlatten]`): on save, a flattened child is serialized through its own
+  resolved config (`ToDynamoDBEntry` → `SerializeToDocument`), so its attribute names use the child's
+  **effective** casing — the child's own declared casing if it has one, otherwise the parent's casing
+  inherited into an undecorated child. On load, `CreateFlattenedMember` reads via the parent
+  `PropertyStorage.FlattenProperties`. To keep save and load symmetric, `PopulateConfigFromType` bakes
+  `FlattenProperties` names with the child's **effective** casing (not blindly the parent's). This
+  matters when a flattened child declares its own casing (e.g. a `PascalCase` child under a `CamelCase`
+  parent): both sides then use the child's PascalCase names, so no value is lost on round-trip.
 
 ### Explicit opt-out of inheritance
 
