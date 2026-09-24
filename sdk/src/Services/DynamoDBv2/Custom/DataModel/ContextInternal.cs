@@ -693,11 +693,11 @@ namespace Amazon.DynamoDBv2.DataModel
 
             storageConfig ??= config.BaseTypeStorageConfig;
 
-            // Mirror the serialization side: propagate CamelCase to nested undecorated types so their
-            // camelCased attribute names are looked up on read. Save/restore since flatConfig is shared.
+            // Mirror the serialization side: propagate the inheritable casing (see Utils.GetInheritableCasing)
+            // to nested undecorated types so their attribute names are looked up with the right casing on
+            // read. Save/restore since flatConfig is shared.
             var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
-            flatConfig.InheritedAttributeCasing =
-                config.AttributeCasing == CaseMode.CamelCase ? CaseMode.CamelCase : (CaseMode?)null;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(config.AttributeCasing);
             try
             {
 
@@ -783,13 +783,12 @@ namespace Amazon.DynamoDBv2.DataModel
             ItemStorageConfig config = storage.Config;
             Document document = storage.Document;
 
-            // Carry this type's casing down to nested objects that don't declare their own. Only
-            // CaseMode.CamelCase propagates; PascalCase and the obsolete LegacyCamelCase do not (the
-            // latter intentionally keeps nested objects PascalCase). Save/restore because flatConfig is
-            // shared across the recursive walk.
+            // Carry this type's casing down to nested objects that don't declare their own. The set of
+            // casings that propagate is defined once in Utils.GetInheritableCasing (CamelCase propagates;
+            // Unset/PascalCase are no-ops; the obsolete LegacyCamelCase intentionally does not cascade).
+            // Save/restore because flatConfig is shared across the recursive walk.
             var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
-            flatConfig.InheritedAttributeCasing =
-                config.AttributeCasing == CaseMode.CamelCase ? CaseMode.CamelCase : (CaseMode?)null;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(config.AttributeCasing);
             try
             {
 

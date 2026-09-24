@@ -899,18 +899,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public bool DeclaresOwnCasing { get; set; }
 
-        /// <summary>
-        /// Backwards-compatible view of <see cref="AttributeCasing"/>. Returns <c>true</c> when the resolved
-        /// casing camelCases the root object's attribute names (both <see cref="CaseMode.CamelCase"/> and
-        /// <see cref="CaseMode.LegacyCamelCase"/> do).
-        /// </summary>
-        public bool LowerCamelCaseProperties
-        {
-#pragma warning disable CS0618 // Referencing obsolete CaseMode.LegacyCamelCase within the SDK.
-            get => AttributeCasing == CaseMode.CamelCase || AttributeCasing == CaseMode.LegacyCamelCase;
-#pragma warning restore CS0618
-        }
-
         public HashSet<string> AttributesToStoreAsEpoch { get; set; }
         public HashSet<string> AttributesToStoreAsEpochLong { get; set; }
 
@@ -1422,7 +1410,11 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
 
             var candidate = flatConfig.InheritedAttributeCasing.Value;
-            if (candidate != CaseMode.CamelCase)
+            // Defensive: only a casing that is itself inheritable may be applied to a nested type. In
+            // practice flatConfig.InheritedAttributeCasing is only ever set to an inheritable value (see
+            // Utils.GetInheritableCasing at the propagation sites), but keying off the helper here means
+            // this gate never hard-codes specific modes either.
+            if (Utils.GetInheritableCasing(candidate) != candidate)
                 return false;
 
             // Only fill in a nested type that did not explicitly declare a casing of its own. An explicit
@@ -1472,16 +1464,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static string GetAccurateCase(ItemStorageConfig config, string value)
         {
-            // Casing is baked into each attribute name at config-build time. Both CamelCase and the
-            // (obsolete) LegacyCamelCase camelCase the attribute names on the type this config represents;
-            // PascalCase leaves them unchanged. The difference between CamelCase and LegacyCamelCase is
-            // whether the casing is inherited by undecorated nested types, which is resolved when the
-            // nested type's config is built (see ResolveCaseMode / GetConfig), not here.
-#pragma warning disable CS0618 // Referencing obsolete CaseMode.LegacyCamelCase within the SDK.
-            var camelCase = config.AttributeCasing == CaseMode.CamelCase
-                         || config.AttributeCasing == CaseMode.LegacyCamelCase;
-#pragma warning restore CS0618
-            return camelCase ? Utils.ToLowerCamelCase(value) : value;
+            // Casing is baked into each attribute name at config-build time. The per-mode transform lives
+            // in Utils.ApplyCasing, so adding a new casing does not require changes here.
+            return Utils.ApplyCasing(config.AttributeCasing, value);
         }
 
         /// <summary>

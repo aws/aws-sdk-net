@@ -355,15 +355,25 @@ need two different baked configs). It also cannot be done by mutating a shared c
 
 The implementation:
 
+- Two per-mode policies are centralized in `Utils` so no serialization/config code hard-codes specific
+  modes:
+  - `Utils.ApplyCasing(CaseMode, name)` — the actual name transform (used by `GetAccurateCase`).
+  - `Utils.GetInheritableCasing(CaseMode)` — the casing (if any) a type propagates to undecorated nested
+    types; returns `null` for modes that must not cascade. Used at both propagation sites and by the
+    `ShouldInheritCasing` gate.
+  Adding a new casing (e.g. `SnakeCase`) means: add the enum value, add one arm to `ApplyCasing`, and —
+  if it should cascade — return it from `GetInheritableCasing`. No changes to `ContextInternal.cs`,
+  `GetAccurateCase`, or the inheritance gate are needed.
 - `DynamoDBFlatConfig.InheritedAttributeCasing` (nullable `CaseMode`) carries the enclosing type's
-  effective casing down the object graph while (de)serializing. It is set and restored (try/finally)
-  around member iteration in `PopulateItemStorage` (serialize) and `PopulateInstance` (deserialize) in
-  `Custom/DataModel/ContextInternal.cs`. Only `CamelCase` propagates; `PascalCase` and `LegacyCamelCase`
-  clear it.
+  inheritable casing down the object graph while (de)serializing. It is set (via
+  `Utils.GetInheritableCasing`) and restored (try/finally) around member iteration in
+  `PopulateItemStorage` (serialize) and `PopulateInstance` (deserialize) in
+  `Custom/DataModel/ContextInternal.cs`. `PascalCase`/`Unset` propagate as a no-op (`null`) and
+  `LegacyCamelCase` deliberately does not cascade.
 - `ItemStorageConfigCache.ConfigTableCache` keeps `InheritedCasingConfigs`, a
   `Dictionary<CaseMode, ItemStorageConfig>` of variants built with a forced casing. When a nested type
-  does not declare its own casing (`DeclaresOwnCasing == false`) and an inherited `CamelCase`
-  applies, `ResolveInheritedCasingConfig` builds/returns a variant with the names re-baked in camelCase.
+  does not declare its own casing (`DeclaresOwnCasing == false`) and an inheritable casing
+  applies, `ResolveInheritedCasingConfig` builds/returns a variant with the names re-baked in that casing.
   `CreateStorageConfig` / `PopulateConfigFromType` take an optional `forcedCasing` that only applies to
   types without their own explicit casing.
 

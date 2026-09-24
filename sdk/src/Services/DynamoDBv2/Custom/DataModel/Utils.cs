@@ -349,6 +349,55 @@ namespace Amazon.DynamoDBv2.DataModel
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Applies a <see cref="CaseMode"/> to a single .NET property name, producing the DynamoDB
+        /// attribute name. This is the one place the actual name transform for each mode lives; adding a
+        /// new casing (e.g. a future SnakeCase) means adding a single arm here, not touching serialization
+        /// or config-build code.
+        /// </summary>
+        internal static string ApplyCasing(CaseMode mode, string value)
+        {
+            switch (mode)
+            {
+#pragma warning disable CS0618 // LegacyCamelCase is obsolete but still a supported casing transform.
+                case CaseMode.CamelCase:
+                case CaseMode.LegacyCamelCase:
+                    // Both camelCase the name on the type this config represents. They differ only in
+                    // whether the casing is inherited by undecorated nested types (see GetInheritableCasing).
+                    return ToLowerCamelCase(value);
+#pragma warning restore CS0618
+                case CaseMode.Unset:
+                case CaseMode.PascalCase:
+                default:
+                    return value;
+            }
+        }
+
+        /// <summary>
+        /// Returns the casing, if any, that a type using <paramref name="mode"/> propagates to nested
+        /// objects that do not declare their own casing; <c>null</c> means "do not propagate". This is the
+        /// single source of truth for inheritance policy, so serialization/deserialization and config
+        /// building never hard-code specific modes.
+        ///
+        /// A mode propagates only when it (a) actually transforms names and (b) is meant to cascade.
+        /// <see cref="CaseMode.CamelCase"/> qualifies. <see cref="CaseMode.Unset"/> and
+        /// <see cref="CaseMode.PascalCase"/> do not transform names, so propagating them is a no-op and we
+        /// return <c>null</c>. <see cref="CaseMode.LegacyCamelCase"/> transforms the root only and, by
+        /// definition, must NOT cascade. A future casing (e.g. SnakeCase) that should cascade simply
+        /// returns itself here.
+        /// </summary>
+        internal static CaseMode? GetInheritableCasing(CaseMode mode)
+        {
+            switch (mode)
+            {
+                case CaseMode.CamelCase:
+                    return CaseMode.CamelCase;
+                // Unset/PascalCase: no-op to propagate. LegacyCamelCase: root-only by design.
+                default:
+                    return null;
+            }
+        }
+
         private static Type[][] validConstructorInputs = new Type[][]
         {
             EmptyTypes,
