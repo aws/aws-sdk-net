@@ -125,7 +125,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/eb-event-bus-logs.html">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus-logs.html">Configuring
         /// logs for event buses</a> in the <i>EventBridge User Guide</i>.
         /// </para>
         /// </summary>

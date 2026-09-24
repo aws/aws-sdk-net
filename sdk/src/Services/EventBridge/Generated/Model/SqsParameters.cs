@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// This structure includes the custom parameter to be used when the target is an SQS
-    /// FIFO queue.
+    /// The custom parameters for EventBridge to use for a target that is an Amazon SQS fair
+    /// or FIFO queue.
     /// </summary>
     public partial class SqsParameters
     {
@@ -40,7 +40,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property MessageGroupId. 
         /// <para>
-        /// The FIFO message group ID to use as the target.
+        /// The ID of the message group to use as the target.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

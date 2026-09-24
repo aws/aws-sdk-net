@@ -43,6 +43,7 @@ namespace Amazon.EventBridge.Model
         private DateTime? _creationTime;
         private string _description;
         private DateTime? _lastModifiedTime;
+        private string _managedBy;
         private string _name;
         private string _policy;
 
@@ -117,6 +118,26 @@ namespace Amazon.EventBridge.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// If the event bus was created on behalf of your account by an Amazon Web Services service,
+        /// this field displays the principal name of the service that created the event bus.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>

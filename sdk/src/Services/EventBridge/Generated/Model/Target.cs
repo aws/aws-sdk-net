@@ -398,12 +398,13 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property SqsParameters. 
         /// <para>
-        /// Contains the message group ID to use when the target is a FIFO queue.
+        /// Contains the message group ID to use when the target is an Amazon SQS fair or FIFO
+        /// queue.
         /// </para>
         ///  
         /// <para>
-        /// If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication
-        /// enabled.
+        /// If you specify a fair or FIFO queue as a target, the queue must have content-based
+        /// deduplication enabled.
         /// </para>
         /// </summary>
         public SqsParameters SqsParameters

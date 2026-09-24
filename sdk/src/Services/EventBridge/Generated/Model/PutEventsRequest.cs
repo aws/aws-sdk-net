@@ -36,8 +36,8 @@ namespace Amazon.EventBridge.Model
     ///  
     /// <para>
     /// You can batch multiple event entries into one request for efficiency. However, the
-    /// total entry size must be less than 256KB. You can calculate the entry size before
-    /// you send the events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size">Calculating
+    /// total entry size must be less than 1MB. You can calculate the entry size before you
+    /// send the events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html#eb-putevent-size">Calculating
     /// PutEvents event entry size</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
     /// </para>
     ///  
