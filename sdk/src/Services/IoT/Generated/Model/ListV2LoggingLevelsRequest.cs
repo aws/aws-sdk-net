@@ -86,7 +86,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of resource for which you are configuring logging. Must be <c>THING_Group</c>.
+        /// The type of resource for which you are configuring logging. Must be <c>DEFAULT</c>,
+        /// <c>THING_GROUP</c>, <c>CLIENT_ID</c>, <c>SOURCE_IP</c>, or <c>PRINCIPAL_ID</c>.
         /// </para>
         /// </summary>
         public LogTargetType TargetType
