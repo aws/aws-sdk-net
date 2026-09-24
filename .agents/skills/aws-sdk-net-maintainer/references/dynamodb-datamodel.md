@@ -353,7 +353,8 @@ wrote. All of these seed `InheritedAttributeCasing` (with save/restore):
 ### Backward-compat traps
 
 - Default is unchanged (Unset ⇒ PascalCase root + nested), so existing data round-trips.
-- V3 `LowerCamelCaseProperties = false` meant "explicitly PascalCase, don't inherit". Because the
+- In previous SDK versions `LowerCamelCaseProperties = false` meant "explicitly PascalCase, don't
+  inherit". Because the
   property is a bool, an explicit `false` is indistinguishable from omitted — so `DynamoDBTableAttribute`
   tracks `LowerCamelCasePropertiesExplicitlySet` and `ResolveCaseMode` treats explicit `false` as an
   own-casing PascalCase declaration. Otherwise such a type would silently inherit a new `CamelCase`

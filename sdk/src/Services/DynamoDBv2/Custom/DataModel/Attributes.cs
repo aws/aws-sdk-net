@@ -122,9 +122,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 _lowerCamelCaseProperties = value;
                 // Record that the flag was explicitly assigned (via the named property or the bool
                 // constructor). An explicit assignment — even to false — is a deliberate casing choice and
-                // must be distinguished from an omitted flag: in V3, LowerCamelCaseProperties=false meant
-                // "PascalCase, do not camelCase", so a type declared that way must NOT inherit an enclosing
-                // CamelCase parent's casing in V4.
+                // must be distinguished from an omitted flag: in previous versions of the SDK,
+                // LowerCamelCaseProperties=false meant "PascalCase, do not camelCase", so a type declared
+                // that way must NOT inherit an enclosing CamelCase parent's casing.
                 LowerCamelCasePropertiesExplicitlySet = true;
             }
         }
@@ -134,7 +134,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Whether <see cref="LowerCamelCaseProperties"/> was explicitly assigned (via the named property or
         /// the obsolete bool constructor), as opposed to being left at its default. An explicit
         /// <c>false</c> is treated as an explicit <see cref="CaseMode.PascalCase"/> declaration so that a
-        /// type carrying V3's <c>LowerCamelCaseProperties=false</c> semantics does not silently inherit an
+        /// type carrying an earlier <c>LowerCamelCaseProperties=false</c> semantic does not silently inherit an
         /// enclosing <see cref="CaseMode.CamelCase"/> parent's casing on upgrade.
         /// </summary>
         internal bool LowerCamelCasePropertiesExplicitlySet { get; private set; }
@@ -232,7 +232,8 @@ namespace Amazon.DynamoDBv2.DataModel
 #pragma warning disable CS0618 // LowerCamelCaseProperties is obsolete but retained for this back-compat constructor overload.
             // Assigning through the property marks LowerCamelCasePropertiesExplicitlySet = true, so
             // ResolveCaseMode treats an explicit false as a deliberate PascalCase choice that blocks
-            // inheritance (preserving V3 semantics). true still maps to LegacyCamelCase. The one-argument
+            // inheritance (preserving the behavior of previous SDK versions). true still maps to
+            // LegacyCamelCase. The one-argument
             // (string) constructor never assigns this, so it stays non-explicit and remains inheritable.
             LowerCamelCaseProperties = lowerCamelCaseProperties;
 #pragma warning restore CS0618

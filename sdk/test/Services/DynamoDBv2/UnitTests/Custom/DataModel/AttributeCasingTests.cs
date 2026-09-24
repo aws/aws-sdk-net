@@ -95,8 +95,9 @@ namespace AWSSDK_DotNet.UnitTests
             public Address ShippingAddress { get; set; }
         }
 
-        // A nested type declared with the obsolete (string, false) bool constructor. In V3 this meant
-        // "PascalCase, do not camelCase". It must NOT inherit a CamelCase parent's casing on upgrade.
+        // A nested type declared with the obsolete (string, false) bool constructor. In previous SDK
+        // versions this meant "PascalCase, do not camelCase". It must NOT inherit a CamelCase parent's
+        // casing on upgrade.
         [DynamoDBTable("AddressExplicitFalse", false)]
         public class AddressExplicitFalse
         {
@@ -104,7 +105,7 @@ namespace AWSSDK_DotNet.UnitTests
             public string City { get; set; }
         }
 
-        // Same V3 semantics via the NAMED property form: LowerCamelCaseProperties = false. An explicit
+        // Same semantics via the NAMED property form: LowerCamelCaseProperties = false. An explicit
         // false must be treated as a deliberate PascalCase choice that blocks inheritance.
         [DynamoDBTable("AddressExplicitFalseNamed", LowerCamelCaseProperties = false)]
         public class AddressExplicitFalseNamed
@@ -809,10 +810,11 @@ namespace AWSSDK_DotNet.UnitTests
         public void ObsoleteFalseBoolConstructor_BlocksInheritanceUnderCamelCaseParent()
         {
             // Regression (Copilot): the obsolete (string, false) constructor meant "PascalCase, do not
-            // camelCase" in V3. With V4 nested-casing inheritance, a type declared that way and nested under
-            // a CamelCase parent must NOT inherit camelCase (which would silently rename existing stored
-            // attributes on upgrade). The false path sets AttributeCasing=PascalCase (declaresOwnCasing),
-            // so the nested type stays PascalCase.
+            // camelCase" in previous SDK versions. With nested-casing inheritance, a type declared that way
+            // and nested under a CamelCase parent must NOT inherit camelCase (which would silently rename
+            // existing stored attributes on upgrade). An explicit false is recorded as an explicit
+            // assignment, so ResolveCaseMode treats it as a PascalCase declaration (declaresOwnCasing) and
+            // the nested type stays PascalCase.
             var context = CreateContext();
             var order = new OrderCamelWithExplicitFalseNested
             {
@@ -836,7 +838,8 @@ namespace AWSSDK_DotNet.UnitTests
         public void NamedFalseProperty_BlocksInheritanceUnderCamelCaseParent()
         {
             // Regression (Copilot): the NAMED [DynamoDBTable("T", LowerCamelCaseProperties = false)] form has
-            // the same V3 "PascalCase, do not camelCase" semantics as the (string, false) constructor. Since
+            // the same "PascalCase, do not camelCase" semantics (from previous SDK versions) as the
+            // (string, false) constructor. Since
             // the property setter records explicit assignment, ResolveCaseMode treats an explicit false as a
             // PascalCase declaration, so the nested type does NOT inherit the CamelCase parent.
             var context = CreateContext();
