@@ -358,12 +358,16 @@ The implementation:
 - Two per-mode policies are centralized in `Utils` so no serialization/config code hard-codes specific
   modes:
   - `Utils.ApplyCasing(CaseMode, name)` — the actual name transform (used by `GetAccurateCase`).
-  - `Utils.GetInheritableCasing(CaseMode)` — the casing (if any) a type propagates to undecorated nested
-    types; returns `null` for modes that must not cascade. Used at both propagation sites and by the
-    `ShouldInheritCasing` gate.
-  Adding a new casing (e.g. `SnakeCase`) means: add the enum value, add one arm to `ApplyCasing`, and —
-  if it should cascade — return it from `GetInheritableCasing`. No changes to `ContextInternal.cs`,
-  `GetAccurateCase`, or the inheritance gate are needed.
+  - `Utils.GetInheritableCasing(CaseMode)` — the casing a type propagates to undecorated nested types.
+    It cascades every casing EXCEPT `LegacyCamelCase` (which returns `null` because it is root-only by
+    definition); the special case is confined to that one obsolete value. Used at both propagation sites
+    and by the `ShouldInheritCasing` gate.
+  - `Utils.IsNameTransformingCasing(CaseMode)` — false for the pass-through casings (`Unset`/`PascalCase`).
+    `ShouldInheritCasing` uses it to skip building a config variant whose baked names would be identical
+    to the base, so no redundant config is created for those.
+  Adding a new casing (e.g. `SnakeCase`) means: add the enum value and add one arm to `ApplyCasing`. It
+  cascades to nested objects automatically — `GetInheritableCasing` only excludes `LegacyCamelCase`, so no
+  changes to `ContextInternal.cs`, `GetAccurateCase`, or the inheritance gate are needed.
 - `DynamoDBFlatConfig.InheritedAttributeCasing` (nullable `CaseMode`) carries the enclosing type's
   inheritable casing down the object graph while (de)serializing. It is set (via
   `Utils.GetInheritableCasing`) and restored (try/finally) around member iteration in

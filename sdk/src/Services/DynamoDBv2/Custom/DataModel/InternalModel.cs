@@ -1417,6 +1417,11 @@ namespace Amazon.DynamoDBv2.DataModel
             if (Utils.GetInheritableCasing(candidate) != candidate)
                 return false;
 
+            // Skip pass-through casings (Unset/PascalCase): inheriting them would build a config variant
+            // whose baked names are identical to the base config, which is wasted work and cache space.
+            if (!Utils.IsNameTransformingCasing(candidate))
+                return false;
+
             // Only fill in a nested type that did not explicitly declare a casing of its own. An explicit
             // PascalCase declaration blocks inheritance (this is why CaseMode has an Unset sentinel:
             // Unset means "not specified" and allows inheritance, whereas an explicit PascalCase does not).

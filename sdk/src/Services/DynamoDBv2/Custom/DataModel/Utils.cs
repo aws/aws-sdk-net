@@ -379,23 +379,29 @@ namespace Amazon.DynamoDBv2.DataModel
         /// single source of truth for inheritance policy, so serialization/deserialization and config
         /// building never hard-code specific modes.
         ///
-        /// A mode propagates only when it (a) actually transforms names and (b) is meant to cascade.
-        /// <see cref="CaseMode.CamelCase"/> qualifies. <see cref="CaseMode.Unset"/> and
-        /// <see cref="CaseMode.PascalCase"/> do not transform names, so propagating them is a no-op and we
-        /// return <c>null</c>. <see cref="CaseMode.LegacyCamelCase"/> transforms the root only and, by
-        /// definition, must NOT cascade. A future casing (e.g. SnakeCase) that should cascade simply
-        /// returns itself here.
+        /// Every casing cascades to nested objects EXCEPT <see cref="CaseMode.LegacyCamelCase"/>, which by
+        /// definition applies to the root only and must not propagate. Confining the special case to that
+        /// one obsolete value means a future casing (e.g. SnakeCase) cascades automatically with no change
+        /// here. Propagating <see cref="CaseMode.Unset"/> or <see cref="CaseMode.PascalCase"/> is a no-op
+        /// for name transformation; the caller (ShouldInheritCasing) skips building a variant for those so
+        /// no redundant config is created.
         /// </summary>
         internal static CaseMode? GetInheritableCasing(CaseMode mode)
         {
-            switch (mode)
-            {
-                case CaseMode.CamelCase:
-                    return CaseMode.CamelCase;
-                // Unset/PascalCase: no-op to propagate. LegacyCamelCase: root-only by design.
-                default:
-                    return null;
-            }
+#pragma warning disable CS0618 // LegacyCamelCase is obsolete but is precisely the one casing that must not cascade.
+            return mode == CaseMode.LegacyCamelCase ? (CaseMode?)null : mode;
+#pragma warning restore CS0618
+        }
+
+        /// <summary>
+        /// True when applying <paramref name="mode"/> can change a .NET property name (i.e. it is not a
+        /// pass-through). <see cref="CaseMode.Unset"/> and <see cref="CaseMode.PascalCase"/> leave names
+        /// unchanged; all other casings transform them. Used to avoid building redundant, identical
+        /// inherited-casing config variants for no-op casings.
+        /// </summary>
+        internal static bool IsNameTransformingCasing(CaseMode mode)
+        {
+            return mode != CaseMode.Unset && mode != CaseMode.PascalCase;
         }
 
         private static Type[][] validConstructorInputs = new Type[][]
