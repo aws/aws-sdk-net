@@ -54,6 +54,16 @@ namespace AWSSDK_DotNet.UnitTests
             public Address ShippingAddress { get; set; }
         }
 
+        // Uses the positional CaseMode constructor rather than the named property.
+        [DynamoDBTable("Orders", CaseMode.CamelCase)]
+        public class OrderCamelCasePositionalCtor
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+            public string CustomerName { get; set; }
+            public Address ShippingAddress { get; set; }
+        }
+
         [DynamoDBTable("Orders", AttributeCasing = CaseMode.PascalCase)]
         public class OrderPascalCase
         {
@@ -258,6 +268,39 @@ namespace AWSSDK_DotNet.UnitTests
             var modeNested = legacyModeDoc["shippingAddress"].AsDocument();
             Assert.IsTrue(boolNested.ContainsKey("Street"));
             Assert.IsTrue(modeNested.ContainsKey("Street"));
+        }
+
+        [TestMethod]
+        public void PositionalCaseModeConstructor_AppliesCasing()
+        {
+            // The [DynamoDBTable("Orders", CaseMode.CamelCase)] positional constructor should behave
+            // identically to setting AttributeCasing = CaseMode.CamelCase via the named property.
+            var context = CreateContext();
+            var order = new OrderCamelCasePositionalCtor
+            {
+                Id = "1",
+                CustomerName = "Alice",
+                ShippingAddress = new Address { Street = "Main", City = "Seattle" }
+            };
+            var doc = context.ToDocument(order);
+
+            Assert.IsTrue(doc.ContainsKey("customerName"));
+            Assert.IsTrue(doc.ContainsKey("shippingAddress"));
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("street"));
+            Assert.IsTrue(nested.ContainsKey("city"));
+        }
+
+        [TestMethod]
+        public void CaseModeConstructors_SetAttributeCasing()
+        {
+            // Direct construction: the CaseMode constructors set AttributeCasing and default correctly.
+            Assert.AreEqual(CaseMode.Unset, new DynamoDBTableAttribute("T").AttributeCasing);
+            Assert.AreEqual(CaseMode.CamelCase, new DynamoDBTableAttribute("T", CaseMode.CamelCase).AttributeCasing);
+
+            var withConversion = new DynamoDBTableAttribute("T", CaseMode.PascalCase, ConversionSchema.V2);
+            Assert.AreEqual(CaseMode.PascalCase, withConversion.AttributeCasing);
+            Assert.AreEqual(ConversionSchema.V2, withConversion.Conversion);
         }
     }
 }

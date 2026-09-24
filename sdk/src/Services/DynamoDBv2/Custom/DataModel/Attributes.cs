@@ -152,8 +152,31 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="tableName"></param>
         public DynamoDBTableAttribute(string tableName)
-            : this(tableName, false, ConversionSchema.Unset)
+            : this(tableName, CaseMode.Unset, ConversionSchema.Unset)
         {
+        }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute with the given attribute casing.
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="attributeCasing">How .NET property names are cased when mapped to DynamoDB attribute names.</param>
+        public DynamoDBTableAttribute(string tableName, CaseMode attributeCasing)
+            : this(tableName, attributeCasing, ConversionSchema.Unset)
+        {
+        }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute with the given attribute casing and conversion schema.
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="attributeCasing">How .NET property names are cased when mapped to DynamoDB attribute names.</param>
+        /// <param name="conversion"></param>
+        public DynamoDBTableAttribute(string tableName, CaseMode attributeCasing, ConversionSchema conversion)
+        {
+            TableName = tableName;
+            AttributeCasing = attributeCasing;
+            Conversion = conversion;
         }
 
         /// <summary>
@@ -161,8 +184,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="tableName"></param>
         /// <param name="lowerCamelCaseProperties"></param>
+        [Obsolete("Use the constructor that takes a CaseMode instead. lowerCamelCaseProperties=true is " +
+                  "equivalent to AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase " +
+                  "nested); for consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties)
+#pragma warning disable CS0618 // Chaining to the obsolete bool overload from an obsolete overload.
             : this(tableName, lowerCamelCaseProperties, ConversionSchema.Unset)
+#pragma warning restore CS0618
         {
         }
 
@@ -172,6 +200,9 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="tableName"></param>
         /// <param name="lowerCamelCaseProperties"></param>
         /// <param name="conversion"></param>
+        [Obsolete("Use the constructor that takes a CaseMode instead. lowerCamelCaseProperties=true is " +
+                  "equivalent to AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase " +
+                  "nested); for consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties, ConversionSchema conversion)
         {
             TableName = tableName;

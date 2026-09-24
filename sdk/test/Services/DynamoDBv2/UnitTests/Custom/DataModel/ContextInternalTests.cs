@@ -2448,7 +2448,7 @@ namespace AWSSDK_DotNet.UnitTests
             public string Name { get; set; }
         }
 
-        [DynamoDBTable("OuterTypeWithNestedConversionTable", false, ConversionSchema.V2)]
+        [DynamoDBTable("OuterTypeWithNestedConversionTable", CaseMode.PascalCase, ConversionSchema.V2)]
         private class OuterTypeWithNestedConversionEntity
         {
             [DynamoDBHashKey]
@@ -2460,7 +2460,7 @@ namespace AWSSDK_DotNet.UnitTests
             public NestedTypeWithV1Conversion Nested { get; set; }
         }
 
-        [DynamoDBTable("NestedTypeWithV1ConversionTable", false, ConversionSchema.V1)]
+        [DynamoDBTable("NestedTypeWithV1ConversionTable", CaseMode.PascalCase, ConversionSchema.V1)]
         private class NestedTypeWithV1Conversion
         {
             public bool IsEnabled { get; set; }

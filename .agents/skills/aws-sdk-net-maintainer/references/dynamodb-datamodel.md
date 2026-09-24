@@ -329,6 +329,12 @@ mode. It cannot be a nullable `CaseMode?` because C# does not allow `Nullable<T>
 argument — hence the `Unset` sentinel. `LowerCamelCaseProperties` is now `[Obsolete]` and maps to
 `LegacyCamelCase` when `true`.
 
+`DynamoDBTableAttribute` also has constructors `(string tableName, CaseMode attributeCasing)` and
+`(string tableName, CaseMode attributeCasing, ConversionSchema conversion)` so callers can set casing
+positionally. The two constructors that take a `bool lowerCamelCaseProperties` are `[Obsolete]` and
+point at the `CaseMode` overloads. The parameterless-casing constructor `(string tableName)` chains to
+the `CaseMode` overload with `CaseMode.Unset` so it does not route through an obsolete member.
+
 ### Precedence (ResolveCaseMode in InternalModel.cs)
 
 1. `AttributeCasing != Unset` wins (any explicit value, including an explicit `PascalCase`), and the
