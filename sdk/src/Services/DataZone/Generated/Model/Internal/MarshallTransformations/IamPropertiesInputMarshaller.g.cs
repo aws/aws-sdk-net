@@ -50,6 +50,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("glueLineageSyncEnabled");
                 context.Writer.WriteBooleanValue(requestObject.GlueLineageSyncEnabled.Value);
             }
+
+            if (requestObject.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(requestObject.RoleArn);
+            }
         }
 
         /// <summary>

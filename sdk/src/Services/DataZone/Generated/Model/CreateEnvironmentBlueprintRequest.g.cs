@@ -36,6 +36,20 @@ namespace Amazon.DataZone.Model
     public partial class CreateEnvironmentBlueprintRequest : AmazonDataZoneRequest
     {
         /// <summary>
+        /// Gets and sets the property BlueprintCategory. 
+        /// <para>
+        /// The category of the Amazon DataZone blueprint. The only valid value is <c>TOOLING</c>,
+        /// which creates a blueprint that provisions the tooling resources of a project.
+        /// </para>
+        /// </summary>
+        public BlueprintCategory BlueprintCategory { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BlueprintCategory property is set.
+        /// </summary>
+        internal bool IsSetBlueprintCategory() => this.BlueprintCategory != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the Amazon DataZone blueprint.

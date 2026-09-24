@@ -36,6 +36,19 @@ namespace Amazon.DataZone.Model
     public partial class UpdateEnvironmentBlueprintRequest : AmazonDataZoneRequest
     {
         /// <summary>
+        /// Gets and sets the property BlueprintCategory. 
+        /// <para>
+        /// The category to update. The only valid value is <c>TOOLING</c>.
+        /// </para>
+        /// </summary>
+        public BlueprintCategory BlueprintCategory { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BlueprintCategory property is set.
+        /// </summary>
+        internal bool IsSetBlueprintCategory() => this.BlueprintCategory != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description to be updated as part of the <c>UpdateEnvironmentBlueprint</c> action.

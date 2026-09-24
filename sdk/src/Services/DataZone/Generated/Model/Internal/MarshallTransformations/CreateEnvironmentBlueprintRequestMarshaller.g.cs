@@ -74,6 +74,11 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetBlueprintCategory())
+            {
+                context.Writer.WritePropertyName("blueprintCategory");
+                context.Writer.WriteStringValue(publicRequest.BlueprintCategory);
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

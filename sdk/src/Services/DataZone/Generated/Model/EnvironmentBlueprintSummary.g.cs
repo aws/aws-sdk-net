@@ -35,6 +35,19 @@ namespace Amazon.DataZone.Model
     public partial class EnvironmentBlueprintSummary
     {
         /// <summary>
+        /// Gets and sets the property BlueprintCategory. 
+        /// <para>
+        /// The category of the environment blueprint. The only valid value is <c>TOOLING</c>.
+        /// </para>
+        /// </summary>
+        public BlueprintCategory BlueprintCategory { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BlueprintCategory property is set.
+        /// </summary>
+        internal bool IsSetBlueprintCategory() => this.BlueprintCategory != null;
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The timestamp of when an environment blueprint was created.

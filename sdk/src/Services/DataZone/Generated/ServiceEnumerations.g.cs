@@ -191,6 +191,42 @@ namespace Amazon.DataZone
     }
 
     /// <summary>
+    /// Constants used for properties of type BlueprintCategory.
+    /// </summary>
+    public class BlueprintCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant TOOLING for BlueprintCategory
+        /// </summary>
+        public static readonly BlueprintCategory TOOLING = new BlueprintCategory("TOOLING");
+
+        /// <summary>
+        /// Constructs a custom BlueprintCategory for a value not among the defined constants.
+        /// </summary>
+        public BlueprintCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlueprintCategory FindValue(string value)
+        {
+            return FindValue<BlueprintCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlueprintCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ChangeAction.
     /// </summary>
     public class ChangeAction : ConstantClass

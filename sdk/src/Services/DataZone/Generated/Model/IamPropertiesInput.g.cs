@@ -46,5 +46,19 @@ namespace Amazon.DataZone.Model
         /// Checks to see if the GlueLineageSyncEnabled property is set.
         /// </summary>
         internal bool IsSetGlueLineageSyncEnabled() => this.GlueLineageSyncEnabled.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the IAM role to associate with the connection as the project user role.
+        /// To use this operation, you must have <c>iam:PassRole</c> permission for this role.
+        /// </para>
+        /// </summary>
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
     }
 }
