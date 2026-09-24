@@ -372,8 +372,9 @@ The implementation:
   inheritable casing down the object graph while (de)serializing. It is set (via
   `Utils.GetInheritableCasing`) and restored (try/finally) around member iteration in
   `PopulateItemStorage` (serialize) and `PopulateInstance` (deserialize) in
-  `Custom/DataModel/ContextInternal.cs`. `PascalCase`/`Unset` propagate as a no-op (`null`) and
-  `LegacyCamelCase` deliberately does not cascade.
+  `Custom/DataModel/ContextInternal.cs`. `PascalCase`/`Unset` are carried as their own (non-null) values
+  and treated as no-ops by `ShouldInheritCasing` (via `IsNameTransformingCasing`), so they build no
+  variant; only `LegacyCamelCase` is mapped to `null` by `GetInheritableCasing` and thus never cascades.
 - `ItemStorageConfigCache.ConfigTableCache` keeps `InheritedCasingConfigs`, a
   `Dictionary<CaseMode, ItemStorageConfig>` of variants built with a forced casing. When a nested type
   does not declare its own casing (`DeclaresOwnCasing == false`) and an inheritable casing

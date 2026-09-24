@@ -495,11 +495,11 @@ namespace Amazon.DynamoDBv2.DataModel
             var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
             flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(storage.Config.AttributeCasing);
 
+            try
+            {
             // Track the document for the same reason PopulateInstance does: FromDynamoDBEntry recurses into
             // nested documents, so constructor arguments must participate in circular-reference detection too.
             using (flatConfig.State.Track(document))
-            {
-            try
             {
                 for (int i = 0; i < arguments.Length; i++)
                 {
@@ -548,10 +548,10 @@ namespace Amazon.DynamoDBv2.DataModel
                     }
                 }
             }
+            }
             finally
             {
                 flatConfig.InheritedAttributeCasing = previousInheritedCasing;
-            }
             }
 
             return storageConfig.BindingConstructor.Invoke(values);
