@@ -89,6 +89,12 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("locale");
+                context.Writer.WriteStringValue(publicRequest.Locale);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");

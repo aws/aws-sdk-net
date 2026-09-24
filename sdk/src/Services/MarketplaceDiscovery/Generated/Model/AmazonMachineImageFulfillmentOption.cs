@@ -35,6 +35,11 @@ namespace Amazon.MarketplaceDiscovery.Model
     /// </summary>
     public partial class AmazonMachineImageFulfillmentOption
     {
+        private string _accessUrlTemplate;
+        private string _amiAlias;
+        private string _architecture;
+        private DateTime? _availableFromTime;
+        private AmazonMachineImageEbsVolume _ebsVolume;
         private string _fulfillmentOptionDisplayName;
         private string _fulfillmentOptionId;
         private string _fulfillmentOptionName;
@@ -43,7 +48,101 @@ namespace Amazon.MarketplaceDiscovery.Model
         private List<AmazonMachineImageOperatingSystem> _operatingSystems = AWSConfigs.InitializeCollections ? new List<AmazonMachineImageOperatingSystem>() : null;
         private AmazonMachineImageRecommendation _recommendation;
         private string _releaseNotes;
+        private string _shortDescription;
         private string _usageInstructions;
+
+        /// <summary>
+        /// Gets and sets the property AccessUrlTemplate. 
+        /// <para>
+        /// The URL pattern for accessing the product when an instance is running.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string AccessUrlTemplate
+        {
+            get { return this._accessUrlTemplate; }
+            set { this._accessUrlTemplate = value; }
+        }
+
+        // Check to see if AccessUrlTemplate property is set
+        internal bool IsSetAccessUrlTemplate()
+        {
+            return this._accessUrlTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmiAlias. 
+        /// <para>
+        /// The alias of the AMI associated with this fulfillment option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string AmiAlias
+        {
+            get { return this._amiAlias; }
+            set { this._amiAlias = value; }
+        }
+
+        // Check to see if AmiAlias property is set
+        internal bool IsSetAmiAlias()
+        {
+            return this._amiAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Architecture. 
+        /// <para>
+        /// The architecture of the AMI, such as <c>x86_64</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string Architecture
+        {
+            get { return this._architecture; }
+            set { this._architecture = value; }
+        }
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this._architecture != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableFromTime. 
+        /// <para>
+        /// The date and time when the AMI became available for fulfillment.
+        /// </para>
+        /// </summary>
+        public DateTime? AvailableFromTime
+        {
+            get { return this._availableFromTime; }
+            set { this._availableFromTime = value; }
+        }
+
+        // Check to see if AvailableFromTime property is set
+        internal bool IsSetAvailableFromTime()
+        {
+            return this._availableFromTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EbsVolume. 
+        /// <para>
+        /// The supported Amazon EBS volume configuration for the AMI.
+        /// </para>
+        /// </summary>
+        public AmazonMachineImageEbsVolume EbsVolume
+        {
+            get { return this._ebsVolume; }
+            set { this._ebsVolume = value; }
+        }
+
+        // Check to see if EbsVolume property is set
+        internal bool IsSetEbsVolume()
+        {
+            return this._ebsVolume != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FulfillmentOptionDisplayName. 
@@ -197,6 +296,25 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetReleaseNotes()
         {
             return this._releaseNotes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShortDescription. 
+        /// <para>
+        /// A short description of the fulfillment option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public string ShortDescription
+        {
+            get { return this._shortDescription; }
+            set { this._shortDescription = value; }
+        }
+
+        // Check to see if ShortDescription property is set
+        internal bool IsSetShortDescription()
+        {
+            return this._shortDescription != null;
         }
 
         /// <summary>

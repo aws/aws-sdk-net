@@ -73,6 +73,12 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("locale");
+                context.Writer.WriteStringValue(publicRequest.Locale);
+            }
+
             if(publicRequest.IsSetOfferId())
             {
                 context.Writer.WritePropertyName("offerId");

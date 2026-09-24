@@ -35,6 +35,7 @@ namespace Amazon.MarketplaceDiscovery.Model
     public partial class ListFulfillmentOptionsResponse : AmazonWebServiceResponse
     {
         private List<FulfillmentOption> _fulfillmentOptions = AWSConfigs.InitializeCollections ? new List<FulfillmentOption>() : null;
+        private string _locale;
         private string _nextToken;
 
         /// <summary>
@@ -60,6 +61,22 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetFulfillmentOptions()
         {
             return this._fulfillmentOptions != null && (this._fulfillmentOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale.
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

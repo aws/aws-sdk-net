@@ -92,6 +92,18 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReleaseNotes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("supportedContentTypes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedContentTypes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("supportedResponseMimeTypes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedResponseMimeTypes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("usageInstructions", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

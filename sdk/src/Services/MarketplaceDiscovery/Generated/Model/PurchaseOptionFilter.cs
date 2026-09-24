@@ -61,8 +61,35 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property FilterValues. 
         /// <para>
-        /// The values to filter by. Multiple values within the same filter are combined with
-        /// OR logic.
+        /// The values to filter by. Supported values depend on <c>filterType</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PRODUCT_ID</c> – One or more product identifiers to filter by.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SELLER_OF_RECORD_PROFILE_ID</c> – One or more seller profile identifiers to filter
+        /// by.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PURCHASE_OPTION_TYPE</c> – One or more purchase option types to filter by: <c>OFFER</c>
+        /// or <c>OFFERSET</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VISIBILITY_SCOPE</c> – The visibility scope to filter by: <c>PRIVATE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AVAILABILITY_STATUS</c> – One or more availability statuses to filter by: <c>AVAILABLE</c>
+        /// or <c>EXPIRED</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To retrieve private offers and offer sets visible to you, use <c>VISIBILITY_SCOPE</c>
+        /// with <c>PRIVATE</c>. OR logic combines multiple values within the same filter.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

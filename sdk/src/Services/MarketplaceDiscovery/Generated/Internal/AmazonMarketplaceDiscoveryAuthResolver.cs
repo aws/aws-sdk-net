@@ -72,7 +72,7 @@ namespace Amazon.MarketplaceDiscovery.Internal
             {
                 default:
                     // Default for the service, applies to all remaining operations.
-                    return AuthSchemeOption.DEFAULT_SIGV4;
+                    return AuthSchemeOption.DEFAULT_SIGV4_SIGV4A;
             }
         }
     }

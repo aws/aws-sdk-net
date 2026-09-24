@@ -30,36 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceDiscovery.Model
 {
     /// <summary>
-    /// Recommended instance types for running an AMI fulfillment option.
+    /// Contains supported Amazon EBS volume information for an AMI fulfillment option.
     /// </summary>
-    public partial class AmazonMachineImageRecommendation
+    public partial class AmazonMachineImageEbsVolume
     {
-        private string _instanceType;
-        private List<AmazonMachineImageSecurityGroup> _securityGroups = AWSConfigs.InitializeCollections ? new List<AmazonMachineImageSecurityGroup>() : null;
+        private int? _iops;
+        private List<string> _volumeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property InstanceType. 
+        /// Gets and sets the property Iops. 
         /// <para>
-        /// The recommended EC2 instance type for this AMI.
+        /// The total number of provisioned IOPS supported.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string InstanceType
+        [AWSProperty(Min=0)]
+        public int? Iops
         {
-            get { return this._instanceType; }
-            set { this._instanceType = value; }
+            get { return this._iops; }
+            set { this._iops = value; }
         }
 
-        // Check to see if InstanceType property is set
-        internal bool IsSetInstanceType()
+        // Check to see if Iops property is set
+        internal bool IsSetIops()
         {
-            return this._instanceType != null;
+            return this._iops.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property SecurityGroups. 
+        /// Gets and sets the property VolumeTypes. 
         /// <para>
-        /// The recommended security group configurations for this AMI.
+        /// The supported Amazon EBS volume types.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,16 +67,17 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<AmazonMachineImageSecurityGroup> SecurityGroups
+        [AWSProperty(Required=true, Min=0, Max=20)]
+        public List<string> VolumeTypes
         {
-            get { return this._securityGroups; }
-            set { this._securityGroups = value; }
+            get { return this._volumeTypes; }
+            set { this._volumeTypes = value; }
         }
 
-        // Check to see if SecurityGroups property is set
-        internal bool IsSetSecurityGroups()
+        // Check to see if VolumeTypes property is set
+        internal bool IsSetVolumeTypes()
         {
-            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._volumeTypes != null && (this._volumeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

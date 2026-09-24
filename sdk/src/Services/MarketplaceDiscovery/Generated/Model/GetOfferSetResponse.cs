@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         private string _buyerNotes;
         private string _catalog;
         private DateTime? _expirationTime;
+        private string _locale;
         private string _offerSetId;
         private string _offerSetName;
         private SellerInformation _sellerOfRecord;
@@ -166,6 +167,27 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetExpirationTime()
         {
             return this._expirationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale of the returned content. Indicates whether the response contains content
+        /// in the requested locale, or fell back to the default locale. See <c>Locale</c> for
+        /// details.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

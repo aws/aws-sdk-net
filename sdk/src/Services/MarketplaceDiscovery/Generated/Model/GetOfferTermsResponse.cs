@@ -34,8 +34,30 @@ namespace Amazon.MarketplaceDiscovery.Model
     /// </summary>
     public partial class GetOfferTermsResponse : AmazonWebServiceResponse
     {
+        private string _locale;
         private string _nextToken;
         private List<OfferTerm> _offerTerms = AWSConfigs.InitializeCollections ? new List<OfferTerm>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale of the returned content. Indicates whether the response contains content
+        /// in the requested locale, or fell back to the default locale. See <c>Locale</c> for
+        /// details.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 

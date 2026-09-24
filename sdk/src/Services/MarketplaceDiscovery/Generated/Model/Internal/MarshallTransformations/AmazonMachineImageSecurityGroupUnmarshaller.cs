@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AmazonMachineImageRecommendation Object
+    /// Response Unmarshaller for AmazonMachineImageSecurityGroup Object
     /// </summary>  
-    public class AmazonMachineImageRecommendationUnmarshaller : IJsonUnmarshaller<AmazonMachineImageRecommendation, JsonUnmarshallerContext>
+    public class AmazonMachineImageSecurityGroupUnmarshaller : IJsonUnmarshaller<AmazonMachineImageSecurityGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AmazonMachineImageRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AmazonMachineImageSecurityGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AmazonMachineImageRecommendation unmarshalledObject = new AmazonMachineImageRecommendation();
+            AmazonMachineImageSecurityGroup unmarshalledObject = new AmazonMachineImageSecurityGroup();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceType", targetDepth, ref reader))
+                if (context.TestExpression("cidrIpAddresses", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CidrIpAddresses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("securityGroups", targetDepth, ref reader))
+                if (context.TestExpression("fromPort", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AmazonMachineImageSecurityGroup, AmazonMachineImageSecurityGroupUnmarshaller>(AmazonMachineImageSecurityGroupUnmarshaller.Instance);
-                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.FromPort = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("protocol", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("toPort", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ToPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
         }
 
 
-        private static AmazonMachineImageRecommendationUnmarshaller _instance = new AmazonMachineImageRecommendationUnmarshaller();        
+        private static AmazonMachineImageSecurityGroupUnmarshaller _instance = new AmazonMachineImageSecurityGroupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AmazonMachineImageRecommendationUnmarshaller Instance
+        public static AmazonMachineImageSecurityGroupUnmarshaller Instance
         {
             get
             {
