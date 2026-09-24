@@ -39,29 +39,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// No casing was specified for this type (the default). Behaves as
         /// <see cref="PascalCase"/> at the root, but - unlike an explicit <see cref="PascalCase"/> - a
         /// nested type left <see cref="Unset"/> inherits an enclosing type's casing (for example
-        /// <see cref="CamelCase"/>). This sentinel is what lets an explicit <see cref="PascalCase"/> be
-        /// distinguished from "not specified"; it mirrors the existing <c>ConversionSchema.Unset</c>
-        /// pattern on this attribute. Because it is the zero value, an undecorated type is treated as
-        /// "not specified" with no behavior change from prior SDK versions.
+        /// <see cref="CamelCase"/>).
         /// </summary>
         Unset = 0,
 
         /// <summary>
-        /// Attribute names use the .NET property names unchanged (PascalCase), at every level of the
-        /// object graph, including nested objects stored as DynamoDB Maps. When set explicitly on a
-        /// nested type, this BLOCKS inheritance of an enclosing type's casing (that is the difference
-        /// between an explicit <see cref="PascalCase"/> and <see cref="Unset"/>).
+        /// Attribute names match the .NET property names unchanged (PascalCase). Setting this explicitly
+        /// on a nested type blocks it from inheriting an enclosing type's casing.
         /// </summary>
         PascalCase,
 
         /// <summary>
-        /// Attribute names are converted to camelCase (the first character is lower-cased) at every
-        /// level of the object graph. Unlike <see cref="LegacyCamelCase"/>, nested objects that do not
-        /// declare their own <see cref="DynamoDBTableAttribute"/> inherit this casing, so their Map keys
-        /// are also camelCased.
-        ///
-        /// This is the recommended value for consistent camelCase output and addresses the long-standing
-        /// gap where nested objects kept PascalCase attribute names.
+        /// Attribute names are converted to camelCase at every level of the object graph, including
+        /// nested objects stored as DynamoDB Maps. This is the recommended value for consistent
+        /// camelCase output.
         /// </summary>
         CamelCase,
 
