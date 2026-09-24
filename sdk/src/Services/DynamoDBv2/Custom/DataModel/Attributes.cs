@@ -36,14 +36,23 @@ namespace Amazon.DynamoDBv2.DataModel
     public enum CaseMode
     {
         /// <summary>
-        /// Attribute names use the .NET property names unchanged (PascalCase), at every level of the
-        /// object graph, including nested objects stored as DynamoDB Maps.
-        ///
-        /// This is the default and matches the behavior of the SDK when neither
-        /// <see cref="DynamoDBTableAttribute.AttributeCasing"/> nor the obsolete
-        /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> is set.
+        /// No casing was specified for this type (the default). Behaves as
+        /// <see cref="PascalCase"/> at the root, but - unlike an explicit <see cref="PascalCase"/> - a
+        /// nested type left <see cref="Unset"/> inherits an enclosing type's casing (for example
+        /// <see cref="CamelCase"/>). This sentinel is what lets an explicit <see cref="PascalCase"/> be
+        /// distinguished from "not specified"; it mirrors the existing <c>ConversionSchema.Unset</c>
+        /// pattern on this attribute. Because it is the zero value, an undecorated type is treated as
+        /// "not specified" with no behavior change from prior SDK versions.
         /// </summary>
-        PascalCase = 0,
+        Unset = 0,
+
+        /// <summary>
+        /// Attribute names use the .NET property names unchanged (PascalCase), at every level of the
+        /// object graph, including nested objects stored as DynamoDB Maps. When set explicitly on a
+        /// nested type, this BLOCKS inheritance of an enclosing type's casing (that is the difference
+        /// between an explicit <see cref="PascalCase"/> and <see cref="Unset"/>).
+        /// </summary>
+        PascalCase,
 
         /// <summary>
         /// Attribute names are converted to camelCase (the first character is lower-cased) at every
@@ -109,19 +118,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Gets and sets how .NET property names are cased when mapped to DynamoDB attribute names.
-        /// Defaults to <see cref="CaseMode.PascalCase"/>, which matches the SDK's behavior when no
-        /// casing is configured.
+        /// Defaults to <see cref="CaseMode.Unset"/>, meaning no casing was specified for this type: it
+        /// behaves as <see cref="CaseMode.PascalCase"/> at the root and, when nested, inherits an
+        /// enclosing type's casing. The <see cref="CaseMode.Unset"/> sentinel is what lets an explicit
+        /// <see cref="CaseMode.PascalCase"/> be distinguished from "not specified" (see remarks).
         /// </summary>
         /// <remarks>
-        /// When set to a non-default value, <see cref="AttributeCasing"/> takes precedence over the
-        /// obsolete <see cref="LowerCamelCaseProperties"/> flag. Setting <see cref="AttributeCasing"/>
-        /// to <see cref="CaseMode.CamelCase"/> or <see cref="CaseMode.LegacyCamelCase"/> while also
-        /// setting <see cref="LowerCamelCaseProperties"/> to <c>true</c> is redundant but allowed; a
-        /// conflicting combination (for example <see cref="AttributeCasing"/> =
-        /// <see cref="CaseMode.PascalCase"/> together with <see cref="LowerCamelCaseProperties"/> =
-        /// <c>true</c>) is resolved in favor of the explicitly set <see cref="LowerCamelCaseProperties"/>
-        /// flag, since <see cref="CaseMode.PascalCase"/> is the unset default and cannot be
-        /// distinguished from "not specified".
+        /// When set to any value other than <see cref="CaseMode.Unset"/> (including an explicit
+        /// <see cref="CaseMode.PascalCase"/>), <see cref="AttributeCasing"/> takes precedence over the
+        /// obsolete <see cref="LowerCamelCaseProperties"/> flag and is treated as an explicit casing
+        /// choice for this type. In particular, setting a nested type's <see cref="AttributeCasing"/> to
+        /// <see cref="CaseMode.PascalCase"/> forces PascalCase and prevents it from inheriting an
+        /// enclosing type's <see cref="CaseMode.CamelCase"/>; leaving it <see cref="CaseMode.Unset"/>
+        /// allows inheritance. Setting both <see cref="AttributeCasing"/> and
+        /// <see cref="LowerCamelCaseProperties"/> is allowed; the explicitly set
+        /// <see cref="AttributeCasing"/> wins.
         /// </remarks>
         public CaseMode AttributeCasing { get; set; }
 

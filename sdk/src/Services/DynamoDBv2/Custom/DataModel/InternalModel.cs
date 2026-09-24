@@ -882,13 +882,22 @@ namespace Amazon.DynamoDBv2.DataModel
         public Dictionary<Type,string> PolymorphicConfig { get; private set; }
 
         /// <summary>
-        /// The effective casing mode for this type, resolved from the type's <see cref="DynamoDBTableAttribute"/>.
-        /// A value of <see cref="CaseMode.PascalCase"/> means the type did not explicitly request a casing
-        /// (it is both the default and the "unset" sentinel), so a nested instance of this type may inherit
-        /// its enclosing type's casing. See <see cref="ItemStorageConfigCache.GetConfig"/> and
-        /// <c>GetAccurateCase</c> for how inheritance is applied.
+        /// The effective casing mode for this type, resolved from the type's <see cref="DynamoDBTableAttribute"/>
+        /// (or inherited from an enclosing type when this type does not declare its own). This is always a
+        /// concrete mode by the time it is on the config; use <see cref="DeclaresOwnCasing"/> to tell whether
+        /// the value came from an explicit declaration on the type.
         /// </summary>
         public CaseMode AttributeCasing { get; set; }
+
+        /// <summary>
+        /// True when this type explicitly declared its casing (via a non-null
+        /// <see cref="DynamoDBTableAttribute.AttributeCasing"/> or the obsolete
+        /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> flag). A nested type that declares
+        /// its own casing is never overridden by an enclosing type's casing, so an explicit
+        /// <see cref="CaseMode.PascalCase"/> correctly blocks inheritance of an enclosing
+        /// <see cref="CaseMode.CamelCase"/>.
+        /// </summary>
+        public bool DeclaresOwnCasing { get; set; }
 
         /// <summary>
         /// Backwards-compatible view of <see cref="AttributeCasing"/>. Returns <c>true</c> when the resolved
@@ -1399,10 +1408,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Determines whether an inherited (enclosing-type) casing should replace a nested type's own
-        /// (default) casing. Inheritance applies only when the enclosing type resolved to
-        /// <see cref="CaseMode.CamelCase"/> and the nested type did not declare its own casing
-        /// (its resolved mode is <see cref="CaseMode.PascalCase"/>). <see cref="CaseMode.LegacyCamelCase"/>
-        /// deliberately does not propagate, preserving PascalCase nested objects for existing data.
+        /// casing. Inheritance applies only when the enclosing type resolved to
+        /// <see cref="CaseMode.CamelCase"/> and the nested type did NOT explicitly declare its own casing
+        /// (<see cref="ItemStorageConfig.DeclaresOwnCasing"/> is false). A nested type that explicitly
+        /// declares any casing — including <see cref="CaseMode.PascalCase"/> — is left untouched.
+        /// <see cref="CaseMode.LegacyCamelCase"/> deliberately does not propagate, preserving PascalCase
+        /// nested objects for existing data.
         /// </summary>
         private static bool ShouldInheritCasing(ConfigTableCache tableCache, DynamoDBFlatConfig flatConfig, out CaseMode inheritedMode)
         {
@@ -1414,8 +1425,10 @@ namespace Amazon.DynamoDBv2.DataModel
             if (candidate != CaseMode.CamelCase)
                 return false;
 
-            // Only fill in a nested type that has no casing of its own.
-            if (tableCache.BaseTypeConfig.AttributeCasing != CaseMode.PascalCase)
+            // Only fill in a nested type that did not explicitly declare a casing of its own. An explicit
+            // PascalCase declaration blocks inheritance (this is why CaseMode has an Unset sentinel:
+            // Unset means "not specified" and allows inheritance, whereas an explicit PascalCase does not).
+            if (tableCache.BaseTypeConfig.DeclaresOwnCasing)
                 return false;
 
             inheritedMode = candidate;
@@ -1477,27 +1490,38 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> flag.
         ///
         /// Precedence:
-        /// 1. If <see cref="DynamoDBTableAttribute.AttributeCasing"/> is set to a non-default value
-        ///    (anything other than <see cref="CaseMode.PascalCase"/>), it wins.
+        /// 1. If <see cref="DynamoDBTableAttribute.AttributeCasing"/> is anything other than
+        ///    <see cref="CaseMode.Unset"/> (including an explicit <see cref="CaseMode.PascalCase"/>), it
+        ///    wins and the type is considered to declare its own casing.
         /// 2. Otherwise, if the obsolete <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/>
         ///    flag is <c>true</c>, the type maps to <see cref="CaseMode.LegacyCamelCase"/> (camelCase root,
-        ///    PascalCase nested) to exactly preserve the historical behavior of existing data.
-        /// 3. Otherwise the type uses <see cref="CaseMode.PascalCase"/>.
+        ///    PascalCase nested) to exactly preserve the historical behavior of existing data, and is
+        ///    considered to declare its own casing.
+        /// 3. Otherwise (<see cref="CaseMode.Unset"/> and no legacy flag) the type uses
+        ///    <see cref="CaseMode.PascalCase"/> and does NOT declare its own casing, so a nested instance
+        ///    may inherit an enclosing type's casing.
         ///
-        /// Because <see cref="CaseMode.PascalCase"/> is both the default and the "unset" sentinel, a
-        /// conflicting combination of <see cref="CaseMode.PascalCase"/> and
-        /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> = <c>true</c> cannot be
-        /// distinguished from "AttributeCasing not specified", so the explicit legacy flag is honored.
+        /// Because <see cref="CaseMode.Unset"/> is a distinct sentinel, an explicit
+        /// <see cref="CaseMode.PascalCase"/> is distinguishable from "not specified"
+        /// (<see cref="CaseMode.Unset"/>): the former declares casing (and blocks inheritance), the latter
+        /// does not.
         /// </summary>
-        private static CaseMode ResolveCaseMode(DynamoDBTableAttribute tableAttribute, Type type)
+        private static CaseMode ResolveCaseMode(DynamoDBTableAttribute tableAttribute, Type type, out bool declaresOwnCasing)
         {
 #pragma warning disable CS0618 // Reconciling the obsolete LowerCamelCaseProperties flag and LegacyCamelCase mode.
-            if (tableAttribute.AttributeCasing != CaseMode.PascalCase)
+            if (tableAttribute.AttributeCasing != CaseMode.Unset)
+            {
+                declaresOwnCasing = true;
                 return tableAttribute.AttributeCasing;
+            }
 
             if (tableAttribute.LowerCamelCaseProperties)
+            {
+                declaresOwnCasing = true;
                 return CaseMode.LegacyCamelCase;
+            }
 
+            declaresOwnCasing = false;
             return CaseMode.PascalCase;
 #pragma warning restore CS0618
         }
@@ -1565,9 +1589,10 @@ namespace Amazon.DynamoDBv2.DataModel
         private static void PopulateConfigFromType(ItemStorageConfig config, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)]  Type type, CaseMode? forcedCasing = null)
         {
             DynamoDBTableAttribute tableAttribute = Utils.GetTableAttribute(type);
-            // A type declares its own casing only when it has a [DynamoDBTable] with a non-default
-            // AttributeCasing (or the obsolete LowerCamelCaseProperties flag). Such a type is never
-            // overridden by an inherited (forced) casing.
+            // A type declares its own casing when it has a [DynamoDBTable] with a non-null AttributeCasing
+            // (including an explicit PascalCase) or the obsolete LowerCamelCaseProperties flag. Such a type
+            // is never overridden by an inherited (forced) casing, so an explicit PascalCase blocks
+            // inheritance of an enclosing CamelCase.
             bool declaresOwnCasing = false;
             if (tableAttribute == null)
             {
@@ -1577,8 +1602,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 if (string.IsNullOrEmpty(tableAttribute.TableName)) throw new InvalidOperationException("DynamoDBTableAttribute.Table is empty or null");
                 config.TableName = tableAttribute.TableName;
-                config.AttributeCasing = ResolveCaseMode(tableAttribute, type);
-                declaresOwnCasing = config.AttributeCasing != CaseMode.PascalCase;
+                config.AttributeCasing = ResolveCaseMode(tableAttribute, type, out declaresOwnCasing);
 
                 config.Conversion = tableAttribute.Conversion switch
                 {
@@ -1591,6 +1615,8 @@ namespace Amazon.DynamoDBv2.DataModel
             // Inherit the enclosing type's casing for a nested type that does not declare its own.
             if (forcedCasing.HasValue && !declaresOwnCasing)
                 config.AttributeCasing = forcedCasing.Value;
+
+            config.DeclaresOwnCasing = declaresOwnCasing;
 
             string tableAlias;
             if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out tableAlias))

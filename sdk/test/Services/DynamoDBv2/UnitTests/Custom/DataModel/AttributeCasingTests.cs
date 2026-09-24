@@ -165,12 +165,13 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
-        public void CamelCase_NestedDeclaringPascalCase_StillInherits_ByDesign()
+        public void CamelCase_NestedExplicitlyDeclaringPascalCase_IsNotOverridden()
         {
-            // AddressPascal declares AttributeCasing = CaseMode.PascalCase, but because PascalCase == 0
-            // is also the "unset" sentinel, it is indistinguishable from "no casing declared". By design
-            // (no separate Default sentinel), such a nested type therefore INHERITS the enclosing
-            // CamelCase. This documents the intended limitation of the PascalCase=0 choice.
+            // AddressPascal declares AttributeCasing = CaseMode.PascalCase explicitly. Because the
+            // attribute defaults to CaseMode.Unset (not PascalCase), an explicit PascalCase is
+            // distinguishable from "not specified" (Unset), so it is honored and BLOCKS inheritance of
+            // the enclosing CamelCase. This is the fix
+            // for the previous design limitation.
             var context = CreateContext();
             var order = new OrderCamelWithDeclaredNested
             {
@@ -179,9 +180,25 @@ namespace AWSSDK_DotNet.UnitTests
             };
             var doc = context.ToDocument(order);
 
+            // Root camelCased...
             Assert.IsTrue(doc.ContainsKey("shippingAddress"));
+            // ...but the nested type explicitly declared PascalCase, so it stays PascalCase.
             var nested = doc["shippingAddress"].AsDocument();
-            Assert.IsTrue(nested.ContainsKey("street"), "PascalCase==unset, so nested inherits CamelCase by design");
+            Assert.IsTrue(nested.ContainsKey("Street"), "Explicit PascalCase on nested type must block inheritance");
+            Assert.IsTrue(nested.ContainsKey("City"));
+            Assert.IsFalse(nested.ContainsKey("street"));
+        }
+
+        [TestMethod]
+        public void CamelCase_NestedWithNoCasing_InheritsCamelCase()
+        {
+            // Address declares no [DynamoDBTable] at all (AttributeCasing is Unset), so it inherits
+            // the enclosing CamelCase. This is the round-trip default for the #1162 fix.
+            var context = CreateContext();
+            var doc = BuildOrderDoc<OrderCamelCase>(context, "1", "Alice", "Main", "Seattle");
+
+            var nested = doc["shippingAddress"].AsDocument();
+            Assert.IsTrue(nested.ContainsKey("street"));
             Assert.IsTrue(nested.ContainsKey("city"));
         }
 

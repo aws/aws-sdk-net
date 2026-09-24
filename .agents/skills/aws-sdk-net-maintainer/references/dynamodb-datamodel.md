@@ -306,31 +306,40 @@ extends it. Handwritten code lives under
 
 ### CaseMode and AttributeCasing
 
-`CaseMode` (in `Attributes.cs`) has three values:
+`CaseMode` (in `Attributes.cs`) has four values:
 
-- `PascalCase = 0` — attribute names match .NET property names unchanged, at every level (root and
-  nested Maps). This is the default **and** the "unset" sentinel — there is intentionally no separate
-  `Default` value, so an explicit `AttributeCasing = PascalCase` is indistinguishable from "not set".
-- `CamelCase` — camelCase at every level. Nested objects that do **not** declare their own casing
-  inherit this, so their Map keys are also camelCased. This is the recommended value and closes the
-  long-standing gap (GitHub issue #1162) where nested objects stayed PascalCase.
+- `Unset = 0` — no casing specified (the default). Behaves as `PascalCase` at the root, but a **nested**
+  type left `Unset` **inherits** an enclosing type's casing (e.g. `CamelCase`). This sentinel is what
+  lets an explicit `PascalCase` be distinguished from "not specified"; it mirrors the existing
+  `ConversionSchema.Unset` pattern on this attribute. Because it is the zero value, an undecorated type
+  is treated as "not specified" with no behavior change from prior SDK versions.
+- `PascalCase` — attribute names match .NET property names unchanged, at every level (root and nested
+  Maps). Set **explicitly** on a nested type, it **blocks** inheritance of an enclosing `CamelCase`
+  (this is the difference from `Unset`).
+- `CamelCase` — camelCase at every level. Nested objects left `Unset` inherit this, so their Map keys
+  are also camelCased. This is the recommended value and closes the long-standing gap (GitHub issue
+  #1162) where nested objects stayed PascalCase.
 - `LegacyCamelCase` — reproduces the exact asymmetric behavior of the obsolete
   `LowerCamelCaseProperties = true`: camelCase root, PascalCase nested. Marked `[Obsolete]`; exists only
   as a compatibility escape hatch for data already written under that behavior. Does **not** propagate
   to nested objects.
 
-`DynamoDBTableAttribute.AttributeCasing` selects the mode. `LowerCamelCaseProperties` is now
-`[Obsolete]` and maps to `LegacyCamelCase` when `true`.
+`DynamoDBTableAttribute.AttributeCasing` (a non-nullable `CaseMode` defaulting to `Unset`) selects the
+mode. It cannot be a nullable `CaseMode?` because C# does not allow `Nullable<T>` as a named attribute
+argument — hence the `Unset` sentinel. `LowerCamelCaseProperties` is now `[Obsolete]` and maps to
+`LegacyCamelCase` when `true`.
 
 ### Precedence (ResolveCaseMode in InternalModel.cs)
 
-1. `AttributeCasing != PascalCase` wins (explicit non-default).
-2. Otherwise, obsolete `LowerCamelCaseProperties == true` → `LegacyCamelCase`.
-3. Otherwise → `PascalCase`.
+1. `AttributeCasing != Unset` wins (any explicit value, including an explicit `PascalCase`), and the
+   type is recorded as declaring its own casing.
+2. Otherwise, obsolete `LowerCamelCaseProperties == true` → `LegacyCamelCase` (also declares own casing).
+3. Otherwise (`Unset`, no legacy flag) → `PascalCase`, and the type does **not** declare its own casing,
+   so a nested instance may inherit an enclosing casing.
 
-Because `PascalCase` is both default and unset sentinel, a conflicting combination of
-`AttributeCasing = PascalCase` plus `LowerCamelCaseProperties = true` resolves to the explicit legacy
-flag (`LegacyCamelCase`).
+`ResolveCaseMode` also reports whether the type declared its own casing; this is stored on
+`ItemStorageConfig.DeclaresOwnCasing` and is what the inheritance gate keys off (not the resolved mode
+value), so an explicit `PascalCase` correctly blocks inheritance.
 
 ### Nested-object inheritance
 
@@ -347,29 +356,32 @@ The implementation:
   clear it.
 - `ItemStorageConfigCache.ConfigTableCache` keeps `InheritedCasingConfigs`, a
   `Dictionary<CaseMode, ItemStorageConfig>` of variants built with a forced casing. When a nested type
-  does not declare its own casing (its resolved mode is `PascalCase`) and an inherited `CamelCase`
+  does not declare its own casing (`DeclaresOwnCasing == false`) and an inherited `CamelCase`
   applies, `ResolveInheritedCasingConfig` builds/returns a variant with the names re-baked in camelCase.
   `CreateStorageConfig` / `PopulateConfigFromType` take an optional `forcedCasing` that only applies to
   types without their own explicit casing.
 
-### Designed limitation
+### Explicit opt-out of inheritance
 
-A nested type that explicitly sets `AttributeCasing = CaseMode.PascalCase` **still inherits** an
-enclosing `CamelCase`, because `PascalCase == 0` cannot be distinguished from "unset". A nested type
-that needs to stay PascalCase under a camelCase parent has no way to force it with the `PascalCase`
-value alone. This is an accepted consequence of not having a `Default` sentinel. A nested type
-declaring a *distinguishable* casing (e.g. `CamelCase`) is always honored.
+A nested type can force PascalCase under a `CamelCase` parent by explicitly setting
+`AttributeCasing = CaseMode.PascalCase`. Because the attribute defaults to `Unset` (not `PascalCase`),
+an explicit `PascalCase` is distinguishable from "not specified" and therefore **blocks** inheritance,
+while leaving the nested type `Unset` allows it. (An earlier iteration used `PascalCase == 0` as both
+default and sentinel, which could not express this; the `Unset` sentinel resolves it. Making the
+attribute property a nullable `CaseMode?` was considered but is not possible — C# rejects `Nullable<T>`
+as a named attribute argument.)
 
 ### Backward compatibility
 
-The default is unchanged: undecorated types and `PascalCase` behave exactly as before, so existing
-data round-trips on upgrade. `CamelCase`'s nested behavior is opt-in. `LegacyCamelCase` exists so that
-callers relying on the old asymmetric `LowerCamelCaseProperties = true` output are not silently
-re-cased.
+The default is unchanged: undecorated types and types left `Unset` behave exactly as before (PascalCase
+root, PascalCase nested), so existing data round-trips on upgrade. `CamelCase`'s nested behavior is
+opt-in. `LegacyCamelCase` exists so that callers relying on the old asymmetric
+`LowerCamelCaseProperties = true` output are not silently re-cased.
 
 ### Tests
 
 `sdk/test/Services/DynamoDBv2/UnitTests/Custom/DataModel/AttributeCasingTests.cs` uses a mocked
 `IAmazonDynamoDB` with `DisableFetchingTableMetadata = true` (no AWS calls) and exercises
 `ToDocument` / `FromDocument` for PascalCase, CamelCase (root + nested + round-trip), LegacyCamelCase,
-the obsolete-bool equivalence, and the designed nested-inheritance limitation.
+the obsolete-bool equivalence, a nested type left `Unset` inheriting `CamelCase`, and an explicit
+`PascalCase` nested type blocking that inheritance.

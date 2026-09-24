@@ -4,7 +4,7 @@
       "serviceName": "DynamoDBv2",
       "type": "minor",
       "changeLogMessages": [
-        "Added AttributeCasing property and CaseMode enum (PascalCase, CamelCase, LegacyCamelCase) to DynamoDBTableAttribute for the object persistence model. CaseMode.CamelCase now camelCases nested objects (stored as DynamoDB Maps) that do not declare their own casing, addressing the long-standing gap where LowerCamelCaseProperties only affected root attribute names. LowerCamelCaseProperties is now obsolete; LowerCamelCaseProperties=true is equivalent to AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase nested)."
+        "Added AttributeCasing property and CaseMode enum (Unset, PascalCase, CamelCase, LegacyCamelCase) to DynamoDBTableAttribute for the object persistence model. CaseMode.CamelCase now camelCases nested objects (stored as DynamoDB Maps) that do not declare their own casing, addressing the long-standing gap where LowerCamelCaseProperties only affected root attribute names. AttributeCasing defaults to CaseMode.Unset, which lets an explicit CaseMode.PascalCase on a nested type opt out of inheriting an enclosing CamelCase. LowerCamelCaseProperties is now obsolete; LowerCamelCaseProperties=true is equivalent to AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase nested)."
       ]
     }
   ]
