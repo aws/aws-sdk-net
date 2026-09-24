@@ -122,6 +122,27 @@ namespace AWSSDK_DotNet.UnitTests
             public Address ShippingAddress { get; set; }
         }
 
+#if NET8_0_OR_GREATER
+        // An immutable (constructor-bound) CamelCase root with an undecorated nested constructor argument.
+        // On net8+ the root is populated via constructor binding before PopulateInstance runs, so the
+        // nested member's casing must be seeded during constructor-argument binding.
+        [DynamoDBTable("Orders", AttributeCasing = CaseMode.CamelCase)]
+        public class ImmutableOrderCamelCase
+        {
+            [DynamoDBHashKey]
+            public string Id { get; }
+            public string CustomerName { get; }
+            public Address ShippingAddress { get; }
+
+            public ImmutableOrderCamelCase(string id, string customerName, Address shippingAddress)
+            {
+                Id = id;
+                CustomerName = customerName;
+                ShippingAddress = shippingAddress;
+            }
+        }
+#endif
+
         private DynamoDBContext CreateContext()
         {
             var mockClient = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
@@ -363,6 +384,32 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual("Main", restored.ShippingAddress.Street);
             Assert.AreEqual("Seattle", restored.ShippingAddress.City);
         }
+
+#if NET8_0_OR_GREATER
+        [TestMethod]
+        public void CamelCase_ImmutableRoot_NestedConstructorArg_UsesInheritedCasing()
+        {
+            // Regression: on net8+ an immutable root is populated via constructor binding before
+            // PopulateInstance runs. The nested constructor argument must be deserialized with the root's
+            // inherited casing, otherwise it looks for PascalCase names ("Street"/"City") that aren't in
+            // the stored camelCased document and the constructor-bound member can't be repaired afterward.
+            var context = CreateContext();
+
+            // Produce a correctly-shaped, camelCased document via the mutable equivalent (same table/casing),
+            // then deserialize it into the immutable (constructor-bound) type.
+            var doc = BuildOrderDoc<OrderCamelCase>(context, "1", "Alice", "Main", "Seattle");
+
+            // Sanity: the stored nested Map keys are camelCased.
+            Assert.IsTrue(doc["shippingAddress"].AsDocument().ContainsKey("street"));
+
+            var restored = context.FromDocument<ImmutableOrderCamelCase>(doc);
+
+            Assert.AreEqual("Alice", restored.CustomerName);
+            Assert.IsNotNull(restored.ShippingAddress);
+            Assert.AreEqual("Main", restored.ShippingAddress.Street);
+            Assert.AreEqual("Seattle", restored.ShippingAddress.City);
+        }
+#endif
     }
 }
 

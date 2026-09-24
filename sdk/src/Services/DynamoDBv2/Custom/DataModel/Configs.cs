@@ -595,13 +595,17 @@ namespace Amazon.DynamoDBv2.DataModel
         public DynamoDBEntryConversion ItemConversion { get; set; }
 
         /// <summary>
-        /// The effective <see cref="CaseMode"/> of the enclosing (parent) type when serializing or
-        /// deserializing a nested object. A nested type that does not declare its own casing inherits
-        /// this value, allowing <see cref="CaseMode.CamelCase"/> to camelCase nested Map attribute names.
+        /// The inheritable <see cref="CaseMode"/> of the enclosing (parent) type when serializing or
+        /// deserializing a nested object, as produced by <c>Utils.GetInheritableCasing</c>. A nested type
+        /// that does not declare its own casing inherits this value, allowing
+        /// <see cref="CaseMode.CamelCase"/> to camelCase nested Map attribute names.
         ///
-        /// Null means "no inherited casing" (top-level item, or the parent's mode does not propagate,
-        /// e.g. PascalCase or the obsolete LegacyCamelCase which intentionally keeps nested objects
-        /// PascalCase).
+        /// This is <c>null</c> only when there is no parent to inherit from (a top-level item) or when the
+        /// parent's mode is the obsolete <see cref="CaseMode.LegacyCamelCase"/>, which by definition does
+        /// not cascade. It is NOT null for the pass-through casings: a <see cref="CaseMode.PascalCase"/> or
+        /// <see cref="CaseMode.Unset"/> parent carries its own value here, which resolution then treats as a
+        /// no-op (see <c>ShouldInheritCasing</c>, which skips building a variant for non-name-transforming
+        /// casings). Only <see cref="CaseMode.LegacyCamelCase"/> is special-cased to null at the source.
         /// </summary>
         public CaseMode? InheritedAttributeCasing { get; set; }
 

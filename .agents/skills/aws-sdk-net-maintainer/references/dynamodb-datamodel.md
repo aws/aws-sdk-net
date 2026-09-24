@@ -381,13 +381,19 @@ The implementation:
   `CreateStorageConfig` / `PopulateConfigFromType` take an optional `forcedCasing` that only applies to
   types without their own explicit casing.
 
-Two non-serialization paths also honor inheritance so attribute names stay consistent:
+Three non-serialization paths also honor inheritance so attribute names stay consistent:
 
 - Filter/update **expressions**: `ResolveNestedPropertyStorage` (used by `ConvertScan` etc.) descends a
   property path like `e => e.ShippingAddress.City`. It seeds `InheritedAttributeCasing` from the root
   `ItemStorageConfig.AttributeCasing` and updates it from each nested config as it descends (with
   save/restore), so a `CamelCase` root emits `shippingAddress.city`, matching what is stored. Without
   this the expression would resolve the nested type's PascalCase base config and emit `City`.
+- **Immutable / constructor-bound members** (net8+): `InstantiateWithConstructor` binds stored values to
+  a type's constructor parameters *before* `PopulateInstance` runs, so it seeds `InheritedAttributeCasing`
+  from the root `ItemStorageConfig.AttributeCasing` (restored afterward) before deserializing each
+  argument. Without this, an undecorated nested object passed as a constructor argument of a `CamelCase`
+  root would resolve PascalCase names, and — because a constructor-bound member is never revisited by
+  `PopulateInstance` — the mismatch would be unrepairable.
 - **Flattened members** (`[DynamoDBFlatten]`): flattened child `PropertyStorage` is built with the
   parent's config, so the child's attribute names take the parent's casing on BOTH save and load (both
   iterate the same `FlattenProperties`). Flattening is symmetric and never loses data on round-trip; a

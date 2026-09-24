@@ -486,9 +486,20 @@ namespace Amazon.DynamoDBv2.DataModel
             var values = new object[arguments.Length];
             var document = storage.Document;
 
+            // Constructor arguments are deserialized here, before PopulateInstance runs, so nested casing
+            // must be seeded now too: FromDynamoDBEntry recurses into nested objects, and an undecorated
+            // nested member of a CamelCase root must resolve its camelCased attribute names (e.g. "city"),
+            // not PascalCase. Because a constructor-bound member is set here and never revisited by
+            // PopulateInstance, missing this would be unrepairable. Seed from the root type's casing and
+            // restore afterward (flatConfig is shared), mirroring PopulateInstance / PopulateItemStorage.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(storage.Config.AttributeCasing);
+
             // Track the document for the same reason PopulateInstance does: FromDynamoDBEntry recurses into
             // nested documents, so constructor arguments must participate in circular-reference detection too.
             using (flatConfig.State.Track(document))
+            {
+            try
             {
                 for (int i = 0; i < arguments.Length; i++)
                 {
@@ -536,6 +547,11 @@ namespace Amazon.DynamoDBv2.DataModel
                         values[i] = GetConstructorArgumentDefault(argument);
                     }
                 }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
             }
 
             return storageConfig.BindingConstructor.Invoke(values);
