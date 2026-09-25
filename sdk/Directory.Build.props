@@ -47,7 +47,7 @@
    -->
    <SdkMSTestNetTestTargets>netstandard2.0;netcoreapp3.1;net8.0</SdkMSTestNetTestTargets>
    <!-- Target for performance benchmark and compatibility runner executables. -->
-   <SdkPerformanceTargets>net8.0</SdkPerformanceTargets>
+   <SdkPerformanceTargets>net10.0</SdkPerformanceTargets>
  </PropertyGroup>
 
  <!-- Generate binding redirects for all .NET Framework targets. The identifier-based condition covers
