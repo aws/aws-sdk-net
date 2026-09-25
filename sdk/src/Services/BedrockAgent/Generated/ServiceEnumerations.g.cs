@@ -3617,6 +3617,144 @@ namespace Amazon.BedrockAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type VpcConfigurationStatus.
+    /// </summary>
+    public class VpcConfigurationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATED for VpcConfigurationStatus
+        /// </summary>
+        public static readonly VpcConfigurationStatus CREATED = new VpcConfigurationStatus("CREATED");
+
+        /// <summary>
+        /// Constant CREATE_FAILED for VpcConfigurationStatus
+        /// </summary>
+        public static readonly VpcConfigurationStatus CREATE_FAILED = new VpcConfigurationStatus("CREATE_FAILED");
+
+        /// <summary>
+        /// Constant CREATING for VpcConfigurationStatus
+        /// </summary>
+        public static readonly VpcConfigurationStatus CREATING = new VpcConfigurationStatus("CREATING");
+
+        /// <summary>
+        /// Constant DELETE_FAILED for VpcConfigurationStatus
+        /// </summary>
+        public static readonly VpcConfigurationStatus DELETE_FAILED = new VpcConfigurationStatus("DELETE_FAILED");
+
+        /// <summary>
+        /// Constant DELETING for VpcConfigurationStatus
+        /// </summary>
+        public static readonly VpcConfigurationStatus DELETING = new VpcConfigurationStatus("DELETING");
+
+        /// <summary>
+        /// Constructs a custom VpcConfigurationStatus for a value not among the defined constants.
+        /// </summary>
+        public VpcConfigurationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcConfigurationStatus FindValue(string value)
+        {
+            return FindValue<VpcConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VpcProtocol.
+    /// </summary>
+    public class VpcProtocol : ConstantClass
+    {
+        /// <summary>
+        /// Constant HTTP for VpcProtocol
+        /// </summary>
+        public static readonly VpcProtocol HTTP = new VpcProtocol("HTTP");
+
+        /// <summary>
+        /// Constant HTTPS for VpcProtocol
+        /// </summary>
+        public static readonly VpcProtocol HTTPS = new VpcProtocol("HTTPS");
+
+        /// <summary>
+        /// Constructs a custom VpcProtocol for a value not among the defined constants.
+        /// </summary>
+        public VpcProtocol(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcProtocol FindValue(string value)
+        {
+            return FindValue<VpcProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VpcResolutionMode.
+    /// </summary>
+    public class VpcResolutionMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN_VPC for VpcResolutionMode
+        /// </summary>
+        public static readonly VpcResolutionMode IN_VPC = new VpcResolutionMode("IN_VPC");
+
+        /// <summary>
+        /// Constant PUBLIC for VpcResolutionMode
+        /// </summary>
+        public static readonly VpcResolutionMode PUBLIC = new VpcResolutionMode("PUBLIC");
+
+        /// <summary>
+        /// Constructs a custom VpcResolutionMode for a value not among the defined constants.
+        /// </summary>
+        public VpcResolutionMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcResolutionMode FindValue(string value)
+        {
+            return FindValue<VpcResolutionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcResolutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type WebScopeType.
     /// </summary>
     public class WebScopeType : ConstantClass

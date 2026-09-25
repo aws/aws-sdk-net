@@ -423,6 +423,62 @@
     <pattern>^(DRAFT|[0-9]{0,4}[1-9][0-9]{0,4})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.ClientToken</property>
+    <min>33</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^[^\p{C}]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.HostHeader</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9._:\[\]-]{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9 _-]*[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.ResourceTarget</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.TlsServerName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*\.)?([A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)*[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationRequest.VpcId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^vpc-[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.CreateVpcConfigurationResponse.VpcConfigurationId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>^[a-z0-9](?:[a-z0-9-]{30}[a-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DeleteAgentRequest.AgentId</property>
     <pattern>^[0-9a-zA-Z]{10}$</pattern>
   </property-value-rule>
@@ -595,6 +651,22 @@
     <property>Amazon.BedrockAgent.Model.DeleteResourcePolicyResponse.RevisionId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteVpcConfigurationRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteVpcConfigurationRequest.VpcConfigurationId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>^[a-z0-9](?:[a-z0-9-]{30}[a-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.DeleteVpcConfigurationResponse.VpcConfigurationId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>^[a-z0-9](?:[a-z0-9-]{30}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.DisassociateAgentCollaboratorRequest.AgentId</property>
@@ -892,6 +964,16 @@
     <property>Amazon.BedrockAgent.Model.GetResourcePolicyResponse.RevisionId</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetVpcConfigurationRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.GetVpcConfigurationRequest.VpcConfigurationId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>^[a-z0-9](?:[a-z0-9-]{30}[a-z0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.IngestKnowledgeBaseDocumentsRequest.ClientToken</property>
@@ -1214,6 +1296,27 @@
     <min>20</min>
     <max>1011</max>
     <pattern>.*(^arn:aws:bedrock:[a-zA-Z0-9-]+:/d{12}:(agent|agent-alias|knowledge-base|flow|prompt)/[A-Z0-9]{10}(?:/[A-Z0-9]{10})?$|^arn:aws:bedrock:[a-zA-Z0-9-]+:/d{12}:flow/([A-Z0-9]{10})/alias/([A-Z0-9]{10})$|^arn:aws:bedrock:[a-zA-Z0-9-]+:/d{12}:prompt/([A-Z0-9]{10})?(?::/d+)?$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListVpcConfigurationsRequest.KnowledgeBaseId</property>
+    <pattern>^[0-9a-zA-Z]{10}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListVpcConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListVpcConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.ListVpcConfigurationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.PrepareAgentRequest.AgentId</property>
@@ -3127,6 +3230,108 @@
     <property>Amazon.BedrockAgent.Model.VideoSegmentationConfiguration.FixedLengthDuration</property>
     <min>1</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^[^\p{C}]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.HostHeader</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9._:\[\]-]{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9 _-]*[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.ResourceTarget</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.StatusMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.TlsServerName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*\.)?([A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)*[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.VpcConfigurationId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>^[a-z0-9](?:[a-z0-9-]{30}[a-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfiguration.VpcId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^vpc-[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^[^\p{C}]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.HostHeader</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Za-z0-9._:\[\]-]{1,255}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9 _-]*[a-zA-Z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.ResourceTarget</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.StatusMessage</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.TlsServerName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>^(\*\.)?([A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)*[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.VpcConfigurationId</property>
+    <min>32</min>
+    <max>32</max>
+    <pattern>^[a-z0-9](?:[a-z0-9-]{30}[a-z0-9])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgent.Model.VpcConfigurationSummary.VpcId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^vpc-[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgent.Model.WebCrawlerConfiguration.UserAgent</property>

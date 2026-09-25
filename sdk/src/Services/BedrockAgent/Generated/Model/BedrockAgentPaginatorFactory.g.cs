@@ -143,5 +143,13 @@ namespace Amazon.BedrockAgent.Model
         {
             return new ListPromptsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListVpcConfigurations operation
+        /// </summary>
+        public IListVpcConfigurationsPaginator ListVpcConfigurations(ListVpcConfigurationsRequest request)
+        {
+            return new ListVpcConfigurationsPaginator(this.client, request);
+        }
     }
 }
