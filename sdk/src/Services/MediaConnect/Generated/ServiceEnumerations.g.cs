@@ -2248,6 +2248,11 @@ namespace Amazon.MediaConnect
         public static readonly RouterOutputProtocol RIST = new RouterOutputProtocol("RIST");
 
         /// <summary>
+        /// Constant RTMP_PUSH for RouterOutputProtocol
+        /// </summary>
+        public static readonly RouterOutputProtocol RTMP_PUSH = new RouterOutputProtocol("RTMP_PUSH");
+
+        /// <summary>
         /// Constant RTP for RouterOutputProtocol
         /// </summary>
         public static readonly RouterOutputProtocol RTP = new RouterOutputProtocol("RTP");
@@ -2854,6 +2859,42 @@ namespace Amazon.MediaConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ThumbnailState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TlsEncryptionType.
+    /// </summary>
+    public class TlsEncryptionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PUBLIC for TlsEncryptionType
+        /// </summary>
+        public static readonly TlsEncryptionType PUBLIC = new TlsEncryptionType("PUBLIC");
+
+        /// <summary>
+        /// Constructs a custom TlsEncryptionType for a value not among the defined constants.
+        /// </summary>
+        public TlsEncryptionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TlsEncryptionType FindValue(string value)
+        {
+            return FindValue<TlsEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TlsEncryptionType(string value)
         {
             return FindValue(value);
         }

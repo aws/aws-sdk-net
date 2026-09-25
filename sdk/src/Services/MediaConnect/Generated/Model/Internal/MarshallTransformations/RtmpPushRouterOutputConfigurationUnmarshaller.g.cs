@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RouterOutputProtocolConfiguration Object
+    /// Response Unmarshaller for RtmpPushRouterOutputConfiguration Object
     /// </summary>
-    public partial class RouterOutputProtocolConfigurationUnmarshaller : IJsonUnmarshaller<RouterOutputProtocolConfiguration, JsonUnmarshallerContext>
+    public partial class RtmpPushRouterOutputConfigurationUnmarshaller : IJsonUnmarshaller<RtmpPushRouterOutputConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public RouterOutputProtocolConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RtmpPushRouterOutputConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new RouterOutputProtocolConfiguration();
+            var unmarshalledObject = new RtmpPushRouterOutputConfiguration();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,49 +53,49 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("rist", targetDepth, ref reader))
+                if (context.TestExpression("applicationName", targetDepth, ref reader))
                 {
-                    var unmarshaller = RistRouterOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Rist = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("rtmpPush", targetDepth, ref reader))
+                if (context.TestExpression("destinationAddress", targetDepth, ref reader))
                 {
-                    var unmarshaller = RtmpPushRouterOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RtmpPush = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("rtp", targetDepth, ref reader))
+                if (context.TestExpression("destinationPort", targetDepth, ref reader))
                 {
-                    var unmarshaller = RtpRouterOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Rtp = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("srtCaller", targetDepth, ref reader))
+                if (context.TestExpression("streamName", targetDepth, ref reader))
                 {
-                    var unmarshaller = SrtCallerRouterOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SrtCaller = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("srtListener", targetDepth, ref reader))
+                if (context.TestExpression("tlsEncryption", targetDepth, ref reader))
                 {
-                    var unmarshaller = SrtListenerRouterOutputConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SrtListener = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = TlsEncryptionUnmarshaller.Instance;
+                    unmarshalledObject.TlsEncryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static RouterOutputProtocolConfigurationUnmarshaller _instance = new RouterOutputProtocolConfigurationUnmarshaller();
+        private static RtmpPushRouterOutputConfigurationUnmarshaller _instance = new RtmpPushRouterOutputConfigurationUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static RouterOutputProtocolConfigurationUnmarshaller Instance => _instance;
+        public static RtmpPushRouterOutputConfigurationUnmarshaller Instance => _instance;
     }
 }
