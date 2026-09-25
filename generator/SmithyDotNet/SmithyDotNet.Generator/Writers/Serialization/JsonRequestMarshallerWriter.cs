@@ -116,6 +116,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             // blob payload block, so the block's trailing Content-Type override must not clobber it.
             var modeledContentType = partitioned.HeaderMembers.Any(h => h.HeaderName.Equals("Content-Type", StringComparison.OrdinalIgnoreCase));
             var blobContentTypeEmitted = false;
+
             if (context.UsesHttpBindings)
             {
                 blobContentTypeEmitted = WriteContentType(writer, httpTrait, partitioned, modeledContentType);
@@ -126,7 +127,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 // Content-Type is unconditional. Same two-statement shape as C2J.
                 writer.WriteLine($"""string target = "{context.ServiceShapeName}.{operation.Name}";""");
                 writer.WriteLine("""request.Headers["X-Amz-Target"] = target;""");
-                writer.WriteLine($"""request.Headers["Content-Type"] = "application/x-amz-json-{JsonVersion(context.Protocol)}";""");
+                if (!String.IsNullOrEmpty(context.Customizations.OverrideContentType))
+                {
+                    writer.WriteLine($"""request.Headers["Content-Type"] = "{context.Customizations.OverrideContentType}";""");
+                }
+                else
+                {
+                    writer.WriteLine($"""request.Headers["Content-Type"] = "application/x-amz-json-{JsonVersion(context.Protocol)}";""");
+                }
             }
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
@@ -243,15 +251,22 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // restJson1 only. Omitted for GET/DELETE and for body-less operations, matching C2J. A blob payload
     // is the exception: its block always sets Content-Type, so when a modeled Content-Type header must
     // win the blob default is emitted here, ahead of the header, on every method. Returns whether that
-    // happened (see WriteBlobPayloadSerialization). TODO: customization OverrideContentType is not
-    // handled yet.
-    private static bool WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned, bool modeledContentType)
+    // happened (see WriteBlobPayloadSerialization). The OverrideContentType customization replaces the
+    // value on every non-GET/DELETE method, body or not.
+    private bool WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned, bool modeledContentType)
     {
         // An input event stream sets its own application/vnd.amazon.eventstream Content-Type (see
         // WriteEventStreamPublisher), so the normal body Content-Type is skipped.
         if (partitioned.PayloadMember is { Type.IsEventStream: true })
         {
             return false;
+        }
+
+        var overrideContentType = context.Customizations.OverrideContentType;
+        if (!string.IsNullOrEmpty(overrideContentType) && httpTrait.Method is not ("GET" or "DELETE"))
+        {
+            writer.WriteLine($"""request.Headers["Content-Type"] = "{overrideContentType}";""");
+            return true;
         }
 
         if (modeledContentType && partitioned.PayloadMember is { Type.IsBlob: true } blob)
