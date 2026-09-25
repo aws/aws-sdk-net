@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         private int? _maxResults;
         private string _nextToken;
         private DateTime? _queryAsOfTime;
+        private TableResourceShareType _resourceShareType;
         private string _transactionId;
 
         /// <summary>
@@ -235,6 +236,36 @@ namespace Amazon.Glue.Model
         internal bool IsSetQueryAsOfTime()
         {
             return this._queryAsOfTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareType. 
+        /// <para>
+        /// Specifies which tables the <c>GetTables</c> call returns. The allowable values are
+        /// <c>FEDERATED</c> or <c>ALL</c>. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If set to <c>FEDERATED</c>, returns only federated tables, which reference an entity
+        /// outside the Glue Data Catalog.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If set to <c>ALL</c>, returns all tables in the database, both federated and non-federated.
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public TableResourceShareType ResourceShareType
+        {
+            get { return this._resourceShareType; }
+            set { this._resourceShareType = value; }
+        }
+
+        // Check to see if ResourceShareType property is set
+        internal bool IsSetResourceShareType()
+        {
+            return this._resourceShareType != null;
         }
 
         /// <summary>

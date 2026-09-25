@@ -139,6 +139,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.QueryAsOfTime.Value));
             }
 
+            if(publicRequest.IsSetResourceShareType())
+            {
+                context.Writer.WritePropertyName("ResourceShareType");
+                context.Writer.WriteStringValue(publicRequest.ResourceShareType);
+            }
+
             if(publicRequest.IsSetTransactionId())
             {
                 context.Writer.WritePropertyName("TransactionId");
