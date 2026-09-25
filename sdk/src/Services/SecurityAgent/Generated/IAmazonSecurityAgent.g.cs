@@ -1802,6 +1802,29 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns a paginated list of the email MFA messages received for an actor at its server-generated
+        /// email address, most recent first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActorMessages service method.</param>
+        /// <returns>The response from the ListActorMessages service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListActorMessages">REST API Reference for ListActorMessages Operation</seealso>
+        ListActorMessagesResponse ListActorMessages(ListActorMessagesRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a paginated list of the email MFA messages received for an actor at its server-generated
+        /// email address, most recent first.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListActorMessages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListActorMessages service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListActorMessages">REST API Reference for ListActorMessages Operation</seealso>
+        Task<ListActorMessagesResponse> ListActorMessagesAsync(ListActorMessagesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns a paginated list of agent space summaries in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgentSpaces service method.</param>

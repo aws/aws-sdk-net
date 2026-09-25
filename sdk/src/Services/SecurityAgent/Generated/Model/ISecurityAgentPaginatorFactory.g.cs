@@ -33,6 +33,12 @@ namespace Amazon.SecurityAgent.Model
     public interface ISecurityAgentPaginatorFactory
     {
         /// <summary>
+        /// Paginator for ListActorMessages operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListActorMessagesPaginator ListActorMessages(ListActorMessagesRequest request);
+
+        /// <summary>
         /// Paginator for ListAgentSpaces operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
