@@ -99,5 +99,13 @@ namespace Amazon.ARCRegionswitch.Model
         {
             return new ListRoute53HealthChecksInRegionPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListServiceQuotaWarnings operation
+        ///</summary>
+        public IListServiceQuotaWarningsPaginator ListServiceQuotaWarnings(ListServiceQuotaWarningsRequest request) 
+        {
+            return new ListServiceQuotaWarningsPaginator(this.client, request);
+        }
     }
 }

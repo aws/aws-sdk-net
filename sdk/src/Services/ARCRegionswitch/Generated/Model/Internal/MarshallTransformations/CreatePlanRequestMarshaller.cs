@@ -152,6 +152,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetServiceQuotaChecksEnabled())
+            {
+                context.Writer.WritePropertyName("serviceQuotaChecksEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.ServiceQuotaChecksEnabled.Value);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

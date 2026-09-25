@@ -91,6 +91,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetWaitELBTargetGroupHealthy())
+            {
+                context.Writer.WritePropertyName("waitELBTargetGroupHealthy");
+                context.Writer.WriteStringValue(requestObject.WaitELBTargetGroupHealthy);
+            }
+
         }
 
         /// <summary>
