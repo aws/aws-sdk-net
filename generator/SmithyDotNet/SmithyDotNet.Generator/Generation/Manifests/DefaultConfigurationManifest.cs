@@ -31,6 +31,24 @@ public static class DefaultConfigurationManifest
     public static IReadOnlyList<ResolvedDefaultConfigurationMode> Load(string manifestPath)
     {
         using var stream = File.OpenRead(manifestPath);
+        return Load(stream, manifestPath);
+    }
+
+    /// <summary>
+    /// The copy of <c>sdk/src/Core/sdk-default-configuration.json</c> embedded in the generator, for
+    /// runs outside the repo: the Core NuGet package does not ship the file.
+    /// </summary>
+    public static IReadOnlyList<ResolvedDefaultConfigurationMode> LoadEmbedded()
+    {
+        const string resourceName = "SmithyDotNet.Generator.sdk-default-configuration.json";
+        using var stream = typeof(DefaultConfigurationManifest).Assembly.GetManifestResourceStream(resourceName)
+            ?? throw new GeneratorException($"Embedded resource '{resourceName}' not found.");
+        return Load(stream, resourceName);
+    }
+
+    // manifestPath only names the source in error messages.
+    private static IReadOnlyList<ResolvedDefaultConfigurationMode> Load(Stream stream, string manifestPath)
+    {
         using var document = JsonDocument.Parse(stream);
         var root = document.RootElement;
 
