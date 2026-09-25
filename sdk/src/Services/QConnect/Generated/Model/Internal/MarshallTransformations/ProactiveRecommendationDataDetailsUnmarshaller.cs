@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AIAgentConfigurationData Object
+    /// Response Unmarshaller for ProactiveRecommendationDataDetails Object
     /// </summary>  
-    public class AIAgentConfigurationDataUnmarshaller : IJsonUnmarshaller<AIAgentConfigurationData, JsonUnmarshallerContext>
+    public class ProactiveRecommendationDataDetailsUnmarshaller : IJsonUnmarshaller<ProactiveRecommendationDataDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AIAgentConfigurationData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProactiveRecommendationDataDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AIAgentConfigurationData unmarshalledObject = new AIAgentConfigurationData();
+            ProactiveRecommendationDataDetails unmarshalledObject = new ProactiveRecommendationDataDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("aiAgentId", targetDepth, ref reader))
+                if (context.TestExpression("nextMessageToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AiAgentId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("enabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.NextMessageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
         }
 
 
-        private static AIAgentConfigurationDataUnmarshaller _instance = new AIAgentConfigurationDataUnmarshaller();        
+        private static ProactiveRecommendationDataDetailsUnmarshaller _instance = new ProactiveRecommendationDataDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AIAgentConfigurationDataUnmarshaller Instance
+        public static ProactiveRecommendationDataDetailsUnmarshaller Instance
         {
             get
             {

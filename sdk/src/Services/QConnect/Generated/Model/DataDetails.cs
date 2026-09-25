@@ -44,6 +44,7 @@ namespace Amazon.QConnect.Model
         private IntentDetectedDataDetails _intentDetectedData;
         private NotesChunkDataDetails _notesChunkData;
         private NotesDataDetails _notesData;
+        private ProactiveRecommendationDataDetails _proactiveRecommendationData;
         private SourceContentDataDetails _sourceContentData;
         private SuggestedMessageDataDetails _suggestedMessageData;
 
@@ -226,6 +227,25 @@ namespace Amazon.QConnect.Model
         internal bool IsSetNotesData()
         {
             return this._notesData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProactiveRecommendationData. 
+        /// <para>
+        /// Details about a proactive recommendation, including the token used to retrieve its
+        /// chunked response with <c>GetNextMessage</c>.
+        /// </para>
+        /// </summary>
+        public ProactiveRecommendationDataDetails ProactiveRecommendationData
+        {
+            get { return this._proactiveRecommendationData; }
+            set { this._proactiveRecommendationData = value; }
+        }
+
+        // Check to see if ProactiveRecommendationData property is set
+        internal bool IsSetProactiveRecommendationData()
+        {
+            return this._proactiveRecommendationData != null;
         }
 
         /// <summary>

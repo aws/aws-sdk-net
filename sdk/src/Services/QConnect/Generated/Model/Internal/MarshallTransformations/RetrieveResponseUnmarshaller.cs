@@ -52,6 +52,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("errors", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RetrieveError, RetrieveErrorUnmarshaller>(RetrieveErrorUnmarshaller.Instance);
+                    response.Errors = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("results", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RetrieveResult, RetrieveResultUnmarshaller>(RetrieveResultUnmarshaller.Instance);

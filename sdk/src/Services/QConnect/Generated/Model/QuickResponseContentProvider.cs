@@ -42,7 +42,7 @@ namespace Amazon.QConnect.Model
         /// The content of the quick response.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4000)]
         public string Content
         {
             get { return this._content; }

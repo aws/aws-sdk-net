@@ -30,29 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QConnect.Model
 {
     /// <summary>
-    /// The container of quick response data.
+    /// Details about a proactive recommendation, including the token used to retrieve its
+    /// chunked response with <c>GetNextMessage</c>.
     /// </summary>
-    public partial class QuickResponseDataProvider
+    public partial class ProactiveRecommendationDataDetails
     {
-        private string _content;
+        private string _nextMessageToken;
 
         /// <summary>
-        /// Gets and sets the property Content. 
+        /// Gets and sets the property NextMessageToken. 
         /// <para>
-        /// The content of the quick response.
+        /// The token used to retrieve the next message in the proactive recommendation. Pass
+        /// this token in a <c>GetNextMessage</c> request to continue receiving the chunked proactive
+        /// response. Each response returns the next token to use until the chunked response is
+        /// complete.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=4000)]
-        public string Content
+        [AWSProperty(Required=true, Min=1, Max=2048)]
+        public string NextMessageToken
         {
-            get { return this._content; }
-            set { this._content = value; }
+            get { return this._nextMessageToken; }
+            set { this._nextMessageToken = value; }
         }
 
-        // Check to see if Content property is set
-        internal bool IsSetContent()
+        // Check to see if NextMessageToken property is set
+        internal bool IsSetNextMessageToken()
         {
-            return this._content != null;
+            return this._nextMessageToken != null;
         }
 
     }

@@ -36,6 +36,7 @@ namespace Amazon.QConnect.Model
     public partial class AIAgentConfigurationData
     {
         private string _aiAgentId;
+        private bool? _enabled;
 
         /// <summary>
         /// Gets and sets the property AiAgentId. 
@@ -54,6 +55,28 @@ namespace Amazon.QConnect.Model
         internal bool IsSetAiAgentId()
         {
             return this._aiAgentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Enabled. 
+        /// <para>
+        /// Indicates whether the AI Agent configured for this AI Agent type is enabled. When
+        /// this value is omitted or set to true, the configured AI Agent runs; when set to false,
+        /// the AI Agent ID is retained but no AI Agent runs for the AI Agent type. Setting this
+        /// value to false is currently supported only for the <c>ANSWER_RECOMMENDATION</c> AI
+        /// Agent type; other requests to set it to false are rejected with a validation error.
+        /// </para>
+        /// </summary>
+        public bool? Enabled
+        {
+            get { return this._enabled; }
+            set { this._enabled = value; }
+        }
+
+        // Check to see if Enabled property is set
+        internal bool IsSetEnabled()
+        {
+            return this._enabled.HasValue; 
         }
 
     }
