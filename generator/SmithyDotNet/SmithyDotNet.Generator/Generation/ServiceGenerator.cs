@@ -197,11 +197,18 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
             }
+
             // The NuGet README is the service documentation converted to Markdown, falling back to the
             // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
             // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
             // catching hand-written READMEs.
             var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
+            if (standalone is not null && readme.Length == 0)
+            {
+                // NuGet rejects an empty readme (NU5040), so the standalone csproj could not be packed.
+                throw new GeneratorException("The service has no @documentation to write nuget-readme.md from.");
+            }
+
             Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
         }
 

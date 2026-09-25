@@ -25,6 +25,19 @@ public sealed class StandaloneGenerator(StandaloneOptions options)
         var generator = new ServiceGenerator(context, Path.GetFileName(options.ModelPath), options.Version, DefaultConfigurationManifest.LoadEmbedded(), options);
         Log.Info($"Generating {context.AssemblyName} into '{options.OutputDirectory}'.");
 
+        // Another service's project at the root would make `dotnet build` ambiguous, and it's the
+        // user's directory, so nothing there is deleted: fail instead. Re-running the same service is fine.
+        if (Directory.Exists(options.OutputDirectory))
+        {
+            foreach (var project in Directory.EnumerateFiles(options.OutputDirectory, "*.csproj"))
+            {
+                if (Path.GetFileName(project) != $"{context.AssemblyName}.csproj")
+                {
+                    throw new GeneratorException($"'{options.OutputDirectory}' already contains '{Path.GetFileName(project)}'; use an empty directory or one previously generated for {context.AssemblyName}.");
+                }
+            }
+        }
+
         // Same reason as BatchGenerator.WipeStaleOutput: leftover files from an earlier model would
         // compile as duplicate types. Only the generated tree is touched.
         var generated = Path.Combine(options.OutputDirectory, "Generated");
