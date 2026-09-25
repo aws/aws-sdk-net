@@ -172,7 +172,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             // Arrange
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["X-Amzn-Errortype"] = "aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
+            webResponseData.Headers["X-Amzn-Errortype"] = "aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
             byte[] bytes = Encoding.ASCII.GetBytes("");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
@@ -225,7 +225,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
             webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.restjson#FooError\"\n}");
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.json#FooError\"\n}");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
             // Act
@@ -252,7 +252,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
             webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}");
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
             // Act
@@ -300,7 +300,31 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
             webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.restjson#FooError\"\n}");
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json#FooError\"\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+        }
+
+        /// <summary>
+        /// Because only the part after '#' is considered, an unrecognized
+        /// namespace should not make a difference.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("JsonProtocol")]
+        public void AwsJson11FooErrorWithDunderTypeAndDifferentNamespaceErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
+            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.different.namespace#FooError\"\n}");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
             // Act
@@ -327,7 +351,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
             webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}");
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
             // Act
@@ -354,7 +378,7 @@ namespace AWSSDK.ProtocolTests.JsonProtocol
             var webResponseData = new WebResponseData();
             webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
             webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.1";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.restjson#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}");
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}");
             var stream = new MemoryStream(bytes);
             var context = new JsonUnmarshallerContext(stream,true,webResponseData);
             // Act

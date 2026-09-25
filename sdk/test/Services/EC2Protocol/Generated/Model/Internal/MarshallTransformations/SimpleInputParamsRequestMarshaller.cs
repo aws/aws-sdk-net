@@ -75,6 +75,18 @@ namespace Amazon.EC2Protocol.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Boo", StringUtils.FromDouble(publicRequest.Boo));
                 }
+                if(publicRequest.IsSetDistinctQueryAndXmlName())
+                {
+                    request.Parameters.Add("XmlAndQueryName", StringUtils.FromString(publicRequest.DistinctQueryAndXmlName));
+                }
+                if(publicRequest.IsSetDistinctQueryName())
+                {
+                    request.Parameters.Add("DistinctQueryName", StringUtils.FromString(publicRequest.DistinctQueryName));
+                }
+                if(publicRequest.IsSetDistinctXmlName())
+                {
+                    request.Parameters.Add("XmlNameOnly", StringUtils.FromString(publicRequest.DistinctXmlName));
+                }
                 if(publicRequest.IsSetFloatValue())
                 {
                     request.Parameters.Add("FloatValue", StringUtils.FromFloat(publicRequest.FloatValue));
