@@ -29,17 +29,17 @@ namespace AWSSDK.Benchmarks.Serde;
 [Config(typeof(E2EBenchmarkConfig))]
 public class AwsQueryE2EBenchmarks
 {
-    private AmazonQueryDataPlaneClient _healthcheckClient = null!;
-    private AmazonQueryDataPlaneClient _putClientS = null!;
-    private AmazonQueryDataPlaneClient _putClientM = null!;
-    private AmazonQueryDataPlaneClient _getClientS = null!;
-    private AmazonQueryDataPlaneClient _getClientM = null!;
+    internal AmazonQueryDataPlaneClient _healthcheckClient = null!;
+    internal AmazonQueryDataPlaneClient _putClientS = null!;
+    internal AmazonQueryDataPlaneClient _putClientM = null!;
+    internal AmazonQueryDataPlaneClient _getClientS = null!;
+    internal AmazonQueryDataPlaneClient _getClientM = null!;
 
-    private HealthcheckRequest _healthcheckRequest = null!;
-    private PutMetricDataRequest _putMetricDataS = null!;
-    private PutMetricDataRequest _putMetricDataM = null!;
-    private GetMetricDataRequest _getMetricDataRequestS = null!;
-    private GetMetricDataRequest _getMetricDataRequestM = null!;
+    internal HealthcheckRequest _healthcheckRequest = null!;
+    internal PutMetricDataRequest _putMetricDataS = null!;
+    internal PutMetricDataRequest _putMetricDataM = null!;
+    internal GetMetricDataRequest _getMetricDataRequestS = null!;
+    internal GetMetricDataRequest _getMetricDataRequestM = null!;
 
     private static readonly byte[] HealthcheckResponse = Encoding.UTF8.GetBytes(
         "<HealthcheckResponse xmlns=\"https://query.amazonaws.com/doc/2024-01-01/\"><HealthcheckResult/><ResponseMetadata><RequestId>test-id</RequestId></ResponseMetadata></HealthcheckResponse>");
@@ -62,7 +62,7 @@ public class AwsQueryE2EBenchmarks
         return sb.ToString();
     }
 
-    private AmazonQueryDataPlaneClient CreateClient(byte[] responseBody)
+    internal AmazonQueryDataPlaneClient CreateClient(byte[] responseBody)
     {
         var handler = new MockHttpHandler(responseBody, "text/xml");
         var config = new AmazonQueryDataPlaneConfig
