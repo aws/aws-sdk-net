@@ -51,10 +51,10 @@ namespace Amazon.WellArchitected.Internal
         {
             var config = (AmazonWellArchitectedConfig)requestContext.ClientConfig;
             var result = new WellArchitectedEndpointParameters();
-            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.Region = requestContext.Request.AlternateEndpoint?.SystemName ?? config.RegionEndpoint?.SystemName;
 
             // The region needs to be determined from the ServiceURL if not set.
             var regionEndpoint = config.RegionEndpoint;
@@ -82,6 +82,123 @@ namespace Amazon.WellArchitected.Internal
             if (requestContext.Request.AlternateEndpoint != null)
             {
                 result.Region = requestContext.Request.AlternateEndpoint.SystemName;
+            }
+
+            // Assign staticContextParams and contextParam per operation
+            if (requestContext.RequestName == "CreateAgentContextRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAgentGoalRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "CreateAgentProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAgentContextRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAgentGoalRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteAgentProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentContextRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentGoalRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentRecommendationRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "GetAgentRecommendationGenerationRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentContextsRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentGoalsRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentProfilesRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentRecommendationGenerationsRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentRecommendationItemsRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "ListAgentRecommendationsRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "PutAgentRecommendationFeedbackRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "StartAgentRecommendationGenerationRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAgentContextRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAgentGoalRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAgentProfileRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAgentRecommendationStatusRequest")
+            {
+                result.SubServiceType = "AGENT";
+                return result;
             }
 
             return result;

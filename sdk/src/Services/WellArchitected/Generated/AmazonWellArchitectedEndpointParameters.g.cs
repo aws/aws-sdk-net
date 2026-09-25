@@ -43,15 +43,6 @@ namespace Amazon.WellArchitected.Endpoints
         }
 
         /// <summary>
-        /// The AWS region used to dispatch the request.
-        /// </summary>
-        public string Region
-        {
-            get => (string)this["Region"];
-            set => this["Region"] = value;
-        }
-
-        /// <summary>
         /// When true, use the dual-stack endpoint. If the configured endpoint does not support dual-stack, dispatching the request MAY return an error.
         /// </summary>
         public bool? UseDualStack
@@ -76,6 +67,24 @@ namespace Amazon.WellArchitected.Endpoints
         {
             get => (string)this["Endpoint"];
             set => this["Endpoint"] = value;
+        }
+
+        /// <summary>
+        /// The AWS region used to dispatch the request.
+        /// </summary>
+        public string Region
+        {
+            get => (string)this["Region"];
+            set => this["Region"] = value;
+        }
+
+        /// <summary>
+        /// Identifies the sub-service used for endpoint routing. This value is set automatically per operation and is not client-configurable. It is unset for Well-Architected Tool operations. It is AGENT for Well-Architected Agent operations, which resolve to the wellarchitected-agent endpoint.
+        /// </summary>
+        public string SubServiceType
+        {
+            get => (string)this["SubServiceType"];
+            set => this["SubServiceType"] = value;
         }
     }
 }

@@ -167,6 +167,19 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetEffort() => this.Effort != null;
 
         /// <summary>
+        /// Gets and sets the property GenerationId. 
+        /// <para>
+        /// The identifier of the generation process that produced this recommendation.
+        /// </para>
+        /// </summary>
+        public string GenerationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GenerationId property is set.
+        /// </summary>
+        internal bool IsSetGenerationId() => this.GenerationId != null;
+
+        /// <summary>
         /// Gets and sets the property Goals. 
         /// <para>
         /// Goals that this recommendation targets.
