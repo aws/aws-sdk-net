@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonRpc10
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeStringUnionValueRequest()
+        public async Task AwsJson10SerializeStringUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -58,21 +59,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"stringValue\": \"foo\"\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -82,7 +90,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeBooleanUnionValueRequest()
+        public async Task AwsJson10SerializeBooleanUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -93,21 +101,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"booleanValue\": true\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -117,7 +132,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeNumberUnionValueRequest()
+        public async Task AwsJson10SerializeNumberUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -128,21 +143,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"numberValue\": 1\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -152,7 +174,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeBlobUnionValueRequest()
+        public async Task AwsJson10SerializeBlobUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -163,21 +185,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"blobValue\": \"Zm9v\"\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -187,7 +216,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeTimestampUnionValueRequest()
+        public async Task AwsJson10SerializeTimestampUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -198,21 +227,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"timestampValue\": 1398796238\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -222,7 +258,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeEnumUnionValueRequest()
+        public async Task AwsJson10SerializeEnumUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -233,21 +269,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"enumValue\": \"Foo\"\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -257,7 +300,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeIntEnumUnionValueRequest()
+        public async Task AwsJson10SerializeIntEnumUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -268,21 +311,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"intEnumValue\": 1\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -292,7 +342,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeListUnionValueRequest()
+        public async Task AwsJson10SerializeListUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -307,21 +357,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"listValue\": [\"foo\", \"bar\"]\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -331,7 +388,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeMapUnionValueRequest()
+        public async Task AwsJson10SerializeMapUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -347,21 +404,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"mapValue\": {\n            \"foo\": \"bar\",\n            \"spam\": \"eggs\"\n        }\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -371,7 +435,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10SerializeStructureUnionValueRequest()
+        public async Task AwsJson10SerializeStructureUnionValueRequest()
         {
             // Arrange
             var request = new JsonUnionsRequest
@@ -385,21 +449,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new JsonUnionsRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.JsonUnionsAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{\n    \"contents\": {\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.JsonUnions".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
         /// <summary>
@@ -409,18 +480,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeStringUnionValueResponse()
+        public async Task AwsJson10DeserializeStringUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"stringValue\": \"foo\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"stringValue\": \"foo\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -429,9 +508,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -441,18 +519,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeBooleanUnionValueResponse()
+        public async Task AwsJson10DeserializeBooleanUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"booleanValue\": true\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"booleanValue\": true\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -461,9 +547,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -473,18 +558,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeNumberUnionValueResponse()
+        public async Task AwsJson10DeserializeNumberUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"numberValue\": 1\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"numberValue\": 1\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -493,9 +586,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -505,18 +597,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeBlobUnionValueResponse()
+        public async Task AwsJson10DeserializeBlobUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"blobValue\": \"Zm9v\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"blobValue\": \"Zm9v\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -525,9 +625,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -537,18 +636,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeTimestampUnionValueResponse()
+        public async Task AwsJson10DeserializeTimestampUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"timestampValue\": 1398796238\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"timestampValue\": 1398796238\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -557,9 +664,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -569,18 +675,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeEnumUnionValueResponse()
+        public async Task AwsJson10DeserializeEnumUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"enumValue\": \"Foo\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"enumValue\": \"Foo\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -589,9 +703,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -601,18 +714,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeIntEnumUnionValueResponse()
+        public async Task AwsJson10DeserializeIntEnumUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"intEnumValue\": 1\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"intEnumValue\": 1\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -621,9 +742,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -633,18 +753,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeListUnionValueResponse()
+        public async Task AwsJson10DeserializeListUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"listValue\": [\"foo\", \"bar\"]\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"listValue\": [\"foo\", \"bar\"]\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -657,9 +785,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -669,18 +796,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeMapUnionValueResponse()
+        public async Task AwsJson10DeserializeMapUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"mapValue\": {\n            \"foo\": \"bar\",\n            \"spam\": \"eggs\"\n        }\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"mapValue\": {\n            \"foo\": \"bar\",\n            \"spam\": \"eggs\"\n        }\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -694,9 +829,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -706,18 +840,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeStructureUnionValueResponse()
+        public async Task AwsJson10DeserializeStructureUnionValueResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -729,9 +871,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -741,18 +882,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeIgnoreTypeResponse()
+        public async Task AwsJson10DeserializeIgnoreTypeResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"__type\": \"aws.protocoltests.json10#MyUnion\",\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"__type\": \"aws.protocoltests.json10#MyUnion\",\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -764,9 +913,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
         /// <summary>
@@ -776,18 +924,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10DeserializeAllowNullsResponse()
+        public async Task AwsJson10DeserializeAllowNullsResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n      \"stringValue\": null,\n      \"booleanValue\": null,\n      \"numberValue\": null,\n      \"blobValue\": null,\n      \"timestampValue\": null,\n      \"enumValue\": null,\n      \"intEnumValue\": null,\n      \"listValue\": null,\n      \"mapValue\": null,\n      \"structureValue\": {\n          \"hi\": \"hello\"\n      }\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n      \"stringValue\": null,\n      \"booleanValue\": null,\n      \"numberValue\": null,\n      \"blobValue\": null,\n      \"timestampValue\": null,\n      \"enumValue\": null,\n      \"intEnumValue\": null,\n      \"listValue\": null,\n      \"mapValue\": null,\n      \"structureValue\": {\n          \"hi\": \"hello\"\n      }\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
 
             // Act
-            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var actualResponse = await client.JsonUnionsAsync(new JsonUnionsRequest()).ConfigureAwait(false);
             var expectedResponse = new JsonUnionsResponse
             {
                 Contents = new MyUnion{
@@ -799,9 +955,8 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
 
             // Assert
-            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
             Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
-            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

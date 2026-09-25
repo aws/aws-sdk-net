@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonRpc10
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void NonQueryCompatibleAwsJson10ForbidsQueryModeHeaderRequest()
+        public async Task NonQueryCompatibleAwsJson10ForbidsQueryModeHeaderRequest()
         {
             // Arrange
             var request = new QueryIncompatibleOperationRequest
@@ -55,21 +56,28 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new QueryIncompatibleOperationRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.QueryIncompatibleOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
-            Assert.AreEqual("JsonRpc10.QueryIncompatibleOperation".Replace(" ",""), marshalledRequest.Headers["X-Amz-Target"].Replace(" ",""));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("application/x-amz-json-1.0".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("JsonRpc10.QueryIncompatibleOperation".Replace(" ",""), actualRequest.Headers["X-Amz-Target"].Replace(" ",""));
         }
 
     }

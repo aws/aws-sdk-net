@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonRpc10
 {
@@ -47,7 +48,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void SDKAppliedContentEncoding_awsJson1_0Request()
+        public async Task SDKAppliedContentEncoding_awsJson1_0Request()
         {
             // Arrange
             var request = new PutWithContentEncodingRequest
@@ -56,18 +57,25 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new PutWithContentEncodingRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.PutWithContentEncodingAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("gzip".Replace(" ",""), marshalledRequest.Headers["Content-Encoding"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("gzip".Replace(" ",""), actualRequest.Headers["Content-Encoding"].Replace(" ",""));
         }
 
         /// <summary>
@@ -80,7 +88,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void SDKAppendsGzipAndIgnoresHttpProvidedEncoding_awsJson1_0Request()
+        public async Task SDKAppendsGzipAndIgnoresHttpProvidedEncoding_awsJson1_0Request()
         {
             // Arrange
             var request = new PutWithContentEncodingRequest
@@ -90,18 +98,25 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new PutWithContentEncodingRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.PutWithContentEncodingAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            Assert.AreEqual("gzip".Replace(" ",""), marshalledRequest.Headers["Content-Encoding"].Replace(" ",""));
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            Assert.AreEqual("gzip".Replace(" ",""), actualRequest.Headers["Content-Encoding"].Replace(" ",""));
         }
 
     }
