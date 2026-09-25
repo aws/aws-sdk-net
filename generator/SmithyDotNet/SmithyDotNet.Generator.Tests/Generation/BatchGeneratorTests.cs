@@ -52,6 +52,51 @@ public class BatchGeneratorTests : IDisposable
         Assert.True(File.Exists(Path.Combine(_repoRoot, "sdk", "test", "Services", "CloudTrailData", "UnitTests", "Generated", "Endpoints", "CloudTrailDataEndpointProviderTests.g.cs")));
     }
 
+    // Paths are spelled out rather than taken from SdkTreeLayout: they are where the docgenerator looks.
+    [Fact]
+    public void WritesDocSamplesIntoTheDocgeneratorTree()
+    {
+        WriteControlFile("CloudTrailData");
+
+        new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
+
+        var samplesRoot = Path.Combine(_repoRoot, "docgenerator", "AWSSDKDocSamples");
+        Assert.Contains("#region PutAuditEvents-1", File.ReadAllText(Path.Combine(samplesRoot, "CloudTrailData", "CloudTrailData.GeneratedSamples.cs")), StringComparison.Ordinal);
+        Assert.Contains("""region="PutAuditEvents-1" />""", File.ReadAllText(Path.Combine(samplesRoot, "CloudTrailData.GeneratedSamples.extra.xml")), StringComparison.Ordinal);
+    }
+
+    // Samples are built before the wipe, so an example without its required title fails the service with its
+    // generated trees intact and nothing written.
+    [Fact]
+    public void InvalidExampleFailsBeforeTheWipe()
+    {
+        var modelDir = Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "invalid-examples");
+        Directory.CreateDirectory(modelDir);
+        File.Copy("TestData/Codegen/invalid-examples-model.json", Path.Combine(modelDir, SdkTreeLayout.SmithyModelFileName));
+        File.Copy("TestData/metadata.json", Path.Combine(modelDir, "metadata.json"));
+        SeedFile(SdkTreeLayout.VersionManifestPath(_repoRoot), JsonSerializer.Serialize(TestManifests.Example()));
+        var stale = Path.Combine(_repoRoot, "sdk", "src", "Services", "Example", "Generated", "Stale.cs");
+        SeedFile(stale, "// stale");
+        WriteControlFile("Example");
+
+        var ex = Assert.Throws<GeneratorException>(() => new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken));
+
+        Assert.Contains("[Example] 'com.example#DoThing' has an invalid smithy.api#examples trait", ex.Message, StringComparison.Ordinal);
+        Assert.True(File.Exists(stale));
+        Assert.False(Directory.Exists(Path.Combine(_repoRoot, "docgenerator")));
+    }
+
+    [Fact]
+    public void TestServiceWritesNoDocSamples()
+    {
+        ConvertModelToTestService();
+        WriteControlFile("CloudTrailData");
+
+        new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken);
+
+        Assert.False(Directory.Exists(Path.Combine(_repoRoot, "docgenerator")));
+    }
+
     [Fact]
     public void WipesStaleGeneratedTreesButKeepsCustom()
     {

@@ -1,0 +1,156 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.samples#SamplesService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        { "target": "com.amazonaws.samples#PutItem" },
+        { "target": "com.amazonaws.samples#ListReportVersions" },
+        { "target": "com.amazonaws.samples#ListReports" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Samples", "endpointPrefix": "samples" },
+        "aws.protocols#awsJson1_1": {},
+        "smithy.api#title": "Samples"
+      }
+    },
+    "com.amazonaws.samples#PutItem": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.samples#PutItemRequest" },
+      "output": { "target": "com.amazonaws.samples#PutItemResponse" },
+      "traits": {
+        "smithy.api#examples": [
+          {
+            "title": "Put an \"item\" & more",
+            "documentation": "Puts an item <fast>.\u0007 Done",
+            "input": {
+              "tags": { "b": "2", "a": "1" },
+              "ratio": 1.0,
+              "name": "C:\\temp\nnext",
+              "Enabled": true,
+              "count": 3,
+              "createdAt": "2024-01-02T15:04:05Z",
+              "body": "<binary data>",
+              "level": 2,
+              "attributes": { "list": [1, true], "k": "v", "empty": {}, "none": null, "emptyList": [] },
+              "items": [{ "size": 10, "id": "i-1", "zzz": 1 }],
+              "events": { "chunk": { "data": "x" } },
+              "unknown": "x",
+              "weight": 2.5,
+              "status": "ACTIVE",
+              "owner": {},
+              "updatedAt": 1515531081.123,
+              "expiresAt": 1736286728468,
+              "retries": "5",
+              "verbose": "false"
+            },
+            "output": { "namespace": "ns", "itemId": "i-1", "ARNList": ["arn"], "event": "e", "total": 7, "status": "ACTIVE", "createdAt": "2024-01-02T00:00:00Z" }
+          }
+        ]
+      }
+    },
+    "com.amazonaws.samples#ListReports": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#examples": [{ "title": "First" }, { "title": "Second" }]
+      }
+    },
+    "com.amazonaws.samples#ListReportVersions": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#examples": [{ "title": "Versions" }]
+      }
+    },
+    "com.amazonaws.samples#EventStream": {
+      "type": "union",
+      "members": { "chunk": { "target": "com.amazonaws.samples#Chunk" } },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.amazonaws.samples#Chunk": {
+      "type": "structure",
+      "members": { "data": { "target": "smithy.api#String" } }
+    },
+    "com.amazonaws.samples#PutItemRequest": {
+      "type": "structure",
+      "members": {
+        "name": { "target": "smithy.api#String" },
+        "count": { "target": "smithy.api#Integer" },
+        "ratio": { "target": "smithy.api#Double" },
+        "enabled": { "target": "smithy.api#Boolean" },
+        "tags": { "target": "com.amazonaws.samples#Tags" },
+        "items": { "target": "com.amazonaws.samples#Items" },
+        "createdAt": { "target": "smithy.api#Timestamp" },
+        "body": { "target": "smithy.api#Blob" },
+        "level": { "target": "com.amazonaws.samples#Level" },
+        "attributes": { "target": "com.amazonaws.samples#Attributes" },
+        "events": { "target": "com.amazonaws.samples#EventStream" },
+        "weight": { "target": "smithy.api#Float" },
+        "status": { "target": "com.amazonaws.samples#Status" },
+        "owner": { "target": "com.amazonaws.samples#Owner" },
+        "updatedAt": { "target": "smithy.api#Timestamp" },
+        "expiresAt": { "target": "smithy.api#Timestamp" },
+        "retries": { "target": "smithy.api#Integer" },
+        "verbose": { "target": "smithy.api#Boolean" }
+      }
+    },
+    "com.amazonaws.samples#PutItemResponse": {
+      "type": "structure",
+      "members": {
+        "ARNList": { "target": "com.amazonaws.samples#Arns" },
+        "namespace": { "target": "smithy.api#String" },
+        "itemId": { "target": "smithy.api#String" },
+        "event": { "target": "smithy.api#String" },
+        "total": { "target": "smithy.api#Integer" },
+        "status": { "target": "com.amazonaws.samples#Status" },
+        "createdAt": { "target": "smithy.api#Timestamp" }
+      }
+    },
+    "com.amazonaws.samples#Status": {
+      "type": "enum",
+      "members": {
+        "ACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ACTIVE" } }
+      }
+    },
+    "com.amazonaws.samples#Owner": {
+      "type": "structure",
+      "members": {
+        "ownerId": { "target": "smithy.api#String" }
+      }
+    },
+    "com.amazonaws.samples#Item": {
+      "type": "structure",
+      "members": {
+        "id": { "target": "smithy.api#String" },
+        "size": { "target": "smithy.api#Long" }
+      }
+    },
+    "com.amazonaws.samples#Items": {
+      "type": "list",
+      "member": { "target": "com.amazonaws.samples#Item" }
+    },
+    "com.amazonaws.samples#Arns": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.amazonaws.samples#Tags": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#String" }
+    },
+    "com.amazonaws.samples#Attributes": {
+      "type": "document"
+    },
+    "com.amazonaws.samples#Level": {
+      "type": "intEnum",
+      "members": {
+        "LOW": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 1 } },
+        "HIGH": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 2 } }
+      }
+    }
+  }
+}

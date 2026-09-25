@@ -65,4 +65,19 @@ public static class StructuredTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#requestcompression-trait" /></remarks>
     public static RequestCompressionTrait? GetRequestCompression(this Shape shape) =>
         DeserializeTrait<RequestCompressionTrait>(shape, "smithy.api#requestCompression");
+
+    /// <summary>The operation's documentation examples, or an empty list when the trait is absent.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#examples-trait" /></remarks>
+    public static IReadOnlyList<ExampleTraitEntry> GetExamples(this Shape shape)
+    {
+        try
+        {
+            return DeserializeTrait<List<ExampleTraitEntry>>(shape, "smithy.api#examples") ?? [];
+        }
+        catch (JsonException ex)
+        {
+            // A GeneratorException, so the batch reports the failing service instead of aborting with a stack trace.
+            throw new GeneratorException($"'{shape.Id}' has an invalid smithy.api#examples trait: {ex.Message}", ex);
+        }
+    }
 }

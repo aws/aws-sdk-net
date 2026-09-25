@@ -111,6 +111,44 @@ code references the shape through a member (directly or as a list/map element), 
 class is emitted too, because member properties are typed with the plain class name (C2J parity:
 drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not).
 
+## Doc Samples
+
+`DocSamplesWriter` and `DocSampleMetadataWriter` emit
+`docgenerator/AWSSDKDocSamples/{ServiceName}/{ServiceName}.GeneratedSamples.cs` and
+`{ServiceName}.GeneratedSamples.extra.xml` from `smithy.api#examples`, rendering values as C2J's
+`Example.cs` does but with the SDK's types, so a copied sample compiles once placeholders like `<data>` are
+filled in. Both are written with
+`CodeWriter.ToRawString()`: the samples file is never compiled and can hold placeholders like
+`<binary data>` that the Roslyn formatter would mangle. A service with no examples, or S3 (its samples are
+hand-written), gets no files, so an existing sample file stays as it is; examples the model lacks but C2J
+had are a model gap. Example keys are matched to members (`TypeMapper.ResolveMembers`) ignoring case after
+`CustomizationTransform`, so, as in C2J, a member renamed by `emitPropertyName` (beyond case) drops out of
+the sample. The samples are built before the service's trees are wiped, so a bad example fails the
+service before anything is deleted, and written only once its code has generated.
+
+Differences from C2J:
+
+- Region ids are `{Operation}-{n}` (the trait has no example id). They only link an `.extra.xml` entry to
+  its code. Each is unique, unlike C2J's repeated `example-1`, which made the docs build (it takes the
+  first matching `#region`) show the first sample's code for every later one.
+- Keys are written ordinal-sorted; examples.json's order is sorted for about 92% of objects.
+- Which examples exist, and their order within an operation, follow the trait.
+- examples.json `comments` (C2J's `// comment` after an assignment) are lost: the trait has no such field.
+- Response locals are typed as the response properties are (`int?`, `Stream`, the enum's class); C2J used
+  non-nullable scalars, `MemoryStream` and `string`. Locals that are C# keywords are escaped (`@event`).
+- A timestamp prints its 24-hour time and milliseconds, and a number is read as epoch seconds (or
+  `DateTime.UtcNow` if it's out of range); C2J printed a 12-hour hour, dropped milliseconds and wrote
+  `DateTime.UtcNow` for any number. A fractional `float` gets `f`.
+- A request event stream is omitted: its `Func` publisher property can't be written from example data.
+- A document value renders as `global::Amazon.Runtime.Documents.Document` with its content, using its
+  collection initializer; C2J rendered an empty initializer of a class that doesn't exist.
+- String literals are fully C# escaped, and titles and documentation escape `&`, `<` and `>` (titles also
+  `"`) and drop characters XML 1.0 can't carry; C2J escaped only quotes, so a backslash, newline or `&`
+  produced broken code or XML.
+- The writers' own layout follows `CodeWriter` (platform newlines, 2-space XML indent); documentation text
+  is written as it is. The docs build parses the XML and left-justifies each region, so the rendered docs
+  don't change.
+
 ## Event Streams
 
 Protocol-independent; only the per-event payload (un)marshalling and the response unmarshaller's body

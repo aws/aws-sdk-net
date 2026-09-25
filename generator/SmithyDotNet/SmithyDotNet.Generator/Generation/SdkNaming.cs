@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.RegularExpressions;
+using Microsoft.CodeAnalysis.CSharp;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -60,6 +61,47 @@ public static partial class SdkNaming
         }
 
         return char.ToUpperInvariant(name[0]) + name[1..];
+    }
+
+    /// <summary>
+    /// Reproduces C2J's <c>GeneratorHelpers.CamelCaseParam</c> for parameter and local names: the first
+    /// character is lowercased, or a whole leading acronym (<c>ARNList</c> → <c>arnList</c>), and the C#
+    /// keyword <c>namespace</c> becomes <c>awsNamespace</c>. Any other keyword is escaped (<c>@event</c>),
+    /// where C2J left an invalid name.
+    /// </summary>
+    public static string ToParameterName(string name)
+    {
+        if (name.Length == 0)
+        {
+            return name;
+        }
+
+        string camel;
+        if (name.Length < 2 || (char.IsUpper(name[0]) && char.IsLower(name[1])))
+        {
+            camel = char.ToLowerInvariant(name[0]) + name[1..];
+        }
+        else
+        {
+            var secondWord = 0;
+            for (var i = 0; i < name.Length - 1; i++)
+            {
+                if (char.IsUpper(name[i]) && char.IsLower(name[i + 1]))
+                {
+                    secondWord = i;
+                    break;
+                }
+            }
+
+            camel = secondWord == 0 ? name.ToLowerInvariant() : name[..secondWord].ToLowerInvariant() + name[secondWord..];
+        }
+
+        if (camel == "namespace")
+        {
+            return "awsNamespace";
+        }
+
+        return SyntaxFacts.GetKeywordKind(camel) == SyntaxKind.None ? camel : "@" + camel;
     }
 
     /// <summary>

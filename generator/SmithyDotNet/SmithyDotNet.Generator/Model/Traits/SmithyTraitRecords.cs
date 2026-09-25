@@ -73,6 +73,27 @@ public record DeprecatedTrait : TraitRecord
     public string? Since { get; init; }
 }
 
+/// <summary>
+/// One entry of an operation's <c>smithy.api#examples</c> list (a documentation sample). <c>error</c> and
+/// <c>allowConstraintErrors</c> stay unmapped: C2J renders an error example as a request-only sample.
+/// </summary>
+/// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#examples-trait" /></remarks>
+public record ExampleTraitEntry : TraitRecord
+{
+    [JsonPropertyName("title")]
+    public required string Title { get; init; }
+
+    [JsonPropertyName("documentation")]
+    public string? Documentation { get; init; }
+
+    // Member-name-keyed sample values; Undefined when the example omits input/output.
+    [JsonPropertyName("input")]
+    public JsonElement Input { get; init; }
+
+    [JsonPropertyName("output")]
+    public JsonElement Output { get; init; }
+}
+
 /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#retryable-trait" /></remarks>
 public record RetryableTrait : TraitRecord
 {

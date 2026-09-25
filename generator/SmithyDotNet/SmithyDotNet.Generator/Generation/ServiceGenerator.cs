@@ -8,6 +8,7 @@ using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.EventStreams;
+using SmithyDotNet.Generator.Writers.Examples;
 using SmithyDotNet.Generator.Writers.NuGet;
 using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
@@ -440,6 +441,26 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         return written.Keys.ToList();
     }
 
+    /// <summary>
+    /// Builds the API reference samples, <c>{Service}/{Service}.GeneratedSamples.cs</c> and
+    /// <c>{Service}.GeneratedSamples.extra.xml</c>, with paths relative to the shared
+    /// <c>docgenerator/AWSSDKDocSamples</c> tree; none when the service has no examples.
+    /// </summary>
+    public IReadOnlyList<(string Path, string Contents)> BuildDocSamples()
+    {
+        var samples = DocSamplesWriter.Collect(context);
+        if (samples.Count == 0)
+        {
+            return [];
+        }
+
+        return
+        [
+            (Path.Combine(context.ServiceName, $"{context.ServiceName}.GeneratedSamples.cs"), new DocSamplesWriter(context).Write(samples)),
+            ($"{context.ServiceName}.GeneratedSamples.extra.xml", new DocSampleMetadataWriter(context).Write(samples)),
+        ];
+    }
+
     // Every structure transitively referenced from a request or response (directly or as a list/map
     // element) gets its own (un)marshaller. The parent itself is included when it is self-referencing.
     private IEnumerable<StructureShape> ReferencedStructures(StructureShape parent) =>
@@ -495,7 +516,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         _ => id,
     };
 
-    private static void WriteFile(string outputPath, string relativePath, string contents)
+    internal static void WriteFile(string outputPath, string relativePath, string contents)
     {
         var fullPath = Path.Combine(outputPath, relativePath);
         Directory.CreateDirectory(Path.GetDirectoryName(fullPath) ?? outputPath);

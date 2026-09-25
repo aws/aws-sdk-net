@@ -397,7 +397,7 @@ public static class TypeMapper
     /// nullable (<c>List&lt;bool?&gt;</c>, matching C2J). Everything else maps as in member position
     /// via <see cref="MapType"/>.
     /// </summary>
-    private static string MapCollectionValueType(Shape target, GenerationContext context, bool isSparse) =>
+    internal static string MapCollectionValueType(Shape target, GenerationContext context, bool isSparse) =>
         MapScalarElement(target, isSparse) ?? MapType(target, context);
 
     /// <summary>

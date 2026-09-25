@@ -18,6 +18,25 @@ public class SdkNamingTests
         Assert.Equal(expected, SdkNaming.SanitizeClassName(name));
     }
 
+    // Expected values are C2J's GeneratorHelpers.CamelCaseParam output, except for escaped keywords.
+    [Theory]
+    [InlineData("ItemId", "itemId")]
+    [InlineData("itemId", "itemId")]
+    [InlineData("ARNList", "arnList")]     // leading acronym lowercased whole
+    [InlineData("SSEType", "sseType")]
+    [InlineData("ARN", "arn")]
+    [InlineData("A", "a")]
+    [InlineData("Namespace", "awsNamespace")] // C# keyword
+    [InlineData("namespace", "awsNamespace")]
+    [InlineData("NAMESPACE", "awsNamespace")]
+    [InlineData("Event", "@event")]       // other keywords are escaped, where C2J left them invalid
+    [InlineData("class", "@class")]
+    [InlineData("Value", "value")]         // contextual keywords are valid identifiers
+    public void ToParameterName_MatchesC2J(string name, string expected)
+    {
+        Assert.Equal(expected, SdkNaming.ToParameterName(name));
+    }
+
     [Theory]
     [InlineData("MyService", "example-arn", "example-signing", "example-signing")] // sigv4 name wins
     [InlineData("MyService", "example-arn", null, "example-arn")]                  // falls back to arnNamespace

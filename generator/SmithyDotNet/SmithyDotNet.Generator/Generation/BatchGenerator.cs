@@ -67,8 +67,9 @@ public sealed class BatchGenerator(string repoRoot)
         var generated = new List<string>(matched.Count);
         try
         {
-            // Mirrors the C2J generator's parallelism. Each service writes to disjoint roots and
-            // ServiceGenerator's trackers are concurrent, so no shared state needs guarding.
+            // Mirrors the C2J generator's parallelism. Each service writes to its own roots (and its own files in
+            // the shared doc-samples tree) and ServiceGenerator's trackers are concurrent, so no shared state
+            // needs guarding.
             Parallel.ForEach(
                 matched,
                 new ParallelOptions { MaxDegreeOfParallelism = Environment.ProcessorCount * 2, CancellationToken = ct },
@@ -236,10 +237,25 @@ public sealed class BatchGenerator(string repoRoot)
                 : versionManifest.GetServiceVersion(context.ServiceName);
             var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
 
+            // Built before the wipe, so a bad example fails the service before anything is deleted, but written only
+            // once the service's code has generated. Test services never ship samples.
+            IReadOnlyList<(string Path, string Contents)> docSamples = service.IsTestService ? [] : generator.BuildDocSamples();
+
             WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot, service.IsTestService);
 
             var written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
             Log.Info($"Generated {written.Count} files for {service.Name} under '{Relative(sourceRoot)}'.");
+
+            var docSamplesRoot = SdkTreeLayout.DocSamplesRoot(repoRoot);
+            foreach (var (path, contents) in docSamples)
+            {
+                ServiceGenerator.WriteFile(docSamplesRoot, path, contents);
+            }
+
+            if (docSamples.Count > 0)
+            {
+                Log.Info($"Generated {docSamples.Count} doc sample files for {service.Name} under '{Relative(docSamplesRoot)}'.");
+            }
         }
         catch (GeneratorException ex)
         {

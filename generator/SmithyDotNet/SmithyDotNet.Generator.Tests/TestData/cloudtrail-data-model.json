@@ -845,7 +845,15 @@
         "smithy.api#http": {
           "uri": "/PutAuditEvents",
           "method": "POST"
-        }
+        },
+        "smithy.api#examples": [
+          {
+            "title": "Put events",
+            "input": {
+              "channelArn": "arn"
+            }
+          }
+        ]
       }
     },
     "com.amazonaws.cloudtraildata#PutAuditEventsRequest": {

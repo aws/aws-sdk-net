@@ -1,0 +1,25 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example_20230101": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoThing" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#awsJson1_0": {},
+        "smithy.api#title": "Example"
+      }
+    },
+    "com.example#DoThing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#examples": [{ "input": {} }]
+      }
+    }
+  }
+}
