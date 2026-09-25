@@ -45,12 +45,12 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private final String serviceName;
     private String marshallerType;
     private final String serviceNamespace;
-    // Services whose request tests are generated to call the service client end-to-end
-    // (await client.OperationAsync(request)) against a mocked HTTP layer instead of RunMockRequest.
-    private static final Set<ShapeId> CLIENT_REQUEST_TEST_SERVICES = Set.of(
+    // Services whose request, response and error tests are generated to call the service client end-to-end
+    // (await client.OperationAsync(request)) against a mocked HTTP layer.
+    private static final Set<ShapeId> MOCKED_CLIENT_SERVICES = Set.of(
             ShapeId.from("aws.protocoltests.json10#JsonRpc10")
     );
-    private final boolean useClientRequestTests;
+    private final boolean useMockedClient;
 
     public HttpProtocolTestGenerator(
             DotnetGenerationContext context
@@ -68,7 +68,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             serviceNamespace = service.getTrait(TitleTrait.class).get().getValue().replace("Service", "");
 
         this.serviceNamespace = serviceNamespace.replace(" ", "");
-        this.useClientRequestTests = CLIENT_REQUEST_TEST_SERVICES.contains(service.getId());
+        this.useMockedClient = MOCKED_CLIENT_SERVICES.contains(service.getId());
     }
 
     @Override
@@ -130,7 +130,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"ErrorTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
-        if (useClientRequestTests) {
+        if (useMockedClient) {
             writer.addImport(serviceName, "System.Threading.Tasks");
             writer.openBlock("public async Task $LErrorResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
                 generateErrorResponseTestBlockV2(operation, error, httpResponseTestCase);
@@ -146,7 +146,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     /**
      * Generates an error test that returns the test case's HTTP error response from a mocked HTTP layer and
      * asserts that the real service client (await client.OperationAsync(request)) throws the modeled exception.
-     * Currently only used for services in CLIENT_REQUEST_TEST_SERVICES.
+     * Currently only used for services in MOCKED_CLIENT_SERVICES.
      */
     private void generateErrorResponseTestBlockV2(OperationShape operation, StructureShape error, HttpResponseTestCase httpResponseTestCase) {
         var operationName = operation.getId().getName();
@@ -234,7 +234,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"RequestTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
-        if (useClientRequestTests) {
+        if (useMockedClient) {
             writer.addImport(serviceName, "System.Threading.Tasks");
             writer.openBlock("public async Task $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
                 generateRequestTestBlockV2(operation, httpRequestTestCase);
@@ -250,7 +250,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     /**
      * Generates a request test that sends the request through the real service client
      * (await client.OperationAsync(request)) with a mocked HTTP layer, and asserts on the
-     * HTTP request captured by the mock. Currently only used for services in CLIENT_REQUEST_TEST_SERVICES.
+     * HTTP request captured by the mock. Currently only used for services in MOCKED_CLIENT_SERVICES.
      */
     private void generateRequestTestBlockV2(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
         var params = httpRequestTestCase.getParams();
@@ -337,7 +337,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
             writer.write("JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);");
         } else {
-            throw new CodegenException("Client based request tests are only supported for JSON protocols.");
+            throw new CodegenException("Mocked client request tests are only supported for JSON protocols.");
         }
     }
 
@@ -476,7 +476,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"ResponseTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
-        if (useClientRequestTests) {
+        if (useMockedClient) {
             writer.addImport(serviceName, "System.Threading.Tasks");
             writer.openBlock("public async Task $LResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
                 generateResponseTestBlockV2(operation, httpResponseTestCase);
@@ -492,7 +492,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     /**
      * Generates a response test that returns the test case's HTTP response from a mocked HTTP layer and
      * unmarshalls it through the real service client (await client.OperationAsync(request)).
-     * Currently only used for services in CLIENT_REQUEST_TEST_SERVICES.
+     * Currently only used for services in MOCKED_CLIENT_SERVICES.
      */
     private void generateResponseTestBlockV2(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
         var outputShape = model.expectShape(operation.getOutputShape(), StructureShape.class);
