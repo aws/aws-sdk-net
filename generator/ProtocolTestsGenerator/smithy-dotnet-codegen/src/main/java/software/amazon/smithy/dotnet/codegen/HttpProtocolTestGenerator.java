@@ -45,6 +45,12 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private final String serviceName;
     private String marshallerType;
     private final String serviceNamespace;
+    // Services whose request tests are generated to call the service client end-to-end
+    // (await client.OperationAsync(request)) against a mocked HTTP layer instead of RunMockRequest.
+    private static final Set<ShapeId> CLIENT_REQUEST_TEST_SERVICES = Set.of(
+            ShapeId.from("aws.protocoltests.json10#JsonRpc10")
+    );
+    private final boolean useClientRequestTests;
 
     public HttpProtocolTestGenerator(
             DotnetGenerationContext context
@@ -62,6 +68,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             serviceNamespace = service.getTrait(TitleTrait.class).get().getValue().replace("Service", "");
 
         this.serviceNamespace = serviceNamespace.replace(" ", "");
+        this.useClientRequestTests = CLIENT_REQUEST_TEST_SERVICES.contains(service.getId());
     }
 
     @Override
@@ -123,10 +130,54 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"ErrorTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
-        writer.openBlock("public void $LErrorResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
-            generateErrorResponseTestBlock(operation, error, httpResponseTestCase);
-        });
+        if (useClientRequestTests) {
+            writer.addImport(serviceName, "System.Threading.Tasks");
+            writer.openBlock("public async Task $LErrorResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
+                generateErrorResponseTestBlockV2(operation, error, httpResponseTestCase);
+            });
+        } else {
+            writer.openBlock("public void $LErrorResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
+                generateErrorResponseTestBlock(operation, error, httpResponseTestCase);
+            });
+        }
         writer.write("\n");
+    }
+
+    /**
+     * Generates an error test that returns the test case's HTTP error response from a mocked HTTP layer and
+     * asserts that the real service client (await client.OperationAsync(request)) throws the modeled exception.
+     * Currently only used for services in CLIENT_REQUEST_TEST_SERVICES.
+     */
+    private void generateErrorResponseTestBlockV2(OperationShape operation, StructureShape error, HttpResponseTestCase httpResponseTestCase) {
+        var operationName = operation.getId().getName();
+        var errorSymbol = error.getId().getName() + "Exception";
+        writer.addImport(serviceName, "System.Net", "HttpStatusCode");
+        //Arrange
+        writer.writeSingleLineComment("Arrange");
+        // Retries are disabled so retryable error codes (e.g. 5xx) surface immediately instead of being re-sent.
+        writer.write("""
+                     var config = new $L
+                     {
+                       ServiceURL = "https://test.com/",
+                       MaxErrorRetry = 0,
+                     };
+                     """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace));
+        writer.write("using var client = new $L(MockHttpClientUtils.TestCredentials, config);",
+                ProtocolTestUtils.getProtocolClient(this.serviceNamespace));
+        arrangeMockHttpResponse(httpResponseTestCase);
+        writer.write("MockHttpClientUtils.InjectMockHttp(client, mockResponse);");
+        writer.write("\n");
+        //Act
+        writer.writeSingleLineComment("Act");
+        // See generateResponseTestBlockV2 for why an empty request is used.
+        writer.write("var errorResponse = await Assert.ThrowsExactlyAsync<$L>(() => client.$LAsync(new $LRequest())).ConfigureAwait(false);",
+                errorSymbol, operationName, operationName);
+        writer.write("\n");
+        //Assert
+        writer.writeSingleLineComment("Assert");
+        // TODO: Assert exception params. Since exceptions don't take a paramterless constructure there is not simple way to implement
+        // this without dramatic alterations to the value node visitor
+        writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), errorResponse.StatusCode);", httpResponseTestCase.getCode());
     }
 
     private void generateErrorResponseTestBlock(OperationShape operation, StructureShape error, HttpResponseTestCase httpResponseTestCase) {
@@ -180,14 +231,114 @@ public final class HttpProtocolTestGenerator implements Runnable {
             writer.writeXmlDocs(httpRequestTestCase.getDocumentation().get());
         }
         writer.write("[TestMethod]");
-
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"RequestTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
-        writer.openBlock("public void $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
-            generateRequestTestBlock(operation, httpRequestTestCase);
-        });
+        if (useClientRequestTests) {
+            writer.addImport(serviceName, "System.Threading.Tasks");
+            writer.openBlock("public async Task $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
+                generateRequestTestBlockV2(operation, httpRequestTestCase);
+            });
+        } else {
+            writer.openBlock("public void $LRequest()\n{", "}", httpRequestTestCase.getId(), () -> {
+                generateRequestTestBlock(operation, httpRequestTestCase);
+            });
+        }
         writer.write("\n");
+    }
+
+    /**
+     * Generates a request test that sends the request through the real service client
+     * (await client.OperationAsync(request)) with a mocked HTTP layer, and asserts on the
+     * HTTP request captured by the mock. Currently only used for services in CLIENT_REQUEST_TEST_SERVICES.
+     */
+    private void generateRequestTestBlockV2(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
+        var params = httpRequestTestCase.getParams();
+        var inputShape = model.expectShape(operation.getInputShape(), StructureShape.class);
+        var operationName = operation.getId().getName();
+
+        String inputShapeName = operationName + "Request";
+        writer.writeSingleLineComment("Arrange");
+        writer.openBlock("var request = new $L\n{", "};", inputShapeName, (Runnable) () -> params.accept(new ValueNodeVisitor(inputShape, true, inputShapeName)));
+        var hostList = httpRequestTestCase.getHost().orElse("test.com").split("/", 2);
+        var host = hostList[0];
+        var resolvedHost = httpRequestTestCase.getResolvedHost().map(x -> x.split("/", 2)[0]).orElse(host);
+        String path;
+        if (hostList.length != 1) {
+            path = hostList[1];
+        } else {
+            path = "";
+        }
+
+        // Retries are disabled so a test fails fast instead of re-sending the request.
+        writer.write("""
+                     var config = new $L
+                     {
+                       ServiceURL = "https://$L/$L",
+                       MaxErrorRetry = 0,
+                     };
+                     """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace), host, path);
+        writer.write("using var client = new $L(MockHttpClientUtils.TestCredentials, config);",
+                ProtocolTestUtils.getProtocolClient(this.serviceNamespace));
+        // Request tests only assert on what was sent, so any response the unmarshaller accepts will do.
+        writer.write("""
+                     var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+                     {
+                         ContentType = "application/json",
+                         Body = Encoding.UTF8.GetBytes("{}"),
+                     });
+                     """);
+        writer.writeSingleLineComment("Act");
+        writer.write("await client.$LAsync(request).ConfigureAwait(false);", operationName);
+        writer.write("var actualRequest = mockHttp.LastCreatedRequest;");
+        writer.write("\n");
+        writer.writeSingleLineComment("Assert");
+        if (httpRequestTestCase.getBody().isPresent() && !httpRequestTestCase.getBody().get().equals("")) {
+            assertRequestBodyV2(httpRequestTestCase);
+        }
+        writer.write("Assert.AreEqual($S, actualRequest.Method);", httpRequestTestCase.getMethod());
+        // We compare with the OriginalString here because in .NET the Uri class sends some special characters decoded. We're only
+        // interested in the original encoded string that the sdk internals calculated
+        writer.write("Assert.AreEqual($S, ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));", httpRequestTestCase.getUri());
+        if (httpRequestTestCase.getResolvedHost().isPresent()) {
+            writer.write("Assert.AreEqual($S, actualRequest.RequestUri.Host);", resolvedHost);
+        }
+        var headers = httpRequestTestCase.getHeaders();
+        for (var header : headers.keySet()) {
+            // We are relaxing our assert here so that "1, 2, 3" = "1,2,3" There is nothing in the smithy docs that says whitespace matters.
+            writer.write("Assert.AreEqual($S.Replace(\" \",\"\"), actualRequest.Headers[$S].Replace(\" \",\"\"));", headers.get(header), header);
+        }
+        // Unlike RunMockRequest, the request has gone through the HttpHandler, so headers it computes
+        // such as Content-Length can be asserted as well.
+        for (var requireHeader : httpRequestTestCase.getRequireHeaders()) {
+            writer.write("Assert.IsTrue(actualRequest.Headers.ContainsKey($S));", requireHeader);
+        }
+        for (var forbidHeader : httpRequestTestCase.getForbidHeaders()) {
+            writer.write("Assert.IsFalse(actualRequest.Headers.ContainsKey($S));", forbidHeader);
+        }
+        if (!httpRequestTestCase.getQueryParams().isEmpty()
+                || !httpRequestTestCase.getForbidQueryParams().isEmpty()
+                || !httpRequestTestCase.getRequireQueryParams().isEmpty()) {
+            writer.write("var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualRequest.RequestUri);");
+            for (var queryParam : httpRequestTestCase.getQueryParams()) {
+                writer.write("Assert.IsTrue(actualQuerySegments.Contains($S));", queryParam);
+            }
+            for (var forbidQueryParam : httpRequestTestCase.getForbidQueryParams()) {
+                writer.write("Assert.IsFalse(actualQuerySegments.Contains($S));", forbidQueryParam);
+            }
+            for (var requireQueryParam : httpRequestTestCase.getRequireQueryParams()) {
+                writer.write("Assert.IsTrue(actualQuerySegments.Contains($S));", requireQueryParam);
+            }
+        }
+    }
+
+    private void assertRequestBodyV2(HttpRequestTestCase httpRequestTestCase) {
+        if (this.marshallerType.equals("Json")) {
+            writer.write("var expectedBody = $S;", httpRequestTestCase.getBody());
+            writer.write("JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);");
+        } else {
+            throw new CodegenException("Client based request tests are only supported for JSON protocols.");
+        }
     }
 
     private void generateRequestTestBlock(OperationShape operation, HttpRequestTestCase httpRequestTestCase) {
@@ -325,10 +476,69 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("[TestCategory(\"ProtocolTest\")]");
         writer.write("[TestCategory(\"ResponseTest\")]");
         writer.write("[TestCategory(\"$L\")]", serviceName);
-        writer.openBlock("public void $LResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
-            generateResponseTestBlock(operation, httpResponseTestCase);
-        });
+        if (useClientRequestTests) {
+            writer.addImport(serviceName, "System.Threading.Tasks");
+            writer.openBlock("public async Task $LResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
+                generateResponseTestBlockV2(operation, httpResponseTestCase);
+            });
+        } else {
+            writer.openBlock("public void $LResponse()\n{", "}", httpResponseTestCase.getId(), () -> {
+                generateResponseTestBlock(operation, httpResponseTestCase);
+            });
+        }
         writer.write("\n");
+    }
+
+    /**
+     * Generates a response test that returns the test case's HTTP response from a mocked HTTP layer and
+     * unmarshalls it through the real service client (await client.OperationAsync(request)).
+     * Currently only used for services in CLIENT_REQUEST_TEST_SERVICES.
+     */
+    private void generateResponseTestBlockV2(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {
+        var outputShape = model.expectShape(operation.getOutputShape(), StructureShape.class);
+        var operationName = operation.getId().getName();
+        var responseSymbol = operationName + "Response";
+        writer.addImport(serviceName, "System.Net", "HttpStatusCode");
+        //Arrange
+        writer.writeSingleLineComment("Arrange");
+        writer.write("""
+                     var config = new $L
+                     {
+                       ServiceURL = "https://test.com/",
+                       MaxErrorRetry = 0,
+                     };
+                     """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace));
+        writer.write("using var client = new $L(MockHttpClientUtils.TestCredentials, config);",
+                ProtocolTestUtils.getProtocolClient(this.serviceNamespace));
+        arrangeMockHttpResponse(httpResponseTestCase);
+        writer.write("MockHttpClientUtils.InjectMockHttp(client, mockResponse);");
+        writer.write("\n");
+        //Act
+        writer.writeSingleLineComment("Act");
+        // Response test cases don't define input params. This is fine for protocols without URI or host labels,
+        // but required label members will need placeholder values before this is used for REST protocols.
+        writer.write("var actualResponse = await client.$LAsync(new $LRequest()).ConfigureAwait(false);", operationName, operationName);
+        writer.openBlock("var expectedResponse = new $L\n{", "};", responseSymbol, (Runnable) () -> httpResponseTestCase.getParams().accept(new ValueNodeVisitor(outputShape, true, responseSymbol)));
+        writer.write("\n");
+        //Assert
+        writer.writeSingleLineComment("Assert");
+        writer.write("Comparer.CompareObjects<$L>(expectedResponse,actualResponse);", responseSymbol);
+        writer.write("Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L), actualResponse.HttpStatusCode);", httpResponseTestCase.getCode());
+    }
+
+    private void arrangeMockHttpResponse(HttpResponseTestCase httpResponseTestCase) {
+        writer.write("var mockResponse = new MockHttpResponse");
+        writer.write("{");
+        writer.write("    StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), $L),", httpResponseTestCase.getCode());
+        // this is only used for json protocols for now but future-proofing
+        if (this.marshallerType.equals("Cbor"))
+            writer.write("    Body = Convert.FromBase64String($S),", httpResponseTestCase.getBody());
+        else
+            writer.write("    Body = Encoding.ASCII.GetBytes($S),", httpResponseTestCase.getBody());
+        writer.write("};");
+        for (var header : httpResponseTestCase.getHeaders().keySet()) {
+            writer.write("mockResponse.Headers[$S] = $S;", header, httpResponseTestCase.getHeaders().get(header));
+        }
     }
 
     private void generateResponseTestBlock(OperationShape operation, HttpResponseTestCase httpResponseTestCase) {

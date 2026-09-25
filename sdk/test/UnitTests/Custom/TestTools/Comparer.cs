@@ -36,6 +36,10 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             "Amazon.DynamoDBv2.Model.AttributeValue.IsBOOLSet",
             "Amazon.DynamoDBv2.Model.AttributeValue.IsLSet",
             "Amazon.DynamoDBv2.Model.AttributeValue.IsMSet",
+            // Populated by the SDK pipeline rather than the unmarshaller, so they aren't part of the modeled response.
+            "Amazon.Runtime.AmazonWebServiceResponse.ResponseMetadata",
+            "Amazon.Runtime.AmazonWebServiceResponse.ContentLength",
+            "Amazon.Runtime.AmazonWebServiceResponse.HttpStatusCode",
         };
 
         public static void CompareObjects<T>(T x, T y)

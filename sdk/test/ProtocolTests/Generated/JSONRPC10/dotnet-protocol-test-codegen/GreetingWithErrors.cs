@@ -34,6 +34,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonRpc10
 {
@@ -47,20 +48,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10InvalidGreetingErrorErrorResponse()
+        public async Task AwsJson10InvalidGreetingErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#InvalidGreeting\",\n    \"Message\": \"Hi\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#InvalidGreeting\",\n    \"Message\": \"Hi\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<InvalidGreetingException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(InvalidGreetingException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -70,20 +80,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10ComplexErrorErrorResponse()
+        public async Task AwsJson10ComplexErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#ComplexError\",\n    \"TopLevel\": \"Top level\",\n    \"Nested\": {\n        \"Foo\": \"bar\"\n    }\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#ComplexError\",\n    \"TopLevel\": \"Top level\",\n    \"Nested\": {\n        \"Foo\": \"bar\"\n    }\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<ComplexErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -93,20 +112,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10EmptyComplexErrorErrorResponse()
+        public async Task AwsJson10EmptyComplexErrorErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#ComplexError\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#ComplexError\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            var errorResponse = await Assert.ThrowsExactlyAsync<ComplexErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(ComplexErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 400), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -117,20 +145,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorUsingXAmznErrorTypeErrorResponse()
+        public async Task AwsJson10FooErrorUsingXAmznErrorTypeErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["X-Amzn-Errortype"] = "FooError";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Amzn-Errortype"] = "FooError";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -145,20 +182,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorUsingXAmznErrorTypeWithUriErrorResponse()
+        public async Task AwsJson10FooErrorUsingXAmznErrorTypeWithUriErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["X-Amzn-Errortype"] = "FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Amzn-Errortype"] = "FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -170,20 +216,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorUsingXAmznErrorTypeWithUriAndNamespaceErrorResponse()
+        public async Task AwsJson10FooErrorUsingXAmznErrorTypeWithUriAndNamespaceErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["X-Amzn-Errortype"] = "aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
-            byte[] bytes = Encoding.ASCII.GetBytes("");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes(""),
+            };
+            mockResponse.Headers["X-Amzn-Errortype"] = "aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -197,20 +252,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorUsingCodeErrorResponse()
+        public async Task AwsJson10FooErrorUsingCodeErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"FooError\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"code\": \"FooError\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -222,20 +286,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorUsingCodeAndNamespaceErrorResponse()
+        public async Task AwsJson10FooErrorUsingCodeAndNamespaceErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.json10#FooError\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.json10#FooError\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -249,20 +322,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorUsingCodeUriAndNamespaceErrorResponse()
+        public async Task AwsJson10FooErrorUsingCodeUriAndNamespaceErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"code\": \"aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -272,20 +354,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorWithDunderTypeErrorResponse()
+        public async Task AwsJson10FooErrorWithDunderTypeErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"FooError\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"FooError\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -297,20 +388,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorWithDunderTypeAndNamespaceErrorResponse()
+        public async Task AwsJson10FooErrorWithDunderTypeAndNamespaceErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#FooError\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#FooError\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -324,20 +424,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorWithDunderTypeUriAndNamespaceErrorResponse()
+        public async Task AwsJson10FooErrorWithDunderTypeUriAndNamespaceErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
@@ -351,20 +460,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorWithNestedTypePropertyErrorResponse()
+        public async Task AwsJson10FooErrorWithNestedTypePropertyErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = "https://test.com/",
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.protocoltests.json10#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
     }
