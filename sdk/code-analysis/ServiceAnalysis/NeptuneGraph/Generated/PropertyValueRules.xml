@@ -445,6 +445,10 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NeptuneGraph.Model.ListImportTasksRequest.GraphIdentifier</property>
+    <pattern>g-[a-z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ListImportTasksRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
