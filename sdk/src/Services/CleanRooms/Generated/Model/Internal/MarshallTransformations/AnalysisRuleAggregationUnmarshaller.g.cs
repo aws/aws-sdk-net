@@ -1,0 +1,122 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.CleanRooms.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AnalysisRuleAggregation Object
+    /// </summary>
+    public partial class AnalysisRuleAggregationUnmarshaller : IJsonUnmarshaller<AnalysisRuleAggregation, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public AnalysisRuleAggregation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new AnalysisRuleAggregation();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("additionalAnalyses", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AdditionalAnalyses = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("aggregateColumns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AggregateColumn, AggregateColumnUnmarshaller>(AggregateColumnUnmarshaller.Instance);
+                    unmarshalledObject.AggregateColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("allowedJoinOperators", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedJoinOperators = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("dimensionColumns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DimensionColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("joinColumns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.JoinColumns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("joinRequired", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.JoinRequired = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("outputConstraints", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AggregationConstraint, AggregationConstraintUnmarshaller>(AggregationConstraintUnmarshaller.Instance);
+                    unmarshalledObject.OutputConstraints = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("scalarFunctions", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ScalarFunctions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static AnalysisRuleAggregationUnmarshaller _instance = new AnalysisRuleAggregationUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static AnalysisRuleAggregationUnmarshaller Instance => _instance;
+    }
+}

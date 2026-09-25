@@ -17,7 +17,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateApplicationResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateApplicationResponse.Name</property>
@@ -57,11 +57,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.Type</property>
-    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Description</property>
@@ -70,13 +70,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.KmsKeyIdentifier</property>
@@ -101,7 +101,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Type</property>
-    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -150,7 +150,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateDeploymentStrategyResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateDeploymentStrategyResponse.Name</property>
@@ -174,7 +174,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentResponse.Description</property>
@@ -183,7 +183,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentResponse.Name</property>
@@ -217,7 +217,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.FlagKey</property>
-    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.Hypothesis</property>
@@ -235,7 +235,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.AudienceDescription</property>
@@ -249,15 +249,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.FlagKey</property>
-    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.Hypothesis</property>
@@ -266,7 +266,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.KmsKeyIdentifier</property>
@@ -296,7 +296,7 @@
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Description</property>
@@ -305,7 +305,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionResponse.Name</property>
@@ -326,13 +326,13 @@
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.Id</property>
@@ -343,7 +343,7 @@
     <property>Amazon.AppConfig.Model.CreateExtensionAssociationResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ApplicationId</property>
@@ -373,11 +373,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ContentType</property>
@@ -393,7 +393,7 @@
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.VersionLabel</property>
@@ -418,7 +418,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteDeploymentStrategyRequest.DeploymentStrategyId</property>
-    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
+    <pattern>^(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteEnvironmentRequest.ApplicationId</property>
@@ -447,7 +447,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteExtensionAssociationRequest.ExtensionAssociationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest.ApplicationId</property>
@@ -471,7 +471,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetApplicationResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetApplicationResponse.Name</property>
@@ -520,7 +520,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.Description</property>
@@ -529,13 +529,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.KmsKeyIdentifier</property>
@@ -560,7 +560,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.Type</property>
-    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentRequest.ApplicationId</property>
@@ -574,7 +574,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.ConfigurationLocationUri</property>
@@ -588,7 +588,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.ConfigurationVersion</property>
@@ -602,7 +602,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.DeploymentStrategyId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.Description</property>
@@ -611,7 +611,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.FinalBakeTimeInMinutes</property>
@@ -627,7 +627,7 @@
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.KmsKeyIdentifier</property>
@@ -647,7 +647,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyRequest.DeploymentStrategyId</property>
-    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
+    <pattern>^(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyResponse.DeploymentDurationInMinutes</property>
@@ -671,7 +671,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentStrategyResponse.Name</property>
@@ -690,7 +690,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.Description</property>
@@ -699,7 +699,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.Name</property>
@@ -718,7 +718,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.AudienceDescription</property>
@@ -732,15 +732,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.FlagKey</property>
-    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.Hypothesis</property>
@@ -749,7 +749,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.KmsKeyIdentifier</property>
@@ -782,7 +782,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentRunResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentRunResponse.Description</property>
@@ -791,7 +791,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentRunResponse.ExperimentDefinitionId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExperimentRunResponse.ExposurePercentage</property>
@@ -807,7 +807,7 @@
     <property>Amazon.AppConfig.Model.GetExtensionResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionResponse.Description</property>
@@ -816,7 +816,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionResponse.Name</property>
@@ -825,19 +825,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionAssociationRequest.ExtensionAssociationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.Id</property>
@@ -848,7 +848,7 @@
     <property>Amazon.AppConfig.Model.GetExtensionAssociationResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest.ApplicationId</property>
@@ -862,11 +862,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ContentType</property>
@@ -882,7 +882,7 @@
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.VersionLabel</property>
@@ -922,10 +922,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesRequest.Type</property>
-    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListDeploymentStrategiesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListDeploymentStrategiesRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListDeploymentStrategiesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -951,21 +966,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListDeploymentsResponse.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppConfig.Model.ListDeploymentStrategiesRequest.MaxResults</property>
-    <min>1</min>
-    <max>50</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppConfig.Model.ListDeploymentStrategiesRequest.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.AppConfig.Model.ListDeploymentStrategiesResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -1092,7 +1092,7 @@
     <property>Amazon.AppConfig.Model.ListExtensionAssociationsRequest.ResourceIdentifier</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListExtensionAssociationsResponse.NextToken</property>
@@ -1153,7 +1153,7 @@
     <property>Amazon.AppConfig.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.ApplicationId</property>
@@ -1172,7 +1172,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.DeploymentStrategyId</property>
-    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
+    <pattern>^(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.Description</property>
@@ -1191,7 +1191,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ConfigurationLocationUri</property>
@@ -1205,7 +1205,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.ConfigurationVersion</property>
@@ -1219,7 +1219,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.DeploymentStrategyId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.Description</property>
@@ -1228,7 +1228,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.FinalBakeTimeInMinutes</property>
@@ -1244,7 +1244,7 @@
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentResponse.KmsKeyIdentifier</property>
@@ -1284,7 +1284,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartExperimentRunResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartExperimentRunResponse.Description</property>
@@ -1293,7 +1293,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartExperimentRunResponse.ExperimentDefinitionId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartExperimentRunResponse.ExposurePercentage</property>
@@ -1312,7 +1312,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.ConfigurationLocationUri</property>
@@ -1326,7 +1326,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.ConfigurationVersion</property>
@@ -1340,7 +1340,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.DeploymentStrategyId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.Description</property>
@@ -1349,7 +1349,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.FinalBakeTimeInMinutes</property>
@@ -1365,7 +1365,7 @@
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.KmsKeyIdentifier</property>
@@ -1399,7 +1399,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopExperimentRunResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopExperimentRunResponse.Description</property>
@@ -1408,7 +1408,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopExperimentRunResponse.ExperimentDefinitionId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopExperimentRunResponse.ExposurePercentage</property>
@@ -1419,13 +1419,13 @@
     <property>Amazon.AppConfig.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateApplicationRequest.ApplicationId</property>
@@ -1449,7 +1449,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateApplicationResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateApplicationResponse.Name</property>
@@ -1489,7 +1489,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Description</property>
@@ -1498,13 +1498,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.KmsKeyIdentifier</property>
@@ -1529,7 +1529,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Type</property>
-    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -1538,7 +1538,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.DeploymentStrategyId</property>
-    <pattern>(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)</pattern>
+    <pattern>^(^[a-z0-9]{4,7}$|^AppConfig\.[A-Za-z0-9]{9,40}$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.Description</property>
@@ -1577,7 +1577,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyResponse.Name</property>
@@ -1606,7 +1606,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentResponse.Description</property>
@@ -1615,7 +1615,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentResponse.Name</property>
@@ -1654,7 +1654,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.AudienceDescription</property>
@@ -1668,15 +1668,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.FlagKey</property>
-    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.Hypothesis</property>
@@ -1685,7 +1685,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.KmsKeyIdentifier</property>
@@ -1728,7 +1728,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.Description</property>
@@ -1737,7 +1737,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.ExperimentDefinitionId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.ExposurePercentage</property>
@@ -1758,7 +1758,7 @@
     <property>Amazon.AppConfig.Model.UpdateExtensionResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionResponse.Description</property>
@@ -1767,7 +1767,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionResponse.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionResponse.Name</property>
@@ -1776,19 +1776,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationRequest.ExtensionAssociationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.Id</property>
@@ -1799,7 +1799,7 @@
     <property>Amazon.AppConfig.Model.UpdateExtensionAssociationResponse.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ValidateConfigurationRequest.ApplicationId</property>
@@ -1830,7 +1830,7 @@
     <property>Amazon.AppConfig.Model.Action.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Action.Uri</property>
@@ -1849,13 +1849,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ActionInvocation.InvocationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ActionInvocation.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ActionInvocation.Uri</property>
@@ -1864,11 +1864,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.AppliedExtension.ExtensionAssociationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.AppliedExtension.ExtensionId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.AttributeValue.StringValue</property>
@@ -1877,11 +1877,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.LocationUri</property>
@@ -1895,7 +1895,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.Type</property>
-    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeletionProtectionSettings.ProtectionPeriodInMinutes</property>
@@ -1914,7 +1914,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationVersion</property>
@@ -1949,7 +1949,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.AudienceDescription</property>
@@ -1963,15 +1963,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.FlagKey</property>
-    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.Hypothesis</property>
@@ -1980,7 +1980,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.LaunchCriteria</property>
@@ -1994,19 +1994,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.FlagKey</property>
-    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.Hypothesis</property>
@@ -2015,7 +2015,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.Name</property>
@@ -2026,7 +2026,7 @@
     <property>Amazon.AppConfig.Model.ExperimentRunEvent.AssociatedDeployment</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentRunEvent.Description</property>
@@ -2060,13 +2060,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExperimentRunSummary.ExperimentDefinitionId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ExtensionArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.Id</property>
@@ -2077,13 +2077,13 @@
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionSummary.Description</property>
@@ -2092,7 +2092,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionSummary.Id</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionSummary.Name</property>
@@ -2101,11 +2101,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <pattern>^[a-z0-9]{4,7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.ContentType</property>
@@ -2121,7 +2121,7 @@
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.KmsKeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.VersionLabel</property>
@@ -2152,7 +2152,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Treatment.Key</property>
-    <pattern>^[a-zA-Z0-9]{1,8}</pattern>
+    <pattern>^[a-zA-Z0-9]{1,8}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Treatment.Weight</property>

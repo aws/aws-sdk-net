@@ -1,0 +1,150 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.IoTWireless.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for WirelessDeviceImportTask Object
+    /// </summary>
+    public partial class WirelessDeviceImportTaskUnmarshaller : IJsonUnmarshaller<WirelessDeviceImportTask, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public WirelessDeviceImportTask Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new WirelessDeviceImportTask();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("Arn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DestinationName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DestinationName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("FailedImportedDeviceCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.FailedImportedDeviceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Id", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("InitializedImportedDeviceCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.InitializedImportedDeviceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("OnboardedImportedDeviceCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.OnboardedImportedDeviceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PendingImportedDeviceCount", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.PendingImportedDeviceCount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Positioning", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Sidewalk", targetDepth, ref reader))
+                {
+                    var unmarshaller = SidewalkGetStartImportInfoUnmarshaller.Instance;
+                    unmarshalledObject.Sidewalk = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Status", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StatusReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static WirelessDeviceImportTaskUnmarshaller _instance = new WirelessDeviceImportTaskUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static WirelessDeviceImportTaskUnmarshaller Instance => _instance;
+    }
+}

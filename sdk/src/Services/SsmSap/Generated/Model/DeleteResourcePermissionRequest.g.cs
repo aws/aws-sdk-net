@@ -1,0 +1,78 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SsmSap.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DeleteResourcePermission operation. Removes permissions
+    /// associated with the target database.
+    /// </summary>
+    public partial class DeleteResourcePermissionRequest : AmazonSsmSapRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ActionType. 
+        /// <para>
+        /// Delete or restore the permissions on the target database.
+        /// </para>
+        /// </summary>
+        public PermissionActionType ActionType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActionType property is set.
+        /// </summary>
+        internal bool IsSetActionType() => this.ActionType != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property SourceResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the source resource.
+        /// </para>
+        /// </summary>
+        public string SourceResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SourceResourceArn property is set.
+        /// </summary>
+        internal bool IsSetSourceResourceArn() => this.SourceResourceArn != null;
+    }
+}

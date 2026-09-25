@@ -1,0 +1,292 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.LocationService.Model
+{
+    /// <summary>
+    /// Container for the parameters to the SearchPlaceIndexForSuggestions operation. <important>
+    /// <para> This operation is no longer current and may be deprecated in the future. We
+    /// recommend you upgrade to <a href="/location/latest/APIReference/API_geoplaces_Suggest.html">
+    /// <c>Suggest</c> </a> or <a href="/location/latest/APIReference/API_geoplaces_Autocomplete.html">
+    /// <c>Autocomplete</c> </a> unless you require Grab data. </para> <ul> <li> <para> <c>SearchPlaceIndexForSuggestions</c>
+    /// is part of a previous Amazon Location Service Places API (version 1) which has been
+    /// superseded by a more intuitive, powerful, and complete API (version 2). </para> </li>
+    /// <li> <para> The version 2 <c>Suggest</c> operation gives better results for typeahead
+    /// place search suggestions with fuzzy matching, while the version 2 <c>Autocomplete</c>
+    /// operation gives better results for address completion based on partial input. </para>
+    /// </li> <li> <para> If you are using an Amazon Web Services SDK or the Amazon Web Services
+    /// CLI, note that the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>,
+    /// not under <c>location</c>. </para> </li> <li> <para> Since Grab is not yet fully supported
+    /// in Places API version 2, we recommend you continue using API version 1 when using
+    /// Grab. </para> </li> </ul> </important> <para> Generates suggestions for addresses
+    /// and points of interest based on partial or misspelled free-form text. This operation
+    /// is also known as autocomplete, autosuggest, or fuzzy matching. </para> <para> Optional
+    /// parameters let you narrow your search results by bounding box or country, or bias
+    /// your search toward a specific position on the globe. </para> <note> <para> You can
+    /// search for suggested place names near a specified position by using <c>BiasPosition</c>,
+    /// or filter results within a bounding box by using <c>FilterBBox</c>. These parameters
+    /// are mutually exclusive; using both <c>BiasPosition</c> and <c>FilterBBox</c> in the
+    /// same command returns an error. </para> </note>
+    /// </summary>
+    public partial class SearchPlaceIndexForSuggestionsRequest : AmazonLocationServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property BiasPosition. 
+        /// <para>
+        /// An optional parameter that indicates a preference for place suggestions that are closer
+        /// to a specified position.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If provided, this parameter must contain a pair of numbers. The first number represents
+        /// the X coordinate, or longitude; the second number represents the Y coordinate, or
+        /// latitude.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <c>[-123.1174, 49.2847]</c> represents the position with longitude <c>-123.1174</c>
+        /// and latitude <c>49.2847</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>BiasPosition</c> and <c>FilterBBox</c> are mutually exclusive. Specifying both
+        /// options results in an error. 
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 2, Max = 2)]
+        public List<double> BiasPosition { get; set; } = AWSConfigs.InitializeCollections ? new List<double>() : null;
+
+        /// <summary>
+        /// Checks to see if the BiasPosition property is set.
+        /// </summary>
+        internal bool IsSetBiasPosition() => this.BiasPosition != null && (this.BiasPosition.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FilterBBox. 
+        /// <para>
+        /// An optional parameter that limits the search results by returning only suggestions
+        /// within a specified bounding box.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If provided, this parameter must contain a total of four consecutive numbers in two
+        /// pairs. The first pair of numbers represents the X and Y coordinates (longitude and
+        /// latitude, respectively) of the southwest corner of the bounding box; the second pair
+        /// of numbers represents the X and Y coordinates (longitude and latitude, respectively)
+        /// of the northeast corner of the bounding box.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, <c>[-12.7935, -37.4835, -12.0684, -36.9542]</c> represents a bounding
+        /// box where the southwest corner has longitude <c>-12.7935</c> and latitude <c>-37.4835</c>,
+        /// and the northeast corner has longitude <c>-12.0684</c> and latitude <c>-36.9542</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>FilterBBox</c> and <c>BiasPosition</c> are mutually exclusive. Specifying both
+        /// options results in an error. 
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 4, Max = 4)]
+        public List<double> FilterBBox { get; set; } = AWSConfigs.InitializeCollections ? new List<double>() : null;
+
+        /// <summary>
+        /// Checks to see if the FilterBBox property is set.
+        /// </summary>
+        internal bool IsSetFilterBBox() => this.FilterBBox != null && (this.FilterBBox.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FilterCategories. 
+        /// <para>
+        /// A list of one or more Amazon Location categories to filter the returned places. If
+        /// you include more than one category, the results will include results that match <i>any</i>
+        /// of the categories listed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using categories, including a list of Amazon Location categories,
+        /// see <a href="https://docs.aws.amazon.com/location/previous/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service developer guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5)]
+        public List<string> FilterCategories { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the FilterCategories property is set.
+        /// </summary>
+        internal bool IsSetFilterCategories() => this.FilterCategories != null && (this.FilterCategories.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property FilterCountries. 
+        /// <para>
+        /// An optional parameter that limits the search results by returning only suggestions
+        /// within the provided list of countries.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country code. For example, Australia uses three upper-case characters: <c>AUS</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public List<string> FilterCountries { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the FilterCountries property is set.
+        /// </summary>
+        internal bool IsSetFilterCountries() => this.FilterCountries != null && (this.FilterCountries.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property IndexName. 
+        /// <para>
+        /// The name of the place index resource you want to use for the search.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string IndexName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IndexName property is set.
+        /// </summary>
+        internal bool IsSetIndexName() => this.IndexName != null;
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The optional <a href="https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html">API
+        /// key</a> to authorize the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Max = 1000)]
+        public string Key { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Key property is set.
+        /// </summary>
+        internal bool IsSetKey() => this.Key != null;
+
+        /// <summary>
+        /// Gets and sets the property Language. 
+        /// <para>
+        /// The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP
+        /// 47</a> language tag, for example, <c>en</c> for English.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting affects the languages used in the results. If no language is specified,
+        /// or not supported for a particular result, the partner automatically chooses a language
+        /// for the result.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an example, we'll use the Greek language. You search for <c>Athens, Gr</c> to
+        /// get suggestions with the <c>language</c> parameter set to <c>en</c>. The results found
+        /// will most likely be returned as <c>Athens, Greece</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set the <c>language</c> parameter to <c>el</c>, for Greek, then the result
+        /// found will more likely be returned as <c>Αθήνα, Ελλάδα</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the data provider does not have a value for Greek, the result will be in a language
+        /// that the provider does support.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 2, Max = 35)]
+        public string Language { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Language property is set.
+        /// </summary>
+        internal bool IsSetLanguage() => this.Language != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// An optional parameter. The maximum number of results returned per request. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The default: <c>5</c> 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 15)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The free-form partial text to use to generate place suggestions. For example, <c>eiffel
+        /// tow</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 200)]
+        public string Text { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Text property is set.
+        /// </summary>
+        internal bool IsSetText() => this.Text != null;
+    }
+}

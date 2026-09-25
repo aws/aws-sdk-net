@@ -1,0 +1,176 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.AppIntegrationsService.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateDataIntegration Request Marshaller
+    /// </summary>
+    public partial class CreateDataIntegrationRequestMarshaller : IMarshaller<IRequest, CreateDataIntegrationRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateDataIntegrationRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(CreateDataIntegrationRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.AppIntegrationsService");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-07-29";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/dataIntegrations";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+            else
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if (publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+            if (publicRequest.IsSetFileConfiguration())
+            {
+                context.Writer.WritePropertyName("FileConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FileConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FileConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetKmsKey())
+            {
+                context.Writer.WritePropertyName("KmsKey");
+                context.Writer.WriteStringValue(publicRequest.KmsKey);
+            }
+            if (publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+            if (publicRequest.IsSetObjectConfiguration())
+            {
+                context.Writer.WritePropertyName("ObjectConfiguration");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                {
+                    context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
+                    var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
+                    {
+                        context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
+                        var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+                        context.Writer.WriteStartArray();
+                        foreach (var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                        {
+                            context.Writer.WriteStringValue(publicRequestObjectConfigurationValueValueListValue);
+                        }
+                        context.Writer.WriteEndArray();
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetScheduleConfig())
+            {
+                context.Writer.WritePropertyName("ScheduleConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScheduleConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScheduleConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetSourceURI())
+            {
+                context.Writer.WritePropertyName("SourceURI");
+                context.Writer.WriteStringValue(publicRequest.SourceURI);
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly CreateDataIntegrationRequestMarshaller _instance = new();
+
+        internal static CreateDataIntegrationRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CreateDataIntegrationRequestMarshaller Instance => _instance;
+    }
+}

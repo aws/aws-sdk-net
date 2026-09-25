@@ -1,0 +1,129 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.IoTWireless.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for SidewalkDevice Object
+    /// </summary>
+    public partial class SidewalkDeviceUnmarshaller : IJsonUnmarshaller<SidewalkDevice, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public SidewalkDevice Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new SidewalkDevice();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("AmazonId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CertificateId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DeviceCertificates", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
+                    unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DeviceProfileId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Positioning", targetDepth, ref reader))
+                {
+                    var unmarshaller = SidewalkPositioningUnmarshaller.Instance;
+                    unmarshalledObject.Positioning = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PrivateKeys", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
+                    unmarshalledObject.PrivateKeys = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SidewalkId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SidewalkId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SidewalkManufacturingSn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Status", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static SidewalkDeviceUnmarshaller _instance = new SidewalkDeviceUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static SidewalkDeviceUnmarshaller Instance => _instance;
+    }
+}

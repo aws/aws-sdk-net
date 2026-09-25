@@ -10,13 +10,13 @@
     <property>Amazon.IotData.Model.DeleteThingShadowRequest.ShadowName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[$a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[$a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.DeleteThingShadowRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.GetConnectionRequest.ClientId</property>
@@ -34,7 +34,7 @@
     <property>Amazon.IotData.Model.GetConnectionResponse.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.GetRetainedMessageResponse.Qos</property>
@@ -45,13 +45,13 @@
     <property>Amazon.IotData.Model.GetThingShadowRequest.ShadowName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[$a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[$a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.GetThingShadowRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.ListNamedShadowsForThingRequest.PageSize</property>
@@ -62,7 +62,7 @@
     <property>Amazon.IotData.Model.ListNamedShadowsForThingRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.ListRetainedMessagesRequest.MaxResults</property>
@@ -95,13 +95,13 @@
     <property>Amazon.IotData.Model.UpdateThingShadowRequest.ShadowName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[$a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[$a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.UpdateThingShadowRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IotData.Model.RetainedMessageSummary.Qos</property>

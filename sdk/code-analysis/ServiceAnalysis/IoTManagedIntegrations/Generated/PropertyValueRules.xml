@@ -4,185 +4,185 @@
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationRequest.ConnectorDestinationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationRequest.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationResponse.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationResponse.Arn</property>
     <min>67</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:account-association/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:account-association/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateAccountAssociationResponse.OAuthAuthorizationUrl</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|^(https):\/\/.*</pattern>
+    <pattern>^$|^(https):\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCloudConnectorResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateConnectorDestinationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateConnectorDestinationRequest.CloudConnectorId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateConnectorDestinationRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateConnectorDestinationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateConnectorDestinationResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCredentialLockerRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCredentialLockerRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCredentialLockerResponse.Arn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:credential-locker/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:credential-locker/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateCredentialLockerResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateDestinationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateDestinationRequest.DeliveryDestinationArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+</pattern>
+    <pattern>^arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateDestinationRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateDestinationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateDestinationResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateEventLogConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateEventLogConfigurationRequest.ResourceId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9+*]*</pattern>
+    <pattern>^[a-zA-Z0-9+*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateEventLogConfigurationRequest.ResourceType</property>
-    <pattern>[*]$|^(managed-thing|credential-locker|provisioning-profile|ota-task|account-association)</pattern>
+    <pattern>^[*]$|^(managed-thing|credential-locker|provisioning-profile|ota-task|account-association)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateEventLogConfigurationResponse.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.AuthenticationMaterial</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[0-9A-Za-z!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~\/: {},\\"]+</pattern>
+    <pattern>^[0-9A-Za-z!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~\/: {},\\"]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.Brand</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.Capabilities</property>
@@ -198,73 +198,73 @@
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.CredentialLockerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.Model</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.Owner</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingRequest.SerialNumber</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingResponse.Arn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:managed-thing/([0-9a-zA-Z:_-])+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:managed-thing/([0-9a-zA-Z:_-])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateManagedThingResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateNotificationConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateNotificationConfigurationRequest.DestinationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskRequest.S3Url</property>
@@ -275,379 +275,379 @@
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskRequest.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskResponse.TaskArn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:ota-task/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:ota-task/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskResponse.TaskId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskConfigurationRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskConfigurationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateOtaTaskConfigurationResponse.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateProvisioningProfileRequest.CaCertificate</property>
-    <pattern>-----BEGIN CERTIFICATE-----.*(.|\n)*-----END CERTIFICATE-----\n?</pattern>
+    <pattern>^-----BEGIN CERTIFICATE-----.*(.|\n)*-----END CERTIFICATE-----\n?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateProvisioningProfileRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateProvisioningProfileRequest.Name</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[0-9A-Za-z_-]+</pattern>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateProvisioningProfileResponse.Arn</property>
     <min>32</min>
     <max>64</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:provisioning-profile/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:provisioning-profile/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateProvisioningProfileResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CreateProvisioningProfileResponse.Name</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[0-9A-Za-z_-]+</pattern>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteAccountAssociationRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteCloudConnectorRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteConnectorDestinationRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteCredentialLockerRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteDestinationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteEventLogConfigurationRequest.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteManagedThingRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteOtaTaskRequest.Identifier</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteOtaTaskConfigurationRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeleteProvisioningProfileRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeregisterAccountAssociationRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeregisterAccountAssociationRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.Arn</property>
     <min>67</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:account-association/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:account-association/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.ConnectorDestinationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.ErrorMessage</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetAccountAssociationResponse.OAuthAuthorizationUrl</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|^(https):\/\/.*</pattern>
+    <pattern>^$|^(https):\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCloudConnectorRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCloudConnectorResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCloudConnectorResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCloudConnectorResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetConnectorDestinationRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetConnectorDestinationResponse.CloudConnectorId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetConnectorDestinationResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetConnectorDestinationResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetConnectorDestinationResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetConnectorDestinationResponse.OAuthCompleteRedirectUrl</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>(http|https)://.*</pattern>
+    <pattern>^(http|https)://.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCredentialLockerRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCredentialLockerResponse.Arn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:credential-locker/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:credential-locker/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCredentialLockerResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCredentialLockerResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetCustomEndpointResponse.EndpointAddress</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9._@-]+</pattern>
+    <pattern>^[A-Za-z0-9._@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDefaultEncryptionConfigurationResponse.KmsKeyArn</property>
     <min>1</min>
     <max>200</max>
-    <pattern>arn:aws:kms:[0-9a-zA-Z-]+:[0-9]+:key/[0-9a-zA-Z-]+</pattern>
+    <pattern>^arn:aws:kms:[0-9a-zA-Z-]+:[0-9]+:key/[0-9a-zA-Z-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDestinationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDestinationResponse.DeliveryDestinationArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+</pattern>
+    <pattern>^arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDestinationResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDestinationResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDeviceDiscoveryRequest.Identifier</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDeviceDiscoveryResponse.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDeviceDiscoveryResponse.Arn</property>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:device-discovery/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:device-discovery/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDeviceDiscoveryResponse.ConnectorAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDeviceDiscoveryResponse.ControllerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetDeviceDiscoveryResponse.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetEventLogConfigurationRequest.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetEventLogConfigurationResponse.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetEventLogConfigurationResponse.ResourceId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9+*]*</pattern>
+    <pattern>^[a-zA-Z0-9+*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetEventLogConfigurationResponse.ResourceType</property>
-    <pattern>[*]$|^(managed-thing|credential-locker|provisioning-profile|ota-task|account-association)</pattern>
+    <pattern>^[*]$|^(managed-thing|credential-locker|provisioning-profile|ota-task|account-association)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetHubConfigurationResponse.HubTokenTimerExpirySettingInSeconds</property>
@@ -657,25 +657,25 @@
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.AdvertisedProductId</property>
     <min>5</min>
     <max>5</max>
-    <pattern>([A-Za-z0-9!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~])+</pattern>
+    <pattern>^([A-Za-z0-9!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Arn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:managed-thing/([0-9a-zA-Z:_-])+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:managed-thing/([0-9a-zA-Z:_-])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Brand</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Classification</property>
@@ -686,43 +686,43 @@
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.ConnectorDestinationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.ConnectorDeviceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.ConnectorPolicyId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.CredentialLockerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.DeviceSpecificKey</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9=_.,@\+\-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_.,@\+\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.InternationalArticleNumber</property>
     <min>8</min>
     <max>13</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.MacAddress</property>
@@ -733,43 +733,43 @@
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Model</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.Owner</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.ParentControllerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.SerialNumber</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingResponse.UniversalProductCode</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCapabilitiesRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCapabilitiesResponse.Capabilities</property>
@@ -780,73 +780,73 @@
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCapabilitiesResponse.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingCertificateResponse.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingConnectivityDataRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingConnectivityDataResponse.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingMetaDataRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingMetaDataResponse.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetManagedThingStateRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetNotificationConfigurationResponse.DestinationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskRequest.Identifier</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskResponse.S3Url</property>
@@ -857,115 +857,115 @@
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskResponse.TaskArn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:ota-task/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:ota-task/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskResponse.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskResponse.TaskId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskConfigurationRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskConfigurationResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskConfigurationResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetOtaTaskConfigurationResponse.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetProvisioningProfileRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetProvisioningProfileResponse.Arn</property>
     <min>32</min>
     <max>64</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:provisioning-profile/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:provisioning-profile/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetProvisioningProfileResponse.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetProvisioningProfileResponse.Name</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[0-9A-Za-z_-]+</pattern>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetRuntimeLogConfigurationRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetRuntimeLogConfigurationResponse.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetSchemaVersionRequest.SchemaVersionedId</property>
     <min>7</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse.Description</property>
     <min>10</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9.,/ -]+</pattern>
+    <pattern>^[a-zA-Z0-9.,/ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse.Namespace</property>
     <min>3</min>
     <max>12</max>
-    <pattern>[a-z0-9]+</pattern>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse.SchemaId</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+</pattern>
+    <pattern>^[a-zA-Z0-9.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.GetSchemaVersionResponse.SemanticVersion</property>
     <min>3</min>
     <max>12</max>
-    <pattern>(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListAccountAssociationsRequest.ConnectorDestinationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListAccountAssociationsRequest.MaxResults</property>
@@ -976,17 +976,17 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListAccountAssociationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListAccountAssociationsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest.LambdaArn</property>
-    <pattern>(arn:aws:lambda:[0-9a-zA-Z-]+:[0-9]+:function:)?([a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?)</pattern>
+    <pattern>^(arn:aws:lambda:[0-9a-zA-Z-]+:[0-9]+:function:)?([a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest.MaxResults</property>
@@ -997,19 +997,19 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListCloudConnectorsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListConnectorDestinationsRequest.CloudConnectorId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListConnectorDestinationsRequest.MaxResults</property>
@@ -1020,13 +1020,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListConnectorDestinationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListConnectorDestinationsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListCredentialLockersRequest.MaxResults</property>
@@ -1037,13 +1037,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListCredentialLockersRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListCredentialLockersResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDestinationsRequest.MaxResults</property>
@@ -1054,13 +1054,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListDestinationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDestinationsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDeviceDiscoveriesRequest.MaxResults</property>
@@ -1071,19 +1071,19 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListDeviceDiscoveriesRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDeviceDiscoveriesResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDiscoveredDevicesRequest.Identifier</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDiscoveredDevicesRequest.MaxResults</property>
@@ -1094,13 +1094,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListDiscoveredDevicesRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListDiscoveredDevicesResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListEventLogConfigurationsRequest.MaxResults</property>
@@ -1111,25 +1111,25 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListEventLogConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListEventLogConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingAccountAssociationsRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingAccountAssociationsRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingAccountAssociationsRequest.MaxResults</property>
@@ -1140,84 +1140,25 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingAccountAssociationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ConnectorDestinationIdFilter</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ConnectorDeviceIdFilter</property>
-    <min>1</min>
-    <max>256</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ConnectorPolicyIdFilter</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.CredentialLockerFilter</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.NextToken</property>
-    <min>1</min>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.OwnerFilter</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ParentControllerIdentifierFilter</property>
-    <min>1</min>
-    <max>64</max>
-    <pattern>[A-Za-z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.SerialNumberFilter</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsResponse.NextToken</property>
-    <min>1</min>
-    <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingSchemasRequest.CapabilityIdFilter</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9./]+(@\d+\.\d+)?</pattern>
+    <pattern>^[a-zA-Z0-9./]+(@\d+\.\d+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingSchemasRequest.EndpointIdFilter</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingSchemasRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingSchemasRequest.MaxResults</property>
@@ -1228,13 +1169,72 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingSchemasRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingSchemasResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ConnectorDestinationIdFilter</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ConnectorDeviceIdFilter</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ConnectorPolicyIdFilter</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.CredentialLockerFilter</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.OwnerFilter</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.ParentControllerIdentifierFilter</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsRequest.SerialNumberFilter</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTManagedIntegrations.Model.ListManagedThingsResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListNotificationConfigurationsRequest.MaxResults</property>
@@ -1245,13 +1245,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListNotificationConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListNotificationConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskConfigurationsRequest.MaxResults</property>
@@ -1262,19 +1262,19 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskExecutionsRequest.Identifier</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskExecutionsRequest.MaxResults</property>
@@ -1285,13 +1285,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskExecutionsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTaskExecutionsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTasksRequest.MaxResults</property>
@@ -1302,13 +1302,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTasksRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListOtaTasksResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListProvisioningProfilesRequest.MaxResults</property>
@@ -1319,13 +1319,13 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListProvisioningProfilesRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListProvisioningProfilesResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest.MaxResults</property>
@@ -1336,49 +1336,49 @@
     <property>Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest.Namespace</property>
     <min>3</min>
     <max>12</max>
-    <pattern>[a-z0-9]+</pattern>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest.SchemaId</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+</pattern>
+    <pattern>^[a-zA-Z0-9.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsRequest.SemanticVersion</property>
     <min>3</min>
     <max>12</max>
-    <pattern>(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListSchemaVersionsResponse.NextToken</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:(managed-thing|provisioning-profile|ota-task|credential-locker|account-association)/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:(managed-thing|provisioning-profile|ota-task|credential-locker|account-association)/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.PutDefaultEncryptionConfigurationRequest.KmsKeyArn</property>
     <min>1</min>
     <max>200</max>
-    <pattern>arn:aws:kms:[0-9a-zA-Z-]+:[0-9]+:key/[0-9a-zA-Z-]+</pattern>
+    <pattern>^arn:aws:kms:[0-9a-zA-Z-]+:[0-9]+:key/[0-9a-zA-Z-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.PutDefaultEncryptionConfigurationResponse.KmsKeyArn</property>
     <min>1</min>
     <max>200</max>
-    <pattern>arn:aws:kms:[0-9a-zA-Z-]+:[0-9]+:key/[0-9a-zA-Z-]+</pattern>
+    <pattern>^arn:aws:kms:[0-9a-zA-Z-]+:[0-9]+:key/[0-9a-zA-Z-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.PutHubConfigurationRequest.HubTokenTimerExpirySettingInSeconds</property>
@@ -1392,85 +1392,85 @@
     <property>Amazon.IoTManagedIntegrations.Model.PutRuntimeLogConfigurationRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterAccountAssociationRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterAccountAssociationRequest.DeviceDiscoveryId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterAccountAssociationRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterAccountAssociationResponse.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterAccountAssociationResponse.DeviceDiscoveryId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterAccountAssociationResponse.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RegisterCustomEndpointResponse.EndpointAddress</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[A-Za-z0-9._@-]+</pattern>
+    <pattern>^[A-Za-z0-9._@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ResetRuntimeLogConfigurationRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.ConnectorDeviceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.ConnectorId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.DeviceDiscoveryId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.Message</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\sa-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[\sa-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.OperationVersion</property>
     <min>1</min>
     <max>6</max>
-    <pattern>[0-9.]+</pattern>
+    <pattern>^[0-9.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.StatusCode</property>
@@ -1481,193 +1481,193 @@
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.TraceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventRequest.UserId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendConnectorEventResponse.ConnectorId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendManagedThingCommandRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendManagedThingCommandRequest.ConnectorAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendManagedThingCommandRequest.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SendManagedThingCommandResponse.TraceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9:=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9:=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartAccountAssociationRefreshRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartAccountAssociationRefreshResponse.OAuthAuthorizationUrl</property>
     <min>0</min>
     <max>1024</max>
-    <pattern>$|^(https):\/\/.*</pattern>
+    <pattern>^$|^(https):\/\/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.AuthenticationMaterial</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9A-Za-z_\-\+=\/:; ]+</pattern>
+    <pattern>^[0-9A-Za-z_\-\+=\/:; ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.ConnectorAssociationIdentifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.ControllerIdentifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryRequest.EndDeviceIdentifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StartDeviceDiscoveryResponse.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:(managed-thing|provisioning-profile|ota-task|credential-locker|account-association)/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:(managed-thing|provisioning-profile|ota-task|credential-locker|account-association)/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>200</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:(managed-thing|provisioning-profile|ota-task|credential-locker|account-association)/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:(managed-thing|provisioning-profile|ota-task|credential-locker|account-association)/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateAccountAssociationRequest.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateAccountAssociationRequest.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateAccountAssociationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateCloudConnectorRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateConnectorDestinationRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateConnectorDestinationRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateConnectorDestinationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateDestinationRequest.DeliveryDestinationArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+</pattern>
+    <pattern>^arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateDestinationRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateDestinationRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateEventLogConfigurationRequest.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.Brand</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.Capabilities</property>
@@ -1683,61 +1683,61 @@
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.CredentialLockerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.Identifier</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.Model</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.Owner</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateManagedThingRequest.SerialNumber</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateNotificationConfigurationRequest.DestinationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateOtaTaskRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateOtaTaskRequest.Identifier</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.UpdateOtaTaskRequest.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AbortConfigCriteria.MinNumberOfExecutedThings</property>
@@ -1752,105 +1752,105 @@
     <property>Amazon.IoTManagedIntegrations.Model.AccountAssociationItem.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AccountAssociationItem.Arn</property>
     <min>67</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:account-association/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:account-association/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AccountAssociationItem.ConnectorDestinationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AccountAssociationItem.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AccountAssociationItem.ErrorMessage</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AccountAssociationItem.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.AuthMaterial.AuthMaterialName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityAction.ActionTraceId</property>
     <min>16</min>
     <max>20</max>
-    <pattern>[a-zA-Z0-9]+=(?:_[0-9]+)?</pattern>
+    <pattern>^[a-zA-Z0-9]+=(?:_[0-9]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityAction.Name</property>
-    <pattern>[/a-zA-Z]+</pattern>
+    <pattern>^[/a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityAction.Ref</property>
-    <pattern>[a-zA-Z.]+</pattern>
+    <pattern>^[a-zA-Z.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReport.NodeId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_.,@\+\-/]+</pattern>
+    <pattern>^[a-zA-Z0-9=_.,@\+\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReport.Version</property>
     <min>1</min>
     <max>10</max>
-    <pattern>1\.0\.0</pattern>
+    <pattern>^1\.0\.0$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReportCapability.Id</property>
     <min>7</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReportCapability.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
+    <pattern>^[/a-zA-Z0-9\._ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReportCapability.Version</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(0|[1-9][0-9]*)</pattern>
+    <pattern>^(0|[1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilityReportEndpoint.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilitySchemaItem.CapabilityId</property>
     <min>7</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilitySchemaItem.ExtrinsicId</property>
     <min>1</min>
     <max>10</max>
-    <pattern>0[xX][0-9a-fA-F]+$|^[0-9]+</pattern>
+    <pattern>^0[xX][0-9a-fA-F]+$|^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CapabilitySchemaItem.ExtrinsicVersion</property>
@@ -1861,185 +1861,185 @@
     <property>Amazon.IoTManagedIntegrations.Model.CommandCapability.Id</property>
     <min>7</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CommandCapability.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
+    <pattern>^[/a-zA-Z0-9\._ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CommandCapability.Version</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(0|[1-9][0-9]*)</pattern>
+    <pattern>^(0|[1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CommandEndpoint.EndpointId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConfigurationError.Code</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConfigurationError.Message</property>
     <min>1</min>
     <max>65535</max>
-    <pattern>[a-zA-Z0-9\-._,]+</pattern>
+    <pattern>^[a-zA-Z0-9\-._,]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorDestinationSummary.CloudConnectorId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorDestinationSummary.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorDestinationSummary.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorDestinationSummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorItem.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorItem.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ConnectorItem.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CredentialLockerSummary.Arn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:credential-locker/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:credential-locker/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CredentialLockerSummary.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.CredentialLockerSummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DestinationSummary.DeliveryDestinationArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+</pattern>
+    <pattern>^arn:aws:[0-9a-zA-Z]+:[0-9a-zA-Z-]+:[0-9]+:[0-9a-zA-Z]+/[0-9a-zA-Z._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DestinationSummary.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[0-9A-Za-z_\- ]+</pattern>
+    <pattern>^[0-9A-Za-z_\- ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DestinationSummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.Device.ConnectorDeviceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.Device.ConnectorDeviceName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DeviceDiscoverySummary.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DiscoveredDeviceSummary.AuthenticationMaterial</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[0-9A-Za-z!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~\/: {},\\"]+</pattern>
+    <pattern>^[0-9A-Za-z!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~\/: {},\\"]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DiscoveredDeviceSummary.Brand</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DiscoveredDeviceSummary.ConnectorDeviceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DiscoveredDeviceSummary.ConnectorDeviceName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DiscoveredDeviceSummary.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.DiscoveredDeviceSummary.Model</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.EventLogConfigurationSummary.Id</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.EventLogConfigurationSummary.ResourceId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9+*]*</pattern>
+    <pattern>^[a-zA-Z0-9+*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.EventLogConfigurationSummary.ResourceType</property>
-    <pattern>[*]$|^(managed-thing|credential-locker|provisioning-profile|ota-task|account-association)</pattern>
+    <pattern>^[*]$|^(managed-thing|credential-locker|provisioning-profile|ota-task|account-association)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ExponentialRolloutRate.BaseRatePerMinute</property>
@@ -2054,53 +2054,53 @@
     <property>Amazon.IoTManagedIntegrations.Model.GeneralAuthorizationName.AuthMaterialName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9=_+/-]+</pattern>
+    <pattern>^[a-zA-Z0-9=_+/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.LambdaConfig.Arn</property>
-    <pattern>(arn:aws:lambda:[0-9a-zA-Z-]+:[0-9]+:function:)?([a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?)</pattern>
+    <pattern>^(arn:aws:lambda:[0-9a-zA-Z-]+:[0-9]+:function:)?([a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingAssociation.AccountAssociationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingAssociation.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSchemaListItem.CapabilityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9./]+(@\d+\.\d+)?</pattern>
+    <pattern>^[a-zA-Z0-9./]+(@\d+\.\d+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSchemaListItem.EndpointId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.AdvertisedProductId</property>
     <min>5</min>
     <max>5</max>
-    <pattern>([A-Za-z0-9!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~])+</pattern>
+    <pattern>^([A-Za-z0-9!#$%&amp;()*\+\-;&lt;=&gt;?@^_`{|}~])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Arn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:managed-thing/([0-9a-zA-Z:_-])+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:managed-thing/([0-9a-zA-Z:_-])+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Brand</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Classification</property>
@@ -2111,85 +2111,85 @@
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.ConnectorDestinationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.ConnectorDeviceId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.ConnectorPolicyId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.CredentialLockerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Model</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.Owner</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_.,@-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.,@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.ParentControllerId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ManagedThingSummary.SerialNumber</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReport.NodeId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9=_.,@\+\-/]+</pattern>
+    <pattern>^[a-zA-Z0-9=_.,@\+\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReport.Version</property>
     <min>1</min>
     <max>10</max>
-    <pattern>1\.0\.0</pattern>
+    <pattern>^1\.0\.0$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportAttribute.Id</property>
     <min>1</min>
     <max>24</max>
-    <pattern>0[xX][0-9a-fA-F]+$|^[0-9]+</pattern>
+    <pattern>^0[xX][0-9a-fA-F]+$|^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportAttribute.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
+    <pattern>^[/a-zA-Z0-9\._ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.FabricIndex</property>
@@ -2205,19 +2205,19 @@
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.Id</property>
     <min>1</min>
     <max>24</max>
-    <pattern>0[xX][0-9a-fA-F]+$|^[0-9]+</pattern>
+    <pattern>^0[xX][0-9a-fA-F]+$|^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
+    <pattern>^[/a-zA-Z0-9\._ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.PublicId</property>
     <min>7</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.Revision</property>
@@ -2228,55 +2228,55 @@
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportCluster.SpecVersion</property>
     <min>1</min>
     <max>64</max>
-    <pattern>\d+\.\d+</pattern>
+    <pattern>^\d+\.\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCapabilityReportEndpoint.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterCluster.Id</property>
     <min>1</min>
     <max>24</max>
-    <pattern>0[xX][0-9a-fA-F]+$|^[0-9]+</pattern>
+    <pattern>^0[xX][0-9a-fA-F]+$|^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.MatterEndpoint.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.NotificationConfigurationSummary.DestinationName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[\p{L}\p{N} ._-]+</pattern>
+    <pattern>^[\p{L}\p{N} ._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OAuthConfig.AuthUrl</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)</pattern>
+    <pattern>^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OAuthConfig.TokenUrl</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)</pattern>
+    <pattern>^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}([-a-zA-Z0-9()@:%_\+.~#?&amp;\/=]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskConfigurationSummary.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9-_ ]+</pattern>
+    <pattern>^[A-Za-z0-9-_ ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskConfigurationSummary.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskExecutionRolloutConfig.MaximumPerMinute</property>
@@ -2286,25 +2286,25 @@
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskExecutionSummaries.ManagedThingId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9:_-]*</pattern>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskSummary.TaskArn</property>
     <min>32</min>
     <max>1011</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:ota-task/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:ota-task/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskSummary.TaskConfigurationId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskSummary.TaskId</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[A-Za-z0-9]+</pattern>
+    <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.OtaTaskTimeoutConfig.InProgressTimeoutInMinutes</property>
@@ -2319,19 +2319,19 @@
     <property>Amazon.IoTManagedIntegrations.Model.ProvisioningProfileSummary.Arn</property>
     <min>32</min>
     <max>64</max>
-    <pattern>arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:provisioning-profile/[0-9a-zA-Z]+</pattern>
+    <pattern>^arn:aws:iotmanagedintegrations:[0-9a-zA-Z-]+:[0-9]+:provisioning-profile/[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ProvisioningProfileSummary.Id</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[A-Za-z0-9-_]+</pattern>
+    <pattern>^[A-Za-z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.ProvisioningProfileSummary.Name</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[0-9A-Za-z_-]+</pattern>
+    <pattern>^[0-9A-Za-z_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.RetryConfigCriteria.MinNumberOfRetries</property>
@@ -2357,61 +2357,61 @@
     <property>Amazon.IoTManagedIntegrations.Model.SchemaVersionListItem.Description</property>
     <min>10</min>
     <max>2048</max>
-    <pattern>[a-zA-Z0-9.,/ -]+</pattern>
+    <pattern>^[a-zA-Z0-9.,/ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SchemaVersionListItem.Namespace</property>
     <min>3</min>
     <max>12</max>
-    <pattern>[a-z0-9]+</pattern>
+    <pattern>^[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SchemaVersionListItem.SchemaId</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+</pattern>
+    <pattern>^[a-zA-Z0-9.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SchemaVersionListItem.SemanticVersion</property>
     <min>3</min>
     <max>12</max>
-    <pattern>(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SecretsManager.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:secretsmanager:[0-9a-zA-Z-]{1,32}:\d{12}:secret:[A-Za-z0-9/_+=.@-]{8,520}</pattern>
+    <pattern>^arn:aws:secretsmanager:[0-9a-zA-Z-]{1,32}:\d{12}:secret:[A-Za-z0-9/_+=.@-]{8,520}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.SecretsManager.VersionId</property>
     <min>32</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9-_]+</pattern>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StateCapability.Id</property>
     <min>7</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)</pattern>
+    <pattern>^[a-zA-Z0-9.]+@(\d+\.\d+(\.\d+)?|\$latest)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StateCapability.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[/a-zA-Z0-9\._ -]+</pattern>
+    <pattern>^[/a-zA-Z0-9\._ -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StateCapability.Version</property>
     <min>1</min>
     <max>64</max>
-    <pattern>(0|[1-9][0-9]*)</pattern>
+    <pattern>^(0|[1-9][0-9]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.StateEndpoint.EndpointId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[0-9a-zA-Z]+</pattern>
+    <pattern>^[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTManagedIntegrations.Model.WiFiSimpleSetupConfiguration.TimeoutInMinutes</property>

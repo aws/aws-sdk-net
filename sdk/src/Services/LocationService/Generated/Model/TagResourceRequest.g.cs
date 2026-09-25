@@ -1,0 +1,121 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.LocationService.Model
+{
+    /// <summary>
+    /// Container for the parameters to the TagResource operation. Assigns one or more tags
+    /// (key-value pairs) to the specified Amazon Location Service resource. <para> Tags can
+    /// help you organize and categorize your resources. You can also use them to scope user
+    /// permissions, by granting a user permission to access or change only resources with
+    /// certain tag values. </para> <para> You can use the <c>TagResource</c> operation with
+    /// an Amazon Location Service resource that already has tags. If you specify a new tag
+    /// key for the resource, this tag is appended to the tags already associated with the
+    /// resource. If you specify a tag key that's already associated with the resource, the
+    /// new tag value that you specify replaces the previous value for that tag. </para> <para>
+    /// You can associate up to 50 tags with a resource. </para>
+    /// </summary>
+    public partial class TagResourceRequest : AmazonLocationServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource whose tags you want to update.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Format example: <c>arn:aws:geo:region:account-id:resourcetype/ExampleResource</c>
+        /// 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true, Max = 1600)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Applies one or more tags to specific resource. A tag is a key-value pair that helps
+        /// you manage, identify, search, and filter your resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <c>"key" : "value"</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 50 tags per resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each tag key must be unique and must have exactly one associated value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length: 128 Unicode characters in UTF-8.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length: 256 Unicode characters in UTF-8.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot use "aws:" as a prefix for a key.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

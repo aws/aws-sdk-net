@@ -7,11 +7,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.CreateResourceExplorerSetupRequest.ViewName</property>
-    <pattern>[a-zA-Z0-9-]{1,64}</pattern>
+    <pattern>^[a-zA-Z0-9-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.CreateResourceExplorerSetupResponse.TaskId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.CreateViewRequest.ClientToken</property>
@@ -25,11 +25,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.CreateViewRequest.ViewName</property>
-    <pattern>[a-zA-Z0-9\-]{1,64}</pattern>
+    <pattern>^[a-zA-Z0-9\-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.DeleteResourceExplorerSetupResponse.TaskId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.DeleteViewRequest.ViewArn</property>
@@ -53,7 +53,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.GetResourceExplorerSetupRequest.TaskId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.GetResourceExplorerSetupResponse.NextToken</property>
@@ -202,7 +202,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.RegionStatus.Region</property>
-    <pattern>[a-z-]+-[a-z]+-[0-9]</pattern>
+    <pattern>^[a-z-]+-[a-z]+-[0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.SearchFilter.FilterString</property>
@@ -211,10 +211,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.ServiceView.ServiceViewName</property>
-    <pattern>[a-zA-Z0-9\-]{1,64}</pattern>
+    <pattern>^[a-zA-Z0-9\-]{1,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ResourceExplorer2.Model.View.ViewName</property>
-    <pattern>[a-zA-Z0-9\-]{1,64}</pattern>
+    <pattern>^[a-zA-Z0-9\-]{1,64}$</pattern>
   </property-value-rule>
 </property-value-rules>

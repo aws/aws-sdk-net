@@ -1,0 +1,91 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.IoTTwinMaker.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// EntityPropertyReference Marshaller
+    /// </summary>
+    public partial class EntityPropertyReferenceMarshaller : IRequestMarshaller<EntityPropertyReference, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(EntityPropertyReference requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetComponentName())
+            {
+                context.Writer.WritePropertyName("componentName");
+                context.Writer.WriteStringValue(requestObject.ComponentName);
+            }
+
+            if (requestObject.IsSetComponentPath())
+            {
+                context.Writer.WritePropertyName("componentPath");
+                context.Writer.WriteStringValue(requestObject.ComponentPath);
+            }
+
+            if (requestObject.IsSetEntityId())
+            {
+                context.Writer.WritePropertyName("entityId");
+                context.Writer.WriteStringValue(requestObject.EntityId);
+            }
+
+            if (requestObject.IsSetExternalIdProperty())
+            {
+                context.Writer.WritePropertyName("externalIdProperty");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectExternalIdPropertyKvp in requestObject.ExternalIdProperty)
+                {
+                    context.Writer.WritePropertyName(requestObjectExternalIdPropertyKvp.Key);
+                    var requestObjectExternalIdPropertyValue = requestObjectExternalIdPropertyKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectExternalIdPropertyValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetPropertyName())
+            {
+                context.Writer.WritePropertyName("propertyName");
+                context.Writer.WriteStringValue(requestObject.PropertyName);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static EntityPropertyReferenceMarshaller Instance = new EntityPropertyReferenceMarshaller();
+    }
+}

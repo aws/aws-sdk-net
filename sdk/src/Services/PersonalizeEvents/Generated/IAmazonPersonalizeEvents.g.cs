@@ -1,0 +1,285 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.PersonalizeEvents.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.PersonalizeEvents
+{
+    /// <summary>
+    /// <para>Interface for accessing PersonalizeEvents</para>
+    ///
+    /// Amazon Personalize can consume real-time user event data, such as <i>stream</i> or
+    /// <i>click</i> data, and use it for model training either alone or combined with historical
+    /// data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+    /// item interaction events</a>.
+    /// </summary>
+    public partial interface IAmazonPersonalizeEvents : IAmazonService, IDisposable
+    {
+#if NETFRAMEWORK
+        /// <summary>
+        /// Records action interaction event data. An <i>action interaction</i> event is an interaction
+        /// between a user and an <i>action</i>. For example, a user taking an action, such a
+        /// enrolling in a membership program or downloading your app.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording
+        /// action interaction events</a>. For more information about actions in an Actions dataset,
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions
+        /// dataset</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActionInteractions service method.</param>
+        /// <returns>The response from the PutActionInteractions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
+        PutActionInteractionsResponse PutActionInteractions(PutActionInteractionsRequest request);
+#endif
+
+        /// <summary>
+        /// Records action interaction event data. An <i>action interaction</i> event is an interaction
+        /// between a user and an <i>action</i>. For example, a user taking an action, such a
+        /// enrolling in a membership program or downloading your app.
+        /// 
+        ///  
+        /// <para>
+        ///  For more information about recording action interactions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-action-interaction-events.html">Recording
+        /// action interaction events</a>. For more information about actions in an Actions dataset,
+        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/actions-datasets.html">Actions
+        /// dataset</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActionInteractions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutActionInteractions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActionInteractions">REST API Reference for PutActionInteractions Operation</seealso>
+        Task<PutActionInteractionsResponse> PutActionInteractionsAsync(PutActionInteractionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds one or more actions to an Actions dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing
+        /// actions individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActions service method.</param>
+        /// <returns>The response from the PutActions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
+        PutActionsResponse PutActions(PutActionsRequest request);
+#endif
+
+        /// <summary>
+        /// Adds one or more actions to an Actions dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing
+        /// actions individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutActions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutActions service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutActions">REST API Reference for PutActions Operation</seealso>
+        Task<PutActionsResponse> PutActionsAsync(PutActionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Records item interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+        /// item interaction events</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
+        /// <returns>The response from the PutEvents service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">REST API Reference for PutEvents Operation</seealso>
+        PutEventsResponse PutEvents(PutEventsRequest request);
+#endif
+
+        /// <summary>
+        /// Records item interaction event data. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html">Recording
+        /// item interaction events</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutEvents service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutEvents">REST API Reference for PutEvents Operation</seealso>
+        Task<PutEventsResponse> PutEventsAsync(PutEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+        /// items individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        PutItemsResponse PutItems(PutItemsRequest request);
+#endif
+
+        /// <summary>
+        /// Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+        /// items individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutItems service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems">REST API Reference for PutItems Operation</seealso>
+        Task<PutItemsResponse> PutItemsAsync(PutItemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
+        /// users individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        PutUsersResponse PutUsers(PutUsersRequest request);
+#endif
+
+        /// <summary>
+        /// Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing
+        /// users individually</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutUsers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutUsers service method, as returned by PersonalizeEvents.</returns>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.InvalidInputException">
+        /// Provide a valid value for the field or parameter.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.PersonalizeEvents.Model.ResourceNotFoundException">
+        /// Could not find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers">REST API Reference for PutUsers Operation</seealso>
+        Task<PutUsersResponse> PutUsersAsync(PutUsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonPersonalizeEventsConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonPersonalizeEventsConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonPersonalizeEventsConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonPersonalizeEventsConfig to create AmazonPersonalizeEventsClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonPersonalizeEventsClient(serviceClientConfig) :
+                    new AmazonPersonalizeEventsClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

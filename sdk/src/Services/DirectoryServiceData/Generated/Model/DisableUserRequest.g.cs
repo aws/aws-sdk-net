@@ -1,0 +1,101 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DirectoryServiceData.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DisableUser operation. Deactivates an active user
+    /// account. For information about how to enable an inactive user account, see <a href="https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html">ResetUserPassword</a>
+    /// in the <i>Directory Service API Reference</i>.
+    /// </summary>
+    public partial class DisableUserRequest : AmazonDirectoryServiceDataRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        ///  A unique and case-sensitive identifier that you provide to make sure the idempotency
+        /// of the request, so multiple identical calls have the same effect as one single call.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  A client token is valid for 8 hours after the first request that uses it completes.
+        /// After 8 hours, any request with the same client token is treated as a new request.
+        /// If the request succeeds, any future uses of that token will be idempotent for another
+        /// 8 hours. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you submit a request with the same client token but change one of the other parameters
+        /// within the 8-hour idempotency window, Directory Service Data returns an <c>ConflictException</c>.
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  This parameter is optional when using the CLI or SDK. 
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 128)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property DirectoryId. 
+        /// <para>
+        ///  The identifier (ID) of the directory that's associated with the user. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DirectoryId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DirectoryId property is set.
+        /// </summary>
+        internal bool IsSetDirectoryId() => this.DirectoryId != null;
+
+        /// <summary>
+        /// Gets and sets the property SAMAccountName. 
+        /// <para>
+        ///  The name of the user. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 20)]
+        public string SAMAccountName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SAMAccountName property is set.
+        /// </summary>
+        internal bool IsSetSAMAccountName() => this.SAMAccountName != null;
+    }
+}

@@ -1,0 +1,241 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.LocationService.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreatePlaceIndex operation. <important> <para>
+    /// This operation is no longer current and may be deprecated in the future. We recommend
+    /// you upgrade to the Places API V2 unless you require Grab data. </para> <ul> <li> <para>
+    /// <c>CreatePlaceIndex</c> is part of a previous Amazon Location Service Places API (version
+    /// 1) which has been superseded by a more intuitive, powerful, and complete API (version
+    /// 2). </para> </li> <li> <para> The Places API version 2 has a simplified interface
+    /// that can be used without creating or managing place index resources. </para> </li>
+    /// <li> <para> If you are using an Amazon Web Services SDK or the Amazon Web Services
+    /// CLI, note that the Places API version 2 is found under <c>geo-places</c> or <c>geo_places</c>,
+    /// not under <c>location</c>. </para> </li> <li> <para> Since Grab is not yet fully supported
+    /// in Places API version 2, we recommend you continue using API version 1 when using
+    /// Grab. </para> </li> <li> <para> Start your version 2 API journey with the Places V2
+    /// <a href="/location/latest/APIReference/API_Operations_Amazon_Location_Service_Places_V2.html">API
+    /// Reference</a> or the <a href="/location/latest/developerguide/places.html">Developer
+    /// Guide</a>. </para> </li> </ul> </important> <para> Creates a place index resource
+    /// in your Amazon Web Services account. Use a place index resource to geocode addresses
+    /// and other text queries by using the <c>SearchPlaceIndexForText</c> operation, and
+    /// reverse geocode coordinates by using the <c>SearchPlaceIndexForPosition</c> operation,
+    /// and enable autosuggestions by using the <c>SearchPlaceIndexForSuggestions</c> operation.
+    /// </para> <note> <para> If your application is tracking or routing assets you use in
+    /// your business, such as delivery vehicles or employees, you must not use Esri as your
+    /// geolocation provider. See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon
+    /// Web Services service terms</a> for more details. </para> </note>
+    /// </summary>
+    public partial class CreatePlaceIndexRequest : AmazonLocationServiceRequest
+    {
+        /// <summary>
+        /// Gets and sets the property DataSource. 
+        /// <para>
+        /// Specifies the geospatial data provider for the new place index.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is case-sensitive. Enter the valid values as shown. For example, entering
+        /// <c>HERE</c> returns an error.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Esri</c> – For additional information about <a href="https://docs.aws.amazon.com/location/previous/developerguide/esri.html">Esri</a>'s
+        /// coverage in your region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri
+        /// details on geocoding coverage</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Grab</c> – Grab provides place index functionality for Southeast Asia. For additional
+        /// information about <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html">GrabMaps</a>'
+        /// coverage, see <a href="https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area">GrabMaps
+        /// countries and areas covered</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Here</c> – For additional information about <a href="https://docs.aws.amazon.com/location/previous/developerguide/HERE.html">HERE
+        /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE
+        /// details on goecoding coverage</a>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify HERE Technologies (<c>Here</c>) as the data provider, you may not <a
+        /// href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
+        /// results</a> for locations in Japan. For more information, see the <a href="http://aws.amazon.com/service-terms/">Amazon
+        /// Web Services service terms</a> for Amazon Location Service.
+        /// </para>
+        ///  </important> </li> </ul> 
+        /// <para>
+        /// For additional information , see <a href="https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html">Data
+        /// providers</a> on the <i>Amazon Location Service developer guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DataSource { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataSource property is set.
+        /// </summary>
+        internal bool IsSetDataSource() => this.DataSource != null;
+
+        /// <summary>
+        /// Gets and sets the property DataSourceConfiguration. 
+        /// <para>
+        /// Specifies the data storage option requesting Places.
+        /// </para>
+        /// </summary>
+        public DataSourceConfiguration DataSourceConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataSourceConfiguration property is set.
+        /// </summary>
+        internal bool IsSetDataSourceConfiguration() => this.DataSourceConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The optional description for the place index resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1000)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property IndexName. 
+        /// <para>
+        /// The name of the place index resource. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
+        /// underscores (_).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Must be a unique place index resource name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// No spaces allowed. For example, <c>ExamplePlaceIndex</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string IndexName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IndexName property is set.
+        /// </summary>
+        internal bool IsSetIndexName() => this.IndexName != null;
+
+        /// <summary>
+        /// Gets and sets the property PricingPlan. 
+        /// <para>
+        /// No longer used. If included, the only allowed value is <c>RequestBasedUsage</c>.
+        /// </para>
+        /// </summary>
+        [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
+        public PricingPlan PricingPlan { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PricingPlan property is set.
+        /// </summary>
+        internal bool IsSetPricingPlan() => this.PricingPlan != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Applies one or more tags to the place index resource. A tag is a key-value pair that
+        /// helps you manage, identify, search, and filter your resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// Format: <c>"key" : "value"</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Restrictions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 50 tags per resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each tag key must be unique and must have exactly one associated value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum key length: 128 Unicode characters in UTF-8.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum value length: 256 Unicode characters in UTF-8.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Cannot use "aws:" as a prefix for a key.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

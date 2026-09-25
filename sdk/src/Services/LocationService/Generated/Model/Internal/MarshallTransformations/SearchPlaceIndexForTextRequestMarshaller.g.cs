@@ -1,0 +1,160 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.LocationService.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.LocationService.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// SearchPlaceIndexForText Request Marshaller
+    /// </summary>
+    public partial class SearchPlaceIndexForTextRequestMarshaller : IMarshaller<IRequest, SearchPlaceIndexForTextRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((SearchPlaceIndexForTextRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(SearchPlaceIndexForTextRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.LocationService");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-11-19";
+            request.HttpMethod = "POST";
+
+            if (publicRequest.IsSetKey())
+            {
+                request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
+            }
+
+            if (!publicRequest.IsSetIndexName())
+            {
+                throw new AmazonLocationServiceException("Request object does not have required field IndexName set");
+            }
+            request.AddPathResource("{IndexName}", StringUtils.FromString(publicRequest.IndexName));
+
+            request.ResourcePath = "/places/v0/indexes/{IndexName}/search/text";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetBiasPosition())
+            {
+                context.Writer.WritePropertyName("BiasPosition");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestBiasPositionListValue in publicRequest.BiasPosition)
+                {
+                    context.Writer.WriteNumberValue(publicRequestBiasPositionListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetFilterBBox())
+            {
+                context.Writer.WritePropertyName("FilterBBox");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestFilterBBoxListValue in publicRequest.FilterBBox)
+                {
+                    context.Writer.WriteNumberValue(publicRequestFilterBBoxListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetFilterCategories())
+            {
+                context.Writer.WritePropertyName("FilterCategories");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestFilterCategoriesListValue in publicRequest.FilterCategories)
+                {
+                    context.Writer.WriteStringValue(publicRequestFilterCategoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetFilterCountries())
+            {
+                context.Writer.WritePropertyName("FilterCountries");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestFilterCountriesListValue in publicRequest.FilterCountries)
+                {
+                    context.Writer.WriteStringValue(publicRequestFilterCountriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("Language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+            if (publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+            if (publicRequest.IsSetText())
+            {
+                context.Writer.WritePropertyName("Text");
+                context.Writer.WriteStringValue(publicRequest.Text);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            request.UseQueryString = true;
+
+            request.HostPrefix = $"places.";
+
+            return request;
+        }
+
+        private static readonly SearchPlaceIndexForTextRequestMarshaller _instance = new();
+
+        internal static SearchPlaceIndexForTextRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static SearchPlaceIndexForTextRequestMarshaller Instance => _instance;
+    }
+}

@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the sagemaker-a2i-runtime-2019-11-07.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,16 +38,12 @@ namespace Amazon.AugmentedAIRuntime
             new AmazonAugmentedAIRuntimeEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "SageMaker A2I Runtime";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "SageMaker A2I Runtime";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.AugmentedAIRuntime
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "a2i-runtime.sagemaker";
-            }
-        }
+        public override string RegionEndpointServiceName => "a2i-runtime.sagemaker";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2019-11-07";
-            }
-        }
+        public override string ServiceVersion => "2019-11-07";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.AugmentedAIRuntime
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }
