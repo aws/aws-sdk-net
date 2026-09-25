@@ -883,6 +883,76 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type FeedbackCode.
+    /// </summary>
+    public class FeedbackCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EYES_CLOSED_DETECTED for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode EYES_CLOSED_DETECTED = new FeedbackCode("EYES_CLOSED_DETECTED");
+        /// <summary>
+        /// Constant FACE_NOT_ALIGNED for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode FACE_NOT_ALIGNED = new FeedbackCode("FACE_NOT_ALIGNED");
+        /// <summary>
+        /// Constant FACE_NOT_VISIBLE for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode FACE_NOT_VISIBLE = new FeedbackCode("FACE_NOT_VISIBLE");
+        /// <summary>
+        /// Constant FACE_OBSTRUCTION_DETECTED for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode FACE_OBSTRUCTION_DETECTED = new FeedbackCode("FACE_OBSTRUCTION_DETECTED");
+        /// <summary>
+        /// Constant HIGH_LIGHTING_DETECTED for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode HIGH_LIGHTING_DETECTED = new FeedbackCode("HIGH_LIGHTING_DETECTED");
+        /// <summary>
+        /// Constant LOW_LIGHTING_DETECTED for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode LOW_LIGHTING_DETECTED = new FeedbackCode("LOW_LIGHTING_DETECTED");
+        /// <summary>
+        /// Constant LOW_VIDEO_QUALITY_DETECTED for FeedbackCode
+        /// </summary>
+        public static readonly FeedbackCode LOW_VIDEO_QUALITY_DETECTED = new FeedbackCode("LOW_VIDEO_QUALITY_DETECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeedbackCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeedbackCode FindValue(string value)
+        {
+            return FindValue<FeedbackCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeedbackCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GenderType.
     /// </summary>
     public class GenderType : ConstantClass

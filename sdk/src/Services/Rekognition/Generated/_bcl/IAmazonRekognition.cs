@@ -33,9 +33,11 @@ namespace Amazon.Rekognition
     /// <para>Interface for accessing Rekognition</para>
     ///
     /// This is the API Reference for <a href="https://docs.aws.amazon.com/rekognition/latest/dg/images.html">Amazon
-    /// Rekognition Image</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon
+    /// Rekognition Image</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/bulk-analysis.html">Amazon
+    /// Rekognition Bulk Image Analysis</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html">Amazon
     /// Rekognition Custom Labels</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/video.html">Amazon
-    /// Rekognition Stored Video</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon
+    /// Rekognition Stored Video</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html">Amazon
+    /// Rekognition Face Liveness</a>, <a href="https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html">Amazon
     /// Rekognition Streaming Video</a>. It provides descriptions of actions, data types,
     /// common parameters, and common errors.
     /// 
@@ -120,22 +122,12 @@ namespace Amazon.Rekognition
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html">GetMediaAnalysisJob</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_IndexFaces.html">IndexFaces</a>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListCollections.html">ListCollections</a>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJob.html">ListMediaAnalysisJob</a>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -171,6 +163,20 @@ namespace Amazon.Rekognition
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_SearchUsersByImage.html">SearchUsersByImage</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Amazon Rekognition Bulk Image Analysis</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetMediaAnalysisJob.html">GetMediaAnalysisJob</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_ListMediaAnalysisJob.html">ListMediaAnalysisJob</a>
     /// 
     /// </para>
     ///  </li> <li> 
@@ -284,7 +290,7 @@ namespace Amazon.Rekognition
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Amazon Rekognition Video Stored Video</b> 
+    ///  <b>Amazon Rekognition Stored Video</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -368,7 +374,26 @@ namespace Amazon.Rekognition
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Amazon Rekognition Video Streaming Video</b> 
+    ///  <b>Amazon Rekognition Face Liveness</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_CreateFaceLivenessSession.html">CreateFaceLivenessSession</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_GetFaceLivenessSessionResults.html">GetFaceLivenessSessionResults</a>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/rekognition/latest/APIReference/API_rekognitionstreaming_StartFaceLivenessSession.html">StartFaceLivenessSession</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Amazon Rekognition Streaming Video</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -1357,6 +1382,16 @@ namespace Amazon.Rekognition
         /// default, it is set to 0. The limit is best effort and based on the duration of the
         /// selfie-video. 
         /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>ChallengePreferences</c> option in the <c>Settings</c> parameter
+        /// to choose between the 'FaceMovementAndLightChallenge' or FaceMovementChallenge' settings.
+        /// See the <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness-shared-responsibility-model.html">Shared
+        /// Responsibility</a> page for details on guidance for which setting to choose between
+        /// these two settings depending on your use case and preferences. This parameter is optional
+        /// and if no parameter is provided, then the 'FaceMovementAndLightChallenge' settings
+        /// is applied by default.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaceLivenessSession service method.</param>
         /// 
@@ -1400,6 +1435,16 @@ namespace Amazon.Rekognition
         /// <c>GetFaceLivenessSessionResults</c> is called. This number is between 0 and 4. By
         /// default, it is set to 0. The limit is best effort and based on the duration of the
         /// selfie-video. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the <c>ChallengePreferences</c> option in the <c>Settings</c> parameter
+        /// to choose between the 'FaceMovementAndLightChallenge' or FaceMovementChallenge' settings.
+        /// See the <a href="https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness-shared-responsibility-model.html">Shared
+        /// Responsibility</a> page for details on guidance for which setting to choose between
+        /// these two settings depending on your use case and preferences. This parameter is optional
+        /// and if no parameter is provided, then the 'FaceMovementAndLightChallenge' settings
+        /// is applied by default.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFaceLivenessSession service method.</param>
@@ -1704,9 +1749,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates an Amazon Rekognition stream processor that you can use to detect and recognize
         /// faces or to detect labels in a streaming video.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
@@ -1787,9 +1845,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates an Amazon Rekognition stream processor that you can use to detect and recognize
         /// faces or to detect labels in a streaming video.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.
@@ -2598,10 +2669,24 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes the stream processor identified by <c>Name</c>. You assign the value for <c>Name</c>
         /// when you create the stream processor with <a>CreateStreamProcessor</a>. You might
         /// not be able to use the same name for a stream processor for a few seconds after calling
         /// <c>DeleteStreamProcessor</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamProcessor service method.</param>
         /// 
@@ -2635,10 +2720,24 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes the stream processor identified by <c>Name</c>. You assign the value for <c>Name</c>
         /// when you create the stream processor with <a>CreateStreamProcessor</a>. You might
         /// not be able to use the same name for a stream processor for a few seconds after calling
         /// <c>DeleteStreamProcessor</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamProcessor service method.</param>
         /// <param name="cancellationToken">
@@ -3120,9 +3219,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Provides information about a stream processor created by <a>CreateStreamProcessor</a>.
         /// You can get information about the input and output streams, the input parameters for
         /// the face recognition being performed, and the current status of the stream processor.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStreamProcessor service method.</param>
         /// 
@@ -3153,9 +3266,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Provides information about a stream processor created by <a>CreateStreamProcessor</a>.
         /// You can get information about the input and output streams, the input parameters for
         /// the face recognition being performed, and the current status of the stream processor.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStreamProcessor service method.</param>
         /// <param name="cancellationToken">
@@ -5356,6 +5483,12 @@ namespace Amazon.Rekognition
         /// by the <c>AuditImagesLimit</c> paramater when calling <c>CreateFaceLivenessSession</c>.
         /// Reference images are always returned when possible.
         /// </para>
+        ///  
+        /// <para>
+        /// For a session that has completed, the response can also include a <c>Feedback</c>
+        /// list describing conditions that were detected in the selfie-video, such as low lighting
+        /// or an obstructed face, and <c>Metadata</c> about the client that streamed the session.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFaceLivenessSessionResults service method.</param>
         /// 
@@ -5397,6 +5530,12 @@ namespace Amazon.Rekognition
         /// The number of audit images returned by <c>GetFaceLivenessSessionResults</c> is defined
         /// by the <c>AuditImagesLimit</c> paramater when calling <c>CreateFaceLivenessSession</c>.
         /// Reference images are always returned when possible.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a session that has completed, the response can also include a <c>Feedback</c>
+        /// list describing conditions that were detected in the selfie-video, such as low lighting
+        /// or an obstructed face, and <c>Metadata</c> about the client that streamed the session.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFaceLivenessSessionResults service method.</param>
@@ -5860,8 +5999,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves the results for a given media analysis job. Takes a <c>JobId</c> returned
         /// by StartMediaAnalysisJob.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMediaAnalysisJob service method.</param>
         /// 
@@ -5892,8 +6045,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Retrieves the results for a given media analysis job. Takes a <c>JobId</c> returned
         /// by StartMediaAnalysisJob.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMediaAnalysisJob service method.</param>
         /// <param name="cancellationToken">
@@ -7248,8 +7415,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns a list of media analysis jobs. Results are sorted by <c>CreationTimestamp</c>
         /// in descending order.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMediaAnalysisJobs service method.</param>
         /// 
@@ -7280,8 +7461,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns a list of media analysis jobs. Results are sorted by <c>CreationTimestamp</c>
         /// in descending order.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMediaAnalysisJobs service method.</param>
         /// <param name="cancellationToken">
@@ -7426,7 +7621,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamProcessors service method.</param>
         /// 
@@ -7457,7 +7667,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStreamProcessors service method.</param>
         /// <param name="cancellationToken">
@@ -9248,9 +9473,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket.
         /// The output is a manifest file and a summary of the manifest stored in the Amazon S3
         /// bucket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMediaAnalysisJob service method.</param>
         /// 
@@ -9301,9 +9540,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Initiates a new media analysis job. Accepts a manifest file in an Amazon S3 bucket.
         /// The output is a manifest file and a summary of the manifest stored in the Amazon S3
         /// bucket.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMediaAnalysisJob service method.</param>
         /// <param name="cancellationToken">
@@ -9792,10 +10045,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>.
         /// To tell <c>StartStreamProcessor</c> which stream processor to start, use the value
         /// of the <c>Name</c> field specified in the call to <c>CreateStreamProcessor</c>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If you are using a label detection stream processor to detect labels, you need to
@@ -9835,10 +10101,23 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>.
         /// To tell <c>StartStreamProcessor</c> which stream processor to start, use the value
         /// of the <c>Name</c> field specified in the call to <c>CreateStreamProcessor</c>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// If you are using a label detection stream processor to detect labels, you need to
@@ -10114,7 +10393,21 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Stops a running stream processor that was created by <a>CreateStreamProcessor</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamProcessor service method.</param>
         /// 
@@ -10148,7 +10441,21 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Stops a running stream processor that was created by <a>CreateStreamProcessor</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamProcessor service method.</param>
         /// <param name="cancellationToken">
@@ -10538,8 +10845,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Allows you to update a stream processor. You can change some settings and regions
-        /// of interest and delete certain parameters.
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Allows you to update a stream processor. You can change some settings and regions
+        /// of interest and delete certain parameters. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamProcessor service method.</param>
         /// 
@@ -10573,8 +10894,22 @@ namespace Amazon.Rekognition
 
 
         /// <summary>
-        /// Allows you to update a stream processor. You can change some settings and regions
-        /// of interest and delete certain parameters.
+        /// <important> 
+        /// <para>
+        /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+        /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+        /// feature availability changes</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+        /// 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Allows you to update a stream processor. You can change some settings and regions
+        /// of interest and delete certain parameters. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStreamProcessor service method.</param>
         /// <param name="cancellationToken">

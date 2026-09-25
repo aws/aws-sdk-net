@@ -31,8 +31,22 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStreamProcessor operation.
-    /// Allows you to update a stream processor. You can change some settings and regions
-    /// of interest and delete certain parameters.
+    /// <important> 
+    /// <para>
+    /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+    /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+    /// feature availability changes</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+    /// 
+    /// </para>
+    ///  </important> 
+    /// <para>
+    ///  Allows you to update a stream processor. You can change some settings and regions
+    /// of interest and delete certain parameters. 
+    /// </para>
     /// </summary>
     public partial class UpdateStreamProcessorRequest : AmazonRekognitionRequest
     {

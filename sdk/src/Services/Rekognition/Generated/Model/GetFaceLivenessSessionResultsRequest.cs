@@ -43,6 +43,12 @@ namespace Amazon.Rekognition.Model
     /// by the <c>AuditImagesLimit</c> paramater when calling <c>CreateFaceLivenessSession</c>.
     /// Reference images are always returned when possible.
     /// </para>
+    ///  
+    /// <para>
+    /// For a session that has completed, the response can also include a <c>Feedback</c>
+    /// list describing conditions that were detected in the selfie-video, such as low lighting
+    /// or an obstructed face, and <c>Metadata</c> about the client that streamed the session.
+    /// </para>
     /// </summary>
     public partial class GetFaceLivenessSessionResultsRequest : AmazonRekognitionRequest
     {

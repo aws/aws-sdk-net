@@ -31,9 +31,23 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStreamProcessor operation.
+    /// <important> 
+    /// <para>
+    /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+    /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+    /// feature availability changes</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+    /// 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Provides information about a stream processor created by <a>CreateStreamProcessor</a>.
     /// You can get information about the input and output streams, the input parameters for
     /// the face recognition being performed, and the current status of the stream processor.
+    /// </para>
     /// </summary>
     public partial class DescribeStreamProcessorRequest : AmazonRekognitionRequest
     {
