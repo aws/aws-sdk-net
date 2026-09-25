@@ -5331,6 +5331,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant AUTO_MUTE_AGENT_ON_HOLD for InstanceAttributeType
+        /// </summary>
+        public static readonly InstanceAttributeType AUTO_MUTE_AGENT_ON_HOLD = new InstanceAttributeType("AUTO_MUTE_AGENT_ON_HOLD");
+        /// <summary>
         /// Constant AUTO_RESOLVE_BEST_VOICES for InstanceAttributeType
         /// </summary>
         public static readonly InstanceAttributeType AUTO_RESOLVE_BEST_VOICES = new InstanceAttributeType("AUTO_RESOLVE_BEST_VOICES");
