@@ -1,3 +1,95 @@
+### 4.0.342.0 (2026-09-25 18:20 UTC)
+* AccessAnalyzer (4.0.100.15)
+	* AccessAnalyzer is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* Account (4.0.101.8)
+	* Account is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* AIOps (4.0.100.15)
+	* AIOps is now generated from its Smithy model. There are no changes to the public API.
+* Amplify (4.0.102.5)
+	* Amplify is now generated from its Smithy model. There are no changes to the public API.
+* AmplifyUIBuilder (4.0.100.15)
+	* AmplifyUIBuilder is now generated from its Smithy model. There are no changes to the public API.
+* AppConfig (4.0.101.12)
+	* AppConfig is now generated from its Smithy model. There are no changes to the public API.
+* AppConfigData (4.0.100.15)
+	* AppConfigData is now generated from its Smithy model. There are no changes to the public API.
+* AppIntegrationsService (4.0.102.1)
+	* AppIntegrationsService is now generated from its Smithy model. There are no changes to the public API.
+* ARCRegionswitch (4.0.103.0)
+	* Adds a service quota checker to Region switch to verify quota parity between your primary and standby Region, and automatically submit quota limit increases. Adds an optional EC2 Auto Scaling and ECS setting that waits for instances or tasks in the scaled-up Region to be healthy in target groups.
+* AugmentedAIRuntime (4.0.100.15)
+	* AugmentedAIRuntime is now generated from its Smithy model. There are no changes to the public API.
+* BedrockAgent (4.0.103.0)
+	* Adds support for calling VPC configuration API's in Bedrock. These configurations allow the use of On Prem connectors in Bedrock Managed Knowledge bases
+* BedrockAgentCoreControl (4.0.118.0)
+	* Amazon Bedrock AgentCore Payments now supports credential rotation for payment connectors, letting you rotate API and wallet secrets for Quick Create payment auths from the console. This release also adds Type and Creation type columns to the payment managers views.
+* BillingConductor (4.0.102.1)
+	* BillingConductor is now generated from its Smithy model.
+	* Added a paginator for the GetBillingGroupCostReport operation.
+	* Exception properties bound to response headers are now populated from those headers.
+* CleanRooms (4.0.104.7)
+	* CleanRooms is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.120.0)
+	* Agent Privacy During Hold is a new privacy capability for Amazon Connect Voice that prevents agent audio from being captured in call recordings or Contact Lens conversational analytics during hold. When enabled, agents are automatically muted on entering hold and unmuted on resuming the contact
+* DirectoryServiceData (4.0.100.15)
+	* DirectoryServiceData is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* DLM (4.0.100.15)
+	* DLM is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.108.0)
+	* add support for table level federation
+* InspectorScan (4.0.100.15)
+	* InspectorScan is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* IotData (4.0.100.15)
+	* IotData is now generated from its Smithy model. There are no changes to the public API.
+* IoTDeviceAdvisor (4.0.100.15)
+	* IoTDeviceAdvisor is now generated from its Smithy model. There are no changes to the public API.
+* IoTJobsDataPlane (4.0.100.15)
+	* IoTJobsDataPlane is now generated from its Smithy model. There are no changes to the public API.
+* IoTManagedIntegrations (4.0.100.15)
+	* IoTManagedIntegrations is now generated from its Smithy model. There are no changes to the public API.
+* IoTTwinMaker (4.0.100.15)
+	* IoTTwinMaker is now generated from its Smithy model. There are no changes to the public API.
+* IoTWireless (4.0.102.1)
+	* IoTWireless is now generated from its Smithy model. There are no changes to the public API.
+* LicenseManagerLinuxSubscriptions (4.0.100.15)
+	* LicenseManagerLinuxSubscriptions is now generated from its Smithy model. There are no changes to the public API.
+* LocationService (4.0.100.15)
+	* LocationService is now generated from its Smithy model. There are no changes to the public API.
+* MainframeModernization (4.0.100.15)
+	* MainframeModernization is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* MediaConnect (4.0.102.0)
+	* This release adds support for RTMP push router outputs in AWS Elemental MediaConnect.
+* NeptuneGraph (4.0.102.0)
+	* Add GraphIdentifier filter for ListImportTasks
+* OpenSearchService (4.0.102.14)
+	* OpenSearchService is now generated from its Smithy model. There are no changes to the public API.
+* PersonalizeEvents (4.0.100.15)
+	* PersonalizeEvents is now generated from its Smithy model. There are no changes to the public API.
+* PersonalizeRuntime (4.0.100.15)
+	* PersonalizeRuntime is now generated from its Smithy model. There are no changes to the public API.
+* QConnect (4.0.102.0)
+	* Release shapes for the proactive agentic recommendations and the multi-knowledge base search features. Increases the maximum length of QuickResponseContent.
+* Rekognition (4.0.101.0)
+	* This release adds support for Feedback and Metadata in the GetFaceLivenessSessionResults response. Feedback returns codes explaining why a Face Liveness check produced its result. Metadata includes the client SDK type.
+* Repostspace (4.0.100.15)
+	* Repostspace is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* ResourceExplorer2 (4.0.100.15)
+	* ResourceExplorer2 is now generated from its Smithy model. There are no changes to the public API.
+* RTBFabric (4.0.102.2)
+	* RTBFabric is now generated from its Smithy model. There are no changes to the public API.
+* SecurityAgent (4.0.107.0)
+	* This release adds the ListActorMessages operation, which returns the multi-factor authentication messages received at an actor's server-generated email address
+* SsmSap (4.0.100.15)
+	* SsmSap is now generated from its Smithy model. There are no changes to the public API.
+* WellArchitected (4.0.102.0)
+	* This change releases the Well-Architected Agent, a generative AI service that analyzes a customer's AWS environment and delivers personalized, prioritized recommendations across cost, security, performance, and resilience.
+
 ### 4.0.341.0 (2026-09-24 18:15 UTC)
 * Appflow (4.0.101.3)
 	* Appflow is now generated from its Smithy model. There are no changes to the public API.
