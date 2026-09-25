@@ -24,6 +24,7 @@
   <PropertyGroup>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>smithy-dotnet</ToolCommandName>
+    <Version>0.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
