@@ -45,6 +45,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
     private final String serviceName;
     private String marshallerType;
     private final String serviceNamespace;
+    private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
 
     public HttpProtocolTestGenerator(
             DotnetGenerationContext context
@@ -168,7 +169,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()) || httpRequestTestCase.hasTag("defaults"))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()) || !Collections.disjoint(httpRequestTestCase.getTags(), tagsToSkip))
                     continue;
                 generateRequestTest(operation, httpRequestTestCase);
             }
@@ -310,7 +311,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults"))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || !Collections.disjoint(httpResponseTestCase.getTags(), tagsToSkip))
                     continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }
