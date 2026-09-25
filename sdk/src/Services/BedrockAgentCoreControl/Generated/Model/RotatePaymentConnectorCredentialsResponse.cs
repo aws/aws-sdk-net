@@ -30,21 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Contains summary information about a payment connector.
+    /// This is the response object from the RotatePaymentConnectorCredentials operation.
     /// </summary>
-    public partial class PaymentConnectorSummary
+    public partial class RotatePaymentConnectorCredentialsResponse : AmazonWebServiceResponse
     {
         private DateTime? _lastUpdatedAt;
-        private string _name;
         private string _paymentConnectorId;
-        private PaymentConnectorProvisionMode _provisionMode;
+        private string _paymentManagerId;
         private PaymentConnectorStatus _status;
-        private PaymentConnectorType _type;
 
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The timestamp when the payment connector was last updated.
+        /// The timestamp when the payment connector was last updated, which is when the rotation
+        /// completed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,25 +57,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLastUpdatedAt()
         {
             return this._lastUpdatedAt.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the payment connector.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=48)]
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
         }
 
         /// <summary>
@@ -99,41 +79,29 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProvisionMode. 
+        /// Gets and sets the property PaymentManagerId. 
         /// <para>
-        /// Specifies how the payment connector was provisioned. Payment connectors that were
-        /// created before this field was available return <c>MANUAL</c>.
+        /// The unique identifier of the parent payment manager.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>MANUAL</c> - You provided the credential provider configurations, so you own the
-        /// credentials.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>QUICK_CREATE</c> - AgentCore provisioned the credential provider for you, so the
-        /// credentials are service-managed and you can rotate them with <c>RotatePaymentConnectorCredentials</c>.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
-        public PaymentConnectorProvisionMode ProvisionMode
+        [AWSProperty(Required=true, Min=12, Max=211)]
+        public string PaymentManagerId
         {
-            get { return this._provisionMode; }
-            set { this._provisionMode = value; }
+            get { return this._paymentManagerId; }
+            set { this._paymentManagerId = value; }
         }
 
-        // Check to see if ProvisionMode property is set
-        internal bool IsSetProvisionMode()
+        // Check to see if PaymentManagerId property is set
+        internal bool IsSetPaymentManagerId()
         {
-            return this._provisionMode != null;
+            return this._paymentManagerId != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the payment connector. Possible values include <c>CREATING</c>,
-        /// <c>READY</c>, <c>UPDATING</c>, <c>DELETING</c>, <c>CREATE_FAILED</c>, <c>UPDATE_FAILED</c>,
-        /// and <c>DELETE_FAILED</c>.
+        /// The current status of the payment connector, which is <c>READY</c> after a successful
+        /// rotation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -147,25 +115,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The type of the payment connector, which determines the payment provider integration.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public PaymentConnectorType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
         }
 
     }

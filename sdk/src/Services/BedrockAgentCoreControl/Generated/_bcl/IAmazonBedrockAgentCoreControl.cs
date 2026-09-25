@@ -9004,6 +9004,114 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  RotatePaymentConnectorCredentials
+
+
+        /// <summary>
+        /// Replaces the service-managed credentials of a payment connector with newly issued
+        /// credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation only for payment connectors with a <c>provisionMode</c> of <c>QUICK_CREATE</c>.
+        /// For payment connectors with a <c>provisionMode</c> of <c>MANUAL</c>, call <c>UpdatePaymentCredentialProvider</c>
+        /// instead after rotating credentials with the payment provider directly.
+        /// </para>
+        ///  
+        /// <para>
+        /// The rotation finishes before the response is returned, and only one rotation runs
+        /// at a time for a given payment connector. When it succeeds, the new credential is in
+        /// effect and the payment connector stays in the <c>READY</c> state. When it fails, an
+        /// error is returned, the payment connector and its existing credential are left unchanged,
+        /// and you can retry the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Rotation replaces the credential on the connector's credential provider, so every
+        /// payment connector that uses that provider is affected. Replace any copy of the previous
+        /// credential that you use outside AgentCore.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotatePaymentConnectorCredentials service method.</param>
+        /// 
+        /// <returns>The response from the RotatePaymentConnectorCredentials service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/RotatePaymentConnectorCredentials">REST API Reference for RotatePaymentConnectorCredentials Operation</seealso>
+        RotatePaymentConnectorCredentialsResponse RotatePaymentConnectorCredentials(RotatePaymentConnectorCredentialsRequest request);
+
+
+
+        /// <summary>
+        /// Replaces the service-managed credentials of a payment connector with newly issued
+        /// credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation only for payment connectors with a <c>provisionMode</c> of <c>QUICK_CREATE</c>.
+        /// For payment connectors with a <c>provisionMode</c> of <c>MANUAL</c>, call <c>UpdatePaymentCredentialProvider</c>
+        /// instead after rotating credentials with the payment provider directly.
+        /// </para>
+        ///  
+        /// <para>
+        /// The rotation finishes before the response is returned, and only one rotation runs
+        /// at a time for a given payment connector. When it succeeds, the new credential is in
+        /// effect and the payment connector stays in the <c>READY</c> state. When it fails, an
+        /// error is returned, the payment connector and its existing credential are left unchanged,
+        /// and you can retry the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Rotation replaces the credential on the connector's credential provider, so every
+        /// payment connector that uses that provider is affected. Replace any copy of the previous
+        /// credential that you use outside AgentCore.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RotatePaymentConnectorCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RotatePaymentConnectorCredentials service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/RotatePaymentConnectorCredentials">REST API Reference for RotatePaymentConnectorCredentials Operation</seealso>
+        Task<RotatePaymentConnectorCredentialsResponse> RotatePaymentConnectorCredentialsAsync(RotatePaymentConnectorCredentialsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  SetTokenVaultCMK
 
 

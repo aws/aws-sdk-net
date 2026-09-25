@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetPaymentConnector operation
+    /// Response Unmarshaller for RotatePaymentConnectorCredentials operation
     /// </summary>  
-    public class GetPaymentConnectorResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RotatePaymentConnectorCredentialsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,52 +46,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetPaymentConnectorResponse response = new GetPaymentConnectorResponse();
+            RotatePaymentConnectorCredentialsResponse response = new RotatePaymentConnectorCredentialsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authorizationUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.AuthorizationUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("credentialProviderConfigurations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CredentialsProviderConfiguration, CredentialsProviderConfigurationUnmarshaller>(CredentialsProviderConfigurationUnmarshaller.Instance);
-                    response.CredentialProviderConfigurations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("credentialsUpdatedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CredentialsUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("paymentConnectorId", targetDepth, ref reader))
@@ -100,22 +64,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.PaymentConnectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("provisionMode", targetDepth, ref reader))
+                if (context.TestExpression("paymentManagerId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProvisionMode = unmarshaller.Unmarshall(context, ref reader);
+                    response.PaymentManagerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -147,6 +105,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -167,9 +129,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             return new AmazonBedrockAgentCoreControlException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetPaymentConnectorResponseUnmarshaller _instance = new GetPaymentConnectorResponseUnmarshaller();        
+        private static RotatePaymentConnectorCredentialsResponseUnmarshaller _instance = new RotatePaymentConnectorCredentialsResponseUnmarshaller();        
 
-        internal static GetPaymentConnectorResponseUnmarshaller GetInstance()
+        internal static RotatePaymentConnectorCredentialsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -177,7 +139,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetPaymentConnectorResponseUnmarshaller Instance
+        public static RotatePaymentConnectorCredentialsResponseUnmarshaller Instance
         {
             get
             {
