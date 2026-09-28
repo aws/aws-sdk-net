@@ -2,52 +2,61 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateCellResponse.CellArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateCellResponse.CellName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateReadinessCheckResponse.ReadinessCheckArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateReadinessCheckResponse.ReadinessCheckName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateReadinessCheckResponse.ResourceSet</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateRecoveryGroupResponse.RecoveryGroupArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateRecoveryGroupResponse.RecoveryGroupName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateResourceSetRequest.ResourceSetType</property>
-    <pattern>AWS::[A-Za-z0-9]+::[A-Za-z0-9]+</pattern>
+    <pattern>^AWS::[A-Za-z0-9]+::[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateResourceSetResponse.ResourceSetArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateResourceSetResponse.ResourceSetName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CreateResourceSetResponse.ResourceSetType</property>
-    <pattern>AWS::[A-Za-z0-9]+::[A-Za-z0-9]+</pattern>
+    <pattern>^AWS::[A-Za-z0-9]+::[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetArchitectureRecommendationsRequest.MaxResults</property>
@@ -56,12 +65,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetCellResponse.CellArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetCellResponse.CellName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetCellReadinessSummaryRequest.MaxResults</property>
@@ -70,17 +81,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetReadinessCheckResponse.ReadinessCheckArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetReadinessCheckResponse.ReadinessCheckName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetReadinessCheckResponse.ResourceSet</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetReadinessCheckResourceStatusRequest.MaxResults</property>
@@ -94,12 +108,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetRecoveryGroupResponse.RecoveryGroupArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetRecoveryGroupResponse.RecoveryGroupName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetRecoveryGroupReadinessSummaryRequest.MaxResults</property>
@@ -108,16 +124,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetResourceSetResponse.ResourceSetArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetResourceSetResponse.ResourceSetName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.GetResourceSetResponse.ResourceSetType</property>
-    <pattern>AWS::[A-Za-z0-9]+::[A-Za-z0-9]+</pattern>
+    <pattern>^AWS::[A-Za-z0-9]+::[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ListCellsRequest.MaxResults</property>
@@ -151,108 +169,129 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateCellResponse.CellArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateCellResponse.CellName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateReadinessCheckResponse.ReadinessCheckArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateReadinessCheckResponse.ReadinessCheckName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateReadinessCheckResponse.ResourceSet</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateRecoveryGroupResponse.RecoveryGroupArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateRecoveryGroupResponse.RecoveryGroupName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateResourceSetRequest.ResourceSetType</property>
-    <pattern>AWS::[A-Za-z0-9]+::[A-Za-z0-9]+</pattern>
+    <pattern>^AWS::[A-Za-z0-9]+::[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateResourceSetResponse.ResourceSetArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateResourceSetResponse.ResourceSetName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.UpdateResourceSetResponse.ResourceSetType</property>
-    <pattern>AWS::[A-Za-z0-9]+::[A-Za-z0-9]+</pattern>
+    <pattern>^AWS::[A-Za-z0-9]+::[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CellOutput.CellArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.CellOutput.CellName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ListRulesOutput.ResourceType</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ListRulesOutput.RuleDescription</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ListRulesOutput.RuleId</property>
+    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ReadinessCheckOutput.ReadinessCheckArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ReadinessCheckOutput.ReadinessCheckName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ReadinessCheckOutput.ResourceSet</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.RecoveryGroupOutput.RecoveryGroupArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.RecoveryGroupOutput.RecoveryGroupName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ResourceSetOutput.ResourceSetArn</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ResourceSetOutput.ResourceSetName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\A[a-zA-Z0-9_]+\z</pattern>
+    <pattern>^\A[a-zA-Z0-9_]+\z$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryReadiness.Model.ResourceSetOutput.ResourceSetType</property>
-    <pattern>AWS::[A-Za-z0-9]+::[A-Za-z0-9]+</pattern>
+    <pattern>^AWS::[A-Za-z0-9]+::[A-Za-z0-9]+$</pattern>
   </property-value-rule>
 </property-value-rules>

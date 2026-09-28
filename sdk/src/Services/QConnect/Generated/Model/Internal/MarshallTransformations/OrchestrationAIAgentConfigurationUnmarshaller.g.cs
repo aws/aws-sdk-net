@@ -1,0 +1,122 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QConnect.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for OrchestrationAIAgentConfiguration Object
+    /// </summary>
+    public partial class OrchestrationAIAgentConfigurationUnmarshaller : IJsonUnmarshaller<OrchestrationAIAgentConfiguration, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public OrchestrationAIAgentConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new OrchestrationAIAgentConfiguration();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("connectInstanceArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectInstanceArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("inputSchemas", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Amazon.Runtime.Documents.Document, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    unmarshalledObject.InputSchemas = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("locale", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Locale = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("multiAgentConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MultiAgentConfiguration, MultiAgentConfigurationUnmarshaller>(MultiAgentConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.MultiAgentConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("orchestrationAIGuardrailId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationAIGuardrailId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("orchestrationAIPromptId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationAIPromptId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("outputSchemas", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Amazon.Runtime.Documents.Document, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    unmarshalledObject.OutputSchemas = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("toolConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ToolConfiguration, ToolConfigurationUnmarshaller>(ToolConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ToolConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static OrchestrationAIAgentConfigurationUnmarshaller _instance = new OrchestrationAIAgentConfigurationUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static OrchestrationAIAgentConfigurationUnmarshaller Instance => _instance;
+    }
+}

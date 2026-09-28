@@ -1,0 +1,113 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Pipes.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Pipes.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// PipeSourceKinesisStreamParameters Marshaller
+    /// </summary>
+    public partial class PipeSourceKinesisStreamParametersMarshaller : IRequestMarshaller<PipeSourceKinesisStreamParameters, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(PipeSourceKinesisStreamParameters requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetBatchSize())
+            {
+                context.Writer.WritePropertyName("BatchSize");
+                context.Writer.WriteNumberValue(requestObject.BatchSize.Value);
+            }
+
+            if (requestObject.IsSetDeadLetterConfig())
+            {
+                context.Writer.WritePropertyName("DeadLetterConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeadLetterConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DeadLetterConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetMaximumBatchingWindowInSeconds())
+            {
+                context.Writer.WritePropertyName("MaximumBatchingWindowInSeconds");
+                context.Writer.WriteNumberValue(requestObject.MaximumBatchingWindowInSeconds.Value);
+            }
+
+            if (requestObject.IsSetMaximumRecordAgeInSeconds())
+            {
+                context.Writer.WritePropertyName("MaximumRecordAgeInSeconds");
+                context.Writer.WriteNumberValue(requestObject.MaximumRecordAgeInSeconds.Value);
+            }
+
+            if (requestObject.IsSetMaximumRetryAttempts())
+            {
+                context.Writer.WritePropertyName("MaximumRetryAttempts");
+                context.Writer.WriteNumberValue(requestObject.MaximumRetryAttempts.Value);
+            }
+
+            if (requestObject.IsSetOnPartialBatchItemFailure())
+            {
+                context.Writer.WritePropertyName("OnPartialBatchItemFailure");
+                context.Writer.WriteStringValue(requestObject.OnPartialBatchItemFailure);
+            }
+
+            if (requestObject.IsSetParallelizationFactor())
+            {
+                context.Writer.WritePropertyName("ParallelizationFactor");
+                context.Writer.WriteNumberValue(requestObject.ParallelizationFactor.Value);
+            }
+
+            if (requestObject.IsSetStartingPosition())
+            {
+                context.Writer.WritePropertyName("StartingPosition");
+                context.Writer.WriteStringValue(requestObject.StartingPosition);
+            }
+
+            if (requestObject.IsSetStartingPositionTimestamp())
+            {
+                context.Writer.WritePropertyName("StartingPositionTimestamp");
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.StartingPositionTimestamp.Value));
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static PipeSourceKinesisStreamParametersMarshaller Instance = new PipeSourceKinesisStreamParametersMarshaller();
+    }
+}

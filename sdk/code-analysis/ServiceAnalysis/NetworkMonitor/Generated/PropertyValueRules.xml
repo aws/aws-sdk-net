@@ -8,7 +8,7 @@
     <property>Amazon.NetworkMonitor.Model.CreateMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateMonitorResponse.AggregationPeriod</property>
@@ -18,19 +18,19 @@
     <property>Amazon.NetworkMonitor.Model.CreateMonitorResponse.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateMonitorResponse.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateProbeRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateProbeResponse.Destination</property>
@@ -51,43 +51,43 @@
     <property>Amazon.NetworkMonitor.Model.CreateProbeResponse.ProbeArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateProbeResponse.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateProbeResponse.SourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateProbeResponse.VpcId</property>
-    <pattern>vpc-[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^vpc-[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.DeleteMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.DeleteProbeRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.DeleteProbeRequest.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetMonitorResponse.AggregationPeriod</property>
@@ -97,23 +97,23 @@
     <property>Amazon.NetworkMonitor.Model.GetMonitorResponse.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetMonitorResponse.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeRequest.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeResponse.Destination</property>
@@ -134,21 +134,21 @@
     <property>Amazon.NetworkMonitor.Model.GetProbeResponse.ProbeArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeResponse.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeResponse.SourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.GetProbeResponse.VpcId</property>
-    <pattern>vpc-[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^vpc-[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.ListMonitorsRequest.MaxResults</property>
@@ -164,19 +164,19 @@
     <property>Amazon.NetworkMonitor.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorRequest.AggregationPeriod</property>
@@ -186,7 +186,7 @@
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorResponse.AggregationPeriod</property>
@@ -196,13 +196,13 @@
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorResponse.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateMonitorResponse.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeRequest.Destination</property>
@@ -218,7 +218,7 @@
     <property>Amazon.NetworkMonitor.Model.UpdateProbeRequest.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeRequest.PacketSize</property>
@@ -227,7 +227,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeRequest.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeResponse.Destination</property>
@@ -248,21 +248,21 @@
     <property>Amazon.NetworkMonitor.Model.UpdateProbeResponse.ProbeArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeResponse.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeResponse.SourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.UpdateProbeResponse.VpcId</property>
-    <pattern>vpc-[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^vpc-[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.CreateMonitorProbeInput.Destination</property>
@@ -283,7 +283,7 @@
     <property>Amazon.NetworkMonitor.Model.CreateMonitorProbeInput.SourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.MonitorSummary.AggregationPeriod</property>
@@ -293,13 +293,13 @@
     <property>Amazon.NetworkMonitor.Model.MonitorSummary.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.MonitorSummary.MonitorName</property>
     <min>1</min>
     <max>200</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.Probe.Destination</property>
@@ -320,21 +320,21 @@
     <property>Amazon.NetworkMonitor.Model.Probe.ProbeArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.Probe.ProbeId</property>
-    <pattern>probe-[a-z0-9A-Z-]{21,64}</pattern>
+    <pattern>^probe-[a-z0-9A-Z-]{21,64}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.Probe.SourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.Probe.VpcId</property>
-    <pattern>vpc-[a-zA-Z0-9]{8,32}</pattern>
+    <pattern>^vpc-[a-zA-Z0-9]{8,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkMonitor.Model.ProbeInput.Destination</property>
@@ -355,6 +355,6 @@
     <property>Amazon.NetworkMonitor.Model.ProbeInput.SourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
 </property-value-rules>

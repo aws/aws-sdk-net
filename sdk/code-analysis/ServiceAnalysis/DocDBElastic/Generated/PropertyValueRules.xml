@@ -31,13 +31,13 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DocDBElastic.Model.ListClustersRequest.MaxResults</property>
-    <min>1</min>
+    <property>Amazon.DocDBElastic.Model.ListClusterSnapshotsRequest.MaxResults</property>
+    <min>20</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.DocDBElastic.Model.ListClusterSnapshotsRequest.MaxResults</property>
-    <min>20</min>
+    <property>Amazon.DocDBElastic.Model.ListClustersRequest.MaxResults</property>
+    <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>

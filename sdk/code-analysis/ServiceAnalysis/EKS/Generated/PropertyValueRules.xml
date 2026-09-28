@@ -4,7 +4,7 @@
     <property>Amazon.EKS.Model.CreateAddonRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.CreateAddonRequest.ServiceAccountRoleArn</property>
@@ -15,25 +15,25 @@
     <property>Amazon.EKS.Model.CreateClusterRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.CreateEksAnywhereSubscriptionRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.DeleteAddonRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.DescribeAddonRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.DescribeAddonVersionsRequest.MaxResults</property>
@@ -59,7 +59,7 @@
     <property>Amazon.EKS.Model.ListAddonsRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.ListAddonsRequest.MaxResults</property>
@@ -125,13 +125,13 @@
     <property>Amazon.EKS.Model.RegisterClusterRequest.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.UpdateAddonRequest.ClusterName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.UpdateAddonRequest.ServiceAccountRoleArn</property>
@@ -142,7 +142,7 @@
     <property>Amazon.EKS.Model.Addon.ClusterName</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+    <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.AddonNamespaceConfigRequest.Namespace</property>
@@ -153,27 +153,6 @@
     <property>Amazon.EKS.Model.AddonNamespaceConfigResponse.Namespace</property>
     <min>1</min>
     <max>63</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EKS.Model.NodegroupScalingConfig.DesiredSize</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EKS.Model.NodegroupScalingConfig.MaxSize</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EKS.Model.NodegroupScalingConfig.MinSize</property>
-    <min>0</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EKS.Model.NodegroupUpdateConfig.MaxUnavailable</property>
-    <min>1</min>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.EKS.Model.NodegroupUpdateConfig.MaxUnavailablePercentage</property>
-    <min>1</min>
-    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.NodeRepairConfig.MaxParallelNodesRepairedCount</property>
@@ -196,6 +175,27 @@
   <property-value-rule>
     <property>Amazon.EKS.Model.NodeRepairConfigOverrides.MinRepairWaitTimeMins</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodegroupScalingConfig.DesiredSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodegroupScalingConfig.MaxSize</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodegroupScalingConfig.MinSize</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodegroupUpdateConfig.MaxUnavailable</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.NodegroupUpdateConfig.MaxUnavailablePercentage</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EKS.Model.PodGcControllerConfigRequest.TerminatedPodGcThreshold</property>

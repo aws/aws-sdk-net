@@ -4,13 +4,13 @@
     <property>Amazon.ControlCatalog.Model.GetControlRequest.ControlArn</property>
     <min>34</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.GetControlResponse.Arn</property>
     <min>34</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListCommonControlsRequest.MaxResults</property>
@@ -19,12 +19,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListCommonControlsRequest.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListCommonControlsResponse.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -34,12 +32,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListControlMappingsRequest.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListControlMappingsResponse.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -49,12 +45,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListControlsRequest.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListControlsResponse.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -64,12 +58,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListDomainsRequest.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListDomainsResponse.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -79,61 +71,59 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListObjectivesRequest.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ListObjectivesResponse.NextToken</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.AssociatedDomainSummary.Arn</property>
     <min>33</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.AssociatedObjectiveSummary.Arn</property>
     <min>36</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.CommonControlMappingDetails.CommonControlArn</property>
     <min>41</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::common-control/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::common-control/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.CommonControlSummary.Arn</property>
     <min>41</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::common-control/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::common-control/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ControlMapping.ControlArn</property>
     <min>34</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ControlSummary.Arn</property>
     <min>34</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.DomainResourceFilter.Arn</property>
     <min>33</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.DomainSummary.Arn</property>
     <min>33</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::domain/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.FrameworkMappingDetails.Item</property>
@@ -149,42 +139,42 @@
     <property>Amazon.ControlCatalog.Model.ImplementationDetails.Identifier</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ImplementationDetails.Type</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>[A-Za-z0-9]+(::[A-Za-z0-9_]+){2,3}</pattern>
+    <pattern>^[A-Za-z0-9]+(::[A-Za-z0-9_]+){2,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ImplementationSummary.Identifier</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_\.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_\.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ImplementationSummary.Type</property>
     <min>7</min>
     <max>2048</max>
-    <pattern>[A-Za-z0-9]+(::[A-Za-z0-9_]+){2,3}</pattern>
+    <pattern>^[A-Za-z0-9]+(::[A-Za-z0-9_]+){2,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ObjectiveResourceFilter.Arn</property>
     <min>36</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.ObjectiveSummary.Arn</property>
     <min>36</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):controlcatalog:::objective/[0-9a-z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ControlCatalog.Model.RelatedControlMappingDetails.ControlArn</property>
     <min>34</min>
     <max>2048</max>
-    <pattern>arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+</pattern>
+    <pattern>^arn:(aws(?:[-a-z]*)?):(controlcatalog|controltower):[a-zA-Z0-9-]*::control/[0-9a-zA-Z_\-]+$</pattern>
   </property-value-rule>
 </property-value-rules>
