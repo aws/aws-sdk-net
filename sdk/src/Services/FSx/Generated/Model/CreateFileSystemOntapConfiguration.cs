@@ -334,7 +334,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=8, Max=100000)]
+        [AWSProperty(Min=8, Max=2147483647)]
         public int? ThroughputCapacity
         {
             get { return this._throughputCapacity; }
@@ -396,7 +396,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=128, Max=6144)]
+        [AWSProperty(Min=128, Max=2147483647)]
         public int? ThroughputCapacityPerHAPair
         {
             get { return this._throughputCapacityPerHAPair; }
