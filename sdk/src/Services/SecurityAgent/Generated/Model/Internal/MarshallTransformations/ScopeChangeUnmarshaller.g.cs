@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PentestJobSummary Object
+    /// Response Unmarshaller for ScopeChange Object
     /// </summary>
-    public partial class PentestJobSummaryUnmarshaller : IJsonUnmarshaller<PentestJobSummary, JsonUnmarshallerContext>
+    public partial class ScopeChangeUnmarshaller : IJsonUnmarshaller<ScopeChange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public PentestJobSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ScopeChange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new PentestJobSummary();
+            var unmarshalledObject = new ScopeChange();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,70 +53,49 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("createdAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("jobType", targetDepth, ref reader))
+                if (context.TestExpression("baseCommitSha", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BaseCommitSha = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("pentestId", targetDepth, ref reader))
+                if (context.TestExpression("headCommitSha", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PentestId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.HeadCommitSha = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("pentestJobId", targetDepth, ref reader))
+                if (context.TestExpression("integrationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PentestJobId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.IntegrationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("reportUrl", targetDepth, ref reader))
+                if (context.TestExpression("providerResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReportUrl = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ProviderResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("status", targetDepth, ref reader))
+                if (context.TestExpression("triggerRunId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("title", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("updatedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TriggerRunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static PentestJobSummaryUnmarshaller _instance = new PentestJobSummaryUnmarshaller();
+        private static ScopeChangeUnmarshaller _instance = new ScopeChangeUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static PentestJobSummaryUnmarshaller Instance => _instance;
+        public static ScopeChangeUnmarshaller Instance => _instance;
     }
 }

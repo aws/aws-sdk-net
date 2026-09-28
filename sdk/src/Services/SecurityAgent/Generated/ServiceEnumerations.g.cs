@@ -752,6 +752,11 @@ namespace Amazon.SecurityAgent
     public class JobType : ConstantClass
     {
         /// <summary>
+        /// Constant CICD for JobType
+        /// </summary>
+        public static readonly JobType CICD = new JobType("CICD");
+
+        /// <summary>
         /// Constant FULL for JobType
         /// </summary>
         public static readonly JobType FULL = new JobType("FULL");
@@ -1516,6 +1521,52 @@ namespace Amazon.SecurityAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RiskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScopeDecision.
+    /// </summary>
+    public class ScopeDecision : ConstantClass
+    {
+        /// <summary>
+        /// Constant IN_SCOPE for ScopeDecision
+        /// </summary>
+        public static readonly ScopeDecision IN_SCOPE = new ScopeDecision("IN_SCOPE");
+
+        /// <summary>
+        /// Constant SCOPED_OUT for ScopeDecision
+        /// </summary>
+        public static readonly ScopeDecision SCOPED_OUT = new ScopeDecision("SCOPED_OUT");
+
+        /// <summary>
+        /// Constant SCOPE_CONFLICT for ScopeDecision
+        /// </summary>
+        public static readonly ScopeDecision SCOPE_CONFLICT = new ScopeDecision("SCOPE_CONFLICT");
+
+        /// <summary>
+        /// Constructs a custom ScopeDecision for a value not among the defined constants.
+        /// </summary>
+        public ScopeDecision(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScopeDecision FindValue(string value)
+        {
+            return FindValue<ScopeDecision>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScopeDecision(string value)
         {
             return FindValue(value);
         }
