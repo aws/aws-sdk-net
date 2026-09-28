@@ -55,6 +55,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public bool ConsistentRead { get; set; }
 
         /// <summary>
+        /// The maximum number of <c>BatchGetItem</c> service calls the SDK is allowed to have in flight
+        /// at the same time when this request contains more keys than fit in a single call.
+        /// </summary>
+        /// <remarks>
+        /// DynamoDB limits a single <c>BatchGetItem</c> call to 100 keys (and 16 MB). When you request more
+        /// keys than that, the SDK automatically splits the work into multiple calls. By default those calls
+        /// are made one after another. Set this property to a value greater than 1 to let the SDK send several
+        /// of them at once, which can noticeably reduce the total time to retrieve a large number of items.
+        /// <para>
+        /// Leaving this property unset (or setting it to 1) preserves the default behavior of sending the calls
+        /// sequentially. Values less than 1 are treated as 1.
+        /// </para>
+        /// <para>
+        /// Choose this value with your table's read throughput in mind. A higher degree of parallelism drives
+        /// reads at the table harder and in a shorter window, which makes request throttling more likely on
+        /// tables that are not provisioned (or scaled) for the resulting rate. Start with a small value and
+        /// increase it only if your table has the capacity to absorb the additional concurrent reads.
+        /// </para>
+        /// <para>
+        /// This property only applies to the asynchronous execution path (<c>ExecuteAsync</c>). It has no effect
+        /// on the synchronous <c>Execute</c> method, which always sends the calls sequentially.
+        /// </para>
+        /// </remarks>
+        public int? MaxParallelBatches { get; set; }
+
+        /// <summary>
         /// Add a single item to get, identified by its hash primary key.
         /// </summary>
         /// <param name="hashKey">Hash key element of the item to get.</param>
@@ -115,6 +141,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public bool ConsistentRead { get; set; }
+
+        /// <inheritdoc/>
+        public int? MaxParallelBatches { get; set; }
 
         #endregion
 
@@ -184,7 +213,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             MultiBatchGet resultsObject = new MultiBatchGet
             {
-                Batches = new List<DocumentBatchGet>(1) { this }
+                Batches = new List<DocumentBatchGet>(1) { this },
+                MaxParallelBatches = MaxParallelBatches
             };
 
             var results = await resultsObject.GetItemsHelperAsync(cancellationToken).ConfigureAwait(false);
@@ -366,6 +396,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public List<DocumentBatchGet> Batches { get; set; }
 
         /// <summary>
+        /// The maximum number of <c>BatchGetItem</c> service calls to have in flight at the same time on the
+        /// asynchronous execution path. When null or &lt;= 1 the calls are made sequentially (default behavior).
+        /// </summary>
+        public int? MaxParallelBatches { get; set; }
+
+        /// <summary>
         /// Maximum number of items that can be sent in a single BatchGet request
         /// </summary>
         public const int MaxItemsPerCall = 100;
@@ -441,7 +477,73 @@ namespace Amazon.DynamoDBv2.DocumentModel
             var targetTable = firstBatch.TargetTable;
             var clientToUse = targetTable.DDBClient;
 
+            // A value <= 1 (or unset) preserves the historical sequential behavior. Anything higher opts in to
+            // sending multiple BatchGetItem calls concurrently, bounded by the requested degree of parallelism.
+            var maxParallelBatches = MaxParallelBatches.GetValueOrDefault(1);
+            if (maxParallelBatches < 1)
+                maxParallelBatches = 1;
+
+            if (maxParallelBatches <= 1)
+            {
+                var convertedBatches = ConvertBatches();
+                while (true)
+                {
+                    var nextSet = GetNextRequestItems(convertedBatches, MaxItemsPerCall);
+                    if (nextSet.Count == 0)
+                        break;
+
+                    BatchGetItemRequest request = CreateRequest(nextSet);
+                    targetTable.UpdateRequestUserAgentDetails(request, isAsync: true);
+
+                    await CallUntilCompletionAsync(clientToUse, request, results, cancellationToken).ConfigureAwait(false);
+                }
+
+                return results;
+            }
+
+            // Parallel path: pre-compute every 100-key chunk up front so each unit of work is independent, then
+            // fan them out under a semaphore that caps how many BatchGetItem calls are in flight at once. Each
+            // chunk still runs its own UnprocessedKeys retry loop inside CallUntilCompletionAsync; the semaphore is
+            // what prevents an unbounded fan-out (and the synchronized retry storm that would come with it).
+            var requests = BuildAllRequests(targetTable);
+            if (requests.Count == 0)
+                return results;
+
+            using (var throttle = new SemaphoreSlim(maxParallelBatches, maxParallelBatches))
+            {
+                var tasks = new List<Task<Results>>(requests.Count);
+                foreach (var request in requests)
+                {
+                    tasks.Add(ExecuteRequestAsync(clientToUse, request, throttle, cancellationToken));
+                }
+
+                // Await all chunks. Task.WhenAll surfaces the first exception; any capacity already consumed by
+                // chunks that completed before the failure is expected and matches BatchGetItem's at-least-partial
+                // execution semantics.
+                var chunkResults = await Task.WhenAll(tasks).ConfigureAwait(false);
+
+                // Merge in deterministic chunk order so the assembled result list is stable regardless of the
+                // (non-deterministic) order in which the parallel calls actually completed.
+                foreach (var chunkResult in chunkResults)
+                {
+                    foreach (var kvp in chunkResult.RetrievedItems)
+                    {
+                        results.Add(kvp.Key, kvp.Value);
+                    }
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Materializes every 100-key <see cref="BatchGetItemRequest"/> needed to satisfy the configured batches.
+        /// Used by the parallel execution path so each request can be dispatched as an independent unit of work.
+        /// </summary>
+        private List<BatchGetItemRequest> BuildAllRequests(Table targetTable)
+        {
             var convertedBatches = ConvertBatches();
+            var requests = new List<BatchGetItemRequest>();
             while (true)
             {
                 var nextSet = GetNextRequestItems(convertedBatches, MaxItemsPerCall);
@@ -450,11 +552,31 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
                 BatchGetItemRequest request = CreateRequest(nextSet);
                 targetTable.UpdateRequestUserAgentDetails(request, isAsync: true);
-
-                await CallUntilCompletionAsync(clientToUse, request, results, cancellationToken).ConfigureAwait(false);
+                requests.Add(request);
             }
 
-            return results;
+            return requests;
+        }
+
+        /// <summary>
+        /// Runs a single chunk request (including its UnprocessedKeys retry loop) into a private
+        /// <see cref="Results"/> instance while holding a slot on the concurrency-limiting semaphore. Using a
+        /// per-chunk result avoids any shared mutable state across the concurrent calls; callers merge the
+        /// returned results afterwards.
+        /// </summary>
+        private async Task<Results> ExecuteRequestAsync(IAmazonDynamoDB client, BatchGetItemRequest request, SemaphoreSlim throttle, CancellationToken cancellationToken)
+        {
+            await throttle.WaitAsync(cancellationToken).ConfigureAwait(false);
+            try
+            {
+                var chunkResults = new Results(Batches);
+                await CallUntilCompletionAsync(client, request, chunkResults, cancellationToken).ConfigureAwait(false);
+                return chunkResults;
+            }
+            finally
+            {
+                throttle.Release();
+            }
         }
 
         private Results GetAttributeItems()

@@ -4,6 +4,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(BatchGetConfig).GetProperties().Length);
+            Assert.AreEqual(7, typeof(BatchGetConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -739,6 +740,84 @@ namespace AWSSDK_DotNet.UnitTests
                 capturedRequest.ExpressionAttributeValues == null || capturedRequest.ExpressionAttributeValues.Count > 0,
                 "ExpressionAttributeValues must be either null or non-empty; DynamoDB rejects empty maps."
             );
+        }
+
+        [TestMethod]
+        public async Task BatchGetConfig_MaxParallelBatches_DrivesConcurrentCalls()
+        {
+            var current = 0;
+            var max = 0;
+            var total = 0;
+            var sync = new object();
+            var gate = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient
+                .Setup(client => client.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(async (BatchGetItemRequest request, CancellationToken _) =>
+                {
+                    lock (sync) { current++; total++; if (current > max) max = current; }
+                    await gate.Task.ConfigureAwait(false);
+                    lock (sync) { current--; }
+                    return new BatchGetItemResponse { Responses = new(), UnprocessedKeys = new() };
+                });
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            // 300 keys => 3 chunks; allow 3 in flight.
+            var batchGet = context.CreateBatchGet<DataModel>(new BatchGetConfig { MaxParallelBatches = 3 });
+            for (var i = 0; i < 300; i++)
+                batchGet.AddKey(i.ToString(), "Name");
+
+            var execution = batchGet.ExecuteAsync();
+
+            // Wait until all 3 chunks are concurrently in flight, then release them.
+            var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(5);
+            while (DateTime.UtcNow < deadline)
+            {
+                lock (sync) { if (current >= 3) break; }
+                await Task.Delay(10);
+            }
+            gate.SetResult(true);
+            await execution;
+
+            Assert.AreEqual(3, total);
+            Assert.AreEqual(3, max, "BatchGetConfig.MaxParallelBatches must flow end-to-end and drive concurrent calls.");
+        }
+
+        [TestMethod]
+        public async Task BatchGetConfig_DefaultMaxParallelBatches_IsSequential()
+        {
+            var current = 0;
+            var max = 0;
+            var sync = new object();
+
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient
+                .Setup(client => client.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(async (BatchGetItemRequest request, CancellationToken _) =>
+                {
+                    lock (sync) { current++; if (current > max) max = current; }
+                    await Task.Yield();
+                    lock (sync) { current--; }
+                    return new BatchGetItemResponse { Responses = new(), UnprocessedKeys = new() };
+                });
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            var batchGet = context.CreateBatchGet<DataModel>(new BatchGetConfig());
+            for (var i = 0; i < 300; i++)
+                batchGet.AddKey(i.ToString(), "Name");
+
+            await batchGet.ExecuteAsync();
+
+            Assert.AreEqual(1, max, "Default BatchGetConfig must preserve today's sequential behavior.");
         }
 
         [DynamoDBTable("TableName")]

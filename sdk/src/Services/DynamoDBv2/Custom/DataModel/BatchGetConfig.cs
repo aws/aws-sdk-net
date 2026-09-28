@@ -41,12 +41,39 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
 
+        /// <summary>
+        /// The maximum number of <c>BatchGetItem</c> service calls the SDK is allowed to have in flight
+        /// at the same time when a request contains more keys than fit in a single call.
+        /// </summary>
+        /// <remarks>
+        /// DynamoDB limits a single <c>BatchGetItem</c> call to 100 keys (and 16 MB). When you request more
+        /// keys than that, the SDK automatically splits the work into multiple calls. By default those calls
+        /// are made one after another. Set this property to a value greater than 1 to let the SDK send several
+        /// of them at once, which can noticeably reduce the total time to retrieve a large number of items.
+        /// <para>
+        /// Leaving this property unset (or setting it to 1) preserves the default behavior of sending the calls
+        /// sequentially. Values less than 1 are treated as 1.
+        /// </para>
+        /// <para>
+        /// Choose this value with your table's read throughput in mind. A higher degree of parallelism drives
+        /// reads at the table harder and in a shorter window, which makes request throttling more likely on
+        /// tables that are not provisioned (or scaled) for the resulting rate. Start with a small value and
+        /// increase it only if your table has the capacity to absorb the additional concurrent reads.
+        /// </para>
+        /// <para>
+        /// This property only applies to the asynchronous execution path (<c>ExecuteAsync</c>). It has no effect
+        /// on the synchronous <c>Execute</c> method, which always sends the calls sequentially.
+        /// </para>
+        /// </remarks>
+        public int? MaxParallelBatches { get; set; }
+
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
         {
             var config = base.ToDynamoDBOperationConfig();
             config.ConsistentRead = ConsistentRead;
             config.RetrieveDateTimeInUtc = RetrieveDateTimeInUtc;
+            config.MaxParallelBatches = MaxParallelBatches;
 
             return config;
         }
