@@ -31,6 +31,8 @@ public static class MemberWriter
 
     private static void WriteMember(CodeWriter writer, Member member)
     {
+        var field = member.EmitIsSetProperties ? WriteBackingField(writer, member) : null;
+
         writer.WriteLine("/// <summary>");
         var cleanedDoc = DocumentationFormatter.Cleanup($"Gets and sets the property {member.PropertyName}. {member.Documentation}");
         DocumentationFormatter.WriteCommentBlock(writer, cleanedDoc);
@@ -71,7 +73,12 @@ public static class MemberWriter
             return;
         }
 
-        if (member.Type.IsCollection)
+        if (field is not null)
+        {
+            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get => this.{field}; set => this.{field} = value; }}");
+            WriteIsSetFlag(writer, member, field);
+        }
+        else if (member.Type.IsCollection)
         {
             writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
         }
@@ -84,7 +91,54 @@ public static class MemberWriter
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Checks to see if the {member.PropertyName} property is set.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"internal bool IsSet{member.PropertyName}() => {member.IsSetExpression};");
+        var isSet = field is not null ? $"this.Is{member.PropertyName}Set" : member.IsSetExpression;
+        writer.WriteLine($"internal bool IsSet{member.PropertyName}() => {isSet};");
+    }
+
+    // The emitIsSetProperties flag's setter passes the value to InternalSDKUtils.SetIsSet by ref, which a
+    // property can't be, so listed members get a backing field instead of an auto-property.
+    private static string WriteBackingField(CodeWriter writer, Member member)
+    {
+        // SetIsSet only has Nullable<T>/List/Dictionary overloads; anything else would not compile.
+        if (!member.Type.IsNullableValueType && !member.Type.IsCollection)
+        {
+            throw new GeneratorException($"emitIsSetProperties lists member '{member.ModeledName}', whose type {member.Type.DotNetType} has no InternalSDKUtils.SetIsSet overload.");
+        }
+
+        var field = $"_{member.PropertyName}";
+        var initializer = member.Type.IsCollection ? $" = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null" : string.Empty;
+        writer.WriteLine($"private {member.Type.DotNetType} {field}{initializer};");
+        writer.WriteLine();
+        return field;
+    }
+
+    // Doc text matches C2J's StructureGenerator so it ships identically in the .xml.
+    private static void WriteIsSetFlag(CodeWriter writer, Member member, string field)
+    {
+        writer.WriteLine();
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"""/// This property is set to true if the property <seealso cref="{member.PropertyName}"/>""");
+        writer.WriteLine("/// is set; false otherwise.");
+        writer.WriteLine("/// This property can be used to determine if the related property");
+        writer.WriteLine("/// was returned by a service response or if the related property");
+        writer.WriteLine("/// should be sent to the service during a service call.");
+        writer.WriteLine("/// <para>");
+        writer.WriteLine($"""/// If this property is set to false the property <seealso cref="{member.PropertyName}"/> will be reset to null.""");
+        writer.WriteLine("/// </para>");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine("/// <returns>");
+        writer.WriteLine("/// True if the related property was set or will be sent to a service; false otherwise.");
+        writer.WriteLine("/// </returns>");
+        if (member.Obsolete is string obsolete)
+        {
+            writer.WriteLine(obsolete);
+        }
+
+        writer.OpenBlock($"public bool Is{member.PropertyName}Set", () =>
+        {
+            writer.WriteLine($"get => Amazon.Util.Internal.InternalSDKUtils.GetIsSet(this.{field});");
+            writer.WriteLine($"set => Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref this.{field});");
+        });
     }
 
     // The doc text matches C2J's GenerateEventPublisherDocumentation so it ships identically in the .xml.

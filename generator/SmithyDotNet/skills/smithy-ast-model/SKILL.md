@@ -32,7 +32,8 @@ Both resolve to the same shape ID type.
   and are read through typed accessors. [Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait)
   have an empty object as their value. Structured trait records tolerate unknown properties.
 - After load, only the customization transform mutates the model, and it runs before the service index is
-  built. Downstream of the index the model is read-only.
+  built. Downstream of the index the model is read-only. A hook with no Smithy trait equivalent is recorded
+  as a `[JsonIgnore]` property on the shape (e.g. `MemberShape.EmitIsSet`).
 
 ## Prelude Shapes
 

@@ -27,6 +27,14 @@ public sealed record CustomizationsModel
 
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
+    /// <summary>
+    /// Usage:
+    /// emitIsSetProperties: {
+    ///   "OwningShapeName" :["memberName", "memberName2"]
+    /// }
+    /// </summary>
+    [JsonPropertyName("emitIsSetProperties")]
+    public Dictionary<string, List<string>> EmitIsSetProperties { get; init; } = [];
 
     /// <summary>Type overrides keyed by modeled shape name, then emitted member name (C2J's <c>dataTypeSwap</c>).</summary>
     [JsonPropertyName("dataTypeSwap")]
@@ -40,6 +48,7 @@ public sealed record CustomizationsModel
     {
         var shapeModifiers = new Dictionary<string, ShapeModifier>();
         var operationModifiers = new Dictionary<string, OperationModifier>();
+        var emitIsSetProperties = new Dictionary<string, List<string>>();
         var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
         foreach (var path in paths)
         {
@@ -71,6 +80,15 @@ public sealed record CustomizationsModel
                 }
             }
 
+
+            foreach (var (shapeName, members) in file.EmitIsSetProperties)
+            {
+                if (!emitIsSetProperties.TryAdd(shapeName, members))
+                {
+                    throw new GeneratorException($"'{path}': emitIsSetProperties['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+        
             foreach (var (shapeName, swaps) in file.DataTypeSwaps)
             {
                 if (!dataTypeSwaps.TryAdd(shapeName, swaps))
@@ -80,7 +98,7 @@ public sealed record CustomizationsModel
             }
         }
 
-        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps };
+        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps, EmitIsSetProperties = emitIsSetProperties };
     }
 }
 

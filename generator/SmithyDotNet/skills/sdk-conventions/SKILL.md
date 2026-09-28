@@ -189,6 +189,14 @@ method per member. The current SDK uses explicit backing fields, but the public 
 the reflection API) only needs the property and the IsSet method — a backing field is not
 required.
 
+**Exception — `emitIsSetProperties` customization.** A listed member (shape name → modeled member
+names) also gets a public `bool Is{Property}Set { get; set; }` whose accessors call
+`InternalSDKUtils.GetIsSet`/`SetIsSet(value, ref field)`. A property can't be passed by `ref`, so the
+member gets a private `_{Property}` backing field (collections keep the `InitializeCollections`
+initializer) instead of an auto-property. `IsSet{Property}()` returns `Is{Property}Set`. Only nullable
+value types and collections have `SetIsSet` overloads; any other listed member throws. Doc text
+matches C2J's `StructureGenerator.tt`.
+
 **`[AWSProperty]` attribute rules:**
 - `Required=true` when member has `@required` trait, unless it also carries `@idempotencyToken` (the SDK fills it)
 - `Min=N` when member has `@length` trait with min, or `@range` trait with min

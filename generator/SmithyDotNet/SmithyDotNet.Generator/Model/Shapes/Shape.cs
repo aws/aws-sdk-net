@@ -56,6 +56,12 @@ public record MemberShape : Shape
     [JsonConverter(typeof(ShapeIdConverter))]
     public required ShapeId Target { get; init; }
 
+    /// <summary>
+    /// Set by <see cref="Generation.Customizations.CustomizationTransform"/> when the C2J
+    /// <c>emitIsSetProperties</c> customization lists this member; not part of the Smithy AST.
+    /// </summary>
+    [JsonIgnore]
+    public bool EmitIsSet { get; set; }
     /// <summary>Set by CustomizationTransform from the C2J dataTypeSwap customization; not part of the Smithy AST.</summary>
     [JsonIgnore]
     public DataTypeOverride? DataTypeSwap { get; set; }

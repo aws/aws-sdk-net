@@ -59,6 +59,94 @@ public class CustomizationTransformTests
     }
 
     [Fact]
+    public void Load_EmitIsSetProperties_MergesAcrossFiles()
+    {
+        var model = LoadFiles(
+            """{ "emitIsSetProperties": { "AttributeValue": ["BOOL", "M"] } }""",
+            """{ "emitIsSetProperties": { "QueryInput": ["Limit"] } }""");
+
+        Assert.Equal(["BOOL", "M"], model.EmitIsSetProperties["AttributeValue"]);
+        Assert.Equal(["Limit"], model.EmitIsSetProperties["QueryInput"]);
+        Assert.Equal(2, model.EmitIsSetProperties.Count);
+    }
+
+    [Fact]
+    public void Apply_EmitIsSetProperties_MarksListedMembersOnly()
+    {
+        var structure = new StructureShape
+        {
+            Members =
+            {
+                ["Limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") },
+                ["TableName"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") },
+            },
+        };
+
+        CustomizationTransform.Apply(ModelWith("QueryInput", structure), new CustomizationsModel { EmitIsSetProperties = { ["QueryInput"] = ["Limit"] } });
+
+        Assert.True(structure.Members["Limit"].EmitIsSet);
+        Assert.False(structure.Members["TableName"].EmitIsSet);
+    }
+
+    // C2J's Member name is already the emitPropertyName by the time it checks emitIsSetProperties
+    // (Shape.Members), so a renamed member is listed under its new name and the modeled name is stale.
+    private static CustomizationsModel RenameAndEmitIsSet(string listedName) => new()
+    {
+        ShapeModifiers = Rename("QueryInput", "limit", "MaxItems").ShapeModifiers,
+        EmitIsSetProperties = { ["QueryInput"] = [listedName] },
+    };
+
+    private static StructureShape LimitInput() =>
+        new() { Members = { ["limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
+
+    [Fact]
+    public void Apply_EmitIsSetProperties_RenamedMember_ListedByNewName_Marks()
+    {
+        var structure = LimitInput();
+
+        CustomizationTransform.Apply(ModelWith("QueryInput", structure), RenameAndEmitIsSet("MaxItems"));
+
+        Assert.True(structure.Members["MaxItems"].EmitIsSet);
+    }
+
+    [Fact]
+    public void Apply_EmitIsSetProperties_RenamedMember_ListedByModeledName_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("limit")));
+        Assert.Contains("lists member 'limit', which the shape does not have", ex.Message);
+    }
+
+    [Theory]
+    [InlineData("NoSuchShape", "Limit", "does not match any shape")]
+    [InlineData("QueryInput", "limit", "which the shape does not have")]
+    public void Apply_EmitIsSetProperties_StaleReference_Throws(string shape, string member, string expectedInMessage)
+    {
+        var structure = new StructureShape { Members = { ["Limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
+
+        var ex = Assert.Throws<GeneratorException>(() =>
+            CustomizationTransform.Apply(ModelWith("QueryInput", structure), new CustomizationsModel { EmitIsSetProperties = { [shape] = [member] } }));
+        Assert.Contains($"emitIsSetProperties['{shape}']", ex.Message);
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Fact]
+    public void Apply_EmitIsSetProperties_NonStructureShape_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() =>
+            CustomizationTransform.Apply(ModelWith("Thing", new StringShape()), new CustomizationsModel { EmitIsSetProperties = { ["Thing"] = ["x"] } }));
+        Assert.Contains("only structures and unions", ex.Message);
+    }
+
+    [Fact]
+    public void Load_EmitIsSetProperties_SameShapeInTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "emitIsSetProperties": { "QueryInput": ["Limit"] } }""",
+            """{ "emitIsSetProperties": { "QueryInput": ["Select"] } }"""));
+        Assert.Contains("emitIsSetProperties['QueryInput']", ex.Message);
+    }
+
+    [Fact]
     public void Load_CombinesShapeModifiersAcrossFiles()
     {
         var merged = LoadFiles(

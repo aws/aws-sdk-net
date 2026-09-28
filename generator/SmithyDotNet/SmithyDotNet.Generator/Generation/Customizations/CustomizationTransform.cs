@@ -46,6 +46,25 @@ public static class CustomizationTransform
             }
         }
 
+        // After shapeModifiers, matching C2J: its Member name is already the emitPropertyName, so a
+        // renamed member is listed under its new name.
+        foreach (var (shapeName, memberNames) in customizations.EmitIsSetProperties)
+        {
+            if (FindSingleShape(model, shapeName, $"emitIsSetProperties['{shapeName}']") is not StructureShape structure)
+            {
+                throw new GeneratorException($"emitIsSetProperties['{shapeName}'] targets a shape without members; only structures and unions are supported.");
+            }
+
+            foreach (var memberName in memberNames)
+            {
+                if (!structure.Members.TryGetValue(memberName, out var member))
+                {
+                    throw new GeneratorException($"emitIsSetProperties['{shapeName}'] lists member '{memberName}', which the shape does not have.");
+                }
+
+                member.EmitIsSet = true;
+            }
+        }
         // After shapeModifiers: C2J keys a swap by the emitted property name, so it must see the renamed member.
         foreach (var (shapeName, swaps) in customizations.DataTypeSwaps)
         {

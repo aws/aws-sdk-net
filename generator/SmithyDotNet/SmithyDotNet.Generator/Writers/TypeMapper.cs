@@ -106,6 +106,7 @@ public sealed record TypeDescriptor(
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
+/// <param name="EmitIsSetProperties">True when the <c>emitIsSetProperties</c> customization lists this member: it gets a public <c>Is{Property}Set</c> flag backing its set-ness.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
 /// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
@@ -120,6 +121,7 @@ public sealed record Member(
     string? Obsolete,
     string Documentation,
     string ModeledName,
+    bool EmitIsSetProperties = false,
     string? JsonName = null,
     bool HidesBaseMember = false,
     bool IsEventPayload = false,
@@ -197,6 +199,7 @@ public static class TypeMapper
                 Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
+                EmitIsSetProperties: member.EmitIsSet,
                 // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
