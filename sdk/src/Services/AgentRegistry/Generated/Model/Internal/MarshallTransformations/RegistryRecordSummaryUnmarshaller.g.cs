@@ -60,6 +60,13 @@ namespace Amazon.AgentRegistry.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("customMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
+                    unmarshalledObject.CustomMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

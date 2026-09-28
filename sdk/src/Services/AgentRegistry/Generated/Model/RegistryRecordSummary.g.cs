@@ -49,6 +49,22 @@ namespace Amazon.AgentRegistry.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadata. 
+        /// <para>
+        ///  The custom metadata attached to this registry record. Values are strings (maximum
+        /// 128 characters) or booleans. This field is only present if the registry has a custom
+        /// metadata schema configured.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public Amazon.Runtime.Documents.Document CustomMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadata property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadata() => !this.CustomMetadata.IsNull();
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         ///  A human-readable description of the registry record. Use this field to explain the
