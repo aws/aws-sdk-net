@@ -30,21 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEnterpriseSupportLinkedAccountCharges operation.
-    /// Returns Support-eligible spend broken down at linked account level.
+    /// Container for the parameters to the ListBusinessSupportSubscriptionHistory operation.
+    /// Returns the history of Business Support subscription contracts across accounts.
     /// </summary>
-    public partial class ListEnterpriseSupportLinkedAccountChargesRequest : AmazonBillingRequest
+    public partial class ListBusinessSupportSubscriptionHistoryRequest : AmazonBillingRequest
     {
         private string _accountId;
         private string _billingMonth;
+        private DateTime? _endDate;
         private int? _maxResults;
         private string _nextToken;
+        private DateTime? _startDate;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The linked account ID to filter results to a specific account. If you don't specify
-        /// a value, the response includes charges for all linked accounts.
+        /// The account ID to filter results to a specific account. If you don't specify a value,
+        /// the response includes subscription history for all accounts.
         /// </para>
         /// </summary>
         public string AccountId
@@ -62,10 +64,10 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property BillingMonth. 
         /// <para>
-        /// The billing month in YYYY-MM format. This must be a month in the past.
+        /// The billing month to retrieve subscription contracts for, in YYYY-MM format. If you
+        /// don't specify a value, defaults to the current month.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string BillingMonth
         {
             get { return this._billingMonth; }
@@ -76,6 +78,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetBillingMonth()
         {
             return this._billingMonth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndDate. 
+        /// <para>
+        /// The end date to filter subscription contracts to.
+        /// </para>
+        /// </summary>
+        public DateTime? EndDate
+        {
+            get { return this._endDate; }
+            set { this._endDate = value; }
+        }
+
+        // Check to see if EndDate property is set
+        internal bool IsSetEndDate()
+        {
+            return this._endDate.HasValue; 
         }
 
         /// <summary>
@@ -114,6 +134,24 @@ namespace Amazon.Billing.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The start date to filter subscription contracts from.
+        /// </para>
+        /// </summary>
+        public DateTime? StartDate
+        {
+            get { return this._startDate; }
+            set { this._startDate = value; }
+        }
+
+        // Check to see if StartDate property is set
+        internal bool IsSetStartDate()
+        {
+            return this._startDate.HasValue; 
         }
 
     }

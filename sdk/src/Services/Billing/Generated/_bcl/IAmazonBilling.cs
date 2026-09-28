@@ -939,6 +939,124 @@ namespace Amazon.Billing
 
         #endregion
         
+        #region  ListBusinessSupportAccountCharges
+
+
+        /// <summary>
+        /// Returns Business Support charges broken down at the linked account level for a given
+        /// billing month.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessSupportAccountCharges service method.</param>
+        /// 
+        /// <returns>The response from the ListBusinessSupportAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportAccountCharges">REST API Reference for ListBusinessSupportAccountCharges Operation</seealso>
+        ListBusinessSupportAccountChargesResponse ListBusinessSupportAccountCharges(ListBusinessSupportAccountChargesRequest request);
+
+
+
+        /// <summary>
+        /// Returns Business Support charges broken down at the linked account level for a given
+        /// billing month.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessSupportAccountCharges service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBusinessSupportAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportAccountCharges">REST API Reference for ListBusinessSupportAccountCharges Operation</seealso>
+        Task<ListBusinessSupportAccountChargesResponse> ListBusinessSupportAccountChargesAsync(ListBusinessSupportAccountChargesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListBusinessSupportSubscriptionHistory
+
+
+        /// <summary>
+        /// Returns the history of Business Support subscription contracts across accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessSupportSubscriptionHistory service method.</param>
+        /// 
+        /// <returns>The response from the ListBusinessSupportSubscriptionHistory service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportSubscriptionHistory">REST API Reference for ListBusinessSupportSubscriptionHistory Operation</seealso>
+        ListBusinessSupportSubscriptionHistoryResponse ListBusinessSupportSubscriptionHistory(ListBusinessSupportSubscriptionHistoryRequest request);
+
+
+
+        /// <summary>
+        /// Returns the history of Business Support subscription contracts across accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessSupportSubscriptionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBusinessSupportSubscriptionHistory service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportSubscriptionHistory">REST API Reference for ListBusinessSupportSubscriptionHistory Operation</seealso>
+        Task<ListBusinessSupportSubscriptionHistoryResponse> ListBusinessSupportSubscriptionHistoryAsync(ListBusinessSupportSubscriptionHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListEnterpriseSupportLinkedAccountCharges
 
 

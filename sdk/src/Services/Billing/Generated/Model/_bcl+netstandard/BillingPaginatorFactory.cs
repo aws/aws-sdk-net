@@ -61,6 +61,22 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Paginator for ListBusinessSupportAccountCharges operation
+        ///</summary>
+        public IListBusinessSupportAccountChargesPaginator ListBusinessSupportAccountCharges(ListBusinessSupportAccountChargesRequest request) 
+        {
+            return new ListBusinessSupportAccountChargesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBusinessSupportSubscriptionHistory operation
+        ///</summary>
+        public IListBusinessSupportSubscriptionHistoryPaginator ListBusinessSupportSubscriptionHistory(ListBusinessSupportSubscriptionHistoryRequest request) 
+        {
+            return new ListBusinessSupportSubscriptionHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEnterpriseSupportLinkedAccountCharges operation
         ///</summary>
         public IListEnterpriseSupportLinkedAccountChargesPaginator ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request) 

@@ -30,10 +30,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEnterpriseSupportLinkedAccountCharges operation.
-    /// Returns Support-eligible spend broken down at linked account level.
+    /// Container for the parameters to the ListBusinessSupportAccountCharges operation.
+    /// Returns Business Support charges broken down at the linked account level for a given
+    /// billing month.
     /// </summary>
-    public partial class ListEnterpriseSupportLinkedAccountChargesRequest : AmazonBillingRequest
+    public partial class ListBusinessSupportAccountChargesRequest : AmazonBillingRequest
     {
         private string _accountId;
         private string _billingMonth;
@@ -62,7 +63,9 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property BillingMonth. 
         /// <para>
-        /// The billing month in YYYY-MM format. This must be a month in the past.
+        /// The billing month to retrieve Business Support charges for, in YYYY-MM format. You
+        /// can request the current month (charges will be estimated) or a past month (charges
+        /// will be finalized).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

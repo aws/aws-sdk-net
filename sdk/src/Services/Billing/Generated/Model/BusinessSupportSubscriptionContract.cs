@@ -30,23 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Billing.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListEnterpriseSupportLinkedAccountCharges operation.
-    /// Returns Support-eligible spend broken down at linked account level.
+    /// A Business Support subscription contract for an account.
     /// </summary>
-    public partial class ListEnterpriseSupportLinkedAccountChargesRequest : AmazonBillingRequest
+    public partial class BusinessSupportSubscriptionContract
     {
         private string _accountId;
-        private string _billingMonth;
-        private int? _maxResults;
-        private string _nextToken;
+        private DateTime? _contractEndDate;
+        private DateTime? _contractStartDate;
+        private string _planName;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The linked account ID to filter results to a specific account. If you don't specify
-        /// a value, the response includes charges for all linked accounts.
+        /// The account ID associated with this subscription contract.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AccountId
         {
             get { return this._accountId; }
@@ -60,60 +59,62 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BillingMonth. 
+        /// Gets and sets the property ContractEndDate. 
         /// <para>
-        /// The billing month in YYYY-MM format. This must be a month in the past.
+        /// The end date of the subscription contract.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string BillingMonth
+        public DateTime? ContractEndDate
         {
-            get { return this._billingMonth; }
-            set { this._billingMonth = value; }
+            get { return this._contractEndDate; }
+            set { this._contractEndDate = value; }
         }
 
-        // Check to see if BillingMonth property is set
-        internal bool IsSetBillingMonth()
+        // Check to see if ContractEndDate property is set
+        internal bool IsSetContractEndDate()
         {
-            return this._billingMonth != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property MaxResults. 
-        /// <para>
-        /// The maximum number of results to return per page. Default is 100.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public int? MaxResults
-        {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
-        }
-
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
-        {
-            return this._maxResults.HasValue; 
+            return this._contractEndDate.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property ContractStartDate. 
         /// <para>
-        /// The pagination token for the next page of results.
+        /// The start date of the subscription contract.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4095)]
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public DateTime? ContractStartDate
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._contractStartDate; }
+            set { this._contractStartDate = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if ContractStartDate property is set
+        internal bool IsSetContractStartDate()
         {
-            return this._nextToken != null;
+            return this._contractStartDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlanName. 
+        /// <para>
+        /// The name of the Support plan for this subscription contract. Valid values: <c>AWSSupportBusiness</c>
+        /// (Business Support plan), <c>AWSSupportDeveloper</c> (Developer Support plan), <c>AWSSupportEssential</c>
+        /// (Basic Support plan).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string PlanName
+        {
+            get { return this._planName; }
+            set { this._planName = value; }
+        }
+
+        // Check to see if PlanName property is set
+        internal bool IsSetPlanName()
+        {
+            return this._planName != null;
         }
 
     }
