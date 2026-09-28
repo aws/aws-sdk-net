@@ -75,6 +75,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeletionMode())
+            {
+                context.Writer.WritePropertyName("DeletionMode");
+                context.Writer.WriteStringValue(publicRequest.DeletionMode);
+            }
+
             if(publicRequest.IsSetPolicyHash())
             {
                 context.Writer.WritePropertyName("PolicyHash");
