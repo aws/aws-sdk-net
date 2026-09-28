@@ -83,6 +83,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
+                {
+                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("EntityNotFoundException"))
                 {
                     return EntityNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

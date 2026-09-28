@@ -122,6 +122,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -156,6 +159,9 @@ namespace Amazon.Glue
         /// <returns>The response from the BatchCreatePartition service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
@@ -229,6 +235,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchDeletePartition service method.</param>
         /// 
         /// <returns>The response from the BatchDeletePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -255,6 +264,9 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the BatchDeletePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -295,6 +307,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTable service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -341,6 +356,9 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the BatchDeleteTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -1165,6 +1183,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePartition service method.</param>
         /// 
         /// <returns>The response from the BatchUpdatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -1194,6 +1215,9 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the BatchUpdatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
