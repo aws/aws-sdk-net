@@ -60,6 +60,13 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("endpointPrefix", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("namespace", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -56,6 +56,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetEndpointPrefix())
+            {
+                context.Writer.WritePropertyName("endpointPrefix");
+                context.Writer.WriteStringValue(requestObject.EndpointPrefix);
+            }
+
             if (requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("namespace");

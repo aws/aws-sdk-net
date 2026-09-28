@@ -53,6 +53,22 @@ namespace Amazon.EKS.Model
         internal bool IsSetAwsIdc() => this.AwsIdc != null;
 
         /// <summary>
+        /// Gets and sets the property EndpointPrefix. 
+        /// <para>
+        /// An optional prefix used to construct the hostname of the Argo CD server endpoint.
+        /// If not specified, Amazon EKS automatically generates the endpoint. This value can't
+        /// be changed after the capability is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public string EndpointPrefix { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndpointPrefix property is set.
+        /// </summary>
+        internal bool IsSetEndpointPrefix() => this.EndpointPrefix != null;
+
+        /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The Kubernetes namespace where Argo CD resources will be created. If not specified,
