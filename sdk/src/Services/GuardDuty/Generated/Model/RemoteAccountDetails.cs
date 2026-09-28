@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private bool? _affiliated;
+        private string _awsServiceName;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -74,6 +75,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAffiliated()
         {
             return this._affiliated.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsServiceName. 
+        /// <para>
+        /// If the remote account belongs to an Amazon Web Services service, this field indicates
+        /// which service the remote account belongs to.
+        /// </para>
+        /// </summary>
+        public string AwsServiceName
+        {
+            get { return this._awsServiceName; }
+            set { this._awsServiceName = value; }
+        }
+
+        // Check to see if AwsServiceName property is set
+        internal bool IsSetAwsServiceName()
+        {
+            return this._awsServiceName != null;
         }
 
     }
