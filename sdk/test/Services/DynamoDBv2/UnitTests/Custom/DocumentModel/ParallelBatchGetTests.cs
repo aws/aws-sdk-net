@@ -21,6 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -183,15 +184,18 @@ namespace AWSSDK_DotNet.UnitTests
         public async Task ParallelExecution_ResultOrderIsDeterministic_RegardlessOfCompletionOrder()
         {
             // Force later chunks to complete BEFORE earlier ones, to prove result ordering is by chunk index,
-            // not by completion time.
-            var callIndex = 0;
+            // not by completion time. The delay is keyed to the chunk's own identity (the numeric part of its
+            // first key: K1 -> chunk 0, K101 -> chunk 1, K201 -> chunk 2) rather than the order the mock happens
+            // to be invoked in, so the earliest chunk deterministically waits the longest even though, under
+            // parallel scheduling, any chunk may acquire the semaphore and call the mock first.
             ddbClientMock
                 .Setup(c => c.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(async (BatchGetItemRequest request, CancellationToken _) =>
                 {
-                    var myIndex = Interlocked.Increment(ref callIndex);
-                    // First-dispatched chunk waits the longest; last-dispatched returns immediately.
-                    await Task.Delay(myIndex == 1 ? 200 : 10);
+                    // Lowest first-key Id (the first-dispatched chunk) waits the longest; the last chunk returns
+                    // fastest. This inverts completion order relative to dispatch order regardless of scheduling.
+                    var firstKeyId = MinFirstKeyId(request);
+                    await Task.Delay(firstKeyId == 1 ? 200 : 10);
                     return EchoResponse(request);
                 });
 
@@ -346,6 +350,56 @@ namespace AWSSDK_DotNet.UnitTests
         }
 
         [TestMethod]
+        public async Task ParallelExecution_ChunkFailure_StopsDispatchingRemainingChunks()
+        {
+            // With a bounded degree of parallelism, only a few chunks are ever in flight at once and the rest
+            // wait on the semaphore. When a chunk faults (for example a batch-wide ResourceNotFoundException),
+            // the fail-fast cancellation should release the still-queued chunks WITHOUT dispatching their
+            // BatchGetItem calls. So the observed call count must be far below the total chunk count.
+            var callCount = 0;
+            ddbClientMock
+                .Setup(c => c.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(async (BatchGetItemRequest request, CancellationToken _) =>
+                {
+                    Interlocked.Increment(ref callCount);
+                    await Task.Yield();
+                    // Every dispatched call fails, simulating a batch-wide error.
+                    throw new ResourceNotFoundException("Simulated batch-wide failure");
+                });
+
+            // 2000 keys -> 20 chunks, but only 2 in flight at a time.
+            var batch = CreateBatchWithKeys("K", 2000);
+            var multiBatchGet = new MultiBatchGet { Batches = new List<DocumentBatchGet> { batch }, MaxParallelBatches = 2 };
+
+            await Assert.ThrowsExactlyAsync<ResourceNotFoundException>(() => multiBatchGet.GetItemsAsync());
+
+            // Without fail-fast, all 20 chunks would eventually dispatch. With it, only the chunks that were
+            // already in flight (plus possibly one or two that raced past the cancellation) run. Assert well
+            // below the total to prove the remaining chunks were short-circuited.
+            Assert.IsTrue(callCount < 20,
+                $"Expected fewer than 20 dispatched calls once a chunk failed, but observed {callCount}.");
+        }
+
+        [TestMethod]
+        public async Task ParallelExecution_ChunkFailure_SurfacesOriginalException_NotSiblingCancellation()
+        {
+            // A sibling chunk cancelled by the fail-fast token must not surface its own OperationCanceledException
+            // through Task.WhenAll and mask the real failure. The caller should always see the original fault.
+            ddbClientMock
+                .Setup(c => c.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
+                .Returns(async (BatchGetItemRequest request, CancellationToken _) =>
+                {
+                    await Task.Yield();
+                    throw new ResourceNotFoundException("Simulated batch-wide failure");
+                });
+
+            var batch = CreateBatchWithKeys("K", 2000);
+            var multiBatchGet = new MultiBatchGet { Batches = new List<DocumentBatchGet> { batch }, MaxParallelBatches = 2 };
+
+            await Assert.ThrowsExactlyAsync<ResourceNotFoundException>(() => multiBatchGet.GetItemsAsync());
+        }
+
+        [TestMethod]
         public async Task ParallelExecution_CancellationRequested_Throws()
         {
             using var cts = new CancellationTokenSource();
@@ -493,6 +547,16 @@ namespace AWSSDK_DotNet.UnitTests
                 Responses = ToResponses(ka.Keys),
                 UnprocessedKeys = new Dictionary<string, KeysAndAttributes>()
             };
+        }
+
+        // Returns the smallest numeric key Id in the request (keys are "K{n}"), which identifies the chunk:
+        // the first chunk contains K1, the second K101, etc. Used to key a mock delay to the chunk's own
+        // identity rather than to the (nondeterministic) order the mock is invoked in.
+        private static int MinFirstKeyId(BatchGetItemRequest request)
+        {
+            return request.RequestItems["AddressTable"].Keys
+                .Select(k => int.Parse(k["Id"].S.Substring(1), CultureInfo.InvariantCulture))
+                .Min();
         }
 
         private static Dictionary<string, List<Dictionary<string, AttributeValue>>> ToResponses(List<Dictionary<string, AttributeValue>> keys)

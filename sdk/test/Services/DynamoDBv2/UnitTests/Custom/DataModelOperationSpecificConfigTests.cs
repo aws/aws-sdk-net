@@ -2,9 +2,11 @@
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
+using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -752,6 +754,10 @@ namespace AWSSDK_DotNet.UnitTests
             var gate = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
 
             var mockClient = new Mock<IAmazonDynamoDB>();
+            var clientConfigMock = new Mock<IClientConfig>();
+            clientConfigMock.SetupGet(c => c.RegionEndpoint).Returns((Amazon.RegionEndpoint)null);
+            clientConfigMock.SetupGet(c => c.ServiceURL).Returns((string)null);
+            mockClient.SetupGet(c => c.Config).Returns(clientConfigMock.Object);
             mockClient
                 .Setup(client => client.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(async (BatchGetItemRequest request, CancellationToken _) =>
@@ -774,13 +780,25 @@ namespace AWSSDK_DotNet.UnitTests
 
             var execution = batchGet.ExecuteAsync();
 
-            // Wait until all 3 chunks are concurrently in flight, then release them.
-            var deadline = DateTime.UtcNow + TimeSpan.FromSeconds(5);
-            while (DateTime.UtcNow < deadline)
+            // Wait until all 3 chunks are concurrently in flight, then release them. Use a monotonic clock and
+            // fail explicitly on timeout so a regression (concurrency never reaching the bound) reports the real
+            // reason immediately instead of hanging for the full timeout and then failing on the max assertion.
+            var timeout = TimeSpan.FromSeconds(5);
+            var stopwatch = Stopwatch.StartNew();
+            var reachedBound = false;
+            while (stopwatch.Elapsed < timeout)
             {
-                lock (sync) { if (current >= 3) break; }
+                lock (sync) { if (current >= 3) { reachedBound = true; break; } }
                 await Task.Delay(10);
             }
+
+            if (!reachedBound)
+            {
+                gate.SetResult(true);
+                await execution;
+                Assert.Fail("Expected 3 BatchGetItem calls to be concurrently in flight within the timeout, but the bound was never reached.");
+            }
+
             gate.SetResult(true);
             await execution;
 
@@ -796,6 +814,10 @@ namespace AWSSDK_DotNet.UnitTests
             var sync = new object();
 
             var mockClient = new Mock<IAmazonDynamoDB>();
+            var clientConfigMock = new Mock<IClientConfig>();
+            clientConfigMock.SetupGet(c => c.RegionEndpoint).Returns((Amazon.RegionEndpoint)null);
+            clientConfigMock.SetupGet(c => c.ServiceURL).Returns((string)null);
+            mockClient.SetupGet(c => c.Config).Returns(clientConfigMock.Object);
             mockClient
                 .Setup(client => client.BatchGetItemAsync(It.IsAny<BatchGetItemRequest>(), It.IsAny<CancellationToken>()))
                 .Returns(async (BatchGetItemRequest request, CancellationToken _) =>

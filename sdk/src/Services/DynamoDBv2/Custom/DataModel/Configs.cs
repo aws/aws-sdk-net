@@ -238,7 +238,8 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// The maximum number of <c>BatchGetItem</c> service calls that may be in flight at the same time
         /// when a <c>BatchGet</c> request is split across multiple calls. Only applies to the asynchronous
-        /// execution path. If unset (or 1), the calls are made sequentially.
+        /// execution path. If unset, or set to a value less than or equal to 1 (values less than 1 are
+        /// treated as 1), the calls are made sequentially.
         /// </summary>
         internal int? MaxParallelBatches { get; set; }
 

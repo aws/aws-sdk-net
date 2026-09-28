@@ -64,6 +64,17 @@ namespace Amazon.DynamoDBv2.DataModel
         /// This property only applies to the asynchronous execution path (<c>ExecuteAsync</c>). It has no effect
         /// on the synchronous <c>Execute</c> method, which always sends the calls sequentially.
         /// </para>
+        /// <para>
+        /// This property applies only to single-table batch gets. Multi-table batch gets always send their
+        /// <c>BatchGetItem</c> calls sequentially regardless of this setting.
+        /// </para>
+        /// <para>
+        /// When parallelism is enabled and one of the concurrent calls fails, the operation still surfaces that
+        /// failure, but other calls that were already in flight may have completed and consumed read capacity
+        /// before the failure was observed. This is the same at-least-partial execution behavior that
+        /// <c>BatchGetItem</c> already has, so callers that opt into parallelism should expect a failed request
+        /// to have potentially retrieved (and been charged for) some of the requested items.
+        /// </para>
         /// </remarks>
         public int? MaxParallelBatches { get; set; }
 

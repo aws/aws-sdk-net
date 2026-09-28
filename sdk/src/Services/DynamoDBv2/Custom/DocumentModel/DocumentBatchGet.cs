@@ -479,9 +479,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             // A value <= 1 (or unset) preserves the historical sequential behavior. Anything higher opts in to
             // sending multiple BatchGetItem calls concurrently, bounded by the requested degree of parallelism.
+            // Values less than 1 fall through to the sequential path below (the <= 1 check covers them), so the
+            // parallel path only ever sees a degree of parallelism of 2 or more.
             var maxParallelBatches = MaxParallelBatches.GetValueOrDefault(1);
-            if (maxParallelBatches < 1)
-                maxParallelBatches = 1;
 
             if (maxParallelBatches <= 1)
             {
@@ -509,17 +509,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (requests.Count == 0)
                 return results;
 
+            // Link a private token to the caller's token so that when any chunk faults we can cancel the rest.
+            // Chunks that have not yet acquired the semaphore observe the cancellation and never dispatch their
+            // BatchGetItem call, so a batch-wide failure (for example ResourceNotFoundException or a validation
+            // error) does not keep consuming read capacity on every remaining chunk. Chunks already in flight run
+            // to completion. This keeps the parallel path's failure cost closer to the sequential path, which
+            // stops at the first faulting chunk.
             using (var throttle = new SemaphoreSlim(maxParallelBatches, maxParallelBatches))
+            using (var failFast = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken))
             {
                 var tasks = new List<Task<Results>>(requests.Count);
                 foreach (var request in requests)
                 {
-                    tasks.Add(ExecuteRequestAsync(clientToUse, request, throttle, cancellationToken));
+                    tasks.Add(ExecuteRequestAsync(clientToUse, request, throttle, failFast, cancellationToken));
                 }
 
-                // Await all chunks. Task.WhenAll surfaces the first exception; any capacity already consumed by
-                // chunks that completed before the failure is expected and matches BatchGetItem's at-least-partial
-                // execution semantics.
+                // Await all chunks. Task.WhenAll completes only after every chunk has finished; if one or more
+                // chunks fault, its Task aggregates all of their exceptions, and awaiting it rethrows the first
+                // of those. Any capacity already consumed by chunks that completed before a failure is expected
+                // and matches BatchGetItem's at-least-partial execution semantics.
                 var chunkResults = await Task.WhenAll(tasks).ConfigureAwait(false);
 
                 // Merge in deterministic chunk order so the assembled result list is stable regardless of the
@@ -564,14 +572,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// per-chunk result avoids any shared mutable state across the concurrent calls; callers merge the
         /// returned results afterwards.
         /// </summary>
-        private async Task<Results> ExecuteRequestAsync(IAmazonDynamoDB client, BatchGetItemRequest request, SemaphoreSlim throttle, CancellationToken cancellationToken)
+        private async Task<Results> ExecuteRequestAsync(IAmazonDynamoDB client, BatchGetItemRequest request, SemaphoreSlim throttle, CancellationTokenSource failFast, CancellationToken cancellationToken)
         {
-            await throttle.WaitAsync(cancellationToken).ConfigureAwait(false);
+            try
+            {
+                // Wait on the linked (fail-fast) token so a chunk still queued behind the semaphore is released
+                // immediately once another chunk has faulted, rather than acquiring the semaphore and dispatching
+                // a call that is about to be discarded.
+                await throttle.WaitAsync(failFast.Token).ConfigureAwait(false);
+            }
+            catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
+            {
+                // Cancellation came from a sibling chunk's failure (fail-fast), not from the caller. Return an
+                // empty result so this discarded chunk does not surface its own OperationCanceledException through
+                // Task.WhenAll and mask the original fault. If the caller cancelled, the exception is allowed to
+                // propagate (the when-filter above only swallows the internal fail-fast case).
+                return new Results(Batches);
+            }
+
             try
             {
                 var chunkResults = new Results(Batches);
                 await CallUntilCompletionAsync(client, request, chunkResults, cancellationToken).ConfigureAwait(false);
                 return chunkResults;
+            }
+            catch
+            {
+                // Signal sibling chunks that have not yet dispatched to stop. We do not swallow the exception;
+                // it still propagates through Task.WhenAll so the caller sees the original failure.
+                failFast.Cancel();
+                throw;
             }
             finally
             {

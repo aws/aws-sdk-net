@@ -1,0 +1,11 @@
+{
+    "services": [
+        {
+            "serviceName": "DynamoDBv2",
+            "type": "minor",
+            "changeLogMessages": [
+                "Added an opt-in MaxParallelBatches setting on DynamoDBContext BatchGet (and the document-model BatchGet) that allows the individual BatchGetItem service calls of a large request to be made concurrently. The default behavior is unchanged and remains sequential; this setting only applies to the asynchronous execution path."
+            ]
+        }
+    ]
+}
