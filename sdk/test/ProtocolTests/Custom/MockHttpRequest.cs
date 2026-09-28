@@ -96,7 +96,7 @@ namespace AWSSDK.ProtocolTests.Utils
             return Task.FromResult(GetRequestContent());
         }
 
-#if BCL
+#if NETFRAMEWORK
         public Task<TRequestContent> GetRequestContentAsync(CancellationToken cancellationToken)
         {
             return Task.FromResult(GetRequestContent());
@@ -128,7 +128,7 @@ namespace AWSSDK.ProtocolTests.Utils
         }
 #endif
 
-#if BCL
+#if NETFRAMEWORK
         public Task WriteToRequestBodyAsync(TRequestContent requestContent, Stream contentStream, IDictionary<string, string> contentHeaders, IRequestContext requestContext)
         {
             WriteToRequestBody(requestContent, contentStream, contentHeaders, requestContext);

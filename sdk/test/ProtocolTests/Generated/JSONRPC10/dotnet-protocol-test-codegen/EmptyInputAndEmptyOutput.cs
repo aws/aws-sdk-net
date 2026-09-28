@@ -56,7 +56,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/",
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
               MaxErrorRetry = 0,
             };
 
@@ -93,7 +93,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             // Arrange
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://test.com/",
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
               MaxErrorRetry = 0,
             };
 

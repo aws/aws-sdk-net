@@ -71,8 +71,9 @@ namespace AWSSDK.ProtocolTests.Utils
 
         /// <summary>
         /// Creates an event message the way a service would send it for the given event type.
+        /// Event header values are encoded according to their CLR type (see <see cref="CreateHeader"/>).
         /// </summary>
-        public static EventStreamMessage CreateEvent(string eventType, string contentType, byte[] payload, IDictionary<string, string> eventHeaders = null)
+        public static EventStreamMessage CreateEvent(string eventType, string contentType, byte[] payload, IDictionary<string, object> eventHeaders = null)
         {
             var headers = new List<IEventStreamHeader>
             {
@@ -82,12 +83,12 @@ namespace AWSSDK.ProtocolTests.Utils
             if (contentType != null)
                 headers.Add(CreateStringHeader(":content-type", contentType));
             if (eventHeaders != null)
-                headers.AddRange(eventHeaders.Select(h => CreateStringHeader(h.Key, h.Value)));
+                headers.AddRange(eventHeaders.Select(h => CreateHeader(h.Key, h.Value)));
 
             return new EventStreamMessage(headers, payload ?? Array.Empty<byte>());
         }
 
-        public static EventStreamMessage CreateEvent(string eventType, string contentType, string payload, IDictionary<string, string> eventHeaders = null)
+        public static EventStreamMessage CreateEvent(string eventType, string contentType, string payload, IDictionary<string, object> eventHeaders = null)
         {
             return CreateEvent(eventType, contentType, Encoding.UTF8.GetBytes(payload), eventHeaders);
         }
@@ -114,6 +115,29 @@ namespace AWSSDK.ProtocolTests.Utils
         {
             var header = new EventStreamHeader(name);
             header.SetString(value);
+            return header;
+        }
+
+        /// <summary>
+        /// Creates an event header whose wire type matches the CLR type of the value.
+        /// </summary>
+        private static IEventStreamHeader CreateHeader(string name, object value)
+        {
+            var header = new EventStreamHeader(name);
+            switch (value)
+            {
+                case string s: header.SetString(s); break;
+                case bool b: header.SetBool(b); break;
+                case sbyte sb: header.SetSByte(sb); break;
+                case short i16: header.SetInt16(i16); break;
+                case int i32: header.SetInt32(i32); break;
+                case long i64: header.SetInt64(i64); break;
+                case byte[] bytes: header.SetByteBuf(bytes); break;
+                case DateTime timestamp: header.SetTimestamp(timestamp); break;
+                case Guid uuid: header.SetUUID(uuid); break;
+                default:
+                    throw new ArgumentException($"Unsupported event header type {value?.GetType().FullName ?? "null"} for header {name}.", nameof(value));
+            }
             return header;
         }
     }

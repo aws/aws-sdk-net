@@ -158,7 +158,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("""
                      var config = new $L
                      {
-                       ServiceURL = "https://test.com/",
+                       ServiceURL = MockHttpClientUtils.TestServiceUrl,
                        MaxErrorRetry = 0,
                      };
                      """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace));
@@ -270,14 +270,18 @@ public final class HttpProtocolTestGenerator implements Runnable {
             path = "";
         }
 
+        var serviceUrl = host.equals("test.com") && path.isEmpty()
+                ? "MockHttpClientUtils.TestServiceUrl"
+                : "\"https://" + host + "/" + path + "\"";
+
         // Retries are disabled so a test fails fast instead of re-sending the request.
         writer.write("""
                      var config = new $L
                      {
-                       ServiceURL = "https://$L/$L",
+                       ServiceURL = $L,
                        MaxErrorRetry = 0,
                      };
-                     """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace), host, path);
+                     """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace), serviceUrl);
         writer.write("using var client = new $L(MockHttpClientUtils.TestCredentials, config);",
                 ProtocolTestUtils.getProtocolClient(this.serviceNamespace));
         // Request tests only assert on what was sent, so any response the unmarshaller accepts will do.
@@ -504,7 +508,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
         writer.write("""
                      var config = new $L
                      {
-                       ServiceURL = "https://test.com/",
+                       ServiceURL = MockHttpClientUtils.TestServiceUrl,
                        MaxErrorRetry = 0,
                      };
                      """, ProtocolTestUtils.getProtocolConfig(this.serviceNamespace));

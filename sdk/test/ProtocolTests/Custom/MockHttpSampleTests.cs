@@ -16,6 +16,7 @@
 using Amazon.RestJsonProtocol;
 using Amazon.RestJsonProtocol.Model;
 using AWSSDK.ProtocolTests.Utils;
+using AWSSDK_DotNet.UnitTests.TestTools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
@@ -141,9 +142,11 @@ namespace AWSSDK.ProtocolTests.RestJson
                 var actualResponse = await client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest()).ConfigureAwait(false);
 
                 // Assert
-                // Comparer.CompareObjects can't be used on a response from a real client because
-                // the pipeline also populates ResponseMetadata, which the comparer can't reflect over.
-                Assert.AreEqual("Hello", actualResponse.Greeting);
+                var expectedResponse = new GreetingWithErrorsResponse
+                {
+                    Greeting = "Hello",
+                };
+                Comparer.CompareObjects<GreetingWithErrorsResponse>(expectedResponse, actualResponse);
                 Assert.AreEqual(HttpStatusCode.OK, actualResponse.HttpStatusCode);
             }
         }
@@ -190,9 +193,9 @@ namespace AWSSDK.ProtocolTests.RestJson
                     ContentType = "application/vnd.amazon.eventstream",
                     Body = MockHttpClientUtils.EncodeEvents(
                         MockHttpClientUtils.CreateEvent("headersAndImplicitPayload", "application/json", "{\"payload\":\"first\"}",
-                            new Dictionary<string, string> { { "header", "h1" } }),
+                            new Dictionary<string, object> { { "header", "h1" } }),
                         MockHttpClientUtils.CreateEvent("headersAndImplicitPayload", "application/json", "{\"payload\":\"second\"}",
-                            new Dictionary<string, string> { { "header", "h2" } })),
+                            new Dictionary<string, object> { { "header", "h2" } })),
                 };
                 MockHttpClientUtils.InjectMockHttp(client, response);
 
@@ -231,7 +234,7 @@ namespace AWSSDK.ProtocolTests.RestJson
                     ContentType = "application/vnd.amazon.eventstream",
                     Body = MockHttpClientUtils.EncodeEvents(
                         MockHttpClientUtils.CreateEvent("headersAndImplicitPayload", "application/json", "{\"payload\":\"world\"}",
-                            new Dictionary<string, string> { { "header", "h" } })),
+                            new Dictionary<string, object> { { "header", "h" } })),
                 });
 
                 // Act
