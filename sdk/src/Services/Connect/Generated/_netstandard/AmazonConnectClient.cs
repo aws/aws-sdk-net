@@ -17440,6 +17440,12 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
+        /// To receive connection information directly in the response, set <c>ConnectionTypes</c>
+        /// on the request. To initiate real-time message streaming when the chat is created,
+        /// set <c>ChatStreamingConfiguration</c> on the request. Both parameters are optional.
+        /// </para>
+        ///  
+        /// <para>
         /// A 429 error occurs in the following situations:
         /// </para>
         ///  <ul> <li> 

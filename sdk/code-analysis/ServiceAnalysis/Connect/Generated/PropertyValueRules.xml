@@ -4097,6 +4097,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartChatContactResponse.StreamingId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartContactConversationalAnalyticsJobRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -6025,6 +6030,11 @@
     <min>0</min>
     <max>500</max>
     <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ConnectionCredentials.ConnectionToken</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.Contact.ContactAssociationId</property>
@@ -8468,6 +8478,11 @@
     <property>Amazon.Connect.Model.WebNotificationContent.ViewArn</property>
     <min>1</min>
     <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Websocket.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.WidgetDestination.ProfileId</property>

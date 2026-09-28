@@ -22874,6 +22874,12 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
+        /// To receive connection information directly in the response, set <c>ConnectionTypes</c>
+        /// on the request. To initiate real-time message streaming when the chat is created,
+        /// set <c>ChatStreamingConfiguration</c> on the request. Both parameters are optional.
+        /// </para>
+        ///  
+        /// <para>
         /// A 429 error occurs in the following situations:
         /// </para>
         ///  <ul> <li> 
@@ -22942,6 +22948,12 @@ namespace Amazon.Connect
         /// connection for the created chat within 5 minutes. This is achieved by invoking <a
         /// href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
         /// with WEBSOCKET and CONNECTION_CREDENTIALS. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To receive connection information directly in the response, set <c>ConnectionTypes</c>
+        /// on the request. To initiate real-time message streaming when the chat is created,
+        /// set <c>ChatStreamingConfiguration</c> on the request. Both parameters are optional.
         /// </para>
         ///  
         /// <para>

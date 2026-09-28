@@ -34,10 +34,32 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class StartChatContactResponse : AmazonWebServiceResponse
     {
+        private ConnectionCredentials _connectionCredentials;
         private string _contactId;
         private string _continuedFromContactId;
         private string _participantId;
         private string _participantToken;
+        private string _streamingId;
+        private Websocket _websocket;
+
+        /// <summary>
+        /// Gets and sets the property ConnectionCredentials. 
+        /// <para>
+        /// The connection credentials for the chat participant. Returned only when the request
+        /// includes <c>CONNECTION_CREDENTIALS</c> in <c>ConnectionTypes</c>.
+        /// </para>
+        /// </summary>
+        public ConnectionCredentials ConnectionCredentials
+        {
+            get { return this._connectionCredentials; }
+            set { this._connectionCredentials = value; }
+        }
+
+        // Check to see if ConnectionCredentials property is set
+        internal bool IsSetConnectionCredentials()
+        {
+            return this._connectionCredentials != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -116,6 +138,46 @@ namespace Amazon.Connect.Model
         internal bool IsSetParticipantToken()
         {
             return this._participantToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingId. 
+        /// <para>
+        /// The identifier of the streaming configuration enabled with the chat. Returned only
+        /// when the request sets <c>ChatStreamingConfiguration</c>. Use this value to call <a
+        /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StopContactStreaming.html">StopContactStreaming</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string StreamingId
+        {
+            get { return this._streamingId; }
+            set { this._streamingId = value; }
+        }
+
+        // Check to see if StreamingId property is set
+        internal bool IsSetStreamingId()
+        {
+            return this._streamingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Websocket. 
+        /// <para>
+        /// The websocket for the chat participant. Returned only when the request includes <c>WEBSOCKET</c>
+        /// in <c>ConnectionTypes</c>.
+        /// </para>
+        /// </summary>
+        public Websocket Websocket
+        {
+            get { return this._websocket; }
+            set { this._websocket = value; }
+        }
+
+        // Check to see if Websocket property is set
+        internal bool IsSetWebsocket()
+        {
+            return this._websocket != null;
         }
 
     }

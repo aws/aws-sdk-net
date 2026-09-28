@@ -1437,6 +1437,64 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionType.
+    /// </summary>
+    public class ConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTHENTICATION_SESSION for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType AUTHENTICATION_SESSION = new ConnectionType("AUTHENTICATION_SESSION");
+        /// <summary>
+        /// Constant CONNECTION_CREDENTIALS for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType CONNECTION_CREDENTIALS = new ConnectionType("CONNECTION_CREDENTIALS");
+        /// <summary>
+        /// Constant WEBRTC_CONNECTION for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WEBRTC_CONNECTION = new ConnectionType("WEBRTC_CONNECTION");
+        /// <summary>
+        /// Constant WEBSOCKET for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType WEBSOCKET = new ConnectionType("WEBSOCKET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionType FindValue(string value)
+        {
+            return FindValue<ConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContactEvaluationAttributeComparisonType.
     /// </summary>
     public class ContactEvaluationAttributeComparisonType : ConstantClass
