@@ -284,3 +284,88 @@ command line: as global properties they propagate into the SDK's `ProjectReferen
   `#if NET8_0_OR_GREATER` needs coverage that runs on the older targets too.
 - After swapping a source file back and forth, `dotnet test` can build against a stale SDK assembly.
   Use `--no-incremental` when verifying that a fix is load-bearing.
+
+## Attribute casing (AttributeCasing / CaseMode)
+
+How `[DynamoDBTable]` decides DynamoDB attribute-name casing, and the `AttributeCasing` / `CaseMode`
+feature (GitHub #1162) that extends camelCase to nested objects. Code is in
+`Attributes.cs` (`CaseMode`, `DynamoDBTableAttribute`), `InternalModel.cs` (`ResolveCaseMode`,
+config build + cache), `Utils.cs` (the per-mode policy helpers), and `ContextInternal.cs` (the
+serialize/expression/condition paths).
+
+### The non-obvious semantics
+
+- Attribute names are **baked per-type at config-build time** (`PopulateConfigFromType` →
+  `GetAccurateCase` → `Utils.ApplyCasing`) and cached by `ItemStorageConfigCache`. Casing is not
+  re-evaluated per serialize. Add a new casing by adding a `CaseMode` value and one arm in
+  `Utils.ApplyCasing`; it cascades automatically (see below), so `GetAccurateCase`/`ContextInternal.cs`
+  should not hard-code modes.
+- `CaseMode.Unset = 0` is a **sentinel**, distinct from an explicit `PascalCase`. Unset behaves as
+  PascalCase at the root but a nested Unset type **inherits** an enclosing type's casing; an explicit
+  `PascalCase` **blocks** that inheritance. `AttributeCasing` can't be `CaseMode?` (C# rejects
+  `Nullable<T>` as an attribute argument), which is why the sentinel exists. Undecorated types stay
+  Unset, so upgrade behavior is unchanged.
+- `LegacyCamelCase` reproduces the obsolete `LowerCamelCaseProperties = true` (camelCase root, PascalCase
+  nested) and is the **only** mode that does not cascade to nested objects. Confined to
+  `Utils.GetInheritableCasing` (returns `null` for it); everything else cascades.
+
+### Precedence (`ResolveCaseMode`)
+
+1. `AttributeCasing != Unset` wins (incl. explicit `PascalCase`) → declares own casing.
+2. else obsolete `LowerCamelCaseProperties == true` → `LegacyCamelCase` → declares own casing.
+3. else `PascalCase`, does **not** declare own casing (so nested instances may inherit).
+
+The inheritance gate keys off `ItemStorageConfig.DeclaresOwnCasing`, not the resolved mode value —
+that is what makes an explicit `PascalCase` block inheritance while an `Unset` does not. `ResolveCaseMode`
+also `Enum.IsDefined`-validates an explicit `AttributeCasing`, so an out-of-range value (e.g.
+`(CaseMode)999`) throws at config-build time instead of silently falling through to PascalCase.
+
+### How inheritance works (the one hard design constraint)
+
+The config cache is keyed by `Type`, but the same nested type can appear under a camelCase parent and a
+PascalCase parent, needing two different baked configs. So inheritance is **cache variants**, not
+build-time or serialize-time mutation: `ItemStorageConfigCache.ConfigTableCache.InheritedCasingConfigs`
+holds per-`CaseMode` variants with names re-baked, built lazily by `ResolveInheritedCasingConfig` for
+types that don't declare their own casing. `DynamoDBFlatConfig.InheritedAttributeCasing` carries the
+enclosing casing down the object graph (set/restored try/finally around member iteration).
+
+Trap in `GetConfig`'s read-lock fast path: a `conversionOnly` lookup needing an uncached inherited
+variant must **not** fall through to the table-cache lookup, or it returns the base (PascalCase) config
+cached from an earlier root use. It is gated to drop to the write lock instead.
+
+### Every path that produces attribute names must honor inheritance
+
+The recurring bug class is one path emitting the wrong casing so values/names no longer match what save
+wrote. All of these seed `InheritedAttributeCasing` (with save/restore):
+
+- **Serialize / deserialize** — `PopulateItemStorage` / `PopulateInstance`.
+- **Expressions** — `ResolveNestedPropertyStorage` (`e => e.ShippingAddress.City`) for the name, and
+  `SetExpressionValueNode` for the comparison **value** Map keys.
+- **Scan / query conditions** — both `ComposeScanFilter` and
+  `ComposeQueryFilterHelper` → `ConvertConditionValues` route through the **shared**
+  `ConditionValueCasing` helper (keep them on it so scan/query can't drift).
+- **Constructor-bound members** (net8+) — `InstantiateWithConstructor` seeds casing before binding args,
+  because a constructor-bound member is never revisited by `PopulateInstance`.
+- **`[DynamoDBFlatten]`** — save serializes the child through its own config, so load must bake
+  `FlattenProperties` names with the child's **effective** casing to stay symmetric. A flattened complex
+  leaf carries its casing via `PropertyStorage.FlattenedEffectiveCasing` (stamped only on **true** leaves,
+  not nested flatten nodes, which compute their own recursively) so the condition/expression paths above
+  can recover it.
+
+### Backward-compat traps
+
+- Default is unchanged (Unset ⇒ PascalCase root + nested), so existing data round-trips.
+- In previous SDK versions `LowerCamelCaseProperties = false` meant "explicitly PascalCase, don't
+  inherit". Because the
+  property is a bool, an explicit `false` is indistinguishable from omitted — so `DynamoDBTableAttribute`
+  tracks `LowerCamelCasePropertiesExplicitlySet` and `ResolveCaseMode` treats explicit `false` as an
+  own-casing PascalCase declaration. Otherwise such a type would silently inherit a new `CamelCase`
+  parent and rename stored attributes on upgrade. Both the obsolete bool constructor and the named
+  property route through this.
+
+### Tests
+
+`sdk/test/Services/DynamoDBv2/UnitTests/Custom/DataModel/AttributeCasingTests.cs` — mocked
+`IAmazonDynamoDB`, `DisableFetchingTableMetadata = true`. Covers each mode, nested inheritance and
+explicit-PascalCase blocking, flattened-leaf casing for scan/query/expression, and the explicit-`false`
+back-compat cases. Each fix has a regression test that fails when the fix is reverted.

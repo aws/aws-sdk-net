@@ -30,6 +30,51 @@ namespace Amazon.DynamoDBv2.DataModel
 
 
     /// <summary>
+    /// Controls how .NET property names are cased when mapped to DynamoDB attribute names
+    /// by the object persistence model. Set via <see cref="DynamoDBTableAttribute.AttributeCasing"/>.
+    /// </summary>
+    public enum CaseMode
+    {
+        /// <summary>
+        /// No casing was specified for this type (the default). Behaves as
+        /// <see cref="PascalCase"/> at the root, but - unlike an explicit <see cref="PascalCase"/> - a
+        /// nested type left <see cref="Unset"/> inherits an enclosing type's casing (for example
+        /// <see cref="CamelCase"/>).
+        /// </summary>
+        Unset = 0,
+
+        /// <summary>
+        /// Attribute names match the .NET property names unchanged (PascalCase). Setting this explicitly
+        /// on a nested type blocks it from inheriting an enclosing type's casing.
+        /// </summary>
+        PascalCase,
+
+        /// <summary>
+        /// Attribute names are converted to camelCase at every level of the object graph, including
+        /// nested objects stored as DynamoDB Maps. This is the recommended value for consistent
+        /// camelCase output.
+        /// </summary>
+        CamelCase,
+
+        /// <summary>
+        /// Reproduces the exact (asymmetric) behavior of the obsolete
+        /// <see cref="DynamoDBTableAttribute.LowerCamelCaseProperties"/> flag set to <c>true</c>:
+        /// only the root object's attribute names are camelCased, while nested objects stored as
+        /// DynamoDB Maps keep their PascalCase attribute names.
+        ///
+        /// This value exists solely as a compatibility escape hatch for applications whose existing
+        /// data already relies on this mixed casing. It is intentionally marked <c>[Obsolete]</c>
+        /// so new code is steered toward <see cref="CamelCase"/> or <see cref="PascalCase"/>. New
+        /// applications should not use it.
+        /// </summary>
+        [Obsolete("LegacyCamelCase reproduces the asymmetric casing of the obsolete " +
+                  "LowerCamelCaseProperties=true (camelCase root, PascalCase nested objects) and exists " +
+                  "only for backward compatibility with existing data. Use CamelCase for consistent " +
+                  "camelCase at all levels, or PascalCase for the default behavior.")]
+        LegacyCamelCase
+    }
+
+    /// <summary>
     /// DynamoDB attribute that marks a class.
     /// Specifies that this object can be stored in DynamoDB, the name
     /// of the target table, and if attribute names must be automatically
@@ -48,9 +93,62 @@ namespace Amazon.DynamoDBv2.DataModel
         public string TableName { get; set; }
 
         /// <summary>
-        /// Gets and sets the LowerCamelCaseProperties property.
+        /// Gets and sets the LowerCamelCaseProperties property. When <c>true</c>, only the root object's
+        /// attribute names are camelCased; nested objects keep their PascalCase names.
         /// </summary>
-        public bool LowerCamelCaseProperties { get; set; }
+        /// <remarks>
+        /// This flag only camelCases the root object's attribute names and cannot express casing for
+        /// nested objects. Use <see cref="AttributeCasing"/> instead: <see cref="CaseMode.CamelCase"/>
+        /// for consistent camelCase at every level, or <see cref="CaseMode.LegacyCamelCase"/> to preserve
+        /// this flag's exact (root-only) behavior for existing data.
+        /// </remarks>
+        [Obsolete("Use AttributeCasing instead. LowerCamelCaseProperties=true is equivalent to " +
+                  "AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase nested); for " +
+                  "consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
+        public bool LowerCamelCaseProperties
+        {
+            get => _lowerCamelCaseProperties;
+            set
+            {
+                _lowerCamelCaseProperties = value;
+                // Record that the flag was explicitly assigned (via the named property or the bool
+                // constructor). An explicit assignment — even to false — is a deliberate casing choice and
+                // must be distinguished from an omitted flag: in previous versions of the SDK,
+                // LowerCamelCaseProperties=false meant "PascalCase, do not camelCase", so a type declared
+                // that way must NOT inherit an enclosing CamelCase parent's casing.
+                LowerCamelCasePropertiesExplicitlySet = true;
+            }
+        }
+        private bool _lowerCamelCaseProperties;
+
+        /// <summary>
+        /// Whether <see cref="LowerCamelCaseProperties"/> was explicitly assigned (via the named property or
+        /// the obsolete bool constructor), as opposed to being left at its default. An explicit
+        /// <c>false</c> is treated as an explicit <see cref="CaseMode.PascalCase"/> declaration so that a
+        /// type carrying an earlier <c>LowerCamelCaseProperties=false</c> semantic does not silently inherit an
+        /// enclosing <see cref="CaseMode.CamelCase"/> parent's casing on upgrade.
+        /// </summary>
+        internal bool LowerCamelCasePropertiesExplicitlySet { get; private set; }
+
+        /// <summary>
+        /// Gets and sets how .NET property names are cased when mapped to DynamoDB attribute names.
+        /// Defaults to <see cref="CaseMode.Unset"/>, meaning no casing was specified for this type: it
+        /// behaves as <see cref="CaseMode.PascalCase"/> at the root and, when nested, inherits an
+        /// enclosing type's casing. The <see cref="CaseMode.Unset"/> sentinel is what lets an explicit
+        /// <see cref="CaseMode.PascalCase"/> be distinguished from "not specified" (see remarks).
+        /// </summary>
+        /// <remarks>
+        /// When set to any value other than <see cref="CaseMode.Unset"/> (including an explicit
+        /// <see cref="CaseMode.PascalCase"/>), <see cref="AttributeCasing"/> takes precedence over the
+        /// obsolete <see cref="LowerCamelCaseProperties"/> flag and is treated as an explicit casing
+        /// choice for this type. In particular, setting a nested type's <see cref="AttributeCasing"/> to
+        /// <see cref="CaseMode.PascalCase"/> forces PascalCase and prevents it from inheriting an
+        /// enclosing type's <see cref="CaseMode.CamelCase"/>; leaving it <see cref="CaseMode.Unset"/>
+        /// allows inheritance. Setting both <see cref="AttributeCasing"/> and
+        /// <see cref="LowerCamelCaseProperties"/> is allowed; the explicitly set
+        /// <see cref="AttributeCasing"/> wins.
+        /// </remarks>
+        public CaseMode AttributeCasing { get; set; }
 
         /// <summary>
         /// Gets and sets the <see cref="ConversionSchema"/> used for mapping between .NET and DynamoDB types.
@@ -68,8 +166,31 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="tableName"></param>
         public DynamoDBTableAttribute(string tableName)
-            : this(tableName, false, ConversionSchema.Unset)
+            : this(tableName, CaseMode.Unset, ConversionSchema.Unset)
         {
+        }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute with the given attribute casing.
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="attributeCasing">How .NET property names are cased when mapped to DynamoDB attribute names.</param>
+        public DynamoDBTableAttribute(string tableName, CaseMode attributeCasing)
+            : this(tableName, attributeCasing, ConversionSchema.Unset)
+        {
+        }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBTableAttribute with the given attribute casing and conversion schema.
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="attributeCasing">How .NET property names are cased when mapped to DynamoDB attribute names.</param>
+        /// <param name="conversion"></param>
+        public DynamoDBTableAttribute(string tableName, CaseMode attributeCasing, ConversionSchema conversion)
+        {
+            TableName = tableName;
+            AttributeCasing = attributeCasing;
+            Conversion = conversion;
         }
 
         /// <summary>
@@ -77,8 +198,13 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="tableName"></param>
         /// <param name="lowerCamelCaseProperties"></param>
+        [Obsolete("Use the constructor that takes a CaseMode instead. lowerCamelCaseProperties=true is " +
+                  "equivalent to AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase " +
+                  "nested); for consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties)
+#pragma warning disable CS0618 // Chaining to the obsolete bool overload from an obsolete overload.
             : this(tableName, lowerCamelCaseProperties, ConversionSchema.Unset)
+#pragma warning restore CS0618
         {
         }
 
@@ -88,10 +214,20 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="tableName"></param>
         /// <param name="lowerCamelCaseProperties"></param>
         /// <param name="conversion"></param>
+        [Obsolete("Use the constructor that takes a CaseMode instead. lowerCamelCaseProperties=true is " +
+                  "equivalent to AttributeCasing=CaseMode.LegacyCamelCase (camelCase root, PascalCase " +
+                  "nested); for consistent camelCase at all levels use AttributeCasing=CaseMode.CamelCase.")]
         public DynamoDBTableAttribute(string tableName, bool lowerCamelCaseProperties, ConversionSchema conversion)
         {
             TableName = tableName;
+#pragma warning disable CS0618 // LowerCamelCaseProperties is obsolete but retained for this back-compat constructor overload.
+            // Assigning through the property marks LowerCamelCasePropertiesExplicitlySet = true, so
+            // ResolveCaseMode treats an explicit false as a deliberate PascalCase choice that blocks
+            // inheritance (preserving the behavior of previous SDK versions). true still maps to
+            // LegacyCamelCase. The one-argument
+            // (string) constructor never assigns this, so it stays non-explicit and remains inheritable.
             LowerCamelCaseProperties = lowerCamelCaseProperties;
+#pragma warning restore CS0618
             Conversion = conversion;
         }
     }
