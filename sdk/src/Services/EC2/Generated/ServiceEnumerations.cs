@@ -4517,6 +4517,118 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ClientVpnAuthorizationPolicyShadowMode.
+    /// </summary>
+    public class ClientVpnAuthorizationPolicyShadowMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for ClientVpnAuthorizationPolicyShadowMode
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyShadowMode Disabled = new ClientVpnAuthorizationPolicyShadowMode("disabled");
+        /// <summary>
+        /// Constant Enabled for ClientVpnAuthorizationPolicyShadowMode
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyShadowMode Enabled = new ClientVpnAuthorizationPolicyShadowMode("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnAuthorizationPolicyShadowMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnAuthorizationPolicyShadowMode FindValue(string value)
+        {
+            return FindValue<ClientVpnAuthorizationPolicyShadowMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnAuthorizationPolicyShadowMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnAuthorizationPolicyStatus.
+    /// </summary>
+    public class ClientVpnAuthorizationPolicyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ClientVpnAuthorizationPolicyStatus
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyStatus Active = new ClientVpnAuthorizationPolicyStatus("active");
+        /// <summary>
+        /// Constant Creating for ClientVpnAuthorizationPolicyStatus
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyStatus Creating = new ClientVpnAuthorizationPolicyStatus("creating");
+        /// <summary>
+        /// Constant Deleting for ClientVpnAuthorizationPolicyStatus
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyStatus Deleting = new ClientVpnAuthorizationPolicyStatus("deleting");
+        /// <summary>
+        /// Constant Failed for ClientVpnAuthorizationPolicyStatus
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyStatus Failed = new ClientVpnAuthorizationPolicyStatus("failed");
+        /// <summary>
+        /// Constant Updating for ClientVpnAuthorizationPolicyStatus
+        /// </summary>
+        public static readonly ClientVpnAuthorizationPolicyStatus Updating = new ClientVpnAuthorizationPolicyStatus("updating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnAuthorizationPolicyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnAuthorizationPolicyStatus FindValue(string value)
+        {
+            return FindValue<ClientVpnAuthorizationPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnAuthorizationPolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientVpnAuthorizationRuleStatusCode.
     /// </summary>
     public class ClientVpnAuthorizationRuleStatusCode : ConstantClass
@@ -4626,6 +4738,60 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ClientVpnConnectionStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnDeviceTrustProviderType.
+    /// </summary>
+    public class ClientVpnDeviceTrustProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Crowdstrike for ClientVpnDeviceTrustProviderType
+        /// </summary>
+        public static readonly ClientVpnDeviceTrustProviderType Crowdstrike = new ClientVpnDeviceTrustProviderType("crowdstrike");
+        /// <summary>
+        /// Constant Jamf for ClientVpnDeviceTrustProviderType
+        /// </summary>
+        public static readonly ClientVpnDeviceTrustProviderType Jamf = new ClientVpnDeviceTrustProviderType("jamf");
+        /// <summary>
+        /// Constant Jumpcloud for ClientVpnDeviceTrustProviderType
+        /// </summary>
+        public static readonly ClientVpnDeviceTrustProviderType Jumpcloud = new ClientVpnDeviceTrustProviderType("jumpcloud");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnDeviceTrustProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnDeviceTrustProviderType FindValue(string value)
+        {
+            return FindValue<ClientVpnDeviceTrustProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnDeviceTrustProviderType(string value)
         {
             return FindValue(value);
         }
@@ -17485,6 +17651,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly IpamInternetRegistryAssociationState DeleteInProgress = new IpamInternetRegistryAssociationState("delete-in-progress");
         /// <summary>
+        /// Constant DisableComplete for IpamInternetRegistryAssociationState
+        /// </summary>
+        public static readonly IpamInternetRegistryAssociationState DisableComplete = new IpamInternetRegistryAssociationState("disable-complete");
+        /// <summary>
+        /// Constant DisableFailed for IpamInternetRegistryAssociationState
+        /// </summary>
+        public static readonly IpamInternetRegistryAssociationState DisableFailed = new IpamInternetRegistryAssociationState("disable-failed");
+        /// <summary>
+        /// Constant DisableInProgress for IpamInternetRegistryAssociationState
+        /// </summary>
+        public static readonly IpamInternetRegistryAssociationState DisableInProgress = new IpamInternetRegistryAssociationState("disable-in-progress");
+        /// <summary>
         /// Constant EnableComplete for IpamInternetRegistryAssociationState
         /// </summary>
         public static readonly IpamInternetRegistryAssociationState EnableComplete = new IpamInternetRegistryAssociationState("enable-complete");
@@ -25696,6 +25874,10 @@ namespace Amazon.EC2
         /// Constant Lacnic for Rir
         /// </summary>
         public static readonly Rir Lacnic = new Rir("lacnic");
+        /// <summary>
+        /// Constant Nicbr for Rir
+        /// </summary>
+        public static readonly Rir Nicbr = new Rir("nicbr");
         /// <summary>
         /// Constant Ripe for Rir
         /// </summary>

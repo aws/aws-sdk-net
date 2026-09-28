@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private string _cloudwatchLogGroup;
         private string _cloudwatchLogStream;
         private bool? _enabled;
+        private bool? _includeAuthorizationPolicyContext;
 
         /// <summary>
         /// Gets and sets the property CloudwatchLogGroup. 
@@ -90,6 +91,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeAuthorizationPolicyContext. 
+        /// <para>
+        /// Specifies whether to include the authorization policy evaluation context in the connection
+        /// logs for the Client VPN endpoint.
+        /// </para>
+        /// </summary>
+        public bool? IncludeAuthorizationPolicyContext
+        {
+            get { return this._includeAuthorizationPolicyContext; }
+            set { this._includeAuthorizationPolicyContext = value; }
+        }
+
+        // Check to see if IncludeAuthorizationPolicyContext property is set
+        internal bool IsSetIncludeAuthorizationPolicyContext()
+        {
+            return this._includeAuthorizationPolicyContext.HasValue; 
         }
 
     }

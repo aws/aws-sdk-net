@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConnectionLogResponseOptions Object
+    /// Response Unmarshaller for ClientVpnTrustProvider Object
     /// </summary>  
-    public class ConnectionLogResponseOptionsUnmarshaller : IXmlUnmarshaller<ConnectionLogResponseOptions, XmlUnmarshallerContext>
+    public class ClientVpnTrustProviderUnmarshaller : IXmlUnmarshaller<ClientVpnTrustProvider, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConnectionLogResponseOptions Unmarshall(XmlUnmarshallerContext context)
+        public ClientVpnTrustProvider Unmarshall(XmlUnmarshallerContext context)
         {
-            ConnectionLogResponseOptions unmarshalledObject = new ConnectionLogResponseOptions();
+            ClientVpnTrustProvider unmarshalledObject = new ClientVpnTrustProvider();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,28 +55,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("cloudwatchLogGroup", targetDepth))
+                    if (context.TestExpression("publicSigningKeyUrl", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CloudwatchLogGroup = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.PublicSigningKeyUrl = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("cloudwatchLogStream", targetDepth))
+                    if (context.TestExpression("tenantId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.CloudwatchLogStream = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.TenantId = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("enabled", targetDepth))
+                    if (context.TestExpression("trustProviderType", targetDepth))
                     {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("includeAuthorizationPolicyContext", targetDepth))
-                    {
-                        var unmarshaller = NullableBoolUnmarshaller.Instance;
-                        unmarshalledObject.IncludeAuthorizationPolicyContext = unmarshaller.Unmarshall(context);
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TrustProviderType = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }
@@ -89,12 +83,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ConnectionLogResponseOptionsUnmarshaller _instance = new ConnectionLogResponseOptionsUnmarshaller();        
+        private static ClientVpnTrustProviderUnmarshaller _instance = new ClientVpnTrustProviderUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectionLogResponseOptionsUnmarshaller Instance
+        public static ClientVpnTrustProviderUnmarshaller Instance
         {
             get
             {

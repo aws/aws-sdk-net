@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private string _creationTime;
         private string _deletionTime;
         private string _description;
+        private DevicePostureResponseOptions _devicePostureOptions;
         private bool? _disconnectOnSessionTimeout;
         private string _dnsName;
         private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -282,6 +283,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevicePostureOptions. 
+        /// <para>
+        /// The device trust providers configured for the Client VPN endpoint, if applicable.
+        /// </para>
+        /// </summary>
+        public DevicePostureResponseOptions DevicePostureOptions
+        {
+            get { return this._devicePostureOptions; }
+            set { this._devicePostureOptions = value; }
+        }
+
+        // Check to see if DevicePostureOptions property is set
+        internal bool IsSetDevicePostureOptions()
+        {
+            return this._devicePostureOptions != null;
         }
 
         /// <summary>

@@ -8549,6 +8549,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  DeleteClientVpnEndpointAuthorizationPolicy
+
+        internal virtual DeleteClientVpnEndpointAuthorizationPolicyResponse DeleteClientVpnEndpointAuthorizationPolicy(DeleteClientVpnEndpointAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClientVpnEndpointAuthorizationPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpointAuthorizationPolicy">REST API Reference for DeleteClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual Task<DeleteClientVpnEndpointAuthorizationPolicyResponse> DeleteClientVpnEndpointAuthorizationPolicyAsync(DeleteClientVpnEndpointAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteClientVpnEndpointAuthorizationPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteClientVpnRoute
 
         internal virtual DeleteClientVpnRouteResponse DeleteClientVpnRoute(DeleteClientVpnRouteRequest request)
@@ -24893,6 +24926,39 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  GetClientVpnEndpointAuthorizationPolicy
+
+        internal virtual GetClientVpnEndpointAuthorizationPolicyResponse GetClientVpnEndpointAuthorizationPolicy(GetClientVpnEndpointAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetClientVpnEndpointAuthorizationPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetClientVpnEndpointAuthorizationPolicy">REST API Reference for GetClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual Task<GetClientVpnEndpointAuthorizationPolicyResponse> GetClientVpnEndpointAuthorizationPolicyAsync(GetClientVpnEndpointAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetClientVpnEndpointAuthorizationPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCoipPoolUsage
 
         internal virtual GetCoipPoolUsageResponse GetCoipPoolUsage(GetCoipPoolUsageRequest request)
@@ -28294,6 +28360,42 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyClientVpnEndpointResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ModifyClientVpnEndpointAuthorizationPolicy
+
+        internal virtual ModifyClientVpnEndpointAuthorizationPolicyResponse ModifyClientVpnEndpointAuthorizationPolicy(ModifyClientVpnEndpointAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClientVpnEndpointAuthorizationPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates the authorization policy for a Client VPN endpoint. A Client VPN
+        /// endpoint can have one authorization policy. If a policy already exists for the endpoint,
+        /// the values that you specify replace the corresponding values in the existing policy,
+        /// and values that you do not specify remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpointAuthorizationPolicy">REST API Reference for ModifyClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual Task<ModifyClientVpnEndpointAuthorizationPolicyResponse> ModifyClientVpnEndpointAuthorizationPolicyAsync(ModifyClientVpnEndpointAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClientVpnEndpointAuthorizationPolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         

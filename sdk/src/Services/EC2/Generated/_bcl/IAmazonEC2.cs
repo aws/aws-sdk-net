@@ -9688,6 +9688,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteClientVpnEndpointAuthorizationPolicy
+
+
+        /// <summary>
+        /// Deletes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpointAuthorizationPolicy">REST API Reference for DeleteClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        DeleteClientVpnEndpointAuthorizationPolicyResponse DeleteClientVpnEndpointAuthorizationPolicy(DeleteClientVpnEndpointAuthorizationPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpointAuthorizationPolicy">REST API Reference for DeleteClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        Task<DeleteClientVpnEndpointAuthorizationPolicyResponse> DeleteClientVpnEndpointAuthorizationPolicyAsync(DeleteClientVpnEndpointAuthorizationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteClientVpnRoute
 
 
@@ -27248,6 +27276,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetClientVpnEndpointAuthorizationPolicy
+
+
+        /// <summary>
+        /// Describes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetClientVpnEndpointAuthorizationPolicy">REST API Reference for GetClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        GetClientVpnEndpointAuthorizationPolicyResponse GetClientVpnEndpointAuthorizationPolicy(GetClientVpnEndpointAuthorizationPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Describes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetClientVpnEndpointAuthorizationPolicy">REST API Reference for GetClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        Task<GetClientVpnEndpointAuthorizationPolicyResponse> GetClientVpnEndpointAuthorizationPolicyAsync(GetClientVpnEndpointAuthorizationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCoipPoolUsage
 
 
@@ -30861,6 +30917,40 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyClientVpnEndpoint service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
         Task<ModifyClientVpnEndpointResponse> ModifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyClientVpnEndpointAuthorizationPolicy
+
+
+        /// <summary>
+        /// Creates or updates the authorization policy for a Client VPN endpoint. A Client VPN
+        /// endpoint can have one authorization policy. If a policy already exists for the endpoint,
+        /// the values that you specify replace the corresponding values in the existing policy,
+        /// and values that you do not specify remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpointAuthorizationPolicy">REST API Reference for ModifyClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        ModifyClientVpnEndpointAuthorizationPolicyResponse ModifyClientVpnEndpointAuthorizationPolicy(ModifyClientVpnEndpointAuthorizationPolicyRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the authorization policy for a Client VPN endpoint. A Client VPN
+        /// endpoint can have one authorization policy. If a policy already exists for the endpoint,
+        /// the values that you specify replace the corresponding values in the existing policy,
+        /// and values that you do not specify remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpointAuthorizationPolicy">REST API Reference for ModifyClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        Task<ModifyClientVpnEndpointAuthorizationPolicyResponse> ModifyClientVpnEndpointAuthorizationPolicyAsync(ModifyClientVpnEndpointAuthorizationPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
