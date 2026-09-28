@@ -115,6 +115,26 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     context.Writer.WriteNumberValue(publicRequest.MaxTaskHours.Value);
                 }
             }
+            if (publicRequest.IsSetReportDestination())
+            {
+                context.Writer.WritePropertyName("reportDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetReportFilters())
+            {
+                context.Writer.WritePropertyName("reportFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("serviceRole");

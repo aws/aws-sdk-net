@@ -100,6 +100,12 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("locale");
+                context.Writer.WriteStringValue(publicRequest.Locale);
+            }
+
             if(publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("nextToken");

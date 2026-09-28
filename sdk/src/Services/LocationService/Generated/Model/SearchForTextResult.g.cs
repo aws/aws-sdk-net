@@ -1,0 +1,114 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.LocationService.Model
+{
+    /// <summary>
+    /// Contains a search result from a text search query that is run on a place index resource.
+    /// </summary>
+    public partial class SearchForTextResult
+    {
+        /// <summary>
+        /// Gets and sets the property Distance. 
+        /// <para>
+        /// The distance in meters of a great-circle arc between the bias position specified and
+        /// the result. <c>Distance</c> will be returned only if a bias position was specified
+        /// in the query.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// A great-circle arc is the shortest path on a sphere, in this case the Earth. This
+        /// returns the shortest distance between two locations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 0)]
+        public double? Distance { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Distance property is set.
+        /// </summary>
+        internal bool IsSetDistance() => this.Distance.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Place. 
+        /// <para>
+        /// Details about the search result, such as its address and position.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public Place Place { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Place property is set.
+        /// </summary>
+        internal bool IsSetPlace() => this.Place != null;
+
+        /// <summary>
+        /// Gets and sets the property PlaceId. 
+        /// <para>
+        /// The unique identifier of the place. You can use this with the <c>GetPlace</c> operation
+        /// to find the place again later.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For <c>SearchPlaceIndexForText</c> operations, the <c>PlaceId</c> is returned only
+        /// by place indexes that use HERE or Grab as a data provider.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string PlaceId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PlaceId property is set.
+        /// </summary>
+        internal bool IsSetPlaceId() => this.PlaceId != null;
+
+        /// <summary>
+        /// Gets and sets the property Relevance. 
+        /// <para>
+        /// The relative confidence in the match for a result among the results returned. For
+        /// example, if more fields for an address match (including house number, street, city,
+        /// country/region, and postal code), the relevance score is closer to 1.
+        /// </para>
+        ///  
+        /// <para>
+        /// Returned only when the partner selected is Esri or Grab.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 0, Max = 1)]
+        public double? Relevance { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Relevance property is set.
+        /// </summary>
+        internal bool IsSetRelevance() => this.Relevance.HasValue;
+    }
+}

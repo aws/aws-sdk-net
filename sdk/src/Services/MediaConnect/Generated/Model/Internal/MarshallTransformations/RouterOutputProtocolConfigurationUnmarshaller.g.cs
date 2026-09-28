@@ -60,6 +60,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("rtmpPush", targetDepth, ref reader))
+                {
+                    var unmarshaller = RtmpPushRouterOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RtmpPush = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("rtp", targetDepth, ref reader))
                 {
                     var unmarshaller = RtpRouterOutputConfigurationUnmarshaller.Instance;

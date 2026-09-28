@@ -1,0 +1,73 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CodeCatalyst.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateAccessToken operation. Creates a personal
+    /// access token (PAT) for the current user. A personal access token (PAT) is similar
+    /// to a password. It is associated with your user identity for use across all spaces
+    /// and projects in Amazon CodeCatalyst. You use PATs to access CodeCatalyst from resources
+    /// that include integrated development environments (IDEs) and Git-based source repositories.
+    /// PATs represent you in Amazon CodeCatalyst and you can manage them in your user settings.For
+    /// more information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html">Managing
+    /// personal access tokens in Amazon CodeCatalyst</a>.
+    /// </summary>
+    public partial class CreateAccessTokenRequest : AmazonCodeCatalystRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ExpiresTime. 
+        /// <para>
+        /// The date and time the personal access token expires, in coordinated universal time
+        /// (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? ExpiresTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExpiresTime property is set.
+        /// </summary>
+        internal bool IsSetExpiresTime() => this.ExpiresTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The friendly name of the personal access token.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 100)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+    }
+}

@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the sms-voice-2018-09-05.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.PinpointSMSVoice
     public partial class AmazonPinpointSMSVoiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Pinpoint SMS Voice", "4.0.100.14");
+            InternalSDKUtils.BuildUserAgentString("Pinpoint SMS Voice", "4.0.100.15");
 
         private static readonly AmazonPinpointSMSVoiceEndpointResolver EndpointResolver =
             new AmazonPinpointSMSVoiceEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Pinpoint SMS Voice";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Pinpoint SMS Voice";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.PinpointSMSVoice
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "sms-voice.pinpoint";
-            }
-        }
+        public override string RegionEndpointServiceName => "sms-voice.pinpoint";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2018-09-05";
-            }
-        }
+        public override string ServiceVersion => "2018-09-05";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.PinpointSMSVoice
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

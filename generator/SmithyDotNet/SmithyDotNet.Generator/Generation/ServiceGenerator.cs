@@ -22,14 +22,8 @@ namespace SmithyDotNet.Generator.Generation;
 /// <see cref="Generate"/>.
 /// Most generated source lands under <c>Generated/</c>; <c>Properties/AssemblyInfo.cs</c> and
 /// the <c>code-analysis/</c> tree sit alongside it at the service root.
-/// <para />
-/// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
-/// metadata, endpoint parameters/provider/resolver, operation request/response/base, structures,
-/// exceptions, the restJson1 request marshaller + structure (un)marshallers, and the auth resolver).
-/// The operation-response / exception unmarshallers have no writers yet, so the generated tree does
-/// not compile standalone.
 /// </summary>
-public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes)
+public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, StandaloneOptions? standalone = null)
 {
     /// <summary>
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
@@ -81,8 +75,14 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var @internal = Path.Combine(generated, "Internal");
         var marshalling = Path.Combine(model, "Internal", "MarshallTransformations");
 
-        var assemblyInfoWriter = new AssemblyInfoWriter(context, serviceFileVersion);
-        Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
+        // Standalone mode (see StandaloneGenerator) emits only the client source and a single csproj:
+        // no AssemblyInfo (MSBuild generates the attributes), code analysis, nuspec, csproj pair, or
+        // slnx. Those all read the version manifest or the repo tree layout.
+        if (standalone is null)
+        {
+            var assemblyInfoWriter = new AssemblyInfoWriter(context, serviceFileVersion);
+            Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
+        }
 
         var interfaceWriter = new ClientInterfaceWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"IAmazon{context.BaseName}.g.cs"), interfaceWriter.Write(cancellationToken));
@@ -106,7 +106,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
 
         // Test services ship no code-analysis project (matching the C2J generator's IsTestService skip).
-        if (!context.IsTestService)
+        if (!context.IsTestService && standalone is null)
         {
             var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
             EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
@@ -189,22 +189,40 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
 
-        // Test services are never packaged, so they get no nuspec or NuGet readme.
+        // Test services are never packaged, so they get no nuspec or NuGet readme. The nuspec is
+        // repo-only; the standalone csproj packs the readme itself.
         if (!context.IsTestService)
         {
-            Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+            if (standalone is null)
+            {
+                Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+            }
+
             // The NuGet README is the service documentation converted to Markdown, falling back to the
             // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
             // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
             // catching hand-written READMEs.
             var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
+            if (standalone is not null && readme.Length == 0)
+            {
+                // NuGet rejects an empty readme (NU5040), so the standalone csproj could not be packed.
+                throw new GeneratorException("The service has no @documentation to write nuget-readme.md from.");
+            }
+
             Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
         }
 
-        Emit($"{context.AssemblyName}.NetFramework.csproj", serviceProjectFileWriter.WriteNetFramework());
-        if (context.Metadata?.NetStandardSupport ?? true)
+        if (standalone is not null)
         {
-            Emit($"{context.AssemblyName}.NetStandard.csproj", serviceProjectFileWriter.WriteNetStandard());
+            Emit($"{context.AssemblyName}.csproj", serviceProjectFileWriter.WriteStandalone(standalone));
+        }
+        else
+        {
+            Emit($"{context.AssemblyName}.NetFramework.csproj", serviceProjectFileWriter.WriteNetFramework());
+            if (context.Metadata?.NetStandardSupport ?? true)
+            {
+                Emit($"{context.AssemblyName}.NetStandard.csproj", serviceProjectFileWriter.WriteNetStandard());
+            }
         }
 
         // The unified csproj (ServiceProjectFileWriter.WriteUnified) is deliberately not emitted:
@@ -380,7 +398,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // otherwise a clean first run produces a .slnx missing the service dependencies that a
         // re-run would then pick up. Test services get no per-service solution (C2J emits none;
         // they build through sdk/test consumers like AWSSDK.ProtocolTests).
-        if (!context.IsTestService)
+        if (!context.IsTestService && standalone is null)
         {
             var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
             Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));

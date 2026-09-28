@@ -1,0 +1,201 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.AuditManager.Model
+{
+    /// <summary>
+    /// The metadata that's associated with the specified assessment.
+    /// </summary>
+    public partial class AssessmentMetadata
+    {
+        /// <summary>
+        /// Gets and sets the property AssessmentReportsDestination. 
+        /// <para>
+        ///  The destination that evidence reports are stored in for the assessment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public AssessmentReportsDestination AssessmentReportsDestination { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssessmentReportsDestination property is set.
+        /// </summary>
+        internal bool IsSetAssessmentReportsDestination() => this.AssessmentReportsDestination != null;
+
+        /// <summary>
+        /// Gets and sets the property ComplianceType. 
+        /// <para>
+        ///  The name of the compliance standard that's related to the assessment, such as PCI-DSS.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 0, Max = 100)]
+        public string ComplianceType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComplianceType property is set.
+        /// </summary>
+        internal bool IsSetComplianceType() => this.ComplianceType != null;
+
+        /// <summary>
+        /// Gets and sets the property CreationTime. 
+        /// <para>
+        ///  Specifies when the assessment was created. 
+        /// </para>
+        /// </summary>
+        public DateTime? CreationTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CreationTime property is set.
+        /// </summary>
+        internal bool IsSetCreationTime() => this.CreationTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Delegations. 
+        /// <para>
+        ///  The delegations that are associated with the assessment. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Delegation> Delegations { get; set; } = AWSConfigs.InitializeCollections ? new List<Delegation>() : null;
+
+        /// <summary>
+        /// Checks to see if the Delegations property is set.
+        /// </summary>
+        internal bool IsSetDelegations() => this.Delegations != null && (this.Delegations.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  The description of the assessment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 0, Max = 1000)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        ///  The unique identifier for the assessment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 36, Max = 36)]
+        public string Id { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id property is set.
+        /// </summary>
+        internal bool IsSetId() => this.Id != null;
+
+        /// <summary>
+        /// Gets and sets the property LastUpdated. 
+        /// <para>
+        ///  The time of the most recent update. 
+        /// </para>
+        /// </summary>
+        public DateTime? LastUpdated { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastUpdated property is set.
+        /// </summary>
+        internal bool IsSetLastUpdated() => this.LastUpdated.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the assessment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 300)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property Roles. 
+        /// <para>
+        ///  The roles that are associated with the assessment. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public List<Role> Roles { get; set; } = AWSConfigs.InitializeCollections ? new List<Role>() : null;
+
+        /// <summary>
+        /// Checks to see if the Roles property is set.
+        /// </summary>
+        internal bool IsSetRoles() => this.Roles != null && (this.Roles.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        ///  The wrapper of Amazon Web Services accounts and services that are in scope for the
+        /// assessment. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public Scope Scope { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scope property is set.
+        /// </summary>
+        internal bool IsSetScope() => this.Scope != null;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The overall status of the assessment. 
+        /// </para>
+        /// </summary>
+        public AssessmentStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+    }
+}

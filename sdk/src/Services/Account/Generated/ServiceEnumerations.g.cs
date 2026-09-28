@@ -1,0 +1,319 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.Account
+{
+    /// <summary>
+    /// Constants used for properties of type AccountState.
+    /// </summary>
+    public class AccountState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for AccountState
+        /// </summary>
+        public static readonly AccountState ACTIVE = new AccountState("ACTIVE");
+
+        /// <summary>
+        /// Constant CLOSED for AccountState
+        /// </summary>
+        public static readonly AccountState CLOSED = new AccountState("CLOSED");
+
+        /// <summary>
+        /// Constant PENDING_ACTIVATION for AccountState
+        /// </summary>
+        public static readonly AccountState PENDING_ACTIVATION = new AccountState("PENDING_ACTIVATION");
+
+        /// <summary>
+        /// Constant SUSPENDED for AccountState
+        /// </summary>
+        public static readonly AccountState SUSPENDED = new AccountState("SUSPENDED");
+
+        /// <summary>
+        /// Constructs a custom AccountState for a value not among the defined constants.
+        /// </summary>
+        public AccountState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountState FindValue(string value)
+        {
+            return FindValue<AccountState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AlternateContactType.
+    /// </summary>
+    public class AlternateContactType : ConstantClass
+    {
+        /// <summary>
+        /// Constant BILLING for AlternateContactType
+        /// </summary>
+        public static readonly AlternateContactType BILLING = new AlternateContactType("BILLING");
+
+        /// <summary>
+        /// Constant OPERATIONS for AlternateContactType
+        /// </summary>
+        public static readonly AlternateContactType OPERATIONS = new AlternateContactType("OPERATIONS");
+
+        /// <summary>
+        /// Constant SECURITY for AlternateContactType
+        /// </summary>
+        public static readonly AlternateContactType SECURITY = new AlternateContactType("SECURITY");
+
+        /// <summary>
+        /// Constructs a custom AlternateContactType for a value not among the defined constants.
+        /// </summary>
+        public AlternateContactType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AlternateContactType FindValue(string value)
+        {
+            return FindValue<AlternateContactType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AlternateContactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AwsAccountState.
+    /// </summary>
+    public class AwsAccountState : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for AwsAccountState
+        /// </summary>
+        public static readonly AwsAccountState ACTIVE = new AwsAccountState("ACTIVE");
+
+        /// <summary>
+        /// Constant CLOSED for AwsAccountState
+        /// </summary>
+        public static readonly AwsAccountState CLOSED = new AwsAccountState("CLOSED");
+
+        /// <summary>
+        /// Constant PENDING_ACTIVATION for AwsAccountState
+        /// </summary>
+        public static readonly AwsAccountState PENDING_ACTIVATION = new AwsAccountState("PENDING_ACTIVATION");
+
+        /// <summary>
+        /// Constant SUSPENDED for AwsAccountState
+        /// </summary>
+        public static readonly AwsAccountState SUSPENDED = new AwsAccountState("SUSPENDED");
+
+        /// <summary>
+        /// Constructs a custom AwsAccountState for a value not among the defined constants.
+        /// </summary>
+        public AwsAccountState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AwsAccountState FindValue(string value)
+        {
+            return FindValue<AwsAccountState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AwsAccountState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PrimaryEmailUpdateStatus.
+    /// </summary>
+    public class PrimaryEmailUpdateStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACCEPTED for PrimaryEmailUpdateStatus
+        /// </summary>
+        public static readonly PrimaryEmailUpdateStatus ACCEPTED = new PrimaryEmailUpdateStatus("ACCEPTED");
+
+        /// <summary>
+        /// Constant COMPLETED for PrimaryEmailUpdateStatus
+        /// </summary>
+        public static readonly PrimaryEmailUpdateStatus COMPLETED = new PrimaryEmailUpdateStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for PrimaryEmailUpdateStatus
+        /// </summary>
+        public static readonly PrimaryEmailUpdateStatus FAILED = new PrimaryEmailUpdateStatus("FAILED");
+
+        /// <summary>
+        /// Constant PENDING for PrimaryEmailUpdateStatus
+        /// </summary>
+        public static readonly PrimaryEmailUpdateStatus PENDING = new PrimaryEmailUpdateStatus("PENDING");
+
+        /// <summary>
+        /// Constructs a custom PrimaryEmailUpdateStatus for a value not among the defined constants.
+        /// </summary>
+        public PrimaryEmailUpdateStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrimaryEmailUpdateStatus FindValue(string value)
+        {
+            return FindValue<PrimaryEmailUpdateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrimaryEmailUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RegionOptStatus.
+    /// </summary>
+    public class RegionOptStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for RegionOptStatus
+        /// </summary>
+        public static readonly RegionOptStatus DISABLED = new RegionOptStatus("DISABLED");
+
+        /// <summary>
+        /// Constant DISABLING for RegionOptStatus
+        /// </summary>
+        public static readonly RegionOptStatus DISABLING = new RegionOptStatus("DISABLING");
+
+        /// <summary>
+        /// Constant ENABLED for RegionOptStatus
+        /// </summary>
+        public static readonly RegionOptStatus ENABLED = new RegionOptStatus("ENABLED");
+
+        /// <summary>
+        /// Constant ENABLED_BY_DEFAULT for RegionOptStatus
+        /// </summary>
+        public static readonly RegionOptStatus ENABLED_BY_DEFAULT = new RegionOptStatus("ENABLED_BY_DEFAULT");
+
+        /// <summary>
+        /// Constant ENABLING for RegionOptStatus
+        /// </summary>
+        public static readonly RegionOptStatus ENABLING = new RegionOptStatus("ENABLING");
+
+        /// <summary>
+        /// Constructs a custom RegionOptStatus for a value not among the defined constants.
+        /// </summary>
+        public RegionOptStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RegionOptStatus FindValue(string value)
+        {
+            return FindValue<RegionOptStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RegionOptStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant FieldValidationFailed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("fieldValidationFailed");
+
+        /// <summary>
+        /// Constant InvalidRegionOptTarget for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason InvalidRegionOptTarget = new ValidationExceptionReason("invalidRegionOptTarget");
+
+        /// <summary>
+        /// Constructs a custom ValidationExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public ValidationExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

@@ -359,6 +359,42 @@ namespace AWSSDK.ProtocolTests.RestJson
         }
 
         /// <summary>
+        /// Serializes a nested union value
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonSerializeNestedUnionValueRequest()
+        {
+            // Arrange
+            var request = new JsonUnionsRequest
+            {
+                Contents = new MyUnion{
+                    UnionValue = new NestedUnion{
+                        StringValue = "foo"
+                    }
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new JsonUnionsRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\n    \"contents\": {\n        \"unionValue\": {\n            \"stringValue\": \"foo\"\n        }\n    }\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("PUT", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/JsonUnions", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
         /// Deserializes a string union value
         /// </summary>
         [TestMethod]
@@ -648,6 +684,40 @@ namespace AWSSDK.ProtocolTests.RestJson
                     StructureValue = new GreetingStruct
                     {
                         Hi = "hello",
+                    }
+                },
+            };
+
+            // Assert
+            var actualResponse = (JsonUnionsResponse)unmarshalledResponse;
+            Comparer.CompareObjects<JsonUnionsResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), context.ResponseData.StatusCode);
+        }
+
+        /// <summary>
+        /// Deserializes a nested union value
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonDeserializeNestedUnionValueResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200);
+            webResponseData.Headers["Content-Type"] = "application/json";
+            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"contents\": {\n        \"unionValue\": {\n            \"stringValue\": \"foo\"\n        }\n    }\n}");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+
+            // Act
+            var unmarshalledResponse = new JsonUnionsResponseUnmarshaller().Unmarshall(context);
+            var expectedResponse = new JsonUnionsResponse
+            {
+                Contents = new MyUnion{
+                    UnionValue = new NestedUnion{
+                        StringValue = "foo"
                     }
                 },
             };

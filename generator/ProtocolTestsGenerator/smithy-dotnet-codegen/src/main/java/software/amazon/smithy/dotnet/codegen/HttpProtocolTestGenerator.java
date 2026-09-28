@@ -51,6 +51,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
             ShapeId.from("aws.protocoltests.json10#JsonRpc10")
     );
     private final boolean useMockedClient;
+    private final List<String> tagsToSkip = List.of("defaults" , "skip-legacy-conversion");
 
     public HttpProtocolTestGenerator(
             DotnetGenerationContext context
@@ -219,7 +220,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpRequestTestCase httpRequestTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()) || httpRequestTestCase.hasTag("defaults"))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpRequestTestCase.getId()) || !Collections.disjoint(httpRequestTestCase.getTags(), tagsToSkip))
                     continue;
                 generateRequestTest(operation, httpRequestTestCase);
             }
@@ -465,7 +466,7 @@ public final class HttpProtocolTestGenerator implements Runnable {
                 setMarshallerType(trait.getTestCasesFor(AppliesTo.CLIENT).getFirst().getProtocol().getName());
             }
             for (HttpResponseTestCase httpResponseTestCase : trait.getTestCasesFor(AppliesTo.CLIENT)) {
-                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || httpResponseTestCase.hasTag("defaults"))
+                if (ProtocolTestCustomizations.TestsToSkip.contains(httpResponseTestCase.getId()) || !Collections.disjoint(httpResponseTestCase.getTags(), tagsToSkip))
                     continue;
                 generateResponseTest(operation, httpResponseTestCase);
             }

@@ -33,6 +33,14 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListActorMessages operation
+        /// </summary>
+        public IListActorMessagesPaginator ListActorMessages(ListActorMessagesRequest request)
+        {
+            return new ListActorMessagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentSpaces operation
         /// </summary>
         public IListAgentSpacesPaginator ListAgentSpaces(ListAgentSpacesRequest request)

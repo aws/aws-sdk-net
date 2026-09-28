@@ -53,10 +53,11 @@ namespace Amazon.WellArchitected.Internal
 
             var refs = new Dictionary<string, object>()
             {
-                ["Region"] = parameters["Region"],
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["Region"] = parameters["Region"],
+                ["SubServiceType"] = parameters["SubServiceType"],
             };
             if (IsSet(refs["Endpoint"]))
             {
@@ -70,6 +71,66 @@ namespace Amazon.WellArchitected.Internal
                 }
                 return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
+            if (IsSet(refs["SubServiceType"]) && Equals(refs["SubServiceType"], "AGENT") && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            {
+                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                {
+                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true) && Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                    {
+                        return new Endpoint(Interpolate(@"https://wellarchitected-agent-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
+                                                    ""authSchemes"": [
+                                                        {
+                                                            ""name"": ""sigv4"",
+                                                            ""signingName"": ""wellarchitected"",
+                                                            ""signingRegion"": ""{Region}""
+                                                        }
+                                                    ]
+                                                }", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                }
+                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
+                {
+                    if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
+                    {
+                        return new Endpoint(Interpolate(@"https://wellarchitected-agent-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
+                                                    ""authSchemes"": [
+                                                        {
+                                                            ""name"": ""sigv4"",
+                                                            ""signingName"": ""wellarchitected"",
+                                                            ""signingRegion"": ""{Region}""
+                                                        }
+                                                    ]
+                                                }", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                }
+                if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
+                {
+                    if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                    {
+                        return new Endpoint(Interpolate(@"https://wellarchitected-agent.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{
+                                                    ""authSchemes"": [
+                                                        {
+                                                            ""name"": ""sigv4"",
+                                                            ""signingName"": ""wellarchitected"",
+                                                            ""signingRegion"": ""{Region}""
+                                                        }
+                                                    ]
+                                                }", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                }
+                return new Endpoint(Interpolate(@"https://wellarchitected-agent.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{
+                                            ""authSchemes"": [
+                                                {
+                                                    ""name"": ""sigv4"",
+                                                    ""signingName"": ""wellarchitected"",
+                                                    ""signingRegion"": ""{Region}""
+                                                }
+                                            ]
+                                        }", refs), InterpolateJson(@"", refs));
+            }
             if (IsSet(refs["Region"]))
             {
                 if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
@@ -82,7 +143,7 @@ namespace Amazon.WellArchitected.Internal
                         }
                         throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
                     }
-                    if (Equals(refs["UseFIPS"], true))
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
                     {
                         if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
                         {
@@ -90,7 +151,7 @@ namespace Amazon.WellArchitected.Internal
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
                     }
-                    if (Equals(refs["UseDualStack"], true))
+                    if (Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], true))
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                         {

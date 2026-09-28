@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Introducing Amazon EventBridge enhanced Custom event bus, a new shareable event bus for organizational-scale event-driven applications feature ordered delivery, deduplication, open event formats, and cross-account bus sharing.",
+  "generate-client-constructors": true
+}

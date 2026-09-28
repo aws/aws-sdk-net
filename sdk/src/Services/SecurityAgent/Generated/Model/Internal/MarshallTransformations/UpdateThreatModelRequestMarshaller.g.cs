@@ -98,6 +98,16 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetReportDestination())
+            {
+                context.Writer.WritePropertyName("reportDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReportDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ReportDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetScopeDocs())
             {
                 context.Writer.WritePropertyName("scopeDocs");

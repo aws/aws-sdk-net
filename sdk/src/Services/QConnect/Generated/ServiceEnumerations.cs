@@ -3283,6 +3283,10 @@ namespace Amazon.QConnect
         /// </summary>
         public static readonly RecommendationType NOTES_CHUNK = new RecommendationType("NOTES_CHUNK");
         /// <summary>
+        /// Constant PROACTIVE_RECOMMENDATION for RecommendationType
+        /// </summary>
+        public static readonly RecommendationType PROACTIVE_RECOMMENDATION = new RecommendationType("PROACTIVE_RECOMMENDATION");
+        /// <summary>
         /// Constant SUGGESTED_MESSAGE for RecommendationType
         /// </summary>
         public static readonly RecommendationType SUGGESTED_MESSAGE = new RecommendationType("SUGGESTED_MESSAGE");
@@ -3502,6 +3506,72 @@ namespace Amazon.QConnect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RelevanceLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RetrieveErrorCode.
+    /// </summary>
+    public class RetrieveErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for RetrieveErrorCode
+        /// </summary>
+        public static readonly RetrieveErrorCode ACCESS_DENIED = new RetrieveErrorCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant DEPENDENCY_FAILED for RetrieveErrorCode
+        /// </summary>
+        public static readonly RetrieveErrorCode DEPENDENCY_FAILED = new RetrieveErrorCode("DEPENDENCY_FAILED");
+        /// <summary>
+        /// Constant INTERNAL_SERVER_ERROR for RetrieveErrorCode
+        /// </summary>
+        public static readonly RetrieveErrorCode INTERNAL_SERVER_ERROR = new RetrieveErrorCode("INTERNAL_SERVER_ERROR");
+        /// <summary>
+        /// Constant RESOURCE_NOT_FOUND for RetrieveErrorCode
+        /// </summary>
+        public static readonly RetrieveErrorCode RESOURCE_NOT_FOUND = new RetrieveErrorCode("RESOURCE_NOT_FOUND");
+        /// <summary>
+        /// Constant THROTTLED for RetrieveErrorCode
+        /// </summary>
+        public static readonly RetrieveErrorCode THROTTLED = new RetrieveErrorCode("THROTTLED");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for RetrieveErrorCode
+        /// </summary>
+        public static readonly RetrieveErrorCode VALIDATION_ERROR = new RetrieveErrorCode("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RetrieveErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RetrieveErrorCode FindValue(string value)
+        {
+            return FindValue<RetrieveErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RetrieveErrorCode(string value)
         {
             return FindValue(value);
         }

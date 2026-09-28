@@ -25,6 +25,9 @@ public sealed record CustomizationsModel
     [JsonPropertyName("operationModifiers")]
     public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
 
+    [JsonPropertyName("overrideContentType")]
+    public string? OverrideContentType { get; init; }
+
     /// <summary>Loads a service's customizations files into one model (C2J's CustomizationCompiler combines them the same way).</summary>
     public static CustomizationsModel Load(IEnumerable<string> paths)
     {

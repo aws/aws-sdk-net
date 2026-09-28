@@ -42,9 +42,7 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property ChargeDateOffset. 
         /// <para>
         /// The relative offset from the renewal agreement start date when this installment is
-        /// due, in ISO 8601 duration format. The offset uses months only or days only (for example,
-        /// P1M or P30D); mixed units are not supported, and every offset in a schedule uses the
-        /// same unit.
+        /// due, represented in ISO 8601 duration format (for example, P1M or P30D).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
@@ -63,8 +61,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ChargePercentage. 
         /// <para>
-        /// The percentage of the increased TCV to charge in this installment. All entries in
-        /// a schedule sum to 100.00.
+        /// The percentage of the increased Total Contract Value (TCV) to charge in this installment.
+        /// All entries in a schedule sum to 100.00.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
@@ -84,10 +82,9 @@ namespace Amazon.MarketplaceDiscovery.Model
         /// Gets and sets the property DayOfMonth. 
         /// <para>
         /// The optional calendar day of month on which the charge occurs. When absent, the charge
-        /// day is derived from <c>chargeDateOffset</c>, and this field does not apply when <c>chargeDateOffset</c>
-        /// is expressed in days. For months with fewer days than the specified day, the charge
-        /// occurs on the last day of the month. For example, if <c>dayOfMonth</c> is 31, the
-        /// charge in April occurs on April 30.
+        /// day is derived from <c>chargeDateOffset</c>. For months with fewer days than the specified
+        /// day, the charge occurs on the last day of the month. For example, if <c>dayOfMonth</c>
+        /// is 31, the charge in April occurs on April 30.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=31)]

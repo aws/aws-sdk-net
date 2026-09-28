@@ -38,7 +38,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the security groups for the VPC configuration.
+        /// The Amazon Resource Names (ARNs) or IDs of the security groups for the VPC configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -57,7 +57,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property SubnetArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the subnets for the VPC configuration.
+        /// The Amazon Resource Names (ARNs) or IDs of the subnets for the VPC configuration.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
@@ -76,7 +76,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property VpcArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the VPC.
+        /// The Amazon Resource Name (ARN) or ID of the VPC.
         /// </para>
         /// </summary>
         public string VpcArn { get; set; }

@@ -45,7 +45,8 @@ namespace AWSSDK_DotNet.UnitTests
                 MaxErrorRetry = MAX_RETRIES
             };
 
-            var retryPolicy = new DefaultRetryPolicy(config);
+            // No backoff between retries; the test only checks capacity consumption.
+            var retryPolicy = new DefaultRetryPolicy(config) { MaxBackoffInMilliseconds = 0 };
             var retryHandler = new RetryHandler(retryPolicy);
             var tester = new MockActionHandler();
             var pipeline = new RuntimePipeline(tester);

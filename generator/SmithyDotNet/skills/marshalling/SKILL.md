@@ -27,7 +27,8 @@ Operation marshallers/unmarshallers expose a `private static` instance behind a 
 Every request marshaller emits, in this order:
 
 1. `new DefaultRequest(publicRequest, "Amazon.{ServiceName}")`, then `@requestCompression` (below).
-2. `Content-Type` (protocol-dependent), omitted for GET/DELETE and for operations with no body.
+2. `Content-Type` (protocol-dependent, or the `overrideContentType` customization when set — below),
+   omitted for GET/DELETE and for operations with no body.
 3. `HeaderKeys.XAmzApiVersion` (the service shape's version) and `HttpMethod`.
 4. `@httpQuery` members, then `@httpQueryParams`; `@httpPrefixHeaders`, then `@httpHeader` members.
 5. `@httpLabel` members as `AddPathResource` calls, then `request.ResourcePath` set to the `@http` uri
@@ -45,6 +46,17 @@ the protocol trait's version lists, where `eventStreamHttp` defaults to `http` w
 | `h2` without `http/1.1` | any | all |
 | `h2` and `http/1.1` | without `http/1.1` | those with an output event stream |
 | `h2` and `http/1.1` | with `http/1.1` | those with both an input and an output event stream |
+
+### `overrideContentType` customization
+
+The service-level `overrideContentType` customization (a top-level string in `*.customizations.json`,
+read into `GenerationContext.Customizations.OverrideContentType`) hard-codes the request `Content-Type`:
+`request.Headers["Content-Type"] = "{value}";`. On restJson1 it replaces the per-operation value
+(including the blob-payload default) but is still skipped for input event streams and GET/DELETE; it's
+emitted even for body-less operations. On awsJson it replaces only the versioned Content-Type;
+`X-Amz-Target` is unchanged. A handful of restJson1 services use it to send
+`application/x-amz-json-1.1` instead of the default `application/json` (finspace, finspace-data,
+lex.v2), matching C2J.
 
 ## Member Placement
 

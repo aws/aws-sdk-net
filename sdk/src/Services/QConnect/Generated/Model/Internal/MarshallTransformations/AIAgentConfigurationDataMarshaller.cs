@@ -52,6 +52,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AiAgentId);
             }
 
+            if(requestObject.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
+            }
+
         }
 
         /// <summary>

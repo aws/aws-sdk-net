@@ -4,31 +4,31 @@
     <property>Amazon.IoTTwinMaker.Model.BatchPutPropertyValuesRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CancelMetadataTransferJobRequest.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CancelMetadataTransferJobResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CancelMetadataTransferJobResponse.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateComponentTypeRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateComponentTypeRequest.ComponentTypeName</property>
@@ -46,13 +46,13 @@
     <property>Amazon.IoTTwinMaker.Model.CreateComponentTypeRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateComponentTypeResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateEntityRequest.Description</property>
@@ -64,37 +64,37 @@
     <property>Amazon.IoTTwinMaker.Model.CreateEntityRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateEntityRequest.EntityName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+    <pattern>^[^\u0000-\u001F\u007F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateEntityRequest.ParentEntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateEntityRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateEntityResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateEntityResponse.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateMetadataTransferJobRequest.Description</property>
@@ -106,25 +106,25 @@
     <property>Amazon.IoTTwinMaker.Model.CreateMetadataTransferJobRequest.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateMetadataTransferJobResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateMetadataTransferJobResponse.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSceneRequest.ContentLocation</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[sS]3://[A-Za-z0-9._/-]+</pattern>
+    <pattern>^[sS]3://[A-Za-z0-9._/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSceneRequest.Description</property>
@@ -136,41 +136,41 @@
     <property>Amazon.IoTTwinMaker.Model.CreateSceneRequest.SceneId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSceneRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSceneResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSyncJobRequest.SyncRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSyncJobRequest.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSyncJobRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateSyncJobResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceRequest.Description</property>
@@ -182,7 +182,7 @@
     <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceRequest.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceRequest.S3Location</property>
@@ -194,65 +194,65 @@
     <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CreateWorkspaceResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteComponentTypeRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteComponentTypeRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteEntityRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteEntityRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteSceneRequest.SceneId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteSceneRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteSyncJobRequest.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteSyncJobRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DeleteWorkspaceResponse.Message</property>
@@ -275,13 +275,13 @@
     <property>Amazon.IoTTwinMaker.Model.ExecuteQueryRequest.QueryStatement</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ExecuteQueryRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ExecuteQueryResponse.NextToken</property>
@@ -293,25 +293,25 @@
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeResponse.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeResponse.ComponentTypeName</property>
@@ -327,31 +327,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeResponse.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetComponentTypeResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.Description</property>
@@ -363,41 +363,41 @@
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.EntityName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+    <pattern>^[^\u0000-\u001F\u007F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.ParentEntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetEntityResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetMetadataTransferJobRequest.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetMetadataTransferJobResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetMetadataTransferJobResponse.Description</property>
@@ -409,13 +409,13 @@
     <property>Amazon.IoTTwinMaker.Model.GetMetadataTransferJobResponse.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetMetadataTransferJobResponse.MetadataTransferJobRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetMetadataTransferJobResponse.ReportUrl</property>
@@ -427,25 +427,25 @@
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.ComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.ComponentPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z_\-0-9/]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.MaxResults</property>
@@ -462,13 +462,13 @@
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.PropertyGroupName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueResponse.NextToken</property>
@@ -480,19 +480,19 @@
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.ComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.ComponentPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z_\-0-9/]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.EndTime</property>
@@ -503,7 +503,7 @@
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.MaxResults</property>
@@ -525,7 +525,7 @@
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetPropertyValueHistoryResponse.NextToken</property>
@@ -537,25 +537,25 @@
     <property>Amazon.IoTTwinMaker.Model.GetSceneRequest.SceneId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSceneRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSceneResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSceneResponse.ContentLocation</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[sS]3://[A-Za-z0-9._/-]+</pattern>
+    <pattern>^[sS]3://[A-Za-z0-9._/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSceneResponse.Description</property>
@@ -567,57 +567,57 @@
     <property>Amazon.IoTTwinMaker.Model.GetSceneResponse.SceneId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSceneResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSyncJobRequest.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSyncJobRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSyncJobResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSyncJobResponse.SyncRole</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSyncJobResponse.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetSyncJobResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$|^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$|^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.Description</property>
@@ -629,7 +629,7 @@
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.S3Location</property>
@@ -641,42 +641,7 @@
     <property>Amazon.IoTTwinMaker.Model.GetWorkspaceResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.ComponentPath</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>[a-zA-Z_\-0-9/]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.EntityId</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.MaxResults</property>
-    <min>0</min>
-    <max>200</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.NextToken</property>
-    <min>0</min>
-    <max>17880</max>
-    <pattern>.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.WorkspaceId</property>
-    <min>1</min>
-    <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.IoTTwinMaker.Model.ListComponentsResponse.NextToken</property>
-    <min>0</min>
-    <max>17880</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListComponentTypesRequest.MaxResults</property>
@@ -693,7 +658,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListComponentTypesRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListComponentTypesResponse.MaxResults</property>
@@ -710,7 +675,42 @@
     <property>Amazon.IoTTwinMaker.Model.ListComponentTypesResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.ComponentPath</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z_\-0-9/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.EntityId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.MaxResults</property>
+    <min>0</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.NextToken</property>
+    <min>0</min>
+    <max>17880</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListComponentsRequest.WorkspaceId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTTwinMaker.Model.ListComponentsResponse.NextToken</property>
+    <min>0</min>
+    <max>17880</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesRequest.MaxResults</property>
@@ -727,7 +727,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesResponse.NextToken</property>
@@ -756,19 +756,19 @@
     <property>Amazon.IoTTwinMaker.Model.ListPropertiesRequest.ComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListPropertiesRequest.ComponentPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z_\-0-9/]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListPropertiesRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListPropertiesRequest.MaxResults</property>
@@ -785,7 +785,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListPropertiesRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListPropertiesResponse.NextToken</property>
@@ -808,7 +808,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListScenesRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListScenesResponse.NextToken</property>
@@ -831,7 +831,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListSyncJobsRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListSyncJobsResponse.NextToken</property>
@@ -852,13 +852,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListSyncResourcesRequest.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListSyncResourcesRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListSyncResourcesResponse.NextToken</property>
@@ -881,7 +881,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListTagsForResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListTagsForResourceResponse.NextToken</property>
@@ -910,19 +910,19 @@
     <property>Amazon.IoTTwinMaker.Model.TagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UntagResourceRequest.ResourceARN</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateComponentTypeRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateComponentTypeRequest.ComponentTypeName</property>
@@ -940,25 +940,25 @@
     <property>Amazon.IoTTwinMaker.Model.UpdateComponentTypeRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateComponentTypeResponse.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateComponentTypeResponse.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateComponentTypeResponse.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateEntityRequest.Description</property>
@@ -970,25 +970,25 @@
     <property>Amazon.IoTTwinMaker.Model.UpdateEntityRequest.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateEntityRequest.EntityName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+    <pattern>^[^\u0000-\u001F\u007F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateEntityRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateSceneRequest.ContentLocation</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[sS]3://[A-Za-z0-9._/-]+</pattern>
+    <pattern>^[sS]3://[A-Za-z0-9._/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateSceneRequest.Description</property>
@@ -1000,13 +1000,13 @@
     <property>Amazon.IoTTwinMaker.Model.UpdateSceneRequest.SceneId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateSceneRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateWorkspaceRequest.Description</property>
@@ -1018,7 +1018,7 @@
     <property>Amazon.IoTTwinMaker.Model.UpdateWorkspaceRequest.Role</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iam::[0-9]{12}:role/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.UpdateWorkspaceRequest.S3Location</property>
@@ -1030,7 +1030,7 @@
     <property>Amazon.IoTTwinMaker.Model.UpdateWorkspaceRequest.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.BatchPutPropertyError.ErrorCode</property>
@@ -1046,13 +1046,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ColumnDescription.Name</property>
-    <pattern>.*</pattern>
+    <pattern>^.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentRequest.Description</property>
@@ -1064,13 +1064,13 @@
     <property>Amazon.IoTTwinMaker.Model.ComponentResponse.ComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentResponse.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentResponse.DefinedIn</property>
@@ -1086,25 +1086,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentResponse.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentSummary.ComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentSummary.ComponentPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z_\-0-9/]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentSummary.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentSummary.DefinedIn</property>
@@ -1120,19 +1120,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentSummary.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentTypeSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentTypeSummary.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentTypeSummary.ComponentTypeName</property>
@@ -1150,7 +1150,7 @@
     <property>Amazon.IoTTwinMaker.Model.ComponentUpdateRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ComponentUpdateRequest.Description</property>
@@ -1168,13 +1168,13 @@
     <property>Amazon.IoTTwinMaker.Model.CompositeComponentTypeRequest.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CompositeComponentTypeResponse.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.CompositeComponentUpdateRequest.Description</property>
@@ -1192,7 +1192,7 @@
     <property>Amazon.IoTTwinMaker.Model.DataValue.Expression</property>
     <min>1</min>
     <max>316</max>
-    <pattern>(^\$\{Parameters\.[a-zA-z]+([a-zA-z_0-9]*)}$)</pattern>
+    <pattern>^(^\$\{Parameters\.[a-zA-z]+([a-zA-z_0-9]*)}$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.DataValue.StringValue</property>
@@ -1204,31 +1204,31 @@
     <property>Amazon.IoTTwinMaker.Model.EntityPropertyReference.ComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntityPropertyReference.ComponentPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>[a-zA-Z_\-0-9/]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntityPropertyReference.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntityPropertyReference.PropertyName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntitySummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntitySummary.Description</property>
@@ -1240,19 +1240,19 @@
     <property>Amazon.IoTTwinMaker.Model.EntitySummary.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntitySummary.EntityName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[^\u0000-\u001F\u007F]+</pattern>
+    <pattern>^[^\u0000-\u001F\u007F]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.EntitySummary.ParentEntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ErrorDetails.Message</property>
@@ -1269,7 +1269,7 @@
     <property>Amazon.IoTTwinMaker.Model.FilterByAsset.AssetId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.FilterByAssetModel.AssetModelExternalId</property>
@@ -1281,43 +1281,43 @@
     <property>Amazon.IoTTwinMaker.Model.FilterByAssetModel.AssetModelId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.FilterByComponentType.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.FilterByEntity.EntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.IotTwinMakerDestinationConfiguration.Workspace</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.IotTwinMakerSourceConfiguration.Workspace</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.LambdaFunction.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):lambda:[a-z0-9-]+:[0-9]{12}:function:[\/a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):lambda:[a-z0-9-]+:[0-9]{12}:function:[\/a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListComponentTypesFilter.ExtendsFrom</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListComponentTypesFilter.Namespace</property>
@@ -1329,7 +1329,7 @@
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesFilter.ComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesFilter.ExternalId</property>
@@ -1341,25 +1341,25 @@
     <property>Amazon.IoTTwinMaker.Model.ListEntitiesFilter.ParentEntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.ListMetadataTransferJobsFilter.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.MetadataTransferJobSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.MetadataTransferJobSummary.MetadataTransferJobId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.OrderBy.PropertyName</property>
@@ -1371,7 +1371,7 @@
     <property>Amazon.IoTTwinMaker.Model.ParentEntityUpdateRequest.ParentEntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^\$ROOT|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.PropertyDefinitionRequest.DisplayName</property>
@@ -1401,7 +1401,7 @@
     <property>Amazon.IoTTwinMaker.Model.PropertySummary.PropertyName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.PropertyValue.Time</property>
@@ -1418,19 +1418,19 @@
     <property>Amazon.IoTTwinMaker.Model.Relationship.TargetComponentTypeId</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\.\-0-9:]+</pattern>
+    <pattern>^[a-zA-Z_\.\-0-9:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.RelationshipValue.TargetComponentName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z_\-0-9]+</pattern>
+    <pattern>^[a-zA-Z_\-0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.RelationshipValue.TargetEntityId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|^[a-zA-Z0-9][a-zA-Z_\-0-9.:]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.S3DestinationConfiguration.Location</property>
@@ -1449,13 +1449,13 @@
     <property>Amazon.IoTTwinMaker.Model.SceneSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SceneSummary.ContentLocation</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[sS]3://[A-Za-z0-9._/-]+</pattern>
+    <pattern>^[sS]3://[A-Za-z0-9._/-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SceneSummary.Description</property>
@@ -1467,53 +1467,53 @@
     <property>Amazon.IoTTwinMaker.Model.SceneSummary.SceneId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncJobSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncJobSummary.SyncSource</property>
-    <pattern>[a-zA-Z_0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncJobSummary.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncResourceFilter.ExternalId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncResourceFilter.ResourceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncResourceSummary.ExternalId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.SyncResourceSummary.ResourceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.WorkspaceSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+</pattern>
+    <pattern>^arn:((aws)|(aws-cn)|(aws-us-gov)):iottwinmaker:[a-z0-9-]+:[0-9]{12}:[\/a-zA-Z0-9_\-\.:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTTwinMaker.Model.WorkspaceSummary.Description</property>
@@ -1525,6 +1525,6 @@
     <property>Amazon.IoTTwinMaker.Model.WorkspaceSummary.WorkspaceId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z_0-9][a-zA-Z_\-0-9]*[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
 </property-value-rules>

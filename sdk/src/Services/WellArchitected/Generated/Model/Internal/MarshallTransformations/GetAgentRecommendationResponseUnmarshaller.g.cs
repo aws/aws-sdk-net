@@ -108,6 +108,13 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("generationId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.GenerationId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("goals", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<RecommendationGoal, RecommendationGoalUnmarshaller>(RecommendationGoalUnmarshaller.Instance);

@@ -37,7 +37,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source that AWS Security Agent reads the certificate from.
+        /// The source that Security Agent reads the certificate from.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

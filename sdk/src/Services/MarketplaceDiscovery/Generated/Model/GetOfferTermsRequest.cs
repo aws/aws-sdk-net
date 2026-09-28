@@ -37,9 +37,32 @@ namespace Amazon.MarketplaceDiscovery.Model
     /// </summary>
     public partial class GetOfferTermsRequest : AmazonMarketplaceDiscoveryRequest
     {
+        private string _locale;
         private int? _maxResults;
         private string _nextToken;
         private string _offerId;
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// A BCP 47 language tag or comma-separated priority list specifying the preferred locale
+        /// for response content. See <c>Locale</c> for supported values, constraints, fallback
+        /// behavior, and the default locale. If omitted, the service returns content in the default
+        /// locale.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

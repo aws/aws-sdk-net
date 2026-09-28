@@ -245,6 +245,24 @@ namespace Amazon.RpcV2Protocol
 
         #endregion
                 
+        #region  RpcV2CborUnions
+
+
+
+        /// <summary>
+        /// This operation uses unions for inputs and outputs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RpcV2CborUnions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RpcV2CborUnions service method, as returned by RpcV2Protocol.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rpcv2protocol-2020-07-14/RpcV2CborUnions">REST API Reference for RpcV2CborUnions Operation</seealso>
+        Task<RpcV2CborUnionsResponse> RpcV2CborUnionsAsync(RpcV2CborUnionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  SimpleScalarProperties
 
 

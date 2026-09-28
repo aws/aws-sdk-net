@@ -31,10 +31,24 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteStreamProcessor operation.
+    /// <important> 
+    /// <para>
+    /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+    /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+    /// feature availability changes</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+    /// 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Deletes the stream processor identified by <c>Name</c>. You assign the value for <c>Name</c>
     /// when you create the stream processor with <a>CreateStreamProcessor</a>. You might
     /// not be able to use the same name for a stream processor for a few seconds after calling
     /// <c>DeleteStreamProcessor</c>.
+    /// </para>
     /// </summary>
     public partial class DeleteStreamProcessorRequest : AmazonRekognitionRequest
     {

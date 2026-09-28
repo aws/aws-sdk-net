@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class TableInput
     {
         private string _description;
+        private FederatedTable _federatedTable;
         private DateTime? _lastAccessTime;
         private DateTime? _lastAnalyzedTime;
         private string _name;
@@ -66,6 +67,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FederatedTable. 
+        /// <para>
+        /// A <c>FederatedTable</c> structure that references an entity outside the Glue Data
+        /// Catalog. Specify this field to create a federated table, which points to a table in
+        /// an external metastore instead of describing data managed in the Glue Data Catalog.
+        /// </para>
+        /// </summary>
+        public FederatedTable FederatedTable
+        {
+            get { return this._federatedTable; }
+            set { this._federatedTable = value; }
+        }
+
+        // Check to see if FederatedTable property is set
+        internal bool IsSetFederatedTable()
+        {
+            return this._federatedTable != null;
         }
 
         /// <summary>

@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;
 
@@ -8,10 +10,12 @@ public class JsonRequestMarshallerWriterTests
 {
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _putAuditEventsRequestMarshaller;
 
     public JsonRequestMarshallerWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new JsonRequestMarshallerWriter(fixture.Context, ModelFileName);
         var operation = fixture.Context.Operations.Single(o => o.Name == "PutAuditEvents");
         _putAuditEventsRequestMarshaller = writer.Write(operation, TestContext.Current.CancellationToken);
@@ -111,5 +115,19 @@ public class JsonRequestMarshallerWriterTests
     {
         Assert.Contains("if (string.IsNullOrEmpty(publicRequest.ChannelArn))", _putAuditEventsRequestMarshaller);
         Assert.Contains(""" throw new AmazonCloudTrailDataException("Request object does not have required field ChannelArn set");""", _putAuditEventsRequestMarshaller);
+    }
+
+    [Fact]
+    public void OverrideContentTypeCustomizationReplacesDefaultContentType()
+    {
+        var customizations = new CustomizationsModel { OverrideContentType = "application/x-amz-json-1.1" };
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, _fixture.Context.Metadata, customizations);
+        var writer = new JsonRequestMarshallerWriter(context, ModelFileName);
+        var operation = context.Operations.Single(o => o.Name == "PutAuditEvents");
+        var marshaller = writer.Write(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("""request.Headers["Content-Type"] = "application/x-amz-json-1.1";""", marshaller);
+        // The override wins over the default body Content-Type.
+        Assert.DoesNotContain("""request.Headers["Content-Type"] = "application/json";""", marshaller);
     }
 }

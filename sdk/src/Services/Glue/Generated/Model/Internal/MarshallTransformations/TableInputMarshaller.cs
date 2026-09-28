@@ -52,6 +52,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Description);
             }
 
+            if(requestObject.IsSetFederatedTable())
+            {
+                context.Writer.WritePropertyName("FederatedTable");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FederatedTableMarshaller.Instance;
+                marshaller.Marshall(requestObject.FederatedTable, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLastAccessTime())
             {
                 context.Writer.WritePropertyName("LastAccessTime");

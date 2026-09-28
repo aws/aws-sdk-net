@@ -116,6 +116,12 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.NotesData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("proactiveRecommendationData", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProactiveRecommendationDataDetailsUnmarshaller.Instance;
+                    unmarshalledObject.ProactiveRecommendationData = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sourceContentData", targetDepth, ref reader))
                 {
                     var unmarshaller = SourceContentDataDetailsUnmarshaller.Instance;

@@ -596,6 +596,103 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  CreateResourceMetricsConfiguration
+
+
+        /// <summary>
+        /// Creates a resource metrics configuration for an Amazon Web Services resource. After
+        /// you create a configuration, Amazon CloudWatch collects detailed metrics for that resource.
+        /// 
+        ///  
+        /// <para>
+        /// Each Amazon Web Services resource can have only one resource metrics configuration.
+        /// If a configuration already exists for the specified resource ARN, this operation returns
+        /// a <c>ConflictException</c>. To modify an existing configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateResourceMetricsConfiguration.html">UpdateResourceMetricsConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the Amazon Web Services resource that you specify in <c>ResourceArn</c> does not
+        /// exist, this operation returns a <c>ResourceNotFoundException</c>. Verify that the
+        /// resource ARN is correct and that the resource exists before you retry the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a resource metrics configuration, you must have the <c>cloudwatch:CreateResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the CreateResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/CreateResourceMetricsConfiguration">REST API Reference for CreateResourceMetricsConfiguration Operation</seealso>
+        public virtual CreateResourceMetricsConfigurationResponse CreateResourceMetricsConfiguration(CreateResourceMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateResourceMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a resource metrics configuration for an Amazon Web Services resource. After
+        /// you create a configuration, Amazon CloudWatch collects detailed metrics for that resource.
+        /// 
+        ///  
+        /// <para>
+        /// Each Amazon Web Services resource can have only one resource metrics configuration.
+        /// If a configuration already exists for the specified resource ARN, this operation returns
+        /// a <c>ConflictException</c>. To modify an existing configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateResourceMetricsConfiguration.html">UpdateResourceMetricsConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the Amazon Web Services resource that you specify in <c>ResourceArn</c> does not
+        /// exist, this operation returns a <c>ResourceNotFoundException</c>. Verify that the
+        /// resource ARN is correct and that the resource exists before you retry the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a resource metrics configuration, you must have the <c>cloudwatch:CreateResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateResourceMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/CreateResourceMetricsConfiguration">REST API Reference for CreateResourceMetricsConfiguration Operation</seealso>
+        public virtual Task<CreateResourceMetricsConfigurationResponse> CreateResourceMetricsConfigurationAsync(CreateResourceMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateResourceMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateResourceMetricsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteAlarmMuteRule
 
 
@@ -1056,6 +1153,87 @@ namespace Amazon.CloudWatch
             options.ResponseUnmarshaller = DeleteMetricStreamResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteMetricStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteResourceMetricsConfiguration
+
+
+        /// <summary>
+        /// Deletes the resource metrics configuration for an Amazon Web Services resource. After
+        /// you delete the configuration, Amazon CloudWatch stops collecting detailed metrics
+        /// for the resource. Metric data that Amazon CloudWatch already collected for the resource
+        /// is not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a <c>ResourceNotFoundException</c> if no resource metrics configuration
+        /// exists for the specified resource ARN. Verify that the resource ARN is correct.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a resource metrics configuration, you must have the <c>cloudwatch:DeleteResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteResourceMetricsConfiguration">REST API Reference for DeleteResourceMetricsConfiguration Operation</seealso>
+        public virtual DeleteResourceMetricsConfigurationResponse DeleteResourceMetricsConfiguration(DeleteResourceMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourceMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the resource metrics configuration for an Amazon Web Services resource. After
+        /// you delete the configuration, Amazon CloudWatch stops collecting detailed metrics
+        /// for the resource. Metric data that Amazon CloudWatch already collected for the resource
+        /// is not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a <c>ResourceNotFoundException</c> if no resource metrics configuration
+        /// exists for the specified resource ARN. Verify that the resource ARN is correct.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a resource metrics configuration, you must have the <c>cloudwatch:DeleteResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourceMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteResourceMetricsConfiguration">REST API Reference for DeleteResourceMetricsConfiguration Operation</seealso>
+        public virtual Task<DeleteResourceMetricsConfigurationResponse> DeleteResourceMetricsConfigurationAsync(DeleteResourceMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourceMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteResourceMetricsConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2012,6 +2190,15 @@ namespace Amazon.CloudWatch
         /// within <c>DashboardBody</c> as the template for the new dashboard when you call <c>PutDashboard</c>
         /// to create the copy.
         /// </para>
+        ///  
+        /// <para>
+        /// You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+        /// Region (Region that is disabled by default)</a> for your account. In that Region,
+        /// <c>GetDashboard</c> can return an access denied error for up to 24 hours after you
+        /// enable the Region. This delay occurs while dashboard data propagates. The error does
+        /// not indicate a problem with your permissions. Because dashboards are global, you can
+        /// call <c>GetDashboard</c> in any other enabled Region, or retry after propagation completes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
         /// 
@@ -2044,6 +2231,15 @@ namespace Amazon.CloudWatch
         /// To copy an existing dashboard, use <c>GetDashboard</c>, and then use the data returned
         /// within <c>DashboardBody</c> as the template for the new dashboard when you call <c>PutDashboard</c>
         /// to create the copy.
+        /// </para>
+        ///  
+        /// <para>
+        /// You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+        /// Region (Region that is disabled by default)</a> for your account. In that Region,
+        /// <c>GetDashboard</c> can return an access denied error for up to 24 hours after you
+        /// enable the Region. This delay occurs while dashboard data propagates. The error does
+        /// not indicate a problem with your permissions. Because dashboards are global, you can
+        /// call <c>GetDashboard</c> in any other enabled Region, or retry after propagation completes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
@@ -2330,8 +2526,10 @@ namespace Amazon.CloudWatch
         /// <para>
         /// If you include a Metrics Insights query, each <c>GetMetricData</c> operation can include
         /// only one query. But the same <c>GetMetricData</c> operation can also retrieve other
-        /// metrics. Metrics Insights queries can query only the most recent three hours of metric
-        /// data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+        /// metrics. Metrics Insights queries can query the most recent two weeks of metric data.
+        /// For alarm condition evaluations, Metrics Insights queries can query only the most
+        /// recent three hours of metric data. For more information about Metrics Insights, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
         /// your metrics with CloudWatch Metrics Insights</a>.
         /// </para>
         ///  
@@ -2433,8 +2631,10 @@ namespace Amazon.CloudWatch
         /// <para>
         /// If you include a Metrics Insights query, each <c>GetMetricData</c> operation can include
         /// only one query. But the same <c>GetMetricData</c> operation can also retrieve other
-        /// metrics. Metrics Insights queries can query only the most recent three hours of metric
-        /// data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+        /// metrics. Metrics Insights queries can query the most recent two weeks of metric data.
+        /// For alarm condition evaluations, Metrics Insights queries can query only the most
+        /// recent three hours of metric data. For more information about Metrics Insights, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
         /// your metrics with CloudWatch Metrics Insights</a>.
         /// </para>
         ///  
@@ -2948,6 +3148,85 @@ namespace Amazon.CloudWatch
 
         #endregion
         
+        #region  GetResourceMetricsConfiguration
+
+
+        /// <summary>
+        /// Retrieves the current resource metrics configuration for an Amazon Web Services resource.
+        /// The response includes the resource ARN, any metric selections, and the times at which
+        /// the configuration was created and last updated.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a <c>ResourceNotFoundException</c> if no resource metrics configuration
+        /// exists for the specified resource ARN. To create a configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve a resource metrics configuration, you must have the <c>cloudwatch:GetResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetResourceMetricsConfiguration">REST API Reference for GetResourceMetricsConfiguration Operation</seealso>
+        public virtual GetResourceMetricsConfigurationResponse GetResourceMetricsConfiguration(GetResourceMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourceMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current resource metrics configuration for an Amazon Web Services resource.
+        /// The response includes the resource ARN, any metric selections, and the times at which
+        /// the configuration was created and last updated.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns a <c>ResourceNotFoundException</c> if no resource metrics configuration
+        /// exists for the specified resource ARN. To create a configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve a resource metrics configuration, you must have the <c>cloudwatch:GetResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourceMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetResourceMetricsConfiguration">REST API Reference for GetResourceMetricsConfiguration Operation</seealso>
+        public virtual Task<GetResourceMetricsConfigurationResponse> GetResourceMetricsConfigurationAsync(GetResourceMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourceMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetResourceMetricsConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAlarmMuteRules
 
 
@@ -3053,6 +3332,16 @@ namespace Amazon.CloudWatch
         /// 1000 dashboards, you can call <c>ListDashboards</c> again and include the value you
         /// received for <c>NextToken</c> in the first call, to receive the next 1000 results.
         /// </para>
+        ///  
+        /// <para>
+        /// You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+        /// Region (Region that is disabled by default)</a> for your account. In that Region,
+        /// <c>ListDashboards</c> can return an access denied error for up to 24 hours after you
+        /// enable the Region. This delay occurs while dashboard data propagates. The error does
+        /// not indicate a problem with your permissions. Because dashboards are global, you can
+        /// call <c>ListDashboards</c> in any other enabled Region, or retry after propagation
+        /// completes.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// 
@@ -3084,6 +3373,16 @@ namespace Amazon.CloudWatch
         ///  <c>ListDashboards</c> returns up to 1000 results on one page. If there are more than
         /// 1000 dashboards, you can call <c>ListDashboards</c> again and include the value you
         /// received for <c>NextToken</c> in the first call, to receive the next 1000 results.
+        /// </para>
+        ///  
+        /// <para>
+        /// You might have recently enabled an <a href="https://docs.aws.amazon.com/glossary/latest/reference/glos-chap.html#optinregion">opt-in
+        /// Region (Region that is disabled by default)</a> for your account. In that Region,
+        /// <c>ListDashboards</c> can return an access denied error for up to 24 hours after you
+        /// enable the Region. This delay occurs while dashboard data propagates. The error does
+        /// not indicate a problem with your permissions. Because dashboards are global, you can
+        /// call <c>ListDashboards</c> in any other enabled Region, or retry after propagation
+        /// completes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
@@ -5074,10 +5373,22 @@ namespace Amazon.CloudWatch
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
         /// resource tags on telemetry</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
+        /// subset of the account's metrics. These filters are stored only when this operation
+        /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
+        /// is already running has no effect and does not modify the filters that are applied.
+        /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
         /// 
         /// <returns>The response from the StartOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ValidationException">
+        /// The request failed validation. One or more input parameters do not satisfy the constraints
+        /// that the operation requires.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">REST API Reference for StartOTelEnrichment Operation</seealso>
         public virtual StartOTelEnrichmentResponse StartOTelEnrichment(StartOTelEnrichmentRequest request)
         {
@@ -5102,6 +5413,14 @@ namespace Amazon.CloudWatch
         /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
         /// resource tags on telemetry</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
+        /// subset of the account's metrics. These filters are stored only when this operation
+        /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
+        /// is already running has no effect and does not modify the filters that are applied.
+        /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOTelEnrichment service method.</param>
         /// <param name="cancellationToken">
@@ -5109,6 +5428,10 @@ namespace Amazon.CloudWatch
         /// </param>
         /// 
         /// <returns>The response from the StartOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ValidationException">
+        /// The request failed validation. One or more input parameters do not satisfy the constraints
+        /// that the operation requires.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartOTelEnrichment">REST API Reference for StartOTelEnrichment Operation</seealso>
         public virtual Task<StartOTelEnrichmentResponse> StartOTelEnrichmentAsync(StartOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -5419,6 +5742,172 @@ namespace Amazon.CloudWatch
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateOTelEnrichment
+
+
+        /// <summary>
+        /// Replaces the filters that determine which CloudWatch vended metrics are enriched with
+        /// resource ARN and resource tag labels for the account. Enrichment must already be running
+        /// for the account. If it is not, this operation returns a <c>ResourceNotFoundException</c>.
+        /// To start enrichment, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartOTelEnrichment.html">StartOTelEnrichment</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The filters in the request completely replace the stored filters; they are not merged
+        /// with them. <c>IncludeFilters</c> and <c>ExcludeFilters</c> are replaced as a pair,
+        /// so a request that specifies only <c>IncludeFilters</c> also clears the stored <c>ExcludeFilters</c>,
+        /// and a request that specifies neither clears both.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOTelEnrichment service method.</param>
+        /// 
+        /// <returns>The response from the UpdateOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ValidationException">
+        /// The request failed validation. One or more input parameters do not satisfy the constraints
+        /// that the operation requires.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UpdateOTelEnrichment">REST API Reference for UpdateOTelEnrichment Operation</seealso>
+        public virtual UpdateOTelEnrichmentResponse UpdateOTelEnrichment(UpdateOTelEnrichmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOTelEnrichmentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOTelEnrichmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Replaces the filters that determine which CloudWatch vended metrics are enriched with
+        /// resource ARN and resource tag labels for the account. Enrichment must already be running
+        /// for the account. If it is not, this operation returns a <c>ResourceNotFoundException</c>.
+        /// To start enrichment, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_StartOTelEnrichment.html">StartOTelEnrichment</a>.
+        /// 
+        ///  
+        /// <para>
+        /// The filters in the request completely replace the stored filters; they are not merged
+        /// with them. <c>IncludeFilters</c> and <c>ExcludeFilters</c> are replaced as a pair,
+        /// so a request that specifies only <c>IncludeFilters</c> also clears the stored <c>ExcludeFilters</c>,
+        /// and a request that specifies neither clears both.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOTelEnrichment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOTelEnrichment service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatch.Model.ValidationException">
+        /// The request failed validation. One or more input parameters do not satisfy the constraints
+        /// that the operation requires.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UpdateOTelEnrichment">REST API Reference for UpdateOTelEnrichment Operation</seealso>
+        public virtual Task<UpdateOTelEnrichmentResponse> UpdateOTelEnrichmentAsync(UpdateOTelEnrichmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateOTelEnrichmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOTelEnrichmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateOTelEnrichmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateResourceMetricsConfiguration
+
+
+        /// <summary>
+        /// Updates the resource metrics configuration for an Amazon Web Services resource. The
+        /// <c>MetricSelections</c> value that you provide replaces any existing metric selections
+        /// for the resource; it is not merged with them.
+        /// 
+        ///  
+        /// <para>
+        /// If you omit <c>MetricSelections</c>, Amazon CloudWatch removes any existing metric
+        /// selection filter and collects all available detailed metrics for the resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns a <c>ResourceNotFoundException</c> if no resource metrics configuration
+        /// exists for the specified resource ARN. To create a configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update a resource metrics configuration, you must have the <c>cloudwatch:UpdateResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceMetricsConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdateResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UpdateResourceMetricsConfiguration">REST API Reference for UpdateResourceMetricsConfiguration Operation</seealso>
+        public virtual UpdateResourceMetricsConfigurationResponse UpdateResourceMetricsConfiguration(UpdateResourceMetricsConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceMetricsConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateResourceMetricsConfigurationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the resource metrics configuration for an Amazon Web Services resource. The
+        /// <c>MetricSelections</c> value that you provide replaces any existing metric selections
+        /// for the resource; it is not merged with them.
+        /// 
+        ///  
+        /// <para>
+        /// If you omit <c>MetricSelections</c>, Amazon CloudWatch removes any existing metric
+        /// selection filter and collects all available detailed metrics for the resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation returns a <c>ResourceNotFoundException</c> if no resource metrics configuration
+        /// exists for the specified resource ARN. To create a configuration, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_CreateResourceMetricsConfiguration.html">CreateResourceMetricsConfiguration</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To update a resource metrics configuration, you must have the <c>cloudwatch:UpdateResourceMetricsConfiguration</c>
+        /// permission. For information about scoping this permission to specific resources, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/iam-cw-condition-keys-resource-arn.html">Condition
+        /// keys for resource metrics configuration access</a> in the <i>Amazon CloudWatch User
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateResourceMetricsConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateResourceMetricsConfiguration service method, as returned by CloudWatch.</returns>
+        /// <exception cref="Amazon.CloudWatch.Model.ResourceNotFoundException">
+        /// The named resource does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/UpdateResourceMetricsConfiguration">REST API Reference for UpdateResourceMetricsConfiguration Operation</seealso>
+        public virtual Task<UpdateResourceMetricsConfigurationResponse> UpdateResourceMetricsConfigurationAsync(UpdateResourceMetricsConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateResourceMetricsConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateResourceMetricsConfigurationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateResourceMetricsConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

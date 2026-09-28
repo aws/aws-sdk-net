@@ -4,13 +4,13 @@
     <property>Amazon.AmplifyUIBuilder.Model.GetCodegenJobRequest.AppId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>d[a-z0-9]+</pattern>
+    <pattern>^d[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.ListCodegenJobsRequest.AppId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>d[a-z0-9]+</pattern>
+    <pattern>^d[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.ListCodegenJobsRequest.MaxResults</property>
@@ -36,19 +36,19 @@
     <property>Amazon.AmplifyUIBuilder.Model.StartCodegenJobRequest.AppId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>d[a-z0-9]+</pattern>
+    <pattern>^d[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.CodegenJob.AppId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>d[a-z0-9]+</pattern>
+    <pattern>^d[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.CodegenJobSummary.AppId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>d[a-z0-9]+</pattern>
+    <pattern>^d[a-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.Component.ComponentType</property>
@@ -102,7 +102,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.Predicate.OperandType</property>
-    <pattern>boolean|string|number</pattern>
+    <pattern>^boolean|string|number$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.Theme.Name</property>

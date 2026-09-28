@@ -37,7 +37,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateApplicationResponse.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationRequest.ClientToken</property>
@@ -67,7 +67,7 @@
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationRequest.SourceURI</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.Arn</property>
@@ -89,7 +89,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.KmsKey</property>
@@ -107,7 +107,7 @@
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.SourceURI</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationRequest.ClientId</property>
@@ -131,7 +131,7 @@
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationRequest.DestinationURI</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationResponse.DataIntegrationArn</property>
@@ -141,7 +141,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationAssociationResponse.DataIntegrationAssociationId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateEventIntegrationRequest.ClientToken</property>
@@ -211,7 +211,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetApplicationResponse.InitializationTimeout</property>
@@ -250,7 +250,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetDataIntegrationResponse.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetDataIntegrationResponse.KmsKey</property>
@@ -268,7 +268,7 @@
     <property>Amazon.AppIntegrationsService.Model.GetDataIntegrationResponse.SourceURI</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetEventIntegrationRequest.Name</property>
@@ -529,7 +529,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.ApplicationSummary.Id</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.ApplicationSummary.Name</property>
@@ -571,7 +571,7 @@
     <property>Amazon.AppIntegrationsService.Model.DataIntegrationAssociationSummary.DestinationURI</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.DataIntegrationSummary.Arn</property>
@@ -589,7 +589,7 @@
     <property>Amazon.AppIntegrationsService.Model.DataIntegrationSummary.SourceURI</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.EventFilter.Source</property>
@@ -641,7 +641,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.EventIntegrationAssociation.EventIntegrationAssociationId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.EventIntegrationAssociation.EventIntegrationName</property>

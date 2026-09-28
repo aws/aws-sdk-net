@@ -39,6 +39,7 @@ namespace Amazon.ARCRegionswitch.Model
         private int? _targetPercent;
         private int? _timeoutMinutes;
         private EcsUngraceful _ungraceful;
+        private WaitELBTargetGroupHealthy _waitelbTargetGroupHealthy;
 
         /// <summary>
         /// Gets and sets the property CapacityMonitoringApproach. 
@@ -135,6 +136,26 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetUngraceful()
         {
             return this._ungraceful != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitELBTargetGroupHealthy. 
+        /// <para>
+        /// If enabled, the step completes only after each attached ELB target group reports a
+        /// healthy target count that matches the service's new desired task count calculated
+        /// in the step.
+        /// </para>
+        /// </summary>
+        public WaitELBTargetGroupHealthy WaitELBTargetGroupHealthy
+        {
+            get { return this._waitelbTargetGroupHealthy; }
+            set { this._waitelbTargetGroupHealthy = value; }
+        }
+
+        // Check to see if WaitELBTargetGroupHealthy property is set
+        internal bool IsSetWaitELBTargetGroupHealthy()
+        {
+            return this._waitelbTargetGroupHealthy != null;
         }
 
     }

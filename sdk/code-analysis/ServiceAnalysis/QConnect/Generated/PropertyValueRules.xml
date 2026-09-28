@@ -2970,6 +2970,11 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QConnect.Model.ProactiveRecommendationDataDetails.NextMessageToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QConnect.Model.PushADMMessageTemplateContent.ImageIconUrl</property>
     <min>1</min>
   </property-value-rule>
@@ -3075,7 +3080,7 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseContentProvider.Content</property>
     <min>1</min>
-    <max>1024</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseData.ContentType</property>
@@ -3126,7 +3131,7 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseDataProvider.Content</property>
     <min>1</min>
-    <max>1024</max>
+    <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.QuickResponseFilterField.Name</property>
@@ -3254,6 +3259,15 @@
   <property-value-rule>
     <property>Amazon.QConnect.Model.ResultData.ResultId</property>
     <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.RetrieveError.AssociationId</property>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QConnect.Model.RetrieveError.Message</property>
+    <min>0</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QConnect.Model.RetrieveResult.AssociationId</property>

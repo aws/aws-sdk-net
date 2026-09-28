@@ -32,7 +32,7 @@ namespace Amazon.WellArchitected
     public partial class AmazonWellArchitectedConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WellArchitected", "4.0.101.7");
+            InternalSDKUtils.BuildUserAgentString("WellArchitected", "4.0.102.0");
 
         private static readonly AmazonWellArchitectedEndpointResolver EndpointResolver =
             new AmazonWellArchitectedEndpointResolver();

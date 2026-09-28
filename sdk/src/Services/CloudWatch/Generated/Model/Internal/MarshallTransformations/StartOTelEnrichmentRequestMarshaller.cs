@@ -71,6 +71,36 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 writer.WriteStartMap(null);
                 var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetExcludeFilters())
+                {
+                    context.Writer.WriteTextString("ExcludeFilters");
+                    context.Writer.WriteStartArray(publicRequest.ExcludeFilters.Count);
+                    foreach(var publicRequestExcludeFiltersListValue in publicRequest.ExcludeFilters)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = OTelEnrichmentMetricSelectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestExcludeFiltersListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetIncludeFilters())
+                {
+                    context.Writer.WriteTextString("IncludeFilters");
+                    context.Writer.WriteStartArray(publicRequest.IncludeFilters.Count);
+                    foreach(var publicRequestIncludeFiltersListValue in publicRequest.IncludeFilters)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = OTelEnrichmentMetricSelectorMarshaller.Instance;
+                        marshaller.Marshall(publicRequestIncludeFiltersListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK
                 // Encode directly into a pooled buffer instead of allocating a new byte[] per request.

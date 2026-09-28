@@ -103,6 +103,19 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetLogConfig() => this.LogConfig != null;
 
         /// <summary>
+        /// Gets and sets the property ReportDestination. 
+        /// <para>
+        /// The destination for publishing scan reports to an integrated document provider.
+        /// </para>
+        /// </summary>
+        public ReportDestination ReportDestination { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReportDestination property is set.
+        /// </summary>
+        internal bool IsSetReportDestination() => this.ReportDestination != null;
+
+        /// <summary>
         /// Gets and sets the property ScopeDocs. 
         /// <para>
         /// The scoped documents for the agent to focus on during threat modeling.

@@ -105,6 +105,13 @@ namespace Amazon.BedrockAgent.Model
         /// The fields that this object accepts depend on the embedding model. For the settings
         /// that each model accepts, see the documentation for that model.
         /// </para>
+        ///  
+        /// <para>
+        /// For an example of a <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>
+        /// request that uses this field to configure a multimodal embedding model, see the <a
+        /// href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html#API_agent_CreateKnowledgeBase_Examples">Examples</a>
+        /// section of <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_CreateKnowledgeBase.html">CreateKnowledgeBase</a>.
+        /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document ModelConfiguration { get; set; }
 

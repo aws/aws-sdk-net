@@ -2,97 +2,111 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CancelFlowExecutionsRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateConnectorProfileRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateConnectorProfileRequest.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateConnectorProfileRequest.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateConnectorProfileRequest.KmsArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:kms:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:kms:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateConnectorProfileResponse.ConnectorProfileArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateFlowRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateFlowRequest.Description</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateFlowRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateFlowRequest.KmsArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:kms:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:kms:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CreateFlowResponse.FlowArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DeleteConnectorProfileRequest.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DeleteFlowRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorRequest.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorEntityRequest.ApiVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorEntityRequest.ConnectorEntityName</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorEntityRequest.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorProfilesRequest.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorProfilesRequest.MaxResults</property>
@@ -101,13 +115,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorProfilesRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorProfilesResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorsRequest.MaxResults</property>
@@ -116,59 +132,69 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorsRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeConnectorsResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.CreatedBy</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.Description</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.FlowArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.FlowStatusMessage</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.KmsArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:kms:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:kms:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowResponse.LastUpdatedBy</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowExecutionRecordsRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowExecutionRecordsRequest.MaxResults</property>
@@ -177,28 +203,33 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowExecutionRecordsRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DescribeFlowExecutionRecordsResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.ApiVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.EntitiesPath</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\s\w/!@#+=,.-]*</pattern>
+    <pattern>^[\s\w/!@#+=,.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.MaxResults</property>
@@ -207,13 +238,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorEntitiesResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorsRequest.MaxResults</property>
@@ -222,13 +255,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorsRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListConnectorsResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListFlowsRequest.MaxResults</property>
@@ -237,323 +272,381 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListFlowsRequest.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListFlowsResponse.NextToken</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RegisterConnectorRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RegisterConnectorRequest.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RegisterConnectorRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RegisterConnectorResponse.ConnectorArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.ApiVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.ConnectorEntityName</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ResetConnectorMetadataCacheRequest.EntitiesPath</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\s\w/!@#+=,.-]*</pattern>
+    <pattern>^[\s\w/!@#+=,.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.StartFlowRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.StartFlowRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.StartFlowResponse.ExecutionId</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.StartFlowResponse.FlowArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.StopFlowRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.StopFlowResponse.FlowArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.TagResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UnregisterConnectorRequest.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UntagResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorProfileRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorProfileRequest.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorProfileResponse.ConnectorProfileArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorRegistrationRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorRegistrationRequest.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorRegistrationRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateConnectorRegistrationResponse.ConnectorArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateFlowRequest.ClientToken</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[ -~]+</pattern>
+    <pattern>^[ -~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateFlowRequest.Description</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpdateFlowRequest.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.AmplitudeConnectorProfileCredentials.ApiKey</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.AmplitudeConnectorProfileCredentials.SecretKey</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.AmplitudeSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ApiKeyCredentials.ApiKey</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ApiKeyCredentials.ApiSecretKey</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.AuthParameter.Description</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.AuthParameter.Key</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.AuthParameter.Label</property>
+    <min>0</min>
     <max>128</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.BasicAuthCredentials.Password</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.BasicAuthCredentials.Username</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.ConnectorArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.ConnectorDescription</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.ConnectorName</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.ConnectorOwner</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.ConnectorVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.LogoURL</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>^(https?|ftp|file)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+    <pattern>^(https?|ftp|file)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorConfiguration.RegisteredBy</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.ApplicationType</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.ConnectorDescription</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.ConnectorName</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.ConnectorOwner</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.ConnectorVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorDetail.RegisteredBy</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntity.Label</property>
+    <min>0</min>
     <max>128</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntity.Name</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntityField.DefaultValue</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntityField.Description</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntityField.Identifier</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntityField.Label</property>
+    <min>0</min>
     <max>128</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorEntityField.ParentIdentifier</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorOAuthRequest.AuthCode</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorOAuthRequest.CodeVerifier</property>
@@ -563,451 +656,539 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorOAuthRequest.RedirectUri</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorProfile.ConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorProfile.ConnectorProfileArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorProfile.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorProfile.CredentialsArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorRuntimeSetting.DataType</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorRuntimeSetting.Description</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorRuntimeSetting.Key</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorRuntimeSetting.Label</property>
+    <min>0</min>
     <max>128</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ConnectorRuntimeSetting.Scope</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CustomAuthConfig.CustomAuthenticationType</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CustomAuthCredentials.CustomAuthenticationType</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CustomConnectorDestinationProperties.EntityName</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CustomConnectorSourceProperties.EntityName</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CustomerProfilesDestinationProperties.DomainName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.CustomerProfilesDestinationProperties.ObjectTypeName</property>
+    <min>0</min>
     <max>255</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.DatadogConnectorProfileCredentials.ApiKey</property>
-    <max>256</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.DatadogConnectorProfileCredentials.ApplicationKey</property>
-    <max>512</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.DatadogConnectorProfileProperties.InstanceUrl</property>
-    <max>256</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.DatadogSourceProperties.Object</property>
-    <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DataTransferApi.Name</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\w/-]+</pattern>
+    <pattern>^[\w/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.DatadogConnectorProfileCredentials.ApiKey</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.DatadogConnectorProfileCredentials.ApplicationKey</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.DatadogConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.DatadogSourceProperties.Object</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DestinationFlowConfig.ApiVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DestinationFlowConfig.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DynatraceConnectorProfileCredentials.ApiToken</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DynatraceConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.DynatraceSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ErrorHandlingConfig.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ErrorHandlingConfig.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ErrorInfo.ExecutionMessage</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.EventBridgeDestinationProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ExecutionDetails.MostRecentExecutionMessage</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ExecutionRecord.ExecutionId</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FieldTypeDetails.SupportedDateFormat</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FieldTypeDetails.ValueRegexPattern</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.CreatedBy</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.Description</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\w!@#\-.?,\s]*</pattern>
+    <pattern>^[\w!@#\-.?,\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.DestinationConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.FlowArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:appflow:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:appflow:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.FlowName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.LastUpdatedBy</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.FlowDefinition.SourceConnectorLabel</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
+    <pattern>^[a-zA-Z0-9][\w!@#.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GlueDataCatalogConfig.DatabaseName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GlueDataCatalogConfig.RoleArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:iam:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:iam:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GlueDataCatalogConfig.TablePrefix</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.ClientId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.ClientSecret</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsConnectorProfileCredentials.RefreshToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.GoogleAnalyticsSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.HoneycodeConnectorProfileCredentials.RefreshToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.HoneycodeDestinationProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.IncrementalPullConfig.DatetimeTypeFieldName</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusConnectorProfileCredentials.AccessKeyId</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusConnectorProfileCredentials.Datakey</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusConnectorProfileCredentials.SecretAccessKey</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusConnectorProfileCredentials.UserId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.InforNexusSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.LambdaConnectorProvisioningConfig.LambdaArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:.*:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:.*:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoConnectorProfileCredentials.ClientId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoConnectorProfileCredentials.ClientSecret</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoDestinationProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MarketoSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.MetadataCatalogDetail.TableName</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.ClientId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.ClientSecret</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Credentials.RefreshToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2CustomParameter.Description</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2CustomParameter.Key</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2CustomParameter.Label</property>
+    <min>0</min>
     <max>128</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuth2Properties.TokenUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.ClientId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.ClientSecret</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthCredentials.RefreshToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthProperties.AuthCodeUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.OAuthProperties.TokenUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.ClientCredentialsArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotConnectorProfileCredentials.RefreshToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotConnectorProfileProperties.BusinessUnitId</property>
+    <min>0</min>
     <max>18</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PardotSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.PrivateConnectionProvisioningState.FailureMessage</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileCredentials.Password</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileCredentials.Username</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1015,45 +1196,53 @@
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.ClusterIdentifier</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.DataApiRoleArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:iam:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:iam:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.DatabaseName</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.DatabaseUrl</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.RoleArn</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>arn:aws:iam:.*:[0-9]+:.*</pattern>
+    <pattern>^arn:aws:iam:.*:[0-9]+:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftConnectorProfileProperties.WorkgroupName</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftDestinationProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1061,20 +1250,23 @@
     <property>Amazon.Appflow.Model.RedshiftDestinationProperties.IntermediateBucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RedshiftDestinationProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RegistrationOutput.Message</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.RegistrationOutput.Result</property>
+    <min>0</min>
     <max>2048</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1082,10 +1274,11 @@
     <property>Amazon.Appflow.Model.S3DestinationProperties.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.S3DestinationProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1093,58 +1286,25 @@
     <property>Amazon.Appflow.Model.S3SourceProperties.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.S3SourceProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.AccessToken</property>
-    <max>4096</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.ClientCredentialsArn</property>
-    <min>20</min>
-    <max>2048</max>
-    <pattern>arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.JwtToken</property>
-    <max>8000</max>
-    <pattern>^([a-zA-Z0-9_=]+)\.([a-zA-Z0-9_=]+)\.([a-zA-Z0-9_\-\+\/=]*)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.RefreshToken</property>
-    <max>4096</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceConnectorProfileProperties.InstanceUrl</property>
-    <max>256</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceDestinationProperties.Object</property>
-    <max>512</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Appflow.Model.SalesforceSourceProperties.Object</property>
-    <max>512</max>
-    <pattern>\S+</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.ApplicationHostUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]</pattern>
+    <pattern>^(https?)://[-a-zA-Z0-9+&amp;@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&amp;@#/%=~_|]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.ApplicationServicePath</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.ClientNumber</property>
@@ -1154,6 +1314,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.LogonLanguage</property>
+    <min>0</min>
     <max>2</max>
     <pattern>^[a-zA-Z0-9_]*$</pattern>
   </property-value-rule>
@@ -1164,13 +1325,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataConnectorProfileProperties.PrivateLinkServiceName</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>^$|com.amazonaws.vpce.[\w/!:@#.\-]+</pattern>
+    <pattern>^$|com.amazonaws.vpce.[\w/!:@#.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataDestinationProperties.ObjectPath</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataPaginationConfig.MaxPageSize</property>
@@ -1184,8 +1347,51 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SAPODataSourceProperties.ObjectPath</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
+    <max>4096</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.ClientCredentialsArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws:secretsmanager:.*:[0-9]+:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.JwtToken</property>
+    <min>0</min>
+    <max>8000</max>
+    <pattern>^([a-zA-Z0-9_=]+)\.([a-zA-Z0-9_=]+)\.([a-zA-Z0-9_\-\+\/=]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileCredentials.RefreshToken</property>
+    <min>0</min>
+    <max>4096</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceDestinationProperties.Object</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^\S+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Appflow.Model.SalesforceSourceProperties.Object</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ScheduledTriggerProperties.FlowErrorDeactivationThreshold</property>
@@ -1194,6 +1400,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ScheduledTriggerProperties.ScheduleExpression</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1204,66 +1411,79 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ScheduledTriggerProperties.Timezone</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ServiceNowConnectorProfileCredentials.Password</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ServiceNowConnectorProfileCredentials.Username</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ServiceNowConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ServiceNowSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SingularConnectorProfileCredentials.ApiKey</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SingularSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SlackConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SlackConnectorProfileCredentials.ClientId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SlackConnectorProfileCredentials.ClientSecret</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SlackConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SlackSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileCredentials.Password</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1275,47 +1495,55 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileCredentials.Username</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.AccountName</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.PrivateLinkServiceName</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>^$|com.amazonaws.vpce.[\w/!:@#.\-]+</pattern>
+    <pattern>^$|com.amazonaws.vpce.[\w/!:@#.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.Region</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.Stage</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeConnectorProfileProperties.Warehouse</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\w/!@#+=.-]*</pattern>
+    <pattern>^[\s\w/!@#+=.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeDestinationProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -1323,113 +1551,132 @@
     <property>Amazon.Appflow.Model.SnowflakeDestinationProperties.IntermediateBucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SnowflakeDestinationProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SourceFlowConfig.ApiVersion</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SourceFlowConfig.ConnectorProfileName</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\w/!@#+=.-]+</pattern>
+    <pattern>^[\w/!@#+=.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SuccessResponseHandlingConfig.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.SuccessResponseHandlingConfig.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.Task.DestinationField</property>
+    <min>0</min>
     <max>256</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.TrendmicroConnectorProfileCredentials.ApiSecretKey</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.TrendmicroSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpsolverDestinationProperties.BucketName</property>
     <min>16</min>
     <max>63</max>
-    <pattern>^(upsolver-appflow)\S*</pattern>
+    <pattern>^(upsolver-appflow)\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.UpsolverDestinationProperties.BucketPrefix</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaConnectorProfileCredentials.Password</property>
+    <min>0</min>
     <max>512</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaConnectorProfileCredentials.Username</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaSourceProperties.DocumentType</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\w_-]+</pattern>
+    <pattern>^[\s\w_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.VeevaSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskConnectorProfileCredentials.AccessToken</property>
+    <min>0</min>
     <max>4096</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskConnectorProfileCredentials.ClientId</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskConnectorProfileCredentials.ClientSecret</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskConnectorProfileProperties.InstanceUrl</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskDestinationProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Appflow.Model.ZendeskSourceProperties.Object</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
 </property-value-rules>

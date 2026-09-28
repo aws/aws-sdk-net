@@ -37,6 +37,8 @@ namespace Amazon.Rekognition.Model
         private List<AuditImage> _auditImages = AWSConfigs.InitializeCollections ? new List<AuditImage>() : null;
         private Challenge _challenge;
         private float? _confidence;
+        private List<FeedbackItem> _feedback = AWSConfigs.InitializeCollections ? new List<FeedbackItem>() : null;
+        private SessionMetadata _metadata;
         private AuditImage _referenceImage;
         private string _sessionId;
         private LivenessSessionStatus _status;
@@ -104,6 +106,51 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetConfidence()
         {
             return this._confidence.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Feedback. 
+        /// <para>
+        /// A list of conditions that were detected in the Face Liveness video and that contributed
+        /// to the returned <c>Confidence</c> score. Each item contains a code and a human-readable
+        /// message. Feedback is returned only for sessions with a <c>Status</c> of <c>SUCCEEDED</c>,
+        /// and the list is empty when no such conditions were detected.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<FeedbackItem> Feedback
+        {
+            get { return this._feedback; }
+            set { this._feedback = value; }
+        }
+
+        // Check to see if Feedback property is set
+        internal bool IsSetFeedback()
+        {
+            return this._feedback != null && (this._feedback.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Metadata about the client that streamed the video for the Face Liveness session.
+        /// </para>
+        /// </summary>
+        public SessionMetadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>

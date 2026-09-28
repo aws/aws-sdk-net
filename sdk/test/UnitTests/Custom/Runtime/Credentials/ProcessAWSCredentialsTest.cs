@@ -34,18 +34,18 @@ namespace AWSSDK.UnitTests
         private const int InvalidVersionNumber = 2;
         private const string ExitKey = "Exit";
         private static readonly string ProjectPath =
-            Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=\\bin\\)").Captures[0].Value;
+            Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=[\\/]bin[\\/])").Captures[0].Value;
         public static readonly string ActualSecretKey = "SecretKey";
         public static readonly string ActualAccessKey = "AccessKey";
         public static readonly string ArgumentsBasic = "Basic";
         public const int ValidVersionNumber = 1;
-        public static readonly string Executable = Path.Combine(ProjectPath, @"Custom\Util\linux-credentials-script.sh");
+        public static readonly string Executable = Path.Combine(ProjectPath, "Custom", "Util", "linux-credentials-script.sh");
 
         static ProcessAWSCredentialsTest()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Executable = $@"{ProjectPath}\Custom\Util\windows-credentials-script.bat";
+                Executable = Path.Combine(ProjectPath, "Custom", "Util", "windows-credentials-script.bat");
             }
         }
 
