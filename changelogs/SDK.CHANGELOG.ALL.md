@@ -1,3 +1,97 @@
+### 4.0.343.0 (2026-09-28 18:26 UTC)
+* AgentRegistry (4.0.103.0)
+	* AWS Agent Registry adds support for custom metadata. Discovery APIs now return custom metadata on registry records and support filtering by metadata fields. Semantic search includes custom metadata for improved relevance. Filter customMetadata fields using eq, ne, and in operators.
+* AgentRegistryControl (4.0.102.0)
+	* AWS Agent Registry adds support for custom metadata. Define a typed metadata schema on your registry and attach structured key-value metadata to registry records. Schemas are additive only. Enforcement is progressive. Records show a compliance status computed against the current schema.
+* AppSync (4.0.100.15)
+	* AppSync is now generated from its Smithy model. There are no changes to the public API.
+* Backup (4.0.101.9)
+	* Backup is now generated from its Smithy model. There are no changes to the public API.
+* BackupSearch (4.0.100.15)
+	* BackupSearch is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* BedrockAgentCoreControl (4.0.119.0)
+	* Amazon Bedrock AgentCore Gateway now supports returning the complete MCP tools list in a single response by disabling pagination for the tools list operation. This feature is available in limited preview.
+* BedrockDataAutomation (4.0.100.15)
+	* BedrockDataAutomation is now generated from its Smithy model. There are no changes to the public API.
+* Billing (4.0.105.0)
+	* Adds support for (a) listing Business Support account charges via ListBusinessSupportAccountCharges and (b) subscription history via ListBusinessSupportSubscriptionHistory through the AWS Billing API.
+* CleanRoomsML (4.0.101.8)
+	* CleanRoomsML is now generated from its Smithy model. There are no changes to the public API.
+* CloudDirectory (4.0.100.15)
+	* CloudDirectory is now generated from its Smithy model. There are no changes to the public API.
+* CloudWatchRUM (4.0.100.15)
+	* CloudWatchRUM is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* Connect (4.0.121.0)
+	* This release adds ConnectionTypes and ChatStreamingConfiguration to StartChatContact, and ConnectionCredentials, Websocket, and StreamingId to its response, so customers can request connection information and chat streaming in the same call that starts the chat.
+* ControlCatalog (4.0.100.15)
+	* ControlCatalog is now generated from its Smithy model. There are no changes to the public API.
+* ControlTower (4.0.100.16)
+	* ControlTower is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* Detective (4.0.100.15)
+	* Detective is now generated from its Smithy model. There are no changes to the public API.
+* DocDBElastic (4.0.100.15)
+	* DocDBElastic is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* DynamoDBv2 (4.0.106.0)
+	* Added AttributeCasing property and CaseMode enum (Unset, PascalCase, CamelCase, LegacyCamelCase) to DynamoDBTableAttribute for the object persistence model, plus DynamoDBTableAttribute constructors that take a CaseMode. CaseMode.CamelCase now camelCases nested objects (stored as DynamoDB Maps) that do not declare their own casing, addressing the long-standing gap where LowerCamelCaseProperties only affected root attribute names. AttributeCasing defaults to CaseMode.Unset, which lets an explicit CaseMode.PascalCase on a nested type opt out of inheriting an enclosing CamelCase. LowerCamelCaseProperties and the DynamoDBTableAttribute constructors that take a lowerCamelCaseProperties bool are now obsolete; use CaseMode instead (LowerCamelCaseProperties=true is equivalent to AttributeCasing=CaseMode.LegacyCamelCase, i.e. camelCase root, PascalCase nested).
+* EC2 (4.0.125.0)
+	* API changes to AWS Client VPN to support device posture assessment and Cedar authorization policies
+* EKS (4.0.106.0)
+	* An optional customer provided prefix used to construct the hostname of the Argo CD server endpoint for EKS Argo CD Capability.
+	* EKS is now generated from its Smithy model. There are no changes to the public API.
+* EMRContainers (4.0.103.8)
+	* EMRContainers is now generated from its Smithy model. There are no changes to the public API.
+* EMRServerless (4.0.100.15)
+	* EMRServerless is now generated from its Smithy model. There are no changes to the public API.
+* FSx (4.0.101.0)
+	* Amazon FSx has expanded the model-level maximum on the ThroughputCapacity, ThroughputCapacityPerHAPair, and Iops API parameters. Actual supported values are unchanged and depend on file system type and configuration.
+* GameLiftStreams (4.0.104.8)
+	* GameLiftStreams is now generated from its Smithy model. There are no changes to the public API.
+* Glue (4.0.109.0)
+	* Added a new exception to several batch APIs
+* GuardDuty (4.0.107.0)
+	* Adding awsServiceName field to GuardDuty Findings
+* InternetMonitor (4.0.100.15)
+	* InternetMonitor is now generated from its Smithy model. There are no changes to the public API.
+* MediaPackageVod (4.0.100.15)
+	* MediaPackageVod is now generated from its Smithy model. There are no changes to the public API.
+* NetworkFlowMonitor (4.0.100.15)
+	* NetworkFlowMonitor is now generated from its Smithy model. There are no changes to the public API.
+* NetworkManager (4.0.100.15)
+	* NetworkManager is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* NetworkMonitor (4.0.100.15)
+	* NetworkMonitor is now generated from its Smithy model. There are no changes to the public API.
+* OSIS (4.0.100.15)
+	* OSIS is now generated from its Smithy model. There are no changes to the public API.
+* Outposts (4.0.104.2)
+	* Outposts is now generated from its Smithy model. There are no changes to the public API.
+* Pipes (4.0.100.15)
+	* Pipes is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* QConnect (4.0.102.1)
+	* QConnect is now generated from its Smithy model. There are no changes to the public API.
+* Route53GlobalResolver (4.0.101.13)
+	* Route53GlobalResolver is now generated from its Smithy model. There are no changes to the public API.
+	* Exception properties bound to response headers are now populated from those headers.
+* Route53Profiles (4.0.100.15)
+	* Route53Profiles is now generated from its Smithy model. There are no changes to the public API.
+* Route53RecoveryControlConfig (4.0.100.15)
+	* Route53RecoveryControlConfig is now generated from its Smithy model. There are no changes to the public API.
+* Route53RecoveryReadiness (4.0.100.15)
+	* Route53RecoveryReadiness is now generated from its Smithy model. There are no changes to the public API.
+* SecurityAgent (4.0.108.0)
+	* Run automated penetration tests directly from your CI-CD pipeline to scan code changes before they ship, gating deployments on the findings
+* SimpleSystemsManagement (4.0.104.0)
+	* Add support for sharing SSM documents with organizations and OUs using RAM.
+* SocialMessaging (4.0.103.1)
+	* SocialMessaging is now generated from its Smithy model. There are no changes to the public API.
+* SupplyChain (4.0.100.15)
+	* SupplyChain is now generated from its Smithy model. There are no changes to the public API.
+
 ### 4.0.342.0 (2026-09-25 18:20 UTC)
 * AccessAnalyzer (4.0.100.15)
 	* AccessAnalyzer is now generated from its Smithy model. There are no changes to the public API.
