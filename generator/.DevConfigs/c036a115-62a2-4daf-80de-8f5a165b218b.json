@@ -1,0 +1,221 @@
+{
+  "services": [
+    {
+      "serviceName": "AppSync",
+      "type": "patch",
+      "changeLogMessages": [
+        "AppSync is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Backup",
+      "type": "patch",
+      "changeLogMessages": [
+        "Backup is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BackupSearch",
+      "type": "patch",
+      "changeLogMessages": [
+        "BackupSearch is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "BedrockDataAutomation",
+      "type": "patch",
+      "changeLogMessages": [
+        "BedrockDataAutomation is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CleanRoomsML",
+      "type": "patch",
+      "changeLogMessages": [
+        "CleanRoomsML is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CloudDirectory",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudDirectory is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CloudWatchRUM",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudWatchRUM is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ControlCatalog",
+      "type": "patch",
+      "changeLogMessages": [
+        "ControlCatalog is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ControlTower",
+      "type": "patch",
+      "changeLogMessages": [
+        "ControlTower is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "Detective",
+      "type": "patch",
+      "changeLogMessages": [
+        "Detective is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "DocDBElastic",
+      "type": "patch",
+      "changeLogMessages": [
+        "DocDBElastic is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "EKS",
+      "type": "patch",
+      "changeLogMessages": [
+        "EKS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "EMRContainers",
+      "type": "patch",
+      "changeLogMessages": [
+        "EMRContainers is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "EMRServerless",
+      "type": "patch",
+      "changeLogMessages": [
+        "EMRServerless is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "GameLiftStreams",
+      "type": "patch",
+      "changeLogMessages": [
+        "GameLiftStreams is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "InternetMonitor",
+      "type": "patch",
+      "changeLogMessages": [
+        "InternetMonitor is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MediaPackageVod",
+      "type": "patch",
+      "changeLogMessages": [
+        "MediaPackageVod is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "NetworkFlowMonitor",
+      "type": "patch",
+      "changeLogMessages": [
+        "NetworkFlowMonitor is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "NetworkManager",
+      "type": "patch",
+      "changeLogMessages": [
+        "NetworkManager is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "NetworkMonitor",
+      "type": "patch",
+      "changeLogMessages": [
+        "NetworkMonitor is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "OSIS",
+      "type": "patch",
+      "changeLogMessages": [
+        "OSIS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Outposts",
+      "type": "patch",
+      "changeLogMessages": [
+        "Outposts is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Pipes",
+      "type": "patch",
+      "changeLogMessages": [
+        "Pipes is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "QConnect",
+      "type": "patch",
+      "changeLogMessages": [
+        "QConnect is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Route53GlobalResolver",
+      "type": "patch",
+      "changeLogMessages": [
+        "Route53GlobalResolver is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "Route53Profiles",
+      "type": "patch",
+      "changeLogMessages": [
+        "Route53Profiles is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Route53RecoveryControlConfig",
+      "type": "patch",
+      "changeLogMessages": [
+        "Route53RecoveryControlConfig is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Route53RecoveryReadiness",
+      "type": "patch",
+      "changeLogMessages": [
+        "Route53RecoveryReadiness is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SocialMessaging",
+      "type": "patch",
+      "changeLogMessages": [
+        "SocialMessaging is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SupplyChain",
+      "type": "patch",
+      "changeLogMessages": [
+        "SupplyChain is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
