@@ -77,6 +77,20 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetCreatedAt() => this.CreatedAt.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadataSchemaConfiguration. 
+        /// <para>
+        /// The custom metadata schema configuration for this registry, if one has been defined.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public CustomMetadataSchemaConfiguration CustomMetadataSchemaConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadataSchemaConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadataSchemaConfiguration() => this.CustomMetadataSchemaConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the registry

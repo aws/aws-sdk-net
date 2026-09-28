@@ -79,6 +79,35 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetCreatedByAutoDetection() => this.CreatedByAutoDetection.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadata. 
+        /// <para>
+        /// The custom metadata attached to this registry record. Values are strings (maximum
+        /// 128 characters) or booleans.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public Amazon.Runtime.Documents.Document CustomMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadata property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadata() => !this.CustomMetadata.IsNull();
+
+        /// <summary>
+        /// Gets and sets the property CustomMetadataSchemaComplianceStatus. 
+        /// <para>
+        /// Indicates whether this record's custom metadata conforms to the registry's current
+        /// schema. This status is computed at read time against the latest schema.
+        /// </para>
+        /// </summary>
+        public CustomMetadataSchemaComplianceStatus CustomMetadataSchemaComplianceStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadataSchemaComplianceStatus property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadataSchemaComplianceStatus() => this.CustomMetadataSchemaComplianceStatus != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the registry record.
@@ -134,7 +163,12 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Provenance.
+        /// Gets and sets the property Provenance. 
+        /// <para>
+        /// The provenance lineage entries for the registry record. Populated for records created
+        /// by auto-detection; each entry identifies the upstream source that the record was detected
+        /// from.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

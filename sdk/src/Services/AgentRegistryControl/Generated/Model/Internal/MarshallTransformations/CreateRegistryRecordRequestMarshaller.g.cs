@@ -84,6 +84,11 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetCustomMetadata())
+            {
+                context.Writer.WritePropertyName("customMetadata");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.CustomMetadata);
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

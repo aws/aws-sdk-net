@@ -30,12 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// Protocol configuration for an AgentCore Runtime.
+    /// The protocol configuration of an AgentCore Runtime resource that a registry record
+    /// was auto-detected from.
     /// </summary>
     public partial class AgentCoreRuntimeProtocolConfiguration
     {
         /// <summary>
-        /// Gets and sets the property ServerProtocol.
+        /// Gets and sets the property ServerProtocol. 
+        /// <para>
+        /// The server protocol used by the AgentCore Runtime, such as <c>MCP</c>, <c>HTTP</c>,
+        /// <c>A2A</c>, or <c>AGUI</c>.
+        /// </para>
         /// </summary>
         public AgentCoreRuntimeServerProtocol ServerProtocol { get; set; }
 

@@ -80,6 +80,20 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetCreatedByAutoDetection() => this.CreatedByAutoDetection.HasValue;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadataSchemaComplianceStatus. 
+        /// <para>
+        /// Indicates whether this record's custom metadata conforms to the registry's current
+        /// schema.
+        /// </para>
+        /// </summary>
+        public CustomMetadataSchemaComplianceStatus CustomMetadataSchemaComplianceStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadataSchemaComplianceStatus property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadataSchemaComplianceStatus() => this.CustomMetadataSchemaComplianceStatus != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the registry record.
@@ -122,7 +136,12 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property ProvenanceSummaryList.
+        /// Gets and sets the property ProvenanceSummaryList. 
+        /// <para>
+        /// The condensed provenance lineage for the registry record. Each entry contains the
+        /// source relation, source identifier, and source type of an auto-detection lineage entry.
+        /// Populated for records created by auto-detection.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

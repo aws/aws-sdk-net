@@ -83,6 +83,21 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadataSchemaConfiguration. 
+        /// <para>
+        /// The optional custom metadata schema configuration for the registry. When provided,
+        /// registry records can carry structured metadata validated against this schema.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public CustomMetadataSchemaConfiguration CustomMetadataSchemaConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadataSchemaConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadataSchemaConfiguration() => this.CustomMetadataSchemaConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the registry

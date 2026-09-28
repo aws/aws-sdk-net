@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// Source details for a record auto-detected from an AgentCore Runtime resource.
+    /// The source details for a registry record that was auto-detected from an Amazon Bedrock
+    /// AgentCore Runtime resource.
     /// </summary>
     public partial class AgentCoreRuntimeSourceDetails
     {
@@ -45,7 +46,11 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetAuthorizerConfiguration() => this.AuthorizerConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property ProtocolConfiguration.
+        /// Gets and sets the property ProtocolConfiguration. 
+        /// <para>
+        /// The protocol configuration of the AgentCore Runtime resource that the registry record
+        /// was detected from.
+        /// </para>
         /// </summary>
         public AgentCoreRuntimeProtocolConfiguration ProtocolConfiguration { get; set; }
 
@@ -55,7 +60,11 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetProtocolConfiguration() => this.ProtocolConfiguration != null;
 
         /// <summary>
-        /// Gets and sets the property WorkloadIdentityDetails.
+        /// Gets and sets the property WorkloadIdentityDetails. 
+        /// <para>
+        /// The workload identity details for the AgentCore Runtime resource. Present when the
+        /// runtime has a workload identity configured.
+        /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails { get; set; }
 

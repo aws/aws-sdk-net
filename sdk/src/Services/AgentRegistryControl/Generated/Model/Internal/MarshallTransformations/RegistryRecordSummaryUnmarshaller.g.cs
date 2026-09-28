@@ -74,6 +74,13 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("customMetadataSchemaComplianceStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomMetadataSchemaComplianceStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

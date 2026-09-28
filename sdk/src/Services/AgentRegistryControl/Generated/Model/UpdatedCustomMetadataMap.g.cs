@@ -30,24 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// The workload identity details associated with a source resource. Present on the source
-    /// details of a provenance entry when the upstream resource has a workload identity configured.
+    /// The custom metadata patch wrapper. Omit to leave the existing metadata unchanged;
+    /// supply with a null value to clear all metadata; supply with key-value pairs to replace
+    /// the existing metadata.
     /// </summary>
-    public partial class WorkloadIdentityDetails
+    public partial class UpdatedCustomMetadataMap
     {
         /// <summary>
-        /// Gets and sets the property WorkloadIdentityArn. 
+        /// Gets and sets the property OptionalValue. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the workload identity associated with the source
-        /// resource.
+        /// The value to set for this field. Omit the wrapper to leave the field unchanged.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 1024)]
-        public string WorkloadIdentityArn { get; set; }
+        [AWSProperty(Sensitive = true)]
+        public Amazon.Runtime.Documents.Document OptionalValue { get; set; }
 
         /// <summary>
-        /// Checks to see if the WorkloadIdentityArn property is set.
+        /// Checks to see if the OptionalValue property is set.
         /// </summary>
-        internal bool IsSetWorkloadIdentityArn() => this.WorkloadIdentityArn != null;
+        internal bool IsSetOptionalValue() => !this.OptionalValue.IsNull();
     }
 }

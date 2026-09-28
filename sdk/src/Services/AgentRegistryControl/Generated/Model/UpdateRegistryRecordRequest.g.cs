@@ -38,6 +38,22 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class UpdateRegistryRecordRequest : AmazonAgentRegistryControlRequest
     {
         /// <summary>
+        /// Gets and sets the property CustomMetadata. 
+        /// <para>
+        /// The updated custom metadata for the registry record. Values can be strings (maximum
+        /// 128 characters) or native JSON booleans (<c>true</c> or <c>false</c>). Omit to leave
+        /// the existing metadata unchanged. Supply the wrapper with a full replacement set to
+        /// update, or with a null value to clear all metadata.
+        /// </para>
+        /// </summary>
+        public UpdatedCustomMetadataMap CustomMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadata property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadata() => this.CustomMetadata != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The updated description of the registry record. Omit to leave the description unchanged;
@@ -94,7 +110,13 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Provenance.
+        /// Gets and sets the property Provenance. 
+        /// <para>
+        /// The provenance lineage re-assertion for the registry record. This field is reserved
+        /// for the Amazon Web Services Agent Registry auto-detection service principal. Requests
+        /// that include this field from other callers are rejected. The source identity of an
+        /// existing lineage is immutable; a re-assertion may only refresh the source details.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

@@ -52,6 +52,23 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetClientToken() => this.ClientToken != null;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadata. 
+        /// <para>
+        /// The custom metadata to attach to the registry record. Each key must match a property
+        /// defined in the registry's custom metadata schema. Values can be strings (maximum 128
+        /// characters) or native JSON booleans (<c>true</c> or <c>false</c>). Values are validated
+        /// against the schema at creation time.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public Amazon.Runtime.Documents.Document CustomMetadata { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadata property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadata() => !this.CustomMetadata.IsNull();
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the registry record
@@ -108,7 +125,12 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetName() => this.Name != null;
 
         /// <summary>
-        /// Gets and sets the property Provenance.
+        /// Gets and sets the property Provenance. 
+        /// <para>
+        /// The provenance lineage entries for the registry record. This field is reserved for
+        /// the Amazon Web Services Agent Registry auto-detection service principal. Requests
+        /// that include this field from other callers are rejected.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
         /// for this property is returned from the service the property will also be null. This

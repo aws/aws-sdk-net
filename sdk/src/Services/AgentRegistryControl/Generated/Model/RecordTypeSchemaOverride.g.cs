@@ -30,24 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// The workload identity details associated with a source resource. Present on the source
-    /// details of a provenance entry when the upstream resource has a workload identity configured.
+    /// A schema override for a specific record type within a custom metadata schema configuration.
     /// </summary>
-    public partial class WorkloadIdentityDetails
+    public partial class RecordTypeSchemaOverride
     {
         /// <summary>
-        /// Gets and sets the property WorkloadIdentityArn. 
+        /// Gets and sets the property RecordType. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the workload identity associated with the source
-        /// resource.
+        /// The record type that this schema override applies to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 1, Max = 1024)]
-        public string WorkloadIdentityArn { get; set; }
+        [AWSProperty(Required = true)]
+        public RecordType RecordType { get; set; }
 
         /// <summary>
-        /// Checks to see if the WorkloadIdentityArn property is set.
+        /// Checks to see if the RecordType property is set.
         /// </summary>
-        internal bool IsSetWorkloadIdentityArn() => this.WorkloadIdentityArn != null;
+        internal bool IsSetRecordType() => this.RecordType != null;
+
+        /// <summary>
+        /// Gets and sets the property Schema. 
+        /// <para>
+        /// The JSON Schema for the specified record type. Must follow the same structural rules
+        /// as the default schema.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 10240)]
+        public string Schema { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Schema property is set.
+        /// </summary>
+        internal bool IsSetSchema() => this.Schema != null;
     }
 }

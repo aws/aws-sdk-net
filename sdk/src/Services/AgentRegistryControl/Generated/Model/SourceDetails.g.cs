@@ -36,7 +36,11 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class SourceDetails
     {
         /// <summary>
-        /// Gets and sets the property AgentcoreGateway.
+        /// Gets and sets the property AgentcoreGateway. 
+        /// <para>
+        /// The source details for a registry record that was auto-detected from an Amazon Bedrock
+        /// AgentCore Gateway resource. Populated when the source type is <c>AWS::BedrockAgentCore::Gateway</c>.
+        /// </para>
         /// </summary>
         public AgentCoreGatewaySourceDetails AgentcoreGateway { get; set; }
 
@@ -46,7 +50,11 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetAgentcoreGateway() => this.AgentcoreGateway != null;
 
         /// <summary>
-        /// Gets and sets the property AgentcoreRuntime.
+        /// Gets and sets the property AgentcoreRuntime. 
+        /// <para>
+        /// The source details for a registry record that was auto-detected from an Amazon Bedrock
+        /// AgentCore Runtime resource. Populated when the source type is <c>AWS::BedrockAgentCore::Runtime</c>.
+        /// </para>
         /// </summary>
         public AgentCoreRuntimeSourceDetails AgentcoreRuntime { get; set; }
 

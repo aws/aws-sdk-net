@@ -268,6 +268,47 @@ namespace Amazon.AgentRegistryControl
     }
 
     /// <summary>
+    /// Constants used for properties of type CustomMetadataSchemaComplianceStatus.
+    /// </summary>
+    public class CustomMetadataSchemaComplianceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLIANT for CustomMetadataSchemaComplianceStatus
+        /// </summary>
+        public static readonly CustomMetadataSchemaComplianceStatus COMPLIANT = new CustomMetadataSchemaComplianceStatus("COMPLIANT");
+
+        /// <summary>
+        /// Constant NON_COMPLIANT for CustomMetadataSchemaComplianceStatus
+        /// </summary>
+        public static readonly CustomMetadataSchemaComplianceStatus NON_COMPLIANT = new CustomMetadataSchemaComplianceStatus("NON_COMPLIANT");
+
+        /// <summary>
+        /// Constructs a custom CustomMetadataSchemaComplianceStatus for a value not among the defined constants.
+        /// </summary>
+        public CustomMetadataSchemaComplianceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomMetadataSchemaComplianceStatus FindValue(string value)
+        {
+            return FindValue<CustomMetadataSchemaComplianceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomMetadataSchemaComplianceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EndpointIpAddressType.
     /// </summary>
     public class EndpointIpAddressType : ConstantClass

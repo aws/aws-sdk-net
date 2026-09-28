@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// Source details for a record auto-detected from an AgentCore Gateway resource.
+    /// The source details for a registry record that was auto-detected from an Amazon Bedrock
+    /// AgentCore Gateway resource.
     /// </summary>
     public partial class AgentCoreGatewaySourceDetails
     {
@@ -59,7 +60,11 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetAuthorizerType() => this.AuthorizerType != null;
 
         /// <summary>
-        /// Gets and sets the property ProtocolType.
+        /// Gets and sets the property ProtocolType. 
+        /// <para>
+        /// The protocol type of the AgentCore Gateway resource that the registry record was detected
+        /// from, for example <c>MCP</c>.
+        /// </para>
         /// </summary>
         public AgentCoreGatewayProtocolType ProtocolType { get; set; }
 
@@ -69,7 +74,11 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetProtocolType() => this.ProtocolType != null;
 
         /// <summary>
-        /// Gets and sets the property WorkloadIdentityDetails.
+        /// Gets and sets the property WorkloadIdentityDetails. 
+        /// <para>
+        /// The workload identity details for the AgentCore Gateway resource. Present when the
+        /// gateway has a workload identity configured.
+        /// </para>
         /// </summary>
         public WorkloadIdentityDetails WorkloadIdentityDetails { get; set; }
 

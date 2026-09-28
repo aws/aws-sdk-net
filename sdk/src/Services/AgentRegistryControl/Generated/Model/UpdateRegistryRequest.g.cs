@@ -67,6 +67,22 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetAutoDetectionConfiguration() => this.AutoDetectionConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property CustomMetadataSchemaConfiguration. 
+        /// <para>
+        /// Updated custom metadata schema configuration for the registry. Omit to leave the existing
+        /// schema unchanged. Schema evolution is additive only: you can add properties and enum
+        /// values, but you cannot remove properties, change property types or formats, add or
+        /// remove enum constraints, or remove record type overrides.
+        /// </para>
+        /// </summary>
+        public UpdatedCustomMetadataSchemaConfiguration CustomMetadataSchemaConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CustomMetadataSchemaConfiguration property is set.
+        /// </summary>
+        internal bool IsSetCustomMetadataSchemaConfiguration() => this.CustomMetadataSchemaConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// The updated description of the registry

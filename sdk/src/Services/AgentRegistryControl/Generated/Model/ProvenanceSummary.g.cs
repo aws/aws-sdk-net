@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// Condensed provenance entry for list results — the key triple only (no sourceDetails
-    /// union). Enough to display and client-side-filter lineage without the full-read config
-    /// payload.
+    /// A condensed provenance entry surfaced in list results. Contains the source identity
+    /// of a lineage entry without the source details returned by <c>GetRegistryRecord</c>.
     /// </summary>
     public partial class ProvenanceSummary
     {
         /// <summary>
-        /// Gets and sets the property Relation.
+        /// Gets and sets the property Relation. 
+        /// <para>
+        /// The relationship between the registry record and its upstream source. <c>DETECTED_FROM</c>
+        /// indicates that the record was auto-detected from the source resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public ProvenanceRelation Relation { get; set; }

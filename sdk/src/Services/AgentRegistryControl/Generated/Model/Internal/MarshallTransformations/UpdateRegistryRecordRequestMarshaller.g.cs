@@ -80,6 +80,16 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCustomMetadata())
+            {
+                context.Writer.WritePropertyName("customMetadata");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedCustomMetadataMapMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomMetadata, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

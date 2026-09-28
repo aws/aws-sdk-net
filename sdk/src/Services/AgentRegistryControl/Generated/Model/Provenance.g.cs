@@ -30,12 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
-    /// One provenance entry describing the lineage of a registry record.
+    /// A provenance entry that describes the lineage of a registry record. Records that were
+    /// auto-detected by Amazon Web Services Agent Registry carry a provenance entry that
+    /// links the record back to its upstream source.
     /// </summary>
     public partial class Provenance
     {
         /// <summary>
-        /// Gets and sets the property Relation.
+        /// Gets and sets the property Relation. 
+        /// <para>
+        /// The relationship between the registry record and its upstream source. <c>DETECTED_FROM</c>
+        /// indicates that the record was auto-detected from the source resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
         public ProvenanceRelation Relation { get; set; }

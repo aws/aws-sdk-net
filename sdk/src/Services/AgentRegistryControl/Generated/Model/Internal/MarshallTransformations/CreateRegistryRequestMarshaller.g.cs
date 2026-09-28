@@ -98,6 +98,16 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if (publicRequest.IsSetCustomMetadataSchemaConfiguration())
+            {
+                context.Writer.WritePropertyName("customMetadataSchemaConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomMetadataSchemaConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomMetadataSchemaConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
