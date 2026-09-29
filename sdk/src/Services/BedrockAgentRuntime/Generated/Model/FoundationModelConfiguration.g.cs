@@ -48,6 +48,19 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetBedrockFoundationModelConfiguration() => this.BedrockFoundationModelConfiguration != null;
 
         /// <summary>
+        /// Gets and sets the property MantleFoundationModelConfiguration. 
+        /// <para>
+        /// The Mantle foundation model configuration.
+        /// </para>
+        /// </summary>
+        public MantleFoundationModelConfiguration MantleFoundationModelConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MantleFoundationModelConfiguration property is set.
+        /// </summary>
+        internal bool IsSetMantleFoundationModelConfiguration() => this.MantleFoundationModelConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of foundation model configuration.

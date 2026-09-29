@@ -67,7 +67,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// The maximum number of agent iterations for retrieval.
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 2)]
+        [AWSProperty(Min = 0)]
         public int? MaxAgentIteration { get; set; }
 
         /// <summary>

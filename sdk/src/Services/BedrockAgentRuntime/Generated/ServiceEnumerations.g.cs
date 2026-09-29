@@ -1387,6 +1387,11 @@ namespace Amazon.BedrockAgentRuntime
         public static readonly FoundationModelConfigurationType BEDROCK_FOUNDATION_MODEL = new FoundationModelConfigurationType("BEDROCK_FOUNDATION_MODEL");
 
         /// <summary>
+        /// Constant MANTLE_FOUNDATION_MODEL for FoundationModelConfigurationType
+        /// </summary>
+        public static readonly FoundationModelConfigurationType MANTLE_FOUNDATION_MODEL = new FoundationModelConfigurationType("MANTLE_FOUNDATION_MODEL");
+
+        /// <summary>
         /// Constructs a custom FoundationModelConfigurationType for a value not among the defined constants.
         /// </summary>
         public FoundationModelConfigurationType(string value) : base(value) { }

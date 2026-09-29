@@ -688,7 +688,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.AgenticRetrieveConfiguration.MaxAgentIteration</property>
-    <min>2</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.AgenticRetrieveMemoryConfiguration.MemoryId</property>
@@ -1191,6 +1191,17 @@
     <property>Amazon.BedrockAgentRuntime.Model.ManagedSearchConfiguration.NumberOfResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.MantleFoundationModelModelConfiguration.ModelArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(arn:aws(-[^:]+)?:(bedrock|sagemaker):[a-z0-9-]{1,20}:([0-9]{12})?:([a-z-]+/)?)?([a-z0-9.-]{1,63}){0,2}(([:][a-z0-9-]{1,63}){0,2})?(/[a-z0-9]{1,12})?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentRuntime.Model.MantleFoundationModelModelConfiguration.ProjectId</property>
+    <max>128</max>
+    <pattern>^(proj_[a-zA-Z0-9]+|default)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentRuntime.Model.MemorySessionSummary.MemoryId</property>

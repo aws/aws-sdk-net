@@ -34,49 +34,32 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FoundationModelConfiguration Marshaller
+    /// MantleFoundationModelConfiguration Marshaller
     /// </summary>
-    public partial class FoundationModelConfigurationMarshaller : IRequestMarshaller<FoundationModelConfiguration, JsonMarshallerContext>
+    public partial class MantleFoundationModelConfigurationMarshaller : IRequestMarshaller<MantleFoundationModelConfiguration, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(FoundationModelConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(MantleFoundationModelConfiguration requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetBedrockFoundationModelConfiguration())
+            if (requestObject.IsSetModelConfiguration())
             {
-                context.Writer.WritePropertyName("bedrockFoundationModelConfiguration");
+                context.Writer.WritePropertyName("modelConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = BedrockFoundationModelConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.BedrockFoundationModelConfiguration, context);
+                var marshaller = MantleFoundationModelModelConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelConfiguration, context);
 
                 context.Writer.WriteEndObject();
-            }
-
-            if (requestObject.IsSetMantleFoundationModelConfiguration())
-            {
-                context.Writer.WritePropertyName("mantleFoundationModelConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = MantleFoundationModelConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.MantleFoundationModelConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if (requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("type");
-                context.Writer.WriteStringValue(requestObject.Type);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static FoundationModelConfigurationMarshaller Instance = new FoundationModelConfigurationMarshaller();
+        public readonly static MantleFoundationModelConfigurationMarshaller Instance = new MantleFoundationModelConfigurationMarshaller();
     }
 }
