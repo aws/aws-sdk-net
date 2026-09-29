@@ -292,7 +292,7 @@ namespace Amazon.Deadline.Model
         /// The name of the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string Name
         {
             get { return this._name; }
@@ -316,7 +316,7 @@ namespace Amazon.Deadline.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public Dictionary<string, JobParameter> Parameters
         {
             get { return this._parameters; }

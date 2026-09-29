@@ -35,7 +35,9 @@ namespace Amazon.Deadline.Model
     public partial class EnvironmentDetailsEntity
     {
         private string _environmentId;
+        private List<string> _extensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobId;
+        private string _resolvedSymbolTable;
         private string _schemaVersion;
         private Amazon.Runtime.Documents.Document _template;
 
@@ -59,6 +61,31 @@ namespace Amazon.Deadline.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Extensions. 
+        /// <para>
+        /// The Open Job Description extensions that the environment uses. This value is used
+        /// by the worker agent.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=32)]
+        public List<string> Extensions
+        {
+            get { return this._extensions; }
+            set { this._extensions = value; }
+        }
+
+        // Check to see if Extensions property is set
+        internal bool IsSetExtensions()
+        {
+            return this._extensions != null && (this._extensions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
         /// The job ID.
@@ -75,6 +102,26 @@ namespace Amazon.Deadline.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolvedSymbolTable. 
+        /// <para>
+        /// The resolved symbol table for the environment's expressions, serialized as JSON. This
+        /// value is used by the worker agent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000000)]
+        public string ResolvedSymbolTable
+        {
+            get { return this._resolvedSymbolTable; }
+            set { this._resolvedSymbolTable = value; }
+        }
+
+        // Check to see if ResolvedSymbolTable property is set
+        internal bool IsSetResolvedSymbolTable()
+        {
+            return this._resolvedSymbolTable != null;
         }
 
         /// <summary>

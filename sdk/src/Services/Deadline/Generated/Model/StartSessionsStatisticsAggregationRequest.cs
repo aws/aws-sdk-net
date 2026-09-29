@@ -194,7 +194,7 @@ namespace Amazon.Deadline.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The timezone to use for the statistics. Use UTC notation such as "UTC+8."
+        /// The time zone to use for the statistics. Use UTC notation such as "UTC+8."
         /// </para>
         /// </summary>
         [AWSProperty(Min=9, Max=9)]

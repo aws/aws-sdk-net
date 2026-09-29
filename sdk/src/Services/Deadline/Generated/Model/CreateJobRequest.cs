@@ -206,7 +206,7 @@ namespace Amazon.Deadline.Model
         /// A custom name to override the job name derived from the job template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=512)]
         public string NameOverride
         {
             get { return this._nameOverride; }
@@ -230,7 +230,7 @@ namespace Amazon.Deadline.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public Dictionary<string, JobParameter> Parameters
         {
             get { return this._parameters; }

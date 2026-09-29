@@ -30,41 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The timestamp in date-time format.
+    /// Software that the service installs on worker hosts in a service-managed fleet.
     /// </summary>
-    public partial class DateTimeFilterExpression
+    public partial class FleetSoftwareAddOn
     {
-        private DateTime? _dateTime;
-        private string _name;
-        private ComparisonOperator _operator;
-
-        /// <summary>
-        /// Gets and sets the property DateTime. 
-        /// <para>
-        /// The date and time.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public DateTime? DateTime
-        {
-            get { return this._dateTime; }
-            set { this._dateTime = value; }
-        }
-
-        // Check to see if DateTime property is set
-        internal bool IsSetDateTime()
-        {
-            return this._dateTime.HasValue; 
-        }
+        private FleetSoftwareAddOnName _name;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the date-time field to filter on.
+        /// The name of the software add-on. The supported value is <c>docker</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Name
+        public FleetSoftwareAddOnName Name
         {
             get { return this._name; }
             set { this._name = value; }
@@ -74,25 +53,6 @@ namespace Amazon.Deadline.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Operator. 
-        /// <para>
-        /// The type of comparison to use to filter the results.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public ComparisonOperator Operator
-        {
-            get { return this._operator; }
-            set { this._operator = value; }
-        }
-
-        // Check to see if Operator property is set
-        internal bool IsSetOperator()
-        {
-            return this._operator != null;
         }
 
     }

@@ -46,10 +46,38 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBool())
+            {
+                context.Writer.WritePropertyName("bool");
+                context.Writer.WriteStringValue(requestObject.Bool);
+            }
+
+            if(requestObject.IsSetBoolList())
+            {
+                context.Writer.WritePropertyName("boolList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectBoolListListValue in requestObject.BoolList)
+                {
+                        context.Writer.WriteStringValue(requestObjectBoolListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetFloat())
             {
                 context.Writer.WritePropertyName("float");
                 context.Writer.WriteStringValue(requestObject.Float);
+            }
+
+            if(requestObject.IsSetFloatList())
+            {
+                context.Writer.WritePropertyName("floatList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectFloatListListValue in requestObject.FloatList)
+                {
+                        context.Writer.WriteStringValue(requestObjectFloatListListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInt())
@@ -58,16 +86,71 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Int);
             }
 
+            if(requestObject.IsSetIntList())
+            {
+                context.Writer.WritePropertyName("intList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectIntListListValue in requestObject.IntList)
+                {
+                        context.Writer.WriteStringValue(requestObjectIntListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetIntListList())
+            {
+                context.Writer.WritePropertyName("intListList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectIntListListListValue in requestObject.IntListList)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var requestObjectIntListListListValueListValue in requestObjectIntListListListValue)
+                    {
+                            context.Writer.WriteStringValue(requestObjectIntListListListValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
                 context.Writer.WriteStringValue(requestObject.Path);
             }
 
+            if(requestObject.IsSetPathList())
+            {
+                context.Writer.WritePropertyName("pathList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPathListListValue in requestObject.PathList)
+                {
+                        context.Writer.WriteStringValue(requestObjectPathListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetRangeExpr())
+            {
+                context.Writer.WritePropertyName("rangeExpr");
+                context.Writer.WriteStringValue(requestObject.RangeExpr);
+            }
+
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("string");
                 context.Writer.WriteStringValue(requestObject.String);
+            }
+
+            if(requestObject.IsSetStringList())
+            {
+                context.Writer.WritePropertyName("stringList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectStringListListValue in requestObject.StringList)
+                {
+                        context.Writer.WriteStringValue(requestObjectStringListListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
