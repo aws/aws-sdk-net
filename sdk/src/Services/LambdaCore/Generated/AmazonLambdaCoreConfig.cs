@@ -32,7 +32,7 @@ namespace Amazon.LambdaCore
     public partial class AmazonLambdaCoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Lambda Core", "4.0.100.14");
+            InternalSDKUtils.BuildUserAgentString("Lambda Core", "4.0.100.15");
 
         private static readonly AmazonLambdaCoreEndpointResolver EndpointResolver =
             new AmazonLambdaCoreEndpointResolver();
