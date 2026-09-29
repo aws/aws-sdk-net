@@ -1,0 +1,247 @@
+{
+  "services": [
+    {
+      "serviceName": "BedrockAgentCore",
+      "type": "patch",
+      "changeLogMessages": [
+        "BedrockAgentCore is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "BedrockAgentRuntime",
+      "type": "patch",
+      "changeLogMessages": [
+        "BedrockAgentRuntime is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CodeArtifact",
+      "type": "patch",
+      "changeLogMessages": [
+        "CodeArtifact is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ConnectHealth",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectHealth is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "DevOpsAgent",
+      "type": "patch",
+      "changeLogMessages": [
+        "DevOpsAgent is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "EBS",
+      "type": "patch",
+      "changeLogMessages": [
+        "EBS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "GlueDataBrew",
+      "type": "patch",
+      "changeLogMessages": [
+        "GlueDataBrew is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "IAMRolesAnywhere",
+      "type": "patch",
+      "changeLogMessages": [
+        "IAMRolesAnywhere is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "IoTSiteWise",
+      "type": "patch",
+      "changeLogMessages": [
+        "IoTSiteWise is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "KinesisVideoArchivedMedia",
+      "type": "patch",
+      "changeLogMessages": [
+        "KinesisVideoArchivedMedia is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "KinesisVideoMedia",
+      "type": "patch",
+      "changeLogMessages": [
+        "KinesisVideoMedia is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "LakeFormation",
+      "type": "patch",
+      "changeLogMessages": [
+        "LakeFormation is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "LambdaCore",
+      "type": "patch",
+      "changeLogMessages": [
+        "LambdaCore is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "Lex",
+      "type": "patch",
+      "changeLogMessages": [
+        "Lex is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ManagedBlockchain",
+      "type": "patch",
+      "changeLogMessages": [
+        "ManagedBlockchain is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ManagedBlockchainQuery",
+      "type": "patch",
+      "changeLogMessages": [
+        "ManagedBlockchainQuery is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "MarketplaceCatalog",
+      "type": "patch",
+      "changeLogMessages": [
+        "MarketplaceCatalog is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MarketplaceDeployment",
+      "type": "patch",
+      "changeLogMessages": [
+        "MarketplaceDeployment is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MediaStoreData",
+      "type": "patch",
+      "changeLogMessages": [
+        "MediaStoreData is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MedicalImaging",
+      "type": "patch",
+      "changeLogMessages": [
+        "MedicalImaging is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MigrationHubOrchestrator",
+      "type": "patch",
+      "changeLogMessages": [
+        "MigrationHubOrchestrator is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MigrationHubRefactorSpaces",
+      "type": "patch",
+      "changeLogMessages": [
+        "MigrationHubRefactorSpaces is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "MigrationHubStrategyRecommendations",
+      "type": "patch",
+      "changeLogMessages": [
+        "MigrationHubStrategyRecommendations is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "NeptuneGraph",
+      "type": "patch",
+      "changeLogMessages": [
+        "NeptuneGraph is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Omics",
+      "type": "patch",
+      "changeLogMessages": [
+        "Omics is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Polly",
+      "type": "patch",
+      "changeLogMessages": [
+        "Polly is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "QBusiness",
+      "type": "patch",
+      "changeLogMessages": [
+        "QBusiness is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "QuickSight",
+      "type": "patch",
+      "changeLogMessages": [
+        "QuickSight is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "RAM",
+      "type": "patch",
+      "changeLogMessages": [
+        "RAM is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SageMakerRuntime",
+      "type": "patch",
+      "changeLogMessages": [
+        "SageMakerRuntime is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SageMakerRuntimeHTTP2",
+      "type": "patch",
+      "changeLogMessages": [
+        "SageMakerRuntimeHTTP2 is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SagemakerJobRuntime",
+      "type": "patch",
+      "changeLogMessages": [
+        "SagemakerJobRuntime is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "TranscribeStreaming",
+      "type": "patch",
+      "changeLogMessages": [
+        "TranscribeStreaming is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "WorkMailMessageFlow",
+      "type": "patch",
+      "changeLogMessages": [
+        "WorkMailMessageFlow is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}

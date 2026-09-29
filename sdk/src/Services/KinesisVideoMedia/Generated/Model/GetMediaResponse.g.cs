@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-video-media-2017-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -22,11 +22,11 @@ using System.Xml.Serialization;
 using System.Text;
 using System.IO;
 using System.Net;
-
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
 #pragma warning disable CS0612,CS0618,CS1570
+
 namespace Amazon.KinesisVideoMedia.Model
 {
     /// <summary>
@@ -34,27 +34,19 @@ namespace Amazon.KinesisVideoMedia.Model
     /// </summary>
     public partial class GetMediaResponse : AmazonWebServiceResponse, IDisposable
     {
-        private string _contentType;
-        private Stream _payload;
-
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The content type of the requested media.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
-        public string ContentType
-        {
-            get { return this._contentType; }
-            set { this._contentType = value; }
-        }
+        [AWSProperty(Min = 1, Max = 128)]
+        public string ContentType { get; set; }
 
-        // Check to see if ContentType property is set
-        internal bool IsSetContentType()
-        {
-            return this._contentType != null;
-        }
+        /// <summary>
+        /// Checks to see if the ContentType property is set.
+        /// </summary>
+        internal bool IsSetContentType() => this.ContentType != null;
 
         /// <summary>
         /// Gets and sets the property Payload. 
@@ -147,17 +139,12 @@ namespace Amazon.KinesisVideoMedia.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public Stream Payload
-        {
-            get { return this._payload; }
-            set { this._payload = value; }
-        }
+        public Stream Payload { get; set; }
 
-        // Check to see if Payload property is set
-        internal bool IsSetPayload()
-        {
-            return this._payload != null;
-        }
+        /// <summary>
+        /// Checks to see if the Payload property is set.
+        /// </summary>
+        internal bool IsSetPayload() => this.Payload != null;
 
         #region Dispose Pattern
 
@@ -178,17 +165,19 @@ namespace Amazon.KinesisVideoMedia.Model
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)
+            {
                 return;
+            }
 
             if (disposing)
             {
-                this._payload?.Dispose();
-                this._payload = null;
+                this.Payload?.Dispose();
+                this.Payload = null;
             }
 
             this._disposed = true;
-         }
+        }
 
-         #endregion
+        #endregion
     }
 }
