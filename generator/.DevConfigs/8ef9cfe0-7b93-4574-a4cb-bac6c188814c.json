@@ -1,0 +1,237 @@
+{
+  "services": [
+    {
+      "serviceName": "ARCZonalShift",
+      "type": "patch",
+      "changeLogMessages": [
+        "ARCZonalShift is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ConnectCampaignService",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectCampaignService is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ConnectCampaignsV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectCampaignsV2 is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ConnectCases",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectCases is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "ConnectParticipant",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectParticipant is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "ConnectWisdomService",
+      "type": "patch",
+      "changeLogMessages": [
+        "ConnectWisdomService is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CustomerProfiles",
+      "type": "patch",
+      "changeLogMessages": [
+        "CustomerProfiles is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Elasticsearch",
+      "type": "patch",
+      "changeLogMessages": [
+        "Elasticsearch is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "FIS",
+      "type": "patch",
+      "changeLogMessages": [
+        "FIS is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Greengrass",
+      "type": "patch",
+      "changeLogMessages": [
+        "Greengrass is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "GreengrassV2",
+      "type": "patch",
+      "changeLogMessages": [
+        "GreengrassV2 is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "MPA",
+      "type": "patch",
+      "changeLogMessages": [
+        "MPA is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MQ",
+      "type": "patch",
+      "changeLogMessages": [
+        "MQ is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "NetworkSecurityManager",
+      "type": "patch",
+      "changeLogMessages": [
+        "NetworkSecurityManager is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "NovaAct",
+      "type": "patch",
+      "changeLogMessages": [
+        "NovaAct is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "PcaConnectorAd",
+      "type": "patch",
+      "changeLogMessages": [
+        "PcaConnectorAd is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PcaConnectorScep",
+      "type": "patch",
+      "changeLogMessages": [
+        "PcaConnectorScep is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "PrometheusService",
+      "type": "patch",
+      "changeLogMessages": [
+        "PrometheusService is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "RecycleBin",
+      "type": "patch",
+      "changeLogMessages": [
+        "RecycleBin is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "S3Files",
+      "type": "patch",
+      "changeLogMessages": [
+        "S3Files is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "S3Outposts",
+      "type": "patch",
+      "changeLogMessages": [
+        "S3Outposts is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "S3Tables",
+      "type": "patch",
+      "changeLogMessages": [
+        "S3Tables is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "S3Vectors",
+      "type": "patch",
+      "changeLogMessages": [
+        "S3Vectors is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SagemakerEdgeManager",
+      "type": "patch",
+      "changeLogMessages": [
+        "SagemakerEdgeManager is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Schemas",
+      "type": "patch",
+      "changeLogMessages": [
+        "Schemas is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SecurityIR",
+      "type": "patch",
+      "changeLogMessages": [
+        "SecurityIR is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "SecurityLake",
+      "type": "patch",
+      "changeLogMessages": [
+        "SecurityLake is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "SupportAuthZ",
+      "type": "patch",
+      "changeLogMessages": [
+        "SupportAuthZ is now generated from its Smithy model. There are no changes to the public API.",
+        "Exception properties bound to response headers are now populated from those headers."
+      ]
+    },
+    {
+      "serviceName": "Synthetics",
+      "type": "patch",
+      "changeLogMessages": [
+        "Synthetics is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "TaxSettings",
+      "type": "patch",
+      "changeLogMessages": [
+        "TaxSettings is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "TrustedAdvisor",
+      "type": "patch",
+      "changeLogMessages": [
+        "TrustedAdvisor is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Wickr",
+      "type": "patch",
+      "changeLogMessages": [
+        "Wickr is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
