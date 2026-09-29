@@ -31,7 +31,7 @@ namespace Amazon.ElementalInference.Model
 {
     /// <summary>
     /// A type of OutputConfig, used when the output in a feed is for the smart subtitling
-    /// feature. smart subtitling uses automatic speech recognition (ASR) to generate live
+    /// feature. Smart subtitling uses automatic speech recognition (ASR) to generate live
     /// TTML subtitles from the audio in your source media.
     /// </summary>
     public partial class SubtitlingConfig

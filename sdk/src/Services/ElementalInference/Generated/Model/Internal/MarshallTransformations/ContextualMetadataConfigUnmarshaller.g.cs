@@ -53,6 +53,13 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("extendedAnalysis", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExtendedAnalysis = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("summaryGeneration", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

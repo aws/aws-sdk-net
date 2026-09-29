@@ -180,6 +180,47 @@ namespace Amazon.ElementalInference
     }
 
     /// <summary>
+    /// Constants used for properties of type ExtendedAnalysisMode.
+    /// </summary>
+    public class ExtendedAnalysisMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for ExtendedAnalysisMode
+        /// </summary>
+        public static readonly ExtendedAnalysisMode DISABLED = new ExtendedAnalysisMode("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for ExtendedAnalysisMode
+        /// </summary>
+        public static readonly ExtendedAnalysisMode ENABLED = new ExtendedAnalysisMode("ENABLED");
+
+        /// <summary>
+        /// Constructs a custom ExtendedAnalysisMode for a value not among the defined constants.
+        /// </summary>
+        public ExtendedAnalysisMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtendedAnalysisMode FindValue(string value)
+        {
+            return FindValue<ExtendedAnalysisMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtendedAnalysisMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FeedStatus.
     /// </summary>
     public class FeedStatus : ConstantClass

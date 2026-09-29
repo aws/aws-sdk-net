@@ -45,6 +45,12 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetExtendedAnalysis())
+            {
+                context.Writer.WritePropertyName("extendedAnalysis");
+                context.Writer.WriteStringValue(requestObject.ExtendedAnalysis);
+            }
+
             if (requestObject.IsSetSummaryGeneration())
             {
                 context.Writer.WritePropertyName("summaryGeneration");

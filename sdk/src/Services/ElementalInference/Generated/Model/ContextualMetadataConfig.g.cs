@@ -36,10 +36,12 @@ namespace Amazon.ElementalInference.Model
     public partial class ContextualMetadataConfig
     {
         /// <summary>
-        /// Gets and sets the property SummaryGeneration. 
+        /// Gets and sets the property ExtendedAnalysis. 
         /// <para>
-        /// Specifies whether Elemental Inference generates a descriptive summary of the media
-        /// content for this output. 
+        /// Specifies whether Elemental Inference generates extended analysis of the media content
+        /// for this output. Extended analysis identifies the people, environments, brands, and
+        /// on-screen text in the media content. This setting is independent of <c>summaryGeneration</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -47,12 +49,43 @@ namespace Amazon.ElementalInference.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ENABLED (default) – Elemental Inference generates a descriptive summary along with
-        /// IAB taxonomy and GARM suitability classifications. 
+        /// ENABLED (default) – Elemental Inference populates the people, environments, brands,
+        /// and on-screen text fields. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DISABLED – No descriptive summary is generated.
+        /// DISABLED – Elemental Inference doesn't populate the people, environments, brands,
+        /// and on-screen text fields. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ExtendedAnalysisMode ExtendedAnalysis { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExtendedAnalysis property is set.
+        /// </summary>
+        internal bool IsSetExtendedAnalysis() => this.ExtendedAnalysis != null;
+
+        /// <summary>
+        /// Gets and sets the property SummaryGeneration. 
+        /// <para>
+        /// Specifies whether Elemental Inference generates a descriptive summary of the media
+        /// content for this output, along with the objects and actions that it detects. This
+        /// setting is independent of <c>extendedAnalysis</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ENABLED (default) – Elemental Inference populates the summary, objects, and actions
+        /// fields, along with the IAB taxonomy and GARM suitability classifications. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// DISABLED – Elemental Inference doesn't populate the summary, objects, and actions
+        /// fields. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
