@@ -24,7 +24,7 @@ public class CollectionElementCodegenTests
 
         // context.Structures excludes @input/@output shapes, so the request structure comes off the operation.
         _requestStructure = new StructureWriter(context, "collection-model.json")
-            .Write(operation.Input, operation.Shape.Input, TestContext.Current.CancellationToken);
+            .Write(operation.Input, TestContext.Current.CancellationToken);
     }
 
     [Fact]

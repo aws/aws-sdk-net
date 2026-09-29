@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -190,16 +191,20 @@ public static class TypeMapper
             var target = context.Resolve(member.Target);
             var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
 
+            // Member-level hooks are keyed by the member's current (post-rename) name; CustomizationTransform
+            // has already validated the entries.
+            var swap = context.Customizations.DataTypeSwapFor(structure.Id.Name, memberName);
+
             resolved.Add(new Member(
                 PropertyName: propertyName,
-                Type: ResolveType(member, context),
+                Type: ResolveType(member, context, swap),
                 IsRequired: member.IsRequired(),
                 IsIdempotencyToken: member.IsIdempotencyToken(),
                 AwsProperty: BuildAwsProperty(member, target),
                 Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                EmitIsSetProperties: member.EmitIsSet,
+                EmitIsSetProperties: context.Customizations.EmitIsSet(structure.Id.Name, memberName),
                 // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
@@ -218,9 +223,11 @@ public static class TypeMapper
     /// own <c>@timestampFormat</c> is captured, including for a timestamp nested inside a collection —
     /// <c>list.Member</c> and <c>map.Value</c> are themselves member references that can carry it. A
     /// collection element (<paramref name="isCollectionValue"/>) collapses an enum to a plain string
-    /// (see <see cref="CollectionElementTarget"/>) and maps value-type scalars non-nullable.
+    /// (see <see cref="CollectionElementTarget"/>) and maps value-type scalars non-nullable. A structure
+    /// member's <c>dataTypeSwap</c> (<paramref name="swap"/>) replaces the emitted type and conversion;
+    /// element members never have one.
     /// </summary>
-    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, bool isCollectionValue = false, bool isSparse = false)
+    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, DataTypeSwap? swap = null, bool isCollectionValue = false, bool isSparse = false)
     {
         var target = context.Resolve(member.Target);
         if (isCollectionValue)
@@ -238,13 +245,10 @@ public static class TypeMapper
             isNullableValueType = false;
         }
 
-        // Only a structure member carries a swap (CustomizationTransform attaches it); element members never do.
-        var swap = member.DataTypeSwap;
-
         return new TypeDescriptor(
             DotNetType: swap?.Type ?? (isCollectionValue
-                ? MapCollectionValueType(member.Target, target, context, isSparse)
-                : MapType(member.Target, target, context)),
+                ? MapCollectionValueType(target, context, isSparse)
+                : MapType(target, context)),
             Target: target,
             IsNullableValueType: swap is null ? isNullableValueType : swap.Type.EndsWith('?'),
             IsStructure: target is StructureShape,
@@ -270,13 +274,7 @@ public static class TypeMapper
     /// <summary>
     /// Returns the .NET type name for a member whose target resolves to <paramref name="target"/>.
     /// </summary>
-    /// <remarks>
-    /// <paramref name="targetId"/> is only read to name a generated class (structure or enum), so it may
-    /// disagree with <paramref name="target"/>: a collection element passes the element's own id even when
-    /// the element-target substitution replaced its shape, since an enum collapses to string and the string
-    /// path ignores the id.
-    /// </remarks>
-    public static string MapType(ShapeId targetId, Shape target, GenerationContext context)
+    public static string MapType(Shape target, GenerationContext context)
     {
         if (target is ListShape list)
         {
@@ -293,7 +291,7 @@ public static class TypeMapper
         // A union derives from StructureShape and is generated as a plain structure class.
         if (target is StructureShape)
         {
-            return context.ToDotNetName(targetId);
+            return context.ToDotNetName(target.Id);
         }
 
         if (target is EnumShape)
@@ -301,7 +299,7 @@ public static class TypeMapper
             // An enum-typed member's .NET type is the ConstantClass the ServiceEnumerationsWriter emits,
             // matching C2J. The name derivation (ToUpperFirstCharacter over the shape name) is shared with
             // that writer so the member type and the class declaration always agree.
-            return EnumTypeName(targetId, context);
+            return EnumTypeName(target.Id, context);
         }
 
         if (target is IntEnumShape)
@@ -353,10 +351,10 @@ public static class TypeMapper
     /// customization entry matching no wire value, or a member without a value, throws — C2J has
     /// nothing to fall back to, and silently skipping either would diverge from its output.
     /// </summary>
-    public static List<EnumMember> ResolveEnumMembers(ShapeId shapeId, EnumShape shape, GenerationContext context)
+    public static List<EnumMember> ResolveEnumMembers(EnumShape shape, GenerationContext context)
     {
         var renames = new Dictionary<string, string>();
-        if (context.Customizations.ShapeModifiers.TryGetValue(shapeId.Name, out var modifier))
+        if (context.Customizations.ShapeModifiers.TryGetValue(shape.Id.Name, out var modifier))
         {
             foreach (var (value, property) in modifier.Modify.SelectMany(entry => entry))
             {
@@ -376,7 +374,7 @@ public static class TypeMapper
 
         if (renames.Count > 0)
         {
-            throw new GeneratorException($"shapeModifiers['{shapeId.Name}'] modifies enum value(s) {string.Join(", ", renames.Keys)}, which the shape does not have.");
+            throw new GeneratorException($"shapeModifiers['{shape.Id.Name}'] modifies enum value(s) {string.Join(", ", renames.Keys)}, which the shape does not have.");
         }
 
         return members;
@@ -399,8 +397,8 @@ public static class TypeMapper
     /// nullable (<c>List&lt;bool?&gt;</c>, matching C2J). Everything else maps as in member position
     /// via <see cref="MapType"/>.
     /// </summary>
-    private static string MapCollectionValueType(ShapeId id, Shape target, GenerationContext context, bool isSparse) =>
-        MapScalarElement(target, isSparse) ?? MapType(id, target, context);
+    private static string MapCollectionValueType(Shape target, GenerationContext context, bool isSparse) =>
+        MapScalarElement(target, isSparse) ?? MapType(target, context);
 
     /// <summary>
     /// The .NET type for a string or scalar in collection-element position, or null for anything else
@@ -459,7 +457,7 @@ public static class TypeMapper
         RejectUnsupportedCollectionElement(elementTarget, collection is MapShape ? "map" : "list");
 
         // Value-type scalars are non-nullable in element position (List<int>, not List<int?>), nullable when the collection is @sparse.
-        return MapCollectionValueType(id, elementTarget, context, collection.IsSparse());
+        return MapCollectionValueType(elementTarget, context, collection.IsSparse());
     }
 
     // The writers handle string, value-type scalar (bool/int/long/float/double/timestamp), intEnum (as a

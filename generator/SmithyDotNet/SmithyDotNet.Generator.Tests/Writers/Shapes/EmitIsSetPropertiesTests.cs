@@ -27,19 +27,20 @@ public class EmitIsSetPropertiesTests
         ["ScanInput"] = ["Limit", "Segment", "TotalSegments"],
     };
 
-    // Same order as BatchGenerator: the transform marks the members before the index is built.
+    // Same order as BatchGenerator: renames land before the index is built.
     private static GenerationContext Context(Dictionary<string, List<string>> emitIsSet)
     {
         var model = TestModels.Load(ModelPath);
         var customizations = new CustomizationsModel { EmitIsSetProperties = emitIsSet };
         CustomizationTransform.Apply(model, customizations);
+        CustomizationTransform.Validate(model, customizations);
         return new(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
     }
 
     private static string WriteAttributeValue(GenerationContext context)
     {
         var shapeId = ShapeId.Parse("com.amazonaws.dynamodb#AttributeValue");
-        return new StructureWriter(context, ModelFileName).Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return new StructureWriter(context, ModelFileName).Write(context.Structures[shapeId], TestContext.Current.CancellationToken);
     }
 
     private static string WriteRequest(GenerationContext context, string operation) =>

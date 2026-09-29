@@ -32,9 +32,9 @@ public class RichExceptionCodegenTests
         var errorId = ShapeId.Parse($"{Namespace}#{errorShapeName}");
         var errorShape = context.Errors[errorId];
         var exceptionClass = new ExceptionWriter(context, ModelFileName)
-            .WriteException(errorShape, errorId, TestContext.Current.CancellationToken);
+            .WriteException(errorShape, TestContext.Current.CancellationToken);
         var unmarshaller = new JsonExceptionUnmarshallerWriter(context, ModelFileName)
-            .Write(errorShape, errorId, TestContext.Current.CancellationToken);
+            .Write(errorShape, TestContext.Current.CancellationToken);
         return (exceptionClass, unmarshaller);
     }
 

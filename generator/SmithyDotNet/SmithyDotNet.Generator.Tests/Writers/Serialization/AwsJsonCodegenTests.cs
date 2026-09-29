@@ -78,7 +78,7 @@ public class AwsJsonCodegenTests
     public void Exception_ReadsHeaderBoundMemberFromBody()
     {
         var error = Json11.Errors.Single(e => e.Key.Name == "BadThing");
-        var source = new JsonExceptionUnmarshallerWriter(Json11, ModelFileName).Write(error.Value, error.Key, TestContext.Current.CancellationToken);
+        var source = new JsonExceptionUnmarshallerWriter(Json11, ModelFileName).Write(error.Value, TestContext.Current.CancellationToken);
 
         Assert.Contains("""context.TestExpression("reason", targetDepth, ref reader)""", source);
         Assert.DoesNotContain("IsHeaderPresent", source);

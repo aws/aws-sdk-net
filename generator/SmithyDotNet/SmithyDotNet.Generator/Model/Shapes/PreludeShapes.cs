@@ -45,6 +45,14 @@ public static class PreludeShapes
         ["Unit"] = new StructureShape(),
     };
 
+    static PreludeShapes()
+    {
+        foreach (var name in new List<string>(ByName.Keys))
+        {
+            ByName[name] = ByName[name] with { Id = new ShapeId("smithy.api", name) };
+        }
+    }
+
     /// <summary>
     /// Returns the prelude shape for <paramref name="shapeId"/>, or <c>null</c> if it is not a
     /// known prelude simple shape.

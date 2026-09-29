@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -16,16 +15,14 @@ namespace SmithyDotNet.Generator.Writers.Shapes;
 public sealed class StructureWriter(GenerationContext context, string modelFileName)
 {
     /// <summary>
-    /// Emits the complete formatted source file for one structure. The <paramref name="shapeId"/>
-    /// supplies the class name (via <see cref="GenerationContext.ToDotNetName"/>) because a
-    /// <see cref="StructureShape"/> does not carry its own ID.
+    /// Emits the complete formatted source file for one structure.
     /// </summary>
-    public string Write(StructureShape structure, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
-        var className = context.ToDotNetName(shapeId);
+        var className = context.ToDotNetName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
-        var isEventStreamEvent = context.RequestEventStreams.Any(stream => stream.Events.Contains(shapeId))
-            || context.ResponseEventStreams.Any(stream => stream.Events.Contains(shapeId));
+        var isEventStreamEvent = context.RequestEventStreams.Any(stream => stream.Events.Contains(structure.Id))
+            || context.ResponseEventStreams.Any(stream => stream.Events.Contains(structure.Id));
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);

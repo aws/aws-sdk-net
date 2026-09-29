@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
 
@@ -244,12 +245,12 @@ public static partial class DocumentationFormatter
     /// Writes an <c>&lt;exception cref="..."&gt;</c> doc tag for a single modeled operation error,
     /// with the error shape's cleaned documentation as the tag body.
     /// </summary>
-    public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, OperationError error)
+    public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, StructureShape error)
     {
         var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
         writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
 
-        var cleaned = Cleanup(error.Shape.GetDocumentation());
+        var cleaned = Cleanup(error.GetDocumentation());
         if (cleaned.Length > 0)
         {
             WriteCommentBlock(writer, cleaned);

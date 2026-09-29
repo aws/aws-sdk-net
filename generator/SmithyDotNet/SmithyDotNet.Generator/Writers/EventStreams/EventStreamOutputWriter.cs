@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -28,9 +27,9 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
     private const string ReaderLine =
         "var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);";
 
-    public string Write(StructureShape eventStream, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string Write(StructureShape eventStream, CancellationToken cancellationToken = default)
     {
-        var className = context.ToDotNetName(shapeId);
+        var className = context.ToDotNetName(eventStream.Id);
         var exceptionType = $"{context.BaseName}EventStreamException";
 
         var events = new List<Entry>();

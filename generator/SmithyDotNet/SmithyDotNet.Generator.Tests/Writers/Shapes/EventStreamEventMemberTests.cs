@@ -21,7 +21,7 @@ public class EventStreamEventMemberTests
 
     private static ShapeId Id(string name) => ShapeId.Parse($"{Namespace}#{name}");
 
-    private string Write(string shapeName) => _writer.Write(_context.Structures[Id(shapeName)], Id(shapeName), TestContext.Current.CancellationToken);
+    private string Write(string shapeName) => _writer.Write(_context.Structures[Id(shapeName)], TestContext.Current.CancellationToken);
 
     [Fact]
     public void InputStreamEventMember_ImplementsIEventStreamEvent()

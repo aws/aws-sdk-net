@@ -40,15 +40,15 @@ public class ScalarMemberCodegenTests
 
         var nestedId = ShapeId.Parse($"{Namespace}#Nested");
         _structureUnmarshaller = new JsonStructureUnmarshallerWriter(_context, ModelFileName)
-            .Write(_context.Structures[nestedId], nestedId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[nestedId], TestContext.Current.CancellationToken);
 
         var detailId = ShapeId.Parse($"{Namespace}#Detail");
         _structureMarshaller = new JsonStructureMarshallerWriter(_context, ModelFileName)
-            .Write(_context.Structures[detailId], detailId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[detailId], TestContext.Current.CancellationToken);
 
         var requestId = ShapeId.Parse($"{Namespace}#DoScalarsRequest");
         _requestStructure = new StructureWriter(_context, ModelFileName)
-            .Write(_context.Structures[requestId], requestId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[requestId], TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -240,6 +240,6 @@ public class ScalarMemberCodegenTests
         var id = ShapeId.Parse($"{Namespace}#TestList");
 
         // Non-sparse elements are non-nullable (List<int>), unlike a standalone int? member.
-        Assert.Equal("List<int>", TypeMapper.MapType(id, list, _context));
+        Assert.Equal("List<int>", TypeMapper.MapType(list, _context));
     }
 }

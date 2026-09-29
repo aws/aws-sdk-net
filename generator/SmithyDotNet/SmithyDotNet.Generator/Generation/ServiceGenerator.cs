@@ -174,7 +174,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var eventStreamOutputWriter = new EventStreamOutputWriter(context, modelFileName);
             foreach (var stream in context.ResponseEventStreams)
             {
-                Emit(Path.Combine(model, $"{context.ToDotNetName(stream.Id)}.g.cs"), eventStreamOutputWriter.Write(context.Structures[stream.Id], stream.Id, cancellationToken));
+                Emit(Path.Combine(model, $"{context.ToDotNetName(stream.Id)}.g.cs"), eventStreamOutputWriter.Write(context.Structures[stream.Id], cancellationToken));
             }
         }
 
@@ -256,28 +256,28 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
+            foreach (var structure in ReferencedStructures(operation.Input))
             {
-                if (marshalledStructures.Add(shapeId))
+                if (marshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Marshaller.g.cs"), structureMarshaller.Write(structure, shapeId, cancellationToken));
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Marshaller.g.cs"), structureMarshaller.Write(structure, cancellationToken));
                 }
             }
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Output))
+            foreach (var structure in ReferencedStructures(operation.Output))
             {
                 // A response event stream is read by its own class (new {Union}(context.Stream)), so the
                 // union gets no structure unmarshaller. Its event structures DO get one — the event stream
                 // class calls {Event}Unmarshaller per message, and the structure unmarshaller handles the
                 // @eventPayload/@eventHeader split when the event carries an explicit payload member.
-                if (context.ResponseEventStreams.Any(stream => stream.Id == shapeId))
+                if (context.ResponseEventStreams.Any(stream => stream.Id == structure.Id))
                 {
                     continue;
                 }
 
-                if (unmarshalledStructures.Add(shapeId))
+                if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
                 }
             }
         }
@@ -285,21 +285,21 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // Every error shape in the model gets an unmarshaller, not just those an operation lists:
         // an error declared only on the service (or reachable only as a member of a response, as
         // eventstream operations do) should still be returnable.
-        foreach (var (errorId, errorShape) in context.Errors)
+        foreach (var errorShape in context.Errors.Values)
         {
-            var name = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorId));
-            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, errorId, cancellationToken));
+            var name = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorShape.Id));
+            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, cancellationToken));
 
             // An exception's rich members can target structures (directly, or as list/map
             // elements); the exception unmarshaller deserializes them, so those nested
             // structures need unmarshallers too. Exceptions are response-only, so only the
             // unmarshaller side is walked (never a marshaller), deduped against the shared set
             // so a structure also reachable from an output isn't emitted twice.
-            foreach (var (shapeId, structure) in ReferencedStructures(errorShape))
+            foreach (var structure in ReferencedStructures(errorShape))
             {
-                if (unmarshalledStructures.Add(shapeId))
+                if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
                 }
             }
         }
@@ -365,32 +365,32 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             }
         }
 
-        foreach (var (shapeId, structure) in context.Structures)
+        foreach (var structure in context.Structures.Values)
         {
-            if (operationShapes.Contains(shapeId) && !memberReferencedOperationShapes.Contains(shapeId))
+            if (operationShapes.Contains(structure.Id) && !memberReferencedOperationShapes.Contains(structure.Id))
             {
                 continue;
             }
 
             // Emitted above as the EnumerableEventOutputStream subclass instead.
-            if (context.ResponseEventStreams.Any(stream => stream.Id == shapeId))
+            if (context.ResponseEventStreams.Any(stream => stream.Id == structure.Id))
             {
                 continue;
             }
 
             // A request event stream's union is the publisher/interface, not a plain model class.
-            if (context.RequestEventStreams.Any(stream => stream.Id == shapeId))
+            if (context.RequestEventStreams.Any(stream => stream.Id == structure.Id))
             {
                 continue;
             }
 
-            Emit(Path.Combine(model, $"{context.ToDotNetName(shapeId)}.g.cs"), structureWriter.Write(structure, shapeId, cancellationToken));
+            Emit(Path.Combine(model, $"{context.ToDotNetName(structure.Id)}.g.cs"), structureWriter.Write(structure, cancellationToken));
         }
 
-        foreach (var (shapeId, errorShape) in context.Errors)
+        foreach (var errorShape in context.Errors.Values)
         {
-            var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(shapeId));
-            Emit(Path.Combine(model, $"{exceptionName}.g.cs"), exceptionWriter.WriteException(errorShape, shapeId, cancellationToken));
+            var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorShape.Id));
+            Emit(Path.Combine(model, $"{exceptionName}.g.cs"), exceptionWriter.WriteException(errorShape, cancellationToken));
         }
 
         // Last on purpose: the solution writer scans outputPath for the service csprojs to build
@@ -409,10 +409,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
     // Every structure transitively referenced from a request or response (directly or as a list/map
     // element) gets its own (un)marshaller. The parent itself is included when it is self-referencing.
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(StructureShape parent) =>
+    private IEnumerable<StructureShape> ReferencedStructures(StructureShape parent) =>
         ReferencedStructuresRecursive(parent, new HashSet<ShapeId>());
 
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
+    private IEnumerable<StructureShape> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {
         foreach (var member in parent.Members.Values)
         {
@@ -443,7 +443,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     continue;
                 }
 
-                yield return (structureId, structure);
+                yield return structure;
                 foreach (var nested in ReferencedStructuresRecursive(structure, visited))
                 {
                     yield return nested;

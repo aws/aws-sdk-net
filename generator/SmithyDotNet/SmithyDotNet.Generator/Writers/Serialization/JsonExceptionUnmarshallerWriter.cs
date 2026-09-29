@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers.Shapes;
 
@@ -11,9 +10,9 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
-    public string Write(StructureShape structure, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
-        var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(shapeId));
+        var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(structure.Id));
         var unmarshallerClassName = $"{exceptionName}Unmarshaller";
 
         // message is deserialized by JsonErrorResponseUnmarshaller into the base Exception.Message,

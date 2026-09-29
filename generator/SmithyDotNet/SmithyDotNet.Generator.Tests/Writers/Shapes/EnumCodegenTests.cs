@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Serialization;
@@ -143,7 +142,7 @@ public class EnumCodegenTests
                 "rank":  { "target": "com.example#Priority" } } }
             """);
         var marshaller = new JsonStructureMarshallerWriter(_context, ModelFileName)
-            .Write(detail, ShapeId.Parse("com.example#Detail"), TestContext.Current.CancellationToken);
+            .Write(detail, TestContext.Current.CancellationToken);
 
         Assert.Contains("context.Writer.WriteStringValue(requestObject.State);", marshaller);
         Assert.Contains("context.Writer.WriteNumberValue(requestObject.Rank.Value);", marshaller);

@@ -47,7 +47,7 @@ public class UnitAndPrimitiveShapesTests
     {
         var flagsId = ShapeId.Parse("com.example#Flags");
         var structure = new StructureWriter(_context, ModelFileName)
-            .Write(_context.Structures[flagsId], flagsId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[flagsId], TestContext.Current.CancellationToken);
 
         // PrimitiveBoolean/PrimitiveLong map exactly like Boolean/Long — the Smithy 1.0
         // "primitive" distinction was about default values, which don't affect nullability here.
@@ -65,7 +65,7 @@ public class UnitAndPrimitiveShapesTests
         Assert.True(_context.Structures.ContainsKey(ShapeId.Unit));
 
         var unit = new StructureWriter(_context, ModelFileName)
-            .Write(_context.Structures[ShapeId.Unit], ShapeId.Unit, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[ShapeId.Unit], TestContext.Current.CancellationToken);
 
         Assert.Contains("public partial class Unit", unit);
 

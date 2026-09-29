@@ -25,7 +25,7 @@ public class EventStructureUnmarshallTests
     private string Unmarshaller(string shapeName)
     {
         var shapeId = ShapeId.Parse($"com.example#{shapeName}");
-        return _writer.Write(_context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return _writer.Write(_context.Structures[shapeId], TestContext.Current.CancellationToken);
     }
 
     [Fact]

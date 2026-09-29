@@ -19,7 +19,7 @@ public class EventMarshallerCodegenTests
     private string Write(string shapeName)
     {
         var shapeId = ShapeId.Parse($"com.example#{shapeName}");
-        return new JsonStructureMarshallerWriter(_context, ModelFileName).Write(_context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return new JsonStructureMarshallerWriter(_context, ModelFileName).Write(_context.Structures[shapeId], TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -77,7 +77,7 @@ public class EventMarshallerCodegenTests
     public void UnsupportedTargetType_FailsLoud(string shapeJson)
     {
         var shape = Assert.IsType<StructureShape>(TestModels.DeserializeShape(shapeJson));
-        Assert.Throws<GeneratorException>(() => new JsonStructureMarshallerWriter(_context, ModelFileName).Write(shape, ShapeId.Parse("com.example#BadEvent"), TestContext.Current.CancellationToken));
+        Assert.Throws<GeneratorException>(() => new JsonStructureMarshallerWriter(_context, ModelFileName).Write(shape, TestContext.Current.CancellationToken));
     }
 
     [Fact]

@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -50,9 +49,9 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
     /// <summary>
     /// Emits a per-operation exception class (e.g. <c>ChannelNotFoundException</c>).
     /// </summary>
-    public string WriteException(StructureShape errorShape, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string WriteException(StructureShape errorShape, CancellationToken cancellationToken = default)
     {
-        var className = ToExceptionName(context.ToDotNetName(shapeId));
+        var className = ToExceptionName(context.ToDotNetName(errorShape.Id));
         var baseClassName = $"{context.ClientName}Exception";
         var serializedMembers = ResolveSerializedMembers(errorShape, context);
         // Class properties are the serialized members minus base-owned RequestId/ErrorCode, which

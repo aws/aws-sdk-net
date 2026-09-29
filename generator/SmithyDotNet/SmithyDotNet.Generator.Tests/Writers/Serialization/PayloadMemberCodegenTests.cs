@@ -511,7 +511,7 @@ public class PayloadMemberCodegenTests
 
         var ex = Assert.Throws<GeneratorException>(() =>
             new JsonExceptionUnmarshallerWriter(context, ModelFileName)
-                .Write(error.Value, error.Key, TestContext.Current.CancellationToken));
+                .Write(error.Value, TestContext.Current.CancellationToken));
         Assert.Contains("@httpPayload on error member", ex.Message);
     }
 }

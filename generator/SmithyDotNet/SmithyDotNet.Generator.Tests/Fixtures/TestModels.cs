@@ -30,7 +30,8 @@ internal static class TestModels
     public static GenerationContext Context(SmithyModel model) =>
         new(new ServiceIndex(model), TestManifests.Example());
 
+    // A shape read on its own has no dictionary key to take its id from.
     public static Shape DeserializeShape(string json) =>
-        JsonSerializer.Deserialize<Shape>(json, Options)
-        ?? throw new InvalidOperationException("Shape deserialized to null.");
+        (JsonSerializer.Deserialize<Shape>(json, Options) ?? throw new InvalidOperationException("Shape deserialized to null."))
+            with { Id = ShapeId.Parse("com.example#Shape") };
 }

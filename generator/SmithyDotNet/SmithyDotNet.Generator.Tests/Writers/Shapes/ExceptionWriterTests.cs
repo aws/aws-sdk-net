@@ -25,7 +25,7 @@ public class ExceptionWriterTests
     private static string WriteException(GenerationContext context, ExceptionWriter writer, string shapeName)
     {
         var shapeId = ShapeId.Parse($"{Namespace}#{shapeName}");
-        return writer.WriteException(context.Errors[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return writer.WriteException(context.Errors[shapeId], TestContext.Current.CancellationToken);
     }
 
     [Fact]

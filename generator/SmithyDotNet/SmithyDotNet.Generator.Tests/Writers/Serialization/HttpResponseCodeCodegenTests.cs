@@ -79,7 +79,7 @@ public class HttpResponseCodeCodegenTests
         // body like any ordinary member — no status-code assignment is emitted.
         var errorId = ShapeId.Parse("com.example#ConflictError");
         var unmarshaller = new JsonExceptionUnmarshallerWriter(_context, ModelFileName)
-            .Write(_context.Errors[errorId], errorId, TestContext.Current.CancellationToken);
+            .Write(_context.Errors[errorId], TestContext.Current.CancellationToken);
 
         Assert.DoesNotContain("(int)context.ResponseData.StatusCode", unmarshaller);
         Assert.Contains("""if (context.TestExpression("code", targetDepth, ref reader))""", unmarshaller);

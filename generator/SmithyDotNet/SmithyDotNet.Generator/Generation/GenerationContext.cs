@@ -157,12 +157,11 @@ public class GenerationContext
 
     /// <summary>
     /// The service's <c>enum</c> shapes (<see cref="ServiceIndex.AllEnums"/>: reachable ones plus
-    /// same-namespace orphans) paired with their <see cref="ShapeId"/>, ordered by name for
-    /// stable output (the API does not depend on declaration order). <c>intEnum</c> shapes are excluded:
+    /// same-namespace orphans), ordered by name for stable output (the API does not depend on declaration order). <c>intEnum</c> shapes are excluded:
     /// C2J emits a <c>ConstantClass</c> only for string enums, so an <c>intEnum</c>-typed member maps to
     /// a plain integer with no enumeration entry.
     /// </summary>
-    public IReadOnlyList<(ShapeId Id, EnumShape Shape)> Enums { get; }
+    public IReadOnlyList<EnumShape> Enums { get; }
 
     /// <summary>
     /// The service's <c>metadata.json</c>, or <c>null</c> when no metadata file was supplied.
@@ -280,7 +279,7 @@ public class GenerationContext
         // emit empty Request/Response classes instead (see ResolveStructure).
         if (index.Shapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
         {
-            structures[ShapeId.Unit] = new StructureShape();
+            structures[ShapeId.Unit] = new StructureShape { Id = ShapeId.Unit };
         }
 
         Structures = structures;

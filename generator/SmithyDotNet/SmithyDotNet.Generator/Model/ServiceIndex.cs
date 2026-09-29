@@ -22,11 +22,11 @@ public class ServiceIndex
     public ShapeId ServiceId { get; }
 
     /// <summary>
-    /// All operations reachable from the service, resource-attached ones included, each paired
-    /// with its shape id. Ordered alphabetically by operation name (ordinal), matching the order
-    /// C2J emits so review diffs on large services stay stable.
+    /// All operations reachable from the service, resource-attached ones included. Ordered
+    /// alphabetically by operation name (ordinal), matching the order C2J emits so review diffs on
+    /// large services stay stable.
     /// </summary>
-    public IReadOnlyList<(ShapeId Id, OperationShape Shape)> Operations { get; }
+    public IReadOnlyList<OperationShape> Operations { get; }
 
     /// <summary>
     /// All non-prelude shapes reachable from the service's errors and its operations (structures,
@@ -38,12 +38,12 @@ public class ServiceIndex
 
     /// <summary>
     /// Every <c>enum</c> shape that is reachable from an operation or declared in the service's own
-    /// namespace, paired with its <see cref="ShapeId"/>. Unreachable same-namespace enums are kept
+    /// namespace. Unreachable same-namespace enums are kept
     /// because C2J ships orphan <c>*ExceptionReason</c> enums that no operation references; enums in
     /// other namespaces (trait definitions like <c>smithy.test#AppliesTo</c> in the raw test models)
     /// are dropped.
     /// </summary>
-    public IReadOnlyList<(ShapeId Id, EnumShape Shape)> AllEnums { get; }
+    public IReadOnlyList<EnumShape> AllEnums { get; }
 
     public ServiceIndex(SmithyModel model)
     {
@@ -75,31 +75,31 @@ public class ServiceIndex
     // the closure (trait definitions in the raw test models) are ignored.
     private void RequireNoMixins()
     {
-        RequireNoMixins(ServiceId, Service);
+        RequireNoMixins(Service);
 
-        foreach (var (id, operation) in Operations)
+        foreach (var operation in Operations)
         {
-            RequireNoMixins(id, operation);
+            RequireNoMixins(operation);
         }
 
-        foreach (var (id, shape) in Shapes)
+        foreach (var shape in Shapes.Values)
         {
-            RequireNoMixins(id, shape);
+            RequireNoMixins(shape);
         }
     }
 
-    private static void RequireNoMixins(ShapeId id, Shape shape)
+    private static void RequireNoMixins(Shape shape)
     {
         if (shape.Mixins.Count > 0)
         {
-            throw new GeneratorException($"Shape '{id}' is reachable from the service and uses mixins, which are not supported.");
+            throw new GeneratorException($"Shape '{shape.Id}' is reachable from the service and uses mixins, which are not supported.");
         }
     }
 
-    private static List<(ShapeId Id, EnumShape Shape)> CollectAllEnums(SmithyModel model, IReadOnlyDictionary<ShapeId, Shape> reachable, string serviceNamespace)
+    private static List<EnumShape> CollectAllEnums(SmithyModel model, IReadOnlyDictionary<ShapeId, Shape> reachable, string serviceNamespace)
     {
-        var enums = new List<(ShapeId Id, EnumShape Shape)>();
-        foreach (var (name, shape) in model.Shapes)
+        var enums = new List<EnumShape>();
+        foreach (var shape in model.Shapes.Values)
         {
             if (shape is not EnumShape enumShape)
             {
@@ -108,19 +108,18 @@ public class ServiceIndex
 
             // An unreachable enum emits only from the service's own namespace: C2J ships orphan
             // *ExceptionReason enums, but trait-definition enums (smithy.test#AppliesTo) must not emit.
-            var id = ShapeId.Parse(name);
-            if (reachable.ContainsKey(id) || id.Namespace == serviceNamespace)
+            if (reachable.ContainsKey(enumShape.Id) || enumShape.Id.Namespace == serviceNamespace)
             {
-                enums.Add((id, enumShape));
+                enums.Add(enumShape);
             }
         }
 
         return enums;
     }
 
-    private static List<(ShapeId Id, OperationShape Shape)> CollectOperations(SmithyModel model, ServiceShape service)
+    private static List<OperationShape> CollectOperations(SmithyModel model, ServiceShape service)
     {
-        var operations = new List<(ShapeId Id, OperationShape Shape)>(service.Operations.Count);
+        var operations = new List<OperationShape>(service.Operations.Count);
         var seen = new HashSet<string>();
 
         void AddOperation(ShapeId operationId)
@@ -135,8 +134,8 @@ public class ServiceIndex
                 throw new GeneratorException($"Service references operation '{operationId}' which is missing or not an operation shape.");
             }
 
-            RequireNoMixins(operationId, operation);
-            operations.Add((operationId, operation));
+            RequireNoMixins(operation);
+            operations.Add(operation);
         }
 
         // Resources are flattened: lifecycle + instance + collection operations all become
@@ -181,7 +180,7 @@ public class ServiceIndex
         return operations;
     }
 
-    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<(ShapeId Id, OperationShape Shape)> operations)
+    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<OperationShape> operations)
     {
         var reachable = new Dictionary<ShapeId, Shape>();
         var visited = new HashSet<string>();
@@ -191,7 +190,7 @@ public class ServiceIndex
             WalkShapeId(model, errorId, reachable, visited);
         }
 
-        foreach (var (_, operation) in operations)
+        foreach (var operation in operations)
         {
             WalkShapeId(model, operation.Input, reachable, visited);
             WalkShapeId(model, operation.Output, reachable, visited);
@@ -223,7 +222,7 @@ public class ServiceIndex
             return;
         }
 
-        RequireNoMixins(shapeId, shape);
+        RequireNoMixins(shape);
         reachable[shapeId] = shape;
 
         switch (shape)

@@ -211,11 +211,11 @@ public class PaginationResolverTests
     {
         var index = new ServiceIndex(TestModels.Load("Model/paginated-model.json"));
         var ops = new List<Operation>();
-        foreach (var (opId, opShape) in index.Operations)
+        foreach (var opShape in index.Operations)
         {
             var input = index.Shapes[opShape.Input] as StructureShape ?? new StructureShape();
             var output = index.Shapes[opShape.Output] as StructureShape ?? new StructureShape();
-            ops.Add(new Operation(opId.Name, opShape, input, output, [], RequiresHttp2: false));
+            ops.Add(new Operation(opShape.Id.Name, opShape, input, output, [], RequiresHttp2: false));
         }
         return (index, ops);
     }

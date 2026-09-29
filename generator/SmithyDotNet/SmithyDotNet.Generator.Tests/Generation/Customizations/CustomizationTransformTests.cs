@@ -70,24 +70,6 @@ public class CustomizationTransformTests
         Assert.Equal(2, model.EmitIsSetProperties.Count);
     }
 
-    [Fact]
-    public void Apply_EmitIsSetProperties_MarksListedMembersOnly()
-    {
-        var structure = new StructureShape
-        {
-            Members =
-            {
-                ["Limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") },
-                ["TableName"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") },
-            },
-        };
-
-        CustomizationTransform.Apply(ModelWith("QueryInput", structure), new CustomizationsModel { EmitIsSetProperties = { ["QueryInput"] = ["Limit"] } });
-
-        Assert.True(structure.Members["Limit"].EmitIsSet);
-        Assert.False(structure.Members["TableName"].EmitIsSet);
-    }
-
     // C2J's Member name is already the emitPropertyName by the time it checks emitIsSetProperties
     // (Shape.Members), so a renamed member is listed under its new name and the modeled name is stale.
     private static CustomizationsModel RenameAndEmitIsSet(string listedName) => new()
@@ -100,40 +82,36 @@ public class CustomizationTransformTests
         new() { Members = { ["limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
 
     [Fact]
-    public void Apply_EmitIsSetProperties_RenamedMember_ListedByNewName_Marks()
+    public void Validate_EmitIsSetProperties_RenamedMember_ListedByNewName_Passes()
     {
-        var structure = LimitInput();
-
-        CustomizationTransform.Apply(ModelWith("QueryInput", structure), RenameAndEmitIsSet("MaxItems"));
-
-        Assert.True(structure.Members["MaxItems"].EmitIsSet);
+        ApplyAndValidate(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("MaxItems"));
     }
 
     [Fact]
-    public void Apply_EmitIsSetProperties_RenamedMember_ListedByModeledName_Throws()
+    public void Validate_EmitIsSetProperties_RenamedMember_ListedByModeledName_Throws()
     {
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("limit")));
+        var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("limit")));
         Assert.Contains("lists member 'limit', which the shape does not have", ex.Message);
     }
 
     [Theory]
     [InlineData("NoSuchShape", "Limit", "does not match any shape")]
     [InlineData("QueryInput", "limit", "which the shape does not have")]
-    public void Apply_EmitIsSetProperties_StaleReference_Throws(string shape, string member, string expectedInMessage)
+    public void Validate_EmitIsSetProperties_StaleReference_Throws(string shape, string member, string expectedInMessage)
     {
         var structure = new StructureShape { Members = { ["Limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
 
         var ex = Assert.Throws<GeneratorException>(() =>
-            CustomizationTransform.Apply(ModelWith("QueryInput", structure), new CustomizationsModel { EmitIsSetProperties = { [shape] = [member] } }));
+            CustomizationTransform.Validate(ModelWith("QueryInput", structure), new CustomizationsModel { EmitIsSetProperties = { [shape] = [member] } }));
         Assert.Contains($"emitIsSetProperties['{shape}']", ex.Message);
         Assert.Contains(expectedInMessage, ex.Message);
     }
 
     [Fact]
-    public void Apply_EmitIsSetProperties_NonStructureShape_Throws()
+    public void Validate_EmitIsSetProperties_NonStructureShape_Throws()
     {
         var ex = Assert.Throws<GeneratorException>(() =>
-            CustomizationTransform.Apply(ModelWith("Thing", new StringShape()), new CustomizationsModel { EmitIsSetProperties = { ["Thing"] = ["x"] } }));
+            CustomizationTransform.Validate(ModelWith("Thing", new StringShape()), new CustomizationsModel { EmitIsSetProperties = { ["Thing"] = ["x"] } }));
         Assert.Contains("only structures and unions", ex.Message);
     }
 
@@ -343,49 +321,52 @@ public class CustomizationTransformTests
     }
 
     [Fact]
-    public void Apply_DataTypeSwapOnMissingMember_Throws()
+    public void Validate_DataTypeSwapOnMissingMember_Throws()
     {
         var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
 
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Swap("Thing", "missing")));
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, Swap("Thing", "missing")));
         Assert.Contains("missing", ex.Message);
     }
 
-    // `required` only checks the key is present, so an explicit null or blank Type reaches Apply.
+    // `required` only checks the key is present, so an explicit null or blank Type reaches Validate.
     [Theory]
     [InlineData("null")]
     [InlineData("\" \"")]
-    public void Apply_DataTypeSwapWithoutType_Throws(string type)
+    public void Validate_DataTypeSwapWithoutType_Throws(string type)
     {
         var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
         var customizations = LoadFiles($$"""{ "dataTypeSwap": { "Thing": { "payload": { "Type": {{type}} } } } }""");
 
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, customizations));
         Assert.Contains("Type", ex.Message);
     }
 
     // C2J keys a swap by the emitted property name, so a renamed member is named by its new name.
     [Fact]
-    public void Apply_DataTypeSwapOnRenamedMember_UsesEmittedName()
+    public void Validate_DataTypeSwapOnRenamedMember_UsesEmittedName()
     {
         var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
         var customizations = Swap("Thing", "PayloadV2");
         customizations.ShapeModifiers["Thing"] = new ShapeModifier { Modify = [new() { ["payload"] = new PropertyModifier { EmitPropertyName = "PayloadV2" } }] };
 
-        CustomizationTransform.Apply(model, customizations);
-
-        var thing = Assert.IsType<StructureShape>(model.Shapes["com.example#Thing"]);
-        Assert.Equal(new DataTypeOverride("DateTime?", "M", "U"), thing.Members["PayloadV2"].DataTypeSwap);
+        ApplyAndValidate(model, customizations);
     }
 
     [Fact]
-    public void Apply_DataTypeSwapXmlOnlyField_Throws()
+    public void Validate_DataTypeSwapXmlOnlyField_Throws()
     {
         var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
         var customizations = new CustomizationsModel { DataTypeSwaps = { ["Thing"] = new() { ["payload"] = new DataTypeSwap { Type = "List<string>", IsFlattened = true } } } };
 
-        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, customizations));
         Assert.Contains("isFlattened", ex.Message);
+    }
+
+    private static void ApplyAndValidate(SmithyModel model, CustomizationsModel customizations)
+    {
+        CustomizationTransform.Apply(model, customizations);
+        CustomizationTransform.Validate(model, customizations);
     }
 
     private static CustomizationsModel Swap(string shape, string member) => new()
@@ -427,7 +408,7 @@ public class CustomizationTransformTests
         var context = TestModels.Context(model);
 
         var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
-        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], requestId, TestContext.Current.CancellationToken);
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
         Assert.Contains("public DateTime? CreatedAt", structure);
 
         var marshaller = new JsonRequestMarshallerWriter(context, "scalars.json").Write(context.Operations.Single(o => o.Name == "DoScalars"), TestContext.Current.CancellationToken);

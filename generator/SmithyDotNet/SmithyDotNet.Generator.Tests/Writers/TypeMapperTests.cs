@@ -211,7 +211,7 @@ public class TypeMapperTests
     public void BlobMember_MapsToMemoryStream_AndIsNotScalar()
     {
         var blob = TestModels.DeserializeShape("""{ "type": "blob" }""");
-        Assert.Equal("MemoryStream", TypeMapper.MapType(ShapeId.Parse("test#Body"), blob, _context));
+        Assert.Equal("MemoryStream", TypeMapper.MapType(blob, _context));
 
         // Through a member, the TypeDescriptor flags a blob so it stays off the scalar (un)marshal paths.
         var context = TestModels.Context("Codegen/payload-model.json");
@@ -228,7 +228,7 @@ public class TypeMapperTests
         // A non-streaming blob element base64-encodes like a blob body member, so it maps to
         // List<MemoryStream> rather than failing loud.
         var list = TestModels.DeserializeShape("""{ "type": "list", "member": { "target": "smithy.api#Blob" } }""");
-        Assert.Equal("List<MemoryStream>", TypeMapper.MapType(ShapeId.Parse("com.example#BlobList"), list, _context));
+        Assert.Equal("List<MemoryStream>", TypeMapper.MapType(list, _context));
     }
 
     [Fact]
@@ -241,7 +241,7 @@ public class TypeMapperTests
         // such a leaf rather than emitting code that won't compile.
         var context = TestModels.Context("Codegen/payload-model.json");
         var list = TestModels.DeserializeShape("""{ "type": "list", "member": { "target": "com.example#StreamingBlob" } }""");
-        Assert.Throws<GeneratorException>(() => TypeMapper.MapType(ShapeId.Parse("com.example#StreamList"), list, context));
+        Assert.Throws<GeneratorException>(() => TypeMapper.MapType(list, context));
     }
 
     [Theory]
@@ -255,7 +255,7 @@ public class TypeMapperTests
     {
         var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#ValueList");
-        Assert.Equal(expected, TypeMapper.MapType(id, list, _context));
+        Assert.Equal(expected, TypeMapper.MapType(list, _context));
     }
 
     [Fact]
@@ -265,10 +265,10 @@ public class TypeMapperTests
         // member's own enum type surfaces the ConstantClass - list<enum> is List<string> on the public API.
         // Typing the element as its ConstantClass would be a public API divergence.
         var list = TestModels.DeserializeShape("""{ "type": "list", "member": { "target": "com.example#Status" } }""");
-        Assert.Equal("List<string>", TypeMapper.MapType(ShapeId.Parse("com.example#StatusList"), list, _context));
+        Assert.Equal("List<string>", TypeMapper.MapType(list, _context));
 
         var map = TestModels.DeserializeShape("""{ "type": "map", "key": { "target": "smithy.api#String" }, "value": { "target": "com.example#Status" } }""");
-        Assert.Equal("Dictionary<string, string>", TypeMapper.MapType(ShapeId.Parse("com.example#StatusMap"), map, _context));
+        Assert.Equal("Dictionary<string, string>", TypeMapper.MapType(map, _context));
     }
 
     [Fact]
@@ -297,7 +297,7 @@ public class TypeMapperTests
         // generically (the pre-fix behavior) would wrongly type this Dictionary<Status, string>.
         var map = TestModels.DeserializeShape("""{ "type": "map", "key": { "target": "com.example#Status" }, "value": { "target": "smithy.api#String" } }""");
         var id = ShapeId.Parse("com.example#StatusMap");
-        Assert.Equal("Dictionary<string, string>", TypeMapper.MapType(id, map, _context));
+        Assert.Equal("Dictionary<string, string>", TypeMapper.MapType(map, _context));
     }
 
     [Fact]

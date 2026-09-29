@@ -22,6 +22,19 @@ public abstract record Shape
     public abstract string Type { get; }
 
     /// <summary>
+    /// The shape's absolute ID: its key in the model's <c>shapes</c> dictionary, assigned when the
+    /// <see cref="SmithyModel"/> is deserialized. Members have none. Reading it on a shape built without one throws.
+    /// </summary>
+    [JsonIgnore]
+    public ShapeId Id
+    {
+        get => _id ?? throw new InvalidOperationException($"This {Type} shape was built without an Id.");
+        init => _id = value;
+    }
+
+    private readonly ShapeId? _id;
+
+    /// <summary>
     /// Trait ID (e.g. <c>smithy.api#required</c>) to raw JSON value.
     /// Values are deserialized on demand via typed accessors.
     /// </summary>
@@ -55,20 +68,4 @@ public record MemberShape : Shape
     [JsonPropertyName("target")]
     [JsonConverter(typeof(ShapeIdConverter))]
     public required ShapeId Target { get; init; }
-
-    /// <summary>
-    /// Set by <see cref="Generation.Customizations.CustomizationTransform"/> when the C2J
-    /// <c>emitIsSetProperties</c> customization lists this member; not part of the Smithy AST.
-    /// </summary>
-    [JsonIgnore]
-    public bool EmitIsSet { get; set; }
-    /// <summary>Set by CustomizationTransform from the C2J dataTypeSwap customization; not part of the Smithy AST.</summary>
-    [JsonIgnore]
-    public DataTypeOverride? DataTypeSwap { get; set; }
 }
-
-/// <summary>
-/// A member's <c>dataTypeSwap</c>: its emitted .NET type and, optionally, the marshaller method and unmarshaller
-/// that replace the modeled conversion.
-/// </summary>
-public record DataTypeOverride(string Type, string? Marshaller, string? Unmarshaller);

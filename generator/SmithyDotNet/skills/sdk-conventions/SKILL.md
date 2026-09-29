@@ -218,13 +218,15 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 
 ## Customizations (`*.customizations.json`)
 
-The .NET-owned override layer (not part of the shared, upstream Smithy model) is folded into the
-model in-memory by `CustomizationTransform` before the `ServiceIndex` is built, so writers stay
-unaware of it. An unknown hook key fails deserialization (fail-closed) rather than silently
-diverging from C2J.
+The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
+trait equivalent (a rename pins `@jsonName`) is folded into the model in-memory by
+`CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
+`CustomizationTransform.Validate` and read from `GenerationContext.Customizations` by shape and member
+name where the member is resolved (`TypeMapper.ResolveMembers`), never stored on a shape. An unknown
+hook key fails deserialization (fail-closed) rather than silently diverging from C2J.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
-  each hook's per-level behavior lives on that record and its `CustomizationTransform` application.
+  each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.
 - What each hook means (and every hook C2J has) is documented in `generator/customization-hooks.md`.
 
 ## Reference: Existing Generator

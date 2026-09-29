@@ -22,7 +22,7 @@ public class JsonStructureUnmarshallerWriterTests
     private static string WriteJsonStructureUnmarshaller(GenerationContext context, JsonStructureUnmarshallerWriter writer, string shapeName)
     {
         var shapeId = ShapeId.Parse($"{Namespace}#{shapeName}");
-        return writer.Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return writer.Write(context.Structures[shapeId], TestContext.Current.CancellationToken);
     }
 
     [Fact]

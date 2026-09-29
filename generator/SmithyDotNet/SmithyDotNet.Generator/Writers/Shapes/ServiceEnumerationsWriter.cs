@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Writers.Shapes;
@@ -28,18 +27,18 @@ public sealed class ServiceEnumerationsWriter(GenerationContext context, string 
                     writer.WriteLine();
                 }
 
-                WriteEnum(writer, context.Enums[i].Id, context.Enums[i].Shape);
+                WriteEnum(writer, context.Enums[i]);
             }
         });
         return writer.ToFormattedString(cancellationToken);
     }
 
-    private void WriteEnum(CodeWriter writer, ShapeId id, EnumShape shape)
+    private void WriteEnum(CodeWriter writer, EnumShape shape)
     {
-        var className = TypeMapper.EnumTypeName(id, context);
+        var className = TypeMapper.EnumTypeName(shape.Id, context);
 
         // Ordered by member name for stable output; the API does not depend on declaration order.
-        var members = TypeMapper.ResolveEnumMembers(id, shape, context).OrderBy(m => m.PropertyName, StringComparer.Ordinal).ToList();
+        var members = TypeMapper.ResolveEnumMembers(shape, context).OrderBy(m => m.PropertyName, StringComparer.Ordinal).ToList();
 
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Constants used for properties of type {className}.");

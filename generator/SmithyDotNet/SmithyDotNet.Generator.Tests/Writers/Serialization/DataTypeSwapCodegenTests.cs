@@ -78,9 +78,9 @@ public class DataTypeSwapCodegenTests
 
         var ct = TestContext.Current.CancellationToken;
         var widget = _context.Structures[WidgetId];
-        _structure = new StructureWriter(_context, ModelFileName).Write(widget, WidgetId, ct);
-        _marshaller = new JsonStructureMarshallerWriter(_context, ModelFileName).Write(widget, WidgetId, ct);
-        _unmarshaller = new JsonStructureUnmarshallerWriter(_context, ModelFileName).Write(widget, WidgetId, ct);
+        _structure = new StructureWriter(_context, ModelFileName).Write(widget, ct);
+        _marshaller = new JsonStructureMarshallerWriter(_context, ModelFileName).Write(widget, ct);
+        _unmarshaller = new JsonStructureUnmarshallerWriter(_context, ModelFileName).Write(widget, ct);
     }
 
     [Fact]
@@ -176,6 +176,7 @@ public class DataTypeSwapCodegenTests
     {
         var model = TestModels.Load("Codegen/datatypeswap-model.json");
         CustomizationTransform.Apply(model, customizations);
+        CustomizationTransform.Validate(model, customizations);
         return new GenerationContext(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
     }
 }

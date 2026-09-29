@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 
 namespace SmithyDotNet.Generator.Writers.Serialization;
@@ -21,9 +20,9 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
-    public string Write(StructureShape structure, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
-        var className = context.ToDotNetName(shapeId);
+        var className = context.ToDotNetName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
         var writer = new CodeWriter();
 

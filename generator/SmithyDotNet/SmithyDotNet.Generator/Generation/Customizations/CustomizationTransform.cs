@@ -6,7 +6,9 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
-/// <see cref="ServiceIndex"/> is built, so writers stay ignorant of customizations.
+/// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent is applied to the model
+/// (a rename pins <c>@jsonName</c>); the rest are checked by <see cref="Validate"/> and read from
+/// <see cref="GenerationContext.Customizations"/> by shape and member name where the member is resolved.
 /// A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
 public static class CustomizationTransform
@@ -46,39 +48,6 @@ public static class CustomizationTransform
             }
         }
 
-        // After shapeModifiers, matching C2J: its Member name is already the emitPropertyName, so a
-        // renamed member is listed under its new name.
-        foreach (var (shapeName, memberNames) in customizations.EmitIsSetProperties)
-        {
-            if (FindSingleShape(model, shapeName, $"emitIsSetProperties['{shapeName}']") is not StructureShape structure)
-            {
-                throw new GeneratorException($"emitIsSetProperties['{shapeName}'] targets a shape without members; only structures and unions are supported.");
-            }
-
-            foreach (var memberName in memberNames)
-            {
-                if (!structure.Members.TryGetValue(memberName, out var member))
-                {
-                    throw new GeneratorException($"emitIsSetProperties['{shapeName}'] lists member '{memberName}', which the shape does not have.");
-                }
-
-                member.EmitIsSet = true;
-            }
-        }
-        // After shapeModifiers: C2J keys a swap by the emitted property name, so it must see the renamed member.
-        foreach (var (shapeName, swaps) in customizations.DataTypeSwaps)
-        {
-            if (FindSingleShape(model, shapeName, $"dataTypeSwap['{shapeName}']") is not StructureShape structure)
-            {
-                throw new GeneratorException($"dataTypeSwap['{shapeName}'] targets a shape that is not a structure.");
-            }
-
-            foreach (var (memberName, swap) in swaps)
-            {
-                ApplyDataTypeSwap(model, structure, memberName, swap, shapeName);
-            }
-        }
-
         foreach (var (operationName, modifier) in customizations.OperationModifiers)
         {
             var shape = FindSingleShape(model, operationName, $"operationModifiers['{operationName}']");
@@ -90,6 +59,44 @@ public static class CustomizationTransform
             if (modifier.DeprecatedMessage is { } message)
             {
                 shape.SetDeprecatedMessage(message);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Checks the hooks TypeMapper.ResolveMembers looks up by name against the model. Runs after
+    /// <see cref="Apply"/>: C2J keys these by the emitted property name, so renames must have landed.
+    /// </summary>
+    public static void Validate(SmithyModel model, CustomizationsModel customizations)
+    {
+        // C2J's Member name is already the emitPropertyName, so a renamed member is listed under its new name.
+        foreach (var (shapeName, memberNames) in customizations.EmitIsSetProperties)
+        {
+            if (FindSingleShape(model, shapeName, $"emitIsSetProperties['{shapeName}']") is not StructureShape structure)
+            {
+                throw new GeneratorException($"emitIsSetProperties['{shapeName}'] targets a shape without members; only structures and unions are supported.");
+            }
+
+            foreach (var memberName in memberNames)
+            {
+                if (!structure.Members.ContainsKey(memberName))
+                {
+                    throw new GeneratorException($"emitIsSetProperties['{shapeName}'] lists member '{memberName}', which the shape does not have.");
+                }
+            }
+        }
+
+        // Likewise keyed by the emitted property name.
+        foreach (var (shapeName, swaps) in customizations.DataTypeSwaps)
+        {
+            if (FindSingleShape(model, shapeName, $"dataTypeSwap['{shapeName}']") is not StructureShape structure)
+            {
+                throw new GeneratorException($"dataTypeSwap['{shapeName}'] targets a shape that is not a structure.");
+            }
+
+            foreach (var (memberName, swap) in swaps)
+            {
+                ValidateDataTypeSwap(model, structure, memberName, swap, shapeName);
             }
         }
     }
@@ -108,7 +115,7 @@ public static class CustomizationTransform
         return model.Shapes[matches[0]] ?? throw new GeneratorException($"{context} matched a null shape entry '{matches[0]}'.");
     }
 
-    private static void ApplyDataTypeSwap(SmithyModel model, StructureShape structure, string memberName, DataTypeSwap swap, string shapeName)
+    private static void ValidateDataTypeSwap(SmithyModel model, StructureShape structure, string memberName, DataTypeSwap swap, string shapeName)
     {
         if (!structure.Members.TryGetValue(memberName, out var member))
         {
@@ -132,8 +139,6 @@ public static class CustomizationTransform
         {
             throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which is not supported yet: only scalar body, query, and header members swapped to a non-collection type are handled so far.");
         }
-
-        member.DataTypeSwap = new DataTypeOverride(swap.Type, swap.Marshaller, swap.Unmarshaller);
     }
 
     // TODO: C2J swaps any member (S3 swaps structures, lists and enums); these are the positions the writers

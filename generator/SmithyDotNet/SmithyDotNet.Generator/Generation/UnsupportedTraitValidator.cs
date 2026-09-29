@@ -39,7 +39,7 @@ public static class UnsupportedTraitValidator
         // streaming *blob* payload is protocol-independent and stays allowed everywhere.
         var eventStreamsSupported = index.Service.IsRestJson1();
 
-        foreach (var (opId, op) in index.Operations)
+        foreach (var op in index.Operations)
         {
             CollectDenied(op.Traits, DeniedTraits, found);
 

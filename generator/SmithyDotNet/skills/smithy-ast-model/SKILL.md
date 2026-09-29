@@ -28,12 +28,16 @@ Both resolve to the same shape ID type.
   A `string` shape carrying the legacy `smithy.api#enum` trait is normalized to an `enum` shape at load;
   nothing downstream sees `smithy.api#enum`.
 - An unknown shape `type` deserializes to `null` with a stderr warning (forward compatibility).
+- Every top-level shape carries its own id (`Shape.Id`), its `shapes` dictionary key, assigned as soon as the
+  model deserializes; prelude shapes get theirs from the table. Members have none. Reading it on a shape built by
+  hand without one throws.
 - Traits stay as raw JSON on every shape, keyed by full trait ID (`smithy.api#required`, `aws.api#service`),
   and are read through typed accessors. [Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait)
   have an empty object as their value. Structured trait records tolerate unknown properties.
 - After load, only the customization transform mutates the model, and it runs before the service index is
-  built. Downstream of the index the model is read-only. A hook with no Smithy trait equivalent is recorded
-  as a `[JsonIgnore]` property on the shape (e.g. `MemberShape.EmitIsSet`).
+  built. It applies only hooks with a Smithy trait equivalent (a rename pins `@jsonName`); every other hook is
+  validated there and looked up by shape and member name where the member is resolved, never stored on a
+  shape. Downstream of the index the model is read-only.
 
 ## Prelude Shapes
 

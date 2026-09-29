@@ -27,6 +27,7 @@ public sealed record CustomizationsModel
 
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
+
     /// <summary>
     /// Usage:
     /// emitIsSetProperties: {
@@ -36,9 +37,15 @@ public sealed record CustomizationsModel
     [JsonPropertyName("emitIsSetProperties")]
     public Dictionary<string, List<string>> EmitIsSetProperties { get; init; } = [];
 
+    /// <summary>True when <c>emitIsSetProperties</c> lists <paramref name="memberName"/> under <paramref name="shapeName"/>.</summary>
+    public bool EmitIsSet(string shapeName, string memberName) => EmitIsSetProperties.TryGetValue(shapeName, out var members) && members.Contains(memberName);
+
     /// <summary>Type overrides keyed by modeled shape name, then emitted member name (C2J's <c>dataTypeSwap</c>).</summary>
     [JsonPropertyName("dataTypeSwap")]
     public Dictionary<string, Dictionary<string, DataTypeSwap>> DataTypeSwaps { get; init; } = [];
+
+    /// <summary>The <c>dataTypeSwap</c> entry for <paramref name="memberName"/> of <paramref name="shapeName"/>, or null.</summary>
+    public DataTypeSwap? DataTypeSwapFor(string shapeName, string memberName) => DataTypeSwaps.TryGetValue(shapeName, out var members) && members.TryGetValue(memberName, out var swap) ? swap : null;
 
     /// <summary>
     /// Loads a service's customizations files into one model, as C2J's CustomizationCompiler combines them, except

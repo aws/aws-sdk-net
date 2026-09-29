@@ -6,14 +6,6 @@ using SmithyDotNet.Generator.Model.Traits;
 namespace SmithyDotNet.Generator.Generation.Operations;
 
 /// <summary>
-/// An error shape paired with its <see cref="ShapeId"/>. A <see cref="StructureShape"/> does
-/// not carry its own ID, but writers need the error's name (e.g. to derive the
-/// <c>{Name}Exception</c> class referenced in an operation's <c>&lt;exception&gt;</c> doc tags),
-/// so the ID is resolved up front alongside the shape.
-/// </summary>
-public record OperationError(StructureShape Shape, ShapeId Id);
-
-/// <summary>
 /// An operation with its input, output, and error shapes pre-resolved so writers
 /// don't need to perform lookups themselves. <see cref="RequiresHttp2"/> pins the request to
 /// <c>HttpProtocolVersion.Version20</c> and excludes the operation below net8; input-only event
@@ -24,7 +16,7 @@ public record Operation(
     OperationShape Shape,
     StructureShape Input,
     StructureShape Output,
-    IReadOnlyList<OperationError> Errors,
+    IReadOnlyList<StructureShape> Errors,
     bool RequiresHttp2);
 
 /// <summary>
@@ -46,10 +38,10 @@ public static class OperationResolver
         var h2Support = ResolveH2Support(protocolTrait);
         var resolved = new List<Operation>(index.Operations.Count);
 
-        foreach (var (operationId, operation) in index.Operations)
+        foreach (var operation in index.Operations)
         {
-            var input = ResolveStructure(index, operation.Input, "input", operationId);
-            var output = ResolveStructure(index, operation.Output, "output", operationId);
+            var input = ResolveStructure(index, operation.Input, "input", operation.Id);
+            var output = ResolveStructure(index, operation.Output, "output", operation.Id);
 
             // A service's errors apply to every operation it contains, so they're folded into each
             // operation's own list here. Deduped and sorted by name.
@@ -60,10 +52,10 @@ public static class OperationResolver
                 .ThenBy(id => id.Namespace, StringComparer.Ordinal)
                 .ThenBy(id => id.Member, StringComparer.Ordinal);
 
-            var errors = new List<OperationError>();
+            var errors = new List<StructureShape>();
             foreach (var errorId in errorIds)
             {
-                errors.Add(new OperationError(ResolveStructure(index, errorId, "error", operationId), errorId));
+                errors.Add(ResolveStructure(index, errorId, "error", operation.Id));
             }
 
             var requiresHttp2 = h2Support switch
@@ -74,7 +66,7 @@ public static class OperationResolver
                 _ => false,
             };
 
-            resolved.Add(new Operation(operationId.Name, operation, input, output, errors, requiresHttp2));
+            resolved.Add(new Operation(operation.Id.Name, operation, input, output, errors, requiresHttp2));
         }
 
         return resolved;
@@ -115,7 +107,7 @@ public static class OperationResolver
         // structure so downstream writers emit the same empty request/response classes C2J does.
         if (shapeId == ShapeId.Unit)
         {
-            return new StructureShape();
+            return new StructureShape { Id = ShapeId.Unit };
         }
 
         throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");

@@ -24,7 +24,7 @@ public class EventStreamOutputCodegenTests
 
         var union = (StructureShape)_context.Resolve(ShapeId.Parse("com.example#ConverseStreamOutput"));
         _eventStreamClass = new EventStreamOutputWriter(_context, ModelFileName)
-            .Write(union, ShapeId.Parse("com.example#ConverseStreamOutput"), TestContext.Current.CancellationToken);
+            .Write(union, TestContext.Current.CancellationToken);
 
         var operation = _context.Operations.Single(o => o.Name == "ConverseStream");
         _responseUnmarshaller = new JsonResponseUnmarshallerWriter(_context, ModelFileName)
