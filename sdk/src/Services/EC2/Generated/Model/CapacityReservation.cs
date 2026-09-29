@@ -57,6 +57,7 @@ namespace Amazon.EC2.Model
         private bool? _interruptible;
         private InterruptibleCapacityAllocation _interruptibleCapacityAllocation;
         private InterruptionInfo _interruptionInfo;
+        private CapacityReservationLaunchStatus _launchStatus;
         private DateTime? _originalStartDate;
         private string _outpostArn;
         private string _ownerId;
@@ -548,6 +549,39 @@ namespace Amazon.EC2.Model
         internal bool IsSetInterruptionInfo()
         {
             return this._interruptionInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchStatus. <note> 
+        /// <para>
+        /// Only supported for UltraServers.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Indicates whether you can launch instances into the Capacity Reservation. A Capacity
+        /// Reservation can have the following launch statuses:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>launchable</c> - You can launch instances into the Capacity Reservation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>unlaunchable</c> - You can't launch instances into the Capacity Reservation. For
+        /// example, the Capacity Reservation is not active.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CapacityReservationLaunchStatus LaunchStatus
+        {
+            get { return this._launchStatus; }
+            set { this._launchStatus = value; }
+        }
+
+        // Check to see if LaunchStatus property is set
+        internal bool IsSetLaunchStatus()
+        {
+            return this._launchStatus != null;
         }
 
         /// <summary>

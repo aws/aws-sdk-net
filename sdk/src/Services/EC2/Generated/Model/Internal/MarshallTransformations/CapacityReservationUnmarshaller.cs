@@ -198,6 +198,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.InterruptionInfo = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("launchStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LaunchStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("originalStartDate", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;
