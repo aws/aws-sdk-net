@@ -69,6 +69,7 @@ namespace Amazon.RDS.Model
         private string _targetDBParameterGroupName;
         private string _targetEngineVersion;
         private int? _targetIops;
+        private List<TargetResourceConfiguration> _targetResourceConfigurations = AWSConfigs.InitializeCollections ? new List<TargetResourceConfiguration>() : null;
         private int? _targetStorageThroughput;
         private string _targetStorageType;
         private bool? _upgradeTargetStorageConfig;
@@ -295,6 +296,51 @@ namespace Amazon.RDS.Model
         internal bool IsSetTargetIops()
         {
             return this._targetIops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetResourceConfigurations. 
+        /// <para>
+        /// Specifies resource-level configuration overrides for the green environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each entry identifies a resource in the blue environment by its Amazon Resource Name
+        /// (ARN). It defines the desired configuration for the corresponding resource in the
+        /// green environment. Any resource that you don't include in this parameter retains the
+        /// same configuration as its counterpart in the blue environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this parameter when one or more resources in the green environment require a different
+        /// configuration than what they have in the blue environment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't specify the same <c>SourceArn</c> in more than one entry.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public List<TargetResourceConfiguration> TargetResourceConfigurations
+        {
+            get { return this._targetResourceConfigurations; }
+            set { this._targetResourceConfigurations = value; }
+        }
+
+        // Check to see if TargetResourceConfigurations property is set
+        internal bool IsSetTargetResourceConfigurations()
+        {
+            return this._targetResourceConfigurations != null && (this._targetResourceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
