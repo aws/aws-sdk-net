@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     public partial class CreateServerlessCacheRequest : AmazonElastiCacheRequest
     {
         private CacheUsageLimits _cacheUsageLimits;
+        private ConnectionType _connectionType;
         private string _dailySnapshotTime;
         private string _description;
         private string _engine;
@@ -66,6 +67,28 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheUsageLimits()
         {
             return this._cacheUsageLimits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The connection type for the serverless cache. Must be either <c>vpc</c> | <c>public</c>.
+        /// Use <c>vpc</c> to access the cache through a VPC endpoint, or <c>public</c> to access
+        /// the cache over the internet. If not specified, defaults to <c>vpc</c>. This value
+        /// cannot be changed after the serverless cache is created. Setting this to <c>public</c>
+        /// requires Valkey 9 or above.
+        /// </para>
+        /// </summary>
+        public ConnectionType ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
         }
 
         /// <summary>
