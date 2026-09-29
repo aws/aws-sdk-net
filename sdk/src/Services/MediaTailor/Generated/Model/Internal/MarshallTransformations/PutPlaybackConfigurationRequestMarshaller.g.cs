@@ -123,6 +123,16 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetBeaconingConfiguration())
+            {
+                context.Writer.WritePropertyName("BeaconingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BeaconingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BeaconingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetBumper())
             {
                 context.Writer.WritePropertyName("Bumper");

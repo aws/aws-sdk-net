@@ -124,6 +124,20 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetAvailSuppression() => this.AvailSuppression != null;
 
         /// <summary>
+        /// Gets and sets the property BeaconingConfiguration. 
+        /// <para>
+        /// The beaconing configuration for this playback configuration, which controls whether
+        /// MediaTailor includes beacons of its own in the ad tracking response.
+        /// </para>
+        /// </summary>
+        public BeaconingConfiguration BeaconingConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BeaconingConfiguration property is set.
+        /// </summary>
+        internal bool IsSetBeaconingConfiguration() => this.BeaconingConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property Bumper. 
         /// <para>
         /// The configuration for bumpers. Bumpers are short audio or video clips that play at

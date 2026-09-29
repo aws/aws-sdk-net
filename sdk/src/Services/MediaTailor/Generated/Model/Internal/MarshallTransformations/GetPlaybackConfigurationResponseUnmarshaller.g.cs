@@ -94,6 +94,13 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("BeaconingConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = BeaconingConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.BeaconingConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("Bumper", targetDepth, ref reader))
                 {
                     var unmarshaller = BumperUnmarshaller.Instance;

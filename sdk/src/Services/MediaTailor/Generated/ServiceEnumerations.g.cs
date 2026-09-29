@@ -175,6 +175,11 @@ namespace Amazon.MediaTailor
         public static readonly AdsInteractionExcludeEventType BEACON_FIRED = new AdsInteractionExcludeEventType("BEACON_FIRED");
 
         /// <summary>
+        /// Constant BEACON_RECEIVED for AdsInteractionExcludeEventType
+        /// </summary>
+        public static readonly AdsInteractionExcludeEventType BEACON_RECEIVED = new AdsInteractionExcludeEventType("BEACON_RECEIVED");
+
+        /// <summary>
         /// Constant EMPTY_VAST_RESPONSE for AdsInteractionExcludeEventType
         /// </summary>
         public static readonly AdsInteractionExcludeEventType EMPTY_VAST_RESPONSE = new AdsInteractionExcludeEventType("EMPTY_VAST_RESPONSE");
@@ -599,6 +604,57 @@ namespace Amazon.MediaTailor
     }
 
     /// <summary>
+    /// Constants used for properties of type BeaconEventType.
+    /// </summary>
+    public class BeaconEventType : ConstantClass
+    {
+        /// <summary>
+        /// Constant MUTE for BeaconEventType
+        /// </summary>
+        public static readonly BeaconEventType MUTE = new BeaconEventType("MUTE");
+
+        /// <summary>
+        /// Constant PAUSE for BeaconEventType
+        /// </summary>
+        public static readonly BeaconEventType PAUSE = new BeaconEventType("PAUSE");
+
+        /// <summary>
+        /// Constant SKIP for BeaconEventType
+        /// </summary>
+        public static readonly BeaconEventType SKIP = new BeaconEventType("SKIP");
+
+        /// <summary>
+        /// Constant UNMUTE for BeaconEventType
+        /// </summary>
+        public static readonly BeaconEventType UNMUTE = new BeaconEventType("UNMUTE");
+
+        /// <summary>
+        /// Constructs a custom BeaconEventType for a value not among the defined constants.
+        /// </summary>
+        public BeaconEventType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BeaconEventType FindValue(string value)
+        {
+            return FindValue<BeaconEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BeaconEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ChannelState.
     /// </summary>
     public class ChannelState : ConstantClass
@@ -634,6 +690,47 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ChannelState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClientSideBeaconingMode.
+    /// </summary>
+    public class ClientSideBeaconingMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for ClientSideBeaconingMode
+        /// </summary>
+        public static readonly ClientSideBeaconingMode DISABLED = new ClientSideBeaconingMode("DISABLED");
+
+        /// <summary>
+        /// Constant INSIGHTS for ClientSideBeaconingMode
+        /// </summary>
+        public static readonly ClientSideBeaconingMode INSIGHTS = new ClientSideBeaconingMode("INSIGHTS");
+
+        /// <summary>
+        /// Constructs a custom ClientSideBeaconingMode for a value not among the defined constants.
+        /// </summary>
+        public ClientSideBeaconingMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientSideBeaconingMode FindValue(string value)
+        {
+            return FindValue<ClientSideBeaconingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientSideBeaconingMode(string value)
         {
             return FindValue(value);
         }
