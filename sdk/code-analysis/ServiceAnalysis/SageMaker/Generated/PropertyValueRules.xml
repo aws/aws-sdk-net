@@ -4869,8 +4869,8 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingPlanRequest.TrainingPlanName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
+    <max>2048</max>
+    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:training-plan/)?[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeTrainingPlanResponse.AvailableInstanceCount</property>
@@ -10324,7 +10324,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstancePlacement.AvailabilityZoneId</property>
-    <pattern>[a-z]{3}\d-az\d</pattern>
+    <pattern>[a-z]{3,5}\d-az\d</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceTypeDetail.CurrentCount</property>
