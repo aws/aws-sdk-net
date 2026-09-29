@@ -105,6 +105,29 @@ namespace Amazon.Extensions.NETCore.Setup
         }
 
         /// <summary>
+        /// Resolves the <see cref="AWSCredentials"/> described by this <see cref="AWSOptions"/> instance using
+        /// the same logic applied when creating a service client. The resolution precedence is:
+        /// <list type="number">
+        /// <item><description>If <see cref="Credentials"/> is set, it is returned directly.</description></item>
+        /// <item><description>Otherwise the <see cref="Profile"/> (and <see cref="ProfilesLocation"/>) are used to look up credentials.</description></item>
+        /// <item><description>Otherwise the SDK's default credential search is used.</description></item>
+        /// </list>
+        /// If <see cref="SessionRoleArn"/> is set, the resolved credentials are wrapped in
+        /// <see cref="AssumeRoleAWSCredentials"/> (honoring <see cref="SessionName"/> and <see cref="ExternalId"/>).
+        /// <para>
+        /// This is useful for APIs that require an <see cref="AWSCredentials"/> instance directly rather than a
+        /// service client, such as <c>Amazon.RDS.Util.RDSAuthTokenGenerator</c>, so that a single AWSOptions
+        /// configuration can be the source of credentials for both service clients and those APIs.
+        /// </para>
+        /// </summary>
+        /// <returns>The resolved credentials. This never returns null; an <see cref="Amazon.Runtime.AmazonClientException"/>
+        /// is thrown if no credentials can be found.</returns>
+        public AWSCredentials GetCredentials()
+        {
+            return CredentialsResolver.ResolveCredentials(this, (ILogger)null);
+        }
+
+        /// <summary>
         /// Container for logging settings of the SDK
         /// </summary>
         public class LoggingSetting
