@@ -38,6 +38,7 @@ namespace Amazon.Transfer.Model
         private string _passiveIp;
         private ProxyConfig _proxyConfig;
         private SetStatOption _setStatOption;
+        private List<SftpPortWithOptions> _sftpPorts = AWSConfigs.InitializeCollections ? new List<SftpPortWithOptions>() : null;
         private TlsSessionResumptionMode _tlsSessionResumptionMode;
 
         /// <summary>
@@ -192,6 +193,65 @@ namespace Amazon.Transfer.Model
         internal bool IsSetSetStatOption()
         {
             return this._setStatOption != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SftpPorts. 
+        /// <para>
+        /// A property used with Transfer Family servers that use the SFTP protocol and have <c>PUBLIC</c>
+        /// endpoints. This property accepts a list of up to three port configurations that the
+        /// service opens on the server endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each entry in the list consists of two parameters, the <c>SftpPort</c> and the <c>CommunicationMode</c>.
+        /// The <c>SftpPort</c> takes any integer from 2000 to 65535, or 22. <c>CommunicationMode</c>
+        /// can be one of the following options:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>SERVER_TALK_FIRST</c>: The server responds to initial TCP connections first. Many
+        /// older clients expect that an SFTP server responds with its server string before starting
+        /// SSH negotiations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CLIENT_TALK_FIRST</c>: The server responds to the initial TCP connection only
+        /// after receiving a data packet. Most modern clients support this behavior and send
+        /// their client string along with the initial data packets for SSH negotiation. Additionally,
+        /// this mode is more resilient to TCP retransmissions that can occur during the initial
+        /// TCP connection.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The following is an <c>SftpPorts</c> example for port 2222 with <c>CLIENT_TALK_FIRST</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>[ { "SftpPort": 2222, "CommunicationMode": "CLIENT_TALK_FIRST" } ]</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify any configurations during <c>CreateServer</c>, the service uses
+        /// port 22 with <c>SERVER_TALK_FIRST</c> by default.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=3)]
+        public List<SftpPortWithOptions> SftpPorts
+        {
+            get { return this._sftpPorts; }
+            set { this._sftpPorts = value; }
+        }
+
+        // Check to see if SftpPorts property is set
+        internal bool IsSetSftpPorts()
+        {
+            return this._sftpPorts != null && (this._sftpPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

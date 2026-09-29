@@ -461,6 +461,11 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// To specify which ports your Transfer Family server listens to, use the <c>SftpPorts</c>
+        /// parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// To determine whether your Transfer Family server resumes recent, negotiated sessions
         /// through a unique session ID, use the <c>TlsSessionResumptionMode</c> parameter.
         /// </para>
