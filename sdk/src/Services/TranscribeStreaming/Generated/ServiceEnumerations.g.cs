@@ -1,0 +1,1658 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.TranscribeStreaming
+{
+    /// <summary>
+    /// Constants used for properties of type CallAnalyticsLanguageCode.
+    /// </summary>
+    public class CallAnalyticsLanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DeDE for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode DeDE = new CallAnalyticsLanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant EnAU for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EnAU = new CallAnalyticsLanguageCode("en-AU");
+
+        /// <summary>
+        /// Constant EnGB for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EnGB = new CallAnalyticsLanguageCode("en-GB");
+
+        /// <summary>
+        /// Constant EnUS for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EnUS = new CallAnalyticsLanguageCode("en-US");
+
+        /// <summary>
+        /// Constant EsUS for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EsUS = new CallAnalyticsLanguageCode("es-US");
+
+        /// <summary>
+        /// Constant FrCA for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode FrCA = new CallAnalyticsLanguageCode("fr-CA");
+
+        /// <summary>
+        /// Constant FrFR for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode FrFR = new CallAnalyticsLanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant ItIT for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode ItIT = new CallAnalyticsLanguageCode("it-IT");
+
+        /// <summary>
+        /// Constant PtBR for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode PtBR = new CallAnalyticsLanguageCode("pt-BR");
+
+        /// <summary>
+        /// Constructs a custom CallAnalyticsLanguageCode for a value not among the defined constants.
+        /// </summary>
+        public CallAnalyticsLanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallAnalyticsLanguageCode FindValue(string value)
+        {
+            return FindValue<CallAnalyticsLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallAnalyticsLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ClinicalNoteGenerationStatus.
+    /// </summary>
+    public class ClinicalNoteGenerationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for ClinicalNoteGenerationStatus
+        /// </summary>
+        public static readonly ClinicalNoteGenerationStatus COMPLETED = new ClinicalNoteGenerationStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for ClinicalNoteGenerationStatus
+        /// </summary>
+        public static readonly ClinicalNoteGenerationStatus FAILED = new ClinicalNoteGenerationStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for ClinicalNoteGenerationStatus
+        /// </summary>
+        public static readonly ClinicalNoteGenerationStatus IN_PROGRESS = new ClinicalNoteGenerationStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom ClinicalNoteGenerationStatus for a value not among the defined constants.
+        /// </summary>
+        public ClinicalNoteGenerationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClinicalNoteGenerationStatus FindValue(string value)
+        {
+            return FindValue<ClinicalNoteGenerationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClinicalNoteGenerationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContentIdentificationType.
+    /// </summary>
+    public class ContentIdentificationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PII for ContentIdentificationType
+        /// </summary>
+        public static readonly ContentIdentificationType PII = new ContentIdentificationType("PII");
+
+        /// <summary>
+        /// Constructs a custom ContentIdentificationType for a value not among the defined constants.
+        /// </summary>
+        public ContentIdentificationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentIdentificationType FindValue(string value)
+        {
+            return FindValue<ContentIdentificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentIdentificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContentRedactionOutput.
+    /// </summary>
+    public class ContentRedactionOutput : ConstantClass
+    {
+        /// <summary>
+        /// Constant Redacted for ContentRedactionOutput
+        /// </summary>
+        public static readonly ContentRedactionOutput Redacted = new ContentRedactionOutput("redacted");
+
+        /// <summary>
+        /// Constant Redacted_and_unredacted for ContentRedactionOutput
+        /// </summary>
+        public static readonly ContentRedactionOutput Redacted_and_unredacted = new ContentRedactionOutput("redacted_and_unredacted");
+
+        /// <summary>
+        /// Constructs a custom ContentRedactionOutput for a value not among the defined constants.
+        /// </summary>
+        public ContentRedactionOutput(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentRedactionOutput FindValue(string value)
+        {
+            return FindValue<ContentRedactionOutput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentRedactionOutput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContentRedactionType.
+    /// </summary>
+    public class ContentRedactionType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PII for ContentRedactionType
+        /// </summary>
+        public static readonly ContentRedactionType PII = new ContentRedactionType("PII");
+
+        /// <summary>
+        /// Constructs a custom ContentRedactionType for a value not among the defined constants.
+        /// </summary>
+        public ContentRedactionType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentRedactionType FindValue(string value)
+        {
+            return FindValue<ContentRedactionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentRedactionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ItemType.
+    /// </summary>
+    public class ItemType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Pronunciation for ItemType
+        /// </summary>
+        public static readonly ItemType Pronunciation = new ItemType("pronunciation");
+
+        /// <summary>
+        /// Constant Punctuation for ItemType
+        /// </summary>
+        public static readonly ItemType Punctuation = new ItemType("punctuation");
+
+        /// <summary>
+        /// Constructs a custom ItemType for a value not among the defined constants.
+        /// </summary>
+        public ItemType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ItemType FindValue(string value)
+        {
+            return FindValue<ItemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ItemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LanguageCode.
+    /// </summary>
+    public class LanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AfZA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode AfZA = new LanguageCode("af-ZA");
+
+        /// <summary>
+        /// Constant AmET for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode AmET = new LanguageCode("am-ET");
+
+        /// <summary>
+        /// Constant ArAE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ArAE = new LanguageCode("ar-AE");
+
+        /// <summary>
+        /// Constant ArSA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ArSA = new LanguageCode("ar-SA");
+
+        /// <summary>
+        /// Constant BeBY for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BeBY = new LanguageCode("be-BY");
+
+        /// <summary>
+        /// Constant BgBG for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BgBG = new LanguageCode("bg-BG");
+
+        /// <summary>
+        /// Constant BnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BnIN = new LanguageCode("bn-IN");
+
+        /// <summary>
+        /// Constant BsBA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode BsBA = new LanguageCode("bs-BA");
+
+        /// <summary>
+        /// Constant CaES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CaES = new LanguageCode("ca-ES");
+
+        /// <summary>
+        /// Constant CkbIQ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CkbIQ = new LanguageCode("ckb-IQ");
+
+        /// <summary>
+        /// Constant CkbIR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CkbIR = new LanguageCode("ckb-IR");
+
+        /// <summary>
+        /// Constant CsCZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CsCZ = new LanguageCode("cs-CZ");
+
+        /// <summary>
+        /// Constant CyWL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode CyWL = new LanguageCode("cy-WL");
+
+        /// <summary>
+        /// Constant DaDK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DaDK = new LanguageCode("da-DK");
+
+        /// <summary>
+        /// Constant DeCH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeCH = new LanguageCode("de-CH");
+
+        /// <summary>
+        /// Constant DeDE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode DeDE = new LanguageCode("de-DE");
+
+        /// <summary>
+        /// Constant ElGR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ElGR = new LanguageCode("el-GR");
+
+        /// <summary>
+        /// Constant EnAB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnAB = new LanguageCode("en-AB");
+
+        /// <summary>
+        /// Constant EnAU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnAU = new LanguageCode("en-AU");
+
+        /// <summary>
+        /// Constant EnGB for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnGB = new LanguageCode("en-GB");
+
+        /// <summary>
+        /// Constant EnIE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnIE = new LanguageCode("en-IE");
+
+        /// <summary>
+        /// Constant EnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnIN = new LanguageCode("en-IN");
+
+        /// <summary>
+        /// Constant EnNZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnNZ = new LanguageCode("en-NZ");
+
+        /// <summary>
+        /// Constant EnUS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnUS = new LanguageCode("en-US");
+
+        /// <summary>
+        /// Constant EnWL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnWL = new LanguageCode("en-WL");
+
+        /// <summary>
+        /// Constant EnZA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnZA = new LanguageCode("en-ZA");
+
+        /// <summary>
+        /// Constant EsES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsES = new LanguageCode("es-ES");
+
+        /// <summary>
+        /// Constant EsMX for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsMX = new LanguageCode("es-MX");
+
+        /// <summary>
+        /// Constant EsUS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EsUS = new LanguageCode("es-US");
+
+        /// <summary>
+        /// Constant EtET for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EtET = new LanguageCode("et-ET");
+
+        /// <summary>
+        /// Constant EuES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EuES = new LanguageCode("eu-ES");
+
+        /// <summary>
+        /// Constant FaAF for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FaAF = new LanguageCode("fa-AF");
+
+        /// <summary>
+        /// Constant FaIR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FaIR = new LanguageCode("fa-IR");
+
+        /// <summary>
+        /// Constant FiFI for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FiFI = new LanguageCode("fi-FI");
+
+        /// <summary>
+        /// Constant FrCA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrCA = new LanguageCode("fr-CA");
+
+        /// <summary>
+        /// Constant FrFR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
+
+        /// <summary>
+        /// Constant GlES for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GlES = new LanguageCode("gl-ES");
+
+        /// <summary>
+        /// Constant GuIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode GuIN = new LanguageCode("gu-IN");
+
+        /// <summary>
+        /// Constant HeIL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HeIL = new LanguageCode("he-IL");
+
+        /// <summary>
+        /// Constant HiIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HiIN = new LanguageCode("hi-IN");
+
+        /// <summary>
+        /// Constant HrHR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HrHR = new LanguageCode("hr-HR");
+
+        /// <summary>
+        /// Constant HtHT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HtHT = new LanguageCode("ht-HT");
+
+        /// <summary>
+        /// Constant HuHU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HuHU = new LanguageCode("hu-HU");
+
+        /// <summary>
+        /// Constant HyAM for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode HyAM = new LanguageCode("hy-AM");
+
+        /// <summary>
+        /// Constant IdID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode IdID = new LanguageCode("id-ID");
+
+        /// <summary>
+        /// Constant IsIS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode IsIS = new LanguageCode("is-IS");
+
+        /// <summary>
+        /// Constant ItIT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ItIT = new LanguageCode("it-IT");
+
+        /// <summary>
+        /// Constant JaJP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JaJP = new LanguageCode("ja-JP");
+
+        /// <summary>
+        /// Constant JvID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode JvID = new LanguageCode("jv-ID");
+
+        /// <summary>
+        /// Constant KaGE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KaGE = new LanguageCode("ka-GE");
+
+        /// <summary>
+        /// Constant KabDZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KabDZ = new LanguageCode("kab-DZ");
+
+        /// <summary>
+        /// Constant KkKZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KkKZ = new LanguageCode("kk-KZ");
+
+        /// <summary>
+        /// Constant KmKH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KmKH = new LanguageCode("km-KH");
+
+        /// <summary>
+        /// Constant KnIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KnIN = new LanguageCode("kn-IN");
+
+        /// <summary>
+        /// Constant KoKR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode KoKR = new LanguageCode("ko-KR");
+
+        /// <summary>
+        /// Constant LgIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode LgIN = new LanguageCode("lg-IN");
+
+        /// <summary>
+        /// Constant LtLT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode LtLT = new LanguageCode("lt-LT");
+
+        /// <summary>
+        /// Constant LvLV for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode LvLV = new LanguageCode("lv-LV");
+
+        /// <summary>
+        /// Constant MkMK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MkMK = new LanguageCode("mk-MK");
+
+        /// <summary>
+        /// Constant MlIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MlIN = new LanguageCode("ml-IN");
+
+        /// <summary>
+        /// Constant MrIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MrIN = new LanguageCode("mr-IN");
+
+        /// <summary>
+        /// Constant MsMY for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MsMY = new LanguageCode("ms-MY");
+
+        /// <summary>
+        /// Constant MyMM for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode MyMM = new LanguageCode("my-MM");
+
+        /// <summary>
+        /// Constant NeNP for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NeNP = new LanguageCode("ne-NP");
+
+        /// <summary>
+        /// Constant NlNL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NlNL = new LanguageCode("nl-NL");
+
+        /// <summary>
+        /// Constant NoNO for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode NoNO = new LanguageCode("no-NO");
+
+        /// <summary>
+        /// Constant OrIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode OrIN = new LanguageCode("or-IN");
+
+        /// <summary>
+        /// Constant PaIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PaIN = new LanguageCode("pa-IN");
+
+        /// <summary>
+        /// Constant PlPL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PlPL = new LanguageCode("pl-PL");
+
+        /// <summary>
+        /// Constant PsAF for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PsAF = new LanguageCode("ps-AF");
+
+        /// <summary>
+        /// Constant PtBR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PtBR = new LanguageCode("pt-BR");
+
+        /// <summary>
+        /// Constant PtPT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode PtPT = new LanguageCode("pt-PT");
+
+        /// <summary>
+        /// Constant RoRO for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode RoRO = new LanguageCode("ro-RO");
+
+        /// <summary>
+        /// Constant RuRU for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode RuRU = new LanguageCode("ru-RU");
+
+        /// <summary>
+        /// Constant SiLK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SiLK = new LanguageCode("si-LK");
+
+        /// <summary>
+        /// Constant SkSK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SkSK = new LanguageCode("sk-SK");
+
+        /// <summary>
+        /// Constant SlSI for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SlSI = new LanguageCode("sl-SI");
+
+        /// <summary>
+        /// Constant SoSO for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SoSO = new LanguageCode("so-SO");
+
+        /// <summary>
+        /// Constant SqAL for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SqAL = new LanguageCode("sq-AL");
+
+        /// <summary>
+        /// Constant SrRS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SrRS = new LanguageCode("sr-RS");
+
+        /// <summary>
+        /// Constant SuID for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SuID = new LanguageCode("su-ID");
+
+        /// <summary>
+        /// Constant SvSE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SvSE = new LanguageCode("sv-SE");
+
+        /// <summary>
+        /// Constant SwBI for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwBI = new LanguageCode("sw-BI");
+
+        /// <summary>
+        /// Constant SwKE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwKE = new LanguageCode("sw-KE");
+
+        /// <summary>
+        /// Constant SwRW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwRW = new LanguageCode("sw-RW");
+
+        /// <summary>
+        /// Constant SwTZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwTZ = new LanguageCode("sw-TZ");
+
+        /// <summary>
+        /// Constant SwUG for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode SwUG = new LanguageCode("sw-UG");
+
+        /// <summary>
+        /// Constant TaIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TaIN = new LanguageCode("ta-IN");
+
+        /// <summary>
+        /// Constant TeIN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TeIN = new LanguageCode("te-IN");
+
+        /// <summary>
+        /// Constant ThTH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ThTH = new LanguageCode("th-TH");
+
+        /// <summary>
+        /// Constant TlPH for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TlPH = new LanguageCode("tl-PH");
+
+        /// <summary>
+        /// Constant TrTR for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode TrTR = new LanguageCode("tr-TR");
+
+        /// <summary>
+        /// Constant UkUA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode UkUA = new LanguageCode("uk-UA");
+
+        /// <summary>
+        /// Constant UzUZ for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode UzUZ = new LanguageCode("uz-UZ");
+
+        /// <summary>
+        /// Constant ViVN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ViVN = new LanguageCode("vi-VN");
+
+        /// <summary>
+        /// Constant ZhCN for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhCN = new LanguageCode("zh-CN");
+
+        /// <summary>
+        /// Constant ZhHK for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhHK = new LanguageCode("zh-HK");
+
+        /// <summary>
+        /// Constant ZhTW for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZhTW = new LanguageCode("zh-TW");
+
+        /// <summary>
+        /// Constant ZuZA for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ZuZA = new LanguageCode("zu-ZA");
+
+        /// <summary>
+        /// Constructs a custom LanguageCode for a value not among the defined constants.
+        /// </summary>
+        public LanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCode FindValue(string value)
+        {
+            return FindValue<LanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MediaEncoding.
+    /// </summary>
+    public class MediaEncoding : ConstantClass
+    {
+        /// <summary>
+        /// Constant Flac for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding Flac = new MediaEncoding("flac");
+
+        /// <summary>
+        /// Constant G711Alaw for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding G711Alaw = new MediaEncoding("g711-alaw");
+
+        /// <summary>
+        /// Constant G711Ulaw for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding G711Ulaw = new MediaEncoding("g711-ulaw");
+
+        /// <summary>
+        /// Constant G729 for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding G729 = new MediaEncoding("g729");
+
+        /// <summary>
+        /// Constant OggOpus for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding OggOpus = new MediaEncoding("ogg-opus");
+
+        /// <summary>
+        /// Constant Pcm for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding Pcm = new MediaEncoding("pcm");
+
+        /// <summary>
+        /// Constructs a custom MediaEncoding for a value not among the defined constants.
+        /// </summary>
+        public MediaEncoding(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaEncoding FindValue(string value)
+        {
+            return FindValue<MediaEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalContentIdentificationType.
+    /// </summary>
+    public class MedicalContentIdentificationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PHI for MedicalContentIdentificationType
+        /// </summary>
+        public static readonly MedicalContentIdentificationType PHI = new MedicalContentIdentificationType("PHI");
+
+        /// <summary>
+        /// Constructs a custom MedicalContentIdentificationType for a value not among the defined constants.
+        /// </summary>
+        public MedicalContentIdentificationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalContentIdentificationType FindValue(string value)
+        {
+            return FindValue<MedicalContentIdentificationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalContentIdentificationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeLanguageCode.
+    /// </summary>
+    public class MedicalScribeLanguageCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EnUS for MedicalScribeLanguageCode
+        /// </summary>
+        public static readonly MedicalScribeLanguageCode EnUS = new MedicalScribeLanguageCode("en-US");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeLanguageCode for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeLanguageCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeLanguageCode FindValue(string value)
+        {
+            return FindValue<MedicalScribeLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeMediaEncoding.
+    /// </summary>
+    public class MedicalScribeMediaEncoding : ConstantClass
+    {
+        /// <summary>
+        /// Constant Flac for MedicalScribeMediaEncoding
+        /// </summary>
+        public static readonly MedicalScribeMediaEncoding Flac = new MedicalScribeMediaEncoding("flac");
+
+        /// <summary>
+        /// Constant OggOpus for MedicalScribeMediaEncoding
+        /// </summary>
+        public static readonly MedicalScribeMediaEncoding OggOpus = new MedicalScribeMediaEncoding("ogg-opus");
+
+        /// <summary>
+        /// Constant Pcm for MedicalScribeMediaEncoding
+        /// </summary>
+        public static readonly MedicalScribeMediaEncoding Pcm = new MedicalScribeMediaEncoding("pcm");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeMediaEncoding for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeMediaEncoding(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeMediaEncoding FindValue(string value)
+        {
+            return FindValue<MedicalScribeMediaEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeMediaEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeNoteTemplate.
+    /// </summary>
+    public class MedicalScribeNoteTemplate : ConstantClass
+    {
+        /// <summary>
+        /// Constant BEHAVIORAL_SOAP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate BEHAVIORAL_SOAP = new MedicalScribeNoteTemplate("BEHAVIORAL_SOAP");
+
+        /// <summary>
+        /// Constant BIRP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate BIRP = new MedicalScribeNoteTemplate("BIRP");
+
+        /// <summary>
+        /// Constant DAP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate DAP = new MedicalScribeNoteTemplate("DAP");
+
+        /// <summary>
+        /// Constant GIRPP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate GIRPP = new MedicalScribeNoteTemplate("GIRPP");
+
+        /// <summary>
+        /// Constant HISTORY_AND_PHYSICAL for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate HISTORY_AND_PHYSICAL = new MedicalScribeNoteTemplate("HISTORY_AND_PHYSICAL");
+
+        /// <summary>
+        /// Constant PHYSICAL_SOAP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate PHYSICAL_SOAP = new MedicalScribeNoteTemplate("PHYSICAL_SOAP");
+
+        /// <summary>
+        /// Constant SIRP for MedicalScribeNoteTemplate
+        /// </summary>
+        public static readonly MedicalScribeNoteTemplate SIRP = new MedicalScribeNoteTemplate("SIRP");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeNoteTemplate for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeNoteTemplate(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeNoteTemplate FindValue(string value)
+        {
+            return FindValue<MedicalScribeNoteTemplate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeNoteTemplate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeParticipantRole.
+    /// </summary>
+    public class MedicalScribeParticipantRole : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLINICIAN for MedicalScribeParticipantRole
+        /// </summary>
+        public static readonly MedicalScribeParticipantRole CLINICIAN = new MedicalScribeParticipantRole("CLINICIAN");
+
+        /// <summary>
+        /// Constant PATIENT for MedicalScribeParticipantRole
+        /// </summary>
+        public static readonly MedicalScribeParticipantRole PATIENT = new MedicalScribeParticipantRole("PATIENT");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeParticipantRole for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeParticipantRole(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeParticipantRole FindValue(string value)
+        {
+            return FindValue<MedicalScribeParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeSessionControlEventType.
+    /// </summary>
+    public class MedicalScribeSessionControlEventType : ConstantClass
+    {
+        /// <summary>
+        /// Constant END_OF_SESSION for MedicalScribeSessionControlEventType
+        /// </summary>
+        public static readonly MedicalScribeSessionControlEventType END_OF_SESSION = new MedicalScribeSessionControlEventType("END_OF_SESSION");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeSessionControlEventType for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeSessionControlEventType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeSessionControlEventType FindValue(string value)
+        {
+            return FindValue<MedicalScribeSessionControlEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeSessionControlEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeStreamStatus.
+    /// </summary>
+    public class MedicalScribeStreamStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant COMPLETED for MedicalScribeStreamStatus
+        /// </summary>
+        public static readonly MedicalScribeStreamStatus COMPLETED = new MedicalScribeStreamStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for MedicalScribeStreamStatus
+        /// </summary>
+        public static readonly MedicalScribeStreamStatus FAILED = new MedicalScribeStreamStatus("FAILED");
+
+        /// <summary>
+        /// Constant IN_PROGRESS for MedicalScribeStreamStatus
+        /// </summary>
+        public static readonly MedicalScribeStreamStatus IN_PROGRESS = new MedicalScribeStreamStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// Constant PAUSED for MedicalScribeStreamStatus
+        /// </summary>
+        public static readonly MedicalScribeStreamStatus PAUSED = new MedicalScribeStreamStatus("PAUSED");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeStreamStatus for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeStreamStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeStreamStatus FindValue(string value)
+        {
+            return FindValue<MedicalScribeStreamStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeStreamStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeTranscriptItemType.
+    /// </summary>
+    public class MedicalScribeTranscriptItemType : ConstantClass
+    {
+        /// <summary>
+        /// Constant Pronunciation for MedicalScribeTranscriptItemType
+        /// </summary>
+        public static readonly MedicalScribeTranscriptItemType Pronunciation = new MedicalScribeTranscriptItemType("pronunciation");
+
+        /// <summary>
+        /// Constant Punctuation for MedicalScribeTranscriptItemType
+        /// </summary>
+        public static readonly MedicalScribeTranscriptItemType Punctuation = new MedicalScribeTranscriptItemType("punctuation");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeTranscriptItemType for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeTranscriptItemType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeTranscriptItemType FindValue(string value)
+        {
+            return FindValue<MedicalScribeTranscriptItemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeTranscriptItemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MedicalScribeVocabularyFilterMethod.
+    /// </summary>
+    public class MedicalScribeVocabularyFilterMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant Mask for MedicalScribeVocabularyFilterMethod
+        /// </summary>
+        public static readonly MedicalScribeVocabularyFilterMethod Mask = new MedicalScribeVocabularyFilterMethod("mask");
+
+        /// <summary>
+        /// Constant Remove for MedicalScribeVocabularyFilterMethod
+        /// </summary>
+        public static readonly MedicalScribeVocabularyFilterMethod Remove = new MedicalScribeVocabularyFilterMethod("remove");
+
+        /// <summary>
+        /// Constant Tag for MedicalScribeVocabularyFilterMethod
+        /// </summary>
+        public static readonly MedicalScribeVocabularyFilterMethod Tag = new MedicalScribeVocabularyFilterMethod("tag");
+
+        /// <summary>
+        /// Constructs a custom MedicalScribeVocabularyFilterMethod for a value not among the defined constants.
+        /// </summary>
+        public MedicalScribeVocabularyFilterMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MedicalScribeVocabularyFilterMethod FindValue(string value)
+        {
+            return FindValue<MedicalScribeVocabularyFilterMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MedicalScribeVocabularyFilterMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PartialResultsStability.
+    /// </summary>
+    public class PartialResultsStability : ConstantClass
+    {
+        /// <summary>
+        /// Constant High for PartialResultsStability
+        /// </summary>
+        public static readonly PartialResultsStability High = new PartialResultsStability("high");
+
+        /// <summary>
+        /// Constant Low for PartialResultsStability
+        /// </summary>
+        public static readonly PartialResultsStability Low = new PartialResultsStability("low");
+
+        /// <summary>
+        /// Constant Medium for PartialResultsStability
+        /// </summary>
+        public static readonly PartialResultsStability Medium = new PartialResultsStability("medium");
+
+        /// <summary>
+        /// Constructs a custom PartialResultsStability for a value not among the defined constants.
+        /// </summary>
+        public PartialResultsStability(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartialResultsStability FindValue(string value)
+        {
+            return FindValue<PartialResultsStability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartialResultsStability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantRole.
+    /// </summary>
+    public class ParticipantRole : ConstantClass
+    {
+        /// <summary>
+        /// Constant AGENT for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole AGENT = new ParticipantRole("AGENT");
+
+        /// <summary>
+        /// Constant CUSTOMER for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
+
+        /// <summary>
+        /// Constructs a custom ParticipantRole for a value not among the defined constants.
+        /// </summary>
+        public ParticipantRole(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRole FindValue(string value)
+        {
+            return FindValue<ParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRole(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Pronouns.
+    /// </summary>
+    public class Pronouns : ConstantClass
+    {
+        /// <summary>
+        /// Constant HE_HIM for Pronouns
+        /// </summary>
+        public static readonly Pronouns HE_HIM = new Pronouns("HE_HIM");
+
+        /// <summary>
+        /// Constant SHE_HER for Pronouns
+        /// </summary>
+        public static readonly Pronouns SHE_HER = new Pronouns("SHE_HER");
+
+        /// <summary>
+        /// Constant THEY_THEM for Pronouns
+        /// </summary>
+        public static readonly Pronouns THEY_THEM = new Pronouns("THEY_THEM");
+
+        /// <summary>
+        /// Constructs a custom Pronouns for a value not among the defined constants.
+        /// </summary>
+        public Pronouns(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Pronouns FindValue(string value)
+        {
+            return FindValue<Pronouns>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Pronouns(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Sentiment.
+    /// </summary>
+    public class Sentiment : ConstantClass
+    {
+        /// <summary>
+        /// Constant MIXED for Sentiment
+        /// </summary>
+        public static readonly Sentiment MIXED = new Sentiment("MIXED");
+
+        /// <summary>
+        /// Constant NEGATIVE for Sentiment
+        /// </summary>
+        public static readonly Sentiment NEGATIVE = new Sentiment("NEGATIVE");
+
+        /// <summary>
+        /// Constant NEUTRAL for Sentiment
+        /// </summary>
+        public static readonly Sentiment NEUTRAL = new Sentiment("NEUTRAL");
+
+        /// <summary>
+        /// Constant POSITIVE for Sentiment
+        /// </summary>
+        public static readonly Sentiment POSITIVE = new Sentiment("POSITIVE");
+
+        /// <summary>
+        /// Constructs a custom Sentiment for a value not among the defined constants.
+        /// </summary>
+        public Sentiment(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Sentiment FindValue(string value)
+        {
+            return FindValue<Sentiment>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Sentiment(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Specialty.
+    /// </summary>
+    public class Specialty : ConstantClass
+    {
+        /// <summary>
+        /// Constant CARDIOLOGY for Specialty
+        /// </summary>
+        public static readonly Specialty CARDIOLOGY = new Specialty("CARDIOLOGY");
+
+        /// <summary>
+        /// Constant NEUROLOGY for Specialty
+        /// </summary>
+        public static readonly Specialty NEUROLOGY = new Specialty("NEUROLOGY");
+
+        /// <summary>
+        /// Constant ONCOLOGY for Specialty
+        /// </summary>
+        public static readonly Specialty ONCOLOGY = new Specialty("ONCOLOGY");
+
+        /// <summary>
+        /// Constant PRIMARYCARE for Specialty
+        /// </summary>
+        public static readonly Specialty PRIMARYCARE = new Specialty("PRIMARYCARE");
+
+        /// <summary>
+        /// Constant RADIOLOGY for Specialty
+        /// </summary>
+        public static readonly Specialty RADIOLOGY = new Specialty("RADIOLOGY");
+
+        /// <summary>
+        /// Constant UROLOGY for Specialty
+        /// </summary>
+        public static readonly Specialty UROLOGY = new Specialty("UROLOGY");
+
+        /// <summary>
+        /// Constructs a custom Specialty for a value not among the defined constants.
+        /// </summary>
+        public Specialty(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Specialty FindValue(string value)
+        {
+            return FindValue<Specialty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Specialty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TranscriptFormat.
+    /// </summary>
+    public class TranscriptFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant Spoken for TranscriptFormat
+        /// </summary>
+        public static readonly TranscriptFormat Spoken = new TranscriptFormat("spoken");
+
+        /// <summary>
+        /// Constant Written for TranscriptFormat
+        /// </summary>
+        public static readonly TranscriptFormat Written = new TranscriptFormat("written");
+
+        /// <summary>
+        /// Constructs a custom TranscriptFormat for a value not among the defined constants.
+        /// </summary>
+        public TranscriptFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscriptFormat FindValue(string value)
+        {
+            return FindValue<TranscriptFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscriptFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Type.
+    /// </summary>
+    public class Type : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONVERSATION for Type
+        /// </summary>
+        public static readonly Type CONVERSATION = new Type("CONVERSATION");
+
+        /// <summary>
+        /// Constant DICTATION for Type
+        /// </summary>
+        public static readonly Type DICTATION = new Type("DICTATION");
+
+        /// <summary>
+        /// Constructs a custom Type for a value not among the defined constants.
+        /// </summary>
+        public Type(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Type FindValue(string value)
+        {
+            return FindValue<Type>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Type(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VocabularyFilterMethod.
+    /// </summary>
+    public class VocabularyFilterMethod : ConstantClass
+    {
+        /// <summary>
+        /// Constant Mask for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Mask = new VocabularyFilterMethod("mask");
+
+        /// <summary>
+        /// Constant Remove for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Remove = new VocabularyFilterMethod("remove");
+
+        /// <summary>
+        /// Constant Tag for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Tag = new VocabularyFilterMethod("tag");
+
+        /// <summary>
+        /// Constructs a custom VocabularyFilterMethod for a value not among the defined constants.
+        /// </summary>
+        public VocabularyFilterMethod(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyFilterMethod FindValue(string value)
+        {
+            return FindValue<VocabularyFilterMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyFilterMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

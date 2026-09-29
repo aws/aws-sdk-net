@@ -1,0 +1,108 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// RadarChartSortConfiguration Marshaller
+    /// </summary>
+    public partial class RadarChartSortConfigurationMarshaller : IRequestMarshaller<RadarChartSortConfiguration, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(RadarChartSortConfiguration requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetCategoryItemsLimit())
+            {
+                context.Writer.WritePropertyName("CategoryItemsLimit");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ItemsLimitConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CategoryItemsLimit, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetCategorySort())
+            {
+                context.Writer.WritePropertyName("CategorySort");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectCategorySortListValue in requestObject.CategorySort)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FieldSortOptionsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCategorySortListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetColorItemsLimit())
+            {
+                context.Writer.WritePropertyName("ColorItemsLimit");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ItemsLimitConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ColorItemsLimit, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetColorSort())
+            {
+                context.Writer.WritePropertyName("ColorSort");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectColorSortListValue in requestObject.ColorSort)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FieldSortOptionsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectColorSortListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static RadarChartSortConfigurationMarshaller Instance = new RadarChartSortConfigurationMarshaller();
+    }
+}

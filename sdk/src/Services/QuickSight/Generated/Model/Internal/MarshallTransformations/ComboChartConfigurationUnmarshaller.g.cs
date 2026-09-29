@@ -1,0 +1,206 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for ComboChartConfiguration Object
+    /// </summary>
+    public partial class ComboChartConfigurationUnmarshaller : IJsonUnmarshaller<ComboChartConfiguration, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public ComboChartConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new ComboChartConfiguration();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("BarDataLabels", targetDepth, ref reader))
+                {
+                    var unmarshaller = DataLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.BarDataLabels = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("BarsArrangement", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BarsArrangement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CategoryAxis", targetDepth, ref reader))
+                {
+                    var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CategoryAxis = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CategoryLabelOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CategoryLabelOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ColorLabelOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ColorLabelOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DefaultSeriesSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = ComboChartDefaultSeriesSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DefaultSeriesSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("FieldWells", targetDepth, ref reader))
+                {
+                    var unmarshaller = ComboChartFieldWellsUnmarshaller.Instance;
+                    unmarshalledObject.FieldWells = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Interactions", targetDepth, ref reader))
+                {
+                    var unmarshaller = VisualInteractionOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Interactions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Legend", targetDepth, ref reader))
+                {
+                    var unmarshaller = LegendOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Legend = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LineDataLabels", targetDepth, ref reader))
+                {
+                    var unmarshaller = DataLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.LineDataLabels = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PrimaryYAxisDisplayOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryYAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PrimaryYAxisLabelOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryYAxisLabelOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ReferenceLines", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ReferenceLine, ReferenceLineUnmarshaller>(ReferenceLineUnmarshaller.Instance);
+                    unmarshalledObject.ReferenceLines = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SecondaryYAxisDisplayOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = AxisDisplayOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SecondaryYAxisDisplayOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SecondaryYAxisLabelOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = ChartAxisLabelOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SecondaryYAxisLabelOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Series", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ComboSeriesItem, ComboSeriesItemUnmarshaller>(ComboSeriesItemUnmarshaller.Instance);
+                    unmarshalledObject.Series = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SingleAxisOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = SingleAxisOptionsUnmarshaller.Instance;
+                    unmarshalledObject.SingleAxisOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("SortConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ComboChartSortConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SortConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Tooltip", targetDepth, ref reader))
+                {
+                    var unmarshaller = TooltipOptionsUnmarshaller.Instance;
+                    unmarshalledObject.Tooltip = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VisualPalette", targetDepth, ref reader))
+                {
+                    var unmarshaller = VisualPaletteUnmarshaller.Instance;
+                    unmarshalledObject.VisualPalette = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static ComboChartConfigurationUnmarshaller _instance = new ComboChartConfigurationUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static ComboChartConfigurationUnmarshaller Instance => _instance;
+    }
+}

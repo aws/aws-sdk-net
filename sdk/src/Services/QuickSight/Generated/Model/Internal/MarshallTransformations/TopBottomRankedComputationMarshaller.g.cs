@@ -1,0 +1,100 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// TopBottomRankedComputation Marshaller
+    /// </summary>
+    public partial class TopBottomRankedComputationMarshaller : IRequestMarshaller<TopBottomRankedComputation, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(TopBottomRankedComputation requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetCategory())
+            {
+                context.Writer.WritePropertyName("Category");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DimensionFieldMarshaller.Instance;
+                marshaller.Marshall(requestObject.Category, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetComputationId())
+            {
+                context.Writer.WritePropertyName("ComputationId");
+                context.Writer.WriteStringValue(requestObject.ComputationId);
+            }
+
+            if (requestObject.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if (requestObject.IsSetResultSize())
+            {
+                context.Writer.WritePropertyName("ResultSize");
+                context.Writer.WriteNumberValue(requestObject.ResultSize.Value);
+            }
+
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(requestObject.Type);
+            }
+
+            if (requestObject.IsSetValue())
+            {
+                context.Writer.WritePropertyName("Value");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MeasureFieldMarshaller.Instance;
+                marshaller.Marshall(requestObject.Value, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static TopBottomRankedComputationMarshaller Instance = new TopBottomRankedComputationMarshaller();
+    }
+}

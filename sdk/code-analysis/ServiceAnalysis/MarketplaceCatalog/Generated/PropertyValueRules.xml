@@ -339,6 +339,18 @@
     <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AMISecurityFilters.DeliveryOptionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AMISecuritySummary.DeliveryOptionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.AmiProductLastModifiedDateFilterDateRange.AfterValue</property>
     <min>20</min>
     <max>20</max>
@@ -361,18 +373,6 @@
     <min>1</min>
     <max>255</max>
     <pattern>^(.)+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MarketplaceCatalog.Model.AMISecurityFilters.DeliveryOptionId</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>^[\w\-]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MarketplaceCatalog.Model.AMISecuritySummary.DeliveryOptionId</property>
-    <min>1</min>
-    <max>255</max>
-    <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.AssessmentSummary.AssessmentArn</property>
@@ -659,7 +659,7 @@
     <property>Amazon.MarketplaceCatalog.Model.EntitySummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^\\S+[\\S\\s]*</pattern>
+    <pattern>^\\S+[\\S\\s]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.EntitySummary.Visibility</property>

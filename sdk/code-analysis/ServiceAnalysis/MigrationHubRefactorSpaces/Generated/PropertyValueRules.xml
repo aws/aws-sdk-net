@@ -690,23 +690,6 @@
     <pattern>^[a-zA-Z0-9/\+\=]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentsRequest.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^[a-zA-Z0-9/\+\=]{0,2048}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentsResponse.NextToken</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^[a-zA-Z0-9/\+\=]{0,2048}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentVpcsRequest.EnvironmentIdentifier</property>
     <min>14</min>
     <max>14</max>
@@ -725,6 +708,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentVpcsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9/\+\=]{0,2048}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubRefactorSpaces.Model.ListEnvironmentsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>^[a-zA-Z0-9/\+\=]{0,2048}$</pattern>
@@ -1036,7 +1036,7 @@
     <property>Amazon.MigrationHubRefactorSpaces.Model.ErrorResponse.ResourceIdentifier</property>
     <min>3</min>
     <max>63</max>
-    <pattern>(^(env|svc|pxy|rte|app)-([0-9A-Za-z]{10}$))</pattern>
+    <pattern>.*(^(env|svc|pxy|rte|app)-([0-9A-Za-z]{10}$)).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubRefactorSpaces.Model.LambdaEndpointConfig.Arn</property>

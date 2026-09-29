@@ -1,0 +1,143 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MigrationHubStrategyRecommendations.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AssessmentSummary Object
+    /// </summary>
+    public partial class AssessmentSummaryUnmarshaller : IJsonUnmarshaller<AssessmentSummary, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public AssessmentSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new AssessmentSummary();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("antipatternReportS3Object", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3ObjectUnmarshaller.Instance;
+                    unmarshalledObject.AntipatternReportS3Object = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("antipatternReportStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AntipatternReportStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("antipatternReportStatusMessage", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AntipatternReportStatusMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("lastAnalyzedTimestamp", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastAnalyzedTimestamp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listAntipatternSeveritySummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AntipatternSeveritySummary, AntipatternSeveritySummaryUnmarshaller>(AntipatternSeveritySummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListAntipatternSeveritySummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listApplicationComponentStatusSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ApplicationComponentStatusSummary, ApplicationComponentStatusSummaryUnmarshaller>(ApplicationComponentStatusSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListApplicationComponentStatusSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listApplicationComponentStrategySummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<StrategySummary, StrategySummaryUnmarshaller>(StrategySummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListApplicationComponentStrategySummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listApplicationComponentSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ApplicationComponentSummary, ApplicationComponentSummaryUnmarshaller>(ApplicationComponentSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListApplicationComponentSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listServerStatusSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServerStatusSummary, ServerStatusSummaryUnmarshaller>(ServerStatusSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListServerStatusSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listServerStrategySummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<StrategySummary, StrategySummaryUnmarshaller>(StrategySummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListServerStrategySummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("listServerSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServerSummary, ServerSummaryUnmarshaller>(ServerSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ListServerSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static AssessmentSummaryUnmarshaller _instance = new AssessmentSummaryUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static AssessmentSummaryUnmarshaller Instance => _instance;
+    }
+}

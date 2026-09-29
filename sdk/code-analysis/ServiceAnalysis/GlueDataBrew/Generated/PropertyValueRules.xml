@@ -80,6 +80,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.CreateRecipeRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -132,6 +133,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.CreateRulesetRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -364,6 +366,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DescribeRecipeResponse.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -393,6 +396,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DescribeRulesetResponse.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -506,26 +510,6 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.ListRecipesRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.ListRecipesRequest.NextToken</property>
-    <min>1</min>
-    <max>2000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.ListRecipesRequest.RecipeVersion</property>
-    <min>1</min>
-    <max>16</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.ListRecipesResponse.NextToken</property>
-    <min>1</min>
-    <max>2000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.ListRecipeVersionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -542,6 +526,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.ListRecipeVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.ListRecipesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.ListRecipesRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.ListRecipesRequest.RecipeVersion</property>
+    <min>1</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.ListRecipesResponse.NextToken</property>
     <min>1</min>
     <max>2000</max>
   </property-value-rule>
@@ -592,6 +596,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.PublishRecipeRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -730,6 +735,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.UpdateRecipeRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -772,6 +778,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.UpdateRulesetRequest.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -821,6 +828,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.ConditionExpression.Value</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -832,31 +840,6 @@
     <property>Amazon.GlueDataBrew.Model.CsvOutputOptions.Delimiter</property>
     <min>1</min>
     <max>1</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.DatabaseTableName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.GlueConnectionName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.QueryString</property>
-    <min>1</min>
-    <max>10000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.DatabaseOutput.GlueConnectionName</property>
-    <min>1</min>
-    <max>255</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GlueDataBrew.Model.DatabaseTableOutputOptions.TableName</property>
-    <min>1</min>
-    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.DataCatalogInputDefinition.CatalogId</property>
@@ -889,7 +872,33 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.DatabaseTableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.GlueConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseInputDefinition.QueryString</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseOutput.GlueConnectionName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlueDataBrew.Model.DatabaseTableOutputOptions.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.Dataset.AccountId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -936,6 +945,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.Job.AccountId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1008,6 +1018,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.Project.AccountId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -1037,6 +1048,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.Recipe.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1096,10 +1108,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.RulesetItem.AccountId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.RulesetItem.Description</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -1144,6 +1158,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GlueDataBrew.Model.Schedule.AccountId</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>

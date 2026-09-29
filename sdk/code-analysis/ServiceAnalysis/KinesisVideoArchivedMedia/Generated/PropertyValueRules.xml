@@ -4,13 +4,13 @@
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetClipRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>^arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetClipRequest.StreamName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetClipResponse.ContentType</property>
@@ -32,13 +32,13 @@
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetDASHStreamingSessionURLRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>^arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetDASHStreamingSessionURLRequest.StreamName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetHLSStreamingSessionURLRequest.Expires</property>
@@ -54,13 +54,13 @@
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetHLSStreamingSessionURLRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>^arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetHLSStreamingSessionURLRequest.StreamName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetImagesRequest.HeightPixels</property>
@@ -76,19 +76,19 @@
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetImagesRequest.NextToken</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9+/]+={0,2}</pattern>
+    <pattern>^[a-zA-Z0-9+/]+={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetImagesRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>^arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetImagesRequest.StreamName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetImagesRequest.WidthPixels</property>
@@ -99,19 +99,19 @@
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetImagesResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9+/]+={0,2}</pattern>
+    <pattern>^[a-zA-Z0-9+/]+={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetMediaForFragmentListRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>^arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetMediaForFragmentListRequest.StreamName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.GetMediaForFragmentListResponse.ContentType</property>
@@ -128,25 +128,25 @@
     <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsRequest.NextToken</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9+/]+={0,2}</pattern>
+    <pattern>^[a-zA-Z0-9+/]+={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsRequest.StreamARN</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+</pattern>
+    <pattern>^arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsRequest.StreamName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.ListFragmentsResponse.NextToken</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9+/]+={0,2}</pattern>
+    <pattern>^[a-zA-Z0-9+/]+={0,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisVideoArchivedMedia.Model.Fragment.FragmentNumber</property>

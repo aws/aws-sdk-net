@@ -2,7 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Polly.Model.DeleteLexiconRequest.Name</property>
-    <pattern>[0-9A-Za-z]{1,20}</pattern>
+    <pattern>^[0-9A-Za-z]{1,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.DescribeVoicesRequest.NextToken</property>
@@ -16,7 +16,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.GetLexiconRequest.Name</property>
-    <pattern>[0-9A-Za-z]{1,20}</pattern>
+    <pattern>^[0-9A-Za-z]{1,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.GetSpeechSynthesisTaskRequest.TaskId</property>
@@ -49,7 +49,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.PutLexiconRequest.Name</property>
-    <pattern>[0-9A-Za-z]{1,20}</pattern>
+    <pattern>^[0-9A-Za-z]{1,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.StartSpeechSynthesisTaskRequest.OutputS3BucketName</property>
@@ -65,11 +65,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.Lexicon.Name</property>
-    <pattern>[0-9A-Za-z]{1,20}</pattern>
+    <pattern>^[0-9A-Za-z]{1,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.LexiconDescription.Name</property>
-    <pattern>[0-9A-Za-z]{1,20}</pattern>
+    <pattern>^[0-9A-Za-z]{1,20}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Polly.Model.SynthesisTask.SnsTopicArn</property>
