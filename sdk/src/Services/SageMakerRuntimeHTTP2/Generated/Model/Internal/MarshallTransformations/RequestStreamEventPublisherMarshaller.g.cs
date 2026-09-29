@@ -14,22 +14,24 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the sagemaker-runtime-http2-2025-10-01.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
 using System;
 using System.IO;
 using System.Threading.Tasks;
 using Amazon.Runtime.EventStreams;
 using System.Collections.Generic;
+
 #pragma warning disable CS0612,CS0618
+
 namespace Amazon.SageMakerRuntimeHTTP2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Marshalles the service events for the event stream to the low level IEventStreamMessage.
+    /// Marshals the service events for the event stream to the low level IEventStreamMessage.
     /// </summary>
     public partial class RequestStreamEventPublisherMarshaller : EventStreamPublisher
     {
-        Func< Task<IRequestStreamEventEvent>> _publisher;
+        Func<Task<IRequestStreamEventEvent>> _publisher;
 
         /// <summary>
         /// Creates instance of RequestStreamEventPublisherMarshaller
@@ -49,7 +51,9 @@ namespace Amazon.SageMakerRuntimeHTTP2.Model.Internal.MarshallTransformations
         {
             var evnt = await _publisher().ConfigureAwait(false);
             if (evnt == null)
+            {
                 return null;
+            }
 
             byte[] eventPayload;
             string contentType;

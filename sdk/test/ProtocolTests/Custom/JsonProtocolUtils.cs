@@ -51,5 +51,19 @@ namespace AWSSDK.ProtocolTests.Utils
                 Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
             }
         }
+
+        public static void AssertBody(byte[] actualBodyBytes, string expectedBody)
+        {
+            var actualBody = Encoding.UTF8.GetString(actualBodyBytes);
+            //if the body is just a raw string and not a json document, just compare the two strings
+            if (!actualBody.StartsWith("{"))
+            {
+                Assert.AreEqual(expectedBody, actualBody);
+                return;
+            }
+            JObject actualJObj = JsonConvert.DeserializeObject<JObject>(actualBody);
+            JObject expectedJObj = JsonConvert.DeserializeObject<JObject>(expectedBody);
+            Assert.IsTrue(JObject.DeepEquals(expectedJObj, actualJObj));
+        }
     }
 }

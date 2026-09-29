@@ -29,39 +29,40 @@ namespace AWSSDK.Benchmarks.Serde;
 [Config(typeof(E2EBenchmarkConfig))]
 public class RestJson1E2EBenchmarks
 {
-    private AmazonRestJsonDataPlaneClient _copyClientBaseline = null!;
-    private AmazonRestJsonDataPlaneClient _copyClientM = null!;
-    private AmazonRestJsonDataPlaneClient _putClient = null!;
-    private AmazonRestJsonDataPlaneClient _getClientS = null!;
-    private AmazonRestJsonDataPlaneClient _getClientM = null!;
-    private AmazonRestJsonDataPlaneClient _getClientL = null!;
-    private AmazonRestJsonDataPlaneClient _putMetricClientS = null!;
-    private AmazonRestJsonDataPlaneClient _putMetricClientM = null!;
-    private AmazonRestJsonDataPlaneClient _putMetricClientL = null!;
-    private AmazonRestJsonDataPlaneClient _getMetricClientS = null!;
-    private AmazonRestJsonDataPlaneClient _getMetricClientM = null!;
-    private AmazonRestJsonDataPlaneClient _getMetricClientL = null!;
+    internal AmazonRestJsonDataPlaneClient _copyClientBaseline = null!;
+    internal AmazonRestJsonDataPlaneClient _copyClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _putClient = null!;
+    internal AmazonRestJsonDataPlaneClient _getClientS = null!;
+    internal AmazonRestJsonDataPlaneClient _getClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _getClientL = null!;
+    internal AmazonRestJsonDataPlaneClient _putMetricClientS = null!;
+    internal AmazonRestJsonDataPlaneClient _putMetricClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _putMetricClientL = null!;
+    internal AmazonRestJsonDataPlaneClient _getMetricClientS = null!;
+    internal AmazonRestJsonDataPlaneClient _getMetricClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _getMetricClientL = null!;
 
-    private CopyObjectRequest _copyObjectBaseline = null!;
-    private CopyObjectRequest _copyObjectMedium = null!;
-    private PutObjectRequest _putObjectS = null!;
-    private PutObjectRequest _putObjectM = null!;
-    private PutObjectRequest _putObjectL = null!;
-    private GetObjectRequest _getObjectRequest = null!;
-    private PutMetricDataRequest _putMetricDataS = null!;
-    private PutMetricDataRequest _putMetricDataM = null!;
-    private PutMetricDataRequest _putMetricDataL = null!;
-    private GetMetricDataRequest _getMetricDataS = null!;
-    private GetMetricDataRequest _getMetricDataM = null!;
-    private GetMetricDataRequest _getMetricDataL = null!;
+    internal CopyObjectRequest _copyObjectBaseline = null!;
+    internal CopyObjectRequest _copyObjectMedium = null!;
+    internal PutObjectRequest _putObjectS = null!;
+    internal PutObjectRequest _putObjectM = null!;
+    internal PutObjectRequest _putObjectL = null!;
+    internal GetObjectRequest _getObjectRequest = null!;
+    internal PutMetricDataRequest _putMetricDataS = null!;
+    internal PutMetricDataRequest _putMetricDataM = null!;
+    internal PutMetricDataRequest _putMetricDataL = null!;
+    internal GetMetricDataRequest _getMetricDataS = null!;
+    internal GetMetricDataRequest _getMetricDataM = null!;
+    internal GetMetricDataRequest _getMetricDataL = null!;
 
     private static readonly byte[] CopyOutputBaseline = Encoding.UTF8.GetBytes("{}");
     private static readonly byte[] CopyOutputM = Encoding.UTF8.GetBytes(
         "{\"ETag\":\"\\\"d41d8cd98f00b204e9800998ecf8427e\\\"\",\"LastModified\":1704067200," +
         "\"ChecksumCRC32\":\"abc123\",\"ServerSideEncryption\":\"aws:kms\",\"VersionId\":\"v1.0\"}");
-    private static readonly byte[] GetObjectS = new byte[1024];
-    private static readonly byte[] GetObjectM = new byte[100 * 1024];
-    private static readonly byte[] GetObjectL = new byte[1024 * 1024];
+    // S3 object body sizes match the shared benchmark model (payloads/ObjectBody_{S,M,L}): 1 / 1000 / 256000 bytes.
+    private static readonly byte[] GetObjectS = new byte[1];
+    private static readonly byte[] GetObjectM = new byte[1000];
+    private static readonly byte[] GetObjectL = new byte[256000];
     private static readonly byte[] EmptyJson = Encoding.UTF8.GetBytes("{}");
     private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricJson(5));
     private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricJson(50));
@@ -82,7 +83,7 @@ public class RestJson1E2EBenchmarks
         return sb.ToString();
     }
 
-    private AmazonRestJsonDataPlaneClient CreateClient(byte[] responseBody)
+    internal AmazonRestJsonDataPlaneClient CreateClient(byte[] responseBody)
     {
         var handler = new MockHttpHandler(responseBody, "application/json");
         var config = new AmazonRestJsonDataPlaneConfig
@@ -123,9 +124,9 @@ public class RestJson1E2EBenchmarks
             ServerSideEncryption = "aws:kms", StorageClass = "STANDARD_IA",
             SSEKMSKeyId = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
         };
-        _putObjectS = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1024]) };
-        _putObjectM = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[100 * 1024]) };
-        _putObjectL = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1024 * 1024]) };
+        _putObjectS = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1]) };
+        _putObjectM = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1000]) };
+        _putObjectL = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[256000]) };
         _getObjectRequest = new GetObjectRequest { Bucket = "bucket", Key = "key" };
         _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(5) };
         _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(50) };

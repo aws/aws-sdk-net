@@ -29,32 +29,33 @@ namespace AWSSDK.Benchmarks.Serde;
 [Config(typeof(E2EBenchmarkConfig))]
 public class RestXmlE2EBenchmarks
 {
-    private AmazonRestXmlDataPlaneClient _copyClient = null!;
-    private AmazonRestXmlDataPlaneClient _putClient = null!;
-    private AmazonRestXmlDataPlaneClient _getClientS = null!;
-    private AmazonRestXmlDataPlaneClient _getClientM = null!;
-    private AmazonRestXmlDataPlaneClient _getClientL = null!;
-    private AmazonRestXmlDataPlaneClient _putMetricClientS = null!;
-    private AmazonRestXmlDataPlaneClient _putMetricClientM = null!;
-    private AmazonRestXmlDataPlaneClient _getMetricClientS = null!;
-    private AmazonRestXmlDataPlaneClient _getMetricClientM = null!;
+    internal AmazonRestXmlDataPlaneClient _copyClient = null!;
+    internal AmazonRestXmlDataPlaneClient _putClient = null!;
+    internal AmazonRestXmlDataPlaneClient _getClientS = null!;
+    internal AmazonRestXmlDataPlaneClient _getClientM = null!;
+    internal AmazonRestXmlDataPlaneClient _getClientL = null!;
+    internal AmazonRestXmlDataPlaneClient _putMetricClientS = null!;
+    internal AmazonRestXmlDataPlaneClient _putMetricClientM = null!;
+    internal AmazonRestXmlDataPlaneClient _getMetricClientS = null!;
+    internal AmazonRestXmlDataPlaneClient _getMetricClientM = null!;
 
-    private CopyObjectRequest _copyObjectRequest = null!;
-    private PutObjectRequest _putObjectS = null!;
-    private PutObjectRequest _putObjectM = null!;
-    private PutObjectRequest _putObjectL = null!;
-    private GetObjectRequest _getObjectRequest = null!;
-    private PutMetricDataRequest _putMetricDataS = null!;
-    private PutMetricDataRequest _putMetricDataM = null!;
-    private GetMetricDataRequest _getMetricDataS = null!;
-    private GetMetricDataRequest _getMetricDataM = null!;
+    internal CopyObjectRequest _copyObjectRequest = null!;
+    internal PutObjectRequest _putObjectS = null!;
+    internal PutObjectRequest _putObjectM = null!;
+    internal PutObjectRequest _putObjectL = null!;
+    internal GetObjectRequest _getObjectRequest = null!;
+    internal PutMetricDataRequest _putMetricDataS = null!;
+    internal PutMetricDataRequest _putMetricDataM = null!;
+    internal GetMetricDataRequest _getMetricDataS = null!;
+    internal GetMetricDataRequest _getMetricDataM = null!;
 
     private static readonly byte[] CopyResponse = Encoding.UTF8.GetBytes(
         "<?xml version=\"1.0\" encoding=\"UTF-8\"?><CopyObjectResult><ETag>\"d41d8cd98f00b204e9800998ecf8427e\"</ETag><LastModified>2024-01-01T00:00:00Z</LastModified></CopyObjectResult>");
     private static readonly byte[] EmptyXml = Encoding.UTF8.GetBytes("<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response/>");
-    private static readonly byte[] GetObjectS = new byte[1024];
-    private static readonly byte[] GetObjectM = new byte[100 * 1024];
-    private static readonly byte[] GetObjectL = new byte[1024 * 1024];
+    // S3 object body sizes match the shared benchmark model (payloads/ObjectBody_{S,M,L}): 1 / 1000 / 256000 bytes.
+    private static readonly byte[] GetObjectS = new byte[1];
+    private static readonly byte[] GetObjectM = new byte[1000];
+    private static readonly byte[] GetObjectL = new byte[256000];
     private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricXml(5));
     private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricXml(50));
 
@@ -72,7 +73,7 @@ public class RestXmlE2EBenchmarks
         return sb.ToString();
     }
 
-    private AmazonRestXmlDataPlaneClient CreateClient(byte[] responseBody, string contentType = "application/xml")
+    internal AmazonRestXmlDataPlaneClient CreateClient(byte[] responseBody, string contentType = "application/xml")
     {
         var handler = new MockHttpHandler(responseBody, contentType);
         var config = new AmazonRestXmlDataPlaneConfig
@@ -101,9 +102,9 @@ public class RestXmlE2EBenchmarks
         _getMetricClientM = CreateClient(GetMetricResponseM);
 
         _copyObjectRequest = new CopyObjectRequest { Bucket = "b", Key = "k", CopySource = "src/k" };
-        _putObjectS = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[1024]) };
-        _putObjectM = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[100 * 1024]) };
-        _putObjectL = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[1024 * 1024]) };
+        _putObjectS = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[1]) };
+        _putObjectM = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[1000]) };
+        _putObjectL = new PutObjectRequest { Bucket = "b", Key = "k", ContentType = "application/octet-stream", Body = new MemoryStream(new byte[256000]) };
         _getObjectRequest = new GetObjectRequest { Bucket = "b", Key = "k" };
         _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(3) };
         _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(20) };
