@@ -54,22 +54,48 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListEmailIdentitiesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SimpleEmailV2");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-09-27";
-            request.HttpMethod = "GET";
+            request.HttpMethod = "POST";
 
+            request.ResourcePath = "/v2/email/list-identities";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("Filter");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                {
+                    context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                    var publicRequestFilterValue = publicRequestFilterKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestFilterValue);
+                }
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetNextToken())
             {
-                request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
             }
-
             if (publicRequest.IsSetPageSize())
             {
-                request.Parameters.Add("PageSize", StringUtils.FromInt(publicRequest.PageSize.Value));
+                context.Writer.WritePropertyName("PageSize");
+                context.Writer.WriteNumberValue(publicRequest.PageSize.Value);
             }
 
-            request.ResourcePath = "/v2/email/identities";
-
-            request.UseQueryString = true;
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
 
             return request;
         }

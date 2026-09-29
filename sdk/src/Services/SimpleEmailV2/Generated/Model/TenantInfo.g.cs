@@ -48,6 +48,16 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetCreatedTimestamp() => this.CreatedTimestamp.HasValue;
 
         /// <summary>
+        /// Gets and sets the property SendingStatus.
+        /// </summary>
+        public SendingStatus SendingStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SendingStatus property is set.
+        /// </summary>
+        internal bool IsSetSendingStatus() => this.SendingStatus != null;
+
+        /// <summary>
         /// Gets and sets the property TenantArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the tenant.

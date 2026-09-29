@@ -297,6 +297,42 @@ namespace Amazon.SimpleEmailV2
     }
 
     /// <summary>
+    /// Constants used for properties of type ConfigurationSetFilterKey.
+    /// </summary>
+    public class ConfigurationSetFilterKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFIGURATION_SET_NAME_CONTAINS for ConfigurationSetFilterKey
+        /// </summary>
+        public static readonly ConfigurationSetFilterKey CONFIGURATION_SET_NAME_CONTAINS = new ConfigurationSetFilterKey("CONFIGURATION_SET_NAME_CONTAINS");
+
+        /// <summary>
+        /// Constructs a custom ConfigurationSetFilterKey for a value not among the defined constants.
+        /// </summary>
+        public ConfigurationSetFilterKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigurationSetFilterKey FindValue(string value)
+        {
+            return FindValue<ConfigurationSetFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigurationSetFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type ContactLanguage.
     /// </summary>
     public class ContactLanguage : ConstantClass
@@ -1249,6 +1285,52 @@ namespace Amazon.SimpleEmailV2
     }
 
     /// <summary>
+    /// Constants used for properties of type IdentityFilterKey.
+    /// </summary>
+    public class IdentityFilterKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant IDENTITY_NAME_CONTAINS for IdentityFilterKey
+        /// </summary>
+        public static readonly IdentityFilterKey IDENTITY_NAME_CONTAINS = new IdentityFilterKey("IDENTITY_NAME_CONTAINS");
+
+        /// <summary>
+        /// Constant IDENTITY_TYPE for IdentityFilterKey
+        /// </summary>
+        public static readonly IdentityFilterKey IDENTITY_TYPE = new IdentityFilterKey("IDENTITY_TYPE");
+
+        /// <summary>
+        /// Constant VERIFICATION_STATUS for IdentityFilterKey
+        /// </summary>
+        public static readonly IdentityFilterKey VERIFICATION_STATUS = new IdentityFilterKey("VERIFICATION_STATUS");
+
+        /// <summary>
+        /// Constructs a custom IdentityFilterKey for a value not among the defined constants.
+        /// </summary>
+        public IdentityFilterKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityFilterKey FindValue(string value)
+        {
+            return FindValue<IdentityFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type IdentityType.
     /// </summary>
     public class IdentityType : ConstantClass
@@ -1473,6 +1555,47 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ListTenantResourcesFilterKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ListTenantsFilterKey.
+    /// </summary>
+    public class ListTenantsFilterKey : ConstantClass
+    {
+        /// <summary>
+        /// Constant SENDING_STATUS for ListTenantsFilterKey
+        /// </summary>
+        public static readonly ListTenantsFilterKey SENDING_STATUS = new ListTenantsFilterKey("SENDING_STATUS");
+
+        /// <summary>
+        /// Constant TENANT_NAME_CONTAINS for ListTenantsFilterKey
+        /// </summary>
+        public static readonly ListTenantsFilterKey TENANT_NAME_CONTAINS = new ListTenantsFilterKey("TENANT_NAME_CONTAINS");
+
+        /// <summary>
+        /// Constructs a custom ListTenantsFilterKey for a value not among the defined constants.
+        /// </summary>
+        public ListTenantsFilterKey(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ListTenantsFilterKey FindValue(string value)
+        {
+            return FindValue<ListTenantsFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ListTenantsFilterKey(string value)
         {
             return FindValue(value);
         }

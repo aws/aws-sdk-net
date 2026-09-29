@@ -68,6 +68,18 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("Filter");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                {
+                    context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
+                    var publicRequestFilterValue = publicRequestFilterKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestFilterValue);
+                }
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("NextToken");
