@@ -60,5 +60,18 @@ namespace Amazon.OpenSearchService.Model
         /// Checks to see if the Message property is set.
         /// </summary>
         internal bool IsSetMessage() => this.Message != null;
+
+        /// <summary>
+        /// Gets and sets the property Severity. 
+        /// <para>
+        /// The severity of the validation failure.
+        /// </para>
+        /// </summary>
+        public ValidationFailureSeverity Severity { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Severity property is set.
+        /// </summary>
+        internal bool IsSetSeverity() => this.Severity != null;
     }
 }

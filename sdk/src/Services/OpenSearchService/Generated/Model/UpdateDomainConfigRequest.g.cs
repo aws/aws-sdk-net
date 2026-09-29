@@ -49,6 +49,33 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAIMLOptions() => this.AIMLOptions != null;
 
         /// <summary>
+        /// Gets and sets the property AcceptedWarnings. 
+        /// <para>
+        /// A list of advisory warning codes to accept for this configuration change. By default,
+        /// any advisory warning blocks the change. Include the code of each warning you want
+        /// to accept so the change can proceed. You can find warning codes in the<c>ValidationFailures</c>
+        /// list returned by <c>DescribeDomainChangeProgress</c>and <c>DescribeDryRunProgress</c>.
+        /// Critical validation failures cannot be accepted and always block the change. If you
+        /// omit this parameter or pass an empty list, all warnings block the change. For more
+        /// information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+        /// a domain update</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 25)]
+        public List<string> AcceptedWarnings { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AcceptedWarnings property is set.
+        /// </summary>
+        internal bool IsSetAcceptedWarnings() => this.AcceptedWarnings != null && (this.AcceptedWarnings.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
         /// Gets and sets the property AccessPolicies. 
         /// <para>
         /// Identity and Access Management (IAM) access policy as a JSON-formatted string.

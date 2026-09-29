@@ -4015,6 +4015,47 @@ namespace Amazon.OpenSearchService
     }
 
     /// <summary>
+    /// Constants used for properties of type ValidationFailureSeverity.
+    /// </summary>
+    public class ValidationFailureSeverity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Critical for ValidationFailureSeverity
+        /// </summary>
+        public static readonly ValidationFailureSeverity Critical = new ValidationFailureSeverity("Critical");
+
+        /// <summary>
+        /// Constant Warning for ValidationFailureSeverity
+        /// </summary>
+        public static readonly ValidationFailureSeverity Warning = new ValidationFailureSeverity("Warning");
+
+        /// <summary>
+        /// Constructs a custom ValidationFailureSeverity for a value not among the defined constants.
+        /// </summary>
+        public ValidationFailureSeverity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationFailureSeverity FindValue(string value)
+        {
+            return FindValue<ValidationFailureSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationFailureSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type VolumeType.
     /// </summary>
     public class VolumeType : ConstantClass

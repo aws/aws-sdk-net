@@ -84,6 +84,16 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
+            if (publicRequest.IsSetAcceptedWarnings())
+            {
+                context.Writer.WritePropertyName("AcceptedWarnings");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestAcceptedWarningsListValue in publicRequest.AcceptedWarnings)
+                {
+                    context.Writer.WriteStringValue(publicRequestAcceptedWarningsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
             if (publicRequest.IsSetAccessPolicies())
             {
                 context.Writer.WritePropertyName("AccessPolicies");

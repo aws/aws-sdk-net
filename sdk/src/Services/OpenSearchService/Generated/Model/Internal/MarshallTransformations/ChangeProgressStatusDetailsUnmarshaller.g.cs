@@ -53,6 +53,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AcceptedWarnings", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AcceptedWarnings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("ChangeId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -120,6 +127,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfStages = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ValidationFailures", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ValidationFailure, ValidationFailureUnmarshaller>(ValidationFailureUnmarshaller.Instance);
+                    unmarshalledObject.ValidationFailures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
