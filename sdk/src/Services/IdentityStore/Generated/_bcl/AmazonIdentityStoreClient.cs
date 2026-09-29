@@ -45,25 +45,46 @@ namespace Amazon.IdentityStore
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// The Identity Store service used by IAM Identity Center provides a single place to
-    /// retrieve all of your identities (users and groups). For more information, see the
-    /// <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">
-    /// IAM Identity Center User Guide</a>.
-    /// 
-    ///  
-    /// <para>
-    /// This reference guide describes the identity store operations that you can call programmatically
-    /// and includes detailed information about data types and errors.
-    /// </para>
-    ///  <note> 
+    /// <note> 
     /// <para>
     ///  IAM Identity Center uses the <c>sso</c>, <c>sso-directory</c>, and <c>identitystore</c>
     /// API namespaces. The <c>sso-directory</c> and <c>identitystore</c> namespaces authorize
     /// access to data in the Identity Store. Make sure your policies with IAM actions from
     /// these two namespaces are consistent to avoid conflicting authorization to the same
     /// data.
+    /// 
+    ///  </note> 
+    /// <para>
+    /// The Identity Store service used by IAM Identity Center provides a single place to
+    /// retrieve all of your identities (users and groups). You can use the identity store
+    /// API operations in this guide to manage your identity data programmatically. The scope
+    /// of these APIs allows you to create, read, update, delete, and list users, groups,
+    /// and memberships.
     /// </para>
-    ///  </note>
+    ///  
+    /// <para>
+    /// This guide also describes identity store operations that you can call and includes
+    /// detailed information about data types and errors.
+    /// </para>
+    ///  <important> 
+    /// <para>
+    /// If you use an external identity provider or Active Directory as your identity source,
+    /// we recommend that you use the <c>Create</c>, <c>Update</c>, and <c>Delete</c> APIs
+    /// with caution. Because IAM Identity Center doesn't support outbound synchronization,
+    /// your identity source won't automatically update with the changes that you make to
+    /// users or groups using these APIs.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// Amazon Web Services provides SDKs that consist of libraries and sample code for various
+    /// programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The
+    /// SDKs provide a convenient way to programmatically access the identity store and other
+    /// Amazon Web Services services. For more information about the Amazon Web Services SDKs,
+    /// including how to download and install them, see <a href="http://aws.amazon.com/tools/">Amazon
+    /// Web Services Builder Center Toolbox</a>.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial class AmazonIdentityStoreClient : AmazonServiceClient, IAmazonIdentityStore
     {
@@ -1098,6 +1119,81 @@ namespace Amazon.IdentityStore
 
         #endregion
         
+        #region  DescribeIdentityStore
+
+
+        /// <summary>
+        /// Retrieves details about the specified identity store, including its Amazon Resource
+        /// Name (ARN) and network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityStore service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeIdentityStore">REST API Reference for DescribeIdentityStore Operation</seealso>
+        public virtual DescribeIdentityStoreResponse DescribeIdentityStore(DescribeIdentityStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeIdentityStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves details about the specified identity store, including its Amazon Resource
+        /// Name (ARN) and network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIdentityStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/DescribeIdentityStore">REST API Reference for DescribeIdentityStore Operation</seealso>
+        public virtual Task<DescribeIdentityStoreResponse> DescribeIdentityStoreAsync(DescribeIdentityStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeIdentityStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeIdentityStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeIdentityStoreResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeUser
 
 
@@ -1836,6 +1932,89 @@ namespace Amazon.IdentityStore
 
         #endregion
         
+        #region  ListIdentityStores
+
+
+        /// <summary>
+        /// Lists the identity stores that you have access to. This operation returns only the
+        /// identity store ID and Amazon Resource Name (ARN) of each identity store. To obtain
+        /// additional information about an identity store, call <c>DescribeIdentityStore</c>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns results in paginated form. Use the <c>NextToken</c> parameter
+        /// to retrieve additional pages of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityStores service method.</param>
+        /// 
+        /// <returns>The response from the ListIdentityStores service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListIdentityStores">REST API Reference for ListIdentityStores Operation</seealso>
+        public virtual ListIdentityStoresResponse ListIdentityStores(ListIdentityStoresRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIdentityStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityStoresResponseUnmarshaller.Instance;
+
+            return Invoke<ListIdentityStoresResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the identity stores that you have access to. This operation returns only the
+        /// identity store ID and Amazon Resource Name (ARN) of each identity store. To obtain
+        /// additional information about an identity store, call <c>DescribeIdentityStore</c>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation returns results in paginated form. Use the <c>NextToken</c> parameter
+        /// to retrieve additional pages of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIdentityStores service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIdentityStores service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/ListIdentityStores">REST API Reference for ListIdentityStores Operation</seealso>
+        public virtual Task<ListIdentityStoresResponse> ListIdentityStoresAsync(ListIdentityStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListIdentityStoresRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIdentityStoresResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListIdentityStoresResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListUsers
 
 
@@ -2036,6 +2215,107 @@ namespace Amazon.IdentityStore
             options.ResponseUnmarshaller = UpdateGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateIdentityStore
+
+
+        /// <summary>
+        /// Updates the configuration of the specified identity store, including its network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityStore service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateIdentityStore">REST API Reference for UpdateIdentityStore Operation</seealso>
+        public virtual UpdateIdentityStoreResponse UpdateIdentityStore(UpdateIdentityStoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIdentityStoreResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the configuration of the specified identity store, including its network configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIdentityStore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateIdentityStore service method, as returned by IdentityStore.</returns>
+        /// <exception cref="Amazon.IdentityStore.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ConflictException">
+        /// This request cannot be completed for one of the following reasons:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Performing the requested operation would violate an existing uniqueness claim in the
+        /// identity store. Resolve the conflict before retrying this request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The requested resource was being concurrently modified by another request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure
+        /// with an internal server.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ResourceNotFoundException">
+        /// Indicates that a requested resource is not found.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ThrottlingException">
+        /// Indicates that the principal has crossed the throttling limits of the API operations.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityStore.Model.ValidationException">
+        /// The request failed because it contains a syntax error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/UpdateIdentityStore">REST API Reference for UpdateIdentityStore Operation</seealso>
+        public virtual Task<UpdateIdentityStoreResponse> UpdateIdentityStoreAsync(UpdateIdentityStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateIdentityStoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIdentityStoreResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateIdentityStoreResponse>(request, options, cancellationToken);
         }
 
         #endregion

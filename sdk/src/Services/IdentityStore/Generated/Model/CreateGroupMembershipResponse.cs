@@ -35,6 +35,7 @@ namespace Amazon.IdentityStore.Model
     public partial class CreateGroupMembershipResponse : AmazonWebServiceResponse
     {
         private string _identityStoreId;
+        private string _membershipArn;
         private string _membershipId;
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.IdentityStore.Model
         /// The globally unique identifier for the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -57,12 +58,32 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MembershipArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the newly created group membership in the identity
+        /// store. For example, <c>arn:aws:identitystore:::membership/a1b2c3d4-5678-90ab-cdef-EXAMPLE33333</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=100)]
+        public string MembershipArn
+        {
+            get { return this._membershipArn; }
+            set { this._membershipArn = value; }
+        }
+
+        // Check to see if MembershipArn property is set
+        internal bool IsSetMembershipArn()
+        {
+            return this._membershipArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
         /// The identifier for a newly created <c>GroupMembership</c> in an identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string MembershipId
         {
             get { return this._membershipId; }

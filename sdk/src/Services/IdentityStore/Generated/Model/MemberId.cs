@@ -39,10 +39,15 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// An object containing the identifiers of resources that can be members.
+        /// The identifier for a user in the identity store.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify the user by ID or by Amazon Resource Name (ARN). For example, user
+        /// ID <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c> or user ARN <c>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=47)]
+        [AWSProperty(Min=1, Max=100)]
         public string UserId
         {
             get { return this._userId; }

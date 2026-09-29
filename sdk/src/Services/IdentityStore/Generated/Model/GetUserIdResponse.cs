@@ -35,6 +35,7 @@ namespace Amazon.IdentityStore.Model
     public partial class GetUserIdResponse : AmazonWebServiceResponse
     {
         private string _identityStoreId;
+        private string _userArn;
         private string _userId;
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.IdentityStore.Model
         /// The globally unique identifier for the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -57,12 +58,31 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the user in the identity store. For example, <c>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=100)]
+        public string UserArn
+        {
+            get { return this._userArn; }
+            set { this._userArn = value; }
+        }
+
+        // Check to see if UserArn property is set
+        internal bool IsSetUserArn()
+        {
+            return this._userArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
         /// The identifier for a user in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string UserId
         {
             get { return this._userId; }
