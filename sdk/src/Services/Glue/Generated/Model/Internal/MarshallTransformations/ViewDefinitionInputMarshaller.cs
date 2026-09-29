@@ -52,6 +52,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Definer);
             }
 
+            if(requestObject.IsSetIsManaged())
+            {
+                context.Writer.WritePropertyName("IsManaged");
+                context.Writer.WriteBooleanValue(requestObject.IsManaged.Value);
+            }
+
             if(requestObject.IsSetIsProtected())
             {
                 context.Writer.WritePropertyName("IsProtected");

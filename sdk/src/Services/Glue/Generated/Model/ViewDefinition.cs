@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class ViewDefinition
     {
         private string _definer;
+        private bool? _isManaged;
         private bool? _isProtected;
         private LastRefreshType _lastRefreshType;
         private long? _refreshSeconds;
@@ -63,6 +64,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDefiner()
         {
             return this._definer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsManaged. 
+        /// <para>
+        /// Specifies whether the materialized view is managed by Glue.
+        /// </para>
+        /// </summary>
+        public bool? IsManaged
+        {
+            get { return this._isManaged; }
+            set { this._isManaged = value; }
+        }
+
+        // Check to see if IsManaged property is set
+        internal bool IsSetIsManaged()
+        {
+            return this._isManaged.HasValue; 
         }
 
         /// <summary>
