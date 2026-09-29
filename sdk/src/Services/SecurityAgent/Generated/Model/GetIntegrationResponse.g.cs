@@ -143,5 +143,19 @@ namespace Amazon.SecurityAgent.Model
         /// Checks to see if the TargetUrl property is set.
         /// </summary>
         internal bool IsSetTargetUrl() => this.TargetUrl != null;
+
+        /// <summary>
+        /// Gets and sets the property WebhookUrl. 
+        /// <para>
+        /// The payload URL of the integration's webhook, once it has been created. The signing
+        /// secret is never returned on a read.
+        /// </para>
+        /// </summary>
+        public string WebhookUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WebhookUrl property is set.
+        /// </summary>
+        internal bool IsSetWebhookUrl() => this.WebhookUrl != null;
     }
 }

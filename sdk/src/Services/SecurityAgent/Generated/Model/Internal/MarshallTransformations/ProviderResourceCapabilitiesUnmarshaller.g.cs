@@ -53,6 +53,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("azureDevOps", targetDepth, ref reader))
+                {
+                    var unmarshaller = AzureDevOpsResourceCapabilitiesUnmarshaller.Instance;
+                    unmarshalledObject.AzureDevOps = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("bitbucket", targetDepth, ref reader))
                 {
                     var unmarshaller = BitbucketResourceCapabilitiesUnmarshaller.Instance;

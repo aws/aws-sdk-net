@@ -45,6 +45,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAzureDevOpsRepository())
+            {
+                context.Writer.WritePropertyName("azureDevOpsRepository");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AzureDevOpsRepositoryResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AzureDevOpsRepository, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetBitbucketRepository())
             {
                 context.Writer.WritePropertyName("bitbucketRepository");

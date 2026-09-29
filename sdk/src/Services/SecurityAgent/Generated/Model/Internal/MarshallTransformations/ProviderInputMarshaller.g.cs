@@ -45,6 +45,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAzureDevOps())
+            {
+                context.Writer.WritePropertyName("azureDevOps");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AzureDevOpsIntegrationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.AzureDevOps, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetBitbucket())
             {
                 context.Writer.WritePropertyName("bitbucket");
@@ -52,6 +63,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 
                 var marshaller = BitbucketIntegrationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.Bitbucket, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetBitbucketDataCenter())
+            {
+                context.Writer.WritePropertyName("bitbucketDataCenter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BitbucketDataCenterIntegrationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.BitbucketDataCenter, context);
 
                 context.Writer.WriteEndObject();
             }

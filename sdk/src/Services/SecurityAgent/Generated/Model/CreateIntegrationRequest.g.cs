@@ -93,7 +93,7 @@ namespace Amazon.SecurityAgent.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The integration provider. Currently, only GITHUB is supported.
+        /// The integration provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]

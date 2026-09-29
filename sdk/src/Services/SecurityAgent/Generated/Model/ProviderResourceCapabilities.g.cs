@@ -36,6 +36,19 @@ namespace Amazon.SecurityAgent.Model
     public partial class ProviderResourceCapabilities
     {
         /// <summary>
+        /// Gets and sets the property AzureDevOps. 
+        /// <para>
+        /// The Azure DevOps-specific resource capabilities.
+        /// </para>
+        /// </summary>
+        public AzureDevOpsResourceCapabilities AzureDevOps { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AzureDevOps property is set.
+        /// </summary>
+        internal bool IsSetAzureDevOps() => this.AzureDevOps != null;
+
+        /// <summary>
         /// Gets and sets the property Bitbucket.
         /// </summary>
         public BitbucketResourceCapabilities Bitbucket { get; set; }

@@ -36,29 +36,29 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// InitiateProviderRegistration Request Marshaller
+    /// UpdateIntegration Request Marshaller
     /// </summary>
-    public partial class InitiateProviderRegistrationRequestMarshaller : IMarshaller<IRequest, InitiateProviderRegistrationRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class UpdateIntegrationRequestMarshaller : IMarshaller<IRequest, UpdateIntegrationRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshall the request object to the HTTP request.
         /// </summary>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((InitiateProviderRegistrationRequest)input);
+            return this.Marshall((UpdateIntegrationRequest)input);
         }
 
         /// <summary>
         /// Marshall the request object to the HTTP request.
         /// </summary>
-        public IRequest Marshall(InitiateProviderRegistrationRequest publicRequest)
+        public IRequest Marshall(UpdateIntegrationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityAgent");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-09-06";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/oauth2/provider/register";
+            request.ResourcePath = "/UpdateIntegration";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -68,30 +68,15 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetClientId())
+            if (publicRequest.IsSetIntegrationId())
             {
-                context.Writer.WritePropertyName("clientId");
-                context.Writer.WriteStringValue(publicRequest.ClientId);
+                context.Writer.WritePropertyName("integrationId");
+                context.Writer.WriteStringValue(publicRequest.IntegrationId);
             }
-            if (publicRequest.IsSetClientSecret())
+            if (publicRequest.IsSetWebhookAction())
             {
-                context.Writer.WritePropertyName("clientSecret");
-                context.Writer.WriteStringValue(publicRequest.ClientSecret);
-            }
-            if (publicRequest.IsSetOrganizationName())
-            {
-                context.Writer.WritePropertyName("organizationName");
-                context.Writer.WriteStringValue(publicRequest.OrganizationName);
-            }
-            if (publicRequest.IsSetProvider())
-            {
-                context.Writer.WritePropertyName("provider");
-                context.Writer.WriteStringValue(publicRequest.Provider);
-            }
-            if (publicRequest.IsSetTargetUrl())
-            {
-                context.Writer.WritePropertyName("targetUrl");
-                context.Writer.WriteStringValue(publicRequest.TargetUrl);
+                context.Writer.WritePropertyName("webhookAction");
+                context.Writer.WriteStringValue(publicRequest.WebhookAction);
             }
 
             writer.WriteEndObject();
@@ -103,13 +88,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             return request;
         }
 
-        private static readonly InitiateProviderRegistrationRequestMarshaller _instance = new();
+        private static readonly UpdateIntegrationRequestMarshaller _instance = new();
 
-        internal static InitiateProviderRegistrationRequestMarshaller GetInstance() => _instance;
+        internal static UpdateIntegrationRequestMarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static InitiateProviderRegistrationRequestMarshaller Instance => _instance;
+        public static UpdateIntegrationRequestMarshaller Instance => _instance;
     }
 }

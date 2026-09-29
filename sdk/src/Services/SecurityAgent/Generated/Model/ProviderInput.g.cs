@@ -36,6 +36,19 @@ namespace Amazon.SecurityAgent.Model
     public partial class ProviderInput
     {
         /// <summary>
+        /// Gets and sets the property AzureDevOps. 
+        /// <para>
+        /// The Azure DevOps-specific input for creating an integration.
+        /// </para>
+        /// </summary>
+        public AzureDevOpsIntegrationInput AzureDevOps { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AzureDevOps property is set.
+        /// </summary>
+        internal bool IsSetAzureDevOps() => this.AzureDevOps != null;
+
+        /// <summary>
         /// Gets and sets the property Bitbucket. 
         /// <para>
         /// The configuration for a Bitbucket integration.
@@ -47,6 +60,19 @@ namespace Amazon.SecurityAgent.Model
         /// Checks to see if the Bitbucket property is set.
         /// </summary>
         internal bool IsSetBitbucket() => this.Bitbucket != null;
+
+        /// <summary>
+        /// Gets and sets the property BitbucketDataCenter. 
+        /// <para>
+        /// The Bitbucket Data Center-specific input for creating an integration.
+        /// </para>
+        /// </summary>
+        public BitbucketDataCenterIntegrationInput BitbucketDataCenter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BitbucketDataCenter property is set.
+        /// </summary>
+        internal bool IsSetBitbucketDataCenter() => this.BitbucketDataCenter != null;
 
         /// <summary>
         /// Gets and sets the property Confluence. 

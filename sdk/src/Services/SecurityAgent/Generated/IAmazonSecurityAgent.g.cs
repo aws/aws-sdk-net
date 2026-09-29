@@ -2844,6 +2844,69 @@ namespace Amazon.SecurityAgent
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Creates an integration's webhook, or rotates the HMAC signing secret of an existing
+        /// one. The secret is returned only once, in this response, and cannot be retrieved again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration service method.</param>
+        /// <returns>The response from the UpdateIntegration service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
+        UpdateIntegrationResponse UpdateIntegration(UpdateIntegrationRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an integration's webhook, or rotates the HMAC signing secret of an existing
+        /// one. The secret is returned only once, in this response, and cannot be retrieved again.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIntegration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateIntegration service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateIntegration">REST API Reference for UpdateIntegration Operation</seealso>
+        Task<UpdateIntegrationResponse> UpdateIntegrationAsync(UpdateIntegrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Updates an existing pentest configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePentest service method.</param>

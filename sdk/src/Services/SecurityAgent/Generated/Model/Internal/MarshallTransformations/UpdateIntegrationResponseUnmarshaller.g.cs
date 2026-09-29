@@ -36,36 +36,22 @@ using Amazon.Util;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetIntegration operation.
+    /// Response Unmarshaller for UpdateIntegration operation.
     /// </summary>
-    public partial class GetIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class UpdateIntegrationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            var unmarshalledObject = new GetIntegrationResponse();
+            var unmarshalledObject = new UpdateIntegrationResponse();
             var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("displayName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("installationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstallationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
                 if (context.TestExpression("integrationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -73,38 +59,10 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
-                if (context.TestExpression("kmsKeyId", targetDepth, ref reader))
+                if (context.TestExpression("secret", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("privateConnectionName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrivateConnectionName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("provider", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Provider = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("providerType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("targetUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetUrl = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Secret = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -141,6 +99,10 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     {
                         return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                    {
+                        return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                     {
                         return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -162,13 +124,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             return new AmazonSecurityAgentException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetIntegrationResponseUnmarshaller _instance = new GetIntegrationResponseUnmarshaller();
+        private static UpdateIntegrationResponseUnmarshaller _instance = new UpdateIntegrationResponseUnmarshaller();
 
-        internal static GetIntegrationResponseUnmarshaller GetInstance() => _instance;
+        internal static UpdateIntegrationResponseUnmarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static GetIntegrationResponseUnmarshaller Instance => _instance;
+        public static UpdateIntegrationResponseUnmarshaller Instance => _instance;
     }
 }

@@ -1126,6 +1126,11 @@ namespace Amazon.SecurityAgent
     public class Provider : ConstantClass
     {
         /// <summary>
+        /// Constant AZURE_DEVOPS for Provider
+        /// </summary>
+        public static readonly Provider AZURE_DEVOPS = new Provider("AZURE_DEVOPS");
+
+        /// <summary>
         /// Constant BITBUCKET for Provider
         /// </summary>
         public static readonly Provider BITBUCKET = new Provider("BITBUCKET");
@@ -2312,6 +2317,47 @@ namespace Amazon.SecurityAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type WebhookAction.
+    /// </summary>
+    public class WebhookAction : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATE_IF_ABSENT for WebhookAction
+        /// </summary>
+        public static readonly WebhookAction CREATE_IF_ABSENT = new WebhookAction("CREATE_IF_ABSENT");
+
+        /// <summary>
+        /// Constant ROTATE for WebhookAction
+        /// </summary>
+        public static readonly WebhookAction ROTATE = new WebhookAction("ROTATE");
+
+        /// <summary>
+        /// Constructs a custom WebhookAction for a value not among the defined constants.
+        /// </summary>
+        public WebhookAction(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WebhookAction FindValue(string value)
+        {
+            return FindValue<WebhookAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WebhookAction(string value)
         {
             return FindValue(value);
         }

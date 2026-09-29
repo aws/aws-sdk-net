@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IntegrationSummary Object
+    /// Response Unmarshaller for AzureDevOpsRepositoryMetadata Object
     /// </summary>
-    public partial class IntegrationSummaryUnmarshaller : IJsonUnmarshaller<IntegrationSummary, JsonUnmarshallerContext>
+    public partial class AzureDevOpsRepositoryMetadataUnmarshaller : IJsonUnmarshaller<AzureDevOpsRepositoryMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public IntegrationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AzureDevOpsRepositoryMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new IntegrationSummary();
+            var unmarshalledObject = new AzureDevOpsRepositoryMetadata();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,70 +53,56 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("displayName", targetDepth, ref reader))
+                if (context.TestExpression("accessType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AccessType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("installationId", targetDepth, ref reader))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstallationId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("integrationId", targetDepth, ref reader))
+                if (context.TestExpression("organization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IntegrationId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Organization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("privateConnectionName", targetDepth, ref reader))
+                if (context.TestExpression("project", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrivateConnectionName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Project = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("provider", targetDepth, ref reader))
+                if (context.TestExpression("projectId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Provider = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ProjectId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("providerType", targetDepth, ref reader))
+                if (context.TestExpression("providerResourceId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("targetUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("webhookUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebhookUrl = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ProviderResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static IntegrationSummaryUnmarshaller _instance = new IntegrationSummaryUnmarshaller();
+        private static AzureDevOpsRepositoryMetadataUnmarshaller _instance = new AzureDevOpsRepositoryMetadataUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static IntegrationSummaryUnmarshaller Instance => _instance;
+        public static AzureDevOpsRepositoryMetadataUnmarshaller Instance => _instance;
     }
 }

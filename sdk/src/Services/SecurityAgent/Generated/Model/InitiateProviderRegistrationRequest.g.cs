@@ -37,9 +37,50 @@ namespace Amazon.SecurityAgent.Model
     public partial class InitiateProviderRegistrationRequest : AmazonSecurityAgentRequest
     {
         /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The client ID of the OAuth application registered on your self-managed provider instance.
+        /// </para>
+        /// </summary>
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientId property is set.
+        /// </summary>
+        internal bool IsSetClientId() => this.ClientId != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientSecret. 
+        /// <para>
+        /// The client secret of the OAuth application registered on your self-managed provider
+        /// instance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public string ClientSecret { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientSecret property is set.
+        /// </summary>
+        internal bool IsSetClientSecret() => this.ClientSecret != null;
+
+        /// <summary>
+        /// Gets and sets the property OrganizationName. 
+        /// <para>
+        /// The name of the organization to connect.
+        /// </para>
+        /// </summary>
+        public string OrganizationName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OrganizationName property is set.
+        /// </summary>
+        internal bool IsSetOrganizationName() => this.OrganizationName != null;
+
+        /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider to initiate registration with. Currently, only GITHUB is supported.
+        /// The provider to initiate registration with.
         /// </para>
         /// </summary>
         [AWSProperty(Required = true)]
@@ -49,5 +90,18 @@ namespace Amazon.SecurityAgent.Model
         /// Checks to see if the Provider property is set.
         /// </summary>
         internal bool IsSetProvider() => this.Provider != null;
+
+        /// <summary>
+        /// Gets and sets the property TargetUrl. 
+        /// <para>
+        /// The HTTPS URL of a self-managed provider instance. Omit for SaaS providers.
+        /// </para>
+        /// </summary>
+        public string TargetUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetUrl property is set.
+        /// </summary>
+        internal bool IsSetTargetUrl() => this.TargetUrl != null;
     }
 }

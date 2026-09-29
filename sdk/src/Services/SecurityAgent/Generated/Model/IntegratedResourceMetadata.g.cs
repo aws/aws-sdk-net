@@ -36,6 +36,19 @@ namespace Amazon.SecurityAgent.Model
     public partial class IntegratedResourceMetadata
     {
         /// <summary>
+        /// Gets and sets the property AzureDevOpsRepository. 
+        /// <para>
+        /// The Azure DevOps repository metadata.
+        /// </para>
+        /// </summary>
+        public AzureDevOpsRepositoryMetadata AzureDevOpsRepository { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AzureDevOpsRepository property is set.
+        /// </summary>
+        internal bool IsSetAzureDevOpsRepository() => this.AzureDevOpsRepository != null;
+
+        /// <summary>
         /// Gets and sets the property BitbucketRepository.
         /// </summary>
         public BitbucketRepositoryMetadata BitbucketRepository { get; set; }
