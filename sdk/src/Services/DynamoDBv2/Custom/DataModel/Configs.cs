@@ -236,6 +236,14 @@ namespace Amazon.DynamoDBv2.DataModel
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
         /// <summary>
+        /// The maximum number of <c>BatchGetItem</c> service calls that may be in flight at the same time
+        /// when a <c>BatchGet</c> request is split across multiple calls. Only applies to the asynchronous
+        /// execution path. If unset, or set to a value less than or equal to 1 (values less than 1 are
+        /// treated as 1), the calls are made sequentially.
+        /// </summary>
+        internal int? MaxParallelBatches { get; set; }
+
+        /// <summary>
         /// Indicates whether a query should traverse the index backwards in descending order by range key value.
         /// If the property is false (or not set), traversal shall be in ascending order.
         /// </summary>
@@ -454,6 +462,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DynamoDBEntryConversion conversion = contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             string tableNamePrefix = operationConfig.TableNamePrefix ?? contextConfig.TableNamePrefix ?? string.Empty;
             ReturnConsumedCapacity returnConsumedCapacity = operationConfig.ReturnConsumedCapacity ?? ReturnConsumedCapacity.NONE;
+            int? maxParallelBatches = operationConfig.MaxParallelBatches;
 
             // These properties can only be set at the operation level
             bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
@@ -493,6 +502,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
             RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
             ReturnConsumedCapacity = returnConsumedCapacity;
+            MaxParallelBatches = maxParallelBatches;
             DerivedTypeAttributeName = derivedTypeAttributeName;
 
             State = new OperationState();
@@ -636,6 +646,13 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc cref="ReturnConsumedCapacity"/>
         public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
+        /// <summary>
+        /// The maximum number of <c>BatchGetItem</c> service calls that may be in flight at the same time
+        /// when a <c>BatchGet</c> request is split across multiple calls. Only applies to the asynchronous
+        /// execution path. If unset (or 1), the calls are made sequentially.
+        /// </summary>
+        public int? MaxParallelBatches { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation => !string.IsNullOrEmpty(IndexName);
