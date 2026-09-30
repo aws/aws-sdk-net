@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class UpdateGatewayTargetResponse : AmazonWebServiceResponse
     {
         private AuthorizationData _authorizationData;
+        private List<CertificateConfiguration> _certificateConfigurations = AWSConfigs.InitializeCollections ? new List<CertificateConfiguration>() : null;
         private DateTime? _createdAt;
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
         private string _description;
@@ -69,6 +70,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAuthorizationData()
         {
             return this._authorizationData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateConfigurations. 
+        /// <para>
+        /// The private certificate authority (CA) configurations for the gateway target.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<CertificateConfiguration> CertificateConfigurations
+        {
+            get { return this._certificateConfigurations; }
+            set { this._certificateConfigurations = value; }
+        }
+
+        // Check to see if CertificateConfigurations property is set
+        internal bool IsSetCertificateConfigurations()
+        {
+            return this._certificateConfigurations != null && (this._certificateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

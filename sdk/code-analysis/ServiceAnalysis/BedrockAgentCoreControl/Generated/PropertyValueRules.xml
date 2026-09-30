@@ -1153,6 +1153,10 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.DeleteConfigurationBundleResponse.BundleArn</property>
+    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.DeleteConfigurationBundleResponse.BundleId</property>
     <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
@@ -4867,7 +4871,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.GatewayPolicyEngineConfiguration.Arn</property>
     <min>1</min>
     <max>170</max>
-    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:policy-engine\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9_]{10}</pattern>
+    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:policy-engine\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9_]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GatewayRateLimitDetail.Description</property>
@@ -6096,6 +6100,14 @@
     <pattern>.*([1-9][0-9]{0,4})|([a-zA-Z][a-zA-Z0-9_]{0,47}).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.S3CertificateConfiguration.BucketOwnerAccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.S3CertificateConfiguration.Uri</property>
+    <pattern>s3://.{1,2043}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.S3Configuration.BucketOwnerAccountId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
@@ -6183,6 +6195,10 @@
     <property>Amazon.BedrockAgentCoreControl.Model.SecretReference.SecretId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.SecretsManagerCertificateConfiguration.SecretArn</property>
+    <pattern>arn:aws(-[^:]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.SecretsManagerLocation.SecretArn</property>

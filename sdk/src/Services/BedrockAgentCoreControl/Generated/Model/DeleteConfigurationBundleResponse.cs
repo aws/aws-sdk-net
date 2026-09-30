@@ -34,8 +34,28 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class DeleteConfigurationBundleResponse : AmazonWebServiceResponse
     {
+        private string _bundleArn;
         private string _bundleId;
         private ConfigurationBundleStatus _status;
+
+        /// <summary>
+        /// Gets and sets the property BundleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the deleted configuration bundle.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string BundleArn
+        {
+            get { return this._bundleArn; }
+            set { this._bundleArn = value; }
+        }
+
+        // Check to see if BundleArn property is set
+        internal bool IsSetBundleArn()
+        {
+            return this._bundleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BundleId. 

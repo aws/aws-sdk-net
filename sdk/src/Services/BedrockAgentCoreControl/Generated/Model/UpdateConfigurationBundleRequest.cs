@@ -133,7 +133,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// A commit message describing the changes in this version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public string CommitMessage
         {
             get { return this._commitMessage; }
