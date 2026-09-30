@@ -108,7 +108,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <para>
         ///  The type of Amazon Web Services resource to configure telemetry for (for example,
         /// <c>AWS::EC2::VPC</c>, <c>AWS::EKS::Cluster</c>, <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>,
-        /// or <c>AWS::Bedrock::KnowledgeBase</c>). 
+        /// <c>AWS::Bedrock::KnowledgeBase</c>, or <c>AWS::BedrockAgentCore::PaymentManager</c>).
+        /// 
         /// </para>
         /// </summary>
         public ResourceType ResourceType { get; set; }

@@ -732,6 +732,11 @@ namespace Amazon.ObservabilityAdmin
         public static readonly ResourceType AWSBedrockAgentCoreMemory = new ResourceType("AWS::BedrockAgentCore::Memory");
 
         /// <summary>
+        /// Constant AWSBedrockAgentCorePaymentManager for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBedrockAgentCorePaymentManager = new ResourceType("AWS::BedrockAgentCore::PaymentManager");
+
+        /// <summary>
         /// Constant AWSBedrockAgentCoreRuntime for ResourceType
         /// </summary>
         public static readonly ResourceType AWSBedrockAgentCoreRuntime = new ResourceType("AWS::BedrockAgentCore::Runtime");

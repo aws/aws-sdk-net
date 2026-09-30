@@ -32,7 +32,8 @@ namespace Amazon.ObservabilityAdmin.Model
     /// <summary>
     /// The configuration parameters for log delivery, including <c>logType</c> settings.
     /// Applies to resource types that support configurable log delivery, such as Amazon Bedrock
-    /// Knowledge Bases and Elastic Load Balancing Application Load Balancers.
+    /// Knowledge Bases, Amazon Bedrock AgentCore payment managers, and Elastic Load Balancing
+    /// Application Load Balancers.
     /// </summary>
     public partial class LogDeliveryParameters
     {

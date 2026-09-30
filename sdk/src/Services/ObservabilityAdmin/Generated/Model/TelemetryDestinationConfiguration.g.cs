@@ -110,8 +110,8 @@ namespace Amazon.ObservabilityAdmin.Model
         /// Gets and sets the property LogDeliveryParameters. 
         /// <para>
         /// The configuration parameters for log delivery when the resource type supports configurable
-        /// log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application
-        /// Load Balancers.
+        /// log types, such as Amazon Bedrock Knowledge Bases, Amazon Bedrock AgentCore payment
+        /// managers, or Elastic Load Balancing Application Load Balancers.
         /// </para>
         /// </summary>
         public LogDeliveryParameters LogDeliveryParameters { get; set; }
