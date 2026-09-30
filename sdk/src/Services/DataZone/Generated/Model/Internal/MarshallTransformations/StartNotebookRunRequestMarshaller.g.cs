@@ -121,6 +121,16 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("notebookIdentifier");
                 context.Writer.WriteStringValue(publicRequest.NotebookIdentifier);
             }
+            if (publicRequest.IsSetNotificationConfiguration())
+            {
+                context.Writer.WritePropertyName("notificationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NotificationConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NotificationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
             if (publicRequest.IsSetOwningProjectIdentifier())
             {
                 context.Writer.WritePropertyName("owningProjectIdentifier");

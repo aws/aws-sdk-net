@@ -3226,6 +3226,72 @@ namespace Amazon.DataZone
     }
 
     /// <summary>
+    /// Constants used for properties of type NotifyOnState.
+    /// </summary>
+    public class NotifyOnState : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILED for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState FAILED = new NotifyOnState("FAILED");
+
+        /// <summary>
+        /// Constant QUEUED for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState QUEUED = new NotifyOnState("QUEUED");
+
+        /// <summary>
+        /// Constant RUNNING for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState RUNNING = new NotifyOnState("RUNNING");
+
+        /// <summary>
+        /// Constant STARTING for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState STARTING = new NotifyOnState("STARTING");
+
+        /// <summary>
+        /// Constant STOPPED for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState STOPPED = new NotifyOnState("STOPPED");
+
+        /// <summary>
+        /// Constant STOPPING for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState STOPPING = new NotifyOnState("STOPPING");
+
+        /// <summary>
+        /// Constant SUCCEEDED for NotifyOnState
+        /// </summary>
+        public static readonly NotifyOnState SUCCEEDED = new NotifyOnState("SUCCEEDED");
+
+        /// <summary>
+        /// Constructs a custom NotifyOnState for a value not among the defined constants.
+        /// </summary>
+        public NotifyOnState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotifyOnState FindValue(string value)
+        {
+            return FindValue<NotifyOnState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotifyOnState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type OAuth2GrantType.
     /// </summary>
     public class OAuth2GrantType : ConstantClass

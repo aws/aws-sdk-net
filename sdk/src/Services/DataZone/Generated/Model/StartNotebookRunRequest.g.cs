@@ -132,6 +132,20 @@ namespace Amazon.DataZone.Model
         internal bool IsSetNotebookIdentifier() => this.NotebookIdentifier != null;
 
         /// <summary>
+        /// Gets and sets the property NotificationConfiguration. 
+        /// <para>
+        /// The notification configuration for the notebook run. Use this to specify the notebook
+        /// run states that trigger notifications.
+        /// </para>
+        /// </summary>
+        public NotificationConfig NotificationConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NotificationConfiguration property is set.
+        /// </summary>
+        internal bool IsSetNotificationConfiguration() => this.NotificationConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property OwningProjectIdentifier. 
         /// <para>
         /// The identifier of the project that owns the notebook run.

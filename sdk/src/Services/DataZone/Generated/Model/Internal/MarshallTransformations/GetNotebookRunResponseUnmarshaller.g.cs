@@ -136,6 +136,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("notificationConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = NotificationConfigUnmarshaller.Instance;
+                    unmarshalledObject.NotificationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("owningProjectId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
