@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Generate SerdeBenchmarksRunner/CpuTimeBenchmarks.cs from the shared cross-SDK serde benchmark models.
+"""Generate the serde benchmark payloads from the shared cross-SDK serde benchmark models.
 
-The models define the canonical ops/CPU-sec cases as Smithy @httpRequestTests / @httpResponseTests
-entries tagged "serde-benchmark" in <model>/operations/*.smithy. This script extracts those entries
-and emits one CpuTimeRunner.MeasureAsync call per case, with request params and response bodies
-taken from the model.
+The models define the canonical cases as Smithy @httpRequestTests / @httpResponseTests entries
+tagged "serde-benchmark" in <model>/operations/*.smithy. This script extracts those entries and
+writes two files into SerdeBenchmarksRunner/:
+
+- CpuTimeBenchmarks.cs: the --cpu-time (ops/CPU-sec) cases, one CpuTimeRunner.MeasureAsync call
+  per case.
+- ModelFixtures.cs: a request factory or response body (plus headers) for every case, used by the
+  --suite serde and --suite e2e BenchmarkDotNet suites. It also holds a few fixtures derived from
+  model params for operations the models only define under another protocol (see DERIVED below).
 
 Usage (from this directory):
-    python generate_cpu_time_benchmarks.py --model <path-to-models>/model
+    python generate_serde_benchmarks.py --model <path-to-models>/model
 
 Requires Python 3.8+ and no third-party packages. Not part of the build.
 """
@@ -19,7 +24,7 @@ import sys
 from collections import Counter
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_OUTPUT = os.path.join(SCRIPT_DIR, "SerdeBenchmarksRunner", "CpuTimeBenchmarks.cs")
+RUNNER_DIR = os.path.join(SCRIPT_DIR, "SerdeBenchmarksRunner")
 EXPECTED_CASES = 71
 # Tagged in the model but not part of the ops/CPU-sec case set.
 EXCLUDED_IDS = {"restJson1_GetObjectStreaming"}
@@ -195,6 +200,8 @@ def extract_cases(model_dir):
                         case["body_inline"] = body
                     if test.get("headers"):
                         case["headers"] = dict(test["headers"])
+                    # Decoded output; protocol-neutral, used to derive bodies for other protocols.
+                    case["params"] = test.get("params") or {}
                 else:
                     case["params"] = test.get("params") or {}
                 cases.append(case)
@@ -267,10 +274,10 @@ def av_expr(node, avt):
         inner = ",".join(cs_str(str(x)) for x in v)
         return f"new {avt}{{NS=new List<string>{{{inner}}}}}"
     if k == "B":
-        b = v.encode("utf-8")  # AttributeValue B is the raw string bytes in the models (not base64)
-        return f"new {avt}{{B=new MemoryStream(new byte[]{{{','.join(str(x) for x in b)}}})}}"
+        # AttributeValue B is the raw UTF-8 bytes of the model string (not base64).
+        return f"new {avt}{{B=new MemoryStream(System.Text.Encoding.UTF8.GetBytes({cs_str(v)}))}}"
     if k == "BS":
-        inner = ",".join("new MemoryStream(new byte[]{" + ",".join(str(x) for x in e.encode("utf-8")) + "})" for e in v)
+        inner = ",".join(f"new MemoryStream(System.Text.Encoding.UTF8.GetBytes({cs_str(e)}))" for e in v)
         return f"new {avt}{{BS=new List<MemoryStream>{{{inner}}}}}"
     raise ValueError("unsupported AttributeValue kind " + k)
 
@@ -458,18 +465,19 @@ def emit_protocol(proto, cases):
         "        }",
         "        var results = new List<CpuTimeRunner.CpuTimeResult>();",
     ]
+    fx = f"ModelFixtures.{FIXTURE_CLASS[proto]}"
     for m in cases:
         meth = OP_METHOD[m["op"]]
+        name = fixture_name(m["id"])
         if m["kind"] == "response":
-            hdr = headers_expr(m) or "null"
-            lines.append(f"        {{ var c=CreateClient({resp_bytes(m)}, {cs_str(P['ct'])}, {hdr}); var r={trivial_request(m)}; "
+            lines.append(f"        {{ var c=CreateClient({fx}.{name}, {cs_str(P['ct'])}, {fx}.{name}_Headers); var r={trivial_request(m)}; "
                          f"results.Add(await CpuTimeRunner.MeasureAsync({cs_str(m['id'])}, ()=>c.{meth}(r))); }}")
         else:
             hdr = P["rh"] or "null"
             # PutObject reuses one MemoryStream body; the mock consumes it, so rewind it every
             # iteration or only the first call sends real bytes.
             lam = f"()=>{{ r.Body.Position=0; return c.{meth}(r); }}" if m["op"] == "PutObject" else f"()=>c.{meth}(r)"
-            lines.append(f"        {{ var c=CreateClient({input_response(m)}, {cs_str(P['ct'])}, {hdr}); var r={build_request(m)}; "
+            lines.append(f"        {{ var c=CreateClient({input_response(m)}, {cs_str(P['ct'])}, {hdr}); var r={fx}.{name}(); "
                          f"results.Add(await CpuTimeRunner.MeasureAsync({cs_str(m['id'])}, {lam})); }}")
     lines += [
         f"        CpuTimeRunner.PrintResults(results, {cs_str(proto)});",
@@ -479,11 +487,148 @@ def emit_protocol(proto, cases):
     return "\n".join(lines)
 
 
+# ---------------------------------------------------------------------------
+# ModelFixtures.cs (payloads for the --suite serde and --suite e2e BenchmarkDotNet suites)
+# ---------------------------------------------------------------------------
+
+FIXTURE_CLASS = {"awsJson1_0": "AwsJson10", "rpcv2Cbor": "RpcV2Cbor", "awsQuery": "AwsQuery",
+                 "restJson1": "RestJson1", "restXml": "RestXml"}
+REQUEST_TYPE = {"Healthcheck": "HealthcheckRequest", "GetItem": "GetItemRequest", "PutItem": "PutItemRequest",
+                "PutObject": "PutObjectRequest", "GetObject": "GetObjectRequest", "CopyObject": "CopyObjectRequest",
+                "PutMetricData": "PutMetricDataRequest", "GetMetricData": "GetMetricDataRequest"}
+
+# Fixtures for operations the models only define under another protocol. Request params and
+# decoded response params are protocol-neutral, so they are re-targeted (requests) or re-encoded
+# (responses) for the destination protocol: (source case id, destination protocol).
+DERIVED_REQUESTS = [
+    ("awsJson1_0_GetItemInput_Baseline", "rpcv2Cbor"),
+    ("awsJson1_0_HealthcheckRequest_Example", "awsQuery"),
+] + [(f"awsQuery_{n}", p) for p in ("restJson1", "restXml") for n in (
+    "PutMetricDataRequest_Baseline", "PutMetricDataRequest_S", "PutMetricDataRequest_M", "PutMetricDataRequest_L",
+    "GetMetricDataRequest_S", "GetMetricDataRequest_M", "GetMetricDataRequest_L")]
+DERIVED_RESPONSES = [("awsJson1_0_HealthcheckResponse_Example", "awsQuery")] + [
+    (f"awsQuery_GetMetricDataResponse_{s}", p) for p in ("restJson1", "restXml") for s in ("S", "M", "L")]
+
+XML_NAMESPACE = {"awsQuery": "https://awsquerydataplane.amazonaws.com",
+                 "restXml": "https://awsrestxmldataplane.amazonaws.com"}
+
+
+def fixture_name(case_id):
+    return case_id.split("_", 2)[2] if case_id.startswith("awsJson1_0_") else case_id.split("_", 1)[1]
+
+
+def _num(v):
+    return str(int(v)) if isinstance(v, float) and v.is_integer() else str(v)
+
+
+def _iso(epoch):
+    import datetime
+    return datetime.datetime.fromtimestamp(epoch, datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _json_value(v, key=""):
+    if isinstance(v, dict):
+        return "{" + ",".join(f"{_json_str(k)}:{_json_value(x, k)}" for k, x in v.items()) + "}"
+    if isinstance(v, list):
+        return "[" + ",".join(_json_value(x, key) for x in v) + "]"
+    if isinstance(v, bool):
+        return "true" if v else "false"
+    if isinstance(v, (int, float)):
+        return _num(v)  # restJson1 timestamps default to epoch-seconds, so epoch ints pass through
+    return _json_str(str(v))
+
+
+def _json_str(s):
+    return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def _xml_value(v, key=""):
+    if isinstance(v, dict):
+        return "".join(f"<{k}>{_xml_value(x, k)}</{k}>" for k, x in v.items())
+    if isinstance(v, list):
+        return "".join(f"<member>{_xml_value(x, key)}</member>" for x in v)
+    if isinstance(v, bool):
+        return "true" if v else "false"
+    if isinstance(v, int) and key in ("Timestamps", "Timestamp"):
+        return _iso(v)  # XML protocols serialize timestamps as date-time
+    if isinstance(v, (int, float)):
+        return _num(v)
+    return str(v).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def derived_response_body(src, proto):
+    op = src["op"]
+    p = src["params"]
+    if proto == "restJson1":
+        return _json_value(p) if p else "{}"
+    if proto == "restXml":
+        # REST XML: the output members sit directly under the root element.
+        return f'<{op}Output xmlns="{XML_NAMESPACE[proto]}">{_xml_value(p)}</{op}Output>'
+    if proto == "awsQuery":
+        result = f"<{op}Result>{_xml_value(p)}</{op}Result>" if p else f"<{op}Result/>"
+        return (f'<{op}Response xmlns="{XML_NAMESPACE[proto]}">{result}'
+                f"<ResponseMetadata><RequestId>id</RequestId></ResponseMetadata></{op}Response>")
+    raise ValueError("unsupported derived response protocol " + proto)
+
+
+def emit_fixtures(cases):
+    by_id = {m["id"]: m for m in cases}
+    members = {p: [] for p in ORDER}
+
+    def add_request(m, proto, source=None):
+        rm = dict(m, protocol=proto)
+        ns = PROTO[proto]["ns"]
+        note = f"    /// <summary>Derived from model case {source} (request params re-targeted).</summary>\n" if source else ""
+        members[proto].append(note + f"    public static {ns}.Model.{REQUEST_TYPE[m['op']]} {fixture_name(m['id'])}() => {build_request(rm)};")
+
+    def add_response(name, proto, body_expr, headers_expr_, source=None):
+        note = f"    /// <summary>Derived from model case {source} (response params re-encoded).</summary>\n" if source else ""
+        members[proto].append(note + f"    public static readonly byte[] {name} = {body_expr};")
+        members[proto].append(f"    public static readonly Dictionary<string,string>? {name}_Headers = {headers_expr_ or 'null'};")
+
+    for m in cases:
+        if m["kind"] == "request":
+            add_request(m, m["protocol"])
+        else:
+            add_response(fixture_name(m["id"]), m["protocol"], resp_bytes(m), headers_expr(m))
+    for src_id, proto in DERIVED_REQUESTS:
+        add_request(by_id[src_id], proto, source=src_id)
+    for src_id, proto in DERIVED_RESPONSES:
+        src = by_id[src_id]
+        add_response(fixture_name(src_id), proto,
+                     f"System.Text.Encoding.UTF8.GetBytes({cs_str(derived_response_body(src, proto))})",
+                     PROTO[proto]["rh"], source=src_id)
+
+    out = [FIXTURES_HEADER]
+    for proto in ORDER:
+        out.append(f"/// <summary>{proto} fixtures.</summary>")
+        out.append(f"public static class {FIXTURE_CLASS[proto]}")
+        out.append("{")
+        out.append("\n".join(members[proto]))
+        out.append("}")
+        out.append("")
+    return "\n".join(out).rstrip("\n") + "\n"
+
+
+FIXTURES_HEADER = '''/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ */
+// GENERATED by sdk/test/Performance/SerdeBenchmarks/generate_serde_benchmarks.py from the shared cross-SDK serde benchmark models. DO NOT EDIT BY HAND.
+#nullable enable
+
+namespace AWSSDK.Benchmarks.Serde.ModelFixtures;
+
+// Request factories return a new object per call. Response bodies are shared read-only arrays;
+// *_Headers are the model's response headers (null when the model defines none).
+'''
+
+
 HEADER = '''/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * Licensed under the Apache License, Version 2.0 (the "License").
  */
-// GENERATED by sdk/test/Performance/SerdeBenchmarks/generate_cpu_time_benchmarks.py from the shared cross-SDK serde benchmark models. DO NOT EDIT BY HAND.
+// GENERATED by sdk/test/Performance/SerdeBenchmarks/generate_serde_benchmarks.py from the shared cross-SDK serde benchmark models. DO NOT EDIT BY HAND.
 using Amazon.Runtime;
 using Amazon.JsonRpc10DataPlane;
 using Amazon.RpcCborDataPlane;
@@ -512,7 +657,7 @@ public static class CpuTimeBenchmarks
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--model", required=True, help="path to the models' 'model' directory (contains operations/)")
-    ap.add_argument("--output", default=DEFAULT_OUTPUT, help="output .cs file (default: %(default)s)")
+    ap.add_argument("--output-dir", default=RUNNER_DIR, help="directory to write the .cs files to (default: %(default)s)")
     args = ap.parse_args()
 
     cases = extract_cases(os.path.abspath(args.model))
@@ -524,10 +669,12 @@ def main():
     if len(cases) != EXPECTED_CASES:
         print(f"warning: expected {EXPECTED_CASES} cases, found {len(cases)}", file=sys.stderr)
 
-    out = [HEADER] + [emit_protocol(p, [m for m in cases if m["protocol"] == p]) for p in ORDER] + ["}"]
-    with open(args.output, "w", encoding="utf-8", newline="\r\n") as f:
-        f.write("\n".join(out))
-    print(f"wrote {args.output}")
+    cpu_time = "\n".join([HEADER] + [emit_protocol(p, [m for m in cases if m["protocol"] == p]) for p in ORDER] + ["}"])
+    for name, text in (("CpuTimeBenchmarks.cs", cpu_time), ("ModelFixtures.cs", emit_fixtures(cases))):
+        path = os.path.join(args.output_dir, name)
+        with open(path, "w", encoding="utf-8", newline="\r\n") as f:
+            f.write(text)
+        print(f"wrote {path}")
 
 
 if __name__ == "__main__":

@@ -13,18 +13,18 @@
  * permissions and limitations under the License.
  */
 
-using System.Formats.Cbor;
 using Amazon.RpcCborDataPlane;
 using Amazon.RpcCborDataPlane.Model;
 using Amazon.Runtime;
 using BenchmarkDotNet.Attributes;
-using AV = Amazon.RpcCborDataPlane.Model.AttributeValue;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.RpcV2Cbor;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// E2E benchmarks for Smithy RPC V2 CBOR protocol.
-/// Full SDK client pipeline with mocked HTTP.
+/// Full SDK client pipeline with mocked HTTP, with payloads from the shared benchmark models:
+/// PutItem S/M/L use the MixedItem cases, GetItem S/M/L the GetItemOutput cases.
 /// Uses separate clients for PutItem (empty response) and GetItem (sized responses).
 /// </summary>
 [MemoryDiagnoser]
@@ -41,33 +41,6 @@ public class RpcV2CborE2EBenchmarks
     private GetItemRequest _getItemRequest = null!;
 
     private static readonly byte[] EmptyCborMap = new byte[] { 0xA0 };
-    private static readonly byte[] GetItemResponseS = BuildCborGetItemResponse(5);
-    private static readonly byte[] GetItemResponseM = BuildCborGetItemResponse(20);
-    private static readonly byte[] GetItemResponseL = BuildCborGetItemResponse(50);
-
-    private static byte[] BuildCborGetItemResponse(int attributeCount)
-    {
-        var writer = new CborWriter();
-        writer.WriteStartMap(attributeCount > 0 ? 1 : 0);
-        if (attributeCount > 0)
-        {
-            writer.WriteTextString("Item");
-            writer.WriteStartMap(attributeCount);
-            for (int i = 0; i < attributeCount; i++)
-            {
-                writer.WriteTextString($"attr_{i}");
-                writer.WriteStartMap(1);
-                writer.WriteTextString("S");
-                writer.WriteTextString($"value-{i}-{new string('x', 20)}");
-                writer.WriteEndMap();
-            }
-            writer.WriteEndMap();
-        }
-        writer.WriteEndMap();
-        return writer.Encode();
-    }
-
-    private static AV S(string v) => new AV { S = v };
 
     private AmazonRpcCborDataPlaneClient CreateClient(byte[] responseBody)
     {
@@ -85,14 +58,14 @@ public class RpcV2CborE2EBenchmarks
     public void Setup()
     {
         _putClient = CreateClient(EmptyCborMap);
-        _getClientS = CreateClient(GetItemResponseS);
-        _getClientM = CreateClient(GetItemResponseM);
-        _getClientL = CreateClient(GetItemResponseL);
+        _getClientS = CreateClient(Fixtures.GetItemOutput_S);
+        _getClientM = CreateClient(Fixtures.GetItemOutput_M);
+        _getClientL = CreateClient(Fixtures.GetItemOutput_L);
 
-        _putItemS = new PutItemRequest { TableName = "T", Item = TestDataHelpers.CreateSmallItem<AV>(S, n => new AV { N = n.ToString() }, b => new AV { BOOL = b }) };
-        _putItemM = new PutItemRequest { TableName = "T", Item = TestDataHelpers.CreateMediumItem<AV>(S, n => new AV { N = n.ToString() }, b => new AV { BOOL = b }, l => new AV { L = l }, m => new AV { M = m }) };
-        _putItemL = new PutItemRequest { TableName = "T", Item = TestDataHelpers.CreateLargeItem<AV>(S, n => new AV { N = n.ToString() }, b => new AV { BOOL = b }, l => new AV { L = l }, m => new AV { M = m }) };
-        _getItemRequest = new GetItemRequest { TableName = "T", Key = TestDataHelpers.CreateBaselineItem<AV>(S) };
+        _putItemS = Fixtures.PutItemRequest_MixedItem_S();
+        _putItemM = Fixtures.PutItemRequest_MixedItem_M();
+        _putItemL = Fixtures.PutItemRequest_MixedItem_L();
+        _getItemRequest = Fixtures.GetItemInput_Baseline();
     }
 
     [Benchmark] public async Task rpcV2Cbor_e2e_PutItem_S() => await _putClient.PutItemAsync(_putItemS);
