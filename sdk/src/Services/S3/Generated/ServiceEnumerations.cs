@@ -1893,6 +1893,10 @@ namespace Amazon.S3
         /// </summary>
         public static readonly InventoryOptionalField IntelligentTieringAccessTier = new InventoryOptionalField("IntelligentTieringAccessTier");
         /// <summary>
+        /// Constant IntelligentTieringReferenceDate for InventoryOptionalField
+        /// </summary>
+        public static readonly InventoryOptionalField IntelligentTieringReferenceDate = new InventoryOptionalField("IntelligentTieringReferenceDate");
+        /// <summary>
         /// Constant IsMultipartUploaded for InventoryOptionalField
         /// </summary>
         public static readonly InventoryOptionalField IsMultipartUploaded = new InventoryOptionalField("IsMultipartUploaded");
