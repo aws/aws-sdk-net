@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the arc-zonal-shift-2022-10-30.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -39,16 +38,12 @@ namespace Amazon.ARCZonalShift
             new AmazonARCZonalShiftEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "ARC Zonal Shift";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "ARC Zonal Shift";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.ARCZonalShift
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "arc-zonal-shift";
-            }
-        }
+        public override string RegionEndpointServiceName => "arc-zonal-shift";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2022-10-30";
-            }
-        }
+        public override string ServiceVersion => "2022-10-30";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.ARCZonalShift
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

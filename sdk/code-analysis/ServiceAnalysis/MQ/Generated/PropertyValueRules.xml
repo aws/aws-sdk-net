@@ -50,19 +50,4 @@
     <min>5</min>
     <max>100</max>
   </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MQ.Model.BrokerEngineTypeOutput.MaxResults</property>
-    <min>5</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MQ.Model.BrokerInstanceOptionsOutput.MaxResults</property>
-    <min>5</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MQ.Model.ListUsersOutput.MaxResults</property>
-    <min>5</min>
-    <max>100</max>
-  </property-value-rule>
 </property-value-rules>

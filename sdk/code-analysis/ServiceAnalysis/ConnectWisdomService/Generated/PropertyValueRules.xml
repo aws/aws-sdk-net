@@ -9,13 +9,13 @@
     <property>Amazon.ConnectWisdomService.Model.CreateAssistantRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateAssistantRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateAssistantAssociationRequest.AssistantId</property>
@@ -39,7 +39,7 @@
     <property>Amazon.ConnectWisdomService.Model.CreateContentRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateContentRequest.OverrideLinkOutUri</property>
@@ -65,13 +65,13 @@
     <property>Amazon.ConnectWisdomService.Model.CreateKnowledgeBaseRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateKnowledgeBaseRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateQuickResponseRequest.ClientToken</property>
@@ -119,13 +119,13 @@
     <property>Amazon.ConnectWisdomService.Model.CreateSessionRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.CreateSessionRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.DeleteAssistantRequest.AssistantId</property>
@@ -607,13 +607,13 @@
     <property>Amazon.ConnectWisdomService.Model.AssistantData.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.AssistantData.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.AssistantIntegrationConfiguration.TopicIntegrationArn</property>
@@ -633,13 +633,13 @@
     <property>Amazon.ConnectWisdomService.Model.AssistantSummary.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.AssistantSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ConnectConfiguration.InstanceId</property>
@@ -675,7 +675,7 @@
     <property>Amazon.ConnectWisdomService.Model.ContentData.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentData.RevisionId</property>
@@ -732,7 +732,7 @@
     <property>Amazon.ConnectWisdomService.Model.ContentSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.ContentSummary.RevisionId</property>
@@ -810,7 +810,7 @@
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseData.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseData.KnowledgeBaseArn</property>
@@ -824,13 +824,13 @@
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseData.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseSummary.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseSummary.KnowledgeBaseArn</property>
@@ -844,7 +844,7 @@
     <property>Amazon.ConnectWisdomService.Model.KnowledgeBaseSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.QuickResponseContentProvider.Content</property>
@@ -1029,13 +1029,13 @@
     <property>Amazon.ConnectWisdomService.Model.SessionData.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.SessionData.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\s_.,-]+</pattern>
+    <pattern>^[a-zA-Z0-9\s_.,-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectWisdomService.Model.SessionData.SessionArn</property>

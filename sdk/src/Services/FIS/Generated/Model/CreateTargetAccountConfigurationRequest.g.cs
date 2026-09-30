@@ -1,0 +1,112 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.FIS.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateTargetAccountConfiguration operation. Creates
+    /// a target account configuration for the experiment template. A target account configuration
+    /// is required when <c>accountTargeting</c> of <c>experimentOptions</c> is set to <c>multi-account</c>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
+    /// options</a> in the <i>Fault Injection Service User Guide</i>.
+    /// </summary>
+    public partial class CreateTargetAccountConfigurationRequest : AmazonFISRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The Amazon Web Services account ID of the target account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 48)]
+        public string AccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccountId property is set.
+        /// </summary>
+        internal bool IsSetAccountId() => this.AccountId != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1024)]
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the target account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 512)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property ExperimentTemplateId. 
+        /// <para>
+        /// The experiment template ID.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 64)]
+        public string ExperimentTemplateId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExperimentTemplateId property is set.
+        /// </summary>
+        internal bool IsSetExperimentTemplateId() => this.ExperimentTemplateId != null;
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role for the target account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 20, Max = 2048)]
+        public string RoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RoleArn property is set.
+        /// </summary>
+        internal bool IsSetRoleArn() => this.RoleArn != null;
+    }
+}

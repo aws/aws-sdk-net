@@ -1,0 +1,671 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.MQ
+{
+    /// <summary>
+    /// Constants used for properties of type AuthenticationStrategy.
+    /// </summary>
+    public class AuthenticationStrategy : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONFIG_MANAGED for AuthenticationStrategy
+        /// </summary>
+        public static readonly AuthenticationStrategy CONFIG_MANAGED = new AuthenticationStrategy("CONFIG_MANAGED");
+
+        /// <summary>
+        /// Constant LDAP for AuthenticationStrategy
+        /// </summary>
+        public static readonly AuthenticationStrategy LDAP = new AuthenticationStrategy("LDAP");
+
+        /// <summary>
+        /// Constant SIMPLE for AuthenticationStrategy
+        /// </summary>
+        public static readonly AuthenticationStrategy SIMPLE = new AuthenticationStrategy("SIMPLE");
+
+        /// <summary>
+        /// Constructs a custom AuthenticationStrategy for a value not among the defined constants.
+        /// </summary>
+        public AuthenticationStrategy(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthenticationStrategy FindValue(string value)
+        {
+            return FindValue<AuthenticationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthenticationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BrokerState.
+    /// </summary>
+    public class BrokerState : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATION_FAILED for BrokerState
+        /// </summary>
+        public static readonly BrokerState CREATION_FAILED = new BrokerState("CREATION_FAILED");
+
+        /// <summary>
+        /// Constant CREATION_IN_PROGRESS for BrokerState
+        /// </summary>
+        public static readonly BrokerState CREATION_IN_PROGRESS = new BrokerState("CREATION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant CRITICAL_ACTION_REQUIRED for BrokerState
+        /// </summary>
+        public static readonly BrokerState CRITICAL_ACTION_REQUIRED = new BrokerState("CRITICAL_ACTION_REQUIRED");
+
+        /// <summary>
+        /// Constant DELETION_IN_PROGRESS for BrokerState
+        /// </summary>
+        public static readonly BrokerState DELETION_IN_PROGRESS = new BrokerState("DELETION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant REBOOT_IN_PROGRESS for BrokerState
+        /// </summary>
+        public static readonly BrokerState REBOOT_IN_PROGRESS = new BrokerState("REBOOT_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant REPLICA for BrokerState
+        /// </summary>
+        public static readonly BrokerState REPLICA = new BrokerState("REPLICA");
+
+        /// <summary>
+        /// Constant RUNNING for BrokerState
+        /// </summary>
+        public static readonly BrokerState RUNNING = new BrokerState("RUNNING");
+
+        /// <summary>
+        /// Constructs a custom BrokerState for a value not among the defined constants.
+        /// </summary>
+        public BrokerState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrokerState FindValue(string value)
+        {
+            return FindValue<BrokerState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrokerState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BrokerStorageType.
+    /// </summary>
+    public class BrokerStorageType : ConstantClass
+    {
+        /// <summary>
+        /// Constant EBS for BrokerStorageType
+        /// </summary>
+        public static readonly BrokerStorageType EBS = new BrokerStorageType("EBS");
+
+        /// <summary>
+        /// Constant EFS for BrokerStorageType
+        /// </summary>
+        public static readonly BrokerStorageType EFS = new BrokerStorageType("EFS");
+
+        /// <summary>
+        /// Constructs a custom BrokerStorageType for a value not among the defined constants.
+        /// </summary>
+        public BrokerStorageType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BrokerStorageType FindValue(string value)
+        {
+            return FindValue<BrokerStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BrokerStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ChangeType.
+    /// </summary>
+    public class ChangeType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CREATE for ChangeType
+        /// </summary>
+        public static readonly ChangeType CREATE = new ChangeType("CREATE");
+
+        /// <summary>
+        /// Constant DELETE for ChangeType
+        /// </summary>
+        public static readonly ChangeType DELETE = new ChangeType("DELETE");
+
+        /// <summary>
+        /// Constant UPDATE for ChangeType
+        /// </summary>
+        public static readonly ChangeType UPDATE = new ChangeType("UPDATE");
+
+        /// <summary>
+        /// Constructs a custom ChangeType for a value not among the defined constants.
+        /// </summary>
+        public ChangeType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChangeType FindValue(string value)
+        {
+            return FindValue<ChangeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChangeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DataReplicationMode.
+    /// </summary>
+    public class DataReplicationMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CRDR for DataReplicationMode
+        /// </summary>
+        public static readonly DataReplicationMode CRDR = new DataReplicationMode("CRDR");
+
+        /// <summary>
+        /// Constant NONE for DataReplicationMode
+        /// </summary>
+        public static readonly DataReplicationMode NONE = new DataReplicationMode("NONE");
+
+        /// <summary>
+        /// Constructs a custom DataReplicationMode for a value not among the defined constants.
+        /// </summary>
+        public DataReplicationMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataReplicationMode FindValue(string value)
+        {
+            return FindValue<DataReplicationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataReplicationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DayOfWeek.
+    /// </summary>
+    public class DayOfWeek : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRIDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek FRIDAY = new DayOfWeek("FRIDAY");
+
+        /// <summary>
+        /// Constant MONDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek MONDAY = new DayOfWeek("MONDAY");
+
+        /// <summary>
+        /// Constant SATURDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SATURDAY = new DayOfWeek("SATURDAY");
+
+        /// <summary>
+        /// Constant SUNDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SUNDAY = new DayOfWeek("SUNDAY");
+
+        /// <summary>
+        /// Constant THURSDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek THURSDAY = new DayOfWeek("THURSDAY");
+
+        /// <summary>
+        /// Constant TUESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek TUESDAY = new DayOfWeek("TUESDAY");
+
+        /// <summary>
+        /// Constant WEDNESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek WEDNESDAY = new DayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// Constructs a custom DayOfWeek for a value not among the defined constants.
+        /// </summary>
+        public DayOfWeek(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfWeek FindValue(string value)
+        {
+            return FindValue<DayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type DeploymentMode.
+    /// </summary>
+    public class DeploymentMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE_STANDBY_MULTI_AZ for DeploymentMode
+        /// </summary>
+        public static readonly DeploymentMode ACTIVE_STANDBY_MULTI_AZ = new DeploymentMode("ACTIVE_STANDBY_MULTI_AZ");
+
+        /// <summary>
+        /// Constant CLUSTER_MULTI_AZ for DeploymentMode
+        /// </summary>
+        public static readonly DeploymentMode CLUSTER_MULTI_AZ = new DeploymentMode("CLUSTER_MULTI_AZ");
+
+        /// <summary>
+        /// Constant SINGLE_INSTANCE for DeploymentMode
+        /// </summary>
+        public static readonly DeploymentMode SINGLE_INSTANCE = new DeploymentMode("SINGLE_INSTANCE");
+
+        /// <summary>
+        /// Constructs a custom DeploymentMode for a value not among the defined constants.
+        /// </summary>
+        public DeploymentMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentMode FindValue(string value)
+        {
+            return FindValue<DeploymentMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EngineType.
+    /// </summary>
+    public class EngineType : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVEMQ for EngineType
+        /// </summary>
+        public static readonly EngineType ACTIVEMQ = new EngineType("ACTIVEMQ");
+
+        /// <summary>
+        /// Constant RABBITMQ for EngineType
+        /// </summary>
+        public static readonly EngineType RABBITMQ = new EngineType("RABBITMQ");
+
+        /// <summary>
+        /// Constructs a custom EngineType for a value not among the defined constants.
+        /// </summary>
+        public EngineType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EngineType FindValue(string value)
+        {
+            return FindValue<EngineType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EngineType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PromoteMode.
+    /// </summary>
+    public class PromoteMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant FAILOVER for PromoteMode
+        /// </summary>
+        public static readonly PromoteMode FAILOVER = new PromoteMode("FAILOVER");
+
+        /// <summary>
+        /// Constant SWITCHOVER for PromoteMode
+        /// </summary>
+        public static readonly PromoteMode SWITCHOVER = new PromoteMode("SWITCHOVER");
+
+        /// <summary>
+        /// Constructs a custom PromoteMode for a value not among the defined constants.
+        /// </summary>
+        public PromoteMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PromoteMode FindValue(string value)
+        {
+            return FindValue<PromoteMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PromoteMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SanitizationWarningReason.
+    /// </summary>
+    public class SanitizationWarningReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISALLOWED_ATTRIBUTE_REMOVED for SanitizationWarningReason
+        /// </summary>
+        public static readonly SanitizationWarningReason DISALLOWED_ATTRIBUTE_REMOVED = new SanitizationWarningReason("DISALLOWED_ATTRIBUTE_REMOVED");
+
+        /// <summary>
+        /// Constant DISALLOWED_ELEMENT_REMOVED for SanitizationWarningReason
+        /// </summary>
+        public static readonly SanitizationWarningReason DISALLOWED_ELEMENT_REMOVED = new SanitizationWarningReason("DISALLOWED_ELEMENT_REMOVED");
+
+        /// <summary>
+        /// Constant INVALID_ATTRIBUTE_VALUE_REMOVED for SanitizationWarningReason
+        /// </summary>
+        public static readonly SanitizationWarningReason INVALID_ATTRIBUTE_VALUE_REMOVED = new SanitizationWarningReason("INVALID_ATTRIBUTE_VALUE_REMOVED");
+
+        /// <summary>
+        /// Constructs a custom SanitizationWarningReason for a value not among the defined constants.
+        /// </summary>
+        public SanitizationWarningReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SanitizationWarningReason FindValue(string value)
+        {
+            return FindValue<SanitizationWarningReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SanitizationWarningReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SharedResourceErrorCode.
+    /// </summary>
+    public class SharedResourceErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZ_MISMATCH for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode AZ_MISMATCH = new SharedResourceErrorCode("AZ_MISMATCH");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode INTERNAL_ERROR = new SharedResourceErrorCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVITE_FAILED for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode INVITE_FAILED = new SharedResourceErrorCode("INVITE_FAILED");
+
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode QUOTA_EXCEEDED = new SharedResourceErrorCode("QUOTA_EXCEEDED");
+
+        /// <summary>
+        /// Constant RESOURCE_CONFIGURATION_NOT_FOUND for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode RESOURCE_CONFIGURATION_NOT_FOUND = new SharedResourceErrorCode("RESOURCE_CONFIGURATION_NOT_FOUND");
+
+        /// <summary>
+        /// Constant SETUP_INCOMPLETE for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode SETUP_INCOMPLETE = new SharedResourceErrorCode("SETUP_INCOMPLETE");
+
+        /// <summary>
+        /// Constant SHARE_NOT_FOUND for SharedResourceErrorCode
+        /// </summary>
+        public static readonly SharedResourceErrorCode SHARE_NOT_FOUND = new SharedResourceErrorCode("SHARE_NOT_FOUND");
+
+        /// <summary>
+        /// Constructs a custom SharedResourceErrorCode for a value not among the defined constants.
+        /// </summary>
+        public SharedResourceErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedResourceErrorCode FindValue(string value)
+        {
+            return FindValue<SharedResourceErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedResourceErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SharedResourceStatus.
+    /// </summary>
+    public class SharedResourceStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus AVAILABLE = new SharedResourceStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant DELETION_IN_PROGRESS for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus DELETION_IN_PROGRESS = new SharedResourceStatus("DELETION_IN_PROGRESS");
+
+        /// <summary>
+        /// Constant ERROR for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus ERROR = new SharedResourceStatus("ERROR");
+
+        /// <summary>
+        /// Constant PENDING_CREATE for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus PENDING_CREATE = new SharedResourceStatus("PENDING_CREATE");
+
+        /// <summary>
+        /// Constant PENDING_DELETE for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus PENDING_DELETE = new SharedResourceStatus("PENDING_DELETE");
+
+        /// <summary>
+        /// Constant SETUP_IN_PROGRESS for SharedResourceStatus
+        /// </summary>
+        public static readonly SharedResourceStatus SETUP_IN_PROGRESS = new SharedResourceStatus("SETUP_IN_PROGRESS");
+
+        /// <summary>
+        /// Constructs a custom SharedResourceStatus for a value not among the defined constants.
+        /// </summary>
+        public SharedResourceStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedResourceStatus FindValue(string value)
+        {
+            return FindValue<SharedResourceStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type SharedResourceType.
+    /// </summary>
+    public class SharedResourceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant RESOURCE for SharedResourceType
+        /// </summary>
+        public static readonly SharedResourceType RESOURCE = new SharedResourceType("RESOURCE");
+
+        /// <summary>
+        /// Constant RESOURCE_SHARE for SharedResourceType
+        /// </summary>
+        public static readonly SharedResourceType RESOURCE_SHARE = new SharedResourceType("RESOURCE_SHARE");
+
+        /// <summary>
+        /// Constructs a custom SharedResourceType for a value not among the defined constants.
+        /// </summary>
+        public SharedResourceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SharedResourceType FindValue(string value)
+        {
+            return FindValue<SharedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SharedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

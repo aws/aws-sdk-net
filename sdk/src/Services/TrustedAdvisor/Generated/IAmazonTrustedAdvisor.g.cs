@@ -1,0 +1,742 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.TrustedAdvisor.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.TrustedAdvisor
+{
+    /// <summary>
+    /// <para>Interface for accessing TrustedAdvisor</para>
+    ///
+    /// TrustedAdvisor Public API
+    /// </summary>
+    public partial interface IAmazonTrustedAdvisor : IAmazonService, IDisposable
+    {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        ITrustedAdvisorPaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update one or more exclusion statuses for a list of recommendation resources. This
+        /// API supports up to 25 unique recommendation resource ARNs per request. This API currently
+        /// doesn't support prioritized recommendation resources. This API updates global recommendations,
+        /// eliminating the need to call the API in each AWS Region. After submitting an exclusion
+        /// update, note that it might take a few minutes for the changes to be reflected in the
+        /// system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
+        /// <returns>The response from the BatchUpdateRecommendationResourceExclusion service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
+        BatchUpdateRecommendationResourceExclusionResponse BatchUpdateRecommendationResourceExclusion(BatchUpdateRecommendationResourceExclusionRequest request);
+#endif
+
+        /// <summary>
+        /// Update one or more exclusion statuses for a list of recommendation resources. This
+        /// API supports up to 25 unique recommendation resource ARNs per request. This API currently
+        /// doesn't support prioritized recommendation resources. This API updates global recommendations,
+        /// eliminating the need to call the API in each AWS Region. After submitting an exclusion
+        /// update, note that it might take a few minutes for the changes to be reflected in the
+        /// system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateRecommendationResourceExclusion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchUpdateRecommendationResourceExclusion service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/BatchUpdateRecommendationResourceExclusion">REST API Reference for BatchUpdateRecommendationResourceExclusion Operation</seealso>
+        Task<BatchUpdateRecommendationResourceExclusionResponse> BatchUpdateRecommendationResourceExclusionAsync(BatchUpdateRecommendationResourceExclusionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get a specific recommendation within an AWS Organizations organization. This API supports
+        /// only prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationRecommendation service method.</param>
+        /// <returns>The response from the GetOrganizationRecommendation service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetOrganizationRecommendation">REST API Reference for GetOrganizationRecommendation Operation</seealso>
+        GetOrganizationRecommendationResponse GetOrganizationRecommendation(GetOrganizationRecommendationRequest request);
+#endif
+
+        /// <summary>
+        /// Get a specific recommendation within an AWS Organizations organization. This API supports
+        /// only prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetOrganizationRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetOrganizationRecommendation service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetOrganizationRecommendation">REST API Reference for GetOrganizationRecommendation Operation</seealso>
+        Task<GetOrganizationRecommendationResponse> GetOrganizationRecommendationAsync(GetOrganizationRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Get a specific Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
+        /// <returns>The response from the GetRecommendation service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
+        GetRecommendationResponse GetRecommendation(GetRecommendationRequest request);
+#endif
+
+        /// <summary>
+        /// Get a specific Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetRecommendation service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/GetRecommendation">REST API Reference for GetRecommendation Operation</seealso>
+        Task<GetRecommendationResponse> GetRecommendationAsync(GetRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List a filterable set of Checks. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChecks service method.</param>
+        /// <returns>The response from the ListChecks service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListChecks">REST API Reference for ListChecks Operation</seealso>
+        ListChecksResponse ListChecks(ListChecksRequest request);
+#endif
+
+        /// <summary>
+        /// List a filterable set of Checks. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListChecks service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListChecks">REST API Reference for ListChecks Operation</seealso>
+        Task<ListChecksResponse> ListChecksAsync(ListChecksRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the accounts that own the resources for an organization aggregate recommendation.
+        /// This API only supports prioritized recommendations and provides global priority recommendations,
+        /// eliminating the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationAccounts service method.</param>
+        /// <returns>The response from the ListOrganizationRecommendationAccounts service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationAccounts">REST API Reference for ListOrganizationRecommendationAccounts Operation</seealso>
+        ListOrganizationRecommendationAccountsResponse ListOrganizationRecommendationAccounts(ListOrganizationRecommendationAccountsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the accounts that own the resources for an organization aggregate recommendation.
+        /// This API only supports prioritized recommendations and provides global priority recommendations,
+        /// eliminating the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationAccounts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOrganizationRecommendationAccounts service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationAccounts">REST API Reference for ListOrganizationRecommendationAccounts Operation</seealso>
+        Task<ListOrganizationRecommendationAccountsResponse> ListOrganizationRecommendationAccountsAsync(ListOrganizationRecommendationAccountsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List Resources of a Recommendation within an Organization. This API only supports
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationResources service method.</param>
+        /// <returns>The response from the ListOrganizationRecommendationResources service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationResources">REST API Reference for ListOrganizationRecommendationResources Operation</seealso>
+        ListOrganizationRecommendationResourcesResponse ListOrganizationRecommendationResources(ListOrganizationRecommendationResourcesRequest request);
+#endif
+
+        /// <summary>
+        /// List Resources of a Recommendation within an Organization. This API only supports
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendationResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOrganizationRecommendationResources service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendationResources">REST API Reference for ListOrganizationRecommendationResources Operation</seealso>
+        Task<ListOrganizationRecommendationResourcesResponse> ListOrganizationRecommendationResourcesAsync(ListOrganizationRecommendationResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List a filterable set of Recommendations within an Organization. This API only supports
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendations service method.</param>
+        /// <returns>The response from the ListOrganizationRecommendations service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendations">REST API Reference for ListOrganizationRecommendations Operation</seealso>
+        ListOrganizationRecommendationsResponse ListOrganizationRecommendations(ListOrganizationRecommendationsRequest request);
+#endif
+
+        /// <summary>
+        /// List a filterable set of Recommendations within an Organization. This API only supports
+        /// prioritized recommendations and provides global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOrganizationRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListOrganizationRecommendations service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListOrganizationRecommendations">REST API Reference for ListOrganizationRecommendations Operation</seealso>
+        Task<ListOrganizationRecommendationsResponse> ListOrganizationRecommendationsAsync(ListOrganizationRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List Resources of a Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendationResources service method.</param>
+        /// <returns>The response from the ListRecommendationResources service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationResources">REST API Reference for ListRecommendationResources Operation</seealso>
+        ListRecommendationResourcesResponse ListRecommendationResources(ListRecommendationResourcesRequest request);
+#endif
+
+        /// <summary>
+        /// List Resources of a Recommendation. This API provides global recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendationResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRecommendationResources service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationResources">REST API Reference for ListRecommendationResources Operation</seealso>
+        Task<ListRecommendationResourcesResponse> ListRecommendationResourcesAsync(ListRecommendationResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List a filterable set of Recommendations. This API provides global recommendations,
+        /// eliminating the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// <returns>The response from the ListRecommendations service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        ListRecommendationsResponse ListRecommendations(ListRecommendationsRequest request);
+#endif
+
+        /// <summary>
+        /// List a filterable set of Recommendations. This API provides global recommendations,
+        /// eliminating the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRecommendations service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendations">REST API Reference for ListRecommendations Operation</seealso>
+        Task<ListRecommendationsResponse> ListRecommendationsAsync(ListRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// List all Trusted Advisor recommendations for a given AWS resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendationsForResource service method.</param>
+        /// <returns>The response from the ListRecommendationsForResource service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationsForResource">REST API Reference for ListRecommendationsForResource Operation</seealso>
+        ListRecommendationsForResourceResponse ListRecommendationsForResource(ListRecommendationsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// List all Trusted Advisor recommendations for a given AWS resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendationsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListRecommendationsForResource service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationsForResource">REST API Reference for ListRecommendationsForResource Operation</seealso>
+        Task<ListRecommendationsForResourceResponse> ListRecommendationsForResourceAsync(ListRecommendationsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update the lifecycle of a Recommendation within an Organization. This API only supports
+        /// prioritized recommendations and updates global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>
+        /// <returns>The response from the UpdateOrganizationRecommendationLifecycle service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateOrganizationRecommendationLifecycle">REST API Reference for UpdateOrganizationRecommendationLifecycle Operation</seealso>
+        UpdateOrganizationRecommendationLifecycleResponse UpdateOrganizationRecommendationLifecycle(UpdateOrganizationRecommendationLifecycleRequest request);
+#endif
+
+        /// <summary>
+        /// Update the lifecycle of a Recommendation within an Organization. This API only supports
+        /// prioritized recommendations and updates global priority recommendations, eliminating
+        /// the need to call the API in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrganizationRecommendationLifecycle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateOrganizationRecommendationLifecycle service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateOrganizationRecommendationLifecycle">REST API Reference for UpdateOrganizationRecommendationLifecycle Operation</seealso>
+        Task<UpdateOrganizationRecommendationLifecycleResponse> UpdateOrganizationRecommendationLifecycleAsync(UpdateOrganizationRecommendationLifecycleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+        /// and updates global priority recommendations, eliminating the need to call the API
+        /// in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommendationLifecycle service method.</param>
+        /// <returns>The response from the UpdateRecommendationLifecycle service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateRecommendationLifecycle">REST API Reference for UpdateRecommendationLifecycle Operation</seealso>
+        UpdateRecommendationLifecycleResponse UpdateRecommendationLifecycle(UpdateRecommendationLifecycleRequest request);
+#endif
+
+        /// <summary>
+        /// Update the lifecyle of a Recommendation. This API only supports prioritized recommendations
+        /// and updates global priority recommendations, eliminating the need to call the API
+        /// in each AWS Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecommendationLifecycle service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateRecommendationLifecycle service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ConflictException">
+        /// Exception that the request was denied due to conflictions in state
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ResourceNotFoundException">
+        /// Exception that the requested resource has not been found
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/UpdateRecommendationLifecycle">REST API Reference for UpdateRecommendationLifecycle Operation</seealso>
+        Task<UpdateRecommendationLifecycleResponse> UpdateRecommendationLifecycleAsync(UpdateRecommendationLifecycleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonTrustedAdvisorConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonTrustedAdvisorConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonTrustedAdvisorConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonTrustedAdvisorConfig to create AmazonTrustedAdvisorClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonTrustedAdvisorClient(serviceClientConfig) :
+                    new AmazonTrustedAdvisorClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

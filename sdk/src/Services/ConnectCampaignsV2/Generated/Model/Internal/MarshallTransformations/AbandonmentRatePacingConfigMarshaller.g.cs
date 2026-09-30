@@ -1,0 +1,85 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.ConnectCampaignsV2.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// AbandonmentRatePacingConfig Marshaller
+    /// </summary>
+    public partial class AbandonmentRatePacingConfigMarshaller : IRequestMarshaller<AbandonmentRatePacingConfig, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(AbandonmentRatePacingConfig requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetConnectionStartPoint())
+            {
+                context.Writer.WritePropertyName("connectionStartPoint");
+                context.Writer.WriteStringValue(requestObject.ConnectionStartPoint);
+            }
+
+            if (requestObject.IsSetConnectionThresholdSeconds())
+            {
+                context.Writer.WritePropertyName("connectionThresholdSeconds");
+                context.Writer.WriteNumberValue(requestObject.ConnectionThresholdSeconds.Value);
+            }
+
+            if (requestObject.IsSetEvaluationWindow())
+            {
+                context.Writer.WritePropertyName("evaluationWindow");
+                context.Writer.WriteStringValue(requestObject.EvaluationWindow);
+            }
+
+            if (requestObject.IsSetTargetRate())
+            {
+                context.Writer.WritePropertyName("targetRate");
+                if (StringUtils.IsSpecialDoubleValue(requestObject.TargetRate.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetRate.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.TargetRate.Value);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static AbandonmentRatePacingConfigMarshaller Instance = new AbandonmentRatePacingConfigMarshaller();
+    }
+}

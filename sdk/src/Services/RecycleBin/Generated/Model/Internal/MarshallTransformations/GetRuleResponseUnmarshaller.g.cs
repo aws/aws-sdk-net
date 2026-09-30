@@ -1,0 +1,180 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.RecycleBin.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Globalization;
+using Amazon.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.RecycleBin.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GetRule operation.
+    /// </summary>
+    public partial class GetRuleResponseUnmarshaller : JsonResponseUnmarshaller
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
+            var unmarshalledObject = new GetRuleResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("Description", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ExcludeResourceTags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);
+                    unmarshalledObject.ExcludeResourceTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Identifier", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LockConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = LockConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LockConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LockEndTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LockEndTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LockState", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.LockState = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ResourceTags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceTag, ResourceTagUnmarshaller>(ResourceTagUnmarshaller.Instance);
+                    unmarshalledObject.ResourceTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ResourceType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RetentionPeriod", targetDepth, ref reader))
+                {
+                    var unmarshaller = RetentionPeriodUnmarshaller.Instance;
+                    unmarshalledObject.RetentionPeriod = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("RuleArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RuleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Status", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+
+            return unmarshalledObject;
+        }
+
+        /// <summary>
+        /// Unmarshall error response to exception.
+        /// </summary>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            {
+                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                {
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                    {
+                        return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                    {
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                    {
+                        return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                }
+            }
+            return new AmazonRecycleBinException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        }
+
+        private static GetRuleResponseUnmarshaller _instance = new GetRuleResponseUnmarshaller();
+
+        internal static GetRuleResponseUnmarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static GetRuleResponseUnmarshaller Instance => _instance;
+    }
+}

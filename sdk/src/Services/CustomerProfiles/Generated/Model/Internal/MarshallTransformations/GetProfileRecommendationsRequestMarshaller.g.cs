@@ -1,0 +1,184 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.CustomerProfiles.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// GetProfileRecommendations Request Marshaller
+    /// </summary>
+    public partial class GetProfileRecommendationsRequestMarshaller : IMarshaller<IRequest, GetProfileRecommendationsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((GetProfileRecommendationsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(GetProfileRecommendationsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.CustomerProfiles");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-08-15";
+            request.HttpMethod = "POST";
+
+            if (!publicRequest.IsSetDomainName())
+            {
+                throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
+            }
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+
+            if (!publicRequest.IsSetProfileId())
+            {
+                throw new AmazonCustomerProfilesException("Request object does not have required field ProfileId set");
+            }
+            request.AddPathResource("{ProfileId}", StringUtils.FromString(publicRequest.ProfileId));
+
+            request.ResourcePath = "/domains/{DomainName}/profiles/{ProfileId}/recommendations";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCandidateIds())
+            {
+                context.Writer.WritePropertyName("CandidateIds");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestCandidateIdsListValue in publicRequest.CandidateIds)
+                {
+                    context.Writer.WriteStringValue(publicRequestCandidateIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetContext())
+            {
+                context.Writer.WritePropertyName("Context");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestContextKvp in publicRequest.Context)
+                {
+                    context.Writer.WritePropertyName(publicRequestContextKvp.Key);
+                    var publicRequestContextValue = publicRequestContextKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestContextValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetDiversityConfig())
+            {
+                context.Writer.WritePropertyName("DiversityConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecommendationDiversityConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DiversityConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+            if (publicRequest.IsSetMetadataConfig())
+            {
+                context.Writer.WritePropertyName("MetadataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MetadataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetadataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetRecommenderFilters())
+            {
+                context.Writer.WritePropertyName("RecommenderFilters");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestRecommenderFiltersListValue in publicRequest.RecommenderFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RecommenderFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRecommenderFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetRecommenderName())
+            {
+                context.Writer.WritePropertyName("RecommenderName");
+                context.Writer.WriteStringValue(publicRequest.RecommenderName);
+            }
+            if (publicRequest.IsSetRecommenderPromotionalFilters())
+            {
+                context.Writer.WritePropertyName("RecommenderPromotionalFilters");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestRecommenderPromotionalFiltersListValue in publicRequest.RecommenderPromotionalFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RecommenderPromotionalFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRecommenderPromotionalFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly GetProfileRecommendationsRequestMarshaller _instance = new();
+
+        internal static GetProfileRecommendationsRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static GetProfileRecommendationsRequestMarshaller Instance => _instance;
+    }
+}

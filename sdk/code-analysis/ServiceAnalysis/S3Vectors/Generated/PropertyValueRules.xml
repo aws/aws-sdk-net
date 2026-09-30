@@ -12,7 +12,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.CreateIndexRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.CreateIndexRequest.VectorBucketName</property>
@@ -21,7 +21,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.CreateIndexResponse.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.CreateVectorBucketRequest.VectorBucketName</property>
@@ -30,11 +30,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.CreateVectorBucketResponse.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteIndexRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteIndexRequest.IndexName</property>
@@ -48,7 +48,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteVectorBucketRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteVectorBucketRequest.VectorBucketName</property>
@@ -57,7 +57,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteVectorBucketPolicyRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteVectorBucketPolicyRequest.VectorBucketName</property>
@@ -66,7 +66,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteVectorsRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.DeleteVectorsRequest.IndexName</property>
@@ -80,7 +80,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetIndexRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetIndexRequest.IndexName</property>
@@ -94,7 +94,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetVectorBucketRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetVectorBucketRequest.VectorBucketName</property>
@@ -103,7 +103,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetVectorBucketPolicyRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetVectorBucketPolicyRequest.VectorBucketName</property>
@@ -112,7 +112,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetVectorsRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetVectorsRequest.IndexName</property>
@@ -141,7 +141,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.ListIndexesRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.ListIndexesRequest.VectorBucketName</property>
@@ -155,7 +155,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <min>0</min>
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
@@ -180,7 +179,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.ListVectorsRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.ListVectorsRequest.IndexName</property>
@@ -219,7 +218,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.PutVectorBucketPolicyRequest.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.PutVectorBucketPolicyRequest.VectorBucketName</property>
@@ -228,7 +227,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.PutVectorsRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.PutVectorsRequest.IndexName</property>
@@ -242,7 +241,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.QueryVectorsRequest.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.QueryVectorsRequest.IndexName</property>
@@ -270,19 +269,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.TagResourceRequest.ResourceArn</property>
-    <min>0</min>
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.UntagResourceRequest.ResourceArn</property>
-    <min>0</min>
     <max>1011</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.EncryptionConfiguration.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>(arn:aws[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+)</pattern>
+    <pattern>^(arn:aws[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.GetOutputVector.Key</property>
@@ -296,7 +293,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.Index.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.Index.IndexName</property>
@@ -310,7 +307,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.IndexSummary.IndexArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.IndexSummary.IndexName</property>
@@ -339,7 +336,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.VectorBucket.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.VectorBucket.VectorBucketName</property>
@@ -348,7 +345,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.VectorBucketSummary.VectorBucketArn</property>
-    <pattern>arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]</pattern>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.VectorBucketSummary.VectorBucketName</property>

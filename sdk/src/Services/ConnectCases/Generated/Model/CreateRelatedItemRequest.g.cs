@@ -1,0 +1,130 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ConnectCases.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateRelatedItem operation. Creates a related
+    /// item (comments, tasks, and contacts) and associates it with a case. <para> There's
+    /// a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Amazon
+    /// Connect Cases quotas</a>. </para> <para> <b>Use cases</b> </para> <para> Following
+    /// are examples of related items that you may want to associate with a case: </para>
+    /// <ul> <li> <para> Related contacts, such as calls, chats, emails tasks </para> </li>
+    /// <li> <para> Comments, for agent notes </para> </li> <li> <para> SLAs, to capture target
+    /// resolution goals </para> </li> <li> <para> Cases, to capture related Amazon Connect
+    /// Cases </para> </li> <li> <para> Files, such as policy documentation or customer-provided
+    /// attachments </para> </li> <li> <para> Custom related items, which provide flexibility
+    /// for you to define related items that such as bookings, orders, products, notices,
+    /// and more </para> </li> </ul> <para> <b>Important things to know</b> </para> <ul> <li>
+    /// <para> If you are associating a contact to a case by passing in <c>Contact</c> for
+    /// a <c>type</c>, you must have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeContact.html">DescribeContact</a>
+    /// permission on the ARN of the contact that you provide in <c>content.contact.contactArn</c>.
+    /// </para> </li> <li> <para> A Related Item is a resource that is associated with a case.
+    /// It may or may not have an external identifier linking it to an external resource (for
+    /// example, a <c>contactArn</c>). All Related Items have their own internal identifier,
+    /// the <c>relatedItemArn</c>. Examples of related items include <c>comments</c> and <c>contacts</c>.
+    /// </para> </li> <li> <para> If you provide a value for <c>performedBy.userArn</c> you
+    /// must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+    /// permission on the ARN of the user that you provide. </para> </li> <li> <para> The
+    /// <c>type</c> field is reserved for internal use only. </para> </li> </ul> <para> <b>Endpoints</b>:
+    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon
+    /// Connect endpoints and quotas</a>. </para>
+    /// </summary>
+    public partial class CreateRelatedItemRequest : AmazonConnectCasesRequest
+    {
+        /// <summary>
+        /// Gets and sets the property CaseId. 
+        /// <para>
+        /// A unique identifier of the case.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 500)]
+        public string CaseId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CaseId property is set.
+        /// </summary>
+        internal bool IsSetCaseId() => this.CaseId != null;
+
+        /// <summary>
+        /// Gets and sets the property Content. 
+        /// <para>
+        /// The content of a related item to be created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public RelatedItemInputContent Content { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Content property is set.
+        /// </summary>
+        internal bool IsSetContent() => this.Content != null;
+
+        /// <summary>
+        /// Gets and sets the property DomainId. 
+        /// <para>
+        /// The unique identifier of the Cases domain. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 500)]
+        public string DomainId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainId property is set.
+        /// </summary>
+        internal bool IsSetDomainId() => this.DomainId != null;
+
+        /// <summary>
+        /// Gets and sets the property PerformedBy. 
+        /// <para>
+        /// Represents the creator of the related item.
+        /// </para>
+        /// </summary>
+        public UserUnion PerformedBy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PerformedBy property is set.
+        /// </summary>
+        internal bool IsSetPerformedBy() => this.PerformedBy != null;
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of a related item.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public RelatedItemType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+    }
+}

@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.Elasticsearch.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// DescribeElasticsearchInstanceTypeLimits Request Marshaller
+    /// </summary>
+    public partial class DescribeElasticsearchInstanceTypeLimitsRequestMarshaller : IMarshaller<IRequest, DescribeElasticsearchInstanceTypeLimitsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((DescribeElasticsearchInstanceTypeLimitsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(DescribeElasticsearchInstanceTypeLimitsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Elasticsearch");
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2015-01-01";
+            request.HttpMethod = "GET";
+
+            if (publicRequest.IsSetDomainName())
+            {
+                request.Parameters.Add("domainName", StringUtils.FromString(publicRequest.DomainName));
+            }
+
+            if (!publicRequest.IsSetElasticsearchVersion())
+            {
+                throw new AmazonElasticsearchException("Request object does not have required field ElasticsearchVersion set");
+            }
+            request.AddPathResource("{ElasticsearchVersion}", StringUtils.FromString(publicRequest.ElasticsearchVersion));
+
+            if (!publicRequest.IsSetInstanceType())
+            {
+                throw new AmazonElasticsearchException("Request object does not have required field InstanceType set");
+            }
+            request.AddPathResource("{InstanceType}", StringUtils.FromString(publicRequest.InstanceType));
+
+            request.ResourcePath = "/2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}";
+
+            request.UseQueryString = true;
+
+            return request;
+        }
+
+        private static readonly DescribeElasticsearchInstanceTypeLimitsRequestMarshaller _instance = new();
+
+        internal static DescribeElasticsearchInstanceTypeLimitsRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static DescribeElasticsearchInstanceTypeLimitsRequestMarshaller Instance => _instance;
+    }
+}

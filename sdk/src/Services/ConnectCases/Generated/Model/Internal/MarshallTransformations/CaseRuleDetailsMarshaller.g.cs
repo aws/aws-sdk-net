@@ -1,0 +1,87 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.ConnectCases.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CaseRuleDetails Marshaller
+    /// </summary>
+    public partial class CaseRuleDetailsMarshaller : IRequestMarshaller<CaseRuleDetails, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(CaseRuleDetails requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetFieldOptions())
+            {
+                context.Writer.WritePropertyName("fieldOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FieldOptionsCaseRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.FieldOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetHidden())
+            {
+                context.Writer.WritePropertyName("hidden");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HiddenCaseRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Hidden, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetRequired())
+            {
+                context.Writer.WritePropertyName("required");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RequiredCaseRuleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Required, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static CaseRuleDetailsMarshaller Instance = new CaseRuleDetailsMarshaller();
+    }
+}
