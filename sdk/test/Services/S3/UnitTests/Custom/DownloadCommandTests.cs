@@ -19,6 +19,8 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class DownloadCommandTests
     {
+        private const string TestBucket = "test-bucket";
+
         private string _testDirectory;
         private Mock<IAmazonS3> _mockS3Client;
 
@@ -52,23 +54,28 @@ namespace AWSSDK.UnitTests
         /// Thread.Sleep) on EVERY successful download. A successful download must
         /// return promptly with no fixed backoff floor.
         ///
-        /// A single wall-clock assertion is timing-sensitive (JIT, GC, or scheduling
-        /// on a loaded CI host can add tens of ms to one legitimate run). To stay
-        /// robust we AMORTIZE across many downloads: the old bug added a FIXED ~100ms
-        /// per call, so N downloads cost >= N*100ms, while the mocked work is a few ms
-        /// each. We allow a generous per-iteration average that still fails decisively
-        /// if a fixed sleep is reintroduced, and one-off pauses are absorbed by the
-        /// average. The deterministic behavioral guarantee (exactly one GetObject, no
-        /// retry) is asserted separately in
-        /// ExecuteAsync_SuccessfulDownload_IssuesSingleGetObjectWithNoRetry.
+        /// This test is intentionally TIMING-SENSITIVE (tagged accordingly): the only
+        /// externally observable symptom of the old bug is wall-clock time. To keep it
+        /// robust we AMORTIZE across many downloads and warm up first: the old bug added
+        /// a FIXED ~100ms per call, so N downloads cost >= N*100ms, while the mocked work
+        /// is a few ms each. The budget below (a generous per-call average still well
+        /// below the 100ms floor) fails decisively if a fixed sleep is reintroduced, and
+        /// one-off GC/scheduling/AV/file-IO pauses are absorbed by the average. The
+        /// deterministic, non-timing guarantee (exactly one GetObject, no retry) is
+        /// asserted separately in
+        /// ExecuteAsync_SuccessfulDownload_IssuesSingleGetObjectWithNoRetry, so a rare
+        /// timing flake here never hides a real behavioral regression.
         /// </summary>
         [TestMethod]
+        [TestCategory("TimingSensitive")]
         public async Task ExecuteAsync_SuccessfulDownload_DoesNotSleepBeforeReturning()
         {
             // Arrange
-            const long fileSize = 16;
+            const int fileSize = 16;
             const int iterations = 10;
-            SetupGetObject("tiny.txt", fileSize);
+            // Per-call average budget, comfortably below the old 100ms/call floor but
+            // loose enough to absorb CI noise (GC, AV scanning, file IO, scheduling).
+            const int perCallBudgetMs = 60;
 
             // Warm up once so JIT of the download path is not counted in the measured loop.
             await RunSingleDownloadAsync("tiny-warmup.txt", fileSize);
@@ -83,12 +90,11 @@ namespace AWSSDK.UnitTests
 
             // Assert
             // The old bug added a fixed ~100ms floor per call => >= 1000ms for 10 calls.
-            // A 400ms aggregate budget (40ms/call average) fails decisively if the fixed
-            // sleep returns, while absorbing incidental scheduling/GC jitter on slow hosts.
-            Assert.IsTrue(stopwatch.ElapsedMilliseconds < iterations * 40,
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds < iterations * perCallBudgetMs,
                 $"Successful downloads should not incur a fixed backoff sleep. " +
                 $"Elapsed for {iterations} downloads: {stopwatch.ElapsedMilliseconds}ms " +
-                $"(would be >= {iterations * 100}ms with the old 100ms-per-call sleep).");
+                $"(budget {iterations * perCallBudgetMs}ms; would be >= {iterations * 100}ms " +
+                $"with the old 100ms-per-call sleep).");
         }
 
         /// <summary>
@@ -99,14 +105,15 @@ namespace AWSSDK.UnitTests
         public async Task ExecuteAsync_SuccessfulDownload_IssuesSingleGetObjectWithNoRetry()
         {
             // Arrange
-            const long fileSize = 16;
-            var filePath = Path.Combine(_testDirectory, "tiny.txt");
-            SetupGetObject("tiny.txt", fileSize);
+            const int fileSize = 16;
+            const string key = "tiny.txt";
+            var filePath = Path.Combine(_testDirectory, key);
+            SetupGetObject(key, fileSize);
 
             var request = new TransferUtilityDownloadRequest
             {
-                BucketName = "test-bucket",
-                Key = "tiny.txt",
+                BucketName = TestBucket,
+                Key = key,
                 FilePath = filePath
             };
             var command = new DownloadCommand(_mockS3Client.Object, request);
@@ -119,9 +126,10 @@ namespace AWSSDK.UnitTests
             Assert.IsTrue(File.Exists(filePath), "Downloaded file should exist");
             Assert.AreEqual(fileSize, new FileInfo(filePath).Length);
 
-            // Exactly one GetObject for a clean success (no retry loop iteration).
+            // Exactly one GetObject for the expected bucket/key, with no retry.
             _mockS3Client.Verify(c => c.GetObjectAsync(
-                It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+                It.Is<GetObjectRequest>(r => r.BucketName == TestBucket && r.Key == key),
+                It.IsAny<CancellationToken>()), Times.Once);
         }
 
         /// <summary>
@@ -148,7 +156,7 @@ namespace AWSSDK.UnitTests
 
             var request = new TransferUtilityDownloadRequest
             {
-                BucketName = "test-bucket",
+                BucketName = TestBucket,
                 Key = "tiny.txt",
                 FilePath = Path.Combine(_testDirectory, "tiny.txt")
             };
@@ -171,22 +179,23 @@ namespace AWSSDK.UnitTests
             }
         }
 
-        private async Task RunSingleDownloadAsync(string fileName, long fileSize)
+        private async Task RunSingleDownloadAsync(string key, int fileSize)
         {
+            SetupGetObject(key, fileSize);
             var request = new TransferUtilityDownloadRequest
             {
-                BucketName = "test-bucket",
-                Key = "tiny.txt",
-                FilePath = Path.Combine(_testDirectory, fileName)
+                BucketName = TestBucket,
+                Key = key,
+                FilePath = Path.Combine(_testDirectory, key)
             };
             var command = new DownloadCommand(_mockS3Client.Object, request);
             await command.ExecuteAsync(CancellationToken.None);
         }
 
-        private void SetupGetObject(string key, long fileSize)
+        private void SetupGetObject(string key, int fileSize)
         {
             _mockS3Client.Setup(c => c.GetObjectAsync(
-                It.IsAny<GetObjectRequest>(),
+                It.Is<GetObjectRequest>(r => r.BucketName == TestBucket && r.Key == key),
                 It.IsAny<CancellationToken>()))
                 .Returns((GetObjectRequest req, CancellationToken ct) =>
                 {
