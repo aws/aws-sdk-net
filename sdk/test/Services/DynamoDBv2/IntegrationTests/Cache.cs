@@ -18,7 +18,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
     public class CacheTests : IAsyncLifetime
     {
         private static readonly string TableCacheIdentifier = typeof(Table).FullName;
-        private const string TABLENAME = "cache-test-table";
 
         private string _testTableName;
         private AmazonDynamoDBClient _client;
@@ -37,15 +36,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public async ValueTask DisposeAsync()
         {
-            var allTables = (await _client.ListTablesAsync()).TableNames;
-            if (allTables.Contains(TABLENAME))
+            // The table name is unique per test, so there's no need to wait for the deletion to finish.
+            try
             {
-                await DeleteTable(TABLENAME);
+                await _client.DeleteTableAsync(_testTableName);
             }
-
-            if (allTables.Contains(_testTableName))
+            catch (ResourceNotFoundException)
             {
-                await DeleteTable(_testTableName);
             }
 
             AWSConfigs.UseSdkCache = _lastUseSdkCacheValue;
@@ -114,8 +111,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             });
             var tableCache = SdkCache.GetCache<string, TableDescription>(_client, TableCacheIdentifier, StringComparer.Ordinal);
 
-            await CreateTable(TABLENAME, defaultKeys: true);
-            var table = Table.LoadTable(_client, TABLENAME);
+            // InitializeAsync already created the table with the default keys.
+            var tableName = _testTableName;
+            var table = Table.LoadTable(_client, tableName);
             await table.PutItemAsync(item);
 
             using (var counter = new ServiceResponseCounter(_client))
@@ -127,17 +125,17 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 Assert.Equal(1, counter.ResponseCount);
                 AssertExtensions.ExpectException(() => table.GetItem("Floyd", 42));
 
-                var oldTableDescription = tableCache.GetValue(TABLENAME, null);
+                var oldTableDescription = tableCache.GetValue(tableName, null);
 
-                await DeleteTable(TABLENAME);
-                await CreateTable(TABLENAME, defaultKeys: false);
+                await DeleteTable(tableName);
+                await CreateTable(tableName, defaultKeys: false);
 
                 await table.PutItemAsync(item);
                 AssertExtensions.ExpectException(() => table.GetItem(42, "Yes"));
 
                 counter.Reset();
                 Table.ClearTableCache();
-                table = Table.LoadTable(_client, TABLENAME);
+                table = Table.LoadTable(_client, tableName);
                 doc = await table.GetItemAsync(42, "Yes", consistentRead);
                 Assert.NotNull(doc);
                 Assert.NotEqual(0, doc.Count);
@@ -145,11 +143,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
                 counter.Reset();
                 Table.ClearTableCache();
-                PutItem(tableCache, TABLENAME, oldTableDescription);
-                table = Table.LoadTable(_client, TABLENAME);
-                doc = tableCache.UseCache(TABLENAME,
+                PutItem(tableCache, tableName, oldTableDescription);
+                table = Table.LoadTable(_client, tableName);
+                doc = tableCache.UseCache(tableName,
                     () => table.GetItem(42, "Yes"),
-                    () => table = Table.LoadTable(_client, TABLENAME),
+                    () => table = Table.LoadTable(_client, tableName),
                     shouldRetryForException: null);
 
                 Assert.NotNull(doc);
@@ -206,7 +204,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 }
             }
 
-            await UtilityMethods.WaitUntilAsync(testFunction);
+            // Poll every second instead of the 5 second default; every test waits on a table create in InitializeAsync,
+            // and ChangingTableTest also waits on a delete and a re-create.
+            await UtilityMethods.WaitUntilAsync(testFunction, sleepSeconds: 1);
         }
     }
 #endif

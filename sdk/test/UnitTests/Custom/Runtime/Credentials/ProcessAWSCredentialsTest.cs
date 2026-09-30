@@ -19,7 +19,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace AWSSDK.UnitTests
@@ -92,9 +91,9 @@ namespace AWSSDK.UnitTests
         /// <summary>
         /// The test validates the credential refresh logic for session credentials.
         /// DetermineProcessCredential runs the credential process on every call (it does
-        /// not cache) and the executable generates a new Guid token per run, so a
-        /// refresh must yield a different token without waiting for the 1 minute
-        /// expiration the executable sets.
+        /// not cache) and the executable generates a new token per run, so a
+        /// refresh must yield a different token even though the expiration the
+        /// executable sets is far in the future.
         /// </summary>
         [TestMethod]
         public void ValidateCredentialRefresh()
@@ -102,8 +101,6 @@ namespace AWSSDK.UnitTests
             var processCredential = new ProcessAWSCredentials($"{Executable} {ArgumentsSession} {ValidVersionNumber}");
             var credentialsRefreshState = processCredential.DetermineProcessCredential();
             var oldToken = credentialsRefreshState.Credentials.Token;
-
-            Thread.Sleep(TimeSpan.FromSeconds(2));
 
             credentialsRefreshState = processCredential.DetermineProcessCredential();
             Assert.AreNotEqual(oldToken, credentialsRefreshState.Credentials.Token);

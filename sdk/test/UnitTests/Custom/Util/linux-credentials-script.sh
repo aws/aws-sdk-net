@@ -13,12 +13,11 @@ if [ "$credentialType" = "Basic" ]; then
     echo '"SecretAccessKey": "SecretKey"'
 fi
 if [ "$credentialType" = "Session" ]; then
-    # A new token per run lets the refresh test see a change; expiration is one minute out (GNU date first, then BSD date).
+    # A new token per run lets the refresh test see a change; expiration is fixed in the future.
     token=$(uuidgen 2>/dev/null || cat /proc/sys/kernel/random/uuid)
-    expiration=$(date -u -d '+1 minute' +%Y-%m-%dT%H:%M:%SZ 2>/dev/null || date -u -v+1M +%Y-%m-%dT%H:%M:%SZ)
     echo '"AccessKeyId": "AccessKey",'
     echo '"SecretAccessKey": "SecretKey",'
     echo "\"SessionToken\": \"$token\","
-    echo "\"Expiration\": \"$expiration\""
+    echo '"Expiration": "2099-01-01T00:00:00Z"'
 fi
 echo '}'
