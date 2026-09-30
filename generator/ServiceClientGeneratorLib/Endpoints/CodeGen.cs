@@ -132,8 +132,13 @@ namespace ServiceClientGenerator.Endpoints
 
         private static string MaybeInterpolate(string s)
         {
-            s = s.SanitizeQuotes();
-            return s.Contains('{') ? $@"Interpolate(@""{s}"", refs)" : $@"""{s}""";
+            if (s.Contains('{'))
+            {
+                return $@"Interpolate(@""{s.SanitizeQuotes()}"", refs)";
+            }
+
+            // Regular string literal, so escape backslashes and quotes C# style instead of doubling quotes.
+            return $@"""{s.Replace(@"\", @"\\").Replace(@"""", @"\""")}""";
         }
 
         private static void GenerateStandardFunction(Function function, StringBuilder code, bool isCondition = false)
