@@ -29,12 +29,13 @@ public class UnsupportedTraitValidatorTests
         Assert.Contains("@streaming (event stream)", ex.Message);
     }
 
+    // The discovery marshaller doesn't pass discovery ids yet (unsupported-trait-model.json's DoThingRequest.tableName).
     [Fact]
-    public void Validate_EndpointDiscovery_Throws()
+    public void Validate_EndpointDiscoveryId_Throws()
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/unsupported-trait-model.json"));
         var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.AwsJson1_0));
-        Assert.Contains("clientEndpointDiscovery", ex.Message);
+        Assert.Contains("clientEndpointDiscoveryId", ex.Message);
     }
 
     [Fact]

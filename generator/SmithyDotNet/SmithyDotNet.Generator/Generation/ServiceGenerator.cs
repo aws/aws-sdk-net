@@ -6,6 +6,7 @@ using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
+using SmithyDotNet.Generator.Writers.EndpointDiscovery;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.EventStreams;
 using SmithyDotNet.Generator.Writers.Examples;
@@ -193,6 +194,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var operationWriter = new OperationWriter(context, modelFileName);
+        var endpointDiscoveryMarshallerWriter = new EndpointDiscoveryMarshallerWriter(context, modelFileName);
         var nuspecWriter = new NuspecWriter(context);
         var serviceProjectFileWriter = new ServiceProjectFileWriter(context);
 
@@ -277,6 +279,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             };
 
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshallerCode);
+
+            if (context.DiscoveredOperations.TryGetValue(operation.Shape.Id, out var discoveryRequired))
+            {
+                Emit(Path.Combine(marshalling, $"{operation.Name}EndpointDiscoveryMarshaller.g.cs"), endpointDiscoveryMarshallerWriter.Write(operation, discoveryRequired, cancellationToken));
+            }
 
             foreach (var structure in ReferencedStructures(operation.Input))
             {

@@ -1,3 +1,4 @@
+using System.Text.Json;
 using SmithyDotNet.Generator.Model.Shapes;
 using static SmithyDotNet.Generator.Model.Traits.TraitHelpers;
 
@@ -47,4 +48,10 @@ public static class ScalarTraits
     /// </summary>
     /// <remarks><see href="https://smithy.io/2.0/spec/simple-types.html#enum" /></remarks>
     public static string? GetEnumValue(this Shape shape) => GetStringTrait(shape, "smithy.api#enumValue");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httperror-trait" /></remarks>
+    public static int? GetHttpError(this Shape shape) =>
+        shape.Traits.TryGetValue("smithy.api#httpError", out var value) && value.ValueKind == JsonValueKind.Number && value.TryGetInt32(out var code)
+            ? code
+            : null;
 }

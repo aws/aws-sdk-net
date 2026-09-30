@@ -15,9 +15,8 @@ public static class UnsupportedTraitValidator
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
         ["aws.protocols#httpChecksum"] = "httpChecksum",
-        // Endpoint discovery (DynamoDB, Timestream) has no codegen yet; without this the service would
-        // generate silently minus its *EndpointDiscoveryMarshaller classes.
-        ["aws.api#clientEndpointDiscovery"] = "clientEndpointDiscovery",
+        // TODO: pass discovery ids in EndpointDiscoveryMarshallerWriter's EndpointDiscoveryData; no service models one yet.
+        ["aws.api#clientEndpointDiscoveryId"] = "clientEndpointDiscoveryId",
     };
 
     // Live on a member's resolved *target* shape, not the member reference.

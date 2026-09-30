@@ -1,0 +1,82 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example_20230101": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DescribeEndpoints" },
+        { "target": "com.example#GetThing" },
+        { "target": "com.example#PutThing" },
+        { "target": "com.example#ListThings" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#awsJson1_0": {},
+        "smithy.api#title": "Example",
+        "aws.api#clientEndpointDiscovery": { "operation": "com.example#DescribeEndpoints", "error": "com.example#InvalidEndpointException" }
+      }
+    },
+    "com.example#DescribeEndpoints": {
+      "type": "operation",
+      "input": { "target": "com.example#DescribeEndpointsRequest" },
+      "output": { "target": "com.example#DescribeEndpointsResponse" },
+      "traits": { "aws.api#clientDiscoveredEndpoint": { "required": false } }
+    },
+    "com.example#DescribeEndpointsRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#DescribeEndpointsResponse": {
+      "type": "structure",
+      "members": {
+        "Endpoints": { "target": "com.example#Endpoints", "traits": { "smithy.api#required": {} } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#Endpoints": {
+      "type": "list",
+      "member": { "target": "com.example#Endpoint" }
+    },
+    "com.example#Endpoint": {
+      "type": "structure",
+      "members": {
+        "Address": { "target": "smithy.api#String", "traits": { "smithy.api#required": {} } },
+        "CachePeriodInMinutes": { "target": "smithy.api#Long", "traits": { "smithy.api#required": {} } }
+      }
+    },
+    "com.example#GetThing": {
+      "type": "operation",
+      "input": { "target": "com.example#GetThingRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "errors": [{ "target": "com.example#InvalidEndpointException" }],
+      "traits": { "aws.api#clientDiscoveredEndpoint": { "required": true } }
+    },
+    "com.example#GetThingRequest": {
+      "type": "structure",
+      "members": {
+        "Id": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#PutThing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "aws.api#clientDiscoveredEndpoint": { "required": false } }
+    },
+    "com.example#ListThings": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" }
+    },
+    "com.example#InvalidEndpointException": {
+      "type": "structure",
+      "members": {
+        "Message": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client", "smithy.api#httpError": 421 }
+    }
+  }
+}

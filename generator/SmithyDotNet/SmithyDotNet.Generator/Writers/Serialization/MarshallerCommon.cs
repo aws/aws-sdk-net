@@ -121,7 +121,7 @@ public static class MarshallerCommon
         writer.WriteLine("protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;");
     }
 
-    // Structure and exception unmarshallers.
+    // Structure and exception unmarshallers, and endpoint discovery marshallers.
     internal static void WriteUnmarshallerSingleton(CodeWriter writer, string unmarshallerClassName)
     {
         writer.WriteLine($"private static {unmarshallerClassName} _instance = new {unmarshallerClassName}();");

@@ -18,6 +18,7 @@ Under `Generated/Model/Internal/MarshallTransformations/`, all `partial`:
 | `{Shape}Marshaller.cs` | `IRequestMarshaller<{Shape}, JsonMarshallerContext>` (or protocol equivalent) | Nested structures in the request path |
 | `{Shape}Unmarshaller.cs` | `IJsonUnmarshaller<{Shape}, JsonUnmarshallerContext>` (or protocol equivalent) | Nested structures in the response path |
 | `{Exception}Unmarshaller.cs` | `IJsonErrorResponseUnmarshaller<{Exception}, JsonUnmarshallerContext>` (or protocol equivalent) | |
+| `{Operation}EndpointDiscoveryMarshaller.cs` | `IMarshaller<EndpointDiscoveryDataBase, {Operation}Request>` | Endpoint discovery only; see `sdk-conventions` |
 
 Structure marshallers expose `public readonly static {Shape}Marshaller Instance = new {Shape}Marshaller();`.
 Operation marshallers/unmarshallers expose a `private static` instance behind a public `Instance` property.

@@ -370,3 +370,17 @@ Must expose:
 - `ServiceMetadata` property override
 
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
+
+## Endpoint Discovery
+
+`aws.api#clientEndpointDiscovery` is legacy: only dynamodb, timestream-query and timestream-write use it, and new
+services use endpoint rule sets (Endpoints 2.0) instead. Matching C2J, each operation with
+`aws.api#clientDiscoveredEndpoint` (except the discovery operation itself) gets an
+`{Op}EndpointDiscoveryMarshaller.g.cs` and sets `options.EndpointDiscoveryMarshaller` and `options.EndpointOperation`;
+the client overrides `EndpointOperation` to call the discovery operation.
+
+Anything those three services don't model fails generation (discovery ids, discovery input, renamed or swapped
+endpoint members, ...); see `EndpointDiscoveryResolver` and `ClientClassWriter.WriteEndpointOperation`.
+
+C2J's `{BaseName}EndpointDiscoveryMarshallingTests.cs` is not generated: with no discovery ids it only checks the
+`required` flag against the C2J model, which the Smithy trait replaces.

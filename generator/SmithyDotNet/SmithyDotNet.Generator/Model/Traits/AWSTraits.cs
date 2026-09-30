@@ -34,6 +34,14 @@ public static class AWSTraits
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-service-trait" /></remarks>
     public static AWSServiceTrait? GetAWSService(this Shape shape) => DeserializeTrait<AWSServiceTrait>(shape, "aws.api#service");
 
+    /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-clientendpointdiscovery-trait" /></remarks>
+    public static ClientEndpointDiscoveryTrait? GetClientEndpointDiscovery(this Shape shape) =>
+        DeserializeTrait<ClientEndpointDiscoveryTrait>(shape, "aws.api#clientEndpointDiscovery");
+
+    /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-clientdiscoveredendpoint-trait" /></remarks>
+    public static ClientDiscoveredEndpointTrait? GetClientDiscoveredEndpoint(this Shape shape) =>
+        DeserializeTrait<ClientDiscoveredEndpointTrait>(shape, "aws.api#clientDiscoveredEndpoint");
+
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-sigv4-trait" /></remarks>
     public static SigV4Trait? GetSigV4(this Shape shape) => DeserializeTrait<SigV4Trait>(shape, "aws.auth#sigv4");
 

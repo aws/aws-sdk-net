@@ -1,5 +1,6 @@
 using SmithyDotNet.Generator.Generation.Auth;
 using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Generation.EndpointDiscovery;
 using SmithyDotNet.Generator.Generation.Endpoints;
 using SmithyDotNet.Generator.Generation.EventStreams;
 using SmithyDotNet.Generator.Generation.Manifests;
@@ -141,6 +142,19 @@ public class GenerationContext
     /// <summary>All operations with their input/output/error shapes resolved.</summary>
     public IReadOnlyList<Operation> Operations { get; }
 
+    /// <summary>
+    /// The operation the client calls to discover endpoints (<c>aws.api#clientEndpointDiscovery</c>), or
+    /// <c>null</c> when the service doesn't use endpoint discovery.
+    /// </summary>
+    public Operation? EndpointDiscoveryOperation { get; }
+
+    /// <summary>
+    /// Operations carrying <c>aws.api#clientDiscoveredEndpoint</c>, by shape ID, to whether they require a discovered
+    /// endpoint. Empty without an <see cref="EndpointDiscoveryOperation"/>, and never holds that operation itself,
+    /// which C2J skips too.
+    /// </summary>
+    public IReadOnlyDictionary<ShapeId, bool> DiscoveredOperations { get; }
+
     /// <summary>Operations carrying <c>@paginated</c>, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
     public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
 
@@ -252,6 +266,8 @@ public class GenerationContext
         IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
         Operations = OperationResolver.Resolve(index, Protocol);
+        EndpointDiscoveryOperation = EndpointDiscoveryResolver.ResolveDiscoveryOperation(Operations, index);
+        DiscoveredOperations = EndpointDiscoveryResolver.ResolveDiscoveredOperations(Operations, EndpointDiscoveryOperation);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
@@ -354,5 +370,4 @@ public class GenerationContext
     /// into the model.
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => _index.ToDotNetName(shapeId);
-
 }
