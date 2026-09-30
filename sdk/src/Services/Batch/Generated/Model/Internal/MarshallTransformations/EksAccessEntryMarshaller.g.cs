@@ -34,44 +34,33 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EksConfiguration Marshaller
+    /// EksAccessEntry Marshaller
     /// </summary>
-    public partial class EksConfigurationMarshaller : IRequestMarshaller<EksConfiguration, JsonMarshallerContext>
+    public partial class EksAccessEntryMarshaller : IRequestMarshaller<EksAccessEntry, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EksConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(EksAccessEntry requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetAccessEntry())
+            if (requestObject.IsSetDesiredState())
             {
-                context.Writer.WritePropertyName("accessEntry");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EksAccessEntryMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccessEntry, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("desiredState");
+                context.Writer.WriteStringValue(requestObject.DesiredState);
             }
 
-            if (requestObject.IsSetEksClusterArn())
+            if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("eksClusterArn");
-                context.Writer.WriteStringValue(requestObject.EksClusterArn);
-            }
-
-            if (requestObject.IsSetKubernetesNamespace())
-            {
-                context.Writer.WritePropertyName("kubernetesNamespace");
-                context.Writer.WriteStringValue(requestObject.KubernetesNamespace);
+                context.Writer.WritePropertyName("status");
+                context.Writer.WriteStringValue(requestObject.Status);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static EksConfigurationMarshaller Instance = new EksConfigurationMarshaller();
+        public readonly static EksAccessEntryMarshaller Instance = new EksAccessEntryMarshaller();
     }
 }

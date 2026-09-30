@@ -123,7 +123,9 @@ namespace Amazon.Batch.Model
         ///  <note> 
         /// <para>
         /// To create a compute environment that uses EKS resources, the caller must have permissions
-        /// to call <c>eks:DescribeCluster</c>.
+        /// to call <c>eks:DescribeCluster</c>. Additional Amazon EKS permissions are required
+        /// for Batch to manage an access entry on the cluster; see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon
+        /// EKS access entry authentication</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>

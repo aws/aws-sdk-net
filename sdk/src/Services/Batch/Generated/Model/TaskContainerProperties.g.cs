@@ -348,8 +348,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
-        /// The type and amount of a resource to assign to a container. The only supported resource
-        /// is a GPU.
+        /// The type and amount of a resource to assign to a container. The supported resources
+        /// include <c>GPU</c>, <c>MEMORY</c>, and <c>VCPU</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data

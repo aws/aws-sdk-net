@@ -594,6 +594,93 @@ namespace Amazon.Batch
     }
 
     /// <summary>
+    /// Constants used for properties of type EksAccessEntryDesiredState.
+    /// </summary>
+    public class EksAccessEntryDesiredState : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for EksAccessEntryDesiredState
+        /// </summary>
+        public static readonly EksAccessEntryDesiredState DISABLED = new EksAccessEntryDesiredState("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for EksAccessEntryDesiredState
+        /// </summary>
+        public static readonly EksAccessEntryDesiredState ENABLED = new EksAccessEntryDesiredState("ENABLED");
+
+        /// <summary>
+        /// Constant INHERIT_FROM_CLUSTER for EksAccessEntryDesiredState
+        /// </summary>
+        public static readonly EksAccessEntryDesiredState INHERIT_FROM_CLUSTER = new EksAccessEntryDesiredState("INHERIT_FROM_CLUSTER");
+
+        /// <summary>
+        /// Constructs a custom EksAccessEntryDesiredState for a value not among the defined constants.
+        /// </summary>
+        public EksAccessEntryDesiredState(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksAccessEntryDesiredState FindValue(string value)
+        {
+            return FindValue<EksAccessEntryDesiredState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksAccessEntryDesiredState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EksAccessEntryStatus.
+    /// </summary>
+    public class EksAccessEntryStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for EksAccessEntryStatus
+        /// </summary>
+        public static readonly EksAccessEntryStatus ACTIVE = new EksAccessEntryStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant INACTIVE for EksAccessEntryStatus
+        /// </summary>
+        public static readonly EksAccessEntryStatus INACTIVE = new EksAccessEntryStatus("INACTIVE");
+
+        /// <summary>
+        /// Constructs a custom EksAccessEntryStatus for a value not among the defined constants.
+        /// </summary>
+        public EksAccessEntryStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EksAccessEntryStatus FindValue(string value)
+        {
+            return FindValue<EksAccessEntryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EksAccessEntryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FirelensConfigurationType.
     /// </summary>
     public class FirelensConfigurationType : ConstantClass

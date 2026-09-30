@@ -160,6 +160,14 @@ namespace Amazon.Batch
         /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
         /// list. Jobs that can't be found are treated as successfully processed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation requires <c>batch:CancelJob</c> permission for each job in the request.
+        /// There is no separate <c>batch:CancelJobs</c> IAM action. If a caller's IAM policy
+        /// grants <c>batch:CancelJob</c>, they can use both the singular <a>CancelJob</a> and
+        /// bulk <c>CancelJobs</c> operations.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJobs service method.</param>
         /// <returns>The response from the CancelJobs service method, as returned by Batch.</returns>
@@ -204,6 +212,14 @@ namespace Amazon.Batch
         /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
         /// list. Jobs that can't be found are treated as successfully processed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation requires <c>batch:CancelJob</c> permission for each job in the request.
+        /// There is no separate <c>batch:CancelJobs</c> IAM action. If a caller's IAM policy
+        /// grants <c>batch:CancelJob</c>, they can use both the singular <a>CancelJob</a> and
+        /// bulk <c>CancelJobs</c> operations.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1799,6 +1815,14 @@ namespace Amazon.Batch
         /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
         /// list. Jobs that can't be found are treated as successfully processed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation requires <c>batch:TerminateJob</c> permission for each job in the request.
+        /// There is no separate <c>batch:TerminateJobs</c> IAM action. If a caller's IAM policy
+        /// grants <c>batch:TerminateJob</c>, they can use both the singular <a>TerminateJob</a>
+        /// and bulk <c>TerminateJobs</c> operations.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobs service method.</param>
         /// <returns>The response from the TerminateJobs service method, as returned by Batch.</returns>
@@ -1828,6 +1852,14 @@ namespace Amazon.Batch
         /// code of <c>200</c> even when some jobs encountered errors, so check the <c>errors</c>
         /// list. Jobs that can't be found are treated as successfully processed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation requires <c>batch:TerminateJob</c> permission for each job in the request.
+        /// There is no separate <c>batch:TerminateJobs</c> IAM action. If a caller's IAM policy
+        /// grants <c>batch:TerminateJob</c>, they can use both the singular <a>TerminateJob</a>
+        /// and bulk <c>TerminateJobs</c> operations.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1895,6 +1927,14 @@ namespace Amazon.Batch
         /// errors, so check the <c>errors</c> list. Service jobs that can't be found are treated
         /// as successfully processed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation requires <c>batch:TerminateServiceJob</c> permission for each service
+        /// job in the request. There is no separate <c>batch:TerminateServiceJobs</c> IAM action.
+        /// If a caller's IAM policy grants <c>batch:TerminateServiceJob</c>, they can use both
+        /// the singular <c>TerminateServiceJob</c> and bulk <c>TerminateServiceJobs</c> operations.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJobs service method.</param>
         /// <returns>The response from the TerminateServiceJobs service method, as returned by Batch.</returns>
@@ -1922,6 +1962,14 @@ namespace Amazon.Batch
         /// errors, so check the <c>errors</c> list. Service jobs that can't be found are treated
         /// as successfully processed.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This operation requires <c>batch:TerminateServiceJob</c> permission for each service
+        /// job in the request. There is no separate <c>batch:TerminateServiceJobs</c> IAM action.
+        /// If a caller's IAM policy grants <c>batch:TerminateServiceJob</c>, they can use both
+        /// the singular <c>TerminateServiceJob</c> and bulk <c>TerminateServiceJobs</c> operations.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateServiceJobs service method.</param>
         /// <param name="cancellationToken">

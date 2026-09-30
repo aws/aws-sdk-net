@@ -34,14 +34,14 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EksConfiguration Marshaller
+    /// EksConfigurationUpdate Marshaller
     /// </summary>
-    public partial class EksConfigurationMarshaller : IRequestMarshaller<EksConfiguration, JsonMarshallerContext>
+    public partial class EksConfigurationUpdateMarshaller : IRequestMarshaller<EksConfigurationUpdate, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(EksConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(EksConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
@@ -55,23 +55,11 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                 context.Writer.WriteEndObject();
             }
-
-            if (requestObject.IsSetEksClusterArn())
-            {
-                context.Writer.WritePropertyName("eksClusterArn");
-                context.Writer.WriteStringValue(requestObject.EksClusterArn);
-            }
-
-            if (requestObject.IsSetKubernetesNamespace())
-            {
-                context.Writer.WritePropertyName("kubernetesNamespace");
-                context.Writer.WriteStringValue(requestObject.KubernetesNamespace);
-            }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static EksConfigurationMarshaller Instance = new EksConfigurationMarshaller();
+        public readonly static EksConfigurationUpdateMarshaller Instance = new EksConfigurationUpdateMarshaller();
     }
 }

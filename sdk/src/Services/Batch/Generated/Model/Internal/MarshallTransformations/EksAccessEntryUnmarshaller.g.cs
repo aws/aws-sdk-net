@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EksConfiguration Object
+    /// Response Unmarshaller for EksAccessEntry Object
     /// </summary>
-    public partial class EksConfigurationUnmarshaller : IJsonUnmarshaller<EksConfiguration, JsonUnmarshallerContext>
+    public partial class EksAccessEntryUnmarshaller : IJsonUnmarshaller<EksAccessEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public EksConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EksAccessEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new EksConfiguration();
+            var unmarshalledObject = new EksAccessEntry();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,35 +53,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessEntry", targetDepth, ref reader))
+                if (context.TestExpression("desiredState", targetDepth, ref reader))
                 {
-                    var unmarshaller = EksAccessEntryUnmarshaller.Instance;
-                    unmarshalledObject.AccessEntry = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DesiredState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("eksClusterArn", targetDepth, ref reader))
+                if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EksClusterArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("kubernetesNamespace", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KubernetesNamespace = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static EksConfigurationUnmarshaller _instance = new EksConfigurationUnmarshaller();
+        private static EksAccessEntryUnmarshaller _instance = new EksAccessEntryUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static EksConfigurationUnmarshaller Instance => _instance;
+        public static EksAccessEntryUnmarshaller Instance => _instance;
     }
 }
