@@ -1424,6 +1424,91 @@ namespace Amazon.S3Vectors
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Updates the default index mode for a vector bucket. The updated default applies to
+        /// vector indexes that you create after the request succeeds. The operation doesn't change
+        /// existing vector indexes. To specify the vector bucket, you must use either the vector
+        /// bucket name or the vector bucket Amazon Resource Name (ARN).
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3vectors:PutVectorBucketDefaultIndexMode</c> permission to use
+        /// this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVectorBucketDefaultIndexMode service method.</param>
+        /// <returns>The response from the PutVectorBucketDefaultIndexMode service method, as returned by S3Vectors.</returns>
+        /// <exception cref="Amazon.S3Vectors.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
+        /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
+        /// The service is unavailable. Wait briefly and retry your request. If it continues to
+        /// fail, increase your waiting time between retries.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ValidationException">
+        /// The requested action isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectorBucketDefaultIndexMode">REST API Reference for PutVectorBucketDefaultIndexMode Operation</seealso>
+        PutVectorBucketDefaultIndexModeResponse PutVectorBucketDefaultIndexMode(PutVectorBucketDefaultIndexModeRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the default index mode for a vector bucket. The updated default applies to
+        /// vector indexes that you create after the request succeeds. The operation doesn't change
+        /// existing vector indexes. To specify the vector bucket, you must use either the vector
+        /// bucket name or the vector bucket Amazon Resource Name (ARN).
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3vectors:PutVectorBucketDefaultIndexMode</c> permission to use
+        /// this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutVectorBucketDefaultIndexMode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the PutVectorBucketDefaultIndexMode service method, as returned by S3Vectors.</returns>
+        /// <exception cref="Amazon.S3Vectors.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
+        /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
+        /// The service is unavailable. Wait briefly and retry your request. If it continues to
+        /// fail, increase your waiting time between retries.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ValidationException">
+        /// The requested action isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/PutVectorBucketDefaultIndexMode">REST API Reference for PutVectorBucketDefaultIndexMode Operation</seealso>
+        Task<PutVectorBucketDefaultIndexModeResponse> PutVectorBucketDefaultIndexModeAsync(PutVectorBucketDefaultIndexModeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a bucket policy for a vector bucket. To specify the bucket, you must use either
         /// the vector bucket name or the vector bucket Amazon Resource Name (ARN). 
         /// 
@@ -2086,6 +2171,93 @@ namespace Amazon.S3Vectors
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the mode for an existing vector index. You can set the mode to <c>ENHANCED</c>
+        /// for any vector index. You can set the mode to <c>CLASSIC</c> only for a vector index
+        /// in a vector bucket created before September 30, 2026. This operation doesn't change
+        /// the default index mode of the vector bucket or the mode of other vector indexes. Specify
+        /// the vector index by using its Amazon Resource Name (ARN) or both the vector bucket
+        /// name and vector index name.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3vectors:UpdateIndexMode</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndexMode service method.</param>
+        /// <returns>The response from the UpdateIndexMode service method, as returned by S3Vectors.</returns>
+        /// <exception cref="Amazon.S3Vectors.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
+        /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
+        /// The service is unavailable. Wait briefly and retry your request. If it continues to
+        /// fail, increase your waiting time between retries.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ValidationException">
+        /// The requested action isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UpdateIndexMode">REST API Reference for UpdateIndexMode Operation</seealso>
+        UpdateIndexModeResponse UpdateIndexMode(UpdateIndexModeRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the mode for an existing vector index. You can set the mode to <c>ENHANCED</c>
+        /// for any vector index. You can set the mode to <c>CLASSIC</c> only for a vector index
+        /// in a vector bucket created before September 30, 2026. This operation doesn't change
+        /// the default index mode of the vector bucket or the mode of other vector indexes. Specify
+        /// the vector index by using its Amazon Resource Name (ARN) or both the vector bucket
+        /// name and vector index name.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3vectors:UpdateIndexMode</c> permission to use this operation.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIndexMode service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateIndexMode service method, as returned by S3Vectors.</returns>
+        /// <exception cref="Amazon.S3Vectors.Model.AccessDeniedException">
+        /// Access denied.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.InternalServerException">
+        /// The request failed due to an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.NotFoundException">
+        /// The request was rejected because the specified resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.RequestTimeoutException">
+        /// The request timed out. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ServiceUnavailableException">
+        /// The service is unavailable. Wait briefly and retry your request. If it continues to
+        /// fail, increase your waiting time between retries.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.TooManyRequestsException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.S3Vectors.Model.ValidationException">
+        /// The requested action isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3vectors-2025-07-15/UpdateIndexMode">REST API Reference for UpdateIndexMode Operation</seealso>
+        Task<UpdateIndexModeResponse> UpdateIndexModeAsync(UpdateIndexModeRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.

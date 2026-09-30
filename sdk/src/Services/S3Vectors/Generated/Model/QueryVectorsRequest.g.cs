@@ -109,6 +109,34 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetNextToken() => this.NextToken != null;
 
         /// <summary>
+        /// Gets and sets the property QueryMode. 
+        /// <para>
+        /// The mode to use to process the query. If you don't specify a query mode, the operation
+        /// uses the mode that's currently configured for the vector index.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CLASSIC</c> - Applies metadata filters during the vector search. You can't specify
+        /// <c>CLASSIC</c> for an <c>ENHANCED</c> index.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENHANCED</c> - Applies metadata filters before the vector search.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IndexMode QueryMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the QueryMode property is set.
+        /// </summary>
+        internal bool IsSetQueryMode() => this.QueryMode != null;
+
+        /// <summary>
         /// Gets and sets the property QueryVector. 
         /// <para>
         /// The query vector. Ensure that the query vector has the same dimension as the dimension

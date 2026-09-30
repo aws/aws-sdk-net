@@ -99,6 +99,47 @@ namespace Amazon.S3Vectors
     }
 
     /// <summary>
+    /// Constants used for properties of type IndexMode.
+    /// </summary>
+    public class IndexMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant CLASSIC for IndexMode
+        /// </summary>
+        public static readonly IndexMode CLASSIC = new IndexMode("CLASSIC");
+
+        /// <summary>
+        /// Constant ENHANCED for IndexMode
+        /// </summary>
+        public static readonly IndexMode ENHANCED = new IndexMode("ENHANCED");
+
+        /// <summary>
+        /// Constructs a custom IndexMode for a value not among the defined constants.
+        /// </summary>
+        public IndexMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexMode FindValue(string value)
+        {
+            return FindValue<IndexMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type SseType.
     /// </summary>
     public class SseType : ConstantClass

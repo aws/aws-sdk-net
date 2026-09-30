@@ -30,31 +30,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Vectors.Model
 {
     /// <summary>
-    /// The attributes of a vector bucket.
+    /// Container for the parameters to the PutVectorBucketDefaultIndexMode operation. Updates
+    /// the default index mode for a vector bucket. The updated default applies to vector
+    /// indexes that you create after the request succeeds. The operation doesn't change existing
+    /// vector indexes. To specify the vector bucket, you must use either the vector bucket
+    /// name or the vector bucket Amazon Resource Name (ARN). <dl> <dt>Permissions</dt> <dd>
+    /// <para> You must have the <c>s3vectors:PutVectorBucketDefaultIndexMode</c> permission
+    /// to use this operation. </para> </dd> </dl>
     /// </summary>
-    public partial class VectorBucket
+    public partial class PutVectorBucketDefaultIndexModeRequest : AmazonS3VectorsRequest
     {
-        /// <summary>
-        /// Gets and sets the property CreationTime. 
-        /// <para>
-        /// Date and time when the vector bucket was created. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required = true)]
-        public DateTime? CreationTime { get; set; }
-
-        /// <summary>
-        /// Checks to see if the CreationTime property is set.
-        /// </summary>
-        internal bool IsSetCreationTime() => this.CreationTime.HasValue;
-
         /// <summary>
         /// Gets and sets the property DefaultIndexMode. 
         /// <para>
-        /// The mode that is automatically assigned to new vector indexes in the vector bucket.
-        /// Changing the default index mode doesn't affect existing vector indexes.
+        /// The default mode to assign to new vector indexes in the vector bucket. This change
+        /// doesn't affect existing vector indexes.
         /// </para>
         /// </summary>
+        [AWSProperty(Required = true)]
         public IndexMode DefaultIndexMode { get; set; }
 
         /// <summary>
@@ -63,25 +56,11 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetDefaultIndexMode() => this.DefaultIndexMode != null;
 
         /// <summary>
-        /// Gets and sets the property EncryptionConfiguration. 
-        /// <para>
-        /// The encryption configuration for the vector bucket.
-        /// </para>
-        /// </summary>
-        public EncryptionConfiguration EncryptionConfiguration { get; set; }
-
-        /// <summary>
-        /// Checks to see if the EncryptionConfiguration property is set.
-        /// </summary>
-        internal bool IsSetEncryptionConfiguration() => this.EncryptionConfiguration != null;
-
-        /// <summary>
         /// Gets and sets the property VectorBucketArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the vector bucket. 
+        /// The Amazon Resource Name (ARN) of the vector bucket to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true)]
         public string VectorBucketArn { get; set; }
 
         /// <summary>
@@ -92,10 +71,10 @@ namespace Amazon.S3Vectors.Model
         /// <summary>
         /// Gets and sets the property VectorBucketName. 
         /// <para>
-        /// The name of the vector bucket. 
+        /// The name of the vector bucket to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Required = true, Min = 3, Max = 63)]
+        [AWSProperty(Min = 3, Max = 63)]
         public string VectorBucketName { get; set; }
 
         /// <summary>

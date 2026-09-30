@@ -217,6 +217,15 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Vectors.Model.PutVectorBucketDefaultIndexModeRequest.VectorBucketArn</property>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Vectors.Model.PutVectorBucketDefaultIndexModeRequest.VectorBucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Vectors.Model.PutVectorBucketPolicyRequest.VectorBucketArn</property>
     <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
   </property-value-rule>
@@ -274,6 +283,20 @@
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.UntagResourceRequest.ResourceArn</property>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Vectors.Model.UpdateIndexModeRequest.IndexArn</property>
+    <pattern>^arn:aws[-a-z0-9]*:s3vectors:[a-z0-9-]+:[0-9]{12}:bucket/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]/index/[a-z0-9][a-z0-9-.]{1,61}[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Vectors.Model.UpdateIndexModeRequest.IndexName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Vectors.Model.UpdateIndexModeRequest.VectorBucketName</property>
+    <min>3</min>
+    <max>63</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.EncryptionConfiguration.KmsKeyArn</property>

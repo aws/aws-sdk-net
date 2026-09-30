@@ -95,6 +95,13 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("indexMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IndexMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("indexName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

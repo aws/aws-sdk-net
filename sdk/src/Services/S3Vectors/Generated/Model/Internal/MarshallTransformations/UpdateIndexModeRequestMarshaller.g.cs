@@ -36,29 +36,29 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// QueryVectors Request Marshaller
+    /// UpdateIndexMode Request Marshaller
     /// </summary>
-    public partial class QueryVectorsRequestMarshaller : IMarshaller<IRequest, QueryVectorsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    public partial class UpdateIndexModeRequestMarshaller : IMarshaller<IRequest, UpdateIndexModeRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshall the request object to the HTTP request.
         /// </summary>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((QueryVectorsRequest)input);
+            return this.Marshall((UpdateIndexModeRequest)input);
         }
 
         /// <summary>
         /// Marshall the request object to the HTTP request.
         /// </summary>
-        public IRequest Marshall(QueryVectorsRequest publicRequest)
+        public IRequest Marshall(UpdateIndexModeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.S3Vectors");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2025-07-15";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/QueryVectors";
+            request.ResourcePath = "/UpdateIndexMode";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -68,55 +68,20 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if (publicRequest.IsSetFilter())
-            {
-                context.Writer.WritePropertyName("filter");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Filter);
-            }
             if (publicRequest.IsSetIndexArn())
             {
                 context.Writer.WritePropertyName("indexArn");
                 context.Writer.WriteStringValue(publicRequest.IndexArn);
             }
+            if (publicRequest.IsSetIndexMode())
+            {
+                context.Writer.WritePropertyName("indexMode");
+                context.Writer.WriteStringValue(publicRequest.IndexMode);
+            }
             if (publicRequest.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("indexName");
                 context.Writer.WriteStringValue(publicRequest.IndexName);
-            }
-            if (publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("nextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-            if (publicRequest.IsSetQueryMode())
-            {
-                context.Writer.WritePropertyName("queryMode");
-                context.Writer.WriteStringValue(publicRequest.QueryMode);
-            }
-            if (publicRequest.IsSetQueryVector())
-            {
-                context.Writer.WritePropertyName("queryVector");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VectorDataMarshaller.Instance;
-                marshaller.Marshall(publicRequest.QueryVector, context);
-
-                context.Writer.WriteEndObject();
-            }
-            if (publicRequest.IsSetReturnDistance())
-            {
-                context.Writer.WritePropertyName("returnDistance");
-                context.Writer.WriteBooleanValue(publicRequest.ReturnDistance.Value);
-            }
-            if (publicRequest.IsSetReturnMetadata())
-            {
-                context.Writer.WritePropertyName("returnMetadata");
-                context.Writer.WriteBooleanValue(publicRequest.ReturnMetadata.Value);
-            }
-            if (publicRequest.IsSetTopK())
-            {
-                context.Writer.WritePropertyName("topK");
-                context.Writer.WriteNumberValue(publicRequest.TopK.Value);
             }
             if (publicRequest.IsSetVectorBucketName())
             {
@@ -133,13 +98,13 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
             return request;
         }
 
-        private static readonly QueryVectorsRequestMarshaller _instance = new();
+        private static readonly UpdateIndexModeRequestMarshaller _instance = new();
 
-        internal static QueryVectorsRequestMarshaller GetInstance() => _instance;
+        internal static UpdateIndexModeRequestMarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static QueryVectorsRequestMarshaller Instance => _instance;
+        public static UpdateIndexModeRequestMarshaller Instance => _instance;
     }
 }

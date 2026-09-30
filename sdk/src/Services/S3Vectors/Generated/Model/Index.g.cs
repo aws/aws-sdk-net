@@ -120,6 +120,32 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetIndexArn() => this.IndexArn != null;
 
         /// <summary>
+        /// Gets and sets the property IndexMode. 
+        /// <para>
+        /// The mode that determines how the vector index processes queries.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CLASSIC</c> - Applies metadata filters during the vector search.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ENHANCED</c> - Applies metadata filters before the vector search.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public IndexMode IndexMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IndexMode property is set.
+        /// </summary>
+        internal bool IsSetIndexMode() => this.IndexMode != null;
+
+        /// <summary>
         /// Gets and sets the property IndexName. 
         /// <para>
         /// The name of the vector index.
