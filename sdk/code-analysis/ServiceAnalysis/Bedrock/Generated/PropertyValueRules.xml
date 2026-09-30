@@ -2301,7 +2301,7 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAddTypeAnnotation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAddTypeValue.Description</property>
@@ -2312,7 +2312,7 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAddTypeValue.Value</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAddVariableAnnotation.Description</property>
@@ -2323,13 +2323,13 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAddVariableAnnotation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAddVariableAnnotation.Type</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyAnnotatedLine.LineText</property>
@@ -2402,7 +2402,7 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionType.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionTypeValue.Description</property>
@@ -2413,19 +2413,19 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionTypeValue.Value</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionTypeValuePair.TypeName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionTypeValuePair.ValueName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionVariable.Description</property>
@@ -2436,13 +2436,13 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionVariable.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDefinitionVariable.Type</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDeleteRuleAnnotation.RuleId</property>
@@ -2460,31 +2460,31 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDeleteTypeAnnotation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDeleteTypeMutation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDeleteTypeValue.Value</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDeleteVariableAnnotation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyDeleteVariableMutation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyFidelityReport.AccuracyScore</property>
@@ -2664,13 +2664,13 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateTypeAnnotation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateTypeAnnotation.NewName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateTypeValue.Description</property>
@@ -2681,13 +2681,13 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateTypeValue.NewValue</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateTypeValue.Value</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateVariableAnnotation.Description</property>
@@ -2698,13 +2698,13 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateVariableAnnotation.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyUpdateVariableAnnotation.NewName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyVariableReport.AccuracyJustification</property>
@@ -2719,7 +2719,7 @@
     <property>Amazon.Bedrock.Model.AutomatedReasoningPolicyVariableReport.PolicyVariable</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[A-Za-z][A-Za-z0-9_]*$</pattern>
+    <pattern>^\p{L}[\p{L}\p{M}0-9_]*( [\p{L}\p{M}0-9_]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Bedrock.Model.BatchDeleteAdvancedPromptOptimizationJobError.JobIdentifier</property>
