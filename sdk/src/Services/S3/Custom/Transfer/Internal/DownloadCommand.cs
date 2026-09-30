@@ -178,11 +178,15 @@ namespace Amazon.S3.Transfer.Internal
             return false;
         }
 
-        static void WaitBeforeRetry(int retries)
+        /// <summary>
+        /// Computes the exponential backoff delay (in milliseconds) to wait before the
+        /// given retry attempt. Shared by both the blocking (sync) and awaited (async)
+        /// wait paths so the backoff schedule stays in one place.
+        /// </summary>
+        static int GetRetryDelay(int retries)
         {
             int delay = (int)(Math.Pow(4, retries) * 100);
-            delay = Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-            AWSSDKUtils.Sleep(delay);
+            return Math.Min(delay, MAX_BACKOFF_IN_MILLISECONDS);
         }
 
         /// <summary>
