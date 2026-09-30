@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using Xunit;
 
@@ -13,7 +14,7 @@ public class UnsupportedTraitValidatorTests
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/unsupported-trait-model.json"));
 
-        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.AwsJson1_0));
         Assert.Contains("@sparse (list of collections)", ex.Message);
     }
 
@@ -24,7 +25,7 @@ public class UnsupportedTraitValidatorTests
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/unsupported-trait-model.json"));
 
-        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.AwsJson1_0));
         Assert.Contains("@streaming (event stream)", ex.Message);
     }
 
@@ -32,8 +33,31 @@ public class UnsupportedTraitValidatorTests
     public void Validate_EndpointDiscovery_Throws()
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/unsupported-trait-model.json"));
-        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.AwsJson1_0));
         Assert.Contains("clientEndpointDiscovery", ex.Message);
+    }
+
+    [Fact]
+    public void Validate_DocumentOnRpcV2CborService_Throws()
+    {
+        var index = new ServiceIndex(TestModels.Load("Codegen/rpcv2cbor-model.json"));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.RpcV2Cbor));
+        Assert.Contains("document (rpcv2Cbor)", ex.Message);
+    }
+
+    [Fact]
+    public void Validate_StreamingBlobOnRpcV2CborService_Throws()
+    {
+        var index = new ServiceIndex(TestModels.Load("Codegen/payload-model.json"));
+        var ex = Assert.Throws<GeneratorException>(() => UnsupportedTraitValidator.Validate(index, AWSProtocol.RpcV2Cbor));
+        Assert.Contains("@streaming (blob, rpcv2Cbor)", ex.Message);
+    }
+
+    [Fact]
+    public void Validate_DocumentOnRestJson1Service_DoesNotThrow()
+    {
+        var index = new ServiceIndex(TestModels.Load("Codegen/document-model.json"));
+        UnsupportedTraitValidator.Validate(index, AWSProtocol.RestJson1);
     }
 
     [Fact]
@@ -41,6 +65,6 @@ public class UnsupportedTraitValidatorTests
     {
         var index = new ServiceIndex(TestModels.Load("Codegen/event-stream-restjson1-model.json"));
 
-        UnsupportedTraitValidator.Validate(index);
+        UnsupportedTraitValidator.Validate(index, AWSProtocol.RestJson1);
     }
 }

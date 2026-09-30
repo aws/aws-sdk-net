@@ -82,6 +82,23 @@ public sealed class SdkVersionManifest
         return version;
     }
 
+    /// <summary>The <c>Version</c> of the <c>Extensions.{extensionName}</c> entry under <c>ExtensionVersions</c>.</summary>
+    public string GetExtensionVersion(string extensionName)
+    {
+        var key = $"Extensions.{extensionName}";
+        if (!ExtensionVersions.TryGetValue(key, out var entry))
+        {
+            throw new GeneratorException($"'{SourcePath}' has no version entry for extension '{key}'.");
+        }
+
+        if (entry.Version is not string version)
+        {
+            throw new GeneratorException($"Extension '{key}' in '{SourcePath}' has no 'Version' field.");
+        }
+
+        return version;
+    }
+
     /// <summary>
     /// Returns the assembly version for <paramref name="serviceName"/>: the entry's
     /// <c>AssemblyVersionOverride</c> when present, otherwise <c>major.minor</c> of the file version

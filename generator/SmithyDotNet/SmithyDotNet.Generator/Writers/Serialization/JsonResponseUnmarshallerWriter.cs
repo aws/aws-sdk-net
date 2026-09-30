@@ -37,21 +37,17 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
                 if (members.PayloadMember is { Type.IsStreaming: true } || members.EventStreamMember is not null)
                 {
-                    WriteHasStreamingProperty(writer);
+                    MarshallerCommon.WriteHasStreamingProperty(writer);
                     writer.WriteLine("");
                 }
 
                 if (members.EventStreamMember is not null)
                 {
-                    // Response logging asks Core to buffer the whole body, which never ends for an event stream.
-                    writer.WriteLine("/// <summary>");
-                    writer.WriteLine("/// Return false for reading the entire response");
-                    writer.WriteLine("/// </summary>");
-                    writer.WriteLine("protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;");
+                    MarshallerCommon.WriteShouldReadEntireResponse(writer);
                     writer.WriteLine("");
                 }
 
-                WriteSingleton(writer, unmarshallerClassName);
+                MarshallerCommon.WriteResponseUnmarshallerSingleton(writer, unmarshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);
@@ -83,12 +79,9 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         {
             writer.WriteLine($"var unmarshalledObject = new {className}();");
 
-            // An event-stream member IS the whole body: hand the raw response stream to the generated
-            // EnumerableEventOutputStream subclass (the union's own class), which decodes the frames
-            // lazily as the caller enumerates. Matches C2J's JsonRPCResponseUnmarshaller.
             if (members.EventStreamMember is { } eventStream)
             {
-                writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName} = new {eventStream.Type.DotNetType}(context.Stream);");
+                MarshallerCommon.WriteEventStreamMember(writer, eventStream);
             }
             // A @httpPayload member IS the whole body (it replaces normal body members); otherwise the
             // body members are read from the JSON payload. A response with only header (or no) members
@@ -453,16 +446,16 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
             writer.OpenBlock("using (var streamCopy = new MemoryStream(responseBodyBytes))", "}", () =>
             {
-                writer.OpenBlock("using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))", "}", () =>
+                writer.OpenBlock($"using (var contextCopy = new JsonUnmarshallerContext(streamCopy, {AwsQueryCompatibleMarshalling.MaintainResponseBody(context)}, context.ResponseData))", "}", () =>
                 {
                     writer.WriteLine("var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+                    var errorCode = AwsQueryCompatibleMarshalling.WriteErrorCodeSource(writer, context);
 
                     foreach (var error in operation.Errors)
                     {
                         // The wire code is the shape name even when the service renames the shape.
-                        var errorCode = error.Id.Name;
                         var exceptionClassName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
-                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{errorCode}"))""", () =>
+                        writer.OpenBlock($"""if ({errorCode} != null && {errorCode}.Equals("{error.Id.Name}"))""", () =>
                         {
                             writer.WriteLine($"return {exceptionClassName}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);");
                         });
@@ -474,25 +467,4 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         });
     }
 
-    // Emitted when the response's @httpPayload is a @streaming blob or an event stream: the runtime
-    // checks this to hand the caller the live response stream rather than buffering the body. Matches C2J.
-    private static void WriteHasStreamingProperty(CodeWriter writer)
-    {
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Overriden to return true indicating the response contains streaming data.");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine("public override bool HasStreamingProperty => true;");
-    }
-
-    private static void WriteSingleton(CodeWriter writer, string unmarshallerClassName)
-    {
-        writer.WriteLine($"private static {unmarshallerClassName} _instance = new {unmarshallerClassName}();");
-        writer.WriteLine("");
-        writer.WriteLine($"internal static {unmarshallerClassName} GetInstance() => _instance;");
-        writer.WriteLine("");
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Gets the singleton.");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public static {unmarshallerClassName} Instance => _instance;");
-    }
 }

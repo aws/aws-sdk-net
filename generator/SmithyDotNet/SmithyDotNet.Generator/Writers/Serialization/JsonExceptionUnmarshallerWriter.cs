@@ -44,7 +44,7 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
                 writer.WriteLine("");
                 WriteMainUnmarshallMethod(writer, exceptionName, bindings.HeaderMembers, bindings.BodyMembers, bindings.PrefixHeadersMember);
                 writer.WriteLine("");
-                WriteSingleton(writer, unmarshallerClassName);
+                MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);
@@ -114,13 +114,4 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    private static void WriteSingleton(CodeWriter writer, string unmarshallerClassName)
-    {
-        writer.WriteLine($"private static {unmarshallerClassName} _instance = new {unmarshallerClassName}();");
-        writer.WriteLine();
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Gets the singleton.");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public static {unmarshallerClassName} Instance => _instance;");
-    }
 }

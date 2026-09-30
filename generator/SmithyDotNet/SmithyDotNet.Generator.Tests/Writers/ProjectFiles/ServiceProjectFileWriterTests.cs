@@ -36,6 +36,21 @@ public class ServiceProjectFileWriterTests
         Assert.DoesNotContain("System.Configuration", _netStandard);
     }
 
+    [Fact]
+    public void RpcV2CborReferencesCborExtension()
+    {
+        var writer = new ServiceProjectFileWriter(TestModels.Context("Codegen/rpcv2cbor-model.json"));
+        const string cborNetFramework = """<ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetFramework.csproj"/>""";
+        const string cborNetStandard = """<ProjectReference Include="../../../../extensions/src/AWSSDK.Extensions.CborProtocol/AWSSDK.Extensions.CborProtocol.NetStandard.csproj"/>""";
+
+        Assert.Contains(cborNetFramework, writer.WriteNetFramework());
+        Assert.Contains(cborNetStandard, writer.WriteNetStandard());
+
+        var unified = writer.WriteUnified();
+        Assert.Contains(cborNetFramework, unified);
+        Assert.Contains(cborNetStandard, unified);
+    }
+
     // The generated source is single-file (#if NETFRAMEWORK), so no platform folder excludes.
     [Fact]
     public void DoesNotExcludePlatformFolders()

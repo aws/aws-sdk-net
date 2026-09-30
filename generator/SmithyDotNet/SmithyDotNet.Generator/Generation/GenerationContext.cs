@@ -5,6 +5,7 @@ using SmithyDotNet.Generator.Generation.EventStreams;
 using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Paginators;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -128,6 +129,9 @@ public class GenerationContext
     /// </summary>
     public bool UsesHttpBindings { get; }
 
+    /// <summary>Whether the service carries <c>aws.protocols#awsQueryCompatible</c>: the request sends <c>x-amzn-query-mode</c> and error dispatch runs before the query error code overwrites the shape name.</summary>
+    public bool IsAwsQueryCompatible { get; }
+
     /// <summary>
     /// The service shape's name (e.g. <c>Kinesis_20131202</c>). awsJson1.x routes requests with it:
     /// <c>X-Amz-Target: {ServiceShapeName}.{OperationName}</c>. C2J equivalent: <c>targetPrefix</c>.
@@ -195,6 +199,9 @@ public class GenerationContext
     /// </summary>
     public string AssemblyName { get; }
 
+    /// <summary>The <c>AWSSDK.Extensions.*</c> packages the service depends on; rpcv2Cbor's runtime lives in CborProtocol.</summary>
+    public IReadOnlyList<SdkExtension> ExtensionDependencies { get; }
+
     // TODO: Accept SmithyModel for shapes not reachable from operations (e.g. shared error shapes).
     // TODO: Add enum values to AWSProtocol as protocols are implemented.
     public GenerationContext(ServiceIndex index, SdkVersionManifest manifest, ServiceMetadata? metadata = null, CustomizationsModel? customizations = null)
@@ -242,6 +249,7 @@ public class GenerationContext
         Protocol = ProtocolResolver.Resolve(index.Service, SdkId);
         // TODO: restXml also honors the HTTP binding traits; add it here when that protocol lands.
         UsesHttpBindings = Protocol == AWSProtocol.RestJson1;
+        IsAwsQueryCompatible = index.Service.HasAwsQueryCompatible();
         ServiceShapeName = index.ServiceId.Name;
         Operations = OperationResolver.Resolve(index, Protocol);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
@@ -290,6 +298,8 @@ public class GenerationContext
         Enums = index.AllEnums
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();
+
+        ExtensionDependencies = Protocol == AWSProtocol.RpcV2Cbor ? [SdkExtension.CborProtocol] : [];
     }
 
     /// <summary>

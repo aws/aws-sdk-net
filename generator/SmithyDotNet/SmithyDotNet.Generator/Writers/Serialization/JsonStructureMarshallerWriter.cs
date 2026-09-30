@@ -40,18 +40,10 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
             {
                 WriteMarshallMethod(structure, members, writer, className);
                 writer.WriteLine("");
-                WriteSingletonMarshaller(writer, className);
+                MarshallerCommon.WriteStructureMarshallerSingleton(writer, className);
             });
         });
         return writer.ToFormattedString(cancellationToken);
-    }
-
-    private void WriteSingletonMarshaller(CodeWriter writer, string className)
-    {
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Singleton Marshaller");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public readonly static {className}Marshaller Instance = new {className}Marshaller();");
     }
 
     private void WriteMarshallMethod(StructureShape structure, List<Member> members, CodeWriter writer, string className)

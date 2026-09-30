@@ -1,5 +1,6 @@
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Traits;
@@ -78,6 +79,21 @@ public class GenerationContextTests
     {
         var metadata = new ServiceMetadata { LegacyServiceId = "SSO" };
         Assert.Equal("SSO", GenerationContext.ResolveServiceName("SSO", metadata));
+    }
+
+    [Fact]
+    public void ExtensionDependencies_EmptyForRestJson1()
+    {
+        Assert.Empty(_context.ExtensionDependencies);
+    }
+
+    [Fact]
+    public void ExtensionDependencies_CborProtocolForRpcV2Cbor()
+    {
+        var context = TestModels.Context("Codegen/rpcv2cbor-model.json");
+        Assert.Equal(AWSProtocol.RpcV2Cbor, context.Protocol);
+        Assert.False(context.UsesHttpBindings);
+        Assert.Equal([SdkExtension.CborProtocol], context.ExtensionDependencies);
     }
 
     [Fact]

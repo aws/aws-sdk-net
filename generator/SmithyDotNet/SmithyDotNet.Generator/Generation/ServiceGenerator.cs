@@ -1,5 +1,6 @@
 using System.Collections.Concurrent;
 using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -179,11 +180,6 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var operationWriter = new OperationWriter(context, modelFileName);
-        var requestMarshaller = new JsonRequestMarshallerWriter(context, modelFileName);
-        var responseUnmarshaller = new JsonResponseUnmarshallerWriter(context, modelFileName);
-        var structureMarshaller = new JsonStructureMarshallerWriter(context, modelFileName);
-        var structureUnmarshaller = new JsonStructureUnmarshallerWriter(context, modelFileName);
-        var exceptionUnmarshallerWriter = new JsonExceptionUnmarshallerWriter(context, modelFileName);
         var nuspecWriter = new NuspecWriter(context);
         var serviceProjectFileWriter = new ServiceProjectFileWriter(context);
 
@@ -253,14 +249,33 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));
-            Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
-            Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
+            var requestMarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                _ => new JsonRequestMarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshallerCode);
+
+            var responseUnmarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+                _ => new JsonResponseUnmarshallerWriter(context, modelFileName).Write(operation, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshallerCode);
 
             foreach (var structure in ReferencedStructures(operation.Input))
             {
                 if (marshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Marshaller.g.cs"), structureMarshaller.Write(structure, cancellationToken));
+                    var structureMarshallerCode = context.Protocol switch
+                    {
+                        AWSProtocol.RpcV2Cbor => new CborStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        _ => new JsonStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                    };
+
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Marshaller.g.cs"), structureMarshallerCode);
                 }
             }
 
@@ -277,7 +292,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
                 if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
+                    var structureUnmarshallerCode = context.Protocol switch
+                    {
+                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                    };
+
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshallerCode);
                 }
             }
         }
@@ -288,7 +309,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         foreach (var errorShape in context.Errors.Values)
         {
             var name = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorShape.Id));
-            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, cancellationToken));
+            var exceptionUnmarshallerCode = context.Protocol switch
+            {
+                AWSProtocol.RpcV2Cbor => new CborExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
+                _ => new JsonExceptionUnmarshallerWriter(context, modelFileName).Write(errorShape, cancellationToken),
+            };
+
+            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerCode);
 
             // An exception's rich members can target structures (directly, or as list/map
             // elements); the exception unmarshaller deserializes them, so those nested
@@ -299,7 +326,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             {
                 if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
+                    var structureUnmarshallerCode = context.Protocol switch
+                    {
+                        AWSProtocol.RpcV2Cbor => new CborStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                        _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
+                    };
+
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshallerCode);
                 }
             }
         }

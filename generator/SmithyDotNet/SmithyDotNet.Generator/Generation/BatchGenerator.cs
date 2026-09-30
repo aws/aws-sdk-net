@@ -228,7 +228,7 @@ public sealed class BatchGenerator(string repoRoot)
             // Everything that can fail without writing a file happens before the wipe, so a missing
             // version entry can't leave a service wiped-but-not-regenerated.
             var context = new GenerationContext(index, versionManifest, service.Metadata, customizations);
-            UnsupportedTraitValidator.Validate(index);
+            UnsupportedTraitValidator.Validate(index, context.Protocol);
 
             // Test services have no _sdk-versions.json entry; they get the default assembly version, matching C2J.
             var serviceFileVersion = service.IsTestService

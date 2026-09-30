@@ -39,11 +39,15 @@ public sealed class NuspecWriter(GenerationContext context)
                 writer.WriteLine("<requireLicenseAcceptance>true</requireLicenseAcceptance>");
             }
 
-            // for now just handle the core dependency since cloudtrail-data only depends on core
             writer.OpenXmlBlock("dependencies", () =>
             {
                 writer.OpenXmlBlock("group", () =>
                 {
+                    foreach (var extension in context.ExtensionDependencies)
+                    {
+                        writer.WriteLine($"""<dependency id="{extension.PackageId}" version="[{context.Manifest.GetExtensionVersion(extension.Name)}, 5.0)" />""");
+                    }
+
                     var coreVersion = context.Manifest.CoreVersion ?? throw new GeneratorException($"'{context.Manifest.SourcePath}' has no 'CoreVersion' field.");
                     writer.WriteLine($"""<dependency id="AWSSDK.Core" version="[{coreVersion}, 5.0)" />""");
                 });

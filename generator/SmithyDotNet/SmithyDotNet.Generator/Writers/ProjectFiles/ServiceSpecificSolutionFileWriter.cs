@@ -101,14 +101,20 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
         });
     }
 
-    // TODO: make this method smarter so that it handles services that depend on extensions
-    // such as CloudWatch depending on Extensions.Cbor.
     private void AddCoreProjects(CodeWriter writer)
     {
         writer.WriteXmlBlock("""<Folder Name="/Core/">""", "Folder", () =>
         {
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetFramework.csproj")}" />""");
             writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetStandard.csproj")}" />""");
+
+            foreach (var extension in context.ExtensionDependencies)
+            {
+                foreach (var project in extension.Projects)
+                {
+                    writer.WriteLine($"""<Project Path="{project.Path}" />""");
+                }
+            }
         });
     }
 

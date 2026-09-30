@@ -11,9 +11,6 @@ public static class AWSTraits
 {
     #region Protocol annotation traits
 
-    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html" /></remarks>
-    public static bool IsRestJson1(this Shape shape) => shape.Traits.ContainsKey("aws.protocols#restJson1");
-
     #endregion
 
     #region Structured traits
@@ -26,6 +23,13 @@ public static class AWSTraits
 
     /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-json-1_1-protocol.html#aws-protocols-awsjson1-1-trait" /></remarks>
     public static ProtocolTrait? GetAwsJson1_1(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "aws.protocols#awsJson1_1");
+
+    /// <remarks><see href="https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html#smithy-protocols-rpcv2cbor-trait" /></remarks>
+    public static ProtocolTrait? GetRpcV2Cbor(this Shape shape) => DeserializeTrait<ProtocolTrait>(shape, "smithy.protocols#rpcv2Cbor");
+
+    /// <summary>Whether the service carries <c>aws.protocols#awsQueryCompatible</c>: it moved off awsQuery and still reports its old error codes in the <c>x-amzn-query-error</c> header.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait" /></remarks>
+    public static bool HasAwsQueryCompatible(this Shape shape) => shape.Traits.ContainsKey("aws.protocols#awsQueryCompatible");
 
     /// <remarks><see href="https://smithy.io/2.0/aws/aws-core.html#aws-api-service-trait" /></remarks>
     public static AWSServiceTrait? GetAWSService(this Shape shape) => DeserializeTrait<AWSServiceTrait>(shape, "aws.api#service");

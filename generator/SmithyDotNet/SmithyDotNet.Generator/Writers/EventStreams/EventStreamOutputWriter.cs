@@ -24,6 +24,8 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
     // stream SEP). `HandlerName` is that name upper-cased for the C# `{HandlerName}Received` member.
     private readonly record struct Entry(string WireName, string HandlerName, string TypeName, string Unmarshaller);
 
+    // TODO: rpcv2Cbor events decode through a CborUnmarshallerContext over the message payload (UnsupportedTraitValidator
+    // rejects @streaming unions there until this writer branches on the protocol).
     private const string ReaderLine =
         "var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);";
 

@@ -1,4 +1,5 @@
 using System.Text.Json;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -13,7 +14,6 @@ public static class UnsupportedTraitValidator
 {
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
-        ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
         ["aws.protocols#httpChecksum"] = "httpChecksum",
         // Endpoint discovery (DynamoDB, Timestream) has no codegen yet; without this the service would
         // generate silently minus its *EndpointDiscoveryMarshaller classes.
@@ -29,15 +29,20 @@ public static class UnsupportedTraitValidator
     /// and throws a single aggregated <see cref="GeneratorException"/> listing every denied trait
     /// found. Call before generation begins.
     /// </summary>
-    public static void Validate(ServiceIndex index)
+    public static void Validate(ServiceIndex index, AWSProtocol protocol)
     {
         var found = new HashSet<string>();
         CollectDenied(index.Service.Traits, DeniedTraits, found);
 
         // Event-stream codegen is only proven for restJson1. Other protocols (awsJson/CBOR) haven't
         // verified their event-stream path, so reject a @streaming union there until they do - a
-        // streaming *blob* payload is protocol-independent and stays allowed everywhere.
-        var eventStreamsSupported = index.Service.IsRestJson1();
+        // streaming *blob* payload stays allowed on the JSON protocols.
+        var eventStreamsSupported = protocol == AWSProtocol.RestJson1;
+
+        // rpcv2Cbor has no document encoding and no content streaming
+        // (https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html), and no CBOR model uses either.
+        var documentsSupported = protocol != AWSProtocol.RpcV2Cbor;
+        var streamingBlobsSupported = protocol != AWSProtocol.RpcV2Cbor;
 
         foreach (var op in index.Operations)
         {
@@ -80,6 +85,16 @@ public static class UnsupportedTraitValidator
             if (!eventStreamsSupported && shape is UnionShape && shape.IsStreaming())
             {
                 found.Add("@streaming (event stream)");
+            }
+
+            if (!documentsSupported && shape is DocumentShape)
+            {
+                found.Add("document (rpcv2Cbor)");
+            }
+
+            if (!streamingBlobsSupported && shape is BlobShape && shape.IsStreaming())
+            {
+                found.Add("@streaming (blob, rpcv2Cbor)");
             }
 
             // @sparse on a list of lists/maps would generate a foreach over a possibly-null element

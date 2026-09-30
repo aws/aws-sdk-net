@@ -45,6 +45,9 @@ public static class SdkTreeLayout
     /// <summary>From sdk/test/Services/{Name}/ up to sdk/src/ — a test service's Core reference crosses into the src tree.</summary>
     public const string SrcRootFromServiceTests = "../../../src";
 
+    /// <summary>From sdk/src/Services/{Name}/ (same depth from sdk/test/Services/{Name}/) to extensions/src/.</summary>
+    public const string ExtensionsRootFromServiceSource = "../../../../extensions/src";
+
     /// <summary>From sdk/test/Services/{Name}/UnitTests/ up to sdk/.</summary>
     public const string SdkRootFromUnitTests = "../../../..";
 

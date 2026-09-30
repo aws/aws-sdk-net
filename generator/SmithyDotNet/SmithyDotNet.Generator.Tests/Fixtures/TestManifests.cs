@@ -16,6 +16,10 @@ internal static class TestManifests
         {
             ["Example"] = new() { Version = "4.0.0.0" },
         },
+        ExtensionVersions = new Dictionary<string, ServiceVersion>
+        {
+            ["Extensions.CborProtocol"] = new() { Version = "4.0.100.14" },
+        },
     };
 
     public static SdkVersionManifest CloudTrailData() => new()

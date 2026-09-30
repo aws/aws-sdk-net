@@ -36,6 +36,9 @@ public sealed record ServiceProjectConfiguration
     /// <summary>Relative path from the service csproj to the Core project reference.</summary>
     public required string CoreProjectReference { get; init; }
 
+    /// <summary>The variant name (<c>NetFramework</c> or <c>NetStandard</c>) that selects extension csproj files.</summary>
+    public required string Variant { get; init; }
+
     /// <summary>Relative path to the signing key file (fallback when <c>$(AWSKeyFile)</c> is empty).</summary>
     public required string KeyFilePath { get; init; }
 
@@ -74,6 +77,7 @@ public static class ServiceProjectConfigurations
         TargetFrameworksProperty = "$(SdkNetFrameworkTargets)",
         DefineConstants = ["BCL", "CODE_ANALYSIS"],
         CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetFramework.csproj"),
+        Variant = "NetFramework",
         KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
         AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
         RuleSetFilePath = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDK.ruleset"),
@@ -92,6 +96,7 @@ public static class ServiceProjectConfigurations
         TargetFrameworksProperty = "$(SdkNetTargets)",
         DefineConstants = ["NETSTANDARD"],
         CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetStandard.csproj"),
+        Variant = "NetStandard",
         KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
         AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
         RuleSetFilePath = Utils.PathCombineAlt(SdkRoot, "AWSDotNetSDK.ruleset"),

@@ -37,7 +37,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             {
                 WriteUnmarshallMethod(writer, className, structure, members);
                 writer.WriteLine("");
-                WriteSingleton(writer, className);
+                MarshallerCommon.WriteUnmarshallerSingleton(writer, $"{className}Unmarshaller");
             });
         });
         return writer.ToFormattedString(cancellationToken);
@@ -163,13 +163,4 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    private static void WriteSingleton(CodeWriter writer, string className)
-    {
-        writer.WriteLine($"private static {className}Unmarshaller _instance = new {className}Unmarshaller();");
-        writer.WriteLine();
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine("/// Gets the singleton.");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public static {className}Unmarshaller Instance => _instance;");
-    }
 }

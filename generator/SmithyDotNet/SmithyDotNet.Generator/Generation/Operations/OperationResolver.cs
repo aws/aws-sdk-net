@@ -32,6 +32,7 @@ public static class OperationResolver
             AWSProtocol.RestJson1 => index.Service.GetRestJson1(),
             AWSProtocol.AwsJson1_0 => index.Service.GetAwsJson1_0(),
             AWSProtocol.AwsJson1_1 => index.Service.GetAwsJson1_1(),
+            AWSProtocol.RpcV2Cbor => index.Service.GetRpcV2Cbor(),
             _ => throw new GeneratorException($"Unsupported protocol '{protocol}'."),
         };
 

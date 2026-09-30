@@ -15,9 +15,9 @@ Under `Generated/Model/Internal/MarshallTransformations/`, all `partial`:
 |---|---|---|
 | `{Operation}RequestMarshaller.cs` | `IMarshaller<IRequest, {Operation}Request>` | |
 | `{Operation}ResponseUnmarshaller.cs` | `JsonResponseUnmarshaller` (or protocol equivalent) | Dispatches errors |
-| `{Shape}Marshaller.cs` | `IRequestMarshaller<{Shape}, JsonMarshallerContext>` | Nested structures in the request path |
-| `{Shape}Unmarshaller.cs` | `IJsonUnmarshaller<{Shape}, JsonUnmarshallerContext>` | Nested structures in the response path |
-| `{Exception}Unmarshaller.cs` | `IJsonErrorResponseUnmarshaller<{Exception}, JsonUnmarshallerContext>` | |
+| `{Shape}Marshaller.cs` | `IRequestMarshaller<{Shape}, JsonMarshallerContext>` (or protocol equivalent) | Nested structures in the request path |
+| `{Shape}Unmarshaller.cs` | `IJsonUnmarshaller<{Shape}, JsonUnmarshallerContext>` (or protocol equivalent) | Nested structures in the response path |
+| `{Exception}Unmarshaller.cs` | `IJsonErrorResponseUnmarshaller<{Exception}, JsonUnmarshallerContext>` (or protocol equivalent) | |
 
 Structure marshallers expose `public readonly static {Shape}Marshaller Instance = new {Shape}Marshaller();`.
 Operation marshallers/unmarshallers expose a `private static` instance behind a public `Instance` property.
@@ -397,9 +397,28 @@ Core handles the `__type` difference transparently, so the generator only varies
 Every one of those decisions is gated on `GenerationContext.UsesHttpBindings`; `AwsJsonCodegenTests`
 pins the emitted code and the JSONRPC10/JsonProtocol protocol tests verify it end to end.
 
+## rpcv2Cbor
+
+Spec: [Smithy RPC v2 CBOR](https://smithy.io/2.0/additional-specs/protocols/smithy-rpc-v2-cbor.html). Every
+operation is `POST service/{ServiceShapeName}/operation/{OperationName}` with `smithy-protocol: rpc-v2-cbor`,
+`Accept: application/cbor`, and a CBOR map body with `Content-Type: application/cbor` unless the input is
+`Unit`. HTTP binding traits, `@jsonName` and `@timestampFormat` are ignored: keys are member names and
+timestamps are tag 1. The output is wire-compatible with C2J's CBOR templates and formatted like the JSON
+writers' output; the `Cbor*` writers mirror the JSON ones and are pinned by `RpcV2CborCodegenTests`.
+
+A `@sparse` element writes CBOR null per the spec; C2J writes `{}` for a null structure element in a sparse
+list, but no CBOR service model uses `@sparse`. Documents and streaming blobs are rejected by
+`UnsupportedTraitValidator`; event streams are not supported.
+
+## awsQueryCompatible
+
+Service trait for awsJson1.0 and rpcv2Cbor services that moved off awsQuery
+([spec](https://smithy.io/2.0/aws/protocols/aws-query-protocol.html#aws-protocols-awsquerycompatible-trait)): the
+request announces query mode and errors still dispatch on the shape name, not the rewritten query error code.
+
 ## Other Protocols (not yet implemented)
 
-restXml, awsQuery, ec2Query and rpcv2Cbor: the target output is defined by the C2J templates
+restXml, awsQuery and ec2Query: the target output is defined by the C2J templates
 (`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`). awsQuery/ec2Query route via an
 `Action={Operation}` param with URL-encoded bodies; restXml keeps the HTTP binding traits with an XML
 body (`@xmlName`/`@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace`) and, per the Smithy spec, defaults

@@ -117,6 +117,10 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             w => w.OpenXmlBlock("ItemGroup", () =>
             {
                 w.WriteLine($"""<PackageReference Include="AWSSDK.Core" Version="{options.CoreVersion}" />""");
+                foreach (var extension in context.ExtensionDependencies)
+                {
+                    w.WriteLine($"""<PackageReference Include="{extension.PackageId}" Version="{StandaloneOptions.DefaultCoreVersion}" />""");
+                }
             }),
             w => w.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () =>
             {
@@ -285,12 +289,25 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteCoreReference(CodeWriter writer, ServiceProjectConfiguration config)
+    private void WriteCoreReference(CodeWriter writer, ServiceProjectConfiguration config)
     {
-        writer.OpenXmlBlock("ItemGroup", () =>
+        writer.OpenXmlBlock("ItemGroup", () => WriteSdkProjectReferences(writer, config));
+    }
+
+    private void WriteSdkProjectReferences(CodeWriter writer, ServiceProjectConfiguration config)
+    {
+        foreach (var extension in context.ExtensionDependencies)
         {
-            writer.WriteLine($"""<ProjectReference Include="{config.CoreProjectReference}"/>""");
-        });
+            foreach (var project in extension.Projects)
+            {
+                if (project.Variant is null || project.Variant == config.Variant)
+                {
+                    writer.WriteLine($"""<ProjectReference Include="{project.Path}"/>""");
+                }
+            }
+        }
+
+        writer.WriteLine($"""<ProjectReference Include="{config.CoreProjectReference}"/>""");
     }
 
     // Emits the project-type framework references (e.g. System.Configuration) followed by any
@@ -307,19 +324,13 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteConditionalCoreReferences(CodeWriter writer, ServiceProjectConfiguration fw, ServiceProjectConfiguration ns, bool netStandardSupport)
+    private void WriteConditionalCoreReferences(CodeWriter writer, ServiceProjectConfiguration fw, ServiceProjectConfiguration ns, bool netStandardSupport)
     {
-        writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () =>
-        {
-            writer.WriteLine($"""<ProjectReference Include="{fw.CoreProjectReference}"/>""");
-        });
+        writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () => WriteSdkProjectReferences(writer, fw));
 
         if (netStandardSupport)
         {
-            writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNotNetFramework}">""", "ItemGroup", () =>
-            {
-                writer.WriteLine($"""<ProjectReference Include="{ns.CoreProjectReference}"/>""");
-            });
+            writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNotNetFramework}">""", "ItemGroup", () => WriteSdkProjectReferences(writer, ns));
         }
     }
 

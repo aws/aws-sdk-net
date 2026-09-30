@@ -120,6 +120,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         writer.OpenBlock($"{keyword} (evnt is {evnt.EventClass})", () =>
         {
             writer.WriteLine("var memoryStream = new MemoryStream();");
+            // TODO: rpcv2Cbor request event streams need a CBOR marshaller context here (rejected by UnsupportedTraitValidator for now).
             writer.WriteLine("var context = CreateJsonMarshallerContext(memoryStream);");
             writer.WriteLine("context.Writer.WriteStartObject();");
             writer.WriteLine($"{evnt.EventClass}Marshaller.Instance.Marshall(({evnt.EventClass})evnt, context);");

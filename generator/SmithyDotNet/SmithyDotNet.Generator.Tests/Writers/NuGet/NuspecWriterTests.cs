@@ -49,6 +49,13 @@ public class NuspecWriterTests
     }
 
     [Fact]
+    public void Nuspec_RpcV2Cbor_DependsOnCborExtension()
+    {
+        var nuspec = new NuspecWriter(TestModels.Context("Codegen/rpcv2cbor-model.json")).Write();
+        Assert.Contains("""<dependency id="AWSSDK.Extensions.CborProtocol" version="[4.0.100.14, 5.0)" />""", nuspec);
+    }
+
+    [Fact]
     public void NuspecReferencesReadme()
     {
         AssertHelper("<readme>nuget-readme.md</readme>");
