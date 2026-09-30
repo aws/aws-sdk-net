@@ -152,6 +152,8 @@ public class PayloadMemberCodegenTests
 
         Assert.Contains("""request.Headers["Content-Type"] = "text/plain";""", m);
         Assert.Contains("request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Body);", m);
+        // An unset optional payload sends no body instead of GetBytes throwing on null (DOTNET-8852).
+        Assert.Contains("if (publicRequest.IsSetBody())", m);
     }
 
     [Fact]
@@ -385,6 +387,8 @@ public class PayloadMemberCodegenTests
 
         Assert.Contains("""request.Headers["Content-Type"] = "text/plain";""", m);
         Assert.Contains("request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Body);", m);
+        // An unset optional payload sends no body instead of GetBytes throwing on null (DOTNET-8852).
+        Assert.Contains("if (publicRequest.IsSetBody())", m);
         Assert.DoesNotContain("Utf8JsonWriter", m);
     }
 

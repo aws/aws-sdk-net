@@ -612,7 +612,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         if (payload.Type.MarshalsAsString)
         {
-            writer.WriteLine($"request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{payload.PropertyName});");
+            // Diverges from C2J, which leaves this unguarded: GetBytes throws on null, so an unset
+            // optional payload must send an empty body instead of failing before the request is sent.
+            writer.OpenBlock($"if (publicRequest.IsSet{payload.PropertyName}())", () =>
+            {
+                writer.WriteLine($"request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{payload.PropertyName});");
+            });
             return;
         }
 
