@@ -109,6 +109,10 @@ namespace Amazon.Runtime.Credentials.Internal
         {
             public DateTime? BlockRefreshUntil { get; set; }
 
+            // The error from the failed refresh that started the cooldown, raised again by calls during the cooldown
+            // for an expired token.
+            public Exception LastFailure { get; set; }
+
             public bool IsInRefreshCoolDown()
             {
                 if (!BlockRefreshUntil.HasValue)
@@ -116,6 +120,31 @@ namespace Amazon.Runtime.Credentials.Internal
 
                 return AWSSDKUtils.CorrectedUtcNow < BlockRefreshUntil.Value;
             }
+        }
+
+        // SSO OIDC CreateToken errors that retrying cannot resolve: the refresh token or the client registration is
+        // invalid, expired or revoked, or the client is not allowed to refresh.
+        private static readonly HashSet<string> NonRecoverableRefreshErrorCodes = new HashSet<string>(StringComparer.Ordinal)
+        {
+            "InvalidGrantException",
+            "ExpiredTokenException",
+            "InvalidClientException",
+            "UnauthorizedClientException",
+            "AccessDeniedException",
+            "InvalidRequestException",
+        };
+
+        // The error for an expired token whose refresh failed. It is non-recoverable only when SSO OIDC rejected the
+        // refresh; any other failure (the service unreachable, throttling, a server error) can succeed on a later
+        // attempt, which the cooldown allows after 30 seconds.
+        private static AmazonClientException ExpiredTokenRefreshFailure(Exception failure)
+        {
+            if (failure is AmazonServiceException serviceException && serviceException.ErrorCode != null &&
+                NonRecoverableRefreshErrorCodes.Contains(serviceException.ErrorCode))
+            {
+                return new AmazonNonRecoverableCredentialsException("SSO Token has expired and failed to refresh. Please reauthenticate.", failure);
+            }
+            return new AmazonClientException("SSO Token has expired and failed to refresh", failure);
         }
 
         private class CacheState
@@ -178,10 +207,10 @@ namespace Amazon.Runtime.Credentials.Internal
                         {
                             return GenerateNewToken(options);
                         }
-                        // we've already tried to refresh and failed, nothing more can be done.
+                        // the last refresh failed; raise its error again until the cooldown ends.
                         else
                         {
-                            throw new AmazonClientException("SSO Token has expired and can not be refreshed");
+                            throw ExpiredTokenRefreshFailure(inMemoryToken.RefreshState.LastFailure);
                         }
                     }
 
@@ -223,7 +252,8 @@ namespace Amazon.Runtime.Credentials.Internal
                             Token = ssoToken,
                             RefreshState = new RefreshState
                             {
-                                BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
+                                BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30),
+                                LastFailure = ex
                             }
                         };
 
@@ -232,7 +262,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                         if (ssoToken.IsExpired())
                         {
-                            throw new AmazonClientException("SSO Token has expired and failed to refresh", ex);
+                            throw ExpiredTokenRefreshFailure(ex);
                         }
 
                         return ssoToken;
@@ -247,7 +277,7 @@ namespace Amazon.Runtime.Credentials.Internal
                     }
                     else
                     {
-                        throw new AmazonClientException("SSO Token has expired and can not be refreshed");
+                        throw new AmazonNonRecoverableCredentialsException("SSO Token has expired and can not be refreshed. Please reauthenticate.");
                     }
                 }
                 else
@@ -265,7 +295,7 @@ namespace Amazon.Runtime.Credentials.Internal
             // can't find a token and can't create one
             else
             {
-                throw new AmazonClientException("No valid SSO Token could be found.");
+                throw new AmazonNonRecoverableCredentialsException("No valid SSO Token could be found. Please reauthenticate.");
             }
         }
 
@@ -332,6 +362,8 @@ namespace Amazon.Runtime.Credentials.Internal
 
         private SsoToken GenerateNewToken(SSOTokenManagerGetTokenOptions options)
         {
+            ThrowIfInteractiveSignInDeferred(options);
+
             if (string.IsNullOrEmpty(options.ClientName))
             {
                 throw new ArgumentNullException($"Options property cannot be empty: {nameof(options.ClientName)}");
@@ -439,10 +471,10 @@ namespace Amazon.Runtime.Credentials.Internal
                         {
                             return await GenerateNewTokenAsync(options, cancellationToken).ConfigureAwait(false);
                         }
-                        // we've already tried to refresh and failed, nothing more can be done.
+                        // the last refresh failed; raise its error again until the cooldown ends.
                         else
                         {
-                            throw new AmazonClientException("SSO Token has expired and can not be refreshed");
+                            throw ExpiredTokenRefreshFailure(inMemoryToken.RefreshState.LastFailure);
                         }
                     }
 
@@ -481,7 +513,8 @@ namespace Amazon.Runtime.Credentials.Internal
                             Token = ssoToken,
                             RefreshState = new RefreshState
                             {
-                                BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
+                                BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30),
+                                LastFailure = ex
                             }
                         };
 
@@ -490,7 +523,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                         if (ssoToken.IsExpired())
                         {
-                            throw new AmazonClientException("SSO Token has expired and failed to refresh", ex);
+                            throw ExpiredTokenRefreshFailure(ex);
                         }
 
                         return ssoToken;
@@ -505,7 +538,7 @@ namespace Amazon.Runtime.Credentials.Internal
                     }
                     else
                     {
-                        throw new AmazonClientException("SSO Token has expired and can not be refreshed");
+                        throw new AmazonNonRecoverableCredentialsException("SSO Token has expired and can not be refreshed. Please reauthenticate.");
                     }
                 }
                 else
@@ -523,7 +556,7 @@ namespace Amazon.Runtime.Credentials.Internal
             // can't find a token and can't create one
             else
             {
-                throw new AmazonClientException("No valid SSO Token could be found.");
+                throw new AmazonNonRecoverableCredentialsException("No valid SSO Token could be found. Please reauthenticate.");
             }
         }
 
@@ -596,6 +629,8 @@ namespace Amazon.Runtime.Credentials.Internal
 
         private async Task<SsoToken> GenerateNewTokenAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default)
         {
+            ThrowIfInteractiveSignInDeferred(options);
+
             var emptyProperties = GetEmptySSOTokenOptions(options);
 
             if (emptyProperties.Count > 0)
@@ -641,6 +676,21 @@ namespace Amazon.Runtime.Credentials.Internal
             await _ssoTokenFileCache.SaveSsoTokenAsync(token, options.CacheFolderLocation, cancellationToken).ConfigureAwait(false);
 
             return token;
+        }
+
+        /// <summary>
+        /// Every path that needs a new token, and would therefore start the interactive sign-in, goes through
+        /// GenerateNewToken or GenerateNewTokenAsync, which call this first. When the caller deferred the sign-in (see
+        /// <see cref="SSOTokenManagerGetTokenOptions.DeferInteractiveSignIn"/>), it throws before any SSO OIDC call or
+        /// sign-in callback is made.
+        /// </summary>
+        private static void ThrowIfInteractiveSignInDeferred(SSOTokenManagerGetTokenOptions options)
+        {
+            if (options.DeferInteractiveSignIn)
+            {
+                throw new CredentialRefreshDeferredException(
+                    $"A new SSO token for [{options.StartUrl}] requires an interactive sign-in, which is not started during a background credential refresh.");
+            }
         }
 
         private static List<string> GetEmptySSOTokenOptions(SSOTokenManagerGetTokenOptions options)

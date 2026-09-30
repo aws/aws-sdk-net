@@ -155,6 +155,37 @@ namespace Amazon.Runtime.Internal.Util
             }
         }
 
+        /// <summary>
+        /// Logs a message at <see cref="SdkLogLevel.Warn"/> together with the exception that caused it.
+        /// <paramref name="messageFormat"/> is a composite format string, so pass text that can contain braces, such
+        /// as an exception message, in <paramref name="args"/> rather than in the format.
+        /// </summary>
+        internal void Warn(Exception exception, string messageFormat, params object[] args)
+        {
+            foreach (var logger in _loggers)
+            {
+                if (logger.IsEnabled(SdkLogLevel.Warn))
+                {
+                    logger.Log(SdkLogLevel.Warn, messageFormat, exception, args);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Logs a message at <see cref="SdkLogLevel.Warn"/>. <paramref name="messageFormat"/> is a composite format
+        /// string, so pass text that can contain braces in <paramref name="args"/> rather than in the format.
+        /// </summary>
+        internal void WarnFormat(string messageFormat, params object[] args)
+        {
+            foreach (var logger in _loggers)
+            {
+                if (logger.IsEnabled(SdkLogLevel.Warn))
+                {
+                    logger.Log(SdkLogLevel.Warn, messageFormat, null, args);
+                }
+            }
+        }
+
         #endregion
 
     }

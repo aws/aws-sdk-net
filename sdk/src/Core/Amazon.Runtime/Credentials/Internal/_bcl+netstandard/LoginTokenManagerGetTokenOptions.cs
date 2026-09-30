@@ -41,6 +41,13 @@ namespace Amazon.Runtime.Credentials.Internal
         public string CacheFolderLocation { get; set; }
 
         /// <summary>
+        /// The access key ID of credentials that a service rejected (see
+        /// <see cref="LoginAWSCredentials.Invalidate(ImmutableCredentials)"/>). A cached Login Token whose access token
+        /// has this access key ID is refreshed even when it has not reached its refresh window.
+        /// </summary>
+        internal string RejectedAccessKeyId { get; set; }
+
+        /// <summary>
         /// The proxy settings to use when calling Signin service.
         /// </summary>
 #if BCL

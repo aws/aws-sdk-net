@@ -43,7 +43,7 @@ namespace Amazon.Runtime
             if (canRetry || executionContext.RequestContext.CSMEnabled)
             {
                 var isClockSkewError = IsClockskew(executionContext, exception);
-                if (isClockSkewError || await RetryForExceptionAsync(executionContext, exception).ConfigureAwait(false))
+                if (isClockSkewError || IsRetryableInvalidCredentialError(executionContext, exception) || await RetryForExceptionAsync(executionContext, exception).ConfigureAwait(false))
                 {
                     executionContext.RequestContext.IsLastExceptionRetryable = true;
                     if (!canRetry)

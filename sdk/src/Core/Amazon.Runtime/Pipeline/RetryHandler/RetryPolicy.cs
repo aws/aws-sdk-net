@@ -136,7 +136,7 @@ namespace Amazon.Runtime
             if (canRetry || executionContext.RequestContext.CSMEnabled)
             {
                 var isClockSkewError = IsClockskew(executionContext, exception);
-                if (isClockSkewError || RetryForException(executionContext, exception))
+                if (isClockSkewError || IsRetryableInvalidCredentialError(executionContext, exception) || RetryForException(executionContext, exception))
                 {
                     executionContext.RequestContext.IsLastExceptionRetryable = true;
                     // If CSM is enabled but canRetry was false, we should not retry the request.
@@ -531,6 +531,21 @@ namespace Amazon.Runtime
         }
 
         #endregion
+
+        /// <summary>
+        /// Invalid credential errors (ExpiredToken/ExpiredTokenException) are retryable only for credentials that support
+        /// invalidation. <see cref="RetryHandler"/> has already invalidated the credentials that signed the request,
+        /// so the request is marked unsigned and the retry resolves credentials again, obtaining the refreshed ones.
+        /// These retries consume retry quota and count toward the maximum attempts like other retryable errors.
+        /// </summary>
+        private static bool IsRetryableInvalidCredentialError(IExecutionContext executionContext, Exception exception)
+        {
+            if (!CredentialsInvalidation.IsInvalidCredentialError(executionContext, exception))
+                return false;
+
+            executionContext.RequestContext.IsSigned = false;
+            return true;
+        }
 
         /// <summary>
         /// Context attribute key for storing the x-amz-retry-after header value (in milliseconds).

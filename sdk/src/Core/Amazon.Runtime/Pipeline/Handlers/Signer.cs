@@ -118,6 +118,11 @@ namespace Amazon.Runtime.Internal
                     }
                 }
 
+                // Capture the resolved credentials so the retry pipeline can invalidate exactly these
+                // if the service rejects them (e.g. ExpiredToken / ExpiredTokenException).
+                if (immutableCredentials != null)
+                    requestContext.ResolvedCredentials = immutableCredentials;
+
                 if (immutableCredentials?.UseToken == true && 
                     !(requestContext.Signer is NullSigner) && 
                     !(requestContext.Signer is BearerTokenSigner))
@@ -186,6 +191,11 @@ namespace Amazon.Runtime.Internal
                         immutableCredentials = await awsCredentials.GetCredentialsAsync().ConfigureAwait(false);
                     }
                 }
+
+                // Capture the resolved credentials so the retry pipeline can invalidate exactly these
+                // if the service rejects them (e.g. ExpiredToken / ExpiredTokenException).
+                if (immutableCredentials != null)
+                    requestContext.ResolvedCredentials = immutableCredentials;
 
                 if (immutableCredentials?.UseToken == true &&
                     !(requestContext.Signer is NullSigner) &&

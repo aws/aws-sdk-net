@@ -117,6 +117,10 @@ namespace Amazon.Runtime.Internal
                     // client send rate is adjusted even when retries are disabled.
                     this.RetryPolicy.NotifyError(executionContext, exception);
 
+                    // If the service rejected the signing credentials (ExpiredToken/ExpiredTokenException), invalidate them
+                    // so that a retry is signed with refreshed credentials. This runs whether or not a retry follows.
+                    CredentialsInvalidation.NotifyIfAuthFailure(executionContext, exception);
+
                     // Standard retry logic
                     shouldRetry = this.RetryPolicy.Retry(executionContext, exception);
                     if (!shouldRetry)
@@ -225,6 +229,10 @@ namespace Amazon.Runtime.Internal
                     // error, regardless of whether the request will be retried, to ensure the
                     // client send rate is adjusted even when retries are disabled.
                     this.RetryPolicy.NotifyError(executionContext, capturedException.SourceException);
+
+                    // If the service rejected the signing credentials (ExpiredToken/ExpiredTokenException), invalidate them
+                    // so that a retry is signed with refreshed credentials. This runs whether or not a retry follows.
+                    CredentialsInvalidation.NotifyIfAuthFailure(executionContext, capturedException.SourceException);
 
                     // Standard retry logic
                     shouldRetry = await this.RetryPolicy.RetryAsync(executionContext, capturedException.SourceException).ConfigureAwait(false);

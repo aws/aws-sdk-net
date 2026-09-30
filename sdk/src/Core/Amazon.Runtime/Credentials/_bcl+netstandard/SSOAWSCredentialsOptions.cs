@@ -91,6 +91,14 @@ namespace Amazon.Runtime
         /// sso authorization flow is started, a new token is generated and the result is cached.
         /// If <c>false</c> and a valid cached token or refreshable token is not found, an exception is thrown.
         /// <para />
+        /// <see cref="SSOAWSCredentials"/> refreshes its credentials in the background before they expire. A background
+        /// refresh uses the cached sso token, and refreshes it with its refresh token when it can, but never starts the
+        /// sso authorization flow: when a new sso token would be needed, the background refresh stops, the cached
+        /// credentials keep being used, and the flow is started as part of the first call for credentials that finds
+        /// them expired. The same applies when these credentials are the source credentials of another provider, such as
+        /// <see cref="AssumeRoleAWSCredentials"/>: a background refresh of that provider never starts the flow either,
+        /// and the flow is started as part of the first call for that provider's credentials that finds them expired.
+        /// <para />
         /// NOTE: If setting to <c>true</c>, either <see cref="SsoVerificationCallback"/> or <see cref="PkceFlowOptions"/> must 
         /// also be set for authorization flow to succeed.
         /// </summary>

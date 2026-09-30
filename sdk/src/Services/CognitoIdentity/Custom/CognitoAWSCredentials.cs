@@ -30,6 +30,9 @@ namespace Amazon.CognitoIdentity
     /// </summary>
     public partial class CognitoAWSCredentials : RefreshingAWSCredentials
     {
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
+
         #region Private members
         private static object refreshIdLock = new object();
         private readonly object identityChangeEventLock = new object();
@@ -337,6 +340,11 @@ namespace Amazon.CognitoIdentity
         /// <summary>
         /// Provides a way to override fetching the identity in case of developer authenticated identities.
         /// The default behaviour will be using Cognito to retrieve the identity id.
+        /// <para />
+        /// If a derived class overrides this method but not <see cref="RefreshIdentityAsync"/>, the default
+        /// <see cref="RefreshIdentityAsync"/> calls this method on a thread-pool thread, so the asynchronous methods and
+        /// the background refresh, which runs before the credentials expire, use the same identity. Override
+        /// <see cref="RefreshIdentityAsync"/> as well to fetch the identity asynchronously.
         /// </summary>
         /// <returns>returns a <see cref="IdentityState"/></returns>
         protected virtual IdentityState RefreshIdentity()
@@ -388,11 +396,28 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Provides a way to override fetching the identity in case of developer authenticated identities.
-        /// The default behaviour will be using Cognito to retrieve the identity id.
+        /// The default behaviour will be using Cognito to retrieve the identity id. If a derived class overrides
+        /// <see cref="RefreshIdentity"/> but not this method, the default implementation calls
+        /// <see cref="RefreshIdentity"/> on a thread-pool thread instead.
         /// </summary>
         /// <returns>returns a <see cref="IdentityState"/></returns>
         public virtual async System.Threading.Tasks.Task<IdentityState> RefreshIdentityAsync()
         {
+            // The credentials refresh in the background before they expire, and that refresh is asynchronous. A derived
+            // class that implements developer authenticated identities by overriding only the synchronous
+            // RefreshIdentity must still supply its identity and login token there. The override is called under the
+            // same lock as on the synchronous path (see GetIdentityId), so calls to it stay serialized.
+            if (OverridesOnlySynchronousRefreshIdentity)
+            {
+                return await System.Threading.Tasks.Task.Run(() =>
+                {
+                    lock (refreshIdLock)
+                    {
+                        return RefreshIdentity();
+                    }
+                }).ConfigureAwait(false);
+            }
+
             bool isCached = true;
             if (!IsIdentitySet)
             {
@@ -407,6 +432,32 @@ namespace Amazon.CognitoIdentity
                 UpdateIdentity(response.IdentityId);
             }
             return new IdentityState(identityId, isCached);
+        }
+
+        // 0 until OverridesOnlySynchronousRefreshIdentity has been determined, then 1 when it is true and 2 when it is false.
+        // Accessed through Volatile.
+        private int _refreshIdentityOverride;
+
+        /// <summary>
+        /// True when the class of this instance overrides <see cref="RefreshIdentity"/> but not
+        /// <see cref="RefreshIdentityAsync"/>. Determined once, from the methods that delegates to the two virtual
+        /// methods bind to.
+        /// </summary>
+        private bool OverridesOnlySynchronousRefreshIdentity
+        {
+            get
+            {
+                var value = System.Threading.Volatile.Read(ref _refreshIdentityOverride);
+                if (value == 0)
+                {
+                    Func<IdentityState> refreshIdentity = RefreshIdentity;
+                    Func<System.Threading.Tasks.Task<IdentityState>> refreshIdentityAsync = RefreshIdentityAsync;
+                    value = refreshIdentity.Method.DeclaringType != typeof(CognitoAWSCredentials)
+                        && refreshIdentityAsync.Method.DeclaringType == typeof(CognitoAWSCredentials) ? 1 : 2;
+                    System.Threading.Volatile.Write(ref _refreshIdentityOverride, value);
+                }
+                return value == 1;
+            }
         }
 
         /// <summary>
@@ -770,6 +821,34 @@ namespace Amazon.CognitoIdentity
 
             credentialsState = new CredentialsRefreshState(credentials.GetCredentials(), credentials.Expiration.GetValueOrDefault());
             return credentialsState;
+        }
+
+        /// <summary>
+        /// In addition to the errors that <see cref="RefreshingAWSCredentials"/> treats as non-recoverable, these errors
+        /// from Amazon Cognito Identity are non-recoverable, because retrying cannot succeed until the application or
+        /// the identity pool's configuration changes:
+        /// <list type="bullet">
+        /// <item><see cref="NotAuthorizedException"/>: Amazon Cognito rejected the identity or its logins, for example
+        /// because an identity provider login token has expired or is invalid. The application must supply a new login
+        /// (see <see cref="AddLogin"/>).</item>
+        /// <item><see cref="ResourceNotFoundException"/>: the identity pool or the identity does not exist, for example
+        /// because it was deleted.</item>
+        /// <item><see cref="InvalidIdentityPoolConfigurationException"/>: the identity pool has no role configured for
+        /// the request, or its role cannot be assumed.</item>
+        /// </list>
+        /// These exceptions are therefore raised to the caller immediately instead of the cached credentials being served
+        /// while refresh attempts back off.
+        /// </summary>
+        /// <param name="exception">The exception raised while retrieving credentials.</param>
+        /// <returns>True if retrying the credential refresh cannot succeed without action from the application.</returns>
+        protected override bool IsNonRecoverableError(Exception exception)
+        {
+            if (exception is NotAuthorizedException
+                || exception is ResourceNotFoundException
+                || exception is InvalidIdentityPoolConfigurationException)
+                return true;
+
+            return base.IsNonRecoverableError(exception);
         }
 
         #endregion

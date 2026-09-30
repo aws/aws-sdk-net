@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
@@ -111,6 +112,12 @@ namespace Amazon.Runtime.Credentials.Internal
         private class RefreshState
         {
             public DateTime? BlockRefreshUntil { get; set; }
+
+            /// <summary>
+            /// True when the last failed refresh attempt was non-recoverable (for example the Sign-In service
+            /// rejected the refresh token), so retrying the refresh cannot succeed without reauthentication.
+            /// </summary>
+            public bool LastRefreshFailureNonRecoverable { get; set; }
 
             public bool IsInRefreshCoolDown()
             {
@@ -309,6 +316,55 @@ namespace Amazon.Runtime.Credentials.Internal
             }
         }
 
+        // True when a service rejected the credentials this token's access token provides (see
+        // LoginTokenManagerGetTokenOptions.RejectedAccessKeyId): the token must be refreshed even though it has not
+        // reached its refresh window, because its access token is the rejected credentials.
+        private static bool IsRejected(LoginToken token, LoginTokenManagerGetTokenOptions options)
+        {
+            return options.RejectedAccessKeyId != null &&
+                string.Equals(token?.AccessToken?.AccessKey, options.RejectedAccessKeyId, StringComparison.Ordinal);
+        }
+
+        // Records a failed Sign-In refresh of loginToken, which starts the 30-second refresh cooldown, and returns the
+        // exception to raise, or null when loginToken can still be returned. A failure that retrying cannot resolve is
+        // raised even while the token has not expired, so the caller sees "Please reauthenticate." at once. After a
+        // transient failure the token is returned while it is valid and its credentials were not rejected; otherwise
+        // the failure is raised as recoverable, so the credential provider keeps its cached credentials and refreshes
+        // again after its refresh backoff.
+        private Exception RefreshFailureToRaise(LoginToken loginToken, LoginTokenManagerGetTokenOptions options, Exception ex)
+        {
+            var nonRecoverable = CredentialRefreshPolicy.IsNonRecoverableSigninRefreshError(ex);
+            if (AWSConfigs.UseSdkCache)
+            {
+                AddOrUpdateInMemoryCache(options.LoginSession, new CacheState
+                {
+                    Token = loginToken,
+                    RefreshState = new RefreshState
+                    {
+                        BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30),
+                        LastRefreshFailureNonRecoverable = nonRecoverable
+                    }
+                });
+            }
+
+            var expired = loginToken.IsExpired();
+            if (nonRecoverable)
+            {
+                return new AmazonNonRecoverableCredentialsException(expired
+                    ? "Login Token has expired and failed to refresh. Please reauthenticate."
+                    : "Login Token failed to refresh. Please reauthenticate.", ex);
+            }
+
+            if (!expired && !IsRejected(loginToken, options))
+            {
+                return null;
+            }
+
+            return new AmazonClientException(expired
+                ? $"Login Token has expired and failed to refresh. {ex.Message}"
+                : $"Login Token failed to refresh. {ex.Message}", ex);
+        }
+
 #if BCL
         /// <summary>
         /// Gets Login token using <paramref name="options"/>. If token is expired, it makes service API call to refresh the token.
@@ -320,19 +376,26 @@ namespace Amazon.Runtime.Credentials.Internal
             CacheState inMemoryToken = null;
 
             if (AWSConfigs.UseSdkCache &&
-                _inMemoryCache.TryGetValue(options.LoginSession, out inMemoryToken) &&
-                !inMemoryToken.Token.NeedsRefresh())
+                _inMemoryCache.TryGetValue(options.LoginSession, out inMemoryToken))
             {
-                _logger.DebugFormat("In Memory cache has Login Token for login session [{0}]", options.LoginSession);
-                return inMemoryToken.Token;
+                // Validate the cached token before NeedsRefresh(), which
+                // dereferences AccessToken.ExpiresAt and would throw a plain NullReferenceException on a
+                // malformed cached token instead of the intended AmazonNonRecoverableCredentialsException.
+                inMemoryToken.Token.EnsureUsable();
+                if (!inMemoryToken.Token.NeedsRefresh() && !IsRejected(inMemoryToken.Token, options))
+                {
+                    _logger.DebugFormat("In Memory cache has Login Token for login session [{0}]", options.LoginSession);
+                    return inMemoryToken.Token;
+                }
             }
 
             if (_loginTokenFileCache.TryGetLoginToken(options.LoginSession, options.CacheFolderLocation, out var loginToken))
             {
                 _logger.DebugFormat("File cache has Login Token for login session [{0}]", options.LoginSession);
+                loginToken.EnsureUsable(); // validate before NeedsRefresh() and before contacting Sign-In
 
                 // Token is not expired and doesn't need a refresh.
-                if (!loginToken.NeedsRefresh())
+                if (!loginToken.NeedsRefresh() && !IsRejected(loginToken, options))
                 {
                     var newInMemoryToken = new CacheState
                     {
@@ -353,12 +416,16 @@ namespace Amazon.Runtime.Credentials.Internal
                     // Did we recently try to refresh the token?
                     if (true == inMemoryToken?.RefreshState.IsInRefreshCoolDown())
                     {
-                        // If we can't refresh, but have a valid token, return the valid token. Else we've already tried to refresh and failed, nothing more can be done.
-                        if (loginToken.IsExpired())
+                        // After a non-recoverable failure nothing more can be done until the session is re-established. After a
+                        // transient failure, return the token while it is valid and its credentials were not rejected;
+                        // otherwise try the refresh again below.
+                        if (inMemoryToken.RefreshState.LastRefreshFailureNonRecoverable)
                         {
-                            throw new AmazonClientException("Login Token has expired and cannot be refreshed. Please reauthenticate.");
+                            throw new AmazonNonRecoverableCredentialsException(loginToken.IsExpired()
+                                ? "Login Token has expired and cannot be refreshed. Please reauthenticate."
+                                : "Login Token cannot be refreshed. Please reauthenticate.");
                         }
-                        else
+                        else if (!loginToken.IsExpired() && !IsRejected(loginToken, options))
                         {
                             return loginToken;
                         }
@@ -369,7 +436,7 @@ namespace Amazon.Runtime.Credentials.Internal
                         _logger.DebugFormat("Refreshing Login Token for login session [{0}]", options.LoginSession);
                         if (string.IsNullOrEmpty(loginToken.DPoPKey))
                         {
-                            throw new ArgumentNullException(nameof(loginToken.DPoPKey), $"DPoP private key missing from the cached Login Token for login session [{options.LoginSession}]. Please reauthenticate.");
+                            throw new AmazonNonRecoverableCredentialsException($"DPoP private key missing from the cached Login Token for login session [{options.LoginSession}]. Please reauthenticate.");
                         }
 
                         bool refreshTokenResult = LoginSessionLockManager.ExecuteWithLock<LoginToken>(
@@ -380,7 +447,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 if (_loginTokenFileCache.TryGetLoginToken(
                                             options.LoginSession,
                                             options.CacheFolderLocation,
-                                            out var tempNewToken) && !tempNewToken.NeedsRefresh())
+                                            out var tempNewToken) && !tempNewToken.NeedsRefresh() && !IsRejected(tempNewToken, options))
                                 {
                                     return;
                                 }
@@ -409,6 +476,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                             options.CacheFolderLocation,
                                             out var newToken))
                             {
+                                newToken.EnsureUsable(); // validate the refreshed token before use
                                 var newInMemoryToken = new CacheState
                                 {
                                     Token = newToken,
@@ -434,31 +502,17 @@ namespace Amazon.Runtime.Credentials.Internal
                     {
                         _logger.Error(ex, "Refreshing Login Token for login session [{0}] failed: {1}", options.LoginSession, ex.Message);
 
-                        if (!loginToken.IsExpired())
+                        var failure = RefreshFailureToRaise(loginToken, options, ex);
+                        if (failure == null)
                         {
-                            var newInMemoryToken = new CacheState
-                            {
-                                Token = loginToken,
-                                RefreshState = new RefreshState
-                                {
-                                    BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
-                                }
-                            };
-
-                            if (AWSConfigs.UseSdkCache)
-                                AddOrUpdateInMemoryCache(options.LoginSession, newInMemoryToken);
-
                             return loginToken;
                         }
-                        else
-                        {
-                            throw new AmazonClientException($"Login Token has expired and failed to refresh. {ex.Message}", ex);
-                        }
+                        throw failure;
                     }
                 }
                 else if (loginToken.IsExpired())
                 {
-                    throw new AmazonClientException("Login Token has expired and cannot be refreshed.");
+                    throw new AmazonNonRecoverableCredentialsException("Login Token has expired and cannot be refreshed. Please reauthenticate.");
                 }
                 else
                 {
@@ -469,7 +523,8 @@ namespace Amazon.Runtime.Credentials.Internal
             // Can't find a token
             else
             {
-                throw new AmazonClientException("No valid Login Token could be found.");
+                // A missing cached Login token is non-recoverable: the user must sign in again.
+                throw new AmazonNonRecoverableCredentialsException("No valid Login Token could be found. Please reauthenticate.");
             }
         }
 
@@ -522,6 +577,21 @@ namespace Amazon.Runtime.Credentials.Internal
         }
 
         /// <summary>
+        /// Test seam: seeds a token directly into the in-memory cache. Production code only caches a validated
+        /// token, so this is the only way to exercise the in-memory read path with a malformed token (verifying it
+        /// throws <see cref="AmazonNonRecoverableCredentialsException"/> rather than a NullReferenceException).
+        /// Test-only.
+        /// </summary>
+        internal void SeedInMemoryCacheForTest(string loginSession, LoginToken token)
+        {
+            _inMemoryCache[loginSession] = new CacheState
+            {
+                Token = token,
+                RefreshState = new RefreshState()
+            };
+        }
+
+        /// <summary>
         /// Gets Login token using <paramref name="options"/>. If token is expired, it makes service API call to refresh the token.
         /// </summary>
         /// <param name="options">Options to be used while getting Login Token.</param>
@@ -532,11 +602,17 @@ namespace Amazon.Runtime.Credentials.Internal
             CacheState inMemoryToken = null;
 
             if (AWSConfigs.UseSdkCache &&
-                _inMemoryCache.TryGetValue(options.LoginSession, out inMemoryToken) &&
-                !inMemoryToken.Token.NeedsRefresh())
+                _inMemoryCache.TryGetValue(options.LoginSession, out inMemoryToken))
             {
-                _logger.DebugFormat("In Memory cache has Login Token for login session [{0}]", options.LoginSession);
-                return inMemoryToken.Token;
+                // Validate the cached token before NeedsRefresh(), which
+                // dereferences AccessToken.ExpiresAt and would throw a plain NullReferenceException on a
+                // malformed cached token instead of the intended AmazonNonRecoverableCredentialsException.
+                inMemoryToken.Token.EnsureUsable();
+                if (!inMemoryToken.Token.NeedsRefresh() && !IsRejected(inMemoryToken.Token, options))
+                {
+                    _logger.DebugFormat("In Memory cache has Login Token for login session [{0}]", options.LoginSession);
+                    return inMemoryToken.Token;
+                }
             }
 
             var cachedToken = await _loginTokenFileCache.TryGetLoginTokenAsync(
@@ -550,9 +626,10 @@ namespace Amazon.Runtime.Credentials.Internal
                 _logger.DebugFormat("File cache has Login Token for login session [{0}]", options.LoginSession);
 
                 var loginToken = cachedToken.Value;
+                loginToken.EnsureUsable(); // validate before NeedsRefresh() and before contacting Sign-In
 
                 // Token is not expired and doesn't need a refresh.
-                if (!loginToken.NeedsRefresh())
+                if (!loginToken.NeedsRefresh() && !IsRejected(loginToken, options))
                 {
                     var newInMemoryToken = new CacheState
                     {
@@ -573,12 +650,16 @@ namespace Amazon.Runtime.Credentials.Internal
                     // Did we recently try to refresh the token?
                     if (true == inMemoryToken?.RefreshState.IsInRefreshCoolDown())
                     {
-                        // If we can't refresh, but have a valid token, return the valid token. Else we've already tried to refresh and failed, nothing more can be done.
-                        if (loginToken.IsExpired())
+                        // After a non-recoverable failure nothing more can be done until the session is re-established. After a
+                        // transient failure, return the token while it is valid and its credentials were not rejected;
+                        // otherwise try the refresh again below.
+                        if (inMemoryToken.RefreshState.LastRefreshFailureNonRecoverable)
                         {
-                            throw new AmazonClientException("Login Token has expired and cannot be refreshed. Please reauthenticate.");
+                            throw new AmazonNonRecoverableCredentialsException(loginToken.IsExpired()
+                                ? "Login Token has expired and cannot be refreshed. Please reauthenticate."
+                                : "Login Token cannot be refreshed. Please reauthenticate.");
                         }
-                        else
+                        else if (!loginToken.IsExpired() && !IsRejected(loginToken, options))
                         {
                             return loginToken;
                         }
@@ -589,7 +670,7 @@ namespace Amazon.Runtime.Credentials.Internal
                         _logger.DebugFormat("Refreshing Login Token for login session [{0}]", options.LoginSession);
                         if (string.IsNullOrEmpty(loginToken.DPoPKey))
                         {
-                            throw new ArgumentNullException(nameof(loginToken.DPoPKey), $"DPoP private key missing from the cached Login Token for login session [{options.LoginSession}]. Please reauthenticate.");
+                            throw new AmazonNonRecoverableCredentialsException($"DPoP private key missing from the cached Login Token for login session [{options.LoginSession}]. Please reauthenticate.");
                         }
 
                         bool refreshTokenResult = await LoginSessionLockManager.ExecuteWithLockAsync(
@@ -601,7 +682,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                     options.LoginSession,
                                     options.CacheFolderLocation,
                                     cancellationToken).ConfigureAwait(false);
-                                if (tempNewToken.Success && !tempNewToken.Value.NeedsRefresh())
+                                if (tempNewToken.Success && !tempNewToken.Value.NeedsRefresh() && !IsRejected(tempNewToken.Value, options))
                                 {
                                     return;
                                 }
@@ -632,6 +713,7 @@ namespace Amazon.Runtime.Credentials.Internal
 
                             if (newToken.Success)
                             {
+                                newToken.Value.EnsureUsable(); // validate the refreshed token before use
                                 var newInMemoryToken = new CacheState
                                 {
                                     Token = newToken.Value,
@@ -657,31 +739,17 @@ namespace Amazon.Runtime.Credentials.Internal
                     {
                         _logger.Error(ex, "Refreshing Login Token for login session [{0}] failed: {1}", options.LoginSession, ex.Message);
 
-                        if (!loginToken.IsExpired())
+                        var failure = RefreshFailureToRaise(loginToken, options, ex);
+                        if (failure == null)
                         {
-                            var newInMemoryToken = new CacheState
-                            {
-                                Token = loginToken,
-                                RefreshState = new RefreshState
-                                {
-                                    BlockRefreshUntil = AWSSDKUtils.CorrectedUtcNow.AddSeconds(30)
-                                }
-                            };
-
-                            if (AWSConfigs.UseSdkCache)
-                                AddOrUpdateInMemoryCache(options.LoginSession, newInMemoryToken);
-
                             return loginToken;
                         }
-                        else
-                        {
-                            throw new AmazonClientException($"Login Token has expired and failed to refresh. {ex.Message}", ex);
-                        }
+                        throw failure;
                     }
                 }
                 else if (loginToken.IsExpired())
                 {
-                    throw new AmazonClientException("Login Token has expired and cannot be refreshed.");
+                    throw new AmazonNonRecoverableCredentialsException("Login Token has expired and cannot be refreshed. Please reauthenticate.");
                 }
                 else
                 {
@@ -692,7 +760,8 @@ namespace Amazon.Runtime.Credentials.Internal
             // Can't find a token
             else
             {
-                throw new AmazonClientException("No valid Login Token could be found.");
+                // A missing cached Login token is non-recoverable: the user must sign in again.
+                throw new AmazonNonRecoverableCredentialsException("No valid Login Token could be found. Please reauthenticate.");
             }
         }
 

@@ -33,6 +33,9 @@ namespace Amazon.Runtime
     /// </summary>
     public class AssumeRoleAWSCredentials : RefreshingAWSCredentials
     {
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
+
         private RegionEndpoint DefaultSTSClientRegion = RegionEndpoint.USEast1;
         private Logger _logger = Logger.GetLogger(typeof(AssumeRoleAWSCredentials));
 
@@ -87,22 +90,10 @@ namespace Amazon.Runtime
             Options = options;
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_STS_ASSUME_ROLE);
 
-            // The minimum duration for AssumeRole is 15 minutes (900 seconds), and if that value
-            // is requested a 15-minute preempt expiry time may cause the SDK to generate credentials
-            // more frequently than needed (https://github.com/aws/aws-sdk-net/issues/4313).
-            //
-            // If customers request a duration of 20 minutes (1200 seconds) or less, use a smaller
-            // preempt expiry time of 5 minutes.
-            if (Options.DurationSeconds.HasValue && Options.DurationSeconds.Value <= 1200)
-            {
-                PreemptExpiryTime = TimeSpan.FromMinutes(5);
-            }
-            else
-            {
-                // Otherwise, use the default of 15 minutes to make sure to fetch new credentials well before
-                // the current credentials expire to avoid any request being made with expired credentials.
-                PreemptExpiryTime = TimeSpan.FromMinutes(15);
-            }
+            // PreemptExpiryTime is not set here. The base class chooses the background refresh window from the
+            // lifetime of each set of credentials (5 minutes for a lifetime of 20 minutes or less), and it does not
+            // start a background refresh for credentials that are already inside that window when they are fetched
+            // (https://github.com/aws/aws-sdk-net/issues/4313). A value that the caller sets takes precedence.
         }
 
         protected override CredentialsRefreshState GenerateNewCredentials()

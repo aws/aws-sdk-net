@@ -73,10 +73,14 @@ namespace Amazon.Runtime
 
         public GenericContainerCredentials()
         {
-            PreemptExpiryTime = TimeSpan.FromMinutes(15);
+            // PreemptExpiryTime is not set: the base class chooses the background refresh window from the lifetime of
+            // the credentials.
             DetermineEndpoint();
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_HTTP);
         }
+
+        /// <inheritdoc/>
+        protected sealed override bool UsesManagedRefreshLifecycle => true;
 
         protected override CredentialsRefreshState GenerateNewCredentials()
         {
