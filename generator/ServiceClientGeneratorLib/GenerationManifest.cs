@@ -265,9 +265,12 @@ namespace ServiceClientGenerator
             // still be protected. migratedConfigs is only used to exclude loaded services from generation.
             MigratedServiceFolderNames = _migratedServiceNames.ToList();
 
+            // Largest models first: services generate in parallel but each one on a single thread, so the
+            // biggest (EC2, SageMaker) set the run time and should not be left running alone at the end.
             ServiceConfigurations = serviceConfigurations
                 .Except(migratedConfigs)
                 .OrderBy(sc => sc.SdkDependencies.Count)
+                .ThenByDescending(sc => new FileInfo(sc.ModelPath).Length)
                 .ToList();
         }
 

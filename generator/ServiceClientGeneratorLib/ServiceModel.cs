@@ -435,6 +435,8 @@ namespace ServiceClientGenerator
             return this.Operations.FirstOrDefault(x => x.IsEndpointOperation);
         }
 
+        private List<Operation> _operations;
+
         /// <summary>
         /// The operations available through the service api found in the model.
         /// These operation objects contain the necessary information to construct the required operation structures for the API
@@ -443,36 +445,47 @@ namespace ServiceClientGenerator
         {
             get
             {
-                var list = new List<Operation>();
-                foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[OperationsKey])
+                if (_operations == null)
                 {
-                    Operation operation;
-                    if (this.PaginatorsRoot != null && this.PaginatorsRoot[PaginationKey][kvp.Key] != null)
-                    {
-                        operation = new Operation(this, kvp.Key,
-                            kvp.Value, this.PaginatorsRoot[PaginationKey][kvp.Key]);
-                        if (operation.Paginators != null && !operation.UnsupportedPaginatorConfig)
-                        {
-                            this.HasPaginators = true;
-                        }
-                    } 
-                    else
-                    {
-                        operation = new Operation(this, kvp.Key, kvp.Value);
-                    }
-
-                    if (operation.IsExcluded)
-                    {
-                        ExcludedOperations.Add(operation.Name);
-                    }
-                    else
-                    {
-                        list.Add(operation);
-                    }
+                    _operations = LoadOperations();
                 }
-                return list.OrderBy(x => x.Name).ToList();
+
+                return _operations;
             }
         }
+
+        private List<Operation> LoadOperations()
+        {
+            var list = new List<Operation>();
+            foreach (KeyValuePair<string, JsonData> kvp in DocumentRoot[OperationsKey])
+            {
+                Operation operation;
+                if (this.PaginatorsRoot != null && this.PaginatorsRoot[PaginationKey][kvp.Key] != null)
+                {
+                    operation = new Operation(this, kvp.Key,
+                        kvp.Value, this.PaginatorsRoot[PaginationKey][kvp.Key]);
+                    if (operation.Paginators != null && !operation.UnsupportedPaginatorConfig)
+                    {
+                        this.HasPaginators = true;
+                    }
+                } 
+                else
+                {
+                    operation = new Operation(this, kvp.Key, kvp.Value);
+                }
+
+                if (operation.IsExcluded)
+                {
+                    ExcludedOperations.Add(operation.Name);
+                }
+                else
+                {
+                    list.Add(operation);
+                }
+            }
+            return list.OrderBy(x => x.Name).ToList();
+        }
+
         private List<string> _s3ExcludeListOperations;
         public List<string> S3ExcludeListOperations
         {
