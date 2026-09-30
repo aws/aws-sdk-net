@@ -70,7 +70,7 @@ namespace Amazon.Runtime.Internal.Transform
         public int Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetInt32(out int value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt32(out int value))
             {
                 return value;
             }
@@ -119,7 +119,7 @@ namespace Amazon.Runtime.Internal.Transform
         public int? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetInt32(out int value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt32(out int value))
             {
                 return value;
             }
@@ -163,7 +163,7 @@ namespace Amazon.Runtime.Internal.Transform
         public long Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetInt64(out long value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt64(out long value))
             {
                 return value;
             }
@@ -201,7 +201,7 @@ namespace Amazon.Runtime.Internal.Transform
         public long? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetInt64(out long value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt64(out long value))
             {
                 return value;
             }
@@ -245,7 +245,7 @@ namespace Amazon.Runtime.Internal.Transform
         public float Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetSingle(out float value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetSingle(out float value))
             {
                 return value;
             }
@@ -286,7 +286,7 @@ namespace Amazon.Runtime.Internal.Transform
         public float? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetSingle(out float value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetSingle(out float value))
             {
                 return value;
             }
@@ -332,7 +332,7 @@ namespace Amazon.Runtime.Internal.Transform
         public double Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetDouble(out double value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDouble(out double value))
             {
                 return value;
             }
@@ -373,7 +373,7 @@ namespace Amazon.Runtime.Internal.Transform
         public double? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetDouble(out double value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDouble(out double value))
             {
                 return value;
             }
@@ -417,7 +417,7 @@ namespace Amazon.Runtime.Internal.Transform
         public decimal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetDecimal(out decimal value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDecimal(out decimal value))
             {
                 return value;
             }
@@ -458,7 +458,7 @@ namespace Amazon.Runtime.Internal.Transform
         public decimal? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetDecimal(out decimal value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDecimal(out decimal value))
             {
                 return value;
             }
@@ -609,7 +609,7 @@ namespace Amazon.Runtime.Internal.Transform
         public byte Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetByte(out byte value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetByte(out byte value))
             {
                 return value;
             }
@@ -649,7 +649,7 @@ namespace Amazon.Runtime.Internal.Transform
         public DateTime Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetDouble(out double seconds))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDouble(out double seconds))
             {
                 return AWSSDKUtils.EPOCH_START.AddSeconds(seconds);
             }
@@ -720,7 +720,7 @@ namespace Amazon.Runtime.Internal.Transform
         public DateTime? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetDouble(out double seconds))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetDouble(out double seconds))
             {
                 return AWSSDKUtils.EPOCH_START.AddSeconds(seconds);
             }
@@ -794,7 +794,7 @@ namespace Amazon.Runtime.Internal.Transform
         public DateTime? Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Number && reader.Reader.TryGetInt64(out long value))
+            if (context.CurrentTokenType == JsonTokenType.Number && reader.TryGetInt64(out long value))
             {
                 return Amazon.Util.AWSSDKUtils.EPOCH_START.AddMilliseconds(value);
             }
@@ -850,7 +850,7 @@ namespace Amazon.Runtime.Internal.Transform
             // TryGetBytesFromBase64 decodes straight from the UTF-8 buffer; it rejects input that
             // Convert.FromBase64String tolerates (e.g. embedded whitespace), so fall back to the text path.
             byte[] bytes;
-            if (context.CurrentTokenType != JsonTokenType.String || !reader.Reader.TryGetBytesFromBase64(out bytes))
+            if (context.CurrentTokenType != JsonTokenType.String || !reader.TryGetBytesFromBase64(out bytes))
             {
                 bytes = Convert.FromBase64String(context.ReadText(ref reader));
             }

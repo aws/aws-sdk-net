@@ -153,6 +153,7 @@ namespace AWSSDK.UnitTests
             const string text = "0.1000000000000000055511151231257827";
             Assert.AreEqual(double.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(DoubleUnmarshaller.Instance, text));
             Assert.AreEqual(float.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(FloatUnmarshaller.Instance, text));
+            Assert.AreEqual(decimal.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(DecimalUnmarshaller.Instance, text));
             Assert.AreEqual(AWSSDKUtils.EPOCH_START.AddSeconds(double.Parse("1533081600.123456789", CultureInfo.InvariantCulture)), UnmarshallValue(DateTimeUnmarshaller.Instance, "1533081600.123456789"));
             Assert.AreEqual(100000m, UnmarshallValue(DecimalUnmarshaller.Instance, "1e5"));
         }
