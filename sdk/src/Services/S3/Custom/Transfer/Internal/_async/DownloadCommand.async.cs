@@ -117,6 +117,16 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 catch (Exception exception)
                 {
+                    // Cancellation must surface as OperationCanceledException per the async
+                    // API contract, not be treated as a retryable/non-retryable transfer
+                    // error and wrapped in AmazonServiceException. This matters now that the
+                    // retry backoff (including the ETag-changed branch above) is a
+                    // cancellable await rather than a non-cancellable blocking sleep.
+                    if (exception is OperationCanceledException && cancellationToken.IsCancellationRequested)
+                    {
+                        throw;
+                    }
+
                     retries++;
                     shouldRetry = HandleExceptionForHttpClient(exception, retries, maxRetries);
                     if (!shouldRetry)

@@ -52,11 +52,51 @@ namespace AWSSDK.UnitTests
         /// Thread.Sleep) on EVERY successful download. A successful download must
         /// return promptly with no fixed backoff floor.
         ///
-        /// The mocked GetObject returns instantly, so real elapsed time should be a
-        /// few milliseconds. We assert it stays comfortably under the old 100ms floor.
+        /// A single wall-clock assertion is timing-sensitive (JIT, GC, or scheduling
+        /// on a loaded CI host can add tens of ms to one legitimate run). To stay
+        /// robust we AMORTIZE across many downloads: the old bug added a FIXED ~100ms
+        /// per call, so N downloads cost >= N*100ms, while the mocked work is a few ms
+        /// each. We allow a generous per-iteration average that still fails decisively
+        /// if a fixed sleep is reintroduced, and one-off pauses are absorbed by the
+        /// average. The deterministic behavioral guarantee (exactly one GetObject, no
+        /// retry) is asserted separately in
+        /// ExecuteAsync_SuccessfulDownload_IssuesSingleGetObjectWithNoRetry.
         /// </summary>
         [TestMethod]
         public async Task ExecuteAsync_SuccessfulDownload_DoesNotSleepBeforeReturning()
+        {
+            // Arrange
+            const long fileSize = 16;
+            const int iterations = 10;
+            SetupGetObject("tiny.txt", fileSize);
+
+            // Warm up once so JIT of the download path is not counted in the measured loop.
+            await RunSingleDownloadAsync("tiny-warmup.txt", fileSize);
+
+            // Act
+            var stopwatch = Stopwatch.StartNew();
+            for (int i = 0; i < iterations; i++)
+            {
+                await RunSingleDownloadAsync($"tiny-{i}.txt", fileSize);
+            }
+            stopwatch.Stop();
+
+            // Assert
+            // The old bug added a fixed ~100ms floor per call => >= 1000ms for 10 calls.
+            // A 400ms aggregate budget (40ms/call average) fails decisively if the fixed
+            // sleep returns, while absorbing incidental scheduling/GC jitter on slow hosts.
+            Assert.IsTrue(stopwatch.ElapsedMilliseconds < iterations * 40,
+                $"Successful downloads should not incur a fixed backoff sleep. " +
+                $"Elapsed for {iterations} downloads: {stopwatch.ElapsedMilliseconds}ms " +
+                $"(would be >= {iterations * 100}ms with the old 100ms-per-call sleep).");
+        }
+
+        /// <summary>
+        /// Deterministic (non-timing) companion to the regression above: a clean,
+        /// successful download must issue exactly one GetObject call and no retry.
+        /// </summary>
+        [TestMethod]
+        public async Task ExecuteAsync_SuccessfulDownload_IssuesSingleGetObjectWithNoRetry()
         {
             // Arrange
             const long fileSize = 16;
@@ -72,23 +112,75 @@ namespace AWSSDK.UnitTests
             var command = new DownloadCommand(_mockS3Client.Object, request);
 
             // Act
-            var stopwatch = Stopwatch.StartNew();
             var response = await command.ExecuteAsync(CancellationToken.None);
-            stopwatch.Stop();
 
             // Assert
             Assert.IsNotNull(response);
             Assert.IsTrue(File.Exists(filePath), "Downloaded file should exist");
             Assert.AreEqual(fileSize, new FileInfo(filePath).Length);
 
-            // The old bug added a hard 100ms floor. Allow generous headroom for slow
-            // CI hosts while still failing if a ~100ms fixed sleep is reintroduced.
-            Assert.IsTrue(stopwatch.ElapsedMilliseconds < 75,
-                $"Successful download should not incur a fixed backoff sleep. Elapsed: {stopwatch.ElapsedMilliseconds}ms");
-
-            // GetObject should be called exactly once for a clean success (no retry).
+            // Exactly one GetObject for a clean success (no retry loop iteration).
             _mockS3Client.Verify(c => c.GetObjectAsync(
                 It.IsAny<GetObjectRequest>(), It.IsAny<CancellationToken>()), Times.Once);
+        }
+
+        /// <summary>
+        /// When the operation is cancelled, DownloadCommand must surface an
+        /// OperationCanceledException rather than wrapping it in an
+        /// AmazonServiceException. This guards the fix for #4525 where the retry
+        /// backoff became a cancellable await: a cancellation thrown from an awaited
+        /// call must not be reclassified by the generic retry catch.
+        /// </summary>
+        [TestMethod]
+        public async Task ExecuteAsync_CancelledDuringGetObject_PropagatesOperationCanceledException()
+        {
+            // Arrange
+            var cts = new CancellationTokenSource();
+            _mockS3Client.Setup(c => c.GetObjectAsync(
+                It.IsAny<GetObjectRequest>(),
+                It.IsAny<CancellationToken>()))
+                .Returns((GetObjectRequest req, CancellationToken ct) =>
+                {
+                    cts.Cancel();
+                    ct.ThrowIfCancellationRequested();
+                    return Task.FromResult(new GetObjectResponse());
+                });
+
+            var request = new TransferUtilityDownloadRequest
+            {
+                BucketName = "test-bucket",
+                Key = "tiny.txt",
+                FilePath = Path.Combine(_testDirectory, "tiny.txt")
+            };
+            var command = new DownloadCommand(_mockS3Client.Object, request);
+
+            // Act & Assert
+            try
+            {
+                await command.ExecuteAsync(cts.Token);
+                Assert.Fail("Expected an OperationCanceledException to be thrown");
+            }
+            catch (OperationCanceledException)
+            {
+                // Expected: cancellation propagates (TaskCanceledException derives from
+                // OperationCanceledException) and is NOT wrapped in AmazonServiceException.
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail($"Expected OperationCanceledException but got {ex.GetType().Name}: {ex.Message}");
+            }
+        }
+
+        private async Task RunSingleDownloadAsync(string fileName, long fileSize)
+        {
+            var request = new TransferUtilityDownloadRequest
+            {
+                BucketName = "test-bucket",
+                Key = "tiny.txt",
+                FilePath = Path.Combine(_testDirectory, fileName)
+            };
+            var command = new DownloadCommand(_mockS3Client.Object, request);
+            await command.ExecuteAsync(CancellationToken.None);
         }
 
         private void SetupGetObject(string key, long fileSize)
