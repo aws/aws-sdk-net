@@ -30,29 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Account.Model
 {
     /// <summary>
-    /// This is the response object from the GetContactInformation operation.
+    /// This is the response object from the VerifyPhoneNumber operation.
     /// </summary>
-    public partial class GetContactInformationResponse : AmazonWebServiceResponse
+    public partial class VerifyPhoneNumberResponse : AmazonWebServiceResponse
     {
         /// <summary>
-        /// Gets and sets the property ContactInformation. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// Contains the details of the primary contact information associated with an Amazon
-        /// Web Services account.
-        /// </para>
-        /// </summary>
-        public ContactInformation ContactInformation { get; set; }
-
-        /// <summary>
-        /// Checks to see if the ContactInformation property is set.
-        /// </summary>
-        internal bool IsSetContactInformation() => this.ContactInformation != null;
-
-        /// <summary>
-        /// Gets and sets the property VerificationStatus. 
-        /// <para>
-        /// The verification status of the phone number in the primary contact information associated
-        /// with an Amazon Web Services account. Valid values:
+        /// The verification status of the phone number in the primary contact information after
+        /// the submitted one-time passcode is evaluated. Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -72,11 +58,11 @@ namespace Amazon.Account.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        public PhoneNumberVerificationStatus VerificationStatus { get; set; }
+        public PhoneNumberVerificationStatus Status { get; set; }
 
         /// <summary>
-        /// Checks to see if the VerificationStatus property is set.
+        /// Checks to see if the Status property is set.
         /// </summary>
-        internal bool IsSetVerificationStatus() => this.VerificationStatus != null;
+        internal bool IsSetStatus() => this.Status != null;
     }
 }

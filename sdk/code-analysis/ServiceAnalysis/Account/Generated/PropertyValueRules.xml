@@ -146,6 +146,10 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Account.Model.SendPhoneNumberVerificationRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Account.Model.StartPrimaryEmailUpdateRequest.AccountId</property>
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
@@ -153,6 +157,14 @@
     <property>Amazon.Account.Model.StartPrimaryEmailUpdateRequest.PrimaryEmail</property>
     <min>5</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.VerifyPhoneNumberRequest.AccountId</property>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Account.Model.VerifyPhoneNumberRequest.Otp</property>
+    <pattern>^[a-zA-Z0-9]{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Account.Model.AlternateContact.EmailAddress</property>

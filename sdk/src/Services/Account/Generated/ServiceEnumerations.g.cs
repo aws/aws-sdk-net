@@ -170,6 +170,57 @@ namespace Amazon.Account
     }
 
     /// <summary>
+    /// Constants used for properties of type PhoneNumberVerificationStatus.
+    /// </summary>
+    public class PhoneNumberVerificationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant NOT_SUPPORTED for PhoneNumberVerificationStatus
+        /// </summary>
+        public static readonly PhoneNumberVerificationStatus NOT_SUPPORTED = new PhoneNumberVerificationStatus("NOT_SUPPORTED");
+
+        /// <summary>
+        /// Constant PENDING for PhoneNumberVerificationStatus
+        /// </summary>
+        public static readonly PhoneNumberVerificationStatus PENDING = new PhoneNumberVerificationStatus("PENDING");
+
+        /// <summary>
+        /// Constant UNVERIFIED for PhoneNumberVerificationStatus
+        /// </summary>
+        public static readonly PhoneNumberVerificationStatus UNVERIFIED = new PhoneNumberVerificationStatus("UNVERIFIED");
+
+        /// <summary>
+        /// Constant VERIFIED for PhoneNumberVerificationStatus
+        /// </summary>
+        public static readonly PhoneNumberVerificationStatus VERIFIED = new PhoneNumberVerificationStatus("VERIFIED");
+
+        /// <summary>
+        /// Constructs a custom PhoneNumberVerificationStatus for a value not among the defined constants.
+        /// </summary>
+        public PhoneNumberVerificationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PhoneNumberVerificationStatus FindValue(string value)
+        {
+            return FindValue<PhoneNumberVerificationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PhoneNumberVerificationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type PrimaryEmailUpdateStatus.
     /// </summary>
     public class PrimaryEmailUpdateStatus : ConstantClass

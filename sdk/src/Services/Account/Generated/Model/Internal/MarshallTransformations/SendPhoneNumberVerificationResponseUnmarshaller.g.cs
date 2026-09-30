@@ -36,33 +36,26 @@ using Amazon.Util;
 namespace Amazon.Account.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetContactInformation operation.
+    /// Response Unmarshaller for SendPhoneNumberVerification operation.
     /// </summary>
-    public partial class GetContactInformationResponseUnmarshaller : JsonResponseUnmarshaller
+    public partial class SendPhoneNumberVerificationResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            var unmarshalledObject = new GetContactInformationResponse();
+            var unmarshalledObject = new SendPhoneNumberVerificationResponse();
             var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContactInformation", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContactInformationUnmarshaller.Instance;
-                    unmarshalledObject.ContactInformation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("VerificationStatus", targetDepth, ref reader))
+                if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VerificationStatus = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -92,6 +85,10 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
                     {
                         return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                     }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                    {
+                        return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                     {
                         return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -113,13 +110,13 @@ namespace Amazon.Account.Model.Internal.MarshallTransformations
             return new AmazonAccountException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetContactInformationResponseUnmarshaller _instance = new GetContactInformationResponseUnmarshaller();
+        private static SendPhoneNumberVerificationResponseUnmarshaller _instance = new SendPhoneNumberVerificationResponseUnmarshaller();
 
-        internal static GetContactInformationResponseUnmarshaller GetInstance() => _instance;
+        internal static SendPhoneNumberVerificationResponseUnmarshaller GetInstance() => _instance;
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static GetContactInformationResponseUnmarshaller Instance => _instance;
+        public static SendPhoneNumberVerificationResponseUnmarshaller Instance => _instance;
     }
 }

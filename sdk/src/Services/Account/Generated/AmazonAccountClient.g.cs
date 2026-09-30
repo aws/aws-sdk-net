@@ -1592,6 +1592,114 @@ namespace Amazon.Account
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Sends a one-time passcode to the phone number in the primary contact information of
+        /// an Amazon Web Services account. Use <a>VerifyPhoneNumber</a> to submit the passcode
+        /// and complete the verification.
+        /// 
+        ///  
+        /// <para>
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPhoneNumberVerification service method.</param>
+        /// <returns>The response from the SendPhoneNumberVerification service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/SendPhoneNumberVerification">REST API Reference for SendPhoneNumberVerification Operation</seealso>
+        public virtual SendPhoneNumberVerificationResponse SendPhoneNumberVerification(SendPhoneNumberVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendPhoneNumberVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPhoneNumberVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<SendPhoneNumberVerificationResponse>(request, options);
+        }
+#else
+        internal virtual SendPhoneNumberVerificationResponse SendPhoneNumberVerification(SendPhoneNumberVerificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendPhoneNumberVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPhoneNumberVerificationResponseUnmarshaller.Instance;
+
+            return Invoke<SendPhoneNumberVerificationResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Sends a one-time passcode to the phone number in the primary contact information of
+        /// an Amazon Web Services account. Use <a>VerifyPhoneNumber</a> to submit the passcode
+        /// and complete the verification.
+        /// 
+        ///  
+        /// <para>
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendPhoneNumberVerification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the SendPhoneNumberVerification service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/SendPhoneNumberVerification">REST API Reference for SendPhoneNumberVerification Operation</seealso>
+        public virtual Task<SendPhoneNumberVerificationResponse> SendPhoneNumberVerificationAsync(SendPhoneNumberVerificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendPhoneNumberVerificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendPhoneNumberVerificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendPhoneNumberVerificationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Starts the process to update the primary email address for the specified account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartPrimaryEmailUpdate service method.</param>
@@ -1680,6 +1788,114 @@ namespace Amazon.Account
             options.ResponseUnmarshaller = StartPrimaryEmailUpdateResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartPrimaryEmailUpdateResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Verifies the phone number in the primary contact information of an Amazon Web Services
+        /// account by submitting the one-time passcode that <a>SendPhoneNumberVerification</a>
+        /// sent to that phone number.
+        /// 
+        ///  
+        /// <para>
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyPhoneNumber service method.</param>
+        /// <returns>The response from the VerifyPhoneNumber service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/VerifyPhoneNumber">REST API Reference for VerifyPhoneNumber Operation</seealso>
+        public virtual VerifyPhoneNumberResponse VerifyPhoneNumber(VerifyPhoneNumberRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = VerifyPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyPhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyPhoneNumberResponse>(request, options);
+        }
+#else
+        internal virtual VerifyPhoneNumberResponse VerifyPhoneNumber(VerifyPhoneNumberRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = VerifyPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyPhoneNumberResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyPhoneNumberResponse>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Verifies the phone number in the primary contact information of an Amazon Web Services
+        /// account by submitting the one-time passcode that <a>SendPhoneNumberVerification</a>
+        /// sent to that phone number.
+        /// 
+        ///  
+        /// <para>
+        /// For complete details about how to use the primary contact operations, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-contact-primary.html">Update
+        /// the primary contact for your Amazon Web Services account</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyPhoneNumber service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the VerifyPhoneNumber service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING) or if you try to change an account’s root
+        /// user email to an email address which is already in use.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/VerifyPhoneNumber">REST API Reference for VerifyPhoneNumber Operation</seealso>
+        public virtual Task<VerifyPhoneNumberResponse> VerifyPhoneNumberAsync(VerifyPhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = VerifyPhoneNumberRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyPhoneNumberResponseUnmarshaller.Instance;
+
+            return InvokeAsync<VerifyPhoneNumberResponse>(request, options, cancellationToken);
         }
 
         /// <summary>
