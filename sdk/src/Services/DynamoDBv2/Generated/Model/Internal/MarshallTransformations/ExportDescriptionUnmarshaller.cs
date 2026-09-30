@@ -122,6 +122,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("FilterSpecification", targetDepth, ref reader))
+                {
+                    var unmarshaller = FilterSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.FilterSpecification = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IncrementalExportSpecification", targetDepth, ref reader))
                 {
                     var unmarshaller = IncrementalExportSpecificationUnmarshaller.Instance;

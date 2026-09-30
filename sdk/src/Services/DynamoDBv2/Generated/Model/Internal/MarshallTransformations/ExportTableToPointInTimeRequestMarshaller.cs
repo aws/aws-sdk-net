@@ -104,6 +104,17 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExportType);
             }
 
+            if(publicRequest.IsSetFilterSpecification())
+            {
+                context.Writer.WritePropertyName("FilterSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetIncrementalExportSpecification())
             {
                 context.Writer.WritePropertyName("IncrementalExportSpecification");

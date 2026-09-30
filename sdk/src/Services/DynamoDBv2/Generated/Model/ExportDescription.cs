@@ -45,6 +45,7 @@ namespace Amazon.DynamoDBv2.Model
         private ExportType _exportType;
         private string _failureCode;
         private string _failureMessage;
+        private FilterSpecification _filterSpecification;
         private IncrementalExportSpecification _incrementalExportSpecification;
         private long? _itemCount;
         private string _s3Bucket;
@@ -257,6 +258,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetFailureMessage()
         {
             return this._failureMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterSpecification. 
+        /// <para>
+        /// The filter criteria applied to the export. When present, only items that match the
+        /// specified key conditions and filter expressions are included in the export output.
+        /// </para>
+        /// </summary>
+        public FilterSpecification FilterSpecification
+        {
+            get { return this._filterSpecification; }
+            set { this._filterSpecification = value; }
+        }
+
+        // Check to see if FilterSpecification property is set
+        internal bool IsSetFilterSpecification()
+        {
+            return this._filterSpecification != null;
         }
 
         /// <summary>
