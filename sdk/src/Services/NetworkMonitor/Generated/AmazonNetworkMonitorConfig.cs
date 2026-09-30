@@ -32,7 +32,7 @@ namespace Amazon.NetworkMonitor
     public partial class AmazonNetworkMonitorConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("NetworkMonitor", "4.0.100.15");
+            InternalSDKUtils.BuildUserAgentString("NetworkMonitor", "4.0.100.16");
 
         private static readonly AmazonNetworkMonitorEndpointResolver EndpointResolver =
             new AmazonNetworkMonitorEndpointResolver();

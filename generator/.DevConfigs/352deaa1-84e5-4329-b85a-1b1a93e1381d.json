@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Reduced allocations when unmarshalling numbers, timestamps, and blobs in JSON responses by reading values directly from the JSON reader instead of materializing intermediate strings. Decimal members now also accept JSON numbers in exponent notation (e.g. `1e5`)."
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
