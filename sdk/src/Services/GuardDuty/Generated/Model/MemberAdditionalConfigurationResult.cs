@@ -34,9 +34,29 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class MemberAdditionalConfigurationResult
     {
+        private ManagedBy _managedBy;
         private OrgFeatureAdditionalConfiguration _name;
         private FeatureStatus _status;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// Indicates what manages the additional configuration. A value of <c>GUARDDUTY_POLICY</c>
+        /// means a GuardDuty policy manages the additional configuration.
+        /// </para>
+        /// </summary>
+        public ManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
