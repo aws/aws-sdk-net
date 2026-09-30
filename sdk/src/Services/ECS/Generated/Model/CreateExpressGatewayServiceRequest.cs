@@ -108,9 +108,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CpuArchitecture. 
         /// <para>
-        /// The CPU architecture that the tasks in the Express service run on. Amazon ECS applies
-        /// this value to the task definition revision that it registers for the service. If you
-        /// don't specify a value, the default is <c>X86_64</c>.
+        /// The CPU architecture that the task runs on. If you don't specify a value, the default
+        /// is <c>X86_64</c>.
         /// </para>
         ///  
         /// <para>
@@ -126,14 +125,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Make sure that the container image that you specify supports the architecture that
-        /// you choose. The operating system family for an Express service is always <c>LINUX</c>.
+        /// Ensure that the container image you specify supports the architecture you choose.
+        /// The operating system family for an Express service is always <c>LINUX</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can't specify <c>cpuArchitecture</c> when you also specify <c>taskDefinitionArn</c>,
-        /// because this value applies only to a task definition that Amazon ECS registers on
-        /// your behalf.
+        /// You can't specify <c>cpuArchitecture</c> together with <c>taskDefinitionArn</c>.
         /// </para>
         /// </summary>
         public ExpressCpuArchitecture CpuArchitecture

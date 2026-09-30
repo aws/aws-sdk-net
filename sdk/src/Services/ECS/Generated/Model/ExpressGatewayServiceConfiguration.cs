@@ -70,10 +70,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property CpuArchitecture. 
         /// <para>
-        /// The CPU architecture that the tasks in this service revision run on. This is the architecture
-        /// from the task definition that the service revision uses, so it reflects the default
-        /// or the previously configured architecture when the request that created the revision
-        /// didn't specify one.
+        /// The CPU architecture that the task runs on.
         /// </para>
         ///  
         /// <para>
@@ -89,9 +86,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This value isn't returned when the task definition for the service revision doesn't
-        /// specify a runtime platform. Because the architecture comes from each service revision's
-        /// own task definition, revisions of the same service can report different architectures.
+        /// Different service revisions can report different architectures. This value isn't returned
+        /// when the service uses a customer-provided task definition that doesn't specify a CPU
+        /// architecture.
         /// </para>
         /// </summary>
         public ExpressCpuArchitecture CpuArchitecture

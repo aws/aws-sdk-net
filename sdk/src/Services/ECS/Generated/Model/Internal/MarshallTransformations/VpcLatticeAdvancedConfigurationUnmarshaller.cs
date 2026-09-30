@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for VpcLatticeConfiguration Object
+    /// Response Unmarshaller for VpcLatticeAdvancedConfiguration Object
     /// </summary>  
-    public class VpcLatticeConfigurationUnmarshaller : IJsonUnmarshaller<VpcLatticeConfiguration, JsonUnmarshallerContext>
+    public class VpcLatticeAdvancedConfigurationUnmarshaller : IJsonUnmarshaller<VpcLatticeAdvancedConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VpcLatticeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public VpcLatticeAdvancedConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            VpcLatticeConfiguration unmarshalledObject = new VpcLatticeConfiguration();
+            VpcLatticeAdvancedConfiguration unmarshalledObject = new VpcLatticeAdvancedConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("advancedConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = VpcLatticeAdvancedConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AdvancedConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("portName", targetDepth, ref reader))
+                if (context.TestExpression("alternateTargetGroupArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PortName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AlternateTargetGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("roleArn", targetDepth, ref reader))
+                if (context.TestExpression("productionListenerRule", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ProductionListenerRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("targetGroupArn", targetDepth, ref reader))
+                if (context.TestExpression("testListenerRule", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.TestListenerRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         }
 
 
-        private static VpcLatticeConfigurationUnmarshaller _instance = new VpcLatticeConfigurationUnmarshaller();        
+        private static VpcLatticeAdvancedConfigurationUnmarshaller _instance = new VpcLatticeAdvancedConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static VpcLatticeConfigurationUnmarshaller Instance
+        public static VpcLatticeAdvancedConfigurationUnmarshaller Instance
         {
             get
             {

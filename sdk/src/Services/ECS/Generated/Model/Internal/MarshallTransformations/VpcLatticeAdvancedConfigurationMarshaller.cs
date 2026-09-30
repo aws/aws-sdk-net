@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// VpcLatticeConfiguration Marshaller
+    /// VpcLatticeAdvancedConfiguration Marshaller
     /// </summary>
-    public class VpcLatticeConfigurationMarshaller : IRequestMarshaller<VpcLatticeConfiguration, JsonMarshallerContext> 
+    public class VpcLatticeAdvancedConfigurationMarshaller : IRequestMarshaller<VpcLatticeAdvancedConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,26 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VpcLatticeConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcLatticeAdvancedConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAdvancedConfiguration())
+            if(requestObject.IsSetAlternateTargetGroupArn())
             {
-                context.Writer.WritePropertyName("advancedConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VpcLatticeAdvancedConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AdvancedConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("alternateTargetGroupArn");
+                context.Writer.WriteStringValue(requestObject.AlternateTargetGroupArn);
             }
 
-            if(requestObject.IsSetPortName())
+            if(requestObject.IsSetProductionListenerRule())
             {
-                context.Writer.WritePropertyName("portName");
-                context.Writer.WriteStringValue(requestObject.PortName);
+                context.Writer.WritePropertyName("productionListenerRule");
+                context.Writer.WriteStringValue(requestObject.ProductionListenerRule);
             }
 
-            if(requestObject.IsSetRoleArn())
+            if(requestObject.IsSetTestListenerRule())
             {
-                context.Writer.WritePropertyName("roleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
-            }
-
-            if(requestObject.IsSetTargetGroupArn())
-            {
-                context.Writer.WritePropertyName("targetGroupArn");
-                context.Writer.WriteStringValue(requestObject.TargetGroupArn);
+                context.Writer.WritePropertyName("testListenerRule");
+                context.Writer.WriteStringValue(requestObject.TestListenerRule);
             }
 
         }
@@ -80,7 +69,7 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static VpcLatticeConfigurationMarshaller Instance = new VpcLatticeConfigurationMarshaller();
+        public readonly static VpcLatticeAdvancedConfigurationMarshaller Instance = new VpcLatticeAdvancedConfigurationMarshaller();
 
     }
 }
