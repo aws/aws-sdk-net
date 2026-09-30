@@ -30,21 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateNotificationContent operation.
-    /// Updates the localized content of an existing notification. This operation applies
-    /// to all users for whom the notification was sent.
+    /// Information about the send in-app notification action.
     /// </summary>
-    public partial class UpdateNotificationContentRequest : AmazonConnectRequest
+    public partial class SendInAppNotificationActionDefinition
     {
         private Dictionary<string, string> _content = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
-        private string _instanceId;
-        private string _notificationId;
+        private NotificationRecipientType _exclusion;
+        private ConfigurableNotificationPriority _priority;
+        private NotificationRecipientType _recipient;
 
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The updated localized content of the notification. A map of locale codes and values.
-        /// Maximum 500 visible characters per locale.
+        /// Notification content. Supports variable injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
+        /// reference</a> in the <i>Connect Customer Administrators Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,42 +65,58 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InstanceId. 
+        /// Gets and sets the property Exclusion. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+        /// Recipients to exclude from notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
-        public string InstanceId
+        public NotificationRecipientType Exclusion
         {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
+            get { return this._exclusion; }
+            set { this._exclusion = value; }
         }
 
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
+        // Check to see if Exclusion property is set
+        internal bool IsSetExclusion()
         {
-            return this._instanceId != null;
+            return this._exclusion != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NotificationId. 
+        /// Gets and sets the property Priority. 
         /// <para>
-        /// The unique identifier for the notification to update.
+        /// Notification priority.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string NotificationId
+        public ConfigurableNotificationPriority Priority
         {
-            get { return this._notificationId; }
-            set { this._notificationId = value; }
+            get { return this._priority; }
+            set { this._priority = value; }
         }
 
-        // Check to see if NotificationId property is set
-        internal bool IsSetNotificationId()
+        // Check to see if Priority property is set
+        internal bool IsSetPriority()
         {
-            return this._notificationId != null;
+            return this._priority != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Recipient. 
+        /// <para>
+        /// Notification recipient.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public NotificationRecipientType Recipient
+        {
+            get { return this._recipient; }
+            set { this._recipient = value; }
+        }
+
+        // Check to see if Recipient property is set
+        internal bool IsSetRecipient()
+        {
+            return this._recipient != null;
         }
 
     }

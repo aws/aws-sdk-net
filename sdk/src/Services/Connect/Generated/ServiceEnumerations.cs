@@ -105,6 +105,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ActionType GENERATE_EVENTBRIDGE_EVENT = new ActionType("GENERATE_EVENTBRIDGE_EVENT");
         /// <summary>
+        /// Constant SEND_IN_APP_NOTIFICATION for ActionType
+        /// </summary>
+        public static readonly ActionType SEND_IN_APP_NOTIFICATION = new ActionType("SEND_IN_APP_NOTIFICATION");
+        /// <summary>
         /// Constant SEND_NOTIFICATION for ActionType
         /// </summary>
         public static readonly ActionType SEND_NOTIFICATION = new ActionType("SEND_NOTIFICATION");

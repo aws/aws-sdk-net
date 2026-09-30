@@ -162,7 +162,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// When you set this parameter, the response includes <c>StreamingId</c>. You do not
+        /// Setting this parameter returns a <c>StreamingId</c> in the response, and you do not
         /// need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.
         /// </para>
         ///  <note> 
@@ -213,9 +213,20 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <c>CONNECTION_CREDENTIALS</c> to receive a connection token. Specify <c>WEBSOCKET</c>
-        /// to receive a websocket URL. You can specify both. No other value returns connection
-        /// information.
+        /// To receive connection information, specify one or both of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CONNECTION_CREDENTIALS</c>: Returns a connection token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>WEBSOCKET</c>: Returns a websocket URL.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>WEBSOCKET</c> and <c>CONNECTION_CREDENTIALS</c> are the values this operation
+        /// acts on. No other value returns connection information.
         /// </para>
         ///  
         /// <para>
@@ -230,8 +241,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the information you request cannot be returned, StartChatContact returns an error
-        /// rather than a response that omits it.
+        /// When you start a new chat contact and the information you request cannot be returned,
+        /// StartChatContact returns an error rather than a response that omits it. When you retry
+        /// a request with the same <c>ClientToken</c>, the response repeats the original contact
+        /// and can omit a websocket URL if the chat has already ended.
         /// </para>
         ///  </note>
         /// <para />
