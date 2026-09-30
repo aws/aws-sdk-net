@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for IpSet Object
+    /// Response Unmarshaller for IpAddressDetail Object
     /// </summary>  
-    public class IpSetUnmarshaller : IJsonUnmarshaller<IpSet, JsonUnmarshallerContext>
+    public class IpAddressDetailUnmarshaller : IJsonUnmarshaller<IpAddressDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IpSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IpAddressDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            IpSet unmarshalledObject = new IpSet();
+            IpAddressDetail unmarshalledObject = new IpAddressDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("IpAddressDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<IpAddressDetail, IpAddressDetailUnmarshaller>(IpAddressDetailUnmarshaller.Instance);
-                    unmarshalledObject.IpAddressDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpAddresses", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.IpAddresses = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IpAddressFamily", targetDepth, ref reader))
+                if (context.TestExpression("IpAddress", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddressFamily = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("IpFamily", targetDepth, ref reader))
+                if (context.TestExpression("NetworkZone", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpFamily = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.NetworkZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
         }
 
 
-        private static IpSetUnmarshaller _instance = new IpSetUnmarshaller();        
+        private static IpAddressDetailUnmarshaller _instance = new IpAddressDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static IpSetUnmarshaller Instance
+        public static IpAddressDetailUnmarshaller Instance
         {
             get
             {

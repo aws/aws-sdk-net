@@ -113,7 +113,6 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don’t specify a prefix, the flow logs are stored in the root of the bucket.
         /// If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure
         /// will include a double slash (//), like the following:
         /// </para>
