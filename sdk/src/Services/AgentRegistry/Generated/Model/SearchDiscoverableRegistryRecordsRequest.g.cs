@@ -45,10 +45,10 @@ namespace Amazon.AgentRegistry.Model
         /// </para>
         ///  
         /// <para>
-        ///  You can also filter on custom metadata fields using the <c>customMetadata.{key}</c>
+        ///  Specifies additional filtering on custom metadata fields using the <c>customMetadata.{key}</c>
         /// prefix. For example, to filter by a custom metadata field: <c>{"customMetadata.environment":
-        /// {"$eq": "production"}}</c>. Filter values must be strings, so match a boolean field
-        /// on its string form: <c>{"customMetadata.requiresApproval": {"$eq": "true"}}</c>.
+        /// {"$eq": "production"}}</c>. For a Boolean field, you can also use a native JSON boolean
+        /// value, for example: <c>{"customMetadata.requiresApproval": {"$eq": true}}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive = true)]
