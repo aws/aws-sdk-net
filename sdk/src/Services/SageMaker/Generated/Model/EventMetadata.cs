@@ -36,9 +36,11 @@ namespace Amazon.SageMaker.Model
     public partial class EventMetadata
     {
         private ClusterMetadata _cluster;
+        private DatabaseConfigurationMetadata _databaseConfiguration;
         private InstanceMetadata _instance;
         private InstanceGroupMetadata _instanceGroup;
         private InstanceGroupScalingMetadata _instanceGroupScaling;
+        private SlurmHealthMetadata _slurmHealth;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -56,6 +58,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCluster()
         {
             return this._cluster != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatabaseConfiguration. 
+        /// <para>
+        /// Metadata specific to events about the external Slurm accounting database of the cluster.
+        /// </para>
+        /// </summary>
+        public DatabaseConfigurationMetadata DatabaseConfiguration
+        {
+            get { return this._databaseConfiguration; }
+            set { this._databaseConfiguration = value; }
+        }
+
+        // Check to see if DatabaseConfiguration property is set
+        internal bool IsSetDatabaseConfiguration()
+        {
+            return this._databaseConfiguration != null;
         }
 
         /// <summary>
@@ -110,6 +130,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceGroupScaling()
         {
             return this._instanceGroupScaling != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SlurmHealth. 
+        /// <para>
+        /// Metadata specific to events about the health of the Slurm components on the controller
+        /// node of the cluster.
+        /// </para>
+        /// </summary>
+        public SlurmHealthMetadata SlurmHealth
+        {
+            get { return this._slurmHealth; }
+            set { this._slurmHealth = value; }
+        }
+
+        // Check to see if SlurmHealth property is set
+        internal bool IsSetSlurmHealth()
+        {
+            return this._slurmHealth != null;
         }
 
     }

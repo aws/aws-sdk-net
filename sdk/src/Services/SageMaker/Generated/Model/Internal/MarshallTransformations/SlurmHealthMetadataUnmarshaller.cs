@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterOrchestratorSlurmConfig Object
+    /// Response Unmarshaller for SlurmHealthMetadata Object
     /// </summary>  
-    public class ClusterOrchestratorSlurmConfigUnmarshaller : IJsonUnmarshaller<ClusterOrchestratorSlurmConfig, JsonUnmarshallerContext>
+    public class SlurmHealthMetadataUnmarshaller : IJsonUnmarshaller<SlurmHealthMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterOrchestratorSlurmConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SlurmHealthMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClusterOrchestratorSlurmConfig unmarshalledObject = new ClusterOrchestratorSlurmConfig();
+            SlurmHealthMetadata unmarshalledObject = new SlurmHealthMetadata();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountingDatabase", targetDepth, ref reader))
-                {
-                    var unmarshaller = ClusterAccountingDatabaseUnmarshaller.Instance;
-                    unmarshalledObject.AccountingDatabase = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SlurmConfigStrategy", targetDepth, ref reader))
+                if (context.TestExpression("Component", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlurmConfigStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Component = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Reason", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterOrchestratorSlurmConfigUnmarshaller _instance = new ClusterOrchestratorSlurmConfigUnmarshaller();        
+        private static SlurmHealthMetadataUnmarshaller _instance = new SlurmHealthMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterOrchestratorSlurmConfigUnmarshaller Instance
+        public static SlurmHealthMetadataUnmarshaller Instance
         {
             get
             {

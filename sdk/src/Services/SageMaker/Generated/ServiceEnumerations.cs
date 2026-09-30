@@ -7249,6 +7249,60 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type DatabaseConfigurationRollbackStatus.
+    /// </summary>
+    public class DatabaseConfigurationRollbackStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NotApplicable for DatabaseConfigurationRollbackStatus
+        /// </summary>
+        public static readonly DatabaseConfigurationRollbackStatus NotApplicable = new DatabaseConfigurationRollbackStatus("NotApplicable");
+        /// <summary>
+        /// Constant Reverted for DatabaseConfigurationRollbackStatus
+        /// </summary>
+        public static readonly DatabaseConfigurationRollbackStatus Reverted = new DatabaseConfigurationRollbackStatus("Reverted");
+        /// <summary>
+        /// Constant RevertFailed for DatabaseConfigurationRollbackStatus
+        /// </summary>
+        public static readonly DatabaseConfigurationRollbackStatus RevertFailed = new DatabaseConfigurationRollbackStatus("RevertFailed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DatabaseConfigurationRollbackStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DatabaseConfigurationRollbackStatus FindValue(string value)
+        {
+            return FindValue<DatabaseConfigurationRollbackStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DatabaseConfigurationRollbackStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataDistributionType.
     /// </summary>
     public class DataDistributionType : ConstantClass
@@ -21926,6 +21980,156 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SkipModelValidation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlurmHealthComponent.
+    /// </summary>
+    public class SlurmHealthComponent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Slurmdbd for SlurmHealthComponent
+        /// </summary>
+        public static readonly SlurmHealthComponent Slurmdbd = new SlurmHealthComponent("Slurmdbd");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlurmHealthComponent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlurmHealthComponent FindValue(string value)
+        {
+            return FindValue<SlurmHealthComponent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlurmHealthComponent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlurmHealthReason.
+    /// </summary>
+    public class SlurmHealthReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DaemonDisabled for SlurmHealthReason
+        /// </summary>
+        public static readonly SlurmHealthReason DaemonDisabled = new SlurmHealthReason("DaemonDisabled");
+        /// <summary>
+        /// Constant DaemonDown for SlurmHealthReason
+        /// </summary>
+        public static readonly SlurmHealthReason DaemonDown = new SlurmHealthReason("DaemonDown");
+        /// <summary>
+        /// Constant DbUnreachable for SlurmHealthReason
+        /// </summary>
+        public static readonly SlurmHealthReason DbUnreachable = new SlurmHealthReason("DbUnreachable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlurmHealthReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlurmHealthReason FindValue(string value)
+        {
+            return FindValue<SlurmHealthReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlurmHealthReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SlurmHealthStatus.
+    /// </summary>
+    public class SlurmHealthStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Healthy for SlurmHealthStatus
+        /// </summary>
+        public static readonly SlurmHealthStatus Healthy = new SlurmHealthStatus("Healthy");
+        /// <summary>
+        /// Constant Unhealthy for SlurmHealthStatus
+        /// </summary>
+        public static readonly SlurmHealthStatus Unhealthy = new SlurmHealthStatus("Unhealthy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SlurmHealthStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SlurmHealthStatus FindValue(string value)
+        {
+            return FindValue<SlurmHealthStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SlurmHealthStatus(string value)
         {
             return FindValue(value);
         }

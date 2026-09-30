@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClusterOrchestratorSlurmConfig Marshaller
+    /// ClusterAccountingDatabase Marshaller
     /// </summary>
-    public class ClusterOrchestratorSlurmConfigMarshaller : IRequestMarshaller<ClusterOrchestratorSlurmConfig, JsonMarshallerContext> 
+    public class ClusterAccountingDatabaseMarshaller : IRequestMarshaller<ClusterAccountingDatabase, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,32 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClusterOrchestratorSlurmConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ClusterAccountingDatabase requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAccountingDatabase())
+            if(requestObject.IsSetEndpoint())
             {
-                context.Writer.WritePropertyName("AccountingDatabase");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ClusterAccountingDatabaseMarshaller.Instance;
-                marshaller.Marshall(requestObject.AccountingDatabase, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("Endpoint");
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
-            if(requestObject.IsSetSlurmConfigStrategy())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("SlurmConfigStrategy");
-                context.Writer.WriteStringValue(requestObject.SlurmConfigStrategy);
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetPort())
+            {
+                context.Writer.WritePropertyName("Port");
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
+            }
+
+            if(requestObject.IsSetSecretArn())
+            {
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }
@@ -68,7 +75,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClusterOrchestratorSlurmConfigMarshaller Instance = new ClusterOrchestratorSlurmConfigMarshaller();
+        public readonly static ClusterAccountingDatabaseMarshaller Instance = new ClusterAccountingDatabaseMarshaller();
 
     }
 }

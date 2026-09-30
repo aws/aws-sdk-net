@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClusterOrchestratorSlurmConfig Object
+    /// Response Unmarshaller for ClusterAccountingDatabase Object
     /// </summary>  
-    public class ClusterOrchestratorSlurmConfigUnmarshaller : IJsonUnmarshaller<ClusterOrchestratorSlurmConfig, JsonUnmarshallerContext>
+    public class ClusterAccountingDatabaseUnmarshaller : IJsonUnmarshaller<ClusterAccountingDatabase, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterOrchestratorSlurmConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ClusterAccountingDatabase Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClusterOrchestratorSlurmConfig unmarshalledObject = new ClusterOrchestratorSlurmConfig();
+            ClusterAccountingDatabase unmarshalledObject = new ClusterAccountingDatabase();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AccountingDatabase", targetDepth, ref reader))
-                {
-                    var unmarshaller = ClusterAccountingDatabaseUnmarshaller.Instance;
-                    unmarshalledObject.AccountingDatabase = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SlurmConfigStrategy", targetDepth, ref reader))
+                if (context.TestExpression("Endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlurmConfigStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Name", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Port", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SecretArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClusterOrchestratorSlurmConfigUnmarshaller _instance = new ClusterOrchestratorSlurmConfigUnmarshaller();        
+        private static ClusterAccountingDatabaseUnmarshaller _instance = new ClusterAccountingDatabaseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClusterOrchestratorSlurmConfigUnmarshaller Instance
+        public static ClusterAccountingDatabaseUnmarshaller Instance
         {
             get
             {
