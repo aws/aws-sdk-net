@@ -102,13 +102,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTimeRangeLowerBound())
             {
                 context.Writer.WritePropertyName("TimeRangeLowerBound");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.TimeRangeLowerBound.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.TimeRangeLowerBound.Value));
             }
 
             if(publicRequest.IsSetTimeRangeUpperBound())
             {
                 context.Writer.WritePropertyName("TimeRangeUpperBound");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.TimeRangeUpperBound.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.TimeRangeUpperBound.Value));
             }
 
             writer.WriteEndObject();

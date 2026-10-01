@@ -46,6 +46,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdvancedConfiguration())
+            {
+                context.Writer.WritePropertyName("advancedConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcLatticeAdvancedConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdvancedConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPortName())
             {
                 context.Writer.WritePropertyName("portName");

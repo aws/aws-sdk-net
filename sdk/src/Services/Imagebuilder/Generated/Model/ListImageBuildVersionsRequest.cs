@@ -88,7 +88,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.
+        /// The Amazon Resource Name (ARN) of the image version whose build versions you want
+        /// to retrieve. The ARN must specify an exact version (<c>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</c>)
+        /// - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image
+        /// Builder returns build versions for all of the images in your account.
         /// </para>
         /// </summary>
         public string ImageVersionArn
@@ -106,7 +109,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specify the maximum number of items to return in a request.
+        /// The maximum number of items to return in a single request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -125,8 +128,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the nextToken from a previously
-        /// truncated response.
+        /// A token to specify where to start paginating. Use the <c>nextToken</c> value from
+        /// a previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

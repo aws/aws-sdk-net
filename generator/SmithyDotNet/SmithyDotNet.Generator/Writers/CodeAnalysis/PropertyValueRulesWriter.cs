@@ -1,8 +1,11 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 using System.Globalization;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace SmithyDotNet.Generator.Writers.CodeAnalysis;
@@ -21,7 +24,8 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
     public string Write(CancellationToken cancellationToken = default)
     {
         var sb = new StringBuilder();
-        using (var writer = XmlWriter.Create(sb, new XmlWriterSettings { Indent = true }))
+        // Entitize preserves a raw \r in a pattern (e.g. Bedrock's ResourcePolicyDocument); default NewLineHandling drops it.
+        using (var writer = XmlWriter.Create(sb, new XmlWriterSettings { Indent = true, NewLineHandling = NewLineHandling.Entitize }))
         {
             writer.WriteStartElement("property-value-rules");
 
@@ -30,26 +34,27 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
 
             // Input/output structures are named after the generated request/response classes, not
             // their modeled shape names, so they're emitted here and skipped in the sorted walk below.
-            var requestAndResponseShapes = new HashSet<string>();
+            var requestAndResponseShapes = new HashSet<ShapeId>();
             foreach (var operation in context.Operations)
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 WriteShapeRules(writer, $"{operation.Name}Request", operation.Input);
                 WriteShapeRules(writer, $"{operation.Name}Response", operation.Output);
-                requestAndResponseShapes.Add(operation.Shape.Input.Name);
-                requestAndResponseShapes.Add(operation.Shape.Output.Name);
+                requestAndResponseShapes.Add(operation.Shape.Input);
+                requestAndResponseShapes.Add(operation.Shape.Output);
             }
 
-            foreach (var (shapeId, structure) in context.Structures.Concat(context.Errors)
-                         .OrderBy(kvp => kvp.Key.Name, StringComparer.Ordinal))
+            foreach (var (shapeId, structure) in context.Structures.Concat(context.Errors).OrderBy(kvp => kvp.Key.Name, StringComparer.Ordinal))
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                if (requestAndResponseShapes.Contains(shapeId.Name))
+                if (requestAndResponseShapes.Contains(shapeId))
                 {
                     continue;
                 }
 
-                WriteShapeRules(writer, shapeId.Name, structure);
+                // An error shape's rules go under its generated exception class name.
+                var name = context.ToDotNetName(shapeId);
+                WriteShapeRules(writer, structure.IsError() ? ExceptionWriter.ToExceptionName(name) : name, structure);
             }
 
             writer.WriteEndElement();
@@ -68,8 +73,18 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
 
         foreach (var (property, member) in members)
         {
+            // An exception class never declares Message: it flows to the base Exception via the
+            // constructor, so a rule for it could never match an assignment.
+            if (structure.IsError() && property == "Message")
+            {
+                continue;
+            }
+
             var target = context.Resolve(member.Target);
-            if (!TypeMapper.IsScalar(target))
+            // Enums keep their rules: the ConstantClass converts implicitly from string, so a literal
+            // assigned to the property is still checked by the analyzer (C2J models an enum as a string
+            // and an intEnum as an integer).
+            if (!TypeMapper.IsScalar(target) && target is not EnumShape and not IntEnumShape)
             {
                 continue;
             }
@@ -100,16 +115,71 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
                 writer.WriteElementString("max", max.Value.ToString(CultureInfo.InvariantCulture));
             }
 
-            // The consuming analyzer (AbstractPropertyValueAssignmentAnalyzer) wraps its `new Regex(pattern)`
-            // in a try/catch and silently skips the rule on failure, so an invalid .NET regex here is a
-            // missed check, not a build break. Every pattern across the six migrated services compiles
-            // today; revisit only if that stops being true.
+            // A pattern .NET can't compile is omitted, matching C2J: the analyzer would skip it anyway
+            // (its `new Regex` is wrapped in a try/catch), so only the XML would differ. Real case:
+            // bedrock-agent#S3ObjectKey escapes an underscore (`\_`), which .NET rejects.
             if (pattern is not null)
             {
-                writer.WriteElementString("pattern", pattern);
+                var converted = ConvertSmithyPattern(pattern);
+                if (IsValidDotNetRegex(converted))
+                {
+                    writer.WriteElementString("pattern", converted);
+                }
             }
 
             writer.WriteEndElement();
+        }
+    }
+
+    /// <summary>
+    /// A Smithy pattern matches anywhere in the input, but the consuming analyzer requires its match to
+    /// cover the whole value, so an unanchored pattern like <c>\S</c> would flag every constant longer
+    /// than one character. Padding unanchored ends with <c>.*</c> preserves the Smithy match-anywhere
+    /// semantics — the same translation the C2J models carry for such patterns (<c>\S</c> appears there
+    /// as <c>.*\S.*</c>).
+    /// <para />
+    /// This intentionally diverges from the C2J translation in one way: that translation also strips
+    /// <c>^</c>/<c>$</c> anchors, which is a no-op under the analyzer's whole-value comparison. Keeping
+    /// them emits anchored patterns exactly as the smithy.json states them and leaves the already-shipped
+    /// XML of previously migrated services unchanged.
+    /// <para />
+    /// Edge cases, all matching the C2J translation's behavior:
+    /// <list type="bullet">
+    /// <item>An end already padded with <c>.*</c> is not padded again, so re-translation is stable.</item>
+    /// <item>Patterns that are only anchors (<c>^</c>, <c>$</c>, <c>^$</c>) are returned untouched.</item>
+    /// <item>The anchor checks are textual: an escaped trailing <c>\$</c> counts as an anchor, and a
+    /// padded top-level alternation is not grouped first (<c>a|b</c> becomes <c>.*a|b.*</c>).</item>
+    /// </list>
+    /// </summary>
+    public static string ConvertSmithyPattern(string pattern)
+    {
+        var anchoredStart = pattern.StartsWith('^');
+        var anchoredEnd = pattern.EndsWith('$');
+        var coreLength = pattern.Length - (anchoredStart ? 1 : 0) - (anchoredEnd ? 1 : 0);
+        if (coreLength <= 0)
+        {
+            return pattern; // Don't try to do anything to unexpected patterns
+        }
+
+        var prefix = !anchoredStart && !pattern.StartsWith(".*", StringComparison.Ordinal) ? ".*" : "";
+        var suffix = !anchoredEnd && !pattern.EndsWith(".*", StringComparison.Ordinal) ? ".*" : "";
+        return prefix + pattern + suffix;
+    }
+
+    /// <summary>
+    /// Whether .NET can compile the pattern. Smithy patterns are ECMA-262 and may use escapes .NET
+    /// rejects (e.g. <c>\_</c>).
+    /// </summary>
+    public static bool IsValidDotNetRegex(string pattern)
+    {
+        try
+        {
+            _ = new Regex(pattern);
+            return true;
+        }
+        catch (ArgumentException)
+        {
+            return false;
         }
     }
 }

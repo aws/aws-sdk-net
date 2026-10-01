@@ -65,13 +65,13 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreateTime())
             {
                 context.Writer.WritePropertyName("CreateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreateTime.Value));
             }
 
             if(requestObject.IsSetLastUpdateTime())
             {
                 context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastUpdateTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastUpdateTime.Value));
             }
 
             if(requestObject.IsSetListId())

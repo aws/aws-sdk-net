@@ -516,6 +516,11 @@
     <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.RtmpPushRouterOutputConfiguration.DestinationPort</property>
+    <min>443</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.RtpRouterInputConfiguration.Port</property>
     <min>3000</min>
     <max>30000</max>

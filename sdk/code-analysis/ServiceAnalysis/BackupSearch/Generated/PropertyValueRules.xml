@@ -22,13 +22,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupSearch.Model.StartSearchJobRequest.Name</property>
-    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BackupSearch.Model.StartSearchResultExportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:(?:aws|aws-cn|aws-us-gov):iam::[a-z0-9-]+:role/(.+)</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):iam::[a-z0-9-]+:role/(.+)$</pattern>
   </property-value-rule>
 </property-value-rules>

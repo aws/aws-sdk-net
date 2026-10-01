@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cleanroomsml-2023-09-06.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.CleanRoomsML
     public partial class AmazonCleanRoomsMLConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "4.0.101.4");
+            InternalSDKUtils.BuildUserAgentString("CleanRoomsML", "4.0.101.9");
 
         private static readonly AmazonCleanRoomsMLEndpointResolver EndpointResolver =
             new AmazonCleanRoomsMLEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "CleanRoomsML";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "CleanRoomsML";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.CleanRoomsML
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "cleanrooms-ml";
-            }
-        }
+        public override string RegionEndpointServiceName => "cleanrooms-ml";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2023-09-06";
-            }
-        }
+        public override string ServiceVersion => "2023-09-06";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.CleanRoomsML
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

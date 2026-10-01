@@ -301,7 +301,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
                         else
                         {
 #>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=flatVariableName#>Value.Value)));
+<#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(<#=flatVariableName#>Value.Value));
 <#+
                         }
                     }
@@ -316,7 +316,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
                         else
                         {
 #>
-<#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=flatVariableName#>Value)));
+<#=new string(' ', level * 4)#>                    context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(<#=flatVariableName#>Value));
 <#+
                         }
                     }
@@ -389,7 +389,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				{
 #>
 <#=new string(' ', level * 4)#>	               if (<#=memberProperty#> != null)
-<#=new string(' ', level * 4)#>	                   context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=memberProperty#>.Value)));
+<#=new string(' ', level * 4)#>	                   context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(<#=memberProperty#>.Value));
 <#=new string(' ', level * 4)#>	               else
 <#=new string(' ', level * 4)#>	                   context.Writer.WriteNullValue();
 <#+
@@ -397,7 +397,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 				else
 				{
 #>
-<#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(<#=memberProperty#>)));
+<#=new string(' ', level * 4)#>                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(<#=memberProperty#>));
 <#+
 				}
 			}

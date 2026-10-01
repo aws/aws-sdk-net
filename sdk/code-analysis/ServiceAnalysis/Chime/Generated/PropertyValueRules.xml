@@ -54,7 +54,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateMeetingDialOutRequest.MeetingId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateMeetingDialOutRequest.ToPhoneNumber</property>
@@ -62,7 +62,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateMeetingDialOutResponse.TransactionId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateRoomRequest.AccountId</property>
@@ -72,7 +72,7 @@
     <property>Amazon.Chime.Model.CreateRoomRequest.ClientRequestToken</property>
     <min>2</min>
     <max>64</max>
-    <pattern>[-_a-zA-Z0-9]*</pattern>
+    <pattern>^[-_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateRoomMembershipRequest.AccountId</property>
@@ -92,7 +92,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.CreateUserRequest.Email</property>
-    <pattern>.+@.+\..+</pattern>
+    <pattern>^.+@.+\..+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.DeleteAccountRequest.AccountId</property>
@@ -156,7 +156,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetPhoneNumberOrderRequest.PhoneNumberOrderId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GetPhoneNumberSettingsResponse.CallingName</property>
@@ -199,7 +199,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListAccountsRequest.UserEmail</property>
-    <pattern>.+@.+\..+</pattern>
+    <pattern>^.+@.+\..+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListBotsRequest.AccountId</property>
@@ -253,7 +253,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.ListUsersRequest.UserEmail</property>
-    <pattern>.+@.+\..+</pattern>
+    <pattern>^.+@.+\..+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.LogoutUserRequest.AccountId</property>
@@ -321,7 +321,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.SearchAvailablePhoneNumbersRequest.Country</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.SearchAvailablePhoneNumbersRequest.MaxResults</property>
@@ -399,7 +399,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.Invite.EmailAddress</property>
-    <pattern>.+@.+\..+</pattern>
+    <pattern>^.+@.+\..+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.Member.AccountId</property>
@@ -427,7 +427,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumber.Country</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumber.E164PhoneNumber</property>
@@ -435,7 +435,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumberCountry.CountryCode</property>
-    <pattern>[A-Z]{2}</pattern>
+    <pattern>^[A-Z]{2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumberError.PhoneNumberId</property>
@@ -443,7 +443,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.PhoneNumberOrder.PhoneNumberOrderId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.Room.AccountId</property>
@@ -488,7 +488,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.User.PrimaryEmail</property>
-    <pattern>.+@.+\..+</pattern>
+    <pattern>^.+@.+\..+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.UserError.UserId</property>

@@ -157,7 +157,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
         {
             // find the src directory
             var sourceRoot = Directory.GetCurrentDirectory();
-            while (sourceRoot != null && !sourceRoot.EndsWith("\\sdk"))
+            while (sourceRoot != null && !sourceRoot.EndsWith(Path.DirectorySeparatorChar + "sdk"))
             {
                 sourceRoot = Path.GetDirectoryName(sourceRoot);
             }

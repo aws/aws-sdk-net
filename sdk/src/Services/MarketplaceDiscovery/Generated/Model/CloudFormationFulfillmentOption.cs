@@ -34,13 +34,35 @@ namespace Amazon.MarketplaceDiscovery.Model
     /// </summary>
     public partial class CloudFormationFulfillmentOption
     {
+        private DateTime? _availableFromTime;
         private string _fulfillmentOptionDisplayName;
         private string _fulfillmentOptionId;
         private string _fulfillmentOptionName;
         private FulfillmentOptionType _fulfillmentOptionType;
         private string _fulfillmentOptionVersion;
+        private string _longDescription;
         private string _releaseNotes;
+        private string _shortDescription;
         private string _usageInstructions;
+
+        /// <summary>
+        /// Gets and sets the property AvailableFromTime. 
+        /// <para>
+        /// The date and time when the CloudFormation fulfillment option became available for
+        /// fulfillment.
+        /// </para>
+        /// </summary>
+        public DateTime? AvailableFromTime
+        {
+            get { return this._availableFromTime; }
+            set { this._availableFromTime = value; }
+        }
+
+        // Check to see if AvailableFromTime property is set
+        internal bool IsSetAvailableFromTime()
+        {
+            return this._availableFromTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FulfillmentOptionDisplayName. 
@@ -137,6 +159,25 @@ namespace Amazon.MarketplaceDiscovery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LongDescription. 
+        /// <para>
+        /// A detailed description of the fulfillment option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
+        public string LongDescription
+        {
+            get { return this._longDescription; }
+            set { this._longDescription = value; }
+        }
+
+        // Check to see if LongDescription property is set
+        internal bool IsSetLongDescription()
+        {
+            return this._longDescription != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ReleaseNotes. 
         /// <para>
         /// Release notes describing changes in this version of the fulfillment option.
@@ -152,6 +193,25 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetReleaseNotes()
         {
             return this._releaseNotes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShortDescription. 
+        /// <para>
+        /// A short description of the fulfillment option.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public string ShortDescription
+        {
+            get { return this._shortDescription; }
+            set { this._shortDescription = value; }
+        }
+
+        // Check to see if ShortDescription property is set
+        internal bool IsSetShortDescription()
+        {
+            return this._shortDescription != null;
         }
 
         /// <summary>

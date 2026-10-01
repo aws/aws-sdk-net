@@ -93,6 +93,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.ChatDurationInMinutes.Value);
             }
 
+            if(publicRequest.IsSetChatStreamingConfiguration())
+            {
+                context.Writer.WritePropertyName("ChatStreamingConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChatStreamingConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ChatStreamingConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -104,6 +115,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetConnectionTypes())
+            {
+                context.Writer.WritePropertyName("ConnectionTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestConnectionTypesListValue in publicRequest.ConnectionTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestConnectionTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetContactFlowId())
             {
                 context.Writer.WritePropertyName("ContactFlowId");

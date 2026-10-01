@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// AWS CodeBuild is not available in the specified region.
+    /// CodeBuild is not available in the specified region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -24,6 +24,7 @@ using System;
 namespace AWSSDK.UnitTests
 {
     [TestClass]
+    [OSCondition(OperatingSystems.Windows)] // exercises the .NET SDK encrypted credential store, which only exists on Windows
     public class SAMLRoleSessionManagerTest
     {
         private const string RoleSessionsFilename = SettingsConstants.RegisteredRoleSessions + ".json";

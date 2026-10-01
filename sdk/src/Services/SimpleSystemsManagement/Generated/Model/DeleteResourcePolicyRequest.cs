@@ -47,13 +47,50 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// of parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
     /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>Document</c> – Shares the document using Resource Access Manager (RAM). For more
+    /// information about sharing documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+    /// Systems Manager documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonSimpleSystemsManagementRequest
     {
+        private DeletionMode _deletionMode;
         private string _policyHash;
         private string _policyId;
         private string _resourceArn;
+
+        /// <summary>
+        /// Gets and sets the property DeletionMode. 
+        /// <para>
+        /// Specifies the intended outcome of the operation. Applies only to the <c>Document</c>
+        /// resource type. The operation ignores this parameter for other resource types. Optional.
+        /// Defaults to <c>RemoveSharing</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RemoveSharing</c> – Deletes the resource policy and removes sharing of the document.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RollbackMigration</c> – Reverts the document to Custom sharing, preserving existing
+        /// consumer access, instead of removing the policy.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DeletionMode DeletionMode
+        {
+            get { return this._deletionMode; }
+            set { this._deletionMode = value; }
+        }
+
+        // Check to see if DeletionMode property is set
+        internal bool IsSetDeletionMode()
+        {
+            return this._deletionMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PolicyHash. 

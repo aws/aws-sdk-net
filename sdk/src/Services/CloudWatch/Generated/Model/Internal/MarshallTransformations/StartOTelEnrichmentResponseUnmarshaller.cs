@@ -51,6 +51,51 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             StartOTelEnrichmentResponse response = new StartOTelEnrichmentResponse();
             var reader = context.Reader;
             context.AddPathSegment("StartOTelEnrichment");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
+                {
+                    case "CreatedAt":
+                        {
+                            context.AddPathSegment("CreatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            response.CreatedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExcludeFilters":
+                        {
+                            context.AddPathSegment("ExcludeFilters");
+                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
+                            response.ExcludeFilters = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IncludeFilters":
+                        {
+                            context.AddPathSegment("IncludeFilters");
+                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
+                            response.IncludeFilters = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UpdatedAt":
+                        {
+                            context.AddPathSegment("UpdatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            response.UpdatedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
+                }
+            }
+            reader.ReadEndMap();
+            context.PopPathSegment();
 
             return response;
         }
@@ -75,6 +120,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 var errorTypeName = errorResponse.Code;
                 Amazon.Runtime.Internal.Transform.AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, context.ResponseData);
+                if (errorTypeName != null && errorTypeName.Equals("ValidationException"))
+                {
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
             return new AmazonCloudWatchException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

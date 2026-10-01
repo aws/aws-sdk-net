@@ -1,0 +1,192 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.QuickSight.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// CreateAnalysis Request Marshaller
+    /// </summary>
+    public partial class CreateAnalysisRequestMarshaller : IMarshaller<IRequest, CreateAnalysisRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((CreateAnalysisRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(CreateAnalysisRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.QuickSight");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-04-01";
+            request.HttpMethod = "POST";
+
+            if (!publicRequest.IsSetAnalysisId())
+            {
+                throw new AmazonQuickSightException("Request object does not have required field AnalysisId set");
+            }
+            request.AddPathResource("{AnalysisId}", StringUtils.FromString(publicRequest.AnalysisId));
+
+            if (!publicRequest.IsSetAwsAccountId())
+            {
+                throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
+            }
+            request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
+
+            request.ResourcePath = "/accounts/{AwsAccountId}/analyses/{AnalysisId}";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetDefinition())
+            {
+                context.Writer.WritePropertyName("Definition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalysisDefinitionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Definition, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetFolderArns())
+            {
+                context.Writer.WritePropertyName("FolderArns");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestFolderArnsListValue in publicRequest.FolderArns)
+                {
+                    context.Writer.WriteStringValue(publicRequestFolderArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+            if (publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("Parameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ParametersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Parameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetPermissions())
+            {
+                context.Writer.WritePropertyName("Permissions");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestPermissionsListValue in publicRequest.Permissions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourcePermissionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPermissionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetSourceEntity())
+            {
+                context.Writer.WritePropertyName("SourceEntity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnalysisSourceEntityMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceEntity, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetThemeArn())
+            {
+                context.Writer.WritePropertyName("ThemeArn");
+                context.Writer.WriteStringValue(publicRequest.ThemeArn);
+            }
+            if (publicRequest.IsSetValidationStrategy())
+            {
+                context.Writer.WritePropertyName("ValidationStrategy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ValidationStrategyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ValidationStrategy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly CreateAnalysisRequestMarshaller _instance = new();
+
+        internal static CreateAnalysisRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static CreateAnalysisRequestMarshaller Instance => _instance;
+    }
+}

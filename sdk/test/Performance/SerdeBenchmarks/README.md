@@ -57,6 +57,17 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --suite serde --filter '*AwsQuery*'
 ```
 
+## Regenerating the ops/CPU-sec cases
+
+`SerdeBenchmarksRunner/CpuTimeBenchmarks.cs` (the `--cpu-time` cases) is generated from the `serde-benchmark` tagged `@httpRequestTests` / `@httpResponseTests` in the AwsSdkPerformanceBenchmarkModels models. Don't edit it by hand. To regenerate it after the models change, run this (Python 3.8+, no extra packages):
+
+```bash
+cd sdk/test/Performance/SerdeBenchmarks
+python generate_cpu_time_benchmarks.py --model <path-to-AwsSdkPerformanceBenchmarkModels>/model
+```
+
+The script is not part of the build.
+
 ## Measurement
 
 ### E2E suite (default)

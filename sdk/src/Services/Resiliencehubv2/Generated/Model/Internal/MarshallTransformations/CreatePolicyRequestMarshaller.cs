@@ -146,6 +146,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetSharingEnabled())
+            {
+                context.Writer.WritePropertyName("sharingEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SharingEnabled.Value);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

@@ -49,7 +49,7 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAt())
             {
                 context.Writer.WritePropertyName("at");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.At.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.At.Value));
             }
 
             if(requestObject.IsSetCron())

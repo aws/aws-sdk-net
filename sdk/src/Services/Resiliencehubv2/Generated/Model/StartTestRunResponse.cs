@@ -88,7 +88,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The identifier of the started test run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string TestRunId
         {
             get { return this._testRunId; }

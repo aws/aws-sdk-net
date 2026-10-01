@@ -67,8 +67,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property HostId. 
         /// <para>
         /// The ID of the Dedicated Host on which build and test instances run. This only applies
-        /// if <c>tenancy</c> is <c>host</c>. If you specify the host ID, you must not specify
-        /// the resource group ARN. If you specify both, Image Builder returns an error.
+        /// if <c>tenancy</c> is <c>host</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -88,9 +87,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property HostResourceGroupArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the host resource group in which to launch build
-        /// and test instances. This only applies if <c>tenancy</c> is <c>host</c>. If you specify
-        /// the resource group ARN, you must not specify the host ID. If you specify both, Image
-        /// Builder returns an error.
+        /// and test instances. This only applies if <c>tenancy</c> is <c>host</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

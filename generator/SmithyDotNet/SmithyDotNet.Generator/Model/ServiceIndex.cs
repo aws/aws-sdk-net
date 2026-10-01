@@ -22,11 +22,11 @@ public class ServiceIndex
     public ShapeId ServiceId { get; }
 
     /// <summary>
-    /// All operations reachable from the service, resource-attached ones included, each paired
-    /// with its shape id. Ordered alphabetically by operation name (ordinal), matching the order
-    /// C2J emits so review diffs on large services stay stable.
+    /// All operations reachable from the service, resource-attached ones included. Ordered
+    /// alphabetically by operation name (ordinal), matching the order C2J emits so review diffs on
+    /// large services stay stable.
     /// </summary>
-    public IReadOnlyList<(ShapeId Id, OperationShape Shape)> Operations { get; }
+    public IReadOnlyList<OperationShape> Operations { get; }
 
     /// <summary>
     /// All non-prelude shapes reachable from the service's errors and its operations (structures,
@@ -37,12 +37,13 @@ public class ServiceIndex
     public IReadOnlyDictionary<ShapeId, Shape> Shapes { get; }
 
     /// <summary>
-    /// Every <c>enum</c> shape in the model, reachable from an operation or not, paired with its
-    /// <see cref="ShapeId"/>. C2J emits a <c>ConstantClass</c> for every string-enum shape regardless of
-    /// reachability, and some models carry orphan <c>*ExceptionReason</c> enums that no operation
-    /// references, so enum collection cannot use the reachable <see cref="Shapes"/> set.
+    /// Every <c>enum</c> shape that is reachable from an operation or declared in the service's own
+    /// namespace. Unreachable same-namespace enums are kept
+    /// because C2J ships orphan <c>*ExceptionReason</c> enums that no operation references; enums in
+    /// other namespaces (trait definitions like <c>smithy.test#AppliesTo</c> in the raw test models)
+    /// are dropped.
     /// </summary>
-    public IReadOnlyList<(ShapeId Id, EnumShape Shape)> AllEnums { get; }
+    public IReadOnlyList<EnumShape> AllEnums { get; }
 
     public ServiceIndex(SmithyModel model)
     {
@@ -54,28 +55,71 @@ public class ServiceIndex
 
         Service = service;
         ServiceId = ShapeId.Parse(serviceEntry.Key);
+
         Operations = CollectOperations(model, Service);
         Shapes = CollectReachableShapes(model, Service, Operations);
-        AllEnums = CollectAllEnums(model);
+        AllEnums = CollectAllEnums(model, Shapes, ServiceId.Namespace);
+
+        RequireNoMixins();
     }
 
-    private static List<(ShapeId Id, EnumShape Shape)> CollectAllEnums(SmithyModel model)
+    /// <summary>
+    /// The generated type name for a shape: the service's <c>rename</c> entry when it has one, otherwise
+    /// the shape name. Every emitted symbol goes through here; only wire error codes use <see cref="ShapeId.Name"/>,
+    /// because a rename does not change the shape ID.
+    /// </summary>
+    public string ToDotNetName(ShapeId shapeId) => Service.Rename.GetValueOrDefault(shapeId.AbsoluteName, shapeId.Name);
+
+    // The generator does not resolve mixins (production models arrive pre-flattened), so
+    // generating from a consumer would silently drop its inherited members. Consumers outside
+    // the closure (trait definitions in the raw test models) are ignored.
+    private void RequireNoMixins()
     {
-        var enums = new List<(ShapeId Id, EnumShape Shape)>();
-        foreach (var (name, shape) in model.Shapes)
+        RequireNoMixins(Service);
+
+        foreach (var operation in Operations)
         {
-            if (shape is EnumShape enumShape)
+            RequireNoMixins(operation);
+        }
+
+        foreach (var shape in Shapes.Values)
+        {
+            RequireNoMixins(shape);
+        }
+    }
+
+    private static void RequireNoMixins(Shape shape)
+    {
+        if (shape.Mixins.Count > 0)
+        {
+            throw new GeneratorException($"Shape '{shape.Id}' is reachable from the service and uses mixins, which are not supported.");
+        }
+    }
+
+    private static List<EnumShape> CollectAllEnums(SmithyModel model, IReadOnlyDictionary<ShapeId, Shape> reachable, string serviceNamespace)
+    {
+        var enums = new List<EnumShape>();
+        foreach (var shape in model.Shapes.Values)
+        {
+            if (shape is not EnumShape enumShape)
             {
-                enums.Add((ShapeId.Parse(name), enumShape));
+                continue;
+            }
+
+            // An unreachable enum emits only from the service's own namespace: C2J ships orphan
+            // *ExceptionReason enums, but trait-definition enums (smithy.test#AppliesTo) must not emit.
+            if (reachable.ContainsKey(enumShape.Id) || enumShape.Id.Namespace == serviceNamespace)
+            {
+                enums.Add(enumShape);
             }
         }
 
         return enums;
     }
 
-    private static List<(ShapeId Id, OperationShape Shape)> CollectOperations(SmithyModel model, ServiceShape service)
+    private static List<OperationShape> CollectOperations(SmithyModel model, ServiceShape service)
     {
-        var operations = new List<(ShapeId Id, OperationShape Shape)>(service.Operations.Count);
+        var operations = new List<OperationShape>(service.Operations.Count);
         var seen = new HashSet<string>();
 
         void AddOperation(ShapeId operationId)
@@ -90,7 +134,8 @@ public class ServiceIndex
                 throw new GeneratorException($"Service references operation '{operationId}' which is missing or not an operation shape.");
             }
 
-            operations.Add((operationId, operation));
+            RequireNoMixins(operation);
+            operations.Add(operation);
         }
 
         // Resources are flattened: lifecycle + instance + collection operations all become
@@ -135,7 +180,7 @@ public class ServiceIndex
         return operations;
     }
 
-    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<(ShapeId Id, OperationShape Shape)> operations)
+    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<OperationShape> operations)
     {
         var reachable = new Dictionary<ShapeId, Shape>();
         var visited = new HashSet<string>();
@@ -145,7 +190,7 @@ public class ServiceIndex
             WalkShapeId(model, errorId, reachable, visited);
         }
 
-        foreach (var (_, operation) in operations)
+        foreach (var operation in operations)
         {
             WalkShapeId(model, operation.Input, reachable, visited);
             WalkShapeId(model, operation.Output, reachable, visited);
@@ -177,6 +222,7 @@ public class ServiceIndex
             return;
         }
 
+        RequireNoMixins(shape);
         reachable[shapeId] = shape;
 
         switch (shape)

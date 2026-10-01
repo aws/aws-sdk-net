@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ClientVpnConnection
     {
+        private string _authorizationPolicyLastEvaluatedTime;
         private string _clientIp;
         private string _clientIpv6Address;
         private string _clientVpnEndpointId;
@@ -49,6 +50,25 @@ namespace Amazon.EC2.Model
         private ClientVpnConnectionStatus _status;
         private string _timestamp;
         private string _username;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationPolicyLastEvaluatedTime. 
+        /// <para>
+        /// The date and time the authorization policy was last evaluated for the client connection,
+        /// if applicable.
+        /// </para>
+        /// </summary>
+        public string AuthorizationPolicyLastEvaluatedTime
+        {
+            get { return this._authorizationPolicyLastEvaluatedTime; }
+            set { this._authorizationPolicyLastEvaluatedTime = value; }
+        }
+
+        // Check to see if AuthorizationPolicyLastEvaluatedTime property is set
+        internal bool IsSetAuthorizationPolicyLastEvaluatedTime()
+        {
+            return this._authorizationPolicyLastEvaluatedTime != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientIp. 

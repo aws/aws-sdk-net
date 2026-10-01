@@ -66,6 +66,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class CreateLagRequest : AmazonDirectConnectRequest
     {
+        private RequestBillingMode _billingMode;
         private List<Tag> _childConnectionTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _connectionId;
         private string _connectionsBandwidth;
@@ -75,6 +76,24 @@ namespace Amazon.DirectConnect.Model
         private string _providerName;
         private bool? _requestmacSec;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// The billing mode for the LAG.
+        /// </para>
+        /// </summary>
+        public RequestBillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ChildConnectionTags. 

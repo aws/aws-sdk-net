@@ -1107,12 +1107,12 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOntapConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOntapConfiguration.ThroughputCapacityPerHAPair</property>
     <min>128</min>
-    <max>6144</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOntapConfiguration.WeeklyMaintenanceStartTime</property>
@@ -1152,7 +1152,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOpenZFSConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOpenZFSConfiguration.WeeklyMaintenanceStartTime</property>
@@ -1186,7 +1186,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemWindowsConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemWindowsConfiguration.WeeklyMaintenanceStartTime</property>
@@ -1384,7 +1384,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.DiskIopsConfiguration.Iops</property>
     <min>0</min>
-    <max>2400000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.DurationSinceLastAccess.Value</property>
@@ -1728,12 +1728,12 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.ThroughputCapacityPerHAPair</property>
     <min>128</min>
-    <max>6144</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.WeeklyMaintenanceStartTime</property>
@@ -1846,7 +1846,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.OpenZFSFileSystemConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OpenZFSFileSystemConfiguration.WeeklyMaintenanceStartTime</property>
@@ -2246,12 +2246,12 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOntapConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOntapConfiguration.ThroughputCapacityPerHAPair</property>
     <min>128</min>
-    <max>6144</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOntapConfiguration.WeeklyMaintenanceStartTime</property>
@@ -2279,7 +2279,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOpenZFSConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemOpenZFSConfiguration.WeeklyMaintenanceStartTime</property>
@@ -2301,7 +2301,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemWindowsConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.UpdateFileSystemWindowsConfiguration.WeeklyMaintenanceStartTime</property>
@@ -2431,7 +2431,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.ThroughputCapacity</property>
     <min>8</min>
-    <max>100000</max>
+    <max>2147483647</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.WindowsFileSystemConfiguration.WeeklyMaintenanceStartTime</property>

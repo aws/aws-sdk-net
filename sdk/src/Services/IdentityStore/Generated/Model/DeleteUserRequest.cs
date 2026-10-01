@@ -36,6 +36,7 @@ namespace Amazon.IdentityStore.Model
     public partial class DeleteUserRequest : AmazonIdentityStoreRequest
     {
         private string _identityStoreId;
+        private string _revision;
         private string _userId;
 
         /// <summary>
@@ -43,8 +44,13 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The globally unique identifier for the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the identity store by ID or by Amazon Resource Name (ARN). For example,
+        /// identity store ID <c>d-1234567890</c> or identity store ARN <c>arn:aws:identitystore::111122223333:identitystore/d-1234567890</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -58,12 +64,39 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The expected current revision of the user. When you provide this value, the user is
+        /// deleted only if it matches the current revision of the user in the identity store.
+        /// If the value doesn't match, the operation fails with a <c>ConflictException</c>. If
+        /// you don't provide this value, the user is deleted regardless of its current revision.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Revision
+        {
+            get { return this._revision; }
+            set { this._revision = value; }
+        }
+
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
+        {
+            return this._revision != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
         /// The identifier for a user in the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the user by ID or by Amazon Resource Name (ARN). For example, user
+        /// ID <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c> or user ARN <c>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string UserId
         {
             get { return this._userId; }

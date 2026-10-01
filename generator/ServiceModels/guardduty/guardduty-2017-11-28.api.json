@@ -2330,6 +2330,29 @@
       "min":1,
       "pattern":"(([1-9][0-9]{0,7})|(DRAFT))"
     },
+    "BedrockGuardrailResource":{
+      "type":"structure",
+      "members":{
+        "Version":{
+          "shape":"BedrockGuardrailResourceVersionString",
+          "locationName":"version"
+        },
+        "GuardrailAction":{
+          "shape":"GuardrailAction",
+          "locationName":"guardrailAction"
+        },
+        "GuardrailSource":{
+          "shape":"GuardrailSource",
+          "locationName":"guardrailSource"
+        }
+      }
+    },
+    "BedrockGuardrailResourceVersionString":{
+      "type":"string",
+      "max":8,
+      "min":1,
+      "pattern":"(([1-9][0-9]{0,7})|(DRAFT)|(ENFORCED))"
+    },
     "BedrockGuardrailVersionString":{
       "type":"string",
       "max":8,
@@ -4443,6 +4466,10 @@
         "UpdatedAt":{
           "shape":"Timestamp",
           "locationName":"updatedAt"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "locationName":"managedBy"
         }
       }
     },
@@ -4503,6 +4530,10 @@
         "AdditionalConfiguration":{
           "shape":"DetectorAdditionalConfigurationResults",
           "locationName":"additionalConfiguration"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "locationName":"managedBy"
         }
       }
     },
@@ -5370,7 +5401,17 @@
         "CLOUDFORMATION_STACK",
         "EC2_LAUNCH_TEMPLATE",
         "EC2_VPC",
-        "EC2_IMAGE"
+        "EC2_IMAGE",
+        "BEDROCK_CUSTOM_MODEL",
+        "BEDROCK_IMPORTED_MODEL",
+        "BEDROCK_PROVISIONED_MODEL",
+        "BEDROCK_CUSTOM_MODEL_DEPLOYMENT",
+        "BEDROCK_INFERENCE_PROFILE",
+        "BEDROCK_APPLICATION_INFERENCE_PROFILE",
+        "BEDROCK_PROMPT",
+        "BEDROCK_PROMPT_ROUTER",
+        "BEDROCK_GUARDRAIL",
+        "SAGEMAKER_ENDPOINT"
       ]
     },
     "FindingStatisticType":{
@@ -8425,6 +8466,10 @@
       "type":"list",
       "member":{"shape":"MalwareScan"}
     },
+    "ManagedBy":{
+      "type":"string",
+      "enum":["GUARDDUTY_POLICY"]
+    },
     "ManagementType":{
       "type":"string",
       "enum":[
@@ -8552,6 +8597,10 @@
         "UpdatedAt":{
           "shape":"Timestamp",
           "locationName":"updatedAt"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "locationName":"managedBy"
         }
       }
     },
@@ -8627,6 +8676,10 @@
         "AdditionalConfiguration":{
           "shape":"MemberAdditionalConfigurationResults",
           "locationName":"additionalConfiguration"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "locationName":"managedBy"
         }
       }
     },
@@ -9685,6 +9738,10 @@
         "Affiliated":{
           "shape":"Boolean",
           "locationName":"affiliated"
+        },
+        "AwsServiceName":{
+          "shape":"String",
+          "locationName":"awsServiceName"
         }
       }
     },
@@ -9877,6 +9934,10 @@
         "CloudformationStack":{
           "shape":"CloudformationStack",
           "locationName":"cloudformationStack"
+        },
+        "BedrockGuardrail":{
+          "shape":"BedrockGuardrailResource",
+          "locationName":"bedrockGuardrail"
         }
       }
     },

@@ -141,8 +141,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// (Interface endpoint) Information about the security groups that are associated with
-        /// the network interface.
+        /// (Interface, Resource, ServiceNetwork, and Tunnel endpoints only) Information about
+        /// the security groups that are associated with the network interface.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -247,7 +247,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaceIds. 
         /// <para>
-        /// (Interface endpoint) The network interfaces for the endpoint.
+        /// (Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel
+        /// endpoints only) The network interfaces for the endpoint.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -479,7 +480,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// (Interface endpoint) The subnets for the endpoint.
+        /// (Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel
+        /// endpoints only) The subnets for the endpoint.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -544,6 +546,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VpcEndpointType. 
         /// <para>
         /// The type of endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC
+        /// endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.
         /// </para>
         /// </summary>
         public VpcEndpointType VpcEndpointType

@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the schemas-2019-12-02.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.Schemas
     public partial class AmazonSchemasConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("schemas", "4.0.100.11");
+            InternalSDKUtils.BuildUserAgentString("schemas", "4.0.100.15");
 
         private static readonly AmazonSchemasEndpointResolver EndpointResolver =
             new AmazonSchemasEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "schemas";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "schemas";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.Schemas
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "schemas";
-            }
-        }
+        public override string RegionEndpointServiceName => "schemas";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2019-12-02";
-            }
-        }
+        public override string ServiceVersion => "2019-12-02";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.Schemas
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

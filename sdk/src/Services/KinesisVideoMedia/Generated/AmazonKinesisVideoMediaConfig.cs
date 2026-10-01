@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the kinesis-video-media-2017-09-30.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.KinesisVideoMedia
     public partial class AmazonKinesisVideoMediaConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Kinesis Video Media", "4.0.100.11");
+            InternalSDKUtils.BuildUserAgentString("Kinesis Video Media", "4.0.100.16");
 
         private static readonly AmazonKinesisVideoMediaEndpointResolver EndpointResolver =
             new AmazonKinesisVideoMediaEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Kinesis Video Media";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Kinesis Video Media";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.KinesisVideoMedia
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "kinesisvideo";
-            }
-        }
+        public override string RegionEndpointServiceName => "kinesisvideo";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2017-09-30";
-            }
-        }
+        public override string ServiceVersion => "2017-09-30";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.KinesisVideoMedia
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

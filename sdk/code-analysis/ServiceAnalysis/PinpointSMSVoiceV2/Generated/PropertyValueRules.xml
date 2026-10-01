@@ -1376,6 +1376,35 @@
     <pattern>arn:[A-Za-z0-9_:/-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest.IsoCountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest.MaxResults</property>
+    <min>1</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest.RegistrationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

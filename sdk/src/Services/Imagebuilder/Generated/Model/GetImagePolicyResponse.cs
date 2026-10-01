@@ -40,7 +40,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The image policy object.
+        /// The resource policy for the image, as a JSON policy document. If the image has no
+        /// policy applied, the response contains an empty JSON object (<c>{}</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30000)]

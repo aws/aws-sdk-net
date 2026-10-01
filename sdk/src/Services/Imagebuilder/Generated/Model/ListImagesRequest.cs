@@ -31,8 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImages operation.
-    /// Returns the list of images that you have access to. Newly created images can take
-    /// up to two minutes to appear in the ListImages API Results.
+    /// Returns the list of images that you have access to.
     /// </summary>
     public partial class ListImagesRequest : AmazonImagebuilderRequest
     {
@@ -46,7 +45,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ByName. 
         /// <para>
-        /// Requests a list of images with a specific recipe name.
+        /// Specifies whether to return one entry per image name, with all versions of each image
+        /// aggregated. Defaults to <c>false</c>, which returns one entry per image version. You
+        /// can't combine this option with the <c>version</c> filter.
         /// </para>
         /// </summary>
         public bool? ByName
@@ -109,7 +110,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property IncludeDeprecated. 
         /// <para>
-        /// Includes deprecated images in the response list.
+        /// Specifies whether to include deprecated Amazon-managed images in the results. Deprecated
+        /// images that you own are always returned. Defaults to <c>false</c>.
         /// </para>
         /// </summary>
         public bool? IncludeDeprecated
@@ -127,7 +129,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specify the maximum number of items to return in a request.
+        /// The maximum number of items to return in a single request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -146,8 +148,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the nextToken from a previously
-        /// truncated response.
+        /// A token to specify where to start paginating. Use the <c>nextToken</c> value from
+        /// a previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -166,10 +168,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner defines which images you want to list. By default, this request will only
-        /// show images owned by your account. You can use this field to specify if you want to
-        /// view images owned by yourself, by Amazon, or those images that have been shared with
-        /// you by other customers.
+        /// Filters the list to images owned by you, by Amazon, or shared with you by other accounts.
+        /// By default, only your account's images are returned.
         /// </para>
         /// </summary>
         public Ownership Owner

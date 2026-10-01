@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Detailed health information about the Amazon EC2 instances in an AWS Elastic Beanstalk
+    /// Detailed health information about the Amazon EC2 instances in an Elastic Beanstalk
     /// environment.
     /// </summary>
     public partial class DescribeInstancesHealthResponse : AmazonWebServiceResponse

@@ -765,6 +765,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly EffectivePolicyType DECLARATIVE_POLICY_EC2 = new EffectivePolicyType("DECLARATIVE_POLICY_EC2");
         /// <summary>
+        /// Constant GUARDDUTY_POLICY for EffectivePolicyType
+        /// </summary>
+        public static readonly EffectivePolicyType GUARDDUTY_POLICY = new EffectivePolicyType("GUARDDUTY_POLICY");
+        /// <summary>
         /// Constant INSPECTOR_POLICY for EffectivePolicyType
         /// </summary>
         public static readonly EffectivePolicyType INSPECTOR_POLICY = new EffectivePolicyType("INSPECTOR_POLICY");
@@ -1530,6 +1534,10 @@ namespace Amazon.Organizations
         /// Constant DECLARATIVE_POLICY_EC2 for PolicyType
         /// </summary>
         public static readonly PolicyType DECLARATIVE_POLICY_EC2 = new PolicyType("DECLARATIVE_POLICY_EC2");
+        /// <summary>
+        /// Constant GUARDDUTY_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType GUARDDUTY_POLICY = new PolicyType("GUARDDUTY_POLICY");
         /// <summary>
         /// Constant INSPECTOR_POLICY for PolicyType
         /// </summary>

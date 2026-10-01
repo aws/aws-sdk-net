@@ -39,7 +39,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ResourceQuotas. 
         /// <para>
-        /// The Elastic Beanstalk resource quotas associated with the calling AWS account.
+        /// The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public ResourceQuotas ResourceQuotas

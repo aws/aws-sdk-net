@@ -1,0 +1,224 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.Omics.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Omics.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// StartRun Request Marshaller
+    /// </summary>
+    public partial class StartRunRequestMarshaller : IMarshaller<IRequest, StartRunRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((StartRunRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(StartRunRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Omics");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-11-28";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/run";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetCacheBehavior())
+            {
+                context.Writer.WritePropertyName("cacheBehavior");
+                context.Writer.WriteStringValue(publicRequest.CacheBehavior);
+            }
+            if (publicRequest.IsSetCacheId())
+            {
+                context.Writer.WritePropertyName("cacheId");
+                context.Writer.WriteStringValue(publicRequest.CacheId);
+            }
+            if (publicRequest.IsSetConfigurationName())
+            {
+                context.Writer.WritePropertyName("configurationName");
+                context.Writer.WriteStringValue(publicRequest.ConfigurationName);
+            }
+            if (publicRequest.IsSetEngineSettings())
+            {
+                context.Writer.WritePropertyName("engineSettings");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.EngineSettings);
+            }
+            if (publicRequest.IsSetLogLevel())
+            {
+                context.Writer.WritePropertyName("logLevel");
+                context.Writer.WriteStringValue(publicRequest.LogLevel);
+            }
+            if (publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+            if (publicRequest.IsSetNetworkingMode())
+            {
+                context.Writer.WritePropertyName("networkingMode");
+                context.Writer.WriteStringValue(publicRequest.NetworkingMode);
+            }
+            if (publicRequest.IsSetOutputUri())
+            {
+                context.Writer.WritePropertyName("outputUri");
+                context.Writer.WriteStringValue(publicRequest.OutputUri);
+            }
+            if (publicRequest.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, publicRequest.Parameters);
+            }
+            if (publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+            if (publicRequest.IsSetRequestId())
+            {
+                context.Writer.WritePropertyName("requestId");
+                context.Writer.WriteStringValue(publicRequest.RequestId);
+            }
+            else
+            {
+                context.Writer.WritePropertyName("requestId");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if (publicRequest.IsSetRetentionMode())
+            {
+                context.Writer.WritePropertyName("retentionMode");
+                context.Writer.WriteStringValue(publicRequest.RetentionMode);
+            }
+            if (publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+            if (publicRequest.IsSetRunGroupId())
+            {
+                context.Writer.WritePropertyName("runGroupId");
+                context.Writer.WriteStringValue(publicRequest.RunGroupId);
+            }
+            if (publicRequest.IsSetRunId())
+            {
+                context.Writer.WritePropertyName("runId");
+                context.Writer.WriteStringValue(publicRequest.RunId);
+            }
+            if (publicRequest.IsSetScratchStorageMode())
+            {
+                context.Writer.WritePropertyName("scratchStorageMode");
+                context.Writer.WriteStringValue(publicRequest.ScratchStorageMode);
+            }
+            if (publicRequest.IsSetSessionPolicy())
+            {
+                context.Writer.WritePropertyName("sessionPolicy");
+                context.Writer.WriteStringValue(publicRequest.SessionPolicy);
+            }
+            if (publicRequest.IsSetStorageCapacity())
+            {
+                context.Writer.WritePropertyName("storageCapacity");
+                context.Writer.WriteNumberValue(publicRequest.StorageCapacity.Value);
+            }
+            if (publicRequest.IsSetStorageType())
+            {
+                context.Writer.WritePropertyName("storageType");
+                context.Writer.WriteStringValue(publicRequest.StorageType);
+            }
+            if (publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+                    context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetWorkflowId())
+            {
+                context.Writer.WritePropertyName("workflowId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowId);
+            }
+            if (publicRequest.IsSetWorkflowOwnerId())
+            {
+                context.Writer.WritePropertyName("workflowOwnerId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowOwnerId);
+            }
+            if (publicRequest.IsSetWorkflowType())
+            {
+                context.Writer.WritePropertyName("workflowType");
+                context.Writer.WriteStringValue(publicRequest.WorkflowType);
+            }
+            if (publicRequest.IsSetWorkflowVersionName())
+            {
+                context.Writer.WritePropertyName("workflowVersionName");
+                context.Writer.WriteStringValue(publicRequest.WorkflowVersionName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            request.HostPrefix = $"workflows-";
+
+            return request;
+        }
+
+        private static readonly StartRunRequestMarshaller _instance = new();
+
+        internal static StartRunRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static StartRunRequestMarshaller Instance => _instance;
+    }
+}

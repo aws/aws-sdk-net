@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Amazon Transcribe Public Preview Release",
   "generate-client-constructors": true,
+  "base-name": "TranscribeService",
   "legacy-service-id": "Transcribe"
 }

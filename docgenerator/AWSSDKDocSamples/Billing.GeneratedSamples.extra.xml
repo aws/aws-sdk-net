@@ -154,6 +154,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListBillingViewSegments(Amazon.Billing.Model.ListBillingViewSegmentsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListBillingViewSegments(Amazon.Billing.Model.ListBillingViewSegmentsRequest)" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewSegmentsRequest" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewSegmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Invoke ListBillingViewSegments"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Billing.IAmazonBilling.ListBillingViewSegments(Amazon.Billing.Model.ListBillingViewSegmentsRequest)" />
+            <member name="M:Amazon.Billing.AmazonBillingClient.ListBillingViewSegments(Amazon.Billing.Model.ListBillingViewSegmentsRequest)" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewSegmentsRequest" />
+            <member name="T:Amazon.Billing.Model.ListBillingViewSegmentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Error example for ListBillingViewSegments"
+                    source=".\AWSSDKDocSamples\Billing\Billing.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Billing.IAmazonBilling.ListSourceViewsForBillingView(Amazon.Billing.Model.ListSourceViewsForBillingViewRequest)" />
             <member name="M:Amazon.Billing.AmazonBillingClient.ListSourceViewsForBillingView(Amazon.Billing.Model.ListSourceViewsForBillingViewRequest)" />
             <member name="T:Amazon.Billing.Model.ListSourceViewsForBillingViewRequest" />

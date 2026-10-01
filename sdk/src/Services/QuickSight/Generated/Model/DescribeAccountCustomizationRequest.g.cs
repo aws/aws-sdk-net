@@ -1,0 +1,113 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.QuickSight.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeAccountCustomization operation. Describes
+    /// the customizations associated with the provided Amazon Web Services account and Amazon
+    /// Quick Sight namespace. The Quick Sight console evaluates which customizations to apply
+    /// by running this API operation with the <c>Resolved</c> flag included. <para> To determine
+    /// what customizations display when you run this command, it can help to visualize the
+    /// relationship of the entities involved. </para> <ul> <li> <para> <c>Amazon Web Services
+    /// account</c> - The Amazon Web Services account exists at the top of the hierarchy.
+    /// It has the potential to use all of the Amazon Web Services Regions and Amazon Web
+    /// Services Services. When you subscribe to Quick Sight, you choose one Amazon Web Services
+    /// Region to use as your home Region. That's where your free SPICE capacity is located.
+    /// You can use Quick Sight in any supported Amazon Web Services Region. </para> </li>
+    /// <li> <para> <c>Amazon Web Services Region</c> - You can sign in to Quick Sight in
+    /// any Amazon Web Services Region. If you have a user directory, it resides in us-east-1,
+    /// which is US East (N. Virginia). Generally speaking, these users have access to Quick
+    /// Sight in any Amazon Web Services Region, unless they are constrained to a namespace.
+    /// </para> <para> To run the command in a different Amazon Web Services Region, you change
+    /// your Region settings. If you're using the CLI, you can use one of the following options:
+    /// </para> <ul> <li> <para> Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command
+    /// line options</a>. </para> </li> <li> <para> Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named
+    /// profiles</a>. </para> </li> <li> <para> Run <c>aws configure</c> to change your default
+    /// Amazon Web Services Region. Use Enter to key the same settings for your keys. For
+    /// more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
+    /// the CLI</a>. </para> </li> </ul> </li> <li> <para> <c>Namespace</c> - A Quick Sight
+    /// namespace is a partition that contains users and assets (data sources, datasets, dashboards,
+    /// and so on). To access assets that are in a specific namespace, users and groups must
+    /// also be part of the same namespace. People who share a namespace are completely isolated
+    /// from users and assets in other namespaces, even if they are in the same Amazon Web
+    /// Services account and Amazon Web Services Region. </para> </li> <li> <para> <c>Applied
+    /// customizations</c> - Quick Sight customizations can apply to an Amazon Web Services
+    /// account or to a namespace. Settings that you apply to a namespace override settings
+    /// that you apply to an Amazon Web Services account. </para> </li> </ul>
+    /// </summary>
+    public partial class DescribeAccountCustomizationRequest : AmazonQuickSightRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AwsAccountId. 
+        /// <para>
+        /// The ID for the Amazon Web Services account that you want to describe Quick Sight customizations
+        /// for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12, Max = 12)]
+        public string AwsAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsAccountId property is set.
+        /// </summary>
+        internal bool IsSetAwsAccountId() => this.AwsAccountId != null;
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The Quick Sight namespace that you want to describe Quick Sight customizations for.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 64)]
+        public string Namespace { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Namespace property is set.
+        /// </summary>
+        internal bool IsSetNamespace() => this.Namespace != null;
+
+        /// <summary>
+        /// Gets and sets the property Resolved. 
+        /// <para>
+        /// The <c>Resolved</c> flag works with the other parameters to determine which view of
+        /// Quick Sight customizations is returned. You can add this flag to your command to use
+        /// the same view that Quick Sight uses to identify which customizations to apply to the
+        /// console. Omit this flag, or set it to <c>no-resolved</c>, to reveal customizations
+        /// that are configured at different levels. 
+        /// </para>
+        /// </summary>
+        public bool? Resolved { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Resolved property is set.
+        /// </summary>
+        internal bool IsSetResolved() => this.Resolved.HasValue;
+    }
+}

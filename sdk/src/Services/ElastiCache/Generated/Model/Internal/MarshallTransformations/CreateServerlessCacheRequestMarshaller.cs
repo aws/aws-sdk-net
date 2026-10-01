@@ -88,6 +88,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetConnectionType())
+                {
+                    request.Parameters.Add("ConnectionType", StringUtils.FromString(publicRequest.ConnectionType));
+                }
                 if(publicRequest.IsSetDailySnapshotTime())
                 {
                     request.Parameters.Add("DailySnapshotTime", StringUtils.FromString(publicRequest.DailySnapshotTime));

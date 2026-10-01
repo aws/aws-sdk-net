@@ -97,6 +97,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetRevision())
+            {
+                context.Writer.WritePropertyName("Revision");
+                context.Writer.WriteStringValue(publicRequest.Revision);
+            }
+
             if(publicRequest.IsSetUserId())
             {
                 context.Writer.WritePropertyName("UserId");

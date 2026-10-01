@@ -86,6 +86,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ungraceful = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("waitELBTargetGroupHealthy", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WaitELBTargetGroupHealthy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

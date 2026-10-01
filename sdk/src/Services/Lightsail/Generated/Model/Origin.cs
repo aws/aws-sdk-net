@@ -43,6 +43,7 @@ namespace Amazon.Lightsail.Model
     public partial class Origin
     {
         private OriginIpAddressTypeEnum _ipAddressType;
+        private bool? _isPrivateOriginAccessEnabled;
         private string _name;
         private OriginProtocolPolicyEnum _protocolPolicy;
         private RegionName _regionName;
@@ -70,6 +71,32 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetIpAddressType()
         {
             return this._ipAddressType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPrivateOriginAccessEnabled. 
+        /// <para>
+        /// Specifies whether private origin access is enabled for the distribution's origin.
+        /// With private origin access, the distribution can serve objects that aren't publicly
+        /// accessible from a Lightsail bucket.
+        /// </para>
+        ///  
+        /// <para>
+        /// This applies when you set the bucket's <c>getObject</c> access rule to <c>private</c>.
+        /// It also applies when you set <c>getObject</c> to <c>public</c> but set individual
+        /// objects to private.
+        /// </para>
+        /// </summary>
+        public bool? IsPrivateOriginAccessEnabled
+        {
+            get { return this._isPrivateOriginAccessEnabled; }
+            set { this._isPrivateOriginAccessEnabled = value; }
+        }
+
+        // Check to see if IsPrivateOriginAccessEnabled property is set
+        internal bool IsSetIsPrivateOriginAccessEnabled()
+        {
+            return this._isPrivateOriginAccessEnabled.HasValue; 
         }
 
         /// <summary>

@@ -1,0 +1,102 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MigrationHubOrchestrator.Model
+{
+    /// <summary>
+    /// The custom script to run tests on source or target environments.
+    /// </summary>
+    public partial class StepAutomationConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property Command. 
+        /// <para>
+        /// The command to run the script.
+        /// </para>
+        /// </summary>
+        public PlatformCommand Command { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Command property is set.
+        /// </summary>
+        internal bool IsSetCommand() => this.Command != null;
+
+        /// <summary>
+        /// Gets and sets the property RunEnvironment. 
+        /// <para>
+        /// The source or target environment.
+        /// </para>
+        /// </summary>
+        public RunEnvironment RunEnvironment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RunEnvironment property is set.
+        /// </summary>
+        internal bool IsSetRunEnvironment() => this.RunEnvironment != null;
+
+        /// <summary>
+        /// Gets and sets the property ScriptLocationS3Bucket. 
+        /// <para>
+        /// The Amazon S3 bucket where the script is located.
+        /// </para>
+        /// </summary>
+        public string ScriptLocationS3Bucket { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScriptLocationS3Bucket property is set.
+        /// </summary>
+        internal bool IsSetScriptLocationS3Bucket() => this.ScriptLocationS3Bucket != null;
+
+        /// <summary>
+        /// Gets and sets the property ScriptLocationS3Key. 
+        /// <para>
+        /// The Amazon S3 key for the script location.
+        /// </para>
+        /// </summary>
+        public PlatformScriptKey ScriptLocationS3Key { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScriptLocationS3Key property is set.
+        /// </summary>
+        internal bool IsSetScriptLocationS3Key() => this.ScriptLocationS3Key != null;
+
+        /// <summary>
+        /// Gets and sets the property TargetType. 
+        /// <para>
+        /// The servers on which to run the script.
+        /// </para>
+        /// </summary>
+        public TargetType TargetType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TargetType property is set.
+        /// </summary>
+        internal bool IsSetTargetType() => this.TargetType != null;
+    }
+}

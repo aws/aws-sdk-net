@@ -43,6 +43,7 @@ namespace Amazon.Deadline.Model
         private MemoryMiBRange _memoryMiB;
         private ServiceManagedFleetOperatingSystemFamily _osFamily;
         private Ec2EbsVolume _rootEbsVolume;
+        private List<FleetSoftwareAddOn> _softwareAddOns = AWSConfigs.InitializeCollections ? new List<FleetSoftwareAddOn>() : null;
         private VCpuCountRange _vCpuCount;
 
         /// <summary>
@@ -233,6 +234,30 @@ namespace Amazon.Deadline.Model
         internal bool IsSetRootEbsVolume()
         {
             return this._rootEbsVolume != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareAddOns. 
+        /// <para>
+        /// The software add-ons that the service installs on worker hosts when they launch.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<FleetSoftwareAddOn> SoftwareAddOns
+        {
+            get { return this._softwareAddOns; }
+            set { this._softwareAddOns = value; }
+        }
+
+        // Check to see if SoftwareAddOns property is set
+        internal bool IsSetSoftwareAddOns()
+        {
+            return this._softwareAddOns != null && (this._softwareAddOns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

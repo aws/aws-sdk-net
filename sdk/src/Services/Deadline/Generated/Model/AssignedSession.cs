@@ -36,6 +36,7 @@ namespace Amazon.Deadline.Model
     {
         private string _jobId;
         private LogConfiguration _logConfiguration;
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _queueId;
         private List<AssignedSessionAction> _sessionActions = AWSConfigs.InitializeCollections ? new List<AssignedSessionAction>() : null;
 
@@ -75,6 +76,31 @@ namespace Amazon.Deadline.Model
         internal bool IsSetLogConfiguration()
         {
             return this._logConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// Key-value hints that the service provides to guide how the session runs. This value
+        /// is used by the worker agent.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

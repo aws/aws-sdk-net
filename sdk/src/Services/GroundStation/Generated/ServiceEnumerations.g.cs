@@ -1,0 +1,1396 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.GroundStation
+{
+    /// <summary>
+    /// Constants used for properties of type AgentStatus.
+    /// </summary>
+    public class AgentStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus ACTIVE = new AgentStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant FAILED for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus FAILED = new AgentStatus("FAILED");
+
+        /// <summary>
+        /// Constant INACTIVE for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus INACTIVE = new AgentStatus("INACTIVE");
+
+        /// <summary>
+        /// Constant SUCCESS for AgentStatus
+        /// </summary>
+        public static readonly AgentStatus SUCCESS = new AgentStatus("SUCCESS");
+
+        /// <summary>
+        /// Constructs a custom AgentStatus for a value not among the defined constants.
+        /// </summary>
+        public AgentStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentStatus FindValue(string value)
+        {
+            return FindValue<AgentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AngleUnits.
+    /// </summary>
+    public class AngleUnits : ConstantClass
+    {
+        /// <summary>
+        /// Constant DEGREE_ANGLE for AngleUnits
+        /// </summary>
+        public static readonly AngleUnits DEGREE_ANGLE = new AngleUnits("DEGREE_ANGLE");
+
+        /// <summary>
+        /// Constant RADIAN for AngleUnits
+        /// </summary>
+        public static readonly AngleUnits RADIAN = new AngleUnits("RADIAN");
+
+        /// <summary>
+        /// Constructs a custom AngleUnits for a value not among the defined constants.
+        /// </summary>
+        public AngleUnits(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AngleUnits FindValue(string value)
+        {
+            return FindValue<AngleUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AngleUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type AuditResults.
+    /// </summary>
+    public class AuditResults : ConstantClass
+    {
+        /// <summary>
+        /// Constant HEALTHY for AuditResults
+        /// </summary>
+        public static readonly AuditResults HEALTHY = new AuditResults("HEALTHY");
+
+        /// <summary>
+        /// Constant UNHEALTHY for AuditResults
+        /// </summary>
+        public static readonly AuditResults UNHEALTHY = new AuditResults("UNHEALTHY");
+
+        /// <summary>
+        /// Constructs a custom AuditResults for a value not among the defined constants.
+        /// </summary>
+        public AuditResults(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuditResults FindValue(string value)
+        {
+            return FindValue<AuditResults>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuditResults(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type BandwidthUnits.
+    /// </summary>
+    public class BandwidthUnits : ConstantClass
+    {
+        /// <summary>
+        /// Constant GHz for BandwidthUnits
+        /// </summary>
+        public static readonly BandwidthUnits GHz = new BandwidthUnits("GHz");
+
+        /// <summary>
+        /// Constant KHz for BandwidthUnits
+        /// </summary>
+        public static readonly BandwidthUnits KHz = new BandwidthUnits("kHz");
+
+        /// <summary>
+        /// Constant MHz for BandwidthUnits
+        /// </summary>
+        public static readonly BandwidthUnits MHz = new BandwidthUnits("MHz");
+
+        /// <summary>
+        /// Constructs a custom BandwidthUnits for a value not among the defined constants.
+        /// </summary>
+        public BandwidthUnits(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BandwidthUnits FindValue(string value)
+        {
+            return FindValue<BandwidthUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BandwidthUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityHealth.
+    /// </summary>
+    public class CapabilityHealth : ConstantClass
+    {
+        /// <summary>
+        /// Constant HEALTHY for CapabilityHealth
+        /// </summary>
+        public static readonly CapabilityHealth HEALTHY = new CapabilityHealth("HEALTHY");
+
+        /// <summary>
+        /// Constant UNHEALTHY for CapabilityHealth
+        /// </summary>
+        public static readonly CapabilityHealth UNHEALTHY = new CapabilityHealth("UNHEALTHY");
+
+        /// <summary>
+        /// Constructs a custom CapabilityHealth for a value not among the defined constants.
+        /// </summary>
+        public CapabilityHealth(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityHealth FindValue(string value)
+        {
+            return FindValue<CapabilityHealth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityHealth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type CapabilityHealthReason.
+    /// </summary>
+    public class CapabilityHealthReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant DATAPLANE_FAILURE for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason DATAPLANE_FAILURE = new CapabilityHealthReason("DATAPLANE_FAILURE");
+
+        /// <summary>
+        /// Constant HEALTHY for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason HEALTHY = new CapabilityHealthReason("HEALTHY");
+
+        /// <summary>
+        /// Constant INITIALIZING_DATAPLANE for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason INITIALIZING_DATAPLANE = new CapabilityHealthReason("INITIALIZING_DATAPLANE");
+
+        /// <summary>
+        /// Constant INVALID_IP_OWNERSHIP for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason INVALID_IP_OWNERSHIP = new CapabilityHealthReason("INVALID_IP_OWNERSHIP");
+
+        /// <summary>
+        /// Constant NOT_AUTHORIZED_TO_CREATE_SLR for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason NOT_AUTHORIZED_TO_CREATE_SLR = new CapabilityHealthReason("NOT_AUTHORIZED_TO_CREATE_SLR");
+
+        /// <summary>
+        /// Constant NO_REGISTERED_AGENT for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason NO_REGISTERED_AGENT = new CapabilityHealthReason("NO_REGISTERED_AGENT");
+
+        /// <summary>
+        /// Constant UNVERIFIED_IP_OWNERSHIP for CapabilityHealthReason
+        /// </summary>
+        public static readonly CapabilityHealthReason UNVERIFIED_IP_OWNERSHIP = new CapabilityHealthReason("UNVERIFIED_IP_OWNERSHIP");
+
+        /// <summary>
+        /// Constructs a custom CapabilityHealthReason for a value not among the defined constants.
+        /// </summary>
+        public CapabilityHealthReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapabilityHealthReason FindValue(string value)
+        {
+            return FindValue<CapabilityHealthReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapabilityHealthReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ConfigCapabilityType.
+    /// </summary>
+    public class ConfigCapabilityType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AntennaDownlink for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType AntennaDownlink = new ConfigCapabilityType("antenna-downlink");
+
+        /// <summary>
+        /// Constant AntennaDownlinkDemodDecode for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType AntennaDownlinkDemodDecode = new ConfigCapabilityType("antenna-downlink-demod-decode");
+
+        /// <summary>
+        /// Constant AntennaUplink for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType AntennaUplink = new ConfigCapabilityType("antenna-uplink");
+
+        /// <summary>
+        /// Constant DataflowEndpoint for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType DataflowEndpoint = new ConfigCapabilityType("dataflow-endpoint");
+
+        /// <summary>
+        /// Constant S3Recording for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType S3Recording = new ConfigCapabilityType("s3-recording");
+
+        /// <summary>
+        /// Constant TelemetrySink for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType TelemetrySink = new ConfigCapabilityType("telemetry-sink");
+
+        /// <summary>
+        /// Constant Tracking for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType Tracking = new ConfigCapabilityType("tracking");
+
+        /// <summary>
+        /// Constant UplinkEcho for ConfigCapabilityType
+        /// </summary>
+        public static readonly ConfigCapabilityType UplinkEcho = new ConfigCapabilityType("uplink-echo");
+
+        /// <summary>
+        /// Constructs a custom ConfigCapabilityType for a value not among the defined constants.
+        /// </summary>
+        public ConfigCapabilityType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConfigCapabilityType FindValue(string value)
+        {
+            return FindValue<ConfigCapabilityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConfigCapabilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContactStatus.
+    /// </summary>
+    public class ContactStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant AVAILABLE for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus AVAILABLE = new ContactStatus("AVAILABLE");
+
+        /// <summary>
+        /// Constant AWS_CANCELLED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus AWS_CANCELLED = new ContactStatus("AWS_CANCELLED");
+
+        /// <summary>
+        /// Constant AWS_FAILED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus AWS_FAILED = new ContactStatus("AWS_FAILED");
+
+        /// <summary>
+        /// Constant CANCELLED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus CANCELLED = new ContactStatus("CANCELLED");
+
+        /// <summary>
+        /// Constant CANCELLING for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus CANCELLING = new ContactStatus("CANCELLING");
+
+        /// <summary>
+        /// Constant COMPLETED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus COMPLETED = new ContactStatus("COMPLETED");
+
+        /// <summary>
+        /// Constant FAILED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus FAILED = new ContactStatus("FAILED");
+
+        /// <summary>
+        /// Constant FAILED_TO_SCHEDULE for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus FAILED_TO_SCHEDULE = new ContactStatus("FAILED_TO_SCHEDULE");
+
+        /// <summary>
+        /// Constant PASS for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus PASS = new ContactStatus("PASS");
+
+        /// <summary>
+        /// Constant POSTPASS for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus POSTPASS = new ContactStatus("POSTPASS");
+
+        /// <summary>
+        /// Constant PREPASS for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus PREPASS = new ContactStatus("PREPASS");
+
+        /// <summary>
+        /// Constant SCHEDULED for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus SCHEDULED = new ContactStatus("SCHEDULED");
+
+        /// <summary>
+        /// Constant SCHEDULING for ContactStatus
+        /// </summary>
+        public static readonly ContactStatus SCHEDULING = new ContactStatus("SCHEDULING");
+
+        /// <summary>
+        /// Constructs a custom ContactStatus for a value not among the defined constants.
+        /// </summary>
+        public ContactStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContactStatus FindValue(string value)
+        {
+            return FindValue<ContactStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContactStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Criticality.
+    /// </summary>
+    public class Criticality : ConstantClass
+    {
+        /// <summary>
+        /// Constant PREFERRED for Criticality
+        /// </summary>
+        public static readonly Criticality PREFERRED = new Criticality("PREFERRED");
+
+        /// <summary>
+        /// Constant REMOVED for Criticality
+        /// </summary>
+        public static readonly Criticality REMOVED = new Criticality("REMOVED");
+
+        /// <summary>
+        /// Constant REQUIRED for Criticality
+        /// </summary>
+        public static readonly Criticality REQUIRED = new Criticality("REQUIRED");
+
+        /// <summary>
+        /// Constructs a custom Criticality for a value not among the defined constants.
+        /// </summary>
+        public Criticality(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Criticality FindValue(string value)
+        {
+            return FindValue<Criticality>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Criticality(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EirpUnits.
+    /// </summary>
+    public class EirpUnits : ConstantClass
+    {
+        /// <summary>
+        /// Constant DBW for EirpUnits
+        /// </summary>
+        public static readonly EirpUnits DBW = new EirpUnits("dBW");
+
+        /// <summary>
+        /// Constructs a custom EirpUnits for a value not among the defined constants.
+        /// </summary>
+        public EirpUnits(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EirpUnits FindValue(string value)
+        {
+            return FindValue<EirpUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EirpUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EndpointStatus.
+    /// </summary>
+    public class EndpointStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant Created for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Created = new EndpointStatus("created");
+
+        /// <summary>
+        /// Constant Creating for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Creating = new EndpointStatus("creating");
+
+        /// <summary>
+        /// Constant Deleted for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Deleted = new EndpointStatus("deleted");
+
+        /// <summary>
+        /// Constant Deleting for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Deleting = new EndpointStatus("deleting");
+
+        /// <summary>
+        /// Constant Failed for EndpointStatus
+        /// </summary>
+        public static readonly EndpointStatus Failed = new EndpointStatus("failed");
+
+        /// <summary>
+        /// Constructs a custom EndpointStatus for a value not among the defined constants.
+        /// </summary>
+        public EndpointStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndpointStatus FindValue(string value)
+        {
+            return FindValue<EndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisErrorCode.
+    /// </summary>
+    public class EphemerisErrorCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZ_EL_SEGMENTS_OUT_OF_ORDER for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENTS_OUT_OF_ORDER = new EphemerisErrorCode("AZ_EL_SEGMENTS_OUT_OF_ORDER");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_END_TIME_BEFORE_START_TIME for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_END_TIME_BEFORE_START_TIME = new EphemerisErrorCode("AZ_EL_SEGMENT_END_TIME_BEFORE_START_TIME");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_END_TIME_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_END_TIME_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_END_TIME_INVALID");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_END_TIME_TOO_LATE for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_END_TIME_TOO_LATE = new EphemerisErrorCode("AZ_EL_SEGMENT_END_TIME_TOO_LATE");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_LIST_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_LIST_MISSING = new EphemerisErrorCode("AZ_EL_SEGMENT_LIST_MISSING");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_REFERENCE_EPOCH_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_REFERENCE_EPOCH_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_REFERENCE_EPOCH_INVALID");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_START_TIME_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_START_TIME_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_START_TIME_INVALID");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_TIMES_OVERLAP for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_TIMES_OVERLAP = new EphemerisErrorCode("AZ_EL_SEGMENT_TIMES_OVERLAP");
+
+        /// <summary>
+        /// Constant AZ_EL_SEGMENT_VALID_TIME_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_SEGMENT_VALID_TIME_RANGE_INVALID = new EphemerisErrorCode("AZ_EL_SEGMENT_VALID_TIME_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant AZ_EL_TOTAL_DURATION_EXCEEDED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode AZ_EL_TOTAL_DURATION_EXCEEDED = new EphemerisErrorCode("AZ_EL_TOTAL_DURATION_EXCEEDED");
+
+        /// <summary>
+        /// Constant CENTER_BODY_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode CENTER_BODY_UNSUPPORTED = new EphemerisErrorCode("CENTER_BODY_UNSUPPORTED");
+
+        /// <summary>
+        /// Constant CREATION_DATE_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode CREATION_DATE_MISSING = new EphemerisErrorCode("CREATION_DATE_MISSING");
+
+        /// <summary>
+        /// Constant END_TIME_IN_PAST for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode END_TIME_IN_PAST = new EphemerisErrorCode("END_TIME_IN_PAST");
+
+        /// <summary>
+        /// Constant EXPIRATION_TIME_TOO_EARLY for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode EXPIRATION_TIME_TOO_EARLY = new EphemerisErrorCode("EXPIRATION_TIME_TOO_EARLY");
+
+        /// <summary>
+        /// Constant FILE_FORMAT_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode FILE_FORMAT_INVALID = new EphemerisErrorCode("FILE_FORMAT_INVALID");
+
+        /// <summary>
+        /// Constant INSUFFICIENT_KMS_PERMISSIONS for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INSUFFICIENT_KMS_PERMISSIONS = new EphemerisErrorCode("INSUFFICIENT_KMS_PERMISSIONS");
+
+        /// <summary>
+        /// Constant INSUFFICIENT_TIME_AZ_EL for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INSUFFICIENT_TIME_AZ_EL = new EphemerisErrorCode("INSUFFICIENT_TIME_AZ_EL");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INTERNAL_ERROR = new EphemerisErrorCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INTERPOLATION_DEGREE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INTERPOLATION_DEGREE_INVALID = new EphemerisErrorCode("INTERPOLATION_DEGREE_INVALID");
+
+        /// <summary>
+        /// Constant INTERPOLATION_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode INTERPOLATION_MISSING = new EphemerisErrorCode("INTERPOLATION_MISSING");
+
+        /// <summary>
+        /// Constant MEAN_MOTION_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode MEAN_MOTION_INVALID = new EphemerisErrorCode("MEAN_MOTION_INVALID");
+
+        /// <summary>
+        /// Constant MISMATCHED_SATCAT_ID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode MISMATCHED_SATCAT_ID = new EphemerisErrorCode("MISMATCHED_SATCAT_ID");
+
+        /// <summary>
+        /// Constant OBJECT_ID_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode OBJECT_ID_MISSING = new EphemerisErrorCode("OBJECT_ID_MISSING");
+
+        /// <summary>
+        /// Constant OBJECT_NAME_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode OBJECT_NAME_MISSING = new EphemerisErrorCode("OBJECT_NAME_MISSING");
+
+        /// <summary>
+        /// Constant OEM_VERSION_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode OEM_VERSION_UNSUPPORTED = new EphemerisErrorCode("OEM_VERSION_UNSUPPORTED");
+
+        /// <summary>
+        /// Constant ORIGINATOR_MISSING for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode ORIGINATOR_MISSING = new EphemerisErrorCode("ORIGINATOR_MISSING");
+
+        /// <summary>
+        /// Constant REF_FRAME_EPOCH_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode REF_FRAME_EPOCH_UNSUPPORTED = new EphemerisErrorCode("REF_FRAME_EPOCH_UNSUPPORTED");
+
+        /// <summary>
+        /// Constant REF_FRAME_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode REF_FRAME_UNSUPPORTED = new EphemerisErrorCode("REF_FRAME_UNSUPPORTED");
+
+        /// <summary>
+        /// Constant START_TIME_IN_FUTURE for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode START_TIME_IN_FUTURE = new EphemerisErrorCode("START_TIME_IN_FUTURE");
+
+        /// <summary>
+        /// Constant START_TIME_METADATA_TOO_EARLY for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode START_TIME_METADATA_TOO_EARLY = new EphemerisErrorCode("START_TIME_METADATA_TOO_EARLY");
+
+        /// <summary>
+        /// Constant STOP_TIME_METADATA_TOO_LATE for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode STOP_TIME_METADATA_TOO_LATE = new EphemerisErrorCode("STOP_TIME_METADATA_TOO_LATE");
+
+        /// <summary>
+        /// Constant TIME_AZ_EL_ANGLE_UNITS_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_ANGLE_UNITS_INVALID = new EphemerisErrorCode("TIME_AZ_EL_ANGLE_UNITS_INVALID");
+
+        /// <summary>
+        /// Constant TIME_AZ_EL_AZ_DEGREE_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_AZ_DEGREE_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_AZ_DEGREE_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant TIME_AZ_EL_AZ_RADIAN_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_AZ_RADIAN_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_AZ_RADIAN_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant TIME_AZ_EL_EL_DEGREE_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_EL_DEGREE_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_EL_DEGREE_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant TIME_AZ_EL_EL_RADIAN_RANGE_INVALID for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_EL_RADIAN_RANGE_INVALID = new EphemerisErrorCode("TIME_AZ_EL_EL_RADIAN_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant TIME_AZ_EL_ITEMS_OUT_OF_ORDER for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_AZ_EL_ITEMS_OUT_OF_ORDER = new EphemerisErrorCode("TIME_AZ_EL_ITEMS_OUT_OF_ORDER");
+
+        /// <summary>
+        /// Constant TIME_SYSTEM_UNSUPPORTED for EphemerisErrorCode
+        /// </summary>
+        public static readonly EphemerisErrorCode TIME_SYSTEM_UNSUPPORTED = new EphemerisErrorCode("TIME_SYSTEM_UNSUPPORTED");
+
+        /// <summary>
+        /// Constructs a custom EphemerisErrorCode for a value not among the defined constants.
+        /// </summary>
+        public EphemerisErrorCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisErrorCode FindValue(string value)
+        {
+            return FindValue<EphemerisErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisInvalidReason.
+    /// </summary>
+    public class EphemerisInvalidReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant KMS_KEY_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason KMS_KEY_INVALID = new EphemerisInvalidReason("KMS_KEY_INVALID");
+
+        /// <summary>
+        /// Constant METADATA_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason METADATA_INVALID = new EphemerisInvalidReason("METADATA_INVALID");
+
+        /// <summary>
+        /// Constant TIME_RANGE_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason TIME_RANGE_INVALID = new EphemerisInvalidReason("TIME_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant TRAJECTORY_INVALID for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason TRAJECTORY_INVALID = new EphemerisInvalidReason("TRAJECTORY_INVALID");
+
+        /// <summary>
+        /// Constant VALIDATION_ERROR for EphemerisInvalidReason
+        /// </summary>
+        public static readonly EphemerisInvalidReason VALIDATION_ERROR = new EphemerisInvalidReason("VALIDATION_ERROR");
+
+        /// <summary>
+        /// Constructs a custom EphemerisInvalidReason for a value not among the defined constants.
+        /// </summary>
+        public EphemerisInvalidReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisInvalidReason FindValue(string value)
+        {
+            return FindValue<EphemerisInvalidReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisInvalidReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisSource.
+    /// </summary>
+    public class EphemerisSource : ConstantClass
+    {
+        /// <summary>
+        /// Constant CUSTOMER_PROVIDED for EphemerisSource
+        /// </summary>
+        public static readonly EphemerisSource CUSTOMER_PROVIDED = new EphemerisSource("CUSTOMER_PROVIDED");
+
+        /// <summary>
+        /// Constant SPACE_TRACK for EphemerisSource
+        /// </summary>
+        public static readonly EphemerisSource SPACE_TRACK = new EphemerisSource("SPACE_TRACK");
+
+        /// <summary>
+        /// Constructs a custom EphemerisSource for a value not among the defined constants.
+        /// </summary>
+        public EphemerisSource(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisSource FindValue(string value)
+        {
+            return FindValue<EphemerisSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisStatus.
+    /// </summary>
+    public class EphemerisStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISABLED for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus DISABLED = new EphemerisStatus("DISABLED");
+
+        /// <summary>
+        /// Constant ENABLED for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus ENABLED = new EphemerisStatus("ENABLED");
+
+        /// <summary>
+        /// Constant ERROR for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus ERROR = new EphemerisStatus("ERROR");
+
+        /// <summary>
+        /// Constant EXPIRED for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus EXPIRED = new EphemerisStatus("EXPIRED");
+
+        /// <summary>
+        /// Constant INVALID for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus INVALID = new EphemerisStatus("INVALID");
+
+        /// <summary>
+        /// Constant VALIDATING for EphemerisStatus
+        /// </summary>
+        public static readonly EphemerisStatus VALIDATING = new EphemerisStatus("VALIDATING");
+
+        /// <summary>
+        /// Constructs a custom EphemerisStatus for a value not among the defined constants.
+        /// </summary>
+        public EphemerisStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisStatus FindValue(string value)
+        {
+            return FindValue<EphemerisStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type EphemerisType.
+    /// </summary>
+    public class EphemerisType : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZ_EL for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType AZ_EL = new EphemerisType("AZ_EL");
+
+        /// <summary>
+        /// Constant OEM for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType OEM = new EphemerisType("OEM");
+
+        /// <summary>
+        /// Constant SERVICE_MANAGED for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType SERVICE_MANAGED = new EphemerisType("SERVICE_MANAGED");
+
+        /// <summary>
+        /// Constant TLE for EphemerisType
+        /// </summary>
+        public static readonly EphemerisType TLE = new EphemerisType("TLE");
+
+        /// <summary>
+        /// Constructs a custom EphemerisType for a value not among the defined constants.
+        /// </summary>
+        public EphemerisType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EphemerisType FindValue(string value)
+        {
+            return FindValue<EphemerisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EphemerisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type FrequencyUnits.
+    /// </summary>
+    public class FrequencyUnits : ConstantClass
+    {
+        /// <summary>
+        /// Constant GHz for FrequencyUnits
+        /// </summary>
+        public static readonly FrequencyUnits GHz = new FrequencyUnits("GHz");
+
+        /// <summary>
+        /// Constant KHz for FrequencyUnits
+        /// </summary>
+        public static readonly FrequencyUnits KHz = new FrequencyUnits("kHz");
+
+        /// <summary>
+        /// Constant MHz for FrequencyUnits
+        /// </summary>
+        public static readonly FrequencyUnits MHz = new FrequencyUnits("MHz");
+
+        /// <summary>
+        /// Constructs a custom FrequencyUnits for a value not among the defined constants.
+        /// </summary>
+        public FrequencyUnits(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FrequencyUnits FindValue(string value)
+        {
+            return FindValue<FrequencyUnits>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FrequencyUnits(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MaintenanceType.
+    /// </summary>
+    public class MaintenanceType : ConstantClass
+    {
+        /// <summary>
+        /// Constant PLANNED for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType PLANNED = new MaintenanceType("PLANNED");
+
+        /// <summary>
+        /// Constant UNPLANNED for MaintenanceType
+        /// </summary>
+        public static readonly MaintenanceType UNPLANNED = new MaintenanceType("UNPLANNED");
+
+        /// <summary>
+        /// Constructs a custom MaintenanceType for a value not among the defined constants.
+        /// </summary>
+        public MaintenanceType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MaintenanceType FindValue(string value)
+        {
+            return FindValue<MaintenanceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MaintenanceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Polarization.
+    /// </summary>
+    public class Polarization : ConstantClass
+    {
+        /// <summary>
+        /// Constant LEFT_HAND for Polarization
+        /// </summary>
+        public static readonly Polarization LEFT_HAND = new Polarization("LEFT_HAND");
+
+        /// <summary>
+        /// Constant NONE for Polarization
+        /// </summary>
+        public static readonly Polarization NONE = new Polarization("NONE");
+
+        /// <summary>
+        /// Constant RIGHT_HAND for Polarization
+        /// </summary>
+        public static readonly Polarization RIGHT_HAND = new Polarization("RIGHT_HAND");
+
+        /// <summary>
+        /// Constructs a custom Polarization for a value not among the defined constants.
+        /// </summary>
+        public Polarization(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Polarization FindValue(string value)
+        {
+            return FindValue<Polarization>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Polarization(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ReservationType.
+    /// </summary>
+    public class ReservationType : ConstantClass
+    {
+        /// <summary>
+        /// Constant CONTACT for ReservationType
+        /// </summary>
+        public static readonly ReservationType CONTACT = new ReservationType("CONTACT");
+
+        /// <summary>
+        /// Constant MAINTENANCE for ReservationType
+        /// </summary>
+        public static readonly ReservationType MAINTENANCE = new ReservationType("MAINTENANCE");
+
+        /// <summary>
+        /// Constructs a custom ReservationType for a value not among the defined constants.
+        /// </summary>
+        public ReservationType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservationType FindValue(string value)
+        {
+            return FindValue<ReservationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TelemetrySinkType.
+    /// </summary>
+    public class TelemetrySinkType : ConstantClass
+    {
+        /// <summary>
+        /// Constant KINESIS_DATA_STREAM for TelemetrySinkType
+        /// </summary>
+        public static readonly TelemetrySinkType KINESIS_DATA_STREAM = new TelemetrySinkType("KINESIS_DATA_STREAM");
+
+        /// <summary>
+        /// Constructs a custom TelemetrySinkType for a value not among the defined constants.
+        /// </summary>
+        public TelemetrySinkType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TelemetrySinkType FindValue(string value)
+        {
+            return FindValue<TelemetrySinkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TelemetrySinkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VersionFailureReasonCode.
+    /// </summary>
+    public class VersionFailureReasonCode : ConstantClass
+    {
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_INVALID_STATUS for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_INVALID_STATUS = new VersionFailureReasonCode("AZEL_EPHEMERIS_INVALID_STATUS");
+
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_NOT_FOUND for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_NOT_FOUND = new VersionFailureReasonCode("AZEL_EPHEMERIS_NOT_FOUND");
+
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_TIME_RANGE_INVALID for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_TIME_RANGE_INVALID = new VersionFailureReasonCode("AZEL_EPHEMERIS_TIME_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant AZEL_EPHEMERIS_WRONG_GROUND_STATION for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode AZEL_EPHEMERIS_WRONG_GROUND_STATION = new VersionFailureReasonCode("AZEL_EPHEMERIS_WRONG_GROUND_STATION");
+
+        /// <summary>
+        /// Constant EPHEMERIS_NOT_ENABLED for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode EPHEMERIS_NOT_ENABLED = new VersionFailureReasonCode("EPHEMERIS_NOT_ENABLED");
+
+        /// <summary>
+        /// Constant EPHEMERIS_NOT_FOUND for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode EPHEMERIS_NOT_FOUND = new VersionFailureReasonCode("EPHEMERIS_NOT_FOUND");
+
+        /// <summary>
+        /// Constant EPHEMERIS_TIME_RANGE_INVALID for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode EPHEMERIS_TIME_RANGE_INVALID = new VersionFailureReasonCode("EPHEMERIS_TIME_RANGE_INVALID");
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode INTERNAL_ERROR = new VersionFailureReasonCode("INTERNAL_ERROR");
+
+        /// <summary>
+        /// Constant INVALID_SATELLITE_ARN for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode INVALID_SATELLITE_ARN = new VersionFailureReasonCode("INVALID_SATELLITE_ARN");
+
+        /// <summary>
+        /// Constant INVALID_UPDATE_CONTACT_REQUEST for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode INVALID_UPDATE_CONTACT_REQUEST = new VersionFailureReasonCode("INVALID_UPDATE_CONTACT_REQUEST");
+
+        /// <summary>
+        /// Constant NOT_ONBOARDED_TO_AZEL_EPHEMERIS for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode NOT_ONBOARDED_TO_AZEL_EPHEMERIS = new VersionFailureReasonCode("NOT_ONBOARDED_TO_AZEL_EPHEMERIS");
+
+        /// <summary>
+        /// Constant SATELLITE_DOES_NOT_MATCH_EPHEMERIS for VersionFailureReasonCode
+        /// </summary>
+        public static readonly VersionFailureReasonCode SATELLITE_DOES_NOT_MATCH_EPHEMERIS = new VersionFailureReasonCode("SATELLITE_DOES_NOT_MATCH_EPHEMERIS");
+
+        /// <summary>
+        /// Constructs a custom VersionFailureReasonCode for a value not among the defined constants.
+        /// </summary>
+        public VersionFailureReasonCode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionFailureReasonCode FindValue(string value)
+        {
+            return FindValue<VersionFailureReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionFailureReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type VersionStatus.
+    /// </summary>
+    public class VersionStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant ACTIVE for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus ACTIVE = new VersionStatus("ACTIVE");
+
+        /// <summary>
+        /// Constant FAILED_TO_UPDATE for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus FAILED_TO_UPDATE = new VersionStatus("FAILED_TO_UPDATE");
+
+        /// <summary>
+        /// Constant SUPERSEDED for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus SUPERSEDED = new VersionStatus("SUPERSEDED");
+
+        /// <summary>
+        /// Constant UPDATING for VersionStatus
+        /// </summary>
+        public static readonly VersionStatus UPDATING = new VersionStatus("UPDATING");
+
+        /// <summary>
+        /// Constructs a custom VersionStatus for a value not among the defined constants.
+        /// </summary>
+        public VersionStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VersionStatus FindValue(string value)
+        {
+            return FindValue<VersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

@@ -66,6 +66,12 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.AutoScalingGroups.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("Cluster", targetDepth))
+                    {
+                        var unmarshaller = ClusterUnmarshaller.Instance;
+                        unmarshalledObject.Cluster = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("EnvironmentName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

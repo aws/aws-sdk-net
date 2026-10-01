@@ -546,6 +546,51 @@ namespace Amazon.ARCRegionswitch
 
         #endregion
                 
+        #region  ListServiceQuotaWarnings
+
+
+
+        /// <summary>
+        /// Lists the service quota warnings for the plans that you can access. Region switch
+        /// creates a warning when the applied quota value in one Region of a plan is lower than
+        /// the value required for the matching resource in another Region or account in the plan.
+        /// 
+        ///  
+        /// <para>
+        /// Returns the warnings for the plans that you own and for plans that are shared with
+        /// your account through AWS Resource Access Manager (AWS RAM). To return warnings for
+        /// specific plans, provide a list of plan Amazon Resource Names (ARNs). Region switch
+        /// ignores any plan ARN that you can't access. If you don't provide any plan ARNs, Region
+        /// switch returns the warnings for all of your accessible plans.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceQuotaWarnings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceQuotaWarnings service method, as returned by ARCRegionswitch.</returns>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/arc-region-switch-2022-07-26/ListServiceQuotaWarnings">REST API Reference for ListServiceQuotaWarnings Operation</seealso>
+        Task<ListServiceQuotaWarningsResponse> ListServiceQuotaWarningsAsync(ListServiceQuotaWarningsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 

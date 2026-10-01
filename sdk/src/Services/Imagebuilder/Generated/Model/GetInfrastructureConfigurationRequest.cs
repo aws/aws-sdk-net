@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInfrastructureConfiguration operation.
-    /// Gets an infrastructure configuration.
+    /// Retrieves an infrastructure configuration.
     /// </summary>
     public partial class GetInfrastructureConfigurationRequest : AmazonImagebuilderRequest
     {

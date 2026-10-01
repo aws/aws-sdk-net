@@ -67,6 +67,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.CacheUsageLimits = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ConnectionType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ConnectionType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("CreateTime", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;

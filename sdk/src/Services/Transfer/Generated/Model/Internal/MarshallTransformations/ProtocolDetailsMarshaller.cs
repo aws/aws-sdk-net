@@ -63,10 +63,37 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PassiveIp);
             }
 
+            if(requestObject.IsSetProxyConfig())
+            {
+                context.Writer.WritePropertyName("ProxyConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProxyConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProxyConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSetStatOption())
             {
                 context.Writer.WritePropertyName("SetStatOption");
                 context.Writer.WriteStringValue(requestObject.SetStatOption);
+            }
+
+            if(requestObject.IsSetSftpPorts())
+            {
+                context.Writer.WritePropertyName("SftpPorts");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSftpPortsListValue in requestObject.SftpPorts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SftpPortWithOptionsMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSftpPortsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTlsSessionResumptionMode())

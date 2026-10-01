@@ -6,16 +6,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.CompleteSnapshotRequest.Checksum</property>
+    <min>0</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.CompleteSnapshotRequest.ChecksumAggregationMethod</property>
+    <min>0</min>
     <max>32</max>
     <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.CompleteSnapshotRequest.ChecksumAlgorithm</property>
+    <min>0</min>
     <max>32</max>
     <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
@@ -27,6 +30,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.CompleteSnapshotResponse.Status</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -35,6 +39,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.GetSnapshotBlockRequest.BlockToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
@@ -46,11 +51,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.GetSnapshotBlockResponse.Checksum</property>
+    <min>0</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.GetSnapshotBlockResponse.ChecksumAlgorithm</property>
+    <min>0</min>
     <max>32</max>
     <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
@@ -67,6 +74,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ListChangedBlocksRequest.NextToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
@@ -82,6 +90,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ListChangedBlocksResponse.NextToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
@@ -96,6 +105,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ListSnapshotBlocksRequest.NextToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
@@ -111,6 +121,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ListSnapshotBlocksResponse.NextToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
@@ -124,11 +135,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.PutSnapshotBlockRequest.Checksum</property>
+    <min>0</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.PutSnapshotBlockRequest.ChecksumAlgorithm</property>
+    <min>0</min>
     <max>32</max>
     <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
@@ -145,21 +158,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.PutSnapshotBlockResponse.Checksum</property>
+    <min>0</min>
     <max>64</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.PutSnapshotBlockResponse.ChecksumAlgorithm</property>
+    <min>0</min>
     <max>32</max>
     <pattern>^[A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotRequest.ClientToken</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotRequest.Description</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
@@ -167,7 +184,7 @@
     <property>Amazon.EBS.Model.StartSnapshotRequest.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotRequest.ParentSnapshotId</property>
@@ -186,6 +203,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotResponse.Description</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
@@ -193,13 +211,13 @@
     <property>Amazon.EBS.Model.StartSnapshotResponse.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:kms:.*:[0-9]{12}:key/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotResponse.OwnerId</property>
     <min>1</min>
     <max>24</max>
-    <pattern>\S+</pattern>
+    <pattern>^\S+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotResponse.ParentSnapshotId</property>
@@ -215,6 +233,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.StartSnapshotResponse.Status</property>
+    <min>0</min>
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
@@ -227,6 +246,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.Block.BlockToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
@@ -236,21 +256,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ChangedBlock.FirstBlockToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.ChangedBlock.SecondBlockToken</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[A-Za-z0-9+/=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.Tag.Key</property>
+    <min>0</min>
     <max>127</max>
     <pattern>^[\S\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EBS.Model.Tag.Value</property>
+    <min>0</min>
     <max>255</max>
     <pattern>^[\S\s]*$</pattern>
   </property-value-rule>

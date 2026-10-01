@@ -1,6 +1,5 @@
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
-using System.Text.Json;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Model;
@@ -69,28 +68,5 @@ public class ModelValidatorTests
 
         var ex = Assert.Throws<GeneratorException>(() => ModelValidator.Validate(model));
         Assert.Contains("exactly one service shape", ex.Message);
-    }
-
-    [Fact]
-    public void Validate_MixinShape_Throws()
-    {
-        var model = new SmithyModel
-        {
-            Version = "2.0",
-            Shapes = new Dictionary<string, Shape?>
-            {
-                ["com.example#MyService"] = new ServiceShape { ApiVersion = "2023-01-01" },
-                ["com.example#MyMixin"] = new StructureShape
-                {
-                    Traits = new Dictionary<string, JsonElement>
-                    {
-                        ["smithy.api#mixin"] = JsonDocument.Parse("{}").RootElement,
-                    },
-                },
-            },
-        };
-
-        var ex = Assert.Throws<GeneratorException>(() => ModelValidator.Validate(model));
-        Assert.Contains("mixin", ex.Message);
     }
 }

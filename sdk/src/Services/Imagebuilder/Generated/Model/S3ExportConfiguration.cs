@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Properties that configure export from your build instance to a compatible file format
-    /// for your VM.
+    /// Properties that configure exporting the output image to a disk image file in an Amazon
+    /// S3 bucket, in a format that's compatible with your VMs.
     /// </summary>
     public partial class S3ExportConfiguration
     {

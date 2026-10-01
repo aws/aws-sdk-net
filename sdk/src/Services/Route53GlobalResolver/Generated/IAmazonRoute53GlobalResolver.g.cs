@@ -1,0 +1,3777 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Amazon.Runtime;
+using Amazon.Route53GlobalResolver.Model;
+
+#pragma warning disable CS1570
+
+namespace Amazon.Route53GlobalResolver
+{
+    /// <summary>
+    /// <para>Interface for accessing Route53GlobalResolver</para>
+    ///
+    /// Amazon Route 53 Global Resolver is a global, internet-accessible DNS resolver that
+    /// enables customers to resolve and forward traffic for both public and private domains
+    /// while ensuring security and authenticity of queries over the internet. Route 53 Global
+    /// Resolver supports DNS-over-port 53 (Do53), DNS-over-TLS (DoT), and DNS-over-HTTPS
+    /// (DoH) protocols through global anycast IP addresses.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+    /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+    /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+    /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+    /// </para>
+    ///  </important>
+    /// </summary>
+    public partial interface IAmazonRoute53GlobalResolver : IAmazonService, IDisposable
+    {
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        IRoute53GlobalResolverPaginatorFactory Paginators { get; }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Associates a Route 53 private hosted zone with a Route 53 Global Resolver resource.
+        /// This allows the resolver to resolve DNS queries for the private hosted zone from anywhere
+        /// globally.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHostedZone service method.</param>
+        /// <returns>The response from the AssociateHostedZone service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/AssociateHostedZone">REST API Reference for AssociateHostedZone Operation</seealso>
+        AssociateHostedZoneResponse AssociateHostedZone(AssociateHostedZoneRequest request);
+#endif
+
+        /// <summary>
+        /// Associates a Route 53 private hosted zone with a Route 53 Global Resolver resource.
+        /// This allows the resolver to resolve DNS queries for the private hosted zone from anywhere
+        /// globally.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateHostedZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the AssociateHostedZone service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/AssociateHostedZone">REST API Reference for AssociateHostedZone Operation</seealso>
+        Task<AssociateHostedZoneResponse> AssociateHostedZoneAsync(AssociateHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates multiple DNS firewall rules in a single operation. This is more efficient
+        /// than creating rules individually when you need to set up multiple rules at once.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateFirewallRule service method.</param>
+        /// <returns>The response from the BatchCreateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/BatchCreateFirewallRule">REST API Reference for BatchCreateFirewallRule Operation</seealso>
+        BatchCreateFirewallRuleResponse BatchCreateFirewallRule(BatchCreateFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Creates multiple DNS firewall rules in a single operation. This is more efficient
+        /// than creating rules individually when you need to set up multiple rules at once.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchCreateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/BatchCreateFirewallRule">REST API Reference for BatchCreateFirewallRule Operation</seealso>
+        Task<BatchCreateFirewallRuleResponse> BatchCreateFirewallRuleAsync(BatchCreateFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes multiple DNS firewall rules in a single operation. This is more efficient
+        /// than deleting rules individually.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteFirewallRule service method.</param>
+        /// <returns>The response from the BatchDeleteFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/BatchDeleteFirewallRule">REST API Reference for BatchDeleteFirewallRule Operation</seealso>
+        BatchDeleteFirewallRuleResponse BatchDeleteFirewallRule(BatchDeleteFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes multiple DNS firewall rules in a single operation. This is more efficient
+        /// than deleting rules individually.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchDeleteFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/BatchDeleteFirewallRule">REST API Reference for BatchDeleteFirewallRule Operation</seealso>
+        Task<BatchDeleteFirewallRuleResponse> BatchDeleteFirewallRuleAsync(BatchDeleteFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates multiple DNS firewall rules in a single operation. This is more efficient
+        /// than updating rules individually.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFirewallRule service method.</param>
+        /// <returns>The response from the BatchUpdateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/BatchUpdateFirewallRule">REST API Reference for BatchUpdateFirewallRule Operation</seealso>
+        BatchUpdateFirewallRuleResponse BatchUpdateFirewallRule(BatchUpdateFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Updates multiple DNS firewall rules in a single operation. This is more efficient
+        /// than updating rules individually.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the BatchUpdateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/BatchUpdateFirewallRule">REST API Reference for BatchUpdateFirewallRule Operation</seealso>
+        Task<BatchUpdateFirewallRuleResponse> BatchUpdateFirewallRuleAsync(BatchUpdateFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an access source for a DNS view. Access sources define IP addresses or CIDR
+        /// ranges that are allowed to send DNS queries to the Route 53 Global Resolver, along
+        /// with the permitted DNS protocols.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessSource service method.</param>
+        /// <returns>The response from the CreateAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateAccessSource">REST API Reference for CreateAccessSource Operation</seealso>
+        CreateAccessSourceResponse CreateAccessSource(CreateAccessSourceRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an access source for a DNS view. Access sources define IP addresses or CIDR
+        /// ranges that are allowed to send DNS queries to the Route 53 Global Resolver, along
+        /// with the permitted DNS protocols.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateAccessSource">REST API Reference for CreateAccessSource Operation</seealso>
+        Task<CreateAccessSourceResponse> CreateAccessSourceAsync(CreateAccessSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates an access token for a DNS view. Access tokens provide token-based authentication
+        /// for DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) connections to the Route 53 Global
+        /// Resolver.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessToken service method.</param>
+        /// <returns>The response from the CreateAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateAccessToken">REST API Reference for CreateAccessToken Operation</seealso>
+        CreateAccessTokenResponse CreateAccessToken(CreateAccessTokenRequest request);
+#endif
+
+        /// <summary>
+        /// Creates an access token for a DNS view. Access tokens provide token-based authentication
+        /// for DNS-over-HTTPS (DoH) and DNS-over-TLS (DoT) connections to the Route 53 Global
+        /// Resolver.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAccessToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateAccessToken">REST API Reference for CreateAccessToken Operation</seealso>
+        Task<CreateAccessTokenResponse> CreateAccessTokenAsync(CreateAccessTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a DNS view within a Route 53 Global Resolver. A DNS view models end users,
+        /// user groups, networks, and devices, and serves as a parent resource that holds configurations
+        /// controlling access, authorization, DNS firewall rules, and forwarding rules.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDNSView service method.</param>
+        /// <returns>The response from the CreateDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateDNSView">REST API Reference for CreateDNSView Operation</seealso>
+        CreateDNSViewResponse CreateDNSView(CreateDNSViewRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a DNS view within a Route 53 Global Resolver. A DNS view models end users,
+        /// user groups, networks, and devices, and serves as a parent resource that holds configurations
+        /// controlling access, authorization, DNS firewall rules, and forwarding rules.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDNSView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateDNSView">REST API Reference for CreateDNSView Operation</seealso>
+        Task<CreateDNSViewResponse> CreateDNSViewAsync(CreateDNSViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a firewall domain list. Domain lists are reusable sets of domain specifications
+        /// that you use in DNS firewall rules to allow, block, or alert on DNS queries to specific
+        /// domains.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallDomainList service method.</param>
+        /// <returns>The response from the CreateFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateFirewallDomainList">REST API Reference for CreateFirewallDomainList Operation</seealso>
+        CreateFirewallDomainListResponse CreateFirewallDomainList(CreateFirewallDomainListRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a firewall domain list. Domain lists are reusable sets of domain specifications
+        /// that you use in DNS firewall rules to allow, block, or alert on DNS queries to specific
+        /// domains.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallDomainList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateFirewallDomainList">REST API Reference for CreateFirewallDomainList Operation</seealso>
+        Task<CreateFirewallDomainListResponse> CreateFirewallDomainListAsync(CreateFirewallDomainListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a DNS firewall rule. Firewall rules define actions (ALLOW, BLOCK, or ALERT)
+        /// to take on DNS queries that match specified domain lists, managed domain lists, or
+        /// advanced threat protections.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
+        /// <returns>The response from the CreateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateFirewallRule">REST API Reference for CreateFirewallRule Operation</seealso>
+        CreateFirewallRuleResponse CreateFirewallRule(CreateFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a DNS firewall rule. Firewall rules define actions (ALLOW, BLOCK, or ALERT)
+        /// to take on DNS queries that match specified domain lists, managed domain lists, or
+        /// advanced threat protections.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateFirewallRule">REST API Reference for CreateFirewallRule Operation</seealso>
+        Task<CreateFirewallRuleResponse> CreateFirewallRuleAsync(CreateFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Creates a new Route 53 Global Resolver instance. A Route 53 Global Resolver is a global,
+        /// internet-accessible DNS resolver that provides secure DNS resolution for both public
+        /// and private domains through global anycast IP addresses.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalResolver service method.</param>
+        /// <returns>The response from the CreateGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateGlobalResolver">REST API Reference for CreateGlobalResolver Operation</seealso>
+        CreateGlobalResolverResponse CreateGlobalResolver(CreateGlobalResolverRequest request);
+#endif
+
+        /// <summary>
+        /// Creates a new Route 53 Global Resolver instance. A Route 53 Global Resolver is a global,
+        /// internet-accessible DNS resolver that provides secure DNS resolution for both public
+        /// and private domains through global anycast IP addresses.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGlobalResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CreateGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/CreateGlobalResolver">REST API Reference for CreateGlobalResolver Operation</seealso>
+        Task<CreateGlobalResolverResponse> CreateGlobalResolverAsync(CreateGlobalResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an access source. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessSource service method.</param>
+        /// <returns>The response from the DeleteAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteAccessSource">REST API Reference for DeleteAccessSource Operation</seealso>
+        DeleteAccessSourceResponse DeleteAccessSource(DeleteAccessSourceRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an access source. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteAccessSource">REST API Reference for DeleteAccessSource Operation</seealso>
+        Task<DeleteAccessSourceResponse> DeleteAccessSourceAsync(DeleteAccessSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes an access token. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessToken service method.</param>
+        /// <returns>The response from the DeleteAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteAccessToken">REST API Reference for DeleteAccessToken Operation</seealso>
+        DeleteAccessTokenResponse DeleteAccessToken(DeleteAccessTokenRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes an access token. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccessToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteAccessToken">REST API Reference for DeleteAccessToken Operation</seealso>
+        Task<DeleteAccessTokenResponse> DeleteAccessTokenAsync(DeleteAccessTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a DNS view. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDNSView service method.</param>
+        /// <returns>The response from the DeleteDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteDNSView">REST API Reference for DeleteDNSView Operation</seealso>
+        DeleteDNSViewResponse DeleteDNSView(DeleteDNSViewRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a DNS view. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDNSView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteDNSView">REST API Reference for DeleteDNSView Operation</seealso>
+        Task<DeleteDNSViewResponse> DeleteDNSViewAsync(DeleteDNSViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a firewall domain list. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallDomainList service method.</param>
+        /// <returns>The response from the DeleteFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteFirewallDomainList">REST API Reference for DeleteFirewallDomainList Operation</seealso>
+        DeleteFirewallDomainListResponse DeleteFirewallDomainList(DeleteFirewallDomainListRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a firewall domain list. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallDomainList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteFirewallDomainList">REST API Reference for DeleteFirewallDomainList Operation</seealso>
+        Task<DeleteFirewallDomainListResponse> DeleteFirewallDomainListAsync(DeleteFirewallDomainListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a DNS firewall rule. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule service method.</param>
+        /// <returns>The response from the DeleteFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteFirewallRule">REST API Reference for DeleteFirewallRule Operation</seealso>
+        DeleteFirewallRuleResponse DeleteFirewallRule(DeleteFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a DNS firewall rule. This operation cannot be undone.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteFirewallRule">REST API Reference for DeleteFirewallRule Operation</seealso>
+        Task<DeleteFirewallRuleResponse> DeleteFirewallRuleAsync(DeleteFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Deletes a Route 53 Global Resolver instance. This operation cannot be undone. All
+        /// associated DNS views, access sources, tokens, and firewall rules are also deleted.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalResolver service method.</param>
+        /// <returns>The response from the DeleteGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteGlobalResolver">REST API Reference for DeleteGlobalResolver Operation</seealso>
+        DeleteGlobalResolverResponse DeleteGlobalResolver(DeleteGlobalResolverRequest request);
+#endif
+
+        /// <summary>
+        /// Deletes a Route 53 Global Resolver instance. This operation cannot be undone. All
+        /// associated DNS views, access sources, tokens, and firewall rules are also deleted.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGlobalResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DeleteGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DeleteGlobalResolver">REST API Reference for DeleteGlobalResolver Operation</seealso>
+        Task<DeleteGlobalResolverResponse> DeleteGlobalResolverAsync(DeleteGlobalResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disables a DNS view, preventing it from serving DNS queries.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDNSView service method.</param>
+        /// <returns>The response from the DisableDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DisableDNSView">REST API Reference for DisableDNSView Operation</seealso>
+        DisableDNSViewResponse DisableDNSView(DisableDNSViewRequest request);
+#endif
+
+        /// <summary>
+        /// Disables a DNS view, preventing it from serving DNS queries.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableDNSView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisableDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DisableDNSView">REST API Reference for DisableDNSView Operation</seealso>
+        Task<DisableDNSViewResponse> DisableDNSViewAsync(DisableDNSViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Disassociates a Route 53 private hosted zone from a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHostedZone service method.</param>
+        /// <returns>The response from the DisassociateHostedZone service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DisassociateHostedZone">REST API Reference for DisassociateHostedZone Operation</seealso>
+        DisassociateHostedZoneResponse DisassociateHostedZone(DisassociateHostedZoneRequest request);
+#endif
+
+        /// <summary>
+        /// Disassociates a Route 53 private hosted zone from a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateHostedZone service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the DisassociateHostedZone service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/DisassociateHostedZone">REST API Reference for DisassociateHostedZone Operation</seealso>
+        Task<DisassociateHostedZoneResponse> DisassociateHostedZoneAsync(DisassociateHostedZoneRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Enables a disabled DNS view, allowing it to serve DNS queries again.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDNSView service method.</param>
+        /// <returns>The response from the EnableDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/EnableDNSView">REST API Reference for EnableDNSView Operation</seealso>
+        EnableDNSViewResponse EnableDNSView(EnableDNSViewRequest request);
+#endif
+
+        /// <summary>
+        /// Enables a disabled DNS view, allowing it to serve DNS queries again.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableDNSView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the EnableDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/EnableDNSView">REST API Reference for EnableDNSView Operation</seealso>
+        Task<EnableDNSViewResponse> EnableDNSViewAsync(EnableDNSViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about an access source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessSource service method.</param>
+        /// <returns>The response from the GetAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetAccessSource">REST API Reference for GetAccessSource Operation</seealso>
+        GetAccessSourceResponse GetAccessSource(GetAccessSourceRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about an access source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetAccessSource">REST API Reference for GetAccessSource Operation</seealso>
+        Task<GetAccessSourceResponse> GetAccessSourceAsync(GetAccessSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about an access token.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// <returns>The response from the GetAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about an access token.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccessToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetAccessToken">REST API Reference for GetAccessToken Operation</seealso>
+        Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a DNS view.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDNSView service method.</param>
+        /// <returns>The response from the GetDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetDNSView">REST API Reference for GetDNSView Operation</seealso>
+        GetDNSViewResponse GetDNSView(GetDNSViewRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a DNS view.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDNSView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetDNSView">REST API Reference for GetDNSView Operation</seealso>
+        Task<GetDNSViewResponse> GetDNSViewAsync(GetDNSViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a firewall domain list.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallDomainList service method.</param>
+        /// <returns>The response from the GetFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetFirewallDomainList">REST API Reference for GetFirewallDomainList Operation</seealso>
+        GetFirewallDomainListResponse GetFirewallDomainList(GetFirewallDomainListRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a firewall domain list.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallDomainList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetFirewallDomainList">REST API Reference for GetFirewallDomainList Operation</seealso>
+        Task<GetFirewallDomainListResponse> GetFirewallDomainListAsync(GetFirewallDomainListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a DNS firewall rule.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRule service method.</param>
+        /// <returns>The response from the GetFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetFirewallRule">REST API Reference for GetFirewallRule Operation</seealso>
+        GetFirewallRuleResponse GetFirewallRule(GetFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a DNS firewall rule.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetFirewallRule">REST API Reference for GetFirewallRule Operation</seealso>
+        Task<GetFirewallRuleResponse> GetFirewallRuleAsync(GetFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a Route 53 Global Resolver instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlobalResolver service method.</param>
+        /// <returns>The response from the GetGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetGlobalResolver">REST API Reference for GetGlobalResolver Operation</seealso>
+        GetGlobalResolverResponse GetGlobalResolver(GetGlobalResolverRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a Route 53 Global Resolver instance.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGlobalResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetGlobalResolver">REST API Reference for GetGlobalResolver Operation</seealso>
+        Task<GetGlobalResolverResponse> GetGlobalResolverAsync(GetGlobalResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about a hosted zone association.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneAssociation service method.</param>
+        /// <returns>The response from the GetHostedZoneAssociation service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetHostedZoneAssociation">REST API Reference for GetHostedZoneAssociation Operation</seealso>
+        GetHostedZoneAssociationResponse GetHostedZoneAssociation(GetHostedZoneAssociationRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about a hosted zone association.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetHostedZoneAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetHostedZoneAssociation service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetHostedZoneAssociation">REST API Reference for GetHostedZoneAssociation Operation</seealso>
+        Task<GetHostedZoneAssociationResponse> GetHostedZoneAssociationAsync(GetHostedZoneAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves information about an Amazon Web Services-managed firewall domain list. Managed
+        /// domain lists contain domains associated with malicious activity, content categories,
+        /// or specific threats.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedFirewallDomainList service method.</param>
+        /// <returns>The response from the GetManagedFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetManagedFirewallDomainList">REST API Reference for GetManagedFirewallDomainList Operation</seealso>
+        GetManagedFirewallDomainListResponse GetManagedFirewallDomainList(GetManagedFirewallDomainListRequest request);
+#endif
+
+        /// <summary>
+        /// Retrieves information about an Amazon Web Services-managed firewall domain list. Managed
+        /// domain lists contain domains associated with malicious activity, content categories,
+        /// or specific threats.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedFirewallDomainList service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetManagedFirewallDomainList service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/GetManagedFirewallDomainList">REST API Reference for GetManagedFirewallDomainList Operation</seealso>
+        Task<GetManagedFirewallDomainListResponse> GetManagedFirewallDomainListAsync(GetManagedFirewallDomainListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Imports a list of domains from an Amazon S3 file into a firewall domain list. The
+        /// file should contain one domain per line.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportFirewallDomains service method.</param>
+        /// <returns>The response from the ImportFirewallDomains service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ImportFirewallDomains">REST API Reference for ImportFirewallDomains Operation</seealso>
+        ImportFirewallDomainsResponse ImportFirewallDomains(ImportFirewallDomainsRequest request);
+#endif
+
+        /// <summary>
+        /// Imports a list of domains from an Amazon S3 file into a firewall domain list. The
+        /// file should contain one domain per line.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportFirewallDomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ImportFirewallDomains service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ImportFirewallDomains">REST API Reference for ImportFirewallDomains Operation</seealso>
+        Task<ImportFirewallDomainsResponse> ImportFirewallDomainsAsync(ImportFirewallDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all access sources with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessSources service method.</param>
+        /// <returns>The response from the ListAccessSources service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListAccessSources">REST API Reference for ListAccessSources Operation</seealso>
+        ListAccessSourcesResponse ListAccessSources(ListAccessSourcesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all access sources with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAccessSources service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListAccessSources">REST API Reference for ListAccessSources Operation</seealso>
+        Task<ListAccessSourcesResponse> ListAccessSourcesAsync(ListAccessSourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all access tokens for a DNS view with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessTokens service method.</param>
+        /// <returns>The response from the ListAccessTokens service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListAccessTokens">REST API Reference for ListAccessTokens Operation</seealso>
+        ListAccessTokensResponse ListAccessTokens(ListAccessTokensRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all access tokens for a DNS view with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAccessTokens service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListAccessTokens service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListAccessTokens">REST API Reference for ListAccessTokens Operation</seealso>
+        Task<ListAccessTokensResponse> ListAccessTokensAsync(ListAccessTokensRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all DNS views for a Route 53 Global Resolver with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDNSViews service method.</param>
+        /// <returns>The response from the ListDNSViews service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListDNSViews">REST API Reference for ListDNSViews Operation</seealso>
+        ListDNSViewsResponse ListDNSViews(ListDNSViewsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all DNS views for a Route 53 Global Resolver with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDNSViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListDNSViews service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListDNSViews">REST API Reference for ListDNSViews Operation</seealso>
+        Task<ListDNSViewsResponse> ListDNSViewsAsync(ListDNSViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all firewall domain lists for a Route 53 Global Resolver with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomainLists service method.</param>
+        /// <returns>The response from the ListFirewallDomainLists service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListFirewallDomainLists">REST API Reference for ListFirewallDomainLists Operation</seealso>
+        ListFirewallDomainListsResponse ListFirewallDomainLists(ListFirewallDomainListsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all firewall domain lists for a Route 53 Global Resolver with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomainLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFirewallDomainLists service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListFirewallDomainLists">REST API Reference for ListFirewallDomainLists Operation</seealso>
+        Task<ListFirewallDomainListsResponse> ListFirewallDomainListsAsync(ListFirewallDomainListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all the domains in DNS Firewall domain list you have created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomains service method.</param>
+        /// <returns>The response from the ListFirewallDomains service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListFirewallDomains">REST API Reference for ListFirewallDomains Operation</seealso>
+        ListFirewallDomainsResponse ListFirewallDomains(ListFirewallDomainsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all the domains in DNS Firewall domain list you have created.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallDomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFirewallDomains service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListFirewallDomains">REST API Reference for ListFirewallDomains Operation</seealso>
+        Task<ListFirewallDomainsResponse> ListFirewallDomainsAsync(ListFirewallDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all DNS firewall rules for a DNS view with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
+        /// <returns>The response from the ListFirewallRules service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
+        ListFirewallRulesResponse ListFirewallRules(ListFirewallRulesRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all DNS firewall rules for a DNS view with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListFirewallRules service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListFirewallRules">REST API Reference for ListFirewallRules Operation</seealso>
+        Task<ListFirewallRulesResponse> ListFirewallRulesAsync(ListFirewallRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists all Route 53 Global Resolver instances in your account with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalResolvers service method.</param>
+        /// <returns>The response from the ListGlobalResolvers service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListGlobalResolvers">REST API Reference for ListGlobalResolvers Operation</seealso>
+        ListGlobalResolversResponse ListGlobalResolvers(ListGlobalResolversRequest request);
+#endif
+
+        /// <summary>
+        /// Lists all Route 53 Global Resolver instances in your account with pagination support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGlobalResolvers service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListGlobalResolvers service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListGlobalResolvers">REST API Reference for ListGlobalResolvers Operation</seealso>
+        Task<ListGlobalResolversResponse> ListGlobalResolversAsync(ListGlobalResolversRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists hosted zone associations with pagination support. Specify a DNS view through
+        /// the <c>resourceArn</c> parameter to list the hosted zone associations for that DNS
+        /// view, or omit it to list all hosted zone associations in your Amazon Web Services
+        /// account.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZoneAssociations service method.</param>
+        /// <returns>The response from the ListHostedZoneAssociations service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListHostedZoneAssociations">REST API Reference for ListHostedZoneAssociations Operation</seealso>
+        ListHostedZoneAssociationsResponse ListHostedZoneAssociations(ListHostedZoneAssociationsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists hosted zone associations with pagination support. Specify a DNS view through
+        /// the <c>resourceArn</c> parameter to list the hosted zone associations for that DNS
+        /// view, or omit it to list all hosted zone associations in your Amazon Web Services
+        /// account.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListHostedZoneAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListHostedZoneAssociations service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListHostedZoneAssociations">REST API Reference for ListHostedZoneAssociations Operation</seealso>
+        Task<ListHostedZoneAssociationsResponse> ListHostedZoneAssociationsAsync(ListHostedZoneAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Returns a paginated list of the Amazon Web Services Managed DNS Lists and the categories
+        /// for DNS Firewall. The categories are either <c>THREAT</c> or <c>CONTENT</c>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedFirewallDomainLists service method.</param>
+        /// <returns>The response from the ListManagedFirewallDomainLists service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListManagedFirewallDomainLists">REST API Reference for ListManagedFirewallDomainLists Operation</seealso>
+        ListManagedFirewallDomainListsResponse ListManagedFirewallDomainLists(ListManagedFirewallDomainListsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns a paginated list of the Amazon Web Services Managed DNS Lists and the categories
+        /// for DNS Firewall. The categories are either <c>THREAT</c> or <c>CONTENT</c>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListManagedFirewallDomainLists service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListManagedFirewallDomainLists service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListManagedFirewallDomainLists">REST API Reference for ListManagedFirewallDomainLists Operation</seealso>
+        Task<ListManagedFirewallDomainListsResponse> ListManagedFirewallDomainListsAsync(ListManagedFirewallDomainListsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the DNS views that have been shared with your Amazon Web Services account through
+        /// Amazon Web Services Resource Access Manager (Amazon Web Services RAM), with pagination
+        /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedDNSViews service method.</param>
+        /// <returns>The response from the ListSharedDNSViews service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListSharedDNSViews">REST API Reference for ListSharedDNSViews Operation</seealso>
+        ListSharedDNSViewsResponse ListSharedDNSViews(ListSharedDNSViewsRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the DNS views that have been shared with your Amazon Web Services account through
+        /// Amazon Web Services Resource Access Manager (Amazon Web Services RAM), with pagination
+        /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedDNSViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListSharedDNSViews service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListSharedDNSViews">REST API Reference for ListSharedDNSViews Operation</seealso>
+        Task<ListSharedDNSViewsResponse> ListSharedDNSViewsAsync(ListSharedDNSViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Lists the tags associated with a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Lists the tags associated with a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListTagsForResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Adds or updates tags for a Route 53 Global Resolver resource. Tags are key-value pairs
+        /// that help you organize and identify your resources.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <returns>The response from the TagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Adds or updates tags for a Route 53 Global Resolver resource. Tags are key-value pairs
+        /// that help you organize and identify your resources.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the TagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Removes tags from a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <returns>The response from the UntagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+#endif
+
+        /// <summary>
+        /// Removes tags from a Route 53 Global Resolver resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UntagResource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of an access source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessSource service method.</param>
+        /// <returns>The response from the UpdateAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateAccessSource">REST API Reference for UpdateAccessSource Operation</seealso>
+        UpdateAccessSourceResponse UpdateAccessSource(UpdateAccessSourceRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of an access source.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAccessSource service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateAccessSource">REST API Reference for UpdateAccessSource Operation</seealso>
+        Task<UpdateAccessSourceResponse> UpdateAccessSourceAsync(UpdateAccessSourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of an access token.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessToken service method.</param>
+        /// <returns>The response from the UpdateAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateAccessToken">REST API Reference for UpdateAccessToken Operation</seealso>
+        UpdateAccessTokenResponse UpdateAccessToken(UpdateAccessTokenRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of an access token.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAccessToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateAccessToken service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateAccessToken">REST API Reference for UpdateAccessToken Operation</seealso>
+        Task<UpdateAccessTokenResponse> UpdateAccessTokenAsync(UpdateAccessTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of a DNS view.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDNSView service method.</param>
+        /// <returns>The response from the UpdateDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateDNSView">REST API Reference for UpdateDNSView Operation</seealso>
+        UpdateDNSViewResponse UpdateDNSView(UpdateDNSViewRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a DNS view.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDNSView service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateDNSView service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateDNSView">REST API Reference for UpdateDNSView Operation</seealso>
+        Task<UpdateDNSViewResponse> UpdateDNSViewAsync(UpdateDNSViewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates a DNS Firewall domain list from an array of specified domains.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains service method.</param>
+        /// <returns>The response from the UpdateFirewallDomains service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateFirewallDomains">REST API Reference for UpdateFirewallDomains Operation</seealso>
+        UpdateFirewallDomainsResponse UpdateFirewallDomains(UpdateFirewallDomainsRequest request);
+#endif
+
+        /// <summary>
+        /// Updates a DNS Firewall domain list from an array of specified domains.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallDomains service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFirewallDomains service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateFirewallDomains">REST API Reference for UpdateFirewallDomains Operation</seealso>
+        Task<UpdateFirewallDomainsResponse> UpdateFirewallDomainsAsync(UpdateFirewallDomainsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of a DNS firewall rule.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule service method.</param>
+        /// <returns>The response from the UpdateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateFirewallRule">REST API Reference for UpdateFirewallRule Operation</seealso>
+        UpdateFirewallRuleResponse UpdateFirewallRule(UpdateFirewallRuleRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a DNS firewall rule.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateFirewallRule service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateFirewallRule">REST API Reference for UpdateFirewallRule Operation</seealso>
+        Task<UpdateFirewallRuleResponse> UpdateFirewallRuleAsync(UpdateFirewallRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of a Route 53 Global Resolver instance. You can modify the
+        /// name, description, and observability Region.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalResolver service method.</param>
+        /// <returns>The response from the UpdateGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateGlobalResolver">REST API Reference for UpdateGlobalResolver Operation</seealso>
+        UpdateGlobalResolverResponse UpdateGlobalResolver(UpdateGlobalResolverRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a Route 53 Global Resolver instance. You can modify the
+        /// name, description, and observability Region.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalResolver service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateGlobalResolver service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateGlobalResolver">REST API Reference for UpdateGlobalResolver Operation</seealso>
+        Task<UpdateGlobalResolverResponse> UpdateGlobalResolverAsync(UpdateGlobalResolverRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Updates the configuration of a hosted zone association.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneAssociation service method.</param>
+        /// <returns>The response from the UpdateHostedZoneAssociation service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateHostedZoneAssociation">REST API Reference for UpdateHostedZoneAssociation Operation</seealso>
+        UpdateHostedZoneAssociationResponse UpdateHostedZoneAssociation(UpdateHostedZoneAssociationRequest request);
+#endif
+
+        /// <summary>
+        /// Updates the configuration of a hosted zone association.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateHostedZoneAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the UpdateHostedZoneAssociation service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. This can occur when
+        /// trying to modify a resource that is not in a valid state for the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify the resource ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ServiceQuotaExceededException">
+        /// The request would exceed one or more service quotas. Check your current usage and
+        /// quotas, then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/UpdateHostedZoneAssociation">REST API Reference for UpdateHostedZoneAssociation Operation</seealso>
+        Task<UpdateHostedZoneAssociationResponse> UpdateHostedZoneAssociationAsync(UpdateHostedZoneAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Returns the endpoint that will be used for a particular request.
+        /// </summary>
+        /// <param name="request">Request for the desired service operation.</param>
+        /// <returns>The resolved endpoint for the given request.</returns>
+        Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);
+
+#if NET8_0_OR_GREATER
+        // Warning CA1033 is issued when the child types can not call the method defined in parent types.
+        // In this use case the intended caller is only meant to be the interface as a factory
+        // method to create the child types. Given the SDK use case the warning can be ignored.
+#pragma warning disable CA1033
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonRoute53GlobalResolverConfig))]
+        static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonRoute53GlobalResolverConfig();
+
+        /// <inheritdoc/>
+        [System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",
+            Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]
+        static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)
+        {
+            var serviceClientConfig = clientConfig as AmazonRoute53GlobalResolverConfig;
+            if (serviceClientConfig == null)
+            {
+                throw new AmazonClientException("ClientConfig is not of type AmazonRoute53GlobalResolverConfig to create AmazonRoute53GlobalResolverClient");
+            }
+
+            return awsCredentials == null ?
+                    new AmazonRoute53GlobalResolverClient(serviceClientConfig) :
+                    new AmazonRoute53GlobalResolverClient(awsCredentials, serviceClientConfig);
+        }
+#pragma warning restore CA1033
+#endif
+    }
+}

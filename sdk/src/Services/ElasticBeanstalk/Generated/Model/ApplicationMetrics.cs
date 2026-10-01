@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Application request metrics for an AWS Elastic Beanstalk environment.
+    /// Application request metrics for an Elastic Beanstalk environment.
     /// </summary>
     public partial class ApplicationMetrics
     {

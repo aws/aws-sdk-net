@@ -61,6 +61,14 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Paginator for ListIdentityStores operation
+        ///</summary>
+        public IListIdentityStoresPaginator ListIdentityStores(ListIdentityStoresRequest request) 
+        {
+            return new ListIdentityStoresPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
         public IListUsersPaginator ListUsers(ListUsersRequest request) 

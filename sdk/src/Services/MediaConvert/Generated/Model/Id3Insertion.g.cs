@@ -1,0 +1,62 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MediaConvert.Model
+{
+    /// <summary>
+    /// To insert ID3 tags in your output, specify two values. Use ID3 tag to specify the
+    /// base 64 encoded string and use Timecode to specify the time when the tag should be
+    /// inserted. To insert multiple ID3 tags in your output, create multiple instances of
+    /// ID3 insertion.
+    /// </summary>
+    public partial class Id3Insertion
+    {
+        /// <summary>
+        /// Gets and sets the property Id3. Use ID3 tag to provide a fully formed ID3 tag in base64-encode
+        /// format.
+        /// </summary>
+        public string Id3 { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Id3 property is set.
+        /// </summary>
+        internal bool IsSetId3() => this.Id3 != null;
+
+        /// <summary>
+        /// Gets and sets the property Timecode. Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF
+        /// format.
+        /// </summary>
+        public string Timecode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Timecode property is set.
+        /// </summary>
+        internal bool IsSetTimecode() => this.Timecode != null;
+    }
+}

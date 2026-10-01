@@ -15,7 +15,7 @@ public class JsonExceptionUnmarshallerWriterTests
     {
         var writer = new JsonExceptionUnmarshallerWriter(fixture.Context, ModelFileName);
         var errorShape = fixture.Context.Errors.Single(e => e.Key.Name == "ChannelInsufficientPermission");
-        _exceptionUnmarshaller = writer.Write(errorShape.Value, errorShape.Key);
+        _exceptionUnmarshaller = writer.Write(errorShape.Value);
     }
 
     [Fact]

@@ -325,11 +325,21 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Cancels a query if the query is not in a terminated state, such as <c>CANCELLED</c>,
         /// <c>FAILED</c>, <c>TIMED_OUT</c>, or <c>FINISHED</c>. You must specify an ARN value
         /// for <c>EventDataStore</c>. The ID of the query that you want to cancel is also required.
         /// When you run <c>CancelQuery</c>, the query status might show as <c>CANCELLED</c> even
         /// if the operation is not yet finished.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelQuery service method.</param>
         /// 
@@ -376,11 +386,21 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Cancels a query if the query is not in a terminated state, such as <c>CANCELLED</c>,
         /// <c>FAILED</c>, <c>TIMED_OUT</c>, or <c>FINISHED</c>. You must specify an ARN value
         /// for <c>EventDataStore</c>. The ID of the query that you want to cancel is also required.
         /// When you run <c>CancelQuery</c>, the query status might show as <c>CANCELLED</c> even
         /// if the operation is not yet finished.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelQuery service method.</param>
         /// <param name="cancellationToken">
@@ -433,9 +453,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a channel for CloudTrail to ingest events from a partner or external source.
         /// After you create a channel, a CloudTrail Lake event data store can log events from
         /// the partner or source that you specify.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
         /// 
@@ -486,9 +516,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a channel for CloudTrail to ingest events from a partner or external source.
         /// After you create a channel, a CloudTrail Lake event data store can log events from
         /// the partner or source that you specify.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -545,8 +585,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Creates a custom dashboard or the Highlights dashboard. 
-        /// 
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Creates a custom dashboard or the Highlights dashboard. 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>Custom dashboards</b> - Custom dashboards allow you to query events in any event
@@ -634,8 +683,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Creates a custom dashboard or the Highlights dashboard. 
-        /// 
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Creates a custom dashboard or the Highlights dashboard. 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>Custom dashboards</b> - Custom dashboards allow you to query events in any event
@@ -729,7 +787,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a new event data store.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventDataStore service method.</param>
         /// 
@@ -860,7 +928,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Creates a new event data store.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventDataStore service method.</param>
         /// <param name="cancellationToken">
@@ -1341,7 +1419,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes a channel.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// 
@@ -1364,7 +1452,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Deletes a channel.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
         /// <param name="cancellationToken">
@@ -1393,8 +1491,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Deletes the specified dashboard. You cannot delete a dashboard that has termination
-        /// protection enabled.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Deletes the specified dashboard. You cannot delete a dashboard that has termination
+        /// protection enabled. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboard service method.</param>
         /// 
@@ -1417,8 +1525,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Deletes the specified dashboard. You cannot delete a dashboard that has termination
-        /// protection enabled.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Deletes the specified dashboard. You cannot delete a dashboard that has termination
+        /// protection enabled. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDashboard service method.</param>
         /// <param name="cancellationToken">
@@ -1447,6 +1565,15 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Disables the event data store specified by <c>EventDataStore</c>, which accepts an
         /// event data store ARN. After you run <c>DeleteEventDataStore</c>, the event data store
         /// enters a <c>PENDING_DELETION</c> state, and is automatically deleted after a wait
@@ -1454,7 +1581,7 @@ namespace Amazon.CloudTrail
         /// on the event data store and the <c>FederationStatus</c> must be <c>DISABLED</c>. You
         /// cannot delete an event data store if <c>TerminationProtectionEnabled</c> is <c>True</c>
         /// or the <c>FederationStatus</c> is <c>ENABLED</c>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// After you run <c>DeleteEventDataStore</c> on an event data store, you cannot run <c>ListQueries</c>,
@@ -1530,6 +1657,15 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Disables the event data store specified by <c>EventDataStore</c>, which accepts an
         /// event data store ARN. After you run <c>DeleteEventDataStore</c>, the event data store
         /// enters a <c>PENDING_DELETION</c> state, and is automatically deleted after a wait
@@ -1537,7 +1673,7 @@ namespace Amazon.CloudTrail
         /// on the event data store and the <c>FederationStatus</c> must be <c>DISABLED</c>. You
         /// cannot delete an event data store if <c>TerminationProtectionEnabled</c> is <c>True</c>
         /// or the <c>FederationStatus</c> is <c>ENABLED</c>.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// After you run <c>DeleteEventDataStore</c> on an event data store, you cannot run <c>ListQueries</c>,
@@ -2103,10 +2239,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns metadata about a query, including query run time in milliseconds, number of
         /// events scanned and matched, and query status. If the query results were delivered
         /// to an S3 bucket, the response also provides the S3 URI and the delivery status.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You must specify either <c>QueryId</c> or <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
@@ -2150,10 +2295,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns metadata about a query, including query run time in milliseconds, number of
         /// events scanned and matched, and query status. If the query results were delivered
         /// to an S3 bucket, the response also provides the S3 URI and the delivery status.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You must specify either <c>QueryId</c> or <c>QueryAlias</c>. Specifying the <c>QueryAlias</c>
@@ -2504,11 +2658,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Disables Lake query federation on the specified event data store. When you disable
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Disables Lake query federation on the specified event data store. When you disable
         /// federation, CloudTrail disables the integration with Glue, Lake Formation, and Amazon
         /// Athena. After disabling Lake query federation, you can no longer query your event
         /// data in Amazon Athena.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// No CloudTrail Lake data is deleted when you disable federation and you can continue
@@ -2583,11 +2746,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Disables Lake query federation on the specified event data store. When you disable
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Disables Lake query federation on the specified event data store. When you disable
         /// federation, CloudTrail disables the integration with Glue, Lake Formation, and Amazon
         /// Athena. After disabling Lake query federation, you can no longer query your event
         /// data in Amazon Athena.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// No CloudTrail Lake data is deleted when you disable federation and you can continue
@@ -2668,13 +2840,22 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Enables Lake query federation on the specified event data store. Federating an event
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Enables Lake query federation on the specified event data store. Federating an event
         /// data store lets you view the metadata associated with the event data store in the
         /// Glue <a href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data
         /// Catalog</a> and run SQL queries against your event data using Amazon Athena. The table
         /// metadata stored in the Glue Data Catalog lets the Athena query engine know how to
         /// find, read, and process the data that you want to query.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When you enable Lake query federation, CloudTrail creates a managed database named
@@ -2763,13 +2944,22 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Enables Lake query federation on the specified event data store. Federating an event
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Enables Lake query federation on the specified event data store. Federating an event
         /// data store lets you view the metadata associated with the event data store in the
         /// Glue <a href="https://docs.aws.amazon.com/glue/latest/dg/components-overview.html#data-catalog-intro">Data
         /// Catalog</a> and run SQL queries against your event data using Amazon Athena. The table
         /// metadata stored in the Glue Data Catalog lets the Athena query engine know how to
         /// find, read, and process the data that you want to query.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// When you enable Lake query federation, CloudTrail creates a managed database named
@@ -2864,10 +3054,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Generates a query from a natural language prompt. This operation uses generative
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Generates a query from a natural language prompt. This operation uses generative
         /// artificial intelligence (generative AI) to produce a ready-to-use SQL query from the
         /// prompt. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The prompt can be a question or a statement about the event data in your event data
@@ -2929,10 +3128,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Generates a query from a natural language prompt. This operation uses generative
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Generates a query from a natural language prompt. This operation uses generative
         /// artificial intelligence (generative AI) to produce a ready-to-use SQL query from the
         /// prompt. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// The prompt can be a question or a statement about the event data in your event data
@@ -3000,7 +3208,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about a specific channel.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information about a specific channel. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// 
@@ -3023,7 +3241,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about a specific channel.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information about a specific channel. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChannel service method.</param>
         /// <param name="cancellationToken">
@@ -3052,7 +3280,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns the specified dashboard.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns the specified dashboard. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
         /// 
@@ -3069,7 +3307,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns the specified dashboard.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns the specified dashboard. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
         /// <param name="cancellationToken">
@@ -3296,8 +3544,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns information about an event data store specified as either an ARN or the ID
         /// portion of the ARN.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventDataStore service method.</param>
         /// 
@@ -3328,8 +3586,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns information about an event data store specified as either an ARN or the ID
         /// portion of the ARN.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEventDataStore service method.</param>
         /// <param name="cancellationToken">
@@ -3608,7 +3876,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about a specific import.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information about a specific import. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
         /// 
@@ -3631,7 +3909,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about a specific import.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information about a specific import. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
         /// <param name="cancellationToken">
@@ -3878,8 +4166,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Gets event data results of a query. You must specify the <c>QueryID</c> value returned
         /// by the <c>StartQuery</c> operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
         /// 
@@ -3934,8 +4232,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Gets event data results of a query. You must specify the <c>QueryID</c> value returned
         /// by the <c>StartQuery</c> operation.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryResults service method.</param>
         /// <param name="cancellationToken">
@@ -4402,7 +4710,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the channels in the current account, and their source names.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Lists the channels in the current account, and their source names. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// 
@@ -4423,7 +4741,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the channels in the current account, and their source names.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Lists the channels in the current account, and their source names. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
         /// <param name="cancellationToken">
@@ -4450,7 +4778,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about all dashboards in the account, in the current Region.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information about all dashboards in the account, in the current Region. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// 
@@ -4464,7 +4802,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about all dashboards in the account, in the current Region.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information about all dashboards in the account, in the current Region. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
         /// <param name="cancellationToken">
@@ -4484,7 +4832,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns information about all event data stores in the account, in the current Region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventDataStores service method.</param>
         /// 
@@ -4512,7 +4870,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns information about all event data stores in the account, in the current Region.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventDataStores service method.</param>
         /// <param name="cancellationToken">
@@ -4546,7 +4914,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns a list of failures for the specified import.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns a list of failures for the specified import. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImportFailures service method.</param>
         /// 
@@ -4570,7 +4948,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns a list of failures for the specified import.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns a list of failures for the specified import. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImportFailures service method.</param>
         /// <param name="cancellationToken">
@@ -4600,8 +4988,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information on all imports, or a select set of imports by <c>ImportStatus</c>
-        /// or <c>Destination</c>.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information on all imports, or a select set of imports by <c>ImportStatus</c>
+        /// or <c>Destination</c>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
         /// 
@@ -4629,8 +5027,18 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information on all imports, or a select set of imports by <c>ImportStatus</c>
-        /// or <c>Destination</c>.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Returns information on all imports, or a select set of imports by <c>ImportStatus</c>
+        /// or <c>Destination</c>. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
         /// <param name="cancellationToken">
@@ -4694,6 +5102,14 @@ namespace Amazon.CloudTrail
         /// The rate of ListInsightsData requests is limited to two per second, per account, per
         /// Region. If this limit is exceeded, a throttling error occurs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For data event Insights on organization trails, only the management account and delegated
+        /// administrator accounts can call <c>ListInsightsData</c>. For these callers, the API
+        /// returns Insights events only for the caller's own account. Member accounts cannot
+        /// call this API on organization trails.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsightsData service method.</param>
         /// 
@@ -4743,6 +5159,14 @@ namespace Amazon.CloudTrail
         /// The rate of ListInsightsData requests is limited to two per second, per account, per
         /// Region. If this limit is exceeded, a throttling error occurs.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For data event Insights on organization trails, only the management account and delegated
+        /// administrator accounts can call <c>ListInsightsData</c>. For these callers, the API
+        /// returns Insights events only for the caller's own account. Member accounts cannot
+        /// call this API on organization trails.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsightsData service method.</param>
         /// <param name="cancellationToken">
@@ -4812,7 +5236,14 @@ namespace Amazon.CloudTrail
         /// action only. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
         /// action.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For data event Insights on organization trails, only the management account and delegated
+        /// administrator accounts can call <c>ListInsightsMetricData</c>. For these callers,
+        /// the API returns Insights metrics only for the caller's own account. Member accounts
+        /// cannot call this API on organization trails.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsightsMetricData service method.</param>
         /// 
@@ -4904,7 +5335,14 @@ namespace Amazon.CloudTrail
         /// action only. To use this operation, you must have permissions to perform the <c>cloudtrail:LookupEvents</c>
         /// action.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For data event Insights on organization trails, only the management account and delegated
+        /// administrator accounts can call <c>ListInsightsMetricData</c>. For these callers,
+        /// the API returns Insights metrics only for the caller's own account. Member accounts
+        /// cannot call this API on organization trails.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsightsMetricData service method.</param>
         /// <param name="cancellationToken">
@@ -5034,12 +5472,22 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns a list of queries and query statuses for the past seven days. You must specify
         /// an ARN value for <c>EventDataStore</c>. Optionally, to shorten the list of results,
         /// you can specify a time range, formatted as timestamps, by adding <c>StartTime</c>
         /// and <c>EndTime</c> parameters, and a <c>QueryStatus</c> value. Valid values for <c>QueryStatus</c>
         /// include <c>QUEUED</c>, <c>RUNNING</c>, <c>FINISHED</c>, <c>FAILED</c>, <c>TIMED_OUT</c>,
         /// or <c>CANCELLED</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueries service method.</param>
         /// 
@@ -5089,12 +5537,22 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Returns a list of queries and query statuses for the past seven days. You must specify
         /// an ARN value for <c>EventDataStore</c>. Optionally, to shorten the list of results,
         /// you can specify a time range, formatted as timestamps, by adding <c>StartTime</c>
         /// and <c>EndTime</c> parameters, and a <c>QueryStatus</c> value. Valid values for <c>QueryStatus</c>
         /// include <c>QUEUED</c>, <c>RUNNING</c>, <c>FINISHED</c>, <c>FAILED</c>, <c>TIMED_OUT</c>,
         /// or <c>CANCELLED</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQueries service method.</param>
         /// <param name="cancellationToken">
@@ -6425,6 +6883,12 @@ namespace Amazon.CloudTrail
         /// 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
         /// and <c>StartImport</c> operations, this exception is thrown when the policy on the
@@ -6615,6 +7079,12 @@ namespace Amazon.CloudTrail
         /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// For the <c>CreateTrail</c> <c>PutInsightSelectors</c>, <c>UpdateTrail</c>, <c>StartQuery</c>,
@@ -7226,10 +7696,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Restores a deleted event data store specified by <c>EventDataStore</c>, which accepts
         /// an event data store ARN. You can only restore a deleted event data store within the
         /// seven-day wait period after deletion. Restoring an event data store can take several
         /// minutes, depending on the size of the event data store.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreEventDataStore service method.</param>
         /// 
@@ -7295,10 +7775,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Restores a deleted event data store specified by <c>EventDataStore</c>, which accepts
         /// an event data store ARN. You can only restore a deleted event data store within the
         /// seven-day wait period after deletion. Restoring an event data store can take several
         /// minutes, depending on the size of the event data store.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreEventDataStore service method.</param>
         /// <param name="cancellationToken">
@@ -7370,8 +7860,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Searches sample queries and returns a list of sample queries that are sorted by relevance.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Searches sample queries and returns a list of sample queries that are sorted by relevance.
         /// To search for sample queries, provide a natural language <c>SearchPhrase</c> in English.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchSampleQueries service method.</param>
         /// 
@@ -7391,8 +7892,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Searches sample queries and returns a list of sample queries that are sorted by relevance.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Searches sample queries and returns a list of sample queries that are sorted by relevance.
         /// To search for sample queries, provide a natural language <c>SearchPhrase</c> in English.
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchSampleQueries service method.</param>
         /// <param name="cancellationToken">
@@ -7418,8 +7930,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Starts a refresh of the specified dashboard. 
-        /// 
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Starts a refresh of the specified dashboard. 
+        /// </para>
         ///  
         /// <para>
         ///  Each time a dashboard is refreshed, CloudTrail runs queries to populate the dashboard's
@@ -7457,8 +7978,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Starts a refresh of the specified dashboard. 
-        /// 
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Starts a refresh of the specified dashboard. 
+        /// </para>
         ///  
         /// <para>
         ///  Each time a dashboard is refreshed, CloudTrail runs queries to populate the dashboard's
@@ -7502,10 +8032,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Starts the ingestion of live events on an event data store specified as either an
         /// ARN or the ID portion of the ARN. To start ingestion, the event data store <c>Status</c>
         /// must be <c>STOPPED_INGESTION</c> and the <c>eventCategory</c> must be <c>Management</c>,
         /// <c>Data</c>, <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
         /// 
@@ -7561,10 +8101,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Starts the ingestion of live events on an event data store specified as either an
         /// ARN or the ID portion of the ARN. To start ingestion, the event data store <c>Status</c>
         /// must be <c>STOPPED_INGESTION</c> and the <c>eventCategory</c> must be <c>Management</c>,
         /// <c>Data</c>, <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
         /// <param name="cancellationToken">
@@ -7626,7 +8176,16 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Starts an import of logged trail events from a source S3 bucket to a destination
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Starts an import of logged trail events from a source S3 bucket to a destination
         /// event data store. By default, CloudTrail only imports events contained in the S3 bucket's
         /// <c>CloudTrail</c> prefix and the prefixes inside the <c>CloudTrail</c> prefix, and
         /// does not check prefixes for other Amazon Web Services services. If you want to import
@@ -7634,7 +8193,7 @@ namespace Amazon.CloudTrail
         /// <c>S3LocationUri</c>. For more considerations about importing trail events, see <a
         /// href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations
         /// for copying trail events</a> in the <i>CloudTrail User Guide</i>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  When you start a new import, the <c>Destinations</c> and <c>ImportSource</c> parameters
@@ -7711,7 +8270,16 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Starts an import of logged trail events from a source S3 bucket to a destination
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Starts an import of logged trail events from a source S3 bucket to a destination
         /// event data store. By default, CloudTrail only imports events contained in the S3 bucket's
         /// <c>CloudTrail</c> prefix and the prefixes inside the <c>CloudTrail</c> prefix, and
         /// does not check prefixes for other Amazon Web Services services. If you want to import
@@ -7719,7 +8287,7 @@ namespace Amazon.CloudTrail
         /// <c>S3LocationUri</c>. For more considerations about importing trail events, see <a
         /// href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations">Considerations
         /// for copying trail events</a> in the <i>CloudTrail User Guide</i>. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  When you start a new import, the <c>Destinations</c> and <c>ImportSource</c> parameters
@@ -8018,10 +8586,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Starts a CloudTrail Lake query. Use the <c>QueryStatement</c> parameter to provide
         /// your SQL query, enclosed in single quotation marks. Use the optional <c>DeliveryS3Uri</c>
         /// parameter to deliver the query results to an S3 bucket.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <c>StartQuery</c> requires you specify either the <c>QueryStatement</c> parameter,
@@ -8095,10 +8672,19 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Starts a CloudTrail Lake query. Use the <c>QueryStatement</c> parameter to provide
         /// your SQL query, enclosed in single quotation marks. Use the optional <c>DeliveryS3Uri</c>
         /// parameter to deliver the query results to an S3 bucket.
-        /// 
+        /// </para>
         ///  
         /// <para>
         ///  <c>StartQuery</c> requires you specify either the <c>QueryStatement</c> parameter,
@@ -8178,10 +8764,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Stops the ingestion of live events on an event data store specified as either an ARN
         /// or the ID portion of the ARN. To stop ingestion, the event data store <c>Status</c>
         /// must be <c>ENABLED</c> and the <c>eventCategory</c> must be <c>Management</c>, <c>Data</c>,
         /// <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
         /// 
@@ -8237,10 +8833,20 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Stops the ingestion of live events on an event data store specified as either an ARN
         /// or the ID portion of the ARN. To stop ingestion, the event data store <c>Status</c>
         /// must be <c>ENABLED</c> and the <c>eventCategory</c> must be <c>Management</c>, <c>Data</c>,
         /// <c>NetworkActivity</c>, or <c>ConfigurationItem</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
         /// <param name="cancellationToken">
@@ -8302,7 +8908,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Stops a specified import.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Stops a specified import. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopImport service method.</param>
         /// 
@@ -8325,7 +8941,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Stops a specified import.
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Stops a specified import. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopImport service method.</param>
         /// <param name="cancellationToken">
@@ -8574,7 +9200,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates a channel specified by a required channel ARN or UUID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// 
@@ -8617,7 +9253,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates a channel specified by a required channel ARN or UUID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// <param name="cancellationToken">
@@ -8666,8 +9312,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Updates the specified dashboard. 
-        /// 
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Updates the specified dashboard. 
+        /// </para>
         ///  
         /// <para>
         ///  To set a refresh schedule, CloudTrail must be granted permissions to run the <c>StartDashboardRefresh</c>
@@ -8736,8 +9391,17 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Updates the specified dashboard. 
-        /// 
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        ///  Updates the specified dashboard. 
+        /// </para>
         ///  
         /// <para>
         ///  To set a refresh schedule, CloudTrail must be granted permissions to run the <c>StartDashboardRefresh</c>
@@ -8812,6 +9476,15 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates an event data store. The required <c>EventDataStore</c> value is an ARN or
         /// the ID portion of the ARN. Other parameters are optional, but at least one optional
         /// parameter must be specified, or CloudTrail throws an error. <c>RetentionPeriod</c>
@@ -8819,7 +9492,7 @@ namespace Amazon.CloudTrail
         /// is set to <c>EXTENDABLE_RETENTION_PRICING</c>, or between 7 and 2557 if <c>BillingMode</c>
         /// is set to <c>FIXED_RETENTION_PRICING</c>. By default, <c>TerminationProtection</c>
         /// is enabled.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes
@@ -8988,6 +9661,15 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
+        /// <important> 
+        /// <para>
+        /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+        /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+        /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+        /// Lake availability change</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
         /// Updates an event data store. The required <c>EventDataStore</c> value is an ARN or
         /// the ID portion of the ARN. Other parameters are optional, but at least one optional
         /// parameter must be specified, or CloudTrail throws an error. <c>RetentionPeriod</c>
@@ -8995,7 +9677,7 @@ namespace Amazon.CloudTrail
         /// is set to <c>EXTENDABLE_RETENTION_PRICING</c>, or between 7 and 2557 if <c>BillingMode</c>
         /// is set to <c>FIXED_RETENTION_PRICING</c>. By default, <c>TerminationProtection</c>
         /// is enabled.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// For event data stores for CloudTrail events, <c>AdvancedEventSelectors</c> includes

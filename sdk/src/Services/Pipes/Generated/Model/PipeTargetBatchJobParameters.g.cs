@@ -1,0 +1,158 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Pipes.Model
+{
+    /// <summary>
+    /// The parameters for using an Batch job as a target.
+    /// </summary>
+    public partial class PipeTargetBatchJobParameters
+    {
+        /// <summary>
+        /// Gets and sets the property ArrayProperties. 
+        /// <para>
+        /// The array properties for the submitted job, such as the size of the array. The array
+        /// size can be between 2 and 10,000. If you specify array properties for a job, it becomes
+        /// an array job. This parameter is used only if the target is an Batch job.
+        /// </para>
+        /// </summary>
+        public BatchArrayProperties ArrayProperties { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ArrayProperties property is set.
+        /// </summary>
+        internal bool IsSetArrayProperties() => this.ArrayProperties != null;
+
+        /// <summary>
+        /// Gets and sets the property ContainerOverrides. 
+        /// <para>
+        /// The overrides that are sent to a container.
+        /// </para>
+        /// </summary>
+        public BatchContainerOverrides ContainerOverrides { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContainerOverrides property is set.
+        /// </summary>
+        internal bool IsSetContainerOverrides() => this.ContainerOverrides != null;
+
+        /// <summary>
+        /// Gets and sets the property DependsOn. 
+        /// <para>
+        /// A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You
+        /// can specify a <c>SEQUENTIAL</c> type dependency without specifying a job ID for array
+        /// jobs so that each child array job completes sequentially, starting at index 0. You
+        /// can also specify an <c>N_TO_N</c> type dependency with a job ID for array jobs. In
+        /// that case, each index child of this job must wait for the corresponding index child
+        /// of each dependency to complete before it can begin.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 20)]
+        public List<BatchJobDependency> DependsOn { get; set; } = AWSConfigs.InitializeCollections ? new List<BatchJobDependency>() : null;
+
+        /// <summary>
+        /// Checks to see if the DependsOn property is set.
+        /// </summary>
+        internal bool IsSetDependsOn() => this.DependsOn != null && (this.DependsOn.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property JobDefinition. 
+        /// <para>
+        /// The job definition used by this job. This value can be one of <c>name</c>, <c>name:revision</c>,
+        /// or the Amazon Resource Name (ARN) for the job definition. If name is specified without
+        /// a revision then the latest active revision is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string JobDefinition { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobDefinition property is set.
+        /// </summary>
+        internal bool IsSetJobDefinition() => this.JobDefinition != null;
+
+        /// <summary>
+        /// Gets and sets the property JobName. 
+        /// <para>
+        /// The name of the job. It can be up to 128 letters long. The first character must be
+        /// alphanumeric, can contain uppercase and lowercase letters, numbers, hyphens (-), and
+        /// underscores (_).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string JobName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the JobName property is set.
+        /// </summary>
+        internal bool IsSetJobName() => this.JobName != null;
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// Additional parameters passed to the job that replace parameter substitution placeholders
+        /// that are set in the job definition. Parameters are specified as a key and value pair
+        /// mapping. Parameters included here override any corresponding parameter defaults from
+        /// the job definition.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Parameters { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Parameters property is set.
+        /// </summary>
+        internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property RetryStrategy. 
+        /// <para>
+        /// The retry strategy to use for failed jobs. When a retry strategy is specified here,
+        /// it overrides the retry strategy defined in the job definition.
+        /// </para>
+        /// </summary>
+        public BatchRetryStrategy RetryStrategy { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RetryStrategy property is set.
+        /// </summary>
+        internal bool IsSetRetryStrategy() => this.RetryStrategy != null;
+    }
+}

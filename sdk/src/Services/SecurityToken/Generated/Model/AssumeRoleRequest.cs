@@ -165,6 +165,7 @@ namespace Amazon.SecurityToken.Model
     {
         private int? _durationSeconds;
         private string _externalId;
+        private int? _minimumSessionTokenSize;
         private string _policy;
         private List<PolicyDescriptorType> _policyArns = AWSConfigs.InitializeCollections ? new List<PolicyDescriptorType>() : null;
         private List<ProvidedContext> _providedContexts = AWSConfigs.InitializeCollections ? new List<ProvidedContext>() : null;
@@ -260,6 +261,22 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetExternalId()
         {
             return this._externalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinimumSessionTokenSize.
+        /// </summary>
+        [AWSProperty(Min=0, Max=4096)]
+        public int? MinimumSessionTokenSize
+        {
+            get { return this._minimumSessionTokenSize; }
+            set { this._minimumSessionTokenSize = value; }
+        }
+
+        // Check to see if MinimumSessionTokenSize property is set
+        internal bool IsSetMinimumSessionTokenSize()
+        {
+            return this._minimumSessionTokenSize.HasValue; 
         }
 
         /// <summary>

@@ -1,0 +1,142 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// FilterControl Marshaller
+    /// </summary>
+    public partial class FilterControlMarshaller : IRequestMarshaller<FilterControl, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(FilterControl requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetCrossSheet())
+            {
+                context.Writer.WritePropertyName("CrossSheet");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterCrossSheetControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.CrossSheet, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetDateTimePicker())
+            {
+                context.Writer.WritePropertyName("DateTimePicker");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterDateTimePickerControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.DateTimePicker, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetDropdown())
+            {
+                context.Writer.WritePropertyName("Dropdown");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterDropDownControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.Dropdown, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetList())
+            {
+                context.Writer.WritePropertyName("List");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterListControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.List, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetRelativeDateTime())
+            {
+                context.Writer.WritePropertyName("RelativeDateTime");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterRelativeDateTimeControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.RelativeDateTime, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSlider())
+            {
+                context.Writer.WritePropertyName("Slider");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterSliderControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.Slider, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetTextArea())
+            {
+                context.Writer.WritePropertyName("TextArea");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterTextAreaControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.TextArea, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetTextField())
+            {
+                context.Writer.WritePropertyName("TextField");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterTextFieldControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.TextField, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static FilterControlMarshaller Instance = new FilterControlMarshaller();
+    }
+}

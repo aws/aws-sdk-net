@@ -156,6 +156,41 @@ namespace AWSSDKDocSamples.Amazon.Billing.Generated
             #endregion
         }
 
+        public void BillingListBillingViewSegments()
+        {
+            #region example-1
+
+            var client = new AmazonBillingClient();
+            var response = client.ListBillingViewSegments(new ListBillingViewSegmentsRequest 
+            {
+                TimeRange = new BillingViewSegmentTimeRange {
+                    BeginDateInclusive = DateTime.UtcNow,
+                    EndDateExclusive = DateTime.UtcNow
+                }
+            });
+
+            List<BillingViewSegmentsListElement> items = response.Items;
+
+            #endregion
+        }
+
+        public void BillingListBillingViewSegments()
+        {
+            #region example-2
+
+            var client = new AmazonBillingClient();
+            var response = client.ListBillingViewSegments(new ListBillingViewSegmentsRequest 
+            {
+                TimeRange = new BillingViewSegmentTimeRange {
+                    BeginDateInclusive = DateTime.UtcNow,
+                    EndDateExclusive = DateTime.UtcNow
+                }
+            });
+
+
+            #endregion
+        }
+
         public void BillingListSourceViewsForBillingView()
         {
             #region example-1

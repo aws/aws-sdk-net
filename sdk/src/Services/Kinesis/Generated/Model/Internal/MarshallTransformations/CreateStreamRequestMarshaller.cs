@@ -81,6 +81,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.MaxRecordSizeInKiB.Value);
             }
 
+            if(publicRequest.IsSetRecordDistributionStrategy())
+            {
+                context.Writer.WritePropertyName("RecordDistributionStrategy");
+                context.Writer.WriteStringValue(publicRequest.RecordDistributionStrategy);
+            }
+
             if(publicRequest.IsSetShardCount())
             {
                 context.Writer.WritePropertyName("ShardCount");

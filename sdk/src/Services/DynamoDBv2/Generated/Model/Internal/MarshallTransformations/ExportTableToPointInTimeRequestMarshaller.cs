@@ -95,13 +95,24 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExportTime())
             {
                 context.Writer.WritePropertyName("ExportTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExportTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExportTime.Value));
             }
 
             if(publicRequest.IsSetExportType())
             {
                 context.Writer.WritePropertyName("ExportType");
                 context.Writer.WriteStringValue(publicRequest.ExportType);
+            }
+
+            if(publicRequest.IsSetFilterSpecification())
+            {
+                context.Writer.WritePropertyName("FilterSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterSpecification, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetIncrementalExportSpecification())

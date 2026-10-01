@@ -97,6 +97,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// Filter test runs by test identifier.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public string TestId
         {
             get { return this._testId; }

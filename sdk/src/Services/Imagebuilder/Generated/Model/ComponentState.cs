@@ -59,7 +59,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the component.
+        /// The current state of the component. Components with a status of <c>DEPRECATED</c>
+        /// or <c>DISABLED</c> can't be added to new recipes.
         /// </para>
         /// </summary>
         public ComponentStatus Status

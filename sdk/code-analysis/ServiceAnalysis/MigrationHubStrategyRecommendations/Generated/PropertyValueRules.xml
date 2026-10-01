@@ -2,27 +2,25 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetApplicationComponentDetailsRequest.ApplicationComponentId</property>
-    <min>0</min>
     <max>44</max>
-    <pattern>[0-9a-zA-Z-]+</pattern>
+    <pattern>.*[0-9a-zA-Z-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetApplicationComponentStrategiesRequest.ApplicationComponentId</property>
-    <min>0</min>
     <max>44</max>
-    <pattern>[0-9a-zA-Z-]+</pattern>
+    <pattern>.*[0-9a-zA-Z-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetAssessmentRequest.Id</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetAssessmentResponse.Id</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetImportFileTaskRequest.Id</property>
@@ -46,7 +44,7 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetImportFileTaskResponse.InputS3Bucket</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetImportFileTaskResponse.InputS3Key</property>
@@ -58,7 +56,7 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetImportFileTaskResponse.StatusReportS3Bucket</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetImportFileTaskResponse.StatusReportS3Key</property>
@@ -70,19 +68,19 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetLatestAssessmentIdResponse.Id</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetRecommendationReportDetailsRequest.Id</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetRecommendationReportDetailsResponse.Id</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.GetServerDetailsRequest.NextToken</property>
@@ -122,7 +120,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ListApplicationComponentsRequest.FilterValue</property>
-    <min>0</min>
     <max>256</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -184,37 +181,37 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartAssessmentRequest.S3bucketForAnalysisData</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartAssessmentRequest.S3bucketForReportData</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartAssessmentResponse.AssessmentId</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartImportFileTaskRequest.Name</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>.*[a-zA-Z0-9_-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartImportFileTaskRequest.S3Bucket</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartImportFileTaskRequest.S3bucketForReportData</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartImportFileTaskRequest.S3key</property>
@@ -232,19 +229,18 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StartRecommendationReportGenerationResponse.Id</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.StopAssessmentRequest.AssessmentId</property>
     <min>0</min>
     <max>52</max>
-    <pattern>[0-9a-z-:]+</pattern>
+    <pattern>.*[0-9a-z-:]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.UpdateApplicationComponentConfigRequest.ApplicationComponentId</property>
-    <min>0</min>
     <max>44</max>
-    <pattern>[0-9a-zA-Z-]+</pattern>
+    <pattern>.*[0-9a-zA-Z-]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.UpdateApplicationComponentConfigRequest.SecretsManagerKey</property>
@@ -304,7 +300,7 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ApplicationComponentDetail.Id</property>
     <min>0</min>
     <max>44</max>
-    <pattern>^[0-9a-b]+</pattern>
+    <pattern>^[0-9a-b]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ApplicationComponentDetail.OsDriver</property>
@@ -411,19 +407,25 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.MigrationHubStrategyRecommendations.Model.DatabaseConfigDetail.SecretName</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.DataCollectionDetails.StatusMessage</property>
     <min>0</min>
     <max>512</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.DatabaseConfigDetail.SecretName</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.Group.Value</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MigrationHubStrategyRecommendations.Model.IPAddressBasedRemoteInfo.IpAddressConfigurationTimeStamp</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
@@ -444,7 +446,7 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ImportFileTaskInformation.InputS3Bucket</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ImportFileTaskInformation.InputS3Key</property>
@@ -456,16 +458,10 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ImportFileTaskInformation.StatusReportS3Bucket</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ImportFileTaskInformation.StatusReportS3Key</property>
-    <min>0</min>
-    <max>1024</max>
-    <pattern>.*\S.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.MigrationHubStrategyRecommendations.Model.IPAddressBasedRemoteInfo.IpAddressConfigurationTimeStamp</property>
     <min>0</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
@@ -534,7 +530,7 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.S3Object.S3Bucket</property>
     <min>0</min>
     <max>63</max>
-    <pattern>[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+</pattern>
+    <pattern>.*[0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.S3Object.S3key</property>
@@ -552,7 +548,7 @@
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ServerDetail.Id</property>
     <min>0</min>
     <max>44</max>
-    <pattern>^[0-9a-b]+</pattern>
+    <pattern>^[0-9a-b]+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MigrationHubStrategyRecommendations.Model.ServerDetail.ServerType</property>

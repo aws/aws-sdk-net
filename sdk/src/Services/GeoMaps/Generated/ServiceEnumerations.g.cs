@@ -1,0 +1,779 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using Amazon.Runtime;
+
+namespace Amazon.GeoMaps
+{
+    /// <summary>
+    /// Constants used for properties of type Buildings.
+    /// </summary>
+    public class Buildings : ConstantClass
+    {
+        /// <summary>
+        /// Constant Buildings3D for Buildings
+        /// </summary>
+        public static readonly Buildings Buildings3D = new Buildings("Buildings3D");
+
+        /// <summary>
+        /// Constructs a custom Buildings for a value not among the defined constants.
+        /// </summary>
+        public Buildings(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Buildings FindValue(string value)
+        {
+            return FindValue<Buildings>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Buildings(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ColorScheme.
+    /// </summary>
+    public class ColorScheme : ConstantClass
+    {
+        /// <summary>
+        /// Constant Dark for ColorScheme
+        /// </summary>
+        public static readonly ColorScheme Dark = new ColorScheme("Dark");
+
+        /// <summary>
+        /// Constant Light for ColorScheme
+        /// </summary>
+        public static readonly ColorScheme Light = new ColorScheme("Light");
+
+        /// <summary>
+        /// Constructs a custom ColorScheme for a value not among the defined constants.
+        /// </summary>
+        public ColorScheme(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ColorScheme FindValue(string value)
+        {
+            return FindValue<ColorScheme>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ColorScheme(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ContourDensity.
+    /// </summary>
+    public class ContourDensity : ConstantClass
+    {
+        /// <summary>
+        /// Constant High for ContourDensity
+        /// </summary>
+        public static readonly ContourDensity High = new ContourDensity("High");
+
+        /// <summary>
+        /// Constant Low for ContourDensity
+        /// </summary>
+        public static readonly ContourDensity Low = new ContourDensity("Low");
+
+        /// <summary>
+        /// Constant Medium for ContourDensity
+        /// </summary>
+        public static readonly ContourDensity Medium = new ContourDensity("Medium");
+
+        /// <summary>
+        /// Constructs a custom ContourDensity for a value not among the defined constants.
+        /// </summary>
+        public ContourDensity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContourDensity FindValue(string value)
+        {
+            return FindValue<ContourDensity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContourDensity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type LabelSize.
+    /// </summary>
+    public class LabelSize : ConstantClass
+    {
+        /// <summary>
+        /// Constant Large for LabelSize
+        /// </summary>
+        public static readonly LabelSize Large = new LabelSize("Large");
+
+        /// <summary>
+        /// Constant Small for LabelSize
+        /// </summary>
+        public static readonly LabelSize Small = new LabelSize("Small");
+
+        /// <summary>
+        /// Constructs a custom LabelSize for a value not among the defined constants.
+        /// </summary>
+        public LabelSize(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LabelSize FindValue(string value)
+        {
+            return FindValue<LabelSize>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LabelSize(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MapFeatureMode.
+    /// </summary>
+    public class MapFeatureMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Disabled for MapFeatureMode
+        /// </summary>
+        public static readonly MapFeatureMode Disabled = new MapFeatureMode("Disabled");
+
+        /// <summary>
+        /// Constant Enabled for MapFeatureMode
+        /// </summary>
+        public static readonly MapFeatureMode Enabled = new MapFeatureMode("Enabled");
+
+        /// <summary>
+        /// Constructs a custom MapFeatureMode for a value not among the defined constants.
+        /// </summary>
+        public MapFeatureMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapFeatureMode FindValue(string value)
+        {
+            return FindValue<MapFeatureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapFeatureMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type MapStyle.
+    /// </summary>
+    public class MapStyle : ConstantClass
+    {
+        /// <summary>
+        /// Constant Hybrid for MapStyle
+        /// </summary>
+        public static readonly MapStyle Hybrid = new MapStyle("Hybrid");
+
+        /// <summary>
+        /// Constant Monochrome for MapStyle
+        /// </summary>
+        public static readonly MapStyle Monochrome = new MapStyle("Monochrome");
+
+        /// <summary>
+        /// Constant Satellite for MapStyle
+        /// </summary>
+        public static readonly MapStyle Satellite = new MapStyle("Satellite");
+
+        /// <summary>
+        /// Constant Standard for MapStyle
+        /// </summary>
+        public static readonly MapStyle Standard = new MapStyle("Standard");
+
+        /// <summary>
+        /// Constructs a custom MapStyle for a value not among the defined constants.
+        /// </summary>
+        public MapStyle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MapStyle FindValue(string value)
+        {
+            return FindValue<MapStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MapStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PoiCategory.
+    /// </summary>
+    public class PoiCategory : ConstantClass
+    {
+        /// <summary>
+        /// Constant Accommodations for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Accommodations = new PoiCategory("Accommodations");
+
+        /// <summary>
+        /// Constant BusinessAndServices for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory BusinessAndServices = new PoiCategory("BusinessAndServices");
+
+        /// <summary>
+        /// Constant Entertainment for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Entertainment = new PoiCategory("Entertainment");
+
+        /// <summary>
+        /// Constant FacilitiesAndBuildings for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory FacilitiesAndBuildings = new PoiCategory("FacilitiesAndBuildings");
+
+        /// <summary>
+        /// Constant FoodAndDrink for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory FoodAndDrink = new PoiCategory("FoodAndDrink");
+
+        /// <summary>
+        /// Constant LeisureAndOutdoor for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory LeisureAndOutdoor = new PoiCategory("LeisureAndOutdoor");
+
+        /// <summary>
+        /// Constant Shopping for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Shopping = new PoiCategory("Shopping");
+
+        /// <summary>
+        /// Constant SightsAndMuseums for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory SightsAndMuseums = new PoiCategory("SightsAndMuseums");
+
+        /// <summary>
+        /// Constant Transportation for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Transportation = new PoiCategory("Transportation");
+
+        /// <summary>
+        /// Constructs a custom PoiCategory for a value not among the defined constants.
+        /// </summary>
+        public PoiCategory(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PoiCategory FindValue(string value)
+        {
+            return FindValue<PoiCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PoiCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type PoiDensity.
+    /// </summary>
+    public class PoiDensity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Default for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Default = new PoiDensity("Default");
+
+        /// <summary>
+        /// Constant Dense for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Dense = new PoiDensity("Dense");
+
+        /// <summary>
+        /// Constant Off for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Off = new PoiDensity("Off");
+
+        /// <summary>
+        /// Constant Sparse for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Sparse = new PoiDensity("Sparse");
+
+        /// <summary>
+        /// Constant VeryDense for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity VeryDense = new PoiDensity("VeryDense");
+
+        /// <summary>
+        /// Constant VerySparse for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity VerySparse = new PoiDensity("VerySparse");
+
+        /// <summary>
+        /// Constructs a custom PoiDensity for a value not among the defined constants.
+        /// </summary>
+        public PoiDensity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PoiDensity FindValue(string value)
+        {
+            return FindValue<PoiDensity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PoiDensity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ScaleBarUnit.
+    /// </summary>
+    public class ScaleBarUnit : ConstantClass
+    {
+        /// <summary>
+        /// Constant Kilometers for ScaleBarUnit
+        /// </summary>
+        public static readonly ScaleBarUnit Kilometers = new ScaleBarUnit("Kilometers");
+
+        /// <summary>
+        /// Constant KilometersMiles for ScaleBarUnit
+        /// </summary>
+        public static readonly ScaleBarUnit KilometersMiles = new ScaleBarUnit("KilometersMiles");
+
+        /// <summary>
+        /// Constant Miles for ScaleBarUnit
+        /// </summary>
+        public static readonly ScaleBarUnit Miles = new ScaleBarUnit("Miles");
+
+        /// <summary>
+        /// Constant MilesKilometers for ScaleBarUnit
+        /// </summary>
+        public static readonly ScaleBarUnit MilesKilometers = new ScaleBarUnit("MilesKilometers");
+
+        /// <summary>
+        /// Constructs a custom ScaleBarUnit for a value not among the defined constants.
+        /// </summary>
+        public ScaleBarUnit(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScaleBarUnit FindValue(string value)
+        {
+            return FindValue<ScaleBarUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScaleBarUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type StaticMapStyle.
+    /// </summary>
+    public class StaticMapStyle : ConstantClass
+    {
+        /// <summary>
+        /// Constant Satellite for StaticMapStyle
+        /// </summary>
+        public static readonly StaticMapStyle Satellite = new StaticMapStyle("Satellite");
+
+        /// <summary>
+        /// Constant Standard for StaticMapStyle
+        /// </summary>
+        public static readonly StaticMapStyle Standard = new StaticMapStyle("Standard");
+
+        /// <summary>
+        /// Constructs a custom StaticMapStyle for a value not among the defined constants.
+        /// </summary>
+        public StaticMapStyle(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StaticMapStyle FindValue(string value)
+        {
+            return FindValue<StaticMapStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StaticMapStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Terrain.
+    /// </summary>
+    public class Terrain : ConstantClass
+    {
+        /// <summary>
+        /// Constant Hillshade for Terrain
+        /// </summary>
+        public static readonly Terrain Hillshade = new Terrain("Hillshade");
+
+        /// <summary>
+        /// Constant Terrain3D for Terrain
+        /// </summary>
+        public static readonly Terrain Terrain3D = new Terrain("Terrain3D");
+
+        /// <summary>
+        /// Constructs a custom Terrain for a value not among the defined constants.
+        /// </summary>
+        public Terrain(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Terrain FindValue(string value)
+        {
+            return FindValue<Terrain>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Terrain(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TileAdditionalFeature.
+    /// </summary>
+    public class TileAdditionalFeature : ConstantClass
+    {
+        /// <summary>
+        /// Constant ContourLines for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature ContourLines = new TileAdditionalFeature("ContourLines");
+
+        /// <summary>
+        /// Constant Hillshade for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Hillshade = new TileAdditionalFeature("Hillshade");
+
+        /// <summary>
+        /// Constant Logistics for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Logistics = new TileAdditionalFeature("Logistics");
+
+        /// <summary>
+        /// Constant Transit for TileAdditionalFeature
+        /// </summary>
+        public static readonly TileAdditionalFeature Transit = new TileAdditionalFeature("Transit");
+
+        /// <summary>
+        /// Constructs a custom TileAdditionalFeature for a value not among the defined constants.
+        /// </summary>
+        public TileAdditionalFeature(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TileAdditionalFeature FindValue(string value)
+        {
+            return FindValue<TileAdditionalFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TileAdditionalFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Traffic.
+    /// </summary>
+    public class Traffic : ConstantClass
+    {
+        /// <summary>
+        /// Constant All for Traffic
+        /// </summary>
+        public static readonly Traffic All = new Traffic("All");
+
+        /// <summary>
+        /// Constant Congestion for Traffic
+        /// </summary>
+        public static readonly Traffic Congestion = new Traffic("Congestion");
+
+        /// <summary>
+        /// Constructs a custom Traffic for a value not among the defined constants.
+        /// </summary>
+        public Traffic(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Traffic FindValue(string value)
+        {
+            return FindValue<Traffic>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Traffic(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TravelMode.
+    /// </summary>
+    public class TravelMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant Transit for TravelMode
+        /// </summary>
+        public static readonly TravelMode Transit = new TravelMode("Transit");
+
+        /// <summary>
+        /// Constant Truck for TravelMode
+        /// </summary>
+        public static readonly TravelMode Truck = new TravelMode("Truck");
+
+        /// <summary>
+        /// Constructs a custom TravelMode for a value not among the defined constants.
+        /// </summary>
+        public TravelMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TravelMode FindValue(string value)
+        {
+            return FindValue<TravelMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TravelMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+        /// <summary>
+        /// Constant CannotParse for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CannotParse = new ValidationExceptionReason("CannotParse");
+
+        /// <summary>
+        /// Constant FieldValidationFailed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("FieldValidationFailed");
+
+        /// <summary>
+        /// Constant Missing for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason Missing = new ValidationExceptionReason("Missing");
+
+        /// <summary>
+        /// Constant Other for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason Other = new ValidationExceptionReason("Other");
+
+        /// <summary>
+        /// Constant UnknownField for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnknownField = new ValidationExceptionReason("UnknownField");
+
+        /// <summary>
+        /// Constant UnknownOperation for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnknownOperation = new ValidationExceptionReason("UnknownOperation");
+
+        /// <summary>
+        /// Constructs a custom ValidationExceptionReason for a value not among the defined constants.
+        /// </summary>
+        public ValidationExceptionReason(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type Variant.
+    /// </summary>
+    public class Variant : ConstantClass
+    {
+        /// <summary>
+        /// Constant Default for Variant
+        /// </summary>
+        public static readonly Variant Default = new Variant("Default");
+
+        /// <summary>
+        /// Constructs a custom Variant for a value not among the defined constants.
+        /// </summary>
+        public Variant(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Variant FindValue(string value)
+        {
+            return FindValue<Variant>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Variant(string value)
+        {
+            return FindValue(value);
+        }
+    }
+}

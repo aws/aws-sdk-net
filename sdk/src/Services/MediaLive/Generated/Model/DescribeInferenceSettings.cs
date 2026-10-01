@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class DescribeInferenceSettings
     {
         private List<AudioFeedInput> _audioFeedInputs = AWSConfigs.InitializeCollections ? new List<AudioFeedInput>() : null;
+        private List<string> _enrichmentMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _feedArn;
 
         /// <summary>
@@ -56,6 +57,28 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetAudioFeedInputs()
         {
             return this._audioFeedInputs != null && (this._audioFeedInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnrichmentMethods. The set of Contextual Metadata Enrichment
+        /// methods enabled for this channel. Each method represents a specific way the channel
+        /// uses the inference feed to augment its output with contextual metadata.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> EnrichmentMethods
+        {
+            get { return this._enrichmentMethods; }
+            set { this._enrichmentMethods = value; }
+        }
+
+        // Check to see if EnrichmentMethods property is set
+        internal bool IsSetEnrichmentMethods()
+        {
+            return this._enrichmentMethods != null && (this._enrichmentMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

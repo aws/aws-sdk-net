@@ -94,6 +94,47 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
                 }
+                if(publicRequest.IsSetImageConfiguration())
+                {
+                    if(publicRequest.ImageConfiguration.IsSetBuild())
+                    {
+                        if(publicRequest.ImageConfiguration.Build.IsSetArchitecture())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "Architecture", StringUtils.FromString(publicRequest.ImageConfiguration.Build.Architecture));
+                        }
+                        if(publicRequest.ImageConfiguration.Build.IsSetBuildpack())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "Buildpack", StringUtils.FromString(publicRequest.ImageConfiguration.Build.Buildpack));
+                        }
+                        if(publicRequest.ImageConfiguration.Build.IsSetCodeBuildServiceRole())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "CodeBuildServiceRole", StringUtils.FromString(publicRequest.ImageConfiguration.Build.CodeBuildServiceRole));
+                        }
+                        if(publicRequest.ImageConfiguration.Build.IsSetComputeType())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "ComputeType", StringUtils.FromString(publicRequest.ImageConfiguration.Build.ComputeType));
+                        }
+                        if(publicRequest.ImageConfiguration.Build.IsSetDockerfileLocation())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "DockerfileLocation", StringUtils.FromString(publicRequest.ImageConfiguration.Build.DockerfileLocation));
+                        }
+                        if(publicRequest.ImageConfiguration.Build.IsSetTimeoutInMinutes())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "TimeoutInMinutes", StringUtils.FromInt(publicRequest.ImageConfiguration.Build.TimeoutInMinutes));
+                        }
+                        if(publicRequest.ImageConfiguration.Build.IsSetType())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Build" + "." + "Type", StringUtils.FromString(publicRequest.ImageConfiguration.Build.Type));
+                        }
+                    }
+                    if(publicRequest.ImageConfiguration.IsSetSource())
+                    {
+                        if(publicRequest.ImageConfiguration.Source.IsSetUri())
+                        {
+                            request.Parameters.Add("ImageConfiguration" + "." + "Source" + "." + "Uri", StringUtils.FromString(publicRequest.ImageConfiguration.Source.Uri));
+                        }
+                    }
+                }
                 if(publicRequest.IsSetProcess())
                 {
                     request.Parameters.Add("Process", StringUtils.FromBool(publicRequest.Process));

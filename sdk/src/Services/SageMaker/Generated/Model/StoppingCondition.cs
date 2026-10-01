@@ -90,9 +90,22 @@ namespace Amazon.SageMaker.Model
         ///  <c>MaxPendingTimeInSeconds</c> only increments when jobs are actively waiting for
         /// capacity in an <c>Active</c> plan.
         /// </para>
-        ///  </note>
+        ///  </note> <note> <ul> <li> 
+        /// <para>
+        ///  <c>MaxPendingTimeInSeconds</c> takes effect only for jobs that request accelerated
+        /// computing instance types, such as instances in the <c>ml.p</c>, <c>ml.g</c>, and <c>ml.trn</c>
+        /// families. It has no effect on jobs that request CPU-only instance types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the job specifies <c>InstancePreferences</c>, <c>MaxPendingTimeInSeconds</c> bounds
+        /// the total time SageMaker spends working through your list of instance types. It is
+        /// not applied per instance type preference, and takes effect only when the list includes
+        /// at least one accelerated computing instance type.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
-        [AWSProperty(Min=7200, Max=2419200)]
+        [AWSProperty(Min=1800, Max=2419200)]
         public int? MaxPendingTimeInSeconds
         {
             get { return this._maxPendingTimeInSeconds; }

@@ -61,8 +61,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LastLaunched. 
         /// <para>
-        /// Specifies configuration details for Image Builder to exclude the most recent resources
-        /// from lifecycle actions.
+        /// Configures Image Builder to exclude AMIs that were launched within the specified time
+        /// period from lifecycle actions. AMIs with no recorded last-launched time aren't excluded
+        /// by this rule.
         /// </para>
         /// </summary>
         public LifecyclePolicyDetailExclusionRulesAmisLastLaunched LastLaunched
@@ -103,8 +104,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SharedAccounts. 
         /// <para>
-        /// Specifies Amazon Web Services accounts whose resources are excluded from the lifecycle
-        /// action.
+        /// The lifecycle action doesn't apply to AMIs that are shared with any of the specified
+        /// Amazon Web Services accounts.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -128,7 +129,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TagMap. 
         /// <para>
-        /// Lists tags that should be excluded from lifecycle actions for the AMIs that have them.
+        /// Lifecycle actions don't apply to AMIs that have any of these tags. Both the key and
+        /// the value must match.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

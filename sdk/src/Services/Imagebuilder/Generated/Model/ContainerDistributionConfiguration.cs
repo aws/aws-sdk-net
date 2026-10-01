@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Container distribution settings for encryption, licensing, and sharing in a specific
-    /// Region.
+    /// Defines how the output container image is distributed in a specific Amazon Web Services
+    /// Region: the target repository, the image tags to apply to the distributed image, and
+    /// an optional description.
     /// </summary>
     public partial class ContainerDistributionConfiguration
     {
@@ -42,7 +43,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ContainerTags. 
         /// <para>
-        /// Tags that are attached to the container distribution configuration.
+        /// Tags that Image Builder applies to the distributed container image in the target repository.
+        /// These are repository image tags, not resource tags.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

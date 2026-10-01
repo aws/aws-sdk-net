@@ -108,13 +108,13 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSubmittedAfter())
             {
                 context.Writer.WritePropertyName("SubmittedAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.SubmittedAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SubmittedAfter.Value));
             }
 
             if(publicRequest.IsSetSubmittedBefore())
             {
                 context.Writer.WritePropertyName("SubmittedBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.SubmittedBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SubmittedBefore.Value));
             }
 
             writer.WriteEndObject();

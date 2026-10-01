@@ -228,11 +228,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImportedImageRequest.Description</property>
+    <min>0</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9_.() -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.CreateImportedImageRequest.DisplayName</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9_.() -]+$</pattern>
   </property-value-rule>
@@ -696,7 +698,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.GetExportImageTaskRequest.TaskId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ListAssociatedFleetsRequest.NextToken</property>
@@ -1044,33 +1046,40 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.AbsoluteAppPath</property>
+    <min>0</min>
     <max>32767</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.AbsoluteIconPath</property>
+    <min>0</min>
     <max>32767</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.AbsoluteManifestPath</property>
+    <min>0</min>
     <max>32767</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.DisplayName</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.LaunchParameters</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>[^\x00]+</pattern>
+    <pattern>^[^\x00]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.Name</property>
+    <min>0</min>
     <max>100</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,99}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ApplicationConfig.WorkingDirectory</property>
+    <min>0</min>
     <max>32767</max>
   </property-value-rule>
   <property-value-rule>
@@ -1151,7 +1160,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ExportImageTask.TaskId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.Filter.Name</property>
@@ -1258,6 +1267,12 @@
   <property-value-rule>
     <property>Amazon.AppStream.Model.ImageBuilderStateChangeReason.Message</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppStream.Model.ImageSoftwareMetadata.NvidiaGridDriverVersion</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>^[0-9]+(\.[0-9]+){1,2}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppStream.Model.ImageStateChangeReason.Message</property>

@@ -1,0 +1,190 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoStaticOnly" },
+        { "target": "com.example#DoContextParam" },
+        { "target": "com.example#DoBoth" },
+        { "target": "com.example#DoOperationPath" },
+        { "target": "com.example#DoNothing" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {},
+        "smithy.rules#clientContextParams": {
+          "CustomSetting": { "type": "string", "documentation": "A custom setting." },
+          "CustomFlag": { "type": "boolean", "documentation": "A custom flag." }
+        },
+        "smithy.rules#endpointRuleSet": {
+          "version": "1.0",
+          "parameters": {
+            "Region": { "type": "string", "builtIn": "AWS::Region", "required": false },
+            "CustomSetting": { "type": "string", "required": false },
+            "CustomFlag": { "type": "boolean", "required": false },
+            "ApiType": { "type": "string", "required": false },
+            "MapNames": { "type": "stringArray", "required": false },
+            "TerminalList": { "type": "stringArray", "required": false },
+            "TerminalMap": { "type": "stringArray", "required": false },
+            "Flattened": { "type": "stringArray", "required": false },
+            "UseControl": { "type": "boolean", "required": false },
+            "EndpointId": { "type": "string", "required": false },
+            "SimpleArn": { "type": "string", "required": false },
+            "TableKeys": { "type": "stringArray", "required": false },
+            "InnerNames": { "type": "stringArray", "required": false },
+            "FlatNames": { "type": "stringArray", "required": false }
+          },
+          "rules": [
+            {
+              "conditions": [],
+              "type": "endpoint",
+              "endpoint": { "url": "https://example.amazonaws.com" }
+            }
+          ]
+        }
+      }
+    },
+
+    "com.example#DoStaticOnly": {
+      "type": "operation",
+      "input": { "target": "com.example#DoStaticOnlyRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/static-only", "method": "POST" },
+        "smithy.rules#staticContextParams": {
+          "ApiType": { "value": "ControlPlane" },
+          "UseControl": { "value": true }
+        }
+      }
+    },
+    "com.example#DoStaticOnlyRequest": {
+      "type": "structure",
+      "members": {
+        "ignored": { "target": "smithy.api#String" }
+      }
+    },
+
+    "com.example#DoContextParam": {
+      "type": "operation",
+      "input": { "target": "com.example#DoContextParamRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/context-param", "method": "POST" }
+      }
+    },
+    "com.example#DoContextParamRequest": {
+      "type": "structure",
+      "members": {
+        "endpointId": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.rules#contextParam": { "name": "EndpointId" } }
+        },
+        "unrelated": { "target": "smithy.api#String" }
+      }
+    },
+
+    "com.example#DoBoth": {
+      "type": "operation",
+      "input": { "target": "com.example#DoBothRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/both", "method": "POST" },
+        "smithy.rules#staticContextParams": {
+          "ApiType": { "value": "DataPlane" }
+        }
+      }
+    },
+    "com.example#DoBothRequest": {
+      "type": "structure",
+      "members": {
+        "endpointId": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.rules#contextParam": { "name": "EndpointId" } }
+        }
+      }
+    },
+
+    "com.example#DoOperationPath": {
+      "type": "operation",
+      "input": { "target": "com.example#DoOperationPathRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/operation-path", "method": "POST" },
+        "smithy.rules#operationContextParams": {
+          "SimpleArn": { "path": "creationParameters.tableName" },
+          "TableKeys": { "path": "keys(requestItems)" },
+          "InnerNames": { "path": "transactItems[*].get.tableName" },
+          "FlatNames": { "path": "transactItems[*].[conditionCheck.tableName, put.tableName][]" },
+          "MapNames": { "path": "itemsByName.*.tableName" },
+          "TerminalList": { "path": "aliases[*]" },
+          "TerminalMap": { "path": "requestItems.*" },
+          "Flattened": { "path": "aliasGroups[]" }
+        }
+      }
+    },
+    "com.example#DoOperationPathRequest": {
+      "type": "structure",
+      "members": {
+        "creationParameters": { "target": "com.example#CreationParameters" },
+        "requestItems": { "target": "com.example#RequestItemMap" },
+        "transactItems": { "target": "com.example#TransactItemList" },
+        "itemsByName": { "target": "com.example#TableRefMap" },
+        "aliases": { "target": "com.example#NameList" },
+        "aliasGroups": { "target": "com.example#NameListList" }
+      }
+    },
+    "com.example#NameListList": {
+      "type": "list",
+      "member": { "target": "com.example#NameList" }
+    },
+    "com.example#TableRefMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "com.example#TableRef" }
+    },
+    "com.example#CreationParameters": {
+      "type": "structure",
+      "members": {
+        "tableName": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#RequestItemMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#String" }
+    },
+    "com.example#TransactItemList": {
+      "type": "list",
+      "member": { "target": "com.example#TransactItem" }
+    },
+    "com.example#TransactItem": {
+      "type": "structure",
+      "members": {
+        "get": { "target": "com.example#TableRef" },
+        "conditionCheck": { "target": "com.example#TableRef" },
+        "put": { "target": "com.example#TableRef" }
+      }
+    },
+    "com.example#TableRef": {
+      "type": "structure",
+      "members": {
+        "tableName": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#NameList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+
+    "com.example#DoNothing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/nothing", "method": "POST" }
+      }
+    }
+  }
+}

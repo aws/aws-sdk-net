@@ -53,6 +53,7 @@ namespace Amazon.ARCRegionswitch.Model
         private int? _recoveryTimeObjectiveMinutes;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ReportConfiguration _reportConfiguration;
+        private bool? _serviceQuotaChecksEnabled;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<Trigger> _triggers = AWSConfigs.InitializeCollections ? new List<Trigger>() : null;
         private List<Workflow> _workflows = AWSConfigs.InitializeCollections ? new List<Workflow>() : null;
@@ -233,6 +234,24 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetReportConfiguration()
         {
             return this._reportConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceQuotaChecksEnabled. 
+        /// <para>
+        /// Specifies whether to enable service quota checks for the Region switch plan.
+        /// </para>
+        /// </summary>
+        public bool? ServiceQuotaChecksEnabled
+        {
+            get { return this._serviceQuotaChecksEnabled; }
+            set { this._serviceQuotaChecksEnabled = value; }
+        }
+
+        // Check to see if ServiceQuotaChecksEnabled property is set
+        internal bool IsSetServiceQuotaChecksEnabled()
+        {
+            return this._serviceQuotaChecksEnabled.HasValue; 
         }
 
         /// <summary>

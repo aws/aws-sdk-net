@@ -62,6 +62,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         unmarshalledObject.Days = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DefaultEventHold", targetDepth))
+                    {
+                        var unmarshaller = EventHoldDurationUnmarshaller.Instance;
+                        unmarshalledObject.DefaultEventHold = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Mode", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

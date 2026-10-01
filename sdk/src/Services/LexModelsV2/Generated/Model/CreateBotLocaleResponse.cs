@@ -44,6 +44,7 @@ namespace Amazon.LexModelsV2.Model
         private string _localeId;
         private string _localeName;
         private double? _nluIntentConfidenceThreshold;
+        private SpeakerDiarizationSettings _speakerDiarizationSettings;
         private SpeechDetectionSensitivity _speechDetectionSensitivity;
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
@@ -245,6 +246,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetNluIntentConfidenceThreshold()
         {
             return this._nluIntentConfidenceThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeakerDiarizationSettings. 
+        /// <para>
+        /// The speaker diarization settings configured for the created bot locale.
+        /// </para>
+        /// </summary>
+        public SpeakerDiarizationSettings SpeakerDiarizationSettings
+        {
+            get { return this._speakerDiarizationSettings; }
+            set { this._speakerDiarizationSettings = value; }
+        }
+
+        // Check to see if SpeakerDiarizationSettings property is set
+        internal bool IsSetSpeakerDiarizationSettings()
+        {
+            return this._speakerDiarizationSettings != null;
         }
 
         /// <summary>

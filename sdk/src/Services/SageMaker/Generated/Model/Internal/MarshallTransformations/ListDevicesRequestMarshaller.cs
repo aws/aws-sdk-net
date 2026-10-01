@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetLatestHeartbeatAfter())
             {
                 context.Writer.WritePropertyName("LatestHeartbeatAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.LatestHeartbeatAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.LatestHeartbeatAfter.Value));
             }
 
             if(publicRequest.IsSetMaxResults())

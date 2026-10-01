@@ -177,7 +177,7 @@ namespace Amazon.FSx.Model
         /// Throughput Capacity</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=100000)]
+        [AWSProperty(Min=8, Max=2147483647)]
         public int? ThroughputCapacity
         {
             get { return this._throughputCapacity; }

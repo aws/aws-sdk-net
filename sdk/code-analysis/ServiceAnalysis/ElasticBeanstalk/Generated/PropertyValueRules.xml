@@ -616,6 +616,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticBeanstalk.Model.ImageBuildConfiguration.CodeBuildServiceRole</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticBeanstalk.Model.OptionSpecification.ResourceName</property>
     <min>1</min>
     <max>256</max>

@@ -112,6 +112,27 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TargetIops", StringUtils.FromInt(publicRequest.TargetIops));
                 }
+                if(publicRequest.IsSetTargetResourceConfigurations())
+                {
+                    if (publicRequest.TargetResourceConfigurations.Count == 0)
+                        request.Parameters.Add("TargetResourceConfigurations", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.TargetResourceConfigurations)
+                         {
+                            if(publicRequestlistValue.IsSetSourceArn())
+                            {
+                                request.Parameters.Add("TargetResourceConfigurations" + "." + "TargetResourceConfiguration" + "." + publicRequestlistValueIndex + "." + "SourceArn", StringUtils.FromString(publicRequestlistValue.SourceArn));
+                            }
+                            if(publicRequestlistValue.IsSetTargetKmsKeyId())
+                            {
+                                request.Parameters.Add("TargetResourceConfigurations" + "." + "TargetResourceConfiguration" + "." + publicRequestlistValueIndex + "." + "TargetKmsKeyId", StringUtils.FromString(publicRequestlistValue.TargetKmsKeyId));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetTargetStorageThroughput())
                 {
                     request.Parameters.Add("TargetStorageThroughput", StringUtils.FromInt(publicRequest.TargetStorageThroughput));

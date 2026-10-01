@@ -139,6 +139,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetBootModeOverride())
+                {
+                    request.Parameters.Add("BootModeOverride", StringUtils.FromString(publicRequest.BootModeOverride));
+                }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));

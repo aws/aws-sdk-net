@@ -51,6 +51,19 @@
         {"shape":"ResourceLimitExceeded"}
       ]
     },
+    "AttachClusterNodeNetworkInterface":{
+      "name":"AttachClusterNodeNetworkInterface",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AttachClusterNodeNetworkInterfaceRequest"},
+      "output":{"shape":"AttachClusterNodeNetworkInterfaceResponse"},
+      "errors":[
+        {"shape":"ResourceNotFound"},
+        {"shape":"ResourceLimitExceeded"}
+      ]
+    },
     "AttachClusterNodeVolume":{
       "name":"AttachClusterNodeVolume",
       "http":{
@@ -6206,6 +6219,34 @@
       "min":1,
       "pattern":"[a-zA-Z0-9._-]+"
     },
+    "AttachClusterNodeNetworkInterfaceRequest":{
+      "type":"structure",
+      "required":[
+        "ClusterName",
+        "NodeId",
+        "NetworkInterfaceId"
+      ],
+      "members":{
+        "ClusterName":{"shape":"ClusterNameOrArn"},
+        "NodeId":{"shape":"ClusterNodeId"},
+        "NetworkInterfaceId":{"shape":"ClusterNetworkInterfaceId"}
+      }
+    },
+    "AttachClusterNodeNetworkInterfaceResponse":{
+      "type":"structure",
+      "required":[
+        "ClusterArn",
+        "NodeId",
+        "NetworkInterfaceId",
+        "AttachmentId"
+      ],
+      "members":{
+        "ClusterArn":{"shape":"ClusterArn"},
+        "NodeId":{"shape":"ClusterNodeId"},
+        "NetworkInterfaceId":{"shape":"ClusterNetworkInterfaceId"},
+        "AttachmentId":{"shape":"ClusterNetworkInterfaceAttachmentId"}
+      }
+    },
     "AttachClusterNodeVolumeRequest":{
       "type":"structure",
       "required":[
@@ -8070,6 +8111,43 @@
       "min":1,
       "pattern":"[a-zA-Z0-9-]+"
     },
+    "ClusterAccountingDatabase":{
+      "type":"structure",
+      "required":[
+        "Endpoint",
+        "SecretArn"
+      ],
+      "members":{
+        "Endpoint":{"shape":"ClusterAccountingDatabaseEndpoint"},
+        "Port":{"shape":"ClusterAccountingDatabasePort"},
+        "Name":{"shape":"ClusterAccountingDatabaseName"},
+        "SecretArn":{"shape":"ClusterAccountingDatabaseSecretArn"}
+      }
+    },
+    "ClusterAccountingDatabaseEndpoint":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"(?=.{1,255}$)([a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?)(\\.[a-zA-Z0-9]([a-zA-Z0-9\\-]{0,61}[a-zA-Z0-9])?)*"
+    },
+    "ClusterAccountingDatabaseName":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-zA-Z0-9$_]+"
+    },
+    "ClusterAccountingDatabasePort":{
+      "type":"integer",
+      "box":true,
+      "max":65535,
+      "min":1
+    },
+    "ClusterAccountingDatabaseSecretArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws[a-z\\-]*:secretsmanager:[a-z0-9\\-]*:[0-9]{12}:secret:.+"
+    },
     "ClusterArn":{
       "type":"string",
       "max":256,
@@ -8141,7 +8219,7 @@
     },
     "ClusterAvailabilityZoneId":{
       "type":"string",
-      "pattern":"[a-z]{3}\\d-az\\d"
+      "pattern":"[a-z]{3,5}\\d-az\\d"
     },
     "ClusterAvailabilityZones":{
       "type":"list",
@@ -8829,11 +8907,23 @@
         "InterfaceType":{"shape":"ClusterInterfaceType"}
       }
     },
+    "ClusterNetworkInterfaceAttachmentId":{
+      "type":"string",
+      "max":28,
+      "min":1,
+      "pattern":"eni-attach-[0-9a-f]{8}(?:[0-9a-f]{9})?"
+    },
     "ClusterNetworkInterfaceDetails":{
       "type":"structure",
       "members":{
         "InterfaceType":{"shape":"ClusterInterfaceType"}
       }
+    },
+    "ClusterNetworkInterfaceId":{
+      "type":"string",
+      "max":21,
+      "min":1,
+      "pattern":"eni-[0-9a-f]{8}(?:[0-9a-f]{9})?"
     },
     "ClusterNodeDetails":{
       "type":"structure",
@@ -8952,7 +9042,8 @@
     "ClusterOrchestratorSlurmConfig":{
       "type":"structure",
       "members":{
-        "SlurmConfigStrategy":{"shape":"ClusterSlurmConfigStrategy"}
+        "SlurmConfigStrategy":{"shape":"ClusterSlurmConfigStrategy"},
+        "AccountingDatabase":{"shape":"ClusterAccountingDatabase"}
       }
     },
     "ClusterPartitionName":{
@@ -11830,6 +11921,22 @@
       "max":255,
       "min":1,
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
+    },
+    "DatabaseConfigurationMetadata":{
+      "type":"structure",
+      "members":{
+        "RollbackStatus":{"shape":"DatabaseConfigurationRollbackStatus"},
+        "Advisory":{"shape":"String"},
+        "FailureMessage":{"shape":"String"}
+      }
+    },
+    "DatabaseConfigurationRollbackStatus":{
+      "type":"string",
+      "enum":[
+        "NotApplicable",
+        "Reverted",
+        "RevertFailed"
+      ]
     },
     "DatasetDefinition":{
       "type":"structure",
@@ -14946,7 +15053,7 @@
       "type":"structure",
       "required":["TrainingPlanName"],
       "members":{
-        "TrainingPlanName":{"shape":"TrainingPlanName"}
+        "TrainingPlanName":{"shape":"TrainingPlanNameOrArn"}
       }
     },
     "DescribeTrainingPlanResponse":{
@@ -16295,7 +16402,9 @@
         "Cluster":{"shape":"ClusterMetadata"},
         "InstanceGroup":{"shape":"InstanceGroupMetadata"},
         "InstanceGroupScaling":{"shape":"InstanceGroupScalingMetadata"},
-        "Instance":{"shape":"InstanceMetadata"}
+        "Instance":{"shape":"InstanceMetadata"},
+        "DatabaseConfiguration":{"shape":"DatabaseConfigurationMetadata"},
+        "SlurmHealth":{"shape":"SlurmHealthMetadata"}
       },
       "union":true
     },
@@ -17256,6 +17365,43 @@
       "max":255,
       "min":0,
       "pattern":".*"
+    },
+    "HubContent":{
+      "type":"structure",
+      "required":[
+        "HubContentName",
+        "HubContentArn",
+        "HubContentVersion",
+        "HubContentType",
+        "DocumentSchemaVersion",
+        "HubName",
+        "HubArn",
+        "HubContentStatus",
+        "CreationTime"
+      ],
+      "members":{
+        "HubContentName":{"shape":"HubContentName"},
+        "HubContentArn":{"shape":"HubContentArn"},
+        "HubContentVersion":{"shape":"HubContentVersion"},
+        "HubContentType":{"shape":"HubContentType"},
+        "DocumentSchemaVersion":{"shape":"DocumentSchemaVersion"},
+        "HubName":{"shape":"HubName"},
+        "HubArn":{"shape":"HubArn"},
+        "HubContentDisplayName":{"shape":"HubContentDisplayName"},
+        "HubContentDescription":{"shape":"HubContentDescription"},
+        "HubContentMarkdown":{"shape":"HubContentMarkdown"},
+        "HubContentDocument":{"shape":"HubContentDocument"},
+        "SageMakerPublicHubContentArn":{"shape":"SageMakerPublicHubContentArn"},
+        "ReferenceMinVersion":{"shape":"ReferenceMinVersion"},
+        "SupportStatus":{"shape":"HubContentSupportStatus"},
+        "HubContentSearchKeywords":{"shape":"HubContentSearchKeywordList"},
+        "HubContentDependencies":{"shape":"HubContentDependencyList"},
+        "HubContentStatus":{"shape":"HubContentStatus"},
+        "FailureReason":{"shape":"FailureReason"},
+        "CreationTime":{"shape":"Timestamp"},
+        "LastModifiedTime":{"shape":"Timestamp"},
+        "Tags":{"shape":"TagList"}
+      }
     },
     "HubContentArn":{
       "type":"string",
@@ -19041,6 +19187,24 @@
     "InstancePoolSummaryList":{
       "type":"list",
       "member":{"shape":"InstancePoolSummary"},
+      "min":1
+    },
+    "InstancePreference":{
+      "type":"structure",
+      "required":["InstanceType"],
+      "members":{
+        "InstanceType":{"shape":"TrainingInstanceType"},
+        "InstanceCount":{
+          "shape":"TrainingInstanceCount",
+          "box":true
+        },
+        "TrainingPlanArns":{"shape":"TrainingPlanArnList"}
+      }
+    },
+    "InstancePreferenceList":{
+      "type":"list",
+      "member":{"shape":"InstancePreference"},
+      "max":5,
       "min":1
     },
     "InstanceRequirementsEniConfiguration":{
@@ -22111,7 +22275,7 @@
       "type":"integer",
       "box":true,
       "max":2419200,
-      "min":7200
+      "min":1800
     },
     "MaxPercentageOfInputDatasetLabeled":{
       "type":"integer",
@@ -25416,7 +25580,10 @@
         "InstanceCount":{"shape":"ProcessingInstanceCount"},
         "InstanceType":{"shape":"ProcessingInstanceType"},
         "VolumeSizeInGB":{"shape":"ProcessingVolumeSizeInGB"},
-        "VolumeKmsKeyId":{"shape":"KmsKeyId"}
+        "VolumeKmsKeyId":{"shape":"KmsKeyId"},
+        "InstancePreferences":{"shape":"ProcessingInstancePreferenceList"},
+        "SelectedInstanceType":{"shape":"ProcessingInstanceType"},
+        "SelectedInstanceCount":{"shape":"ProcessingInstanceCount"}
       }
     },
     "ProcessingEnvironmentKey":{
@@ -25468,6 +25635,20 @@
       "type":"integer",
       "box":true,
       "max":100,
+      "min":1
+    },
+    "ProcessingInstancePreference":{
+      "type":"structure",
+      "required":["InstanceType"],
+      "members":{
+        "InstanceType":{"shape":"ProcessingInstanceType"},
+        "InstanceCount":{"shape":"ProcessingInstanceCount"}
+      }
+    },
+    "ProcessingInstancePreferenceList":{
+      "type":"list",
+      "member":{"shape":"ProcessingInstancePreference"},
+      "max":5,
       "min":1
     },
     "ProcessingInstanceType":{
@@ -25605,7 +25786,81 @@
         "ml.g7.8xlarge",
         "ml.g7.12xlarge",
         "ml.g7.24xlarge",
-        "ml.g7.48xlarge"
+        "ml.g7.48xlarge",
+        "ml.r6i.large",
+        "ml.r6i.xlarge",
+        "ml.r6i.2xlarge",
+        "ml.r6i.4xlarge",
+        "ml.r6i.8xlarge",
+        "ml.r6i.12xlarge",
+        "ml.r6i.16xlarge",
+        "ml.r6i.24xlarge",
+        "ml.r6i.32xlarge",
+        "ml.m8i.large",
+        "ml.m8i.xlarge",
+        "ml.m8i.2xlarge",
+        "ml.m8i.4xlarge",
+        "ml.m8i.8xlarge",
+        "ml.m8i.12xlarge",
+        "ml.m8i.16xlarge",
+        "ml.m8i.24xlarge",
+        "ml.m8i.32xlarge",
+        "ml.m8i.48xlarge",
+        "ml.m8i.96xlarge",
+        "ml.c8i.xlarge",
+        "ml.c8i.2xlarge",
+        "ml.c8i.4xlarge",
+        "ml.c8i.8xlarge",
+        "ml.c8i.12xlarge",
+        "ml.c8i.16xlarge",
+        "ml.c8i.24xlarge",
+        "ml.c8i.32xlarge",
+        "ml.c8i.48xlarge",
+        "ml.c8i.96xlarge",
+        "ml.r8i.large",
+        "ml.r8i.xlarge",
+        "ml.r8i.2xlarge",
+        "ml.r8i.4xlarge",
+        "ml.r8i.8xlarge",
+        "ml.r8i.12xlarge",
+        "ml.r8i.16xlarge",
+        "ml.r8i.24xlarge",
+        "ml.r8i.32xlarge",
+        "ml.r8i.48xlarge",
+        "ml.r8i.96xlarge",
+        "ml.m7i-flex.large",
+        "ml.m7i-flex.xlarge",
+        "ml.m7i-flex.2xlarge",
+        "ml.m7i-flex.4xlarge",
+        "ml.m7i-flex.8xlarge",
+        "ml.m7i-flex.12xlarge",
+        "ml.m7i-flex.16xlarge",
+        "ml.c7i-flex.xlarge",
+        "ml.c7i-flex.2xlarge",
+        "ml.c7i-flex.4xlarge",
+        "ml.c7i-flex.8xlarge",
+        "ml.c7i-flex.12xlarge",
+        "ml.c7i-flex.16xlarge",
+        "ml.m8i-flex.large",
+        "ml.m8i-flex.xlarge",
+        "ml.m8i-flex.2xlarge",
+        "ml.m8i-flex.4xlarge",
+        "ml.m8i-flex.8xlarge",
+        "ml.m8i-flex.12xlarge",
+        "ml.m8i-flex.16xlarge",
+        "ml.c8i-flex.xlarge",
+        "ml.c8i-flex.2xlarge",
+        "ml.c8i-flex.4xlarge",
+        "ml.c8i-flex.8xlarge",
+        "ml.c8i-flex.12xlarge",
+        "ml.c8i-flex.16xlarge",
+        "ml.r8i-flex.large",
+        "ml.r8i-flex.xlarge",
+        "ml.r8i-flex.2xlarge",
+        "ml.r8i-flex.4xlarge",
+        "ml.r8i-flex.8xlarge",
+        "ml.r8i-flex.12xlarge",
+        "ml.r8i-flex.16xlarge"
       ]
     },
     "ProcessingJob":{
@@ -27362,7 +27617,13 @@
         "KeepAlivePeriodInSeconds":{"shape":"KeepAlivePeriodInSeconds"},
         "InstanceGroups":{"shape":"InstanceGroups"},
         "TrainingPlanArn":{"shape":"TrainingPlanArn"},
-        "InstancePlacementConfig":{"shape":"InstancePlacementConfig"}
+        "InstancePlacementConfig":{"shape":"InstancePlacementConfig"},
+        "InstancePreferences":{"shape":"InstancePreferenceList"},
+        "SelectedInstanceType":{"shape":"TrainingInstanceType"},
+        "SelectedInstanceCount":{
+          "shape":"TrainingInstanceCount",
+          "box":true
+        }
       }
     },
     "ResourceConfigForUpdate":{
@@ -27482,7 +27743,8 @@
         "HyperParameterTuningJob",
         "ModelCard",
         "PipelineVersion",
-        "Job"
+        "Job",
+        "HubContent"
       ]
     },
     "ResponseMIMEType":{
@@ -27927,7 +28189,8 @@
         "HyperParameterTuningJob":{"shape":"HyperParameterTuningJobSearchEntity"},
         "ModelCard":{"shape":"ModelCard"},
         "Model":{"shape":"ModelDashboardModel"},
-        "Job":{"shape":"Job"}
+        "Job":{"shape":"Job"},
+        "HubContent":{"shape":"HubContent"}
       }
     },
     "SearchRequest":{
@@ -28282,6 +28545,37 @@
       "enum":[
         "All",
         "None"
+      ]
+    },
+    "SlurmHealthComponent":{
+      "type":"string",
+      "enum":["Slurmdbd"]
+    },
+    "SlurmHealthMetadata":{
+      "type":"structure",
+      "required":[
+        "Component",
+        "Status"
+      ],
+      "members":{
+        "Component":{"shape":"SlurmHealthComponent"},
+        "Status":{"shape":"SlurmHealthStatus"},
+        "Reason":{"shape":"SlurmHealthReason"}
+      }
+    },
+    "SlurmHealthReason":{
+      "type":"string",
+      "enum":[
+        "DaemonDown",
+        "DaemonDisabled",
+        "DbUnreachable"
+      ]
+    },
+    "SlurmHealthStatus":{
+      "type":"string",
+      "enum":[
+        "Healthy",
+        "Unhealthy"
       ]
     },
     "SnsTopicArn":{
@@ -29959,7 +30253,81 @@
         "ml.g7.8xlarge",
         "ml.g7.12xlarge",
         "ml.g7.24xlarge",
-        "ml.g7.48xlarge"
+        "ml.g7.48xlarge",
+        "ml.r6i.large",
+        "ml.r6i.xlarge",
+        "ml.r6i.2xlarge",
+        "ml.r6i.4xlarge",
+        "ml.r6i.8xlarge",
+        "ml.r6i.12xlarge",
+        "ml.r6i.16xlarge",
+        "ml.r6i.24xlarge",
+        "ml.r6i.32xlarge",
+        "ml.m8i.large",
+        "ml.m8i.xlarge",
+        "ml.m8i.2xlarge",
+        "ml.m8i.4xlarge",
+        "ml.m8i.8xlarge",
+        "ml.m8i.12xlarge",
+        "ml.m8i.16xlarge",
+        "ml.m8i.24xlarge",
+        "ml.m8i.32xlarge",
+        "ml.m8i.48xlarge",
+        "ml.m8i.96xlarge",
+        "ml.c8i.xlarge",
+        "ml.c8i.2xlarge",
+        "ml.c8i.4xlarge",
+        "ml.c8i.8xlarge",
+        "ml.c8i.12xlarge",
+        "ml.c8i.16xlarge",
+        "ml.c8i.24xlarge",
+        "ml.c8i.32xlarge",
+        "ml.c8i.48xlarge",
+        "ml.c8i.96xlarge",
+        "ml.r8i.large",
+        "ml.r8i.xlarge",
+        "ml.r8i.2xlarge",
+        "ml.r8i.4xlarge",
+        "ml.r8i.8xlarge",
+        "ml.r8i.12xlarge",
+        "ml.r8i.16xlarge",
+        "ml.r8i.24xlarge",
+        "ml.r8i.32xlarge",
+        "ml.r8i.48xlarge",
+        "ml.r8i.96xlarge",
+        "ml.m7i-flex.large",
+        "ml.m7i-flex.xlarge",
+        "ml.m7i-flex.2xlarge",
+        "ml.m7i-flex.4xlarge",
+        "ml.m7i-flex.8xlarge",
+        "ml.m7i-flex.12xlarge",
+        "ml.m7i-flex.16xlarge",
+        "ml.c7i-flex.xlarge",
+        "ml.c7i-flex.2xlarge",
+        "ml.c7i-flex.4xlarge",
+        "ml.c7i-flex.8xlarge",
+        "ml.c7i-flex.12xlarge",
+        "ml.c7i-flex.16xlarge",
+        "ml.m8i-flex.large",
+        "ml.m8i-flex.xlarge",
+        "ml.m8i-flex.2xlarge",
+        "ml.m8i-flex.4xlarge",
+        "ml.m8i-flex.8xlarge",
+        "ml.m8i-flex.12xlarge",
+        "ml.m8i-flex.16xlarge",
+        "ml.c8i-flex.xlarge",
+        "ml.c8i-flex.2xlarge",
+        "ml.c8i-flex.4xlarge",
+        "ml.c8i-flex.8xlarge",
+        "ml.c8i-flex.12xlarge",
+        "ml.c8i-flex.16xlarge",
+        "ml.r8i-flex.large",
+        "ml.r8i-flex.xlarge",
+        "ml.r8i-flex.2xlarge",
+        "ml.r8i-flex.4xlarge",
+        "ml.r8i-flex.8xlarge",
+        "ml.r8i-flex.12xlarge",
+        "ml.r8i-flex.16xlarge"
       ]
     },
     "TrainingInstanceTypes":{
@@ -30143,6 +30511,12 @@
       "min":50,
       "pattern":"arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:training-plan/.*"
     },
+    "TrainingPlanArnList":{
+      "type":"list",
+      "member":{"shape":"TrainingPlanArn"},
+      "max":1,
+      "min":1
+    },
     "TrainingPlanArns":{
       "type":"list",
       "member":{"shape":"TrainingPlanArn"}
@@ -30238,6 +30612,12 @@
       "max":64,
       "min":1,
       "pattern":"[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}"
+    },
+    "TrainingPlanNameOrArn":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"(arn:aws[a-z\\-]*:sagemaker:[a-z0-9\\-]*:[0-9]{12}:training-plan/)?[a-zA-Z0-9](-*[a-zA-Z0-9]){0,63}"
     },
     "TrainingPlanOffering":{
       "type":"structure",

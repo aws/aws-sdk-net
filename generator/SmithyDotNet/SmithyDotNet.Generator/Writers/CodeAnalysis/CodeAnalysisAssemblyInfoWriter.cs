@@ -15,7 +15,7 @@ public class CodeAnalysisAssemblyInfoWriter(GenerationContext context)
         FileHeader.WriteAssemblyInfoBody(
             writer,
             context.AssemblyName,
-            w => w.WriteLine($"""[assembly: AssemblyDescription("Code analysis project file for AWSSDK.{context.ServiceName}")]"""),
+            w => w.WriteLine($"""[assembly: AssemblyDescription("Code analysis project file for {context.AssemblyName}")]"""),
             assemblyVersion,
             fileVersion);
 

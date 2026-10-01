@@ -58,6 +58,16 @@ namespace Amazon.IdentityStore.Model
         IListGroupsPaginator ListGroups(ListGroupsRequest request);
 
         /// <summary>
+        /// Paginator for ListIdentityStores operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListIdentityStoresPaginator ListIdentityStores(ListIdentityStoresRequest request);
+
+        /// <summary>
         /// Paginator for ListUsers operation
         ///</summary>
         [AWSPaginator(

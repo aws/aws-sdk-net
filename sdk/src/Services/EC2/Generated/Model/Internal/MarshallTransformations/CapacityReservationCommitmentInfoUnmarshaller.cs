@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("commitmentDuration", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.CommitmentDuration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("commitmentEndDate", targetDepth))
                     {
                         var unmarshaller = NullableDateTimeUnmarshaller.Instance;

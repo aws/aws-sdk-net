@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("IntegrationArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IntegrationArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PartitionSpec", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<IntegrationPartition, IntegrationPartitionUnmarshaller>(IntegrationPartitionUnmarshaller.Instance);

@@ -33,6 +33,13 @@ namespace Amazon.Route53Resolver.Model
     /// Container for the parameters to the UpdateOutpostResolver operation.
     /// You can use <c>UpdateOutpostResolver</c> to update the instance count, type, or name
     /// of a Resolver on an Outpost.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation applies to first-generation Outposts only. On second-generation Outposts,
+    /// Resolver is managed automatically by Amazon Web Services and can't be updated directly.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateOutpostResolverRequest : AmazonRoute53ResolverRequest
     {

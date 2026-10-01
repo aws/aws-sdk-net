@@ -98,6 +98,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                     unmarshalledObject.OpenShardCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("RecordDistributionStrategy", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RecordDistributionStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RetentionPeriodHours", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;

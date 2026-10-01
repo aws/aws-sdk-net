@@ -52,6 +52,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ConnectionCredentials", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConnectionCredentialsUnmarshaller.Instance;
+                    response.ConnectionCredentials = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ContactId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -74,6 +80,18 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ParticipantToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("StreamingId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StreamingId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Websocket", targetDepth, ref reader))
+                {
+                    var unmarshaller = WebsocketUnmarshaller.Instance;
+                    response.Websocket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

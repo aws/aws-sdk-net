@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Defines a process that Image Builder uses to build and test images during the image
-    /// creation process.
+    /// Defines a process that Image Builder runs during the build, test, or distribution
+    /// stage of the image creation process.
     /// </summary>
     public partial class Workflow
     {
@@ -204,8 +204,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// An array of input parameters that that the image workflow uses to control actions
-        /// or configure settings.
+        /// An array of input parameters that the image workflow uses to control actions or configure
+        /// settings.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -246,7 +246,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags that apply to the workflow resource
+        /// The tags that apply to the workflow resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -270,8 +270,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the image creation stage that the workflow applies to. Image Builder currently
-        /// supports build and test workflows.
+        /// The image creation stage that the workflow applies to.
         /// </para>
         /// </summary>
         public WorkflowType Type

@@ -62,6 +62,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cluster = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DatabaseConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatabaseConfigurationMetadataUnmarshaller.Instance;
+                    unmarshalledObject.DatabaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Instance", targetDepth, ref reader))
                 {
                     var unmarshaller = InstanceMetadataUnmarshaller.Instance;
@@ -78,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = InstanceGroupScalingMetadataUnmarshaller.Instance;
                     unmarshalledObject.InstanceGroupScaling = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SlurmHealth", targetDepth, ref reader))
+                {
+                    var unmarshaller = SlurmHealthMetadataUnmarshaller.Instance;
+                    unmarshalledObject.SlurmHealth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

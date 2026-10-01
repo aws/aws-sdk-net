@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 
@@ -64,7 +65,15 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
                     WritePaginatorsProperty(writer);
                 }
 
-                WriteConstructors(writer);
+                // A service whose endpoint isn't region-derived hand-writes its own constructors
+                // under Custom\ and sets generate-client-constructors:false; the client is one
+                // partial class, so emitting ours as well is CS0111 (mediastore-data,
+                // iot-jobs-data, kinesis-video-archived-media, kinesis-video-media).
+                if (context.Metadata?.GenerateClientConstructors ?? true)
+                {
+                    WriteConstructors(writer);
+                }
+
                 WriteOverrides(writer);
                 WriteDispose(writer);
 
@@ -83,7 +92,7 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
     private void WriteClassDocumentation(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// <para>Implementation for accessing {context.ServiceName}</para>");
+        writer.WriteLine($"/// <para>Implementation for accessing {context.BaseName}</para>");
         writer.WriteLine("/// <para>");
         writer.WriteLine("/// Service client instances are thread-safe and can be shared across multiple threads.");
         writer.WriteLine("/// For a given service configuration, it is recommended to reuse a client instance");
@@ -216,9 +225,14 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         {
             // Base handler set, emitted for every service. Per-service extra handlers (e.g. S3,
             // EC2, SQS) come from {service}.customizations.json (runtimePipelineOverride.overrides),
-            // which the Smithy model does not carry.
-            writer.WriteLine("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();");
-            writer.WriteLine($"pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new {_clientName}EndpointResolver());");
+            // which the Smithy model does not carry. The endpoint-resolver swap exists only for
+            // services with an endpoint rule set (test services have none), matching C2J.
+            if (context.HasEndpointRuleSet)
+            {
+                writer.WriteLine("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();");
+                writer.WriteLine($"pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new {_clientName}EndpointResolver());");
+            }
+
             writer.WriteLine($"pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new {_clientName}AuthSchemeHandler());");
         });
         writer.WriteLine();
@@ -253,19 +267,37 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         var responseType = $"{operation.Name}Response";
         var requestType = $"{operation.Name}Request";
 
+        // HTTP/2 operations exist only on net8+ (h2 is unavailable on .NET Framework and pre-net8
+        // netstandard); C2J omits them there entirely, so guard the whole operation.
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#if NET8_0_OR_GREATER");
+        }
+
         // Synchronous method. The SDK ships it at different visibility per TFM: the _bcl client
         // exposes it as `public virtual` (with full docs), while the _netstandard client keeps it
         // `internal virtual` (no docs) to reduce the modern-TFM public surface. In this single-file
         // output that is a #if NETFRAMEWORK (public + docs) / #else (internal, no docs) pair. Both
-        // arms share the same InvokeOptions body; the async overload below is unconditional.
+        // arms share the same InvokeOptions body; the async overload below is emitted on every target
+        // (unless the whole operation is h2-guarded above).
+        var obsolete = TypeMapper.BuildObsolete(operation.Shape);
+
         writer.WriteLine("#if NETFRAMEWORK");
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.OpenBlock($"public virtual {responseType} {operation.Name}({requestType} request)", () =>
         {
             WriteInvokeOptions(writer, operation);
             writer.WriteLine($"return Invoke<{responseType}>(request, options);");
         });
         writer.WriteLine("#else");
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.OpenBlock($"internal virtual {responseType} {operation.Name}({requestType} request)", () =>
         {
             WriteInvokeOptions(writer, operation);
@@ -274,13 +306,23 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine("#endif");
         writer.WriteLine();
 
-        // Asynchronous method. Unconditional across all target frameworks.
+        // Asynchronous method. Emitted on every target framework (the h2 guard above, when present,
+        // still excludes it below net8).
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.OpenBlock($"public virtual Task<{responseType}> {operation.Name}Async({requestType} request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))", () =>
         {
             WriteInvokeOptions(writer, operation);
             writer.WriteLine($"return InvokeAsync<{responseType}>(request, options, cancellationToken);");
         });
+
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#endif");
+        }
         writer.WriteLine();
     }
 

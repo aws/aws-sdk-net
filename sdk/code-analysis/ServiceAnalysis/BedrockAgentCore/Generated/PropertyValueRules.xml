@@ -3,29 +3,29 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchCreateMemoryRecordsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchDeleteMemoryRecordsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchUpdateMemoryRecordsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CompleteResourceTokenAuthRequest.SessionUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</pattern>
+    <pattern>^urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestRequest.Description</property>
@@ -34,85 +34,82 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestRequest.GatewayArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestRequest.Name</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestRequest.RoleArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestResponse.AbTestArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestResponse.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateABTestResponse.Name</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateEventRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateEventRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreateEventRequest.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentInstrumentRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentInstrumentRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentInstrumentRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentInstrumentRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentInstrumentRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentSessionRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentSessionRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentSessionRequest.ExpiryTimeInMinutes</property>
@@ -123,168 +120,165 @@
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentSessionRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CreatePaymentSessionRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteABTestRequest.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteABTestResponse.AbTestArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteABTestResponse.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteBatchEvaluationRequest.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteBatchEvaluationResponse.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionRequest.CapacityProviderId</property>
     <min>12</min>
     <max>59</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionRequest.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionResponse.CapacityProviderArn</property>
-    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:capacity-provider/[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:capacity-provider/[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionResponse.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteEventRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteEventRequest.EventId</property>
-    <pattern>[0-9]+#[a-fA-F0-9]+</pattern>
+    <pattern>^[0-9]+#[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteEventRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteEventRequest.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteEventResponse.EventId</property>
-    <pattern>[0-9]+#[a-fA-F0-9]+</pattern>
+    <pattern>^[0-9]+#[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteMemoryRecordRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteMemoryRecordRequest.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteMemoryRecordRequest.Namespace</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteMemoryRecordResponse.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentInstrumentRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentInstrumentRequest.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentInstrumentRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentInstrumentRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentSessionRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentSessionRequest.PaymentSessionId</property>
     <min>31</min>
     <max>31</max>
-    <pattern>payment-session-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-session-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeletePaymentSessionRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteRecommendationRequest.RecommendationId</property>
-    <pattern>[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteRecommendationResponse.RecommendationId</property>
-    <pattern>[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluateRequest.EvaluatorId</property>
     <min>1</min>
     <max>111</max>
-    <pattern>(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})</pattern>
+    <pattern>^(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestRequest.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestResponse.AbTestArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestResponse.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestResponse.Description</property>
@@ -293,17 +287,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestResponse.GatewayArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestResponse.Name</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetABTestResponse.RoleArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetAgentCardRequest.RuntimeSessionId</property>
@@ -314,34 +308,33 @@
     <property>Amazon.BedrockAgentCore.Model.GetAgentCardResponse.RuntimeSessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBatchEvaluationRequest.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBatchEvaluationResponse.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBatchEvaluationResponse.BatchEvaluationName</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBatchEvaluationResponse.Description</property>
-    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBatchEvaluationResponse.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBrowserSessionRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBrowserSessionResponse.Name</property>
@@ -350,7 +343,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBrowserSessionResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetBrowserSessionResponse.SessionTimeoutSeconds</property>
@@ -359,7 +352,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetCodeInterpreterSessionRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetCodeInterpreterSessionResponse.Name</property>
@@ -368,7 +361,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetCodeInterpreterSessionResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetCodeInterpreterSessionResponse.SessionTimeoutSeconds</property>
@@ -379,158 +372,150 @@
     <property>Amazon.BedrockAgentCore.Model.GetEventRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetEventRequest.EventId</property>
-    <pattern>[0-9]+#[a-fA-F0-9]+</pattern>
+    <pattern>^[0-9]+#[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetEventRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetEventRequest.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetMemoryRecordRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetMemoryRecordRequest.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetMemoryRecordRequest.Namespace</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentBalanceResponse.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentSessionRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentSessionRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentSessionRequest.PaymentSessionId</property>
     <min>31</min>
     <max>31</max>
-    <pattern>payment-session-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-session-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentSessionRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetRecommendationRequest.RecommendationId</property>
-    <pattern>[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetRecommendationResponse.Description</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetRecommendationResponse.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetRecommendationResponse.Name</property>
-    <min>0</min>
     <max>100</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9_-]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_-]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetRecommendationResponse.RecommendationArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:recommendation/[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:recommendation/[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetRecommendationResponse.RecommendationId</property>
-    <pattern>[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceApiKeyRequest.ResourceCredentialProviderName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\-_]+</pattern>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceApiKeyRequest.WorkloadIdentityToken</property>
@@ -551,19 +536,19 @@
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.ResourceCredentialProviderName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\-_]+</pattern>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.ResourceOauth2ReturnUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\w+:(\/?\/?)[^\s]+</pattern>
+    <pattern>^\w+:(\/?\/?)[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.SessionUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</pattern>
+    <pattern>^urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenRequest.WorkloadIdentityToken</property>
@@ -583,13 +568,13 @@
     <property>Amazon.BedrockAgentCore.Model.GetResourceOauth2TokenResponse.SessionUri</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+</pattern>
+    <pattern>^urn:ietf:params:oauth:request_uri:[a-zA-Z0-9-._~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourcePaymentTokenRequest.ResourceCredentialProviderName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\-_]+</pattern>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetResourcePaymentTokenRequest.WorkloadIdentityToken</property>
@@ -600,7 +585,7 @@
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenRequest.WorkloadName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9_.-]+</pattern>
+    <pattern>^[A-Za-z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenResponse.WorkloadAccessToken</property>
@@ -611,13 +596,13 @@
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenForJWTRequest.UserToken</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+</pattern>
+    <pattern>^[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenForJWTRequest.WorkloadName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9_.-]+</pattern>
+    <pattern>^[A-Za-z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenForJWTResponse.WorkloadAccessToken</property>
@@ -633,7 +618,7 @@
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenForUserIdRequest.WorkloadName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9_.-]+</pattern>
+    <pattern>^[A-Za-z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetWorkloadAccessTokenForUserIdResponse.WorkloadAccessToken</property>
@@ -644,24 +629,24 @@
     <property>Amazon.BedrockAgentCore.Model.IngestDataRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.IngestDataRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.IngestDataRequest.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.IngestDataResponse.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.Accept</property>
@@ -670,7 +655,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.Baggage</property>
@@ -704,7 +689,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeRequest.Payload</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
@@ -736,13 +720,13 @@
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeResponse.McpSessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeResponse.RuntimeSessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.Accept</property>
@@ -751,7 +735,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.AccountId</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequest.Baggage</property>
@@ -787,19 +771,19 @@
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandResponse.RuntimeSessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeBrowserRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeBrowserResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeCodeInterpreterRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeCodeInterpreterRequest.TraceId</property>
@@ -813,7 +797,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeCodeInterpreterResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.Baggage</property>
@@ -822,17 +806,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.HarnessArn</property>
-    <pattern>arn:([^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:harness/[a-zA-Z][a-zA-Z0-9_]{0,39}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:([^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:harness/[a-zA-Z][a-zA-Z0-9_]{0,39}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.Qualifier</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.RuntimeSessionId</property>
     <min>33</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeHarnessRequest.TraceId</property>
@@ -862,7 +846,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListActorsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListBatchEvaluationsRequest.MaxResults</property>
@@ -878,13 +862,13 @@
     <property>Amazon.BedrockAgentCore.Model.ListBrowserSessionsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListBrowserSessionsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListCodeInterpreterSessionsRequest.MaxResults</property>
@@ -895,19 +879,19 @@
     <property>Amazon.BedrockAgentCore.Model.ListCodeInterpreterSessionsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListCodeInterpreterSessionsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListEventsRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListEventsRequest.MaxResults</property>
@@ -917,13 +901,13 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListEventsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListEventsRequest.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryExtractionJobsRequest.MaxResults</property>
@@ -933,7 +917,7 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryExtractionJobsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryRecordsRequest.MaxResults</property>
@@ -943,81 +927,77 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryRecordsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryRecordsRequest.MemoryStrategyId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryRecordsRequest.Namespace</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListMemoryRecordsRequest.NamespacePath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentInstrumentsRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentInstrumentsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentInstrumentsRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentInstrumentsRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentInstrumentsRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentSessionsRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentSessionsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentSessionsRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentSessionsRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListPaymentSessionsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListRecommendationsRequest.MaxResults</property>
@@ -1028,19 +1008,19 @@
     <property>Amazon.BedrockAgentCore.Model.ListRecommendationsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListRecommendationsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\S*</pattern>
+    <pattern>^\S*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListSessionsRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListSessionsRequest.MaxResults</property>
@@ -1050,65 +1030,63 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ListSessionsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.AgentName</property>
-    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.PaymentSessionId</property>
     <min>31</min>
     <max>31</max>
-    <pattern>payment-session-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-session-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentRequest.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentResponse.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentResponse.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentResponse.PaymentSessionId</property>
     <min>31</min>
     <max>31</max>
-    <pattern>payment-session-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-session-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ProcessPaymentResponse.ProcessPaymentId</property>
     <min>36</min>
     <max>36</max>
-    <pattern>[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RetrieveMemoryRecordsRequest.MaxResults</property>
@@ -1118,33 +1096,33 @@
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RetrieveMemoryRecordsRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RetrieveMemoryRecordsRequest.Namespace</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RetrieveMemoryRecordsRequest.NamespacePath</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SaveBrowserSessionProfileRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SaveBrowserSessionProfileRequest.ProfileIdentifier</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SaveBrowserSessionProfileRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SaveBrowserSessionProfileRequest.TraceId</property>
@@ -1158,11 +1136,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SaveBrowserSessionProfileResponse.ProfileIdentifier</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SaveBrowserSessionProfileResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SearchRegistryRecordsRequest.MaxResults</property>
@@ -1176,49 +1154,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationRequest.BatchEvaluationName</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationRequest.Description</property>
-    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationRequest.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationResponse.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationResponse.BatchEvaluationName</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationResponse.Description</property>
-    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBatchEvaluationResponse.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBrowserSessionRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBrowserSessionRequest.Name</property>
@@ -1242,13 +1218,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartBrowserSessionResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartCodeInterpreterSessionRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartCodeInterpreterSessionRequest.Name</property>
@@ -1272,77 +1248,72 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartCodeInterpreterSessionResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartMemoryExtractionJobRequest.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationRequest.Description</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationRequest.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationRequest.Name</property>
-    <min>0</min>
     <max>100</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9_-]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_-]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationResponse.Description</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationResponse.Name</property>
-    <min>0</min>
     <max>100</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9_-]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_-]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationResponse.RecommendationArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:recommendation/[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:recommendation/[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StartRecommendationResponse.RecommendationId</property>
-    <pattern>[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBatchEvaluationRequest.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBatchEvaluationResponse.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBatchEvaluationResponse.Description</property>
-    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBrowserSessionRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBrowserSessionRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBrowserSessionRequest.TraceId</property>
@@ -1356,17 +1327,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopBrowserSessionResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopCodeInterpreterSessionRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopCodeInterpreterSessionRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopCodeInterpreterSessionRequest.TraceId</property>
@@ -1380,13 +1351,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopCodeInterpreterSessionResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopRuntimeSessionRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StopRuntimeSessionRequest.RuntimeSessionId</property>
@@ -1397,17 +1368,17 @@
     <property>Amazon.BedrockAgentCore.Model.StopRuntimeSessionResponse.RuntimeSessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestRequest.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestRequest.Description</property>
@@ -1416,47 +1387,47 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestRequest.Name</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestRequest.RoleArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+    <pattern>^arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestResponse.AbTestArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateABTestResponse.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateBrowserStreamRequest.ClientToken</property>
     <min>33</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}</pattern>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,256}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateBrowserStreamRequest.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.UpdateBrowserStreamResponse.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ABTestEvaluationConfig.OnlineEvaluationConfigArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ABTestSummary.AbTestArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:ab-test/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ABTestSummary.AbTestId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ABTestSummary.Description</property>
@@ -1465,17 +1436,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ABTestSummary.GatewayArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ABTestSummary.Name</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ActorSummary.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.AgentCardDefinition.InlineContent</property>
@@ -1494,46 +1465,45 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BasicAuth.SecretArn</property>
-    <pattern>arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+    <pattern>^arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchEvaluationSummary.BatchEvaluationId</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchEvaluationSummary.BatchEvaluationName</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchEvaluationSummary.Description</property>
-    <min>0</min>
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BatchEvaluationSummary.KmsKeyArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Branch.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Branch.RootEventId</property>
-    <pattern>[0-9]+#[a-fA-F0-9]+</pattern>
+    <pattern>^[0-9]+#[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BranchFilter.Name</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BrowserProfileConfiguration.ProfileIdentifier</property>
-    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BrowserSessionSummary.Name</property>
@@ -1542,27 +1512,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.BrowserSessionSummary.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CloudWatchLogsFilter.Key</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>^[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CloudWatchOutputConfig.LogGroupName</property>
-    <pattern>$|^[.\-_/#A-Za-z0-9]+</pattern>
+    <pattern>^$|^[.\-_/#A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CloudWatchOutputConfig.LogStreamName</property>
-    <pattern>[^:*]*</pattern>
+    <pattern>^[^:*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CloudWatchOutputConfig.MetricsNamespace</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._#/:-]+</pattern>
+    <pattern>^[a-zA-Z0-9._#/:-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CodeInterpreterSessionSummary.Name</property>
@@ -1571,25 +1541,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CodeInterpreterSessionSummary.SessionId</property>
-    <pattern>[0-9a-zA-Z]{1,40}</pattern>
+    <pattern>^[0-9a-zA-Z]{1,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CoinbaseCdpTokenRequestInput.RequestBody</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CoinbaseCdpTokenRequestInput.RequestHost</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\-\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CoinbaseCdpTokenRequestInput.RequestPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>/[a-zA-Z0-9/_\-\.~%?=&amp;]+</pattern>
+    <pattern>^/[a-zA-Z0-9/_\-\.~%?=&amp;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CoinbaseCdpTokenResponseOutput.BearerToken</property>
@@ -1603,17 +1573,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ConfigurationBundleRef.BundleArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ConfigurationBundleRef.BundleVersion</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ConfigurationBundleToolEntry.ToolName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+    <pattern>^[a-zA-Z0-9_\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Content.Text</property>
@@ -1624,7 +1594,7 @@
     <property>Amazon.BedrockAgentCore.Model.CryptoX402PaymentInput.Permit2AllowanceLimit</property>
     <min>1</min>
     <max>78</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CustomDescriptor.InlineContent</property>
@@ -1633,25 +1603,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EfsConfiguration.AccessPointArn</property>
-    <min>0</min>
     <max>128</max>
-    <pattern>arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}</pattern>
+    <pattern>^arn:aws[-a-z]*:elasticfilesystem:[0-9a-z-:]+:access-point/fsap-[0-9a-f]{8,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EfsConfiguration.FileSystemArn</property>
-    <min>0</min>
     <max>256</max>
-    <pattern>arn:aws[-a-z]*:elasticfilesystem:[a-z0-9-]+:[0-9]{12}:file-system/fs-[0-9a-f]{8,40}</pattern>
+    <pattern>^arn:aws[-a-z]*:elasticfilesystem:[a-z0-9-]+:[0-9]{12}:file-system/fs-[0-9a-f]{8,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EfsConfiguration.MountPath</property>
     <min>6</min>
     <max>200</max>
-    <pattern>/mnt/[a-zA-Z0-9._-]+/?</pattern>
+    <pattern>^/mnt/[a-zA-Z0-9._-]+/?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EmbeddedCryptoWallet.RedirectUrl</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -1666,56 +1633,54 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.ErrorMessage</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.EvaluatorArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws[a-zA-Z-]*:bedrock-agentcore:::evaluator/(Builtin|ThirdParty)\.[a-zA-Z0-9._-]+</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws[a-zA-Z-]*:bedrock-agentcore:::evaluator/(Builtin|ThirdParty)\.[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.EvaluatorId</property>
     <min>1</min>
     <max>111</max>
-    <pattern>(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})</pattern>
+    <pattern>^(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.EvaluatorName</property>
     <min>1</min>
     <max>48</max>
-    <pattern>(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9_]{0,47})</pattern>
+    <pattern>^(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9_]{0,47})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.EvaluationResultContent.Explanation</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Evaluator.EvaluatorId</property>
     <min>1</min>
     <max>111</max>
-    <pattern>(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})</pattern>
+    <pattern>^(Builtin\.[a-zA-Z0-9._-]+|ThirdParty\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Event.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Event.EventId</property>
-    <pattern>[0-9]+#[a-fA-F0-9]+</pattern>
+    <pattern>^[0-9]+#[a-fA-F0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Event.MemoryId</property>
     <min>12</min>
-    <pattern>(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^(arn:(aws|aws-cn|aws-us-gov):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:memory/)?[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Event.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ExternalProxy.Port</property>
@@ -1726,29 +1691,27 @@
     <property>Amazon.BedrockAgentCore.Model.ExternalProxy.Server</property>
     <min>1</min>
     <max>253</max>
-    <pattern>[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*</pattern>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.FilterValue.StringValue</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GroundTruthTurnInput.Prompt</property>
-    <min>0</min>
     <max>4000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessAgentCoreBrowserConfig.BrowserArn</property>
-    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):browser(-custom)?/(aws\.browser\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})</pattern>
+    <pattern>^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):browser(-custom)?/(aws\.browser\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessAgentCoreCodeInterpreterConfig.CodeInterpreterArn</property>
-    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):code-interpreter(-custom)?/(aws\.codeinterpreter\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})</pattern>
+    <pattern>^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:(aws|[0-9]{12}):code-interpreter(-custom)?/(aws\.codeinterpreter\.v1|[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessAgentCoreGatewayConfig.GatewayArn</property>
-    <pattern>arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}</pattern>
+    <pattern>^arn:aws(|-cn|-us-gov):bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessBedrockModelConfig.MaxTokens</property>
@@ -1774,7 +1737,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessGeminiModelConfig.ApiKeyArn</property>
-    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
+    <pattern>^arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessGeminiModelConfig.MaxTokens</property>
@@ -1796,6 +1759,20 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessHookEvent.HookEventId</property>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessHookEvent.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessHookEvent.Reason</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessInlineFunctionConfig.Description</property>
     <min>1</min>
     <max>4096</max>
@@ -1807,7 +1784,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.ApiKeyArn</property>
-    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
+    <pattern>^arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessLiteLlmModelConfig.MaxTokens</property>
@@ -1824,8 +1801,13 @@
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.HarnessOpenAiModelConfig.ApiBase</property>
+    <min>1</min>
+    <max>16383</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessOpenAiModelConfig.ApiKeyArn</property>
-    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
+    <pattern>^arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessOpenAiModelConfig.MaxTokens</property>
@@ -1843,7 +1825,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessReasoningContentBlockDelta.RedactedContent</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
@@ -1858,19 +1839,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkillGitAuth.CredentialArn</property>
-    <pattern>arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+</pattern>
+    <pattern>^arn:aws:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:token-vault/[a-zA-Z0-9-.]+/apikeycredentialprovider/[a-zA-Z0-9-.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkillGitSource.Url</property>
     <min>8</min>
     <max>16383</max>
-    <pattern>https://[^#@]+</pattern>
+    <pattern>^https://[^#@]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSkillS3Source.Uri</property>
     <min>5</min>
     <max>16383</max>
-    <pattern>s3://.*</pattern>
+    <pattern>^s3://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessSystemContentBlock.Text</property>
@@ -1900,13 +1881,13 @@
     <property>Amazon.BedrockAgentCore.Model.HarnessTool.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolResultBlock.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolResultBlockDelta.Text</property>
@@ -1916,7 +1897,7 @@
     <property>Amazon.BedrockAgentCore.Model.HarnessToolResultBlockStart.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolResultContentBlock.Text</property>
@@ -1930,13 +1911,13 @@
     <property>Amazon.BedrockAgentCore.Model.HarnessToolUseBlock.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolUseBlock.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolUseBlockDelta.Input</property>
@@ -1946,32 +1927,29 @@
     <property>Amazon.BedrockAgentCore.Model.HarnessToolUseBlockStart.Name</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.HarnessToolUseBlockStart.ToolUseId</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InputContentBlock.Blob</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InputContentBlock.Path</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InputContentBlock.Text</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Insight.InsightId</property>
-    <pattern>(Builtin\.[a-zA-Z0-9._-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})</pattern>
+    <pattern>^(Builtin\.[a-zA-Z0-9._-]+|[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.InvokeAgentRuntimeCommandRequestBody.Command</property>
@@ -1985,20 +1963,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.KeyTypeArguments.Text</property>
-    <min>0</min>
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LeftExpression.MetadataKey</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+    <pattern>^[a-zA-Z0-9\s._:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LinkedAccountDeveloperJwt.Kid</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_-]{1,255}</pattern>
+    <pattern>^[a-zA-Z0-9_-]{1,255}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LinkedAccountDeveloperJwt.Sub</property>
@@ -2009,13 +1986,13 @@
     <property>Amazon.BedrockAgentCore.Model.LinkedAccountEmail.EmailAddress</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LinkedAccountSms.PhoneNumber</property>
     <min>3</min>
     <max>16</max>
-    <pattern>\+[1-9]\d{1,14}</pattern>
+    <pattern>^\+[1-9]\d{1,14}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.LiveViewStream.StreamEndpoint</property>
@@ -2031,91 +2008,91 @@
     <property>Amazon.BedrockAgentCore.Model.MemoryRecord.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecord.MemoryStrategyId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordCreateInput.MemoryStrategyId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordCreateInput.RequestIdentifier</property>
     <min>1</min>
     <max>80</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordDeleteInput.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordDeleteInput.Namespace</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+    <pattern>^[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordLeftExpression.MetadataKey</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+    <pattern>^[a-zA-Z0-9\s._:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordMetadataValue.StringValue</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+    <pattern>^[a-zA-Z0-9\s._:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordOutput.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordOutput.RequestIdentifier</property>
     <min>1</min>
     <max>80</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordSummary.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordSummary.MemoryStrategyId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordUpdateInput.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
-    <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+    <pattern>^mem-[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordUpdateInput.MemoryStrategyId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MetadataValue.StringValue</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\s._:/=+@-]*</pattern>
+    <pattern>^[a-zA-Z0-9\s._:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MouseClickArguments.ClickCount</property>
@@ -2136,7 +2113,7 @@
     <property>Amazon.BedrockAgentCore.Model.MppPaymentInput.Version</property>
     <min>1</min>
     <max>10</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MppPaymentOutput.PaymentCredential</property>
@@ -2152,13 +2129,13 @@
     <property>Amazon.BedrockAgentCore.Model.MppPaymentOutput.Version</property>
     <min>1</min>
     <max>10</max>
-    <pattern>[0-9]+</pattern>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OAuth2Authentication.EmailAddress</property>
     <min>1</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}</pattern>
+    <pattern>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OAuth2Authentication.Name</property>
@@ -2179,136 +2156,130 @@
     <property>Amazon.BedrockAgentCore.Model.OAuthCredentialProvider.DefaultReturnUrl</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>\w+:(\/?\/?)[^\s]+</pattern>
+    <pattern>^\w+:(\/?\/?)[^\s]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OAuthCredentialProvider.ProviderArn</property>
-    <pattern>arn:([^:]*):([^:]*):([^:]*):([0-9]{12})?:(.+)</pattern>
+    <pattern>^arn:([^:]*):([^:]*):([^:]*):([0-9]{12})?:(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OnlineEvaluationConfigSource.OnlineEvaluationConfigArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OnlineEvaluationTraceConfig.OnlineEvaluationConfigArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrument.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrument.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrument.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrument.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrumentSummary.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>^([0-9a-z][-]?){1,100}-[0-9a-z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrumentSummary.PaymentInstrumentId</property>
     <min>34</min>
     <max>34</max>
-    <pattern>payment-instrument-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-instrument-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrumentSummary.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentInstrumentSummary.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentSession.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentSession.PaymentSessionId</property>
     <min>31</min>
     <max>31</max>
-    <pattern>payment-session-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-session-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentSession.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentSessionSummary.PaymentManagerArn</property>
     <min>66</min>
     <max>2048</max>
-    <pattern>arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}</pattern>
+    <pattern>^arn:(aws|aws-[a-z0-9-]+):bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:payment-manager/[a-z0-9]([a-z0-9-]{0,47}[a-z0-9])?-[a-z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentSessionSummary.PaymentSessionId</property>
     <min>31</min>
     <max>31</max>
-    <pattern>payment-session-[0-9a-zA-Z-]{15}</pattern>
+    <pattern>^payment-session-[0-9a-zA-Z-]{15}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PaymentSessionSummary.UserId</property>
-    <min>0</min>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PerVariantOnlineEvaluationConfig.Name</property>
     <min>1</min>
     <max>2</max>
-    <pattern>(C|T1)</pattern>
+    <pattern>^(C|T1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.PerVariantOnlineEvaluationConfig.OnlineEvaluationConfigArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RecommendationEvaluatorReference.EvaluatorArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws[a-zA-Z-]*:bedrock-agentcore:::evaluator/(Builtin|ThirdParty)\.[a-zA-Z0-9._-]+</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:evaluator\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$|^arn:aws[a-zA-Z-]*:bedrock-agentcore:::evaluator/(Builtin|ThirdParty)\.[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RecommendationResultConfigurationBundle.BundleArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RecommendationSummary.Description</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RecommendationSummary.Name</property>
-    <min>0</min>
     <max>100</max>
-    <pattern>[a-zA-Z][a-zA-Z0-9_-]{0,47}</pattern>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_-]{0,47}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RecommendationSummary.RecommendationArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:recommendation/[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:recommendation/[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RecommendationSummary.RecommendationId</property>
-    <pattern>[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}</pattern>
+    <pattern>^[0-9a-zA-Z_-]{1,48}-[0-9A-Z]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RegistryRecordSummary.Description</property>
@@ -2319,55 +2290,53 @@
     <property>Amazon.BedrockAgentCore.Model.RegistryRecordSummary.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_\-\.\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RegistryRecordSummary.RecordArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}/record/[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RegistryRecordSummary.RecordId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[a-zA-Z0-9]{12}</pattern>
+    <pattern>^[a-zA-Z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RegistryRecordSummary.RegistryArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}</pattern>
+    <pattern>^arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:registry/[a-zA-Z0-9]{12,16}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.RegistryRecordSummary.Version</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9.-]+</pattern>
+    <pattern>^[a-zA-Z0-9.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.S3FilesConfiguration.AccessPointArn</property>
-    <min>0</min>
     <max>256</max>
-    <pattern>arn:aws[-a-z]*:s3files:[0-9a-z-:]+:file-system/fs-[0-9a-f]{17,40}/access-point/fsap-[0-9a-f]{17,40}</pattern>
+    <pattern>^arn:aws[-a-z]*:s3files:[0-9a-z-:]+:file-system/fs-[0-9a-f]{17,40}/access-point/fsap-[0-9a-f]{17,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.S3FilesConfiguration.FileSystemArn</property>
-    <min>0</min>
     <max>256</max>
-    <pattern>arn:aws[-a-z]*:s3files:[a-z0-9-]+:[0-9]{12}:file-system/fs-[0-9a-f]{17,40}</pattern>
+    <pattern>^arn:aws[-a-z]*:s3files:[a-z0-9-]+:[0-9]{12}:file-system/fs-[0-9a-f]{17,40}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.S3FilesConfiguration.MountPath</property>
     <min>6</min>
     <max>200</max>
-    <pattern>/mnt/[a-zA-Z0-9._-]+/?</pattern>
+    <pattern>^/mnt/[a-zA-Z0-9._-]+/?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.S3Location.Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[a-z0-9][a-z0-9.-]*[a-z0-9]</pattern>
+    <pattern>^[a-z0-9][a-z0-9.-]*[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.S3Location.Prefix</property>
@@ -2383,7 +2352,7 @@
     <property>Amazon.BedrockAgentCore.Model.SearchCriteria.MemoryStrategyId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SearchCriteria.SearchQuery</property>
@@ -2397,7 +2366,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SecretsManagerLocation.SecretArn</property>
-    <pattern>arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+    <pattern>^arn:aws(-[a-z-]+)?:secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ServerDefinition.InlineContent</property>
@@ -2413,13 +2382,13 @@
     <property>Amazon.BedrockAgentCore.Model.SessionSummary.ActorId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_/]*(?::[a-zA-Z0-9-_/]+)*[a-zA-Z0-9-_/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SessionSummary.SessionId</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SkillDefinition.InlineContent</property>
@@ -2440,25 +2409,25 @@
     <property>Amazon.BedrockAgentCore.Model.StripePrivyTokenRequestInput.RequestBody</property>
     <min>1</min>
     <max>16384</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StripePrivyTokenRequestInput.RequestHost</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9\-\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StripePrivyTokenRequestInput.RequestPath</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>/[a-zA-Z0-9/_\-\.~%?=&amp;]+</pattern>
+    <pattern>^/[a-zA-Z0-9/_\-\.~%?=&amp;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StripePrivyTokenResponseOutput.AppId</property>
     <min>1</min>
     <max>512</max>
-    <pattern>[a-zA-Z0-9\-_]+</pattern>
+    <pattern>^[a-zA-Z0-9\-_]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.StripePrivyTokenResponseOutput.AuthorizationSignature</property>
@@ -2487,21 +2456,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SystemPromptConfigurationBundle.BundleArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SystemPromptRecommendationResult.ErrorCode</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SystemPromptRecommendationResult.ErrorMessage</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SystemPromptRecommendationResult.Explanation</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -2516,27 +2482,22 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolArguments.Code</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolArguments.Command</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolArguments.DirectoryPath</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolArguments.Path</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolArguments.TaskId</property>
-    <min>0</min>
     <max>100000000</max>
   </property-value-rule>
   <property-value-rule>
@@ -2546,17 +2507,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolDescriptionConfigurationBundle.BundleArn</property>
-    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+    <pattern>^arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:configuration-bundle/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolDescriptionInput.ToolName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+    <pattern>^[a-zA-Z0-9_\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolDescriptionOutput.Explanation</property>
-    <min>0</min>
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
@@ -2568,16 +2528,14 @@
     <property>Amazon.BedrockAgentCore.Model.ToolDescriptionOutput.ToolName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z0-9_\-\.]+</pattern>
+    <pattern>^[a-zA-Z0-9_\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolDescriptionRecommendationResult.ErrorCode</property>
-    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.ToolDescriptionRecommendationResult.ErrorMessage</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -2599,13 +2557,13 @@
     <property>Amazon.BedrockAgentCore.Model.UserIdentifier.UserToken</property>
     <min>1</min>
     <max>131072</max>
-    <pattern>[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+</pattern>
+    <pattern>^[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+.[A-Za-z0-9-_=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Variant.Name</property>
     <min>1</min>
     <max>2</max>
-    <pattern>(C|T1)</pattern>
+    <pattern>^(C|T1)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.Variant.Weight</property>

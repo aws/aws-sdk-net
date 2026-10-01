@@ -8,7 +8,7 @@ namespace SmithyDotNet.Generator.Model;
 /// Top-level Smithy JSON AST model containing version, shapes, and metadata.
 /// </summary>
 /// <remarks><see href="https://smithy.io/2.0/spec/json-ast.html" /></remarks>
-public record SmithyModel
+public record SmithyModel : IJsonOnDeserialized
 {
     [JsonPropertyName("smithy")]
     public required string Version { get; init; }
@@ -18,4 +18,16 @@ public record SmithyModel
 
     [JsonPropertyName("metadata")]
     public Dictionary<string, JsonElement> Metadata { get; init; } = [];
+
+    // A shape's id is its key in the shapes dictionary, not part of its own JSON.
+    void IJsonOnDeserialized.OnDeserialized()
+    {
+        foreach (var key in new List<string>(Shapes.Keys))
+        {
+            if (Shapes[key] is { } shape)
+            {
+                Shapes[key] = shape with { Id = ShapeId.Parse(key) };
+            }
+        }
+    }
 }

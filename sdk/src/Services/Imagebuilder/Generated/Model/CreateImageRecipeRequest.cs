@@ -43,6 +43,7 @@ namespace Amazon.Imagebuilder.Model
         private string _clientToken;
         private List<ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new List<ComponentConfiguration>() : null;
         private string _description;
+        private bool? _dryRun;
         private string _name;
         private string _parentImage;
         private string _semanticVersion;
@@ -52,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property AdditionalInstanceConfiguration. 
         /// <para>
-        /// Specify additional settings and launch scripts for your build instances.
+        /// The additional settings and launch scripts for your build instances.
         /// </para>
         /// </summary>
         public AdditionalInstanceConfiguration AdditionalInstanceConfiguration
@@ -127,7 +128,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// The block device mappings of the image recipe.
+        /// The block device mappings that Image Builder applies to the build instance and the
+        /// output AMI. For example, you can override the size of the base image's root volume
+        /// or attach additional EBS volumes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -150,8 +153,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -171,7 +176,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// The components included in the image recipe.
+        /// The components included in the image recipe. Components are optional. A recipe with
+        /// no components bakes the base image without additional customization. You can specify
+        /// each component only one time in a recipe. Components with a status of <c>DEPRECATED</c>
+        /// or <c>DISABLED</c> can't be added to new recipes.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -212,9 +220,32 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Validates the required permissions and request parameters without performing the operation.
+        /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the image recipe.
+        /// The name of the image recipe. The recipe name, combined with the semantic version,
+        /// must be unique to your account in each Amazon Web Services Region. Image Builder generates
+        /// the image recipe ARN from a normalized form of the name, so names that differ only
+        /// in case, spaces, or underscores count as the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -256,7 +287,7 @@ namespace Amazon.Imagebuilder.Model
         ///  </li> </ul> 
         /// <para>
         /// If you enter an AMI ID or an SSM parameter that contains the AMI ID, you must have
-        /// access to the AMI, and the AMI must be in the source Region.
+        /// access to the AMI. The AMI must also be in the Region where you're creating the recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -285,9 +316,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Assignment:</b> For the first three nodes you can assign any positive integer
-        /// value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node.
-        /// Image Builder automatically assigns the build number to the fourth node.
+        ///  <b>Assignment:</b> For the first three nodes, you can assign any positive integer
+        /// value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image
+        /// Builder automatically assigns the build number to the fourth node.
         /// </para>
         ///  
         /// <para>
@@ -337,7 +368,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkingDirectory. 
         /// <para>
-        /// The working directory used during build and test workflows.
+        /// The working directory used during build and test workflows. If you don't specify a
+        /// working directory, Image Builder uses <c>/tmp</c> for Linux and macOS build instances,
+        /// and <c>C:/</c> for Windows build instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

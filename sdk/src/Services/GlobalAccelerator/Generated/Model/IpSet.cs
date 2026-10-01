@@ -34,9 +34,35 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class IpSet
     {
+        private List<IpAddressDetail> _ipAddressDetails = AWSConfigs.InitializeCollections ? new List<IpAddressDetail>() : null;
         private List<string> _ipAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IpAddressFamily _ipAddressFamily;
         private string _ipFamily;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressDetails. 
+        /// <para>
+        /// The array of IP addresses in the IP address set, with detailed information about the
+        /// IP addresses. An IP address set can have a maximum of two IP addresses.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=2)]
+        public List<IpAddressDetail> IpAddressDetails
+        {
+            get { return this._ipAddressDetails; }
+            set { this._ipAddressDetails = value; }
+        }
+
+        // Check to see if IpAddressDetails property is set
+        internal bool IsSetIpAddressDetails()
+        {
+            return this._ipAddressDetails != null && (this._ipAddressDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property IpAddresses. 

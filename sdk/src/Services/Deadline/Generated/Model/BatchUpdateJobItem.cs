@@ -191,7 +191,7 @@ namespace Amazon.Deadline.Model
         /// The name of the job to update.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=512)]
         public string Name
         {
             get { return this._name; }

@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private EndAssociatedTasksActionDefinition _endAssociatedTasksAction;
         private EventBridgeActionDefinition _eventBridgeAction;
         private ExtractInformationActionDefinition _extractInformationAction;
+        private SendInAppNotificationActionDefinition _sendInAppNotificationAction;
         private SendNotificationActionDefinition _sendNotificationAction;
         private SubmitAutoEvaluationActionDefinition _submitAutoEvaluationAction;
         private TaskActionDefinition _taskAction;
@@ -194,6 +195,33 @@ namespace Amazon.Connect.Model
         internal bool IsSetExtractInformationAction()
         {
             return this._extractInformationAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SendInAppNotificationAction. 
+        /// <para>
+        /// Information about the send in-app notification action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnPostCallAnalysisAvailable</c>
+        /// | <c>OnRealTimeCallAnalysisAvailable</c> | <c>OnRealTimeChatAnalysisAvailable</c>
+        /// | <c>OnPostChatAnalysisAvailable</c> | <c>OnAfterCallWorkAvailable</c> | <c>OnAfterChatWorkAvailable</c>
+        /// | <c>OnEmailAnalysisAvailable</c> | <c>OnContactEvaluationSubmit</c> | <c>OnCaseCreate</c>
+        /// | <c>OnCaseUpdate</c> | <c>OnSlaBreach</c> | <c>OnSchedulePublish</c> | <c>OnScheduleUpdate</c>
+        /// | <c>OnScheduleTimeOffRequestActivity</c> 
+        /// </para>
+        /// </summary>
+        public SendInAppNotificationActionDefinition SendInAppNotificationAction
+        {
+            get { return this._sendInAppNotificationAction; }
+            set { this._sendInAppNotificationAction = value; }
+        }
+
+        // Check to see if SendInAppNotificationAction property is set
+        internal bool IsSetSendInAppNotificationAction()
+        {
+            return this._sendInAppNotificationAction != null;
         }
 
         /// <summary>

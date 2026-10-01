@@ -54,6 +54,7 @@ namespace Amazon.DirectConnect.Model
     public partial class CreateConnectionRequest : AmazonDirectConnectRequest
     {
         private string _bandwidth;
+        private RequestBillingMode _billingMode;
         private string _connectionName;
         private string _lagId;
         private string _location;
@@ -78,6 +79,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetBandwidth()
         {
             return this._bandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// The billing mode for the connection.
+        /// </para>
+        /// </summary>
+        public RequestBillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
         }
 
         /// <summary>

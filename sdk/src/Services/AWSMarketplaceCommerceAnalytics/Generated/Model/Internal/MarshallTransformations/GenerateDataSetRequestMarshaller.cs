@@ -92,7 +92,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
             if(publicRequest.IsSetDataSetPublicationDate())
             {
                 context.Writer.WritePropertyName("dataSetPublicationDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.DataSetPublicationDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.DataSetPublicationDate.Value));
             }
 
             if(publicRequest.IsSetDataSetType())

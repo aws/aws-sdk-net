@@ -220,7 +220,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The runtime state for the lifecycle execution.
+        /// The runtime state of the lifecycle action for this resource.
         /// </para>
         /// </summary>
         public LifecycleExecutionResourceState State

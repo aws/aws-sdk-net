@@ -338,7 +338,7 @@ namespace Amazon.FSx.Model
         /// The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=100000)]
+        [AWSProperty(Min=8, Max=2147483647)]
         public int? ThroughputCapacity
         {
             get { return this._throughputCapacity; }

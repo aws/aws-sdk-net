@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Serialization;
@@ -13,7 +12,7 @@ namespace SmithyDotNet.Generator.Tests.Writers.Shapes;
 /// <see cref="ServiceEnumerationsWriter"/> emission (ConstantClass declarations, member naming, the
 /// <c>Equals</c>/<c>new</c> guard, intEnum exclusion, unreachable-enum collection, the throw on a
 /// missing value) plus the marshaller/unmarshaller writers that route an enum member through the
-/// string path. Type-mapping is covered by <see cref="Serialization.TypeMapperTests"/>.
+/// string path. Type-mapping is covered by <see cref="TypeMapperTests"/>.
 /// </summary>
 public class EnumCodegenTests
 {
@@ -122,7 +121,7 @@ public class EnumCodegenTests
     [Fact]
     public void RequestMarshaller_HeaderEnum_AssignedDirectly()
     {
-        // MarshalType is "string", so the enum is assigned directly (implicit ConstantClass->string).
+        // An enum marshals as a string, so it is assigned directly (implicit ConstantClass->string).
         Assert.Contains("""request.Headers["x-status"] = publicRequest.Tag;""", _requestMarshaller);
     }
 
@@ -136,14 +135,14 @@ public class EnumCodegenTests
     public void StructureMarshaller_RoutesEnumThroughStringAndIntEnumThroughNumber()
     {
         // A nested structure with an enum member (marshals as a string) and an intEnum member (a plain
-        // int). Without MarshalType dispatch the enum member would miss the "string" case and throw.
+        // int). Without the enum-as-string dispatch the enum member would miss the string case and throw.
         var detail = (StructureShape)TestModels.DeserializeShape("""
             { "type": "structure", "members": {
                 "state": { "target": "com.example#Status" },
                 "rank":  { "target": "com.example#Priority" } } }
             """);
         var marshaller = new JsonStructureMarshallerWriter(_context, ModelFileName)
-            .Write(detail, ShapeId.Parse("com.example#Detail"), TestContext.Current.CancellationToken);
+            .Write(detail, TestContext.Current.CancellationToken);
 
         Assert.Contains("context.Writer.WriteStringValue(requestObject.State);", marshaller);
         Assert.Contains("context.Writer.WriteNumberValue(requestObject.Rank.Value);", marshaller);

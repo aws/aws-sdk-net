@@ -35,9 +35,11 @@ namespace Amazon.Imagebuilder.Model
     public partial class WorkflowStepMetadata
     {
         private string _action;
+        private int? _attemptNumber;
         private string _description;
         private string _endTime;
         private string _inputs;
+        private int? _maxAttempts;
         private string _message;
         private string _name;
         private string _outputs;
@@ -62,6 +64,26 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AttemptNumber. 
+        /// <para>
+        /// The current attempt number for the workflow step. The first run is attempt one. The
+        /// number increases by one for each retry.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? AttemptNumber
+        {
+            get { return this._attemptNumber; }
+            set { this._attemptNumber = value; }
+        }
+
+        // Check to see if AttemptNumber property is set
+        internal bool IsSetAttemptNumber()
+        {
+            return this._attemptNumber.HasValue; 
         }
 
         /// <summary>
@@ -104,7 +126,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Inputs. 
         /// <para>
-        /// Input parameters that Image Builder provides for the workflow step.
+        /// Input parameters that Image Builder provides for the workflow step, as a JSON-encoded
+        /// string.
         /// </para>
         /// </summary>
         public string Inputs
@@ -117,6 +140,27 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxAttempts. 
+        /// <para>
+        /// The maximum number of attempts allowed for the workflow step, based on the retry configuration
+        /// in the workflow document. If the step doesn't configure retries, the maximum is one
+        /// attempt.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MaxAttempts
+        {
+            get { return this._maxAttempts; }
+            set { this._maxAttempts = value; }
+        }
+
+        // Check to see if MaxAttempts property is set
+        internal bool IsSetMaxAttempts()
+        {
+            return this._maxAttempts.HasValue; 
         }
 
         /// <summary>
@@ -159,8 +203,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// The file names that the workflow step created as output for this runtime instance
-        /// of the workflow.
+        /// The output values that the workflow step produced for this runtime instance of the
+        /// workflow, as a JSON-encoded string. For example, a step that launches an instance
+        /// outputs the instance ID. If the step failed, this field contains the error message.
         /// </para>
         /// </summary>
         public string Outputs

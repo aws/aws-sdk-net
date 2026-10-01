@@ -1,0 +1,152 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetFindingHistory operation. Returns the history
+    /// of a Security Hub CSPM finding. The history includes changes made to any fields in
+    /// the Amazon Web Services Security Finding Format (ASFF) except top-level timestamp
+    /// fields, such as the <c>CreatedAt</c> and <c>UpdatedAt</c> fields. <para> This operation
+    /// might return fewer results than the maximum number of results (<c>MaxResults</c>)
+    /// specified in a request, even when more results are available. If this occurs, the
+    /// response includes a <c>NextToken</c> value, which you should use to retrieve the next
+    /// set of results in the response. The presence of a <c>NextToken</c> value in a response
+    /// doesn't necessarily indicate that the results are incomplete. However, you should
+    /// continue to specify a <c>NextToken</c> value until you receive a response that doesn't
+    /// include this value. </para>
+    /// </summary>
+    public partial class GetFindingHistoryRequest : AmazonSecurityHubRequest
+    {
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        ///  An ISO 8601-formatted timestamp that indicates the end time of the requested finding
+        /// history.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide values for both <c>StartTime</c> and <c>EndTime</c>, Security Hub CSPM
+        /// returns finding history for the specified time period. If you provide a value for
+        /// <c>StartTime</c> but not for <c>EndTime</c>, Security Hub CSPM returns finding history
+        /// from the <c>StartTime</c> to the time at which the API is called. If you provide a
+        /// value for <c>EndTime</c> but not for <c>StartTime</c>, Security Hub CSPM returns finding
+        /// history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
+        /// timestamp of the finding to the <c>EndTime</c>. If you provide neither <c>StartTime</c>
+        /// nor <c>EndTime</c>, Security Hub CSPM returns finding history from the <c>CreatedAt</c>
+        /// timestamp of the finding to the time at which the API is called. In all of these scenarios,
+        /// the response is limited to 100 results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? EndTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndTime property is set.
+        /// </summary>
+        internal bool IsSetEndTime() => this.EndTime.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property FindingIdentifier.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public AwsSecurityFindingIdentifier FindingIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the FindingIdentifier property is set.
+        /// </summary>
+        internal bool IsSetFindingIdentifier() => this.FindingIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        ///  The maximum number of results to be returned. If you don’t provide it, Security Hub
+        /// CSPM returns up to 100 results of finding history. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        ///  A token for pagination purposes. Provide <c>NULL</c> as the initial value. In subsequent
+        /// requests, provide the token included in the response to get up to an additional 100
+        /// results of finding history. If you don’t provide <c>NextToken</c>, Security Hub CSPM
+        /// returns up to 100 results of finding history for each request. 
+        /// </para>
+        /// </summary>
+        public string NextToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextToken property is set.
+        /// </summary>
+        internal bool IsSetNextToken() => this.NextToken != null;
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// A timestamp that indicates the start time of the requested finding history.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide values for both <c>StartTime</c> and <c>EndTime</c>, Security Hub CSPM
+        /// returns finding history for the specified time period. If you provide a value for
+        /// <c>StartTime</c> but not for <c>EndTime</c>, Security Hub CSPM returns finding history
+        /// from the <c>StartTime</c> to the time at which the API is called. If you provide a
+        /// value for <c>EndTime</c> but not for <c>StartTime</c>, Security Hub CSPM returns finding
+        /// history from the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
+        /// timestamp of the finding to the <c>EndTime</c>. If you provide neither <c>StartTime</c>
+        /// nor <c>EndTime</c>, Security Hub CSPM returns finding history from the <c>CreatedAt</c>
+        /// timestamp of the finding to the time at which the API is called. In all of these scenarios,
+        /// the response is limited to 100 results.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the validation and formatting of timestamp fields in Security
+        /// Hub CSPM, see <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.
+        /// </para>
+        /// </summary>
+        public DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartTime property is set.
+        /// </summary>
+        internal bool IsSetStartTime() => this.StartTime.HasValue;
+    }
+}

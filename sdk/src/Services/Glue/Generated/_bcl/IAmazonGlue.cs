@@ -122,6 +122,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -156,6 +159,9 @@ namespace Amazon.Glue
         /// <returns>The response from the BatchCreatePartition service method, as returned by Glue.</returns>
         /// <exception cref="Amazon.Glue.Model.AlreadyExistsException">
         /// A resource to be created or added already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
@@ -229,6 +235,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchDeletePartition service method.</param>
         /// 
         /// <returns>The response from the BatchDeletePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -255,6 +264,9 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the BatchDeletePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -295,6 +307,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteTable service method.</param>
         /// 
         /// <returns>The response from the BatchDeleteTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -341,6 +356,9 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the BatchDeleteTable service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -1165,6 +1183,9 @@ namespace Amazon.Glue
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdatePartition service method.</param>
         /// 
         /// <returns>The response from the BatchUpdatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -1194,6 +1215,9 @@ namespace Amazon.Glue
         /// </param>
         /// 
         /// <returns>The response from the BatchUpdatePartition service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
+        /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
         /// A specified entity does not exist
         /// </exception>
@@ -12857,6 +12881,78 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationResourceProperties">REST API Reference for ListIntegrationResourceProperties Operation</seealso>
         Task<ListIntegrationResourcePropertiesResponse> ListIntegrationResourcePropertiesAsync(ListIntegrationResourcePropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListIntegrationTableProperties
+
+
+        /// <summary>
+        /// Lists the integration table properties in your account. This operation supports filtering
+        /// and pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationTableProperties service method.</param>
+        /// 
+        /// <returns>The response from the ListIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationTableProperties">REST API Reference for ListIntegrationTableProperties Operation</seealso>
+        ListIntegrationTablePropertiesResponse ListIntegrationTableProperties(ListIntegrationTablePropertiesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the integration table properties in your account. This operation supports filtering
+        /// and pagination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIntegrationTableProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListIntegrationTableProperties service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServerException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ValidationException">
+        /// A value could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListIntegrationTableProperties">REST API Reference for ListIntegrationTableProperties Operation</seealso>
+        Task<ListIntegrationTablePropertiesResponse> ListIntegrationTablePropertiesAsync(ListIntegrationTablePropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -45,8 +45,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Adjustments. 
         /// <para>
-        /// An object that contains details about an adjustment that Amazon Inspector made to
-        /// the CVSS score for the finding.
+        /// The adjustments that Amazon Inspector applied to the base CVSS score to produce its
+        /// own score for the finding. The list is empty when Amazon Inspector made no adjustments.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -69,7 +69,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property CvssSource. 
         /// <para>
-        /// The source of the finding.
+        /// The source of the CVSS data that the Amazon Inspector score for the finding is based
+        /// on, for example NVD or a vendor security feed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

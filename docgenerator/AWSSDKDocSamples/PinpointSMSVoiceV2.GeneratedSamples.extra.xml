@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.ListAvailablePhoneNumbers(Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest)" />
+            <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.ListAvailablePhoneNumbers(Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest)" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersRequest" />
+            <member name="T:Amazon.PinpointSMSVoiceV2.Model.ListAvailablePhoneNumbersResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Search for available TEN_DLC phone numbers in the US that start with a specific area code.
+                </para>
+                <code
+                    title="ListAvailablePhoneNumbers"
+                    source=".\AWSSDKDocSamples\PinpointSMSVoiceV2\PinpointSMSVoiceV2.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.PinpointSMSVoiceV2.IAmazonPinpointSMSVoiceV2.ListNotifyCountries(Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest)" />
             <member name="M:Amazon.PinpointSMSVoiceV2.AmazonPinpointSMSVoiceV2Client.ListNotifyCountries(Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest)" />
             <member name="T:Amazon.PinpointSMSVoiceV2.Model.ListNotifyCountriesRequest" />

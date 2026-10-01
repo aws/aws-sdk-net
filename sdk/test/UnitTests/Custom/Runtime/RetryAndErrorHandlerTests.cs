@@ -37,7 +37,8 @@ namespace AWSSDK.UnitTests
                 ServiceURL = @"https://s3.amazonaws.com",
                 MaxErrorRetry = MAX_RETRIES
             };
-            Handler = new RetryHandler(new DefaultRetryPolicy(config));
+            // No backoff between retries; these tests only count attempts.
+            Handler = new RetryHandler(new DefaultRetryPolicy(config) { MaxBackoffInMilliseconds = 0 });
             RuntimePipeline.AddHandler(Handler);
         }
 

@@ -253,6 +253,30 @@ namespace AWSSDK.ProtocolTests.RestJson
         }
 
         /// <summary>
+        /// Because namespace and URL are ignored, an unrecognized namespace
+        /// should not make a difference.
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ErrorTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonFooErrorUsingXAmznErrorTypeWithUriAndDifferentNamespaceErrorResponse()
+        {
+            // Arrange
+            var webResponseData = new WebResponseData();
+            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
+            webResponseData.Headers["X-Amzn-Errortype"] = "aws.different.namespace#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/";
+            byte[] bytes = Encoding.ASCII.GetBytes("");
+            var stream = new MemoryStream(bytes);
+            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            // Act
+            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            // Assert
+            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
+            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+        }
+
+        /// <summary>
         /// This example uses the 'code' property in the output rather than
         /// X-Amzn-Errortype. Some services do this though it's preferable to
         /// send the X-Amzn-Errortype. Client implementations must first

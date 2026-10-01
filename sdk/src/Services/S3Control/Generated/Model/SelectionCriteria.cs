@@ -79,13 +79,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MinStorageBytesPercentage. 
         /// <para>
-        /// The minimum number of storage bytes percentage whose metrics will be selected.
+        /// The minimum percentage of total bucket storage that a prefix must hold for its metrics
+        /// to be included.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// You must choose a value greater than or equal to <c>1.0</c>.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public double? MinStorageBytesPercentage

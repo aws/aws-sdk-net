@@ -113,7 +113,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSubmittedSince())
             {
                 context.Writer.WritePropertyName("SubmittedSince");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.SubmittedSince.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SubmittedSince.Value));
             }
 
             if(publicRequest.IsSetType())

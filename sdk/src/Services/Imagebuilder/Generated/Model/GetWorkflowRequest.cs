@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkflow operation.
-    /// Get a workflow resource object.
+    /// Retrieves a workflow resource object.
     /// </summary>
     public partial class GetWorkflowRequest : AmazonImagebuilderRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the workflow resource that you want to get.
+        /// The Amazon Resource Name (ARN) of the workflow resource that you want to get. You
+        /// can specify a build version ARN, or a version ARN with or without wildcards (<c>x</c>)
+        /// in its version segments. Image Builder resolves version and wildcard ARNs to the most
+        /// recent matching build version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

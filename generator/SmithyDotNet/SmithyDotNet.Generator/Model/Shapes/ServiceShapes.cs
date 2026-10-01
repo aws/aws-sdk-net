@@ -25,6 +25,14 @@ public record ServiceShape : Shape
     [JsonPropertyName("errors")]
     [JsonConverter(typeof(ShapeTargetListConverter))]
     public List<ShapeId> Errors { get; init; } = [];
+
+    /// <summary>
+    /// Absolute shape ID to the name code generators must use for it, so two shapes with the same
+    /// name in different namespaces don't collide.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/service-types.html#service-rename" /></remarks>
+    [JsonPropertyName("rename")]
+    public Dictionary<string, string> Rename { get; init; } = [];
 }
 
 /// <summary>

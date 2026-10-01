@@ -104,6 +104,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.OutputFormat);
             }
 
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

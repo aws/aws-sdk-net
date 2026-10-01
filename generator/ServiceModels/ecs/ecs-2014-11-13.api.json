@@ -2232,6 +2232,7 @@
         "networkConfiguration":{"shape":"ExpressGatewayServiceNetworkConfiguration"},
         "cpu":{"shape":"String"},
         "memory":{"shape":"String"},
+        "cpuArchitecture":{"shape":"ExpressCpuArchitecture"},
         "scalingTarget":{"shape":"ExpressGatewayScalingTarget"},
         "tags":{"shape":"Tags"},
         "taskDefinitionArn":{"shape":"String"}
@@ -3540,6 +3541,13 @@
         "taskArn":{"shape":"String"}
       }
     },
+    "ExpressCpuArchitecture":{
+      "type":"string",
+      "enum":[
+        "X86_64",
+        "ARM64"
+      ]
+    },
     "ExpressGatewayContainer":{
       "type":"structure",
       "required":["image"],
@@ -3588,6 +3596,7 @@
         "taskDefinitionArn":{"shape":"String"},
         "cpu":{"shape":"String"},
         "memory":{"shape":"String"},
+        "cpuArchitecture":{"shape":"ExpressCpuArchitecture"},
         "networkConfiguration":{"shape":"ExpressGatewayServiceNetworkConfiguration"},
         "healthCheckPath":{"shape":"String"},
         "primaryContainer":{"shape":"ExpressGatewayContainer"},
@@ -5124,7 +5133,8 @@
     "ResolvedConfiguration":{
       "type":"structure",
       "members":{
-        "loadBalancers":{"shape":"ServiceRevisionLoadBalancers"}
+        "loadBalancers":{"shape":"ServiceRevisionLoadBalancers"},
+        "vpcLatticeConfigurations":{"shape":"ServiceRevisionVpcLatticeConfigurations"}
       }
     },
     "Resource":{
@@ -5712,6 +5722,17 @@
           "box":true
         }
       }
+    },
+    "ServiceRevisionVpcLatticeConfiguration":{
+      "type":"structure",
+      "members":{
+        "targetGroupArn":{"shape":"String"},
+        "productionListenerRule":{"shape":"String"}
+      }
+    },
+    "ServiceRevisionVpcLatticeConfigurations":{
+      "type":"list",
+      "member":{"shape":"ServiceRevisionVpcLatticeConfiguration"}
     },
     "ServiceRevisions":{
       "type":"list",
@@ -6498,6 +6519,7 @@
         "networkConfiguration":{"shape":"ExpressGatewayServiceNetworkConfiguration"},
         "cpu":{"shape":"String"},
         "memory":{"shape":"String"},
+        "cpuArchitecture":{"shape":"ExpressCpuArchitecture"},
         "scalingTarget":{"shape":"ExpressGatewayScalingTarget"},
         "taskDefinitionArn":{"shape":"String"}
       }
@@ -6687,6 +6709,14 @@
       "type":"list",
       "member":{"shape":"Volume"}
     },
+    "VpcLatticeAdvancedConfiguration":{
+      "type":"structure",
+      "members":{
+        "alternateTargetGroupArn":{"shape":"String"},
+        "productionListenerRule":{"shape":"String"},
+        "testListenerRule":{"shape":"String"}
+      }
+    },
     "VpcLatticeConfiguration":{
       "type":"structure",
       "required":[
@@ -6697,7 +6727,8 @@
       "members":{
         "roleArn":{"shape":"IAMRoleArn"},
         "targetGroupArn":{"shape":"String"},
-        "portName":{"shape":"String"}
+        "portName":{"shape":"String"},
+        "advancedConfiguration":{"shape":"VpcLatticeAdvancedConfiguration"}
       }
     },
     "VpcLatticeConfigurations":{

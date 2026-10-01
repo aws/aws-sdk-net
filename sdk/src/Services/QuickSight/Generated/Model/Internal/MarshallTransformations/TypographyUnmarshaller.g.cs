@@ -1,0 +1,129 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for Typography Object
+    /// </summary>
+    public partial class TypographyUnmarshaller : IJsonUnmarshaller<Typography, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public Typography Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new Typography();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("AxisLabelFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AxisLabelFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("AxisTitleFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AxisTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ControlTitleFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ControlTitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ControlTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DataLabelFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataLabelFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("FontFamilies", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Font, FontUnmarshaller>(FontUnmarshaller.Instance);
+                    unmarshalledObject.FontFamilies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LegendTitleFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LegendTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LegendValueFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.LegendValueFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VisualSubtitleFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = VisualSubtitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VisualSubtitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VisualTitleFontConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = VisualTitleFontConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.VisualTitleFontConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static TypographyUnmarshaller _instance = new TypographyUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static TypographyUnmarshaller Instance => _instance;
+    }
+}

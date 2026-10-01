@@ -52,7 +52,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// A message to attach to the service job that explains the reason for canceling it.
+        /// A message to attach to the service job that explains the reason for terminating it.
         /// This message is returned by <c>DescribeServiceJob</c> operations on the service job.
         /// </para>
         /// </summary>

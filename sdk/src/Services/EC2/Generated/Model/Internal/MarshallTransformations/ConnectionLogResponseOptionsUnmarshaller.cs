@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("includeAuthorizationPolicyContext", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.IncludeAuthorizationPolicyContext = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

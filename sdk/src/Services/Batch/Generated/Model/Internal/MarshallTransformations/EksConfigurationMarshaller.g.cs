@@ -45,6 +45,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         {
             if (requestObject == null) return;
 
+            if (requestObject.IsSetAccessEntry())
+            {
+                context.Writer.WritePropertyName("accessEntry");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksAccessEntryMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccessEntry, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetEksClusterArn())
             {
                 context.Writer.WritePropertyName("eksClusterArn");

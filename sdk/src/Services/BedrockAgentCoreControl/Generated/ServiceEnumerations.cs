@@ -159,6 +159,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly AgentRuntimeEndpointStatus CREATING = new AgentRuntimeEndpointStatus("CREATING");
         /// <summary>
+        /// Constant DELETE_FAILED for AgentRuntimeEndpointStatus
+        /// </summary>
+        public static readonly AgentRuntimeEndpointStatus DELETE_FAILED = new AgentRuntimeEndpointStatus("DELETE_FAILED");
+        /// <summary>
         /// Constant DELETING for AgentRuntimeEndpointStatus
         /// </summary>
         public static readonly AgentRuntimeEndpointStatus DELETING = new AgentRuntimeEndpointStatus("DELETING");
@@ -224,6 +228,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CREATING for AgentRuntimeStatus
         /// </summary>
         public static readonly AgentRuntimeStatus CREATING = new AgentRuntimeStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for AgentRuntimeStatus
+        /// </summary>
+        public static readonly AgentRuntimeStatus DELETE_FAILED = new AgentRuntimeStatus("DELETE_FAILED");
         /// <summary>
         /// Constant DELETING for AgentRuntimeStatus
         /// </summary>
@@ -1070,6 +1078,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CodeInterpreterStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoinbaseCdpSecret.
+    /// </summary>
+    public class CoinbaseCdpSecret : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_KEY for CoinbaseCdpSecret
+        /// </summary>
+        public static readonly CoinbaseCdpSecret API_KEY = new CoinbaseCdpSecret("API_KEY");
+        /// <summary>
+        /// Constant WALLET_SECRET for CoinbaseCdpSecret
+        /// </summary>
+        public static readonly CoinbaseCdpSecret WALLET_SECRET = new CoinbaseCdpSecret("WALLET_SECRET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoinbaseCdpSecret(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoinbaseCdpSecret FindValue(string value)
+        {
+            return FindValue<CoinbaseCdpSecret>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoinbaseCdpSecret(string value)
         {
             return FindValue(value);
         }
@@ -2828,6 +2886,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HarnessEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type HarnessHookFailureMode.
+    /// </summary>
+    public class HarnessHookFailureMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Allow for HarnessHookFailureMode
+        /// </summary>
+        public static readonly HarnessHookFailureMode Allow = new HarnessHookFailureMode("allow");
+        /// <summary>
+        /// Constant Deny for HarnessHookFailureMode
+        /// </summary>
+        public static readonly HarnessHookFailureMode Deny = new HarnessHookFailureMode("deny");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HarnessHookFailureMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HarnessHookFailureMode FindValue(string value)
+        {
+            return FindValue<HarnessHookFailureMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HarnessHookFailureMode(string value)
         {
             return FindValue(value);
         }

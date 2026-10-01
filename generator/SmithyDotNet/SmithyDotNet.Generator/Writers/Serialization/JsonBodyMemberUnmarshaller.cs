@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Model.Shapes;
+
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
@@ -35,30 +37,39 @@ public static class JsonBodyMemberUnmarshaller
     }
 
     /// <summary>
-    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a scalar's
-    /// <see cref="TypeDescriptor.MarshalType"/>, or null when the type is not a supported scalar. The type
-    /// string itself encodes nullability, so this one map serves both a standalone member (nullable, e.g.
-    /// <c>int?</c> → <c>NullableIntUnmarshaller</c>) and a non-sparse collection element (non-nullable,
-    /// e.g. <c>int</c> → <c>IntUnmarshaller</c>); <c>string</c> is shared. Enums ride the <c>string</c>
-    /// path (implicit string-to-ConstantClass conversion); timestamps auto-detect the wire format.
+    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a scalar, or null when
+    /// the type is not a supported scalar. <see cref="TypeDescriptor.IsNullableValueType"/> selects the
+    /// <c>Nullable*</c> variant, so this one map serves both a standalone member (<c>int?</c> →
+    /// <c>NullableIntUnmarshaller</c>) and a non-sparse collection element (<c>int</c> → <c>IntUnmarshaller</c>).
+    /// Enums ride the string path (implicit string-to-ConstantClass conversion); timestamps auto-detect
+    /// the wire format. A <c>dataTypeSwap</c> <see cref="TypeDescriptor.UnmarshallerOverride"/> is returned as-is.
     /// </summary>
-    internal static string? ScalarUnmarshaller(string marshalType) => marshalType switch
+    internal static string? ScalarUnmarshaller(TypeDescriptor type)
     {
-        "string" => "StringUnmarshaller",
-        "bool?" => "NullableBoolUnmarshaller",
-        "int?" => "NullableIntUnmarshaller",
-        "long?" => "NullableLongUnmarshaller",
-        "float?" => "NullableFloatUnmarshaller",
-        "double?" => "NullableDoubleUnmarshaller",
-        "DateTime?" => "NullableDateTimeUnmarshaller",
-        "bool" => "BoolUnmarshaller",
-        "int" => "IntUnmarshaller",
-        "long" => "LongUnmarshaller",
-        "float" => "FloatUnmarshaller",
-        "double" => "DoubleUnmarshaller",
-        "DateTime" => "DateTimeUnmarshaller",
-        _ => null,
-    };
+        if (type.UnmarshallerOverride is { } unmarshaller)
+        {
+            return unmarshaller;
+        }
+
+        var name = type.Target switch
+        {
+            StringShape or EnumShape => "String",
+            BooleanShape => "Bool",
+            IntegerShape or IntEnumShape => "Int",
+            LongShape => "Long",
+            FloatShape => "Float",
+            DoubleShape => "Double",
+            TimestampShape => "DateTime",
+            _ => null,
+        };
+
+        if (name is null)
+        {
+            return null;
+        }
+
+        return type.IsNullableValueType ? $"Nullable{name}Unmarshaller" : $"{name}Unmarshaller";
+    }
 
     // A scalar member uses a runtime scalar unmarshaller; a blob member uses MemoryStreamUnmarshaller
     // (base64 JSON string -> MemoryStream, matching C2J - see Kinesis's RecordUnmarshaller);
@@ -68,7 +79,7 @@ public static class JsonBodyMemberUnmarshaller
     {
         var instance = member.Type.IsBlob
             ? "MemoryStreamUnmarshaller.Instance"
-            : ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller
+            : ScalarUnmarshaller(member.Type) is string scalarUnmarshaller
                 ? $"{scalarUnmarshaller}.Instance"
                 : CollectionUnmarshaller(member.Type).Instance;
         writer.WriteLine($"var unmarshaller = {instance};");
@@ -76,16 +87,21 @@ public static class JsonBodyMemberUnmarshaller
     }
 
     // The runtime unmarshaller type name and an instance expression for a scalar, structure, document,
-    // list, or map type - recursing for nested collections. Scalar leaves resolve via ScalarUnmarshaller on
-    // the element's non-nullable MarshalType (e.g. "int" → IntUnmarshaller), matching the non-sparse element
-    // type; an enum leaf is already a string here (see TypeMapper) so it uses StringUnmarshaller. Map keys
-    // are always strings (see TypeMapper.MapType), so the key unmarshaller is StringUnmarshaller. Only blob
-    // leaves are rejected in TypeMapper (a blob is body/@httpPayload-only).
+    // blob, list, or map type - recursing for nested collections. Scalar leaves resolve via ScalarUnmarshaller
+    // (non-nullable for a non-sparse element, e.g. IntUnmarshaller); an enum leaf is already a string here (see TypeMapper) so it uses StringUnmarshaller; a blob leaf
+    // uses MemoryStreamUnmarshaller. Map keys are always strings (see TypeMapper.MapType), so the key
+    // unmarshaller is StringUnmarshaller. Only @streaming blob leaves are rejected in TypeMapper.
     private static (string Type, string Instance) CollectionUnmarshaller(TypeDescriptor type)
     {
-        if (ScalarUnmarshaller(type.MarshalType) is string scalar)
+        if (ScalarUnmarshaller(type) is string scalar)
         {
             return (scalar, $"{scalar}.Instance");
+        }
+        if (type.IsBlob)
+        {
+            // A non-streaming blob element reads a base64 JSON string into a MemoryStream, exactly like a
+            // blob body member (a @streaming blob leaf is rejected in TypeMapper).
+            return ("MemoryStreamUnmarshaller", "MemoryStreamUnmarshaller.Instance");
         }
         if (type.IsDocument)
         {

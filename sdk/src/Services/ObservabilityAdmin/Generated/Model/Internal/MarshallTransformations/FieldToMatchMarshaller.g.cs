@@ -1,0 +1,83 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.ObservabilityAdmin.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// FieldToMatch Marshaller
+    /// </summary>
+    public partial class FieldToMatchMarshaller : IRequestMarshaller<FieldToMatch, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(FieldToMatch requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetMethod())
+            {
+                context.Writer.WritePropertyName("Method");
+                context.Writer.WriteStringValue(requestObject.Method);
+            }
+
+            if (requestObject.IsSetQueryString())
+            {
+                context.Writer.WritePropertyName("QueryString");
+                context.Writer.WriteStringValue(requestObject.QueryString);
+            }
+
+            if (requestObject.IsSetSingleHeader())
+            {
+                context.Writer.WritePropertyName("SingleHeader");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SingleHeaderMarshaller.Instance;
+                marshaller.Marshall(requestObject.SingleHeader, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetUriPath())
+            {
+                context.Writer.WritePropertyName("UriPath");
+                context.Writer.WriteStringValue(requestObject.UriPath);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static FieldToMatchMarshaller Instance = new FieldToMatchMarshaller();
+    }
+}

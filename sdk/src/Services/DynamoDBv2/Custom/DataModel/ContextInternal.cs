@@ -128,15 +128,17 @@ namespace Amazon.DynamoDBv2.DataModel
 
         private static PropertyStorage[] GetCounterProperties(ItemStorage storage)
         {
+            // Ignored properties are excluded at every level: [DynamoDBIgnore] means the attribute is not persisted,
+            // so it must not appear in an update expression either, where it would change server-side state.
             var counterProperties = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.IsCounter).ToArray();
+                Where(propertyStorage => propertyStorage.IsCounter && !propertyStorage.IsIgnored).ToArray();
             var flatten = storage.Config.BaseTypeStorageConfig.Properties.
-                Where(propertyStorage => propertyStorage.FlattenProperties.Any()).ToArray();
+                Where(propertyStorage => !propertyStorage.IsIgnored && propertyStorage.FlattenProperties.Any()).ToArray();
             while (flatten.Any())
             {
-                var flattenCounters = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.IsCounter)).ToArray();
+                var flattenCounters = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.IsCounter && !fp.IsIgnored)).ToArray();
                 counterProperties = counterProperties.Concat(flattenCounters).ToArray();
-                flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => fp.FlattenProperties.Any())).ToArray();
+                flatten = flatten.SelectMany(p => p.FlattenProperties.Where(fp => !fp.IsIgnored && fp.FlattenProperties.Any())).ToArray();
             }
 
             return counterProperties;
@@ -173,7 +175,8 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal static HashSet<string> GetUpdateIfNotExistsAttributeNames(ItemStorage storage)
         {
-            var baseProperties = storage.Config.BaseTypeStorageConfig.Properties;
+            // Ignored properties are excluded at every level, for the same reason as in GetCounterProperties.
+            var baseProperties = storage.Config.BaseTypeStorageConfig.Properties.Where(p => !p.IsIgnored).ToList();
             var ifNotExistsProperties = new List<PropertyStorage>();
             var stack = new Stack<PropertyStorage>(baseProperties.Where(p => p.FlattenProperties.Any()));
 
@@ -184,6 +187,8 @@ namespace Amazon.DynamoDBv2.DataModel
                 var current = stack.Pop();
                 foreach (var fp in current.FlattenProperties)
                 {
+                    if (fp.IsIgnored) continue;
+
                     if (fp.UpdateBehaviorMode == UpdateBehavior.IfNotExists)
                         ifNotExistsProperties.Add(fp);
                     if (fp.FlattenProperties.Any())
@@ -418,7 +423,11 @@ namespace Amazon.DynamoDBv2.DataModel
         private T DocumentToObject<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ItemStorage storage, DynamoDBFlatConfig flatConfig)
         {
             Type type = typeof(T);
-            return (T)DocumentToObject(type, storage, flatConfig);
+            var instance = DocumentToObject(type, storage, flatConfig);
+
+            // There is no document when the item does not exist. A reference type yields null, as it always has;
+            // a value type cannot hold null, so it yields default(T) rather than failing the cast.
+            return instance == null ? default : (T)instance;
         }
 
         private object DocumentToObject([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type objectType, ItemStorage storage, DynamoDBFlatConfig flatConfig)
@@ -440,11 +449,258 @@ namespace Amazon.DynamoDBv2.DataModel
             // If a valid derived type config was found, use it; otherwise, use the default object type
             var targetType = storageTypeConfig?.TargetType ?? objectType;
 
-            object instance = Utils.InstantiateConverter(targetType, this);
+            object instance;
+#if NET8_0_OR_GREATER
+            var resolvedConfig = storageTypeConfig ?? storage.Config.BaseTypeStorageConfig;
+            if (resolvedConfig.BindingConstructor != null)
+            {
+                instance = InstantiateWithConstructor(resolvedConfig, storage, flatConfig);
+            }
+            else if (targetType.IsValueType)
+            {
+                // Value types (e.g. a non-positional record struct) have no binding constructor and cannot use
+                // the reference-type-only InstantiateConverter path. Start from a zero-initialized value and let
+                // PopulateInstance assign its init/settable members (reflection SetValue mutates the boxed value).
+                instance = GetTypeDefaultValue(targetType);
+            }
+            else
+#endif
+            {
+                instance = Utils.InstantiateConverter(targetType, this);
+            }
+
             PopulateInstance(storage, instance, flatConfig, storageTypeConfig);
 
             return instance;
         }
+
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Constructs an instance by binding stored attribute values to the parameters of the type's
+        /// binding constructor (used for immutable types such as records). Members not bound to a
+        /// constructor parameter are subsequently set by <see cref="PopulateInstance"/>.
+        /// </summary>
+        private object InstantiateWithConstructor(StorageConfig storageConfig, ItemStorage storage, DynamoDBFlatConfig flatConfig)
+        {
+            var arguments = storageConfig.ConstructorArguments;
+            var values = new object[arguments.Length];
+            var document = storage.Document;
+
+            // Constructor arguments are deserialized here, before PopulateInstance runs, so nested casing
+            // must be seeded now too: FromDynamoDBEntry recurses into nested objects, and an undecorated
+            // nested member of a CamelCase root must resolve its camelCased attribute names (e.g. "city"),
+            // not PascalCase. Because a constructor-bound member is set here and never revisited by
+            // PopulateInstance, missing this would be unrepairable. Seed from the root type's casing and
+            // restore afterward (flatConfig is shared), mirroring PopulateInstance / PopulateItemStorage.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(storage.Config.AttributeCasing);
+
+            try
+            {
+            // Track the document for the same reason PopulateInstance does: FromDynamoDBEntry recurses into
+            // nested documents, so constructor arguments must participate in circular-reference detection too.
+            using (flatConfig.State.Track(document))
+            {
+                for (int i = 0; i < arguments.Length; i++)
+                {
+                    var argument = arguments[i];
+                    var propertyStorage = argument.Storage;
+
+                    if (propertyStorage == null)
+                    {
+                        // The parameter is only matched by an ignored member, so it never has a stored value.
+                        values[i] = GetConstructorArgumentDefault(argument);
+                    }
+                    else if (propertyStorage.ShouldFlattenChildProperties)
+                    {
+                        // A flattened member's children are stored under their own top-level attributes rather than
+                        // under this member's attribute name. Only materialize it when at least one child attribute is
+                        // present; otherwise (e.g. loading an older item saved before this flattened field existed)
+                        // honor the constructor parameter default so an optional flattened parameter stays null/default
+                        // instead of becoming a newly constructed child (which would also fail for an immutable child).
+                        if (AnyFlattenedChildPresent(document, propertyStorage))
+                        {
+                            values[i] = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
+                        }
+                        else
+                        {
+                            values[i] = GetConstructorArgumentDefault(argument);
+                        }
+                    }
+                    else if (document.TryGetValue(propertyStorage.AttributeName, out var entry) && ShouldSave(entry, true))
+                    {
+                        // Version, atomic counter, auto-generated timestamp and UpdateBehavior.IfNotExists members
+                        // are rejected as constructor arguments by StorageConfig.ResolveConstructorArguments, so no
+                        // server-managed state (such as storage.CurrentVersion) needs to be captured here.
+                        var value = FromDynamoDBEntry(propertyStorage, entry, flatConfig);
+
+                        // A stored DynamoDB NULL deserializes to null, which a non-nullable value-type parameter
+                        // cannot represent. Treat it the same as a missing attribute so the parameter's declared
+                        // default is honored, rather than letting the reflection binder silently substitute
+                        // default(T) and discard that default.
+                        values[i] = value == null && IsNonNullableValueType(argument.Parameter.ParameterType)
+                            ? GetConstructorArgumentDefault(argument)
+                            : value;
+                    }
+                    else
+                    {
+                        values[i] = GetConstructorArgumentDefault(argument);
+                    }
+                }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
+
+            return storageConfig.BindingConstructor.Invoke(values);
+        }
+
+        /// <summary>
+        /// Whether <paramref name="type"/> is a value type that cannot hold null, that is a value type which is
+        /// not <see cref="Nullable{T}"/>.
+        /// </summary>
+        private static bool IsNonNullableValueType(Type type)
+        {
+            return type.IsValueType && Nullable.GetUnderlyingType(type) == null;
+        }
+
+        /// <summary>
+        /// Returns the value to bind when the stored item has no value for a constructor parameter: the
+        /// parameter's own default when it declares one, otherwise <c>null</c>. This is what makes adding a member
+        /// to an existing type safe, since items saved before the member existed still load.
+        /// </summary>
+        /// <remarks>
+        /// <c>null</c> is correct even for a non-nullable value-type parameter. The reflection binder substitutes
+        /// <c>default(T)</c> for a null argument, which is also what <see cref="ParameterInfo.DefaultValue"/>
+        /// itself returns for a parameter declared <c>= default</c>.
+        /// </remarks>
+        private static object GetConstructorArgumentDefault(StorageConfig.ConstructorArgument argument)
+        {
+            return argument.Parameter.HasDefaultValue
+                ? argument.Parameter.DefaultValue
+                : null;
+        }
+
+        /// <summary>
+        /// Determines whether the document contains at least one attribute belonging to a flattened member,
+        /// descending through nested flattened members. Used to decide whether a flattened constructor argument
+        /// should be materialized or left at its constructor-parameter default.
+        /// </summary>
+        private static bool AnyFlattenedChildPresent(Document document, PropertyStorage propertyStorage)
+        {
+            foreach (var child in propertyStorage.FlattenProperties)
+            {
+                // Denormalize omits ignored descendants, so an ignored attribute left behind in an older item is
+                // not evidence that the flattened member exists.
+                if (child.IsIgnored) continue;
+
+                if (child.ShouldFlattenChildProperties)
+                {
+                    if (AnyFlattenedChildPresent(document, child))
+                        return true;
+                }
+                else if (document.ContainsKey(child.AttributeName))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+#endif
+
+        /// <summary>
+        /// Materializes a member marked <see cref="PropertyStorage.ShouldFlattenChildProperties"/> by creating
+        /// an instance of the member's type and populating it from the child properties that are stored at the
+        /// same (top) level as the parent.
+        /// </summary>
+        private object CreateFlattenedMember(ItemStorage storage, DynamoDBFlatConfig flatConfig, Document document, PropertyStorage propertyStorage)
+        {
+            var targetType = propertyStorage.MemberType;
+            object flattenedPropertyInstance;
+#if NET8_0_OR_GREATER
+            if (targetType.IsValueType)
+            {
+                // Value types (e.g. a mutable/non-positional record struct) cannot use the reference-type-only
+                // InstantiateConverter path, so start from a zero-initialized value; the members below are then
+                // assigned via reflection SetValue, which mutates the boxed value. (Immutable value types that
+                // require a binding constructor are rejected during configuration in MemberInfoToPropertyStorage.)
+                flattenedPropertyInstance = GetTypeDefaultValue(targetType);
+            }
+            else
+#endif
+            {
+                flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
+            }
+
+            // On save the flattened child's members (including any non-flattened complex leaf) were
+            // serialized with the child's effective casing. Seed that here so a nested Map leaf resolves its
+            // config with the same casing on load; otherwise it would search the parent's casing and miss
+            // the stored keys. Save/restore because flatConfig is shared.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(propertyStorage.FlattenedEffectiveCasing);
+            try
+            {
+            foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
+            {
+                // [DynamoDBIgnore] excludes a member when loading as well as when saving. Denormalize keeps ignored
+                // members out of AllPropertyStorage, so the top-level path already skips them; FlattenProperties is
+                // the raw list and has to be filtered here for flattened members to behave the same way.
+                if (flattenPropertyStorage.IsIgnored) continue;
+
+                if (flattenPropertyStorage.ShouldFlattenChildProperties)
+                {
+                    // A nested flattened member's own children are also stored under their leaf attribute names,
+                    // so materialize it recursively rather than looking it up by its (never-present) attribute name.
+                    object nestedInstance = CreateFlattenedMember(storage, flatConfig, document, flattenPropertyStorage);
+                    if (!TrySetValue(flattenedPropertyInstance, flattenPropertyStorage.Member, nestedInstance))
+                    {
+                        throw UnableToSetMemberException(flattenPropertyStorage.Member, flattenPropertyStorage.AttributeName);
+                    }
+                }
+                else
+                {
+                    PopulateProperty(storage, flatConfig, document, flattenPropertyStorage.AttributeName, flattenPropertyStorage, flattenedPropertyInstance);
+                }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
+
+            return flattenedPropertyInstance;
+        }
+#if NET8_0_OR_GREATER
+
+        /// <summary>
+        /// Returns the default value for <paramref name="type"/>, boxed: <c>null</c> for a reference type or a
+        /// <see cref="Nullable{T}"/>, and a zero-initialized instance for any other value type.
+        /// </summary>
+        /// <remarks>
+        /// Uses <c>RuntimeHelpers.GetUninitializedObject</c> rather than creating a one-element array, because
+        /// <see cref="Array.CreateInstance(Type, int)"/> carries <c>RequiresDynamicCodeAttribute</c>: under Native
+        /// AOT the code for an array of an arbitrary type may not have been generated, which the AOT analyzer
+        /// reports as IL3050. A zero-initialized value type has no constructor to run, so there is nothing for
+        /// GetUninitializedObject to skip and the result is exactly <c>default(T)</c> boxed.
+        /// </remarks>
+        [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
+            Justification = "GetUninitializedObject is only reached for a non-nullable value type. A value type is " +
+                "zero-initialized and has no constructor to run, so the constructor metadata the annotation asks for " +
+                "is not required; only the type structure itself is, and that is preserved because the type is " +
+                "reached from a modeled type annotated with InternalConstants.DataModelModeledType.")]
+        private static object GetTypeDefaultValue(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type)
+        {
+            // A Nullable<T> with no value boxes as null, which is what default(T?) is.
+            if (!type.IsValueType || Nullable.GetUnderlyingType(type) != null)
+                return null;
+
+            return System.Runtime.CompilerServices.RuntimeHelpers.GetUninitializedObject(type);
+        }
+#endif
 
         internal class ObjectWithItemStorage
         {
@@ -466,28 +722,31 @@ namespace Amazon.DynamoDBv2.DataModel
 
             storageConfig ??= config.BaseTypeStorageConfig;
 
+            // Mirror the serialization side: propagate the inheritable casing (see Utils.GetInheritableCasing)
+            // to nested undecorated types so their attribute names are looked up with the right casing on
+            // read. Save/restore since flatConfig is shared.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(config.AttributeCasing);
+            try
+            {
+
             using (flatConfig.State.Track(document))
             {
                 foreach (PropertyStorage propertyStorage in storageConfig.AllPropertyStorage)
                 {
                     if (propertyStorage.IsFlattened) continue;
+#if NET8_0_OR_GREATER
+                    // Members whose values were supplied through the binding constructor are already set;
+                    // do not attempt to overwrite them (they may be init-only or get-only).
+                    if (propertyStorage.IsConstructorArgument) continue;
+#endif
                     string attributeName = propertyStorage.AttributeName;
                     if (propertyStorage.ShouldFlattenChildProperties)
                     {
-                        //create instance of the flatten property
-                        var targetType = propertyStorage.MemberType;
-                        object flattenedPropertyInstance = Utils.InstantiateConverter(targetType, this);
-
-                        //populate the flatten properties
-                        foreach (var flattenPropertyStorage in propertyStorage.FlattenProperties)
-                        {
-                            string flattenedAttributeName = flattenPropertyStorage.AttributeName;
-
-                            PopulateProperty(storage, flatConfig, document, flattenedAttributeName, flattenPropertyStorage, flattenedPropertyInstance);
-                        }
+                        object flattenedPropertyInstance = CreateFlattenedMember(storage, flatConfig, document, propertyStorage);
                         if (!TrySetValue(instance, propertyStorage.Member, flattenedPropertyInstance))
                         {
-                            throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                            throw UnableToSetMemberException(propertyStorage.Member, attributeName);
                         }
                     }
                     else
@@ -495,6 +754,11 @@ namespace Amazon.DynamoDBv2.DataModel
                         PopulateProperty(storage, flatConfig, document, attributeName, propertyStorage, instance);
                     }
                 }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
         }
 
@@ -510,7 +774,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (!TrySetValue(instance, propertyStorage.Member, value))
                 {
-                    throw new InvalidOperationException("Unable to retrieve value from " + attributeName);
+                    throw UnableToSetMemberException(propertyStorage.Member, attributeName);
                 }
             }
 
@@ -547,6 +811,15 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             ItemStorageConfig config = storage.Config;
             Document document = storage.Document;
+
+            // Carry this type's casing down to nested objects that don't declare their own. The set of
+            // casings that propagate is defined once in Utils.GetInheritableCasing (CamelCase propagates;
+            // Unset/PascalCase are no-ops; the obsolete LegacyCamelCase intentionally does not cascade).
+            // Save/restore because flatConfig is shared across the recursive walk.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(config.AttributeCasing);
+            try
+            {
 
             using (flatConfig.State.Track(toStore))
             {
@@ -598,12 +871,14 @@ namespace Amazon.DynamoDBv2.DataModel
                                     document[pair.Key] = pair.Value;
                                 }
 
-                                if (propertyStorage.FlattenProperties.Any(p => p.IsVersion))
+                                // The version may be any depth down a nested [DynamoDBFlatten] chain. Every level
+                                // hoists its leaves to the top of its own serialized document, so once the property
+                                // is found the attribute is always at the top of innerDocument.
+                                var innerVersionProperty = FindFlattenedVersionProperty(propertyStorage);
+                                if (innerVersionProperty != null &&
+                                    innerDocument.TryGetValue(innerVersionProperty.AttributeName, out var innerVersionEntry))
                                 {
-                                    var innerVersionProperty =
-                                        propertyStorage.FlattenProperties.First(p => p.IsVersion);
-                                    storage.CurrentVersion =
-                                        innerDocument[innerVersionProperty.AttributeName] as Primitive;
+                                    storage.CurrentVersion = innerVersionEntry as Primitive;
                                 }
                             }
                             else
@@ -633,6 +908,11 @@ namespace Amazon.DynamoDBv2.DataModel
                         throw new InvalidOperationException(
                             "Unable to retrieve value from property " + propertyName);
                 }
+            }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
         }
 
@@ -1013,6 +1293,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         private object DeserializeFromDocument(Document document, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBFlatConfig flatConfig)
         {
+            // Symmetric to SerializeToDocument: read a Nullable<T> member as T. The DynamoDBNull case is
+            // already handled by the caller, so a document here always maps to a non-null T that assigns
+            // back to the T? member.
+            targetType = Nullable.GetUnderlyingType(targetType) ?? targetType;
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig(targetType, flatConfig, conversionOnly: true);
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = document;
@@ -1026,6 +1310,10 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, string typeDiscriminator)
         {
+            // A Nullable<T> member stores with T's shape: a non-null Nullable<T> boxes as T. Model against
+            // T so a nullable member serializes identically to a non-nullable T member (and older builds),
+            // instead of Nullable<T>'s own get-only Value wrapper.
+            type = Nullable.GetUnderlyingType(type) ?? type;
             ItemStorageConfig config = StorageConfigCache.GetConfig(type, flatConfig, conversionOnly: true);
             var itemStorage = ObjectToItemStorageHelper(value, config, flatConfig, keysOnly: false, ignoreNullValues: flatConfig.IgnoreNullValues.Value);
             var doc = itemStorage.Document;
@@ -1052,6 +1340,11 @@ namespace Amazon.DynamoDBv2.DataModel
             }
             else if (propertyInfo != null)
             {
+                // Report a read-only property as a failure rather than letting reflection throw a bare
+                // "Property set method not found" ArgumentException, so the caller can name the member.
+                if (!propertyInfo.CanWrite)
+                    return false;
+
                 propertyInfo.SetValue(instance, value, null);
                 return true;
             }
@@ -1059,6 +1352,45 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Builds the exception thrown when a loaded value cannot be assigned to the member it belongs to.
+        /// </summary>
+        private static InvalidOperationException UnableToSetMemberException(MemberInfo member, string attributeName)
+        {
+            return new InvalidOperationException(
+                $"Unable to set member {member.DeclaringType?.FullName}.{member.Name} from attribute '{attributeName}'. " +
+                "The member must be a settable property or a public field.");
+        }
+
+        /// <summary>
+        /// Finds the version property among a flattened member's descendants, at any depth and skipping ignored
+        /// ones. Returns <c>null</c> when the flattened member contains no version property that is persisted.
+        /// </summary>
+        private static PropertyStorage FindFlattenedVersionProperty(PropertyStorage propertyStorage)
+        {
+            if (propertyStorage.FlattenProperties == null)
+                return null;
+
+            foreach (var child in propertyStorage.FlattenProperties)
+            {
+                // An ignored descendant is excluded by Denormalize and never written, so it is not the version
+                // the optimistic-locking condition should be built from.
+                if (child.IsIgnored) continue;
+
+                if (child.IsVersion)
+                    return child;
+
+                if (child.FlattenProperties != null && child.FlattenProperties.Any())
+                {
+                    var nested = FindFlattenedVersionProperty(child);
+                    if (nested != null)
+                        return nested;
+                }
+            }
+
+            return null;
         }
 
         private static bool TryGetValue(object instance, MemberInfo member, out object value)
@@ -1105,23 +1437,37 @@ namespace Amazon.DynamoDBv2.DataModel
                 PropertyStorage propertyStorage =
                     storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
                 List<AttributeValue> attributeValues = new List<AttributeValue>();
-                foreach (var value in condition.Values)
+                // A scan condition targets a top-level property of the root (or a flattened complex leaf);
+                // a complex/nested condition value must be cased with the resolved property's effective
+                // casing (root casing normally, or the flattened child's casing for a flattened leaf) so the
+                // value's Map keys match what was stored. Seed and restore InheritedAttributeCasing;
+                // primitives are unaffected.
+                var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+                flatConfig.InheritedAttributeCasing = ConditionValueCasing(propertyStorage, storageConfig);
+                try
                 {
-                    var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: true);
-                    if (entry == null)
-                        throw new InvalidOperationException(
-                            string.Format(CultureInfo.InvariantCulture,
-                                "Unable to convert value corresponding to property [{0}] to DynamoDB representation",
-                                condition.PropertyName));
-
-                    var attributeConversionConfig =
-                        new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion,
-                            flatConfig.IsEmptyStringValueEnabled);
-                    AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
-                    if (nativeValue != null)
+                    foreach (var value in condition.Values)
                     {
-                        attributeValues.Add(nativeValue);
+                        var entry = ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: true);
+                        if (entry == null)
+                            throw new InvalidOperationException(
+                                string.Format(CultureInfo.InvariantCulture,
+                                    "Unable to convert value corresponding to property [{0}] to DynamoDB representation",
+                                    condition.PropertyName));
+
+                        var attributeConversionConfig =
+                            new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion,
+                                flatConfig.IsEmptyStringValueEnabled);
+                        AttributeValue nativeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
+                        if (nativeValue != null)
+                        {
+                            attributeValues.Add(nativeValue);
+                        }
                     }
+                }
+                finally
+                {
+                    flatConfig.InheritedAttributeCasing = previousInheritedCasing;
                 }
 
                 filter.AddCondition(propertyStorage.AttributeName, condition.Operator, attributeValues);
@@ -1293,7 +1639,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         indexNames.AddRange(conditionProperty.IndexNames);
                     if (conditionProperty.IsRangeKey)
                         indexNames.Add(NO_INDEX);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, valueInheritedCasing: ConditionValueCasing(conditionProperty, storageConfig));
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
@@ -1303,24 +1649,58 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     object[] conditionValues = condition.Values;
                     PropertyStorage conditionProperty = storageConfig.BaseTypeStorageConfig.GetPropertyStorage(condition.PropertyName);
-                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true);
+                    List<AttributeValue> attributeValues = ConvertConditionValues(conditionValues, conditionProperty, currentConfig, canReturnScalarInsteadOfList: true, valueInheritedCasing: ConditionValueCasing(conditionProperty, storageConfig));
                     filter.AddCondition(conditionProperty.AttributeName, condition.Operator, attributeValues);
                 }
             }
             return filter;
         }
 
-        private List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList = false)
+        private List<AttributeValue> ConvertConditionValues(object[] conditionValues, PropertyStorage conditionProperty, DynamoDBFlatConfig flatConfig, bool canReturnScalarInsteadOfList = false, CaseMode? valueInheritedCasing = null)
         {
             List<AttributeValue> attributeValues = new List<AttributeValue>();
-            foreach (var conditionValue in conditionValues)
+            // A condition property is a top-level member of the root type, so a complex/nested condition
+            // value inherits the root's casing (e.g. a CamelCase root writes the value's Map keys as
+            // street/city). Seed and restore InheritedAttributeCasing around the conversion; primitive
+            // key values are unaffected.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = valueInheritedCasing;
+            try
             {
-                DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue, flatConfig, canReturnScalarInsteadOfList);
-                var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
-                AttributeValue attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
-                attributeValues.Add(attributeValue);
+                foreach (var conditionValue in conditionValues)
+                {
+                    DynamoDBEntry entry = ToDynamoDBEntry(conditionProperty, conditionValue, flatConfig, canReturnScalarInsteadOfList);
+                    var attributeConversionConfig = new DynamoDBEntry.AttributeConversionConfig(flatConfig.Conversion, flatConfig.IsEmptyStringValueEnabled);
+                    AttributeValue attributeValue = entry.ConvertToAttributeValue(attributeConversionConfig);
+                    attributeValues.Add(attributeValue);
+                }
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
             }
             return attributeValues;
+        }
+
+        /// <summary>
+        /// Computes the <see cref="CaseMode"/> to seed for serializing a condition/comparison value's Map
+        /// keys for a <see cref="ScanCondition"/>/<see cref="QueryCondition"/> (or expression equality)
+        /// targeting <paramref name="conditionProperty"/>. This is only the *enclosing* inherited casing:
+        /// the flattened child's effective casing when the property is a flattened complex leaf, otherwise
+        /// the root's inheritable casing. The value is then serialized via <c>ToDynamoDBEntry</c> →
+        /// <c>SerializeToDocument</c> → <c>GetConfig</c>, which resolves the value's member type against
+        /// this seed and correctly honors an explicitly-declared child casing (an explicit child ignores
+        /// the seed via <c>DeclaresOwnCasing</c>) — so seeding the enclosing casing is sufficient and we do
+        /// not need to pre-resolve the member type here.
+        /// </summary>
+        private CaseMode? ConditionValueCasing(PropertyStorage conditionProperty, ItemStorageConfig storageConfig)
+        {
+            // A flattened leaf carries its owning flattened child's effective casing; prefer it so a
+            // condition value on that leaf is cased consistently with how the leaf was stored.
+            if (conditionProperty != null && conditionProperty.IsFlattened)
+                return Utils.GetInheritableCasing(conditionProperty.FlattenedEffectiveCasing);
+
+            return Utils.GetInheritableCasing(storageConfig.AttributeCasing);
         }
 
         private static string GetQueryIndexName(DynamoDBFlatConfig flatConfig, List<string> indexNames)
@@ -1553,7 +1933,7 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
-        #endregion
+#endregion
 
         #region Scan/Query
 
@@ -2373,7 +2753,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var collectionExpr = expr.Arguments[0] as MemberExpression;
                 if (collectionExpr != null)
                 {
-                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
+                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig, out _);
                 }
                 else
                 {
@@ -2401,7 +2781,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 var collectionExpr = expr.Arguments[0] as MemberExpression;
                 if (collectionExpr != null)
                 {
-                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
+                    SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig, out _);
                 }
                 else
                 {
@@ -2422,7 +2802,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (expr.Object is MemberExpression memberObj && expr.Arguments[0] is NewArrayExpression arrayExpr)
             {
-                var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig);
+                var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig, out var valueInheritedCasing);
 
                 foreach (var arg in arrayExpr.Expressions)
                 {
@@ -2430,7 +2810,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
                     node.FormatedExpression += "#c, ";
 
-                    SetExpressionValueNode(constExpr, node, propertyStorage, flatConfig);
+                    SetExpressionValueNode(constExpr, node, propertyStorage, flatConfig, valueInheritedCasing);
                 }
             }
             else
@@ -2463,10 +2843,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 if (collectionExpr != null && constExprLeft != null && constExprRight != null)
                 {
-                    var propertyStorage = SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig);
+                    var propertyStorage = SetExpressionNameNode(storageConfig, collectionExpr, node, flatConfig, out var valueInheritedCasing);
 
-                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprLeft), node, propertyStorage, flatConfig);
-                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprRight), node, propertyStorage, flatConfig);
+                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprLeft), node, propertyStorage, flatConfig, valueInheritedCasing);
+                    SetExpressionValueNode(ContextExpressionsUtils.GetConstant(constExprRight), node, propertyStorage, flatConfig, valueInheritedCasing);
                 }
             }
             else
@@ -2577,13 +2957,26 @@ namespace Amazon.DynamoDBv2.DataModel
         private void SetExpressionNodeAttributes(ItemStorageConfig storageConfig, Expression memberObj,
             object argConst, ExpressionNode node, DynamoDBFlatConfig flatConfig)
         {
-            var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig);
-            SetExpressionValueNode(argConst, node, propertyStorage, flatConfig);
+            var propertyStorage = SetExpressionNameNode(storageConfig, memberObj, node, flatConfig, out var valueInheritedCasing);
+            SetExpressionValueNode(argConst, node, propertyStorage, flatConfig, valueInheritedCasing);
         }
 
-        private void SetExpressionValueNode(object argConst, ExpressionNode node, PropertyStorage propertyStorage, DynamoDBFlatConfig flatConfig)
+        private void SetExpressionValueNode(object argConst, ExpressionNode node, PropertyStorage propertyStorage, DynamoDBFlatConfig flatConfig, CaseMode? valueInheritedCasing = null)
         {
-            DynamoDBEntry entry = ToDynamoDBEntry(propertyStorage, argConst, flatConfig, canReturnScalarInsteadOfList: true);
+            // When the comparison value is itself a nested object (e.g. e.ShippingAddress == new Address { ... }),
+            // it must serialize with the casing inherited from the property's enclosing type so the value's Map
+            // keys match what is stored. Seed and restore InheritedAttributeCasing around the conversion.
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            flatConfig.InheritedAttributeCasing = valueInheritedCasing;
+            DynamoDBEntry entry;
+            try
+            {
+                entry = ToDynamoDBEntry(propertyStorage, argConst, flatConfig, canReturnScalarInsteadOfList: true);
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
             var valuesNode = new ExpressionNode()
             {
                 FormatedExpression = ExpressionFormatConstants.Value
@@ -2592,10 +2985,27 @@ namespace Amazon.DynamoDBv2.DataModel
             node.Children.Enqueue(valuesNode);
         }
 
-        private PropertyStorage ResolveNestedPropertyStorage(StorageConfig rootConfig, DynamoDBFlatConfig flatConfig,
-            List<PathNode> path, Queue<string> namesNodeNames, out string formattedExpression)
+        private PropertyStorage ResolveNestedPropertyStorage(StorageConfig rootConfig, CaseMode rootCasing, DynamoDBFlatConfig flatConfig,
+            List<PathNode> path, Queue<string> namesNodeNames, out string formattedExpression, out CaseMode? valueInheritedCasing)
         {
             StorageConfig currentConfig = rootConfig;
+            // Track the enclosing type's casing as we descend so an undecorated nested type resolves with
+            // the inherited casing (e.g. a CamelCase root makes e.ShippingAddress.City resolve to the
+            // stored "city"). This mirrors PopulateItemStorage / PopulateInstance. flatConfig is shared,
+            // so save and restore InheritedAttributeCasing.
+            CaseMode currentCasing = rootCasing;
+            // Casing of the type that ENCLOSES the finally-resolved property. When the comparison value is
+            // itself a nested object (e.g. e.ShippingAddress == new Address { ... }), it must serialize with
+            // this enclosing type's inheritable casing so the value's Map keys match what is stored.
+            CaseMode resolvedEnclosingCasing = rootCasing;
+            // When the resolved property is a flattened complex leaf (reached by descending through a
+            // [DynamoDBFlatten] member), its value's casing is the flattened child's effective casing
+            // (stamped on the leaf), NOT the enclosing root's. Capture the resolved flattened leaf so the
+            // value-node serialization uses the same casing the leaf was stored with.
+            PropertyStorage resolvedFlattenedLeaf = null;
+            var previousInheritedCasing = flatConfig.InheritedAttributeCasing;
+            try
+            {
             PropertyStorage propertyStorage = null;
             // Format tokens are accumulated per enqueued name so the resulting expression contains
             // exactly one '#n' placeholder for every name in namesNodeNames. Flattened properties
@@ -2616,6 +3026,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 propertyStorage = currentConfig.GetPropertyStorage(pathNode.Path);
                 if (propertyStorage == null)
                     throw new InvalidOperationException($"Property '{pathNode.Path}' not found in storage config.");
+                // The property just resolved is enclosed by the current type, so its value inherits the
+                // current type's casing.
+                resolvedEnclosingCasing = currentCasing;
                 // If the property is ignored, throw an exception
                 if (propertyStorage.IsIgnored)
                 {
@@ -2625,6 +3038,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (propertyStorage.ShouldFlattenChildProperties && i < path.Count - 1)
                 {
                     propertyStorage = ResolveFlattenedPropertyStorage(propertyStorage, path, i + 1, namesNodeNames);
+                    // The resolved property is a flattened leaf; its value uses the flattened child's
+                    // effective casing (stamped on the leaf), not the enclosing root's casing.
+                    resolvedFlattenedLeaf = propertyStorage;
                     // The flattened tail resolves to a single top-level attribute name.
                     formatTokens.Add(ExpressionFormatConstants.Name);
                     // The flattened path has been fully consumed by the helper.
@@ -2666,12 +3082,29 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 elementType ??= propertyType;
 
+                // Propagate the enclosing type's inheritable casing so an undecorated nested type resolves
+                // with the inherited casing (matching the stored attribute names).
+                flatConfig.InheritedAttributeCasing = Utils.GetInheritableCasing(currentCasing);
+
                 ItemStorageConfig config = StorageConfigCache.GetConfig(elementType, flatConfig, conversionOnly: true);
                 currentConfig = config.BaseTypeStorageConfig;
+                currentCasing = config.AttributeCasing;
             }
 
             formattedExpression = string.Join(".", formatTokens);
+            // The comparison VALUE is serialized via ToDynamoDBEntry -> SerializeToDocument, which resolves
+            // the value's member type against this seed and honors an explicitly-declared child casing. So
+            // seeding the ENCLOSING casing is sufficient: the flattened child's effective casing for a
+            // flattened complex leaf, otherwise the casing of the type that encloses the resolved property.
+            valueInheritedCasing = resolvedFlattenedLeaf != null
+                ? Utils.GetInheritableCasing(resolvedFlattenedLeaf.FlattenedEffectiveCasing)
+                : Utils.GetInheritableCasing(resolvedEnclosingCasing);
             return propertyStorage;
+            }
+            finally
+            {
+                flatConfig.InheritedAttributeCasing = previousInheritedCasing;
+            }
         }
 
        private PropertyStorage ResolveFlattenedPropertyStorage(PropertyStorage flatteningProperty,
@@ -2731,7 +3164,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return null;
         }
         private PropertyStorage SetExpressionNameNode(ItemStorageConfig storageConfig, Expression memberObj,
-            ExpressionNode node, DynamoDBFlatConfig flatConfig)
+            ExpressionNode node, DynamoDBFlatConfig flatConfig, out CaseMode? valueInheritedCasing)
         {
             var path = ContextExpressionsUtils.ExtractPathNodes(memberObj);
             if (path.Count == 0)
@@ -2743,8 +3176,8 @@ namespace Amazon.DynamoDBv2.DataModel
             // The formatted expression is built by the resolver so that flattened properties,
             // which collapse multiple path segments into a single top-level attribute, emit exactly
             // one '#n' placeholder per enqueued name.
-            var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, flatConfig, path,
-                namesNode.Names, out var formattedExpression);
+            var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, storageConfig.AttributeCasing, flatConfig, path,
+                namesNode.Names, out var formattedExpression, out valueInheritedCasing);
             namesNode.FormatedExpression = formattedExpression;
             node.Children.Enqueue(namesNode);
 

@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class UpdateCrawlerRequest : AmazonGlueRequest
     {
+        private string _catalogId;
         private List<string> _classifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _configuration;
         private string _crawlerSecurityConfiguration;
@@ -50,6 +51,26 @@ namespace Amazon.Glue.Model
         private SchemaChangePolicy _schemaChangePolicy;
         private string _tablePrefix;
         private CrawlerTargets _targets;
+
+        /// <summary>
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The ID of the Data Catalog in which to store the crawler's output. If you omit this
+        /// value, the existing value on the crawler is preserved.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogId
+        {
+            get { return this._catalogId; }
+            set { this._catalogId = value; }
+        }
+
+        // Check to see if CatalogId property is set
+        internal bool IsSetCatalogId()
+        {
+            return this._catalogId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Classifiers. 

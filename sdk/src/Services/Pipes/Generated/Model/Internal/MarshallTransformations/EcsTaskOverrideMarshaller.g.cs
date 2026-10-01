@@ -1,0 +1,121 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Pipes.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Pipes.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// EcsTaskOverride Marshaller
+    /// </summary>
+    public partial class EcsTaskOverrideMarshaller : IRequestMarshaller<EcsTaskOverride, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(EcsTaskOverride requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetContainerOverrides())
+            {
+                context.Writer.WritePropertyName("ContainerOverrides");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectContainerOverridesListValue in requestObject.ContainerOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EcsContainerOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectContainerOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetCpu())
+            {
+                context.Writer.WritePropertyName("Cpu");
+                context.Writer.WriteStringValue(requestObject.Cpu);
+            }
+
+            if (requestObject.IsSetEphemeralStorage())
+            {
+                context.Writer.WritePropertyName("EphemeralStorage");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EcsEphemeralStorageMarshaller.Instance;
+                marshaller.Marshall(requestObject.EphemeralStorage, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleArn");
+                context.Writer.WriteStringValue(requestObject.ExecutionRoleArn);
+            }
+
+            if (requestObject.IsSetInferenceAcceleratorOverrides())
+            {
+                context.Writer.WritePropertyName("InferenceAcceleratorOverrides");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectInferenceAcceleratorOverridesListValue in requestObject.InferenceAcceleratorOverrides)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EcsInferenceAcceleratorOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInferenceAcceleratorOverridesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetMemory())
+            {
+                context.Writer.WritePropertyName("Memory");
+                context.Writer.WriteStringValue(requestObject.Memory);
+            }
+
+            if (requestObject.IsSetTaskRoleArn())
+            {
+                context.Writer.WritePropertyName("TaskRoleArn");
+                context.Writer.WriteStringValue(requestObject.TaskRoleArn);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static EcsTaskOverrideMarshaller Instance = new EcsTaskOverrideMarshaller();
+    }
+}

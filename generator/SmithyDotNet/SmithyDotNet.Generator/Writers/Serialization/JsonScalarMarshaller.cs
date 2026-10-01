@@ -1,3 +1,5 @@
+using SmithyDotNet.Generator.Model.Shapes;
+
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
@@ -8,45 +10,55 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public static class JsonScalarMarshaller
 {
+    // The swap names the method to call but not whether it returns a number or a string, which picks the JSON
+    // token. C2J hardcodes this one method as the number case (JsonRPCStructureMarshaller.tt).
+    private const string EpochMillisecondsMarshaller = "Amazon.Util.AWSSDKUtils.ConvertToUnixEpochMilliseconds";
+
     /// <summary>
     /// Emits the writer call(s) for <paramref name="expression"/> (a scalar value of <paramref name="type"/>).
-    /// Dispatch is on <see cref="TypeDescriptor.MarshalType"/>, whose nullability selects the shape: a
-    /// nullable value type (a standalone member, guarded by the caller's <c>IsSet</c>) unwraps with
+    /// Dispatch is on <see cref="TypeDescriptor.Target"/> and <see cref="TypeDescriptor.IsNullableValueType"/>:
+    /// a nullable value type (a standalone member, guarded by the caller's <c>IsSet</c>) unwraps with
     /// <c>.Value</c> and, for float/double, branches through <c>StringUtils.IsSpecial*Value</c> so
     /// NaN/±Infinity serialize as strings; a non-nullable value type (a non-sparse collection leaf) writes
     /// the bare value with no unwrap and no special guard, matching C2J's collection path. An enum
     /// marshals as a <c>string</c> (implicit ConstantClass to string). A timestamp uses its explicit
     /// <c>@timestampFormat</c>, else <paramref name="timestampDefault"/> (the caller's binding default);
     /// this mirrors <see cref="JsonRequestMarshallerWriter.StringConversion"/>, keeping protocol/binding
-    /// defaults out of this writer.
+    /// defaults out of this writer. A <see cref="TypeDescriptor.MarshallerOverride"/> replaces all of this with a
+    /// call to the <c>dataTypeSwap</c> marshaller.
     /// </summary>
     public static void WriteScalar(CodeWriter writer, TypeDescriptor type, string expression, string timestampDefault)
     {
-        switch (type.MarshalType)
+        if (type.MarshallerOverride is { } marshaller)
         {
-            case "string":
+            // .Value when the modeled type is a value type (as C2J does; every swappable target but string/enum is)
+            // and the swapped type is nullable, so a swap to a reference type still compiles.
+            var swappedValue = type.Target is not (StringShape or EnumShape) && type.IsNullableValueType ? $"{expression}.Value" : expression;
+            var write = string.Equals(marshaller, EpochMillisecondsMarshaller, StringComparison.OrdinalIgnoreCase) ? "WriteNumberValue" : "WriteStringValue";
+            writer.WriteLine($"context.Writer.{write}({marshaller}({swappedValue}));");
+            return;
+        }
+
+        var value = type.IsNullableValueType ? $"{expression}.Value" : expression;
+        switch (type.Target)
+        {
+            case StringShape or EnumShape:
                 writer.WriteLine($"context.Writer.WriteStringValue({expression});");
                 break;
-            case "bool":
-                writer.WriteLine($"context.Writer.WriteBooleanValue({expression});");
+            case BooleanShape:
+                writer.WriteLine($"context.Writer.WriteBooleanValue({value});");
                 break;
-            case "bool?":
-                writer.WriteLine($"context.Writer.WriteBooleanValue({expression}.Value);");
+            case IntegerShape or IntEnumShape or LongShape:
+                writer.WriteLine($"context.Writer.WriteNumberValue({value});");
                 break;
-            case "int" or "long" or "float" or "double":
-                writer.WriteLine($"context.Writer.WriteNumberValue({expression});");
+            case FloatShape or DoubleShape when type.IsNullableValueType:
+                WriteSpecialNumeric(writer, type.Target, expression);
                 break;
-            case "int?" or "long?":
-                writer.WriteLine($"context.Writer.WriteNumberValue({expression}.Value);");
+            case FloatShape or DoubleShape:
+                writer.WriteLine($"context.Writer.WriteNumberValue({value});");
                 break;
-            case "float?" or "double?":
-                WriteSpecialNumeric(writer, type.DotNetType, expression);
-                break;
-            case "DateTime":
-                WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: false);
-                break;
-            case "DateTime?":
-                WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: true);
+            case TimestampShape:
+                WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: type.IsNullableValueType);
                 break;
             default:
                 throw new GeneratorException($"'{type.DotNetType}' is not a body scalar.");
@@ -60,15 +72,20 @@ public static class JsonScalarMarshaller
     /// </summary>
     public static void WriteNonNullScalar(CodeWriter writer, TypeDescriptor type, string expression, string timestampDefault)
     {
-        switch (type.MarshalType)
+        if (!type.IsNullableValueType)
         {
-            case "bool?":
+            throw new GeneratorException($"'{type.DotNetType}' is not a sparse value-type element.");
+        }
+
+        switch (type.Target)
+        {
+            case BooleanShape:
                 writer.WriteLine($"context.Writer.WriteBooleanValue({expression}.Value);");
                 break;
-            case "int?" or "long?" or "float?" or "double?":
+            case IntegerShape or IntEnumShape or LongShape or FloatShape or DoubleShape:
                 writer.WriteLine($"context.Writer.WriteNumberValue({expression}.Value);");
                 break;
-            case "DateTime?":
+            case TimestampShape:
                 WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: true);
                 break;
             default:
@@ -76,9 +93,9 @@ public static class JsonScalarMarshaller
         }
     }
 
-    private static void WriteSpecialNumeric(CodeWriter writer, string dotNetType, string expression)
+    private static void WriteSpecialNumeric(CodeWriter writer, Shape target, string expression)
     {
-        var suffix = dotNetType == "float?" ? "Float" : "Double";
+        var suffix = target is FloatShape ? "Float" : "Double";
         writer.OpenBlock($"if (StringUtils.IsSpecial{suffix}Value({expression}.Value))", () =>
         {
             writer.WriteLine($"context.Writer.WriteStringValue(StringUtils.FromSpecial{suffix}Value({expression}.Value));");
@@ -91,6 +108,8 @@ public static class JsonScalarMarshaller
 
     // The string forms take a DateTime? (a non-nullable DateTime converts implicitly), so only the epoch
     // form differs by nullability - a nullable member unwraps with .Value, a non-nullable leaf does not.
+    // epoch-seconds is a JSON number that may carry a fraction, so it goes through the decimal
+    // conversion (millisecond precision) rather than truncating to whole seconds.
     private static void WriteTimestamp(CodeWriter writer, string format, string expression, bool nullable)
     {
         var epochValue = nullable ? $"{expression}.Value" : expression;
@@ -98,7 +117,7 @@ public static class JsonScalarMarshaller
         {
             "date-time" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs({expression}));",
             "http-date" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822({expression}));",
-            "epoch-seconds" => $"context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp({epochValue})));",
+            "epoch-seconds" => $"context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal({epochValue}));",
             _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
         });
     }

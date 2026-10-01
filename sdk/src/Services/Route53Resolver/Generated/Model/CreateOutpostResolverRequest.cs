@@ -32,6 +32,14 @@ namespace Amazon.Route53Resolver.Model
     /// <summary>
     /// Container for the parameters to the CreateOutpostResolver operation.
     /// Creates a Route 53 Resolver on an Outpost.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation applies to first-generation Outposts only. On second-generation Outposts,
+    /// Resolver is enabled by default and managed automatically by Amazon Web Services, so
+    /// you don't need to create it.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateOutpostResolverRequest : AmazonRoute53ResolverRequest
     {

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Endpoints;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 
@@ -40,8 +41,8 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            // Class doc uses the normalized ServiceName (e.g. CloudTrailData), not the sdkId.
-            writer.WriteLine($"/// Configuration for accessing Amazon {context.ServiceName} service");
+            // Class doc uses the BaseName (e.g. CloudTrailData), not the sdkId.
+            writer.WriteLine($"/// Configuration for accessing Amazon {context.BaseName} service");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {configName} : ClientConfig", () =>
             {
@@ -58,8 +59,22 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
                 WriteUserAgent(writer);
                 if (context.HasEndpointRuleSet)
                 {
+                    // clientContextParams extend the config with a settable property each, which the
+                    // endpoint resolver then reads. Gated on the rule set, like C2J: without one there
+                    // is nothing to feed.
+                    foreach (var parameter in context.ClientContextParameters)
+                    {
+                        writer.WriteLine();
+                        WriteClientContextParameter(writer, parameter);
+                    }
+
                     writer.WriteLine();
                     WriteDetermineServiceOperationEndpoint(writer);
+                }
+                else
+                {
+                    writer.WriteLine();
+                    WritePlaceholderDetermineServiceOperationEndpoint(writer);
                 }
             });
         });
@@ -139,12 +154,37 @@ public sealed class ConfigWriter(GenerationContext context, string modelFileName
         writer.WriteLine("public override string UserAgent => _userAgent;");
     }
 
+    private static void WriteClientContextParameter(CodeWriter writer, ClientContextParameter parameter)
+    {
+        writer.WriteLine("/// <summary>");
+        DocumentationFormatter.WriteCommentBlock(writer, DocumentationFormatter.Cleanup(parameter.Documentation));
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {parameter.NativeType} {parameter.Name} {{ get; set; }}");
+    }
+
+    // DetermineServiceOperationEndpoint is abstract on ClientConfig, so a service without an
+    // endpoint rule set still needs an implementation; C2J emits the same placeholder.
+    private static void WritePlaceholderDetermineServiceOperationEndpoint(CodeWriter writer)
+    {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Returns the endpoint that will be used for a particular request.");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine("""/// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>""");
+        writer.WriteLine("/// <returns>The resolved endpoint for the given request.</returns>");
+        writer.OpenBlock("public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)", () =>
+        {
+            writer.WriteLine("// If the current service doesn't have an endpoint rule set (which is the case for configs");
+            writer.WriteLine("// that are used for testing), we'll return a placeholder endpoint so that unit tests pass.");
+            writer.WriteLine("""return new Amazon.Runtime.Endpoints.Endpoint(this.ServiceURL ?? "https://example.com");""");
+        });
+    }
+
     private static void WriteDetermineServiceOperationEndpoint(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Returns the endpoint that will be used for a particular request.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine("/// <param name=\"parameters\">A Container class for parameters used for endpoint resolution.</param>");
+        writer.WriteLine("""/// <param name="parameters">A Container class for parameters used for endpoint resolution.</param>""");
         writer.WriteLine("/// <returns>The resolved endpoint for the given request.</returns>");
         writer.OpenBlock("public override Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(ServiceOperationEndpointParameters parameters)", () =>
         {

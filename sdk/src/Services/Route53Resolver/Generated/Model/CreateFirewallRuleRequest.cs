@@ -37,7 +37,8 @@ namespace Amazon.Route53Resolver.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <c>FirewallDomainListId</c> — match a customer-managed or AWS-managed domain list.
+    ///  <c>FirewallDomainListId</c> — match a customer-managed or Amazon Web Services-managed
+    /// domain list.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,7 +50,7 @@ namespace Amazon.Route53Resolver.Model
     ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
     /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
     /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
-    /// an active AWS Marketplace subscription to the named partner product.
+    /// an active Amazon Web Services Marketplace subscription to the named partner product.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -397,13 +398,13 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>FirewallAdvancedContentCategory</c> — match an AWS-managed content category (for
-        /// example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        ///  <c>FirewallAdvancedContentCategory</c> — match an Amazon Web Services-managed content
+        /// category (for example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FirewallAdvancedThreatCategory</c> — match an AWS-managed advanced threat category
-        /// (for example, <c>PHISHING</c>).
+        ///  <c>FirewallAdvancedThreatCategory</c> — match an Amazon Web Services-managed advanced
+        /// threat category (for example, <c>PHISHING</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -413,8 +414,8 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>PartnerThreatProtection</c> — match a third-party threat feed delivered through
-        /// AWS Marketplace. The selected partner must be an active subscription on the calling
-        /// account.
+        /// Amazon Web Services Marketplace. The selected partner must be an active subscription
+        /// on the calling account.
         /// </para>
         ///  </li> </ul> 
         /// <para>

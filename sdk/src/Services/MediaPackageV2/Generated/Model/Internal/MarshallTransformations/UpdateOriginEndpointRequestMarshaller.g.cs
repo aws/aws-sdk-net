@@ -1,0 +1,218 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.MediaPackageV2.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// UpdateOriginEndpoint Request Marshaller
+    /// </summary>
+    public partial class UpdateOriginEndpointRequestMarshaller : IMarshaller<IRequest, UpdateOriginEndpointRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((UpdateOriginEndpointRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(UpdateOriginEndpointRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.MediaPackageV2");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-12-25";
+            request.HttpMethod = "PUT";
+
+            if (publicRequest.IsSetETag())
+            {
+                request.Headers["x-amzn-update-if-match"] = publicRequest.ETag;
+            }
+
+            if (!publicRequest.IsSetChannelGroupName())
+            {
+                throw new AmazonMediaPackageV2Exception("Request object does not have required field ChannelGroupName set");
+            }
+            request.AddPathResource("{ChannelGroupName}", StringUtils.FromString(publicRequest.ChannelGroupName));
+
+            if (!publicRequest.IsSetChannelName())
+            {
+                throw new AmazonMediaPackageV2Exception("Request object does not have required field ChannelName set");
+            }
+            request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
+
+            if (!publicRequest.IsSetOriginEndpointName())
+            {
+                throw new AmazonMediaPackageV2Exception("Request object does not have required field OriginEndpointName set");
+            }
+            request.AddPathResource("{OriginEndpointName}", StringUtils.FromString(publicRequest.OriginEndpointName));
+
+            request.ResourcePath = "/channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetContainerType())
+            {
+                context.Writer.WritePropertyName("ContainerType");
+                context.Writer.WriteStringValue(publicRequest.ContainerType);
+            }
+            if (publicRequest.IsSetDashManifests())
+            {
+                context.Writer.WritePropertyName("DashManifests");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestDashManifestsListValue in publicRequest.DashManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateDashManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDashManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+            if (publicRequest.IsSetForceEndpointErrorConfiguration())
+            {
+                context.Writer.WritePropertyName("ForceEndpointErrorConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ForceEndpointErrorConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ForceEndpointErrorConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetHlsManifests())
+            {
+                context.Writer.WritePropertyName("HlsManifests");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestHlsManifestsListValue in publicRequest.HlsManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateHlsManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestHlsManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetLowLatencyHlsManifests())
+            {
+                context.Writer.WritePropertyName("LowLatencyHlsManifests");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestLowLatencyHlsManifestsListValue in publicRequest.LowLatencyHlsManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateLowLatencyHlsManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLowLatencyHlsManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetMssManifests())
+            {
+                context.Writer.WritePropertyName("MssManifests");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestMssManifestsListValue in publicRequest.MssManifests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CreateMssManifestConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMssManifestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetSegment())
+            {
+                context.Writer.WritePropertyName("Segment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SegmentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Segment, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetStartoverWindowSeconds())
+            {
+                context.Writer.WritePropertyName("StartoverWindowSeconds");
+                context.Writer.WriteNumberValue(publicRequest.StartoverWindowSeconds.Value);
+            }
+            if (publicRequest.IsSetStreamNameOutputMode())
+            {
+                context.Writer.WritePropertyName("StreamNameOutputMode");
+                context.Writer.WriteStringValue(publicRequest.StreamNameOutputMode);
+            }
+            if (publicRequest.IsSetUriSeparator())
+            {
+                context.Writer.WritePropertyName("UriSeparator");
+                context.Writer.WriteStringValue(publicRequest.UriSeparator);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly UpdateOriginEndpointRequestMarshaller _instance = new();
+
+        internal static UpdateOriginEndpointRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static UpdateOriginEndpointRequestMarshaller Instance => _instance;
+    }
+}

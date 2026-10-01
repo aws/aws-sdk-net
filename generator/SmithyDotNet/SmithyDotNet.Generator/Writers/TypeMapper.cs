@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -10,15 +11,24 @@ namespace SmithyDotNet.Generator.Writers;
 /// the type nested inside a collection. One definition shared by all of them instead of independent
 /// copies of the same flags.
 /// </summary>
-/// <param name="DotNetType">The .NET type name.</param>
+/// <param name="DotNetType">The .NET type name; a <c>dataTypeSwap</c> member's swapped type.</param>
+/// <param name="Target">The resolved (modeled) shape this describes, even for a swapped member. The (un)marshaller writers pattern match on it
+/// (<c>IntegerShape</c>, <c>TimestampShape</c>, ...) rather than on the .NET type name. For a collection
+/// element/value an enum has already collapsed to a <c>StringShape</c> (see <see cref="TypeMapper.CollectionElementTarget"/>).</param>
+/// <param name="IsNullableValueType">True when a value-type scalar is nullable in this position: a standalone
+/// member (the V4 convention, <c>int?</c>) or a <c>@sparse</c> collection element. False for a non-sparse
+/// element (<c>List&lt;int&gt;</c>) and for anything that is not a value-type scalar. Selects <c>.Value</c>
+/// unwrapping in the writers and <c>.HasValue</c> in <see cref="Member.IsSetExpression"/>. For a swapped
+/// member it describes the swapped type (<c>DateTime?</c> is, <c>string</c> is not).</param>
 /// <param name="IsStructure">True if this targets a structure shape.</param>
 /// <param name="IsString">True if this targets a string shape.</param>
 /// <param name="IsCollection">True if this is itself a list or map.</param>
-/// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
+/// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalsAsString"/>).</param>
 /// <param name="IsBlob">True if this targets a blob shape. A non-streaming blob maps to <c>MemoryStream</c>
 /// (supported as an <c>@httpPayload</c> body or a JSON body member — base64 string on the wire); a
 /// <c>@streaming</c> blob (<see cref="IsStreaming"/>) maps to <c>Stream</c> and is only an <c>@httpPayload</c>
-/// body. Not supported as a header, query, or collection element.</param>
+/// body. A non-streaming blob is also a valid list element / map value (base64, like a body member); a
+/// streaming blob is not. Not supported as a header or query.</param>
 /// <param name="IsStreaming">True if this targets a <c>@streaming</c> blob (maps to <c>Stream</c>, not
 /// <c>MemoryStream</c>). The request marshals identically to a non-streaming blob payload, but the response
 /// assigns the raw response stream instead of buffering it into a <c>MemoryStream</c>.</param>
@@ -26,6 +36,12 @@ namespace SmithyDotNet.Generator.Writers;
 /// blob payload then requires a seekable stream so the marshaller can set Content-Length (no chunked body).</param>
 /// <param name="IsDocument">True if this targets a document shape (maps to <c>Amazon.Runtime.Documents.Document</c>);
 /// (un)marshals wholesale through the runtime document transforms.</param>
+/// <param name="IsTimestamp">True if this targets a timestamp shape (maps to <c>DateTime</c>/<c>DateTime?</c>).
+/// A timestamp's wire form is format-dependent (see <see cref="TimestampFormat"/>), so writers branch on it
+/// rather than on the .NET type name.</param>
+/// <param name="IsEventStream">True if this targets a <c>@streaming</c> union (or structure) — an event
+/// stream. The member maps to the generated <c>EnumerableEventOutputStream</c> subclass; the response
+/// unmarshaller assigns it a new instance wrapping the raw response stream rather than reading the body.</param>
 /// <param name="ListElement">The list element's type; set only for a list, null otherwise. An enum element
 /// is described as a plain <c>string</c>, so <see cref="IsEnum"/> is never set on an element descriptor.</param>
 /// <param name="MapValue">The map value's type; set only for a map, null otherwise. A map's key always
@@ -40,8 +56,14 @@ namespace SmithyDotNet.Generator.Writers;
 /// standalone member's descriptor.</param>
 /// <param name="MediaType">The target shape's <c>@mediaType</c> value, or null. A header-bound
 /// string is base64 on the wire (C2J's "jsonvalue"); a payload sends it as Content-Type.</param>
+/// <param name="MarshallerOverride">The <c>dataTypeSwap</c> marshaller method the writers call instead of the
+/// modeled conversion, or null.</param>
+/// <param name="UnmarshallerOverride">The <c>dataTypeSwap</c> unmarshaller the writers use instead of the
+/// modeled one, or null.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
+    Shape Target,
+    bool IsNullableValueType,
     bool IsStructure,
     bool IsString,
     bool IsCollection,
@@ -50,11 +72,15 @@ public sealed record TypeDescriptor(
     bool IsStreaming = false,
     bool RequiresLength = false,
     bool IsDocument = false,
+    bool IsTimestamp = false,
+    bool IsEventStream = false,
     TypeDescriptor? ListElement = null,
     TypeDescriptor? MapValue = null,
     string? TimestampFormat = null,
     bool IsSparse = false,
-    string? MediaType = null)
+    string? MediaType = null,
+    string? MarshallerOverride = null,
+    string? UnmarshallerOverride = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -64,16 +90,8 @@ public sealed record TypeDescriptor(
     public bool IsScalar => !IsCollection && !IsStructure && !IsBlob && !IsDocument;
 
     /// <summary>
-    /// The type (un)marshaller writers dispatch on. An enum marshals as a string (ConstantClass
-    /// converts implicitly to/from <c>string</c>, matching C2J), the only case this diverges from
-    /// <see cref="DotNetType"/>. A future divergent kind gets its own flag here, not a call-site
-    /// comparison.
-    /// </summary>
-    public string MarshalType => IsEnum ? "string" : DotNetType;
-
-    /// <summary>
-    /// True when the value is a string on the wire (a real string, or an enum). Equivalent to
-    /// <c>MarshalType == "string"</c> as a named flag, not a call-site comparison.
+    /// True when the value is a string on the wire (a real string, or an enum: its ConstantClass
+    /// converts implicitly to/from <c>string</c>, matching C2J).
     /// </summary>
     public bool MarshalsAsString => IsString || IsEnum;
 }
@@ -84,26 +102,32 @@ public sealed record TypeDescriptor(
 /// <param name="PropertyName">The name of the member as it appears in generated code.</param>
 /// <param name="Type">The member's type - .NET type, structure/collection/enum-ness, and (for a list) its element's type.</param>
 /// <param name="IsRequired">True if the member is required.</param>
-/// <param name="IsNullableValueType">True if the member maps to a nullable .NET value type (e.g. <c>int?</c>, <c>DateTime?</c>); drives <c>.HasValue</c> vs <c>!= null</c> in <see cref="Member.IsSetExpression"/>.</param>
 /// <param name="IsIdempotencyToken">True if the member carries <c>@idempotencyToken</c>; the marshaller auto-fills with a GUID when unset.</param>
 /// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
+/// <param name="EmitIsSetProperties">True when the <c>emitIsSetProperties</c> customization lists this member: it gets a public <c>Is{Property}Set</c> flag backing its set-ness.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
+/// <param name="IsEventPayload">True when the member carries <c>@eventPayload</c>: it is the event message payload, unmarshalled from the raw stream rather than a header.</param>
+/// <param name="IsEventHeader">True when the member carries <c>@eventHeader</c>: it is unmarshalled from an event-message header.</param>
+/// <param name="EventStreamPublisher">Set when this is a request event-stream member: the member is emitted as a <c>Func&lt;Task&lt;I{Stream}Event&gt;&gt;</c> publisher property (keeping any modeled <c>[Obsolete]</c>/<c>[AWSProperty]</c>, but with no <c>IsSet</c>) instead of a normal property.</param>
 public sealed record Member(
     string PropertyName,
     TypeDescriptor Type,
     bool IsRequired,
-    bool IsNullableValueType,
     bool IsIdempotencyToken,
     string? AwsProperty,
     string? Obsolete,
     string Documentation,
     string ModeledName,
+    bool EmitIsSetProperties = false,
     string? JsonName = null,
-    bool HidesBaseMember = false
+    bool HidesBaseMember = false,
+    bool IsEventPayload = false,
+    bool IsEventHeader = false,
+    EventStreamPublisherInfo? EventStreamPublisher = null
 )
 {
     /// <summary>
@@ -112,6 +136,12 @@ public sealed record Member(
     /// top-level-member call sites.
     /// </summary>
     public string? TimestampFormat => Type.TimestampFormat;
+
+    /// <summary>
+    /// True if the member maps to a nullable .NET value type (<c>int?</c>, <c>DateTime?</c>, ...);
+    /// drives <c>.HasValue</c> vs <c>!= null</c> in <see cref="IsSetExpression"/>.
+    /// </summary>
+    public bool IsNullableValueType => Type.IsNullableValueType;
 
     /// <summary>
     /// Body expression for the internal <c>IsSet{Property}()</c> method. Collections honor
@@ -131,6 +161,19 @@ public sealed record Member(
 }
 
 /// <summary>
+/// A resolved enum member: the emitted constant name and the raw wire value C2J stores verbatim
+/// as the <c>ConstantClass</c> constructor argument.
+/// </summary>
+public readonly record struct EnumMember(string PropertyName, string WireValue);
+
+/// <summary>
+/// The per-stream interface a request event-stream publisher property returns, and the event classes
+/// listed in its doc comment. Carried on the request member so <see cref="MemberWriter"/> emits the
+/// publisher property surface.
+/// </summary>
+public sealed record EventStreamPublisherInfo(string InterfaceName, IReadOnlyList<string> EventClasses);
+
+/// <summary>
 /// Maps Smithy shapes to .NET type names and resolves <c>[AWSProperty]</c> attributes.
 /// Shared by all writers that emit members.
 /// </summary>
@@ -146,25 +189,28 @@ public static class TypeMapper
         foreach (var (memberName, member) in structure.Members)
         {
             var target = context.Resolve(member.Target);
-
-            // MapScalar doubles as the IsNullableValueType signal - Member-only, since TypeDescriptor
-            // has no equivalent for list/map elements.
-            var scalarType = MapScalar(target);
             var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
+
+            // Member-level hooks are keyed by the member's current (post-rename) name; CustomizationTransform
+            // has already validated the entries.
+            var swap = context.Customizations.DataTypeSwapFor(structure.Id.Name, memberName);
 
             resolved.Add(new Member(
                 PropertyName: propertyName,
-                Type: ResolveType(member, context),
+                Type: ResolveType(member, context, swap),
                 IsRequired: member.IsRequired(),
-                IsNullableValueType: scalarType is not null,
                 IsIdempotencyToken: member.IsIdempotencyToken(),
                 AwsProperty: BuildAwsProperty(member, target),
-                Obsolete: BuildObsolete(memberName, member, target),
+                Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                JsonName: member.GetJsonName(),
+                EmitIsSetProperties: context.Customizations.EmitIsSet(structure.Id.Name, memberName),
+                // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
+                JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
-                HidesBaseMember: propertyName == "Equals")
+                HidesBaseMember: propertyName == "Equals",
+                IsEventPayload: member.IsEventPayload(),
+                IsEventHeader: member.IsEventHeader())
             );
         }
 
@@ -177,9 +223,11 @@ public static class TypeMapper
     /// own <c>@timestampFormat</c> is captured, including for a timestamp nested inside a collection —
     /// <c>list.Member</c> and <c>map.Value</c> are themselves member references that can carry it. A
     /// collection element (<paramref name="isCollectionValue"/>) collapses an enum to a plain string
-    /// (see <see cref="CollectionElementTarget"/>) and maps value-type scalars non-nullable.
+    /// (see <see cref="CollectionElementTarget"/>) and maps value-type scalars non-nullable. A structure
+    /// member's <c>dataTypeSwap</c> (<paramref name="swap"/>) replaces the emitted type and conversion;
+    /// element members never have one.
     /// </summary>
-    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, bool isCollectionValue = false, bool isSparse = false)
+    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, DataTypeSwap? swap = null, bool isCollectionValue = false, bool isSparse = false)
     {
         var target = context.Resolve(member.Target);
         if (isCollectionValue)
@@ -188,12 +236,21 @@ public static class TypeMapper
             // substituted shape and the descriptor never carries an enum in element position.
             target = CollectionElementTarget(target);
         }
+
+        // A value-type scalar is nullable as a standalone member (int?) and in a @sparse collection;
+        // a non-sparse collection element/value is not (List<int>, not List<int?>).
+        var isNullableValueType = MapNonNullableScalar(target) is not null;
+        if (isCollectionValue && !isSparse)
+        {
+            isNullableValueType = false;
+        }
+
         return new TypeDescriptor(
-            // A collection element/value maps its scalars non-nullable (List<int>, not List<int?>)
-            // unless the collection is @sparse; a standalone member maps them nullable (int?).
-            DotNetType: isCollectionValue
-                ? MapCollectionValueType(member.Target, target, context, isSparse)
-                : MapType(member.Target, target, context),
+            DotNetType: swap?.Type ?? (isCollectionValue
+                ? MapCollectionValueType(target, context, isSparse)
+                : MapType(target, context)),
+            Target: target,
+            IsNullableValueType: swap is null ? isNullableValueType : swap.Type.EndsWith('?'),
             IsStructure: target is StructureShape,
             IsString: target is StringShape,
             IsCollection: IsCollection(target),
@@ -202,23 +259,22 @@ public static class TypeMapper
             IsStreaming: target is BlobShape && target.IsStreaming(),
             RequiresLength: target is BlobShape && target.RequiresLength(),
             IsDocument: target is DocumentShape,
+            IsTimestamp: target is TimestampShape,
+            // A @streaming union/structure is an event stream (UnionShape derives from StructureShape).
+            IsEventStream: target is StructureShape && target.IsStreaming(),
             ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
             TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
             IsSparse: isSparse,
-            MediaType: target.GetMediaType());
+            MediaType: target.GetMediaType(),
+            MarshallerOverride: swap?.Marshaller,
+            UnmarshallerOverride: swap?.Unmarshaller);
     }
 
     /// <summary>
     /// Returns the .NET type name for a member whose target resolves to <paramref name="target"/>.
     /// </summary>
-    /// <remarks>
-    /// <paramref name="targetId"/> is only read to name a generated class (structure or enum), so it may
-    /// disagree with <paramref name="target"/>: a collection element passes the element's own id even when
-    /// the element-target substitution replaced its shape, since an enum collapses to string and the string
-    /// path ignores the id.
-    /// </remarks>
-    public static string MapType(ShapeId targetId, Shape target, GenerationContext context)
+    public static string MapType(Shape target, GenerationContext context)
     {
         if (target is ListShape list)
         {
@@ -235,7 +291,7 @@ public static class TypeMapper
         // A union derives from StructureShape and is generated as a plain structure class.
         if (target is StructureShape)
         {
-            return context.ToDotNetName(targetId);
+            return context.ToDotNetName(target.Id);
         }
 
         if (target is EnumShape)
@@ -243,7 +299,7 @@ public static class TypeMapper
             // An enum-typed member's .NET type is the ConstantClass the ServiceEnumerationsWriter emits,
             // matching C2J. The name derivation (ToUpperFirstCharacter over the shape name) is shared with
             // that writer so the member type and the class declaration always agree.
-            return EnumTypeName(targetId, context);
+            return EnumTypeName(target.Id, context);
         }
 
         if (target is IntEnumShape)
@@ -256,11 +312,11 @@ public static class TypeMapper
         if (target is BlobShape)
         {
             // A blob maps to MemoryStream, matching C2J. Supported as an @httpPayload body (the
-            // marshaller/unmarshaller payload paths) or a JSON body member (base64 string on the
-            // wire). A blob in a header/query position maps here but fails loud in the writer; as a
-            // collection element it never gets here (RejectUnsupportedCollectionElement throws first).
-            // A @streaming blob instead maps to Stream (the caller reads/writes it without buffering);
-            // Smithy requires it to be the @httpPayload, so it never reaches a body/header/collection path.
+            // marshaller/unmarshaller payload paths), a JSON body member, or a list element / map value
+            // (all base64 string on the wire). A blob in a header/query position maps here but fails loud
+            // in the writer. A @streaming blob instead maps to Stream (the caller reads/writes it without
+            // buffering); Smithy requires it to be the @httpPayload, so it never reaches a body/header/
+            // collection path (RejectUnsupportedCollectionElement fails loud if a model puts one there).
             return target.IsStreaming() ? "Stream" : "MemoryStream";
         }
 
@@ -289,6 +345,42 @@ public static class TypeMapper
         SdkNaming.ToUpperFirstCharacter(context.ToDotNetName(shapeId));
 
     /// <summary>
+    /// Resolves every member of an <c>enum</c> shape into its emitted constant name and wire value.
+    /// The name is the customization's <c>emitPropertyName</c> for the wire value when one exists
+    /// (C2J keys enum entries by value, not member name), otherwise derived from the value. A
+    /// customization entry matching no wire value, or a member without a value, throws — C2J has
+    /// nothing to fall back to, and silently skipping either would diverge from its output.
+    /// </summary>
+    public static List<EnumMember> ResolveEnumMembers(EnumShape shape, GenerationContext context)
+    {
+        var renames = new Dictionary<string, string>();
+        if (context.Customizations.ShapeModifiers.TryGetValue(shape.Id.Name, out var modifier))
+        {
+            foreach (var (value, property) in modifier.Modify.SelectMany(entry => entry))
+            {
+                if (property.EmitPropertyName is { } name)
+                {
+                    renames[value] = name;
+                }
+            }
+        }
+
+        var members = new List<EnumMember>(shape.Members.Count);
+        foreach (var (memberName, member) in shape.Members)
+        {
+            var wireValue = member.GetEnumValue() ?? throw new GeneratorException($"Enum member '{memberName}' has no smithy.api#enumValue trait; C2J has no value to fall back to.");
+            members.Add(new EnumMember(renames.Remove(wireValue, out var custom) ? custom : SdkNaming.ToEnumMemberName(wireValue), wireValue));
+        }
+
+        if (renames.Count > 0)
+        {
+            throw new GeneratorException($"shapeModifiers['{shape.Id.Name}'] modifies enum value(s) {string.Join(", ", renames.Keys)}, which the shape does not have.");
+        }
+
+        return members;
+    }
+
+    /// <summary>
     /// The .NET type for a string or value-type scalar, or null when the shape is not a primitive.
     /// Unlike <see cref="MapScalar"/>, includes <c>string</c>.
     /// </summary>
@@ -305,13 +397,13 @@ public static class TypeMapper
     /// nullable (<c>List&lt;bool?&gt;</c>, matching C2J). Everything else maps as in member position
     /// via <see cref="MapType"/>.
     /// </summary>
-    private static string MapCollectionValueType(ShapeId id, Shape target, GenerationContext context, bool isSparse) =>
-        MapScalarElement(target, isSparse) ?? MapType(id, target, context);
+    private static string MapCollectionValueType(Shape target, GenerationContext context, bool isSparse) =>
+        MapScalarElement(target, isSparse) ?? MapType(target, context);
 
     /// <summary>
     /// The .NET type for a string or scalar in collection-element position, or null for anything else
     /// (structures, nested collections, documents). Value types are non-nullable unless the collection
-    /// is <c>@sparse</c>. Context-free so <see cref="Generation.PaginationResolver"/> (which has no
+    /// is <c>@sparse</c>. Context-free so <see cref="Generation.Paginators.PaginationResolver"/> (which has no
     /// <see cref="GenerationContext"/>) shares the property types' rule.
     /// </summary>
     public static string? MapScalarElement(Shape target, bool isSparse)
@@ -346,16 +438,7 @@ public static class TypeMapper
     /// The nullable .NET type for a primitive scalar or timestamp shape, or null when the shape is
     /// not one of the supported scalars.
     /// </summary>
-    public static string? MapScalar(Shape target) => target switch
-    {
-        BooleanShape => "bool?",
-        IntegerShape => "int?",
-        LongShape => "long?",
-        FloatShape => "float?",
-        DoubleShape => "double?",
-        TimestampShape => "DateTime?",
-        _ => null,
-    };
+    public static string? MapScalar(Shape target) => MapNonNullableScalar(target) is string name ? name + "?" : null;
 
     /// <summary>
     /// The shape a list element or map value is described as. An enum collapses to a plain string: C2J's
@@ -374,20 +457,20 @@ public static class TypeMapper
         RejectUnsupportedCollectionElement(elementTarget, collection is MapShape ? "map" : "list");
 
         // Value-type scalars are non-nullable in element position (List<int>, not List<int?>), nullable when the collection is @sparse.
-        return MapCollectionValueType(id, elementTarget, context, collection.IsSparse());
+        return MapCollectionValueType(elementTarget, context, collection.IsSparse());
     }
 
     // The writers handle string, value-type scalar (bool/int/long/float/double/timestamp), intEnum (as a
-    // plain int), structure, document, and nested-collection (list/map) collection elements. A blob is only
-    // supported as a body member or an @httpPayload body, so it can't ride the leaf paths. Fail here so a
-    // model like list<Blob> doesn't silently map the type then blow up in the writer with a confusing error.
-    // (A list/map element that is itself a list/map is fine - it recurses; only blob leaves are rejected. An
-    // enum element is already a string by the time it gets here - see ElementTarget.)
+    // plain int), structure, document, non-streaming blob (base64 string, like a blob body member), and
+    // nested-collection (list/map) collection elements. A @streaming blob maps to Stream and is valid only
+    // as an @httpPayload body (Smithy forbids it elsewhere), and StringUtils.WriteBase64StringValue takes a
+    // MemoryStream, so it can't ride the element path - fail loud rather than emit code that won't compile.
+    // (An enum element is already a string by the time it gets here - see ElementTarget.)
     private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
     {
-        if (elementTarget is BlobShape)
+        if (elementTarget is BlobShape && elementTarget.IsStreaming())
         {
-            throw new GeneratorException($"Elements of type '{elementTarget.Type}' in a {collectionKind} are not supported yet.");
+            throw new GeneratorException($"A @streaming blob element in a {collectionKind} is not supported; a streaming blob is only valid as an @httpPayload body.");
         }
     }
 
@@ -444,27 +527,19 @@ public static class TypeMapper
     }
 
     /// <summary>
-    /// Builds the <c>[Obsolete(...)]</c> attribute string for a @deprecated member, or null when the
-    /// member is not deprecated.
+    /// Builds the <c>[Obsolete(...)]</c> attribute string for a @deprecated shape (member, structure,
+    /// or operation), or null when the shape is not deprecated. Deprecation marks the shape's own
+    /// declaration only; it does not propagate onto properties targeting the shape (matches C2J).
     /// </summary>
-    /// <remarks>
-    /// A message is mandatory: <c>[Obsolete]</c> without one trips analyzer CA1041, so we throw rather
-    /// than emit a message-less attribute.
-    /// </remarks>
-    public static string? BuildObsolete(string memberName, MemberShape member, Shape target)
+    public static string? BuildObsolete(Shape shape)
     {
-        var deprecated = member.GetDeprecated() ?? target.GetDeprecated();
+        var deprecated = shape.GetDeprecated();
         if (deprecated is null)
         {
             return null;
         }
 
-        // TODO: fall back to the customization file's deprecation message (c2j's PropertyModifier.DeprecationMessage)
-        // once the customization layer is implemented.
-        var message = deprecated.Message
-            ?? throw new GeneratorException(
-                $"The 'message' property of the @deprecated trait is missing for member '{memberName}'. " +
-                "[Obsolete] requires a message (CA1041); provide one in the model or via a customization.");
+        var message = deprecated.Message ?? throw new GeneratorException("The @deprecated trait is missing its 'message' property.");
 
         return $"[Obsolete({CodeWriter.Literal(message)})]";
     }

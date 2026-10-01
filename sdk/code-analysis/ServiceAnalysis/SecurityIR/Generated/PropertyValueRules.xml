@@ -4,25 +4,25 @@
     <property>Amazon.SecurityIR.Model.BatchGetMemberAccountDetailsRequest.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CancelMembershipRequest.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CancelMembershipResponse.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CloseCaseRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CreateCaseRequest.ClientToken</property>
@@ -43,7 +43,7 @@
     <property>Amazon.SecurityIR.Model.CreateCaseResponse.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CreateCaseCommentRequest.Body</property>
@@ -54,7 +54,7 @@
     <property>Amazon.SecurityIR.Model.CreateCaseCommentRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CreateCaseCommentRequest.ClientToken</property>
@@ -65,7 +65,7 @@
     <property>Amazon.SecurityIR.Model.CreateCaseCommentResponse.CommentId</property>
     <min>6</min>
     <max>6</max>
-    <pattern>\d{6}</pattern>
+    <pattern>^\d{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CreateMembershipRequest.ClientToken</property>
@@ -81,19 +81,19 @@
     <property>Amazon.SecurityIR.Model.CreateMembershipResponse.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseResponse.CaseArn</property>
     <min>12</min>
     <max>80</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:case/[0-9]{10}</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:case/[0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseResponse.Description</property>
@@ -107,23 +107,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlRequest.AttachmentId</property>
-    <pattern>[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentDownloadUrlResponse.AttachmentPresignedUrl</property>
-    <pattern>https?://(?:www.)?[a-zA-Z0-9@:._+~#=-]{2,256}\.[a-z]{2,6}\b(?:[-a-zA-Z0-9@:%_+.~#?&amp;/=]{0,2048})</pattern>
+    <pattern>^https?://(?:www.)?[a-zA-Z0-9@:._+~#=-]{2,256}\.[a-z]{2,6}\b(?:[-a-zA-Z0-9@:%_+.~#?&amp;/=]{0,2048})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlRequest.ClientToken</property>
@@ -139,35 +139,35 @@
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlRequest.FileName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>^[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetCaseAttachmentUploadUrlResponse.AttachmentPresignedUrl</property>
-    <pattern>https?://(?:www.)?[a-zA-Z0-9@:._+~#=-]{2,256}\.[a-z]{2,6}\b(?:[-a-zA-Z0-9@:%_+.~#?&amp;/=]{0,2048})</pattern>
+    <pattern>^https?://(?:www.)?[a-zA-Z0-9@:._+~#=-]{2,256}\.[a-z]{2,6}\b(?:[-a-zA-Z0-9@:%_+.~#?&amp;/=]{0,2048})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipRequest.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipResponse.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipResponse.MembershipArn</property>
     <min>12</min>
     <max>80</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:membership/m-[a-z0-9]{10,32}</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:membership/m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipResponse.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipResponse.MembershipName</property>
@@ -178,7 +178,7 @@
     <property>Amazon.SecurityIR.Model.ListCaseEditsRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCaseEditsRequest.MaxResults</property>
@@ -187,7 +187,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCaseEditsRequest.NextToken</property>
-    <min>0</min>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
@@ -197,14 +196,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCasesRequest.NextToken</property>
-    <min>0</min>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsRequest.MaxResults</property>
@@ -213,14 +211,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsRequest.NextToken</property>
-    <min>0</min>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListInvestigationsRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListInvestigationsRequest.MaxResults</property>
@@ -229,7 +226,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListInvestigationsRequest.NextToken</property>
-    <min>0</min>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
@@ -239,20 +235,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListMembershipsRequest.NextToken</property>
-    <min>0</min>
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>12</min>
     <max>1010</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.SendFeedbackRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.SendFeedbackRequest.Comment</property>
@@ -261,25 +256,25 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.SendFeedbackRequest.ResultId</property>
-    <pattern>inv-[a-z0-9]{10,32}</pattern>
+    <pattern>^inv-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.TagResourceRequest.ResourceArn</property>
     <min>12</min>
     <max>1010</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UntagResourceRequest.ResourceArn</property>
     <min>12</min>
     <max>1010</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:(membership/m-[a-z0-9]{10,32}|case/[0-9]{10})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateCaseRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateCaseRequest.Description</property>
@@ -300,13 +295,13 @@
     <property>Amazon.SecurityIR.Model.UpdateCaseCommentRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateCaseCommentRequest.CommentId</property>
     <min>6</min>
     <max>6</max>
-    <pattern>\d{6}</pattern>
+    <pattern>^\d{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateCaseCommentResponse.Body</property>
@@ -317,19 +312,19 @@
     <property>Amazon.SecurityIR.Model.UpdateCaseCommentResponse.CommentId</property>
     <min>6</min>
     <max>6</max>
-    <pattern>\d{6}</pattern>
+    <pattern>^\d{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateCaseStatusRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateMembershipRequest.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateMembershipRequest.MembershipName</property>
@@ -340,17 +335,17 @@
     <property>Amazon.SecurityIR.Model.UpdateResolverTypeRequest.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.UpdateResolverTypeResponse.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.AttachmentId</property>
-    <pattern>[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}</pattern>
+    <pattern>^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.Creator</property>
@@ -360,7 +355,7 @@
     <property>Amazon.SecurityIR.Model.CaseAttachmentAttributes.FileName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9._-]+</pattern>
+    <pattern>^[a-zA-Z0-9._-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.CaseEditItem.Action</property>
@@ -386,19 +381,19 @@
     <property>Amazon.SecurityIR.Model.GetMembershipAccountDetailError.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.GetMembershipAccountDetailItem.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.IncidentResponder.Email</property>
     <min>6</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*</pattern>
+    <pattern>^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.IncidentResponder.JobTitle</property>
@@ -417,7 +412,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.InvestigationAction.InvestigationId</property>
-    <pattern>inv-[a-z0-9]{10,32}</pattern>
+    <pattern>^inv-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.InvestigationAction.Title</property>
@@ -433,13 +428,13 @@
     <property>Amazon.SecurityIR.Model.ListCasesItem.CaseArn</property>
     <min>12</min>
     <max>80</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:case/[0-9]{10}</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:case/[0-9]{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCasesItem.CaseId</property>
     <min>10</min>
     <max>32</max>
-    <pattern>\d{10,32}.*</pattern>
+    <pattern>^\d{10,32}.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCasesItem.Title</property>
@@ -455,7 +450,7 @@
     <property>Amazon.SecurityIR.Model.ListCommentsItem.CommentId</property>
     <min>6</min>
     <max>6</max>
-    <pattern>\d{6}</pattern>
+    <pattern>^\d{6}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListCommentsItem.Creator</property>
@@ -469,23 +464,23 @@
     <property>Amazon.SecurityIR.Model.ListMembershipItem.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListMembershipItem.MembershipArn</property>
     <min>12</min>
     <max>80</max>
-    <pattern>arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:membership/m-[a-z0-9]{10,32}</pattern>
+    <pattern>^arn:aws:security-ir:\w+?-\w+?-\d+:[0-9]{12}:membership/m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ListMembershipItem.MembershipId</property>
     <min>12</min>
     <max>34</max>
-    <pattern>m-[a-z0-9]{10,32}</pattern>
+    <pattern>^m-[a-z0-9]{10,32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ThreatActorIp.IpAddress</property>
-    <pattern>(?:(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))|(?:(?:[A-F0-9]{1,4}:){7}[A-F0-9]{1,4})|(?:(?:[A-F0-9]{1,4}:){6}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))</pattern>
+    <pattern>^(?:(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))|(?:(?:[A-F0-9]{1,4}:){7}[A-F0-9]{1,4})|(?:(?:[A-F0-9]{1,4}:){6}(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.ThreatActorIp.UserAgent</property>
@@ -496,7 +491,7 @@
     <property>Amazon.SecurityIR.Model.Watcher.Email</property>
     <min>6</min>
     <max>254</max>
-    <pattern>[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*</pattern>
+    <pattern>^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityIR.Model.Watcher.JobTitle</property>

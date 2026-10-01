@@ -1,0 +1,136 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.AppSync.Model
+{
+    /// <summary>
+    /// Describes a configuration for a custom domain.
+    /// </summary>
+    public partial class DomainNameConfig
+    {
+        /// <summary>
+        /// Gets and sets the property AppsyncDomainName. 
+        /// <para>
+        /// The domain name that AppSync provides.
+        /// </para>
+        /// </summary>
+        public string AppsyncDomainName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AppsyncDomainName property is set.
+        /// </summary>
+        internal bool IsSetAppsyncDomainName() => this.AppsyncDomainName != null;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the certificate. This can be an Certificate Manager
+        /// (ACM) certificate or an Identity and Access Management (IAM) server certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 2048)]
+        public string CertificateArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CertificateArn property is set.
+        /// </summary>
+        internal bool IsSetCertificateArn() => this.CertificateArn != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the <c>DomainName</c> configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 255)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property DomainName. 
+        /// <para>
+        /// The domain name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 253)]
+        public string DomainName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainName property is set.
+        /// </summary>
+        internal bool IsSetDomainName() => this.DomainName != null;
+
+        /// <summary>
+        /// Gets and sets the property DomainNameArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the domain name.
+        /// </para>
+        /// </summary>
+        public string DomainNameArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainNameArn property is set.
+        /// </summary>
+        internal bool IsSetDomainNameArn() => this.DomainNameArn != null;
+
+        /// <summary>
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// The ID of your Amazon Route 53 hosted zone.
+        /// </para>
+        /// </summary>
+        public string HostedZoneId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HostedZoneId property is set.
+        /// </summary>
+        internal bool IsSetHostedZoneId() => this.HostedZoneId != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

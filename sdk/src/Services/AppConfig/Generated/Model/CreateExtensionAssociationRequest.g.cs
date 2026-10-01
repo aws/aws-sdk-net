@@ -1,0 +1,133 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.AppConfig.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateExtensionAssociation operation. When you
+    /// create an extension or configure an Amazon Web Services authored extension, you associate
+    /// the extension with an AppConfig application, environment, or configuration profile.
+    /// For example, you can choose to run the <c>AppConfig deployment events to Amazon SNS</c>
+    /// Amazon Web Services authored extension and receive notifications on an Amazon SNS
+    /// topic anytime a configuration deployment is started for a specific application. Defining
+    /// which extension to associate with an AppConfig resource is called an <i>extension
+    /// association</i>. An extension association is a specified relationship between an extension
+    /// and an AppConfig resource, such as an application or a configuration profile. For
+    /// more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
+    /// </summary>
+    public partial class CreateExtensionAssociationRequest : AmazonAppConfigRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ExtensionIdentifier. 
+        /// <para>
+        /// The name, the ID, or the Amazon Resource Name (ARN) of the extension.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string ExtensionIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExtensionIdentifier property is set.
+        /// </summary>
+        internal bool IsSetExtensionIdentifier() => this.ExtensionIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property ExtensionVersionNumber. 
+        /// <para>
+        /// The version number of the extension. If not specified, AppConfig uses the maximum
+        /// version of the extension.
+        /// </para>
+        /// </summary>
+        public int? ExtensionVersionNumber { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExtensionVersionNumber property is set.
+        /// </summary>
+        internal bool IsSetExtensionVersionNumber() => this.ExtensionVersionNumber.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The parameter names and values defined in the extensions. Extension parameters marked
+        /// <c>Required</c> must be entered for this field.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 10)]
+        public Dictionary<string, string> Parameters { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Parameters property is set.
+        /// </summary>
+        internal bool IsSetParameters() => this.Parameters != null && (this.Parameters.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ResourceIdentifier. 
+        /// <para>
+        /// The ARN of an application, configuration profile, or environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string ResourceIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceIdentifier property is set.
+        /// </summary>
+        internal bool IsSetResourceIdentifier() => this.ResourceIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Adds one or more tags for the specified extension association. Tags are metadata that
+        /// help you categorize resources in different ways, for example, by purpose, owner, or
+        /// environment. Each tag consists of a key and an optional value, both of which you define.
+        /// 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -78,7 +78,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetAfterIssuedTime())
             {
                 context.Writer.WritePropertyName("afterIssuedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.AfterIssuedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.AfterIssuedTime.Value));
             }
 
             if(publicRequest.IsSetAgreementId())
@@ -90,7 +90,7 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetBeforeIssuedTime())
             {
                 context.Writer.WritePropertyName("beforeIssuedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.BeforeIssuedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.BeforeIssuedTime.Value));
             }
 
             if(publicRequest.IsSetGroupBy())

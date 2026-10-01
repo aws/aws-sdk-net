@@ -52,7 +52,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SystemsManagerAgent. 
         /// <para>
-        /// Contains settings for the Systems Manager agent on your build instance.
+        /// The Systems Manager agent settings for your build instance. This setting applies to
+        /// Linux and macOS build instances only. Requests that set it for a recipe with a Windows
+        /// base image are rejected.
         /// </para>
         /// </summary>
         public SystemsManagerAgent SystemsManagerAgent
@@ -83,7 +85,7 @@ namespace Amazon.Imagebuilder.Model
         ///  <note> 
         /// <para>
         /// The user data is always base 64 encoded. For example, the following commands are encoded
-        /// as <c>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhci$</c>:
+        /// as <c>IyEvYmluL2Jhc2gKbWtkaXIgLXAgL3Zhci9iYi8KdG91Y2ggL3Zhcg==</c>:
         /// </para>
         ///  
         /// <para>

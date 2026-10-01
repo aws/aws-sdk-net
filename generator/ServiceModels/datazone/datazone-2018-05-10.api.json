@@ -4816,6 +4816,10 @@
         "attributes":{"shape":"BatchPutAttributeItems"}
       }
     },
+    "BlueprintCategory":{
+      "type":"string",
+      "enum":["TOOLING"]
+    },
     "Boolean":{
       "type":"boolean",
       "box":true
@@ -5915,7 +5919,8 @@
         "name":{"shape":"EnvironmentBlueprintName"},
         "description":{"shape":"Description"},
         "provisioningProperties":{"shape":"ProvisioningProperties"},
-        "userParameters":{"shape":"CustomParameterList"}
+        "userParameters":{"shape":"CustomParameterList"},
+        "blueprintCategory":{"shape":"BlueprintCategory"}
       }
     },
     "CreateEnvironmentBlueprintOutput":{
@@ -5935,6 +5940,7 @@
         "deploymentProperties":{"shape":"DeploymentProperties"},
         "userParameters":{"shape":"CustomParameterList"},
         "glossaryTerms":{"shape":"GlossaryTerms"},
+        "blueprintCategory":{"shape":"BlueprintCategory"},
         "createdAt":{"shape":"SyntheticTimestamp_date_time"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
       }
@@ -6273,6 +6279,7 @@
         "owningProjectIdentifier":{"shape":"ProjectId"},
         "name":{"shape":"NotebookName"},
         "description":{"shape":"Description"},
+        "type":{"shape":"NotebookType"},
         "metadata":{"shape":"Metadata"},
         "parameters":{"shape":"Parameters"},
         "clientToken":{
@@ -6298,6 +6305,7 @@
         "domainId":{"shape":"DomainId"},
         "cellOrder":{"shape":"CellOrder"},
         "status":{"shape":"NotebookStatus"},
+        "type":{"shape":"NotebookType"},
         "description":{"shape":"Description"},
         "createdAt":{"shape":"CreatedAt"},
         "createdBy":{"shape":"CreatedBy"},
@@ -8356,7 +8364,8 @@
         "provider":{"shape":"String"},
         "provisioningProperties":{"shape":"ProvisioningProperties"},
         "createdAt":{"shape":"SyntheticTimestamp_date_time"},
-        "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
+        "updatedAt":{"shape":"SyntheticTimestamp_date_time"},
+        "blueprintCategory":{"shape":"BlueprintCategory"}
       }
     },
     "EnvironmentConfig":{
@@ -9501,6 +9510,7 @@
         "deploymentProperties":{"shape":"DeploymentProperties"},
         "userParameters":{"shape":"CustomParameterList"},
         "glossaryTerms":{"shape":"GlossaryTerms"},
+        "blueprintCategory":{"shape":"BlueprintCategory"},
         "createdAt":{"shape":"SyntheticTimestamp_date_time"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
       }
@@ -10127,6 +10137,7 @@
         "domainId":{"shape":"DomainId"},
         "cellOrder":{"shape":"CellOrder"},
         "status":{"shape":"NotebookStatus"},
+        "type":{"shape":"NotebookType"},
         "description":{"shape":"Description"},
         "createdAt":{"shape":"CreatedAt"},
         "createdBy":{"shape":"CreatedBy"},
@@ -10186,6 +10197,7 @@
         "timeoutConfiguration":{"shape":"TimeoutConfig"},
         "environmentConfiguration":{"shape":"EnvironmentConfig"},
         "storageConfiguration":{"shape":"StorageConfig"},
+        "notificationConfiguration":{"shape":"NotificationConfig"},
         "triggerSource":{"shape":"TriggerSource"},
         "error":{"shape":"NotebookRunError"},
         "createdAt":{"shape":"CreatedAt"},
@@ -11275,7 +11287,8 @@
     "IamPropertiesInput":{
       "type":"structure",
       "members":{
-        "glueLineageSyncEnabled":{"shape":"Boolean"}
+        "glueLineageSyncEnabled":{"shape":"Boolean"},
+        "roleArn":{"shape":"RoleArn"}
       }
     },
     "IamPropertiesOutput":{
@@ -12756,6 +12769,11 @@
           "location":"querystring",
           "locationName":"status"
         },
+        "type":{
+          "shape":"NotebookType",
+          "location":"querystring",
+          "locationName":"type"
+        },
         "nextToken":{
           "shape":"PaginationToken",
           "location":"querystring",
@@ -14020,6 +14038,7 @@
         "owningProjectId":{"shape":"ProjectId"},
         "domainId":{"shape":"DomainId"},
         "status":{"shape":"NotebookStatus"},
+        "type":{"shape":"NotebookType"},
         "description":{"shape":"Description"},
         "createdAt":{"shape":"CreatedAt"},
         "createdBy":{"shape":"CreatedBy"},
@@ -14030,6 +14049,20 @@
     "NotebookSummaryList":{
       "type":"list",
       "member":{"shape":"NotebookSummary"}
+    },
+    "NotebookType":{
+      "type":"string",
+      "enum":[
+        "DATA",
+        "SQL"
+      ]
+    },
+    "NotificationConfig":{
+      "type":"structure",
+      "required":["notifyOn"],
+      "members":{
+        "notifyOn":{"shape":"NotifyOnStates"}
+      }
     },
     "NotificationOutput":{
       "type":"structure",
@@ -14098,6 +14131,24 @@
     "NotificationsList":{
       "type":"list",
       "member":{"shape":"NotificationOutput"}
+    },
+    "NotifyOnState":{
+      "type":"string",
+      "enum":[
+        "SUCCEEDED",
+        "FAILED",
+        "STOPPED",
+        "QUEUED",
+        "STARTING",
+        "RUNNING",
+        "STOPPING"
+      ]
+    },
+    "NotifyOnStates":{
+      "type":"list",
+      "member":{"shape":"NotifyOnState"},
+      "max":7,
+      "min":0
     },
     "OAuth2ClientApplication":{
       "type":"structure",
@@ -16540,6 +16591,7 @@
         "computeConfiguration":{"shape":"ComputeConfig"},
         "networkConfiguration":{"shape":"NetworkConfig"},
         "timeoutConfiguration":{"shape":"TimeoutConfig"},
+        "notificationConfiguration":{"shape":"NotificationConfig"},
         "triggerSource":{"shape":"TriggerSource"},
         "metadata":{"shape":"Metadata"},
         "parameters":{"shape":"Parameters"},
@@ -16573,6 +16625,7 @@
         "timeoutConfiguration":{"shape":"TimeoutConfig"},
         "environmentConfiguration":{"shape":"EnvironmentConfig"},
         "storageConfiguration":{"shape":"StorageConfig"},
+        "notificationConfiguration":{"shape":"NotificationConfig"},
         "triggerSource":{"shape":"TriggerSource"},
         "error":{"shape":"NotebookRunError"},
         "createdAt":{"shape":"CreatedAt"},
@@ -17844,7 +17897,8 @@
         },
         "description":{"shape":"String"},
         "provisioningProperties":{"shape":"ProvisioningProperties"},
-        "userParameters":{"shape":"CustomParameterList"}
+        "userParameters":{"shape":"CustomParameterList"},
+        "blueprintCategory":{"shape":"BlueprintCategory"}
       }
     },
     "UpdateEnvironmentBlueprintOutput":{
@@ -17864,6 +17918,7 @@
         "deploymentProperties":{"shape":"DeploymentProperties"},
         "userParameters":{"shape":"CustomParameterList"},
         "glossaryTerms":{"shape":"GlossaryTerms"},
+        "blueprintCategory":{"shape":"BlueprintCategory"},
         "createdAt":{"shape":"SyntheticTimestamp_date_time"},
         "updatedAt":{"shape":"SyntheticTimestamp_date_time"}
       }
@@ -18119,6 +18174,7 @@
         "status":{"shape":"NotebookStatus"},
         "name":{"shape":"NotebookName"},
         "cellOrder":{"shape":"CellOrder"},
+        "type":{"shape":"NotebookType"},
         "metadata":{"shape":"Metadata"},
         "parameters":{"shape":"Parameters"},
         "environmentConfiguration":{"shape":"EnvironmentConfig"},
@@ -18145,6 +18201,7 @@
         "domainId":{"shape":"DomainId"},
         "cellOrder":{"shape":"CellOrder"},
         "status":{"shape":"NotebookStatus"},
+        "type":{"shape":"NotebookType"},
         "description":{"shape":"Description"},
         "createdAt":{"shape":"CreatedAt"},
         "createdBy":{"shape":"CreatedBy"},

@@ -44,6 +44,12 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
+    /// To receive connection information directly in the response, set <c>ConnectionTypes</c>
+    /// on the request. To initiate real-time message streaming when the chat is created,
+    /// set <c>ChatStreamingConfiguration</c> on the request. Both parameters are optional.
+    /// </para>
+    ///  
+    /// <para>
     /// A 429 error occurs in the following situations:
     /// </para>
     ///  <ul> <li> 
@@ -82,7 +88,9 @@ namespace Amazon.Connect.Model
     {
         private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _chatDurationInMinutes;
+        private ChatStreamingConfiguration _chatStreamingConfiguration;
         private string _clientToken;
+        private List<string> _connectionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _contactFlowId;
         private string _customerId;
         private List<string> _disconnectOnCustomerExit = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -147,6 +155,36 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ChatStreamingConfiguration. 
+        /// <para>
+        /// The streaming configuration, such as the Amazon SNS streaming endpoint. Use it to
+        /// initiate real-time message streaming when the chat is created. This parameter is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting this parameter returns a <c>StreamingId</c> in the response, and you do not
+        /// need to call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter starts message streaming only. The response does not include connection
+        /// information, and setting this parameter does not remove the need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ChatStreamingConfiguration ChatStreamingConfiguration
+        {
+            get { return this._chatStreamingConfiguration; }
+            set { this._chatStreamingConfiguration = value; }
+        }
+
+        // Check to see if ChatStreamingConfiguration property is set
+        internal bool IsSetChatStreamingConfiguration()
+        {
+            return this._chatStreamingConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
@@ -166,6 +204,66 @@ namespace Amazon.Connect.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionTypes. 
+        /// <para>
+        /// The types of connection information to return in the response. This parameter is optional.
+        /// </para>
+        ///  
+        /// <para>
+        /// To receive connection information, specify one or both of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CONNECTION_CREDENTIALS</c>: Returns a connection token.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>WEBSOCKET</c>: Returns a websocket URL.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <c>WEBSOCKET</c> and <c>CONNECTION_CREDENTIALS</c> are the values this operation
+        /// acts on. No other value returns connection information.
+        /// </para>
+        ///  
+        /// <para>
+        /// Request <c>WEBSOCKET</c> to get a URL the participant connects to directly. You do
+        /// not need to call <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// for it. Request <c>CONNECTION_CREDENTIALS</c> on its own and the response returns
+        /// a connection token but no websocket URL.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the response has no connection information.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you start a new chat contact and the information you request cannot be returned,
+        /// StartChatContact returns an error rather than a response that omits it. When you retry
+        /// a request with the same <c>ClientToken</c>, the response repeats the original contact
+        /// and can omit a websocket URL if the chat has already ended.
+        /// </para>
+        ///  </note>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> ConnectionTypes
+        {
+            get { return this._connectionTypes; }
+            set { this._connectionTypes = value; }
+        }
+
+        // Check to see if ConnectionTypes property is set
+        internal bool IsSetConnectionTypes()
+        {
+            return this._connectionTypes != null && (this._connectionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

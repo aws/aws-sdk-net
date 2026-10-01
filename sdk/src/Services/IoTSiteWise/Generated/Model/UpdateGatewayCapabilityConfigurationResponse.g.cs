@@ -1,0 +1,93 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.IoTSiteWise.Model
+{
+    /// <summary>
+    /// This is the response object from the UpdateGatewayCapabilityConfiguration operation.
+    /// </summary>
+    public partial class UpdateGatewayCapabilityConfigurationResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property CapabilityNamespace. 
+        /// <para>
+        /// The namespace of the gateway capability.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 512)]
+        public string CapabilityNamespace { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CapabilityNamespace property is set.
+        /// </summary>
+        internal bool IsSetCapabilityNamespace() => this.CapabilityNamespace != null;
+
+        /// <summary>
+        /// Gets and sets the property CapabilitySyncStatus. 
+        /// <para>
+        /// The synchronization status of the gateway capability configuration. The sync status
+        /// can be one of the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IN_SYNC</c> - The gateway is running with the latest configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OUT_OF_SYNC</c> - The gateway hasn't received the latest configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SYNC_FAILED</c> - The gateway rejected the latest configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>UNKNOWN</c> - The gateway hasn't reported its sync status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_APPLICABLE</c> - The gateway doesn't support this capability. This is most
+        /// common when integrating partner data sources, because the data integration is handled
+        /// externally by the partner.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// After you update a capability configuration, its sync status is <c>OUT_OF_SYNC</c>
+        /// until the gateway receives and applies or rejects the updated configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public CapabilitySyncStatus CapabilitySyncStatus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CapabilitySyncStatus property is set.
+        /// </summary>
+        internal bool IsSetCapabilitySyncStatus() => this.CapabilitySyncStatus != null;
+    }
+}

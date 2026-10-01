@@ -353,7 +353,7 @@ namespace Amazon.FSx.Model
         /// You pay for additional throughput capacity that you provision.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=100000)]
+        [AWSProperty(Required=true, Min=8, Max=2147483647)]
         public int? ThroughputCapacity
         {
             get { return this._throughputCapacity; }

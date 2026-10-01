@@ -32,7 +32,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateSubscriberRequest.SubscriberName</property>
-    <min>0</min>
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
@@ -76,7 +75,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.GetDataLakeSourcesRequest.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -87,7 +85,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.GetDataLakeSourcesResponse.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -101,12 +98,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsRequest.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsResponse.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -116,12 +111,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListLogSourcesRequest.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListLogSourcesResponse.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -131,12 +124,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListSubscribersRequest.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListSubscribersResponse.NextToken</property>
-    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
@@ -187,7 +178,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.SubscriberName</property>
-    <min>0</min>
     <max>64</max>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>

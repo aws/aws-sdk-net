@@ -31,9 +31,22 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStreamProcessor operation.
+    /// <important> 
+    /// <para>
+    /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+    /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+    /// feature availability changes</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+    /// 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Creates an Amazon Rekognition stream processor that you can use to detect and recognize
     /// faces or to detect labels in a streaming video.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams.

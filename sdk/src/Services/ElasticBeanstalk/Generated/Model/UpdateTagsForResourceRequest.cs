@@ -31,8 +31,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTagsForResource operation.
-    /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
-    /// be passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
+    /// Update the list of tags applied to an Elastic Beanstalk resource. Two lists can be
+    /// passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
     /// 
     ///  
     /// <para>
@@ -42,8 +42,8 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </para>
     ///  
     /// <para>
-    /// If you create a custom IAM user policy to control permission to this operation, specify
-    /// one of the following two virtual actions (or both) instead of the API operation name:
+    /// If you create a custom policy to control permission to this operation, specify one
+    /// of the following two virtual actions (or both) instead of the API operation name:
     /// </para>
     ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
     /// <para>

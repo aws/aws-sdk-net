@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _lastUpdatedAt;
         private string _name;
         private string _paymentConnectorId;
+        private PaymentConnectorProvisionMode _provisionMode;
         private PaymentConnectorStatus _status;
         private PaymentConnectorType _type;
 
@@ -95,6 +96,36 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPaymentConnectorId()
         {
             return this._paymentConnectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionMode. 
+        /// <para>
+        /// Specifies how the payment connector was provisioned. Payment connectors that were
+        /// created before this field was available return <c>MANUAL</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MANUAL</c> - You provided the credential provider configurations, so you own the
+        /// credentials.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>QUICK_CREATE</c> - AgentCore provisioned the credential provider for you, so the
+        /// credentials are service-managed and you can rotate them with <c>RotatePaymentConnectorCredentials</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PaymentConnectorProvisionMode ProvisionMode
+        {
+            get { return this._provisionMode; }
+            set { this._provisionMode = value; }
+        }
+
+        // Check to see if ProvisionMode property is set
+        internal bool IsSetProvisionMode()
+        {
+            return this._provisionMode != null;
         }
 
         /// <summary>

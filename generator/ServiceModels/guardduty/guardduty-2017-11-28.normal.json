@@ -2571,6 +2571,33 @@
       "min":1,
       "pattern":"(([1-9][0-9]{0,7})|(DRAFT))"
     },
+    "BedrockGuardrailResource":{
+      "type":"structure",
+      "members":{
+        "Version":{
+          "shape":"BedrockGuardrailResourceVersionString",
+          "documentation":"<p>The version of the Amazon Bedrock guardrail. Valid values are a numeric version, <code>DRAFT</code>, or <code>ENFORCED</code>.</p>",
+          "locationName":"version"
+        },
+        "GuardrailAction":{
+          "shape":"GuardrailAction",
+          "documentation":"<p>Indicates whether the guardrail intervened during the model invocation.</p>",
+          "locationName":"guardrailAction"
+        },
+        "GuardrailSource":{
+          "shape":"GuardrailSource",
+          "documentation":"<p>Indicates whether the guardrail was applied on the input or output of the model invocation.</p>",
+          "locationName":"guardrailSource"
+        }
+      },
+      "documentation":"<p>Contains details about an Amazon Bedrock guardrail evaluated during a model invocation.</p>"
+    },
+    "BedrockGuardrailResourceVersionString":{
+      "type":"string",
+      "max":8,
+      "min":1,
+      "pattern":"(([1-9][0-9]{0,7})|(DRAFT)|(ENFORCED))"
+    },
     "BedrockGuardrailVersionString":{
       "type":"string",
       "max":8,
@@ -4997,6 +5024,11 @@
           "shape":"Timestamp",
           "documentation":"<p>The timestamp at which the additional configuration was last updated. This is in UTC format.</p>",
           "locationName":"updatedAt"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "documentation":"<p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>",
+          "locationName":"managedBy"
         }
       },
       "documentation":"<p>Information about the additional configuration.</p>"
@@ -5066,6 +5098,11 @@
           "shape":"DetectorAdditionalConfigurationResults",
           "documentation":"<p>Additional configuration for a resource.</p>",
           "locationName":"additionalConfiguration"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "documentation":"<p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>",
+          "locationName":"managedBy"
         }
       },
       "documentation":"<p>Contains information about a GuardDuty feature.</p> <p>Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (<code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a href=\"https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html\">Runtime Monitoring</a>.</p>"
@@ -6065,7 +6102,17 @@
         "CLOUDFORMATION_STACK",
         "EC2_LAUNCH_TEMPLATE",
         "EC2_VPC",
-        "EC2_IMAGE"
+        "EC2_IMAGE",
+        "BEDROCK_CUSTOM_MODEL",
+        "BEDROCK_IMPORTED_MODEL",
+        "BEDROCK_PROVISIONED_MODEL",
+        "BEDROCK_CUSTOM_MODEL_DEPLOYMENT",
+        "BEDROCK_INFERENCE_PROFILE",
+        "BEDROCK_APPLICATION_INFERENCE_PROFILE",
+        "BEDROCK_PROMPT",
+        "BEDROCK_PROMPT_ROUTER",
+        "BEDROCK_GUARDRAIL",
+        "SAGEMAKER_ENDPOINT"
       ]
     },
     "FindingStatisticType":{
@@ -9600,6 +9647,10 @@
       "type":"list",
       "member":{"shape":"MalwareScan"}
     },
+    "ManagedBy":{
+      "type":"string",
+      "enum":["GUARDDUTY_POLICY"]
+    },
     "ManagementType":{
       "type":"string",
       "enum":[
@@ -9747,6 +9798,11 @@
           "shape":"Timestamp",
           "documentation":"<p>The timestamp at which the additional configuration was set for the member account. This is in UTC format.</p>",
           "locationName":"updatedAt"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "documentation":"<p>Indicates what manages the additional configuration. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the additional configuration.</p>",
+          "locationName":"managedBy"
         }
       },
       "documentation":"<p>Information about the additional configuration for the member account.</p>"
@@ -9835,6 +9891,11 @@
           "shape":"MemberAdditionalConfigurationResults",
           "documentation":"<p>Indicates the additional configuration of the feature that is configured for the member account.</p>",
           "locationName":"additionalConfiguration"
+        },
+        "ManagedBy":{
+          "shape":"ManagedBy",
+          "documentation":"<p>Indicates what manages the feature. A value of <code>GUARDDUTY_POLICY</code> means a GuardDuty policy manages the feature.</p>",
+          "locationName":"managedBy"
         }
       },
       "documentation":"<p>Contains information about the features for the member account.</p>"
@@ -11078,6 +11139,11 @@
           "shape":"Boolean",
           "documentation":"<p>Details on whether the Amazon Web Services account of the remote API caller is related to your GuardDuty environment. If this value is <code>True</code> the API caller is affiliated to your account in some way. If it is <code>False</code> the API caller is from outside your environment.</p>",
           "locationName":"affiliated"
+        },
+        "AwsServiceName":{
+          "shape":"String",
+          "documentation":"<p>If the remote account belongs to an Amazon Web Services service, this field indicates which service the remote account belongs to.</p>",
+          "locationName":"awsServiceName"
         }
       },
       "documentation":"<p>Contains details about the remote Amazon Web Services account that made the API call.</p>"
@@ -11315,6 +11381,11 @@
           "shape":"CloudformationStack",
           "documentation":"<p>Contains detailed information about the CloudFormation stack associated with the activity that prompted GuardDuty to generate a finding.</p>",
           "locationName":"cloudformationStack"
+        },
+        "BedrockGuardrail":{
+          "shape":"BedrockGuardrailResource",
+          "documentation":"<p>Contains detailed information about the Amazon Bedrock guardrail associated with the activity that prompted GuardDuty to generate a finding.</p>",
+          "locationName":"bedrockGuardrail"
         }
       },
       "documentation":"<p>Contains information about the Amazon Web Services resource that is associated with the activity that prompted GuardDuty to generate a finding.</p>"

@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComponent operation.
-    /// Gets a component object.
+    /// Retrieves a component object.
     /// </summary>
     public partial class GetComponentRequest : AmazonImagebuilderRequest
     {
@@ -40,8 +40,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component that you want to get. Regex requires
-        /// the suffix <c>/\d+$</c>.
+        /// The Amazon Resource Name (ARN) of the component that you want to get. You can specify
+        /// a build version ARN, or a component version ARN. The version can use the <c>x</c>
+        /// wildcard in trailing positions, for example <c>1.0.x</c> or <c>1.x.x</c>. Version
+        /// ARNs resolve to the latest available matching component build version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

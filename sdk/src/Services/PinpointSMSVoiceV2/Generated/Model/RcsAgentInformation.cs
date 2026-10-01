@@ -36,6 +36,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private DateTime? _createdTimestamp;
         private bool? _deletionProtectionEnabled;
+        private MessagingLimits _messagingLimits;
         private string _optOutListName;
         private string _poolId;
         private string _rcsAgentArn;
@@ -88,6 +89,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetDeletionProtectionEnabled()
         {
             return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessagingLimits. 
+        /// <para>
+        /// The messaging limits that apply to the RCS agent, including the per-capability send
+        /// rates.
+        /// </para>
+        /// </summary>
+        public MessagingLimits MessagingLimits
+        {
+            get { return this._messagingLimits; }
+            set { this._messagingLimits = value; }
+        }
+
+        // Check to see if MessagingLimits property is set
+        internal bool IsSetMessagingLimits()
+        {
+            return this._messagingLimits != null;
         }
 
         /// <summary>

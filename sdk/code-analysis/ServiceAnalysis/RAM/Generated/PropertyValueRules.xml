@@ -4,7 +4,7 @@
     <property>Amazon.RAM.Model.CreatePermissionRequest.Name</property>
     <min>1</min>
     <max>36</max>
-    <pattern>[\w.-]*</pattern>
+    <pattern>^[\w.-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RAM.Model.GetResourcePoliciesRequest.MaxResults</property>
@@ -37,12 +37,12 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.RAM.Model.ListPermissionsRequest.MaxResults</property>
+    <property>Amazon.RAM.Model.ListPermissionVersionsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.RAM.Model.ListPermissionVersionsRequest.MaxResults</property>
+    <property>Amazon.RAM.Model.ListPermissionsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>
@@ -57,17 +57,17 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.RAM.Model.ListResourcesRequest.MaxResults</property>
-    <min>1</min>
-    <max>500</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.RAM.Model.ListResourceSharePermissionsRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RAM.Model.ListResourceTypesRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.RAM.Model.ListResourcesRequest.MaxResults</property>
     <min>1</min>
     <max>500</max>
   </property-value-rule>

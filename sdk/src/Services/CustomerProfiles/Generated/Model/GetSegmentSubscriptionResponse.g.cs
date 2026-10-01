@@ -1,0 +1,135 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CustomerProfiles.Model
+{
+    /// <summary>
+    /// This is the response object from the GetSegmentSubscription operation.
+    /// </summary>
+    public partial class GetSegmentSubscriptionResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property LastUpdatedAt. 
+        /// <para>
+        /// The timestamp of the most recent configuration change. 
+        /// </para>
+        /// </summary>
+        public DateTime? LastUpdatedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LastUpdatedAt property is set.
+        /// </summary>
+        internal bool IsSetLastUpdatedAt() => this.LastUpdatedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A status message providing additional context, such as a failure reason. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 1000)]
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Message property is set.
+        /// </summary>
+        internal bool IsSetMessage() => this.Message != null;
+
+        /// <summary>
+        /// Gets and sets the property ScheduleConfiguration. 
+        /// <para>
+        /// The schedule configuration for periodic membership event notifications. 
+        /// </para>
+        /// </summary>
+        public ScheduleConfiguration ScheduleConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScheduleConfiguration property is set.
+        /// </summary>
+        internal bool IsSetScheduleConfiguration() => this.ScheduleConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ScheduledExecutions. 
+        /// <para>
+        /// Information about scheduled execution timestamps. 
+        /// </para>
+        /// </summary>
+        public ScheduledExecutions ScheduledExecutions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ScheduledExecutions property is set.
+        /// </summary>
+        internal bool IsSetScheduledExecutions() => this.ScheduledExecutions != null;
+
+        /// <summary>
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The timestamp of when the subscription was first started. 
+        /// </para>
+        /// </summary>
+        public DateTime? StartedAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartedAt property is set.
+        /// </summary>
+        internal bool IsSetStartedAt() => this.StartedAt.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current lifecycle status of the subscription. The following are valid values:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>STARTING</b>: Initial snapshot is in progress. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>RUNNING</b>: Notifications are active and running. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>STOPPED</b>: Notifications have been stopped. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>FAILED</b>: Notifications failed (for example, the Amazon Kinesis data stream
+        /// became inaccessible). 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SegmentSubscriptionStatus Status { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Status property is set.
+        /// </summary>
+        internal bool IsSetStatus() => this.Status != null;
+    }
+}

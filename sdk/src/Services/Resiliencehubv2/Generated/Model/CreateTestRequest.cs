@@ -91,7 +91,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The name of the IAM execution role to use when running the test.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=60)]
+        [AWSProperty(Min=1, Max=576)]
         public string RoleName
         {
             get { return this._roleName; }

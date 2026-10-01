@@ -46,6 +46,7 @@ namespace Amazon.ARCRegionswitch.Model
         private int? _recoveryTimeObjectiveMinutes;
         private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ReportConfiguration _reportConfiguration;
+        private bool? _serviceQuotaChecksEnabled;
         private List<Trigger> _triggers = AWSConfigs.InitializeCollections ? new List<Trigger>() : null;
         private DateTime? _updatedAt;
         private string _version;
@@ -265,6 +266,29 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetReportConfiguration()
         {
             return this._reportConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceQuotaChecksEnabled. 
+        /// <para>
+        /// Indicates whether service quota checks are enabled for the Region switch plan. When
+        /// enabled, Region switch compares the applied service quota values across the plan's
+        /// Amazon Web Services Regions and creates a warning when a quota in one Region is lower
+        /// than the value required for the matching resource in another Region. Service quota
+        /// checks are advisory and don't prevent you from creating, evaluating, or executing
+        /// a plan.
+        /// </para>
+        /// </summary>
+        public bool? ServiceQuotaChecksEnabled
+        {
+            get { return this._serviceQuotaChecksEnabled; }
+            set { this._serviceQuotaChecksEnabled = value; }
+        }
+
+        // Check to see if ServiceQuotaChecksEnabled property is set
+        internal bool IsSetServiceQuotaChecksEnabled()
+        {
+            return this._serviceQuotaChecksEnabled.HasValue; 
         }
 
         /// <summary>

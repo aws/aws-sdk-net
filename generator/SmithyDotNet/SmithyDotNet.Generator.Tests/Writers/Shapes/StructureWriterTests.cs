@@ -27,7 +27,7 @@ public class StructureWriterTests
     private static string WriteStructure(GenerationContext context, StructureWriter writer, string shapeName)
     {
         var shapeId = ShapeId.Parse($"{Namespace}#{shapeName}");
-        return writer.Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return writer.Write(context.Structures[shapeId], TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -104,13 +104,24 @@ public class StructureWriterTests
     }
 
     [Fact]
+    public void DeprecatedStructure_EmitsClassLevelObsolete()
+    {
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var shapeId = ShapeId.Parse("com.example#ConflictDetails");
+        var output = new StructureWriter(context, ModelFileName)
+            .Write(context.Structures[shapeId], TestContext.Current.CancellationToken);
+
+        Assert.Contains("""[Obsolete("This type is deprecated.")]""", output);
+    }
+
+    [Fact]
     public void StructureWithoutDocumentation_StillEmitsSummary()
     {
         // Widget has no @documentation; without a class <summary> it would trip CS1591 (build error).
         var context = TestModels.Context("Codegen/nested-structure-model.json");
         var shapeId = ShapeId.Parse("com.amazonaws.testnested#Widget");
         var widget = new StructureWriter(context, ModelFileName)
-            .Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+            .Write(context.Structures[shapeId], TestContext.Current.CancellationToken);
 
         var beforeClass = widget[..widget.IndexOf("public partial class Widget", StringComparison.Ordinal)];
         Assert.Contains("/// <summary>", beforeClass);

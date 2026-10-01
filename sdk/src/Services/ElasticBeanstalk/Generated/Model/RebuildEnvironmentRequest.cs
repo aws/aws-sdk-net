@@ -31,8 +31,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the RebuildEnvironment operation.
-    /// Deletes and recreates all of the AWS resources (for example: the Auto Scaling group,
-    /// load balancer, etc.) for a specified environment and forces a restart.
+    /// Deletes and recreates all of the Amazon Web Services resources (for example: the Auto
+    /// Scaling group, load balancer, etc.) for a specified environment and forces a restart.
     /// </summary>
     public partial class RebuildEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
@@ -52,8 +52,8 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
-        /// not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
-        /// error. 
+        /// not specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
+        /// 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -76,8 +76,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
-        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
-        /// 
+        /// specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]

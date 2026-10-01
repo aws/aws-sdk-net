@@ -17,8 +17,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -47,14 +49,24 @@ namespace Amazon.S3.Internal
         /// </summary>
         /// <param name="executionContext"></param>
         /// <param name="exception"></param>
-        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
-        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        /// <returns>
+        /// <c>true</c>/<c>false</c> when the retry decision can be made synchronously; <c>null</c>
+        /// when it must be deferred to <see cref="AmazonS3RetryPolicy.SharedRetryForExceptionAsync"/>
+        /// for bucket/region-mismatch detection.
+        /// </returns>
+        public bool? RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
         {
             return SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);            
         }
-        internal static bool? SharedRetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception, 
-            Runtime.Internal.Util.ILogger logger,
-            Func<Runtime.IExecutionContext, Exception, bool> baseRetryForException)
+        /// <summary>
+        /// Shared synchronous retry triage for S3. Returns <c>true</c>/<c>false</c> for
+        /// cases that can be decided without further lookup, or <c>null</c> to signal a
+        /// possible bucket/region mismatch (the async caller then resolves the bucket's
+        /// Region from the x-amz-bucket-region header or a HEAD bucket fallback).
+        /// </summary>
+        internal static bool? SharedRetryForExceptionSync(IExecutionContext executionContext, Exception exception, 
+            ILogger logger,
+            Func<IExecutionContext, Exception, bool> baseRetryForException)
         {
             var serviceException = exception as AmazonServiceException;
             if (serviceException != null)
@@ -69,6 +81,18 @@ namespace Amazon.S3.Internal
                         // response.
                         return true;
                     }
+                }
+
+                // A bucket in a different Region can be answered with a redirect instead of a 400
+                // (301 when the bucket is in us-east-1 and the client is not; more rarely 308).
+                // These carry the correct Region in the x-amz-bucket-region header, so treat them
+                // as inconclusive. This is limited to HeadBucket so other operations preserve the
+                // prior behavior of surfacing the redirect as an error.
+                if (executionContext.RequestContext.OriginalRequest is HeadBucketRequest &&
+                    (serviceException.StatusCode == HttpStatusCode.MovedPermanently ||
+                     (int)serviceException.StatusCode == 308))
+                {
+                    return null;
                 }
 
                 if (serviceException.StatusCode == HttpStatusCode.BadRequest)
@@ -123,6 +147,44 @@ namespace Amazon.S3.Internal
 
             return baseRetryForException(executionContext, exception);
         }
+
+        /// <summary>
+        /// Redirects the request to <paramref name="correctedRegion"/> after a bucket/region
+        /// mismatch is detected, so the retried request is both sent to and signed for that Region.
+        /// Returns <c>false</c> when <paramref name="correctedRegion"/> (from the x-amz-bucket-region header)
+        /// is not a valid hostname component.
+        /// </summary>
+        internal static bool RedirectToRegion(IExecutionContext executionContext, string correctedRegion)
+        {
+            RegionEndpoint correctedEndpoint;
+            try
+            {
+                correctedEndpoint = RegionEndpoint.GetBySystemName(correctedRegion);
+            }
+            catch (AmazonClientException)
+            {
+                // Malformed x-amz-bucket-region value (not a valid hostname component).
+                return false;
+            }
+
+            var requestContext = executionContext.RequestContext;
+
+            // Re-resolve the operation endpoint for the corrected Region via the endpoint provider.
+            var parameters = new ServiceOperationEndpointParameters(requestContext.OriginalRequest, correctedEndpoint);
+            var endpoint = requestContext.ClientConfig.DetermineServiceOperationEndpoint(parameters);
+            requestContext.Request.Endpoint = new Uri(endpoint.URL);
+
+            // Drop the stale Host header so it is recomputed for the new endpoint on re-sign.
+            if (requestContext.Request.Headers.ContainsKey(HeaderKeys.HostHeader))
+            {
+                requestContext.Request.Headers.Remove(HeaderKeys.HostHeader);
+            }
+
+            // Set the signing region and let the pipeline re-sign on retry.
+            requestContext.Request.AuthenticationRegion = correctedRegion;
+            requestContext.IsSigned = false;
+            return true;
+        }
     }
 
 
@@ -143,8 +205,12 @@ namespace Amazon.S3.Internal
         /// </summary>
         /// <param name="executionContext"></param>
         /// <param name="exception"></param>
-        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
-        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        /// <returns>
+        /// <c>true</c>/<c>false</c> when the retry decision can be made synchronously; <c>null</c>
+        /// when it must be deferred to <see cref="AmazonS3RetryPolicy.SharedRetryForExceptionAsync"/>
+        /// for bucket/region-mismatch detection.
+        /// </returns>
+        public bool? RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
         {
             return AmazonS3RetryPolicy.SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);
         }
@@ -168,8 +234,12 @@ namespace Amazon.S3.Internal
         /// </summary>
         /// <param name="executionContext"></param>
         /// <param name="exception"></param>
-        /// <returns>a value if it can be determined, or null if the IO-bound calculations need to be done</returns>
-        public bool? RetryForExceptionSync(Runtime.IExecutionContext executionContext, Exception exception)
+        /// <returns>
+        /// <c>true</c>/<c>false</c> when the retry decision can be made synchronously; <c>null</c>
+        /// when it must be deferred to <see cref="AmazonS3RetryPolicy.SharedRetryForExceptionAsync"/>
+        /// for bucket/region-mismatch detection.
+        /// </returns>
+        public bool? RetryForExceptionSync(IExecutionContext executionContext, Exception exception)
         {
             return AmazonS3RetryPolicy.SharedRetryForExceptionSync(executionContext, exception, Logger, base.RetryForException);
         }

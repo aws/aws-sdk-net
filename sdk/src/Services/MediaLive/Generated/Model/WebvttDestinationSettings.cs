@@ -34,13 +34,32 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class WebvttDestinationSettings
     {
+        private TextCaptionPositionSettings _position;
         private WebvttDestinationStyleControl _styleControl;
+
+        /// <summary>
+        /// Gets and sets the property Position. Specifies the position of the output captions.
+        /// Applies only when styleControl is set to manual.
+        /// </summary>
+        public TextCaptionPositionSettings Position
+        {
+            get { return this._position; }
+            set { this._position = value; }
+        }
+
+        // Check to see if Position property is set
+        internal bool IsSetPosition()
+        {
+            return this._position != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StyleControl. Controls whether the color and position of
         /// the source captions is passed through to the WebVTT output captions.  PASSTHROUGH
-        /// - Valid only if the source captions are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't
-        /// pass through the style. The output captions will not contain any font styling information.
+        /// - Valid only if the source captions are EMBEDDED, TELETEXT, or SMART SUBTITLES.  NO_STYLE_DATA
+        /// - Don't pass through the style. The output captions will not contain any font styling
+        /// information. MANUAL - Applies the specified styling and positioning. All other styling
+        /// and positioning is given default values.
         /// </summary>
         public WebvttDestinationStyleControl StyleControl
         {

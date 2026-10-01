@@ -64,7 +64,7 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.GetResourcePolicyResponse.Policy</property>
     <min>2</min>
     <max>10240</max>
-    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+</pattern>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListAssociatedRoute53HealthChecksRequest.MaxResults</property>
@@ -75,7 +75,7 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.ListAssociatedRoute53HealthChecksResponse.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListClustersRequest.MaxResults</property>
@@ -86,7 +86,7 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.ListClustersResponse.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListControlPanelsRequest.MaxResults</property>
@@ -97,7 +97,7 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.ListControlPanelsResponse.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListRoutingControlsRequest.MaxResults</property>
@@ -108,7 +108,7 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.ListRoutingControlsResponse.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.ListSafetyRulesRequest.MaxResults</property>
@@ -119,7 +119,7 @@
     <property>Amazon.Route53RecoveryControlConfig.Model.ListSafetyRulesResponse.NextToken</property>
     <min>1</min>
     <max>8096</max>
-    <pattern>[\S]*</pattern>
+    <pattern>^[\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Route53RecoveryControlConfig.Model.UpdateClusterRequest.ClusterArn</property>

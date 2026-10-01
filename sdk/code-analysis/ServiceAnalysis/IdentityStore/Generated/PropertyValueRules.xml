@@ -10,49 +10,67 @@
     <property>Amazon.IdentityStore.Model.CreateGroupRequest.DisplayName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+</pattern>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateGroupResponse.GroupArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupResponse.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateGroupResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupMembershipRequest.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupMembershipRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupMembershipResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateGroupMembershipResponse.MembershipArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateGroupMembershipResponse.MembershipId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserRequest.Birthdate</property>
@@ -69,8 +87,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserRequest.Locale</property>
@@ -129,62 +147,86 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateUserResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.CreateUserResponse.UserArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.CreateUserResponse.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DeleteGroupRequest.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DeleteGroupRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DeleteGroupRequest.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DeleteGroupMembershipRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DeleteGroupMembershipRequest.MembershipId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DeleteUserRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DeleteUserRequest.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DeleteUserRequest.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupRequest.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupResponse.Description</property>
@@ -196,61 +238,97 @@
     <property>Amazon.IdentityStore.Model.DescribeGroupResponse.DisplayName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+</pattern>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeGroupResponse.GroupArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupResponse.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeGroupResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupMembershipRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupMembershipRequest.MembershipId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupMembershipResponse.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupMembershipResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeGroupMembershipResponse.MembershipArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeGroupMembershipResponse.MembershipId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeIdentityStoreRequest.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeIdentityStoreResponse.IdentityStoreArn</property>
+    <min>62</min>
+    <max>93</max>
+    <pattern>arn:aws[a-z-]*:identitystore::\d{12}:identitystore/(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeIdentityStoreResponse.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserRequest.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.Birthdate</property>
@@ -267,8 +345,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.Locale</property>
@@ -295,6 +373,12 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeUserResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.Timezone</property>
     <min>1</min>
     <max>1024</max>
@@ -307,10 +391,16 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.DescribeUserResponse.UserArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.DescribeUserResponse.UserName</property>
@@ -333,80 +423,98 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupIdRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.GetGroupIdResponse.GroupArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupIdResponse.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupIdResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupMembershipIdRequest.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupMembershipIdRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupMembershipIdResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.GetGroupMembershipIdResponse.MembershipArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetGroupMembershipIdResponse.MembershipId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetUserIdRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetUserIdResponse.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.GetUserIdResponse.UserArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GetUserIdResponse.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.IsMemberInGroupsRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsRequest.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsRequest.MaxResults</property>
@@ -428,8 +536,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsForMemberRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupMembershipsForMemberRequest.MaxResults</property>
@@ -451,8 +559,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupsRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListGroupsRequest.MaxResults</property>
@@ -472,10 +580,27 @@
     <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.ListIdentityStoresRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.ListIdentityStoresRequest.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.ListIdentityStoresResponse.NextToken</property>
+    <min>1</min>
+    <max>65535</max>
+    <pattern>[-a-zA-Z0-9+=/:_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListUsersRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ListUsersRequest.MaxResults</property>
@@ -497,26 +622,104 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.UpdateGroupRequest.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.UpdateGroupRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateGroupRequest.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateGroupResponse.GroupArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateGroupResponse.GroupId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateGroupResponse.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateGroupResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateIdentityStoreRequest.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateIdentityStoreResponse.IdentityStoreArn</property>
+    <min>62</min>
+    <max>93</max>
+    <pattern>arn:aws[a-z-]*:identitystore::\d{12}:identitystore/(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateIdentityStoreResponse.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.UpdateUserRequest.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateUserRequest.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.UpdateUserRequest.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateUserResponse.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateUserResponse.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateUserResponse.UserArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.UpdateUserResponse.UserId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.AccessDeniedException.RequestId</property>
@@ -624,43 +827,73 @@
     <property>Amazon.IdentityStore.Model.Group.DisplayName</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  ]+</pattern>
+    <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Group.GroupArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.Group.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.Group.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.Group.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GroupMembership.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GroupMembership.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.GroupMembership.MembershipArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GroupMembership.MembershipId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.GroupMembershipExistenceResult.GroupId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.IdentityStore.IdentityStoreArn</property>
+    <min>62</min>
+    <max>93</max>
+    <pattern>arn:aws[a-z-]*:identitystore::\d{12}:identitystore/(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityStore.Model.IdentityStore.IdentityStoreId</property>
+    <min>1</min>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.InternalServerException.RequestId</property>
@@ -671,8 +904,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.MemberId.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.Name.FamilyName</property>
@@ -749,8 +982,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.ResourceNotFoundException.ResourceId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.Role.Type</property>
@@ -797,8 +1030,8 @@
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.IdentityStoreId</property>
     <min>1</min>
-    <max>36</max>
-    <pattern>d-[0-9a-f]{10}$|^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <max>93</max>
+    <pattern>(arn:aws[a-z-]*:identitystore::\d{12}:identitystore/)?(d-[0-9a-f]{10}|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.Locale</property>
@@ -825,6 +1058,12 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.User.Revision</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.Timezone</property>
     <min>1</min>
     <max>1024</max>
@@ -837,10 +1076,16 @@
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}\t\n\r  　]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityStore.Model.User.UserArn</property>
+    <min>60</min>
+    <max>100</max>
+    <pattern>arn:aws[a-z-]*:identitystore:::(user|group|membership)/([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.UserId</property>
     <min>1</min>
-    <max>47</max>
-    <pattern>([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
+    <max>100</max>
+    <pattern>(arn:aws[a-z-]*:identitystore:::(user|group|membership)/)?([0-9a-f]{10}-|)[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityStore.Model.User.UserName</property>

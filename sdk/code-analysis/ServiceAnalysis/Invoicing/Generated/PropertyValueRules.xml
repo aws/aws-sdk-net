@@ -188,6 +188,44 @@
     <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalsRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalsResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalSuppliersRequest.PortalIdentifier</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ListProcurementPortalSuppliersResponse.NextToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
@@ -569,6 +607,16 @@
     <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortal.PortalDisplayName</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\s\S]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortal.PortalIdentifier</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.ProcurementPortalPreference.AwsAccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -653,6 +701,22 @@
     <min>0</min>
     <max>1024</max>
     <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalSupplier.CountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalSupplier.SellerOfRecord</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.ProcurementPortalSupplier.SupplierIdentifier</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.ReceiverAddress.AddressLine1</property>

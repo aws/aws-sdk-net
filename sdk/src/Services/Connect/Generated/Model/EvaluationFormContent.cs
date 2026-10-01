@@ -34,6 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormContent
     {
+        private string _aiVersion;
         private EvaluationFormAutoEvaluationConfiguration _autoEvaluationConfiguration;
         private string _description;
         private string _evaluationFormArn;
@@ -45,6 +46,26 @@ namespace Amazon.Connect.Model
         private EvaluationFormScoringStrategy _scoringStrategy;
         private EvaluationFormTargetConfiguration _targetConfiguration;
         private string _title;
+
+        /// <summary>
+        /// Gets and sets the property AIVersion. 
+        /// <para>
+        /// The AI version to use for the evaluation form. This specifies which AI model version
+        /// is used for automated evaluations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AIVersion
+        {
+            get { return this._aiVersion; }
+            set { this._aiVersion = value; }
+        }
+
+        // Check to see if AIVersion property is set
+        internal bool IsSetAIVersion()
+        {
+            return this._aiVersion != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AutoEvaluationConfiguration. 

@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private Experiment _experiment;
         private FeatureGroup _featureGroup;
         private FeatureMetadata _featureMetadata;
+        private HubContent _hubContent;
         private HyperParameterTuningJobSearchEntity _hyperParameterTuningJob;
         private Job _job;
         private ModelDashboardModel _model;
@@ -117,6 +118,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFeatureMetadata()
         {
             return this._featureMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HubContent. 
+        /// <para>
+        /// The properties of a hub content resource.
+        /// </para>
+        /// </summary>
+        public HubContent HubContent
+        {
+            get { return this._hubContent; }
+            set { this._hubContent = value; }
+        }
+
+        // Check to see if HubContent property is set
+        internal bool IsSetHubContent()
+        {
+            return this._hubContent != null;
         }
 
         /// <summary>

@@ -129,8 +129,8 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property IsEstimated. 
         /// <para>
-        /// When true, the Support charge amount is estimated. When false, the Support charge
-        /// amount is finalized.
+        /// Specifies whether the Support charge amount is estimated. When false, the charge amount
+        /// is finalized.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

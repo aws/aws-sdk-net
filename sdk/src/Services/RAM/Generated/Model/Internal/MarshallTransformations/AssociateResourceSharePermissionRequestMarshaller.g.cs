@@ -1,0 +1,115 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.RAM.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.RAM.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// AssociateResourceSharePermission Request Marshaller
+    /// </summary>
+    public partial class AssociateResourceSharePermissionRequestMarshaller : IMarshaller<IRequest, AssociateResourceSharePermissionRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((AssociateResourceSharePermissionRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AssociateResourceSharePermissionRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.RAM");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-01-04";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/associateresourcesharepermission";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+            if (publicRequest.IsSetPermissionArn())
+            {
+                context.Writer.WritePropertyName("permissionArn");
+                context.Writer.WriteStringValue(publicRequest.PermissionArn);
+            }
+            if (publicRequest.IsSetPermissionVersion())
+            {
+                context.Writer.WritePropertyName("permissionVersion");
+                context.Writer.WriteNumberValue(publicRequest.PermissionVersion.Value);
+            }
+            if (publicRequest.IsSetReplace())
+            {
+                context.Writer.WritePropertyName("replace");
+                context.Writer.WriteBooleanValue(publicRequest.Replace.Value);
+            }
+            if (publicRequest.IsSetResourceShareArn())
+            {
+                context.Writer.WritePropertyName("resourceShareArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceShareArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly AssociateResourceSharePermissionRequestMarshaller _instance = new();
+
+        internal static AssociateResourceSharePermissionRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static AssociateResourceSharePermissionRequestMarshaller Instance => _instance;
+    }
+}

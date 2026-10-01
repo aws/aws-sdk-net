@@ -69,6 +69,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetWorkloadTypeConcurrencies())
+            {
+                context.Writer.WritePropertyName("WorkloadTypeConcurrencies");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectWorkloadTypeConcurrenciesListValue in requestObject.WorkloadTypeConcurrencies)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = WorkloadTypeConcurrencyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectWorkloadTypeConcurrenciesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

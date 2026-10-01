@@ -45,6 +45,7 @@ namespace Amazon.Connect.Model
     {
         private string _allowedAccessControlHierarchyGroupId;
         private Dictionary<string, string> _allowedAccessControlTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<AIAgent> _allowedAIAgents = AWSConfigs.InitializeCollections ? new List<AIAgent>() : null;
         private List<FlowModule> _allowedFlowModules = AWSConfigs.InitializeCollections ? new List<FlowModule>() : null;
         private List<Application> _applications = AWSConfigs.InitializeCollections ? new List<Application>() : null;
         private string _description;
@@ -97,6 +98,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetAllowedAccessControlTags()
         {
             return this._allowedAccessControlTags != null && (this._allowedAccessControlTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedAIAgents. 
+        /// <para>
+        /// A list of AI agents that the security profile will give access to.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public List<AIAgent> AllowedAIAgents
+        {
+            get { return this._allowedAIAgents; }
+            set { this._allowedAIAgents = value; }
+        }
+
+        // Check to see if AllowedAIAgents property is set
+        internal bool IsSetAllowedAIAgents()
+        {
+            return this._allowedAIAgents != null && (this._allowedAIAgents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

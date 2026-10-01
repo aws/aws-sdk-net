@@ -102,6 +102,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DistributionConfigurationArn);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetEnhancedImageMetadataEnabled())
             {
                 context.Writer.WritePropertyName("enhancedImageMetadataEnabled");

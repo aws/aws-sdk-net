@@ -16,7 +16,7 @@ public class PropertyValueAssignmentAnalyzerWriter(GenerationContext context, st
             writer.WriteLine("[DiagnosticAnalyzer(LanguageNames.CSharp)]");
             writer.OpenBlock("public class PropertyValueAssignmentAnalyzer : AbstractPropertyValueAssignmentAnalyzer", () =>
             {
-                writer.WriteLine($"""public override string GetServiceName() => "{context.ServiceName}";""");
+                writer.WriteLine($"""public override string GetServiceName() => "{context.BaseName}";""");
             });
         });
         return writer.ToFormattedString();

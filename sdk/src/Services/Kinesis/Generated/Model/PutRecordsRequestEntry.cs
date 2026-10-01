@@ -89,8 +89,17 @@ namespace Amazon.Kinesis.Model
         /// data records to shards. As a result of this hashing mechanism, all data records with
         /// the same partition key map to the same shard within the stream.
         /// </para>
+        ///  
+        /// <para>
+        /// If the stream uses the <c>USER_PARTITION_KEY</c> record distribution strategy (the
+        /// default), a partition key is required for each record. If the stream uses the <c>AUTO</c>
+        /// record distribution strategy, the partition key is optional and any value you provide
+        /// is ignored, along with any <c>ExplicitHashKey</c> you provide. In that case, Amazon
+        /// Kinesis Data Streams distributes records across shards using service-managed algorithms.
+        /// For more information, see <c>UpdateStreamRecordDistributionStrategy</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Min=1, Max=256)]
         public string PartitionKey
         {
             get { return this._partitionKey; }

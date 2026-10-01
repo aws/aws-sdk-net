@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// This exception is thrown when the service encounters an unrecoverable exception.
+    /// An internal server error occurred while Image Builder processed the request. Retrying
+    /// the request may succeed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

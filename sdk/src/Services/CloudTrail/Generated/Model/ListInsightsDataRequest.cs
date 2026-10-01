@@ -61,6 +61,14 @@ namespace Amazon.CloudTrail.Model
     /// The rate of ListInsightsData requests is limited to two per second, per account, per
     /// Region. If this limit is exceeded, a throttling error occurs.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// For data event Insights on organization trails, only the management account and delegated
+    /// administrator accounts can call <c>ListInsightsData</c>. For these callers, the API
+    /// returns Insights events only for the caller's own account. Member accounts cannot
+    /// call this API on organization trails.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListInsightsDataRequest : AmazonCloudTrailRequest
     {

@@ -70,8 +70,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image resource build version that the specified
-        /// runtime instance of the workflow created.
+        /// The Amazon Resource Name (ARN) of the image build version that owns the specified
+        /// runtime instance of the workflow.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn
@@ -108,8 +108,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParallelGroup. 
         /// <para>
-        /// Test workflows are defined within named runtime groups. The parallel group is a named
-        /// group that contains one or more test workflows.
+        /// The name of the parallel group that this runtime instance of the workflow ran in,
+        /// if configured. Parallel groups apply only to test workflows.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -165,7 +165,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current runtime status for the specified runtime instance of the workflow.
+        /// The current runtime status for the specified runtime instance of the workflow. <c>COMPLETED</c>,
+        /// <c>FAILED</c>, <c>ROLLBACK_COMPLETED</c>, <c>CANCELLED</c>, and <c>SKIPPED</c> are
+        /// terminal states.
         /// </para>
         /// </summary>
         public WorkflowExecutionStatus Status
@@ -183,9 +185,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TotalStepCount. 
         /// <para>
-        /// The total number of steps in the specified runtime instance of the workflow that ran.
-        /// This number should equal the sum of the step counts for steps that succeeded, were
-        /// skipped, and failed.
+        /// The total number of steps that the workflow document defines for this runtime instance
+        /// of the workflow. Image Builder sets this count before any steps run. The sum of succeeded,
+        /// skipped, and failed steps only reaches this total if every step finishes in one of
+        /// those states.
         /// </para>
         /// </summary>
         public int? TotalStepCount

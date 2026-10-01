@@ -55,6 +55,65 @@ namespace Amazon.Runtime.Internal.Util
             return _reader.ValueTextEquals(text.AsSpan());
         }
 
+        // The TryGet* methods below forward to the underlying Utf8JsonReader without copying it,
+        // which reading through the Reader property would do.
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as an <see cref="int"/>.
+        /// </summary>
+        public bool TryGetInt32(out int value)
+        {
+            return _reader.TryGetInt32(out value);
+        }
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as a <see cref="long"/>.
+        /// </summary>
+        public bool TryGetInt64(out long value)
+        {
+            return _reader.TryGetInt64(out value);
+        }
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as a <see cref="float"/>.
+        /// </summary>
+        public bool TryGetSingle(out float value)
+        {
+            return _reader.TryGetSingle(out value);
+        }
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as a <see cref="double"/>.
+        /// </summary>
+        public bool TryGetDouble(out double value)
+        {
+            return _reader.TryGetDouble(out value);
+        }
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as a <see cref="decimal"/>.
+        /// </summary>
+        public bool TryGetDecimal(out decimal value)
+        {
+            return _reader.TryGetDecimal(out value);
+        }
+
+        /// <summary>
+        /// Tries to parse the current JSON token value as a <see cref="byte"/>.
+        /// </summary>
+        public bool TryGetByte(out byte value)
+        {
+            return _reader.TryGetByte(out value);
+        }
+
+        /// <summary>
+        /// Tries to decode the current JSON string token value from Base64.
+        /// </summary>
+        public bool TryGetBytesFromBase64(out byte[] value)
+        {
+            return _reader.TryGetBytesFromBase64(out value);
+        }
+
         private Stream _stream;
         private byte[] _buffer;
 

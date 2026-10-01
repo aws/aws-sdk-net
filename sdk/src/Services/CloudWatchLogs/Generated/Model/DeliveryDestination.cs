@@ -75,6 +75,7 @@ namespace Amazon.CloudWatchLogs.Model
         private DeliveryDestinationType _deliveryDestinationType;
         private string _name;
         private OutputFormat _outputFormat;
+        private string _roleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -168,6 +169,26 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetOutputFormat()
         {
             return this._outputFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of the IAM role that CloudWatch Logs assumes to deliver to this delivery destination.
+        /// This field is present only for X-Ray trace delivery destinations that were created
+        /// with a role.
+        /// </para>
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

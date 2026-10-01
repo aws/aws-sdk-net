@@ -2,6 +2,8 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
 
@@ -77,6 +79,12 @@ public static partial class DocumentationFormatter
         // Adjacent paragraphs with no whitespace between them ("</p><p>") leave a triple newline
         // after the first-para strip, which would render as two blank comment lines.
         documentation = NewlineRunRegex().Replace(documentation, "\n\n");
+
+        // A bare '&', or a '<' that doesn't start a tag (e.g. "OPEN < CLICK"), is unescaped text and
+        // breaks the doc comment's XML.
+        documentation = EscapeMismatchedTags(documentation);
+        documentation = BareAmpersandRegex().Replace(documentation, "&amp;");
+        documentation = BareLessThanRegex().Replace(documentation, "&lt;");
 
         // Insert line breaks around 80 character line length.
         var sb = new StringBuilder();
@@ -223,7 +231,7 @@ public static partial class DocumentationFormatter
             writer.WriteLine("/// </param>");
         }
 
-        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.ServiceName}.</returns>");
+        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.BaseName}.</returns>");
 
         foreach (var error in operation.Errors)
         {
@@ -237,18 +245,47 @@ public static partial class DocumentationFormatter
     /// Writes an <c>&lt;exception cref="..."&gt;</c> doc tag for a single modeled operation error,
     /// with the error shape's cleaned documentation as the tag body.
     /// </summary>
-    public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, OperationError error)
+    public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, StructureShape error)
     {
-        var exceptionName = ExceptionWriter.ToExceptionName(error.Id.Name);
+        var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
         writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
 
-        var cleaned = Cleanup(error.Shape.GetDocumentation());
+        var cleaned = Cleanup(error.GetDocumentation());
         if (cleaned.Length > 0)
         {
             WriteCommentBlock(writer, cleaned);
         }
 
         writer.WriteLine("/// </exception>");
+    }
+
+    // A tag whose name doesn't open and close the same number of times (e.g. a lone <port>) is an
+    // unescaped placeholder, not real markup, and breaks the doc comment's XML - so its angle
+    // brackets get swapped for entities and it reads as literal text.
+    private static string EscapeMismatchedTags(string documentation)
+    {
+        var counts = new Dictionary<string, (int Opens, int Closes)>();
+        foreach (Match tag in TagRegex().Matches(documentation))
+        {
+            var name = tag.Groups["name"].Value;
+            var count = counts.GetValueOrDefault(name);
+            if (tag.Value[1] == '/')
+            {
+                count.Closes++;
+            }
+            else
+            {
+                count.Opens++;
+            }
+
+            counts[name] = count;
+        }
+
+        return TagRegex().Replace(documentation, tag =>
+        {
+            var (opens, closes) = counts[tag.Groups["name"].Value];
+            return opens == closes ? tag.Value : $"&lt;{tag.Value[1..^1]}&gt;";
+        });
     }
 
     private static string RemoveSnippets(string documentation, string startToken, string endToken)
@@ -270,6 +307,21 @@ public static partial class DocumentationFormatter
 
     [GeneratedRegex("\n{3,}")]
     private static partial Regex NewlineRunRegex();
+
+    // An opening or closing tag; the name is what gets balance-counted. A bare self-closing tag (<i/>,
+    // <code/>) is stray markup that is complete on its own, so it is excluded rather than counted as an
+    // unmatched open. A self-closing tag with attributes (<Accessibility value="caption"/>) is an XML
+    // example in the prose and still gets counted, so it ends up escaped and reads as text.
+    [GeneratedRegex(@"</?(?<name>[A-Za-z][\w-]*)(?=[\s/>])(?!\s*/>)[^>]*>")]
+    private static partial Regex TagRegex();
+
+    // An '&' not followed by an entity reference like "amp;" or "#150;".
+    [GeneratedRegex(@"&(?![#\w]+;)")]
+    private static partial Regex BareAmpersandRegex();
+
+    // A '<' not followed by a tag name or '/'.
+    [GeneratedRegex(@"<(?![A-Za-z/])")]
+    private static partial Regex BareLessThanRegex();
 
     // "<p [^>]*>" matches a <p> tag carrying extra attributes (e.g. <p class='title'>).
     [GeneratedRegex("<p [^>]*>")]

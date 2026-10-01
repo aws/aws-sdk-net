@@ -54,6 +54,11 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// A list of identifiers for groups in the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify each group by ID or by Amazon Resource Name (ARN). For example, group
+        /// ID <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c> or group ARN <c>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -78,8 +83,13 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The globally unique identifier for the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the identity store by ID or by Amazon Resource Name (ARN). For example,
+        /// identity store ID <c>d-1234567890</c> or identity store ARN <c>arn:aws:identitystore::111122223333:identitystore/d-1234567890</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }

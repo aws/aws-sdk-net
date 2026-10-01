@@ -49,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreatedAfter.Value));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreatedBefore.Value));
             }
 
             if(requestObject.IsSetLineageTypes())
@@ -72,13 +72,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetModifiedAfter())
             {
                 context.Writer.WritePropertyName("ModifiedAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ModifiedAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ModifiedAfter.Value));
             }
 
             if(requestObject.IsSetModifiedBefore())
             {
                 context.Writer.WritePropertyName("ModifiedBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ModifiedBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ModifiedBefore.Value));
             }
 
             if(requestObject.IsSetProperties())

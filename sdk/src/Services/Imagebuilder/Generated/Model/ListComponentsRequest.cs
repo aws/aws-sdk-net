@@ -31,9 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListComponents operation.
-    /// Returns the list of components that can be filtered by name, or by using the listed
-    /// <c>filters</c> to streamline results. Newly created components can take up to two
-    /// minutes to appear in the ListComponents API Results.
+    /// Returns the list of components that you have access to. By default, the response doesn't
+    /// include components in the <c>DEPRECATED</c> state. To list deprecated components,
+    /// use the <c>status</c> filter with the value <c>DEPRECATED</c>.
     /// 
     ///  <note> 
     /// <para>
@@ -42,10 +42,9 @@ namespace Amazon.Imagebuilder.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards
-    /// (x) to specify the most recent versions or nodes when selecting the base image or
-    /// components for your recipe. When you use a wildcard in any node, all nodes to the
-    /// right of the first wildcard must also be wildcards.
+    ///  <b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or
+    /// nodes when selecting the base image or components for your recipe. When you use a
+    /// wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.
     /// </para>
     ///  </note>
     /// </summary>
@@ -60,7 +59,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ByName. 
         /// <para>
-        /// Returns the list of components for the specified name.
+        /// Specifies whether to return one entry per component name, with all versions of each
+        /// component aggregated. Defaults to <c>false</c>, which returns one entry per component
+        /// version. You can't combine this option with the <c>version</c> filter.
         /// </para>
         /// </summary>
         public bool? ByName
@@ -91,6 +92,14 @@ namespace Amazon.Imagebuilder.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>platform</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>productCodes</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -127,7 +136,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specify the maximum number of items to return in a request.
+        /// The maximum number of items to return in a single request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -146,8 +155,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the nextToken from a previously
-        /// truncated response.
+        /// A token to specify where to start paginating. Use the <c>nextToken</c> value from
+        /// a previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -168,8 +177,9 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// Filters results based on the type of owner for the component. By default, this request
         /// returns a list of components that your account owns. To see results for other types
-        /// of owners, you can specify components that Amazon manages, third party components,
-        /// or components that other accounts have shared with you.
+        /// of owners, you can specify components that Amazon manages, components from the Amazon
+        /// Web Services Marketplace, third party components, or components that other accounts
+        /// have shared with you.
         /// </para>
         /// </summary>
         public Ownership Owner

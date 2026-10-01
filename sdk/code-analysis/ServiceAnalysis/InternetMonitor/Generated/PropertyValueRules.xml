@@ -9,7 +9,7 @@
     <property>Amazon.InternetMonitor.Model.CreateMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.CreateMonitorRequest.TrafficPercentageToMonitor</property>
@@ -20,19 +20,19 @@
     <property>Amazon.InternetMonitor.Model.CreateMonitorResponse.Arn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.DeleteMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetHealthEventRequest.EventId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9/_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9/_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetHealthEventRequest.LinkedAccountId</property>
@@ -43,19 +43,19 @@
     <property>Amazon.InternetMonitor.Model.GetHealthEventRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetHealthEventResponse.EventArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetHealthEventResponse.EventId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9/_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9/_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetHealthEventResponse.HealthScoreThreshold</property>
@@ -66,19 +66,19 @@
     <property>Amazon.InternetMonitor.Model.GetInternetEventRequest.EventId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetInternetEventResponse.EventArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetInternetEventResponse.EventId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetMonitorRequest.LinkedAccountId</property>
@@ -89,7 +89,7 @@
     <property>Amazon.InternetMonitor.Model.GetMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetMonitorResponse.MaxCityNetworksToMonitor</property>
@@ -100,13 +100,13 @@
     <property>Amazon.InternetMonitor.Model.GetMonitorResponse.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetMonitorResponse.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetMonitorResponse.TrafficPercentageToMonitor</property>
@@ -122,13 +122,13 @@
     <property>Amazon.InternetMonitor.Model.GetQueryResultsRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.GetQueryStatusRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.ListHealthEventsRequest.LinkedAccountId</property>
@@ -144,7 +144,7 @@
     <property>Amazon.InternetMonitor.Model.ListHealthEventsRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.ListInternetEventsRequest.MaxResults</property>
@@ -160,7 +160,7 @@
     <property>Amazon.InternetMonitor.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.StartQueryRequest.LinkedAccountId</property>
@@ -171,25 +171,25 @@
     <property>Amazon.InternetMonitor.Model.StartQueryRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.StopQueryRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.UpdateMonitorRequest.MaxCityNetworksToMonitor</property>
@@ -200,7 +200,7 @@
     <property>Amazon.InternetMonitor.Model.UpdateMonitorRequest.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.UpdateMonitorRequest.TrafficPercentageToMonitor</property>
@@ -211,19 +211,19 @@
     <property>Amazon.InternetMonitor.Model.UpdateMonitorResponse.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.HealthEvent.EventArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.HealthEvent.EventId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9/_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9/_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.HealthEvent.HealthScoreThreshold</property>
@@ -244,13 +244,13 @@
     <property>Amazon.InternetMonitor.Model.InternetEventSummary.EventArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.InternetEventSummary.EventId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9-]+</pattern>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.LocalHealthEventsConfig.HealthScoreThreshold</property>
@@ -266,13 +266,13 @@
     <property>Amazon.InternetMonitor.Model.Monitor.MonitorArn</property>
     <min>20</min>
     <max>512</max>
-    <pattern>arn:.*</pattern>
+    <pattern>^arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.Monitor.MonitorName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_.-]+</pattern>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.InternetMonitor.Model.S3Config.BucketName</property>

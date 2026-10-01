@@ -1,0 +1,120 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.DevOpsAgent.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// MCPServerOAuth3LOConfig Marshaller
+    /// </summary>
+    public partial class MCPServerOAuth3LOConfigMarshaller : IRequestMarshaller<MCPServerOAuth3LOConfig, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(MCPServerOAuth3LOConfig requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAuthorizationUrl())
+            {
+                context.Writer.WritePropertyName("authorizationUrl");
+                context.Writer.WriteStringValue(requestObject.AuthorizationUrl);
+            }
+
+            if (requestObject.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.WriteStringValue(requestObject.ClientId);
+            }
+
+            if (requestObject.IsSetClientName())
+            {
+                context.Writer.WritePropertyName("clientName");
+                context.Writer.WriteStringValue(requestObject.ClientName);
+            }
+
+            if (requestObject.IsSetClientSecret())
+            {
+                context.Writer.WritePropertyName("clientSecret");
+                context.Writer.WriteStringValue(requestObject.ClientSecret);
+            }
+
+            if (requestObject.IsSetExchangeParameters())
+            {
+                context.Writer.WritePropertyName("exchangeParameters");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectExchangeParametersKvp in requestObject.ExchangeParameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectExchangeParametersKvp.Key);
+                    var requestObjectExchangeParametersValue = requestObjectExchangeParametersKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectExchangeParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetExchangeUrl())
+            {
+                context.Writer.WritePropertyName("exchangeUrl");
+                context.Writer.WriteStringValue(requestObject.ExchangeUrl);
+            }
+
+            if (requestObject.IsSetReturnToEndpoint())
+            {
+                context.Writer.WritePropertyName("returnToEndpoint");
+                context.Writer.WriteStringValue(requestObject.ReturnToEndpoint);
+            }
+
+            if (requestObject.IsSetScopes())
+            {
+                context.Writer.WritePropertyName("scopes");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectScopesListValue in requestObject.Scopes)
+                {
+                    context.Writer.WriteStringValue(requestObjectScopesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetSupportCodeChallenge())
+            {
+                context.Writer.WritePropertyName("supportCodeChallenge");
+                context.Writer.WriteBooleanValue(requestObject.SupportCodeChallenge.Value);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static MCPServerOAuth3LOConfigMarshaller Instance = new MCPServerOAuth3LOConfigMarshaller();
+    }
+}

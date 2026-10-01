@@ -1,15 +1,18 @@
+using System.Collections.Concurrent;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
+using SmithyDotNet.Generator.Writers.EventStreams;
 using SmithyDotNet.Generator.Writers.NuGet;
 using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
 using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
 using SmithyDotNet.Generator.Writers.Shapes;
-using System.Collections.Concurrent;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -19,14 +22,8 @@ namespace SmithyDotNet.Generator.Generation;
 /// <see cref="Generate"/>.
 /// Most generated source lands under <c>Generated/</c>; <c>Properties/AssemblyInfo.cs</c> and
 /// the <c>code-analysis/</c> tree sit alongside it at the service root.
-/// <para />
-/// Phase 1 scope: the writers that exist today (interface, client, config, service exception,
-/// metadata, endpoint parameters/provider/resolver, operation request/response/base, structures,
-/// exceptions, the restJson1 request marshaller + structure (un)marshallers, and the auth resolver).
-/// The operation-response / exception unmarshallers have no writers yet, so the generated tree does
-/// not compile standalone.
 /// </summary>
-public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes)
+public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, StandaloneOptions? standalone = null)
 {
     /// <summary>
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
@@ -78,11 +75,17 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var @internal = Path.Combine(generated, "Internal");
         var marshalling = Path.Combine(model, "Internal", "MarshallTransformations");
 
-        var assemblyInfoWriter = new AssemblyInfoWriter(context, serviceFileVersion);
-        Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
+        // Standalone mode (see StandaloneGenerator) emits only the client source and a single csproj:
+        // no AssemblyInfo (MSBuild generates the attributes), code analysis, nuspec, csproj pair, or
+        // slnx. Those all read the version manifest or the repo tree layout.
+        if (standalone is null)
+        {
+            var assemblyInfoWriter = new AssemblyInfoWriter(context, serviceFileVersion);
+            Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
+        }
 
         var interfaceWriter = new ClientInterfaceWriter(context, modelFileName);
-        Emit(Path.Combine(generated, $"IAmazon{context.ServiceName}.g.cs"), interfaceWriter.Write(cancellationToken));
+        Emit(Path.Combine(generated, $"IAmazon{context.BaseName}.g.cs"), interfaceWriter.Write(cancellationToken));
 
         var clientWriter = new ClientClassWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"{clientName}Client.g.cs"), clientWriter.Write(cancellationToken));
@@ -102,26 +105,30 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var metadataWriter = new MetadataWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
 
-        var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
-        EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
+        // Test services ship no code-analysis project (matching the C2J generator's IsTestService skip).
+        if (!context.IsTestService && standalone is null)
+        {
+            var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
+            EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
 
-        var deprecatedTargetFrameworkAnalyzerWriter = new DeprecatedTargetFrameworkAnalyzerWriter(context, modelFileName);
-        EmitCodeAnalysis(Path.Combine(generated, "DeprecatedTargetFrameworkAnalyzer.g.cs"), deprecatedTargetFrameworkAnalyzerWriter.Write(cancellationToken));
+            var deprecatedTargetFrameworkAnalyzerWriter = new DeprecatedTargetFrameworkAnalyzerWriter(context, modelFileName);
+            EmitCodeAnalysis(Path.Combine(generated, "DeprecatedTargetFrameworkAnalyzer.g.cs"), deprecatedTargetFrameworkAnalyzerWriter.Write(cancellationToken));
 
-        var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
-        EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
+            var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
+            EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
 
-        var propertyValueRulesWriter = new PropertyValueRulesWriter(context);
-        EmitCodeAnalysis(Path.Combine(generated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
+            var propertyValueRulesWriter = new PropertyValueRulesWriter(context);
+            EmitCodeAnalysis(Path.Combine(generated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
 
-        var codeAnalysisAssemblyInfoWriter = new CodeAnalysisAssemblyInfoWriter(context);
-        EmitCodeAnalysis(Path.Combine("Properties", "AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
+            var codeAnalysisAssemblyInfoWriter = new CodeAnalysisAssemblyInfoWriter(context);
+            EmitCodeAnalysis(Path.Combine("Properties", "AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
 
-        // The writer probes the existing csproj to preserve its ProjectGuid, so it needs the full
-        // on-disk path, not the root-relative one used for emission.
-        var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
-        var codeAnalysisProjectFileName = $"{context.AssemblyName}.CodeAnalysis.csproj";
-        EmitCodeAnalysis(codeAnalysisProjectFileName, codeAnalysisProjectFileWriter.Write(Path.Combine(codeAnalysisPath, codeAnalysisProjectFileName)));
+            // The writer probes the existing csproj to preserve its ProjectGuid, so it needs the full
+            // on-disk path, not the root-relative one used for emission.
+            var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
+            var codeAnalysisProjectFileName = $"{context.AssemblyName}.CodeAnalysis.csproj";
+            EmitCodeAnalysis(codeAnalysisProjectFileName, codeAnalysisProjectFileWriter.Write(Path.Combine(codeAnalysisPath, codeAnalysisProjectFileName)));
+        }
 
         // Endpoint files are emitted only when the service carries an endpoint rule set. The
         // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the
@@ -145,7 +152,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         if (context.HasEndpointTests && testsOutputPath is not null)
         {
             var endpointProviderTestSuiteWriter = new EndpointProviderTestSuiteWriter(context, modelFileName);
-            var testsRelativePath = Path.Combine("UnitTests", "Generated", "Endpoints", $"{context.ServiceName}EndpointProviderTests.g.cs");
+            var testsRelativePath = Path.Combine("UnitTests", "Generated", "Endpoints", $"{context.BaseName}EndpointProviderTests.g.cs");
             EmitUnder(testsOutputPath, writtenTests, testsRelativePath, endpointProviderTestSuiteWriter.Write(cancellationToken));
         }
 
@@ -161,6 +168,19 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var exceptionWriter = new ExceptionWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"{clientName}Exception.g.cs"), exceptionWriter.WriteServiceException(cancellationToken));
 
+        if (context.ResponseEventStreams.Count > 0)
+        {
+            var eventStreamExceptionWriter = new EventStreamExceptionWriter(context, modelFileName);
+            Emit(Path.Combine(model, $"{context.BaseName}EventStreamException.g.cs"), eventStreamExceptionWriter.Write(cancellationToken));
+
+            // The union's model class is the event stream itself (see the structure loop below).
+            var eventStreamOutputWriter = new EventStreamOutputWriter(context, modelFileName);
+            foreach (var stream in context.ResponseEventStreams)
+            {
+                Emit(Path.Combine(model, $"{context.ToDotNetName(stream.Id)}.g.cs"), eventStreamOutputWriter.Write(context.Structures[stream.Id], cancellationToken));
+            }
+        }
+
         var operationWriter = new OperationWriter(context, modelFileName);
         var requestMarshaller = new JsonRequestMarshallerWriter(context, modelFileName);
         var responseUnmarshaller = new JsonResponseUnmarshallerWriter(context, modelFileName);
@@ -171,18 +191,41 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var serviceProjectFileWriter = new ServiceProjectFileWriter(context);
 
         Emit(Path.Combine(model, $"{clientName}Request.g.cs"), operationWriter.WriteServiceRequest(cancellationToken));
-        Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
-        // The NuGet README is the service documentation converted to Markdown, falling back to the
-        // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
-        // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
-        // catching hand-written READMEs.
-        var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
-        Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
 
-        Emit($"{context.AssemblyName}.NetFramework.csproj", serviceProjectFileWriter.WriteNetFramework());
-        if (context.Metadata?.NetStandardSupport ?? true)
+        // Test services are never packaged, so they get no nuspec or NuGet readme. The nuspec is
+        // repo-only; the standalone csproj packs the readme itself.
+        if (!context.IsTestService)
         {
-            Emit($"{context.AssemblyName}.NetStandard.csproj", serviceProjectFileWriter.WriteNetStandard());
+            if (standalone is null)
+            {
+                Emit(Path.Combine($"{context.AssemblyName}.nuspec"), nuspecWriter.Write());
+            }
+
+            // The NuGet README is the service documentation converted to Markdown, falling back to the
+            // synopsis when the model carries no @documentation (see aws/aws-sdk-net#3186). Named
+            // nuget-readme.md (not README.md) so it can be gitignored as a generated artifact without
+            // catching hand-written READMEs.
+            var readme = DocumentationFormatter.ToMarkdown(context.ServiceDocumentation);
+            if (standalone is not null && readme.Length == 0)
+            {
+                // NuGet rejects an empty readme (NU5040), so the standalone csproj could not be packed.
+                throw new GeneratorException("The service has no @documentation to write nuget-readme.md from.");
+            }
+
+            Emit("nuget-readme.md", readme.Length > 0 ? readme : context.Metadata?.Synopsis ?? string.Empty);
+        }
+
+        if (standalone is not null)
+        {
+            Emit($"{context.AssemblyName}.csproj", serviceProjectFileWriter.WriteStandalone(standalone));
+        }
+        else
+        {
+            Emit($"{context.AssemblyName}.NetFramework.csproj", serviceProjectFileWriter.WriteNetFramework());
+            if (context.Metadata?.NetStandardSupport ?? true)
+            {
+                Emit($"{context.AssemblyName}.NetStandard.csproj", serviceProjectFileWriter.WriteNetStandard());
+            }
         }
 
         // The unified csproj (ServiceProjectFileWriter.WriteUnified) is deliberately not emitted:
@@ -216,19 +259,28 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Input, operation.Input))
+            foreach (var structure in ReferencedStructures(operation.Input))
             {
-                if (marshalledStructures.Add(shapeId))
+                if (marshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Marshaller.g.cs"), structureMarshaller.Write(structure, shapeId, cancellationToken));
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Marshaller.g.cs"), structureMarshaller.Write(structure, cancellationToken));
                 }
             }
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Output, operation.Output))
+            foreach (var structure in ReferencedStructures(operation.Output))
             {
-                if (unmarshalledStructures.Add(shapeId))
+                // A response event stream is read by its own class (new {Union}(context.Stream)), so the
+                // union gets no structure unmarshaller. Its event structures DO get one — the event stream
+                // class calls {Event}Unmarshaller per message, and the structure unmarshaller handles the
+                // @eventPayload/@eventHeader split when the event carries an explicit payload member.
+                if (context.ResponseEventStreams.Any(stream => stream.Id == structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                    continue;
+                }
+
+                if (unmarshalledStructures.Add(structure.Id))
+                {
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
                 }
             }
         }
@@ -236,21 +288,21 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // Every error shape in the model gets an unmarshaller, not just those an operation lists:
         // an error declared only on the service (or reachable only as a member of a response, as
         // eventstream operations do) should still be returnable.
-        foreach (var (errorId, errorShape) in context.Errors)
+        foreach (var errorShape in context.Errors.Values)
         {
-            var name = ExceptionWriter.ToExceptionName(errorId.Name);
-            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, errorId, cancellationToken));
+            var name = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorShape.Id));
+            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, cancellationToken));
 
             // An exception's rich members can target structures (directly, or as list/map
             // elements); the exception unmarshaller deserializes them, so those nested
             // structures need unmarshallers too. Exceptions are response-only, so only the
             // unmarshaller side is walked (never a marshaller), deduped against the shared set
             // so a structure also reachable from an output isn't emitted twice.
-            foreach (var (shapeId, structure) in ReferencedStructures(errorId, errorShape))
+            foreach (var structure in ReferencedStructures(errorShape))
             {
-                if (unmarshalledStructures.Add(shapeId))
+                if (unmarshalledStructures.Add(structure.Id))
                 {
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, cancellationToken));
                 }
             }
         }
@@ -276,6 +328,18 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             var factoryClassWriter = new PaginatorFactoryClassWriter(context, modelFileName);
             Emit(Path.Combine(model, $"{context.ServiceName}PaginatorFactory.g.cs"), factoryClassWriter.Write(cancellationToken));
+        }
+
+        var eventInterfaceWriter = new EventStreamEventInterfaceWriter(context, modelFileName);
+        var publisherMarshallerWriter = new EventStreamPublisherMarshallerWriter(context, modelFileName);
+        foreach (var eventStream in context.RequestEventStreams)
+        {
+            Emit(Path.Combine(model, $"{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteInterface(eventStream, cancellationToken));
+            foreach (var eventId in eventStream.Events)
+            {
+                Emit(Path.Combine(model, $"{context.ToDotNetName(eventId)}.{eventStream.InterfaceName}.g.cs"), eventInterfaceWriter.WriteEventImplementation(eventStream, eventId, cancellationToken));
+            }
+            Emit(Path.Combine(marshalling, $"{context.ToDotNetName(eventStream.Id)}PublisherMarshaller.g.cs"), publisherMarshallerWriter.Write(eventStream, cancellationToken));
         }
 
         var structureWriter = new StructureWriter(context, modelFileName);
@@ -304,42 +368,54 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             }
         }
 
-        foreach (var (shapeId, structure) in context.Structures)
+        foreach (var structure in context.Structures.Values)
         {
-            if (operationShapes.Contains(shapeId) && !memberReferencedOperationShapes.Contains(shapeId))
+            if (operationShapes.Contains(structure.Id) && !memberReferencedOperationShapes.Contains(structure.Id))
             {
                 continue;
             }
 
-            Emit(Path.Combine(model, $"{context.ToDotNetName(shapeId)}.g.cs"), structureWriter.Write(structure, shapeId, cancellationToken));
+            // Emitted above as the EnumerableEventOutputStream subclass instead.
+            if (context.ResponseEventStreams.Any(stream => stream.Id == structure.Id))
+            {
+                continue;
+            }
+
+            // A request event stream's union is the publisher/interface, not a plain model class.
+            if (context.RequestEventStreams.Any(stream => stream.Id == structure.Id))
+            {
+                continue;
+            }
+
+            Emit(Path.Combine(model, $"{context.ToDotNetName(structure.Id)}.g.cs"), structureWriter.Write(structure, cancellationToken));
         }
 
-        foreach (var (shapeId, errorShape) in context.Errors)
+        foreach (var errorShape in context.Errors.Values)
         {
-            var exceptionName = ExceptionWriter.ToExceptionName(shapeId.Name);
-            Emit(Path.Combine(model, $"{exceptionName}.g.cs"), exceptionWriter.WriteException(errorShape, shapeId, cancellationToken));
+            var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(errorShape.Id));
+            Emit(Path.Combine(model, $"{exceptionName}.g.cs"), exceptionWriter.WriteException(errorShape, cancellationToken));
         }
 
         // Last on purpose: the solution writer scans outputPath for the service csprojs to build
         // the /Services/ dependency folder, so it must run after every csproj has been emitted —
         // otherwise a clean first run produces a .slnx missing the service dependencies that a
-        // re-run would then pick up.
-        var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
-        Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
+        // re-run would then pick up. Test services get no per-service solution (C2J emits none;
+        // they build through sdk/test consumers like AWSSDK.ProtocolTests).
+        if (!context.IsTestService && standalone is null)
+        {
+            var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
+            Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
+        }
 
         return written.Keys.ToList();
     }
 
-    // Finds all structures transitively referenced from a request or response so each gets its own
-    // (un)marshaller. A member targets a structure directly, or indirectly via a list/map element.
-    // The visited set prevents infinite recursion on circular references.
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(ShapeId parentId, StructureShape parent)
-    {
-        var visited = new HashSet<ShapeId> { parentId };
-        return ReferencedStructuresRecursive(parent, visited);
-    }
+    // Every structure transitively referenced from a request or response (directly or as a list/map
+    // element) gets its own (un)marshaller. The parent itself is included when it is self-referencing.
+    private IEnumerable<StructureShape> ReferencedStructures(StructureShape parent) =>
+        ReferencedStructuresRecursive(parent, new HashSet<ShapeId>());
 
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
+    private IEnumerable<StructureShape> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {
         foreach (var member in parent.Members.Values)
         {
@@ -354,7 +430,23 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
             if (context.Resolve(structureId) is StructureShape structure)
             {
-                yield return (structureId, structure);
+                if (structure.IsError())
+                {
+                    continue;
+                }
+
+                // A request event stream's @streaming union is not a wire structure: its events still need
+                // their own marshallers, so recurse into them, but the union itself gets none.
+                if (context.RequestEventStreams.Any(stream => stream.Id == structureId))
+                {
+                    foreach (var nested in ReferencedStructuresRecursive(structure, visited))
+                    {
+                        yield return nested;
+                    }
+                    continue;
+                }
+
+                yield return structure;
                 foreach (var nested in ReferencedStructuresRecursive(structure, visited))
                 {
                     yield return nested;

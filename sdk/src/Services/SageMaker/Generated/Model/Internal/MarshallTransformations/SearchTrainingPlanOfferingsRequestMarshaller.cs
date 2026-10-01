@@ -84,7 +84,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndTimeBefore())
             {
                 context.Writer.WritePropertyName("EndTimeBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndTimeBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTimeBefore.Value));
             }
 
             if(publicRequest.IsSetInstanceCount())
@@ -102,7 +102,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartTimeAfter())
             {
                 context.Writer.WritePropertyName("StartTimeAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTimeAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTimeAfter.Value));
             }
 
             if(publicRequest.IsSetTargetResources())

@@ -95,6 +95,12 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterCreateTime = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("CopyTagsToSnapshot", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.CopyTagsToSnapshot = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBClusterArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

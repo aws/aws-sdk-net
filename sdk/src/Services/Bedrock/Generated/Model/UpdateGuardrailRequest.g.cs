@@ -1,0 +1,239 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Bedrock.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateGuardrail operation. Updates a guardrail
+    /// with the values you specify. <ul> <li> <para> Specify a <c>name</c> and optional <c>description</c>.
+    /// </para> </li> <li> <para> Specify messages for when the guardrail successfully blocks
+    /// a prompt or a model response in the <c>blockedInputMessaging</c> and <c>blockedOutputsMessaging</c>
+    /// fields. </para> </li> <li> <para> Specify topics for the guardrail to deny in the
+    /// <c>topicPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html">GuardrailTopicConfig</a>
+    /// object in the <c>topicsConfig</c> list pertains to one topic. </para> <ul> <li> <para>
+    /// Give a <c>name</c> and <c>description</c> so that the guardrail can properly identify
+    /// the topic. </para> </li> <li> <para> Specify <c>DENY</c> in the <c>type</c> field.
+    /// </para> </li> <li> <para> (Optional) Provide up to five prompts that you would categorize
+    /// as belonging to the topic in the <c>examples</c> list. </para> </li> </ul> </li> <li>
+    /// <para> Specify filter strengths for the harmful categories defined in Amazon Bedrock
+    /// in the <c>contentPolicyConfig</c> object. Each <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>
+    /// object in the <c>filtersConfig</c> list pertains to a harmful category. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters">Content
+    /// filters</a>. For more information about the fields in a content filter, see <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+    /// </para> <ul> <li> <para> Specify the category in the <c>type</c> field. </para> </li>
+    /// <li> <para> Specify the strength of the filter for prompts in the <c>inputStrength</c>
+    /// field and for model responses in the <c>strength</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html">GuardrailContentFilterConfig</a>.
+    /// </para> </li> </ul> </li> <li> <para> (Optional) For security, include the ARN of
+    /// a KMS key in the <c>kmsKeyId</c> field. </para> </li> </ul>
+    /// </summary>
+    public partial class UpdateGuardrailRequest : AmazonBedrockRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AutomatedReasoningPolicyConfig. 
+        /// <para>
+        /// Updated configuration for Automated Reasoning policies associated with the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailAutomatedReasoningPolicyConfig AutomatedReasoningPolicyConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AutomatedReasoningPolicyConfig property is set.
+        /// </summary>
+        internal bool IsSetAutomatedReasoningPolicyConfig() => this.AutomatedReasoningPolicyConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property BlockedInputMessaging. 
+        /// <para>
+        /// The message to return when the guardrail blocks a prompt.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 500)]
+        public string BlockedInputMessaging { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BlockedInputMessaging property is set.
+        /// </summary>
+        internal bool IsSetBlockedInputMessaging() => this.BlockedInputMessaging != null;
+
+        /// <summary>
+        /// Gets and sets the property BlockedOutputsMessaging. 
+        /// <para>
+        /// The message to return when the guardrail blocks a model response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 500)]
+        public string BlockedOutputsMessaging { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BlockedOutputsMessaging property is set.
+        /// </summary>
+        internal bool IsSetBlockedOutputsMessaging() => this.BlockedOutputsMessaging != null;
+
+        /// <summary>
+        /// Gets and sets the property ContentPolicyConfig. 
+        /// <para>
+        /// The content policy to configure for the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailContentPolicyConfig ContentPolicyConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContentPolicyConfig property is set.
+        /// </summary>
+        internal bool IsSetContentPolicyConfig() => this.ContentPolicyConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property ContextualGroundingPolicyConfig. 
+        /// <para>
+        /// The contextual grounding policy configuration used to update a guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailContextualGroundingPolicyConfig ContextualGroundingPolicyConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContextualGroundingPolicyConfig property is set.
+        /// </summary>
+        internal bool IsSetContextualGroundingPolicyConfig() => this.ContextualGroundingPolicyConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property CrossRegionConfig. 
+        /// <para>
+        /// The system-defined guardrail profile that you're using with your guardrail. Guardrail
+        /// profiles define the destination Amazon Web Services Regions where guardrail inference
+        /// requests can be automatically routed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html">Amazon
+        /// Bedrock User Guide</a>.
+        /// </para>
+        /// </summary>
+        public GuardrailCrossRegionConfig CrossRegionConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CrossRegionConfig property is set.
+        /// </summary>
+        internal bool IsSetCrossRegionConfig() => this.CrossRegionConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the guardrail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 200)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property GuardrailIdentifier. 
+        /// <para>
+        /// The unique identifier of the guardrail. This can be an ID or the ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Max = 2048)]
+        public string GuardrailIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the GuardrailIdentifier property is set.
+        /// </summary>
+        internal bool IsSetGuardrailIdentifier() => this.GuardrailIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ARN of the KMS key with which to encrypt the guardrail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string KmsKeyId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the KmsKeyId property is set.
+        /// </summary>
+        internal bool IsSetKmsKeyId() => this.KmsKeyId != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// A name for the guardrail.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 50)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property SensitiveInformationPolicyConfig. 
+        /// <para>
+        /// The sensitive information policy to configure for the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailSensitiveInformationPolicyConfig SensitiveInformationPolicyConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SensitiveInformationPolicyConfig property is set.
+        /// </summary>
+        internal bool IsSetSensitiveInformationPolicyConfig() => this.SensitiveInformationPolicyConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property TopicPolicyConfig. 
+        /// <para>
+        /// The topic policy to configure for the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailTopicPolicyConfig TopicPolicyConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TopicPolicyConfig property is set.
+        /// </summary>
+        internal bool IsSetTopicPolicyConfig() => this.TopicPolicyConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property WordPolicyConfig. 
+        /// <para>
+        /// The word policy to configure for the guardrail.
+        /// </para>
+        /// </summary>
+        public GuardrailWordPolicyConfig WordPolicyConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WordPolicyConfig property is set.
+        /// </summary>
+        internal bool IsSetWordPolicyConfig() => this.WordPolicyConfig != null;
+    }
+}

@@ -36,6 +36,8 @@ namespace Amazon.SecurityToken.Model
     public partial class GetSessionTokenResponse : AmazonWebServiceResponse
     {
         private Credentials _credentials;
+        private int? _sessionTokenSize;
+        private int? _sessionTokenUtilization;
 
         /// <summary>
         /// Gets and sets the property Credentials. 
@@ -60,6 +62,38 @@ namespace Amazon.SecurityToken.Model
         internal bool IsSetCredentials()
         {
             return this._credentials != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTokenSize.
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? SessionTokenSize
+        {
+            get { return this._sessionTokenSize; }
+            set { this._sessionTokenSize = value; }
+        }
+
+        // Check to see if SessionTokenSize property is set
+        internal bool IsSetSessionTokenSize()
+        {
+            return this._sessionTokenSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionTokenUtilization.
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? SessionTokenUtilization
+        {
+            get { return this._sessionTokenUtilization; }
+            set { this._sessionTokenUtilization = value; }
+        }
+
+        // Check to see if SessionTokenUtilization property is set
+        internal bool IsSetSessionTokenUtilization()
+        {
+            return this._sessionTokenUtilization.HasValue; 
         }
 
     }

@@ -62,6 +62,12 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("securityGroups", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AmazonMachineImageSecurityGroup, AmazonMachineImageSecurityGroupUnmarshaller>(AmazonMachineImageSecurityGroupUnmarshaller.Instance);
+                    unmarshalledObject.SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

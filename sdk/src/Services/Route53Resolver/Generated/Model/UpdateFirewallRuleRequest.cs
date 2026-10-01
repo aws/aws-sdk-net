@@ -333,13 +333,13 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>FirewallAdvancedContentCategory</c> — match an AWS-managed content category (for
-        /// example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        ///  <c>FirewallAdvancedContentCategory</c> — match an Amazon Web Services-managed content
+        /// category (for example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>FirewallAdvancedThreatCategory</c> — match an AWS-managed advanced threat category
-        /// (for example, <c>PHISHING</c>).
+        ///  <c>FirewallAdvancedThreatCategory</c> — match an Amazon Web Services-managed advanced
+        /// threat category (for example, <c>PHISHING</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -349,8 +349,8 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>PartnerThreatProtection</c> — match a third-party threat feed delivered through
-        /// AWS Marketplace. The selected partner must be an active subscription on the calling
-        /// account.
+        /// Amazon Web Services Marketplace. The selected partner must be an active subscription
+        /// on the calling account.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -1,0 +1,153 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DataZone.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateEnvironmentProfile operation. Creates an
+    /// Amazon DataZone environment profile.
+    /// </summary>
+    public partial class CreateEnvironmentProfileRequest : AmazonDataZoneRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AwsAccountId. 
+        /// <para>
+        /// The Amazon Web Services account in which the Amazon DataZone environment is created.
+        /// </para>
+        /// </summary>
+        public string AwsAccountId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsAccountId property is set.
+        /// </summary>
+        internal bool IsSetAwsAccountId() => this.AwsAccountId != null;
+
+        /// <summary>
+        /// Gets and sets the property AwsAccountRegion. 
+        /// <para>
+        /// The Amazon Web Services region in which this environment profile is created.
+        /// </para>
+        /// </summary>
+        public string AwsAccountRegion { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AwsAccountRegion property is set.
+        /// </summary>
+        internal bool IsSetAwsAccountRegion() => this.AwsAccountRegion != null;
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of this Amazon DataZone environment profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Max = 2048)]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Description property is set.
+        /// </summary>
+        internal bool IsSetDescription() => this.Description != null;
+
+        /// <summary>
+        /// Gets and sets the property DomainIdentifier. 
+        /// <para>
+        /// The ID of the Amazon DataZone domain in which this environment profile is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DomainIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DomainIdentifier property is set.
+        /// </summary>
+        internal bool IsSetDomainIdentifier() => this.DomainIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentBlueprintIdentifier. 
+        /// <para>
+        /// The ID of the blueprint with which this environment profile is created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string EnvironmentBlueprintIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EnvironmentBlueprintIdentifier property is set.
+        /// </summary>
+        internal bool IsSetEnvironmentBlueprintIdentifier() => this.EnvironmentBlueprintIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of this Amazon DataZone environment profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 64)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property ProjectIdentifier. 
+        /// <para>
+        /// The identifier of the project in which to create the environment profile.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ProjectIdentifier { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ProjectIdentifier property is set.
+        /// </summary>
+        internal bool IsSetProjectIdentifier() => this.ProjectIdentifier != null;
+
+        /// <summary>
+        /// Gets and sets the property UserParameters. 
+        /// <para>
+        /// The user parameters of this Amazon DataZone environment profile.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EnvironmentParameter> UserParameters { get; set; } = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
+
+        /// <summary>
+        /// Checks to see if the UserParameters property is set.
+        /// </summary>
+        internal bool IsSetUserParameters() => this.UserParameters != null && (this.UserParameters.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -1,0 +1,76 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Kafka.Model
+{
+    /// <summary>
+    /// This is the response object from the CreateReplicator operation.
+    /// </summary>
+    public partial class CreateReplicatorResponse : AmazonWebServiceResponse
+    {
+        /// <summary>
+        /// Gets and sets the property ReplicatorArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the replicator.
+        /// </para>
+        /// </summary>
+        public string ReplicatorArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReplicatorArn property is set.
+        /// </summary>
+        internal bool IsSetReplicatorArn() => this.ReplicatorArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ReplicatorName. 
+        /// <para>
+        /// Name of the replicator provided by the customer.
+        /// </para>
+        /// </summary>
+        public string ReplicatorName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReplicatorName property is set.
+        /// </summary>
+        internal bool IsSetReplicatorName() => this.ReplicatorName != null;
+
+        /// <summary>
+        /// Gets and sets the property ReplicatorState. 
+        /// <para>
+        /// State of the replicator.
+        /// </para>
+        /// </summary>
+        public ReplicatorState ReplicatorState { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReplicatorState property is set.
+        /// </summary>
+        internal bool IsSetReplicatorState() => this.ReplicatorState != null;
+    }
+}

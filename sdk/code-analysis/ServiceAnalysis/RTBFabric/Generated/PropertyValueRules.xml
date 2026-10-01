@@ -4,13 +4,13 @@
     <property>Amazon.RTBFabric.Model.AcceptLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AcceptLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AcceptLinkRequest.TimeoutInMillis</property>
@@ -21,79 +21,79 @@
     <property>Amazon.RTBFabric.Model.AcceptLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AcceptLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AcceptLinkResponse.PeerGatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AssociateCertificateRequest.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AssociateCertificateRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AssociateCertificateResponse.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AssociateCertificateResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateInboundExternalLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateInboundExternalLinkResponse.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateInboundExternalLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateInboundExternalLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkRequest.PeerGatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkRequest.TimeoutInMillis</property>
@@ -102,37 +102,37 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkResponse.CustomerProvidedId</property>
-    <pattern>[a-zA-Z0-9_-]{5,50}</pattern>
+    <pattern>^[a-zA-Z0-9_-]{5,50}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkResponse.PeerGatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkRoutingRuleRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkRoutingRuleRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateLinkRoutingRuleRequest.Priority</property>
@@ -143,67 +143,67 @@
     <property>Amazon.RTBFabric.Model.CreateLinkRoutingRuleResponse.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateOutboundExternalLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateOutboundExternalLinkRequest.PublicEndpoint</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(https|http)://.+</pattern>
+    <pattern>^(https|http)://.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateOutboundExternalLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateOutboundExternalLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateRequesterGatewayRequest.Description</property>
     <min>0</min>
     <max>255</max>
-    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateRequesterGatewayRequest.VpcId</property>
     <min>12</min>
     <max>21</max>
-    <pattern>vpc-[a-f0-9]{8,17}</pattern>
+    <pattern>^vpc-[a-f0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateRequesterGatewayResponse.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateRequesterGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateResponderGatewayRequest.Description</property>
     <min>0</min>
     <max>255</max>
-    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-@]*)</pattern>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateResponderGatewayRequest.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateResponderGatewayRequest.Port</property>
@@ -214,229 +214,229 @@
     <property>Amazon.RTBFabric.Model.CreateResponderGatewayRequest.VpcId</property>
     <min>12</min>
     <max>21</max>
-    <pattern>vpc-[a-f0-9]{8,17}</pattern>
+    <pattern>^vpc-[a-f0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateResponderGatewayResponse.ExternalInboundEndpoint</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CreateResponderGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteInboundExternalLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteInboundExternalLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteInboundExternalLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkRoutingRuleRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkRoutingRuleRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkRoutingRuleRequest.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteLinkRoutingRuleResponse.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteOutboundExternalLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteOutboundExternalLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteOutboundExternalLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteRequesterGatewayRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteRequesterGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteResponderGatewayRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DeleteResponderGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DisassociateCertificateRequest.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DisassociateCertificateRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DisassociateCertificateResponse.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.DisassociateCertificateResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetCertificateAssociationRequest.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetCertificateAssociationRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetCertificateAssociationResponse.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetCertificateAssociationResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetInboundExternalLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetInboundExternalLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetInboundExternalLinkResponse.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetInboundExternalLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetInboundExternalLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkResponse.PeerGatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkResponse.TimeoutInMillis</property>
@@ -447,31 +447,31 @@
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleRequest.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleResponse.Priority</property>
@@ -482,93 +482,93 @@
     <property>Amazon.RTBFabric.Model.GetLinkRoutingRuleResponse.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetOutboundExternalLinkResponse.PublicEndpoint</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(https|http)://.+</pattern>
+    <pattern>^(https|http)://.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetRequesterGatewayRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetRequesterGatewayResponse.Description</property>
-    <pattern>[A-Za-z0-9 ]+</pattern>
+    <pattern>^[A-Za-z0-9 ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetRequesterGatewayResponse.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetRequesterGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetRequesterGatewayResponse.VpcId</property>
     <min>12</min>
     <max>21</max>
-    <pattern>vpc-[a-f0-9]{8,17}</pattern>
+    <pattern>^vpc-[a-f0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetResponderGatewayRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetResponderGatewayResponse.Description</property>
-    <pattern>[A-Za-z0-9 ]+</pattern>
+    <pattern>^[A-Za-z0-9 ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetResponderGatewayResponse.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetResponderGatewayResponse.ExternalInboundEndpoint</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetResponderGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.GetResponderGatewayResponse.Port</property>
@@ -579,13 +579,13 @@
     <property>Amazon.RTBFabric.Model.GetResponderGatewayResponse.VpcId</property>
     <min>12</min>
     <max>21</max>
-    <pattern>vpc-[a-f0-9]{8,17}</pattern>
+    <pattern>^vpc-[a-f0-9]{8,17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListCertificateAssociationsRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListCertificateAssociationsRequest.MaxResults</property>
@@ -596,13 +596,13 @@
     <property>Amazon.RTBFabric.Model.ListLinkRoutingRulesRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinkRoutingRulesRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinkRoutingRulesRequest.MaxResults</property>
@@ -613,7 +613,7 @@
     <property>Amazon.RTBFabric.Model.ListLinksRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListRequesterGatewaysRequest.MaxResults</property>
@@ -629,61 +629,61 @@
     <property>Amazon.RTBFabric.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?</pattern>
+    <pattern>^arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RejectLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RejectLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RejectLinkResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RejectLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RejectLinkResponse.PeerGatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?</pattern>
+    <pattern>^arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1600</max>
-    <pattern>arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?</pattern>
+    <pattern>^arn:aws:rtbfabric:[a-zA-Z0-9_-]+:[0-9]{12}:gateway/[a-zA-Z0-9-]+(/link/[a-zA-Z0-9-]+(/routing-rule/[a-zA-Z0-9-]+)?)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRequest.TimeoutInMillis</property>
@@ -694,43 +694,43 @@
     <property>Amazon.RTBFabric.Model.UpdateLinkResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkModuleFlowRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkModuleFlowRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkModuleFlowResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkModuleFlowResponse.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest.Priority</property>
@@ -741,45 +741,45 @@
     <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleRequest.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateLinkRoutingRuleResponse.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateRequesterGatewayRequest.Description</property>
-    <pattern>[A-Za-z0-9 ]+</pattern>
+    <pattern>^[A-Za-z0-9 ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateRequesterGatewayRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateRequesterGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateResponderGatewayRequest.Description</property>
-    <pattern>[A-Za-z0-9 ]+</pattern>
+    <pattern>^[A-Za-z0-9 ]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateResponderGatewayRequest.DomainName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+</pattern>
+    <pattern>^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)(?:\.(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateResponderGatewayRequest.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.UpdateResponderGatewayRequest.Port</property>
@@ -790,17 +790,17 @@
     <property>Amazon.RTBFabric.Model.UpdateResponderGatewayResponse.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.AutoScalingGroupsConfiguration.RoleArn</property>
-    <pattern>arn:aws:iam::[0-9]{12}:role/.{1,2048}</pattern>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.CertificateAssociationSummary.AcmCertificateArn</property>
     <min>75</min>
     <max>256</max>
-    <pattern>arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov):acm:[a-z0-9-]+:[0-9]{12}:certificate/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.ClusterApiServerCaCertificateChain</property>
@@ -811,29 +811,29 @@
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.ClusterApiServerEndpointUri</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(https|http)://(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)(?:\.(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?))+</pattern>
+    <pattern>^(https|http)://(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)(?:\.(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?))+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.ClusterName</property>
     <min>2</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9]</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.EndpointsResourceName</property>
     <min>2</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9]</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.EndpointsResourceNamespace</property>
     <min>2</min>
     <max>63</max>
-    <pattern>[A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9]</pattern>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9-]{0,61}[A-Za-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.EksEndpointsConfiguration.RoleArn</property>
-    <pattern>arn:aws:iam::[0-9]{12}:role/.{1,2048}</pattern>
+    <pattern>^arn:aws:iam::[0-9]{12}:role/.{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.HealthCheckConfig.HealthyThresholdCount</property>
@@ -849,7 +849,7 @@
     <property>Amazon.RTBFabric.Model.HealthCheckConfig.Path</property>
     <min>1</min>
     <max>128</max>
-    <pattern>/.*</pattern>
+    <pattern>^/.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.HealthCheckConfig.Port</property>
@@ -885,7 +885,7 @@
     <property>Amazon.RTBFabric.Model.LinkAttributes.CustomerProvidedId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[a-zA-Z0-9_-]+</pattern>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.LinkRoutingRuleSummary.Priority</property>
@@ -896,43 +896,43 @@
     <property>Amazon.RTBFabric.Model.LinkRoutingRuleSummary.RuleId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>rule-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rule-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinksResponseStructure.GatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinksResponseStructure.LinkId</property>
     <min>6</min>
     <max>30</max>
-    <pattern>link-[a-z0-9-]{1,25}</pattern>
+    <pattern>^link-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinksResponseStructure.PeerGatewayId</property>
     <min>8</min>
     <max>32</max>
-    <pattern>rtb-gw-[a-z0-9-]{1,25}</pattern>
+    <pattern>^rtb-gw-[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ListLinksResponseStructure.PublicEndpoint</property>
     <min>0</min>
     <max>255</max>
-    <pattern>(https|http)://.+</pattern>
+    <pattern>^(https|http)://.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ModuleConfiguration.Name</property>
     <min>0</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9 -]+</pattern>
+    <pattern>^[A-Za-z0-9 -]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ModuleConfiguration.Version</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]{1,25}</pattern>
+    <pattern>^[a-z0-9-]{1,25}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.NoBidAction.NoBidReasonCode</property>
@@ -947,7 +947,7 @@
     <property>Amazon.RTBFabric.Model.NoBidModuleParameters.Reason</property>
     <min>1</min>
     <max>50</max>
-    <pattern>[a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.NoBidModuleParameters.ReasonCode</property>
@@ -963,19 +963,19 @@
     <property>Amazon.RTBFabric.Model.QueryStringKeyValuePair.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9._~-]+</pattern>
+    <pattern>^[A-Za-z0-9._~-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.QueryStringKeyValuePair.Value</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9._~-]+</pattern>
+    <pattern>^[A-Za-z0-9._~-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ResponderErrorMaskingForHttpCode.HttpCode</property>
     <min>3</min>
     <max>7</max>
-    <pattern>DEFAULT|4XX|5XX|\d{3}</pattern>
+    <pattern>^DEFAULT|4XX|5XX|\d{3}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.ResponderErrorMaskingForHttpCode.ResponseLoggingPercentage</property>
@@ -986,30 +986,30 @@
     <property>Amazon.RTBFabric.Model.RuleCondition.HostHeader</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9._~-]+</pattern>
+    <pattern>^[A-Za-z0-9._~-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RuleCondition.HostHeaderWildcard</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[A-Za-z0-9._~*-]+</pattern>
+    <pattern>^[A-Za-z0-9._~*-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RuleCondition.PathExact</property>
     <min>1</min>
     <max>128</max>
-    <pattern>/[A-Za-z0-9._~/-]*</pattern>
+    <pattern>^/[A-Za-z0-9._~/-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RuleCondition.PathPrefix</property>
     <min>1</min>
     <max>128</max>
-    <pattern>/[A-Za-z0-9._~/-]*</pattern>
+    <pattern>^/[A-Za-z0-9._~/-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RTBFabric.Model.RuleCondition.QueryStringExists</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[A-Za-z0-9._~-]+</pattern>
+    <pattern>^[A-Za-z0-9._~-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

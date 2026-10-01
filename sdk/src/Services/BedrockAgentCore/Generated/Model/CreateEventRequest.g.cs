@@ -1,0 +1,198 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgentCore.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateEvent operation. Creates an event in an
+    /// AgentCore Memory resource. Events represent interactions or activities that occur
+    /// within a session and are associated with specific actors. <para> To use this operation,
+    /// you must have the <c>bedrock-agentcore:CreateEvent</c> permission. </para> <para>
+    /// This operation is subject to request rate limiting. </para>
+    /// </summary>
+    public partial class CreateEventRequest : AmazonBedrockAgentCoreRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ActorId. 
+        /// <para>
+        /// The identifier of the actor associated with this event. An actor represents an entity
+        /// that participates in sessions and generates events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 255)]
+        public string ActorId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ActorId property is set.
+        /// </summary>
+        internal bool IsSetActorId() => this.ActorId != null;
+
+        /// <summary>
+        /// Gets and sets the property Branch. 
+        /// <para>
+        /// The branch information for this event. Branches allow for organizing events into different
+        /// conversation threads or paths.
+        /// </para>
+        /// </summary>
+        public Branch Branch { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Branch property is set.
+        /// </summary>
+        internal bool IsSetBranch() => this.Branch != null;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the operation completes no more
+        /// than one time. If this token matches a previous request, AgentCore ignores the request,
+        /// but does not return an error.
+        /// </para>
+        /// </summary>
+        public string ClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ClientToken property is set.
+        /// </summary>
+        internal bool IsSetClientToken() => this.ClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property EventTimestamp. 
+        /// <para>
+        /// The timestamp when the event occurred. If not specified, the current time is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public DateTime? EventTimestamp { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EventTimestamp property is set.
+        /// </summary>
+        internal bool IsSetEventTimestamp() => this.EventTimestamp.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property ExtractionConfig. 
+        /// <para>
+        /// The extraction configuration for long-term memory records. Use this parameter to specify
+        /// namespace variable keys and their values for namespace substitution during extraction.
+        /// </para>
+        /// </summary>
+        public ExtractionConfig ExtractionConfig { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExtractionConfig property is set.
+        /// </summary>
+        internal bool IsSetExtractionConfig() => this.ExtractionConfig != null;
+
+        /// <summary>
+        /// Gets and sets the property ExtractionMode. 
+        /// <para>
+        /// Controls long-term memory extraction for this event. When set to <c>SKIP</c>, the
+        /// event is stored in short-term memory but is excluded from long-term memory extraction.
+        /// If not specified, the event is processed for extraction as usual.
+        /// </para>
+        /// </summary>
+        public ExtractionMode ExtractionMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ExtractionMode property is set.
+        /// </summary>
+        internal bool IsSetExtractionMode() => this.ExtractionMode != null;
+
+        /// <summary>
+        /// Gets and sets the property MemoryId. 
+        /// <para>
+        /// The identifier of the AgentCore Memory resource in which to create the event.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 12)]
+        public string MemoryId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MemoryId property is set.
+        /// </summary>
+        internal bool IsSetMemoryId() => this.MemoryId != null;
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The key-value metadata to attach to the event.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 15)]
+        public Dictionary<string, MetadataValue> Metadata { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
+
+        /// <summary>
+        /// Checks to see if the Metadata property is set.
+        /// </summary>
+        internal bool IsSetMetadata() => this.Metadata != null && (this.Metadata.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// The content payload of the event. This can include conversational data, JSON data,
+        /// or binary content.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Max = 100)]
+        public List<PayloadType> Payload { get; set; } = AWSConfigs.InitializeCollections ? new List<PayloadType>() : null;
+
+        /// <summary>
+        /// Checks to see if the Payload property is set.
+        /// </summary>
+        internal bool IsSetPayload() => this.Payload != null && (this.Payload.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The identifier of the session in which this event occurs. A session represents a sequence
+        /// of related events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public string SessionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SessionId property is set.
+        /// </summary>
+        internal bool IsSetSessionId() => this.SessionId != null;
+    }
+}

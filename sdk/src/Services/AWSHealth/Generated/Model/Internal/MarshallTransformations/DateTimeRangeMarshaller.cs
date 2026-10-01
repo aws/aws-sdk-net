@@ -49,13 +49,13 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrom())
             {
                 context.Writer.WritePropertyName("from");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.From.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.From.Value));
             }
 
             if(requestObject.IsSetTo())
             {
                 context.Writer.WritePropertyName("to");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.To.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.To.Value));
             }
 
         }

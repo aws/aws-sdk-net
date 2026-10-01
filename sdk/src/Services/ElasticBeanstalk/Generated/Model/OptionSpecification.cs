@@ -46,7 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// A unique namespace identifying the option's associated AWS resource.
+        /// A unique namespace identifying the option's associated Amazon Web Services resource.
         /// </para>
         /// </summary>
         public string Namespace

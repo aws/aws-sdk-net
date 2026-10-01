@@ -42,6 +42,7 @@ namespace Amazon.Imagebuilder.Model
         private string _description;
         private string _dockerfileTemplateData;
         private string _dockerfileTemplateUri;
+        private bool? _dryRun;
         private string _imageOsVersionOverride;
         private InstanceConfiguration _instanceConfiguration;
         private string _kmsKeyId;
@@ -56,8 +57,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -77,7 +80,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Components. 
         /// <para>
-        /// The components included in the container recipe.
+        /// The components included in the container recipe. You can specify each component only
+        /// one time in a recipe.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -139,7 +143,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DockerfileTemplateData. 
         /// <para>
-        /// The Dockerfile template used to build your image as an inline data blob.
+        /// The Dockerfile template used to build your image, as an inline data blob. You must
+        /// specify exactly one of the <c>dockerfileTemplateData</c> or <c>dockerfileTemplateUri</c>
+        /// properties. For the contextual variables that the template can include, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/create-container-recipes.html">Create
+        /// a new version of a container recipe</a> in the <i>EC2 Image Builder User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16000)]
@@ -158,7 +165,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DockerfileTemplateUri. 
         /// <para>
-        /// The Amazon S3 URI for the Dockerfile that will be used to build your container image.
+        /// The Amazon S3 URI for the Dockerfile template that is used to build your container
+        /// image. You must have permission to read the object. Image Builder reads the object
+        /// once, when it creates the recipe, and stores its content in the recipe. Later changes
+        /// to the S3 object don't affect the recipe. You must specify exactly one of the <c>dockerfileTemplateData</c>
+        /// or <c>dockerfileTemplateUri</c> properties.
         /// </para>
         /// </summary>
         public string DockerfileTemplateUri
@@ -174,9 +185,31 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Validates the required permissions and request parameters without performing the operation.
+        /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageOsVersionOverride. 
         /// <para>
-        /// Specifies the operating system version for the base image.
+        /// Specifies the operating system version for the base image. Use this property only
+        /// when the base image is a container image from a registry. When the base image is an
+        /// Image Builder image, the operating system version comes from the parent image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -236,7 +269,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the container recipe.
+        /// The name of the container recipe. The recipe name, combined with the semantic version,
+        /// must be unique to your account in each Amazon Web Services Region. Image Builder generates
+        /// the container recipe ARN from a normalized form of the name, so names that differ
+        /// only in case, spaces, or underscores count as the same name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -255,7 +291,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ParentImage. 
         /// <para>
-        /// The base image for the container recipe.
+        /// The base image for the container recipe. This can be an Image Builder image resource
+        /// ARN or a container image URI from a registry, for example <c>amazonlinux:latest</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -274,7 +311,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PlatformOverride. 
         /// <para>
-        /// Specifies the operating system platform when you use a custom base image.
+        /// Specifies the operating system platform when you use a custom base image. Container
+        /// recipes support only the Linux and Windows platforms.
         /// </para>
         /// </summary>
         public Platform PlatformOverride
@@ -302,9 +340,9 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Assignment:</b> For the first three nodes you can assign any positive integer
-        /// value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node.
-        /// Image Builder automatically assigns the build number to the fourth node.
+        ///  <b>Assignment:</b> For the first three nodes, you can assign any positive integer
+        /// value, including zero. The upper limit is 2^30-1, or 1073741823, for each node. Image
+        /// Builder automatically assigns the build number to the fourth node.
         /// </para>
         ///  
         /// <para>
@@ -354,7 +392,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TargetRepository. 
         /// <para>
-        /// The destination repository for the container image.
+        /// The destination repository for the container image. The Amazon ECR repository must
+        /// already exist in the Amazon Web Services Region where the build runs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

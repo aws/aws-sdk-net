@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -33,7 +32,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("///<summary>");
-            writer.WriteLine($"/// Common exception for the {context.ServiceName} service.");
+            writer.WriteLine($"/// Common exception for the {context.BaseName} service.");
             writer.WriteLine("/// </summary>");
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : AmazonServiceException", () =>
@@ -50,9 +49,9 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
     /// <summary>
     /// Emits a per-operation exception class (e.g. <c>ChannelNotFoundException</c>).
     /// </summary>
-    public string WriteException(StructureShape errorShape, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string WriteException(StructureShape errorShape, CancellationToken cancellationToken = default)
     {
-        var className = ToExceptionName(shapeId.Name);
+        var className = ToExceptionName(context.ToDotNetName(errorShape.Id));
         var baseClassName = $"{context.ClientName}Exception";
         var serializedMembers = ResolveSerializedMembers(errorShape, context);
         // Class properties are the serialized members minus base-owned RequestId/ErrorCode, which
@@ -67,6 +66,10 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace($"{context.Namespace}.Model", () =>
         {
             DocumentationFormatter.WriteClassSummary(writer, DocumentationFormatter.Cleanup(errorShape.GetDocumentation()));
+            if (TypeMapper.BuildObsolete(errorShape) is string obsolete)
+            {
+                writer.WriteLine(obsolete);
+            }
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : {baseClassName}", () =>
             {
@@ -132,7 +135,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         return [.. members.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
     }
 
-    private static void WriteSerializableAttribute(CodeWriter writer)
+    internal static void WriteSerializableAttribute(CodeWriter writer)
     {
         writer.WriteLine("#if !NETSTANDARD");
         writer.WriteLine("[Serializable]");
@@ -228,7 +231,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
     }
 
-    private static void WriteSerializationBlock(CodeWriter writer, string className, IReadOnlyList<Member> members, bool includeGetObjectData)
+    internal static void WriteSerializationBlock(CodeWriter writer, string className, IReadOnlyList<Member> members, bool includeGetObjectData)
     {
         writer.WriteLine("#if !NETSTANDARD");
         writer.WriteLine("/// <summary>");

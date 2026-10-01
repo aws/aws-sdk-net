@@ -39,6 +39,9 @@ namespace Amazon.EC2Protocol.Model
         private string _bar;
         private bool? _baz;
         private double? _boo;
+        private string _distinctQueryAndXmlName;
+        private string _distinctQueryName;
+        private string _distinctXmlName;
         private float? _floatValue;
         private string _foo;
         private FooEnum _fooEnum;
@@ -105,6 +108,51 @@ namespace Amazon.EC2Protocol.Model
         internal bool IsSetBoo()
         {
             return this._boo.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DistinctQueryAndXmlName.
+        /// </summary>
+        public string DistinctQueryAndXmlName
+        {
+            get { return this._distinctQueryAndXmlName; }
+            set { this._distinctQueryAndXmlName = value; }
+        }
+
+        // Check to see if DistinctQueryAndXmlName property is set
+        internal bool IsSetDistinctQueryAndXmlName()
+        {
+            return this._distinctQueryAndXmlName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DistinctQueryName.
+        /// </summary>
+        public string DistinctQueryName
+        {
+            get { return this._distinctQueryName; }
+            set { this._distinctQueryName = value; }
+        }
+
+        // Check to see if DistinctQueryName property is set
+        internal bool IsSetDistinctQueryName()
+        {
+            return this._distinctQueryName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DistinctXmlName.
+        /// </summary>
+        public string DistinctXmlName
+        {
+            get { return this._distinctXmlName; }
+            set { this._distinctXmlName = value; }
+        }
+
+        // Check to see if DistinctXmlName property is set
+        internal bool IsSetDistinctXmlName()
+        {
+            return this._distinctXmlName != null;
         }
 
         /// <summary>

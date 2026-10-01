@@ -32,6 +32,27 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the DescribeEnvironments operation.
     /// Returns descriptions for existing environments.
+    /// 
+    ///  
+    /// <para>
+    /// This action only returns information about environments that the calling principle
+    /// has IAM permissions to access. For example, consider a case where a user only has
+    /// permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i>
+    /// action, the response will only include the one environment that the user has permission
+    /// to access instead of all three environments. If the user doesn’t have access to any
+    /// of the environments an empty result is returned.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+    /// managed policy allows operators to view information about resources related to Elastic
+    /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+    /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+    /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+    /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+    /// Controlling access with managed policies</a> in the same topic.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeEnvironmentsRequest : AmazonElasticBeanstalkRequest
     {
@@ -52,8 +73,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
-        /// only those that are associated with this application.
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to include only
+        /// those that are associated with this application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -72,8 +93,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentIds. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
-        /// only those that have the specified IDs.
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to include only
+        /// those that have the specified IDs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -96,8 +117,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentNames. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
-        /// only those that have the specified names.
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to include only
+        /// those that have the specified names.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -215,8 +236,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property VersionLabel. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk restricts the returned descriptions to include
-        /// only those that are associated with this application version.
+        /// If specified, Elastic Beanstalk restricts the returned descriptions to include only
+        /// those that are associated with this application version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

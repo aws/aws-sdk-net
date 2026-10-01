@@ -37,6 +37,7 @@ namespace Amazon.Notifications.Model
     public partial class ListManagedNotificationEventsRequest : AmazonNotificationsRequest
     {
         private DateTime? _endTime;
+        private bool? _includeSensitiveEvents;
         private LocaleCode _locale;
         private int? _maxResults;
         private string _nextToken;
@@ -61,6 +62,26 @@ namespace Amazon.Notifications.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeSensitiveEvents. 
+        /// <para>
+        /// Specifies whether to include sensitive events in the result. By default, only non-sensitive
+        /// events are returned. The <c>notifications:AccessSensitiveEvents</c> permission controls
+        /// access to sensitive events.
+        /// </para>
+        /// </summary>
+        public bool? IncludeSensitiveEvents
+        {
+            get { return this._includeSensitiveEvents; }
+            set { this._includeSensitiveEvents = value; }
+        }
+
+        // Check to see if IncludeSensitiveEvents property is set
+        internal bool IsSetIncludeSensitiveEvents()
+        {
+            return this._includeSensitiveEvents.HasValue; 
         }
 
         /// <summary>

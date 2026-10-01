@@ -85,8 +85,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NoData. 
         /// <para>
-        ///  <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on
-        /// an instance.
+        ///  <b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on an instance.
         /// </para>
         /// </summary>
         public int? NoData
@@ -160,7 +159,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Unknown. 
         /// <para>
-        ///  <b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient
+        ///  <b>Grey.</b> Elastic Beanstalk and the health agent are reporting an insufficient
         /// amount of data on an instance.
         /// </para>
         /// </summary>

@@ -49,13 +49,13 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.End.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.End.Value));
             }
 
             if(requestObject.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Start.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.Start.Value));
             }
 
         }

@@ -7,6 +7,12 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetListingRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetListingResponse.Catalog</property>
     <min>1</min>
     <max>255</max>
@@ -30,6 +36,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetListingResponse.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetListingResponse.LogoThumbnailUrl</property>
     <min>1</min>
     <max>2048</max>
@@ -46,6 +58,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetOfferRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetOfferRequest.OfferId</property>
@@ -66,6 +84,12 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetOfferResponse.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetOfferResponse.OfferId</property>
     <min>1</min>
     <max>255</max>
@@ -81,6 +105,12 @@
     <min>1</min>
     <max>64</max>
     <pattern>[A-Za-z0-9_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetOfferSetRequest.OfferSetId</property>
@@ -100,6 +130,12 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetOfferSetResponse.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetOfferSetResponse.OfferSetId</property>
     <min>1</min>
     <max>255</max>
@@ -110,6 +146,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest.MaxResults</property>
@@ -129,10 +171,22 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse.NextToken</property>
     <min>0</min>
     <max>8192</max>
     <pattern>[a-zA-Z0-9+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetProductRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetProductRequest.ProductId</property>
@@ -145,6 +199,18 @@
     <min>1</min>
     <max>255</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetProductResponse.ListingId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.GetProductResponse.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.GetProductResponse.LogoThumbnailUrl</property>
@@ -177,6 +243,12 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -194,10 +266,22 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ListFulfillmentOptionsResponse.NextToken</property>
     <min>0</min>
     <max>8192</max>
     <pattern>[a-zA-Z0-9+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ListPurchaseOptionsRequest.MaxResults</property>
@@ -215,6 +299,12 @@
     <min>0</min>
     <max>8192</max>
     <pattern>[a-zA-Z0-9+/=]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.SearchFacetsRequest.NextToken</property>
@@ -237,6 +327,12 @@
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.SearchFacetsResponse.TotalResults</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.SearchListingsRequest.Locale</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[^;,]+(\s*,\s*[^;,]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.SearchListingsRequest.MaxResults</property>
@@ -266,6 +362,30 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.AmazonMachineImageEbsVolume.Iops</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.AmazonMachineImageFulfillmentOption.AccessUrlTemplate</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.AmazonMachineImageFulfillmentOption.AmiAlias</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.AmazonMachineImageFulfillmentOption.Architecture</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.AmazonMachineImageFulfillmentOption.ShortDescription</property>
+    <min>0</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ByolPricingTerm.Id</property>
     <min>1</min>
     <max>256</max>
@@ -282,6 +402,16 @@
     <min>1</min>
     <max>1024</max>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.CloudFormationFulfillmentOption.LongDescription</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.CloudFormationFulfillmentOption.ShortDescription</property>
+    <min>0</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ConfigurableUpfrontPricingTerm.CurrencyCode</property>
@@ -720,6 +850,12 @@
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ReviewSourceSummary.TotalReviews</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.SaasFulfillmentOption.LaunchUrl</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https?://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.ScheduleItem.ChargeAmount</property>

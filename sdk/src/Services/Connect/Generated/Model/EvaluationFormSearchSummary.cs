@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormSearchSummary
     {
         private int? _activeVersion;
+        private string _aiVersion;
         private bool? _autoEvaluationEnabled;
         private ContactInteractionType _contactInteractionType;
         private string _createdBy;
@@ -68,6 +69,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetActiveVersion()
         {
             return this._activeVersion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AIVersion. 
+        /// <para>
+        /// The AI version to use for the evaluation form. This specifies which AI model version
+        /// is used for automated evaluations.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string AIVersion
+        {
+            get { return this._aiVersion; }
+            set { this._aiVersion = value; }
+        }
+
+        // Check to see if AIVersion property is set
+        internal bool IsSetAIVersion()
+        {
+            return this._aiVersion != null;
         }
 
         /// <summary>

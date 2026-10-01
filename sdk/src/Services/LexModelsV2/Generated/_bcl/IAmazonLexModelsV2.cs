@@ -32,8 +32,72 @@ namespace Amazon.LexModelsV2
     /// <summary>
     /// <para>Interface for accessing LexModelsV2</para>
     ///
-    /// Amazon Lex Model Building Service provides APIs for creating, managing, and deploying
-    /// conversational bots and their components.
+    /// This document provides detailed information about the Amazon Lex V2 API actions and
+    /// their parameters.
+    /// 
+    ///  
+    /// <para>
+    /// For information about the IAM access control permissions you need to use this API,
+    /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/security_iam_service-with-iam.html">Identity-based
+    /// policies for Amazon Lex V2</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon Lex V2 Model Building V2 operations let you build and manage bots.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you use a custom HTTP client to call Amazon Lex Model Building V2 operations, you
+    /// must set the "Content-Type" HTTP header to "application/x-amz-json-1.1". Otherwise,
+    /// you receive an HTTP 404 - UnknownOperationException in the response.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon Lex Model Building V2 operations return the responses with the "application/x-amz-json-1.1"
+    /// content type.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can use <a href="http://aws.amazon.com/tools/#sdk">Amazon Web Services SDKs</a>
+    /// to access Amazon Lex V2 APIs using your favorite programming language. The SDKs automatically
+    /// perform useful tasks for you, such as:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Cryptographically sign your service requests
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Retry requests
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Handle error responses
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The following resources provide additional information about the Amazon Lex V2 Model
+    /// Building API.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <i>Amazon Web Services General Reference</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/general/latest/gr/lex.html">Amazon Lex V2 Endpoints
+    /// for each region</a>.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <i>Command Line Interface</i> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/cli/latest/reference/lexv2-models/index.html">
+    /// Amazon Lex Model Building V2 CLI commands</a>.
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial interface IAmazonLexModelsV2 : IAmazonService, IDisposable
     {

@@ -1,0 +1,99 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.IoTWireless.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// FPorts Marshaller
+    /// </summary>
+    public partial class FPortsMarshaller : IRequestMarshaller<FPorts, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(FPorts requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetApplications())
+            {
+                context.Writer.WritePropertyName("Applications");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectApplicationsListValue in requestObject.Applications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ApplicationConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectApplicationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetClockSync())
+            {
+                context.Writer.WritePropertyName("ClockSync");
+                context.Writer.WriteNumberValue(requestObject.ClockSync.Value);
+            }
+
+            if (requestObject.IsSetFuota())
+            {
+                context.Writer.WritePropertyName("Fuota");
+                context.Writer.WriteNumberValue(requestObject.Fuota.Value);
+            }
+
+            if (requestObject.IsSetMulticast())
+            {
+                context.Writer.WritePropertyName("Multicast");
+                context.Writer.WriteNumberValue(requestObject.Multicast.Value);
+            }
+
+            if (requestObject.IsSetPositioning())
+            {
+                context.Writer.WritePropertyName("Positioning");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PositioningMarshaller.Instance;
+                marshaller.Marshall(requestObject.Positioning, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static FPortsMarshaller Instance = new FPortsMarshaller();
+    }
+}

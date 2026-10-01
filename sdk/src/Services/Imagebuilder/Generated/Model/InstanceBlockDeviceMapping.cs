@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Ebs. 
         /// <para>
-        /// Use to manage Amazon EBS-specific configuration for this mapping.
+        /// The Amazon EBS-specific configuration for this mapping.
         /// </para>
         /// </summary>
         public EbsInstanceBlockDeviceSpecification Ebs
@@ -79,7 +79,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// Use to remove a mapping from the base image.
+        /// Specifies a mapping to remove from the base image.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=0)]
@@ -98,7 +98,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// Use to manage instance ephemeral devices.
+        /// The virtual device name for instance ephemeral devices.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

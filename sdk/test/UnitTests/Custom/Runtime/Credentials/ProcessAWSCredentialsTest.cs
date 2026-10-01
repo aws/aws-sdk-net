@@ -34,18 +34,18 @@ namespace AWSSDK.UnitTests
         private const int InvalidVersionNumber = 2;
         private const string ExitKey = "Exit";
         private static readonly string ProjectPath =
-            Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=\\bin\\)").Captures[0].Value;
+            Regex.Match(Directory.GetCurrentDirectory(), @"^.*?(?=[\\/]bin[\\/])").Captures[0].Value;
         public static readonly string ActualSecretKey = "SecretKey";
         public static readonly string ActualAccessKey = "AccessKey";
         public static readonly string ArgumentsBasic = "Basic";
         public const int ValidVersionNumber = 1;
-        public static readonly string Executable = Path.Combine(ProjectPath, @"Custom\Util\linux-credentials-script.sh");
+        public static readonly string Executable = Path.Combine(ProjectPath, "Custom", "Util", "linux-credentials-script.sh");
 
         static ProcessAWSCredentialsTest()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Executable = $@"{ProjectPath}\Custom\Util\windows-credentials-script.bat";
+                Executable = Path.Combine(ProjectPath, "Custom", "Util", "windows-credentials-script.bat");
             }
         }
 
@@ -91,8 +91,10 @@ namespace AWSSDK.UnitTests
 
         /// <summary>
         /// The test validates the credential refresh logic for session credentials.
-        /// The executable generates mock creds and Guid tokens with an expiration of
-        /// 1 min. Hence a delay of 1 min is added to allow successful credential refresh.
+        /// DetermineProcessCredential runs the credential process on every call (it does
+        /// not cache) and the executable generates a new Guid token per run, so a
+        /// refresh must yield a different token without waiting for the 1 minute
+        /// expiration the executable sets.
         /// </summary>
         [TestMethod]
         public void ValidateCredentialRefresh()
@@ -100,9 +102,9 @@ namespace AWSSDK.UnitTests
             var processCredential = new ProcessAWSCredentials($"{Executable} {ArgumentsSession} {ValidVersionNumber}");
             var credentialsRefreshState = processCredential.DetermineProcessCredential();
             var oldToken = credentialsRefreshState.Credentials.Token;
-            
-            Thread.Sleep(TimeSpan.FromSeconds(60));
-            
+
+            Thread.Sleep(TimeSpan.FromSeconds(2));
+
             credentialsRefreshState = processCredential.DetermineProcessCredential();
             Assert.AreNotEqual(oldToken, credentialsRefreshState.Credentials.Token);
         }

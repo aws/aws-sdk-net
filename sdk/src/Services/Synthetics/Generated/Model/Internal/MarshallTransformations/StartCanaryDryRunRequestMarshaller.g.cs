@@ -1,0 +1,206 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.Synthetics.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// StartCanaryDryRun Request Marshaller
+    /// </summary>
+    public partial class StartCanaryDryRunRequestMarshaller : IMarshaller<IRequest, StartCanaryDryRunRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((StartCanaryDryRunRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(StartCanaryDryRunRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.Synthetics");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-10-11";
+            request.HttpMethod = "POST";
+
+            if (!publicRequest.IsSetName())
+            {
+                throw new AmazonSyntheticsException("Request object does not have required field Name set");
+            }
+            request.AddPathResource("{Name}", StringUtils.FromString(publicRequest.Name));
+
+            request.ResourcePath = "/canary/{Name}/dry-run/start";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetArtifactConfig())
+            {
+                context.Writer.WritePropertyName("ArtifactConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ArtifactConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ArtifactConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetArtifactS3Location())
+            {
+                context.Writer.WritePropertyName("ArtifactS3Location");
+                context.Writer.WriteStringValue(publicRequest.ArtifactS3Location);
+            }
+            if (publicRequest.IsSetBrowserConfigs())
+            {
+                context.Writer.WritePropertyName("BrowserConfigs");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestBrowserConfigsListValue in publicRequest.BrowserConfigs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BrowserConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBrowserConfigsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetCode())
+            {
+                context.Writer.WritePropertyName("Code");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CanaryCodeInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Code, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
+            }
+            if (publicRequest.IsSetFailureRetentionPeriodInDays())
+            {
+                context.Writer.WritePropertyName("FailureRetentionPeriodInDays");
+                context.Writer.WriteNumberValue(publicRequest.FailureRetentionPeriodInDays.Value);
+            }
+            if (publicRequest.IsSetProvisionedResourceCleanup())
+            {
+                context.Writer.WritePropertyName("ProvisionedResourceCleanup");
+                context.Writer.WriteStringValue(publicRequest.ProvisionedResourceCleanup);
+            }
+            if (publicRequest.IsSetRunConfig())
+            {
+                context.Writer.WritePropertyName("RunConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CanaryRunConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RunConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetRuntimeVersion())
+            {
+                context.Writer.WritePropertyName("RuntimeVersion");
+                context.Writer.WriteStringValue(publicRequest.RuntimeVersion);
+            }
+            if (publicRequest.IsSetSuccessRetentionPeriodInDays())
+            {
+                context.Writer.WritePropertyName("SuccessRetentionPeriodInDays");
+                context.Writer.WriteNumberValue(publicRequest.SuccessRetentionPeriodInDays.Value);
+            }
+            if (publicRequest.IsSetVisualReference())
+            {
+                context.Writer.WritePropertyName("VisualReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VisualReferenceInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VisualReference, context);
+
+                context.Writer.WriteEndObject();
+            }
+            if (publicRequest.IsSetVisualReferences())
+            {
+                context.Writer.WritePropertyName("VisualReferences");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestVisualReferencesListValue in publicRequest.VisualReferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VisualReferenceInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVisualReferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("VpcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly StartCanaryDryRunRequestMarshaller _instance = new();
+
+        internal static StartCanaryDryRunRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static StartCanaryDryRunRequestMarshaller Instance => _instance;
+    }
+}

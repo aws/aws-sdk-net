@@ -36,6 +36,37 @@ namespace Amazon.Batch.Model
     public partial class EksConfiguration
     {
         /// <summary>
+        /// Gets and sets the property AccessEntry. 
+        /// <para>
+        /// The Batch-managed Amazon EKS access entry for the compute environment. Set <c>desiredState</c>
+        /// to declare whether Batch manages an access entry on the cluster. In a <c>DescribeComputeEnvironments</c>
+        /// response, <c>desiredState</c> is the value that Batch recorded for the compute environment
+        /// and <c>status</c> is the observed state of the access entry on the cluster. To change
+        /// the access entry on an existing compute environment, use <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_EksConfigurationUpdate.html#Batch-Type-EksConfigurationUpdate-accessEntry">
+        /// <c>EksConfigurationUpdate.accessEntry</c> </a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Whether the entry is provisioned on the cluster depends on the cluster's <c>authenticationMode</c>
+        /// and the <c>desiredState</c> recorded for each Batch compute environment targeting
+        /// the cluster. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon
+        /// EKS access entry authentication</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify this field, Batch doesn't record a <c>desiredState</c> for the
+        /// compute environment and <c>DescribeComputeEnvironments</c> doesn't return one. For
+        /// the purpose of provisioning the access entry, Batch behaves as it does for <c>INHERIT_FROM_CLUSTER</c>.
+        /// </para>
+        /// </summary>
+        public EksAccessEntry AccessEntry { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AccessEntry property is set.
+        /// </summary>
+        internal bool IsSetAccessEntry() => this.AccessEntry != null;
+
+        /// <summary>
         /// Gets and sets the property EksClusterArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <c>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i>

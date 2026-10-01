@@ -53,8 +53,8 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
-        /// not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
-        /// error. 
+        /// not specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
+        /// 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -77,8 +77,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
-        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
-        /// 
+        /// specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -116,23 +115,23 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property TerminateResources. 
         /// <para>
-        /// Indicates whether the associated AWS resources should shut down when the environment
-        /// is terminated:
+        /// Indicates whether the associated Amazon Web Services resources should shut down when
+        /// the environment is terminated:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>true</c>: The specified environment as well as the associated AWS resources, such
-        /// as Auto Scaling group and LoadBalancer, are terminated.
+        ///  <c>true</c>: The specified environment as well as the associated Amazon Web Services
+        /// resources, such as Auto Scaling group and LoadBalancer, are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>false</c>: AWS Elastic Beanstalk resource management is removed from the environment,
-        /// but the AWS resources continue to operate.
+        ///  <c>false</c>: Elastic Beanstalk resource management is removed from the environment,
+        /// but the Amazon Web Services resources continue to operate.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/">
-        /// AWS Elastic Beanstalk User Guide. </a> 
+        /// Elastic Beanstalk User Guide. </a> 
         /// </para>
         ///  
         /// <para>

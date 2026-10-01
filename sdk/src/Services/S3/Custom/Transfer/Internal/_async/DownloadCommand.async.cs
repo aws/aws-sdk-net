@@ -70,7 +70,8 @@ namespace Amazon.S3.Transfer.Internal
                             retries = 0;
                             Interlocked.Exchange(ref _totalTransferredBytes, 0);
                             shouldRetry = true;
-                            WaitBeforeRetry(retries);
+                            await Task.Delay(GetRetryDelay(retries), cancellationToken)
+                                .ConfigureAwait(continueOnCapturedContext: false);
                             continue;
                         }
                         mostRecentETag = response.ETag;
@@ -116,6 +117,16 @@ namespace Amazon.S3.Transfer.Internal
                 }
                 catch (Exception exception)
                 {
+                    // Cancellation must surface as OperationCanceledException per the async
+                    // API contract, not be treated as a retryable/non-retryable transfer
+                    // error and wrapped in AmazonServiceException. This matters now that the
+                    // retry backoff (including the ETag-changed branch above) is a
+                    // cancellable await rather than a non-cancellable blocking sleep.
+                    if (exception is OperationCanceledException && cancellationToken.IsCancellationRequested)
+                    {
+                        throw;
+                    }
+
                     retries++;
                     shouldRetry = HandleExceptionForHttpClient(exception, retries, maxRetries);
                     if (!shouldRetry)
@@ -142,7 +153,17 @@ namespace Amazon.S3.Transfer.Internal
                         }
                     }
                 }
-                WaitBeforeRetry(retries);
+
+                // Only back off when a retry will actually happen. On a successful
+                // download shouldRetry is false and retries is 0, so historically this
+                // slept 100ms (GetRetryDelay(0)) on every successful download. Guarding
+                // on shouldRetry removes that fixed floor. Use a non-blocking awaited
+                // delay so the async path does not block a thread-pool thread.
+                if (shouldRetry)
+                {
+                    await Task.Delay(GetRetryDelay(retries), cancellationToken)
+                        .ConfigureAwait(continueOnCapturedContext: false);
+                }
             } while (shouldRetry);
             
             // This should never happen under normal logic flow since we always throw exception on error.

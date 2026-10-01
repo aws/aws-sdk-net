@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetLifecyclePolicy operation.
-    /// Get details for the specified image lifecycle policy.
+    /// Retrieves details for the specified image lifecycle policy.
     /// </summary>
     public partial class GetLifecyclePolicyRequest : AmazonImagebuilderRequest
     {

@@ -1,0 +1,120 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Buffers;
+
+using Amazon.XRay.Model;
+using System.Globalization;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.XRay.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// GetSamplingTargets Request Marshaller
+    /// </summary>
+    public partial class GetSamplingTargetsRequestMarshaller : IMarshaller<IRequest, GetSamplingTargetsRequest>, IMarshaller<IRequest, AmazonWebServiceRequest>
+    {
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(AmazonWebServiceRequest input)
+        {
+            return this.Marshall((GetSamplingTargetsRequest)input);
+        }
+
+        /// <summary>
+        /// Marshall the request object to the HTTP request.
+        /// </summary>
+        public IRequest Marshall(GetSamplingTargetsRequest publicRequest)
+        {
+            IRequest request = new DefaultRequest(publicRequest, "Amazon.XRay");
+            request.Headers["Content-Type"] = "application/json";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-04-12";
+            request.HttpMethod = "POST";
+
+            request.ResourcePath = "/SamplingTargets";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using var writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if (publicRequest.IsSetSamplingBoostStatisticsDocuments())
+            {
+                context.Writer.WritePropertyName("SamplingBoostStatisticsDocuments");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSamplingBoostStatisticsDocumentsListValue in publicRequest.SamplingBoostStatisticsDocuments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SamplingBoostStatisticsDocumentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSamplingBoostStatisticsDocumentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+            if (publicRequest.IsSetSamplingStatisticsDocuments())
+            {
+                context.Writer.WritePropertyName("SamplingStatisticsDocuments");
+                context.Writer.WriteStartArray();
+                foreach (var publicRequestSamplingStatisticsDocumentsListValue in publicRequest.SamplingStatisticsDocuments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SamplingStatisticsDocumentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSamplingStatisticsDocumentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+
+            return request;
+        }
+
+        private static readonly GetSamplingTargetsRequestMarshaller _instance = new();
+
+        internal static GetSamplingTargetsRequestMarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static GetSamplingTargetsRequestMarshaller Instance => _instance;
+    }
+}

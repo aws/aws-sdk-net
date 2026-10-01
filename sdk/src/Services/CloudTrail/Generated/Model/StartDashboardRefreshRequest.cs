@@ -31,8 +31,17 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDashboardRefresh operation.
-    /// Starts a refresh of the specified dashboard. 
-    /// 
+    /// <important> 
+    /// <para>
+    /// CloudTrail Lake will no longer be open to new customers starting May 31, 2026. If
+    /// you would like to use CloudTrail Lake, sign up prior to that date. Existing customers
+    /// can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-lake-service-availability-change.html">CloudTrail
+    /// Lake availability change</a>.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    ///  Starts a refresh of the specified dashboard. 
+    /// </para>
     ///  
     /// <para>
     ///  Each time a dashboard is refreshed, CloudTrail runs queries to populate the dashboard's

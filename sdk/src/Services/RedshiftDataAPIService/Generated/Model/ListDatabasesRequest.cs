@@ -114,7 +114,6 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Secrets Manager or temporary credentials. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Database
         {
             get { return this._database; }

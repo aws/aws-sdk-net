@@ -49,11 +49,16 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <i>Web server tier</i> – <c>WebServer</c> 
+        /// For <i>Standard-mode EC2-based web server</i> – <c>WebServer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <i>Worker tier</i> – <c>Worker</c> 
+        /// For <i>Standard-mode EC2-based backend application with Amazon SQS</i> – <c>Worker</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <i>Cluster-mode Amazon EKS-based applications</i> – <c>Cluster</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -85,6 +90,10 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  </li> <li> 
         /// <para>
         /// For <i>Worker tier</i> – <c>SQS/HTTP</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <i>Cluster tier</i> – <c>EKS</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

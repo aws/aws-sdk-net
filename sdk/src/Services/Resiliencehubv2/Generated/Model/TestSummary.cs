@@ -104,7 +104,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// The unique identifier of the test.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public string TestId
         {
             get { return this._testId; }

@@ -6131,6 +6131,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type EmbeddedDestinationStyleControl.
+    /// </summary>
+    public class EmbeddedDestinationStyleControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANUAL for EmbeddedDestinationStyleControl
+        /// </summary>
+        public static readonly EmbeddedDestinationStyleControl MANUAL = new EmbeddedDestinationStyleControl("MANUAL");
+        /// <summary>
+        /// Constant PASSTHROUGH for EmbeddedDestinationStyleControl
+        /// </summary>
+        public static readonly EmbeddedDestinationStyleControl PASSTHROUGH = new EmbeddedDestinationStyleControl("PASSTHROUGH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmbeddedDestinationStyleControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmbeddedDestinationStyleControl FindValue(string value)
+        {
+            return FindValue<EmbeddedDestinationStyleControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmbeddedDestinationStyleControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EmbeddedScte20Detection.
     /// </summary>
     public class EmbeddedScte20Detection : ConstantClass
@@ -6174,6 +6224,52 @@ namespace Amazon.MediaLive
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EmbeddedScte20Detection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EnrichmentMethod.
+    /// </summary>
+    public class EnrichmentMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SCTE35_ELEMENTAL_INFERENCE_QUERY_PARAMS for EnrichmentMethod
+        /// </summary>
+        public static readonly EnrichmentMethod SCTE35_ELEMENTAL_INFERENCE_QUERY_PARAMS = new EnrichmentMethod("SCTE35_ELEMENTAL_INFERENCE_QUERY_PARAMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EnrichmentMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EnrichmentMethod FindValue(string value)
+        {
+            return FindValue<EnrichmentMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EnrichmentMethod(string value)
         {
             return FindValue(value);
         }
@@ -15459,6 +15555,60 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type OutputUsage.
+    /// </summary>
+    public class OutputUsage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTIVIEW_EQUAL_SIZE_VIEW for OutputUsage
+        /// </summary>
+        public static readonly OutputUsage MULTIVIEW_EQUAL_SIZE_VIEW = new OutputUsage("MULTIVIEW_EQUAL_SIZE_VIEW");
+        /// <summary>
+        /// Constant MULTIVIEW_PRIMARY_VIEW for OutputUsage
+        /// </summary>
+        public static readonly OutputUsage MULTIVIEW_PRIMARY_VIEW = new OutputUsage("MULTIVIEW_PRIMARY_VIEW");
+        /// <summary>
+        /// Constant MULTIVIEW_SECONDARY_VIEW for OutputUsage
+        /// </summary>
+        public static readonly OutputUsage MULTIVIEW_SECONDARY_VIEW = new OutputUsage("MULTIVIEW_SECONDARY_VIEW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputUsage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputUsage FindValue(string value)
+        {
+            return FindValue<OutputUsage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PipelineId.
     /// </summary>
     public class PipelineId : ConstantClass
@@ -18495,6 +18645,10 @@ namespace Amazon.MediaLive
     {
 
         /// <summary>
+        /// Constant MANUAL for TtmlDestinationStyleControl
+        /// </summary>
+        public static readonly TtmlDestinationStyleControl MANUAL = new TtmlDestinationStyleControl("MANUAL");
+        /// <summary>
         /// Constant PASSTHROUGH for TtmlDestinationStyleControl
         /// </summary>
         public static readonly TtmlDestinationStyleControl PASSTHROUGH = new TtmlDestinationStyleControl("PASSTHROUGH");
@@ -18926,6 +19080,10 @@ namespace Amazon.MediaLive
     public class WebvttDestinationStyleControl : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MANUAL for WebvttDestinationStyleControl
+        /// </summary>
+        public static readonly WebvttDestinationStyleControl MANUAL = new WebvttDestinationStyleControl("MANUAL");
         /// <summary>
         /// Constant NO_STYLE_DATA for WebvttDestinationStyleControl
         /// </summary>

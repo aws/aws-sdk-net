@@ -3531,6 +3531,21 @@
         {"shape":"InternalServiceException"}
       ]
     },
+    "ListEvaluationFormAIVersions":{
+      "name":"ListEvaluationFormAIVersions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/instances/{InstanceId}/evaluation-form-ai-versions"
+      },
+      "input":{"shape":"ListEvaluationFormAIVersionsRequest"},
+      "output":{"shape":"ListEvaluationFormAIVersionsResponse"},
+      "errors":[
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"}
+      ]
+    },
     "ListEvaluationFormVersions":{
       "name":"ListEvaluationFormVersions",
       "http":{
@@ -3977,6 +3992,22 @@
         {"shape":"InvalidRequestException"},
         {"shape":"InvalidParameterException"},
         {"shape":"ThrottlingException"}
+      ]
+    },
+    "ListSecurityProfileAIAgents":{
+      "name":"ListSecurityProfileAIAgents",
+      "http":{
+        "method":"GET",
+        "requestUri":"/security-profiles-ai-agents/{InstanceId}/{SecurityProfileId}"
+      },
+      "input":{"shape":"ListSecurityProfileAIAgentsRequest"},
+      "output":{"shape":"ListSecurityProfileAIAgentsResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidParameterException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServiceException"}
       ]
     },
     "ListSecurityProfileApplications":{
@@ -6608,6 +6639,17 @@
       "type":"string",
       "pattern":"^[a-zA-Z0-9_-]+$"
     },
+    "AIAgent":{
+      "type":"structure",
+      "members":{
+        "Arn":{"shape":"ARN"},
+        "Type":{"shape":"AIAgentType"}
+      }
+    },
+    "AIAgentType":{
+      "type":"string",
+      "enum":["THIRD_PARTY"]
+    },
     "ARN":{"type":"string"},
     "AWSAccountId":{"type":"string"},
     "AccessDeniedException":{
@@ -6651,7 +6693,8 @@
         "ASSIGN_SLA",
         "END_ASSOCIATED_TASKS",
         "SUBMIT_AUTO_EVALUATION",
-        "EXTRACT_INFORMATION"
+        "EXTRACT_INFORMATION",
+        "SEND_IN_APP_NOTIFICATION"
       ]
     },
     "ActivateEvaluationFormRequest":{
@@ -7049,6 +7092,11 @@
       "type":"list",
       "member":{"shape":"AliasConfiguration"},
       "max":1
+    },
+    "AllowedAIAgents":{
+      "type":"list",
+      "member":{"shape":"AIAgent"},
+      "max":100
     },
     "AllowedAccessControlTags":{
       "type":"map",
@@ -8579,6 +8627,14 @@
       "key":{"shape":"Channel"},
       "value":{"shape":"IntegerCount"}
     },
+    "ChannelWorkloadBehaviorType":{
+      "type":"string",
+      "enum":[
+        "ROUTE_CURRENT_CHANNEL_CURRENT_WORKLOADTYPE_ONLY",
+        "ROUTE_CURRENT_CHANNEL_ANY_WORKLOADTYPE_ONLY",
+        "ROUTE_ANY_CHANNEL_ANY_WORKLOAD_TYPE"
+      ]
+    },
     "Channels":{
       "type":"list",
       "member":{"shape":"Channel"},
@@ -8788,7 +8844,7 @@
     "Concurrency":{
       "type":"integer",
       "max":10,
-      "min":1
+      "min":0
     },
     "Condition":{
       "type":"structure",
@@ -8824,12 +8880,34 @@
       "error":{"httpStatusCode":409},
       "exception":true
     },
+    "ConnectionCredentials":{
+      "type":"structure",
+      "members":{
+        "ConnectionToken":{"shape":"ParticipantToken"},
+        "Expiry":{"shape":"ISO8601Datetime"}
+      }
+    },
     "ConnectionData":{
       "type":"structure",
       "members":{
         "Attendee":{"shape":"Attendee"},
         "Meeting":{"shape":"Meeting"}
       }
+    },
+    "ConnectionType":{
+      "type":"string",
+      "enum":[
+        "WEBSOCKET",
+        "CONNECTION_CREDENTIALS",
+        "AUTHENTICATION_SESSION",
+        "WEBRTC_CONNECTION"
+      ]
+    },
+    "ConnectionTypeList":{
+      "type":"list",
+      "member":{"shape":"ConnectionType"},
+      "max":2,
+      "min":1
     },
     "Contact":{
       "type":"structure",
@@ -8888,6 +8966,17 @@
       "type":"structure",
       "members":{
         "Transcript":{"shape":"Transcript"}
+      }
+    },
+    "ContactAnalysisReference":{
+      "type":"structure",
+      "members":{
+        "Name":{"shape":"ReferenceKey"},
+        "Value":{"shape":"ReferenceValue"},
+        "Status":{"shape":"ReferenceStatus"},
+        "Arn":{"shape":"ARN"},
+        "AnalyticsMode":{"shape":"AnalyticsMode"},
+        "IsRedacted":{"shape":"NullableBoolean"}
       }
     },
     "ContactConfiguration":{
@@ -9990,7 +10079,8 @@
         "Tags":{"shape":"TagMap"},
         "ReviewConfiguration":{"shape":"EvaluationReviewConfiguration"},
         "TargetConfiguration":{"shape":"EvaluationFormTargetConfiguration"},
-        "LanguageConfiguration":{"shape":"EvaluationFormLanguageConfiguration"}
+        "LanguageConfiguration":{"shape":"EvaluationFormLanguageConfiguration"},
+        "AIVersion":{"shape":"EvaluationFormAIVersion"}
       }
     },
     "CreateEvaluationFormResponse":{
@@ -10527,6 +10617,7 @@
         "HierarchyRestrictedResources":{"shape":"HierarchyRestrictedResourceList"},
         "AllowedAccessControlHierarchyGroupId":{"shape":"HierarchyGroupId"},
         "AllowedFlowModules":{"shape":"AllowedFlowModules"},
+        "AllowedAIAgents":{"shape":"AllowedAIAgents"},
         "GranularAccessControlConfiguration":{"shape":"GranularAccessControlConfiguration"}
       }
     },
@@ -10907,6 +10998,12 @@
       "required":["BehaviorType"],
       "members":{
         "BehaviorType":{"shape":"BehaviorType"}
+      }
+    },
+    "CrossChannelWorkloadBehavior":{
+      "type":"structure",
+      "members":{
+        "ChannelWorkloadBehaviorType":{"shape":"ChannelWorkloadBehaviorType"}
       }
     },
     "CurrentMetric":{
@@ -14396,8 +14493,50 @@
         "TargetConfiguration":{"shape":"EvaluationFormTargetConfiguration"},
         "LanguageConfiguration":{"shape":"EvaluationFormLanguageConfiguration"},
         "LatestValidationStatus":{"shape":"EvaluationFormValidationStatus"},
-        "LastValidationTime":{"shape":"Timestamp"}
+        "LastValidationTime":{"shape":"Timestamp"},
+        "AIVersion":{"shape":"EvaluationFormAIVersion"}
       }
+    },
+    "EvaluationFormAIVersion":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "EvaluationFormAIVersionLifecycle":{
+      "type":"structure",
+      "required":[
+        "Status",
+        "StartOfLifeTime"
+      ],
+      "members":{
+        "Status":{"shape":"EvaluationFormAIVersionStatus"},
+        "StartOfLifeTime":{"shape":"Timestamp"},
+        "EndOfLifeTime":{"shape":"Timestamp"}
+      }
+    },
+    "EvaluationFormAIVersionStatus":{
+      "type":"string",
+      "enum":[
+        "LATEST",
+        "PREVIEW",
+        "ACTIVE",
+        "DEPRECATED"
+      ]
+    },
+    "EvaluationFormAIVersionSummary":{
+      "type":"structure",
+      "required":[
+        "AIVersionName",
+        "AIVersionLifecycle"
+      ],
+      "members":{
+        "AIVersionName":{"shape":"EvaluationFormAIVersion"},
+        "AIVersionLifecycle":{"shape":"EvaluationFormAIVersionLifecycle"}
+      }
+    },
+    "EvaluationFormAIVersionSummaryList":{
+      "type":"list",
+      "member":{"shape":"EvaluationFormAIVersionSummary"}
     },
     "EvaluationFormAutoEvaluationConfiguration":{
       "type":"structure",
@@ -14426,7 +14565,8 @@
         "AutoEvaluationConfiguration":{"shape":"EvaluationFormAutoEvaluationConfiguration"},
         "TargetConfiguration":{"shape":"EvaluationFormTargetConfiguration"},
         "LanguageConfiguration":{"shape":"EvaluationFormLanguageConfiguration"},
-        "ReviewConfiguration":{"shape":"EvaluationReviewConfiguration"}
+        "ReviewConfiguration":{"shape":"EvaluationReviewConfiguration"},
+        "AIVersion":{"shape":"EvaluationFormAIVersion"}
       }
     },
     "EvaluationFormDescription":{"type":"string"},
@@ -14565,6 +14705,27 @@
         "FormLanguage":{"shape":"EvaluationFormLanguageCode"}
       }
     },
+    "EvaluationFormMetricConfiguration":{
+      "type":"structure",
+      "required":[
+        "MetricType",
+        "MetricName"
+      ],
+      "members":{
+        "MetricType":{"shape":"EvaluationFormMetricType"},
+        "MetricName":{"shape":"EvaluationFormMetricName"}
+      }
+    },
+    "EvaluationFormMetricName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"^[^\\p{C}]*$"
+    },
+    "EvaluationFormMetricType":{
+      "type":"string",
+      "enum":["BUSINESS_OUTCOME"]
+    },
     "EvaluationFormMultiSelectQuestionAutomation":{
       "type":"structure",
       "members":{
@@ -14680,7 +14841,8 @@
         "QuestionTypeProperties":{"shape":"EvaluationFormQuestionTypeProperties"},
         "Enablement":{"shape":"EvaluationFormItemEnablementConfiguration"},
         "Weight":{"shape":"EvaluationFormItemWeight"},
-        "ScoringConfiguration":{"shape":"EvaluationFormQuestionScoringConfiguration"}
+        "ScoringConfiguration":{"shape":"EvaluationFormQuestionScoringConfiguration"},
+        "MetricConfiguration":{"shape":"EvaluationFormMetricConfiguration"}
       }
     },
     "EvaluationFormQuestionAnswerScore":{"type":"integer"},
@@ -14825,7 +14987,8 @@
         "AutoEvaluationEnabled":{"shape":"Boolean"},
         "EvaluationFormLanguage":{"shape":"EvaluationFormLanguageCode"},
         "ContactInteractionType":{"shape":"ContactInteractionType"},
-        "Tags":{"shape":"TagMap"}
+        "Tags":{"shape":"TagMap"},
+        "AIVersion":{"shape":"EvaluationFormAIVersion"}
       }
     },
     "EvaluationFormSearchSummaryList":{
@@ -16954,6 +17117,7 @@
         "USE_CUSTOM_TTS_VOICES",
         "EARLY_MEDIA",
         "MULTI_PARTY_CONFERENCE",
+        "AUTO_MUTE_AGENT_ON_HOLD",
         "HIGH_VOLUME_OUTBOUND",
         "ENHANCED_CONTACT_MONITORING",
         "ENHANCED_CHAT_MONITORING",
@@ -18072,6 +18236,44 @@
         "NextToken":{"shape":"NextToken2500"}
       }
     },
+    "ListEvaluationFormAIVersionsRequest":{
+      "type":"structure",
+      "required":[
+        "InstanceId",
+        "ContactInteractionType"
+      ],
+      "members":{
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "ContactInteractionType":{
+          "shape":"ContactInteractionType",
+          "location":"querystring",
+          "locationName":"contactInteractionType"
+        },
+        "MaxResults":{
+          "shape":"MaxResult100",
+          "box":true,
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListEvaluationFormAIVersionsResponse":{
+      "type":"structure",
+      "required":["AIVersionSummaries"],
+      "members":{
+        "AIVersionSummaries":{"shape":"EvaluationFormAIVersionSummaryList"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "ListEvaluationFormVersionsRequest":{
       "type":"structure",
       "required":[
@@ -19027,6 +19229,45 @@
         "NextToken":{"shape":"NextToken"}
       }
     },
+    "ListSecurityProfileAIAgentsRequest":{
+      "type":"structure",
+      "required":[
+        "SecurityProfileId",
+        "InstanceId"
+      ],
+      "members":{
+        "SecurityProfileId":{
+          "shape":"SecurityProfileId",
+          "location":"uri",
+          "locationName":"SecurityProfileId"
+        },
+        "InstanceId":{
+          "shape":"InstanceId",
+          "location":"uri",
+          "locationName":"InstanceId"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"nextToken"
+        },
+        "MaxResults":{
+          "shape":"MaxResult1000",
+          "box":true,
+          "location":"querystring",
+          "locationName":"maxResults"
+        }
+      }
+    },
+    "ListSecurityProfileAIAgentsResponse":{
+      "type":"structure",
+      "members":{
+        "AllowedAIAgents":{"shape":"AllowedAIAgents"},
+        "NextToken":{"shape":"NextToken"},
+        "LastModifiedTime":{"shape":"Timestamp"},
+        "LastModifiedRegion":{"shape":"RegionName"}
+      }
+    },
     "ListSecurityProfileApplicationsRequest":{
       "type":"structure",
       "required":[
@@ -19766,7 +20007,7 @@
     },
     "LocalizedString":{
       "type":"string",
-      "max":500,
+      "max":3000,
       "min":0
     },
     "Long":{"type":"long"},
@@ -19855,14 +20096,12 @@
     },
     "MediaConcurrency":{
       "type":"structure",
-      "required":[
-        "Channel",
-        "Concurrency"
-      ],
+      "required":["Channel"],
       "members":{
         "Channel":{"shape":"Channel"},
         "Concurrency":{"shape":"Concurrency"},
-        "CrossChannelBehavior":{"shape":"CrossChannelBehavior"}
+        "CrossChannelBehavior":{"shape":"CrossChannelBehavior"},
+        "WorkloadTypeConcurrencies":{"shape":"WorkloadTypeConcurrencies"}
       }
     },
     "MediaItem":{
@@ -21501,6 +21740,11 @@
       "max":2000,
       "min":1
     },
+    "PreSignedConnectionUrl":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
     "PredefinedAttribute":{
       "type":"structure",
       "members":{
@@ -22679,7 +22923,8 @@
         "String":{"shape":"StringReference"},
         "Number":{"shape":"NumberReference"},
         "Date":{"shape":"DateReference"},
-        "Email":{"shape":"EmailReference"}
+        "Email":{"shape":"EmailReference"},
+        "ContactAnalysis":{"shape":"ContactAnalysisReference"}
       },
       "union":true
     },
@@ -22757,8 +23002,7 @@
       "type":"structure",
       "required":[
         "InstanceId",
-        "ReplicaRegion",
-        "ReplicaAlias"
+        "ReplicaRegion"
       ],
       "members":{
         "InstanceId":{
@@ -23210,7 +23454,8 @@
         "AssignSlaAction":{"shape":"AssignSlaActionDefinition"},
         "EndAssociatedTasksAction":{"shape":"EndAssociatedTasksActionDefinition"},
         "SubmitAutoEvaluationAction":{"shape":"SubmitAutoEvaluationActionDefinition"},
-        "ExtractInformationAction":{"shape":"ExtractInformationActionDefinition"}
+        "ExtractInformationAction":{"shape":"ExtractInformationActionDefinition"},
+        "SendInAppNotificationAction":{"shape":"SendInAppNotificationActionDefinition"}
       }
     },
     "RuleActions":{
@@ -24408,6 +24653,19 @@
         "NewChatCreated":{"shape":"NewChatCreated"}
       }
     },
+    "SendInAppNotificationActionDefinition":{
+      "type":"structure",
+      "required":[
+        "Content",
+        "Recipient"
+      ],
+      "members":{
+        "Content":{"shape":"NotificationContent"},
+        "Recipient":{"shape":"NotificationRecipientType"},
+        "Exclusion":{"shape":"NotificationRecipientType"},
+        "Priority":{"shape":"ConfigurableNotificationPriority"}
+      }
+    },
     "SendNotificationActionDefinition":{
       "type":"structure",
       "required":[
@@ -24755,7 +25013,9 @@
         "RelatedContactId":{"shape":"ContactId"},
         "SegmentAttributes":{"shape":"SegmentAttributes"},
         "CustomerId":{"shape":"CustomerIdNonEmpty"},
-        "DisconnectOnCustomerExit":{"shape":"DisconnectOnCustomerExit"}
+        "DisconnectOnCustomerExit":{"shape":"DisconnectOnCustomerExit"},
+        "ConnectionTypes":{"shape":"ConnectionTypeList"},
+        "ChatStreamingConfiguration":{"shape":"ChatStreamingConfiguration"}
       }
     },
     "StartChatContactResponse":{
@@ -24764,7 +25024,10 @@
         "ContactId":{"shape":"ContactId"},
         "ParticipantId":{"shape":"ParticipantId"},
         "ParticipantToken":{"shape":"ParticipantToken"},
-        "ContinuedFromContactId":{"shape":"ContactId"}
+        "ContinuedFromContactId":{"shape":"ContactId"},
+        "ConnectionCredentials":{"shape":"ConnectionCredentials"},
+        "Websocket":{"shape":"Websocket"},
+        "StreamingId":{"shape":"StreamingId"}
       }
     },
     "StartContactConversationalAnalyticsJobRequest":{
@@ -26806,7 +27069,8 @@
           "idempotencyToken":true
         },
         "TargetConfiguration":{"shape":"EvaluationFormTargetConfiguration"},
-        "LanguageConfiguration":{"shape":"EvaluationFormLanguageConfiguration"}
+        "LanguageConfiguration":{"shape":"EvaluationFormLanguageConfiguration"},
+        "AIVersion":{"shape":"EvaluationFormAIVersion"}
       }
     },
     "UpdateEvaluationFormResponse":{
@@ -27520,6 +27784,7 @@
         "HierarchyRestrictedResources":{"shape":"HierarchyRestrictedResourceList"},
         "AllowedAccessControlHierarchyGroupId":{"shape":"HierarchyGroupId"},
         "AllowedFlowModules":{"shape":"AllowedFlowModules"},
+        "AllowedAIAgents":{"shape":"AllowedAIAgents"},
         "GranularAccessControlConfiguration":{"shape":"GranularAccessControlConfiguration"}
       }
     },
@@ -28738,6 +29003,13 @@
       "max":36,
       "min":1
     },
+    "Websocket":{
+      "type":"structure",
+      "members":{
+        "Url":{"shape":"PreSignedConnectionUrl"},
+        "ConnectionExpiry":{"shape":"ISO8601Datetime"}
+      }
+    },
     "WeekdayOccurrenceInteger":{
       "type":"integer",
       "box":true,
@@ -28772,6 +29044,30 @@
         "SessionArn":{"shape":"ARN"},
         "AiAgents":{"shape":"AiAgents"}
       }
+    },
+    "WorkloadType":{"type":"string"},
+    "WorkloadTypeConcurrencies":{
+      "type":"list",
+      "member":{"shape":"WorkloadTypeConcurrency"},
+      "max":5,
+      "min":1
+    },
+    "WorkloadTypeConcurrency":{
+      "type":"structure",
+      "required":[
+        "WorkloadType",
+        "Concurrency"
+      ],
+      "members":{
+        "WorkloadType":{"shape":"WorkloadType"},
+        "Concurrency":{"shape":"WorkloadTypeConcurrencyType"},
+        "CrossChannelWorkloadBehavior":{"shape":"CrossChannelWorkloadBehavior"}
+      }
+    },
+    "WorkloadTypeConcurrencyType":{
+      "type":"integer",
+      "max":10,
+      "min":1
     },
     "Workspace":{
       "type":"structure",

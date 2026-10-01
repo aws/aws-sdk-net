@@ -37,6 +37,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.DisconnectParticipantRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -120,6 +121,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.SendEventRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -149,6 +151,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.SendMessageRequest.ClientToken</property>
+    <min>0</min>
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
@@ -338,7 +341,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.WebRTCMeeting.MeetingId</property>
-    <pattern>[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}</pattern>
+    <pattern>^[a-fA-F0-9]{8}(?:-[a-fA-F0-9]{4}){3}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConnectParticipant.Model.Websocket.Url</property>

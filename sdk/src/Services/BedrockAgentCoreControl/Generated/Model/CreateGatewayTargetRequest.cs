@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CreateGatewayTargetRequest : AmazonBedrockAgentCoreControlRequest
     {
+        private List<CertificateConfiguration> _certificateConfigurations = AWSConfigs.InitializeCollections ? new List<CertificateConfiguration>() : null;
         private string _clientToken;
         private List<CredentialProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialProviderConfiguration>() : null;
         private string _description;
@@ -44,6 +45,34 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _name;
         private PrivateEndpoint _privateEndpoint;
         private TargetConfiguration _targetConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property CertificateConfigurations. 
+        /// <para>
+        /// The private certificate authority (CA) configurations for the gateway target. Use
+        /// this to have the gateway trust a private CA when it establishes TLS connections to
+        /// the target endpoint. Provide each certificate by reference to an Amazon S3 object
+        /// or an Amazon Web Services Secrets Manager secret. You can specify only one certificate
+        /// authority configuration in this list.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<CertificateConfiguration> CertificateConfigurations
+        {
+            get { return this._certificateConfigurations; }
+            set { this._certificateConfigurations = value; }
+        }
+
+        // Check to see if CertificateConfigurations property is set
+        internal bool IsSetCertificateConfigurations()
+        {
+            return this._certificateConfigurations != null && (this._certificateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

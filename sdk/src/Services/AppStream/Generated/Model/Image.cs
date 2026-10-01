@@ -47,6 +47,7 @@ namespace Amazon.AppStream.Model
         private List<ResourceError> _imageErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
         private ImagePermissions _imagePermissions;
         private ImageSharedWithOthers _imageSharedWithOthers;
+        private ImageSoftwareMetadata _imageSoftwareMetadata;
         private ImageType _imageType;
         private LatestAppstreamAgentVersion _latestAppstreamAgentVersion;
         private bool? _managedSoftwareIncluded;
@@ -307,6 +308,24 @@ namespace Amazon.AppStream.Model
         internal bool IsSetImageSharedWithOthers()
         {
             return this._imageSharedWithOthers != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageSoftwareMetadata. 
+        /// <para>
+        /// The software metadata associated with the image.
+        /// </para>
+        /// </summary>
+        public ImageSoftwareMetadata ImageSoftwareMetadata
+        {
+            get { return this._imageSoftwareMetadata; }
+            set { this._imageSoftwareMetadata = value; }
+        }
+
+        // Check to see if ImageSoftwareMetadata property is set
+        internal bool IsSetImageSoftwareMetadata()
+        {
+            return this._imageSoftwareMetadata != null;
         }
 
         /// <summary>

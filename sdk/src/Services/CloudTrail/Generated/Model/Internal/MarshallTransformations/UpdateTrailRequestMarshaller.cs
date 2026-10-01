@@ -123,6 +123,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetRecursiveLogging())
+            {
+                context.Writer.WritePropertyName("RecursiveLogging");
+                context.Writer.WriteBooleanValue(publicRequest.RecursiveLogging.Value);
+            }
+
             if(publicRequest.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");

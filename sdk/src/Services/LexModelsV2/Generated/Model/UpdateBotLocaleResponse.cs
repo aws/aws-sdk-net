@@ -47,6 +47,7 @@ namespace Amazon.LexModelsV2.Model
         private string _localeName;
         private double? _nluIntentConfidenceThreshold;
         private List<string> _recommendedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SpeakerDiarizationSettings _speakerDiarizationSettings;
         private SpeechDetectionSensitivity _speechDetectionSensitivity;
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
@@ -302,6 +303,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetRecommendedActions()
         {
             return this._recommendedActions != null && (this._recommendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeakerDiarizationSettings. 
+        /// <para>
+        /// The updated speaker diarization settings for the bot locale.
+        /// </para>
+        /// </summary>
+        public SpeakerDiarizationSettings SpeakerDiarizationSettings
+        {
+            get { return this._speakerDiarizationSettings; }
+            set { this._speakerDiarizationSettings = value; }
+        }
+
+        // Check to see if SpeakerDiarizationSettings property is set
+        internal bool IsSetSpeakerDiarizationSettings()
+        {
+            return this._speakerDiarizationSettings != null;
         }
 
         /// <summary>

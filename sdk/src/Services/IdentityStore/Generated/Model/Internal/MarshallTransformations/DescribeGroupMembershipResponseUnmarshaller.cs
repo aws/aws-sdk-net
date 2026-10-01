@@ -82,6 +82,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                     response.MemberId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MembershipArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.MembershipArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MembershipId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -1,0 +1,170 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MediaPackageV2.Model
+{
+    /// <summary>
+    /// The segment configuration, including the segment name, duration, and other configuration
+    /// values.
+    /// </summary>
+    public partial class Segment
+    {
+        /// <summary>
+        /// Gets and sets the property Encryption.
+        /// </summary>
+        public Encryption Encryption { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Encryption property is set.
+        /// </summary>
+        internal bool IsSetEncryption() => this.Encryption != null;
+
+        /// <summary>
+        /// Gets and sets the property IncludeIframeOnlyStreams. 
+        /// <para>
+        /// When selected, the stream set includes an additional I-frame only stream, along with
+        /// the other tracks. If false, this extra stream is not included. MediaPackage generates
+        /// an I-frame only stream from the first rendition in the manifest. The service inserts
+        /// EXT-I-FRAMES-ONLY tags in the output manifest, and then generates and includes an
+        /// I-frames only playlist in the stream. This playlist permits player functionality like
+        /// fast forward and rewind.
+        /// </para>
+        /// </summary>
+        public bool? IncludeIframeOnlyStreams { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IncludeIframeOnlyStreams property is set.
+        /// </summary>
+        internal bool IsSetIncludeIframeOnlyStreams() => this.IncludeIframeOnlyStreams.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property OutputTimestampMode. 
+        /// <para>
+        /// The output timestamp mode for the origin endpoint's segments. This setting is only
+        /// configurable on channels with <c>OutputLockingMode</c> set to <c>NON_EPOCH_LOCKED</c>.
+        /// This value is immutable after endpoint creation. If you don't specify a value, the
+        /// default is <c>PASSTHROUGH</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PASSTHROUGH</c> - Output PTS (Presentation Timestamp) values pass through unchanged
+        /// from the input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REBASED_TO_CHANNEL_START</c> - Output PTS is rebased relative to the channel start
+        /// time.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OutputTimestampMode OutputTimestampMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OutputTimestampMode property is set.
+        /// </summary>
+        internal bool IsSetOutputTimestampMode() => this.OutputTimestampMode != null;
+
+        /// <summary>
+        /// Gets and sets the property Scte. 
+        /// <para>
+        /// The SCTE configuration options in the segment settings.
+        /// </para>
+        /// </summary>
+        public Scte Scte { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Scte property is set.
+        /// </summary>
+        internal bool IsSetScte() => this.Scte != null;
+
+        /// <summary>
+        /// Gets and sets the property SegmentDurationSeconds. 
+        /// <para>
+        /// The duration (in seconds) of each segment. Enter a value equal to, or a multiple of,
+        /// the input segment duration. If the value that you enter is different from the input
+        /// segment duration, MediaPackage rounds segments to the nearest multiple of the input
+        /// segment duration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 30)]
+        public int? SegmentDurationSeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SegmentDurationSeconds property is set.
+        /// </summary>
+        internal bool IsSetSegmentDurationSeconds() => this.SegmentDurationSeconds.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property SegmentName. 
+        /// <para>
+        /// The name that describes the segment. The name is the base name of the segment used
+        /// in all content manifests inside of the endpoint. You can't use spaces in the name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 256)]
+        public string SegmentName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SegmentName property is set.
+        /// </summary>
+        internal bool IsSetSegmentName() => this.SegmentName != null;
+
+        /// <summary>
+        /// Gets and sets the property TsIncludeDvbSubtitles. 
+        /// <para>
+        /// By default, MediaPackage excludes all digital video broadcasting (DVB) subtitles from
+        /// the output. When selected, MediaPackage passes through DVB subtitles into the output.
+        /// </para>
+        /// </summary>
+        public bool? TsIncludeDvbSubtitles { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TsIncludeDvbSubtitles property is set.
+        /// </summary>
+        internal bool IsSetTsIncludeDvbSubtitles() => this.TsIncludeDvbSubtitles.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TsUseAudioRenditionGroup. 
+        /// <para>
+        /// When selected, MediaPackage bundles all audio tracks in a rendition group. All other
+        /// tracks in the stream can be used with any audio rendition from the group.
+        /// </para>
+        /// </summary>
+        public bool? TsUseAudioRenditionGroup { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TsUseAudioRenditionGroup property is set.
+        /// </summary>
+        internal bool IsSetTsUseAudioRenditionGroup() => this.TsUseAudioRenditionGroup.HasValue;
+    }
+}

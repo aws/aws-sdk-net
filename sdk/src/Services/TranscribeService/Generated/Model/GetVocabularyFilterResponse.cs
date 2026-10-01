@@ -34,10 +34,32 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class GetVocabularyFilterResponse : AmazonWebServiceResponse
     {
+        private string _dataAccessRoleArn;
         private string _downloadUri;
+        private EncryptionConfiguration _encryptionConfiguration;
         private LanguageCode _languageCode;
         private DateTime? _lastModifiedTime;
         private string _vocabularyFilterName;
+
+        /// <summary>
+        /// Gets and sets the property DataAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role used to access the Amazon S3 bucket
+        /// that contains your input files and, if applicable, the KMS key specified in <c>EncryptionConfiguration</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DataAccessRoleArn
+        {
+            get { return this._dataAccessRoleArn; }
+            set { this._dataAccessRoleArn = value; }
+        }
+
+        // Check to see if DataAccessRoleArn property is set
+        internal bool IsSetDataAccessRoleArn()
+        {
+            return this._dataAccessRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DownloadUri. 
@@ -57,6 +79,24 @@ namespace Amazon.TranscribeService.Model
         internal bool IsSetDownloadUri()
         {
             return this._downloadUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The encryption configuration used for your custom vocabulary filter.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

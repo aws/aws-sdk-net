@@ -78,13 +78,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetActualEndTime())
             {
                 context.Writer.WritePropertyName("ActualEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ActualEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ActualEndTime.Value));
             }
 
             if(publicRequest.IsSetActualStartTime())
             {
                 context.Writer.WritePropertyName("ActualStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ActualStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ActualStartTime.Value));
             }
 
             if(publicRequest.IsSetCategory())
@@ -160,13 +160,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetPlannedEndTime())
             {
                 context.Writer.WritePropertyName("PlannedEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.PlannedEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.PlannedEndTime.Value));
             }
 
             if(publicRequest.IsSetPlannedStartTime())
             {
                 context.Writer.WritePropertyName("PlannedStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.PlannedStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.PlannedStartTime.Value));
             }
 
             if(publicRequest.IsSetPriority())

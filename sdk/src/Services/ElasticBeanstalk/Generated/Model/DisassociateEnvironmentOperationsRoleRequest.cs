@@ -31,10 +31,17 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateEnvironmentOperationsRole operation.
+    /// <important> 
+    /// <para>
+    /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+    /// to change.
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Disassociate the operations role from an environment. After this call is made, Elastic
     /// Beanstalk uses the caller's permissions for permissions to downstream services during
-    /// subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-    /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+    /// subsequent calls acting on this environment.
+    /// </para>
     /// </summary>
     public partial class DisassociateEnvironmentOperationsRoleRequest : AmazonElasticBeanstalkRequest
     {

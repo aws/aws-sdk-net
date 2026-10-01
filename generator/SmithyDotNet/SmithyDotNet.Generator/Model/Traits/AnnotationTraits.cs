@@ -45,6 +45,16 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#streaming-trait" /></remarks>
     public static bool IsStreaming(this Shape shape) => shape.Traits.ContainsKey("smithy.api#streaming");
 
+    /// <summary>The event member carrying the message payload; every other member of the event then
+    /// carries <c>@eventHeader</c>. Targets a blob, string, or structure shape.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#eventpayload-trait" /></remarks>
+    public static bool IsEventPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#eventPayload");
+
+    /// <summary>An event member serialized as an event-message header. Targets a boolean, byte, short,
+    /// integer, long, float, double, blob, string, or timestamp shape.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#eventheader-trait" /></remarks>
+    public static bool IsEventHeader(this Shape shape) => shape.Traits.ContainsKey("smithy.api#eventHeader");
+
     /// <remarks><see href="https://smithy.io/2.0/spec/type-refinement-traits.html#sparse-trait" /></remarks>
     public static bool IsSparse(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sparse");
 
@@ -54,4 +64,8 @@ public static class AnnotationTraits
     /// </summary>
     /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#requireslength-trait" /></remarks>
     public static bool RequiresLength(this Shape shape) => shape.Traits.ContainsKey("smithy.api#requiresLength");
+
+    /// <summary>The legacy MD5-only trait, not the flexible <c>aws.protocols#httpChecksum</c>.</summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpchecksumrequired-trait" /></remarks>
+    public static bool RequiresHttpChecksum(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpChecksumRequired");
 }

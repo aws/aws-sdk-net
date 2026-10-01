@@ -1,0 +1,136 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.QConnect.Model
+{
+    /// <summary>
+    /// Container for the parameters to the GetRecommendations operation. <important> <para>
+    /// This API will be discontinued starting June 1, 2024. To receive generative responses
+    /// after March 1, 2024, you will need to create a new Assistant in the Connect Customer
+    /// console and integrate the Amazon Q in Connect JavaScript library (amazon-q-connectjs)
+    /// into your applications. </para> </important> <para> Retrieves recommendations for
+    /// the specified session. To avoid retrieving the same recommendations in subsequent
+    /// calls, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>.
+    /// This API supports long-polling behavior with the <c>waitTimeSeconds</c> parameter.
+    /// Short poll is the default behavior and only returns recommendations already available.
+    /// To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
+    /// </para>
+    /// </summary>
+    public partial class GetRecommendationsRequest : AmazonQConnectRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AssistantId. 
+        /// <para>
+        /// The identifier of the Amazon Q in Connect assistant. Can be either the ID or the ARN.
+        /// URLs cannot contain the ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string AssistantId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AssistantId property is set.
+        /// </summary>
+        internal bool IsSetAssistantId() => this.AssistantId != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return per page.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public int? MaxResults { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxResults property is set.
+        /// </summary>
+        internal bool IsSetMaxResults() => this.MaxResults.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NextChunkToken. 
+        /// <para>
+        /// The token for the next set of chunks. Use the value returned in the previous response
+        /// in the next request to retrieve the next set of chunks.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string NextChunkToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NextChunkToken property is set.
+        /// </summary>
+        internal bool IsSetNextChunkToken() => this.NextChunkToken != null;
+
+        /// <summary>
+        /// Gets and sets the property RecommendationType. 
+        /// <para>
+        /// The type of recommendation being requested.
+        /// </para>
+        /// </summary>
+        public RecommendationType RecommendationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RecommendationType property is set.
+        /// </summary>
+        internal bool IsSetRecommendationType() => this.RecommendationType != null;
+
+        /// <summary>
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The identifier of the session. Can be either the ID or the ARN. URLs cannot contain
+        /// the ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string SessionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SessionId property is set.
+        /// </summary>
+        internal bool IsSetSessionId() => this.SessionId != null;
+
+        /// <summary>
+        /// Gets and sets the property WaitTimeSeconds. 
+        /// <para>
+        /// The duration (in seconds) for which the call waits for a recommendation to be made
+        /// available before returning. If a recommendation is available, the call returns sooner
+        /// than <c>WaitTimeSeconds</c>. If no messages are available and the wait time expires,
+        /// the call returns successfully with an empty list.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 20)]
+        public int? WaitTimeSeconds { get; set; }
+
+        /// <summary>
+        /// Checks to see if the WaitTimeSeconds property is set.
+        /// </summary>
+        internal bool IsSetWaitTimeSeconds() => this.WaitTimeSeconds.HasValue;
+    }
+}

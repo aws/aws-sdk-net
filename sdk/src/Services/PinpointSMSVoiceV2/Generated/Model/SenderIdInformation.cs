@@ -37,6 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private bool? _deletionProtectionEnabled;
         private string _isoCountryCode;
         private List<string> _messageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private MessagingLimits _messagingLimits;
         private string _monthlyLeasingPrice;
         private bool? _registered;
         private string _registrationId;
@@ -104,6 +105,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetMessageTypes()
         {
             return this._messageTypes != null && (this._messageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessagingLimits. 
+        /// <para>
+        /// The messaging limits that apply to the sender ID, including the per-capability send
+        /// rates.
+        /// </para>
+        /// </summary>
+        public MessagingLimits MessagingLimits
+        {
+            get { return this._messagingLimits; }
+            set { this._messagingLimits = value; }
+        }
+
+        // Check to see if MessagingLimits property is set
+        internal bool IsSetMessagingLimits()
+        {
+            return this._messagingLimits != null;
         }
 
         /// <summary>

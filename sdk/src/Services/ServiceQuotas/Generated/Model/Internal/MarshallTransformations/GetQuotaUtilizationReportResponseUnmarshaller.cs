@@ -133,6 +133,10 @@ namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
                 {
                     return IllegalArgumentExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPaginationTokenException"))
+                {
+                    return InvalidPaginationTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchResourceException"))
                 {
                     return NoSuchResourceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

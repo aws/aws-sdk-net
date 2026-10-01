@@ -31,7 +31,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContainerRecipe operation.
-    /// Deletes a container recipe.
+    /// Deletes a container recipe. The request fails with <c>ResourceDependencyException</c>
+    /// if the recipe is shared with other accounts, or if an image pipeline references it.
     /// </summary>
     public partial class DeleteContainerRecipeRequest : AmazonImagebuilderRequest
     {

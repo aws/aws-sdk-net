@@ -52,6 +52,17 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ClusterArn);
             }
 
+            if(requestObject.IsSetLabelSelector())
+            {
+                context.Writer.WritePropertyName("labelSelector");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EksLabelSelectorMarshaller.Instance;
+                marshaller.Marshall(requestObject.LabelSelector, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetNamespaces())
             {
                 context.Writer.WritePropertyName("namespaces");

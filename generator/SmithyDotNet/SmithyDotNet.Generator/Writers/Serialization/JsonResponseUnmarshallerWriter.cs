@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -16,7 +17,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
         var resolvedMembers = TypeMapper.ResolveMembers(operation.Output, context);
-        var members = PartitionByBinding(operation.Output, resolvedMembers);
+        var members = PartitionByBinding(operation.Output, resolvedMembers, context.UsesHttpBindings);
 
         var writer = new CodeWriter();
 
@@ -33,11 +34,23 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
-                if (members.PayloadMember is { Type.IsStreaming: true })
+
+                if (members.PayloadMember is { Type.IsStreaming: true } || members.EventStreamMember is not null)
                 {
                     WriteHasStreamingProperty(writer);
                     writer.WriteLine("");
                 }
+
+                if (members.EventStreamMember is not null)
+                {
+                    // Response logging asks Core to buffer the whole body, which never ends for an event stream.
+                    writer.WriteLine("/// <summary>");
+                    writer.WriteLine("/// Return false for reading the entire response");
+                    writer.WriteLine("/// </summary>");
+                    writer.WriteLine("protected override bool ShouldReadEntireResponse(IWebResponseData response, bool readEntireResponse) => false;");
+                    writer.WriteLine("");
+                }
+
                 WriteSingleton(writer, unmarshallerClassName);
             });
         });
@@ -70,10 +83,17 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         {
             writer.WriteLine($"var unmarshalledObject = new {className}();");
 
+            // An event-stream member IS the whole body: hand the raw response stream to the generated
+            // EnumerableEventOutputStream subclass (the union's own class), which decodes the frames
+            // lazily as the caller enumerates. Matches C2J's JsonRPCResponseUnmarshaller.
+            if (members.EventStreamMember is { } eventStream)
+            {
+                writer.WriteLine($"unmarshalledObject.{eventStream.PropertyName} = new {eventStream.Type.DotNetType}(context.Stream);");
+            }
             // A @httpPayload member IS the whole body (it replaces normal body members); otherwise the
             // body members are read from the JSON payload. A response with only header (or no) members
             // emits no reader/loop.
-            if (members.PayloadMember is { } payload)
+            else if (members.PayloadMember is { } payload)
             {
                 WritePayloadUnmarshall(writer, payload);
             }
@@ -104,11 +124,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
     // Unmarshalls a @httpPayload response member — the ENTIRE body: a string/enum via StreamReader (an
     // enum is a string shape in C2J and its ConstantClass converts implicitly from string), a structure
-    // via its unmarshaller over a fresh reader (empty-body early-return), a @streaming blob as the raw
-    // response stream (unbuffered), a non-streaming blob copied into a buffered
-    // MemoryStream. Matches C2J output. A union is a structure (structure path); document throws
-    // earlier in TypeMapper; list/map fail loud here. Response-only: JsonExceptionUnmarshallerWriter
-    // fails loud on an @httpPayload error member.
+    // or document via a JSON unmarshaller over a fresh reader (empty-body early-return), a @streaming blob
+    // as the raw response stream (unbuffered), a non-streaming blob copied into a buffered
+    // MemoryStream. Matches C2J output. A union is a structure (structure path); a document takes the
+    // same reader scaffold but the runtime DocumentUnmarshaller (C2J models a document as a structure, so
+    // it too takes the unmarshallPayload branch — see bedrock-agentcore GetAgentCardResponse); list/map
+    // fail loud here. Response-only: JsonExceptionUnmarshallerWriter fails loud on an @httpPayload error member.
     private static void WritePayloadUnmarshall(CodeWriter writer, Member payload)
     {
         if (payload.Type.MarshalsAsString)
@@ -120,11 +141,16 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             return;
         }
 
-        if (payload.Type.IsStructure)
+        if (payload.Type.IsStructure || payload.Type.IsDocument)
         {
+            // A document reuses the DocumentUnmarshaller that body-member and collection-element documents
+            // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
+            var unmarshaller = payload.Type.IsDocument
+                ? "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller"
+                : $"{payload.Type.DotNetType}Unmarshaller";
             writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
             writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
-            writer.WriteLine($"var unmarshaller = {payload.Type.DotNetType}Unmarshaller.Instance;");
+            writer.WriteLine($"var unmarshaller = {unmarshaller}.Instance;");
             writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
             return;
         }
@@ -149,7 +175,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             return;
         }
 
-        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
     // The JSON body reader loop over the in-scope `reader`, shared by the response and exception
@@ -176,19 +202,39 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// <para><c>@httpResponseCode</c> is only meaningful on an operation's output; on an error it "is
     /// simply ignored" per the Smithy spec, so the exception unmarshaller passes
     /// <paramref name="bindStatusCode"/> <c>false</c> and the member falls through to the body.</para>
+    ///
+    /// <para>With <paramref name="httpBindings"/> <c>false</c> (awsJson1.x) the binding traits are ignored,
+    /// as that protocol requires, and every member except an event stream is a body member.</para>
     /// </summary>
     internal static PartitionedMembers PartitionByBinding(
-        StructureShape structure, List<Member> members, bool bindStatusCode = true)
+        StructureShape structure, List<Member> members, bool httpBindings, bool bindStatusCode = true)
     {
         var headerMembers = new List<(Member, string)>();
         var bodyMembers = new List<Member>();
         Member? payloadMember = null;
         Member? statusCodeMember = null;
+        Member? eventStreamMember = null;
         (Member Member, string Prefix)? prefixHeadersMember = null;
         foreach (var member in members)
         {
             var memberShape = structure.Members[member.ModeledName];
-            if (memberShape.GetHttpHeader() is string headerName)
+            if (member.Type.IsEventStream)
+            {
+                // A @streaming union/structure member is the event stream — it IS the body (like a
+                // payload): the unmarshaller hands the raw response stream to the generated
+                // EnumerableEventOutputStream subclass rather than reading JSON.
+                if (eventStreamMember is not null)
+                {
+                    throw new GeneratorException($"Structure has more than one event-stream member ('{eventStreamMember.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                eventStreamMember = member;
+            }
+            else if (!httpBindings)
+            {
+                bodyMembers.Add(member);
+            }
+            else if (memberShape.GetHttpHeader() is string headerName)
             {
                 headerMembers.Add((member, headerName));
             }
@@ -234,7 +280,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
         }
 
-        return new PartitionedMembers(headerMembers, bodyMembers, payloadMember, statusCodeMember, prefixHeadersMember);
+        return new PartitionedMembers(headerMembers, bodyMembers, payloadMember, statusCodeMember, prefixHeadersMember, eventStreamMember);
     }
 
     /// <summary>
@@ -248,7 +294,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         List<Member> BodyMembers,
         Member? PayloadMember,
         Member? StatusCodeMember,
-        (Member Member, string Prefix)? PrefixHeadersMember);
+        (Member Member, string Prefix)? PrefixHeadersMember,
+        Member? EventStreamMember);
 
     // Emits `if (context.ResponseData.IsHeaderPresent("name")) unmarshalledObject.Property = <conversion>;`
     // per header member. Shared with the exception unmarshaller (both use the `unmarshalledObject` local).
@@ -256,6 +303,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     {
         foreach (var (member, headerName) in headerMembers)
         {
+            // TODO: no service names an unmarshaller for a response header swap yet; the header conversion would need it.
+            if (member.Type.UnmarshallerOverride is not null)
+            {
+                throw new GeneratorException($"dataTypeSwap on response header member '{member.PropertyName}' is not supported yet.");
+            }
+
             writer.OpenBlock($"""if (context.ResponseData.IsHeaderPresent("{headerName}"))""", () =>
             {
                 // A @mediaType string header is base64 on the wire.
@@ -315,17 +368,25 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// (e.g. <c>context.ResponseData.GetHeaderValue("x-foo")</c>). A string/enum takes the value
     /// directly; <c>bool</c> parses without a culture (its two literals are culture-invariant); numeric
     /// scalars parse with the invariant culture; a timestamp parses per its resolved
-    /// <c>@timestampFormat</c>. Dispatch is on <see cref="TypeDescriptor.MarshalType"/> so an enum
-    /// marshals as a <c>string</c> (implicit ConstantClass conversion).
+    /// <c>@timestampFormat</c>. Dispatch is on <see cref="TypeDescriptor.Target"/>; an enum reads as a
+    /// <c>string</c> (implicit ConstantClass conversion).
     /// </summary>
     internal static string HeaderValueConversion(Member member, string value)
     {
+        // A list<T> @httpHeader is a multi-value header parsed by MultiValueHeaderParser (matches C2J):
+        // strings/enums via ToStringList, timestamps via ToDateTimeList with the C2J format name,
+        // other value types via the generic ToValueTypeList<T>. Handled before the scalar switch.
+        if (member.Type.ListElement is { } element)
+        {
+            return MultiValueHeaderConversion(member, element, value);
+        }
+
         // A timestamp needs a second axis — its resolved @timestampFormat — so it is handled before the
         // scalar switch. restJson1's header default when unset (null) is http-date; epoch-seconds is an
         // integer count fed to the Unix-epoch helper, while date-time and http-date both parse via
         // DateTime.Parse (the wire forms differ but the parser handles both).
         // https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html
-        if (member.Type.MarshalType == "DateTime?")
+        if (member.Type.IsTimestamp)
         {
             return member.TimestampFormat switch
             {
@@ -335,19 +396,43 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             };
         }
 
-        return member.Type.MarshalType switch
+        return member.Type.Target switch
         {
-            "string" => value,
-            "bool?" => $"bool.Parse({value})",
-            "int?" => $"int.Parse({value}, CultureInfo.InvariantCulture)",
-            "long?" => $"long.Parse({value}, CultureInfo.InvariantCulture)",
-            "float?" => $"float.Parse({value}, CultureInfo.InvariantCulture)",
-            "double?" => $"double.Parse({value}, CultureInfo.InvariantCulture)",
-            // TODO: a list/set bound to @httpHeader (a multi-value header) has a List<T> MarshalType and
-            // falls through here. C2J parses these via MultiValueHeaderParser (ToStringList /
-            // ToValueTypeList<T> / ToDateTimeList).
+            StringShape or EnumShape => value,
+            BooleanShape => $"bool.Parse({value})",
+            IntegerShape or IntEnumShape => $"int.Parse({value}, CultureInfo.InvariantCulture)",
+            LongShape => $"long.Parse({value}, CultureInfo.InvariantCulture)",
+            FloatShape => $"float.Parse({value}, CultureInfo.InvariantCulture)",
+            DoubleShape => $"double.Parse({value}, CultureInfo.InvariantCulture)",
             _ => throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName})."),
         };
+    }
+
+    /// <summary>
+    /// The right-hand side that reads a <c>list&lt;T&gt;</c> multi-value header from
+    /// <paramref name="value"/> via <c>MultiValueHeaderParser</c> (matches C2J). A string/enum element
+    /// uses <c>ToStringList</c>; a timestamp element uses <c>ToDateTimeList</c> with the C2J format name
+    /// (header default RFC822 when unset); another value type uses the generic <c>ToValueTypeList&lt;T&gt;</c>
+    /// over the non-nullable element type. A non-scalar element (blob, structure, nested collection) fails loud.
+    /// </summary>
+    private static string MultiValueHeaderConversion(Member member, TypeDescriptor element, string value)
+    {
+        if (element.MarshalsAsString)
+        {
+            return $"MultiValueHeaderParser.ToStringList({value})";
+        }
+        if (element is { IsTimestamp: true, IsSparse: false })
+        {
+            // A header timestamp list defaults to http-date when the element carries no @timestampFormat
+            // (restJson1's header binding default); the shared helper maps it to the runtime parser's name.
+            var format = HttpBindingConversions.TimestampFormatName(element.TimestampFormat ?? "http-date");
+            return $"""MultiValueHeaderParser.ToDateTimeList({value}, "{format}")""";
+        }
+        if (element is { IsScalar: true, IsSparse: false })
+        {
+            return $"MultiValueHeaderParser.ToValueTypeList<{element.DotNetType}>({value})";
+        }
+        throw new GeneratorException($"Unsupported header list element type '{element.DotNetType}' (member: {member.PropertyName}).");
     }
 
     private void WriteUnmarshallExceptionMethod(CodeWriter writer, Operation operation)
@@ -374,9 +459,10 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
                     foreach (var error in operation.Errors)
                     {
-                        var errorShapeName = error.Id.Name;
-                        var exceptionClassName = ExceptionWriter.ToExceptionName(errorShapeName);
-                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{errorShapeName}"))""", () =>
+                        // The wire code is the shape name even when the service renames the shape.
+                        var errorCode = error.Id.Name;
+                        var exceptionClassName = ExceptionWriter.ToExceptionName(context.ToDotNetName(error.Id));
+                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{errorCode}"))""", () =>
                         {
                             writer.WriteLine($"return {exceptionClassName}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);");
                         });
@@ -384,12 +470,12 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 });
             });
 
-            writer.WriteLine($"return new Amazon{context.ServiceName}Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
+            writer.WriteLine($"return new Amazon{context.BaseName}Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
         });
     }
 
-    // Emitted only when the response's @httpPayload is a @streaming blob: the runtime checks this to
-    // hand the caller the live response stream rather than buffering the body. Matches C2J.
+    // Emitted when the response's @httpPayload is a @streaming blob or an event stream: the runtime
+    // checks this to hand the caller the live response stream rather than buffering the body. Matches C2J.
     private static void WriteHasStreamingProperty(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");

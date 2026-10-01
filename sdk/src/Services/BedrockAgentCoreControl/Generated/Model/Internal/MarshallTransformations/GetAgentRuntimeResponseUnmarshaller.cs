@@ -148,6 +148,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.NetworkConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("platformVersion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PlatformVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("protocolConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtocolConfigurationUnmarshaller.Instance;

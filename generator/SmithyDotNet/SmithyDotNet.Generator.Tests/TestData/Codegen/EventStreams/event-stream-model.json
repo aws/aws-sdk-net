@@ -1,0 +1,58 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#Listen" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Example"
+      }
+    },
+    "com.example#Listen": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#ListenResponse" },
+      "traits": { "smithy.api#http": { "uri": "/listen", "method": "POST" } }
+    },
+    "com.example#ListenResponse": {
+      "type": "structure",
+      "members": {
+        "stream": { "target": "com.example#EventStream", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#EventStream": {
+      "type": "union",
+      "members": {
+        "data": { "target": "com.example#DataEvent" },
+        "accessDenied": { "target": "com.example#AccessDeniedException" },
+        "throttling": { "target": "com.example#ThrottlingException" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#DataEvent": {
+      "type": "structure",
+      "members": {
+        "payload": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#AccessDeniedException": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client", "smithy.api#httpError": 403 }
+    },
+    "com.example#ThrottlingException": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": { "smithy.api#error": "client", "smithy.api#httpError": 429 }
+    }
+  }
+}

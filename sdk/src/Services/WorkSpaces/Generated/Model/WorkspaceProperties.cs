@@ -140,7 +140,7 @@ namespace Amazon.WorkSpaces.Model
         ///  </li> <li> 
         /// <para>
         /// Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics,
-        /// GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, and Graphics.g6).
+        /// GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, Graphics.g6, and Graphics.g7).
         /// </para>
         ///  </li> </ul> </note>
         /// <para />

@@ -49,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastAccessTime())
             {
                 context.Writer.WritePropertyName("LastAccessTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastAccessTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastAccessTime.Value));
             }
 
             if(requestObject.IsSetLastAnalyzedTime())
             {
                 context.Writer.WritePropertyName("LastAnalyzedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastAnalyzedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastAnalyzedTime.Value));
             }
 
             if(requestObject.IsSetParameters())

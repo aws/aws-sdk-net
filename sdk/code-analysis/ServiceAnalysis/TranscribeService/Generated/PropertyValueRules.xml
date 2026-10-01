@@ -199,6 +199,12 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.GetVocabularyResponse.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.GetVocabularyResponse.DownloadUri</property>
     <min>1</min>
     <max>2000</max>
@@ -215,6 +221,12 @@
     <min>1</min>
     <max>200</max>
     <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.GetVocabularyFilterResponse.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1024}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.GetVocabularyFilterResponse.DownloadUri</property>
@@ -545,6 +557,24 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.TranscribeService.Model.UpdateLanguageModelRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws|aws-cn|aws-us-gov|aws-iso-{0,1}[a-z]{0,1}):iam::[0-9]{0,63}:role/[A-Za-z0-9:_/+=,@.-]{0,1024}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.UpdateLanguageModelRequest.ModelName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.UpdateLanguageModelResponse.ModelName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[0-9a-zA-Z._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.TranscribeService.Model.UpdateMedicalVocabularyRequest.VocabularyFileUri</property>
     <min>1</min>
     <max>2000</max>
@@ -681,6 +711,12 @@
     <property>Amazon.TranscribeService.Model.ChannelDefinition.ChannelId</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.TranscribeService.Model.EncryptionConfiguration.KMSKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[A-Za-z0-9][A-Za-z0-9:_/+=,@.-]{0,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.TranscribeService.Model.InputDataConfig.DataAccessRoleArn</property>

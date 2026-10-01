@@ -16,7 +16,7 @@
     <property>Amazon.Outposts.Model.CancelOrderRequest.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CreateOrderRequest.OutpostIdentifier</property>
@@ -178,7 +178,7 @@
     <property>Amazon.Outposts.Model.GetCapacityTaskResponse.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetCapacityTaskResponse.OutpostId</property>
@@ -190,7 +190,7 @@
     <property>Amazon.Outposts.Model.GetCatalogItemRequest.CatalogItemId</property>
     <min>1</min>
     <max>10</max>
-    <pattern>OR-[A-Z0-9]{7}</pattern>
+    <pattern>^OR-[A-Z0-9]{7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetConnectionRequest.ConnectionId</property>
@@ -208,7 +208,7 @@
     <property>Amazon.Outposts.Model.GetOrderRequest.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostRequest.OutpostId</property>
@@ -284,7 +284,7 @@
     <property>Amazon.Outposts.Model.GetOutpostSupportedInstanceTypesRequest.AssetId</property>
     <min>10</min>
     <max>10</max>
-    <pattern>\d{10}</pattern>
+    <pattern>^\d{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostSupportedInstanceTypesRequest.MaxResults</property>
@@ -301,7 +301,7 @@
     <property>Amazon.Outposts.Model.GetOutpostSupportedInstanceTypesRequest.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostSupportedInstanceTypesRequest.OutpostIdentifier</property>
@@ -559,6 +559,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>1011</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
   </property-value-rule>
@@ -566,13 +567,13 @@
     <property>Amazon.Outposts.Model.StartCapacityTaskRequest.AssetId</property>
     <min>10</min>
     <max>10</max>
-    <pattern>\d{10}</pattern>
+    <pattern>^\d{10}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.StartCapacityTaskRequest.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.StartCapacityTaskRequest.OutpostIdentifier</property>
@@ -596,7 +597,7 @@
     <property>Amazon.Outposts.Model.StartCapacityTaskResponse.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.StartCapacityTaskResponse.OutpostId</property>
@@ -647,11 +648,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.TagResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>1011</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.UntagResourceRequest.ResourceArn</property>
+    <min>0</min>
     <max>1011</max>
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:([a-z\d-]+)/)[a-z]{2,8}-[a-f0-9]{17}$</pattern>
   </property-value-rule>
@@ -767,7 +770,7 @@
     <property>Amazon.Outposts.Model.Address.ContactPhoneNumber</property>
     <min>1</min>
     <max>20</max>
-    <pattern>\+[1-9][0-9]{1,18}</pattern>
+    <pattern>^\+[1-9][0-9]{1,18}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Address.CountryCode</property>
@@ -779,7 +782,7 @@
     <property>Amazon.Outposts.Model.Address.DistrictOrCounty</property>
     <min>1</min>
     <max>60</max>
-    <pattern>^\S[\S ]*</pattern>
+    <pattern>^\S[\S ]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Address.Municipality</property>
@@ -815,7 +818,7 @@
     <property>Amazon.Outposts.Model.AssetInstance.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.AssetInstance.AssetId</property>
@@ -833,7 +836,7 @@
     <property>Amazon.Outposts.Model.AssetInstance.InstanceType</property>
     <min>3</min>
     <max>30</max>
-    <pattern>[a-z0-9\-\.]+</pattern>
+    <pattern>^[a-z0-9\-\.]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.AssetInstanceTypeCapacity.Count</property>
@@ -855,7 +858,7 @@
     <property>Amazon.Outposts.Model.BlockingInstance.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.BlockingInstance.InstanceId</property>
@@ -865,6 +868,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CapacityTaskFailure.Reason</property>
+    <min>0</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -883,7 +887,7 @@
     <property>Amazon.Outposts.Model.CapacityTaskSummary.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.CapacityTaskSummary.OutpostId</property>
@@ -895,7 +899,7 @@
     <property>Amazon.Outposts.Model.CatalogItem.CatalogItemId</property>
     <min>1</min>
     <max>10</max>
-    <pattern>OR-[A-Z0-9]{7}</pattern>
+    <pattern>^OR-[A-Z0-9]{7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ComputeAttributes.HostId</property>
@@ -960,21 +964,21 @@
     <property>Amazon.Outposts.Model.LineItem.CatalogItemId</property>
     <min>1</min>
     <max>10</max>
-    <pattern>OR-[A-Z0-9]{7}</pattern>
+    <pattern>^OR-[A-Z0-9]{7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.LineItemId</property>
-    <pattern>ooi-[a-f0-9]{17}</pattern>
+    <pattern>^ooi-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.PreviousLineItemId</property>
-    <pattern>ooi-[a-f0-9]{17}</pattern>
+    <pattern>^ooi-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.PreviousOrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.Quantity</property>
@@ -990,7 +994,7 @@
     <property>Amazon.Outposts.Model.LineItemRequest.CatalogItemId</property>
     <min>1</min>
     <max>10</max>
-    <pattern>OR-[A-Z0-9]{7}</pattern>
+    <pattern>^OR-[A-Z0-9]{7}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItemRequest.Quantity</property>
@@ -1000,7 +1004,7 @@
     <property>Amazon.Outposts.Model.Order.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Order.OutpostId</property>
@@ -1021,22 +1025,22 @@
     <pattern>^oqo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Outposts.Model.OrderingRequirement.StatusMessage</property>
-    <min>1</min>
-    <max>2048</max>
-    <pattern>^[\S \n]+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Outposts.Model.OrderSummary.OrderId</property>
     <min>1</min>
     <max>20</max>
-    <pattern>oo-[a-f0-9]{17}$</pattern>
+    <pattern>^oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.OrderSummary.OutpostId</property>
     <min>1</min>
     <max>20</max>
     <pattern>^op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.OrderingRequirement.StatusMessage</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[\S \n]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.AvailabilityZone</property>
@@ -1084,7 +1088,7 @@
     <property>Amazon.Outposts.Model.Outpost.OwnerId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Outpost.SiteArn</property>
@@ -1102,19 +1106,19 @@
     <property>Amazon.Outposts.Model.PrivateConnectivityConfig.ProvisioningRoleArn</property>
     <min>1</min>
     <max>150</max>
-    <pattern>^arn:aws([a-z-]+)?:iam::\d{12}:role\/[a-zA-Z_0-9+=,.@\-_\/]+</pattern>
+    <pattern>^arn:aws([a-z-]+)?:iam::\d{12}:role\/[a-zA-Z_0-9+=,.@\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.PrivateConnectivityConfig.RoleArn</property>
     <min>1</min>
     <max>150</max>
-    <pattern>^arn:aws([a-z-]+)?:iam::\d{12}:role\/[a-zA-Z_0-9+=,.@\-_\/]+</pattern>
+    <pattern>^arn:aws([a-z-]+)?:iam::\d{12}:role\/[a-zA-Z_0-9+=,.@\-_\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Quote.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Quote.CountryCode</property>
@@ -1174,7 +1178,7 @@
     <property>Amazon.Outposts.Model.QuoteSummary.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.QuoteSummary.CountryCode</property>
@@ -1228,7 +1232,7 @@
     <property>Amazon.Outposts.Model.Site.AccountId</property>
     <min>12</min>
     <max>12</max>
-    <pattern>\d{12}</pattern>
+    <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.Site.Description</property>
@@ -1294,6 +1298,6 @@
     <property>Amazon.Outposts.Model.VpcInformation.VpcId</property>
     <min>1</min>
     <max>25</max>
-    <pattern>[a-z0-9-]+</pattern>
+    <pattern>^[a-z0-9-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

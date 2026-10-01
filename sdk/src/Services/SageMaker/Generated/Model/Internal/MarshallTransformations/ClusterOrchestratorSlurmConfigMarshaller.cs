@@ -46,6 +46,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccountingDatabase())
+            {
+                context.Writer.WritePropertyName("AccountingDatabase");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterAccountingDatabaseMarshaller.Instance;
+                marshaller.Marshall(requestObject.AccountingDatabase, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSlurmConfigStrategy())
             {
                 context.Writer.WritePropertyName("SlurmConfigStrategy");

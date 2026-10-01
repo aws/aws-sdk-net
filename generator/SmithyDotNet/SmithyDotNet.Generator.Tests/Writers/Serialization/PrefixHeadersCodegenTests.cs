@@ -81,7 +81,7 @@ public class PrefixHeadersCodegenTests
         // unmarshaller collects them the same way rather than failing loud.
         var errorId = ShapeId.Parse("com.example#ThrottlingError");
         var unmarshaller = new JsonExceptionUnmarshallerWriter(_context, ModelFileName)
-            .Write(_context.Errors[errorId], errorId, TestContext.Current.CancellationToken);
+            .Write(_context.Errors[errorId], TestContext.Current.CancellationToken);
 
         Assert.Contains("var headersForRetryAfterHeaders = new Dictionary<string, string>();", unmarshaller);
         Assert.Contains("""if (context.ResponseData.IsHeaderPresent($"x-amzn-ratelimit-{keyToUse}"))""", unmarshaller);

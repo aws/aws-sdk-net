@@ -1,0 +1,216 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MPA.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+using System.Globalization;
+using Amazon.Util;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MPA.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for GetApprovalTeam operation.
+    /// </summary>
+    public partial class GetApprovalTeamResponseUnmarshaller : JsonResponseUnmarshaller
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
+        {
+            var unmarshalledObject = new GetApprovalTeamResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("ApprovalStrategy", targetDepth, ref reader))
+                {
+                    var unmarshaller = ApprovalStrategyResponseUnmarshaller.Instance;
+                    unmarshalledObject.ApprovalStrategy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Approvers", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<GetApprovalTeamResponseApprover, GetApprovalTeamResponseApproverUnmarshaller>(GetApprovalTeamResponseApproverUnmarshaller.Instance);
+                    unmarshalledObject.Approvers = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Arn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("CreationTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Description", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("LastUpdateTime", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Name", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("NumberOfApprovers", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfApprovers = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("PendingUpdate", targetDepth, ref reader))
+                {
+                    var unmarshaller = PendingUpdateUnmarshaller.Instance;
+                    unmarshalledObject.PendingUpdate = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Policies", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PolicyReference, PolicyReferenceUnmarshaller>(PolicyReferenceUnmarshaller.Instance);
+                    unmarshalledObject.Policies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Status", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StatusCode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("UpdateSessionArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UpdateSessionArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("VersionId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+
+            return unmarshalledObject;
+        }
+
+        /// <summary>
+        /// Unmarshall error response to exception.
+        /// </summary>
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        {
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
+
+            errorResponse.InnerException = innerException;
+            errorResponse.StatusCode = statusCode;
+
+            var responseBodyBytes = context.GetResponseBodyBytes();
+
+            using (var streamCopy = new MemoryStream(responseBodyBytes))
+            {
+                using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
+                {
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
+                    {
+                        return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
+                    {
+                        return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                    {
+                        return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                    {
+                        return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                    if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                    {
+                        return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    }
+                }
+            }
+            return new AmazonMPAException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        }
+
+        private static GetApprovalTeamResponseUnmarshaller _instance = new GetApprovalTeamResponseUnmarshaller();
+
+        internal static GetApprovalTeamResponseUnmarshaller GetInstance() => _instance;
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static GetApprovalTeamResponseUnmarshaller Instance => _instance;
+    }
+}

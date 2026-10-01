@@ -46,6 +46,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetIntegrationArn())
+            {
+                context.Writer.WritePropertyName("IntegrationArn");
+                context.Writer.WriteStringValue(requestObject.IntegrationArn);
+            }
+
             if(requestObject.IsSetPartitionSpec())
             {
                 context.Writer.WritePropertyName("PartitionSpec");

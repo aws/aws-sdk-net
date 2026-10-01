@@ -78,7 +78,7 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpireAt())
             {
                 context.Writer.WritePropertyName("ExpireAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpireAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpireAt.Value));
             }
 
             if(publicRequest.IsSetHITId())

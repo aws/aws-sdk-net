@@ -229,6 +229,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListEvaluationFormAIVersions operation
+        ///</summary>
+        public IListEvaluationFormAIVersionsPaginator ListEvaluationFormAIVersions(ListEvaluationFormAIVersionsRequest request) 
+        {
+            return new ListEvaluationFormAIVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEvaluationForms operation
         ///</summary>
         public IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request) 
@@ -434,6 +442,14 @@ namespace Amazon.Connect.Model
         public IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request) 
         {
             return new ListSecurityKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSecurityProfileAIAgents operation
+        ///</summary>
+        public IListSecurityProfileAIAgentsPaginator ListSecurityProfileAIAgents(ListSecurityProfileAIAgentsRequest request) 
+        {
+            return new ListSecurityProfileAIAgentsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -56,6 +56,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("adjustmentDetails", targetDepth))
+                    {
+                        var unmarshaller = CapacityReservationAdjustmentDetailsUnmarshaller.Instance;
+                        response.AdjustmentDetails = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("adjustmentStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.AdjustmentStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("return", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

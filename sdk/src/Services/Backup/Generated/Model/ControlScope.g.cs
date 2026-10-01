@@ -1,0 +1,116 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Backup.Model
+{
+    /// <summary>
+    /// A framework consists of one or more controls. Each control has its own control scope.
+    /// The control scope can include one or more resource types, a combination of a tag key
+    /// and value, or a combination of one resource type and one resource ID. If no scope
+    /// is specified, evaluations for the rule are triggered when any resource in your recording
+    /// group changes in configuration.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// To set a control scope that includes all of a particular resource, leave the <c>ControlScope</c>
+    /// empty or do not pass it when calling <c>CreateFramework</c>.
+    /// </para>
+    ///  </note>
+    /// </summary>
+    public partial class ControlScope
+    {
+        /// <summary>
+        /// Gets and sets the property ComplianceResourceIds. 
+        /// <para>
+        /// The ID of the only Amazon Web Services resource that you want your control scope to
+        /// contain.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 100)]
+        public List<string> ComplianceResourceIds { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ComplianceResourceIds property is set.
+        /// </summary>
+        internal bool IsSetComplianceResourceIds() => this.ComplianceResourceIds != null && (this.ComplianceResourceIds.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ComplianceResourceTypes. 
+        /// <para>
+        /// Describes whether the control scope includes one or more types of resources, such
+        /// as <c>EFS</c> or <c>RDS</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ComplianceResourceTypes { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the ComplianceResourceTypes property is set.
+        /// </summary>
+        internal bool IsSetComplianceResourceTypes() => this.ComplianceResourceTypes != null && (this.ComplianceResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag key-value pair applied to those Amazon Web Services resources that you want
+        /// to trigger an evaluation for a rule. A maximum of one key-value pair can be provided.
+        /// The tag value is optional, but it cannot be an empty string if you are creating or
+        /// editing a framework from the console (though the value can be an empty string when
+        /// included in a CloudFormation template).
+        /// </para>
+        ///  
+        /// <para>
+        /// The structure to assign a tag is: <c>[{"Key":"string","Value":"string"}]</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

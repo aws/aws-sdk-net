@@ -4,7 +4,7 @@
     <property>Amazon.Elasticsearch.Model.AssociatePackageRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.AuthorizeVpcEndpointAccessRequest.Account</property>
@@ -14,25 +14,25 @@
     <property>Amazon.Elasticsearch.Model.AuthorizeVpcEndpointAccessRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CancelDomainConfigChangeRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CancelElasticsearchServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateElasticsearchDomainRequest.ElasticsearchVersion</property>
@@ -40,21 +40,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateOutboundCrossClusterSearchConnectionRequest.ConnectionAlias</property>
+    <min>0</min>
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateOutboundCrossClusterSearchConnectionResponse.ConnectionAlias</property>
+    <min>0</min>
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreatePackageRequest.PackageDescription</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreatePackageRequest.PackageName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CreateVpcEndpointRequest.ClientToken</property>
@@ -65,13 +68,13 @@
     <property>Amazon.Elasticsearch.Model.CreateVpcEndpointRequest.DomainArn</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DeleteElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DeleteVpcEndpointRequest.VpcEndpointId</property>
@@ -83,7 +86,7 @@
     <property>Amazon.Elasticsearch.Model.DescribeDomainAutoTunesRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeDomainAutoTunesRequest.MaxResults</property>
@@ -96,25 +99,25 @@
     <property>Amazon.Elasticsearch.Model.DescribeDomainChangeProgressRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchDomainConfigRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchInstanceTypeLimitsRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DescribeElasticsearchInstanceTypeLimitsRequest.ElasticsearchVersion</property>
@@ -150,13 +153,13 @@
     <property>Amazon.Elasticsearch.Model.DissociatePackageRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.GetCompatibleElasticsearchVersionsRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.GetPackageVersionHistoryRequest.MaxResults</property>
@@ -166,7 +169,7 @@
     <property>Amazon.Elasticsearch.Model.GetUpgradeHistoryRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.GetUpgradeHistoryRequest.MaxResults</property>
@@ -176,7 +179,7 @@
     <property>Amazon.Elasticsearch.Model.GetUpgradeStatusRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListDomainsForPackageRequest.MaxResults</property>
@@ -186,7 +189,7 @@
     <property>Amazon.Elasticsearch.Model.ListElasticsearchInstanceTypesRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListElasticsearchInstanceTypesRequest.ElasticsearchVersion</property>
@@ -204,7 +207,7 @@
     <property>Amazon.Elasticsearch.Model.ListPackagesForDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListPackagesForDomainRequest.MaxResults</property>
@@ -214,13 +217,13 @@
     <property>Amazon.Elasticsearch.Model.ListVpcEndpointAccessRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ListVpcEndpointsForDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.PurchaseReservedElasticsearchInstanceOfferingRequest.InstanceCount</property>
@@ -250,26 +253,28 @@
     <property>Amazon.Elasticsearch.Model.RevokeVpcEndpointAccessRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.StartElasticsearchServiceSoftwareUpdateRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpdateElasticsearchDomainConfigRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpdatePackageRequest.CommitMessage</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpdatePackageRequest.PackageDescription</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -282,7 +287,7 @@
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainRequest.TargetVersion</property>
@@ -292,7 +297,7 @@
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainResponse.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.UpgradeElasticsearchDomainResponse.TargetVersion</property>
@@ -327,7 +332,7 @@
     <property>Amazon.Elasticsearch.Model.CognitoOptions.IdentityPoolId</property>
     <min>1</min>
     <max>55</max>
-    <pattern>[\w-]+:[0-9a-f-]+</pattern>
+    <pattern>^[\w-]+:[0-9a-f-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CognitoOptions.RoleArn</property>
@@ -338,7 +343,7 @@
     <property>Amazon.Elasticsearch.Model.CognitoOptions.UserPoolId</property>
     <min>1</min>
     <max>55</max>
-    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+    <pattern>^[\w-]+_[0-9a-zA-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.CompatibleVersionsMap.SourceVersion</property>
@@ -354,13 +359,13 @@
     <property>Amazon.Elasticsearch.Model.DomainInfo.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DomainInformation.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DomainInformation.OwnerId</property>
@@ -371,13 +376,13 @@
     <property>Amazon.Elasticsearch.Model.DomainPackageDetails.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DomainPackageDetails.PackageName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.DryRunResults.DeploymentType</property>
@@ -403,7 +408,7 @@
     <property>Amazon.Elasticsearch.Model.ElasticsearchDomainStatus.DomainName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.ElasticsearchDomainStatus.ElasticsearchVersion</property>
@@ -436,17 +441,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.OutboundCrossClusterSearchConnection.ConnectionAlias</property>
+    <min>0</min>
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.PackageDetails.PackageDescription</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.PackageDetails.PackageName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.PackageSource.S3BucketName</property>
@@ -455,6 +462,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.PackageVersionHistory.CommitMessage</property>
+    <min>0</min>
     <max>160</max>
   </property-value-rule>
   <property-value-rule>
@@ -501,7 +509,7 @@
     <property>Amazon.Elasticsearch.Model.VpcEndpoint.DomainArn</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.VpcEndpoint.Endpoint</property>
@@ -527,7 +535,7 @@
     <property>Amazon.Elasticsearch.Model.VpcEndpointSummary.DomainArn</property>
     <min>1</min>
     <max>512</max>
-    <pattern>arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+</pattern>
+    <pattern>^arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Elasticsearch.Model.VpcEndpointSummary.VpcEndpointId</property>

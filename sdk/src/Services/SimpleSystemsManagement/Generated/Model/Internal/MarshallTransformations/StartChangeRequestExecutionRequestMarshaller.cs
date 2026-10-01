@@ -149,13 +149,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetScheduledEndTime())
             {
                 context.Writer.WritePropertyName("ScheduledEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ScheduledEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ScheduledEndTime.Value));
             }
 
             if(publicRequest.IsSetScheduledTime())
             {
                 context.Writer.WritePropertyName("ScheduledTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ScheduledTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ScheduledTime.Value));
             }
 
             if(publicRequest.IsSetTags())

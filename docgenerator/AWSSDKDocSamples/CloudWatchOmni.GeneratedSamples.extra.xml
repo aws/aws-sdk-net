@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateAccessGrant(Amazon.CloudWatchOmni.Model.CreateAccessGrantRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateAccessGrant(Amazon.CloudWatchOmni.Model.CreateAccessGrantRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAccessGrantRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAccessGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a custom access grant that authorizes an Identity Center user to read and update a specific dashboard in a space. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an access grant"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateAccessProfile(Amazon.CloudWatchOmni.Model.CreateAccessProfileRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateAccessProfile(Amazon.CloudWatchOmni.Model.CreateAccessProfileRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAccessProfileRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAccessProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a customer-managed access profile in a space. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an access profile"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateAlert(Amazon.CloudWatchOmni.Model.CreateAlertRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateAlert(Amazon.CloudWatchOmni.Model.CreateAlertRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAlertRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAlertResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alert whose threshold is compared against a named field of each result row, so every service the query groups by is tracked as its own contributor. FIELD_VALUE requires thresholdField. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an alert on a field value"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateAlert(Amazon.CloudWatchOmni.Model.CreateAlertRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateAlert(Amazon.CloudWatchOmni.Model.CreateAlertRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAlertRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAlertResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alert whose threshold is compared against how many rows the query returns, rather than a value within them. COUNT_OF_RESULTS takes no thresholdField. Notifications are created disabled, so the alert evaluates and records state without sending anything, and an empty result set is treated as OK rather than as missing data. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an alert on the number of matching rows"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateAlert(Amazon.CloudWatchOmni.Model.CreateAlertRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateAlert(Amazon.CloudWatchOmni.Model.CreateAlertRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAlertRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateAlertResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an alert from a PromQL expression instead of SQL. A PromQL rule compares against the series value, which is carried as the `value` field, so the condition is FIELD_VALUE with thresholdField set to `value`. Notifications go to an Amazon SNS topic, whose ARN is the topic itself rather than an integration. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an alert from a PromQL query"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateDomain(Amazon.CloudWatchOmni.Model.CreateDomainRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateDomain(Amazon.CloudWatchOmni.Model.CreateDomainRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateDomainRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateDomainResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an Identity Center domain and configures it with an Identity Center instance. The name must be 3-63 characters of lowercase letters, numbers, and hyphens, and the endpoint URLs are derived from it. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create a domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateDomainAccessGrantForOrganization(Amazon.CloudWatchOmni.Model.CreateDomainAccessGrantForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateDomainAccessGrantForOrganization(Amazon.CloudWatchOmni.Model.CreateDomainAccessGrantForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateDomainAccessGrantForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateDomainAccessGrantForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example grants an Identity Center user administrative access to an organization domain. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an organization domain access grant"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateDomainForOrganization(Amazon.CloudWatchOmni.Model.CreateDomainForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateDomainForOrganization(Amazon.CloudWatchOmni.Model.CreateDomainForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateDomainForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateDomainForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an organization-scoped domain from the organization's management account, configures it with an Identity Center instance, and supplies an IAM role in the management account for domain access. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an organization domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateIntegration(Amazon.CloudWatchOmni.Model.CreateIntegrationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateIntegration(Amazon.CloudWatchOmni.Model.CreateIntegrationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateIntegrationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an AWS_INTEGRATION named my-aws-integration, authorized by an IAM role. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create an AWS integration"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateOmniDashboard(Amazon.CloudWatchOmni.Model.CreateOmniDashboardRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateOmniDashboard(Amazon.CloudWatchOmni.Model.CreateOmniDashboardRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateOmniDashboardRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateOmniDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a dashboard in a space from a JSON dashboard definition. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create a dashboard"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateOneTimeDeepLinkCode(Amazon.CloudWatchOmni.Model.CreateOneTimeDeepLinkCodeRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateOneTimeDeepLinkCode(Amazon.CloudWatchOmni.Model.CreateOneTimeDeepLinkCodeRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateOneTimeDeepLinkCodeRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateOneTimeDeepLinkCodeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a one-time deep-link code for a domain that remains valid for 300 seconds and, once used, redirects the browser to the domain's /auth/callback path. Direct the user's browser to the returned deepLinkUrl before it expires; the code can be used only once. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create a one-time deep-link code"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateSpace(Amazon.CloudWatchOmni.Model.CreateSpaceRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateSpace(Amazon.CloudWatchOmni.Model.CreateSpaceRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateSpaceRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateSpaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a space in a domain and encrypts its data at rest with a customer managed KMS key. The name must be 3-64 characters of lowercase letters, numbers, and hyphens. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.CreateView(Amazon.CloudWatchOmni.Model.CreateViewRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.CreateView(Amazon.CloudWatchOmni.Model.CreateViewRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateViewRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.CreateViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a user view that saves an error-count-by-service query. View names must begin with the view. prefix and be unique within the account and Region. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Create a view"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteAccessGrant(Amazon.CloudWatchOmni.Model.DeleteAccessGrantRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteAccessGrant(Amazon.CloudWatchOmni.Model.DeleteAccessGrantRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteAccessGrantRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteAccessGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an access grant by ID, revoking the access it granted. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete an access grant"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteAccessProfile(Amazon.CloudWatchOmni.Model.DeleteAccessProfileRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteAccessProfile(Amazon.CloudWatchOmni.Model.DeleteAccessProfileRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteAccessProfileRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteAccessProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an access profile from a space. An access profile cannot be deleted while access grants reference it. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete an access profile"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteAlert(Amazon.CloudWatchOmni.Model.DeleteAlertRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteAlert(Amazon.CloudWatchOmni.Model.DeleteAlertRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteAlertRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteAlertResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes an alert from a space. Deleting an alert that has already been removed succeeds without error. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete an alert"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteDomain(Amazon.CloudWatchOmni.Model.DeleteDomainRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteDomain(Amazon.CloudWatchOmni.Model.DeleteDomainRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteDomainRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteDomainResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a domain in the Region where it was created. The domain must not contain any spaces. A successful response returns an empty body. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete a domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteDomainAccessGrantForOrganization(Amazon.CloudWatchOmni.Model.DeleteDomainAccessGrantForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteDomainAccessGrantForOrganization(Amazon.CloudWatchOmni.Model.DeleteDomainAccessGrantForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteDomainAccessGrantForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteDomainAccessGrantForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an organization domain access grant by ID, revoking the access it granted. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete an organization domain access grant"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteDomainForOrganization(Amazon.CloudWatchOmni.Model.DeleteDomainForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteDomainForOrganization(Amazon.CloudWatchOmni.Model.DeleteDomainForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteDomainForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteDomainForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an organization domain in the Region where it was created. The domain must not contain any spaces. A successful response returns an empty body. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete an organization domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteIntegration(Amazon.CloudWatchOmni.Model.DeleteIntegrationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteIntegration(Amazon.CloudWatchOmni.Model.DeleteIntegrationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteIntegrationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the integration identified by its id. DeleteIntegration is idempotent and returns an empty response. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete an integration by id"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteOmniDashboard(Amazon.CloudWatchOmni.Model.DeleteOmniDashboardRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteOmniDashboard(Amazon.CloudWatchOmni.Model.DeleteOmniDashboardRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteOmniDashboardRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteOmniDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes a dashboard from a space. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete a dashboard"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteSpace(Amazon.CloudWatchOmni.Model.DeleteSpaceRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteSpace(Amazon.CloudWatchOmni.Model.DeleteSpaceRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteSpaceRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteSpaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes a space and all of its resources. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.DeleteView(Amazon.CloudWatchOmni.Model.DeleteViewRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.DeleteView(Amazon.CloudWatchOmni.Model.DeleteViewRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteViewRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.DeleteViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a view. The response body is empty. Queries that reference the view fail after it is deleted. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Delete a view"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetAccessGrant(Amazon.CloudWatchOmni.Model.GetAccessGrantRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetAccessGrant(Amazon.CloudWatchOmni.Model.GetAccessGrantRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetAccessGrantRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetAccessGrantResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the full detail of a single access grant by ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get an access grant"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetAccessProfile(Amazon.CloudWatchOmni.Model.GetAccessProfileRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetAccessProfile(Amazon.CloudWatchOmni.Model.GetAccessProfileRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetAccessProfileRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetAccessProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an access profile by ID, including whether the calling principal is currently allowed to assume it. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get an access profile"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetAlert(Amazon.CloudWatchOmni.Model.GetAlertRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetAlert(Amazon.CloudWatchOmni.Model.GetAlertRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetAlertRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetAlertResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an alert by its identifier, including the live evaluation state that CreateAlert does not report. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Retrieve an alert"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetContextGraph(Amazon.CloudWatchOmni.Model.GetContextGraphRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetContextGraph(Amazon.CloudWatchOmni.Model.GetContextGraphRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetContextGraphRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetContextGraphResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns context graph nodes matching the filter and traverses one hop out to their direct dependencies, over a one-hour window. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Query a service and its immediate dependencies"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetDomain(Amazon.CloudWatchOmni.Model.GetDomainRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetDomain(Amazon.CloudWatchOmni.Model.GetDomainRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetDomainRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetDomainResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the configuration and status of an Identity Center domain by its ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get a domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetDomainAccessGrantForOrganization(Amazon.CloudWatchOmni.Model.GetDomainAccessGrantForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetDomainAccessGrantForOrganization(Amazon.CloudWatchOmni.Model.GetDomainAccessGrantForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetDomainAccessGrantForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetDomainAccessGrantForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the full detail of a single organization domain access grant by ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get an organization domain access grant"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetDomainForOrganization(Amazon.CloudWatchOmni.Model.GetDomainForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetDomainForOrganization(Amazon.CloudWatchOmni.Model.GetDomainForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetDomainForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetDomainForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the configuration and status of an organization-scoped domain by its ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get an organization domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetIntegration(Amazon.CloudWatchOmni.Model.GetIntegrationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetIntegration(Amazon.CloudWatchOmni.Model.GetIntegrationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetIntegrationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the integration with the given id. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get an integration by id"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetIntelligenceConfiguration(Amazon.CloudWatchOmni.Model.GetIntelligenceConfigurationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetIntelligenceConfiguration(Amazon.CloudWatchOmni.Model.GetIntelligenceConfigurationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetIntelligenceConfigurationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetIntelligenceConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the intelligence configuration for the calling account. The request carries no parameters; the account is taken from the caller identity. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Retrieve the intelligence configuration"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetOmniDashboard(Amazon.CloudWatchOmni.Model.GetOmniDashboardRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetOmniDashboard(Amazon.CloudWatchOmni.Model.GetOmniDashboardRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetOmniDashboardRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetOmniDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves a dashboard by ID within a space, including its full body. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get a dashboard"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetSpace(Amazon.CloudWatchOmni.Model.GetSpaceRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetSpace(Amazon.CloudWatchOmni.Model.GetSpaceRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of a space by ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetSpaceCredentialsForOrganization(Amazon.CloudWatchOmni.Model.GetSpaceCredentialsForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetSpaceCredentialsForOrganization(Amazon.CloudWatchOmni.Model.GetSpaceCredentialsForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceCredentialsForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetSpaceCredentialsForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns temporary, space-scoped AWS credentials for an existing space in an organization member account, selected by spaceId. The credentials are valid for one hour, as reflected by the expiration timestamp. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get space credentials for an organization member account"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetTelemetryQueryResults(Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetTelemetryQueryResults(Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetTelemetryQueryResultsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves a page of results for a completed query, along with execution statistics. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get telemetry query results"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.GetView(Amazon.CloudWatchOmni.Model.GetViewRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.GetView(Amazon.CloudWatchOmni.Model.GetViewRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetViewRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.GetViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the definition and metadata of a view. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Get a view"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListAccessGrants(Amazon.CloudWatchOmni.Model.ListAccessGrantsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListAccessGrants(Amazon.CloudWatchOmni.Model.ListAccessGrantsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListAccessGrantsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListAccessGrantsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of access grants in a space and returns a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List access grants in a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListAccessProfiles(Amazon.CloudWatchOmni.Model.ListAccessProfilesRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListAccessProfiles(Amazon.CloudWatchOmni.Model.ListAccessProfilesRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListAccessProfilesRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListAccessProfilesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of access profiles in a space and returns a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List access profiles in a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListAlerts(Amazon.CloudWatchOmni.Model.ListAlertsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListAlerts(Amazon.CloudWatchOmni.Model.ListAlertsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListAlertsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListAlertsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of alerts in a space, sorted by state, and returns a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List alerts in a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListDomainAccessGrantsForOrganization(Amazon.CloudWatchOmni.Model.ListDomainAccessGrantsForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListDomainAccessGrantsForOrganization(Amazon.CloudWatchOmni.Model.ListDomainAccessGrantsForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListDomainAccessGrantsForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListDomainAccessGrantsForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of organization domain access grants and returns a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List organization domain access grants"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListDomains(Amazon.CloudWatchOmni.Model.ListDomainsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListDomains(Amazon.CloudWatchOmni.Model.ListDomainsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListDomainsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListDomainsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the caller's domains. At most two are returned — the account-scoped domain and the organization-scoped domain — so there is no nextToken. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List domains"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListIntegrations(Amazon.CloudWatchOmni.Model.ListIntegrationsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListIntegrations(Amazon.CloudWatchOmni.Model.ListIntegrationsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListIntegrationsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListIntegrationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists up to 20 AWS_INTEGRATION integrations in the account. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List integrations of a type"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListOmniDashboards(Amazon.CloudWatchOmni.Model.ListOmniDashboardsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListOmniDashboards(Amazon.CloudWatchOmni.Model.ListOmniDashboardsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListOmniDashboardsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListOmniDashboardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of dashboards in a space and returns a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List dashboards in a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListSpaces(Amazon.CloudWatchOmni.Model.ListSpacesRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListSpaces(Amazon.CloudWatchOmni.Model.ListSpacesRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListSpacesRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListSpacesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of spaces in a domain and returns a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List spaces in a domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListSpacesForOrganization(Amazon.CloudWatchOmni.Model.ListSpacesForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListSpacesForOrganization(Amazon.CloudWatchOmni.Model.ListSpacesForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListSpacesForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListSpacesForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the first page of spaces across all member accounts in the organization. The results include spaces owned by different accounts, along with a nextToken to retrieve the next page. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List spaces across the organization"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListTelemetryFields(Amazon.CloudWatchOmni.Model.ListTelemetryFieldsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListTelemetryFields(Amazon.CloudWatchOmni.Model.ListTelemetryFieldsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListTelemetryFieldsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListTelemetryFieldsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the log fields available in the specified dataset. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List fields for a dataset"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListTelemetryQuerySessions(Amazon.CloudWatchOmni.Model.ListTelemetryQuerySessionsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListTelemetryQuerySessions(Amazon.CloudWatchOmni.Model.ListTelemetryQuerySessionsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListTelemetryQuerySessionsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListTelemetryQuerySessionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the query sessions owned by the caller. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List telemetry query sessions"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.ListViews(Amazon.CloudWatchOmni.Model.ListViewsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.ListViews(Amazon.CloudWatchOmni.Model.ListViewsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListViewsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.ListViewsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a page of view summaries, filtered to user-created views. Definitions are not included — call GetView to retrieve them. A nextToken is returned when more results are available. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="List the views in an account and Region"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.PutIntelligenceConfiguration(Amazon.CloudWatchOmni.Model.PutIntelligenceConfigurationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.PutIntelligenceConfiguration(Amazon.CloudWatchOmni.Model.PutIntelligenceConfigurationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.PutIntelligenceConfigurationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.PutIntelligenceConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sets the customer-managed KMS key used to encrypt the account's intelligence data. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Configure a customer-managed KMS key"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.SearchPrincipals(Amazon.CloudWatchOmni.Model.SearchPrincipalsRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.SearchPrincipals(Amazon.CloudWatchOmni.Model.SearchPrincipalsRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.SearchPrincipalsRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.SearchPrincipalsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example searches a domain for principals whose name matches a text query. A text search (any searchQuery other than *) returns at most 10 results and does not paginate, so maxResults and nextToken are not supplied and no nextToken is returned. To grant access to a result, pass its principalId to CreateAccessGrant with a principalType of IDC_USER for a user or IDC_GROUP for a group. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Search principals by name"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.StartTelemetryQuery(Amazon.CloudWatchOmni.Model.StartTelemetryQueryRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.StartTelemetryQuery(Amazon.CloudWatchOmni.Model.StartTelemetryQueryRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StartTelemetryQueryRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StartTelemetryQueryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example submits a SQL query within a session and returns the query ID used to poll for results. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Start a telemetry query"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.StartTelemetryQuerySession(Amazon.CloudWatchOmni.Model.StartTelemetryQuerySessionRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.StartTelemetryQuerySession(Amazon.CloudWatchOmni.Model.StartTelemetryQuerySessionRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StartTelemetryQuerySessionRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StartTelemetryQuerySessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts a session for grouping telemetry queries and returns its session ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Start a telemetry query session"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.StopTelemetryQuery(Amazon.CloudWatchOmni.Model.StopTelemetryQueryRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.StopTelemetryQuery(Amazon.CloudWatchOmni.Model.StopTelemetryQueryRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StopTelemetryQueryRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StopTelemetryQueryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example stops a running query by its ID. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Stop a running telemetry query"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.StopTelemetryQuerySession(Amazon.CloudWatchOmni.Model.StopTelemetryQuerySessionRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.StopTelemetryQuerySession(Amazon.CloudWatchOmni.Model.StopTelemetryQuerySessionRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StopTelemetryQuerySessionRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.StopTelemetryQuerySessionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example terminates the specified session. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Stop a telemetry query session"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateAccessProfile(Amazon.CloudWatchOmni.Model.UpdateAccessProfileRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateAccessProfile(Amazon.CloudWatchOmni.Model.UpdateAccessProfileRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateAccessProfileRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateAccessProfileResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates only the description of an access profile; the name is left unchanged. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Update an access profile description"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateAlert(Amazon.CloudWatchOmni.Model.UpdateAlertRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateAlert(Amazon.CloudWatchOmni.Model.UpdateAlertRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateAlertRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateAlertResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replaces only the condition of an alert's rule; the query, the evaluation cadence and the notification rules are left unchanged. A supplied condition is replaced whole rather than merged, so every threshold to keep is sent again. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Raise an alert's thresholds"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateDomain(Amazon.CloudWatchOmni.Model.UpdateDomainRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateDomain(Amazon.CloudWatchOmni.Model.UpdateDomainRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateDomainRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateDomainResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example performs a partial update that changes only the domain name; the omitted fields are left unchanged. Renaming the domain also updates the endpoint URLs derived from its name, and updatedAt advances past createdAt. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Rename a domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateDomainForOrganization(Amazon.CloudWatchOmni.Model.UpdateDomainForOrganizationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateDomainForOrganization(Amazon.CloudWatchOmni.Model.UpdateDomainForOrganizationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateDomainForOrganizationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateDomainForOrganizationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example performs a partial update that changes only the organization domain name; the omitted fields are left unchanged. The endpoint URLs derived from the name are updated, and updatedAt advances past createdAt. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Rename an organization domain"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateIntegration(Amazon.CloudWatchOmni.Model.UpdateIntegrationRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateIntegration(Amazon.CloudWatchOmni.Model.UpdateIntegrationRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateIntegrationRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateIntegrationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replaces the provider-specific attributes of the integration identified by its id. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Update an integration's attributes"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateOmniDashboard(Amazon.CloudWatchOmni.Model.UpdateOmniDashboardRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateOmniDashboard(Amazon.CloudWatchOmni.Model.UpdateOmniDashboardRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateOmniDashboardRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateOmniDashboardResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates only the body of a dashboard; the name and description are left unchanged. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Update a dashboard body"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateSpace(Amazon.CloudWatchOmni.Model.UpdateSpaceRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateSpace(Amazon.CloudWatchOmni.Model.UpdateSpaceRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateSpaceRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateSpaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates only the name of a space; omitted fields are left unchanged. The response returns the full space with a later updatedAt timestamp. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Rename a space"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.CloudWatchOmni.IAmazonCloudWatchOmni.UpdateView(Amazon.CloudWatchOmni.Model.UpdateViewRequest)" />
+            <member name="M:Amazon.CloudWatchOmni.AmazonCloudWatchOmniClient.UpdateView(Amazon.CloudWatchOmni.Model.UpdateViewRequest)" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateViewRequest" />
+            <member name="T:Amazon.CloudWatchOmni.Model.UpdateViewResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example changes only the definition; the omitted description is left unchanged. Managed views cannot be updated. The response carries the view's effective configuration. Payloads are shown as JSON; on the wire they are CBOR-encoded.
+                </para>
+                <code
+                    title="Update a view's definition"
+                    source=".\AWSSDKDocSamples\CloudWatchOmni\CloudWatchOmni.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

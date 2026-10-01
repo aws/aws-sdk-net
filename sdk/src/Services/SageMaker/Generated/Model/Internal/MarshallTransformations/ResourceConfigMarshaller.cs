@@ -79,6 +79,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInstancePreferences())
+            {
+                context.Writer.WritePropertyName("InstancePreferences");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInstancePreferencesListValue in requestObject.InstancePreferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InstancePreferenceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstancePreferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
@@ -89,6 +105,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("KeepAlivePeriodInSeconds");
                 context.Writer.WriteNumberValue(requestObject.KeepAlivePeriodInSeconds.Value);
+            }
+
+            if(requestObject.IsSetSelectedInstanceCount())
+            {
+                context.Writer.WritePropertyName("SelectedInstanceCount");
+                context.Writer.WriteNumberValue(requestObject.SelectedInstanceCount.Value);
+            }
+
+            if(requestObject.IsSetSelectedInstanceType())
+            {
+                context.Writer.WritePropertyName("SelectedInstanceType");
+                context.Writer.WriteStringValue(requestObject.SelectedInstanceType);
             }
 
             if(requestObject.IsSetTrainingPlanArn())

@@ -435,6 +435,52 @@ namespace Amazon.SageMaker
         }
         #endregion
         
+        #region  AttachClusterNodeNetworkInterface
+
+        internal virtual AttachClusterNodeNetworkInterfaceResponse AttachClusterNodeNetworkInterface(AttachClusterNodeNetworkInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachClusterNodeNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachClusterNodeNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<AttachClusterNodeNetworkInterfaceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Attaches an elastic network interface (ENI) to a node in a HyperPod cluster. 
+        /// 
+        ///  
+        /// <para>
+        ///  To use this operation, you must have the <c>sagemaker:AttachClusterNodeNetworkInterface</c>
+        /// permission. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachClusterNodeNetworkInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachClusterNodeNetworkInterface service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AttachClusterNodeNetworkInterface">REST API Reference for AttachClusterNodeNetworkInterface Operation</seealso>
+        public virtual Task<AttachClusterNodeNetworkInterfaceResponse> AttachClusterNodeNetworkInterfaceAsync(AttachClusterNodeNetworkInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachClusterNodeNetworkInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachClusterNodeNetworkInterfaceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AttachClusterNodeNetworkInterfaceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  AttachClusterNodeVolume
 
         internal virtual AttachClusterNodeVolumeResponse AttachClusterNodeVolume(AttachClusterNodeVolumeRequest request)

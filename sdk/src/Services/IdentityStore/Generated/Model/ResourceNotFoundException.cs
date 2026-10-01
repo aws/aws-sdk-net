@@ -166,7 +166,7 @@ namespace Amazon.IdentityStore.Model
         /// in the <c>1234567890-UUID</c> format.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=47)]
+        [AWSProperty(Min=1, Max=100)]
         public string ResourceId
         {
             get { return this._resourceId; }

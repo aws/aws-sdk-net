@@ -5190,6 +5190,67 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateCapacityReservationDateChangeQuote
+
+
+        /// <summary>
+        /// Generates a quote for changing the start date of a future-dated Capacity Reservation
+        /// that has not yet been delivered. The quote includes the new start date, the resulting
+        /// commitment end date, and a quote ID. Pass the quote ID to <c>ModifyCapacityReservation</c>
+        /// to apply the change.
+        /// 
+        ///  
+        /// <para>
+        /// The cumulative pushout across all changes is limited to 30 days from the Capacity
+        /// Reservation's original start date. Quotes are valid for 24 hours, and always expire
+        /// at least one hour before the start date.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationDateChangeQuote service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationDateChangeQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationDateChangeQuote">REST API Reference for CreateCapacityReservationDateChangeQuote Operation</seealso>
+        public virtual CreateCapacityReservationDateChangeQuoteResponse CreateCapacityReservationDateChangeQuote(CreateCapacityReservationDateChangeQuoteRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationDateChangeQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationDateChangeQuoteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCapacityReservationDateChangeQuoteResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generates a quote for changing the start date of a future-dated Capacity Reservation
+        /// that has not yet been delivered. The quote includes the new start date, the resulting
+        /// commitment end date, and a quote ID. Pass the quote ID to <c>ModifyCapacityReservation</c>
+        /// to apply the change.
+        /// 
+        ///  
+        /// <para>
+        /// The cumulative pushout across all changes is limited to 30 days from the Capacity
+        /// Reservation's original start date. Quotes are valid for 24 hours, and always expire
+        /// at least one hour before the start date.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityReservationDateChangeQuote service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityReservationDateChangeQuote service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservationDateChangeQuote">REST API Reference for CreateCapacityReservationDateChangeQuote Operation</seealso>
+        public virtual Task<CreateCapacityReservationDateChangeQuoteResponse> CreateCapacityReservationDateChangeQuoteAsync(CreateCapacityReservationDateChangeQuoteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCapacityReservationDateChangeQuoteRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCapacityReservationDateChangeQuoteResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateCapacityReservationDateChangeQuoteResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCapacityReservationFleet
 
 
@@ -12196,6 +12257,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteClientVpnEndpointAuthorizationPolicy
+
+
+        /// <summary>
+        /// Deletes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpointAuthorizationPolicy">REST API Reference for DeleteClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual DeleteClientVpnEndpointAuthorizationPolicyResponse DeleteClientVpnEndpointAuthorizationPolicy(DeleteClientVpnEndpointAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClientVpnEndpointAuthorizationPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpointAuthorizationPolicy">REST API Reference for DeleteClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual Task<DeleteClientVpnEndpointAuthorizationPolicyResponse> DeleteClientVpnEndpointAuthorizationPolicyAsync(DeleteClientVpnEndpointAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteClientVpnEndpointAuthorizationPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteClientVpnRoute
 
 
@@ -18638,6 +18740,49 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeCapacityReservationDateChangeQuotes
+
+
+        /// <summary>
+        /// Describes one or more Capacity Reservation date change quotes that you generated by
+        /// using the <c>CreateCapacityReservationDateChangeQuote</c> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationDateChangeQuotes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationDateChangeQuotes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationDateChangeQuotes">REST API Reference for DescribeCapacityReservationDateChangeQuotes Operation</seealso>
+        public virtual DescribeCapacityReservationDateChangeQuotesResponse DescribeCapacityReservationDateChangeQuotes(DescribeCapacityReservationDateChangeQuotesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationDateChangeQuotesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCapacityReservationDateChangeQuotesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more Capacity Reservation date change quotes that you generated by
+        /// using the <c>CreateCapacityReservationDateChangeQuote</c> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCapacityReservationDateChangeQuotes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCapacityReservationDateChangeQuotes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservationDateChangeQuotes">REST API Reference for DescribeCapacityReservationDateChangeQuotes Operation</seealso>
+        public virtual Task<DescribeCapacityReservationDateChangeQuotesResponse> DescribeCapacityReservationDateChangeQuotesAsync(DescribeCapacityReservationDateChangeQuotesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeCapacityReservationDateChangeQuotesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCapacityReservationDateChangeQuotesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeCapacityReservationDateChangeQuotesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeCapacityReservationFleets
 
 
@@ -21181,8 +21326,7 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<c>standard</c>
         /// or <c>unlimited</c>) of those instances. If you specify an instance ID that is not
-        /// valid, such as an instance that is not a burstable performance instance, an error
-        /// is returned.
+        /// a burstable performance instance, Amazon EC2 returns the <c>standard</c> credit option.
         /// </para>
         ///  
         /// <para>
@@ -21231,8 +21375,7 @@ namespace Amazon.EC2
         /// <para>
         /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<c>standard</c>
         /// or <c>unlimited</c>) of those instances. If you specify an instance ID that is not
-        /// valid, such as an instance that is not a burstable performance instance, an error
-        /// is returned.
+        /// a burstable performance instance, Amazon EC2 returns the <c>standard</c> credit option.
         /// </para>
         ///  
         /// <para>
@@ -34861,6 +35004,47 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetClientVpnEndpointAuthorizationPolicy
+
+
+        /// <summary>
+        /// Describes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetClientVpnEndpointAuthorizationPolicy">REST API Reference for GetClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual GetClientVpnEndpointAuthorizationPolicyResponse GetClientVpnEndpointAuthorizationPolicy(GetClientVpnEndpointAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetClientVpnEndpointAuthorizationPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the authorization policy for a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetClientVpnEndpointAuthorizationPolicy">REST API Reference for GetClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual Task<GetClientVpnEndpointAuthorizationPolicyResponse> GetClientVpnEndpointAuthorizationPolicyAsync(GetClientVpnEndpointAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetClientVpnEndpointAuthorizationPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetCoipPoolUsage
 
 
@@ -39382,7 +39566,13 @@ namespace Amazon.EC2
         ///  <c>expired</c>, <c>cancelled</c>, <c>unsupported</c>, or <c>failed</c> state - You
         /// can't modify the Capacity Reservation in any way.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a future-dated Capacity Reservation that has not yet been delivered, pushing out
+        /// the start date requires a quote generated by <c>CreateCapacityReservationDateChangeQuote</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+        /// an active Capacity Reservation</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// 
@@ -39435,7 +39625,13 @@ namespace Amazon.EC2
         ///  <c>expired</c>, <c>cancelled</c>, <c>unsupported</c>, or <c>failed</c> state - You
         /// can't modify the Capacity Reservation in any way.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For a future-dated Capacity Reservation that has not yet been delivered, pushing out
+        /// the start date requires a quote generated by <c>CreateCapacityReservationDateChangeQuote</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-modify.html">Modify
+        /// an active Capacity Reservation</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyCapacityReservation service method.</param>
         /// <param name="cancellationToken">
@@ -39553,6 +39749,53 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyClientVpnEndpointResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyClientVpnEndpointAuthorizationPolicy
+
+
+        /// <summary>
+        /// Creates or updates the authorization policy for a Client VPN endpoint. A Client VPN
+        /// endpoint can have one authorization policy. If a policy already exists for the endpoint,
+        /// the values that you specify replace the corresponding values in the existing policy,
+        /// and values that you do not specify remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpointAuthorizationPolicy">REST API Reference for ModifyClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual ModifyClientVpnEndpointAuthorizationPolicyResponse ModifyClientVpnEndpointAuthorizationPolicy(ModifyClientVpnEndpointAuthorizationPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClientVpnEndpointAuthorizationPolicyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates the authorization policy for a Client VPN endpoint. A Client VPN
+        /// endpoint can have one authorization policy. If a policy already exists for the endpoint,
+        /// the values that you specify replace the corresponding values in the existing policy,
+        /// and values that you do not specify remain unchanged.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpointAuthorizationPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpointAuthorizationPolicy service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpointAuthorizationPolicy">REST API Reference for ModifyClientVpnEndpointAuthorizationPolicy Operation</seealso>
+        public virtual Task<ModifyClientVpnEndpointAuthorizationPolicyResponse> ModifyClientVpnEndpointAuthorizationPolicyAsync(ModifyClientVpnEndpointAuthorizationPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyClientVpnEndpointAuthorizationPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyClientVpnEndpointAuthorizationPolicyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyClientVpnEndpointAuthorizationPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -49378,6 +49621,65 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = UpdateSecurityGroupRuleDescriptionsIngressResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateSecurityGroupRuleDescriptionsIngressResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ValidateSecurityGroupQuotasForInterface
+
+
+        /// <summary>
+        /// Validates whether the specified security groups can be associated with a single network
+        /// interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas.
+        /// It checks inbound or outbound rules per security group and security groups per network
+        /// interface. Only authorized Amazon Web Services services can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups">Amazon
+        /// VPC quotas</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateSecurityGroupQuotasForInterface service method.</param>
+        /// 
+        /// <returns>The response from the ValidateSecurityGroupQuotasForInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ValidateSecurityGroupQuotasForInterface">REST API Reference for ValidateSecurityGroupQuotasForInterface Operation</seealso>
+        public virtual ValidateSecurityGroupQuotasForInterfaceResponse ValidateSecurityGroupQuotasForInterface(ValidateSecurityGroupQuotasForInterfaceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidateSecurityGroupQuotasForInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateSecurityGroupQuotasForInterfaceResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateSecurityGroupQuotasForInterfaceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Validates whether the specified security groups can be associated with a single network
+        /// interface. The operation checks Amazon Virtual Private Cloud (Amazon VPC) quotas.
+        /// It checks inbound or outbound rules per security group and security groups per network
+        /// interface. Only authorized Amazon Web Services services can call this operation.
+        /// 
+        ///  
+        /// <para>
+        /// For more information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-security-groups">Amazon
+        /// VPC quotas</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateSecurityGroupQuotasForInterface service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateSecurityGroupQuotasForInterface service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ValidateSecurityGroupQuotasForInterface">REST API Reference for ValidateSecurityGroupQuotasForInterface Operation</seealso>
+        public virtual Task<ValidateSecurityGroupQuotasForInterfaceResponse> ValidateSecurityGroupQuotasForInterfaceAsync(ValidateSecurityGroupQuotasForInterfaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidateSecurityGroupQuotasForInterfaceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateSecurityGroupQuotasForInterfaceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ValidateSecurityGroupQuotasForInterfaceResponse>(request, options, cancellationToken);
         }
 
         #endregion

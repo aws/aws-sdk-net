@@ -56,6 +56,12 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("IpAddressDetails", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<IpAddressDetail, IpAddressDetailUnmarshaller>(IpAddressDetailUnmarshaller.Instance);
+                    unmarshalledObject.IpAddressDetails = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IpAddresses", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

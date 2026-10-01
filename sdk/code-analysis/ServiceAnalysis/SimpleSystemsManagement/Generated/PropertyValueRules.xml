@@ -496,7 +496,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeAssociationRequest.InstanceId</property>
@@ -1497,7 +1497,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.PutComplianceItemsRequest.ComplianceType</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+</pattern>
+    <pattern>^([A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.PutComplianceItemsRequest.ItemContentHash</property>
@@ -1900,7 +1900,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateAssociationRequest.AutomationTargetParameterName</property>
@@ -2420,7 +2420,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.Association.DocumentVersion</property>
@@ -2465,7 +2465,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationDescription.AutomationTargetParameterName</property>
@@ -2517,7 +2517,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationExecution.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationExecution.ExecutionId</property>
@@ -2533,7 +2533,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationExecutionTarget.ExecutionId</property>
@@ -2582,7 +2582,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AssociationVersionInfo.DocumentVersion</property>
@@ -2928,7 +2928,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.ComplianceItem.ComplianceType</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+</pattern>
+    <pattern>^([A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ComplianceItem.ResourceId</property>
@@ -2957,7 +2957,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.ComplianceSummaryItem.ComplianceType</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+</pattern>
+    <pattern>^([A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateAssociationBatchRequestEntry.AssociationName</property>
@@ -3159,7 +3159,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.Content</property>
@@ -3179,7 +3179,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.AssociationVersion</property>
-    <pattern>([$]LATEST)|([1-9][0-9]*)</pattern>
+    <pattern>^(([$]LATEST)|([1-9][0-9]*))$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociationStatusInfo.DocumentVersion</property>
@@ -4022,7 +4022,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.ParameterStringFilter.Key</property>
     <min>1</min>
     <max>132</max>
-    <pattern>tag:.+|Name|Type|KeyId|Path|Label|Tier|DataType</pattern>
+    <pattern>^(tag:.+|Name|Type|KeyId|Path|Label|Tier|DataType)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ParameterStringFilter.Option</property>
@@ -4101,7 +4101,7 @@
     <property>Amazon.SimpleSystemsManagement.Model.ResourceComplianceSummaryItem.ComplianceType</property>
     <min>1</min>
     <max>100</max>
-    <pattern>[A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+</pattern>
+    <pattern>^([A-Za-z0-9_\-]\w+|Custom:[a-zA-Z0-9_\-]\w+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ResourceComplianceSummaryItem.ResourceId</property>

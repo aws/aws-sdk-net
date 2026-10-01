@@ -56,6 +56,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AccountingDatabase", targetDepth, ref reader))
+                {
+                    var unmarshaller = ClusterAccountingDatabaseUnmarshaller.Instance;
+                    unmarshalledObject.AccountingDatabase = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SlurmConfigStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

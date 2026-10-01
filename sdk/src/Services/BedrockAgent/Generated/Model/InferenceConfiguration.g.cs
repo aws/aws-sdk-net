@@ -1,0 +1,128 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.BedrockAgent.Model
+{
+    /// <summary>
+    /// Contains inference parameters to use when the agent invokes a foundation model in
+    /// the part of the agent sequence defined by the <c>promptType</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+    /// parameters for foundation models</a>.
+    /// </summary>
+    public partial class InferenceConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property MaximumLength. 
+        /// <para>
+        /// The maximum number of tokens to allow in the generated response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0)]
+        public int? MaximumLength { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaximumLength property is set.
+        /// </summary>
+        internal bool IsSetMaximumLength() => this.MaximumLength.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property StopSequences. 
+        /// <para>
+        /// A list of stop sequences. A stop sequence is a sequence of characters that causes
+        /// the model to stop generating the response.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 4)]
+        public List<string> StopSequences { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the StopSequences property is set.
+        /// </summary>
+        internal bool IsSetStopSequences() => this.StopSequences != null && (this.StopSequences.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Temperature. 
+        /// <para>
+        /// The likelihood of the model selecting higher-probability options while generating
+        /// a response. A lower value makes the model more likely to choose higher-probability
+        /// options, while a higher value makes the model more likely to choose lower-probability
+        /// options.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1)]
+        public float? Temperature { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Temperature property is set.
+        /// </summary>
+        internal bool IsSetTemperature() => this.Temperature.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TopK. 
+        /// <para>
+        /// While generating a response, the model determines the probability of the following
+        /// token at each point of generation. The value that you set for <c>topK</c> is the number
+        /// of most-likely candidates from which the model chooses the next token in the sequence.
+        /// For example, if you set <c>topK</c> to 50, the model selects the next token from among
+        /// the top 50 most likely choices.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 500)]
+        public int? TopK { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TopK property is set.
+        /// </summary>
+        internal bool IsSetTopK() => this.TopK.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property TopP. 
+        /// <para>
+        /// While generating a response, the model determines the probability of the following
+        /// token at each point of generation. The value that you set for <c>Top P</c> determines
+        /// the number of most-likely candidates from which the model chooses the next token in
+        /// the sequence. For example, if you set <c>topP</c> to 0.8, the model only selects the
+        /// next token from the top 80% of the probability distribution of next tokens.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1)]
+        public float? TopP { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TopP property is set.
+        /// </summary>
+        internal bool IsSetTopP() => this.TopP.HasValue;
+    }
+}

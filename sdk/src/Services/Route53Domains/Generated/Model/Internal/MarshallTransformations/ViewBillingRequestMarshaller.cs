@@ -78,7 +78,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEnd())
             {
                 context.Writer.WritePropertyName("End");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.End.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.End.Value));
             }
 
             if(publicRequest.IsSetMarker())
@@ -96,7 +96,7 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStart())
             {
                 context.Writer.WritePropertyName("Start");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Start.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Start.Value));
             }
 
             writer.WriteEndObject();

@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private ConnectionLogOptions _connectionLogOptions;
         private string _description;
+        private DevicePostureOptions _devicePostureOptions;
         private bool? _disconnectOnSessionTimeout;
         private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _dryRun;
@@ -249,6 +250,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DevicePostureOptions. 
+        /// <para>
+        /// The device posture options for the Client VPN endpoint. Use this parameter to specify
+        /// the device trust providers that the endpoint uses to evaluate the security posture
+        /// of connecting devices.
+        /// </para>
+        /// </summary>
+        public DevicePostureOptions DevicePostureOptions
+        {
+            get { return this._devicePostureOptions; }
+            set { this._devicePostureOptions = value; }
+        }
+
+        // Check to see if DevicePostureOptions property is set
+        internal bool IsSetDevicePostureOptions()
+        {
+            return this._devicePostureOptions != null;
         }
 
         /// <summary>

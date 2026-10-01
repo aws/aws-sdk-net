@@ -705,6 +705,14 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.IpAddressDetail.IpAddress</property>
+    <max>45</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GlobalAccelerator.Model.IpAddressDetail.NetworkZone</property>
+    <max>24</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GlobalAccelerator.Model.IpSet.IpFamily</property>
     <max>255</max>
   </property-value-rule>

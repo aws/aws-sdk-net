@@ -44,6 +44,7 @@ namespace Amazon.GuardDuty.Model
     public partial class DetectorFeatureConfigurationResult
     {
         private List<DetectorAdditionalConfigurationResult> _additionalConfiguration = AWSConfigs.InitializeCollections ? new List<DetectorAdditionalConfigurationResult>() : null;
+        private ManagedBy _managedBy;
         private DetectorFeatureResult _name;
         private FeatureStatus _status;
         private DateTime? _updatedAt;
@@ -69,6 +70,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAdditionalConfiguration()
         {
             return this._additionalConfiguration != null && (this._additionalConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// Indicates what manages the feature. A value of <c>GUARDDUTY_POLICY</c> means a GuardDuty
+        /// policy manages the feature.
+        /// </para>
+        /// </summary>
+        public ManagedBy ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>

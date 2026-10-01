@@ -1,0 +1,283 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Backup.Model
+{
+    /// <summary>
+    /// Container for the parameters to the StartBackupJob operation. Starts an on-demand
+    /// backup job for the specified resource.
+    /// </summary>
+    public partial class StartBackupJobRequest : AmazonBackupRequest
+    {
+        /// <summary>
+        /// Gets and sets the property BackupOptions. 
+        /// <para>
+        /// The backup option for a selected resource. This option is only available for Windows
+        /// Volume Shadow Copy Service (VSS) backup jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: Set to <c>"WindowsVSS":"enabled"</c> to enable the <c>WindowsVSS</c>
+        /// backup option and create a Windows VSS backup. Set to <c>"WindowsVSS""disabled"</c>
+        /// to create a regular backup. The <c>WindowsVSS</c> option is not enabled by default.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> BackupOptions { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the BackupOptions property is set.
+        /// </summary>
+        internal bool IsSetBackupOptions() => this.BackupOptions != null && (this.BackupOptions.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property BackupVaultName. 
+        /// <para>
+        /// The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string BackupVaultName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BackupVaultName property is set.
+        /// </summary>
+        internal bool IsSetBackupVaultName() => this.BackupVaultName != null;
+
+        /// <summary>
+        /// Gets and sets the property CompleteWindowMinutes. 
+        /// <para>
+        /// A value in minutes during which a successfully started backup must complete, or else
+        /// Backup will cancel the job. This value is optional. This value begins counting down
+        /// from when the backup was scheduled. It does not add additional time for <c>StartWindowMinutes</c>,
+        /// or if the backup started later than scheduled.
+        /// </para>
+        ///  
+        /// <para>
+        /// Like <c>StartWindowMinutes</c>, this parameter has a maximum value of 100 years (52,560,000
+        /// minutes).
+        /// </para>
+        /// </summary>
+        public long? CompleteWindowMinutes { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CompleteWindowMinutes property is set.
+        /// </summary>
+        internal bool IsSetCompleteWindowMinutes() => this.CompleteWindowMinutes.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property IamRoleArn. 
+        /// <para>
+        /// Specifies the IAM role ARN used to create the target recovery point; for example,
+        /// <c>arn:aws:iam::123456789012:role/S3Access</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string IamRoleArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IamRoleArn property is set.
+        /// </summary>
+        internal bool IsSetIamRoleArn() => this.IamRoleArn != null;
+
+        /// <summary>
+        /// Gets and sets the property IdempotencyToken. 
+        /// <para>
+        /// A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <c>StartBackupJob</c>. Retrying a successful request with the same idempotency
+        /// token results in a success message with no action taken.
+        /// </para>
+        /// </summary>
+        public string IdempotencyToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IdempotencyToken property is set.
+        /// </summary>
+        internal bool IsSetIdempotencyToken() => this.IdempotencyToken != null;
+
+        /// <summary>
+        /// Gets and sets the property Index. 
+        /// <para>
+        /// Include this parameter to enable index creation if your backup job has a resource
+        /// type that supports backup indexes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Resource types that support backup indexes include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EBS</c> for Amazon Elastic Block Store
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>S3</c> for Amazon Simple Storage Service (Amazon S3)
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Index can have 1 of 2 possible values, either <c>ENABLED</c> or <c>DISABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create a backup index for an eligible <c>ACTIVE</c> recovery point that does not
+        /// yet have a backup index, set value to <c>ENABLED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To delete a backup index, set value to <c>DISABLED</c>.
+        /// </para>
+        /// </summary>
+        public Index Index { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Index property is set.
+        /// </summary>
+        internal bool IsSetIndex() => this.Index != null;
+
+        /// <summary>
+        /// Gets and sets the property Lifecycle. 
+        /// <para>
+        /// The lifecycle defines when a protected resource is transitioned to cold storage and
+        /// when it expires. Backup will transition and expire backups automatically according
+        /// to the lifecycle that you define. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Backups transitioned to cold storage must be stored in cold storage for a minimum
+        /// of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition
+        /// to cold after days” setting. The “transition to cold after days” setting cannot be
+        /// changed after a backup has been transitioned to cold. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Resource types that can transition to cold storage are listed in the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature
+        /// availability by resource</a> table. Backup ignores this expression for other resource
+        /// types.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter has a maximum value of 100 years (36,500 days).
+        /// </para>
+        /// </summary>
+        public Lifecycle Lifecycle { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Lifecycle property is set.
+        /// </summary>
+        internal bool IsSetLifecycle() => this.Lifecycle != null;
+
+        /// <summary>
+        /// Gets and sets the property LogicallyAirGappedBackupVaultArn. 
+        /// <para>
+        /// The ARN of a logically air-gapped vault. ARN must be in the same account and Region.
+        /// If provided, supported fully managed resources back up directly to logically air-gapped
+        /// vault, while other supported resources create a temporary (billable) snapshot in backup
+        /// vault, then copy it to logically air-gapped vault. Unsupported resources only back
+        /// up to the specified backup vault.
+        /// </para>
+        /// </summary>
+        public string LogicallyAirGappedBackupVaultArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the LogicallyAirGappedBackupVaultArn property is set.
+        /// </summary>
+        internal bool IsSetLogicallyAirGappedBackupVaultArn() => this.LogicallyAirGappedBackupVaultArn != null;
+
+        /// <summary>
+        /// Gets and sets the property RecoveryPointTags. 
+        /// <para>
+        /// The tags to assign to the resources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Sensitive = true)]
+        public Dictionary<string, string> RecoveryPointTags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the RecoveryPointTags property is set.
+        /// </summary>
+        internal bool IsSetRecoveryPointTags() => this.RecoveryPointTags != null && (this.RecoveryPointTags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the
+        /// ARN depends on the resource type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property StartWindowMinutes. 
+        /// <para>
+        /// A value in minutes after a backup is scheduled before a job will be canceled if it
+        /// doesn't start successfully. This value is optional, and the default is 8 hours. If
+        /// this value is included, it must be at least 60 minutes to avoid errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter has a maximum value of 100 years (52,560,000 minutes).
+        /// </para>
+        ///  
+        /// <para>
+        /// During the start window, the backup job status remains in <c>CREATED</c> status until
+        /// it has successfully begun or until the start window time has run out. If within the
+        /// start window time Backup receives an error that allows the job to be retried, Backup
+        /// will automatically retry to begin the job at least every 10 minutes until the backup
+        /// successfully begins (the job status changes to <c>RUNNING</c>) or until the job status
+        /// changes to <c>EXPIRED</c> (which is expected to occur when the start window time is
+        /// over).
+        /// </para>
+        /// </summary>
+        public long? StartWindowMinutes { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartWindowMinutes property is set.
+        /// </summary>
+        internal bool IsSetStartWindowMinutes() => this.StartWindowMinutes.HasValue;
+    }
+}

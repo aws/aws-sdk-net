@@ -46,6 +46,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBorder())
+            {
+                context.Writer.WritePropertyName("border");
+                context.Writer.WriteNumberValue(requestObject.Border.Value);
+            }
+
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");

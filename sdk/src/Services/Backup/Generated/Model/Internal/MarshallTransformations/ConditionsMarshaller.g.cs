@@ -1,0 +1,118 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Backup.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Backup.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Conditions Marshaller
+    /// </summary>
+    public partial class ConditionsMarshaller : IRequestMarshaller<Conditions, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(Conditions requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetStringEquals())
+            {
+                context.Writer.WritePropertyName("StringEquals");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectStringEqualsListValue in requestObject.StringEquals)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConditionParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStringEqualsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetStringLike())
+            {
+                context.Writer.WritePropertyName("StringLike");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectStringLikeListValue in requestObject.StringLike)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConditionParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStringLikeListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetStringNotEquals())
+            {
+                context.Writer.WritePropertyName("StringNotEquals");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectStringNotEqualsListValue in requestObject.StringNotEquals)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConditionParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStringNotEqualsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetStringNotLike())
+            {
+                context.Writer.WritePropertyName("StringNotLike");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectStringNotLikeListValue in requestObject.StringNotLike)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ConditionParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectStringNotLikeListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static ConditionsMarshaller Instance = new ConditionsMarshaller();
+    }
+}

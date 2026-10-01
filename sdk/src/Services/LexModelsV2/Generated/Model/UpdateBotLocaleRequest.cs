@@ -42,6 +42,7 @@ namespace Amazon.LexModelsV2.Model
         private GenerativeAISettings _generativeaiSettings;
         private string _localeId;
         private double? _nluIntentConfidenceThreshold;
+        private SpeakerDiarizationSettings _speakerDiarizationSettings;
         private SpeechDetectionSensitivity _speechDetectionSensitivity;
         private SpeechRecognitionSettings _speechRecognitionSettings;
         private UnifiedSpeechSettings _unifiedSpeechSettings;
@@ -184,6 +185,26 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetNluIntentConfidenceThreshold()
         {
             return this._nluIntentConfidenceThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SpeakerDiarizationSettings. 
+        /// <para>
+        /// The updated speaker diarization settings to apply to the bot locale. If you omit this
+        /// field, Amazon Lex keeps the setting currently stored on the bot locale. To turn speaker
+        /// diarization off, set <c>enabled</c> to <c>false</c> explicitly.
+        /// </para>
+        /// </summary>
+        public SpeakerDiarizationSettings SpeakerDiarizationSettings
+        {
+            get { return this._speakerDiarizationSettings; }
+            set { this._speakerDiarizationSettings = value; }
+        }
+
+        // Check to see if SpeakerDiarizationSettings property is set
+        internal bool IsSetSpeakerDiarizationSettings()
+        {
+            return this._speakerDiarizationSettings != null;
         }
 
         /// <summary>

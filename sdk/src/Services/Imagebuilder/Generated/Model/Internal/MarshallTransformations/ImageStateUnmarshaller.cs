@@ -56,6 +56,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("failureContext", targetDepth, ref reader))
+                {
+                    var unmarshaller = ImageFailureContextUnmarshaller.Instance;
+                    unmarshalledObject.FailureContext = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("reason", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

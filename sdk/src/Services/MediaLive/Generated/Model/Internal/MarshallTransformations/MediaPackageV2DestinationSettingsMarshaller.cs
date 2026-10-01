@@ -70,6 +70,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.HlsDefault);
             }
 
+            if(requestObject.IsSetOutputUsage())
+            {
+                context.Writer.WritePropertyName("outputUsage");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectOutputUsageListValue in requestObject.OutputUsage)
+                {
+                        context.Writer.WriteStringValue(requestObjectOutputUsageListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>
