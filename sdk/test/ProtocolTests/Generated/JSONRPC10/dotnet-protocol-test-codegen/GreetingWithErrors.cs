@@ -421,20 +421,29 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("ErrorTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10FooErrorWithDunderTypeAndDifferentNamespaceErrorResponse()
+        public async Task AwsJson10FooErrorWithDunderTypeAndDifferentNamespaceErrorResponse()
         {
             // Arrange
-            var webResponseData = new WebResponseData();
-            webResponseData.StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500);
-            webResponseData.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            byte[] bytes = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.different.namespace#FooError\"\n}");
-            var stream = new MemoryStream(bytes);
-            var context = new JsonUnmarshallerContext(stream,true,webResponseData);
+            var config = new AmazonJSONRPC10Config
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500),
+                Body = Encoding.ASCII.GetBytes("{\n    \"__type\": \"aws.different.namespace#FooError\"\n}"),
+            };
+            mockResponse.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
             // Act
-            var errorResponse = new GreetingWithErrorsResponseUnmarshaller().UnmarshallException(context, null, (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            var errorResponse = await Assert.ThrowsExactlyAsync<FooErrorException>(() => client.GreetingWithErrorsAsync(new GreetingWithErrorsRequest())).ConfigureAwait(false);
+
             // Assert
-            Assert.IsInstanceOfType(errorResponse, typeof(FooErrorException));
-            Assert.AreEqual(errorResponse.StatusCode,(HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500));
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 500), errorResponse.StatusCode);
         }
 
         /// <summary>
