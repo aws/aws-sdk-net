@@ -7103,6 +7103,47 @@ namespace Amazon.QuickSight
     }
 
     /// <summary>
+    /// Constants used for properties of type HierarchyFilterMatchOperator.
+    /// </summary>
+    public class HierarchyFilterMatchOperator : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXCLUDE for HierarchyFilterMatchOperator
+        /// </summary>
+        public static readonly HierarchyFilterMatchOperator EXCLUDE = new HierarchyFilterMatchOperator("EXCLUDE");
+
+        /// <summary>
+        /// Constant INCLUDE for HierarchyFilterMatchOperator
+        /// </summary>
+        public static readonly HierarchyFilterMatchOperator INCLUDE = new HierarchyFilterMatchOperator("INCLUDE");
+
+        /// <summary>
+        /// Constructs a custom HierarchyFilterMatchOperator for a value not among the defined constants.
+        /// </summary>
+        public HierarchyFilterMatchOperator(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HierarchyFilterMatchOperator FindValue(string value)
+        {
+            return FindValue<HierarchyFilterMatchOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HierarchyFilterMatchOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type HistogramBinType.
     /// </summary>
     public class HistogramBinType : ConstantClass

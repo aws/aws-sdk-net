@@ -35,6 +35,20 @@ namespace Amazon.QuickSight.Model
     public partial class DatabricksParameters
     {
         /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The authentication type that you want to use for your connection. This parameter accepts
+        /// OAuth and non-OAuth authentication types.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuthenticationType property is set.
+        /// </summary>
+        internal bool IsSetAuthenticationType() => this.AuthenticationType != null;
+
+        /// <summary>
         /// Gets and sets the property Host. 
         /// <para>
         /// The host name of the Databricks data source.
@@ -47,6 +61,20 @@ namespace Amazon.QuickSight.Model
         /// Checks to see if the Host property is set.
         /// </summary>
         internal bool IsSetHost() => this.Host != null;
+
+        /// <summary>
+        /// Gets and sets the property OAuthParameters. 
+        /// <para>
+        /// An object that contains information needed to create a data source connection between
+        /// an Quick Sight account and Databricks.
+        /// </para>
+        /// </summary>
+        public OAuthParameters OAuthParameters { get; set; }
+
+        /// <summary>
+        /// Checks to see if the OAuthParameters property is set.
+        /// </summary>
+        internal bool IsSetOAuthParameters() => this.OAuthParameters != null;
 
         /// <summary>
         /// Gets and sets the property Port. 

@@ -61,6 +61,33 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDefaultDropdownOptions() => this.DefaultDropdownOptions != null;
 
         /// <summary>
+        /// Gets and sets the property DefaultHierarchyDropdown. 
+        /// <para>
+        /// The default options that correspond to the <c>HierarchyDropdown</c> filter control
+        /// type.
+        /// </para>
+        /// </summary>
+        public DefaultHierarchyFilterDropDownControlOptions DefaultHierarchyDropdown { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultHierarchyDropdown property is set.
+        /// </summary>
+        internal bool IsSetDefaultHierarchyDropdown() => this.DefaultHierarchyDropdown != null;
+
+        /// <summary>
+        /// Gets and sets the property DefaultHierarchyList. 
+        /// <para>
+        /// The default options that correspond to the <c>HierarchyList</c> filter control type.
+        /// </para>
+        /// </summary>
+        public DefaultHierarchyFilterListControlOptions DefaultHierarchyList { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DefaultHierarchyList property is set.
+        /// </summary>
+        internal bool IsSetDefaultHierarchyList() => this.DefaultHierarchyList != null;
+
+        /// <summary>
         /// Gets and sets the property DefaultListOptions. 
         /// <para>
         /// The default options that correspond to the <c>List</c> filter control type.

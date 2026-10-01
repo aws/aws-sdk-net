@@ -34,56 +34,54 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DatabricksParameters Marshaller
+    /// HierarchyFilterListControlDisplayOptions Marshaller
     /// </summary>
-    public partial class DatabricksParametersMarshaller : IRequestMarshaller<DatabricksParameters, JsonMarshallerContext>
+    public partial class HierarchyFilterListControlDisplayOptionsMarshaller : IRequestMarshaller<HierarchyFilterListControlDisplayOptions, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(DatabricksParameters requestObject, JsonMarshallerContext context)
+        public void Marshall(HierarchyFilterListControlDisplayOptions requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetAuthenticationType())
+            if (requestObject.IsSetInfoIconLabelOptions())
             {
-                context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.WriteStringValue(requestObject.AuthenticationType);
-            }
-
-            if (requestObject.IsSetHost())
-            {
-                context.Writer.WritePropertyName("Host");
-                context.Writer.WriteStringValue(requestObject.Host);
-            }
-
-            if (requestObject.IsSetOAuthParameters())
-            {
-                context.Writer.WritePropertyName("OAuthParameters");
+                context.Writer.WritePropertyName("InfoIconLabelOptions");
                 context.Writer.WriteStartObject();
 
-                var marshaller = OAuthParametersMarshaller.Instance;
-                marshaller.Marshall(requestObject.OAuthParameters, context);
+                var marshaller = SheetControlInfoIconLabelOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfoIconLabelOptions, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if (requestObject.IsSetPort())
+            if (requestObject.IsSetSearchOptions())
             {
-                context.Writer.WritePropertyName("Port");
-                context.Writer.WriteNumberValue(requestObject.Port.Value);
+                context.Writer.WritePropertyName("SearchOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HierarchyFilterListControlSearchOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.SearchOptions, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if (requestObject.IsSetSqlEndpointPath())
+            if (requestObject.IsSetTitleOptions())
             {
-                context.Writer.WritePropertyName("SqlEndpointPath");
-                context.Writer.WriteStringValue(requestObject.SqlEndpointPath);
+                context.Writer.WritePropertyName("TitleOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LabelOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.TitleOptions, context);
+
+                context.Writer.WriteEndObject();
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static DatabricksParametersMarshaller Instance = new DatabricksParametersMarshaller();
+        public readonly static HierarchyFilterListControlDisplayOptionsMarshaller Instance = new HierarchyFilterListControlDisplayOptionsMarshaller();
     }
 }

@@ -7260,6 +7260,51 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilter.FilterId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterDropDownControl.FilterControlId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterDropDownControl.SourceFilterId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterDropDownControl.Title</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterListControl.FilterControlId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterListControl.SourceFilterId</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterListControl.Title</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.HierarchyFilterNode.ParentValue</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.HistogramVisual.VisualContentAltText</property>
     <min>1</min>
     <max>1024</max>

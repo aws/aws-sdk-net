@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatabricksParameters Object
+    /// Response Unmarshaller for DefaultHierarchyFilterListControlOptions Object
     /// </summary>
-    public partial class DatabricksParametersUnmarshaller : IJsonUnmarshaller<DatabricksParameters, JsonUnmarshallerContext>
+    public partial class DefaultHierarchyFilterListControlOptionsUnmarshaller : IJsonUnmarshaller<DefaultHierarchyFilterListControlOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DatabricksParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DefaultHierarchyFilterListControlOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new DatabricksParameters();
+            var unmarshalledObject = new DefaultHierarchyFilterListControlOptions();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,49 +53,49 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
+                if (context.TestExpression("CommitMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CommitMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("Host", targetDepth, ref reader))
+                if (context.TestExpression("ControlSortConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ControlSortConfiguration, ControlSortConfigurationUnmarshaller>(ControlSortConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ControlSortConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ControlTitleFormatText", targetDepth, ref reader))
+                {
+                    var unmarshaller = ControlTitleFormatTextUnmarshaller.Instance;
+                    unmarshalledObject.ControlTitleFormatText = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("DisplayOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = HierarchyFilterListControlDisplayOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DisplayOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("OAuthParameters", targetDepth, ref reader))
-                {
-                    var unmarshaller = OAuthParametersUnmarshaller.Instance;
-                    unmarshalledObject.OAuthParameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("Port", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("SqlEndpointPath", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SqlEndpointPath = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static DatabricksParametersUnmarshaller _instance = new DatabricksParametersUnmarshaller();
+        private static DefaultHierarchyFilterListControlOptionsUnmarshaller _instance = new DefaultHierarchyFilterListControlOptionsUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static DatabricksParametersUnmarshaller Instance => _instance;
+        public static DefaultHierarchyFilterListControlOptionsUnmarshaller Instance => _instance;
     }
 }

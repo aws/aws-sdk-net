@@ -32,7 +32,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// An object that contains information needed to create a data source connection that
     /// uses OAuth client credentials. This option is available for data source connections
-    /// that are made with Snowflake and Starburst.
+    /// that are made with Snowflake, Starburst, and Databricks.
     /// </summary>
     public partial class OAuthParameters
     {

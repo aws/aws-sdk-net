@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatabricksParameters Object
+    /// Response Unmarshaller for HierarchyFilterNode Object
     /// </summary>
-    public partial class DatabricksParametersUnmarshaller : IJsonUnmarshaller<DatabricksParameters, JsonUnmarshallerContext>
+    public partial class HierarchyFilterNodeUnmarshaller : IJsonUnmarshaller<HierarchyFilterNode, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public DatabricksParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HierarchyFilterNode Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new DatabricksParameters();
+            var unmarshalledObject = new HierarchyFilterNode();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,49 +53,42 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
+                if (context.TestExpression("Children", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<HierarchyFilterNode, HierarchyFilterNodeUnmarshaller>(HierarchyFilterNodeUnmarshaller.Instance);
+                    unmarshalledObject.Children = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("Column", targetDepth, ref reader))
+                {
+                    var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.Column = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("HierarchyValues", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.HierarchyValues = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ParentValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("Host", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("OAuthParameters", targetDepth, ref reader))
-                {
-                    var unmarshaller = OAuthParametersUnmarshaller.Instance;
-                    unmarshalledObject.OAuthParameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("Port", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("SqlEndpointPath", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SqlEndpointPath = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ParentValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static DatabricksParametersUnmarshaller _instance = new DatabricksParametersUnmarshaller();
+        private static HierarchyFilterNodeUnmarshaller _instance = new HierarchyFilterNodeUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static DatabricksParametersUnmarshaller Instance => _instance;
+        public static HierarchyFilterNodeUnmarshaller Instance => _instance;
     }
 }

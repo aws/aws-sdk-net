@@ -78,6 +78,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetHierarchyDropdown())
+            {
+                context.Writer.WritePropertyName("HierarchyDropdown");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HierarchyFilterDropDownControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.HierarchyDropdown, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetHierarchyList())
+            {
+                context.Writer.WritePropertyName("HierarchyList");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HierarchyFilterListControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.HierarchyList, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetList())
             {
                 context.Writer.WritePropertyName("List");

@@ -60,6 +60,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCategoryFilter() => this.CategoryFilter != null;
 
         /// <summary>
+        /// Gets and sets the property HierarchyFilter. 
+        /// <para>
+        /// A <c>HierarchyFilter</c> filters data by drilling down through an ordered list of
+        /// columns. Each level in the list narrows the data by one column, and the selected values
+        /// at each level determine which values are available at the next.
+        /// </para>
+        /// </summary>
+        public HierarchyFilter HierarchyFilter { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HierarchyFilter property is set.
+        /// </summary>
+        internal bool IsSetHierarchyFilter() => this.HierarchyFilter != null;
+
+        /// <summary>
         /// Gets and sets the property NestedFilter. 
         /// <para>
         /// A <c>NestedFilter</c> filters data with a subset of data that is defined by the nested
