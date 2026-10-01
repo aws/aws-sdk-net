@@ -1,3 +1,27 @@
+### 4.0.346.0 (2026-10-01 18:20 UTC)
+* AWSHealth (4.0.101.0)
+	* Adds DescribeServiceLifecycle operation returning lifecycle information for AWS services, including end-of-support dates, version recommendations, and lifecycle events.
+* BedrockAgent (4.0.104.0)
+	* Adds an optional textReadyAt field to ListIngestionJobs and GetIngestionJob for Managed Knowledge Bases data source sync jobs. The field denotes the timestamp at which all the documents in the scope of a sync job had their text content indexed and are available for retrieval.
+* CloudFront (4.0.102.0)
+	* Added always-amz-auth as a supported signing behavior for Origin Access Control (OAC), enabling CloudFront to authenticate requests to Lambda-Web origins.
+* EC2 (4.0.126.2)
+	* This release launches the AMI tag sharing feature, which lets AMI owners share tags alongside their AMIs, eliminating the need to build and maintain custom tag replication workflows.
+* EndUserMessaging (4.0.100.0)
+	* AWS End User Messaging now supports Brand profiles and Notify code configurations. Brand profiles capture your sender details once to reuse across phone number registrations. Notify code configurations let you define your OTP policy and delivery settings to send passcodes in minutes.
+* LambdaWeb (4.0.100.0)
+	* Lambda Web Functions GA launch. Lambda Web Functions enable customers to run web applications and API backends
+* QuickSight (4.0.110.0)
+	* This release adds HierarchyFilter support for Amazon QuickSight analysis and dashboard and 2 legged OAuth for databricks datasources.
+* S3 (4.0.104.1)
+	* Fixed a bug where TransferUtility.Download/DownloadAsync (the non-multipart path) always waited 100ms after a successful download. The backoff delay now only applies before an actual retry, and the async path uses a non-blocking await instead of a blocking Thread.Sleep.
+* SageMaker (4.0.120.0)
+	* Release support for c8a.16xlarge and m8a.16xlarge instance types for SageMaker HyperPod
+* SecurityHub (4.0.104.0)
+	* Adds GetRemediationsV2 and ListExposuresByRemediationV2 APIs. This feature allows customers to see their highest priority remediations for their Exposure findings. Remediations target key changes customers can make to resources to drive finding resolution.
+* Transfer (4.0.104.0)
+	* AWS Transfer Family Workflows adds support for the structuredLogDestinations option, enabling customers to specify a custom Amazon CloudWatch Logs log group for managed workflow execution logs.
+
 ### 4.0.345.0 (2026-09-30 18:30 UTC)
 * Account (4.0.102.0)
 	* This release adds support for verifying an AWS account's primary contact phone number. SendPhoneNumberVerification sends a one-time code by SMS, VerifyPhoneNumber validates it, and GetContactInformation now returns the verification status.
