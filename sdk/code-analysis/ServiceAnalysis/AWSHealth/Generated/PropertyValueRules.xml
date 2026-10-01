@@ -167,6 +167,23 @@
     <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeServiceLifecycleRequest.MaxResults</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeServiceLifecycleRequest.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.DescribeServiceLifecycleResponse.NextToken</property>
+    <min>4</min>
+    <max>10000</max>
+    <pattern>[a-zA-Z0-9=/+_.-]{4,10000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSHealth.Model.AccountEntityAggregate.AccountId</property>
     <max>1600</max>
     <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
@@ -326,5 +343,17 @@
     <property>Amazon.AWSHealth.Model.OrganizationEventDetailsErrorItem.EventArn</property>
     <max>1600</max>
     <pattern>arn:aws(-[a-z]+(-[a-z]+)?)?:health:[^:]*:[^:]*:event(?:/[\w-]+){3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.ServiceLifecycle.Service</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>[^:/]{2,30}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSHealth.Model.ServiceLifecycleFilter.Service</property>
+    <min>2</min>
+    <max>30</max>
+    <pattern>[^:/]{2,30}</pattern>
   </property-value-rule>
 </property-value-rules>

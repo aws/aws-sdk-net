@@ -96,5 +96,15 @@ namespace Amazon.AWSHealth.Model
             OutputToken = new[] { "NextToken" }
         )]
         IDescribeEventTypesPaginator DescribeEventTypes(DescribeEventTypesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeServiceLifecycle operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeServiceLifecyclePaginator DescribeServiceLifecycle(DescribeServiceLifecycleRequest request);
     }
 }
