@@ -196,7 +196,9 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// For public and shared AMIs, user-defined tags that are attached by other Amazon Web
-        /// Services accounts
+        /// Services accounts, except tags with the <c>ec2:SharedTag/</c> prefix. For more information
+        /// about tag sharing, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#sharing-tags">Sharing
+        /// tags</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
