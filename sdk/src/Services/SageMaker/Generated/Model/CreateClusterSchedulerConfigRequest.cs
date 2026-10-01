@@ -84,7 +84,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name for the cluster policy.
+        /// The name for the cluster policy. The name must be unique within the SageMaker AI HyperPod
+        /// cluster specified by <c>ClusterArn</c>. You can use the same name in other clusters
+        /// within a Region or across Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
