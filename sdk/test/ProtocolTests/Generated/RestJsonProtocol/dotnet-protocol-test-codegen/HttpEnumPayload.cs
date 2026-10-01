@@ -32,6 +32,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -74,6 +75,40 @@ namespace AWSSDK.ProtocolTests.RestJson
             Assert.AreEqual("POST", actualRequest.Method);
             Assert.AreEqual("/EnumPayload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
             Assert.AreEqual("text/plain".Replace(" ",""), actualRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("ResponseTest")]
+        [TestCategory("RestJson")]
+        public async Task RestJsonEnumPayloadResponseResponse()
+        {
+            // Arrange
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
+            };
+
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockResponse = new MockHttpResponse
+            {
+                StatusCode = (HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200),
+                Body = Encoding.ASCII.GetBytes("enumvalue"),
+            };
+            mockResponse.Headers["Content-Type"] = "text/plain";
+            MockHttpClientUtils.InjectMockHttp(client, mockResponse);
+
+            // Act
+            var actualResponse = await client.HttpEnumPayloadAsync(new HttpEnumPayloadRequest()).ConfigureAwait(false);
+            var expectedResponse = new HttpEnumPayloadResponse
+            {
+                Payload = "enumvalue",
+            };
+
+            // Assert
+            Comparer.CompareObjects<HttpEnumPayloadResponse>(expectedResponse,actualResponse);
+            Assert.AreEqual((HttpStatusCode)Enum.ToObject(typeof(HttpStatusCode), 200), actualResponse.HttpStatusCode);
         }
 
     }

@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "DataExchange",
+      "type": "patch",
+      "changeLogMessages": [
+        "Check if string / enum payload is set before calling GetBytes to avoid ArgumentNullException"
+      ]
+    }
+  ]
+}
