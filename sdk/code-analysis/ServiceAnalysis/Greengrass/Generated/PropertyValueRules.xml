@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
-<property-value-rules />
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.Greengrass.Model.GetGroupCertificateAuthorityRequest.CertificateAuthorityId</property>
+    <pattern>^(?!configuration).*$</pattern>
+  </property-value-rule>
+</property-value-rules>

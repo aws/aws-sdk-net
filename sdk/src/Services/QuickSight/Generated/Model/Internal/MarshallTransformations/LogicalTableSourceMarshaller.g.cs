@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// LogicalTableSource Marshaller
+    /// </summary>
+    public partial class LogicalTableSourceMarshaller : IRequestMarshaller<LogicalTableSource, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(LogicalTableSource requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetDataSetArn())
+            {
+                context.Writer.WritePropertyName("DataSetArn");
+                context.Writer.WriteStringValue(requestObject.DataSetArn);
+            }
+
+            if (requestObject.IsSetJoinInstruction())
+            {
+                context.Writer.WritePropertyName("JoinInstruction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JoinInstructionMarshaller.Instance;
+                marshaller.Marshall(requestObject.JoinInstruction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetPhysicalTableId())
+            {
+                context.Writer.WritePropertyName("PhysicalTableId");
+                context.Writer.WriteStringValue(requestObject.PhysicalTableId);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static LogicalTableSourceMarshaller Instance = new LogicalTableSourceMarshaller();
+    }
+}

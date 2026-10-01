@@ -36,6 +36,7 @@ namespace Amazon.ECS.Model
     public partial class ExpressGatewayServiceConfiguration
     {
         private string _cpu;
+        private ExpressCpuArchitecture _cpuArchitecture;
         private DateTime? _createdAt;
         private string _executionRoleArn;
         private string _healthCheckPath;
@@ -64,6 +65,42 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuArchitecture. 
+        /// <para>
+        /// The CPU architecture that the task runs on.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>X86_64</c> - The x86 64-bit architecture.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ARM64</c> - The 64-bit ARM architecture.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Different service revisions can report different architectures. This value isn't returned
+        /// when the service uses a customer-provided task definition that doesn't specify a CPU
+        /// architecture.
+        /// </para>
+        /// </summary>
+        public ExpressCpuArchitecture CpuArchitecture
+        {
+            get { return this._cpuArchitecture; }
+            set { this._cpuArchitecture = value; }
+        }
+
+        // Check to see if CpuArchitecture property is set
+        internal bool IsSetCpuArchitecture()
+        {
+            return this._cpuArchitecture != null;
         }
 
         /// <summary>

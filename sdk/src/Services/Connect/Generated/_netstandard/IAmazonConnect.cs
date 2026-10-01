@@ -9046,6 +9046,37 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  ListEvaluationFormAIVersions
+
+
+
+        /// <summary>
+        /// Lists the available AI versions for evaluation forms in the specified Connect Customer
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationFormAIVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEvaluationFormAIVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormAIVersions">REST API Reference for ListEvaluationFormAIVersions Operation</seealso>
+        Task<ListEvaluationFormAIVersionsResponse> ListEvaluationFormAIVersionsAsync(ListEvaluationFormAIVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListEvaluationForms
 
 
@@ -10177,6 +10208,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityKeys">REST API Reference for ListSecurityKeys Operation</seealso>
         Task<ListSecurityKeysResponse> ListSecurityKeysAsync(ListSecurityKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSecurityProfileAIAgents
+
+
+
+        /// <summary>
+        /// Returns a list of the allowed AI agents in a specific security profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityProfileAIAgents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSecurityProfileAIAgents service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListSecurityProfileAIAgents">REST API Reference for ListSecurityProfileAIAgents Operation</seealso>
+        Task<ListSecurityProfileAIAgentsResponse> ListSecurityProfileAIAgentsAsync(ListSecurityProfileAIAgentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -12627,6 +12691,12 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
+        /// To receive connection information directly in the response, set <c>ConnectionTypes</c>
+        /// on the request. To initiate real-time message streaming when the chat is created,
+        /// set <c>ChatStreamingConfiguration</c> on the request. Both parameters are optional.
+        /// </para>
+        ///  
+        /// <para>
         /// A 429 error occurs in the following situations:
         /// </para>
         ///  <ul> <li> 
@@ -12747,14 +12817,7 @@ namespace Amazon.Connect
         /// Starts an empty evaluation in the specified Connect Customer instance, using the given
         /// evaluation form for the particular contact. The evaluation form version used for the
         /// contact evaluation corresponds to the currently activated version. If no version is
-        /// activated for the evaluation form, the contact evaluation cannot be started. 
-        /// 
-        ///  <note> 
-        /// <para>
-        /// Evaluations created through the public API do not contain answer values suggested
-        /// from automation.
-        /// </para>
-        ///  </note>
+        /// activated for the evaluation form, the contact evaluation cannot be started.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartContactEvaluation service method.</param>
         /// <param name="cancellationToken">

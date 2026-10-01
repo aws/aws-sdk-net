@@ -35,8 +35,29 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class StopColumnStatisticsTaskRunScheduleRequest : AmazonGlueRequest
     {
+        private string _catalogID;
         private string _databaseName;
         private string _tableName;
+
+        /// <summary>
+        /// Gets and sets the property CatalogID. 
+        /// <para>
+        /// The ID of the Data Catalog where the table resides. If none is supplied, the Amazon
+        /// Web Services account ID is used by default.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CatalogID
+        {
+            get { return this._catalogID; }
+            set { this._catalogID = value; }
+        }
+
+        // Check to see if CatalogID property is set
+        internal bool IsSetCatalogID()
+        {
+            return this._catalogID != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DatabaseName. 

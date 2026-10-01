@@ -1,0 +1,186 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MediaConvert.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// XavcSettings Marshaller
+    /// </summary>
+    public partial class XavcSettingsMarshaller : IRequestMarshaller<XavcSettings, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(XavcSettings requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAdaptiveQuantization())
+            {
+                context.Writer.WritePropertyName("adaptiveQuantization");
+                context.Writer.WriteStringValue(requestObject.AdaptiveQuantization);
+            }
+
+            if (requestObject.IsSetEntropyEncoding())
+            {
+                context.Writer.WritePropertyName("entropyEncoding");
+                context.Writer.WriteStringValue(requestObject.EntropyEncoding);
+            }
+
+            if (requestObject.IsSetFramerateControl())
+            {
+                context.Writer.WritePropertyName("framerateControl");
+                context.Writer.WriteStringValue(requestObject.FramerateControl);
+            }
+
+            if (requestObject.IsSetFramerateConversionAlgorithm())
+            {
+                context.Writer.WritePropertyName("framerateConversionAlgorithm");
+                context.Writer.WriteStringValue(requestObject.FramerateConversionAlgorithm);
+            }
+
+            if (requestObject.IsSetFramerateDenominator())
+            {
+                context.Writer.WritePropertyName("framerateDenominator");
+                context.Writer.WriteNumberValue(requestObject.FramerateDenominator.Value);
+            }
+
+            if (requestObject.IsSetFramerateNumerator())
+            {
+                context.Writer.WritePropertyName("framerateNumerator");
+                context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
+            }
+
+            if (requestObject.IsSetPerFrameMetrics())
+            {
+                context.Writer.WritePropertyName("perFrameMetrics");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectPerFrameMetricsListValue in requestObject.PerFrameMetrics)
+                {
+                    context.Writer.WriteStringValue(requestObjectPerFrameMetricsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetProfile())
+            {
+                context.Writer.WritePropertyName("profile");
+                context.Writer.WriteStringValue(requestObject.Profile);
+            }
+
+            if (requestObject.IsSetSlowPal())
+            {
+                context.Writer.WritePropertyName("slowPal");
+                context.Writer.WriteStringValue(requestObject.SlowPal);
+            }
+
+            if (requestObject.IsSetSoftness())
+            {
+                context.Writer.WritePropertyName("softness");
+                context.Writer.WriteNumberValue(requestObject.Softness.Value);
+            }
+
+            if (requestObject.IsSetSpatialAdaptiveQuantization())
+            {
+                context.Writer.WritePropertyName("spatialAdaptiveQuantization");
+                context.Writer.WriteStringValue(requestObject.SpatialAdaptiveQuantization);
+            }
+
+            if (requestObject.IsSetTemporalAdaptiveQuantization())
+            {
+                context.Writer.WritePropertyName("temporalAdaptiveQuantization");
+                context.Writer.WriteStringValue(requestObject.TemporalAdaptiveQuantization);
+            }
+
+            if (requestObject.IsSetXavc4kIntraCbgProfileSettings())
+            {
+                context.Writer.WritePropertyName("xavc4kIntraCbgProfileSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Xavc4kIntraCbgProfileSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Xavc4kIntraCbgProfileSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetXavc4kIntraVbrProfileSettings())
+            {
+                context.Writer.WritePropertyName("xavc4kIntraVbrProfileSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Xavc4kIntraVbrProfileSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Xavc4kIntraVbrProfileSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetXavc4kProfileSettings())
+            {
+                context.Writer.WritePropertyName("xavc4kProfileSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Xavc4kProfileSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Xavc4kProfileSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetXavcHdIntraCbgProfileSettings())
+            {
+                context.Writer.WritePropertyName("xavcHdIntraCbgProfileSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = XavcHdIntraCbgProfileSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.XavcHdIntraCbgProfileSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetXavcHdProfileSettings())
+            {
+                context.Writer.WritePropertyName("xavcHdProfileSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = XavcHdProfileSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.XavcHdProfileSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static XavcSettingsMarshaller Instance = new XavcSettingsMarshaller();
+    }
+}

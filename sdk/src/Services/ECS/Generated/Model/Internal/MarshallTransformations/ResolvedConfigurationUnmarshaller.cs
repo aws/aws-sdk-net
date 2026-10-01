@@ -62,6 +62,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoadBalancers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("vpcLatticeConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ServiceRevisionVpcLatticeConfiguration, ServiceRevisionVpcLatticeConfigurationUnmarshaller>(ServiceRevisionVpcLatticeConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.VpcLatticeConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

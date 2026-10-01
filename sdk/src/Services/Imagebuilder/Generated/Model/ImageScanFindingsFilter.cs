@@ -41,8 +41,29 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the image scan finding filter. Filter names are case-sensitive.
+        /// The name of the image scan finding filter. Filter names are case-sensitive. Valid
+        /// filter names are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>imageBuildVersionArn</c> – Filters findings by the image build version that was
+        /// scanned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>imagePipelineArn</c> – Filters findings by the pipeline that created the scanned
+        /// image.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>vulnerabilityId</c> – Filters findings by vulnerability ID, for example a CVE
+        /// ID.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>severity</c> – Filters findings by severity level.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {

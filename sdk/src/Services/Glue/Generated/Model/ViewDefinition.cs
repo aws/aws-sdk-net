@@ -35,11 +35,14 @@ namespace Amazon.Glue.Model
     public partial class ViewDefinition
     {
         private string _definer;
+        private bool? _isManaged;
         private bool? _isProtected;
         private LastRefreshType _lastRefreshType;
         private long? _refreshSeconds;
         private List<ViewRepresentation> _representations = AWSConfigs.InitializeCollections ? new List<ViewRepresentation>() : null;
+        private Dictionary<string, string> _sparkPipelineInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _subObjects = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SubObjectStatistics> _subObjectsStatistics = AWSConfigs.InitializeCollections ? new List<SubObjectStatistics>() : null;
         private List<long> _subObjectVersionIds = AWSConfigs.InitializeCollections ? new List<long>() : null;
         private long? _viewVersionId;
         private string _viewVersionToken;
@@ -61,6 +64,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDefiner()
         {
             return this._definer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsManaged. 
+        /// <para>
+        /// Specifies whether the materialized view is managed by Glue.
+        /// </para>
+        /// </summary>
+        public bool? IsManaged
+        {
+            get { return this._isManaged; }
+            set { this._isManaged = value; }
+        }
+
+        // Check to see if IsManaged property is set
+        internal bool IsSetIsManaged()
+        {
+            return this._isManaged.HasValue; 
         }
 
         /// <summary>
@@ -146,6 +167,31 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SparkPipelineInfo. 
+        /// <para>
+        /// A map of key-value pairs containing Spark Declarative Pipelines (SDP) information
+        /// for the materialized view.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> SparkPipelineInfo
+        {
+            get { return this._sparkPipelineInfo; }
+            set { this._sparkPipelineInfo = value; }
+        }
+
+        // Check to see if SparkPipelineInfo property is set
+        internal bool IsSetSparkPipelineInfo()
+        {
+            return this._sparkPipelineInfo != null && (this._sparkPipelineInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SubObjects. 
         /// <para>
         /// A list of table Amazon Resource Names (ARNs).
@@ -167,6 +213,33 @@ namespace Amazon.Glue.Model
         internal bool IsSetSubObjects()
         {
             return this._subObjects != null && (this._subObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubObjectsStatistics. 
+        /// <para>
+        /// Statistics captured for each sub-object referenced by the materialized view as of
+        /// its most recent refresh, such as the source type, Glue version ID, and the partition,
+        /// file, and byte counts. Each entry describes one sub-object, identified by its source
+        /// type.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=250)]
+        public List<SubObjectStatistics> SubObjectsStatistics
+        {
+            get { return this._subObjectsStatistics; }
+            set { this._subObjectsStatistics = value; }
+        }
+
+        // Check to see if SubObjectsStatistics property is set
+        internal bool IsSetSubObjectsStatistics()
+        {
+            return this._subObjectsStatistics != null && (this._subObjectsStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

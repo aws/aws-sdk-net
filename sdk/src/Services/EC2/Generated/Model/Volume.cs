@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private bool? _multiAttachEnabled;
         private OperatorResponse _operator;
         private string _outpostArn;
+        private string _ownerId;
         private int? _size;
         private string _snapshotId;
         private string _sourceVolumeId;
@@ -52,6 +53,7 @@ namespace Amazon.EC2.Model
         private VolumeState _state;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _throughput;
+        private string _volumeArn;
         private string _volumeId;
         private int? _volumeInitializationRate;
         private VolumeType _volumeType;
@@ -272,6 +274,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that owns the volume.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
         /// The size of the volume, in GiBs.
@@ -405,6 +425,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetThroughput()
         {
             return this._throughput.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the volume.
+        /// </para>
+        /// </summary>
+        public string VolumeArn
+        {
+            get { return this._volumeArn; }
+            set { this._volumeArn = value; }
+        }
+
+        // Check to see if VolumeArn property is set
+        internal bool IsSetVolumeArn()
+        {
+            return this._volumeArn != null;
         }
 
         /// <summary>

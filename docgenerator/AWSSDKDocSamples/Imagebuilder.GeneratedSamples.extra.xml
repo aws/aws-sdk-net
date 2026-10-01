@@ -1,0 +1,1599 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CancelImageCreation(Amazon.Imagebuilder.Model.CancelImageCreationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CancelImageCreation(Amazon.Imagebuilder.Model.CancelImageCreationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CancelImageCreationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CancelImageCreationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels a build that is in progress for the specified image build version.
+                </para>
+                <code
+                    title="Cancel an image build"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="cancel-an-image-build" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CancelLifecycleExecution(Amazon.Imagebuilder.Model.CancelLifecycleExecutionRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CancelLifecycleExecution(Amazon.Imagebuilder.Model.CancelLifecycleExecutionRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CancelLifecycleExecutionRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CancelLifecycleExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels the scheduled resource state update associated with the specified lifecycle execution ID before it runs.
+                </para>
+                <code
+                    title="Cancel a lifecycle execution"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="cancel-a-lifecycle-execution" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateComponent(Amazon.Imagebuilder.Model.CreateComponentRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateComponent(Amazon.Imagebuilder.Model.CreateComponentRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateComponentRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateComponentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a build component from a YAML document provided inline in the request.
+                </para>
+                <code
+                    title="Create a component from an inline document"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-component-from-an-inline-document" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateComponent(Amazon.Imagebuilder.Model.CreateComponentRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateComponent(Amazon.Imagebuilder.Model.CreateComponentRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateComponentRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateComponentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a component from a YAML definition document that's stored in an Amazon S3 bucket. The definition document for this component includes an AppVersion parameter that recipes can set when they include the component.
+                </para>
+                <code
+                    title="Create a component from a document stored in Amazon S3"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-component-from-a-document-stored-in-amazon-s3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateContainerRecipe(Amazon.Imagebuilder.Model.CreateContainerRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateContainerRecipe(Amazon.Imagebuilder.Model.CreateContainerRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateContainerRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateContainerRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a Docker container recipe that applies one build component, using the latest Amazon Linux container image as the parent and an existing ECR repository as the target.
+                </para>
+                <code
+                    title="Create a container recipe with an inline Dockerfile template"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-container-recipe-with-an-inline-dockerfile-template" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateContainerRecipe(Amazon.Imagebuilder.Model.CreateContainerRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateContainerRecipe(Amazon.Imagebuilder.Model.CreateContainerRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateContainerRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateContainerRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a container recipe that customizes the Amazon EC2 instance that builds the container image. The build instance launches from an Amazon ECS-optimized instance image and uses a 40 GiB gp3 volume.
+                </para>
+                <code
+                    title="Create a container recipe with a custom build instance configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-container-recipe-with-a-custom-build-instance-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateDistributionConfiguration(Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateDistributionConfiguration(Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateDistributionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a distribution configuration that distributes the output AMI to two Regions. The AMI name includes the build date, so that repeated builds create unique AMI names.
+                </para>
+                <code
+                    title="Create a distribution configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-distribution-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateDistributionConfiguration(Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateDistributionConfiguration(Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateDistributionConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateDistributionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a distribution configuration that distributes the output AMI to two Regions. In us-east-1, it shares the AMI with another AWS account. In us-west-2, it sets the new AMI as the default version of your launch template.
+                </para>
+                <code
+                    title="Create a distribution configuration with launch permissions and a launch template update"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-distribution-configuration-with-launch-permissions-and-a-launch-template-update" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateImage(Amazon.Imagebuilder.Model.CreateImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateImage(Amazon.Imagebuilder.Model.CreateImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a new image from the specified image recipe and infrastructure configuration.
+                </para>
+                <code
+                    title="Create an image"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-image" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateImage(Amazon.Imagebuilder.Model.CreateImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateImage(Amazon.Imagebuilder.Model.CreateImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an image that uses your custom build and test workflows. It uses the Image Builder service-linked role as the execution role. Both test workflows are in the same parallel group, so they can run at the same time after the build workflow completes.
+                </para>
+                <code
+                    title="Create an image with custom build and parallel test workflows"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-image-with-custom-build-and-parallel-test-workflows" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateImagePipeline(Amazon.Imagebuilder.Model.CreateImagePipelineRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateImagePipeline(Amazon.Imagebuilder.Model.CreateImagePipelineRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImagePipelineRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImagePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a pipeline that builds a new image version every Sunday at 9:00 AM UTC, if the base image or components have updates.
+                </para>
+                <code
+                    title="Create an image pipeline"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-image-pipeline" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateImagePipeline(Amazon.Imagebuilder.Model.CreateImagePipelineRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateImagePipeline(Amazon.Imagebuilder.Model.CreateImagePipelineRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImagePipelineRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImagePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a pipeline that uses your custom build workflow and enables image scanning. The schedule evaluates its cron expression in the America/Los_Angeles time zone. The auto-disable policy disables the pipeline after 3 consecutive failed scheduled builds.
+                </para>
+                <code
+                    title="Create an image pipeline with scanning, custom workflows, and an auto-disable policy"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-image-pipeline-with-scanning-custom-workflows-and-an-auto-disable-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateImageRecipe(Amazon.Imagebuilder.Model.CreateImageRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateImageRecipe(Amazon.Imagebuilder.Model.CreateImageRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an image recipe that applies a custom component on top of the latest Amazon Linux 2023 base image.
+                </para>
+                <code
+                    title="Create an image recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-image-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateImageRecipe(Amazon.Imagebuilder.Model.CreateImageRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateImageRecipe(Amazon.Imagebuilder.Model.CreateImageRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateImageRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an image recipe that configures its components and storage. The AppVersion component parameter selects the application version to install. The block device mapping increases the root volume to an encrypted 30 GiB gp3 volume.
+                </para>
+                <code
+                    title="Create an image recipe with component parameters and block device mappings"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-image-recipe-with-component-parameters-and-block-device-mappings" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateInfrastructureConfiguration(Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateInfrastructureConfiguration(Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an infrastructure configuration that gives Image Builder a choice of two instance types for its build and test instances.
+                </para>
+                <code
+                    title="Create an infrastructure configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-infrastructure-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateInfrastructureConfiguration(Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateInfrastructureConfiguration(Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateInfrastructureConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an infrastructure configuration. It places your build and test instances in a single Availability Zone and requires IMDSv2 for instance metadata requests. It also applies resource tags to the resources that Image Builder creates during the build.
+                </para>
+                <code
+                    title="Create an infrastructure configuration with instance placement and metadata options"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-an-infrastructure-configuration-with-instance-placement-and-metadata-options" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateLifecyclePolicy(Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateLifecyclePolicy(Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateLifecyclePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a lifecycle policy that deletes AMI-based images six months after they were created, selecting the images that match the specified resource tags.
+                </para>
+                <code
+                    title="Create a lifecycle policy"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-lifecycle-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateLifecyclePolicy(Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateLifecyclePolicy(Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateLifecyclePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateLifecyclePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a lifecycle policy that deletes images created from the specified recipe version after six months. The policy excludes images whose AMIs launched an instance within the last 30 days or are tagged to be retained.
+                </para>
+                <code
+                    title="Create a lifecycle policy with exclusion rules"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-lifecycle-policy-with-exclusion-rules" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.CreateWorkflow(Amazon.Imagebuilder.Model.CreateWorkflowRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.CreateWorkflow(Amazon.Imagebuilder.Model.CreateWorkflowRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateWorkflowRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.CreateWorkflowResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a build workflow from a YAML workflow document provided inline in the request.
+                </para>
+                <code
+                    title="Create a build workflow from an inline document"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="create-a-build-workflow-from-an-inline-document" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteComponent(Amazon.Imagebuilder.Model.DeleteComponentRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteComponent(Amazon.Imagebuilder.Model.DeleteComponentRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteComponentRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteComponentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified component build version.
+                </para>
+                <code
+                    title="Delete a component build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-a-component-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteContainerRecipe(Amazon.Imagebuilder.Model.DeleteContainerRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteContainerRecipe(Amazon.Imagebuilder.Model.DeleteContainerRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteContainerRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteContainerRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified container recipe.
+                </para>
+                <code
+                    title="Delete a container recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-a-container-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteDistributionConfiguration(Amazon.Imagebuilder.Model.DeleteDistributionConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteDistributionConfiguration(Amazon.Imagebuilder.Model.DeleteDistributionConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteDistributionConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteDistributionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified distribution configuration.
+                </para>
+                <code
+                    title="Delete a distribution configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-a-distribution-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteImage(Amazon.Imagebuilder.Model.DeleteImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteImage(Amazon.Imagebuilder.Model.DeleteImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the Image Builder image record for the specified build version - EC2 AMIs or ECR container images that the build created aren't removed.
+                </para>
+                <code
+                    title="Delete an image build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-an-image-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteImagePipeline(Amazon.Imagebuilder.Model.DeleteImagePipelineRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteImagePipeline(Amazon.Imagebuilder.Model.DeleteImagePipelineRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteImagePipelineRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteImagePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes an image pipeline.
+                </para>
+                <code
+                    title="Delete an image pipeline"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-an-image-pipeline" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteImageRecipe(Amazon.Imagebuilder.Model.DeleteImageRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteImageRecipe(Amazon.Imagebuilder.Model.DeleteImageRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteImageRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteImageRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified image recipe version.
+                </para>
+                <code
+                    title="Delete an image recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-an-image-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteInfrastructureConfiguration(Amazon.Imagebuilder.Model.DeleteInfrastructureConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteInfrastructureConfiguration(Amazon.Imagebuilder.Model.DeleteInfrastructureConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteInfrastructureConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteInfrastructureConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the infrastructure configuration with the specified ARN.
+                </para>
+                <code
+                    title="Delete an infrastructure configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-an-infrastructure-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteLifecyclePolicy(Amazon.Imagebuilder.Model.DeleteLifecyclePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteLifecyclePolicy(Amazon.Imagebuilder.Model.DeleteLifecyclePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteLifecyclePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteLifecyclePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified lifecycle policy.
+                </para>
+                <code
+                    title="Delete a lifecycle policy"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-a-lifecycle-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DeleteWorkflow(Amazon.Imagebuilder.Model.DeleteWorkflowRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DeleteWorkflow(Amazon.Imagebuilder.Model.DeleteWorkflowRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteWorkflowRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DeleteWorkflowResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the workflow build version that the ARN specifies.
+                </para>
+                <code
+                    title="Delete a workflow build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="delete-a-workflow-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.DistributeImage(Amazon.Imagebuilder.Model.DistributeImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.DistributeImage(Amazon.Imagebuilder.Model.DistributeImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.DistributeImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.DistributeImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example distributes an AMI that you own to the targets defined in the specified distribution configuration. It returns the ARN of a new Image Builder image resource that you can use with GetImage to monitor distribution progress.
+                </para>
+                <code
+                    title="Distribute an existing AMI"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="distribute-an-existing-ami" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetComponent(Amazon.Imagebuilder.Model.GetComponentRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetComponent(Amazon.Imagebuilder.Model.GetComponentRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetComponentRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetComponentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves a component build version. The data field in the response contains the YAML document that defines the component.
+                </para>
+                <code
+                    title="Get the details of a component build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-a-component-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetComponentPolicy(Amazon.Imagebuilder.Model.GetComponentPolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetComponentPolicy(Amazon.Imagebuilder.Model.GetComponentPolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetComponentPolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetComponentPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the resource policy that's applied to a component that the owner shared with another account.
+                </para>
+                <code
+                    title="Get the resource policy for a component"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-resource-policy-for-a-component" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetContainerRecipe(Amazon.Imagebuilder.Model.GetContainerRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetContainerRecipe(Amazon.Imagebuilder.Model.GetContainerRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetContainerRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetContainerRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the details of the specified container recipe.
+                </para>
+                <code
+                    title="Get the details of a container recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-a-container-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetContainerRecipePolicy(Amazon.Imagebuilder.Model.GetContainerRecipePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetContainerRecipePolicy(Amazon.Imagebuilder.Model.GetContainerRecipePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetContainerRecipePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetContainerRecipePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the resource policy for a container recipe that you shared with another AWS account. The policy property contains the resource-based policy document as a JSON-encoded string.
+                </para>
+                <code
+                    title="Get the policy attached to a container recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-policy-attached-to-a-container-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetDistributionConfiguration(Amazon.Imagebuilder.Model.GetDistributionConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetDistributionConfiguration(Amazon.Imagebuilder.Model.GetDistributionConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetDistributionConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetDistributionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves a distribution configuration that distributes the output AMI to two Regions.
+                </para>
+                <code
+                    title="Get the details of a distribution configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-a-distribution-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetImage(Amazon.Imagebuilder.Model.GetImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetImage(Amazon.Imagebuilder.Model.GetImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an image build version to check its status while the build is running. The response is shortened to show a subset of the fields that Image Builder returns.
+                </para>
+                <code
+                    title="Check the status of an image build"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="check-the-status-of-an-image-build" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetImagePipeline(Amazon.Imagebuilder.Model.GetImagePipelineRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetImagePipeline(Amazon.Imagebuilder.Model.GetImagePipelineRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImagePipelineRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImagePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an image pipeline that builds a new image every Sunday, including the image tests configuration and schedule start condition defaults that Image Builder applied at creation.
+                </para>
+                <code
+                    title="Get the details of an image pipeline"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-an-image-pipeline" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetImagePolicy(Amazon.Imagebuilder.Model.GetImagePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetImagePolicy(Amazon.Imagebuilder.Model.GetImagePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImagePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImagePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the resource policy for an image build version that was shared with account 444455556666.
+                </para>
+                <code
+                    title="Retrieve the resource policy for an image"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="retrieve-the-resource-policy-for-an-image" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetImageRecipe(Amazon.Imagebuilder.Model.GetImageRecipeRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetImageRecipe(Amazon.Imagebuilder.Model.GetImageRecipeRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImageRecipeRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImageRecipeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the full definition of an image recipe, including the components it applies and the base image it builds on.
+                </para>
+                <code
+                    title="Get the details of an image recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-an-image-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetImageRecipePolicy(Amazon.Imagebuilder.Model.GetImageRecipePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetImageRecipePolicy(Amazon.Imagebuilder.Model.GetImageRecipePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImageRecipePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetImageRecipePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the resource policy that's applied to the specified image recipe.
+                </para>
+                <code
+                    title="Get the resource policy for an image recipe"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-resource-policy-for-an-image-recipe" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetInfrastructureConfiguration(Amazon.Imagebuilder.Model.GetInfrastructureConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetInfrastructureConfiguration(Amazon.Imagebuilder.Model.GetInfrastructureConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetInfrastructureConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetInfrastructureConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves an infrastructure configuration that specifies the instance types, instance profile, and instance metadata options that Image Builder uses for build and test instances.
+                </para>
+                <code
+                    title="Get the details of an infrastructure configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-an-infrastructure-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetLifecycleExecution(Amazon.Imagebuilder.Model.GetLifecycleExecutionRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetLifecycleExecution(Amazon.Imagebuilder.Model.GetLifecycleExecutionRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetLifecycleExecutionRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetLifecycleExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the runtime status of the specified lifecycle execution. If the execution was started by StartResourceStateUpdate rather than a lifecycle policy run, the response doesn't include the lifecyclePolicyArn field.
+                </para>
+                <code
+                    title="Get the details of a lifecycle execution"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-a-lifecycle-execution" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetLifecyclePolicy(Amazon.Imagebuilder.Model.GetLifecyclePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetLifecyclePolicy(Amazon.Imagebuilder.Model.GetLifecyclePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetLifecyclePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetLifecyclePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the full definition of the specified lifecycle policy.
+                </para>
+                <code
+                    title="Get the details of a lifecycle policy"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-a-lifecycle-policy" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetWorkflow(Amazon.Imagebuilder.Model.GetWorkflowRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetWorkflow(Amazon.Imagebuilder.Model.GetWorkflowRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetWorkflowRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetWorkflowResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves a workflow build version. The response includes the YAML workflow document in the data field and the parameters that Image Builder extracted from it when the workflow was created.
+                </para>
+                <code
+                    title="Get the details of a workflow build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-details-of-a-workflow-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetWorkflowExecution(Amazon.Imagebuilder.Model.GetWorkflowExecutionRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetWorkflowExecution(Amazon.Imagebuilder.Model.GetWorkflowExecutionRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetWorkflowExecutionRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetWorkflowExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves runtime status and step counts for the build workflow that ran for an image build version, using the workflow execution ID returned by ListWorkflowExecutions.
+                </para>
+                <code
+                    title="Get the runtime details for a workflow execution"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-runtime-details-for-a-workflow-execution" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.GetWorkflowStepExecution(Amazon.Imagebuilder.Model.GetWorkflowStepExecutionRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.GetWorkflowStepExecution(Amazon.Imagebuilder.Model.GetWorkflowStepExecutionRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.GetWorkflowStepExecutionRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.GetWorkflowStepExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves runtime details for the step that launched the build instance during an image build, with the step's input parameters and output values returned as JSON-encoded strings.
+                </para>
+                <code
+                    title="Get the runtime details of a workflow step"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="get-the-runtime-details-of-a-workflow-step" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ImportComponent(Amazon.Imagebuilder.Model.ImportComponentRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ImportComponent(Amazon.Imagebuilder.Model.ImportComponentRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ImportComponentRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ImportComponentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example imports a plain shell script as a Linux build component.
+                </para>
+                <code
+                    title="Import a component from a shell script"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="import-a-component-from-a-shell-script" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ImportDiskImage(Amazon.Imagebuilder.Model.ImportDiskImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ImportDiskImage(Amazon.Imagebuilder.Model.ImportDiskImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ImportDiskImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ImportDiskImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts an image build that converts a Windows 11 ISO disk file stored in Amazon S3 into an AMI; the imageBuildVersionArn in the response identifies the Image Builder image resource that tracks the build, not the output AMI.
+                </para>
+                <code
+                    title="Import a Windows 11 ISO disk image"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="import-a-windows-11-iso-disk-image" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ImportVmImage(Amazon.Imagebuilder.Model.ImportVmImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ImportVmImage(Amazon.Imagebuilder.Model.ImportVmImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ImportVmImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ImportVmImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example registers the output of an EC2 VM Import/Export task (import-ami) as a new Image Builder image, so you can use the imported virtual machine as a base image.
+                </para>
+                <code
+                    title="Import a virtual machine as an Image Builder image"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="import-a-virtual-machine-as-an-image-builder-image" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListComponentBuildVersions(Amazon.Imagebuilder.Model.ListComponentBuildVersionsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListComponentBuildVersions(Amazon.Imagebuilder.Model.ListComponentBuildVersionsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListComponentBuildVersionsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListComponentBuildVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the build versions that exist for version 1.0.0 of the specified component. The list returns the most recent build version first.
+                </para>
+                <code
+                    title="List the build versions of a component"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-build-versions-of-a-component" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListComponents(Amazon.Imagebuilder.Model.ListComponentsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListComponents(Amazon.Imagebuilder.Model.ListComponentsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListComponentsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListComponentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the component versions that your account owns, filtered to components for the Linux platform.
+                </para>
+                <code
+                    title="List components that you own"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-components-that-you-own" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListContainerRecipes(Amazon.Imagebuilder.Model.ListContainerRecipesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListContainerRecipes(Amazon.Imagebuilder.Model.ListContainerRecipesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListContainerRecipesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListContainerRecipesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the container recipes that you own.
+                </para>
+                <code
+                    title="List the container recipes you own"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-container-recipes-you-own" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListDistributionConfigurations(Amazon.Imagebuilder.Model.ListDistributionConfigurationsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListDistributionConfigurations(Amazon.Imagebuilder.Model.ListDistributionConfigurationsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListDistributionConfigurationsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListDistributionConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the distribution configurations whose name matches the filter value.
+                </para>
+                <code
+                    title="List distribution configurations that match a name filter"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-distribution-configurations-that-match-a-name-filter" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImageBuildVersions(Amazon.Imagebuilder.Model.ListImageBuildVersionsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImageBuildVersions(Amazon.Imagebuilder.Model.ListImageBuildVersionsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageBuildVersionsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageBuildVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the build versions that exist for version 1.0.0 of the specified image, with the output AMI that each build produced.
+                </para>
+                <code
+                    title="List the build versions of an image"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-build-versions-of-an-image" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImagePackages(Amazon.Imagebuilder.Model.ListImagePackagesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImagePackages(Amazon.Imagebuilder.Model.ListImagePackagesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagePackagesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagePackagesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the operating system packages that Image Builder detected in the specified image build version.
+                </para>
+                <code
+                    title="List the packages in an image build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-packages-in-an-image-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImagePipelineImages(Amazon.Imagebuilder.Model.ListImagePipelineImagesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImagePipelineImages(Amazon.Imagebuilder.Model.ListImagePipelineImagesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagePipelineImagesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagePipelineImagesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the images that the specified pipeline created, including a build that is still in progress.
+                </para>
+                <code
+                    title="List the images that an image pipeline created"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-images-that-an-image-pipeline-created" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImagePipelines(Amazon.Imagebuilder.Model.ListImagePipelinesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImagePipelines(Amazon.Imagebuilder.Model.ListImagePipelinesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagePipelinesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagePipelinesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the image pipelines in your account, using a filter to match a specific pipeline name.
+                </para>
+                <code
+                    title="List image pipelines filtered by name"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-image-pipelines-filtered-by-name" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImageRecipes(Amazon.Imagebuilder.Model.ListImageRecipesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImageRecipes(Amazon.Imagebuilder.Model.ListImageRecipesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageRecipesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageRecipesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the image recipes that you own.
+                </para>
+                <code
+                    title="List the image recipes that you own"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-image-recipes-that-you-own" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImages(Amazon.Imagebuilder.Model.ListImagesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImages(Amazon.Imagebuilder.Model.ListImagesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImagesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the image versions that you own. Setting byName to false returns each image version as its own entry, instead of grouping build versions under their image name.
+                </para>
+                <code
+                    title="List images that you own"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-images-that-you-own" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImageScanFindingAggregations(Amazon.Imagebuilder.Model.ListImageScanFindingAggregationsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImageScanFindingAggregations(Amazon.Imagebuilder.Model.ListImageScanFindingAggregationsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageScanFindingAggregationsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageScanFindingAggregationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example aggregates vulnerability findings for images that the specified pipeline created, with counts grouped by severity level.
+                </para>
+                <code
+                    title="List image scan finding aggregations for an image pipeline"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-image-scan-finding-aggregations-for-an-image-pipeline" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListImageScanFindings(Amazon.Imagebuilder.Model.ListImageScanFindingsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListImageScanFindings(Amazon.Imagebuilder.Model.ListImageScanFindingsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageScanFindingsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListImageScanFindingsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the vulnerability findings that Amazon Inspector detected for the specified image build version.
+                </para>
+                <code
+                    title="List vulnerability findings for an image build"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-vulnerability-findings-for-an-image-build" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListInfrastructureConfigurations(Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListInfrastructureConfigurations(Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListInfrastructureConfigurationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists your infrastructure configurations, filtered to a specific resource name.
+                </para>
+                <code
+                    title="List infrastructure configurations by name"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-infrastructure-configurations-by-name" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListLifecycleExecutionResources(Amazon.Imagebuilder.Model.ListLifecycleExecutionResourcesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListLifecycleExecutionResources(Amazon.Imagebuilder.Model.ListLifecycleExecutionResourcesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListLifecycleExecutionResourcesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListLifecycleExecutionResourcesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the resources that the specified lifecycle execution acted on. For a scheduled resource state update that hasn't started to apply changes yet, the resources list is empty.
+                </para>
+                <code
+                    title="List the resources that a lifecycle execution acted on"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-resources-that-a-lifecycle-execution-acted-on" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListLifecycleExecutions(Amazon.Imagebuilder.Model.ListLifecycleExecutionsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListLifecycleExecutions(Amazon.Imagebuilder.Model.ListLifecycleExecutionsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListLifecycleExecutionsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListLifecycleExecutionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the lifecycle executions that have run against the specified image build version. The execution shown was started with StartResourceStateUpdate rather than a lifecycle policy, so it has no lifecyclePolicyArn.
+                </para>
+                <code
+                    title="List lifecycle executions for an image build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-lifecycle-executions-for-an-image-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListLifecyclePolicies(Amazon.Imagebuilder.Model.ListLifecyclePoliciesRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListLifecyclePolicies(Amazon.Imagebuilder.Model.ListLifecyclePoliciesRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListLifecyclePoliciesRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListLifecyclePoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the lifecycle policies in your account that have ENABLED status.
+                </para>
+                <code
+                    title="List enabled lifecycle policies"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-enabled-lifecycle-policies" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListTagsForResource(Amazon.Imagebuilder.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListTagsForResource(Amazon.Imagebuilder.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the tags that are assigned to an existing component build version.
+                </para>
+                <code
+                    title="List the tags for a resource"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-tags-for-a-resource" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListWaitingWorkflowSteps(Amazon.Imagebuilder.Model.ListWaitingWorkflowStepsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListWaitingWorkflowSteps(Amazon.Imagebuilder.Model.ListWaitingWorkflowStepsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWaitingWorkflowStepsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWaitingWorkflowStepsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the workflow steps in your account that are paused at a WaitForAction step, waiting for you to resume or stop the workflow with SendWorkflowStepAction.
+                </para>
+                <code
+                    title="List workflow steps that are waiting for an action"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-workflow-steps-that-are-waiting-for-an-action" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListWorkflowBuildVersions(Amazon.Imagebuilder.Model.ListWorkflowBuildVersionsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListWorkflowBuildVersions(Amazon.Imagebuilder.Model.ListWorkflowBuildVersionsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowBuildVersionsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowBuildVersionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the build versions that exist for version 1.0.0 of the specified workflow, with the most recent build version first and the change description for each build version showing what changed.
+                </para>
+                <code
+                    title="List the build versions of a workflow"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-build-versions-of-a-workflow" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListWorkflowExecutions(Amazon.Imagebuilder.Model.ListWorkflowExecutionsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListWorkflowExecutions(Amazon.Imagebuilder.Model.ListWorkflowExecutionsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowExecutionsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowExecutionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the workflow runtime instances that ran for the specified image build version, which was built with the Image Builder default build and test workflows.
+                </para>
+                <code
+                    title="List the workflow runtime instances for an image build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-workflow-runtime-instances-for-an-image-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListWorkflows(Amazon.Imagebuilder.Model.ListWorkflowsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListWorkflows(Amazon.Imagebuilder.Model.ListWorkflowsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the workflow versions that you own.
+                </para>
+                <code
+                    title="List workflows that you own"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-workflows-that-you-own" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.ListWorkflowStepExecutions(Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.ListWorkflowStepExecutions(Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.ListWorkflowStepExecutionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists runtime details for each step in the specified runtime instance of a workflow, in this case the build workflow from an image build.
+                </para>
+                <code
+                    title="List the steps that ran in a workflow execution"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="list-the-steps-that-ran-in-a-workflow-execution" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.PutComponentPolicy(Amazon.Imagebuilder.Model.PutComponentPolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.PutComponentPolicy(Amazon.Imagebuilder.Model.PutComponentPolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.PutComponentPolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.PutComponentPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies a resource policy that grants another account permission to get and list the component.
+                </para>
+                <code
+                    title="Share a component with another account"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="share-a-component-with-another-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.PutContainerRecipePolicy(Amazon.Imagebuilder.Model.PutContainerRecipePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.PutContainerRecipePolicy(Amazon.Imagebuilder.Model.PutContainerRecipePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.PutContainerRecipePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.PutContainerRecipePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies a resource policy that grants another AWS account permission to view and use the specified container recipe.
+                </para>
+                <code
+                    title="Share a container recipe with another account"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="share-a-container-recipe-with-another-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.PutImagePolicy(Amazon.Imagebuilder.Model.PutImagePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.PutImagePolicy(Amazon.Imagebuilder.Model.PutImagePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.PutImagePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.PutImagePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies a resource policy to an image build version that grants another AWS account permission to view the image.
+                </para>
+                <code
+                    title="Share an image with another AWS account"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="share-an-image-with-another-aws-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.PutImageRecipePolicy(Amazon.Imagebuilder.Model.PutImageRecipePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.PutImageRecipePolicy(Amazon.Imagebuilder.Model.PutImageRecipePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.PutImageRecipePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.PutImageRecipePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example applies a resource policy that grants another AWS account permission to view the specified image recipe.
+                </para>
+                <code
+                    title="Share an image recipe with another account"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="share-an-image-recipe-with-another-account" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.RetryImage(Amazon.Imagebuilder.Model.RetryImageRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.RetryImage(Amazon.Imagebuilder.Model.RetryImageRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.RetryImageRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.RetryImageResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retries a cancelled image build, which resumes in place from the phase where it stopped.
+                </para>
+                <code
+                    title="Retry an image build"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="retry-an-image-build" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.SendWorkflowStepAction(Amazon.Imagebuilder.Model.SendWorkflowStepActionRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.SendWorkflowStepAction(Amazon.Imagebuilder.Model.SendWorkflowStepActionRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.SendWorkflowStepActionRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.SendWorkflowStepActionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example sends the STOP action to a workflow step that has paused the image build, identified by the step execution ID that ListWaitingWorkflowSteps returns.
+                </para>
+                <code
+                    title="Stop a workflow step that is waiting for action"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="stop-a-workflow-step-that-is-waiting-for-action" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.StartImagePipelineExecution(Amazon.Imagebuilder.Model.StartImagePipelineExecutionRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.StartImagePipelineExecution(Amazon.Imagebuilder.Model.StartImagePipelineExecutionRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.StartImagePipelineExecutionRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.StartImagePipelineExecutionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example starts a build for the specified pipeline. The response returns the ARN of the new image build version.
+                </para>
+                <code
+                    title="Start a pipeline build manually"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="start-a-pipeline-build-manually" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.StartResourceStateUpdate(Amazon.Imagebuilder.Model.StartResourceStateUpdateRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.StartResourceStateUpdate(Amazon.Imagebuilder.Model.StartResourceStateUpdateRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.StartResourceStateUpdateRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.StartResourceStateUpdateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example schedules the specified image build version and its AMI to move to the DEPRECATED state at the requested future time. It returns the ID of the lifecycle execution that applies the update.
+                </para>
+                <code
+                    title="Schedule an image build version for deprecation"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="schedule-an-image-build-version-for-deprecation" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.TagResource(Amazon.Imagebuilder.Model.TagResourceRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.TagResource(Amazon.Imagebuilder.Model.TagResourceRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.TagResourceRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example adds two tags to a component build version.
+                </para>
+                <code
+                    title="Add tags to a component build version"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="add-tags-to-a-component-build-version" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.UntagResource(Amazon.Imagebuilder.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.UntagResource(Amazon.Imagebuilder.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.UntagResourceRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example removes the CostCenter tag key from the specified component build version.
+                </para>
+                <code
+                    title="Remove a tag from a resource"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="remove-a-tag-from-a-resource" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.UpdateDistributionConfiguration(Amazon.Imagebuilder.Model.UpdateDistributionConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.UpdateDistributionConfiguration(Amazon.Imagebuilder.Model.UpdateDistributionConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateDistributionConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateDistributionConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example replaces the distribution settings for the specified configuration with a single distribution that names the output AMI with the build date.
+                </para>
+                <code
+                    title="Update a distribution configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="update-a-distribution-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.UpdateImagePipeline(Amazon.Imagebuilder.Model.UpdateImagePipelineRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.UpdateImagePipeline(Amazon.Imagebuilder.Model.UpdateImagePipelineRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateImagePipelineRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateImagePipelineResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example changes the pipeline's schedule to build every day at 6:00 AM UTC.
+                </para>
+                <code
+                    title="Update an image pipeline"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="update-an-image-pipeline" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.UpdateInfrastructureConfiguration(Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.UpdateInfrastructureConfiguration(Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateInfrastructureConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates an infrastructure configuration to use larger instance types and to keep the build instance running when the image build fails.
+                </para>
+                <code
+                    title="Update an infrastructure configuration"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="update-an-infrastructure-configuration" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Imagebuilder.IAmazonImagebuilder.UpdateLifecyclePolicy(Amazon.Imagebuilder.Model.UpdateLifecyclePolicyRequest)" />
+            <member name="M:Amazon.Imagebuilder.AmazonImagebuilderClient.UpdateLifecyclePolicy(Amazon.Imagebuilder.Model.UpdateLifecyclePolicyRequest)" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateLifecyclePolicyRequest" />
+            <member name="T:Amazon.Imagebuilder.Model.UpdateLifecyclePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates a lifecycle policy to delete AMI images and their associated snapshots after 12 months, retaining the 3 most recent images.
+                </para>
+                <code
+                    title="Update a lifecycle policy"
+                    source=".\AWSSDKDocSamples\Imagebuilder\Imagebuilder.GeneratedSamples.cs"
+                    region="update-a-lifecycle-policy" />
+            </example>
+        </value>
+    </doc>
+</docs>

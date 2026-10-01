@@ -6,7 +6,10 @@
       "version": "2024-01-01",
       "operations": [
         { "target": "com.amazonaws.testunsupported#DoThing" }
-      ]
+      ],
+      "traits": {
+        "aws.api#clientEndpointDiscovery": { "operation": "com.amazonaws.testunsupported#DoThing", "error": "com.amazonaws.testunsupported#DoThing" }
+      }
     },
     "com.amazonaws.testunsupported#DoThing": {
       "type": "operation",

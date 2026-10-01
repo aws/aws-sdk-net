@@ -186,8 +186,30 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceConfigurationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a resource configuration that will be associated
-        /// with the VPC endpoint of type resource.
+        /// (Resource and Tunnel endpoints only) The Amazon Resource Name (ARN) of a resource
+        /// configuration associated with the VPC endpoint. The type of resource configuration
+        /// depends on the endpoint type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For a Resource endpoint, you can specify a resource configuration that is of type
+        /// <c>SINGLE</c>, <c>GROUP</c>, or <c>ARN</c>. To reach a resource that belongs to a
+        /// group, specify the parent <c>GROUP</c> resource configuration.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a Tunnel endpoint, you can specify a resource configuration that is of type <c>CIDR</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about the types of resource configurations, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/resource-configuration.html">Types
+        /// of resource configurations</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This request fails if a VPC endpoint owned by a different Amazon Web Services account
+        /// already exists on a resource gateway that is enabled for <c>ResourceGatewayCharges</c>
+        /// payer responsibility.
         /// </para>
         /// </summary>
         public string ResourceConfigurationArn
@@ -228,9 +250,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// (Interface endpoint) The IDs of the security groups to associate with the endpoint
-        /// network interfaces. If this parameter is not specified, we use the default security
-        /// group for the VPC.
+        /// (Interface, Resource, ServiceNetwork, and Tunnel endpoints only) The IDs of the security
+        /// groups to associate with the endpoint network interfaces. If this parameter is not
+        /// specified, we use the default security group for the VPC.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -331,9 +353,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// (Interface and Gateway Load Balancer endpoints) The IDs of the subnets in which to
-        /// create endpoint network interfaces. For a Gateway Load Balancer endpoint, you can
-        /// specify only one subnet.
+        /// (Interface, Gateway Load Balancer endpoints, Resource, ServiceNetwork, and Tunnel
+        /// endpoints only) The IDs of the subnets in which to create endpoint network interfaces.
+        /// For a Gateway Load Balancer endpoint, you can specify only one subnet. For a <c>Tunnel</c>
+        /// endpoint, the subnets must be in the Availability Zones of the resource gateway associated
+        /// with the shared resource configuration. An endpoint network interface is created only
+        /// in an Availability Zone that the resource gateway is also in.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -380,6 +405,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VpcEndpointType. 
         /// <para>
         /// The type of endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about the types of VPC endpoints, see <a href="https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html#concepts-vpc-endpoints">VPC
+        /// endpoints</a> in the <i>Amazon Web Services PrivateLink User Guide</i>.
         /// </para>
         ///  
         /// <para>

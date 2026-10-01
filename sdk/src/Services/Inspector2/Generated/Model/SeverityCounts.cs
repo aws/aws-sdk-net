@@ -37,7 +37,10 @@ namespace Amazon.Inspector2.Model
         private long? _all;
         private long? _critical;
         private long? _high;
+        private long? _informational;
+        private long? _low;
         private long? _medium;
+        private long? _untriaged;
 
         /// <summary>
         /// Gets and sets the property All. 
@@ -94,6 +97,42 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Informational. 
+        /// <para>
+        /// The total count of informational severity findings.
+        /// </para>
+        /// </summary>
+        public long? Informational
+        {
+            get { return this._informational; }
+            set { this._informational = value; }
+        }
+
+        // Check to see if Informational property is set
+        internal bool IsSetInformational()
+        {
+            return this._informational.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Low. 
+        /// <para>
+        /// The total count of low severity findings.
+        /// </para>
+        /// </summary>
+        public long? Low
+        {
+            get { return this._low; }
+            set { this._low = value; }
+        }
+
+        // Check to see if Low property is set
+        internal bool IsSetLow()
+        {
+            return this._low.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Medium. 
         /// <para>
         /// The total count of medium severity findings.
@@ -109,6 +148,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetMedium()
         {
             return this._medium.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Untriaged. 
+        /// <para>
+        /// The total count of untriaged findings.
+        /// </para>
+        /// </summary>
+        public long? Untriaged
+        {
+            get { return this._untriaged; }
+            set { this._untriaged = value; }
+        }
+
+        // Check to see if Untriaged property is set
+        internal bool IsSetUntriaged()
+        {
+            return this._untriaged.HasValue; 
         }
 
     }

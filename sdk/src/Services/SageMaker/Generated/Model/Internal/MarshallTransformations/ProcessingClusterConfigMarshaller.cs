@@ -52,10 +52,38 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
+            if(requestObject.IsSetInstancePreferences())
+            {
+                context.Writer.WritePropertyName("InstancePreferences");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInstancePreferencesListValue in requestObject.InstancePreferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProcessingInstancePreferenceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInstancePreferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
                 context.Writer.WriteStringValue(requestObject.InstanceType);
+            }
+
+            if(requestObject.IsSetSelectedInstanceCount())
+            {
+                context.Writer.WritePropertyName("SelectedInstanceCount");
+                context.Writer.WriteNumberValue(requestObject.SelectedInstanceCount.Value);
+            }
+
+            if(requestObject.IsSetSelectedInstanceType())
+            {
+                context.Writer.WritePropertyName("SelectedInstanceType");
+                context.Writer.WriteStringValue(requestObject.SelectedInstanceType);
             }
 
             if(requestObject.IsSetVolumeKmsKeyId())

@@ -96,7 +96,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property S3DestinationConfiguration. 
         /// <para>
-        /// The updated configuration for a general purpose Amazon S3 destination. Only <c>DataFreshnessInSeconds</c>
+        /// The updated configuration for a general purpose Amazon S3 destination. Specify this
+        /// parameter when the channel delivers to a general purpose Amazon S3 bucket. Only <c>DataFreshnessInSeconds</c>
         /// can be updated.
         /// </para>
         /// </summary>
@@ -115,8 +116,9 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property S3TablesDestinationConfiguration. 
         /// <para>
-        /// The updated configuration for a streaming table destination. Only <c>DataFreshnessInSeconds</c>
-        /// can be updated.
+        /// The updated configuration for a streaming table destination. Specify this parameter
+        /// when the channel delivers to streaming tables on Apache Iceberg in Amazon S3 Tables.
+        /// Only <c>DataFreshnessInSeconds</c> can be updated.
         /// </para>
         /// </summary>
         public S3TablesDestinationUpdateInput S3TablesDestinationConfiguration

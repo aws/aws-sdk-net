@@ -290,7 +290,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartingPositionTimestamp())
             {
                 context.Writer.WritePropertyName("StartingPositionTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartingPositionTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartingPositionTimestamp.Value));
             }
 
             if(publicRequest.IsSetTags())

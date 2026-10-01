@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A list of available AWS Elastic Beanstalk solution stacks.
+    /// A list of available Elastic Beanstalk solution stacks.
     /// </summary>
     public partial class ListAvailableSolutionStacksResponse : AmazonWebServiceResponse
     {

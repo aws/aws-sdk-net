@@ -23,10 +23,9 @@ public class UnionCodegenTests
     {
         _context = TestModels.Context("Codegen/unions.json");
         _unionId = ShapeId.Parse("com.example#MyUnion");
-        var requestId = ShapeId.Parse("com.example#OpRequest");
         var requestShape = _context.Operations.Single(o => o.Name == "Op").Input;
-        _union = new StructureWriter(_context, ModelFileName).Write(_context.Structures[_unionId],_unionId,TestContext.Current.CancellationToken);
-        _request = new StructureWriter(_context, ModelFileName).Write(requestShape, requestId, TestContext.Current.CancellationToken);
+        _union = new StructureWriter(_context, ModelFileName).Write(_context.Structures[_unionId], TestContext.Current.CancellationToken);
+        _request = new StructureWriter(_context, ModelFileName).Write(requestShape, TestContext.Current.CancellationToken);
     }
 
     [Fact]

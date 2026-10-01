@@ -31,12 +31,13 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLifecyclePolicy operation.
-    /// Create a lifecycle policy resource.
+    /// Creates a lifecycle policy resource.
     /// </summary>
     public partial class CreateLifecyclePolicyRequest : AmazonImagebuilderRequest
     {
         private string _clientToken;
         private string _description;
+        private bool? _dryRun;
         private string _executionRole;
         private string _name;
         private List<LifecyclePolicyDetail> _policyDetails = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyDetail>() : null;
@@ -48,8 +49,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -86,10 +89,32 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Validates the required permissions and request parameters without performing the operation.
+        /// If validation succeeds, the operation returns a <c>DryRunOperationException</c> error
+        /// response.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image
-        /// Builder access to run lifecycle actions.
+        /// Builder access to run lifecycle actions. You must have permission to pass the role,
+        /// and the role's trust policy must allow the Image Builder service principal to assume
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -108,7 +133,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the lifecycle policy to create.
+        /// The name of the lifecycle policy to create. Policy names must be unique to your account
+        /// in each Amazon Web Services Region. Image Builder generates the policy ARN from a
+        /// normalized form of the name, so names that differ only in case, spaces, or underscores
+        /// count as the same name. You can't change the name after creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,7 +155,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property PolicyDetails. 
         /// <para>
-        /// Configuration details for the lifecycle policy rules.
+        /// Configuration details for the lifecycle policy rules. A policy can contain at most
+        /// one rule per action type: one <c>DELETE</c>, one <c>DEPRECATE</c>, and one <c>DISABLE</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -151,7 +180,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceSelection. 
         /// <para>
-        /// Selection criteria for the resources that the lifecycle policy applies to. 
+        /// Selection criteria for the resources that the lifecycle policy applies to. You must
+        /// specify exactly one selection criteria: either recipes or a tag map, not both.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -170,7 +200,11 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of Image Builder resource that the lifecycle policy applies to.
+        /// The type of Image Builder resource that the lifecycle policy applies to. The resource
+        /// type determines the allowed rule actions: policies for AMI-based Image Builder images
+        /// support <c>DELETE</c>, <c>DEPRECATE</c>, and <c>DISABLE</c>, and policies for container-based
+        /// Image Builder images support only <c>DELETE</c>. You can't change the resource type
+        /// after creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -189,7 +223,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates whether the lifecycle policy resource is enabled.
+        /// Indicates whether the lifecycle policy resource is enabled. If you don't specify a
+        /// status, it defaults to <c>ENABLED</c>. Only enabled policies run on their schedule.
         /// </para>
         /// </summary>
         public LifecyclePolicyStatus Status

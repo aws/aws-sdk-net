@@ -31,10 +31,10 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConfigurationTemplate operation.
-    /// Creates an AWS Elastic Beanstalk configuration template, associated with a specific
-    /// Elastic Beanstalk application. You define application configuration settings in a
-    /// configuration template. You can then use the configuration template to deploy different
-    /// versions of the application with the same configuration settings.
+    /// Creates an Elastic Beanstalk configuration template, associated with a specific Elastic
+    /// Beanstalk application. You define application configuration settings in a configuration
+    /// template. You can then use the configuration template to deploy different versions
+    /// of the application with the same configuration settings.
     /// 
     ///  
     /// <para>
@@ -153,7 +153,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// If specified, these values override the values obtained from the solution stack or
         /// the source configuration template. For a complete list of Elastic Beanstalk configuration
         /// options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
-        /// Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// Values</a> in the <i>Elastic Beanstalk Developer Guide</i>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -178,7 +178,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the custom platform. For more information, see <a
         /// href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
-        /// Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// Custom Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -206,7 +206,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// stack specifies the operating system, runtime, and application server for a configuration
         /// template. It also determines the set of configuration options as well as the possible
         /// and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
-        /// Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.
         /// </para>
         ///  
         /// <para>

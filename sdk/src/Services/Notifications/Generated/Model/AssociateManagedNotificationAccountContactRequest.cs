@@ -36,6 +36,7 @@ namespace Amazon.Notifications.Model
     public partial class AssociateManagedNotificationAccountContactRequest : AmazonNotificationsRequest
     {
         private AccountContactType _contactIdentifier;
+        private bool? _isSensitiveEventsSubscribed;
         private string _managedNotificationConfigurationArn;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.Notifications.Model
         internal bool IsSetContactIdentifier()
         {
             return this._contactIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsSensitiveEventsSubscribed. 
+        /// <para>
+        /// Specifies whether this contact is subscribed to sensitive events. The <c>notifications:SubscribeSensitiveEvents</c>
+        /// permission controls access to sensitive events. Defaults to false.
+        /// </para>
+        /// </summary>
+        public bool? IsSensitiveEventsSubscribed
+        {
+            get { return this._isSensitiveEventsSubscribed; }
+            set { this._isSensitiveEventsSubscribed = value; }
+        }
+
+        // Check to see if IsSensitiveEventsSubscribed property is set
+        internal bool IsSetIsSensitiveEventsSubscribed()
+        {
+            return this._isSensitiveEventsSubscribed.HasValue; 
         }
 
         /// <summary>

@@ -68,10 +68,22 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.PassiveIp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ProxyConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProxyConfigUnmarshaller.Instance;
+                    unmarshalledObject.ProxyConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SetStatOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SetStatOption = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("SftpPorts", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<SftpPortWithOptions, SftpPortWithOptionsUnmarshaller>(SftpPortWithOptionsUnmarshaller.Instance);
+                    unmarshalledObject.SftpPorts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TlsSessionResumptionMode", targetDepth, ref reader))

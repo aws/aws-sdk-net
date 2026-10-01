@@ -74,6 +74,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.CrossChannelBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WorkloadTypeConcurrencies", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<WorkloadTypeConcurrency, WorkloadTypeConcurrencyUnmarshaller>(WorkloadTypeConcurrencyUnmarshaller.Instance);
+                    unmarshalledObject.WorkloadTypeConcurrencies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

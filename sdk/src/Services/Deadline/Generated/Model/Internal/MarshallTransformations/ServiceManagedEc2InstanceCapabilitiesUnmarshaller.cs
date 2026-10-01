@@ -110,6 +110,12 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                     unmarshalledObject.RootEbsVolume = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("softwareAddOns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<FleetSoftwareAddOn, FleetSoftwareAddOnUnmarshaller>(FleetSoftwareAddOnUnmarshaller.Instance);
+                    unmarshalledObject.SoftwareAddOns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("vCpuCount", targetDepth, ref reader))
                 {
                     var unmarshaller = VCpuCountRangeUnmarshaller.Instance;

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Endpoints;
 using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers.Endpoints;
@@ -42,15 +43,8 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
     public string Write(CancellationToken cancellationToken = default)
     {
         var ruleSet = context.EndpointRuleSet ?? throw new GeneratorException("EndpointResolverWriter requires an endpoint rule set.");
-        if (context.HasEndpointContextParams)
-        {
-            // Context params drive per-operation parameter assignment in MapEndpointsParameters,
-            // which isn't emitted yet; without it the resolver would silently drop endpoint inputs.
-            throw new GeneratorException("Endpoint context parameters are not supported yet.");
-        }
-
         var className = $"{context.ClientName}EndpointResolver";
-        var parametersName = $"{context.ServiceName}EndpointParameters";
+        var parametersName = $"{context.BaseName}EndpointParameters";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -59,9 +53,9 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Amazon {context.ServiceName} endpoint resolver.");
+            writer.WriteLine($"/// Amazon {context.BaseName} endpoint resolver.");
             writer.WriteLine("/// <para />");
-            writer.WriteLine($"/// Custom <see cref=\"PipelineHandler\"/> responsible for resolving endpoint and setting authentication parameters for {context.ServiceName} service requests.");
+            writer.WriteLine($"""/// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for {context.BaseName} service requests.""");
             writer.WriteLine("/// <para />");
             writer.WriteLine($"/// Collects values for <see cref=\"{parametersName}\"/> and then tries to resolve endpoint by calling");
             writer.WriteLine($"/// <c>ResolveEndpoint</c> method on <see cref=\"GlobalEndpoints.Provider\"/> if present, otherwise uses <see cref=\"{context.ClientName}EndpointProvider\"/>.");
@@ -98,13 +92,18 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
             {
                 if (parameter.BuiltIn is { } builtIn)
                 {
-                    if (!BuiltInSources.TryGetValue(builtIn, out var source))
-                    {
-                        throw new GeneratorException($"Endpoint parameter builtIn '{builtIn}' is not supported yet.");
-                    }
-
-                    writer.WriteLine($"result.{name} = {source};");
+                    writer.WriteLine($"result.{name} = {BuiltInSource(builtIn)};");
                 }
+            }
+
+            // A clientContextParams entry is normally sourced from the config property it added, but a
+            // parameter that *also* declares a builtIn takes the builtIn instead (C2J AssignClientContext).
+            foreach (var parameter in context.ClientContextParameters)
+            {
+                var source = ruleSet.Parameters.TryGetValue(parameter.Name, out var declared) && declared.BuiltIn is { } builtIn
+                    ? BuiltInSource(builtIn)
+                    : $"config.{parameter.Name}";
+                writer.WriteLine($"result.{parameter.Name} = {source};");
             }
 
             if (ruleSet.Parameters.ContainsKey("Region"))
@@ -113,7 +112,46 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
                 WriteRegionFromServiceUrl(writer);
             }
 
+            // The comment is emitted only alongside real blocks. C2J emits it unconditionally, but it's
+            // a comment, and emitting it for every service would churn every already-migrated resolver.
+            if (context.OperationEndpointContexts.Count > 0)
+            {
+                writer.WriteLine();
+                writer.WriteLine("// Assign staticContextParams and contextParam per operation");
+                foreach (var operation in context.OperationEndpointContexts)
+                {
+                    WriteOperationContext(writer, operation);
+                }
+            }
+
             writer.WriteLine();
+            writer.WriteLine("return result;");
+        });
+    }
+
+    private static string BuiltInSource(string builtIn) =>
+        BuiltInSources.TryGetValue(builtIn, out var source)
+            ? source
+            : throw new GeneratorException($"Endpoint parameter builtIn '{builtIn}' is not supported yet.");
+
+    private static void WriteOperationContext(CodeWriter writer, OperationEndpointContext operation)
+    {
+        writer.OpenBlock($"""if (requestContext.RequestName == "{operation.OperationName}Request")""", () =>
+        {
+            foreach (var assignment in operation.StaticAssignments)
+            {
+                writer.WriteLine($"result.{assignment.Parameter} = {assignment.Expression};");
+            }
+
+            if (operation.RequestAssignments.Count > 0)
+            {
+                writer.WriteLine($"var request = ({operation.OperationName}Request)requestContext.OriginalRequest;");
+                foreach (var assignment in operation.RequestAssignments)
+                {
+                    writer.WriteLine($"result.{assignment.Parameter} = {assignment.Expression};");
+                }
+            }
+
             writer.WriteLine("return result;");
         });
     }

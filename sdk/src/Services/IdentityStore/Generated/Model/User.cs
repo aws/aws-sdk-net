@@ -50,11 +50,13 @@ namespace Amazon.IdentityStore.Model
         private List<Photo> _photos = AWSConfigs.InitializeCollections ? new List<Photo>() : null;
         private string _preferredLanguage;
         private string _profileUrl;
+        private string _revision;
         private List<Role> _roles = AWSConfigs.InitializeCollections ? new List<Role>() : null;
         private string _timezone;
         private string _title;
         private DateTime? _updatedAt;
         private string _updatedBy;
+        private string _userArn;
         private string _userId;
         private string _userName;
         private UserStatus _userStatus;
@@ -245,7 +247,7 @@ namespace Amazon.IdentityStore.Model
         /// The globally unique identifier for the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -404,6 +406,29 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The current revision of the user in the identity store. This value changes each time
+        /// the user is modified. You can provide it as the <c>Revision</c> parameter of an <c>UpdateUser</c>
+        /// or <c>DeleteUser</c> request to make the operation conditional on the user not having
+        /// changed. Treat this value as an opaque token: don't parse it or rely on its format
+        /// or ordering.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string Revision
+        {
+            get { return this._revision; }
+            set { this._revision = value; }
+        }
+
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
+        {
+            return this._revision != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Roles. 
         /// <para>
         /// A list of <c>Role</c> objects containing roles associated with the user.
@@ -503,12 +528,31 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UserArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the user in the identity store. For example, <c>arn:aws:identitystore:::user/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=100)]
+        public string UserArn
+        {
+            get { return this._userArn; }
+            set { this._userArn = value; }
+        }
+
+        // Check to see if UserArn property is set
+        internal bool IsSetUserArn()
+        {
+            return this._userArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
         /// The identifier for a user in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string UserId
         {
             get { return this._userId; }

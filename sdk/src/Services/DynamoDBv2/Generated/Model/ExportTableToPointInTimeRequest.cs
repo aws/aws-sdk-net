@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         private ExportFormat _exportFormat;
         private DateTime? _exportTime;
         private ExportType _exportType;
+        private FilterSpecification _filterSpecification;
         private IncrementalExportSpecification _incrementalExportSpecification;
         private string _s3Bucket;
         private string _s3BucketOwner;
@@ -137,6 +138,26 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetExportType()
         {
             return this._exportType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterSpecification. 
+        /// <para>
+        /// The criteria used to filter which items are included in the point-in-time export.
+        /// When you specify this parameter, only items that match the key conditions and filter
+        /// expressions are exported.
+        /// </para>
+        /// </summary>
+        public FilterSpecification FilterSpecification
+        {
+            get { return this._filterSpecification; }
+            set { this._filterSpecification = value; }
+        }
+
+        // Check to see if FilterSpecification property is set
+        internal bool IsSetFilterSpecification()
+        {
+            return this._filterSpecification != null;
         }
 
         /// <summary>

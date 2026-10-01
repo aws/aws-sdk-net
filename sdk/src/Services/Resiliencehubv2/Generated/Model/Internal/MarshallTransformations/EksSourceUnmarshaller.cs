@@ -62,6 +62,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("labelSelector", targetDepth, ref reader))
+                {
+                    var unmarshaller = EksLabelSelectorUnmarshaller.Instance;
+                    unmarshalledObject.LabelSelector = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("namespaces", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

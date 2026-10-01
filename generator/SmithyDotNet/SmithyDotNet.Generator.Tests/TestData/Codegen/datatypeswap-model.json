@@ -1,0 +1,75 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.datatypeswap#DataTypeSwapService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [{ "target": "com.amazonaws.datatypeswap#Put" }],
+      "traits": {
+        "aws.api#service": { "sdkId": "DataTypeSwap", "endpointPrefix": "datatypeswap" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "DataTypeSwap"
+      }
+    },
+    "com.amazonaws.datatypeswap#Put": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.datatypeswap#PutRequest" },
+      "output": { "target": "com.amazonaws.datatypeswap#PutResponse" },
+      "traits": {
+        "smithy.api#http": { "method": "POST", "uri": "/put/{id}", "code": 200 },
+        "smithy.api#endpoint": { "hostPrefix": "{accountId}." }
+      }
+    },
+    "com.amazonaws.datatypeswap#PutRequest": {
+      "type": "structure",
+      "members": {
+        "widget": { "target": "com.amazonaws.datatypeswap#Widget" },
+        "stamp": { "target": "smithy.api#String" },
+        "limit": {
+          "target": "smithy.api#Integer",
+          "traits": { "smithy.api#httpQuery": "limit" }
+        },
+        "partSize": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.api#httpHeader": "x-amz-part-size" }
+        },
+        "marker": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.api#httpQuery": "marker", "smithy.api#required": {} }
+        },
+        "id": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} }
+        },
+        "accountId": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.api#hostLabel": {}, "smithy.api#required": {} }
+        },
+        "clientToken": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.api#idempotencyToken": {} }
+        }
+      }
+    },
+    "com.amazonaws.datatypeswap#PutResponse": {
+      "type": "structure",
+      "members": {
+        "widget": { "target": "com.amazonaws.datatypeswap#Widget" },
+        "issuedAt": { "target": "smithy.api#String" },
+        "requestId": {
+          "target": "smithy.api#String",
+          "traits": { "smithy.api#httpHeader": "x-request-id" }
+        }
+      }
+    },
+    "com.amazonaws.datatypeswap#Widget": {
+      "type": "structure",
+      "members": {
+        "createdAt": { "target": "smithy.api#String" },
+        "sizeMillis": { "target": "smithy.api#Long" },
+        "retries": { "target": "smithy.api#Integer" },
+        "version": { "target": "smithy.api#Long" }
+      }
+    }
+  }
+}

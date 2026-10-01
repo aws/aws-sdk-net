@@ -1,4 +1,6 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Traits;
 using Xunit;
@@ -28,33 +30,60 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void BaseNameAndServiceName_EqualWithoutOverrides()
+    {
+        Assert.Equal("CloudTrailData", _context.BaseName);
+        Assert.Equal("CloudTrailData", _context.ServiceName);
+        Assert.Equal("AWSSDK.CloudTrailData", _context.AssemblyName);
+    }
+
+    [Fact]
+    public void ResolveBaseName_WithoutMetadata_SanitizesSdkId()
+    {
+        Assert.Equal("CloudTrailData", GenerationContext.ResolveBaseName("CloudTrail Data", null));
+    }
+
+    [Fact]
+    public void ResolveBaseName_PrefersBaseNameOverride()
+    {
+        var metadata = new ServiceMetadata { BaseName = "Elasticsearch", LegacyServiceId = "Elasticsearch Service" };
+        Assert.Equal("Elasticsearch", GenerationContext.ResolveBaseName("Elasticsearch Service", metadata));
+    }
+
+    [Fact]
+    public void ResolveBaseName_ThrowsOnEmptyBaseNameOverride()
+    {
+        var metadata = new ServiceMetadata { BaseName = "" };
+        Assert.Throws<GeneratorException>(() => GenerationContext.ResolveBaseName("CloudTrail Data", metadata));
+    }
+
+    [Fact]
+    public void ResolveBaseName_UsesLegacyServiceIdOverSdkId()
+    {
+        var metadata = new ServiceMetadata { LegacyServiceId = "Old Service Name" };
+        Assert.Equal("OldServiceName", GenerationContext.ResolveBaseName("New Service Name", metadata));
+    }
+
+    [Fact]
+    public void ResolveServiceName_StripsAmazonPrefixFromNamespaceOverride()
+    {
+        // sesv2: type names use the base-name, but the folder/package name follows the namespace.
+        var metadata = new ServiceMetadata { BaseName = "SimpleEmailServiceV2", Namespace = "Amazon.SimpleEmailV2", LegacyServiceId = "SESv2" };
+        Assert.Equal("SimpleEmailServiceV2", GenerationContext.ResolveBaseName("SESv2", metadata));
+        Assert.Equal("SimpleEmailV2", GenerationContext.ResolveServiceName("SESv2", metadata));
+    }
+
+    [Fact]
+    public void ResolveServiceName_WithoutNamespaceOverride_EqualsBaseName()
+    {
+        var metadata = new ServiceMetadata { LegacyServiceId = "SSO" };
+        Assert.Equal("SSO", GenerationContext.ResolveServiceName("SSO", metadata));
+    }
+
+    [Fact]
     public void Protocol_IsRestJson1()
     {
         Assert.Equal(AWSProtocol.RestJson1, _context.Protocol);
-    }
-
-    [Theory]
-    // Highest-priority trait wins over lower ones, regardless of the order they appear in the model.
-    [InlineData("aws.protocols#restJson1", "smithy.protocols#rpcv2Cbor", "smithy.protocols#rpcv2Cbor")]
-    [InlineData("aws.protocols#awsJson1_0", "aws.protocols#restJson1", "aws.protocols#awsJson1_0")]
-    [InlineData("aws.protocols#awsQuery", "aws.protocols#restXml", "aws.protocols#restXml")]
-    [InlineData("aws.protocols#ec2Query", "aws.protocols#awsQuery", "aws.protocols#awsQuery")]
-    public void ResolveProtocol_PicksHighestPriority(string a, string b, string expected)
-    {
-        Assert.Equal(expected, GenerationContext.ResolveProtocol([a, b], "Example"));
-    }
-
-    [Fact]
-    public void ResolveProtocol_AppliesArcRegionSwitchSkip()
-    {
-        // ARC Region switch models CBOR but must skip it; the next-priority protocol wins.
-        Assert.Equal("aws.protocols#awsJson1_0", GenerationContext.ResolveProtocol(["smithy.protocols#rpcv2Cbor", "aws.protocols#awsJson1_0"], "ARC Region switch"));
-    }
-
-    [Fact]
-    public void ResolveProtocol_ReturnsNullWhenNoProtocolTrait()
-    {
-        Assert.Null(GenerationContext.ResolveProtocol(["aws.api#service"], "Example"));
     }
 
     [Fact]
@@ -86,11 +115,13 @@ public class GenerationContextTests
     }
 
     [Fact]
-    public void HasEndpointContextParams_IsFalseForCloudTrailData()
+    public void EndpointContextParams_AreEmptyForCloudTrailData()
     {
-        // CloudTrailData uses no context params. If detection over-fires, the resolver writer throws
-        // and no real service can be generated, so guard the common case explicitly.
-        Assert.False(_context.HasEndpointContextParams);
+        // CloudTrailData uses no context params. If resolution over-fires, the resolver gains
+        // per-operation blocks and the config gains properties that C2J never emitted, so guard the
+        // common case explicitly.
+        Assert.Empty(_context.ClientContextParameters);
+        Assert.Empty(_context.OperationEndpointContexts);
     }
 
     [Fact]
@@ -157,6 +188,14 @@ public class GenerationContextTests
     {
         var id = ShapeId.Parse("com.amazonaws.cloudtraildata#AuditEvent");
         Assert.Equal("AuditEvent", _context.ToDotNetName(id));
+    }
+
+    [Fact]
+    public void ToDotNetName_AppliesServiceRename()
+    {
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        Assert.Equal("RenamedResource", context.ToDotNetName(ShapeId.Parse("com.example#RelatedResource")));
+        Assert.Equal("ConflictDetails", context.ToDotNetName(ShapeId.Parse("com.example#ConflictDetails")));
     }
 
     [Fact]

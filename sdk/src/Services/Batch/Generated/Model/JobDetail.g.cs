@@ -177,7 +177,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property IsCancelled. 
         /// <para>
-        /// Indicates whether the job is canceled.
+        /// Indicates whether the job is cancelled.
         /// </para>
         /// </summary>
         public bool? IsCancelled { get; set; }

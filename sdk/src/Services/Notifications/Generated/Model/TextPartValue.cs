@@ -51,7 +51,7 @@ namespace Amazon.Notifications.Model
         /// Used for text parts with the type <c>URL</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=1, Max=12000)]
         public string DisplayText
         {
             get { return this._displayText; }

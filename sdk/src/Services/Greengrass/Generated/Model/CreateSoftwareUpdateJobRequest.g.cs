@@ -1,0 +1,123 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Greengrass.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateSoftwareUpdateJob operation. Creates a software
+    /// update for a core or group of cores (specified as an IoT thing group.) Use this to
+    /// update the OTA Agent as well as the Greengrass core software. It makes use of the
+    /// IoT Jobs feature which provides additional commands to manage a Greengrass core software
+    /// update job.
+    /// </summary>
+    public partial class CreateSoftwareUpdateJobRequest : AmazonGreengrassRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AmznClientToken. A client token used to correlate requests
+        /// and responses.
+        /// </summary>
+        public string AmznClientToken { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AmznClientToken property is set.
+        /// </summary>
+        internal bool IsSetAmznClientToken() => this.AmznClientToken != null;
+
+        /// <summary>
+        /// Gets and sets the property S3UrlSignerRole.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string S3UrlSignerRole { get; set; }
+
+        /// <summary>
+        /// Checks to see if the S3UrlSignerRole property is set.
+        /// </summary>
+        internal bool IsSetS3UrlSignerRole() => this.S3UrlSignerRole != null;
+
+        /// <summary>
+        /// Gets and sets the property SoftwareToUpdate.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public SoftwareToUpdate SoftwareToUpdate { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SoftwareToUpdate property is set.
+        /// </summary>
+        internal bool IsSetSoftwareToUpdate() => this.SoftwareToUpdate != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateAgentLogLevel.
+        /// </summary>
+        public UpdateAgentLogLevel UpdateAgentLogLevel { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateAgentLogLevel property is set.
+        /// </summary>
+        internal bool IsSetUpdateAgentLogLevel() => this.UpdateAgentLogLevel != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateTargets.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public List<string> UpdateTargets { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the UpdateTargets property is set.
+        /// </summary>
+        internal bool IsSetUpdateTargets() => this.UpdateTargets != null && (this.UpdateTargets.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property UpdateTargetsArchitecture.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public UpdateTargetsArchitecture UpdateTargetsArchitecture { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateTargetsArchitecture property is set.
+        /// </summary>
+        internal bool IsSetUpdateTargetsArchitecture() => this.UpdateTargetsArchitecture != null;
+
+        /// <summary>
+        /// Gets and sets the property UpdateTargetsOperatingSystem.
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public UpdateTargetsOperatingSystem UpdateTargetsOperatingSystem { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UpdateTargetsOperatingSystem property is set.
+        /// </summary>
+        internal bool IsSetUpdateTargetsOperatingSystem() => this.UpdateTargetsOperatingSystem != null;
+    }
+}

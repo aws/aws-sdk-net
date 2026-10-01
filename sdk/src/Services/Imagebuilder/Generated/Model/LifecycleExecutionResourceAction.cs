@@ -40,7 +40,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the resource that was identified for a lifecycle policy action.
+        /// The name of the lifecycle action that was identified for the resource.
         /// </para>
         /// </summary>
         public LifecycleExecutionResourceActionName Name

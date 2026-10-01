@@ -26,6 +26,9 @@ public static class ScalarTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait" /></remarks>
     public static string? GetJsonName(this Shape shape) => GetStringTrait(shape, "smithy.api#jsonName");
 
+    /// <summary>Sets a synthetic <c>@jsonName</c>; used by customizations to pin the wire name across a member rename.</summary>
+    public static void SetJsonName(this Shape shape, string value) => SetStringTrait(shape, "smithy.api#jsonName", value);
+
     /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#pattern-trait" /></remarks>
     public static string? GetPattern(this Shape shape) => GetStringTrait(shape, "smithy.api#pattern");
 

@@ -48,6 +48,36 @@ namespace Amazon.Billing.Model
         IListBillingViewsPaginator ListBillingViews(ListBillingViewsRequest request);
 
         /// <summary>
+        /// Paginator for ListBillingViewSegments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBillingViewSegmentsPaginator ListBillingViewSegments(ListBillingViewSegmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBusinessSupportAccountCharges operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBusinessSupportAccountChargesPaginator ListBusinessSupportAccountCharges(ListBusinessSupportAccountChargesRequest request);
+
+        /// <summary>
+        /// Paginator for ListBusinessSupportSubscriptionHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBusinessSupportSubscriptionHistoryPaginator ListBusinessSupportSubscriptionHistory(ListBusinessSupportSubscriptionHistoryRequest request);
+
+        /// <summary>
         /// Paginator for ListEnterpriseSupportLinkedAccountCharges operation
         ///</summary>
         [AWSPaginator(

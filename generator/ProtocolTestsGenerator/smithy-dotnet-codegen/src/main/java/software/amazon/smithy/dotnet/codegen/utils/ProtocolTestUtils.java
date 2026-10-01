@@ -20,4 +20,12 @@ public final class ProtocolTestUtils {
     public static Symbol getProtocolConfig(String namespace) {
         return Symbol.builder().name("Amazon" + namespace + "Config").build();
     }
+
+    /**
+     * @param namespace This is derived from the sdkId field of the Service trait
+     * @return The service client for the service
+     */
+    public static Symbol getProtocolClient(String namespace) {
+        return Symbol.builder().name("Amazon" + namespace + "Client").build();
+    }
 }

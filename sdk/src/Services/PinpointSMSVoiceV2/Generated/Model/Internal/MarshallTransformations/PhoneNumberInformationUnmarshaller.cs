@@ -86,6 +86,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.MessageType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MessagingLimits", targetDepth, ref reader))
+                {
+                    var unmarshaller = MessagingLimitsUnmarshaller.Instance;
+                    unmarshalledObject.MessagingLimits = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("MonthlyLeasingPrice", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

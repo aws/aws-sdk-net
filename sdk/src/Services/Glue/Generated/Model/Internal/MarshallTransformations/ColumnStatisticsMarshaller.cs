@@ -49,7 +49,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalyzedTime())
             {
                 context.Writer.WritePropertyName("AnalyzedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.AnalyzedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.AnalyzedTime.Value));
             }
 
             if(requestObject.IsSetColumnName())

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers.Service;
@@ -14,7 +15,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     /// </summary>
     public string WriteServiceRequest(CancellationToken cancellationToken = default)
     {
-        var className = $"Amazon{context.ServiceName}Request";
+        var className = $"Amazon{context.BaseName}Request";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -22,7 +23,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Base class for {context.ServiceName} operation requests.");
+            writer.WriteLine($"/// Base class for {context.BaseName} operation requests.");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {className} : AmazonWebServiceRequest", () => { });
         });
@@ -36,15 +37,42 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     public string WriteRequest(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var baseClass = $"Amazon{context.ServiceName}Request";
+        var baseClass = $"Amazon{context.BaseName}Request";
 
         // Cleanup the operation doc on its own first so its leading <p> wrapper is stripped,
         // then prepend the request preface so it reads as a single paragraph.
         var cleanedOperationDoc = DocumentationFormatter.Cleanup(operation.Shape.GetDocumentation());
         var doc = $"Container for the parameters to the {operation.Name} operation. {cleanedOperationDoc}";
 
-        var members = TypeMapper.ResolveMembers(operation.Input, context);
-        return WriteClass(new OperationRecord(className, baseClass, doc, members), cancellationToken);
+        var members = ApplyEventStreamPublisher(operation, TypeMapper.ResolveMembers(operation.Input, context));
+        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Input));
+        return WriteClass(record, cancellationToken);
+    }
+
+    // A request event-stream member (target is a @streaming union) is emitted as a Func publisher property
+    // named {Member}Publisher — matching C2J, which replaces the normal member. The list is re-sorted
+    // because the rename can change alphabetical order relative to the other members.
+    private List<Member> ApplyEventStreamPublisher(Operation operation, List<Member> members)
+    {
+        var stream = context.RequestEventStreams.FirstOrDefault(candidate => candidate.Operations.Any(op => op.Name == operation.Name));
+        if (stream is null)
+        {
+            return members;
+        }
+
+        // The property keeps the input member's name (+ "Publisher"); the interface and event list are the union's.
+        var memberName = operation.Input.Members.First(member => member.Value.Target == stream.Id).Key;
+        var memberProperty = SdkNaming.ToUpperFirstCharacter(memberName);
+        var eventClasses = stream.Events.Select(context.ToDotNetName).ToList();
+        var publisher = new EventStreamPublisherInfo(stream.InterfaceName, eventClasses);
+        return members
+            // Clear HidesBaseMember: the "Publisher" suffix means a member named "equals" no longer
+            // shadows object.Equals, so it must not keep the `new` modifier (CS0109).
+            .Select(member => member.PropertyName == memberProperty && member.Type.IsEventStream
+                ? member with { PropertyName = $"{memberProperty}Publisher", EventStreamPublisher = publisher, HidesBaseMember = false }
+                : member)
+            .OrderBy(member => member.PropertyName, StringComparer.Ordinal)
+            .ToList();
     }
 
     /// <summary>
@@ -59,17 +87,28 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         // AmazonWebServiceResponse already declares it, and the unmarshaller assigns the inherited property.
         members.RemoveAll(m => m.PropertyName == "ContentLength");
 
-        // A @streaming output member hands back the raw response stream the caller must dispose.
-        // The trait lives on the target blob shape, so detect it via the resolved member type.
-        var streamingMembers = members.Where(m => m.Type.IsStreaming).ToList();
+        // A @streaming output member (raw blob stream or event stream) hands back a stream the caller
+        // must dispose. The trait lives on the target shape, so detect it via the resolved member type.
+        var streamingMembers = members.Where(m => m.Type.IsStreaming || m.Type.IsEventStream).ToList();
+
+        // The response of an operation that sends an event stream owns the request handle Core gives it
+        // (C2J: `Operation.IsEventStreamInput`); an output-only stream doesn't.
+        var hasRequestEventStream = context.RequestEventStreams.Any(stream => stream.Operations.Contains(operation));
         var baseClass = "AmazonWebServiceResponse";
-        if (streamingMembers.Count > 0)
+
+        if (hasRequestEventStream)
+        {
+            baseClass = baseClass + ", Amazon.Runtime.EventStreams.IEventInputStreamContextOwner";
+        }
+
+        if (streamingMembers.Count > 0 || hasRequestEventStream)
         {
             baseClass = baseClass + ", IDisposable";
         }
-        var doc = $"This is the response object from the {operation.Name} operation.";
 
-        return WriteClass(new OperationRecord(className, baseClass, doc, members, streamingMembers), cancellationToken);
+        var doc = $"This is the response object from the {operation.Name} operation.";
+        var record = new OperationRecord(className, baseClass, doc, members, TypeMapper.BuildObsolete(operation.Output), streamingMembers, hasRequestEventStream);
+        return WriteClass(record, cancellationToken);
     }
 
     /// <summary>
@@ -81,7 +120,9 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         string BaseClass,
         string Doc,
         List<Member> Members,
-        List<Member>? StreamingMembers = null);
+        string? Obsolete = null,
+        List<Member>? StreamingMembers = null,
+        bool HasRequestEventStream = false);
 
     private string WriteClass(OperationRecord opRecord, CancellationToken cancellationToken)
     {
@@ -94,12 +135,23 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             writer.WriteLine("/// <summary>");
             DocumentationFormatter.WriteCommentBlock(writer, DocumentationFormatter.Cleanup(opRecord.Doc));
             writer.WriteLine("/// </summary>");
+            if (opRecord.Obsolete is string obsolete)
+            {
+                writer.WriteLine(obsolete);
+            }
             writer.OpenBlock($"public partial class {opRecord.ClassName} : {opRecord.BaseClass}", () =>
             {
                 MemberWriter.WriteMembers(writer, opRecord.Members);
-                if (opRecord.StreamingMembers is { Count: > 0 } streamingMembers)
+                if (opRecord.HasRequestEventStream)
                 {
-                    WriteDisposePattern(writer, streamingMembers);
+                    WriteEventInputStreamContextOwner(writer);
+                }
+
+                // Unlike C2J, also emitted for an input-only stream (it would otherwise declare IDisposable without implementing it).
+                var streamingMembers = opRecord.StreamingMembers ?? [];
+                if (streamingMembers.Count > 0 || opRecord.HasRequestEventStream)
+                {
+                    WriteDisposePattern(writer, streamingMembers, opRecord.HasRequestEventStream);
                 }
             });
         });
@@ -107,10 +159,24 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         return writer.ToFormattedString(cancellationToken);
     }
 
+    // Explicit interface implementation, so CA1033 (make it accessible to derived types) is suppressed like C2J does.
+    private static void WriteEventInputStreamContextOwner(CodeWriter writer)
+    {
+        writer.WriteLine();
+        writer.WriteLine("#pragma warning disable CA1033");
+        writer.WriteLine("Amazon.Runtime.EventStreams.EventInputStreamContext _eventInputStreamContext;");
+        writer.OpenBlock("void Amazon.Runtime.EventStreams.IEventInputStreamContextOwner.SetEventInputStreamContext(Amazon.Runtime.EventStreams.EventInputStreamContext eventInputStreamContext)", () =>
+        {
+            writer.WriteLine("this._eventInputStreamContext = eventInputStreamContext;");
+        });
+        writer.WriteLine("#pragma warning restore CA1033");
+    }
+
     /// <summary>
-    /// Emits the standard <see cref="IDisposable"/> region that releases each streaming member's stream.
+    /// Emits the standard <see cref="IDisposable"/> region that releases each streaming member's stream
+    /// (and the event input stream context first, when the response owns one).
     /// </summary>
-    private static void WriteDisposePattern(CodeWriter writer, List<Member> streamingMembers)
+    private static void WriteDisposePattern(CodeWriter writer, List<Member> streamingMembers, bool hasRequestEventStream)
     {
         writer.WriteLine();
         writer.WriteLine("#region Dispose Pattern");
@@ -135,6 +201,11 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
             writer.WriteLine();
             writer.OpenBlock("if (disposing)", () =>
             {
+                if (hasRequestEventStream)
+                {
+                    writer.WriteLine("this._eventInputStreamContext?.Dispose();");
+                    writer.WriteLine("this._eventInputStreamContext = null;");
+                }
                 foreach (var member in streamingMembers)
                 {
                     writer.WriteLine($"this.{member.PropertyName}?.Dispose();");

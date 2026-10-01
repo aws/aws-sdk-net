@@ -137,8 +137,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The image creation stage that this workflow applies to. Image Builder currently supports
-        /// build and test stage workflows.
+        /// The image creation stage that this workflow applies to.
         /// </para>
         /// </summary>
         public WorkflowType Type

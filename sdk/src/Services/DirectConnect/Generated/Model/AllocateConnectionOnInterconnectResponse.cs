@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDeviceV2;
         private string _awsLogicalDeviceId;
         private string _bandwidth;
+        private BillingMode _billingMode;
         private string _connectionId;
         private string _connectionName;
         private ConnectionState _connectionState;
@@ -134,6 +135,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetBandwidth()
         {
             return this._bandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// The billing mode of the connection.
+        /// </para>
+        /// </summary>
+        public BillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
         }
 
         /// <summary>

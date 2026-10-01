@@ -87,6 +87,12 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IdentityStoreId);
             }
 
+            if(publicRequest.IsSetRevision())
+            {
+                context.Writer.WritePropertyName("Revision");
+                context.Writer.WriteStringValue(publicRequest.Revision);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

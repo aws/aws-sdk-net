@@ -793,6 +793,21 @@ namespace Amazon.Util
         }
 
         /// <summary>
+        /// Converts a DateTime to Unix epoch seconds, keeping millisecond precision
+        /// (for example 1756149554.123). Whole seconds carry no fractional part.
+        /// </summary>
+        /// <remarks>
+        /// Returns <see cref="decimal"/> rather than <see cref="double"/> so that the value
+        /// serializes to the same digits on every target framework: System.Text.Json formats
+        /// a double with "G17" on .NET Framework/netstandard2.0 (1756149554.123 renders as
+        /// 1756149554.1229999) but shortest-round-trippable on .NET Core.
+        /// </remarks>
+        public static decimal ConvertToUnixEpochSecondsDecimal(DateTime dateTime)
+        {
+            return ConvertToUnixEpochMilliseconds(dateTime) / 1000m;
+        }
+
+        /// <summary>
         /// This method ensures the passed in DateTime is in UTC format then gets the numbers of ticks from that UTC time
         /// minus the number of ticks from the UTC Epoch start time.
         /// </summary>

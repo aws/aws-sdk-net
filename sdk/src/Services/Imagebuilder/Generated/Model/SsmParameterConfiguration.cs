@@ -62,8 +62,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type specifies what type of value the Parameter contains. We recommend that
-        /// you use data type <c>aws:ec2:image</c>.
+        /// The type of value the parameter contains. We recommend the <c>aws:ec2:image</c> data
+        /// type.
         /// </para>
         /// </summary>
         public SsmParameterDataType DataType

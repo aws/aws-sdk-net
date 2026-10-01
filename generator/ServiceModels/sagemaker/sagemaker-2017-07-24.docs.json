@@ -5,6 +5,7 @@
     "AddAssociation": "<p>Creates an <i>association</i> between the source and the destination. A source can be associated with multiple destinations, and a destination can be associated with multiple sources. An association is a lineage tracking entity. For more information, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html\">Amazon SageMaker ML Lineage Tracking</a>.</p>",
     "AddTags": "<p>Adds or overwrites one or more tags for the specified SageMaker resource. You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.</p> <p>Each tag consists of a key and an optional value. Tag keys must be unique per resource. For more information about tags, see For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">Amazon Web Services Tagging Strategies</a>.</p> <note> <p>Tags that you add to a hyperparameter tuning job by calling this API are also added to any training jobs that the hyperparameter tuning job launches after you call this API, but not to training jobs that the hyperparameter tuning job launched before you called this API. To make sure that the tags associated with a hyperparameter tuning job are also added to all training jobs that the hyperparameter tuning job launches, add the tags when you first create the tuning job by specifying them in the <code>Tags</code> parameter of <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html\">CreateHyperParameterTuningJob</a> </p> </note> <note> <p>Tags that you add to a SageMaker Domain or User Profile by calling this API are also added to any Apps that the Domain or User Profile launches after you call this API, but not to Apps that the Domain or User Profile launched before you called this API. To make sure that the tags associated with a Domain or User Profile are also added to all Apps that the Domain or User Profile launches, add the tags when you first create the Domain or User Profile by specifying them in the <code>Tags</code> parameter of <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html\">CreateDomain</a> or <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html\">CreateUserProfile</a>.</p> </note>",
     "AssociateTrialComponent": "<p>Associates a trial component with a trial. A trial component can be associated with multiple trials. To disassociate a trial component from a trial, call the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html\">DisassociateTrialComponent</a> API.</p>",
+    "AttachClusterNodeNetworkInterface": "<p> Attaches an elastic network interface (ENI) to a node in a HyperPod cluster. </p> <p> To use this operation, you must have the <code>sagemaker:AttachClusterNodeNetworkInterface</code> permission. </p>",
     "AttachClusterNodeVolume": "<p> Attaches your Amazon Elastic Block Store (Amazon EBS) volume to a node in your EKS orchestrated HyperPod cluster. </p> <p> This API works with the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver to manage the lifecycle of persistent storage in your HyperPod EKS clusters. </p>",
     "BatchAddClusterNodes": "<p>Adds nodes to a HyperPod cluster by incrementing the target count for one or more instance groups. This operation returns a unique <code>NodeLogicalId</code> for each node being added, which can be used to track the provisioning status of the node. This API provides a safer alternative to <code>UpdateCluster</code> for scaling operations by avoiding unintended configuration changes.</p> <note> <p>This API is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p> </note>",
     "BatchDeleteClusterNodes": "<p>Deletes specific nodes within a SageMaker HyperPod cluster. <code>BatchDeleteClusterNodes</code> accepts a cluster name and a list of node IDs.</p> <important> <ul> <li> <p>To safeguard your work, back up your data to Amazon S3 or an FSx for Lustre file system before invoking the API on a worker node group. This will help prevent any potential data loss from the instance root volume. For more information about backup, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software-backup\">Use the backup script provided by SageMaker HyperPod</a>. </p> </li> <li> <p>If you want to invoke this API on an existing cluster, you'll first need to patch the cluster by running the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateClusterSoftware.html\">UpdateClusterSoftware API</a>. For more information about patching a cluster, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-operate-cli-command.html#sagemaker-hyperpod-operate-cli-command-update-cluster-software\">Update the SageMaker HyperPod platform software of a cluster</a>.</p> </li> </ul> </important>",
@@ -1686,6 +1687,14 @@
         "AthenaDatasetDefinition$WorkGroup": null
       }
     },
+    "AttachClusterNodeNetworkInterfaceRequest": {
+      "base": null,
+      "refs": {}
+    },
+    "AttachClusterNodeNetworkInterfaceResponse": {
+      "base": null,
+      "refs": {}
+    },
     "AttachClusterNodeVolumeRequest": {
       "base": null,
       "refs": {}
@@ -3214,9 +3223,40 @@
         "UpdatePartnerAppRequest$ClientToken": "<p>A unique token that guarantees that the call to this API is idempotent.</p>"
       }
     },
+    "ClusterAccountingDatabase": {
+      "base": "<p>The external MySQL-compatible database that the Slurm accounting daemon (<code>slurmdbd</code>) connects to for a SageMaker HyperPod cluster. You provide the database credentials in an Amazon Web Services Secrets Manager secret instead of in the request.</p>",
+      "refs": {
+        "ClusterOrchestratorSlurmConfig$AccountingDatabase": "<p>The external database that stores the Slurm accounting data for the cluster, such as job history, associations, and usage. When you omit this field, Slurm accounting uses a database on the cluster's controller node.</p> <note> <p>This field is only supported for clusters using <code>Continuous</code> as the <code>NodeProvisioningMode</code>.</p> </note>"
+      }
+    },
+    "ClusterAccountingDatabaseEndpoint": {
+      "base": null,
+      "refs": {
+        "ClusterAccountingDatabase$Endpoint": "<p>The hostname or endpoint of the accounting database, such as the endpoint of an Amazon RDS for MySQL or Aurora MySQL database. The database must be reachable from the subnets and security groups that you configure for the cluster.</p>"
+      }
+    },
+    "ClusterAccountingDatabaseName": {
+      "base": null,
+      "refs": {
+        "ClusterAccountingDatabase$Name": "<p>The name of the database schema that stores the Slurm accounting data. The default is <code>slurm_acct_db_</code> followed by the cluster ID from the cluster ARN, for example <code>slurm_acct_db_a1b2c3d4e5f6</code>.</p>"
+      }
+    },
+    "ClusterAccountingDatabasePort": {
+      "base": null,
+      "refs": {
+        "ClusterAccountingDatabase$Port": "<p>The port that the accounting database listens on. The default is <code>3306</code>.</p>"
+      }
+    },
+    "ClusterAccountingDatabaseSecretArn": {
+      "base": null,
+      "refs": {
+        "ClusterAccountingDatabase$SecretArn": "<p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the user name and password for the accounting database. The database user must be able to create the schema and to read from and write to it.</p>"
+      }
+    },
     "ClusterArn": {
       "base": null,
       "refs": {
+        "AttachClusterNodeNetworkInterfaceResponse$ClusterArn": "<p> The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster where the network interface attachment operation was performed. </p>",
         "AttachClusterNodeVolumeRequest$ClusterArn": "<p> The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster containing the target node. Your cluster must use EKS as the orchestration and be in the <code>InService</code> state. </p>",
         "AttachClusterNodeVolumeResponse$ClusterArn": "<p> The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster where the volume attachment operation was performed. </p>",
         "ClusterEventDetail$ClusterArn": "<p>The Amazon Resource Name (ARN) of the HyperPod cluster associated with the event.</p>",
@@ -3694,6 +3734,7 @@
     "ClusterNameOrArn": {
       "base": null,
       "refs": {
+        "AttachClusterNodeNetworkInterfaceRequest$ClusterName": "<p> The name or Amazon Resource Name (ARN) of the SageMaker HyperPod cluster that contains the target node. </p>",
         "BatchAddClusterNodesRequest$ClusterName": "<p>The name of the HyperPod cluster to which you want to add nodes.</p>",
         "BatchDeleteClusterNodesRequest$ClusterName": "<p>The name of the SageMaker HyperPod cluster from which to delete the specified nodes.</p>",
         "BatchRebootClusterNodesRequest$ClusterName": "<p>The name or Amazon Resource Name (ARN) of the SageMaker HyperPod cluster containing the nodes to reboot.</p>",
@@ -3715,11 +3756,24 @@
         "ClusterInstanceGroupSpecification$NetworkInterface": "<p>The network interface configuration for the instance group.</p>"
       }
     },
+    "ClusterNetworkInterfaceAttachmentId": {
+      "base": null,
+      "refs": {
+        "AttachClusterNodeNetworkInterfaceResponse$AttachmentId": "<p> The unique identifier of the network interface attachment. Use this value to reference or detach the network interface later. </p>"
+      }
+    },
     "ClusterNetworkInterfaceDetails": {
       "base": "<p>The network interface configuration details for a Amazon SageMaker HyperPod cluster instance group.</p>",
       "refs": {
         "ClusterInstanceGroupDetails$NetworkInterface": "<p>The network interface configuration for the instance group.</p>",
         "ClusterNodeDetails$NetworkInterface": "<p>The network interface configuration for the cluster node.</p>"
+      }
+    },
+    "ClusterNetworkInterfaceId": {
+      "base": null,
+      "refs": {
+        "AttachClusterNodeNetworkInterfaceRequest$NetworkInterfaceId": "<p> The unique identifier of the elastic network interface (ENI) to attach. </p>",
+        "AttachClusterNodeNetworkInterfaceResponse$NetworkInterfaceId": "<p> The unique identifier of the elastic network interface (ENI) that was attached. </p>"
       }
     },
     "ClusterNodeDetails": {
@@ -3731,6 +3785,8 @@
     "ClusterNodeId": {
       "base": null,
       "refs": {
+        "AttachClusterNodeNetworkInterfaceRequest$NodeId": "<p> The unique identifier of the cluster node to which you want to attach the network interface. The node must belong to your specified HyperPod cluster and cannot be part of a Restricted Instance Group (RIG). </p>",
+        "AttachClusterNodeNetworkInterfaceResponse$NodeId": "<p> The unique identifier of the cluster node where your network interface was attached. </p>",
         "AttachClusterNodeVolumeRequest$NodeId": "<p> The unique identifier of the cluster node to which you want to attach the volume. The node must belong to your specified HyperPod cluster and cannot be part of a Restricted Instance Group (RIG). </p>",
         "AttachClusterNodeVolumeResponse$NodeId": "<p> The unique identifier of the cluster node where your volume was attached. </p>",
         "BatchDeleteClusterNodesError$NodeId": "<p>The ID of the node that encountered an error during the deletion process.</p>",
@@ -5436,6 +5492,18 @@
         "DataCatalogConfig$Database": "<p>The name of the Glue table database.</p>"
       }
     },
+    "DatabaseConfigurationMetadata": {
+      "base": "<p>Metadata information about a change to the external Slurm accounting database of a HyperPod cluster.</p>",
+      "refs": {
+        "EventMetadata$DatabaseConfiguration": "<p>Metadata specific to events about the external Slurm accounting database of the cluster.</p>"
+      }
+    },
+    "DatabaseConfigurationRollbackStatus": {
+      "base": null,
+      "refs": {
+        "DatabaseConfigurationMetadata$RollbackStatus": "<p>Whether HyperPod restored the previous accounting database configuration after the change failed. Valid values:</p> <ul> <li> <p> <code>NotApplicable</code>: The change failed before HyperPod modified the cluster, for example because the database could not be reached or rejected the credentials, so there was nothing to restore.</p> </li> <li> <p> <code>Reverted</code>: The change failed after it was applied, and HyperPod restored the previous configuration. The cluster continues to use the previous accounting database.</p> </li> <li> <p> <code>RevertFailed</code>: The change failed and HyperPod could not restore the previous configuration, so Slurm accounting on the cluster might not be working.</p> </li> </ul> <p>This field is omitted when the change succeeds.</p>"
+      }
+    },
     "DatasetDefinition": {
       "base": "<p>Configuration for Dataset Definition inputs. The Dataset Definition input must specify exactly one of either <code>AthenaDatasetDefinition</code> or <code>RedshiftDatasetDefinition</code> types.</p>",
       "refs": {
@@ -6857,6 +6925,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$DocumentSchemaVersion": "<p>The document schema version for the hub content.</p>",
+        "HubContent$DocumentSchemaVersion": "<p>The document schema version for the hub content.</p>",
         "HubContentInfo$DocumentSchemaVersion": "<p>The version of the hub content document schema.</p>",
         "ImportHubContentRequest$DocumentSchemaVersion": "<p>The version of the hub content schema to import.</p>",
         "ListHubContentVersionsRequest$MaxSchemaVersion": "<p>The upper bound of the hub content schema version.</p>",
@@ -8129,6 +8198,7 @@
         "EndpointMetadata$FailureReason": "<p> If the status of the endpoint is <code>Failed</code>, or the status is <code>InService</code> but update operation fails, this provides the reason why it failed. </p>",
         "FeatureGroup$FailureReason": "<p>The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>. This is failure may be due to a failure to create a <code>FeatureGroup</code> in or delete a <code>FeatureGroup</code> from the <code>OfflineStore</code>.</p>",
         "FlowDefinitionSummary$FailureReason": "<p>The reason why the flow definition creation failed. A failure reason is returned only when the flow definition status is <code>Failed</code>.</p>",
+        "HubContent$FailureReason": "<p>The failure reason if importing hub content failed.</p>",
         "HyperParameterTrainingJobSummary$FailureReason": "<p>The reason that the training job failed. </p>",
         "HyperParameterTuningJobSearchEntity$FailureReason": "<p>The error that was created when a hyperparameter tuning job failed.</p>",
         "Image$FailureReason": "<p>When a create, update, or delete operation fails, the reason for the failure.</p>",
@@ -8817,11 +8887,18 @@
         "CreateHubResponse$HubArn": "<p>The Amazon Resource Name (ARN) of the hub.</p>",
         "DescribeHubContentResponse$HubArn": "<p>The Amazon Resource Name (ARN) of the hub that contains the content. </p>",
         "DescribeHubResponse$HubArn": "<p>The Amazon Resource Name (ARN) of the hub.</p>",
+        "HubContent$HubArn": "<p>The Amazon Resource Name (ARN) of the hub that contains the content.</p>",
         "HubInfo$HubArn": "<p>The Amazon Resource Name (ARN) of the hub.</p>",
         "ImportHubContentResponse$HubArn": "<p>The ARN of the hub that the content was imported into.</p>",
         "UpdateHubContentReferenceResponse$HubArn": "<p>The ARN of the private model hub that contains the updated hub content.</p>",
         "UpdateHubContentResponse$HubArn": "<p>The ARN of the private model hub that contains the updated hub content.</p>",
         "UpdateHubResponse$HubArn": "<p>The Amazon Resource Name (ARN) of the updated hub.</p>"
+      }
+    },
+    "HubContent": {
+      "base": "<p>Contains information about a hub content resource, including its name, version, type, associated documents, dependencies, and status, as returned by a search result.</p>",
+      "refs": {
+        "SearchRecord$HubContent": "<p>The properties of a hub content resource.</p>"
       }
     },
     "HubContentArn": {
@@ -8830,6 +8907,7 @@
         "CreateHubContentReferenceResponse$HubContentArn": "<p>The ARN of the hub content.</p>",
         "DescribeHubContentResponse$HubContentArn": "<p>The Amazon Resource Name (ARN) of the hub content.</p>",
         "HubAccessConfig$HubContentArn": "<p>The ARN of your private model hub content. This should be a <code>ModelReference</code> resource type that points to a SageMaker JumpStart public hub model.</p>",
+        "HubContent$HubContentArn": "<p>The Amazon Resource Name (ARN) of the hub content.</p>",
         "HubContentInfo$HubContentArn": "<p>The Amazon Resource Name (ARN) of the hub content.</p>",
         "ImportHubContentResponse$HubContentArn": "<p>The ARN of the hub content that was imported.</p>",
         "InferenceHubAccessConfig$HubContentArn": "<p>The ARN of the hub content for which deployment access is allowed.</p>",
@@ -8846,13 +8924,15 @@
     "HubContentDependencyList": {
       "base": null,
       "refs": {
-        "DescribeHubContentResponse$HubContentDependencies": "<p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>"
+        "DescribeHubContentResponse$HubContentDependencies": "<p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>",
+        "HubContent$HubContentDependencies": "<p>The location of any dependencies that the hub content has, such as scripts, model artifacts, datasets, or notebooks.</p>"
       }
     },
     "HubContentDescription": {
       "base": null,
       "refs": {
         "DescribeHubContentResponse$HubContentDescription": "<p>A description of the hub content.</p>",
+        "HubContent$HubContentDescription": "<p>A description of the hub content.</p>",
         "HubContentInfo$HubContentDescription": "<p>A description of the hub content.</p>",
         "ImportHubContentRequest$HubContentDescription": "<p>A description of the hub content to import.</p>",
         "UpdateHubContentRequest$HubContentDescription": "<p>The description of the hub content.</p>"
@@ -8862,6 +8942,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$HubContentDisplayName": "<p>The display name of the hub content.</p>",
+        "HubContent$HubContentDisplayName": "<p>The display name of the hub content.</p>",
         "HubContentInfo$HubContentDisplayName": "<p>The display name of the hub content.</p>",
         "ImportHubContentRequest$HubContentDisplayName": "<p>The display name of the hub content to import.</p>",
         "UpdateHubContentRequest$HubContentDisplayName": "<p>The display name of the hub content.</p>"
@@ -8871,6 +8952,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$HubContentDocument": "<p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>",
+        "HubContent$HubContentDocument": "<p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>",
         "ImportHubContentRequest$HubContentDocument": "<p>The hub content document that describes information about the hub content such as type, associated containers, scripts, and more.</p>"
       }
     },
@@ -8891,6 +8973,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$HubContentMarkdown": "<p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>",
+        "HubContent$HubContentMarkdown": "<p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formatting.</p>",
         "ImportHubContentRequest$HubContentMarkdown": "<p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formating.</p>",
         "UpdateHubContentRequest$HubContentMarkdown": "<p>A string that provides a description of the hub content. This string can include links, tables, and standard markdown formatting.</p>"
       }
@@ -8905,6 +8988,7 @@
         "DeleteHubContentRequest$HubContentName": "<p>The name of the content that you want to delete from a hub.</p>",
         "DescribeHubContentRequest$HubContentName": "<p>The name of the content to describe.</p>",
         "DescribeHubContentResponse$HubContentName": "<p>The name of the hub content.</p>",
+        "HubContent$HubContentName": "<p>The name of the hub content.</p>",
         "HubContentInfo$HubContentName": "<p>The name of the hub content.</p>",
         "ImportHubContentRequest$HubContentName": "<p>The name of the hub content to import.</p>",
         "ListHubContentVersionsRequest$HubContentName": "<p>The name of the hub content.</p>",
@@ -8922,6 +9006,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$HubContentSearchKeywords": "<p>The searchable keywords for the hub content.</p>",
+        "HubContent$HubContentSearchKeywords": "<p>The searchable keywords for the hub content.</p>",
         "HubContentInfo$HubContentSearchKeywords": "<p>The searchable keywords for the hub content.</p>",
         "ImportHubContentRequest$HubContentSearchKeywords": "<p>The searchable keywords of the hub content.</p>",
         "UpdateHubContentRequest$HubContentSearchKeywords": "<p>The searchable keywords of the hub content.</p>"
@@ -8938,6 +9023,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$HubContentStatus": "<p>The status of the hub content.</p>",
+        "HubContent$HubContentStatus": "<p>The status of the hub content.</p>",
         "HubContentInfo$HubContentStatus": "<p>The status of the hub content.</p>"
       }
     },
@@ -8945,6 +9031,7 @@
       "base": null,
       "refs": {
         "DescribeHubContentResponse$SupportStatus": "<p>The support status of the hub content.</p>",
+        "HubContent$SupportStatus": "<p>The support status of the hub content.</p>",
         "HubContentInfo$SupportStatus": "<p>The support status of the hub content.</p>",
         "ImportHubContentRequest$SupportStatus": "<p>The status of the hub content resource.</p>",
         "UpdateHubContentRequest$SupportStatus": "<p>Indicates the current status of the hub content resource.</p>"
@@ -8958,6 +9045,7 @@
         "DeleteHubContentRequest$HubContentType": "<p>The type of content that you want to delete from a hub.</p>",
         "DescribeHubContentRequest$HubContentType": "<p>The type of content in the hub.</p>",
         "DescribeHubContentResponse$HubContentType": "<p>The type of hub content.</p>",
+        "HubContent$HubContentType": "<p>The type of hub content.</p>",
         "HubContentInfo$HubContentType": "<p>The type of hub content.</p>",
         "ImportHubContentRequest$HubContentType": "<p>The type of hub content to import.</p>",
         "ListHubContentVersionsRequest$HubContentType": "<p>The type of hub content to list versions of.</p>",
@@ -8975,6 +9063,7 @@
         "DeleteHubContentRequest$HubContentVersion": "<p>The version of the content that you want to delete from a hub.</p>",
         "DescribeHubContentRequest$HubContentVersion": "<p>The version of the content to describe.</p>",
         "DescribeHubContentResponse$HubContentVersion": "<p>The version of the hub content.</p>",
+        "HubContent$HubContentVersion": "<p>The version of the hub content.</p>",
         "HubContentInfo$HubContentVersion": "<p>The version of the hub content.</p>",
         "ImportHubContentRequest$HubContentVersion": "<p>The version of the hub content to import.</p>",
         "ListHubContentVersionsRequest$MinVersion": "<p>The lower bound of the hub content versions to list.</p>",
@@ -9024,6 +9113,7 @@
         "CreateHubRequest$HubName": "<p>The name of the hub to create.</p>",
         "DescribeHubContentResponse$HubName": "<p>The name of the hub that contains the content.</p>",
         "DescribeHubResponse$HubName": "<p>The name of the hub.</p>",
+        "HubContent$HubName": "<p>The name of the hub that contains the content.</p>",
         "HubInfo$HubName": "<p>The name of the hub.</p>"
       }
     },
@@ -10354,6 +10444,18 @@
       "refs": {
         "PendingProductionVariantSummary$InstancePools": "<p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>",
         "ProductionVariantSummary$InstancePools": "<p>A list of instance pools for the production variant. Each pool indicates the instance type and the current number of instances of that type.</p>"
+      }
+    },
+    "InstancePreference": {
+      "base": "<p>A candidate instance type preference in an <code>InstancePreferences</code> list.</p>",
+      "refs": {
+        "InstancePreferenceList$member": null
+      }
+    },
+    "InstancePreferenceList": {
+      "base": "<p>Ordered list of candidate instance types, in priority order.</p>",
+      "refs": {
+        "ResourceConfig$InstancePreferences": "<p>An ordered list of ML compute instance types for the training job, in priority order. SageMaker launches the training job on the first instance type in the list that has available capacity. If capacity is insufficient, SageMaker evaluates the next instance type in the preferred list. Exactly one instance type is selected for the job.</p> <p> <code>InstancePreferences</code> is mutually exclusive with <code>InstanceType</code>, <code>InstanceGroups</code>, <code>InstancePlacementConfig</code>, and <code>EnableManagedSpotTraining</code>, and supports only Flexible Training Plans (FTP) and On-Demand capacity.</p>"
       }
     },
     "InstanceRequirementsEniConfiguration": {
@@ -12144,7 +12246,7 @@
     "MaxPendingTimeInSeconds": {
       "base": "<p>Maximum job scheduler pending time in seconds.</p>",
       "refs": {
-        "StoppingCondition$MaxPendingTimeInSeconds": "<p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p> <note> <p>When working with training jobs that use capacity from <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html\">training plans</a>, not all <code>Pending</code> job states count against the <code>MaxPendingTimeInSeconds</code> limit. The following scenarios do not increment the <code>MaxPendingTimeInSeconds</code> counter:</p> <ul> <li> <p>The plan is in a <code>Scheduled</code> state: Jobs queued (in <code>Pending</code> status) before a plan's start date (waiting for scheduled start time)</p> </li> <li> <p>Between capacity reservations: Jobs temporarily back to <code>Pending</code> status between two capacity reservation periods</p> </li> </ul> <p> <code>MaxPendingTimeInSeconds</code> only increments when jobs are actively waiting for capacity in an <code>Active</code> plan.</p> </note>"
+        "StoppingCondition$MaxPendingTimeInSeconds": "<p>The maximum length of time, in seconds, that a training or compilation job can be pending before it is stopped.</p> <note> <p>When working with training jobs that use capacity from <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html\">training plans</a>, not all <code>Pending</code> job states count against the <code>MaxPendingTimeInSeconds</code> limit. The following scenarios do not increment the <code>MaxPendingTimeInSeconds</code> counter:</p> <ul> <li> <p>The plan is in a <code>Scheduled</code> state: Jobs queued (in <code>Pending</code> status) before a plan's start date (waiting for scheduled start time)</p> </li> <li> <p>Between capacity reservations: Jobs temporarily back to <code>Pending</code> status between two capacity reservation periods</p> </li> </ul> <p> <code>MaxPendingTimeInSeconds</code> only increments when jobs are actively waiting for capacity in an <code>Active</code> plan.</p> </note> <note> <ul> <li> <p> <code>MaxPendingTimeInSeconds</code> takes effect only for jobs that request accelerated computing instance types, such as instances in the <code>ml.p</code>, <code>ml.g</code>, and <code>ml.trn</code> families. It has no effect on jobs that request CPU-only instance types.</p> </li> <li> <p>If the job specifies <code>InstancePreferences</code>, <code>MaxPendingTimeInSeconds</code> bounds the total time SageMaker spends working through your list of instance types. It is not applied per instance type preference, and takes effect only when the list includes at least one accelerated computing instance type.</p> </li> </ul> </note>"
       }
     },
     "MaxPercentageOfInputDatasetLabeled": {
@@ -15503,7 +15605,21 @@
       "base": null,
       "refs": {
         "MonitoringClusterConfig$InstanceCount": "<p>The number of ML compute instances to use in the model monitoring job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>",
-        "ProcessingClusterConfig$InstanceCount": "<p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>"
+        "ProcessingClusterConfig$InstanceCount": "<p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>",
+        "ProcessingClusterConfig$SelectedInstanceCount": "<p>The number of instances of <code>SelectedInstanceType</code> that the job launched with. The job is billed for this instance type and count. Returned by <code>DescribeProcessingJob</code> after an instance type is selected. This field is read-only and isn't accepted in <code>CreateProcessingJob</code> requests.</p>",
+        "ProcessingInstancePreference$InstanceCount": "<p>The number of instances to launch if this instance type is selected. Specify the instance count for the processing job in one of the following two ways:</p> <ol> <li> <p> <b>Per preference</b> – Set <code>InstanceCount</code> on every preference in the <code>InstancePreferences</code> list and don't set <code>ProcessingClusterConfig$InstanceCount</code>. Use this when each instance type needs a different number of instances to deliver equivalent compute.</p> </li> <li> <p> <b>One count for the job</b> – Set <code>ProcessingClusterConfig$InstanceCount</code> and omit it from every preference. Amazon SageMaker applies this to all instance types in the list.</p> </li> </ol> <p>For example, in a list of five preferences, either all five specify <code>InstanceCount</code> or none of them do. Amazon SageMaker rejects requests that set <code>InstanceCount</code> on only some preferences, that set it both per preference and in <code>ProcessingClusterConfig</code>, or that omit it in both places.</p>"
+      }
+    },
+    "ProcessingInstancePreference": {
+      "base": "<p>A candidate instance type preference in a processing <code>InstancePreferences</code> list.</p>",
+      "refs": {
+        "ProcessingInstancePreferenceList$member": null
+      }
+    },
+    "ProcessingInstancePreferenceList": {
+      "base": "<p>Ordered list of candidate instance types, in priority order.</p>",
+      "refs": {
+        "ProcessingClusterConfig$InstancePreferences": "<p>An ordered list of ML compute instance types for the processing job, in priority order. Amazon SageMaker launches the job on the first instance type in the list that has available capacity. If capacity is insufficient, Amazon SageMaker evaluates the next instance type in the list. Exactly one instance type is selected for the job.</p> <p> <code>InstancePreferences</code> is mutually exclusive with <code>InstanceType</code>.</p>"
       }
     },
     "ProcessingInstanceType": {
@@ -15512,6 +15628,8 @@
         "DebugRuleConfiguration$InstanceType": "<p>The instance type to deploy a custom rule for debugging a training job.</p>",
         "MonitoringClusterConfig$InstanceType": "<p>The ML compute instance type for the processing job.</p>",
         "ProcessingClusterConfig$InstanceType": "<p>The ML compute instance type for the processing job.</p>",
+        "ProcessingClusterConfig$SelectedInstanceType": "<p>The instance type that Amazon SageMaker selected for the job from <code>InstancePreferences</code>. Returned by <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeProcessingJob.html\">DescribeProcessingJob</a> </code> after an instance type is selected. This field is read-only and isn't accepted in <code>CreateProcessingJob</code> requests.</p>",
+        "ProcessingInstancePreference$InstanceType": "<p>The ML compute instance type. An instance type can appear only once in an <code>InstancePreferences</code> list.</p>",
         "ProfilerRuleConfiguration$InstanceType": "<p>The instance type to deploy a custom rule for profiling a training job.</p>"
       }
     },
@@ -16465,7 +16583,8 @@
     "ReferenceMinVersion": {
       "base": null,
       "refs": {
-        "DescribeHubContentResponse$ReferenceMinVersion": "<p>The minimum version of the hub content.</p>"
+        "DescribeHubContentResponse$ReferenceMinVersion": "<p>The minimum version of the hub content.</p>",
+        "HubContent$ReferenceMinVersion": "<p>The minimum version of the hub content.</p>"
       }
     },
     "RegionName": {
@@ -17203,6 +17322,7 @@
       "refs": {
         "CreateHubContentReferenceRequest$SageMakerPublicHubContentArn": "<p>The ARN of the public hub content to reference.</p>",
         "DescribeHubContentResponse$SageMakerPublicHubContentArn": "<p>The ARN of the public hub content.</p>",
+        "HubContent$SageMakerPublicHubContentArn": "<p>The Amazon Resource Name (ARN) of the public hub content.</p>",
         "HubContentInfo$SageMakerPublicHubContentArn": "<p>The ARN of the public hub content.</p>"
       }
     },
@@ -17631,6 +17751,30 @@
         "CreateModelPackageInput$SkipModelValidation": "<p>Indicates if you want to skip model validation.</p>",
         "DescribeModelPackageOutput$SkipModelValidation": "<p>Indicates if you want to skip model validation.</p>",
         "ModelPackage$SkipModelValidation": "<p>Indicates if you want to skip model validation.</p>"
+      }
+    },
+    "SlurmHealthComponent": {
+      "base": null,
+      "refs": {
+        "SlurmHealthMetadata$Component": "<p>The Slurm component that the health information describes. The valid value is <code>Slurmdbd</code>, the Slurm accounting daemon.</p>"
+      }
+    },
+    "SlurmHealthMetadata": {
+      "base": "<p>Metadata information about the health of a Slurm component on the controller node of a HyperPod cluster.</p>",
+      "refs": {
+        "EventMetadata$SlurmHealth": "<p>Metadata specific to events about the health of the Slurm components on the controller node of the cluster.</p>"
+      }
+    },
+    "SlurmHealthReason": {
+      "base": null,
+      "refs": {
+        "SlurmHealthMetadata$Reason": "<p>The reason the component is unhealthy. Valid values:</p> <ul> <li> <p> <code>DaemonDown</code>: The daemon is not running, so job accounting records are not being written.</p> </li> <li> <p> <code>DaemonDisabled</code>: The daemon is running and its accounting database is responding, but the daemon is not enabled to start automatically. Job accounting stops the next time the controller node restarts.</p> </li> <li> <p> <code>DbUnreachable</code>: The daemon is running, but its accounting database did not respond. Job accounting records might not be written.</p> </li> </ul> <p>This field is omitted when the component is healthy.</p>"
+      }
+    },
+    "SlurmHealthStatus": {
+      "base": null,
+      "refs": {
+        "SlurmHealthMetadata$Status": "<p>The health of the component. Valid values are <code>Healthy</code> and <code>Unhealthy</code>.</p>"
       }
     },
     "SnsTopicArn": {
@@ -18286,6 +18430,8 @@
         "CreateModelPackageInput$Task": "<p>The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: <code>\"IMAGE_CLASSIFICATION\"</code> | <code>\"OBJECT_DETECTION\"</code> | <code>\"TEXT_GENERATION\"</code> |<code>\"IMAGE_SEGMENTATION\"</code> | <code>\"FILL_MASK\"</code> | <code>\"CLASSIFICATION\"</code> | <code>\"REGRESSION\"</code> | <code>\"OTHER\"</code>.</p> <p>Specify \"OTHER\" if none of the tasks listed fit your use case.</p>",
         "CustomizedMetricSpecification$MetricName": "<p>The name of the customized metric.</p>",
         "CustomizedMetricSpecification$Namespace": "<p>The namespace of the customized metric.</p>",
+        "DatabaseConfigurationMetadata$Advisory": "<p>Additional information about a change that succeeded, such as an action to take on the cluster.</p>",
+        "DatabaseConfigurationMetadata$FailureMessage": "<p>An error message describing why the accounting database change failed, and how to resolve it.</p>",
         "DescribeClusterResponse$FailureMessage": "<p>The failure message of the SageMaker HyperPod cluster.</p>",
         "DescribeEdgePackagingJobResponse$EdgePackagingJobStatusMessage": "<p>Returns a message describing the job status and error messages.</p>",
         "DescribeEdgePackagingJobResponse$ModelSignature": "<p>The signature document of files in the model artifact.</p>",
@@ -18769,6 +18915,7 @@
         "Endpoint$Tags": "<p>A list of the tags associated with the endpoint. For more information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>",
         "Experiment$Tags": "<p>The list of tags that are associated with the experiment. You can use <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html\">Search</a> API to search on the tags.</p>",
         "FeatureGroup$Tags": "<p>Tags used to define a <code>FeatureGroup</code>.</p>",
+        "HubContent$Tags": "<p>Any tags associated with the hub content.</p>",
         "HyperParameterTuningJobSearchEntity$Tags": "<p>The tags associated with a hyperparameter tuning job. For more information see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services resources</a>.</p>",
         "ImportHubContentRequest$Tags": "<p>Any tags associated with the hub content.</p>",
         "Job$Tags": "<p>The tags associated with the job.</p>",
@@ -19272,6 +19419,8 @@
         "FeatureGroupSummary$CreationTime": "<p>A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.</p>",
         "FlowDefinitionSummary$CreationTime": "<p>The timestamp when SageMaker created the flow definition.</p>",
         "GetDeviceFleetReportResponse$ReportGenerated": "<p>Timestamp of when the report was generated.</p>",
+        "HubContent$CreationTime": "<p>The date and time that hub content was created.</p>",
+        "HubContent$LastModifiedTime": "<p>The last modified time of the hub content.</p>",
         "HubContentInfo$CreationTime": "<p>The date and time that the hub content was created.</p>",
         "HubContentInfo$OriginalCreationTime": "<p>The date and time when the hub content was originally created, before any updates or revisions.</p>",
         "HubInfo$CreationTime": "<p>The date and time that the hub was created.</p>",
@@ -19809,8 +19958,10 @@
         "HyperParameterTuningInstanceConfig$InstanceCount": "<p>The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than 1 for distributed training algorithms. See <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html\">Step 2: Launch a SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.</p>",
         "HyperParameterTuningResourceConfig$InstanceCount": "<p>The number of compute instances of type <code>InstanceType</code> to use. For <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html\">distributed training</a>, select a value greater than 1.</p>",
         "InstanceGroup$InstanceCount": "<p>Specifies the number of instances of the instance group.</p>",
+        "InstancePreference$InstanceCount": "<p>The number of instances to launch if this instance type is selected. Specify the instance count for the training job in one of the following two ways:</p> <ol> <li> <p> <b>Per preference</b> – Set <code>InstanceCount</code> on every preference in the <code>InstancePreferences</code> list and don't set <code>ResourceConfig$InstanceCount</code>. Use this when each instance type needs a different number of instances to deliver equivalent compute.</p> </li> <li> <p> <b>One count for the job</b> – Set <code>ResourceConfig$InstanceCount</code> and omit it from every preference. SageMaker applies this to all instance types in the list.</p> </li> </ol> <p>For example, in a list of five preferences, either all five specify <code>InstanceCount</code> or none of them do. SageMaker rejects requests that set <code>InstanceCount</code> on only some preferences, that set it both per preference and in <code>ResourceConfig</code>, or that omit it in both places.</p>",
         "PlacementSpecification$InstanceCount": "<p>The number of ML compute instances required to be placed together on the same UltraServer. Minimum value of 1.</p>",
-        "ResourceConfig$InstanceCount": "<p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>"
+        "ResourceConfig$InstanceCount": "<p>The number of ML compute instances to use. For distributed training, provide a value greater than 1. </p>",
+        "ResourceConfig$SelectedInstanceCount": "<p>The number of instances of <code>SelectedInstanceType</code> that the training job launched with. The job is billed for this instance type and count. Returned by <code>DescribeTrainingJob</code> after an instance type is selected. This field is read-only and isn't accepted in <code>CreateTrainingJob</code> requests.</p>"
       }
     },
     "TrainingInstanceType": {
@@ -19819,7 +19970,9 @@
         "HyperParameterTuningInstanceConfig$InstanceType": "<p>The instance type used for processing of hyperparameter optimization jobs. Choose from general purpose (no GPUs) instance types: ml.m5.xlarge, ml.m5.2xlarge, and ml.m5.4xlarge or compute optimized (no GPUs) instance types: ml.c5.xlarge and ml.c5.2xlarge. For more information about instance types, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html\">instance type descriptions</a>.</p>",
         "HyperParameterTuningResourceConfig$InstanceType": "<p>The instance type used to run hyperparameter optimization tuning jobs. See <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/notebooks-available-instance-types.html\"> descriptions of instance types</a> for more information.</p>",
         "InstanceGroup$InstanceType": "<p>Specifies the instance type of the instance group.</p>",
+        "InstancePreference$InstanceType": "<p>The ML compute instance type. An instance type can appear only once in an <code>InstancePreferences</code> list.</p>",
         "ResourceConfig$InstanceType": "<p>The ML compute instance type. </p>",
+        "ResourceConfig$SelectedInstanceType": "<p>The instance type that SageMaker selected for the job from the provided <code>InstancePreferences</code>. The job is billed for this instance type and count. Returned by <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html\">DescribeTrainingJob</a> </code> after an instance type is selected. This field is read-only and isn't accepted in <code>CreateTrainingJob</code> requests.</p>",
         "TrainingInstanceTypes$member": null
       }
     },
@@ -19945,8 +20098,15 @@
         "OptimizationJobTrainingPlanArns$member": null,
         "ResourceConfig$TrainingPlanArn": "<p>The Amazon Resource Name (ARN); of the training plan to use for this resource configuration.</p>",
         "TrainingJobSummary$TrainingPlanArn": "<p>The Amazon Resource Name (ARN); of the training plan associated with this training job.</p> <p>For more information about how to reserve GPU capacity for your SageMaker HyperPod clusters using Amazon SageMaker Training Plan, see <code> <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingPlan.html\">CreateTrainingPlan</a> </code>.</p>",
+        "TrainingPlanArnList$member": null,
         "TrainingPlanArns$member": null,
         "TrainingPlanSummary$TrainingPlanArn": "<p>The Amazon Resource Name (ARN); of the training plan.</p>"
+      }
+    },
+    "TrainingPlanArnList": {
+      "base": "<p>Training plan ARNs for a single instance preference.</p>",
+      "refs": {
+        "InstancePreference$TrainingPlanArns": "<p>The Amazon Resource Name (ARN) of a training plan to use if this instance type is selected. The plan's instance type must match <code>InstanceType</code>. A preference with a training plan uses that plan's reserved capacity; a preference without one uses on-demand capacity. Per-preference <code>TrainingPlanArns</code> is mutually exclusive with the job-level <code>TrainingPlanArn</code> in <code>ResourceConfig</code>.</p>"
       }
     },
     "TrainingPlanArns": {
@@ -20039,9 +20199,14 @@
       "base": null,
       "refs": {
         "CreateTrainingPlanRequest$TrainingPlanName": "<p>The name of the training plan to create.</p>",
-        "DescribeTrainingPlanRequest$TrainingPlanName": "<p>The name of the training plan to describe.</p>",
         "DescribeTrainingPlanResponse$TrainingPlanName": "<p>The name of the training plan.</p>",
         "TrainingPlanSummary$TrainingPlanName": "<p>The name of the training plan.</p>"
+      }
+    },
+    "TrainingPlanNameOrArn": {
+      "base": "<p>A training plan name, or the ARN of a training plan.</p>",
+      "refs": {
+        "DescribeTrainingPlanRequest$TrainingPlanName": "<p>The name of the training plan to describe.</p>"
       }
     },
     "TrainingPlanOffering": {

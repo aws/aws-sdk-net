@@ -70,6 +70,18 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     response.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Feedback", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<FeedbackItem, FeedbackItemUnmarshaller>(FeedbackItemUnmarshaller.Instance);
+                    response.Feedback = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Metadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = SessionMetadataUnmarshaller.Instance;
+                    response.Metadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ReferenceImage", targetDepth, ref reader))
                 {
                     var unmarshaller = AuditImageUnmarshaller.Instance;

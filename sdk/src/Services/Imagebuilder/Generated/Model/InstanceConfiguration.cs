@@ -41,8 +41,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// Defines the block devices to attach for building an instance from this Image Builder
-        /// AMI.
+        /// Defines the block device mappings for the EC2 instance that Image Builder launches
+        /// to build and test your container image.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -13,10 +13,11 @@ public static class UnsupportedTraitValidator
 {
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
-        ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
-        ["smithy.api#requestCompression"] = "@requestCompression",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
         ["aws.protocols#httpChecksum"] = "httpChecksum",
+        // Endpoint discovery (DynamoDB, Timestream) has no codegen yet; without this the service would
+        // generate silently minus its *EndpointDiscoveryMarshaller classes.
+        ["aws.api#clientEndpointDiscovery"] = "clientEndpointDiscovery",
     };
 
     // Live on a member's resolved *target* shape, not the member reference.
@@ -33,7 +34,12 @@ public static class UnsupportedTraitValidator
         var found = new HashSet<string>();
         CollectDenied(index.Service.Traits, DeniedTraits, found);
 
-        foreach (var (opId, op) in index.Operations)
+        // Event-stream codegen is only proven for restJson1. Other protocols (awsJson/CBOR) haven't
+        // verified their event-stream path, so reject a @streaming union there until they do - a
+        // streaming *blob* payload is protocol-independent and stays allowed everywhere.
+        var eventStreamsSupported = index.Service.IsRestJson1();
+
+        foreach (var op in index.Operations)
         {
             CollectDenied(op.Traits, DeniedTraits, found);
 
@@ -71,11 +77,9 @@ public static class UnsupportedTraitValidator
         {
             CollectDenied(shape.Traits, DeniedTargetTraits, found);
 
-            // @streaming is supported only on a blob (an @httpPayload Stream); on a union it marks an
-            // event stream, which nothing handles yet, so fail loud there.
-            if (shape is not BlobShape && shape.IsStreaming())
+            if (!eventStreamsSupported && shape is UnionShape && shape.IsStreaming())
             {
-                found.Add("@streaming");
+                found.Add("@streaming (event stream)");
             }
 
             // @sparse on a list of lists/maps would generate a foreach over a possibly-null element

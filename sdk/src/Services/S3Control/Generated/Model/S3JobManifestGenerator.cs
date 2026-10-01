@@ -62,9 +62,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ExpectedBucketOwner. 
         /// <para>
-        /// The Amazon Web Services account ID that owns the bucket the generated manifest is
-        /// written to. If provided the generated manifest bucket's owner Amazon Web Services
-        /// account ID must match this value, else the job fails.
+        /// The Amazon Web Services account ID that owns the source bucket specified in <c>SourceBucket</c>.
+        /// If provided, the manifest source bucket owner's Amazon Web Services account ID must
+        /// match this value, else the job fails.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

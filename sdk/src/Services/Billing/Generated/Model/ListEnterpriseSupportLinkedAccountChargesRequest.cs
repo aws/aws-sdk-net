@@ -43,7 +43,8 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// An optional linked account ID to filter results to a specific account.
+        /// The linked account ID to filter results to a specific account. If you don't specify
+        /// a value, the response includes charges for all linked accounts.
         /// </para>
         /// </summary>
         public string AccountId
@@ -80,7 +81,7 @@ namespace Amazon.Billing.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return per page.
+        /// The maximum number of results to return per page. Default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

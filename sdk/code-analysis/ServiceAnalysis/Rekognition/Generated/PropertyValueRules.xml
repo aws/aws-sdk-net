@@ -1516,6 +1516,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.FeedbackItem.Message</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Gender.Confidence</property>
     <min>0</min>
     <max>100</max>
@@ -1827,6 +1832,11 @@
   <property-value-rule>
     <property>Amazon.Rekognition.Model.SegmentDetection.StartFrameNumber</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.SessionMetadata.SDKType</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Rekognition.Model.ShotSegment.Confidence</property>

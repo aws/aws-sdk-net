@@ -2,6 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.EventTime</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -9,10 +10,11 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.DeleteRecordRequest.RecordIdentifierValueAsString</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -20,10 +22,11 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.GetRecordRequest.RecordIdentifierValueAsString</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -31,7 +34,7 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.ListRecordsRequest.MaxResults</property>
@@ -52,35 +55,40 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.PutRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest.RecordIdentifierValueAsString</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.ErrorCode</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.ErrorMessage</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.FeatureGroupName</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordError.RecordIdentifierValueAsString</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -88,15 +96,17 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordIdentifier.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.FeatureGroupName</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchGetRecordResultDetail.RecordIdentifierValueAsString</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -104,25 +114,28 @@
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordEntry.FeatureGroupName</property>
     <min>1</min>
     <max>150</max>
-    <pattern>(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})</pattern>
+    <pattern>^(arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:feature-group/)?([a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordError.ErrorCode</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.BatchWriteRecordError.ErrorMessage</property>
+    <min>0</min>
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.FeatureName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}</pattern>
+    <pattern>^[a-zA-Z0-9]([-_]*[a-zA-Z0-9]){0,63}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMakerFeatureStoreRuntime.Model.FeatureValue.ValueAsString</property>
+    <min>0</min>
     <max>358400</max>
     <pattern>.*</pattern>
   </property-value-rule>

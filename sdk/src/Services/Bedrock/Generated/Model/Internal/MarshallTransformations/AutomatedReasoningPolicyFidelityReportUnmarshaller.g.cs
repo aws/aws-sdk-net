@@ -1,0 +1,101 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Bedrock.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+using System.Text.Json;
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// Response Unmarshaller for AutomatedReasoningPolicyFidelityReport Object
+    /// </summary>
+    public partial class AutomatedReasoningPolicyFidelityReportUnmarshaller : IJsonUnmarshaller<AutomatedReasoningPolicyFidelityReport, JsonUnmarshallerContext>
+    {
+        /// <summary>
+        /// Unmarshall the response from the service to the response class.
+        /// </summary>
+        /// <returns>The unmarshalled object</returns>
+        public AutomatedReasoningPolicyFidelityReport Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        {
+            var unmarshalledObject = new AutomatedReasoningPolicyFidelityReport();
+            if (context.IsEmptyResponse) return null;
+
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) return null;
+
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("accuracyScore", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.AccuracyScore = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("coverageScore", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.CoverageScore = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("documentSources", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AutomatedReasoningPolicyReportSourceDocument, AutomatedReasoningPolicyReportSourceDocumentUnmarshaller>(AutomatedReasoningPolicyReportSourceDocumentUnmarshaller.Instance);
+                    unmarshalledObject.DocumentSources = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("ruleReports", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AutomatedReasoningPolicyRuleReport, StringUnmarshaller, AutomatedReasoningPolicyRuleReportUnmarshaller>(StringUnmarshaller.Instance, AutomatedReasoningPolicyRuleReportUnmarshaller.Instance);
+                    unmarshalledObject.RuleReports = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
+                if (context.TestExpression("variableReports", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AutomatedReasoningPolicyVariableReport, StringUnmarshaller, AutomatedReasoningPolicyVariableReportUnmarshaller>(StringUnmarshaller.Instance, AutomatedReasoningPolicyVariableReportUnmarshaller.Instance);
+                    unmarshalledObject.VariableReports = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
+            return unmarshalledObject;
+        }
+
+        private static AutomatedReasoningPolicyFidelityReportUnmarshaller _instance = new AutomatedReasoningPolicyFidelityReportUnmarshaller();
+
+        /// <summary>
+        /// Gets the singleton.
+        /// </summary>
+        public static AutomatedReasoningPolicyFidelityReportUnmarshaller Instance => _instance;
+    }
+}

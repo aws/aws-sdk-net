@@ -39,6 +39,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private bool? _internationalSendingEnabled;
         private string _isoCountryCode;
         private MessageType _messageType;
+        private MessagingLimits _messagingLimits;
         private string _monthlyLeasingPrice;
         private List<string> _numberCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NumberType _numberType;
@@ -148,6 +149,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetMessageType()
         {
             return this._messageType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessagingLimits. 
+        /// <para>
+        /// The messaging limits that apply to the phone number, including the per-capability
+        /// send rates and any advisory per-provider daily message caps.
+        /// </para>
+        /// </summary>
+        public MessagingLimits MessagingLimits
+        {
+            get { return this._messagingLimits; }
+            set { this._messagingLimits = value; }
+        }
+
+        // Check to see if MessagingLimits property is set
+        internal bool IsSetMessagingLimits()
+        {
+            return this._messagingLimits != null;
         }
 
         /// <summary>

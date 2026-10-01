@@ -1963,6 +1963,26 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Control.Model.S3ObjectLockEventHoldDuration.Days</property>
+    <min>1</min>
+    <max>36500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.S3ObjectLockEventHoldDuration.Years</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.S3ObjectLockRetentionEventHoldDuration.Days</property>
+    <min>1</min>
+    <max>36500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Control.Model.S3ObjectLockRetentionEventHoldDuration.Years</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Control.Model.S3ObjectMetadata.CacheControl</property>
     <min>1</min>
     <max>1024</max>

@@ -98,6 +98,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExtractInformationAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SendInAppNotificationAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = SendInAppNotificationActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.SendInAppNotificationAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SendNotificationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = SendNotificationActionDefinitionUnmarshaller.Instance;

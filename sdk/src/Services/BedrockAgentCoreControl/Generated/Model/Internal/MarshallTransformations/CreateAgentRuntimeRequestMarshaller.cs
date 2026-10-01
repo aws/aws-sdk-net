@@ -181,6 +181,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetPlatformVersion())
+            {
+                context.Writer.WritePropertyName("platformVersion");
+                context.Writer.WriteStringValue(publicRequest.PlatformVersion);
+            }
+
             if(publicRequest.IsSetProtocolConfiguration())
             {
                 context.Writer.WritePropertyName("protocolConfiguration");

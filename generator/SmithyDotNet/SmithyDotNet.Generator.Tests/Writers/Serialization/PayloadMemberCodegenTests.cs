@@ -202,18 +202,41 @@ public class PayloadMemberCodegenTests
         Assert.DoesNotContain("context.TestExpression(", m);
     }
 
+    // GET/DELETE normally get no Content-Type, but a blob payload always carries one, so the modeled
+    // header must win there too: blob default first, modeled header after it, no trailing override.
+    // DeleteBlobPayload shares DoBlobPayload's input.
+    [Fact]
+    public void BlobPayload_WithModeledContentType_OnDelete_ModeledHeaderWins()
+    {
+        var m = Marshaller("DeleteBlobPayload");
+
+        var defaultContentType = """request.Headers["Content-Type"] = "application/octet-stream";""";
+        var modeledContentType = """request.Headers["Content-Type"] = publicRequest.ContentType;""";
+        Assert.Contains(defaultContentType, m);
+        Assert.Contains(modeledContentType, m);
+        Assert.True(m.IndexOf(defaultContentType, StringComparison.Ordinal) < m.IndexOf(modeledContentType, StringComparison.Ordinal));
+        Assert.DoesNotContain("request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader]", m);
+    }
+
     [Fact]
     public void BlobPayload_WritesRawContentStreamWithOctetStream()
     {
         var m = Marshaller("DoBlobPayload");
 
-        // Content-Type is application/json at the top, then overridden to octet-stream (matches C2J).
         Assert.Contains("request.ContentStream = publicRequest.Body ?? new MemoryStream();", m);
         Assert.Contains("if (request.ContentStream.CanSeek)", m);
         Assert.Contains("request.ContentStream.Seek(0, SeekOrigin.Begin);", m);
         Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);", m);
-        Assert.Contains("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""", m);
         Assert.Contains("using System.Globalization;", m);
+
+        // The modeled @httpHeader("Content-Type") must win over the blob default (restJson1 TestPayloadBlob).
+        var defaultContentType = """request.Headers["Content-Type"] = "application/octet-stream";""";
+        var modeledContentType = """request.Headers["Content-Type"] = publicRequest.ContentType;""";
+        Assert.Contains(defaultContentType, m);
+        Assert.Contains(modeledContentType, m);
+        Assert.True(m.IndexOf(defaultContentType, StringComparison.Ordinal) < m.IndexOf(modeledContentType, StringComparison.Ordinal));
+        Assert.DoesNotContain("""request.Headers["Content-Type"] = "application/json";""", m);
+        Assert.DoesNotContain("request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader]", m);
 
         // A raw blob body uses no JSON writer scaffold; the query sibling still marshals.
         Assert.DoesNotContain("Utf8JsonWriter", m);
@@ -316,6 +339,44 @@ public class PayloadMemberCodegenTests
     }
 
     [Fact]
+    public void DocumentPayload_MarshalsWholeBodyViaDocumentMarshaller()
+    {
+        // A document @httpPayload IS the whole body: the runtime DocumentMarshaller writes the complete
+        // JSON value over the shared body scaffold, with NO WriteStartObject/WriteEndObject wrapping (the
+        // document is the value itself, unlike a structure payload). No C2J precedent — designed to mirror
+        // the document body-member marshaller. Content-Type stays application/json.
+        var m = Marshaller("DoDocumentPayload");
+
+        Assert.Contains("request.ContentStream = new PooledContentStream();", m);
+        Assert.Contains("Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.Document);", m);
+        Assert.Contains("""request.Headers["Content-Type"] = "application/json";""", m);
+
+        // Not the structure path (no object braces, no per-target marshaller); the query sibling still marshals.
+        Assert.DoesNotContain("context.Writer.WriteStartObject();", m);
+        Assert.DoesNotContain("var marshaller =", m);
+        Assert.Contains("""request.Parameters.Add("filter", StringUtils.FromString(publicRequest.Filter));""", m);
+    }
+
+    [Fact]
+    public void DocumentResponsePayload_UnmarshalsWholeBodyViaDocumentUnmarshaller()
+    {
+        // A document @httpPayload IS the whole body: read via the runtime DocumentUnmarshaller over a
+        // fresh reader (empty-body early-return). C2J models a document as a structure, so it takes the
+        // same unmarshallPayload scaffold as a structure but the DocumentUnmarshaller other document
+        // positions use (matches bedrock-agentcore GetAgentCardResponse).
+        var m = ResponseUnmarshaller("GetDocumentPayload");
+
+        Assert.Contains("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);", m);
+        Assert.Contains("if (reader.Reader.IsFinalBlock) return unmarshalledObject;", m);
+        Assert.Contains("var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;", m);
+        Assert.Contains("unmarshalledObject.Document = unmarshaller.Unmarshall(context, ref reader);", m);
+
+        // The payload IS the body: no named-field reader loop; the header sibling still reads.
+        Assert.DoesNotContain("context.TestExpression(", m);
+        Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-trace"))""", m);
+    }
+
+    [Fact]
     public void EnumPayload_RequestUsesTextPlainAndRawBytes()
     {
         // An enum is a string shape in C2J: the payload marshals byte-identically to a string one —
@@ -380,8 +441,8 @@ public class PayloadMemberCodegenTests
 
     // Each case is one inline model fragment (request members + optional extra shapes) that MarshallOp
     // rejects: more than one @httpPayload and a payload alongside an unbound body member are caught in
-    // PartitionMembers; a list payload resolves to a type but isn't a handled payload target (a union
-    // is a structure and handled; document throws even earlier, in TypeMapper).
+    // PartitionMembers; a list payload resolves to a type but isn't a handled payload target (a union is
+    // a structure and handled; a document is handled too — see DocumentPayload_MarshalsWholeBodyViaDocumentMarshaller).
     [Theory]
     [InlineData(
         """
@@ -405,7 +466,7 @@ public class PayloadMemberCodegenTests
         ,
         "com.example#StringList": { "type": "list", "member": { "target": "smithy.api#String" } }
         """,
-        "only string, structure, and blob payloads are handled")]
+        "Unsupported @httpPayload member type 'List<string>'")]
     public void PayloadMisuse_FailsLoud(string requestMembersJson, string extraShapesJson, string expectedMessage)
     {
         var ex = Assert.Throws<GeneratorException>(() => MarshallOp(requestMembersJson, extraShapesJson));
@@ -450,7 +511,7 @@ public class PayloadMemberCodegenTests
 
         var ex = Assert.Throws<GeneratorException>(() =>
             new JsonExceptionUnmarshallerWriter(context, ModelFileName)
-                .Write(error.Value, error.Key, TestContext.Current.CancellationToken));
+                .Write(error.Value, TestContext.Current.CancellationToken));
         Assert.Contains("@httpPayload on error member", ex.Message);
     }
 }

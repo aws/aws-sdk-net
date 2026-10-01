@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The updated localized content of the notification. A map of locale codes and values.
-        /// Maximum 500 characters per locale.
+        /// Maximum 500 visible characters per locale.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -1,0 +1,92 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.QuickSight.Model
+{
+    /// <summary>
+    /// The configuration of a <c>CustomContentVisual</c>.
+    /// </summary>
+    public partial class CustomContentConfiguration
+    {
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content type of the custom content visual. You can use this to have the visual
+        /// render as an image.
+        /// </para>
+        /// </summary>
+        public CustomContentType ContentType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContentType property is set.
+        /// </summary>
+        internal bool IsSetContentType() => this.ContentType != null;
+
+        /// <summary>
+        /// Gets and sets the property ContentUrl. 
+        /// <para>
+        /// The input URL that links to the custom content that you want in the custom visual.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 2048)]
+        public string ContentUrl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ContentUrl property is set.
+        /// </summary>
+        internal bool IsSetContentUrl() => this.ContentUrl != null;
+
+        /// <summary>
+        /// Gets and sets the property ImageScaling. 
+        /// <para>
+        /// The sizing options for the size of the custom content visual. This structure is required
+        /// when the <c>ContentType</c> of the visual is <c>'IMAGE'</c>.
+        /// </para>
+        /// </summary>
+        public CustomContentImageScalingConfiguration ImageScaling { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ImageScaling property is set.
+        /// </summary>
+        internal bool IsSetImageScaling() => this.ImageScaling != null;
+
+        /// <summary>
+        /// Gets and sets the property Interactions. 
+        /// <para>
+        /// The general visual interactions setup for a visual.
+        /// </para>
+        /// </summary>
+        public VisualInteractionOptions Interactions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Interactions property is set.
+        /// </summary>
+        internal bool IsSetInteractions() => this.Interactions != null;
+    }
+}

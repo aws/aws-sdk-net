@@ -38,23 +38,13 @@ public static partial class SdkNaming
     }
 
     /// <summary>
-    /// Normalizes an sdkId to a .NET class name component.
-    /// Strips "AWS"/"Amazon" prefix, removes non-alphanumeric chars, capitalizes first char.
+    /// Reproduces C2J's <c>SanitizeStringForClassName</c>: removes every "AWS" and "Amazon"
+    /// occurrence, removes non-alphanumeric chars, capitalizes the first char.
     /// </summary>
-    public static string NormalizeSdkId(string sdkId)
+    public static string SanitizeClassName(string name)
     {
-        var stripped = sdkId;
-        if (stripped.StartsWith("AWS", StringComparison.Ordinal))
-        {
-            stripped = stripped[3..];
-        }
-        else if (stripped.StartsWith("Amazon", StringComparison.Ordinal))
-        {
-            stripped = stripped[6..];
-        }
-
-        var result = AlphaNumericOnlyRegex().Replace(stripped, string.Empty);
-        return ToUpperFirstCharacter(result);
+        var sanitized = name.Replace("AWS", string.Empty).Replace("Amazon", string.Empty);
+        return ToUpperFirstCharacter(AlphaNumericOnlyRegex().Replace(sanitized, string.Empty));
     }
 
     /// <summary>

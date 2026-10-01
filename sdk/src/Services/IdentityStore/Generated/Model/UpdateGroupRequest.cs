@@ -38,14 +38,20 @@ namespace Amazon.IdentityStore.Model
         private string _groupId;
         private string _identityStoreId;
         private List<AttributeOperation> _operations = AWSConfigs.InitializeCollections ? new List<AttributeOperation>() : null;
+        private string _revision;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
         /// The identifier for a group in the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the group by ID or by Amazon Resource Name (ARN). For example, group
+        /// ID <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c> or group ARN <c>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -63,8 +69,13 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The globally unique identifier for the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the identity store by ID or by Amazon Resource Name (ARN). For example,
+        /// identity store ID <c>d-1234567890</c> or identity store ARN <c>arn:aws:identitystore::111122223333:identitystore/d-1234567890</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -101,6 +112,29 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetOperations()
         {
             return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The expected current revision of the group. When you provide this value, the update
+        /// is applied only if it matches the current revision of the group in the identity store,
+        /// which prevents you from overwriting concurrent changes. If the value doesn't match,
+        /// the operation fails with a <c>ConflictException</c>. If you don't provide this value,
+        /// the update is applied unconditionally.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string Revision
+        {
+            get { return this._revision; }
+            set { this._revision = value; }
+        }
+
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
+        {
+            return this._revision != null;
         }
 
     }

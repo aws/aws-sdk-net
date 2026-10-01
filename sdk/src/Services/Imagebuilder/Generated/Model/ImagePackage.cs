@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A software package that's installed on top of the base image to create a customized
-    /// image.
+    /// A software package that's installed on an image, as detected by Amazon Web Services
+    /// Systems Manager Inventory at build time. The list includes packages that shipped with
+    /// the base image.
     /// </summary>
     public partial class ImagePackage
     {

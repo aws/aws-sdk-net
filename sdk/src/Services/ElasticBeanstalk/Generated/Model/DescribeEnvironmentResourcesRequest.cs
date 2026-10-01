@@ -31,7 +31,7 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEnvironmentResources operation.
-    /// Returns AWS resources for this environment.
+    /// Returns Amazon Web Services resources for this environment.
     /// </summary>
     public partial class DescribeEnvironmentResourcesRequest : AmazonElasticBeanstalkRequest
     {
@@ -46,13 +46,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// The ID of the environment to retrieve AWS resource usage data.
+        /// The ID of the environment to retrieve Amazon Web Services resource usage data.
         /// </para>
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
-        /// not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
-        /// error. 
+        /// not specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
+        /// 
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -70,13 +70,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// The name of the environment to retrieve AWS resource usage data.
+        /// The name of the environment to retrieve Amazon Web Services resource usage data.
         /// </para>
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
-        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
-        /// 
+        /// specify either, Elastic Beanstalk returns <c>MissingRequiredParameter</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]

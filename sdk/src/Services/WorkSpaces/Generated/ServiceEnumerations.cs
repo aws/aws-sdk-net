@@ -1067,6 +1067,22 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly Compute GRAPHICS_G6F_XLARGE = new Compute("GRAPHICS_G6F_XLARGE");
         /// <summary>
+        /// Constant GRAPHICS_G7_12XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G7_12XLARGE = new Compute("GRAPHICS_G7_12XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G7_2XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G7_2XLARGE = new Compute("GRAPHICS_G7_2XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G7_4XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G7_4XLARGE = new Compute("GRAPHICS_G7_4XLARGE");
+        /// <summary>
+        /// Constant GRAPHICS_G7_8XLARGE for Compute
+        /// </summary>
+        public static readonly Compute GRAPHICS_G7_8XLARGE = new Compute("GRAPHICS_G7_8XLARGE");
+        /// <summary>
         /// Constant GRAPHICS_GR6_4XLARGE for Compute
         /// </summary>
         public static readonly Compute GRAPHICS_GR6_4XLARGE = new Compute("GRAPHICS_GR6_4XLARGE");
@@ -2016,6 +2032,10 @@ namespace Amazon.WorkSpaces
         /// Constant GRAPHICS_G6 for ImageComputeType
         /// </summary>
         public static readonly ImageComputeType GRAPHICS_G6 = new ImageComputeType("GRAPHICS_G6");
+        /// <summary>
+        /// Constant GRAPHICS_G7 for ImageComputeType
+        /// </summary>
+        public static readonly ImageComputeType GRAPHICS_G7 = new ImageComputeType("GRAPHICS_G7");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

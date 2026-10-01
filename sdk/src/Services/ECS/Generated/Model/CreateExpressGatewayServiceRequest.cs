@@ -52,6 +52,7 @@ namespace Amazon.ECS.Model
     {
         private string _cluster;
         private string _cpu;
+        private ExpressCpuArchitecture _cpuArchitecture;
         private string _executionRoleArn;
         private string _healthCheckPath;
         private string _infrastructureRoleArn;
@@ -102,6 +103,46 @@ namespace Amazon.ECS.Model
         internal bool IsSetCpu()
         {
             return this._cpu != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuArchitecture. 
+        /// <para>
+        /// The CPU architecture that the task runs on. If you don't specify a value, the default
+        /// is <c>X86_64</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>X86_64</c> - The x86 64-bit architecture.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ARM64</c> - The 64-bit ARM architecture.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Ensure that the container image you specify supports the architecture you choose.
+        /// The operating system family for an Express service is always <c>LINUX</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't specify <c>cpuArchitecture</c> together with <c>taskDefinitionArn</c>.
+        /// </para>
+        /// </summary>
+        public ExpressCpuArchitecture CpuArchitecture
+        {
+            get { return this._cpuArchitecture; }
+            set { this._cpuArchitecture = value; }
+        }
+
+        // Check to see if CpuArchitecture property is set
+        internal bool IsSetCpuArchitecture()
+        {
+            return this._cpuArchitecture != null;
         }
 
         /// <summary>
@@ -354,7 +395,7 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If you provide a task definition ARN, you cannot also specify <c>primaryContainer</c>,
-        /// <c>executionRoleArn</c>, <c>taskRoleArn</c>, <c>cpu</c>, or <c>memory</c>.
+        /// <c>executionRoleArn</c>, <c>taskRoleArn</c>, <c>cpu</c>, <c>memory</c>, or <c>cpuArchitecture</c>.
         /// </para>
         /// </summary>
         public string TaskDefinitionArn

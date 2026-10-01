@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// Describes the AWS resources in use by this environment. This data is not live data.
+    /// Describes the Amazon Web Services resources in use by this environment. This data
+    /// is not live data.
     /// </summary>
     public partial class EnvironmentResourcesDescription
     {

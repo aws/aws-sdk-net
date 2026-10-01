@@ -63,6 +63,9 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAccountId())
+                request.Parameters.Add("accountId", StringUtils.FromString(publicRequest.AccountId));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

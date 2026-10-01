@@ -104,10 +104,22 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("customErrorResponses", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DistributionCustomErrorResponse, DistributionCustomErrorResponseUnmarshaller>(DistributionCustomErrorResponseUnmarshaller.Instance);
+                    unmarshalledObject.CustomErrorResponses = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("defaultCacheBehavior", targetDepth, ref reader))
                 {
                     var unmarshaller = CacheBehaviorUnmarshaller.Instance;
                     unmarshalledObject.DefaultCacheBehavior = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("defaultRootObject", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DefaultRootObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("domainName", targetDepth, ref reader))

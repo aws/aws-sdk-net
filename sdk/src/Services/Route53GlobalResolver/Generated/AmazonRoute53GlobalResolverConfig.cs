@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the route53globalresolver-2022-09-27.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.Route53GlobalResolver
     public partial class AmazonRoute53GlobalResolverConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Route53GlobalResolver", "4.0.101.9");
+            InternalSDKUtils.BuildUserAgentString("Route53GlobalResolver", "4.0.101.14");
 
         private static readonly AmazonRoute53GlobalResolverEndpointResolver EndpointResolver =
             new AmazonRoute53GlobalResolverEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "Route53GlobalResolver";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "Route53GlobalResolver";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.Route53GlobalResolver
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "route53globalresolver";
-            }
-        }
+        public override string RegionEndpointServiceName => "route53globalresolver";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2022-09-27";
-            }
-        }
+        public override string ServiceVersion => "2022-09-27";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.Route53GlobalResolver
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

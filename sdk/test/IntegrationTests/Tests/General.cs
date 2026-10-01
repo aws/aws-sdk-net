@@ -308,7 +308,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [Fact]
         public void TestLargeRetryCount()
         {
-            var maxRetries = 1000;
+            // Verifies the backoff computation doesn't overflow at large retry counts.
+            // Sampling retry counts is enough to prove that; iterating every value from
+            // 0 to 1000 just multiplies Thread.Sleep calls (each costing ~15ms of timer
+            // resolution regardless of MaxBackoffInMilliseconds).
+            var retryCounts = new[] { 0, 1, 10, 30, 31, 32, 63, 64, 100, 500, 999, 1000, int.MaxValue };
             var maxMilliseconds = 1;
             ClientConfig config = new AmazonDynamoDBConfig();
             config.MaxErrorRetry = 100;
@@ -322,9 +326,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             };
 
             var context = new Amazon.Runtime.Internal.ExecutionContext(new RequestContext(false, new NullSigner()), null);
-            for (int i = 0; i < maxRetries; i++)
+            foreach (var retries in retryCounts)
             {
-                context.RequestContext.Retries = i;
+                context.RequestContext.Retries = retries;
                 coreRetryPolicy.WaitBeforeRetry(context);
                 ddbRetryPolicy.WaitBeforeRetry(context);
             }

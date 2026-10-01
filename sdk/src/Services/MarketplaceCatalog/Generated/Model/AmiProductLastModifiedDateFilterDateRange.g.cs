@@ -1,0 +1,66 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MarketplaceCatalog.Model
+{
+    /// <summary>
+    /// Object that contains date range of the last modified date to be filtered on. You can
+    /// optionally provide a <c>BeforeValue</c> and/or <c>AfterValue</c>. Both are inclusive.
+    /// </summary>
+    public partial class AmiProductLastModifiedDateFilterDateRange
+    {
+        /// <summary>
+        /// Gets and sets the property AfterValue. 
+        /// <para>
+        /// Date after which the AMI product was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 20)]
+        public string AfterValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AfterValue property is set.
+        /// </summary>
+        internal bool IsSetAfterValue() => this.AfterValue != null;
+
+        /// <summary>
+        /// Gets and sets the property BeforeValue. 
+        /// <para>
+        /// Date before which the AMI product was last modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 20, Max = 20)]
+        public string BeforeValue { get; set; }
+
+        /// <summary>
+        /// Checks to see if the BeforeValue property is set.
+        /// </summary>
+        internal bool IsSetBeforeValue() => this.BeforeValue != null;
+    }
+}

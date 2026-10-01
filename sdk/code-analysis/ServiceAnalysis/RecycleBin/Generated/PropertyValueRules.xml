@@ -10,7 +10,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.CreateRuleResponse.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.CreateRuleResponse.RuleArn</property>
@@ -19,11 +19,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.DeleteRuleRequest.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.GetRuleRequest.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.GetRuleResponse.Description</property>
@@ -31,7 +31,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.GetRuleResponse.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.GetRuleResponse.RuleArn</property>
@@ -58,7 +58,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.LockRuleRequest.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.LockRuleResponse.Description</property>
@@ -66,7 +66,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.LockRuleResponse.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.LockRuleResponse.RuleArn</property>
@@ -80,7 +80,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UnlockRuleRequest.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UnlockRuleResponse.Description</property>
@@ -88,7 +88,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UnlockRuleResponse.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UnlockRuleResponse.RuleArn</property>
@@ -106,7 +106,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UpdateRuleRequest.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UpdateRuleResponse.Description</property>
@@ -114,7 +114,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UpdateRuleResponse.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.UpdateRuleResponse.RuleArn</property>
@@ -140,7 +140,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.RuleSummary.Identifier</property>
-    <pattern>[0-9a-zA-Z]{11}</pattern>
+    <pattern>^[0-9a-zA-Z]{11}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.RecycleBin.Model.RuleSummary.RuleArn</property>

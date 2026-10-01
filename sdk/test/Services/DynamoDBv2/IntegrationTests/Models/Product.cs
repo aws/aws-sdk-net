@@ -55,7 +55,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public S3Link FullProductDescription { get; set; }
     }
 
-    [DynamoDBTable("HashTable", false, ConversionSchema.V2)]
+    [DynamoDBTable("HashTable", CaseMode.PascalCase, ConversionSchema.V2)]
     public class ProductV2 : Product
     {
     }

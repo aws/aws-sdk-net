@@ -90,7 +90,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetFrom())
             {
                 context.Writer.WritePropertyName("From");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.From.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.From.Value));
             }
 
             if(publicRequest.IsSetMarker())
@@ -108,7 +108,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTo())
             {
                 context.Writer.WritePropertyName("To");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.To.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.To.Value));
             }
 
             writer.WriteEndObject();

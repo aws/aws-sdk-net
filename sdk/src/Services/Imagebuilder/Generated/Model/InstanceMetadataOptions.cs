@@ -30,13 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The instance metadata options that apply to the HTTP requests that pipeline builds
-    /// use to launch EC2 build and test instances. For more information about instance metadata
-    /// options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
-    /// the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i> for
-    /// Linux instances, or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/configuring-instance-metadata-options.html">Configure
-    /// the instance metadata options</a> in the <i> <i>Amazon EC2 Windows Guide</i> </i>
-    /// for Windows instances.
+    /// The instance metadata service (IMDS) settings that Image Builder applies to the EC2
+    /// build and test instances it launches. These settings control how software on those
+    /// instances retrieves instance metadata and IAM role credentials.
     /// </summary>
     public partial class InstanceMetadataOptions
     {
@@ -47,8 +43,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property HttpPutResponseHopLimit. 
         /// <para>
         /// Limit the number of hops that an instance metadata request can traverse to reach its
-        /// destination. The default is one hop. However, if HTTP tokens are required, container
-        /// image builds need a minimum of two hops.
+        /// destination. If you don't set a value, the EC2 launch default for the instance applies.
+        /// If HTTP tokens are required, container image builds need a minimum of two hops.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -83,7 +79,10 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default setting is <b>optional</b>.
+        /// If you don't set a value, the EC2 launch default applies to the build and test instances.
+        /// That default depends on the base AMI and any account-level instance metadata defaults.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html">Configure
+        /// the instance metadata options</a> in the <i> <i>Amazon EC2 User Guide</i> </i>.
         /// </para>
         /// </summary>
         public string HttpTokens

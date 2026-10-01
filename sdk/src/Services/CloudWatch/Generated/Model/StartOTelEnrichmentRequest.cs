@@ -43,9 +43,84 @@ namespace Amazon.CloudWatch.Model
     /// account. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/EnableResourceTagsOnTelemetry.html">Enable
     /// resource tags on telemetry</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// Optionally, <c>IncludeFilters</c> and <c>ExcludeFilters</c> limit enrichment to a
+    /// subset of the account's metrics. These filters are stored only when this operation
+    /// starts enrichment. Calling <c>StartOTelEnrichment</c> for an account where enrichment
+    /// is already running has no effect and does not modify the filters that are applied.
+    /// To change them, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UpdateOTelEnrichment.html">UpdateOTelEnrichment</a>.
+    /// </para>
     /// </summary>
     public partial class StartOTelEnrichmentRequest : AmazonCloudWatchRequest
     {
+        private List<OTelEnrichmentMetricSelector> _excludeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
+        private List<OTelEnrichmentMetricSelector> _includeFilters = AWSConfigs.InitializeCollections ? new List<OTelEnrichmentMetricSelector>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ExcludeFilters. 
+        /// <para>
+        /// The metric namespaces, and the metric names, to leave unenriched. If this parameter
+        /// is omitted, nothing is excluded.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon CloudWatch applies <c>ExcludeFilters</c> after <c>IncludeFilters</c>, so a
+        /// metric that both parameters match is not enriched.
+        /// </para>
+        ///  
+        /// <para>
+        /// A maximum of 100 filters is allowed across <c>IncludeFilters</c> and <c>ExcludeFilters</c>
+        /// combined.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<OTelEnrichmentMetricSelector> ExcludeFilters
+        {
+            get { return this._excludeFilters; }
+            set { this._excludeFilters = value; }
+        }
+
+        // Check to see if ExcludeFilters property is set
+        internal bool IsSetExcludeFilters()
+        {
+            return this._excludeFilters != null && (this._excludeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeFilters. 
+        /// <para>
+        /// The metric namespaces, and the metric names, to enrich. If this parameter is omitted,
+        /// every namespace that Amazon CloudWatch supports for enrichment is in scope.
+        /// </para>
+        ///  
+        /// <para>
+        /// A maximum of 100 filters is allowed across <c>IncludeFilters</c> and <c>ExcludeFilters</c>
+        /// combined.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<OTelEnrichmentMetricSelector> IncludeFilters
+        {
+            get { return this._includeFilters; }
+            set { this._includeFilters = value; }
+        }
+
+        // Check to see if IncludeFilters property is set
+        internal bool IsSetIncludeFilters()
+        {
+            return this._includeFilters != null && (this._includeFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

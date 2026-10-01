@@ -118,7 +118,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpiresAt())
             {
                 context.Writer.WritePropertyName("ExpiresAt");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpiresAt.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpiresAt.Value));
             }
 
             if(publicRequest.IsSetSessionId())

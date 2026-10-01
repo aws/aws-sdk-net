@@ -61,8 +61,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property WorkflowSummaryList. 
         /// <para>
-        /// A list that contains metadata for the workflow builds that have run for the workflow
-        /// resource specified in the request.
+        /// A list that contains metadata for the build versions of the workflow resource specified
+        /// in the request.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

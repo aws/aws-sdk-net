@@ -195,7 +195,8 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentBatchGet docBatch = new DocumentBatchGet(table)
             {
                 ProjectionExpression = _itemStorageConfig.ProjectionExpression,
-                ConsistentRead = ConsistentRead
+                ConsistentRead = ConsistentRead,
+                MaxParallelBatches = _config.MaxParallelBatches
             };
             docBatch.Keys.AddRange(_keys);
 

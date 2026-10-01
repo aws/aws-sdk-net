@@ -7,8 +7,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.PutActionsRequest.DatasetArn</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+    <pattern>^arn:([a-z\d-]+):personalize:.*:.*:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.PutEventsRequest.SessionId</property>
@@ -27,13 +28,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.PutItemsRequest.DatasetArn</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+    <pattern>^arn:([a-z\d-]+):personalize:.*:.*:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.PutUsersRequest.DatasetArn</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>arn:([a-z\d-]+):personalize:.*:.*:.+</pattern>
+    <pattern>^arn:([a-z\d-]+):personalize:.*:.*:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.Action.ActionId</property>
@@ -117,6 +120,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PersonalizeEvents.Model.MetricAttribution.EventAttributionSource</property>
+    <min>0</min>
     <max>1024</max>
     <pattern>^[\x20-\x7E]*[\x21-\x7E]+[\x20-\x7E]*$</pattern>
   </property-value-rule>

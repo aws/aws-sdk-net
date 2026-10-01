@@ -90,7 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpirationDate())
             {
                 context.Writer.WritePropertyName("ExpirationDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpirationDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpirationDate.Value));
             }
 
             if(publicRequest.IsSetIamRole())

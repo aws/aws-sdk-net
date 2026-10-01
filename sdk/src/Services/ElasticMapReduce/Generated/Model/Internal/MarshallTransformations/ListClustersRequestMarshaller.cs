@@ -89,13 +89,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAfter.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreatedAfter.Value));
             }
 
             if(publicRequest.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedBefore.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CreatedBefore.Value));
             }
 
             if(publicRequest.IsSetMarker())

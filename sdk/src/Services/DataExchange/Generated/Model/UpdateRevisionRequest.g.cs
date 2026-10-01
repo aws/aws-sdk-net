@@ -1,0 +1,95 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.DataExchange.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdateRevision operation. This operation updates
+    /// a revision.
+    /// </summary>
+    public partial class UpdateRevisionRequest : AmazonDataExchangeRequest
+    {
+        /// <summary>
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// An optional comment about the revision.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 16384)]
+        public string Comment { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Comment property is set.
+        /// </summary>
+        internal bool IsSetComment() => this.Comment != null;
+
+        /// <summary>
+        /// Gets and sets the property DataSetId. 
+        /// <para>
+        /// The unique identifier for a data set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DataSetId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataSetId property is set.
+        /// </summary>
+        internal bool IsSetDataSetId() => this.DataSetId != null;
+
+        /// <summary>
+        /// Gets and sets the property Finalized. 
+        /// <para>
+        /// Finalizing a revision tells AWS Data Exchange that your changes to the assets in the
+        /// revision are complete. After it's in this read-only state, you can publish the revision
+        /// to your products.
+        /// </para>
+        /// </summary>
+        public bool? Finalized { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Finalized property is set.
+        /// </summary>
+        internal bool IsSetFinalized() => this.Finalized.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property RevisionId. 
+        /// <para>
+        /// The unique identifier for a revision.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string RevisionId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RevisionId property is set.
+        /// </summary>
+        internal bool IsSetRevisionId() => this.RevisionId != null;
+    }
+}

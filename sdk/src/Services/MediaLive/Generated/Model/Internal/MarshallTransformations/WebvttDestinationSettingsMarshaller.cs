@@ -46,6 +46,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetPosition())
+            {
+                context.Writer.WritePropertyName("position");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TextCaptionPositionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Position, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStyleControl())
             {
                 context.Writer.WritePropertyName("styleControl");

@@ -1,0 +1,101 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.QuickSight.Model
+{
+    /// <summary>
+    /// A physical table type that contains the schema and upload settings for a file-based
+    /// data source.
+    /// </summary>
+    public partial class FileSource
+    {
+        /// <summary>
+        /// Gets and sets the property DataSourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string DataSourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DataSourceArn property is set.
+        /// </summary>
+        internal bool IsSetDataSourceArn() => this.DataSourceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property InputColumns. 
+        /// <para>
+        /// The column schema of the file.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Min = 0, Max = 2048)]
+        public List<InputColumn> InputColumns { get; set; } = AWSConfigs.InitializeCollections ? new List<InputColumn>() : null;
+
+        /// <summary>
+        /// Checks to see if the InputColumns property is set.
+        /// </summary>
+        internal bool IsSetInputColumns() => this.InputColumns != null && (this.InputColumns.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property SheetIndex. 
+        /// <para>
+        /// The zero-based index of the sheet to use within the file. For files that contain multiple
+        /// sheets, this identifies which sheet to read. Files that contain a single sheet, or
+        /// that have no concept of sheets, use sheet 0.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public int? SheetIndex { get; set; }
+
+        /// <summary>
+        /// Checks to see if the SheetIndex property is set.
+        /// </summary>
+        internal bool IsSetSheetIndex() => this.SheetIndex.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property UploadSettings. 
+        /// <para>
+        /// Information about the format for the source file.
+        /// </para>
+        /// </summary>
+        public UploadSettings UploadSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UploadSettings property is set.
+        /// </summary>
+        internal bool IsSetUploadSettings() => this.UploadSettings != null;
+    }
+}

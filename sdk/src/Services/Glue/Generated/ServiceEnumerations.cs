@@ -6503,6 +6503,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type RecommendationMode.
+    /// </summary>
+    public class RecommendationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADVANCED for RecommendationMode
+        /// </summary>
+        public static readonly RecommendationMode ADVANCED = new RecommendationMode("ADVANCED");
+        /// <summary>
+        /// Constant BASIC for RecommendationMode
+        /// </summary>
+        public static readonly RecommendationMode BASIC = new RecommendationMode("BASIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationMode FindValue(string value)
+        {
+            return FindValue<RecommendationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecrawlBehavior.
     /// </summary>
     public class RecrawlBehavior : ConstantClass
@@ -7927,6 +7977,72 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type SubObjectSourceType.
+    /// </summary>
+    public class SubObjectSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIVE_CSV for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_CSV = new SubObjectSourceType("HIVE_CSV");
+        /// <summary>
+        /// Constant HIVE_JSON for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_JSON = new SubObjectSourceType("HIVE_JSON");
+        /// <summary>
+        /// Constant HIVE_ORC for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_ORC = new SubObjectSourceType("HIVE_ORC");
+        /// <summary>
+        /// Constant HIVE_PARQUET for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType HIVE_PARQUET = new SubObjectSourceType("HIVE_PARQUET");
+        /// <summary>
+        /// Constant ICEBERG for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType ICEBERG = new SubObjectSourceType("ICEBERG");
+        /// <summary>
+        /// Constant PLAIN_PARQUET for SubObjectSourceType
+        /// </summary>
+        public static readonly SubObjectSourceType PLAIN_PARQUET = new SubObjectSourceType("PLAIN_PARQUET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubObjectSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubObjectSourceType FindValue(string value)
+        {
+            return FindValue<SubObjectSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubObjectSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TableAttributes.
     /// </summary>
     public class TableAttributes : ConstantClass
@@ -8090,6 +8206,56 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TableOptimizerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TableResourceShareType.
+    /// </summary>
+    public class TableResourceShareType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for TableResourceShareType
+        /// </summary>
+        public static readonly TableResourceShareType ALL = new TableResourceShareType("ALL");
+        /// <summary>
+        /// Constant FEDERATED for TableResourceShareType
+        /// </summary>
+        public static readonly TableResourceShareType FEDERATED = new TableResourceShareType("FEDERATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TableResourceShareType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TableResourceShareType FindValue(string value)
+        {
+            return FindValue<TableResourceShareType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TableResourceShareType(string value)
         {
             return FindValue(value);
         }

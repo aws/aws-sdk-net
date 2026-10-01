@@ -124,6 +124,12 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DockerfileTemplateUri);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetImageOsVersionOverride())
             {
                 context.Writer.WritePropertyName("imageOsVersionOverride");

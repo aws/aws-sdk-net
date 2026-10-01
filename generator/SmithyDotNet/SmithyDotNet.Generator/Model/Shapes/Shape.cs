@@ -14,9 +14,25 @@ public abstract record Shape
     /// <summary>
     /// The Smithy shape type (e.g. <c>structure</c>, <c>string</c>, <c>operation</c>).
     /// Each subclass returns a constant — not deserialized from JSON.
-    /// <see cref="Converters.ShapeConverter"/> reads the <c>type</c> field to pick the subclass.
+    /// <see cref="Converters.ShapeConverter"/> reads the <c>type</c> field to pick the subclass. It is
+    /// registered through <c>JsonSerializerOptions.Converters</c>, never as a <c>[JsonConverter]</c> on
+    /// this record: it deserializes the chosen subclass with the same options, so an attribute here
+    /// would re-enter the converter and recurse until the stack overflows.
     /// </summary>
     public abstract string Type { get; }
+
+    /// <summary>
+    /// The shape's absolute ID: its key in the model's <c>shapes</c> dictionary, assigned when the
+    /// <see cref="SmithyModel"/> is deserialized. Members have none. Reading it on a shape built without one throws.
+    /// </summary>
+    [JsonIgnore]
+    public ShapeId Id
+    {
+        get => _id ?? throw new InvalidOperationException($"This {Type} shape was built without an Id.");
+        init => _id = value;
+    }
+
+    private readonly ShapeId? _id;
 
     /// <summary>
     /// Trait ID (e.g. <c>smithy.api#required</c>) to raw JSON value.
@@ -25,6 +41,16 @@ public abstract record Shape
     /// <remarks><see href="https://smithy.io/2.0/spec/model.html#applying-traits" /></remarks>
     [JsonPropertyName("traits")]
     public Dictionary<string, JsonElement> Traits { get; init; } = [];
+
+    /// <summary>
+    /// The mixin shapes this shape consumes. The generator does not resolve mixins (production
+    /// models arrive pre-flattened), so <see cref="ServiceIndex"/> rejects mixin consumers
+    /// reachable from the service.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/mixins.html" /></remarks>
+    [JsonPropertyName("mixins")]
+    [JsonConverter(typeof(ShapeTargetListConverter))]
+    public List<ShapeId> Mixins { get; init; } = [];
 }
 
 /// <summary>

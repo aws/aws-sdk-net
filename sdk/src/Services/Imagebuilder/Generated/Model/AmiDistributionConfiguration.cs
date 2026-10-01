@@ -68,8 +68,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the AMI distribution configuration. Minimum and maximum length
-        /// are in characters.
+        /// The description to apply to the distributed AMI. Image Builder sets this as the output
+        /// AMI's description in each target Region and account. If you don't specify a description,
+        /// the AMI in the build Region uses the image recipe's description, if the recipe has
+        /// one. Copies distributed to other Regions and accounts don't receive a default description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -129,7 +131,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the output AMI.
+        /// The name of the output AMI. The name must include the <c>{{ imagebuilder:buildDate
+        /// }}</c> dynamic tag so that each build produces a uniquely named AMI. If you don't
+        /// specify a name, Image Builder names the output AMI with the image name followed by
+        /// the build timestamp, for example <c>my-image 2022-10-26T22-30-05.912619Z</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -148,7 +153,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property TargetAccountIds. 
         /// <para>
-        /// The ID of an account to which you want to distribute an image.
+        /// The Amazon Web Services account IDs to distribute the AMI to in this Region. Each
+        /// listed account receives its own copy of the output AMI. If you don't specify accounts,
+        /// Image Builder distributes the AMI only to your own account.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

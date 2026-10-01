@@ -156,10 +156,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("ConnectionLogOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.ConnectionLogOptions.Enabled));
                     }
+                    if(publicRequest.ConnectionLogOptions.IsSetIncludeAuthorizationPolicyContext())
+                    {
+                        request.Parameters.Add("ConnectionLogOptions" + "." + "IncludeAuthorizationPolicyContext", StringUtils.FromBool(publicRequest.ConnectionLogOptions.IncludeAuthorizationPolicyContext));
+                    }
                 }
                 if(publicRequest.IsSetDescription())
                 {
                     request.Parameters.Add("Description", StringUtils.FromString(publicRequest.Description));
+                }
+                if(publicRequest.IsSetDevicePostureOptions())
+                {
+                    if(publicRequest.DevicePostureOptions.IsSetEnabled())
+                    {
+                        request.Parameters.Add("DevicePostureOptions" + "." + "Enabled", StringUtils.FromBool(publicRequest.DevicePostureOptions.Enabled));
+                    }
+                    if(publicRequest.DevicePostureOptions.IsSetTrustProviders())
+                    {
+                        if (publicRequest.DevicePostureOptions.TrustProviders.Count == 0)
+                            request.Parameters.Add("DevicePostureOptions" + "." + "TrustProvider", "");
+                        else
+                        {
+                             int publicRequestDevicePostureOptionslistValueIndex = 1;
+                             foreach(var publicRequestDevicePostureOptionslistValue in publicRequest.DevicePostureOptions.TrustProviders)
+                             {
+                                if(publicRequestDevicePostureOptionslistValue.IsSetPublicSigningKeyUrl())
+                                {
+                                    request.Parameters.Add("DevicePostureOptions" + "." + "TrustProvider" + "." + publicRequestDevicePostureOptionslistValueIndex + "." + "PublicSigningKeyUrl", StringUtils.FromString(publicRequestDevicePostureOptionslistValue.PublicSigningKeyUrl));
+                                }
+                                if(publicRequestDevicePostureOptionslistValue.IsSetTenantId())
+                                {
+                                    request.Parameters.Add("DevicePostureOptions" + "." + "TrustProvider" + "." + publicRequestDevicePostureOptionslistValueIndex + "." + "TenantId", StringUtils.FromString(publicRequestDevicePostureOptionslistValue.TenantId));
+                                }
+                                if(publicRequestDevicePostureOptionslistValue.IsSetTrustProviderType())
+                                {
+                                    request.Parameters.Add("DevicePostureOptions" + "." + "TrustProvider" + "." + publicRequestDevicePostureOptionslistValueIndex + "." + "TrustProviderType", StringUtils.FromString(publicRequestDevicePostureOptionslistValue.TrustProviderType));
+                                }
+                                 publicRequestDevicePostureOptionslistValueIndex++;
+                             }
+                        }
+                    }
                 }
                 if(publicRequest.IsSetDisconnectOnSessionTimeout())
                 {

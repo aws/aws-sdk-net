@@ -32,3 +32,17 @@ public record SigV4Trait : TraitRecord
     [JsonPropertyName("name")]
     public required string SigningName { get; init; }
 }
+
+/// <summary>
+/// The value of the protocol traits (such as restJson1 or awsJson1_0), which all carry
+/// the same HTTP version members.
+/// </summary>
+public record ProtocolTrait : TraitRecord
+{
+    // Priority-ordered HTTP versions for normal / event-stream operations. eventStreamHttp is a subset of http.
+    [JsonPropertyName("http")]
+    public IReadOnlyList<string>? Http { get; init; }
+
+    [JsonPropertyName("eventStreamHttp")]
+    public IReadOnlyList<string>? EventStreamHttp { get; init; }
+}

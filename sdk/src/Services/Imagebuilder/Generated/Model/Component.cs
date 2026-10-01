@@ -150,7 +150,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// The encryption status of the component.
+        /// Indicates whether the component data is encrypted at rest. Image Builder encrypts
+        /// all component data at rest, so this value is always <c>true</c>. This field is retained
+        /// for backward compatibility.
         /// </para>
         /// </summary>
         public bool? Encrypted
@@ -226,7 +228,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the component.
+        /// The owner of the component. The value is your account ID for components that you own,
+        /// the sharing account's ID for shared components, or <c>Amazon</c>, <c>ThirdParty</c>,
+        /// or <c>AWSMarketplace</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

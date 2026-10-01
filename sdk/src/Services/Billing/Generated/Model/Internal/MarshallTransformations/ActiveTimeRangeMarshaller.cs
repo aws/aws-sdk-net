@@ -49,13 +49,13 @@ namespace Amazon.Billing.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveAfterInclusive())
             {
                 context.Writer.WritePropertyName("activeAfterInclusive");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ActiveAfterInclusive.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ActiveAfterInclusive.Value));
             }
 
             if(requestObject.IsSetActiveBeforeInclusive())
             {
                 context.Writer.WritePropertyName("activeBeforeInclusive");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ActiveBeforeInclusive.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ActiveBeforeInclusive.Value));
             }
 
         }

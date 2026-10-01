@@ -17,7 +17,7 @@
     <property>Amazon.OSIS.Model.CreatePipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.CreatePipelineRequest.PipelineRoleArn</property>
@@ -47,7 +47,7 @@
     <property>Amazon.OSIS.Model.DeletePipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.DeletePipelineEndpointRequest.EndpointId</property>
@@ -65,17 +65,17 @@
     <property>Amazon.OSIS.Model.GetPipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.GetPipelineBlueprintRequest.Format</property>
-    <pattern>(YAML|JSON)</pattern>
+    <pattern>^(YAML|JSON)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.GetPipelineChangeProgressRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.GetResourcePolicyRequest.ResourceArn</property>
@@ -189,13 +189,13 @@
     <property>Amazon.OSIS.Model.StartPipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.StopPipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.TagResourceRequest.Arn</property>
@@ -226,7 +226,7 @@
     <property>Amazon.OSIS.Model.UpdatePipelineRequest.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.UpdatePipelineRequest.PipelineRoleArn</property>
@@ -243,7 +243,7 @@
     <property>Amazon.OSIS.Model.CloudWatchLogDestination.LogGroup</property>
     <min>1</min>
     <max>512</max>
-    <pattern>\/aws\/vendedlogs\/[\.\-_/#A-Za-z0-9]+</pattern>
+    <pattern>^\/aws\/vendedlogs\/[\.\-_/#A-Za-z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.EncryptionAtRestOptions.KmsKeyArn</property>
@@ -304,7 +304,7 @@
     <property>Amazon.OSIS.Model.PipelineSummary.PipelineName</property>
     <min>3</min>
     <max>28</max>
-    <pattern>[a-z][a-z0-9\-]+</pattern>
+    <pattern>^[a-z][a-z0-9\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OSIS.Model.Tag.Key</property>

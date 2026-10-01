@@ -31,11 +31,11 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the PutImagePolicy operation.
-    /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-    /// to share resources. If you call the Image Builder API <c>PutImagePolicy</c>, you must
-    /// also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
-    /// in order for the resource to be visible to all principals with whom the resource is
-    /// shared.
+    /// Applies a policy to an image. The preferred way to share resources is with the RAM
+    /// API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>.
+    /// If you use the PutImagePolicy operation instead, you must also call the RAM API <a
+    /// href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>.
+    /// Otherwise, the resource isn't visible to the principals that it's shared with.
     /// </summary>
     public partial class PutImagePolicyRequest : AmazonImagebuilderRequest
     {
@@ -64,7 +64,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// The policy to apply.
+        /// The resource policy to apply to the image, as a JSON policy document. Image Builder
+        /// validates the policy with Amazon Web Services RAM before applying it, and rejects
+        /// invalid policies with <c>InvalidParameterValueException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30000)]

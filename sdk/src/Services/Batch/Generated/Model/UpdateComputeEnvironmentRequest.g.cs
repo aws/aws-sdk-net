@@ -92,6 +92,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetEcsSettings() => this.EcsSettings != null;
 
         /// <summary>
+        /// Gets and sets the property EksConfiguration. 
+        /// <para>
+        /// Updates the Amazon EKS configuration for the compute environment. Only specify this
+        /// parameter if the compute environment's <c>containerOrchestrationType</c> is <c>EKS</c>.
+        /// Currently, the <c>accessEntry</c> setting is the only Amazon EKS configuration that
+        /// you can change after the compute environment is created. For more information, see
+        /// <a href="https://docs.aws.amazon.com/batch/latest/userguide/eks-access-entries.html">Amazon
+        /// EKS access entry authentication</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public EksConfigurationUpdate EksConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EksConfiguration property is set.
+        /// </summary>
+        internal bool IsSetEksConfiguration() => this.EksConfiguration != null;
+
+        /// <summary>
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls

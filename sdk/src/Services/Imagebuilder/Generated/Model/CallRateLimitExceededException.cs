@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// You have exceeded the permitted request rate for the specific operation.
+    /// You have exceeded the permitted request rate for the Amazon EC2 APIs that Image Builder
+    /// calls on your behalf. Retry with an increasing or variable delay between requests.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

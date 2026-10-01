@@ -34,8 +34,28 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class GetGroupIdResponse : AmazonWebServiceResponse
     {
+        private string _groupArn;
         private string _groupId;
         private string _identityStoreId;
+
+        /// <summary>
+        /// Gets and sets the property GroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the group in the identity store. For example, <c>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=100)]
+        public string GroupArn
+        {
+            get { return this._groupArn; }
+            set { this._groupArn = value; }
+        }
+
+        // Check to see if GroupArn property is set
+        internal bool IsSetGroupArn()
+        {
+            return this._groupArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -43,7 +63,7 @@ namespace Amazon.IdentityStore.Model
         /// The identifier for a group in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -62,7 +82,7 @@ namespace Amazon.IdentityStore.Model
         /// The globally unique identifier for the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }

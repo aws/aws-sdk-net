@@ -5817,6 +5817,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly Runtime DOTNET_7 = new Runtime("DOTNET_7");
         /// <summary>
+        /// Constant DOTNET_8 for Runtime
+        /// </summary>
+        public static readonly Runtime DOTNET_8 = new Runtime("DOTNET_8");
+        /// <summary>
         /// Constant DOTNETCORE_3_1 for Runtime
         /// </summary>
         public static readonly Runtime DOTNETCORE_3_1 = new Runtime("DOTNETCORE_3_1");
@@ -5869,6 +5873,10 @@ namespace Amazon.Inspector2
         /// </summary>
         public static readonly Runtime NODEJS_18_X = new Runtime("NODEJS_18_X");
         /// <summary>
+        /// Constant NODEJS_20_X for Runtime
+        /// </summary>
+        public static readonly Runtime NODEJS_20_X = new Runtime("NODEJS_20_X");
+        /// <summary>
         /// Constant NODEJS_22_X for Runtime
         /// </summary>
         public static readonly Runtime NODEJS_22_X = new Runtime("NODEJS_22_X");
@@ -5884,6 +5892,18 @@ namespace Amazon.Inspector2
         /// Constant PYTHON_3_11 for Runtime
         /// </summary>
         public static readonly Runtime PYTHON_3_11 = new Runtime("PYTHON_3_11");
+        /// <summary>
+        /// Constant PYTHON_3_12 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_12 = new Runtime("PYTHON_3_12");
+        /// <summary>
+        /// Constant PYTHON_3_13 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_13 = new Runtime("PYTHON_3_13");
+        /// <summary>
+        /// Constant PYTHON_3_14 for Runtime
+        /// </summary>
+        public static readonly Runtime PYTHON_3_14 = new Runtime("PYTHON_3_14");
         /// <summary>
         /// Constant PYTHON_3_7 for Runtime
         /// </summary>
@@ -5904,6 +5924,10 @@ namespace Amazon.Inspector2
         /// Constant RUBY_3_2 for Runtime
         /// </summary>
         public static readonly Runtime RUBY_3_2 = new Runtime("RUBY_3_2");
+        /// <summary>
+        /// Constant RUBY_3_3 for Runtime
+        /// </summary>
+        public static readonly Runtime RUBY_3_3 = new Runtime("RUBY_3_3");
         /// <summary>
         /// Constant UNSUPPORTED for Runtime
         /// </summary>

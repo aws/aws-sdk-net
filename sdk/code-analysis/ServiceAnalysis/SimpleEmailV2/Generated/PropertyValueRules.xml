@@ -4,7 +4,7 @@
     <property>Amazon.SimpleEmailV2.Model.AssociateEmailIdentityCertificateRequest.CertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.AssociateEmailIdentityCertificateRequest.EmailIdentity</property>
@@ -237,19 +237,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutAccountDetailsRequest.UseCaseDescription</property>
+    <min>0</min>
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutAccountDetailsRequest.WebsiteURL</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?</pattern>
+    <pattern>^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutConfigurationSetArchivingOptionsRequest.ArchiveArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:(aws|aws-[a-z-]+):ses:[a-z]{2,4}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}</pattern>
+    <pattern>^arn:(aws|aws-[a-z-]+):ses:[a-z]{2,4}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.PutConfigurationSetDeliveryOptionsRequest.MaxDeliverySeconds</property>
@@ -318,6 +319,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.TestRenderEmailTemplateRequest.TemplateData</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -363,22 +365,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.AccountDetails.UseCaseDescription</property>
+    <min>0</min>
     <max>5000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.AccountDetails.WebsiteURL</property>
     <min>1</min>
     <max>1000</max>
-    <pattern>^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?</pattern>
+    <pattern>^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ArchivingOptions.ArchiveArn</property>
     <min>20</min>
     <max>1011</max>
-    <pattern>arn:(aws|aws-[a-z-]+):ses:[a-z]{2,4}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}</pattern>
+    <pattern>^arn:(aws|aws-[a-z-]+):ses:[a-z]{2,4}-[a-z-]+-[0-9]:[0-9]{1,20}:mailmanager-archive/a-[a-z0-9]{24,62}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Attachment.ContentDescription</property>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -393,6 +397,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Attachment.FileName</property>
+    <min>0</min>
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
@@ -450,7 +455,7 @@
     <property>Amazon.SimpleEmailV2.Model.IdentityCertificate.CertificateArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+</pattern>
+    <pattern>^arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.IdentityInfo.IdentityName</property>
@@ -482,7 +487,7 @@
     <property>Amazon.SimpleEmailV2.Model.MessageHeader.Value</property>
     <min>1</min>
     <max>995</max>
-    <pattern>[ -~]*</pattern>
+    <pattern>^[ -~]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.MessageInsightsDataSource.MaxResults</property>
@@ -515,6 +520,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ReplacementTemplate.ReplacementTemplateData</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>
@@ -552,6 +558,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.Template.TemplateData</property>
+    <min>0</min>
     <max>262144</max>
   </property-value-rule>
   <property-value-rule>

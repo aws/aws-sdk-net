@@ -89,7 +89,7 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetInvocationTime())
             {
                 context.Writer.WritePropertyName("InvocationTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.InvocationTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.InvocationTime.Value));
             }
 
             if(publicRequest.IsSetQueryInsights())

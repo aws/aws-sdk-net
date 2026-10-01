@@ -963,6 +963,10 @@ namespace Amazon.Notifications
         /// </summary>
         public static readonly TextPartType PLAIN_TEXT = new TextPartType("PLAIN_TEXT");
         /// <summary>
+        /// Constant PORTABLE_TEXT for TextPartType
+        /// </summary>
+        public static readonly TextPartType PORTABLE_TEXT = new TextPartType("PORTABLE_TEXT");
+        /// <summary>
         /// Constant URL for TextPartType
         /// </summary>
         public static readonly TextPartType URL = new TextPartType("URL");

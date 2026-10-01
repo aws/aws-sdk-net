@@ -131,6 +131,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("devicePostureOptions", targetDepth))
+                    {
+                        var unmarshaller = DevicePostureResponseOptionsUnmarshaller.Instance;
+                        unmarshalledObject.DevicePostureOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("disconnectOnSessionTimeout", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

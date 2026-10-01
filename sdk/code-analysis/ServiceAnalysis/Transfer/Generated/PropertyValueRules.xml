@@ -2231,6 +2231,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Transfer.Model.SftpPortWithOptions.SftpPort</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Transfer.Model.SshPublicKey.SshPublicKeyBody</property>
     <min>0</min>
     <max>2048</max>

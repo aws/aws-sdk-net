@@ -122,6 +122,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReportConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("serviceQuotaChecksEnabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ServiceQuotaChecksEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("triggers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<Trigger, TriggerUnmarshaller>(TriggerUnmarshaller.Instance);

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using static SmithyDotNet.Generator.Writers.ProjectFiles.ProjectFileSections;
 
 namespace SmithyDotNet.Generator.Writers.ProjectFiles;
@@ -107,7 +108,12 @@ public sealed class UnitTestProjectFileWriter(GenerationContext context)
     {
         writer.WriteLine($"""<ProjectReference Include="{SdkRoot}/src/Core/AWSSDK.Core.{variant}.csproj"/>""");
         writer.WriteLine($"""<ProjectReference Include="{SdkRoot}/../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.{variant}.csproj"/>""");
-        writer.WriteLine($"""<ProjectReference Include="{SdkRoot}/src/Services/{context.ServiceName}/{context.AssemblyName}.{variant}.csproj"/>""");
+
+        // A test service's client project is the parent directory, not the sdk/src tree.
+        var serviceProject = context.IsTestService
+            ? $"../{context.AssemblyName}.{variant}.csproj"
+            : $"{SdkRoot}/src/Services/{context.ServiceName}/{context.AssemblyName}.{variant}.csproj";
+        writer.WriteLine($"""<ProjectReference Include="{serviceProject}"/>""");
     }
 
     private static void WritePackageReferences(CodeWriter writer)

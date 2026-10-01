@@ -310,7 +310,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.NameOverride</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.CreateJobRequest.Priority</property>
@@ -840,7 +840,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetJobResponse.Priority</property>
@@ -1165,7 +1165,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepResponse.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.GetStepResponse.StepId</property>
@@ -2255,7 +2255,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.UpdateJobRequest.Priority</property>
@@ -2626,7 +2626,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetJobItem.Priority</property>
@@ -2821,7 +2821,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchGetStepItem.QueueId</property>
@@ -2984,7 +2984,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.BatchUpdateJobItem.Priority</property>
@@ -3102,6 +3102,11 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsEntity.JobId</property>
     <pattern>job-[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.EnvironmentDetailsEntity.ResolvedSymbolTable</property>
+    <min>1</min>
+    <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.EnvironmentDetailsError.EnvironmentId</property>
@@ -3340,6 +3345,12 @@
     <pattern>queue-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.JobParameter.Bool</property>
+    <min>1</min>
+    <max>5</max>
+    <pattern>([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee]|[Yy][Ee][Ss]|[Nn][Oo]|[Oo][Nn]|[Oo][Ff][Ff]|[01])</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.JobParameter.Float</property>
     <min>1</min>
     <max>26</max>
@@ -3354,6 +3365,11 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobParameter.Path</property>
     <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Deadline.Model.JobParameter.RangeExpr</property>
+    <min>1</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
@@ -3383,7 +3399,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSearchSummary.Priority</property>
@@ -3425,7 +3441,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.Name</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.JobSummary.Priority</property>
@@ -3762,7 +3778,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.JobName</property>
     <min>1</min>
-    <max>128</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.Statistics.QueueId</property>
@@ -3793,6 +3809,11 @@
     <pattern>job-[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Deadline.Model.StepDetailsEntity.ResolvedSymbolTable</property>
+    <min>1</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Deadline.Model.StepDetailsEntity.StepId</property>
     <pattern>step-[0-9a-f]{32}</pattern>
   </property-value-rule>
@@ -3815,7 +3836,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepParameter.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepParameterChunks.DefaultTaskCount</property>
@@ -3834,7 +3855,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSearchSummary.QueueId</property>
@@ -3852,7 +3873,7 @@
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSummary.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Deadline.Model.StepSummary.StepId</property>

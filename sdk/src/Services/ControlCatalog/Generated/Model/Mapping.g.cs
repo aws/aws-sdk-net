@@ -1,0 +1,77 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.ControlCatalog.Model
+{
+    /// <summary>
+    /// A structure that contains the details of a mapping relationship, which can be either
+    /// to a framework or to a common control.
+    /// </summary>
+    public partial class Mapping
+    {
+        /// <summary>
+        /// Gets and sets the property CommonControl. 
+        /// <para>
+        /// The common control mapping details when the mapping type relates to a common control.
+        /// </para>
+        /// </summary>
+        public CommonControlMappingDetails CommonControl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the CommonControl property is set.
+        /// </summary>
+        internal bool IsSetCommonControl() => this.CommonControl != null;
+
+        /// <summary>
+        /// Gets and sets the property Framework. 
+        /// <para>
+        /// The framework mapping details when the mapping type relates to a compliance framework.
+        /// </para>
+        /// </summary>
+        public FrameworkMappingDetails Framework { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Framework property is set.
+        /// </summary>
+        internal bool IsSetFramework() => this.Framework != null;
+
+        /// <summary>
+        /// Gets and sets the property RelatedControl. 
+        /// <para>
+        /// Returns information about controls that are related to the specified control.
+        /// </para>
+        /// </summary>
+        public RelatedControlMappingDetails RelatedControl { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RelatedControl property is set.
+        /// </summary>
+        internal bool IsSetRelatedControl() => this.RelatedControl != null;
+    }
+}

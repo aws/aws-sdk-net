@@ -34,8 +34,35 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class ComputeNodeGroupSlurmConfiguration
     {
+        private List<Dictionary<string, string>> _gresCustomSettings = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private int? _scaleDownIdleTimeInSeconds;
         private List<SlurmCustomSetting> _slurmCustomSettings = AWSConfigs.InitializeCollections ? new List<SlurmCustomSetting>() : null;
+
+        /// <summary>
+        /// Gets and sets the property GresCustomSettings. 
+        /// <para>
+        /// The additional Slurm <c>gres.conf</c> records for the compute node group. Each item
+        /// is a map of <c>gres.conf</c> attribute names to values that describes one <c>gres.conf</c>
+        /// record, such as a GPU topology, MIG, MPS, or custom GRES entry. PCS adds the <c>NodeName=</c>
+        /// prefix and merges these records with the GPU record it derives from the instance type.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Dictionary<string, string>> GresCustomSettings
+        {
+            get { return this._gresCustomSettings; }
+            set { this._gresCustomSettings = value; }
+        }
+
+        // Check to see if GresCustomSettings property is set
+        internal bool IsSetGresCustomSettings()
+        {
+            return this._gresCustomSettings != null && (this._gresCustomSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ScaleDownIdleTimeInSeconds. 

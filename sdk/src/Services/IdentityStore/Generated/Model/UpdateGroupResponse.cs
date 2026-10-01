@@ -34,6 +34,86 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class UpdateGroupResponse : AmazonWebServiceResponse
     {
+        private string _groupArn;
+        private string _groupId;
+        private string _identityStoreId;
+        private string _revision;
+
+        /// <summary>
+        /// Gets and sets the property GroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the group in the identity store. For example, <c>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=100)]
+        public string GroupArn
+        {
+            get { return this._groupArn; }
+            set { this._groupArn = value; }
+        }
+
+        // Check to see if GroupArn property is set
+        internal bool IsSetGroupArn()
+        {
+            return this._groupArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupId. 
+        /// <para>
+        /// The identifier for a group in the identity store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=100)]
+        public string GroupId
+        {
+            get { return this._groupId; }
+            set { this._groupId = value; }
+        }
+
+        // Check to see if GroupId property is set
+        internal bool IsSetGroupId()
+        {
+            return this._groupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityStoreId. 
+        /// <para>
+        /// The globally unique identifier for the identity store.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=93)]
+        public string IdentityStoreId
+        {
+            get { return this._identityStoreId; }
+            set { this._identityStoreId = value; }
+        }
+
+        // Check to see if IdentityStoreId property is set
+        internal bool IsSetIdentityStoreId()
+        {
+            return this._identityStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision of the group after the requested update is applied.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string Revision
+        {
+            get { return this._revision; }
+            set { this._revision = value; }
+        }
+
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
+        {
+            return this._revision != null;
+        }
 
     }
 }

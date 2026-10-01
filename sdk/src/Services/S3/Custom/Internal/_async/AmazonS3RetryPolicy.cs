@@ -15,6 +15,7 @@
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.S3.Model;
 using Amazon.S3.Util;
 using System;
 using System.Threading.Tasks;
@@ -53,7 +54,10 @@ namespace Amazon.S3.Internal
                 AmazonS3Uri s3BucketUri;
                 if (AmazonS3Uri.TryParseAmazonS3Uri(executionContext.RequestContext.Request.Endpoint, out s3BucketUri))
                 {
-                    correctedRegion = await BucketRegionDetector.DetectMismatchWithHeadBucketFallbackAsync(s3BucketUri, serviceException, executionContext.RequestContext).ConfigureAwait(false);
+                    if (executionContext.RequestContext.Identity is AWSCredentials && !(executionContext.RequestContext.Identity is AnonymousAWSCredentials))
+                    {
+                        correctedRegion = await BucketRegionDetector.DetectMismatchWithHeadBucketFallbackAsync(s3BucketUri, serviceException, executionContext.RequestContext).ConfigureAwait(false);
+                    }
                 }
 
                 if (correctedRegion == null)
@@ -62,7 +66,15 @@ namespace Amazon.S3.Internal
                 }
                 else
                 {
-                    // change authentication region of request and signal the handler to sign again with the new region
+                    if (executionContext.RequestContext.OriginalRequest is HeadBucketRequest)
+                    {
+                        if (RedirectToRegion(executionContext, correctedRegion))
+                        {
+                            return true;
+                        }
+                        return baseRetryForException(executionContext, exception);
+                    }
+
                     executionContext.RequestContext.Request.AuthenticationRegion = correctedRegion;
                     executionContext.RequestContext.IsSigned = false;
                     return true;

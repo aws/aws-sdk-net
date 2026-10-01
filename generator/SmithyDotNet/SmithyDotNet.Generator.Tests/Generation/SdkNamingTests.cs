@@ -13,9 +13,9 @@ public class SdkNamingTests
     [InlineData("Config Service", "ConfigService")]
     [InlineData("synthetics", "Synthetics")]
     [InlineData("CloudTrail Data", "CloudTrailData")]
-    public void NormalizeSdkId_ProducesExpectedClassName(string sdkId, string expected)
+    public void SanitizeClassName_ProducesExpectedClassName(string name, string expected)
     {
-        Assert.Equal(expected, SdkNaming.NormalizeSdkId(sdkId));
+        Assert.Equal(expected, SdkNaming.SanitizeClassName(name));
     }
 
     [Theory]

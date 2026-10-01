@@ -39,8 +39,10 @@ namespace Amazon.IdentityStore.Model
         private string _description;
         private string _displayName;
         private List<ExternalId> _externalIds = AWSConfigs.InitializeCollections ? new List<ExternalId>() : null;
+        private string _groupArn;
         private string _groupId;
         private string _identityStoreId;
+        private string _revision;
         private DateTime? _updatedAt;
         private string _updatedBy;
 
@@ -148,12 +150,31 @@ namespace Amazon.IdentityStore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GroupArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the group in the identity store. For example, <c>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=60, Max=100)]
+        public string GroupArn
+        {
+            get { return this._groupArn; }
+            set { this._groupArn = value; }
+        }
+
+        // Check to see if GroupArn property is set
+        internal bool IsSetGroupArn()
+        {
+            return this._groupArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
         /// The identifier for a group in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -172,7 +193,7 @@ namespace Amazon.IdentityStore.Model
         /// The globally unique identifier for the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }
@@ -183,6 +204,26 @@ namespace Amazon.IdentityStore.Model
         internal bool IsSetIdentityStoreId()
         {
             return this._identityStoreId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The current revision of the group in the identity store. This value changes each time
+        /// the group is modified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string Revision
+        {
+            get { return this._revision; }
+            set { this._revision = value; }
+        }
+
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
+        {
+            return this._revision != null;
         }
 
         /// <summary>

@@ -111,8 +111,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentFormat. 
         /// <para>
-        /// Specify the document format for the new document version. Systems Manager supports
-        /// JSON and YAML documents. JSON is the default format.
+        /// Specify the document format for the new document version. The document format can
+        /// be JSON, YAML, or TEXT. JSON is the default format.
         /// </para>
         /// </summary>
         public DocumentFormat DocumentFormat

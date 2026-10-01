@@ -37,6 +37,7 @@ namespace Amazon.EC2.Model
         private int? _additionalFlexibleNetworkInterfaces;
         private double? _baselineBandwidthInGbps;
         private int? _defaultEnaQueueCountPerInterface;
+        private List<string> _interfaceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumEnaQueueCount;
         private int? _maximumEnaQueueCountPerInterface;
         private int? _maximumNetworkInterfaces;
@@ -98,6 +99,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetDefaultEnaQueueCountPerInterface()
         {
             return this._defaultEnaQueueCountPerInterface.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InterfaceTypes. 
+        /// <para>
+        /// The supported interface types for the network card.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> InterfaceTypes
+        {
+            get { return this._interfaceTypes; }
+            set { this._interfaceTypes = value; }
+        }
+
+        // Check to see if InterfaceTypes property is set
+        internal bool IsSetInterfaceTypes()
+        {
+            return this._interfaceTypes != null && (this._interfaceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

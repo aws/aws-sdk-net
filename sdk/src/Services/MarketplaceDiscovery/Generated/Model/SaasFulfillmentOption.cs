@@ -34,11 +34,32 @@ namespace Amazon.MarketplaceDiscovery.Model
     /// </summary>
     public partial class SaasFulfillmentOption
     {
+        private DateTime? _availableFromTime;
         private string _fulfillmentOptionDisplayName;
         private string _fulfillmentOptionId;
         private FulfillmentOptionType _fulfillmentOptionType;
         private string _fulfillmentUrl;
+        private string _launchUrl;
+        private SaasQuickLaunchStatus _quickLaunch;
         private string _usageInstructions;
+
+        /// <summary>
+        /// Gets and sets the property AvailableFromTime. 
+        /// <para>
+        /// The date and time when the SaaS product became available for fulfillment.
+        /// </para>
+        /// </summary>
+        public DateTime? AvailableFromTime
+        {
+            get { return this._availableFromTime; }
+            set { this._availableFromTime = value; }
+        }
+
+        // Check to see if AvailableFromTime property is set
+        internal bool IsSetAvailableFromTime()
+        {
+            return this._availableFromTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property FulfillmentOptionDisplayName. 
@@ -113,6 +134,45 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetFulfillmentUrl()
         {
             return this._fulfillmentUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchUrl. 
+        /// <para>
+        /// The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct
+        /// from <c>fulfillmentUrl</c>, which is the seller's software registration landing page.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string LaunchUrl
+        {
+            get { return this._launchUrl; }
+            set { this._launchUrl = value; }
+        }
+
+        // Check to see if LaunchUrl property is set
+        internal bool IsSetLaunchUrl()
+        {
+            return this._launchUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QuickLaunch. 
+        /// <para>
+        /// Specifies whether the SaaS product supports quick-launch deployment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public SaasQuickLaunchStatus QuickLaunch
+        {
+            get { return this._quickLaunch; }
+            set { this._quickLaunch = value; }
+        }
+
+        // Check to see if QuickLaunch property is set
+        internal bool IsSetQuickLaunch()
+        {
+            return this._quickLaunch != null;
         }
 
         /// <summary>

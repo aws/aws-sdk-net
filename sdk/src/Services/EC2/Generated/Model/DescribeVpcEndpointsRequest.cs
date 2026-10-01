@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>vpc-endpoint-type</c> - The type of VPC endpoint (<c>Interface</c> | <c>Gateway</c>
-        /// | <c>GatewayLoadBalancer</c> | <c>Resource</c> | <c>ServiceNetwork</c>).
+        /// | <c>GatewayLoadBalancer</c> | <c>Resource</c> | <c>ServiceNetwork</c> | <c>Tunnel</c>).
         /// </para>
         ///  </li> </ul>
         /// <para />

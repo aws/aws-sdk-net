@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// A set of per-resource AWS Elastic Beanstalk quotas associated with an AWS account.
-    /// They reflect Elastic Beanstalk resource limits for this account.
+    /// A set of per-resource Elastic Beanstalk quotas associated with an Amazon Web Services
+    /// account. They reflect Elastic Beanstalk resource limits for this account.
     /// </summary>
     public partial class ResourceQuotas
     {
@@ -44,7 +44,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationQuota. 
         /// <para>
-        /// The quota for applications in the AWS account.
+        /// The quota for applications in the Amazon Web Services account.
         /// </para>
         /// </summary>
         public ResourceQuota ApplicationQuota
@@ -62,7 +62,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionQuota. 
         /// <para>
-        /// The quota for application versions in the AWS account.
+        /// The quota for application versions in the Amazon Web Services account.
         /// </para>
         /// </summary>
         public ResourceQuota ApplicationVersionQuota
@@ -80,7 +80,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ConfigurationTemplateQuota. 
         /// <para>
-        /// The quota for configuration templates in the AWS account.
+        /// The quota for configuration templates in the Amazon Web Services account.
         /// </para>
         /// </summary>
         public ResourceQuota ConfigurationTemplateQuota
@@ -98,7 +98,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property CustomPlatformQuota. 
         /// <para>
-        /// The quota for custom platforms in the AWS account.
+        /// The quota for custom platforms in the Amazon Web Services account.
         /// </para>
         /// </summary>
         public ResourceQuota CustomPlatformQuota
@@ -116,7 +116,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentQuota. 
         /// <para>
-        /// The quota for environments in the AWS account.
+        /// The quota for environments in the Amazon Web Services account.
         /// </para>
         /// </summary>
         public ResourceQuota EnvironmentQuota

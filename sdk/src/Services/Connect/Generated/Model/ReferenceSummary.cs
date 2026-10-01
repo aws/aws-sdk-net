@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     public partial class ReferenceSummary
     {
         private AttachmentReference _attachment;
+        private ContactAnalysisReference _contactAnalysis;
         private DateReference _date;
         private EmailReference _email;
         private EmailMessageReference _emailMessage;
@@ -63,6 +64,21 @@ namespace Amazon.Connect.Model
         internal bool IsSetAttachment()
         {
             return this._attachment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactAnalysis.
+        /// </summary>
+        public ContactAnalysisReference ContactAnalysis
+        {
+            get { return this._contactAnalysis; }
+            set { this._contactAnalysis = value; }
+        }
+
+        // Check to see if ContactAnalysis property is set
+        internal bool IsSetContactAnalysis()
+        {
+            return this._contactAnalysis != null;
         }
 
         /// <summary>

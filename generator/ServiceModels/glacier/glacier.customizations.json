@@ -82,11 +82,6 @@
                 "Type": "DateTime?",
                 "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
                 "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
-            },
-            "CompletionDate": {
-                "Type": "DateTime?",
-                "Marshaller": "Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs",
-                "Unmarshaller": "Amazon.Runtime.Internal.Transform.NullableDateTimeUnmarshaller"
             }
 		},
 		"ListVaultsInput" : {

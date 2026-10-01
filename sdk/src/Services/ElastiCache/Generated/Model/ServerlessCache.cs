@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     {
         private string _arn;
         private CacheUsageLimits _cacheUsageLimits;
+        private ConnectionType _connectionType;
         private DateTime? _createTime;
         private string _dailySnapshotTime;
         private string _description;
@@ -88,6 +89,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetCacheUsageLimits()
         {
             return this._cacheUsageLimits != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionType. 
+        /// <para>
+        /// The connection type for the serverless cache. Must be either <c>vpc</c> | <c>public</c>.
+        /// If not specified, defaults to <c>vpc</c>.
+        /// </para>
+        /// </summary>
+        public ConnectionType ConnectionType
+        {
+            get { return this._connectionType; }
+            set { this._connectionType = value; }
+        }
+
+        // Check to see if ConnectionType property is set
+        internal bool IsSetConnectionType()
+        {
+            return this._connectionType != null;
         }
 
         /// <summary>

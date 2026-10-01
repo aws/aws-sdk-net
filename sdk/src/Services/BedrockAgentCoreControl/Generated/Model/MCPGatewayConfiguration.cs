@@ -35,11 +35,33 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class MCPGatewayConfiguration
     {
+        private bool? _disableMcpListToolsPagination;
         private string _instructions;
         private SearchType _searchType;
         private SessionConfiguration _sessionConfiguration;
         private StreamingConfiguration _streamingConfiguration;
         private List<string> _supportedVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property DisableMcpListToolsPagination. 
+        /// <para>
+        /// Specifies whether pagination is disabled for the Model Context Protocol (MCP) <c>tools/list</c>
+        /// operation. When set to <c>true</c>, the gateway returns the complete list of tools
+        /// in a single response without a pagination cursor. When set to <c>false</c> or omitted,
+        /// the gateway returns tools in paginated responses.
+        /// </para>
+        /// </summary>
+        public bool? DisableMcpListToolsPagination
+        {
+            get { return this._disableMcpListToolsPagination; }
+            set { this._disableMcpListToolsPagination = value; }
+        }
+
+        // Check to see if DisableMcpListToolsPagination property is set
+        internal bool IsSetDisableMcpListToolsPagination()
+        {
+            return this._disableMcpListToolsPagination.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Instructions. 

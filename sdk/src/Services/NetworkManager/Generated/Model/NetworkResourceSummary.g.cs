@@ -1,0 +1,121 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.NetworkManager.Model
+{
+    /// <summary>
+    /// Describes a network resource.
+    /// </summary>
+    public partial class NetworkResourceSummary
+    {
+        /// <summary>
+        /// Gets and sets the property Definition. 
+        /// <para>
+        /// Information about the resource, in JSON format. Network Manager gets this information
+        /// by describing the resource using its Describe API call.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string Definition { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Definition property is set.
+        /// </summary>
+        internal bool IsSetDefinition() => this.Definition != null;
+
+        /// <summary>
+        /// Gets and sets the property IsMiddlebox. 
+        /// <para>
+        /// Indicates whether this is a middlebox appliance.
+        /// </para>
+        /// </summary>
+        public bool? IsMiddlebox { get; set; }
+
+        /// <summary>
+        /// Checks to see if the IsMiddlebox property is set.
+        /// </summary>
+        internal bool IsSetIsMiddlebox() => this.IsMiddlebox.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property NameTag. 
+        /// <para>
+        /// The value for the Name tag.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string NameTag { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NameTag property is set.
+        /// </summary>
+        internal bool IsSetNameTag() => this.NameTag != null;
+
+        /// <summary>
+        /// Gets and sets the property RegisteredGatewayArn. 
+        /// <para>
+        /// The ARN of the gateway.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1500)]
+        public string RegisteredGatewayArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RegisteredGatewayArn property is set.
+        /// </summary>
+        internal bool IsSetRegisteredGatewayArn() => this.RegisteredGatewayArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The ARN of the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 1500)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The resource type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 256)]
+        public string ResourceType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceType property is set.
+        /// </summary>
+        internal bool IsSetResourceType() => this.ResourceType != null;
+    }
+}

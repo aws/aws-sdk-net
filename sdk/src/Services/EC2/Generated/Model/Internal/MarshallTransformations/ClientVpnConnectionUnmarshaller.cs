@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("authorizationPolicyLastEvaluatedTime", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AuthorizationPolicyLastEvaluatedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("clientIp", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

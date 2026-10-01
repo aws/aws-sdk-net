@@ -1,0 +1,87 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Route53GlobalResolver.Model
+{
+    /// <summary>
+    /// Container for the parameters to the AssociateHostedZone operation. Associates a Route
+    /// 53 private hosted zone with a Route 53 Global Resolver resource. This allows the resolver
+    /// to resolve DNS queries for the private hosted zone from anywhere globally. <important>
+    /// <para> Route 53 Global Resolver is a global service that supports resolvers in multiple
+    /// Amazon Web Services Regions but you must specify the US East (Ohio) Region to create,
+    /// update, or otherwise work with Route 53 Global Resolver resources. That is, for example,
+    /// specify <c>--region us-east-2</c> on Amazon Web Services CLI commands. </para> </important>
+    /// </summary>
+    public partial class AssociateHostedZoneRequest : AmazonRoute53GlobalResolverRequest
+    {
+        /// <summary>
+        /// Gets and sets the property HostedZoneId. 
+        /// <para>
+        /// The ID of the Route 53 private hosted zone to associate with the Route 53 Global Resolver
+        /// resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 32)]
+        public string HostedZoneId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the HostedZoneId property is set.
+        /// </summary>
+        internal bool IsSetHostedZoneId() => this.HostedZoneId != null;
+
+        /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Name for the private hosted zone association.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 64)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Name property is set.
+        /// </summary>
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// An Amazon Resource Name (ARN) of the Route 53 Global Resolver the private hosted zone
+        /// will be associated to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 1, Max = 2048)]
+        public string ResourceArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ResourceArn property is set.
+        /// </summary>
+        internal bool IsSetResourceArn() => this.ResourceArn != null;
+    }
+}

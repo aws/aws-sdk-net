@@ -165,6 +165,37 @@ namespace AWSSDKDocSamples.Amazon.PinpointSMSVoiceV2.Generated
             #endregion
         }
 
+        public void PinpointSMSVoiceV2ListAvailablePhoneNumbers()
+        {
+            #region example-1
+
+            var client = new AmazonPinpointSMSVoiceV2Client();
+            var response = client.ListAvailablePhoneNumbers(new ListAvailablePhoneNumbersRequest 
+            {
+                IsoCountryCode = "US",
+                MaxResults = 10,
+                NumberCapabilities = new List<string> {
+                    "SMS"
+                },
+                NumberPreference = new List<NumberPreferenceItem> {
+                    new NumberPreferenceItem {
+                        Filter = new List<string> {
+                            "+1206"
+                        },
+                        PreferenceType = new List<string> {
+                            "StartsWith"
+                        }
+                    }
+                },
+                NumberType = "TEN_DLC",
+                RegistrationId = "reg-1234567890abcdef0"
+            });
+
+            List<string> availablePhoneNumbers = response.AvailablePhoneNumbers;
+
+            #endregion
+        }
+
         public void PinpointSMSVoiceV2ListNotifyCountries()
         {
             #region example-1

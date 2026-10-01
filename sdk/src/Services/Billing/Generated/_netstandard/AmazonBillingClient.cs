@@ -902,6 +902,169 @@ namespace Amazon.Billing
         }
         #endregion
         
+        #region  ListBillingViewSegments
+
+        internal virtual ListBillingViewSegmentsResponse ListBillingViewSegments(ListBillingViewSegmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBillingViewSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBillingViewSegmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBillingViewSegmentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the segments of a billing view over a given time period. Each segment identifies
+        /// the billing domain (<c>PRO_FORMA</c> or <c>BILLABLE</c>) and the account relationships
+        /// that apply during its time range.
+        /// 
+        ///  
+        /// <para>
+        /// If you don't provide an <c>arn</c>, the response includes segments for the caller's
+        /// <c>PRIMARY</c> billing view.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a mid-period change occurs, the response includes multiple segments, each with
+        /// its own time range. The response omits hidden segments, so the segments it returns
+        /// might not cover the entire requested time period.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBillingViewSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBillingViewSegments service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.BillingViewHealthStatusException">
+        /// Exception thrown when a billing view's health status prevents an operation from being
+        /// performed. This may occur if the billing view is in a state other than <c>HEALTHY</c>.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViewSegments">REST API Reference for ListBillingViewSegments Operation</seealso>
+        public virtual Task<ListBillingViewSegmentsResponse> ListBillingViewSegmentsAsync(ListBillingViewSegmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBillingViewSegmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBillingViewSegmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBillingViewSegmentsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListBusinessSupportAccountCharges
+
+        internal virtual ListBusinessSupportAccountChargesResponse ListBusinessSupportAccountCharges(ListBusinessSupportAccountChargesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBusinessSupportAccountChargesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBusinessSupportAccountChargesResponseUnmarshaller.Instance;
+
+            return Invoke<ListBusinessSupportAccountChargesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns Business Support charges broken down at the linked account level for a given
+        /// billing month.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessSupportAccountCharges service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBusinessSupportAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportAccountCharges">REST API Reference for ListBusinessSupportAccountCharges Operation</seealso>
+        public virtual Task<ListBusinessSupportAccountChargesResponse> ListBusinessSupportAccountChargesAsync(ListBusinessSupportAccountChargesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBusinessSupportAccountChargesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBusinessSupportAccountChargesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBusinessSupportAccountChargesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListBusinessSupportSubscriptionHistory
+
+        internal virtual ListBusinessSupportSubscriptionHistoryResponse ListBusinessSupportSubscriptionHistory(ListBusinessSupportSubscriptionHistoryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBusinessSupportSubscriptionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBusinessSupportSubscriptionHistoryResponseUnmarshaller.Instance;
+
+            return Invoke<ListBusinessSupportSubscriptionHistoryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the history of Business Support subscription contracts across accounts.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessSupportSubscriptionHistory service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBusinessSupportSubscriptionHistory service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBusinessSupportSubscriptionHistory">REST API Reference for ListBusinessSupportSubscriptionHistory Operation</seealso>
+        public virtual Task<ListBusinessSupportSubscriptionHistoryResponse> ListBusinessSupportSubscriptionHistoryAsync(ListBusinessSupportSubscriptionHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListBusinessSupportSubscriptionHistoryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListBusinessSupportSubscriptionHistoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBusinessSupportSubscriptionHistoryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListEnterpriseSupportLinkedAccountCharges
 
         internal virtual ListEnterpriseSupportLinkedAccountChargesResponse ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request)

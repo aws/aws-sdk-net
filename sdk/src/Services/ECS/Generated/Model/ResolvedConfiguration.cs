@@ -36,6 +36,7 @@ namespace Amazon.ECS.Model
     public partial class ResolvedConfiguration
     {
         private List<ServiceRevisionLoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<ServiceRevisionLoadBalancer>() : null;
+        private List<ServiceRevisionVpcLatticeConfiguration> _vpcLatticeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceRevisionVpcLatticeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
@@ -60,6 +61,31 @@ namespace Amazon.ECS.Model
         internal bool IsSetLoadBalancers()
         {
             return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcLatticeConfigurations. 
+        /// <para>
+        /// The resolved VPC Lattice configuration for the service revision. This includes information
+        /// about which target groups serve traffic and which listener rules direct traffic to
+        /// them.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ServiceRevisionVpcLatticeConfiguration> VpcLatticeConfigurations
+        {
+            get { return this._vpcLatticeConfigurations; }
+            set { this._vpcLatticeConfigurations = value; }
+        }
+
+        // Check to see if VpcLatticeConfigurations property is set
+        internal bool IsSetVpcLatticeConfigurations()
+        {
+            return this._vpcLatticeConfigurations != null && (this._vpcLatticeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

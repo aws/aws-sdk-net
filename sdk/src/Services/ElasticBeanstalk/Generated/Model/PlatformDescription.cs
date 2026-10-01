@@ -337,7 +337,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property PlatformOwner. 
         /// <para>
-        /// The AWS account ID of the person who created the platform version.
+        /// The Amazon Web Services account ID of the person who created the platform version.
         /// </para>
         /// </summary>
         public string PlatformOwner

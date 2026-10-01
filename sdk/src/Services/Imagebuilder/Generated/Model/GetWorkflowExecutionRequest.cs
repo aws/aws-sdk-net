@@ -31,8 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetWorkflowExecution operation.
-    /// Get the runtime information that was logged for a specific runtime instance of the
-    /// workflow.
+    /// Retrieves runtime information for a specific runtime instance of the workflow.
     /// </summary>
     public partial class GetWorkflowExecutionRequest : AmazonImagebuilderRequest
     {

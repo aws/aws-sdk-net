@@ -52,8 +52,13 @@ namespace Amazon.IdentityStore.Model
         /// <para>
         /// The identifier for a group in the identity store.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the group by ID or by Amazon Resource Name (ARN). For example, group
+        /// ID <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c> or group ARN <c>arn:aws:identitystore:::group/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=47)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string GroupId
         {
             get { return this._groupId; }
@@ -74,8 +79,13 @@ namespace Amazon.IdentityStore.Model
         /// generated string that contains numbers and lower case letters. This value is generated
         /// at the time that a new identity store is created.
         /// </para>
+        ///  
+        /// <para>
+        /// You can specify the identity store by ID or by Amazon Resource Name (ARN). For example,
+        /// identity store ID <c>d-1234567890</c> or identity store ARN <c>arn:aws:identitystore::111122223333:identitystore/d-1234567890</c>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=36)]
+        [AWSProperty(Required=true, Min=1, Max=93)]
         public string IdentityStoreId
         {
             get { return this._identityStoreId; }

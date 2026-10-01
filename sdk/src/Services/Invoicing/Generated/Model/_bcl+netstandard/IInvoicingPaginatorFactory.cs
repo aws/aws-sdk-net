@@ -56,5 +56,25 @@ namespace Amazon.Invoicing.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListProcurementPortalPreferencesPaginator ListProcurementPortalPreferences(ListProcurementPortalPreferencesRequest request);
+
+        /// <summary>
+        /// Paginator for ListProcurementPortals operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListProcurementPortalsPaginator ListProcurementPortals(ListProcurementPortalsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProcurementPortalSuppliers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListProcurementPortalSuppliersPaginator ListProcurementPortalSuppliers(ListProcurementPortalSuppliersRequest request);
     }
 }

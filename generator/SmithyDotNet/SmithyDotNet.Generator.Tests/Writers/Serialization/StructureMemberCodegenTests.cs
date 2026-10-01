@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers.Serialization;
 using Xunit;
@@ -26,10 +27,10 @@ public class StructureMemberCodegenTests
     }
 
     private string ConfigMarshaller => new JsonStructureMarshallerWriter(_context, ModelFileName)
-        .Write(_context.Structures[ShapeId.Parse("com.amazonaws.testnested#Config")], ShapeId.Parse("com.amazonaws.testnested#Config"), TestContext.Current.CancellationToken);
+        .Write(_context.Structures[ShapeId.Parse("com.amazonaws.testnested#Config")], TestContext.Current.CancellationToken);
 
     private string ConfigUnmarshaller => new JsonStructureUnmarshallerWriter(_context, ModelFileName)
-        .Write(_context.Structures[ShapeId.Parse("com.amazonaws.testnested#Config")], ShapeId.Parse("com.amazonaws.testnested#Config"), TestContext.Current.CancellationToken);
+        .Write(_context.Structures[ShapeId.Parse("com.amazonaws.testnested#Config")], TestContext.Current.CancellationToken);
 
     private string RequestMarshaller => new JsonRequestMarshallerWriter(_context, ModelFileName)
         .Write(_putWidget, TestContext.Current.CancellationToken);

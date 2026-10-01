@@ -40,7 +40,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LatestVersionReferences. 
         /// <para>
-        /// The resource ARNs with different wildcard variations of semantic versioning.
+        /// A set of wildcard version ARNs that always reference the latest version of the resource.
+        /// ARNs are included for the latest version overall, and for the latest versions within
+        /// the same major, minor, and patch levels.
         /// </para>
         /// </summary>
         public LatestVersionReferences LatestVersionReferences

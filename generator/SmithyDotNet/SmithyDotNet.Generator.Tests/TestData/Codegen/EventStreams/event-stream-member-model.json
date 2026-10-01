@@ -1,0 +1,92 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#Listen" },
+        { "target": "com.example#Send" },
+        { "target": "com.example#Ping" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Example"
+      }
+    },
+    "com.example#Listen": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#ListenResponse" },
+      "traits": { "smithy.api#http": { "uri": "/listen", "method": "POST" } }
+    },
+    "com.example#ListenResponse": {
+      "type": "structure",
+      "members": {
+        "stream": { "target": "com.example#EventStream", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#EventStream": {
+      "type": "union",
+      "members": {
+        "data": { "target": "com.example#DataEvent" },
+        "metadata": { "target": "com.example#MetadataEvent" },
+        "oops": { "target": "com.example#FooException" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#DataEvent": {
+      "type": "structure",
+      "members": { "payload": { "target": "smithy.api#String" } }
+    },
+    "com.example#MetadataEvent": {
+      "type": "structure",
+      "members": { "count": { "target": "smithy.api#String" } }
+    },
+    "com.example#FooException": {
+      "type": "structure",
+      "members": { "message": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client", "smithy.api#httpError": 400 }
+    },
+    "com.example#Send": {
+      "type": "operation",
+      "input": { "target": "com.example#SendRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/send", "method": "POST" } }
+    },
+    "com.example#SendRequest": {
+      "type": "structure",
+      "members": {
+        "stream": { "target": "com.example#InputStream", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#InputStream": {
+      "type": "union",
+      "members": {
+        "chunk": { "target": "com.example#ChunkEvent" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#ChunkEvent": {
+      "type": "structure",
+      "members": { "data": { "target": "smithy.api#String" } }
+    },
+    "com.example#Ping": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#PingResponse" },
+      "traits": { "smithy.api#http": { "uri": "/ping", "method": "POST" } }
+    },
+    "com.example#PingResponse": {
+      "type": "structure",
+      "members": {
+        "detail": { "target": "com.example#PingDetail", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#PingDetail": {
+      "type": "structure",
+      "members": { "note": { "target": "smithy.api#String" } }
+    }
+  }
+}

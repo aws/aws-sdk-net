@@ -53,6 +53,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("accessEntry", targetDepth, ref reader))
+                {
+                    var unmarshaller = EksAccessEntryUnmarshaller.Instance;
+                    unmarshalledObject.AccessEntry = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("eksClusterArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

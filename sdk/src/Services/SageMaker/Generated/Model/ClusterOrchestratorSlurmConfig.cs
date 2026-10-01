@@ -35,7 +35,33 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ClusterOrchestratorSlurmConfig
     {
+        private ClusterAccountingDatabase _accountingDatabase;
         private ClusterSlurmConfigStrategy _slurmConfigStrategy;
+
+        /// <summary>
+        /// Gets and sets the property AccountingDatabase. 
+        /// <para>
+        /// The external database that stores the Slurm accounting data for the cluster, such
+        /// as job history, associations, and usage. When you omit this field, Slurm accounting
+        /// uses a database on the cluster's controller node.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This field is only supported for clusters using <c>Continuous</c> as the <c>NodeProvisioningMode</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ClusterAccountingDatabase AccountingDatabase
+        {
+            get { return this._accountingDatabase; }
+            set { this._accountingDatabase = value; }
+        }
+
+        // Check to see if AccountingDatabase property is set
+        internal bool IsSetAccountingDatabase()
+        {
+            return this._accountingDatabase != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SlurmConfigStrategy. 

@@ -7109,6 +7109,17 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Updates a fleet.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Workers that are running when you call <c>UpdateFleet</c> keep the instance type and
+        /// capabilities that they launched with until they scale in. Deadline Cloud can schedule
+        /// jobs that you submit after the update on these existing workers, so the new configuration
+        /// might not take effect immediately. To make sure that all workers use the new configuration,
+        /// set <c>maxWorkerCount</c> to 0, use the <c>ListWorkers</c> operation to confirm that
+        /// the fleet has no workers, and then restore <c>maxWorkerCount</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
         /// 
@@ -7140,6 +7151,17 @@ namespace Amazon.Deadline
 
         /// <summary>
         /// Updates a fleet.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Workers that are running when you call <c>UpdateFleet</c> keep the instance type and
+        /// capabilities that they launched with until they scale in. Deadline Cloud can schedule
+        /// jobs that you submit after the update on these existing workers, so the new configuration
+        /// might not take effect immediately. To make sure that all workers use the new configuration,
+        /// set <c>maxWorkerCount</c> to 0, use the <c>ListWorkers</c> operation to confirm that
+        /// the fleet has no workers, and then restore <c>maxWorkerCount</c>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
         /// <param name="cancellationToken">

@@ -1006,6 +1006,11 @@ namespace Amazon.Organizations
         ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html">NETWORK_SECURITY_DIRECTOR_POLICY</a>
         /// 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_guardduty.html">GUARDDUTY_POLICY</a>
+        /// 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// You can only call this operation from the management account or a member account that

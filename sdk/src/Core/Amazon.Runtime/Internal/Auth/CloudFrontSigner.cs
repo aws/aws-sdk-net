@@ -47,7 +47,7 @@ namespace Amazon.Runtime.Internal.Auth
                 throw new ArgumentOutOfRangeException("awsAccessKeyId", "The AWS Access Key ID cannot be NULL or a Zero length string");
             }
 
-            DateTime dateTime = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString(), clientConfig);
+            DateTime dateTime = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.GetEndpointString(), clientConfig);
             request.SignedAt = dateTime;
             string dateTimeString = dateTime.ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
             request.Headers.Add(HeaderKeys.XAmzDateHeader, dateTimeString);

@@ -26,7 +26,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateComponentVersionResponse.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateComponentVersionResponse.ComponentName</property>
@@ -51,11 +51,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.ParentTargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentRequest.TargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentResponse.DeploymentId</property>
@@ -63,7 +63,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentResponse.IotJobArn</property>
-    <pattern>arn:[^:]*:iot:[^:]+:[0-9]+:job/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]+:[0-9]+:job/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.CreateDeploymentResponse.IotJobId</property>
@@ -71,7 +71,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.DeleteComponentRequest.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.DeleteCoreDeviceRequest.CoreDeviceThingName</property>
@@ -84,11 +84,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.DescribeComponentRequest.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.DescribeComponentResponse.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.DescribeComponentResponse.ComponentName</property>
@@ -102,11 +102,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetComponentRequest.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetComponentVersionArtifactRequest.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetComponentVersionArtifactRequest.ArtifactName</property>
@@ -161,11 +161,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetDeploymentResponse.IotJobArn</property>
-    <pattern>arn:[^:]*:iot:[^:]+:[0-9]+:job/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]+:[0-9]+:job/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetDeploymentResponse.ParentTargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetDeploymentResponse.RevisionId</property>
@@ -173,7 +173,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.GetDeploymentResponse.TargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListClientDevicesAssociatedWithCoreDeviceRequest.CoreDeviceThingName</property>
@@ -186,16 +186,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GreengrassV2.Model.ListComponentsRequest.MaxResults</property>
+    <property>Amazon.GreengrassV2.Model.ListComponentVersionsRequest.Arn</property>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GreengrassV2.Model.ListComponentVersionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.GreengrassV2.Model.ListComponentVersionsRequest.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.GreengrassV2.Model.ListComponentVersionsRequest.MaxResults</property>
+    <property>Amazon.GreengrassV2.Model.ListComponentsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -211,7 +211,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListCoreDevicesRequest.ThingGroupArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListDeploymentsRequest.MaxResults</property>
@@ -220,11 +220,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListDeploymentsRequest.ParentTargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListDeploymentsRequest.TargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListEffectiveDeploymentsRequest.CoreDeviceThingName</property>
@@ -248,15 +248,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):(components|deployments|coreDevices):.*</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):(components|deployments|coreDevices):.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):(components|deployments|coreDevices):.*</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):(components|deployments|coreDevices):.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):(components|deployments|coreDevices):.*</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):(components|deployments|coreDevices):.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.UpdateConnectivityInfoRequest.ThingName</property>
@@ -296,7 +296,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Component.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Component.ComponentName</property>
@@ -329,7 +329,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ComponentLatestVersion.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ComponentLatestVersion.ComponentVersion</property>
@@ -405,7 +405,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Deployment.ParentTargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:thinggroup/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Deployment.RevisionId</property>
@@ -413,7 +413,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.Deployment.TargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.DisassociateClientDeviceFromCoreDeviceEntry.ThingName</property>
@@ -440,7 +440,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.EffectiveDeployment.IotJobArn</property>
-    <pattern>arn:[^:]*:iot:[^:]+:[0-9]+:job/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]+:[0-9]+:job/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.EffectiveDeployment.IotJobId</property>
@@ -449,7 +449,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.EffectiveDeployment.TargetArn</property>
-    <pattern>arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+</pattern>
+    <pattern>^arn:[^:]*:iot:[^:]*:[0-9]+:(thing|thinggroup)/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.InstalledComponent.ComponentName</property>
@@ -517,7 +517,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ResolvedComponentVersion.Arn</property>
-    <pattern>arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+</pattern>
+    <pattern>^arn:[^:]*:greengrass:[^:]*:(aws|[0-9]+):components:[^:]+:versions:[^:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GreengrassV2.Model.ResolvedComponentVersion.ComponentName</property>

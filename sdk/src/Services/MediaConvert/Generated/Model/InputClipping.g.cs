@@ -1,0 +1,73 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.MediaConvert.Model
+{
+    /// <summary>
+    /// To transcode only portions of your input, include one input clip for each part of
+    /// your input that you want in your output. All input clips that you specify will be
+    /// included in every output of the job. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html.
+    /// </summary>
+    public partial class InputClipping
+    {
+        /// <summary>
+        /// Gets and sets the property EndTimecode. Set End timecode to the end of the portion
+        /// of the input you are clipping. The frame corresponding to the End timecode value is
+        /// included in the clip. Start timecode or End timecode may be left blank, but not both.
+        /// Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the minute,
+        /// SS is the second, and FF is the frame number. When choosing this value, take into
+        /// account your setting for timecode source under input settings. For example, if you
+        /// have embedded timecodes that start at 01:00:00:00 and you want your clip to end six
+        /// minutes into the video, use 01:06:00:00.
+        /// </summary>
+        public string EndTimecode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EndTimecode property is set.
+        /// </summary>
+        internal bool IsSetEndTimecode() => this.EndTimecode != null;
+
+        /// <summary>
+        /// Gets and sets the property StartTimecode. Set Start timecode to the beginning of the
+        /// portion of the input you are clipping. The frame corresponding to the Start timecode
+        /// value is included in the clip. Start timecode or End timecode may be left blank, but
+        /// not both. Use the format HH:MM:SS:FF or HH:MM:SS;FF, where HH is the hour, MM is the
+        /// minute, SS is the second, and FF is the frame number. When choosing this value, take
+        /// into account your setting for Input timecode source. For example, if you have embedded
+        /// timecodes that start at 01:00:00:00 and you want your clip to begin five minutes into
+        /// the video, use 01:05:00:00.
+        /// </summary>
+        public string StartTimecode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the StartTimecode property is set.
+        /// </summary>
+        internal bool IsSetStartTimecode() => this.StartTimecode != null;
+    }
+}

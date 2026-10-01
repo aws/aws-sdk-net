@@ -166,6 +166,14 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "ImageSoftwareMetadata":
+                        {
+                            context.AddPathSegment("ImageSoftwareMetadata");
+                            var unmarshaller = ImageSoftwareMetadataUnmarshaller.Instance;
+                            unmarshalledObject.ImageSoftwareMetadata = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "ImageType":
                         {
                             context.AddPathSegment("ImageType");

@@ -105,12 +105,11 @@ namespace Amazon.Runtime.Internal
                 : (DateTime?)null;
             bool hasAgeHeader = response.IsHeaderPresent(HeaderKeys.AgeHeader);
 
-            var contextAttributes = executionContext.RequestContext.ContextAttributes;
             if (ClockSkewCalculator.TryComputeCandidateSkew(serverTime, sentAtUtc.Value, receivedUtc, hasAgeHeader, out var candidate))
             {
-                var endpoint = executionContext.RequestContext.Request.Endpoint.ToString();
+                var endpoint = executionContext.RequestContext.Request.GetEndpointString();
                 CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, candidate);
-                contextAttributes[AttemptSkewCandidateKey] = candidate;
+                SetAttemptSkewCandidate(executionContext.RequestContext, candidate);
 
                 // Emit a detailed diagnostic only when the measured skew is large enough to
                 // plausibly be the cause of auth/retry failures. Gated on the detection
@@ -124,8 +123,30 @@ namespace Amazon.Runtime.Internal
             }
             else
             {
-                contextAttributes.Remove(AttemptSkewCandidateKey);
+                SetAttemptSkewCandidate(executionContext.RequestContext, null);
             }
+        }
+
+        /// <summary>
+        /// Stores (or clears) the latest attempt's candidate skew. <see cref="RequestContext"/> is
+        /// the only <see cref="IRequestContext"/> implementation in the SDK, so the common case
+        /// writes the typed <see cref="RequestContext.ClockSkewAttemptCandidate"/> field, avoiding
+        /// the box that storing a <see cref="TimeSpan"/> in the <c>object</c>-valued
+        /// <see cref="IRequestContext.ContextAttributes"/> dictionary would otherwise cost on every
+        /// response. Any other implementation falls back to the dictionary so behavior is unchanged.
+        /// </summary>
+        private static void SetAttemptSkewCandidate(IRequestContext requestContext, TimeSpan? candidate)
+        {
+            if (requestContext is RequestContext concreteContext)
+            {
+                concreteContext.ClockSkewAttemptCandidate = candidate;
+                return;
+            }
+
+            if (candidate is { } value)
+                requestContext.ContextAttributes[AttemptSkewCandidateKey] = value;
+            else
+                requestContext.ContextAttributes.Remove(AttemptSkewCandidateKey);
         }
 
         /// <summary>
@@ -142,7 +163,7 @@ namespace Amazon.Runtime.Internal
             if (webData != null)
                 RecordFromResponse(executionContext, sentAtUtc, webData);
             else
-                executionContext.RequestContext.ContextAttributes.Remove(AttemptSkewCandidateKey);
+                SetAttemptSkewCandidate(executionContext.RequestContext, null);
         }
 
         /// <summary>
@@ -152,14 +173,37 @@ namespace Amazon.Runtime.Internal
         /// </summary>
         internal static bool AttemptSkewExceedsThreshold(IExecutionContext executionContext)
         {
-            if (executionContext.RequestContext.ContextAttributes.TryGetValue(AttemptSkewCandidateKey, out var value)
-                && value is TimeSpan candidate)
+            var requestContext = executionContext.RequestContext;
+            TimeSpan? candidate;
+
+            if (requestContext is RequestContext concreteContext)
             {
-                var absolute = candidate.Ticks < 0 ? candidate.Negate() : candidate;
-                return absolute > ClockSkewCalculator.SkewDetectionThreshold;
+                // Normal flow: RecordFromResponse/RecordFromException already wrote this field, so
+                // the common case resolves here without ever touching ContextAttributes. Only fall
+                // back to it (via the non-creating accessor, so we don't allocate a dictionary the
+                // field-based path doesn't need) when something set the key directly instead, e.g.
+                // a test or another pipeline handler bypassing the normal recording path.
+                candidate = concreteContext.ClockSkewAttemptCandidate;
+                if (!candidate.HasValue &&
+                    concreteContext.ContextAttributesIfCreated is { } attributes &&
+                    attributes.TryGetValue(AttemptSkewCandidateKey, out var directValue) &&
+                    directValue is TimeSpan directCandidate)
+                {
+                    candidate = directCandidate;
+                }
+            }
+            else
+            {
+                candidate = requestContext.ContextAttributes.TryGetValue(AttemptSkewCandidateKey, out var boxedValue) && boxedValue is TimeSpan boxed
+                    ? boxed
+                    : (TimeSpan?)null;
             }
 
-            return false;
+            if (candidate is not { } value)
+                return false;
+
+            var absolute = value.Ticks < 0 ? value.Negate() : value;
+            return absolute > ClockSkewCalculator.SkewDetectionThreshold;
         }
 
         private static IWebResponseData GetWebData(Exception exception)

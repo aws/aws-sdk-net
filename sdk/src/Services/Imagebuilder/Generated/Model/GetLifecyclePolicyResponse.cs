@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LifecyclePolicy. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image lifecycle policy resource that was returned.
+        /// The details of the lifecycle policy that the request retrieved.
         /// </para>
         /// </summary>
         public LifecyclePolicy LifecyclePolicy

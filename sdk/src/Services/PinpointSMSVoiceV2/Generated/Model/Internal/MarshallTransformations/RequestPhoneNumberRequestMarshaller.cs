@@ -121,6 +121,22 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetNumberPreference())
+            {
+                context.Writer.WritePropertyName("NumberPreference");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNumberPreferenceListValue in publicRequest.NumberPreference)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NumberPreferenceItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNumberPreferenceListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetNumberType())
             {
                 context.Writer.WritePropertyName("NumberType");

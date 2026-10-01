@@ -39,7 +39,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property LifecycleExecutionId. 
         /// <para>
-        /// The unique identifier for the image lifecycle runtime instance that was canceled.
+        /// The unique identifier of the lifecycle execution that the cancellation request applies
+        /// to. The cancellation completes asynchronously.
         /// </para>
         /// </summary>
         public string LifecycleExecutionId

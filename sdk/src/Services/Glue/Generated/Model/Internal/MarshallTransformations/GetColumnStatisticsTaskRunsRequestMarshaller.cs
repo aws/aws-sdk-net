@@ -75,6 +75,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalogID())
+            {
+                context.Writer.WritePropertyName("CatalogID");
+                context.Writer.WriteStringValue(publicRequest.CatalogID);
+            }
+
             if(publicRequest.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");

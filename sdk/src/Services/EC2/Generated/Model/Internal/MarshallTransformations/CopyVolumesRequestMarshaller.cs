@@ -71,9 +71,17 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetEncrypted())
+                {
+                    request.Parameters.Add("Encrypted", StringUtils.FromBool(publicRequest.Encrypted));
+                }
                 if(publicRequest.IsSetIops())
                 {
                     request.Parameters.Add("Iops", StringUtils.FromInt(publicRequest.Iops));
+                }
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    request.Parameters.Add("KmsKeyId", StringUtils.FromString(publicRequest.KmsKeyId));
                 }
                 if(publicRequest.IsSetMultiAttachEnabled())
                 {

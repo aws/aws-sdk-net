@@ -145,6 +145,22 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSoftwareAddOns())
+            {
+                context.Writer.WritePropertyName("softwareAddOns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSoftwareAddOnsListValue in requestObject.SoftwareAddOns)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FleetSoftwareAddOnMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSoftwareAddOnsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetVCpuCount())
             {
                 context.Writer.WritePropertyName("vCpuCount");

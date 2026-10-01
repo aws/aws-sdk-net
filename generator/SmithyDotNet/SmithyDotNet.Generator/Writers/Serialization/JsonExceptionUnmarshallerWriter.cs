@@ -1,5 +1,4 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers.Shapes;
 
@@ -11,18 +10,19 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
-    public string Write(StructureShape structure, ShapeId shapeId, CancellationToken cancellationToken = default)
+    public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
-        var exceptionName = ExceptionWriter.ToExceptionName(shapeId.Name);
+        var exceptionName = ExceptionWriter.ToExceptionName(context.ToDotNetName(structure.Id));
         var unmarshallerClassName = $"{exceptionName}Unmarshaller";
 
         // message is deserialized by JsonErrorResponseUnmarshaller into the base Exception.Message,
         // so it is excluded here; every other member — including base-owned RequestId/ErrorCode — is
         // unmarshalled from the error body, except @httpHeader members (read from the headers).
         var members = ExceptionWriter.ResolveSerializedMembers(structure, context);
+
         // @httpResponseCode "is simply ignored" outside an operation's output (Smithy spec), so on an
         // error the member is treated as an ordinary body member — bindStatusCode: false.
-        var bindings = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members, bindStatusCode: false);
+        var bindings = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members, context.UsesHttpBindings, bindStatusCode: false);
 
         if (bindings.PayloadMember is not null)
         {

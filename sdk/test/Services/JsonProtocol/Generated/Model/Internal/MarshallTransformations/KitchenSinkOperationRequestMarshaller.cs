@@ -367,13 +367,13 @@ namespace Amazon.JsonProtocol.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Timestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Timestamp.Value));
             }
 
             if(publicRequest.IsSetUnixTimestamp())
             {
                 context.Writer.WritePropertyName("UnixTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.UnixTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.UnixTimestamp.Value));
             }
 
             writer.WriteEndObject();

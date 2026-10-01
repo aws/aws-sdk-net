@@ -68,6 +68,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                     unmarshalledObject.ChannelType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("isSensitiveEventsSubscribed", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IsSensitiveEventsSubscribed = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("overrideOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

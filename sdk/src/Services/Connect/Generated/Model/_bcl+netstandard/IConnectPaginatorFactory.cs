@@ -268,6 +268,16 @@ namespace Amazon.Connect.Model
         IListEntitySecurityProfilesPaginator ListEntitySecurityProfiles(ListEntitySecurityProfilesRequest request);
 
         /// <summary>
+        /// Paginator for ListEvaluationFormAIVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEvaluationFormAIVersionsPaginator ListEvaluationFormAIVersions(ListEvaluationFormAIVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListEvaluationForms operation
         ///</summary>
         [AWSPaginator(
@@ -526,6 +536,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListSecurityKeysPaginator ListSecurityKeys(ListSecurityKeysRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityProfileAIAgents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSecurityProfileAIAgentsPaginator ListSecurityProfileAIAgents(ListSecurityProfileAIAgentsRequest request);
 
         /// <summary>
         /// Paginator for ListSecurityProfileApplications operation

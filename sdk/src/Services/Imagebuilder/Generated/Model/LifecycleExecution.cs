@@ -99,8 +99,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourcesImpactedSummary. 
         /// <para>
-        /// Contains information about associated resources that are identified for action by
-        /// the runtime instance of the lifecycle policy.
+        /// A summary flag that indicates whether the lifecycle execution identified any resources
+        /// to take lifecycle actions on.
         /// </para>
         /// </summary>
         public LifecycleExecutionResourcesImpactedSummary ResourcesImpactedSummary
@@ -136,7 +136,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Runtime state that reports if the policy action ran successfully, failed, or was skipped.
+        /// Runtime state that reports whether the lifecycle execution is in progress, succeeded,
+        /// or failed.
         /// </para>
         /// </summary>
         public LifecycleExecutionState State

@@ -31,8 +31,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEnvironment operation.
-    /// Launches an AWS Elastic Beanstalk environment for the specified application using
-    /// the specified configuration.
+    /// Launches an Elastic Beanstalk environment for the specified application using the
+    /// specified configuration.
     /// </summary>
     public partial class CreateEnvironmentRequest : AmazonElasticBeanstalkRequest
     {
@@ -180,14 +180,18 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationsRole. 
+        /// Gets and sets the property OperationsRole. <important> 
+        /// <para>
+        /// The operations role feature of Elastic Beanstalk is in beta release and is subject
+        /// to change.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
         /// operations role. If specified, Elastic Beanstalk uses the operations role for permissions
         /// to downstream services during this call and during subsequent calls acting on this
         /// environment. To specify an operations role, you must have the <c>iam:PassRole</c>
-        /// permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
-        /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// permission for the role.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -206,9 +210,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property OptionSettings. 
         /// <para>
-        /// If specified, AWS Elastic Beanstalk sets the specified configuration options to the
-        /// requested value in the configuration set for the new environment. These override the
-        /// values obtained from the solution stack or the configuration template.
+        /// If specified, Elastic Beanstalk sets the specified configuration options to the requested
+        /// value in the configuration set for the new environment. These override the values
+        /// obtained from the solution stack or the configuration template.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -257,7 +261,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the custom platform to use with the environment.
         /// For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom
-        /// Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+        /// Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -284,7 +288,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// environment. If specified, Elastic Beanstalk sets the configuration values to the
         /// default values associated with the specified solution stack. For a list of current
         /// solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic
-        /// Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.
+        /// Beanstalk Supported Platforms</a> in the <i>Elastic Beanstalk Platforms</i> guide.
         /// </para>
         ///  <note> 
         /// <para>
@@ -355,9 +359,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property Tier. 
         /// <para>
         /// Specifies the tier to use in creating this environment. The environment tier that
-        /// you choose determines whether Elastic Beanstalk provisions resources to support a
-        /// web application that handles HTTP(S) requests or a web application that handles background-processing
-        /// tasks.
+        /// you choose determines whether Elastic Beanstalk provisions resources on Amazon EC2
+        /// instances or on an Amazon EKS cluster, and, for Amazon EC2, whether the environment
+        /// serves HTTP(S) requests or processes background tasks from a queue.
         /// </para>
         /// </summary>
         public EnvironmentTier Tier

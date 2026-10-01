@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
 
 namespace SmithyDotNet.Generator.Writers.Service;
 
@@ -116,7 +117,7 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
     private void WriteInterfaceDocumentation(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// <para>Interface for accessing {context.ServiceName}</para>");
+        writer.WriteLine($"/// <para>Interface for accessing {context.BaseName}</para>");
 
         var cleaned = DocumentationFormatter.Cleanup(context.ServiceDocumentation);
         if (cleaned.Length > 0)
@@ -133,18 +134,40 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         var responseType = $"{operation.Name}Response";
         var requestType = $"{operation.Name}Request";
 
+        // HTTP/2 operations exist only on net8+ (h2 is unavailable on .NET Framework and pre-net8
+        // netstandard); C2J omits them there entirely, so guard the whole operation.
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#if NET8_0_OR_GREATER");
+        }
+
         // Synchronous overload. The synchronous API surface exists only on .NET Framework (the C2J
         // generator emits it in the _bcl file, which is excluded from the netstandard/net builds), so
         // guard it with #if NETFRAMEWORK in this single-file output.
+        var obsolete = TypeMapper.BuildObsolete(operation.Shape);
+
         writer.WriteLine("#if NETFRAMEWORK");
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.WriteLine($"{responseType} {operation.Name}({requestType} request);");
         writer.WriteLine("#endif");
         writer.WriteLine();
 
         // Asynchronous overload.
         DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
+        if (obsolete is not null)
+        {
+            writer.WriteLine(obsolete);
+        }
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
+
+        if (operation.RequiresHttp2)
+        {
+            writer.WriteLine("#endif");
+        }
     }
 
 }

@@ -9,13 +9,13 @@
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateTrustAnchorRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.DeleteAttributeMappingRequest.ProfileId</property>
@@ -110,13 +110,13 @@
     <property>Amazon.IAMRolesAnywhere.Model.ImportCrlRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ImportCrlRequest.TrustAnchorArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)</pattern>
+    <pattern>^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ListCrlsRequest.NextToken</property>
@@ -186,7 +186,7 @@
     <property>Amazon.IAMRolesAnywhere.Model.UpdateCrlRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.DurationSeconds</property>
@@ -197,7 +197,7 @@
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.ProfileId</property>
@@ -214,7 +214,7 @@
     <property>Amazon.IAMRolesAnywhere.Model.UpdateTrustAnchorRequest.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateTrustAnchorRequest.TrustAnchorId</property>
@@ -230,7 +230,6 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.MappingRule.Specifier</property>
-    <min>0</min>
     <max>60</max>
   </property-value-rule>
   <property-value-rule>
@@ -252,13 +251,13 @@
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.ProfileArn</property>
     <min>1</min>
     <max>1011</max>
-    <pattern>arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:profile.*)</pattern>
+    <pattern>^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:profile.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.ProfileId</property>
@@ -287,19 +286,19 @@
     <property>Amazon.IAMRolesAnywhere.Model.Tag.Key</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[ a-zA-Z0-9_.:/=+@-]*</pattern>
+    <pattern>^[ a-zA-Z0-9_.:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
-    <pattern>[ a-zA-Z0-9_.:/=+@-]*</pattern>
+    <pattern>^[ a-zA-Z0-9_.:/=+@-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.TrustAnchorDetail.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[ a-zA-Z0-9-_]*</pattern>
+    <pattern>^[ a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.TrustAnchorDetail.TrustAnchorId</property>

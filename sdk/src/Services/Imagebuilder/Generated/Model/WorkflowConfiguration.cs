@@ -42,7 +42,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property OnFailure. 
         /// <para>
-        /// The action to take if the workflow fails.
+        /// The action to take if the workflow fails. With <c>CONTINUE</c>, a failed workflow
+        /// is logged and image creation proceeds to the next workflow. If you don't set a value,
+        /// the image build fails when the workflow fails. You can only set this property for
+        /// test workflows.
         /// </para>
         /// </summary>
         public OnWorkflowFailure OnFailure

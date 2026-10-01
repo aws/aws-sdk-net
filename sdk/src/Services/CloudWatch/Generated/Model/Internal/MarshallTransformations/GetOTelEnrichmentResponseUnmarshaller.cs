@@ -57,11 +57,43 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "CreatedAt":
+                        {
+                            context.AddPathSegment("CreatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            response.CreatedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExcludeFilters":
+                        {
+                            context.AddPathSegment("ExcludeFilters");
+                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
+                            response.ExcludeFilters = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IncludeFilters":
+                        {
+                            context.AddPathSegment("IncludeFilters");
+                            var unmarshaller = new CborListUnmarshaller<OTelEnrichmentMetricSelector, OTelEnrichmentMetricSelectorUnmarshaller>(OTelEnrichmentMetricSelectorUnmarshaller.Instance);
+                            response.IncludeFilters = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "Status":
                         {
                             context.AddPathSegment("Status");
                             var unmarshaller = CborStringUnmarshaller.Instance;
                             response.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UpdatedAt":
+                        {
+                            context.AddPathSegment("UpdatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            response.UpdatedAt = unmarshaller.Unmarshall(context);
                             context.PopPathSegment();
                             break;
                         }

@@ -1,0 +1,91 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.Omics.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.Omics.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// TsvVersionOptions Marshaller
+    /// </summary>
+    public partial class TsvVersionOptionsMarshaller : IRequestMarshaller<TsvVersionOptions, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(TsvVersionOptions requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAnnotationType())
+            {
+                context.Writer.WritePropertyName("annotationType");
+                context.Writer.WriteStringValue(requestObject.AnnotationType);
+            }
+
+            if (requestObject.IsSetFormatToHeader())
+            {
+                context.Writer.WritePropertyName("formatToHeader");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectFormatToHeaderKvp in requestObject.FormatToHeader)
+                {
+                    context.Writer.WritePropertyName(requestObjectFormatToHeaderKvp.Key);
+                    var requestObjectFormatToHeaderValue = requestObjectFormatToHeaderKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectFormatToHeaderValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("schema");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectSchemaListValue in requestObject.Schema)
+                {
+                    context.Writer.WriteStartObject();
+                    foreach (var requestObjectSchemaListValueKvp in requestObjectSchemaListValue)
+                    {
+                        context.Writer.WritePropertyName(requestObjectSchemaListValueKvp.Key);
+                        var requestObjectSchemaListValueValue = requestObjectSchemaListValueKvp.Value;
+                        context.Writer.WriteStringValue(requestObjectSchemaListValueValue);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static TsvVersionOptionsMarshaller Instance = new TsvVersionOptionsMarshaller();
+    }
+}

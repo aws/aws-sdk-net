@@ -49,7 +49,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastUpdatedTime())
             {
                 context.Writer.WritePropertyName("LastUpdatedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastUpdatedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastUpdatedTime.Value));
             }
 
             if(requestObject.IsSetStatus())

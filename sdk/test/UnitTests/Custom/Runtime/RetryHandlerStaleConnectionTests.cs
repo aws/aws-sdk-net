@@ -56,7 +56,8 @@ namespace AWSSDK.UnitTests
             Tester = new MockActionHandler();
             IsolatedPipeline = new RuntimePipeline(Tester);
             
-            Handler = new RetryHandler(new DefaultRetryPolicy(TestConfig));
+            // No backoff between retries; these tests only count attempts.
+            Handler = new RetryHandler(new DefaultRetryPolicy(TestConfig) { MaxBackoffInMilliseconds = 0 });
             IsolatedPipeline.AddHandler(Handler);
         }
 
@@ -266,7 +267,7 @@ namespace AWSSDK.UnitTests
                 MaxErrorRetry = MAX_RETRIES,
                 MaxStaleConnectionRetries = CUSTOM_MAX_STALE_RETRIES
             };
-            var customHandler = new RetryHandler(new DefaultRetryPolicy(config));
+            var customHandler = new RetryHandler(new DefaultRetryPolicy(config) { MaxBackoffInMilliseconds = 0 });
             var customPipeline = new RuntimePipeline(Tester);
             customPipeline.AddHandler(customHandler);
 

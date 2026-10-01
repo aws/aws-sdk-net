@@ -4,7 +4,7 @@
     <property>Amazon.CloudDirectory.Model.AttachObjectRequest.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateDirectoryRequest.Name</property>
@@ -28,13 +28,13 @@
     <property>Amazon.CloudDirectory.Model.CreateIndexRequest.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateObjectRequest.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.CreateSchemaRequest.Name</property>
@@ -56,7 +56,7 @@
     <property>Amazon.CloudDirectory.Model.DetachObjectRequest.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.GetFacetRequest.Name</property>
@@ -230,25 +230,25 @@
     <property>Amazon.CloudDirectory.Model.BatchAttachObject.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchCreateIndex.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchCreateObject.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchDetachObject.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.BatchListAttachedIndices.MaxResults</property>
@@ -328,7 +328,7 @@
     <property>Amazon.CloudDirectory.Model.ObjectIdentifierAndLinkNameTuple.LinkName</property>
     <min>1</min>
     <max>64</max>
-    <pattern>[^\/\[\]\(\):\{\}#@!?\s\\;]+</pattern>
+    <pattern>^[^\/\[\]\(\):\{\}#@!?\s\\;]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudDirectory.Model.SchemaFacet.FacetName</property>

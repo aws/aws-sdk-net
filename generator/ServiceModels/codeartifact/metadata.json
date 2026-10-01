@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "Added support for AWS CodeArtifact.",
   "generate-client-constructors": true,
+  "base-name": "CodeArtifact",
   "legacy-service-id": "codeartifact"
 }

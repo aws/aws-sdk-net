@@ -41,9 +41,42 @@ namespace Amazon.ServiceQuotas.Model
     /// </summary>
     public partial class QuotaContextInfo
     {
+        private AdjustableAtLevelEnum _adjustableAtLevel;
         private string _contextId;
         private QuotaContextScope _contextScope;
         private string _contextScopeType;
+
+        /// <summary>
+        /// Gets and sets the property AdjustableAtLevel. 
+        /// <para>
+        /// Specifies the level at which you can request an increase for this quota:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ACCOUNT</c> – You can request an increase only at the account level.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PER_RESOURCE</c> – You can request an increase only for an individual resource.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ALL</c> – You can request an increase at either the account level or for an individual
+        /// resource.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AdjustableAtLevelEnum AdjustableAtLevel
+        {
+            get { return this._adjustableAtLevel; }
+            set { this._adjustableAtLevel = value; }
+        }
+
+        // Check to see if AdjustableAtLevel property is set
+        internal bool IsSetAdjustableAtLevel()
+        {
+            return this._adjustableAtLevel != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ContextId. 

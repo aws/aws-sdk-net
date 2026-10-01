@@ -31,8 +31,22 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMediaAnalysisJobs operation.
+    /// <important> 
+    /// <para>
+    /// Service availability notice: Streaming Video and Bulk Image Analysis is no longer
+    /// available to new customers. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-availability-changes.html">Rekognition
+    /// feature availability changes</a>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>This change does not impact the availability of other Amazon Rekognition features.</b>
+    /// 
+    /// </para>
+    ///  </important> 
+    /// <para>
     /// Returns a list of media analysis jobs. Results are sorted by <c>CreationTimestamp</c>
     /// in descending order.
+    /// </para>
     /// </summary>
     public partial class ListMediaAnalysisJobsRequest : AmazonRekognitionRequest
     {

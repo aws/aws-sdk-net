@@ -1,4 +1,6 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Operations;
+using SmithyDotNet.Generator.Generation.Protocols;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
@@ -8,8 +10,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// Emits the C# source for a JSON request marshaller matching the public API surface
 /// of the existing AWS SDK for .NET.
 /// <para />
-/// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
-/// bool, numeric, timestamp), list&lt;string&gt; @httpQuery/@httpHeader, an @httpQueryParams map
+/// Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
+/// bool, numeric, timestamp), list @httpQuery/@httpHeader (string, enum, and value-type elements), an @httpQueryParams map
 /// (map&lt;string,string&gt; or map&lt;string,list&lt;string&gt;&gt;), an @httpPrefixHeaders
 /// map&lt;string,string&gt;, body lists of strings or
 /// structures, an @httpPayload string/structure/blob body, and the operation's @endpoint host
@@ -20,11 +22,34 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     public string Write(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var httpTrait = operation.Shape.GetHttp() ?? throw new GeneratorException($"Operation '{operation.Name}' is missing the @http trait.");
+
+        // awsJson1.x sends every operation as POST / and ignores @http and the member binding traits when
+        // present (https://smithy.io/2.0/aws/protocols/aws-json-1_1-protocol.html#protocol-behaviors).
+        var httpBindings = context.UsesHttpBindings;
+        var httpTrait = httpBindings
+            ? operation.Shape.GetHttp() ?? throw new GeneratorException($"Operation '{operation.Name}' is missing the @http trait.")
+            : new HttpTrait { Method = "POST", Uri = "/" };
         var hostPrefix = operation.Shape.GetEndpoint()?.HostPrefix;
         var members = TypeMapper.ResolveMembers(operation.Input, context);
 
-        var partitioned = PartitionMembers(operation.Input, members);
+        var partitioned = PartitionMembers(operation.Input, members, httpBindings);
+
+        // The client takes the first encoding it supports, so unsupported entries are skipped rather
+        // than rejected. gzip is the whole supported set: it's emitted verbatim as an enum member and
+        // CompressionEncodingAlgorithm has only NONE and gzip.
+        var compression = operation.Shape.GetRequestCompression();
+        var compressionEncoding = compression?.Encodings.FirstOrDefault(encoding => encoding == "gzip");
+        if (compression is not null && compressionEncoding is null)
+        {
+            throw new GeneratorException($"Operation '{operation.Name}' requests compression encodings '{string.Join(", ", compression.Encodings)}'; only 'gzip' is supported.");
+        }
+
+        // Smithy forbids the combination: the compressed length isn't known until the whole stream
+        // has been read, which is exactly what @requiresLength rules out.
+        if (compressionEncoding is not null && partitioned.PayloadMember is { Type: { IsStreaming: true, RequiresLength: true } })
+        {
+            throw new GeneratorException($"Operation '{operation.Name}' combines @requestCompression with a @streaming @requiresLength payload.");
+        }
 
         var writer = new CodeWriter();
 
@@ -39,7 +64,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
-                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload());
+                WriteTypedMarshallMethod(writer, className, operation, httpTrait, partitioned, hostPrefix, compressionEncoding);
                 writer.WriteLine("");
                 WriteSingleton(writer, className);
             });
@@ -61,18 +86,56 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     private void WriteTypedMarshallMethod(
         CodeWriter writer,
         string className,
+        Operation operation,
         HttpTrait httpTrait,
         PartitionedMembers partitioned,
         string? hostPrefix,
-        bool unsignedPayload)
+        string? compressionEncoding)
     {
+        var unsignedPayload = operation.Shape.HasUnsignedPayload();
+        var requiresChecksum = operation.Shape.RequiresHttpChecksum();
+
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
-            WriteContentType(writer, httpTrait, partitioned);
+            if (operation.RequiresHttp2)
+            {
+                writer.WriteLine("#if NET8_0_OR_GREATER");
+                writer.WriteLine("request.HttpProtocolVersion = System.Net.HttpVersion.Version20;");
+                writer.WriteLine("#endif");
+            }
+            if (compressionEncoding is not null)
+            {
+                writer.WriteLine($"CompressionAlgorithmUtils.SetCompressionAlgorithm(request, CompressionEncodingAlgorithm.{compressionEncoding});");
+            }
+
+            // A modeled @httpHeader("Content-Type") is emitted between the default Content-Type and the
+            // blob payload block, so the block's trailing Content-Type override must not clobber it.
+            var modeledContentType = partitioned.HeaderMembers.Any(h => h.HeaderName.Equals("Content-Type", StringComparison.OrdinalIgnoreCase));
+            var blobContentTypeEmitted = false;
+
+            if (context.UsesHttpBindings)
+            {
+                blobContentTypeEmitted = WriteContentType(writer, httpTrait, partitioned, modeledContentType);
+            }
+            else
+            {
+                // awsJson1.x routes on X-Amz-Target and always sends a JSON body (see below), so the
+                // Content-Type is unconditional. Same two-statement shape as C2J.
+                writer.WriteLine($"""string target = "{context.ServiceShapeName}.{operation.Name}";""");
+                writer.WriteLine("""request.Headers["X-Amz-Target"] = target;""");
+                if (!String.IsNullOrEmpty(context.Customizations.OverrideContentType))
+                {
+                    writer.WriteLine($"""request.Headers["Content-Type"] = "{context.Customizations.OverrideContentType}";""");
+                }
+                else
+                {
+                    writer.WriteLine($"""request.Headers["Content-Type"] = "application/x-amz-json-{JsonVersion(context.Protocol)}";""");
+                }
+            }
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
@@ -95,14 +158,35 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
 
             // A @httpPayload member IS the whole body, so it replaces (never coexists with) normal
-            // JSON body members.
-            if (partitioned.PayloadMember is { } payload)
+            // JSON body members. A @streaming union payload is an input event stream: the body is the
+            // consumer's event publisher, wired here instead of serialized.
+            if (partitioned.PayloadMember is { Type.IsEventStream: true } eventStreamPayload)
             {
-                WritePayloadSerialization(writer, payload, unsignedPayload);
+                WriteEventStreamPublisher(writer, eventStreamPayload);
+            }
+            else if (partitioned.PayloadMember is { } payload)
+            {
+                WritePayloadSerialization(writer, payload, unsignedPayload, blobContentTypeEmitted);
             }
             else if (partitioned.BodyMembers.Count > 0)
             {
                 WriteBodySerialization(writer, partitioned.BodyMembers);
+            }
+            else if (!context.UsesHttpBindings)
+            {
+                // awsJson1.x: "a client MUST send an empty JSON object ({}) as the request body" when the
+                // operation has no input members.
+                writer.WriteLine("""var content = "{}";""");
+                writer.WriteLine("request.Content = System.Text.Encoding.UTF8.GetBytes(content);");
+            }
+
+            // The checksum covers the body, so it has to follow serialization (same spot as C2J).
+            // TODO: flexible checksums (aws.protocols#httpChecksum, rejected by UnsupportedTraitValidator for now) need the
+            // algorithm member / header name / isRequestChecksumRequired handling from BaseMarshaller.tt GenerateRequestChecksumHandling;
+            // Once more protocols support it, the logic should be extracted to helper used by the request marshaller writers.
+            if (requiresChecksum)
+            {
+                writer.WriteLine("ChecksumUtils.SetChecksumData(request);");
             }
 
             // @unsignedPayload disables SigV4 body signing regardless of body kind (matches C2J).
@@ -146,7 +230,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 writer.OpenBlock($"if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.{member.ModeledName}))", () =>
                 {
-                    writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("{member.ModeledName} can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");""");
+                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("{member.ModeledName} can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");""");
                 });
             }
             writer.WriteLine("");
@@ -157,14 +241,44 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine($"""request.HostPrefix = $"{interpolated}";""");
     }
 
-    // Omitted for GET/DELETE and for body-less operations, matching C2J. TODO: customization
-    // OverrideContentType and non-restJson (application/x-amz-json) are not handled yet.
-    private static void WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned)
+    private static string JsonVersion(AWSProtocol protocol) => protocol switch
     {
+        AWSProtocol.AwsJson1_0 => "1.0",
+        AWSProtocol.AwsJson1_1 => "1.1",
+        _ => throw new GeneratorException($"Protocol '{protocol}' has no awsJson version."),
+    };
+
+    // restJson1 only. Omitted for GET/DELETE and for body-less operations, matching C2J. A blob payload
+    // is the exception: its block always sets Content-Type, so when a modeled Content-Type header must
+    // win the blob default is emitted here, ahead of the header, on every method. Returns whether that
+    // happened (see WriteBlobPayloadSerialization). The OverrideContentType customization replaces the
+    // value on every non-GET/DELETE method, body or not.
+    private bool WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned, bool modeledContentType)
+    {
+        // An input event stream sets its own application/vnd.amazon.eventstream Content-Type (see
+        // WriteEventStreamPublisher), so the normal body Content-Type is skipped.
+        if (partitioned.PayloadMember is { Type.IsEventStream: true })
+        {
+            return false;
+        }
+
+        var overrideContentType = context.Customizations.OverrideContentType;
+        if (!string.IsNullOrEmpty(overrideContentType) && httpTrait.Method is not ("GET" or "DELETE"))
+        {
+            writer.WriteLine($"""request.Headers["Content-Type"] = "{overrideContentType}";""");
+            return true;
+        }
+
+        if (modeledContentType && partitioned.PayloadMember is { Type.IsBlob: true } blob)
+        {
+            writer.WriteLine($"""request.Headers["Content-Type"] = "{blob.Type.MediaType ?? "application/octet-stream"}";""");
+            return true;
+        }
+
         var hasBody = partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0;
         if (httpTrait.Method is "GET" or "DELETE" || !hasBody)
         {
-            return;
+            return false;
         }
 
         var contentType = "application/json";
@@ -173,6 +287,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             contentType = payload.Type.MediaType ?? "text/plain";
         }
         writer.WriteLine($"""request.Headers["Content-Type"] = "{contentType}";""");
+        return false;
     }
 
     // restJson1 @timestampFormat defaults for HTTP bindings when unset: http-date on a header,
@@ -187,58 +302,94 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     /// unwrapped with <c>.Value</c> (timestamps keep the nullable overload); the caller guards each
     /// with an <c>IsSet</c> check first. <paramref name="timestampDefault"/> is the binding's
     /// <c>@timestampFormat</c> default, used when the member carries no explicit format.
-    /// Dispatch is on <see cref="TypeDescriptor.MarshalType"/> so an enum marshals as a <c>string</c>.
+    /// Dispatch is on <see cref="TypeDescriptor.Target"/>; an enum marshals as a <c>string</c>.
     /// </summary>
-    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.MarshalType switch
-    {
-        "string" => $"StringUtils.FromString({expression})",
-        "bool?" => $"StringUtils.FromBool({expression}.Value)",
-        "int?" => $"StringUtils.FromInt({expression}.Value)",
-        "long?" => $"StringUtils.FromLong({expression}.Value)",
-        "float?" => $"StringUtils.FromFloat({expression}.Value)",
-        "double?" => $"StringUtils.FromDouble({expression}.Value)",
-        "DateTime?" => TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
-        _ => null,
-    };
+    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.MarshallerOverride is { } marshaller
+        ? $"{marshaller}({expression})"
+        : member.Type.Target switch
+        {
+            StringShape or EnumShape => $"StringUtils.FromString({expression})",
+            BooleanShape => $"StringUtils.FromBool({expression}.Value)",
+            IntegerShape or IntEnumShape => $"StringUtils.FromInt({expression}.Value)",
+            LongShape => $"StringUtils.FromLong({expression}.Value)",
+            FloatShape => $"StringUtils.FromFloat({expression}.Value)",
+            DoubleShape => $"StringUtils.FromDouble({expression}.Value)",
+            TimestampShape => HttpBindingConversions.TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
+            _ => null,
+        };
 
-    // The StringUtils call that renders a timestamp as a string for a header/query/label position.
-    private static string TimestampStringConversion(string format, string expression) => format switch
+    // The bare StringUtils.From* method name (no argument) for a non-nullable value-type collection
+    // element, or null when the element has no scalar string form or is a @sparse (nullable) element.
+    // Used as the lambda body in a query ConvertAll<string>(item => X(item)); elements are non-nullable
+    // (List<int>), so no .Value. Timestamps use the query/label default (ISO8601) unless the element
+    // carries an explicit format.
+    private static string? QueryElementConverter(TypeDescriptor element)
     {
-        "date-time" => $"StringUtils.FromDateTimeToISO8601WithOptionalMs({expression})",
-        "http-date" => $"StringUtils.FromDateTimeToRFC822({expression})",
-        "epoch-seconds" => $"StringUtils.FromDateTimeToUnixTimestamp({expression})",
-        _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
-    };
+        if (element.IsNullableValueType)
+        {
+            return null;
+        }
+
+        return element.Target switch
+        {
+            BooleanShape => "StringUtils.FromBool",
+            IntegerShape or IntEnumShape => "StringUtils.FromInt",
+            LongShape => "StringUtils.FromLong",
+            FloatShape => "StringUtils.FromFloat",
+            DoubleShape => "StringUtils.FromDouble",
+            TimestampShape => HttpBindingConversions.TimestampConverter(element.TimestampFormat ?? QueryLabelTimestampDefault),
+            _ => null,
+        };
+    }
+
+    // A list<string>/list<enum> adds its List<string> to the typed ParameterCollection directly; a
+    // value-type list converts each element to a string via ConvertAll (repeated params, matching C2J).
+    // A non-scalar element (blob, structure, nested collection) fails loud as it's not supported according to smithy spec
+    // https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
+    private void WriteQueryListMember(CodeWriter writer, Member member, string queryName, TypeDescriptor element)
+    {
+        if (element.MarshalsAsString)
+        {
+            writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName});""");
+            return;
+        }
+
+        var converter = QueryElementConverter(element)
+            ?? throw new GeneratorException($"Unsupported query list element type '{element.DotNetType}' (member: {member.PropertyName}).");
+        writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName}.ConvertAll<string>(item => {converter}(item)));""");
+    }
 
     //https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
     private void WriteQueryStringMembers(CodeWriter writer, List<(Member Member, string QueryName)> queryMembers)
     {
+        // TODO: handle customizations, such as exclusions in marshalling
         foreach (var (member, queryName) in queryMembers)
         {
             // An idempotency token is auto-populated, so it is never "required from the customer".
             if (member.IsRequired && !member.IsIdempotencyToken)
             {
-                // A real string is checked for empty; anything else (an enum's ConstantClass, a list,
-                // a reference type) is checked for null.
-                var guard = member.Type.IsString
+                // Strings and enums are checked for empty: C2J models an enum as a string shape, and a
+                // ConstantClass converts implicitly to string. Anything else (a list, a reference type, a
+                // member converted by its dataTypeSwap marshaller, whose type may not be a string) is checked for null.
+                var guard = member.Type.MarshalsAsString && member.Type.MarshallerOverride is null
                     ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
                     : $"publicRequest.{member.PropertyName} == null";
                 writer.OpenBlock($"if ({guard})", () =>
                 {
-                    writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
+                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
                 });
                 writer.WriteLine("");
             }
 
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A list<string> adds repeated params via the typed ParameterCollection overload;
+                // A list adds repeated params via the typed ParameterCollection overload;
                 // request.Parameters is a string-only IDictionary facade over the same collection and
                 // cannot take a List<string>. Scalars stay on StringConversion, which still throws for
                 // any unsupported type.
-                if (member.Type.ListElement is { IsString: true })
+                if (member.Type.ListElement is { } element)
                 {
-                    writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName});""");
+                    WriteQueryListMember(writer, member, queryName, element);
                 }
                 else
                 {
@@ -320,13 +471,18 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         {
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A list<string> header joins to one comma-separated value via StringUtils.FromList
-                // (RFC-7230 quoting). A string/enum header is assigned directly (an enum's ConstantClass
-                // converts implicitly to string). Other scalars go through StringUtils; an unsupported
-                // type throws.
-                if (member.Type.ListElement is { IsString: true })
+                // A list header joins to one value: a list<string>/list<enum> via StringUtils.FromList
+                // (RFC-7230 quoting), a value-type list via StringUtils.FromValueTypeList (bool
+                // lowercased, DateTime forced to RFC822). A non-scalar element fails loud. A string/enum
+                // scalar header is assigned directly (an enum's ConstantClass converts implicitly to
+                // string). Other scalars go through StringUtils; an unsupported type throws.
+                if (member.Type.MarshallerOverride is { } marshaller)
                 {
-                    writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
+                    writer.WriteLine($"""request.Headers["{headerName}"] = {marshaller}(publicRequest.{member.PropertyName});""");
+                }
+                else if (member.Type.ListElement is { } element)
+                {
+                    WriteHeaderListMember(writer, member, headerName, element);
                 }
                 else if (member.Type is { IsString: true, MediaType: not null })
                 {
@@ -346,6 +502,31 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             });
             writer.WriteLine("");
         }
+    }
+
+    // A list<string>/list<enum> comma-joins via StringUtils.FromList; a value-type list (int, long,
+    // bool, double, timestamp, ...) via StringUtils.FromValueTypeList, whose List<T> overload lowercases
+    // bool and forces DateTime to RFC822 (matching C2J's untyped call — the element type is inferred). A
+    // non-scalar element (blob, structure, nested collection) fails loud.
+    private void WriteHeaderListMember(CodeWriter writer, Member member, string headerName, TypeDescriptor element)
+    {
+        if (element.MarshalsAsString)
+        {
+            writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
+            return;
+        }
+        if (!element.IsScalar || element.IsSparse)
+        {
+            throw new GeneratorException($"Unsupported header list element type '{element.DotNetType}' (member: {member.PropertyName}).");
+        }
+        // FromValueTypeList always emits RFC822 for DateTime, which matches the http-date header default.
+        // An element with an explicit @timestampFormat other than http-date would be silently sent as
+        // RFC822, so fail loud rather than send the wrong value (no AWS service binds such a list today).
+        if (element.IsTimestamp && element.TimestampFormat is { } format && format != "http-date")
+        {
+            throw new GeneratorException($"@httpHeader list of timestamps with @timestampFormat '{format}' is not supported (StringUtils.FromValueTypeList always emits RFC822); member: {member.PropertyName}.");
+        }
+        writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromValueTypeList(publicRequest.{member.PropertyName});""");
     }
 
     // https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait
@@ -368,7 +549,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
+                writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
             });
 
             var pathTemplate = greedy ? "{" + member.ModeledName + "+}" : "{" + member.ModeledName + "}";
@@ -414,11 +595,20 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     // A @httpPayload member is serialized as the ENTIRE request body, with no wrapping JSON object or
     // property name. A structure payload writes its own object braces around the target's marshaller;
-    // a string/enum payload is the raw UTF-8 body (text/plain; an enum is a string shape in C2J and its
-    // ConstantClass converts implicitly to string); a blob payload is the raw octet-stream body. Matches
-    // C2J output. A union is a structure (structure path); document throws earlier in TypeMapper; a
-    // list/map payload fails loud below.
-    private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
+    // a document payload delegates the whole body to the runtime DocumentMarshaller (no braces — the
+    // document IS the complete JSON value); a string/enum payload is the raw UTF-8 body (text/plain; an
+    // enum is a string shape in C2J and its ConstantClass converts implicitly to string); a blob payload
+    // is the raw octet-stream body. Matches C2J output where one exists. A union is a structure (structure
+    // path); a list/map payload fails loud below.
+    // The member's .NET type is the union class name, so it names the {Stream}PublisherMarshaller; the
+    // request property carries the "Publisher" suffix (see OperationWriter.ApplyEventStreamPublisher).
+    private static void WriteEventStreamPublisher(CodeWriter writer, Member payload)
+    {
+        writer.WriteLine("""request.Headers["Content-Type"] = "application/vnd.amazon.eventstream";""");
+        writer.WriteLine($"request.EventStreamPublisher = new {payload.Type.DotNetType}PublisherMarshaller(publicRequest.{payload.PropertyName}Publisher);");
+    }
+
+    private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload, bool blobContentTypeEmitted)
     {
         if (payload.Type.MarshalsAsString)
         {
@@ -441,19 +631,35 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             return;
         }
 
-        if (payload.Type.IsBlob)
+        if (payload.Type.IsDocument)
         {
-            WriteBlobPayloadSerialization(writer, payload, unsignedPayload);
+            // No C2J precedent — C2J represents a document as a structure and no model binds one to
+            // @httpPayload. The runtime DocumentMarshaller writes the whole JSON value itself (object,
+            // array, or scalar), so unlike the structure path there is no WriteStartObject/WriteEndObject
+            // wrapping; it mirrors the document body-member marshaller (JsonBodyMemberMarshaller) over
+            // the shared body scaffold. Content-Type stays application/json (WriteContentType).
+            WriteBodyScaffolding(writer, () =>
+            {
+                writer.WriteLine($"Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.{payload.PropertyName});");
+            });
             return;
         }
 
-        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+        if (payload.Type.IsBlob)
+        {
+            WriteBlobPayloadSerialization(writer, payload, unsignedPayload, blobContentTypeEmitted);
+            return;
+        }
+
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}).");
     }
 
-    // A blob payload is the raw body stream; the final Content-Type overrides the one set earlier.
+    // A blob payload is the raw body stream; the final Content-Type overrides the one set earlier,
+    // unless WriteContentType already emitted the blob's type up front (it does so when a modeled
+    // Content-Type header sits between them, so the modeled header still wins when set).
     // A non-seekable stream can only fall back to chunked transfer when the body is unsigned and
     // no length is required; @requiresLength makes Content-Length mandatory, so it throws instead.
-    private static void WriteBlobPayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
+    private static void WriteBlobPayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload, bool blobContentTypeEmitted)
     {
         var streaming = payload.Type.IsStreaming;
         var requiresLength = payload.Type.RequiresLength;
@@ -488,7 +694,10 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             writer.WriteLine("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);");
         }
 
-        writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "{payload.Type.MediaType ?? "application/octet-stream"}";""");
+        if (!blobContentTypeEmitted)
+        {
+            writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "{payload.Type.MediaType ?? "application/octet-stream"}";""");
+        }
     }
 
     // The Utf8JsonWriter + Content/ContentStream scaffold shared by the normal JSON body and the
@@ -512,7 +721,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine("#endif");
     }
 
-    private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members)
+    // With httpBindings false (awsJson1.x) every member is a body member and the binding traits are
+    // ignored, as the protocol requires; @hostLabel is not an HTTP binding and still applies.
+    private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members, bool httpBindings)
     {
         var queryMembers = new List<(Member Member, string QueryName)>();
         var headerMembers = new List<(Member Member, string HeaderName)>();
@@ -530,7 +741,17 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             var httpHeader = memberShape.GetHttpHeader();
             var httpPrefixHeaders = memberShape.GetHttpPrefixHeaders();
 
-            if (httpQuery is not null)
+            // Anywhere else the publisher is never wired and the body path emits a marshaller that doesn't exist.
+            if (member.Type.IsEventStream && !memberShape.IsHttpPayload())
+            {
+                throw new GeneratorException($"Event stream member '{member.PropertyName}' must be bound with @httpPayload.");
+            }
+
+            if (!httpBindings)
+            {
+                bodyMembers.Add(member);
+            }
+            else if (httpQuery is not null)
             {
                 queryMembers.Add((member, httpQuery));
             }

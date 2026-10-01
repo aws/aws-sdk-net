@@ -41,6 +41,7 @@ namespace Amazon.Resiliencehubv2.Model
         private MultiAzTargets _multiAz;
         private MultiRegionTargets _multiRegion;
         private string _policyArn;
+        private bool? _sharingEnabled;
 
         /// <summary>
         /// Gets and sets the property AvailabilitySlo. 
@@ -144,6 +145,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetPolicyArn()
         {
             return this._policyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingEnabled. 
+        /// <para>
+        /// Specifies whether cross-account sharing is enabled for the policy. Disabling sharing
+        /// stops member services from using the policy.
+        /// </para>
+        /// </summary>
+        public bool? SharingEnabled
+        {
+            get { return this._sharingEnabled; }
+            set { this._sharingEnabled = value; }
+        }
+
+        // Check to see if SharingEnabled property is set
+        internal bool IsSetSharingEnabled()
+        {
+            return this._sharingEnabled.HasValue; 
         }
 
     }

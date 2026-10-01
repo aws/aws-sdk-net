@@ -14,6 +14,10 @@
         { "target": "com.example#DoScalars" },
         { "target": "com.example#DoShadow" }
       ],
+      "rename": {
+        "com.example#RelatedResource": "RenamedResource",
+        "com.example#MixedError": "RenamedMixedError"
+      },
       "traits": {
         "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
         "aws.protocols#restJson1": {},
@@ -72,7 +76,8 @@
       "type": "structure",
       "members": {
         "reason": { "target": "smithy.api#String" }
-      }
+      },
+      "traits": { "smithy.api#deprecated": { "message": "This type is deprecated." } }
     },
     "com.example#ResourceList": {
       "type": "list",
@@ -81,7 +86,7 @@
     "com.example#RelatedResource": {
       "type": "structure",
       "members": {
-        "arn": { "target": "smithy.api#String" }
+        "arn": { "target": "smithy.api#String", "traits": { "smithy.api#length": { "min": 1 } } }
       }
     },
     "com.example#DoEnums": {
@@ -113,7 +118,9 @@
         "AWS":     { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "amazon-web-services" } },
         "EQ":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "Equals" } },
         "GP":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "GENERAL_PURPOSE" } },
-        "AB":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a.b" } }
+        "AB":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a.b" } },
+        "ZERO":    { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "0" } },
+        "ONE":     { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "1" } }
       }
     },
     "com.example#Status": {
@@ -127,7 +134,8 @@
       "type": "enum",
       "members": {
         "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } }
-      }
+      },
+      "traits": { "smithy.api#length": { "min": 1, "max": 63 }, "smithy.api#pattern": "^[A-Za-z0-9]+$" }
     },
     "com.example#Priority": {
       "type": "intEnum",
@@ -159,13 +167,14 @@
       "type": "operation",
       "input": { "target": "smithy.api#Unit" },
       "output": { "target": "com.example#DoHeaderOnlyResponse" },
-      "traits": { "smithy.api#http": { "uri": "/header-only?aws_iam=t", "method": "POST" } }
+      "traits": { "smithy.api#http": { "uri": "/header-only?aws_iam=t", "method": "POST" }, "smithy.api#deprecated": { "message": "This operation is deprecated." } }
     },
     "com.example#DoHeaderOnlyResponse": {
       "type": "structure",
       "members": {
         "token": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-token" } }
-      }
+      },
+      "traits": { "smithy.api#deprecated": { "message": "This type is deprecated." } }
     },
     "com.example#DoScalars": {
       "type": "operation",
@@ -181,6 +190,7 @@
         "when":       { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
         "count":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "count" } },
         "token":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "token", "smithy.api#required": {} } },
+        "mode":       { "target": "com.example#Status", "traits": { "smithy.api#httpQuery": "mode", "smithy.api#required": {} } },
         "since":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpQuery": "since", "smithy.api#timestampFormat": "epoch-seconds" } },
         "ratio":      { "target": "smithy.api#Double", "traits": { "smithy.api#httpHeader": "x-ratio" } },
         "stamp":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-stamp" } },
@@ -246,7 +256,7 @@
     "com.example#DoLists": {
       "type": "operation",
       "input": { "target": "com.example#DoListsRequest" },
-      "output": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#DoListsResponse" },
       "traits": { "smithy.api#http": { "uri": "/lists", "method": "POST" } }
     },
     "com.example#DoListsRequest": {
@@ -254,12 +264,32 @@
       "members": {
         "tagKeys":      { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "tagKeys" } },
         "requiredKeys": { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "requiredKeys", "smithy.api#required": {} } },
-        "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } }
+        "counts":       { "target": "com.example#IntList", "traits": { "smithy.api#httpQuery": "counts" } },
+        "stamps":       { "target": "com.example#TimestampList", "traits": { "smithy.api#httpQuery": "stamps" } },
+        "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } },
+        "amounts":      { "target": "com.example#IntList", "traits": { "smithy.api#httpHeader": "x-amounts" } },
+        "when":         { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-when" } }
+      }
+    },
+    "com.example#DoListsResponse": {
+      "type": "structure",
+      "members": {
+        "stringHeader":    { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-strs" } },
+        "intHeader":       { "target": "com.example#IntList", "traits": { "smithy.api#httpHeader": "x-ints" } },
+        "timestampHeader": { "target": "com.example#TimestampList", "traits": { "smithy.api#httpHeader": "x-stamps" } }
       }
     },
     "com.example#StringList": {
       "type": "list",
       "member": { "target": "smithy.api#String" }
+    },
+    "com.example#IntList": {
+      "type": "list",
+      "member": { "target": "smithy.api#Integer" }
+    },
+    "com.example#TimestampList": {
+      "type": "list",
+      "member": { "target": "smithy.api#Timestamp" }
     },
     "com.example#DoShadow": {
       "type": "operation",

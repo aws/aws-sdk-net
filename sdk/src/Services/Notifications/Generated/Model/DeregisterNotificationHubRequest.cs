@@ -31,14 +31,13 @@ namespace Amazon.Notifications.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterNotificationHub operation.
-    /// Deregisters a <c>NotificationConfiguration</c> in the specified Region.
+    /// Deregisters a <c>NotificationHub</c> in the specified Region.
     /// 
     ///  <note> 
     /// <para>
     /// You can't deregister the last <c>NotificationHub</c> in the account. <c>NotificationEvents</c>
-    /// stored in the deregistered <c>NotificationConfiguration</c> are no longer be visible.
-    /// Recreating a new <c>NotificationConfiguration</c> in the same Region restores access
-    /// to those <c>NotificationEvents</c>.
+    /// stored in the deregistered <c>NotificationHub</c> are no longer visible. Recreating
+    /// a new <c>NotificationHub</c> in the same Region restores access to those <c>NotificationEvents</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +48,7 @@ namespace Amazon.Notifications.Model
         /// <summary>
         /// Gets and sets the property NotificationHubRegion. 
         /// <para>
-        /// The <c>NotificationConfiguration</c> Region.
+        /// The <c>NotificationHub</c> Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=25)]

@@ -46,7 +46,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// Use to configure delete on termination of the associated device.
+        /// Specifies whether to delete the associated device on termination.
         /// </para>
         /// </summary>
         public bool? DeleteOnTermination
@@ -64,7 +64,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Use to configure device encryption.
+        /// Specifies whether to encrypt the device.
         /// </para>
         /// </summary>
         public bool? Encrypted
@@ -82,7 +82,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Use to configure device IOPS.
+        /// The IOPS value for the device. Required only when volumeType is io1 or io2.
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=64000)]
@@ -161,7 +161,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property VolumeSize. 
         /// <para>
-        /// Use to override the device's volume size.
+        /// Overrides the volume size for the device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16000)]
@@ -180,7 +180,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// Use to override the device's volume type.
+        /// Overrides the volume type for the device.
         /// </para>
         /// </summary>
         public EbsVolumeType VolumeType

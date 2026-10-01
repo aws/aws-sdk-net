@@ -1,4 +1,4 @@
-using SmithyDotNet.Generator.Generation;
+﻿using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.Serialization;
@@ -40,15 +40,15 @@ public class ScalarMemberCodegenTests
 
         var nestedId = ShapeId.Parse($"{Namespace}#Nested");
         _structureUnmarshaller = new JsonStructureUnmarshallerWriter(_context, ModelFileName)
-            .Write(_context.Structures[nestedId], nestedId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[nestedId], TestContext.Current.CancellationToken);
 
         var detailId = ShapeId.Parse($"{Namespace}#Detail");
         _structureMarshaller = new JsonStructureMarshallerWriter(_context, ModelFileName)
-            .Write(_context.Structures[detailId], detailId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[detailId], TestContext.Current.CancellationToken);
 
         var requestId = ShapeId.Parse($"{Namespace}#DoScalarsRequest");
         _requestStructure = new StructureWriter(_context, ModelFileName)
-            .Write(_context.Structures[requestId], requestId, TestContext.Current.CancellationToken);
+            .Write(_context.Structures[requestId], TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -60,7 +60,7 @@ public class ScalarMemberCodegenTests
         Assert.Contains("""context.Writer.WritePropertyName("created");""", _requestMarshaller);
         Assert.Contains("context.Writer.WriteBooleanValue(publicRequest.Flag.Value);", _requestMarshaller);
         Assert.Contains("context.Writer.WriteNumberValue(publicRequest.Size.Value);", _requestMarshaller);
-        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Created.Value)));", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Created.Value));", _requestMarshaller);
 
         // float/double branch through IsSpecial*Value: WriteNumberValue rejects NaN/±Infinity, which
         // JSON protocols send as strings.
@@ -73,7 +73,7 @@ public class ScalarMemberCodegenTests
     public void RequestMarshaller_TimestampFormat_ResolvesPerBindingAndOverride()
     {
         // Body defaults to epoch seconds; member and target @timestampFormat override it.
-        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Created.Value)));", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Created.Value));", _requestMarshaller);
         Assert.Contains("context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Expiry));", _requestMarshaller);   // member @date-time
         Assert.Contains("context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822(publicRequest.SealedAt));", _requestMarshaller);              // target @http-date
 
@@ -95,6 +95,10 @@ public class ScalarMemberCodegenTests
         // A required non-string query member is null-checked; IsSet alone would silently omit it.
         Assert.Contains("if (publicRequest.Token == null)", _requestMarshaller);
         Assert.Contains("""throw new AmazonExampleException("Request object does not have required field Token set");""", _requestMarshaller);
+
+        // A required enum query member gets the string guard, matching C2J (which models enums as strings).
+        Assert.Contains("if (string.IsNullOrEmpty(publicRequest.Mode))", _requestMarshaller);
+        Assert.Contains("""throw new AmazonExampleException("Request object does not have required field Mode set");""", _requestMarshaller);
     }
 
     [Fact]
@@ -222,7 +226,7 @@ public class ScalarMemberCodegenTests
         Assert.Contains("if (requestObject.IsSetLevel())", _structureMarshaller);
         Assert.Contains("""context.Writer.WritePropertyName("level");""", _structureMarshaller);
         Assert.Contains("context.Writer.WriteNumberValue(requestObject.Level.Value);", _structureMarshaller);
-        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.At.Value)));", _structureMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.At.Value));", _structureMarshaller);
     }
 
     [Fact]
@@ -236,6 +240,6 @@ public class ScalarMemberCodegenTests
         var id = ShapeId.Parse($"{Namespace}#TestList");
 
         // Non-sparse elements are non-nullable (List<int>), unlike a standalone int? member.
-        Assert.Equal("List<int>", TypeMapper.MapType(id, list, _context));
+        Assert.Equal("List<int>", TypeMapper.MapType(list, _context));
     }
 }

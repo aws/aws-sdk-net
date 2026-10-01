@@ -103,7 +103,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of input this parameter provides. The currently supported value is "string".
+        /// The type of input this parameter provides. Supported values are <c>string</c>, <c>integer</c>,
+        /// <c>boolean</c>, and <c>stringList</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

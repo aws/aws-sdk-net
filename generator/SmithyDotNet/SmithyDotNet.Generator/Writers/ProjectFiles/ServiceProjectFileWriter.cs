@@ -1,4 +1,6 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using static SmithyDotNet.Generator.Writers.ProjectFiles.ProjectFileSections;
 
 namespace SmithyDotNet.Generator.Writers.ProjectFiles;
@@ -17,16 +19,23 @@ namespace SmithyDotNet.Generator.Writers.ProjectFiles;
 /// </summary>
 public sealed class ServiceProjectFileWriter(GenerationContext context)
 {
+    // Extra framework references a service's Custom\ code needs, per its metadata reference-dependencies.
+    private IReadOnlyList<ReferenceDependency> NetFrameworkReferenceDependencies =>
+        context.Metadata?.ReferenceDependencies?.NetFramework ?? [];
+
+    private IReadOnlyList<ReferenceDependency> NetStandardReferenceDependencies =>
+        context.Metadata?.ReferenceDependencies?.NetStandard ?? [];
+
     /// <summary>Writes <c>AWSSDK.{Service}.NetFramework.csproj</c>.</summary>
     public string WriteNetFramework()
     {
-        return WriteProject(ServiceProjectConfigurations.NetFramework);
+        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetFrameworkTestService : ServiceProjectConfigurations.NetFramework, NetFrameworkReferenceDependencies);
     }
 
     /// <summary>Writes <c>AWSSDK.{Service}.NetStandard.csproj</c>.</summary>
     public string WriteNetStandard()
     {
-        return WriteProject(ServiceProjectConfigurations.NetStandard);
+        return WriteProject(context.IsTestService ? ServiceProjectConfigurations.NetStandardTestService : ServiceProjectConfigurations.NetStandard, NetStandardReferenceDependencies);
     }
 
     /// <summary>
@@ -54,19 +63,66 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         sections.Add(w => WriteRuleSetProperties(w, ns));
         sections.Add(w => WriteSigningChoose(w, ns.KeyFilePath));
         sections.Add(w => WriteAnalyzerItems(w, ns));
-        sections.Add(WriteCompileExcludes);
+        sections.Add(WriteServiceCompileExcludes);
         sections.Add(WriteReadmePackaging);
         sections.Add(w => WriteConditionalCoreReferences(w, fw, ns, netStandardSupport));
         sections.Add(w => WriteAnalyzerPackageReferences(w, ns));
 
         // net472 needs the same framework references the NetFramework variant carries.
-        if (fw.FrameworkReferences.Count > 0)
+        if (fw.FrameworkReferences.Count > 0 || NetFrameworkReferenceDependencies.Count > 0)
         {
-            sections.Add(w => WriteConditionalFrameworkReferences(w, fw));
+            sections.Add(w => WriteConditionalFrameworkReferences(w, fw, NetFrameworkReferenceDependencies));
+        }
+
+        // netstandard/net8 targets need the same references the NetStandard variant carries.
+        // (ns.FrameworkReferences is empty, so only the metadata reference-dependencies apply.)
+        if (NetStandardReferenceDependencies.Count > 0)
+        {
+            sections.Add(w => WriteConditionalNetStandardReferences(w, NetStandardReferenceDependencies));
         }
 
         var writer = new CodeWriter();
         WriteProjectElement(writer, sections);
+        return writer.ToRawString();
+    }
+
+    /// <summary>
+    /// Writes the standalone <c>AWSSDK.{Service}.csproj</c>: the requested targets and AWSSDK.Core
+    /// from NuGet, with none of the repo-only signing, analyzer, or ruleset wiring. The per-target
+    /// defines and the Framework-only System.Configuration reference use the same identifier
+    /// conditions as the repo csprojs, so any mix of Framework and modern targets works.
+    /// </summary>
+    public string WriteStandalone(StandaloneOptions options)
+    {
+        var writer = new CodeWriter();
+        WriteProjectElement(writer,
+        [
+            w => w.OpenXmlBlock("PropertyGroup", () =>
+            {
+                w.WriteLine(options.TargetFrameworks.Count == 1
+                    ? $"<TargetFramework>{options.TargetFrameworks[0]}</TargetFramework>"
+                    : $"<TargetFrameworks>{string.Join(';', options.TargetFrameworks)}</TargetFrameworks>");
+                w.WriteLine($"<AssemblyName>{context.AssemblyName}</AssemblyName>");
+
+                // .NET Framework targets default to C# 7.3; the generated source needs (at least) C# 9.
+                w.WriteLine("<LangVersion>latest</LangVersion>");
+                w.WriteLine($"""<DefineConstants Condition="{IsNotNetFramework}">$(DefineConstants);NETSTANDARD</DefineConstants>""");
+                WriteAsyncEnumerablesDefine(w);
+                w.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");
+                w.WriteLine();
+                WritePackagingProperties(w, options.Version);
+            }),
+            WriteCompileExcludes,
+            WriteReadmePackaging,
+            w => w.OpenXmlBlock("ItemGroup", () =>
+            {
+                w.WriteLine($"""<PackageReference Include="AWSSDK.Core" Version="{options.CoreVersion}" />""");
+            }),
+            w => w.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () =>
+            {
+                w.WriteLine("""<Reference Include="System.Configuration"/>""");
+            }),
+        ]);
         return writer.ToRawString();
     }
 
@@ -96,28 +152,36 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             writer.WriteLine();
             WriteGenerateAssemblyAttributeSuppressions(writer);
             writer.WriteLine();
-            WritePackagingProperties(writer);
+            WritePackagingProperties(writer, context.Manifest.GetServiceVersion(context.ServiceName));
+            WriteAwsPackagingProperties(writer);
         });
     }
 
-    // Package metadata that lives in the .nuspec today. On the unified project it moves onto the
-    // csproj so `dotnet pack` produces a complete package without a separate nuspec.
-    private void WritePackagingProperties(CodeWriter writer)
+    // Package metadata that lives in the .nuspec today. On the unified and standalone projects it
+    // moves onto the csproj so `dotnet pack` produces a complete package without a separate nuspec.
+    // Only what the model or the caller supplies: the description is the metadata.json synopsis,
+    // falling back to the model's @title when there is no metadata (standalone).
+    private void WritePackagingProperties(CodeWriter writer, string version)
     {
         writer.WriteLine($"<PackageId>{context.AssemblyName}</PackageId>");
-        writer.WriteLine($"<Version>{context.Manifest.GetServiceVersion(context.ServiceName)}</Version>");
+        writer.WriteLine($"<Version>{version}</Version>");
         writer.WriteLine($"<Title>AWSSDK - {context.ServiceName}</Title>");
-        writer.WriteLine("<Authors>Amazon Web Services</Authors>");
-        if (context.Metadata?.Synopsis is { Length: > 0 } synopsis)
+        if ((context.Metadata?.Synopsis ?? context.ServiceTitle) is { Length: > 0 } description)
         {
-            writer.WriteLine($"<Description>{System.Security.SecurityElement.Escape(synopsis)}</Description>");
+            writer.WriteLine($"<Description>{System.Security.SecurityElement.Escape(description)}</Description>");
         }
+        writer.WriteLine("<PackageReadmeFile>nuget-readme.md</PackageReadmeFile>");
+    }
 
+    // Publisher metadata for the packages AWS ships. A standalone project is someone else's package,
+    // so these are not emitted there.
+    private void WriteAwsPackagingProperties(CodeWriter writer)
+    {
+        writer.WriteLine("<Authors>Amazon Web Services</Authors>");
         var extraTags = context.Metadata is { Tags.Count: > 0 } metadata ? " " + string.Join(" ", metadata.Tags) : string.Empty;
-        writer.WriteLine($"<PackageTags>AWS;Amazon;cloud;{context.ServiceName};aws-sdk-v4{System.Security.SecurityElement.Escape(extraTags.Replace(' ', ';'))}</PackageTags>");
+        writer.WriteLine($"<PackageTags>AWS;Amazon;cloud;{context.BaseName};aws-sdk-v4{System.Security.SecurityElement.Escape(extraTags.Replace(' ', ';'))}</PackageTags>");
         writer.WriteLine("<PackageProjectUrl>https://github.com/aws/aws-sdk-net/</PackageProjectUrl>");
         writer.WriteLine("<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>");
-        writer.WriteLine("<PackageReadmeFile>nuget-readme.md</PackageReadmeFile>");
     }
 
     private static void WriteReadmePackaging(CodeWriter writer)
@@ -128,7 +192,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteConditionalFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration frameworkConfig)
+    private static void WriteConditionalFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration frameworkConfig, IReadOnlyList<ReferenceDependency> referenceDependencies)
     {
         writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNetFramework}">""", "ItemGroup", () =>
         {
@@ -136,10 +200,29 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             {
                 writer.WriteLine($"""<Reference Include="{reference}"/>""");
             }
+            WriteReferenceDependencies(writer, referenceDependencies);
         });
     }
 
-    private string WriteProject(ServiceProjectConfiguration config)
+    private static void WriteConditionalNetStandardReferences(CodeWriter writer, IReadOnlyList<ReferenceDependency> referenceDependencies)
+    {
+        writer.WriteXmlBlock($"""<ItemGroup Condition="{IsNotNetFramework}">""", "ItemGroup", () =>
+        {
+            WriteReferenceDependencies(writer, referenceDependencies);
+        });
+    }
+
+    // Single emitter for service-specific reference-dependencies so a format change (e.g. adding a
+    // HintPath) lands in one place across every variant.
+    private static void WriteReferenceDependencies(CodeWriter writer, IReadOnlyList<ReferenceDependency> referenceDependencies)
+    {
+        foreach (var dependency in referenceDependencies)
+        {
+            writer.WriteLine($"""<Reference Include="{dependency.Name}"/>""");
+        }
+    }
+
+    private string WriteProject(ServiceProjectConfiguration config, IReadOnlyList<ReferenceDependency> referenceDependencies)
     {
         var sections = new List<Action<CodeWriter>>
         {
@@ -148,7 +231,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             w => WriteRuleSetProperties(w, config),
             w => WriteSigningChoose(w, config.KeyFilePath),
             w => WriteAnalyzerItems(w, config),
-            WriteCompileExcludes,
+            WriteServiceCompileExcludes,
             w => WriteCoreReference(w, config)
         };
 
@@ -157,9 +240,9 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             sections.Add(w => WriteAnalyzerPackageReferences(w, config));
         }
 
-        if (config.FrameworkReferences.Count > 0)
+        if (config.FrameworkReferences.Count > 0 || referenceDependencies.Count > 0)
         {
-            sections.Add(w => WriteFrameworkReferences(w, config));
+            sections.Add(w => WriteFrameworkReferences(w, config, referenceDependencies));
         }
 
         var writer = new CodeWriter();
@@ -188,6 +271,20 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
+    // A test service's unit tests compile in their own project under UnitTests/; exclude them from the client csproj.
+    private void WriteServiceCompileExcludes(CodeWriter writer)
+    {
+        writer.OpenXmlBlock("ItemGroup", () =>
+        {
+            writer.WriteLine("""<Compile Remove="**/obj/**"/>""");
+            writer.WriteLine("""<None Remove="**/obj/**" />""");
+            if (context.IsTestService)
+            {
+                writer.WriteLine("""<Compile Remove="**/UnitTests/**"/>""");
+            }
+        });
+    }
+
     private static void WriteCoreReference(CodeWriter writer, ServiceProjectConfiguration config)
     {
         writer.OpenXmlBlock("ItemGroup", () =>
@@ -196,7 +293,9 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         });
     }
 
-    private static void WriteFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration config)
+    // Emits the project-type framework references (e.g. System.Configuration) followed by any
+    // service-specific reference-dependencies, matching C2J which merges both into one ItemGroup.
+    private static void WriteFrameworkReferences(CodeWriter writer, ServiceProjectConfiguration config, IReadOnlyList<ReferenceDependency> referenceDependencies)
     {
         writer.OpenXmlBlock("ItemGroup", () =>
         {
@@ -204,6 +303,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             {
                 writer.WriteLine($"""<Reference Include="{reference}"/>""");
             }
+            WriteReferenceDependencies(writer, referenceDependencies);
         });
     }
 

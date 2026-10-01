@@ -37,6 +37,7 @@ namespace Amazon.S3Control.Model
     public partial class S3CopyObjectOperation
     {
         private List<S3Grant> _accessControlGrants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
+        private S3AnnotationDirective _annotationDirective;
         private bool? _bucketKeyEnabled;
         private S3CannedAccessControlList _cannedAccessControlList;
         private S3ChecksumAlgorithm _checksumAlgorithm;
@@ -44,6 +45,8 @@ namespace Amazon.S3Control.Model
         private DateTime? _modifiedSinceConstraint;
         private S3ObjectMetadata _newObjectMetadata;
         private List<S3Tag> _newObjectTagging = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
+        private S3ObjectLockEventHold _objectLockEventHold;
+        private S3ObjectLockEventHoldDuration _objectLockEventHoldDuration;
         private S3ObjectLockLegalHoldStatus _objectLockLegalHoldStatus;
         private S3ObjectLockMode _objectLockMode;
         private DateTime? _objectLockRetainUntilDate;
@@ -77,6 +80,35 @@ namespace Amazon.S3Control.Model
         internal bool IsSetAccessControlGrants()
         {
             return this._accessControlGrants != null && (this._accessControlGrants.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AnnotationDirective. 
+        /// <para>
+        /// Specifies whether the Batch Operations copy job copies object annotations from the
+        /// source object or skips them. If this property isn't specified, <c>COPY</c> is the
+        /// default behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>COPY | EXCLUDE</c> 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public S3AnnotationDirective AnnotationDirective
+        {
+            get { return this._annotationDirective; }
+            set { this._annotationDirective = value; }
+        }
+
+        // Check to see if AnnotationDirective property is set
+        internal bool IsSetAnnotationDirective()
+        {
+            return this._annotationDirective != null;
         }
 
         /// <summary>
@@ -234,6 +266,55 @@ namespace Amazon.S3Control.Model
         internal bool IsSetNewObjectTagging()
         {
             return this._newObjectTagging != null && (this._newObjectTagging.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHold. 
+        /// <para>
+        /// The event hold status to be applied to all objects in the Batch Operations copy job.
+        /// Set to <c>ON</c> to enable an event hold or <c>OFF</c> to disable it.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public S3ObjectLockEventHold ObjectLockEventHold
+        {
+            get { return this._objectLockEventHold; }
+            set { this._objectLockEventHold = value; }
+        }
+
+        // Check to see if ObjectLockEventHold property is set
+        internal bool IsSetObjectLockEventHold()
+        {
+            return this._objectLockEventHold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEventHoldDuration. 
+        /// <para>
+        /// The event hold duration to be applied to all objects in the Batch Operations copy
+        /// job. The duration specifies how long the object remains protected after the event
+        /// hold is released.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This functionality is not supported by directory buckets.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public S3ObjectLockEventHoldDuration ObjectLockEventHoldDuration
+        {
+            get { return this._objectLockEventHoldDuration; }
+            set { this._objectLockEventHoldDuration = value; }
+        }
+
+        // Check to see if ObjectLockEventHoldDuration property is set
+        internal bool IsSetObjectLockEventHoldDuration()
+        {
+            return this._objectLockEventHoldDuration != null;
         }
 
         /// <summary>

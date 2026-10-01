@@ -3027,6 +3027,10 @@
           "shape":"String",
           "documentation":"<p>The amount of memory (in MiB) used by the task. This parameter determines the memory allocation for each task in the Express service. The default value for an express service is 512 MiB.</p>"
         },
+        "cpuArchitecture":{
+          "shape":"ExpressCpuArchitecture",
+          "documentation":"<p>The CPU architecture that the task runs on. If you don't specify a value, the default is <code>X86_64</code>.</p> <p>Valid values:</p> <ul> <li> <p> <code>X86_64</code> - The x86 64-bit architecture.</p> </li> <li> <p> <code>ARM64</code> - The 64-bit ARM architecture.</p> </li> </ul> <p>Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p> <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>"
+        },
         "scalingTarget":{
           "shape":"ExpressGatewayScalingTarget",
           "documentation":"<p>The auto-scaling configuration for the Express service. This defines how the service automatically adjusts the number of running tasks based on demand.</p> <p>You can specify the minimum and maximum number of tasks, the scaling metric (CPU utilization, memory utilization, or request count per target), and the target value for the metric. If not specified, the default target value for an Express service is 60.</p>"
@@ -3037,7 +3041,7 @@
         },
         "taskDefinitionArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p> <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p> <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of a task definition to use to create the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p> <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p> <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, <code>memory</code>, or <code>cpuArchitecture</code>.</p>"
         }
       }
     },
@@ -5607,6 +5611,13 @@
         }
       }
     },
+    "ExpressCpuArchitecture":{
+      "type":"string",
+      "enum":[
+        "X86_64",
+        "ARM64"
+      ]
+    },
     "ExpressGatewayContainer":{
       "type":"structure",
       "required":["image"],
@@ -5718,6 +5729,10 @@
         "memory":{
           "shape":"String",
           "documentation":"<p>The memory allocation for tasks in this service revision.</p>"
+        },
+        "cpuArchitecture":{
+          "shape":"ExpressCpuArchitecture",
+          "documentation":"<p>The CPU architecture that the task runs on.</p> <p>Valid values:</p> <ul> <li> <p> <code>X86_64</code> - The x86 64-bit architecture.</p> </li> <li> <p> <code>ARM64</code> - The 64-bit ARM architecture.</p> </li> </ul> <p>Different service revisions can report different architectures. This value isn't returned when the service uses a customer-provided task definition that doesn't specify a CPU architecture.</p>"
         },
         "networkConfiguration":{
           "shape":"ExpressGatewayServiceNetworkConfiguration",
@@ -8527,6 +8542,10 @@
         "loadBalancers":{
           "shape":"ServiceRevisionLoadBalancers",
           "documentation":"<p>The resolved load balancer configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>"
+        },
+        "vpcLatticeConfigurations":{
+          "shape":"ServiceRevisionVpcLatticeConfigurations",
+          "documentation":"<p>The resolved VPC Lattice configuration for the service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>"
         }
       },
       "documentation":"<p>The resolved configuration for a service revision, which contains the actual resources your service revision uses, such as which target groups serve traffic.</p>"
@@ -9725,6 +9744,24 @@
         }
       },
       "documentation":"<p>The information about the number of requested, pending, and running tasks for a service revision.</p>"
+    },
+    "ServiceRevisionVpcLatticeConfiguration":{
+      "type":"structure",
+      "members":{
+        "targetGroupArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the target group associated with the service revision.</p>"
+        },
+        "productionListenerRule":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the production listener rule or listener that directs traffic to the target group associated with the service revision.</p>"
+        }
+      },
+      "documentation":"<p>The resolved VPC Lattice configuration for a service revision. This includes information about which target groups serve traffic and which listener rules direct traffic to them.</p>"
+    },
+    "ServiceRevisionVpcLatticeConfigurations":{
+      "type":"list",
+      "member":{"shape":"ServiceRevisionVpcLatticeConfiguration"}
     },
     "ServiceRevisions":{
       "type":"list",
@@ -11249,13 +11286,17 @@
           "shape":"String",
           "documentation":"<p>The amount of memory (in MiB) used by the task.</p>"
         },
+        "cpuArchitecture":{
+          "shape":"ExpressCpuArchitecture",
+          "documentation":"<p>The CPU architecture that the task runs on. If you don't specify a value, the service keeps its current architecture.</p> <p>Valid values:</p> <ul> <li> <p> <code>X86_64</code> - The x86 64-bit architecture.</p> </li> <li> <p> <code>ARM64</code> - The 64-bit ARM architecture.</p> </li> </ul> <p>Changing the architecture starts a new deployment that replaces the running tasks. Ensure that the container image you specify supports the architecture you choose. The operating system family for an Express service is always <code>LINUX</code>.</p> <p>You can't specify <code>cpuArchitecture</code> together with <code>taskDefinitionArn</code>.</p>"
+        },
         "scalingTarget":{
           "shape":"ExpressGatewayScalingTarget",
           "documentation":"<p>The auto-scaling configuration for the Express service.</p>"
         },
         "taskDefinitionArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p> <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p> <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, or <code>memory</code>.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of a task definition to use to update the Express Gateway service. This allows you to manage your own task definition, giving you more control over the service configuration such as adding sidecar containers.</p> <p>The task definition must have a container named <code>Main</code> with a single TCP port mapping that includes a container port and port name. The task definition must also have <code>FARGATE</code> compatibility.</p> <p>If you provide a task definition ARN, you cannot also specify <code>primaryContainer</code>, <code>executionRoleArn</code>, <code>taskRoleArn</code>, <code>cpu</code>, <code>memory</code>, or <code>cpuArchitecture</code>.</p>"
         }
       }
     },
@@ -11651,6 +11692,24 @@
       "type":"list",
       "member":{"shape":"Volume"}
     },
+    "VpcLatticeAdvancedConfiguration":{
+      "type":"structure",
+      "members":{
+        "alternateTargetGroupArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the alternate target group associated with the VPC Lattice Configuration for Amazon ECS blue/green deployments.</p>"
+        },
+        "productionListenerRule":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the production listener rule or listener for routing production traffic.</p>"
+        },
+        "testListenerRule":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) that identifies the test listener rule or listener for routing test traffic.</p>"
+        }
+      },
+      "documentation":"<p>The advanced settings for VPC Lattice used in blue/green deployments. Specify the alternate target group and listener rules required for traffic shifting during blue/green deployments. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECS/latest/developerguide/blue-green-deployment-implementation.html\">Required resources for Amazon ECS blue/green deployments</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>"
+    },
     "VpcLatticeConfiguration":{
       "type":"structure",
       "required":[
@@ -11670,7 +11729,8 @@
         "portName":{
           "shape":"String",
           "documentation":"<p>The name of the port mapping to register in the VPC Lattice target group. This is the name of the <code>portMapping</code> you defined in your task definition.</p>"
-        }
+        },
+        "advancedConfiguration":{"shape":"VpcLatticeAdvancedConfiguration"}
       },
       "documentation":"<p>The VPC Lattice configuration for your service that holds the information for the target group(s) Amazon ECS tasks will be registered to.</p>"
     },

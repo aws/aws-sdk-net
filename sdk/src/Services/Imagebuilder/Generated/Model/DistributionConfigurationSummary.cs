@@ -136,7 +136,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// A list of Regions where the container image is distributed to.
+        /// A list of the Regions that the distribution configuration distributes images to.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

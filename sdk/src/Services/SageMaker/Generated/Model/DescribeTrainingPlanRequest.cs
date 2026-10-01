@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the training plan to describe.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string TrainingPlanName
         {
             get { return this._trainingPlanName; }

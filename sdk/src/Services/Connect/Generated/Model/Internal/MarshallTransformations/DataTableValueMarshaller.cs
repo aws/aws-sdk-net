@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLastModifiedTime())
             {
                 context.Writer.WritePropertyName("LastModifiedTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastModifiedTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastModifiedTime.Value));
             }
 
             if(requestObject.IsSetLockVersion())

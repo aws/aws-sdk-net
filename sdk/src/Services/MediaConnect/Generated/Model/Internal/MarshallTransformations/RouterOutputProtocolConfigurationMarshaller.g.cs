@@ -56,6 +56,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetRtmpPush())
+            {
+                context.Writer.WritePropertyName("rtmpPush");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RtmpPushRouterOutputConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RtmpPush, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRtp())
             {
                 context.Writer.WritePropertyName("rtp");

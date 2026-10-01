@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Configuration details of the component.
+    /// Configuration details of the component. You can specify each component only once in
+    /// a recipe, regardless of version. Components with a status of <c>DEPRECATED</c> or
+    /// <c>DISABLED</c> can't be added to new recipes.
     /// </summary>
     public partial class ComponentConfiguration
     {
@@ -40,7 +42,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ComponentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the component.
+        /// The Amazon Resource Name (ARN) of the component. You can specify a build version ARN,
+        /// or a component version ARN whose version segments can use <c>x</c> wildcards, for
+        /// example <c>1.x.x</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +64,8 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A group of parameter settings that Image Builder uses to configure the component for
-        /// a specific recipe.
+        /// a specific recipe. You must supply a value for every component parameter that has
+        /// no default value, and you can only supply parameters that the component defines.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

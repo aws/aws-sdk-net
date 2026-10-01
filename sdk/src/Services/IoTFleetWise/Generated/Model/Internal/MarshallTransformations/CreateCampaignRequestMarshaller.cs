@@ -150,7 +150,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpiryTime())
             {
                 context.Writer.WritePropertyName("expiryTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpiryTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpiryTime.Value));
             }
 
             if(publicRequest.IsSetName())
@@ -218,7 +218,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
             }
 
             if(publicRequest.IsSetTags())

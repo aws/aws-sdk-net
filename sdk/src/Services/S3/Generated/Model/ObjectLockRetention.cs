@@ -34,8 +34,48 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class ObjectLockRetention
     {
+        private ObjectLockEventHold _eventHold;
+        private EventHoldDuration _eventHoldDuration;
         private ObjectLockRetentionMode _mode;
         private DateTime? _retainUntilDate;
+
+        /// <summary>
+        /// Gets and sets the property EventHold. 
+        /// <para>
+        /// The event hold status for the object. Set to <c>ON</c> to enable an event hold or
+        /// <c>OFF</c> to disable it.
+        /// </para>
+        /// </summary>
+        public ObjectLockEventHold EventHold
+        {
+            get { return this._eventHold; }
+            set { this._eventHold = value; }
+        }
+
+        // Check to see if EventHold property is set
+        internal bool IsSetEventHold()
+        {
+            return this._eventHold != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventHoldDuration. 
+        /// <para>
+        /// The event hold duration for the object. Specifies how long the object remains protected
+        /// after the event hold is released.
+        /// </para>
+        /// </summary>
+        public EventHoldDuration EventHoldDuration
+        {
+            get { return this._eventHoldDuration; }
+            set { this._eventHoldDuration = value; }
+        }
+
+        // Check to see if EventHoldDuration property is set
+        internal bool IsSetEventHoldDuration()
+        {
+            return this._eventHoldDuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Mode. 

@@ -84,7 +84,7 @@ namespace Amazon.Pricing.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEffectiveDate())
             {
                 context.Writer.WritePropertyName("EffectiveDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EffectiveDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EffectiveDate.Value));
             }
 
             if(publicRequest.IsSetMaxResults())

@@ -59,7 +59,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image to be distributed.
+        /// The Amazon Resource Name (ARN) of the new Image Builder image resource that this operation
+        /// creates to track the distribution. Use this ARN with <a>GetImage</a> to monitor distribution
+        /// progress.
         /// </para>
         /// </summary>
         public string ImageBuildVersionArn

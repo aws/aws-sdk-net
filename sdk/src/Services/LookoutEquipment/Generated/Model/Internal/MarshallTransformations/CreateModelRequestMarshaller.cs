@@ -117,13 +117,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEvaluationDataEndTime())
             {
                 context.Writer.WritePropertyName("EvaluationDataEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EvaluationDataEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EvaluationDataEndTime.Value));
             }
 
             if(publicRequest.IsSetEvaluationDataStartTime())
             {
                 context.Writer.WritePropertyName("EvaluationDataStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EvaluationDataStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EvaluationDataStartTime.Value));
             }
 
             if(publicRequest.IsSetLabelsInputConfiguration())
@@ -191,13 +191,13 @@ namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetTrainingDataEndTime())
             {
                 context.Writer.WritePropertyName("TrainingDataEndTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.TrainingDataEndTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.TrainingDataEndTime.Value));
             }
 
             if(publicRequest.IsSetTrainingDataStartTime())
             {
                 context.Writer.WritePropertyName("TrainingDataStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.TrainingDataStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.TrainingDataStartTime.Value));
             }
 
             writer.WriteEndObject();

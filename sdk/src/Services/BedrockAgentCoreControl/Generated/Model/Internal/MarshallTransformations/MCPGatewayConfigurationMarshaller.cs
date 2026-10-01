@@ -46,6 +46,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDisableMcpListToolsPagination())
+            {
+                context.Writer.WritePropertyName("disableMcpListToolsPagination");
+                context.Writer.WriteBooleanValue(requestObject.DisableMcpListToolsPagination.Value);
+            }
+
             if(requestObject.IsSetInstructions())
             {
                 context.Writer.WritePropertyName("instructions");

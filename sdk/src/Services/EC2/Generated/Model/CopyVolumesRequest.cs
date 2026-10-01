@@ -40,7 +40,9 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private bool? _dryRun;
+        private bool? _encrypted;
         private int? _iops;
+        private string _kmsKeyId;
         private bool? _multiAttachEnabled;
         private int? _size;
         private string _sourceVolumeId;
@@ -89,6 +91,28 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Indicates whether to encrypt the volume copy. If the source volume is encrypted, the
+        /// service always encrypts the copy regardless of this value. Set to <c>true</c> to encrypt
+        /// a copy of an unencrypted source volume during the copy operation. If you set <c>Encrypted</c>
+        /// to <c>true</c> but do not specify <c>KmsKeyId</c>, the service uses the default KMS
+        /// key for EBS encryption in your account.
+        /// </para>
+        /// </summary>
+        public bool? Encrypted
+        {
+            get { return this._encrypted; }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
         /// The number of I/O operations per second (IOPS) to provision for the volume copy. Required
@@ -130,6 +154,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetIops()
         {
             return this._iops.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The identifier of the KMS key to use for encryption of the volume copy. Specify a
+        /// symmetric encryption KMS key. You can specify a KMS key using the key ID, key ARN,
+        /// alias name, or alias ARN. If you set <c>Encrypted</c> to <c>true</c> but do not specify
+        /// this parameter, the service uses the default KMS key for EBS encryption in your account.
+        /// For cross-account volume copies, this must be a KMS key in the calling account.
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

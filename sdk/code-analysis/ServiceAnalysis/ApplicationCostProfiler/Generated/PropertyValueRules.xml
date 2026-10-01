@@ -34,7 +34,7 @@
     <property>Amazon.ApplicationCostProfiler.Model.ImportApplicationUsageResponse.ImportId</property>
     <min>1</min>
     <max>255</max>
-    <pattern>[0-9A-Za-z\.\-_]*</pattern>
+    <pattern>^[0-9A-Za-z\.\-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationCostProfiler.Model.ListReportDefinitionsRequest.MaxResults</property>
@@ -105,7 +105,7 @@
     <property>Amazon.ApplicationCostProfiler.Model.S3Location.Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>(?=^.{3,63}$)(?!^(\d+\.)+\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)*([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$)</pattern>
+    <pattern>^(?=^.{3,63}$)(?!^(\d+\.)+\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)*([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationCostProfiler.Model.S3Location.Prefix</property>
@@ -117,7 +117,7 @@
     <property>Amazon.ApplicationCostProfiler.Model.SourceS3Location.Bucket</property>
     <min>3</min>
     <max>63</max>
-    <pattern>(?=^.{3,63}$)(?!^(\d+\.)+\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)*([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$)</pattern>
+    <pattern>^(?=^.{3,63}$)(?!^(\d+\.)+\d+$)(^(([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])\.)*([a-z0-9]|[a-z0-9][a-z0-9\-]*[a-z0-9])$)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationCostProfiler.Model.SourceS3Location.Key</property>

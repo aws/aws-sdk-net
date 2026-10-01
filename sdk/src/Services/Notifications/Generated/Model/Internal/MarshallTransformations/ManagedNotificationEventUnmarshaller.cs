@@ -68,6 +68,12 @@ namespace Amazon.Notifications.Model.Internal.MarshallTransformations
                     unmarshalledObject.AggregationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("attachments", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NotificationEventAttachment, NotificationEventAttachmentUnmarshaller>(NotificationEventAttachmentUnmarshaller.Instance);
+                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

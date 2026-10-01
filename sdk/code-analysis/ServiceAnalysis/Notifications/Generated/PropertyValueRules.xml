@@ -2,27 +2,27 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateChannelRequest.Arn</property>
-    <pattern>arn:aws:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
+    <pattern>arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateChannelRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateManagedNotificationAccountContactRequest.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateManagedNotificationAdditionalChannelRequest.ChannelArn</property>
-    <pattern>arn:aws:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
+    <pattern>arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateManagedNotificationAdditionalChannelRequest.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateOrganizationalUnitRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.AssociateOrganizationalUnitRequest.OrganizationalUnitId</property>
@@ -41,7 +41,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.CreateEventRuleRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.CreateEventRuleRequest.Source</property>
@@ -51,11 +51,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.CreateEventRuleResponse.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.CreateEventRuleResponse.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.CreateNotificationConfigurationRequest.Description</property>
@@ -71,51 +71,51 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.CreateNotificationConfigurationResponse.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DeleteEventRuleRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DeleteNotificationConfigurationRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DeregisterNotificationHubRequest.NotificationHubRegion</property>
     <min>2</min>
     <max>25</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DeregisterNotificationHubResponse.NotificationHubRegion</property>
     <min>2</min>
     <max>25</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateChannelRequest.Arn</property>
-    <pattern>arn:aws:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
+    <pattern>arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateChannelRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateManagedNotificationAccountContactRequest.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateManagedNotificationAdditionalChannelRequest.ChannelArn</property>
-    <pattern>arn:aws:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
+    <pattern>arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateManagedNotificationAdditionalChannelRequest.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateOrganizationalUnitRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.DisassociateOrganizationalUnitRequest.OrganizationalUnitId</property>
@@ -123,11 +123,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetEventRuleRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetEventRuleResponse.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetEventRuleResponse.EventPattern</property>
@@ -142,7 +142,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetEventRuleResponse.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetEventRuleResponse.Source</property>
@@ -152,23 +152,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationChildEventRequest.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}/child-event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}/child-event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationChildEventResponse.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}/child-event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}/child-event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationChildEventResponse.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationConfigurationRequest.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationConfigurationResponse.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationConfigurationResponse.Description</property>
@@ -184,23 +184,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationEventRequest.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationEventResponse.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetManagedNotificationEventResponse.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetNotificationConfigurationRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetNotificationConfigurationResponse.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetNotificationConfigurationResponse.Description</property>
@@ -216,15 +216,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetNotificationEventRequest.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetNotificationEventResponse.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.GetNotificationEventResponse.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListChannelsRequest.MaxResults</property>
@@ -239,7 +239,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListChannelsRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListChannelsResponse.NextToken</property>
@@ -260,7 +260,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListEventRulesRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListEventRulesResponse.NextToken</property>
@@ -270,7 +270,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListManagedNotificationChannelAssociationsRequest.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListManagedNotificationChannelAssociationsRequest.MaxResults</property>
@@ -291,7 +291,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListManagedNotificationChildEventsRequest.AggregateManagedNotificationEventArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListManagedNotificationChildEventsRequest.MaxResults</property>
@@ -320,7 +320,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListManagedNotificationConfigurationsRequest.ChannelIdentifier</property>
-    <pattern>ACCOUNT_PRIMARY|ACCOUNT_ALTERNATE_BILLING|ACCOUNT_ALTERNATE_OPERATIONS|ACCOUNT_ALTERNATE_SECURITY|arn:aws:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
+    <pattern>(ACCOUNT_PRIMARY|ACCOUNT_ALTERNATE_BILLING|ACCOUNT_ALTERNATE_OPERATIONS|ACCOUNT_ALTERNATE_SECURITY|arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListManagedNotificationConfigurationsRequest.MaxResults</property>
@@ -387,7 +387,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListMemberAccountsRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListMemberAccountsRequest.OrganizationalUnitId</property>
@@ -401,7 +401,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListNotificationConfigurationsRequest.ChannelArn</property>
-    <pattern>arn:aws:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
+    <pattern>arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListNotificationConfigurationsRequest.EventRuleSource</property>
@@ -428,7 +428,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListNotificationEventsRequest.AggregateNotificationEventArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListNotificationEventsRequest.MaxResults</property>
@@ -487,7 +487,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListOrganizationalUnitsRequest.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListOrganizationalUnitsResponse.NextToken</property>
@@ -497,31 +497,31 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ListTagsForResourceRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.RegisterNotificationHubRequest.NotificationHubRegion</property>
     <min>2</min>
     <max>25</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.RegisterNotificationHubResponse.NotificationHubRegion</property>
     <min>2</min>
     <max>25</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.TagResourceRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UntagResourceRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateEventRuleRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateEventRuleRequest.EventPattern</property>
@@ -530,15 +530,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateEventRuleResponse.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateEventRuleResponse.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Notifications.Model.UpdateManagedNotificationChannelAssociationRequest.ChannelIdentifier</property>
+    <pattern>(ACCOUNT_PRIMARY|ACCOUNT_ALTERNATE_BILLING|ACCOUNT_ALTERNATE_OPERATIONS|ACCOUNT_ALTERNATE_SECURITY|arn:[a-z-]{3,10}:(chatbot|consoleapp|notifications-contacts):[a-zA-Z0-9-]*:[0-9]{12}:[a-zA-Z0-9-_.@]+/[a-zA-Z0-9/_.@:-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Notifications.Model.UpdateManagedNotificationChannelAssociationRequest.ManagedNotificationConfigurationArn</property>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateNotificationConfigurationRequest.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateNotificationConfigurationRequest.Description</property>
@@ -554,11 +562,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.UpdateNotificationConfigurationResponse.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.EventRuleStructure.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}/rule/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.EventRuleStructure.EventPattern</property>
@@ -573,7 +581,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.EventRuleStructure.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.EventRuleStructure.Source</property>
@@ -583,7 +591,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationChildEvent.AggregateManagedNotificationEventArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationChildEvent.Id</property>
@@ -597,19 +605,18 @@
     <property>Amazon.Notifications.Model.ManagedNotificationChildEvent.SourceEventDetailUrl</property>
     <min>0</min>
     <max>2000</max>
-    <pattern>(https?)://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationChildEventOverview.AggregateManagedNotificationEventArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationChildEventOverview.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationChildEventOverview.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationChildEventOverview.OrganizationalUnitId</property>
@@ -621,7 +628,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationConfigurationStructure.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationConfigurationStructure.Description</property>
@@ -647,15 +654,14 @@
     <property>Amazon.Notifications.Model.ManagedNotificationEvent.SourceEventDetailUrl</property>
     <min>0</min>
     <max>2000</max>
-    <pattern>(https?)://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationEventOverview.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationEventOverview.ManagedNotificationConfigurationArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:managed-notification-configuration/category/[a-zA-Z0-9\-]{3,64}/sub-category/[a-zA-Z0-9\-]{3,64}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedNotificationEventOverview.OrganizationalUnitId</property>
@@ -669,7 +675,7 @@
     <property>Amazon.Notifications.Model.ManagedSourceEventMetadataSummary.EventOriginRegion</property>
     <min>0</min>
     <max>32</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.ManagedSourceEventMetadataSummary.EventType</property>
@@ -692,7 +698,6 @@
     <property>Amazon.Notifications.Model.MediaElement.Url</property>
     <min>0</min>
     <max>2000</max>
-    <pattern>(https?)://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.MemberAccount.AccountId</property>
@@ -700,7 +705,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.MemberAccount.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.MemberAccount.OrganizationalUnitId</property>
@@ -713,7 +718,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationConfigurationStructure.Arn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationConfigurationStructure.Description</property>
@@ -729,7 +734,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationEvent.AggregateNotificationEventArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationEvent.Id</property>
@@ -743,19 +748,33 @@
     <property>Amazon.Notifications.Model.NotificationEvent.SourceEventDetailUrl</property>
     <min>0</min>
     <max>2000</max>
-    <pattern>(https?)://.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Notifications.Model.NotificationEventAttachment.AttachmentDownloadUrl</property>
+    <min>0</min>
+    <max>4096</max>
+    <pattern>(https?):\/\/.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Notifications.Model.NotificationEventAttachment.ContentType</property>
+    <pattern>[a-zA-Z0-9]+/[a-zA-Z0-9][a-zA-Z0-9!#$&amp;\-^_.+]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Notifications.Model.NotificationEventAttachment.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationEventOverview.AggregateNotificationEventArn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationEventOverview.Arn</property>
-    <pattern>arn:[-.a-z0-9]{1,63}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications:[-.a-z0-9]{1,63}:[0-9]{12}:configuration/[a-z0-9]{27}/event/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationEventOverview.NotificationConfigurationArn</property>
-    <pattern>arn:aws:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
+    <pattern>arn:[a-z-]{3,10}:notifications::[0-9]{12}:configuration/[a-z0-9]{27}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.NotificationEventOverview.OrganizationalUnitId</property>
@@ -769,7 +788,7 @@
     <property>Amazon.Notifications.Model.NotificationHubOverview.NotificationHubRegion</property>
     <min>2</min>
     <max>25</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.Resource.Arn</property>
@@ -779,13 +798,12 @@
     <property>Amazon.Notifications.Model.Resource.DetailUrl</property>
     <min>0</min>
     <max>2000</max>
-    <pattern>(https?)://.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.SourceEventMetadata.EventOriginRegion</property>
     <min>0</min>
     <max>32</max>
-    <pattern>([a-z]{1,2})-([a-z]{1,15}-)+([0-9])</pattern>
+    <pattern>([a-z]{1,4})-([a-z]{1,15}-)+([0-9])</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.SourceEventMetadata.EventType</property>
@@ -821,12 +839,11 @@
   <property-value-rule>
     <property>Amazon.Notifications.Model.TextPartValue.DisplayText</property>
     <min>1</min>
-    <max>1024</max>
+    <max>12000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Notifications.Model.TextPartValue.Url</property>
     <min>0</min>
     <max>2000</max>
-    <pattern>(https?)://.*</pattern>
   </property-value-rule>
 </property-value-rules>

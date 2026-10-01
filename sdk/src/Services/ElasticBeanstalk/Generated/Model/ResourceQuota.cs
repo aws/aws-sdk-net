@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
-    /// The AWS Elastic Beanstalk quota information for a single resource type in an AWS account.
-    /// It reflects the resource's limits for this account.
+    /// The Elastic Beanstalk quota information for a single resource type in an Amazon Web
+    /// Services account. It reflects the resource's limits for this account.
     /// </summary>
     public partial class ResourceQuota
     {
@@ -40,8 +40,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Maximum. 
         /// <para>
-        /// The maximum number of instances of this Elastic Beanstalk resource type that an AWS
-        /// account can use.
+        /// The maximum number of instances of this Elastic Beanstalk resource type that an Amazon
+        /// Web Services account can use.
         /// </para>
         /// </summary>
         public int? Maximum

@@ -1,0 +1,99 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.EKS.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.EKS.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// OutpostConfigRequest Marshaller
+    /// </summary>
+    public partial class OutpostConfigRequestMarshaller : IRequestMarshaller<OutpostConfigRequest, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(OutpostConfigRequest requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetControlPlaneInstanceType())
+            {
+                context.Writer.WritePropertyName("controlPlaneInstanceType");
+                context.Writer.WriteStringValue(requestObject.ControlPlaneInstanceType);
+            }
+
+            if (requestObject.IsSetControlPlanePlacement())
+            {
+                context.Writer.WritePropertyName("controlPlanePlacement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ControlPlanePlacementRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.ControlPlanePlacement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetEtcdInstanceType())
+            {
+                context.Writer.WritePropertyName("etcdInstanceType");
+                context.Writer.WriteStringValue(requestObject.EtcdInstanceType);
+            }
+
+            if (requestObject.IsSetEtcdPlacement())
+            {
+                context.Writer.WritePropertyName("etcdPlacement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EtcdPlacementRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.EtcdPlacement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetOutpostArns())
+            {
+                context.Writer.WritePropertyName("outpostArns");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectOutpostArnsListValue in requestObject.OutpostArns)
+                {
+                    context.Writer.WriteStringValue(requestObjectOutpostArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static OutpostConfigRequestMarshaller Instance = new OutpostConfigRequestMarshaller();
+    }
+}

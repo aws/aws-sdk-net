@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateDeployment(Amazon.NetworkSecurityManager.Model.CreateDeploymentRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateDeployment(Amazon.NetworkSecurityManager.Model.CreateDeploymentRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateDeploymentRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new deployment in draft state.
+                </para>
+                <code
+                    title="Create a deployment"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateDeploymentSnapshot(Amazon.NetworkSecurityManager.Model.CreateDeploymentSnapshotRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateDeploymentSnapshot(Amazon.NetworkSecurityManager.Model.CreateDeploymentSnapshotRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateDeploymentSnapshotRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateDeploymentSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an immutable snapshot of the current published version of a deployment. The snapshot is addressable by a version-qualified ARN.
+                </para>
+                <code
+                    title="Create a deployment snapshot"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreatePolicy(Amazon.NetworkSecurityManager.Model.CreatePolicyRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreatePolicy(Amazon.NetworkSecurityManager.Model.CreatePolicyRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreatePolicyRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new WAF policy in draft state with a template association.
+                </para>
+                <code
+                    title="Create a WAF policy"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreatePolicySnapshot(Amazon.NetworkSecurityManager.Model.CreatePolicySnapshotRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreatePolicySnapshot(Amazon.NetworkSecurityManager.Model.CreatePolicySnapshotRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreatePolicySnapshotRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreatePolicySnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an immutable snapshot of the current published version of a policy. The snapshot is addressable by a version-qualified ARN.
+                </para>
+                <code
+                    title="Create a policy snapshot"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateRule(Amazon.NetworkSecurityManager.Model.CreateRuleRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateRule(Amazon.NetworkSecurityManager.Model.CreateRuleRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateRuleRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new WAF inspection rule in draft state.
+                </para>
+                <code
+                    title="Create a WAF rule"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateRuleSnapshot(Amazon.NetworkSecurityManager.Model.CreateRuleSnapshotRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateRuleSnapshot(Amazon.NetworkSecurityManager.Model.CreateRuleSnapshotRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateRuleSnapshotRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateRuleSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an immutable snapshot of the current published version of a rule. The snapshot is addressable by a version-qualified ARN.
+                </para>
+                <code
+                    title="Create a rule snapshot"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateScope(Amazon.NetworkSecurityManager.Model.CreateScopeRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateScope(Amazon.NetworkSecurityManager.Model.CreateScopeRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateScopeRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateScopeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new scope in published (ACTIVE) state.
+                </para>
+                <code
+                    title="Create a scope"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateScopeSnapshot(Amazon.NetworkSecurityManager.Model.CreateScopeSnapshotRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateScopeSnapshot(Amazon.NetworkSecurityManager.Model.CreateScopeSnapshotRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateScopeSnapshotRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateScopeSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an immutable snapshot of the current published version of a scope. The snapshot is addressable by a version-qualified ARN.
+                </para>
+                <code
+                    title="Create a scope snapshot"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateTemplate(Amazon.NetworkSecurityManager.Model.CreateTemplateRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateTemplate(Amazon.NetworkSecurityManager.Model.CreateTemplateRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateTemplateRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates a new WAF template in published (ACTIVE) state with an associated rule.
+                </para>
+                <code
+                    title="Create a WAF template"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.CreateTemplateSnapshot(Amazon.NetworkSecurityManager.Model.CreateTemplateSnapshotRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.CreateTemplateSnapshot(Amazon.NetworkSecurityManager.Model.CreateTemplateSnapshotRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateTemplateSnapshotRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.CreateTemplateSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Creates an immutable snapshot of the current published version of a template. The snapshot is addressable by a version-qualified ARN.
+                </para>
+                <code
+                    title="Create a template snapshot"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.DeleteAdminAccount(Amazon.NetworkSecurityManager.Model.DeleteAdminAccountRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.DeleteAdminAccount(Amazon.NetworkSecurityManager.Model.DeleteAdminAccountRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteAdminAccountRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteAdminAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Removes an account's Network Security Manager administrator designation.
+                </para>
+                <code
+                    title="Remove an administrator account"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.DeleteDeployment(Amazon.NetworkSecurityManager.Model.DeleteDeploymentRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.DeleteDeployment(Amazon.NetworkSecurityManager.Model.DeleteDeploymentRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteDeploymentRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a deployment by its ARN. Deleting an active deployment stops enforcement and triggers cleanup of managed firewall resources.
+                </para>
+                <code
+                    title="Delete a deployment"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.DeletePolicy(Amazon.NetworkSecurityManager.Model.DeletePolicyRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.DeletePolicy(Amazon.NetworkSecurityManager.Model.DeletePolicyRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeletePolicyRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeletePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a policy by its ARN. The policy must not be associated with any deployment.
+                </para>
+                <code
+                    title="Delete a policy"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.DeleteRule(Amazon.NetworkSecurityManager.Model.DeleteRuleRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.DeleteRule(Amazon.NetworkSecurityManager.Model.DeleteRuleRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteRuleRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a rule by its ARN. The rule must not be associated with any template or policy.
+                </para>
+                <code
+                    title="Delete a rule"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.DeleteScope(Amazon.NetworkSecurityManager.Model.DeleteScopeRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.DeleteScope(Amazon.NetworkSecurityManager.Model.DeleteScopeRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteScopeRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteScopeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a scope by its ARN. The scope must not be associated with any deployment.
+                </para>
+                <code
+                    title="Delete a scope"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.DeleteTemplate(Amazon.NetworkSecurityManager.Model.DeleteTemplateRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.DeleteTemplate(Amazon.NetworkSecurityManager.Model.DeleteTemplateRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteTemplateRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.DeleteTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Deletes a template by its ARN. The template must not be associated with any policy.
+                </para>
+                <code
+                    title="Delete a template"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GenerateRuleConfiguration(Amazon.NetworkSecurityManager.Model.GenerateRuleConfigurationRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GenerateRuleConfiguration(Amazon.NetworkSecurityManager.Model.GenerateRuleConfigurationRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GenerateRuleConfigurationRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GenerateRuleConfigurationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Generates a firewall rule configuration from a natural language description. The response contains the generated configuration as a JSON string, ready to use as the configuration of a rule.
+                </para>
+                <code
+                    title="Generate a rule configuration from a description"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetAdminAccount(Amazon.NetworkSecurityManager.Model.GetAdminAccountRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetAdminAccount(Amazon.NetworkSecurityManager.Model.GetAdminAccountRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetAdminAccountRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetAdminAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the details and administrative scope of a Network Security Manager administrator account.
+                </para>
+                <code
+                    title="Get an administrator account"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetDeployment(Amazon.NetworkSecurityManager.Model.GetDeploymentRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetDeployment(Amazon.NetworkSecurityManager.Model.GetDeploymentRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetDeploymentRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the current published version of a deployment by its base ARN, including per-firewall-type coverage showing which in-scope resource types each policy protects.
+                </para>
+                <code
+                    title="Get a deployment"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetPolicy(Amazon.NetworkSecurityManager.Model.GetPolicyRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetPolicy(Amazon.NetworkSecurityManager.Model.GetPolicyRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetPolicyRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetPolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the current published version of a policy by its base ARN, including its associated templates and rules and its enforcement configuration.
+                </para>
+                <code
+                    title="Get a policy"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetRule(Amazon.NetworkSecurityManager.Model.GetRuleRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetRule(Amazon.NetworkSecurityManager.Model.GetRuleRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetRuleRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the current published version of a rule by its base ARN.
+                </para>
+                <code
+                    title="Get a rule"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetRule(Amazon.NetworkSecurityManager.Model.GetRuleRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetRule(Amazon.NetworkSecurityManager.Model.GetRuleRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetRuleRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves a specific immutable version (snapshot) of a rule using a version-qualified ARN. The response has isSnapshot set to true. Omitting the version qualifier returns the current published rule instead.
+                </para>
+                <code
+                    title="Get a specific version of a rule"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetScope(Amazon.NetworkSecurityManager.Model.GetScopeRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetScope(Amazon.NetworkSecurityManager.Model.GetScopeRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetScopeRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetScopeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the current published version of a scope by its base ARN.
+                </para>
+                <code
+                    title="Get a scope"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.GetTemplate(Amazon.NetworkSecurityManager.Model.GetTemplateRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.GetTemplate(Amazon.NetworkSecurityManager.Model.GetTemplateRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetTemplateRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.GetTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Retrieves the current published version of a template by its base ARN, including its associated rules.
+                </para>
+                <code
+                    title="Get a template"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListAdminAccounts(Amazon.NetworkSecurityManager.Model.ListAdminAccountsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListAdminAccounts(Amazon.NetworkSecurityManager.Model.ListAdminAccountsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListAdminAccountsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListAdminAccountsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the Network Security Manager administrator accounts for the organization.
+                </para>
+                <code
+                    title="List administrator accounts"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListAggregateResourceSynchronizationStatuses(Amazon.NetworkSecurityManager.Model.ListAggregateResourceSynchronizationStatusesRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListAggregateResourceSynchronizationStatuses(Amazon.NetworkSecurityManager.Model.ListAggregateResourceSynchronizationStatusesRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListAggregateResourceSynchronizationStatusesRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListAggregateResourceSynchronizationStatusesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the aggregate synchronization status of resources across all deployments in the account.
+                </para>
+                <code
+                    title="List synchronization statuses across all deployments"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListDeployments(Amazon.NetworkSecurityManager.Model.ListDeploymentsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListDeployments(Amazon.NetworkSecurityManager.Model.ListDeploymentsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListDeploymentsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListDeploymentsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the published deployments in the account, one page at a time.
+                </para>
+                <code
+                    title="List deployments"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListDeploymentSnapshots(Amazon.NetworkSecurityManager.Model.ListDeploymentSnapshotsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListDeploymentSnapshots(Amazon.NetworkSecurityManager.Model.ListDeploymentSnapshotsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListDeploymentSnapshotsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListDeploymentSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the immutable snapshots that have been created for a deployment.
+                </para>
+                <code
+                    title="List the snapshots of a deployment"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListPolicies(Amazon.NetworkSecurityManager.Model.ListPoliciesRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListPolicies(Amazon.NetworkSecurityManager.Model.ListPoliciesRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListPoliciesRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListPoliciesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the published policies in the account, one page at a time.
+                </para>
+                <code
+                    title="List policies"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListPolicySnapshots(Amazon.NetworkSecurityManager.Model.ListPolicySnapshotsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListPolicySnapshots(Amazon.NetworkSecurityManager.Model.ListPolicySnapshotsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListPolicySnapshotsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListPolicySnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the immutable snapshots that have been created for a policy.
+                </para>
+                <code
+                    title="List the snapshots of a policy"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListResourceAssociations(Amazon.NetworkSecurityManager.Model.ListResourceAssociationsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListResourceAssociations(Amazon.NetworkSecurityManager.Model.ListResourceAssociationsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListResourceAssociationsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListResourceAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the resources that reference the given rule, such as the templates and policies it is associated with.
+                </para>
+                <code
+                    title="List what references a rule"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListResourceSynchronizationStatuses(Amazon.NetworkSecurityManager.Model.ListResourceSynchronizationStatusesRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListResourceSynchronizationStatuses(Amazon.NetworkSecurityManager.Model.ListResourceSynchronizationStatusesRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListResourceSynchronizationStatusesRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListResourceSynchronizationStatusesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the resources tracked by a deployment that are out of sync, including the structured reason. Here a CloudFront distribution has no web ACL where the policy requires one.
+                </para>
+                <code
+                    title="List out-of-sync resources for a deployment"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListRules(Amazon.NetworkSecurityManager.Model.ListRulesRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListRules(Amazon.NetworkSecurityManager.Model.ListRulesRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListRulesRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the published rules in the account, one page at a time.
+                </para>
+                <code
+                    title="List rules"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListRuleSnapshots(Amazon.NetworkSecurityManager.Model.ListRuleSnapshotsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListRuleSnapshots(Amazon.NetworkSecurityManager.Model.ListRuleSnapshotsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListRuleSnapshotsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListRuleSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the immutable snapshots that have been created for a rule.
+                </para>
+                <code
+                    title="List the snapshots of a rule"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListScopes(Amazon.NetworkSecurityManager.Model.ListScopesRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListScopes(Amazon.NetworkSecurityManager.Model.ListScopesRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListScopesRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListScopesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the published scopes in the account, one page at a time.
+                </para>
+                <code
+                    title="List scopes"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListScopeSnapshots(Amazon.NetworkSecurityManager.Model.ListScopeSnapshotsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListScopeSnapshots(Amazon.NetworkSecurityManager.Model.ListScopeSnapshotsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListScopeSnapshotsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListScopeSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the immutable snapshots that have been created for a scope.
+                </para>
+                <code
+                    title="List the snapshots of a scope"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListTagsForResource(Amazon.NetworkSecurityManager.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListTagsForResource(Amazon.NetworkSecurityManager.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the tags associated with a Network Security Manager resource.
+                </para>
+                <code
+                    title="List the tags on a resource"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListTemplates(Amazon.NetworkSecurityManager.Model.ListTemplatesRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListTemplates(Amazon.NetworkSecurityManager.Model.ListTemplatesRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListTemplatesRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListTemplatesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the published templates in the account, one page at a time.
+                </para>
+                <code
+                    title="List templates"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.ListTemplateSnapshots(Amazon.NetworkSecurityManager.Model.ListTemplateSnapshotsRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.ListTemplateSnapshots(Amazon.NetworkSecurityManager.Model.ListTemplateSnapshotsRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListTemplateSnapshotsRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.ListTemplateSnapshotsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Lists the immutable snapshots that have been created for a template.
+                </para>
+                <code
+                    title="List the snapshots of a template"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.PutAdminAccount(Amazon.NetworkSecurityManager.Model.PutAdminAccountRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.PutAdminAccount(Amazon.NetworkSecurityManager.Model.PutAdminAccountRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.PutAdminAccountRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.PutAdminAccountResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Designates an account as a Network Security Manager administrator, scoped to a specific organizational unit and the WAF firewall type.
+                </para>
+                <code
+                    title="Designate an administrator account"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.TagResource(Amazon.NetworkSecurityManager.Model.TagResourceRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.TagResource(Amazon.NetworkSecurityManager.Model.TagResourceRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.TagResourceRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Adds tags to a Network Security Manager resource.
+                </para>
+                <code
+                    title="Tag a resource"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.UntagResource(Amazon.NetworkSecurityManager.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.UntagResource(Amazon.NetworkSecurityManager.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UntagResourceRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Removes the specified tag keys from a Network Security Manager resource.
+                </para>
+                <code
+                    title="Remove tags from a resource"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.UpdateDeployment(Amazon.NetworkSecurityManager.Model.UpdateDeploymentRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.UpdateDeployment(Amazon.NetworkSecurityManager.Model.UpdateDeploymentRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateDeploymentRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateDeploymentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the deployment's associations and publishes the change. The response includes deploymentCoverage showing which resource types the associated policies can protect. The updateToken from the most recent read is required for optimistic locking.
+                </para>
+                <code
+                    title="Update a deployment and publish it"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.UpdatePolicy(Amazon.NetworkSecurityManager.Model.UpdatePolicyRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.UpdatePolicy(Amazon.NetworkSecurityManager.Model.UpdatePolicyRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdatePolicyRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdatePolicyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the policy's description, priority, and configuration and publishes the change. The updateToken from the most recent read is required for optimistic locking.
+                </para>
+                <code
+                    title="Update a policy and publish it"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.UpdateRule(Amazon.NetworkSecurityManager.Model.UpdateRuleRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.UpdateRule(Amazon.NetworkSecurityManager.Model.UpdateRuleRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateRuleRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the rule's description and configuration and publishes the change. The updateToken from the most recent read is required for optimistic locking.
+                </para>
+                <code
+                    title="Update a rule and publish it"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.UpdateScope(Amazon.NetworkSecurityManager.Model.UpdateScopeRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.UpdateScope(Amazon.NetworkSecurityManager.Model.UpdateScopeRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateScopeRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateScopeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the scope's description and configuration and publishes the change. The updateToken from the most recent read is required for optimistic locking.
+                </para>
+                <code
+                    title="Update a scope and publish it"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.NetworkSecurityManager.IAmazonNetworkSecurityManager.UpdateTemplate(Amazon.NetworkSecurityManager.Model.UpdateTemplateRequest)" />
+            <member name="M:Amazon.NetworkSecurityManager.AmazonNetworkSecurityManagerClient.UpdateTemplate(Amazon.NetworkSecurityManager.Model.UpdateTemplateRequest)" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateTemplateRequest" />
+            <member name="T:Amazon.NetworkSecurityManager.Model.UpdateTemplateResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Updates the template's description and rule associations and publishes the change. The updateToken from the most recent read is required for optimistic locking.
+                </para>
+                <code
+                    title="Update a template and publish it"
+                    source=".\AWSSDKDocSamples\NetworkSecurityManager\NetworkSecurityManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

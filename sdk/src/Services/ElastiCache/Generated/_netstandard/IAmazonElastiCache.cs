@@ -66,10 +66,9 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// A tag is a key-value pair where the key and value are case-sensitive. You can use
-        /// tags to categorize and track all your ElastiCache resources, with the exception of
-        /// global replication group. When you add or remove tags on replication groups, those
-        /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
+        /// tags to categorize and track all your ElastiCache resources. When you add or remove
+        /// tags on replication groups, those actions will be replicated to all nodes in the replication
+        /// group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// 
         ///  
@@ -106,8 +105,14 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global datastore does not exist
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.
@@ -741,6 +746,11 @@ namespace Amazon.ElastiCache
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ServiceLinkedRoleNotFoundException">
         /// The specified service linked role (SLR) was not found.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.TagQuotaPerResourceExceededException">
+        /// The request cannot be processed because it would cause the resource to have more than
+        /// the allowed number of tags. The maximum number of tags permitted on a resource is
+        /// 50.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">REST API Reference for CreateGlobalReplicationGroup Operation</seealso>
         Task<CreateGlobalReplicationGroupResponse> CreateGlobalReplicationGroupAsync(CreateGlobalReplicationGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2793,10 +2803,9 @@ namespace Amazon.ElastiCache
         ///  
         /// <para>
         ///  A tag is a key-value pair where the key and value are case-sensitive. You can use
-        /// tags to categorize and track all your ElastiCache resources, with the exception of
-        /// global replication group. When you add or remove tags on replication groups, those
-        /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
+        /// tags to categorize and track all your ElastiCache resources. When you add or remove
+        /// tags on replication groups, those actions will be replicated to all nodes in the replication
+        /// group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </para>
         ///  
@@ -2825,8 +2834,14 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global datastore does not exist
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.
@@ -3405,10 +3420,9 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Removes the tags identified by the <c>TagKeys</c> list from the named resource. A
         /// tag is a key-value pair where the key and value are case-sensitive. You can use tags
-        /// to categorize and track all your ElastiCache resources, with the exception of global
-        /// replication group. When you add or remove tags on replication groups, those actions
-        /// will be replicated to all nodes in the replication group. For more information, see
-        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
+        /// to categorize and track all your ElastiCache resources. When you add or remove tags
+        /// on replication groups, those actions will be replicated to all nodes in the replication
+        /// group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -3431,8 +3445,14 @@ namespace Amazon.ElastiCache
         /// <exception cref="Amazon.ElastiCache.Model.CacheSubnetGroupNotFoundException">
         /// The requested cache subnet group name does not refer to an existing cache subnet group.
         /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.GlobalReplicationGroupNotFoundException">
+        /// The Global datastore does not exist
+        /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidARNException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
+        /// </exception>
+        /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterValueException">
+        /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
         /// The requested replication group is not in the <c>available</c> state.

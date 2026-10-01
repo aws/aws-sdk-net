@@ -79,6 +79,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAIVersion())
+            {
+                context.Writer.WritePropertyName("AIVersion");
+                context.Writer.WriteStringValue(publicRequest.AIVersion);
+            }
+
             if(publicRequest.IsSetAsDraft())
             {
                 context.Writer.WritePropertyName("AsDraft");

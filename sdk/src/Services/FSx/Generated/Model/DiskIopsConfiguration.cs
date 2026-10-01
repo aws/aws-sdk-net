@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model
         /// is outside of the minimum or maximum values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2400000)]
+        [AWSProperty(Min=0, Max=2147483647)]
         public long? Iops
         {
             get { return this._iops; }

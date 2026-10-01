@@ -49,7 +49,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceLastModifiedDate())
             {
                 context.Writer.WritePropertyName("DeviceLastModifiedDate");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.DeviceLastModifiedDate.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.DeviceLastModifiedDate.Value));
             }
 
             if(requestObject.IsSetKey())

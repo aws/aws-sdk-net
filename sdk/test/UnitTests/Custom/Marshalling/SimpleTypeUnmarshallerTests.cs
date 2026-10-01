@@ -15,9 +15,11 @@
 using System.Text.Json;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Util;
 using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Globalization;
 using System.IO;
 
 namespace AWSSDK.UnitTests
@@ -141,6 +143,46 @@ namespace AWSSDK.UnitTests
                 throw new Exception($"Could not parse all properties in JSON '{json}'");
             }
             return model;
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestJsonNumbersMatchTextParse()
+        {
+            const string text = "0.1000000000000000055511151231257827";
+            Assert.AreEqual(double.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(DoubleUnmarshaller.Instance, text));
+            Assert.AreEqual(float.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(FloatUnmarshaller.Instance, text));
+            Assert.AreEqual(decimal.Parse(text, CultureInfo.InvariantCulture), UnmarshallValue(DecimalUnmarshaller.Instance, text));
+            Assert.AreEqual(AWSSDKUtils.EPOCH_START.AddSeconds(double.Parse("1533081600.123456789", CultureInfo.InvariantCulture)), UnmarshallValue(DateTimeUnmarshaller.Instance, "1533081600.123456789"));
+            Assert.AreEqual(100000m, UnmarshallValue(DecimalUnmarshaller.Instance, "1e5"));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestJsonIntegerOverflowThrows()
+        {
+            Assert.ThrowsExactly<OverflowException>(() => UnmarshallValue(IntUnmarshaller.Instance, "2147483648"));
+            Assert.ThrowsExactly<OverflowException>(() => UnmarshallValue(LongUnmarshaller.Instance, "9223372036854775808"));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestJsonBlobWithWhitespace()
+        {
+            var stream = UnmarshallValue(MemoryStreamUnmarshaller.Instance, "\"SEVM TE8=\"");
+            CollectionAssert.AreEqual(Convert.FromBase64String("SEVMTE8="), stream.ToArray());
+        }
+
+        private static T UnmarshallValue<T>(IJsonUnmarshaller<T, JsonUnmarshallerContext> unmarshaller, string json)
+        {
+            var stream = Utils.CreateStreamFromString("[" + json + "]");
+            var context = new JsonUnmarshallerContext(stream, false, null);
+            var reader = new StreamingUtf8JsonReader(stream);
+            context.Read(ref reader);
+            return unmarshaller.Unmarshall(context, ref reader);
         }
 
         private Model UnmarshallModel(string json)

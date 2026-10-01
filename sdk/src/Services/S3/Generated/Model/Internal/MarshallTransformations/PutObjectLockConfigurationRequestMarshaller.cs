@@ -111,6 +111,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                             xmlWriter.WriteStartElement("DefaultRetention");
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetDays())
                                 xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Days.Value));
+                            if (publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetDefaultEventHold())
+                            {
+                                xmlWriter.WriteStartElement("DefaultEventHold");
+                                if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.DefaultEventHold.IsSetDays())
+                                    xmlWriter.WriteElementString("Days", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.DefaultEventHold.Days.Value));
+                                if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.DefaultEventHold.IsSetYears())
+                                    xmlWriter.WriteElementString("Years", StringUtils.FromInt(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.DefaultEventHold.Years.Value));
+                                xmlWriter.WriteEndElement();
+                            }
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetMode())
                                 xmlWriter.WriteElementString("Mode", StringUtils.FromString(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.Mode));
                             if(publicRequest.ObjectLockConfiguration.Rule.DefaultRetention.IsSetYears())

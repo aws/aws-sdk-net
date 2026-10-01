@@ -49,6 +49,7 @@ namespace Amazon.Glue.Model
         private string _dataQualitySecurityConfiguration;
         private DataSource _dataSource;
         private int? _numberOfWorkers;
+        private RecommendationMode _recommendationMode;
         private string _role;
         private int? _timeout;
 
@@ -166,9 +167,36 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RecommendationMode. 
+        /// <para>
+        /// The mode that Glue Data Quality uses to recommend rules.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default is <c>BASIC</c>.
+        /// </para>
+        /// </summary>
+        public RecommendationMode RecommendationMode
+        {
+            get { return this._recommendationMode; }
+            set { this._recommendationMode = value; }
+        }
+
+        // Check to see if RecommendationMode property is set
+        internal bool IsSetRecommendationMode()
+        {
+            return this._recommendationMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// An IAM role supplied to encrypt the results of the run.
+        /// The IAM role that Glue assumes to access resources for the run.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/data-quality-authorization.html">Configure
+        /// IAM permissions for Glue Data Quality</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

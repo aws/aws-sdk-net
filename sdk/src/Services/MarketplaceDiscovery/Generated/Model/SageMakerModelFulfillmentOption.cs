@@ -41,6 +41,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         private string _fulfillmentOptionVersion;
         private SageMakerModelRecommendation _recommendation;
         private string _releaseNotes;
+        private List<string> _supportedContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedResponseMimeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _usageInstructions;
 
         /// <summary>
@@ -152,6 +154,54 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetReleaseNotes()
         {
             return this._releaseNotes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedContentTypes. 
+        /// <para>
+        /// The MIME types that this model accepts as input.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<string> SupportedContentTypes
+        {
+            get { return this._supportedContentTypes; }
+            set { this._supportedContentTypes = value; }
+        }
+
+        // Check to see if SupportedContentTypes property is set
+        internal bool IsSetSupportedContentTypes()
+        {
+            return this._supportedContentTypes != null && (this._supportedContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedResponseMimeTypes. 
+        /// <para>
+        /// The MIME types that this model returns as output.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<string> SupportedResponseMimeTypes
+        {
+            get { return this._supportedResponseMimeTypes; }
+            set { this._supportedResponseMimeTypes = value; }
+        }
+
+        // Check to see if SupportedResponseMimeTypes property is set
+        internal bool IsSetSupportedResponseMimeTypes()
+        {
+            return this._supportedResponseMimeTypes != null && (this._supportedResponseMimeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -35,9 +35,25 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class VpcLatticeConfiguration
     {
+        private VpcLatticeAdvancedConfiguration _advancedConfiguration;
         private string _portName;
         private string _roleArn;
         private string _targetGroupArn;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedConfiguration.
+        /// </summary>
+        public VpcLatticeAdvancedConfiguration AdvancedConfiguration
+        {
+            get { return this._advancedConfiguration; }
+            set { this._advancedConfiguration = value; }
+        }
+
+        // Check to see if AdvancedConfiguration property is set
+        internal bool IsSetAdvancedConfiguration()
+        {
+            return this._advancedConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PortName. 

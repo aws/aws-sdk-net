@@ -243,16 +243,18 @@ namespace AWSSDK.UnitTests
 
         private static readonly SAMLEndpoint SomeSAMLEndpoint = new SAMLEndpoint("endpoint_name", new Uri("https://samlendpoint.com"));
 
-        private static readonly FederatedAWSCredentials FederatedCredentials =
+        // FederatedAWSCredentials opens the .NET SDK encrypted store in its constructor, which only exists on Windows,
+        // so these are built on demand by the Windows-only SAML tests instead of when the class loads.
+        private static FederatedAWSCredentials FederatedCredentials =>
             new FederatedAWSCredentials(SomeSAMLEndpoint, "role_arn");
 
-        private static readonly FederatedAWSCredentials FederatedUserIdentityCredentials =
+        private static FederatedAWSCredentials FederatedUserIdentityCredentials =>
             new FederatedAWSCredentials(SomeSAMLEndpoint, "role_arn", new FederatedAWSCredentialsOptions()
             {
                 UserIdentity = "user_identity"
             });
 
-        private static readonly AssumeRoleAWSCredentials AssumeRoleProfileSAMLSourceCredentials =
+        private static AssumeRoleAWSCredentials AssumeRoleProfileSAMLSourceCredentials =>
             new AssumeRoleAWSCredentials(FederatedUserIdentityCredentials, "role_arn", "role_session_name");
 
         private static readonly CredentialProfile AssumeRoleLoopedAssumeRoleSource1 =
@@ -353,6 +355,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void GetSAMLRoleCredentials()
         {
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
@@ -375,6 +378,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void GetSAMLRoleUserIdentityCredentials()
         {
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
@@ -385,6 +389,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void GetAssumeRoleProfileSourceNotBasicOrSession()
         {
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
@@ -513,6 +518,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void GetSAMLRoleCredentialsAnonymous()
         {
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
@@ -523,6 +529,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void GetSAMLRoleUserIdentityCredentialsAnonymous()
         {
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))
@@ -533,6 +540,7 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        [OSCondition(OperatingSystems.Windows)]
         public void GetAssumeRoleProfileSourceNotBasicOrSessionAnonymous()
         {
             using (var fixture = new EncryptedStoreTestFixture(SettingsConstants.RegisteredSAMLEndpoints))

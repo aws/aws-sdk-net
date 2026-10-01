@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.JsonRpc10
 {
@@ -46,7 +47,7 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("JsonRpc10")]
-        public void AwsJson10HostWithPathRequest()
+        public async Task AwsJson10HostWithPathRequest()
         {
             // Arrange
             var request = new HostWithPathOperationRequest
@@ -54,19 +55,26 @@ namespace AWSSDK.ProtocolTests.JsonRpc10
             };
             var config = new AmazonJSONRPC10Config
             {
-              ServiceURL = "https://example.com/custom"
+              ServiceURL = "https://example.com/custom",
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new HostWithPathOperationRequestMarshaller();
+            using var client = new AmazonJSONRPC10Client(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.HostWithPathOperationAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
             var expectedBody = "{}";
-            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
-            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/custom/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            JsonProtocolUtils.AssertBody(actualRequest.Body, expectedBody);
+            Assert.AreEqual("POST", actualRequest.Method);
+            Assert.AreEqual("/custom/", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
         }
 
     }

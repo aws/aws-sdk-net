@@ -89,7 +89,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEndEventTime())
             {
                 context.Writer.WritePropertyName("EndEventTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndEventTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndEventTime.Value));
             }
 
             if(publicRequest.IsSetImportId())
@@ -112,7 +112,7 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetStartEventTime())
             {
                 context.Writer.WritePropertyName("StartEventTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartEventTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartEventTime.Value));
             }
 
             writer.WriteEndObject();

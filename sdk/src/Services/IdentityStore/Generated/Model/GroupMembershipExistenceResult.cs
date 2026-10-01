@@ -44,7 +44,7 @@ namespace Amazon.IdentityStore.Model
         /// The identifier for a group in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=47)]
+        [AWSProperty(Min=1, Max=100)]
         public string GroupId
         {
             get { return this._groupId; }

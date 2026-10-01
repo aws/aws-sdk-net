@@ -43,6 +43,7 @@ namespace Amazon.Resiliencehubv2.Model
         private MultiAzTargets _multiAz;
         private MultiRegionTargets _multiRegion;
         private string _name;
+        private bool? _sharingEnabled;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -179,6 +180,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharingEnabled. 
+        /// <para>
+        /// Specifies whether cross-account sharing is enabled for the policy. Only a delegated
+        /// administrator or the management account can enable sharing.
+        /// </para>
+        /// </summary>
+        public bool? SharingEnabled
+        {
+            get { return this._sharingEnabled; }
+            set { this._sharingEnabled = value; }
+        }
+
+        // Check to see if SharingEnabled property is set
+        internal bool IsSetSharingEnabled()
+        {
+            return this._sharingEnabled.HasValue; 
         }
 
         /// <summary>

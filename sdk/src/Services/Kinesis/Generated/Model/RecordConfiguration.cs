@@ -41,8 +41,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property GSRSchemaARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon Web Services Glue Schema Registry schema
-        /// used to validate records. Required when the channel destination is a streaming table
-        /// (Amazon S3 Tables), for both the <c>JSON</c> and <c>GSR_JSON</c> record formats.
+        /// used to validate records. Required when the channel destination is a streaming table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

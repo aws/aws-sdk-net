@@ -12,15 +12,15 @@
     <property>Amazon.Backup.Model.CreateBackupAccessPointRequest.Name</property>
     <min>3</min>
     <max>50</max>
-    <pattern>[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateBackupAccessPointRequest.RecoveryPointArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateBackupAccessPointResponse.AccessPointArn</property>
-    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateBackupVaultRequest.BackupVaultName</property>
@@ -38,13 +38,13 @@
     <property>Amazon.Backup.Model.CreateFrameworkRequest.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateFrameworkResponse.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateLogicallyAirGappedBackupVaultRequest.BackupVaultName</property>
@@ -62,13 +62,13 @@
     <property>Amazon.Backup.Model.CreateReportPlanRequest.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateReportPlanResponse.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.CreateRestoreAccessBackupVaultRequest.BackupVaultName</property>
@@ -78,7 +78,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupAccessPointRequest.AccessPointArn</property>
-    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupVaultAccessPolicyRequest.BackupVaultName</property>
@@ -93,7 +93,7 @@
     <property>Amazon.Backup.Model.DeleteFrameworkRequest.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteRecoveryPointRequest.BackupVaultName</property>
@@ -102,7 +102,7 @@
     <property>Amazon.Backup.Model.DeleteReportPlanRequest.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteTieringConfigurationRequest.TieringConfigurationName</property>
@@ -110,11 +110,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupAccessPointRequest.AccessPointArn</property>
-    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.AccessPointArn</property>
-    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.BackupVaultName</property>
@@ -123,15 +123,15 @@
     <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.Name</property>
     <min>3</min>
     <max>50</max>
-    <pattern>[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.RecoveryPointArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.ResourceArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupJobResponse.AccountId</property>
@@ -147,7 +147,7 @@
     <property>Amazon.Backup.Model.DescribeFrameworkRequest.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeFrameworkResponse.FrameworkDescription</property>
@@ -159,7 +159,7 @@
     <property>Amazon.Backup.Model.DescribeFrameworkResponse.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeProtectedResourceResponse.ResourceType</property>
@@ -181,7 +181,7 @@
     <property>Amazon.Backup.Model.DescribeReportPlanRequest.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeRestoreJobResponse.AccountId</property>
@@ -245,7 +245,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupAccessPointsByRecoveryPointRequest.RecoveryPointArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupAccessPointsByResourceRequest.MaxResults</property>
@@ -254,7 +254,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupAccessPointsByResourceRequest.ResourceArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:).+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupJobsRequest.ByAccountId</property>
@@ -272,29 +284,17 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.AccountId</property>
-    <pattern>^[0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListBackupJobSummariesRequest.ResourceType</property>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListBackupPlansRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupPlanTemplatesRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupPlanVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupPlansRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -309,18 +309,6 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Backup.Model.ListCopyJobsRequest.ByAccountId</property>
-    <pattern>^[0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListCopyJobsRequest.ByResourceType</property>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListCopyJobsRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Backup.Model.ListCopyJobSummariesRequest.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -331,6 +319,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListCopyJobSummariesRequest.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobsRequest.ByAccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobsRequest.ByResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListCopyJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListFrameworksRequest.MaxResults</property>
@@ -396,7 +396,7 @@
     <property>Amazon.Backup.Model.ListReportJobsRequest.ByReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListReportJobsRequest.MaxResults</property>
@@ -417,6 +417,18 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ListRestoreJobsRequest.ByAccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
@@ -434,29 +446,12 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.AccountId</property>
-    <pattern>^[0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListRestoreJobSummariesRequest.ResourceType</property>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Backup.Model.ListRestoreTestingPlansRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListRestoreTestingSelectionsRequest.MaxResults</property>
-    <min>1</min>
-    <max>1000</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.ListScanJobsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -471,6 +466,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListScanJobSummariesRequest.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListScanJobsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListTagsRequest.MaxResults</property>
@@ -504,7 +504,7 @@
     <property>Amazon.Backup.Model.StartReportJobRequest.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.StartRestoreJobRequest.ResourceType</property>
@@ -519,13 +519,13 @@
     <property>Amazon.Backup.Model.UpdateFrameworkRequest.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.UpdateFrameworkResponse.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.UpdateRecoveryPointIndexSettingsRequest.BackupVaultName</property>
@@ -546,13 +546,13 @@
     <property>Amazon.Backup.Model.UpdateReportPlanRequest.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.UpdateReportPlanResponse.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.UpdateTieringConfigurationRequest.TieringConfigurationName</property>
@@ -627,14 +627,14 @@
     <property>Amazon.Backup.Model.Framework.FrameworkName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.IndexedRecoveryPoint.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListAccessPointsMember.AccessPointArn</property>
-    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListAccessPointsMember.BackupVaultName</property>
@@ -643,15 +643,15 @@
     <property>Amazon.Backup.Model.ListAccessPointsMember.Name</property>
     <min>3</min>
     <max>50</max>
-    <pattern>[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+    <pattern>^[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListAccessPointsMember.RecoveryPointArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListAccessPointsMember.ResourceArn</property>
-    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:).+</pattern>
+    <pattern>^(arn:aws[a-z-]*:[a-z-\d]+:).+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ProtectedResource.ResourceType</property>
@@ -681,7 +681,7 @@
     <property>Amazon.Backup.Model.ReportPlan.ReportPlanName</property>
     <min>1</min>
     <max>256</max>
-    <pattern>[a-zA-Z][_a-zA-Z0-9]*</pattern>
+    <pattern>^[a-zA-Z][_a-zA-Z0-9]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ResourceSelection.ResourceType</property>
@@ -692,18 +692,18 @@
     <max>36500</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.Backup.Model.RestoreJobsListMember.AccountId</property>
-    <pattern>^[0-9]{12}$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.Backup.Model.RestoreJobsListMember.ResourceType</property>
-  </property-value-rule>
-  <property-value-rule>
     <property>Amazon.Backup.Model.RestoreJobSummary.AccountId</property>
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.RestoreJobSummary.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RestoreJobsListMember.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RestoreJobsListMember.ResourceType</property>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ScanJobSummary.AccountId</property>

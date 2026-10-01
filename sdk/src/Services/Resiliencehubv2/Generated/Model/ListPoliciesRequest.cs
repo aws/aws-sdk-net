@@ -35,8 +35,28 @@ namespace Amazon.Resiliencehubv2.Model
     /// </summary>
     public partial class ListPoliciesRequest : AmazonResiliencehubv2Request
     {
+        private string _accountId;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The identifier of the account that owns the policies to include in the results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults.

@@ -1,4 +1,4 @@
-using SmithyDotNet.Generator.Writers.Serialization;
+﻿using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
 
@@ -24,7 +24,7 @@ public class CollectionElementCodegenTests
 
         // context.Structures excludes @input/@output shapes, so the request structure comes off the operation.
         _requestStructure = new StructureWriter(context, "collection-model.json")
-            .Write(operation.Input, operation.Shape.Input, TestContext.Current.CancellationToken);
+            .Write(operation.Input, TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -200,7 +200,7 @@ public class CollectionElementCodegenTests
     public void RequestMarshaller_WritesTimestampListElements_DefaultsToEpochSeconds()
     {
         Assert.Contains("foreach (var publicRequestEpochTimesListValue in publicRequest.EpochTimes)", _requestMarshaller);
-        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequestEpochTimesListValue)));", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequestEpochTimesListValue));", _requestMarshaller);
     }
 
     [Fact]
@@ -274,6 +274,68 @@ public class CollectionElementCodegenTests
         Assert.Contains("context.Writer.WriteStringValue(publicRequestSparseLabelsValue);", _requestMarshaller);
         Assert.Contains("if (publicRequestSparseAmountsValue == null)", _requestMarshaller);
         Assert.Contains("context.Writer.WriteNumberValue(publicRequestSparseAmountsValue.Value);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestStructure_BlobCollections_UseMemoryStreamElements()
+    {
+        // A non-streaming blob element maps to MemoryStream (reference type, so no nullable marker even
+        // when @sparse) - the collection surfaces List<MemoryStream> / Dictionary<string, MemoryStream>.
+        Assert.Contains("public List<MemoryStream> Blobs", _requestStructure);
+        Assert.Contains("public Dictionary<string, MemoryStream> BlobsById", _requestStructure);
+        Assert.Contains("public List<MemoryStream> SparseBlobs", _requestStructure);
+        Assert.Contains("public Dictionary<string, MemoryStream> SparseBlobsById", _requestStructure);
+    }
+
+    [Fact]
+    public void RequestMarshaller_WritesBlobListElements_AsBase64()
+    {
+        // A blob list element base64-encodes exactly like a blob body member.
+        Assert.Contains("foreach (var publicRequestBlobsListValue in publicRequest.Blobs)", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBase64StringValue(context.Writer, publicRequestBlobsListValue);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_WritesBlobMapEntries_AsBase64()
+    {
+        Assert.Contains("foreach (var publicRequestBlobsByIdKvp in publicRequest.BlobsById)", _requestMarshaller);
+        Assert.Contains("var publicRequestBlobsByIdValue = publicRequestBlobsByIdKvp.Value;", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBase64StringValue(context.Writer, publicRequestBlobsByIdValue);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_SparseBlobListElements_NullCheckOrWriteNull()
+    {
+        // WriteBase64StringValue dereferences its argument, so a @sparse blob element must be null-guarded
+        // (unlike a null string, which already writes JSON null).
+        Assert.Contains("if (publicRequestSparseBlobsListValue != null)", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBase64StringValue(context.Writer, publicRequestSparseBlobsListValue);", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNullValue();", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_SparseBlobMapValues_NullCheckOrWriteBase64()
+    {
+        // A @sparse blob map value null-guards like a blob list element: WriteBase64StringValue dereferences,
+        // so a null value must write JSON null instead.
+        Assert.Contains("var publicRequestSparseBlobsByIdValue = publicRequestSparseBlobsByIdKvp.Value;", _requestMarshaller);
+        Assert.Contains("if (publicRequestSparseBlobsByIdValue == null)", _requestMarshaller);
+        Assert.Contains("StringUtils.WriteBase64StringValue(context.Writer, publicRequestSparseBlobsByIdValue);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_UnmarshallsBlobCollections_ViaMemoryStreamUnmarshaller()
+    {
+        Assert.Contains("""if (context.TestExpression("blobs", targetDepth, ref reader))""", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = new JsonListUnmarshaller<MemoryStream, MemoryStreamUnmarshaller>(MemoryStreamUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Blobs = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+
+        Assert.Contains("var unmarshaller = new JsonDictionaryUnmarshaller<string, MemoryStream, StringUnmarshaller, MemoryStreamUnmarshaller>(StringUnmarshaller.Instance, MemoryStreamUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.BlobsById = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+
+        // A blob is a reference type, so @sparse reuses the same MemoryStreamUnmarshaller (no Nullable* variant).
+        Assert.Contains("unmarshalledObject.SparseBlobs = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.SparseBlobsById = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
     }
 
     [Fact]

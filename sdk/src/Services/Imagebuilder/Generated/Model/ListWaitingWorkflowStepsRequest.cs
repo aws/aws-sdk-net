@@ -31,8 +31,9 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWaitingWorkflowSteps operation.
-    /// Get a list of workflow steps that are waiting for action for workflows in your Amazon
-    /// Web Services account.
+    /// Lists the workflow steps in your Amazon Web Services account that have paused at a
+    /// <c>WaitForAction</c> step, and are waiting for you to respond. To send a response,
+    /// call <a>SendWorkflowStepAction</a>.
     /// </summary>
     public partial class ListWaitingWorkflowStepsRequest : AmazonImagebuilderRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specify the maximum number of items to return in a request.
+        /// The maximum number of items to return in a single request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -61,8 +62,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the nextToken from a previously
-        /// truncated response.
+        /// A token to specify where to start paginating. Use the <c>nextToken</c> value from
+        /// a previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

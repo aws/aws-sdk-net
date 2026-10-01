@@ -36,6 +36,8 @@ namespace Amazon.Resiliencehubv2.Model
     {
         private string _policyArn;
         private string _policyName;
+        private string _policyOwnerAccountId;
+        private PolicyValueSource _policySource;
 
         /// <summary>
         /// Gets and sets the property PolicyArn.
@@ -69,6 +71,51 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetPolicyName()
         {
             return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyOwnerAccountId. 
+        /// <para>
+        /// The account that owns the policy.
+        /// </para>
+        /// </summary>
+        public string PolicyOwnerAccountId
+        {
+            get { return this._policyOwnerAccountId; }
+            set { this._policyOwnerAccountId = value; }
+        }
+
+        // Check to see if PolicyOwnerAccountId property is set
+        internal bool IsSetPolicyOwnerAccountId()
+        {
+            return this._policyOwnerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicySource. 
+        /// <para>
+        /// The source of the policy.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// SELF — the policy belongs to the account that owns the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// CROSS_ACCOUNT — the policy belongs to another account and was shared with the organization.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PolicyValueSource PolicySource
+        {
+            get { return this._policySource; }
+            set { this._policySource = value; }
+        }
+
+        // Check to see if PolicySource property is set
+        internal bool IsSetPolicySource()
+        {
+            return this._policySource != null;
         }
 
     }

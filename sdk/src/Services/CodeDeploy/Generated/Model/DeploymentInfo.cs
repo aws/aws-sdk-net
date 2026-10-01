@@ -45,6 +45,7 @@ namespace Amazon.CodeDeploy.Model
         private string _deploymentConfigName;
         private string _deploymentGroupName;
         private string _deploymentId;
+        private DeploymentMode _deploymentMode;
         private DeploymentOverview _deploymentOverview;
         private List<string> _deploymentStatusMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeploymentStyle _deploymentStyle;
@@ -284,6 +285,40 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeploymentId()
         {
             return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentMode. 
+        /// <para>
+        /// The deployment's type. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>STANDARD</c>: The deployment installed the specified revision.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESTART</c>: The deployment restarted the application on the target instances
+        /// using the revision from the deployment group's last successful deployment, without
+        /// downloading a new revision.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This field is absent for deployments created before <c>deploymentMode</c> existed,
+        /// and for <c>STANDARD</c> deployments. An absent value must not be interpreted as <c>STANDARD</c>;
+        /// it simply means no value was recorded either way.
+        /// </para>
+        /// </summary>
+        public DeploymentMode DeploymentMode
+        {
+            get { return this._deploymentMode; }
+            set { this._deploymentMode = value; }
+        }
+
+        // Check to see if DeploymentMode property is set
+        internal bool IsSetDeploymentMode()
+        {
+            return this._deploymentMode != null;
         }
 
         /// <summary>

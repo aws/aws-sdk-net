@@ -22,7 +22,7 @@ public class JsonStructureMarshallerWriterTests
     private static string WriteJsonStructureMarshaller(GenerationContext context, JsonStructureMarshallerWriter writer, string shapeName)
     {
         var shapeId = ShapeId.Parse($"{Namespace}#{shapeName}");
-        return writer.Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+        return writer.Write(context.Structures[shapeId], TestContext.Current.CancellationToken);
     }
 
     [Fact]

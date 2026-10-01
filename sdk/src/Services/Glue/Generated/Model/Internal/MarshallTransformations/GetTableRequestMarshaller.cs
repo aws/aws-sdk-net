@@ -124,7 +124,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetQueryAsOfTime())
             {
                 context.Writer.WritePropertyName("QueryAsOfTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.QueryAsOfTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.QueryAsOfTime.Value));
             }
 
             if(publicRequest.IsSetTransactionId())

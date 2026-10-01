@@ -1,8 +1,12 @@
 using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Generation.Manifests;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Generation;
@@ -32,6 +36,7 @@ public sealed class BatchGenerator(string repoRoot)
     };
 
     private readonly string _modelsRoot = SdkTreeLayout.ModelsRoot(repoRoot);
+    private readonly string _testModelsRoot = SdkTreeLayout.TestModelsRoot(repoRoot);
     private readonly string _sdkRoot = SdkTreeLayout.SdkRoot(repoRoot);
 
     /// <summary>
@@ -100,13 +105,18 @@ public sealed class BatchGenerator(string repoRoot)
         return file.Services;
     }
 
-    private sealed record DiscoveredModel(string Name, string ModelPath, ServiceIndex Index, string ModelDirectory);
+    private sealed record DiscoveredModel(string Name, string ModelPath, SmithyModel Model, ServiceMetadata Metadata)
+    {
+        /// <summary>Test services (metadata.json <c>test-service</c>) generate into sdk/test/Services/{Name} and skip the shipping artifacts.</summary>
+        public bool IsTestService => Metadata.TestService;
+    }
 
-    // Scans generator/ServiceModels/*/ for the single all-inclusive Smithy model each migrated
-    // service carries at a fixed name, smithy.json (unlike C2J's versioned api/docs/endpoints split).
-    // A model has to be parsed to learn its name, so a model this generator can't yet handle is
-    // skipped here rather than aborting the batch; MatchListedServices below still fails loudly if
-    // that model belongs to a service actually listed in the control file.
+    // Scans generator/ServiceModels/*/ and generator/TestServiceModels/*/ for the single
+    // all-inclusive Smithy model each migrated service carries at a fixed name, smithy.json (unlike
+    // C2J's versioned api/docs/endpoints split). A model has to be parsed to learn its name, so a
+    // model this generator can't yet handle is skipped here rather than aborting the batch;
+    // MatchListedServices below still fails loudly if that model belongs to a service actually
+    // listed in the control file.
     private Dictionary<string, DiscoveredModel> DiscoverModels(CancellationToken ct)
     {
         if (!Directory.Exists(_modelsRoot))
@@ -114,8 +124,14 @@ public sealed class BatchGenerator(string repoRoot)
             throw new GeneratorException($"Service models directory not found: '{_modelsRoot}'.");
         }
 
+        var modelDirectories = Directory.EnumerateDirectories(_modelsRoot);
+        if (Directory.Exists(_testModelsRoot))
+        {
+            modelDirectories = modelDirectories.Concat(Directory.EnumerateDirectories(_testModelsRoot));
+        }
+
         var discovered = new Dictionary<string, DiscoveredModel>(StringComparer.OrdinalIgnoreCase);
-        foreach (var directory in Directory.EnumerateDirectories(_modelsRoot))
+        foreach (var directory in modelDirectories)
         {
             ct.ThrowIfCancellationRequested();
 
@@ -125,10 +141,10 @@ public sealed class BatchGenerator(string repoRoot)
                 continue;
             }
 
-            DiscoveredModel model;
+            SmithyModel model;
             try
             {
-                model = LoadModel(modelPath, directory);
+                model = LoadModel(modelPath);
             }
             catch (Exception ex) when (ex is not OperationCanceledException)
             {
@@ -136,26 +152,39 @@ public sealed class BatchGenerator(string repoRoot)
                 continue;
             }
 
-            if (!discovered.TryAdd(model.Name, model))
+            // Past parsing, a failure is a repo error, not a model this generator can't handle
+            // yet — fail the batch, don't demote to a skip. Validate guaranteed one service shape.
+            var service = model.Shapes.Values.OfType<ServiceShape>().Single();
+            var serviceTrait = service.GetAWSService() ?? throw new GeneratorException($"'{modelPath}': service shape is missing the aws.api#service trait.");
+
+            // Every service in ServiceModels has a metadata.json; its base-name/namespace overrides feed
+            // the service name below, so it loads at discovery rather than at generation.
+            // TODO: a generic Smithy model won't carry one; relax the throw when that becomes real.
+            var metadataPath = Path.Combine(directory, "metadata.json");
+            if (!File.Exists(metadataPath))
             {
-                throw new GeneratorException($"Service '{model.Name}' resolves from both '{discovered[model.Name].ModelPath}' and '{model.ModelPath}'.");
+                throw new GeneratorException($"'{metadataPath}' not found.");
+            }
+
+            var metadata = ServiceMetadata.Load(metadataPath);
+            var name = GenerationContext.ResolveServiceName(serviceTrait.SdkId, metadata);
+
+            if (!discovered.TryAdd(name, new DiscoveredModel(name, modelPath, model, metadata)))
+            {
+                throw new GeneratorException($"Service '{name}' resolves from both '{discovered[name].ModelPath}' and '{modelPath}'.");
             }
         }
 
         return discovered;
     }
 
-    private static DiscoveredModel LoadModel(string modelPath, string directory)
+    internal static SmithyModel LoadModel(string modelPath)
     {
         using var stream = File.OpenRead(modelPath);
         var model = JsonSerializer.Deserialize<SmithyModel>(stream, ModelOptions) ?? throw new GeneratorException($"'{modelPath}' deserialized to null.");
         ModelValidator.Validate(model);
 
-        var index = new ServiceIndex(model);
-        var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException($"'{modelPath}': service shape is missing the aws.api#service trait.");
-        var name = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
-
-        return new DiscoveredModel(name, modelPath, index, directory);
+        return model;
     }
 
     // Every listed service must resolve to exactly one discovered model (mirroring the C2J
@@ -180,50 +209,63 @@ public sealed class BatchGenerator(string repoRoot)
 
     private void GenerateService(DiscoveredModel service, SdkVersionManifest versionManifest, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, CancellationToken ct)
     {
-        var sourceRoot = SdkTreeLayout.ServiceSourceRoot(repoRoot, service.Name);
         var codeAnalysisRoot = SdkTreeLayout.ServiceCodeAnalysisRoot(repoRoot, service.Name);
         var testsRoot = SdkTreeLayout.ServiceTestsRoot(repoRoot, service.Name);
+        var sourceRoot = service.IsTestService ? testsRoot : SdkTreeLayout.ServiceSourceRoot(repoRoot, service.Name);
 
-        // Everything that can fail without writing a file happens before the wipe, so a bad
-        // metadata.json or a missing version entry can't leave a service wiped-but-not-regenerated.
-        // metadata.json is an optional sidecar next to the model; ServiceMetadata.Load throws on a
-        // missing file, so the Exists guard is what makes it optional.
-        var metadataPath = Path.Combine(service.ModelDirectory, "metadata.json");
-        var metadata = File.Exists(metadataPath) ? ServiceMetadata.Load(metadataPath) : null;
-
-        var context = new GenerationContext(service.Index, versionManifest, metadata);
-        UnsupportedTraitValidator.Validate(service.Index);
-
-        var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);
-        var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
-
-        WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot);
-
-        IReadOnlyList<string> written;
         try
         {
-            written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
+            // Customizations merge into the model before the index is built. The glob mirrors C2J's
+            // CustomizationCompiler, which combines all *.customizations*.json siblings.
+            var modelDirectory = Path.GetDirectoryName(service.ModelPath) ?? throw new GeneratorException($"'{service.ModelPath}' has no parent directory.");
+            var customizationFiles = Directory.EnumerateFiles(modelDirectory, "*.customizations*.json").OrderBy(file => file, StringComparer.Ordinal);
+            var customizations = CustomizationsModel.Load(customizationFiles);
+            CustomizationTransform.Apply(service.Model, customizations);
+            CustomizationTransform.Validate(service.Model, customizations);
+
+            var index = new ServiceIndex(service.Model);
+
+            // Everything that can fail without writing a file happens before the wipe, so a missing
+            // version entry can't leave a service wiped-but-not-regenerated.
+            var context = new GenerationContext(index, versionManifest, service.Metadata, customizations);
+            UnsupportedTraitValidator.Validate(index);
+
+            // Test services have no _sdk-versions.json entry; they get the default assembly version, matching C2J.
+            var serviceFileVersion = service.IsTestService
+                ? versionManifest.DefaultAssemblyVersion ?? throw new GeneratorException($"'{versionManifest.SourcePath}' has no 'DefaultAssemblyVersion' for test service '{context.ServiceName}'.")
+                : versionManifest.GetServiceVersion(context.ServiceName);
+            var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
+
+            WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot, service.IsTestService);
+
+            var written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
+            Log.Info($"Generated {written.Count} files for {service.Name} under '{Relative(sourceRoot)}'.");
         }
         catch (GeneratorException ex)
         {
             // Services generate in parallel, so the message has to name the one that failed.
             throw new GeneratorException($"[{service.Name}] {ex.Message}", ex);
         }
-
-        Log.Info($"Generated {written.Count} files for {service.Name} under '{Relative(sourceRoot)}'.");
     }
 
     // Deletion is the destructive step, so every tree/file actually removed is logged. Only the
     // generated trees and the superseded C2J solution file are touched — never Custom/ or anything
     // hand-written.
-    private void WipeStaleOutput(string serviceName, string sourceRoot, string codeAnalysisRoot, string testsRoot)
+    private void WipeStaleOutput(string serviceName, string sourceRoot, string codeAnalysisRoot, string testsRoot, bool isTestService)
     {
-        string[] staleTrees =
-        [
-            Path.Combine(sourceRoot, "Generated"),
-            Path.Combine(codeAnalysisRoot, "Generated"),
-            Path.Combine(testsRoot, "UnitTests", "Generated"),
-        ];
+        // Test services have no code-analysis tree (and sourceRoot == testsRoot), so only the two generated trees under the test root are wiped.
+        string[] staleTrees = isTestService
+            ?
+            [
+                Path.Combine(testsRoot, "Generated"),
+                Path.Combine(testsRoot, "UnitTests", "Generated"),
+            ]
+            :
+            [
+                Path.Combine(sourceRoot, "Generated"),
+                Path.Combine(codeAnalysisRoot, "Generated"),
+                Path.Combine(testsRoot, "UnitTests", "Generated"),
+            ];
 
         foreach (var tree in staleTrees)
         {

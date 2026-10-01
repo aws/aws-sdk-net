@@ -4,109 +4,121 @@
     <property>Amazon.FIS.Model.CreateExperimentTemplateRequest.ClientToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateRequest.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateTargetAccountConfigurationRequest.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateTargetAccountConfigurationRequest.ClientToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateTargetAccountConfigurationRequest.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateTargetAccountConfigurationRequest.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateTargetAccountConfigurationRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.DeleteExperimentTemplateRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.DeleteTargetAccountConfigurationRequest.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.DeleteTargetAccountConfigurationRequest.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetActionRequest.Id</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetExperimentRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetExperimentTargetAccountConfigurationRequest.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetExperimentTargetAccountConfigurationRequest.ExperimentId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetExperimentTemplateRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetSafetyLeverRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetTargetAccountConfigurationRequest.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetTargetAccountConfigurationRequest.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.GetTargetResourceTypeRequest.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListActionsRequest.MaxResults</property>
@@ -117,18 +129,19 @@
     <property>Amazon.FIS.Model.ListActionsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListActionsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentResolvedTargetsRequest.ExperimentId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentResolvedTargetsRequest.MaxResults</property>
@@ -139,57 +152,37 @@
     <property>Amazon.FIS.Model.ListExperimentResolvedTargetsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentResolvedTargetsRequest.TargetName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentResolvedTargetsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FIS.Model.ListExperimentsRequest.ExperimentTemplateId</property>
-    <max>64</max>
-    <pattern>[\S]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FIS.Model.ListExperimentsRequest.MaxResults</property>
-    <min>1</min>
-    <max>100</max>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FIS.Model.ListExperimentsRequest.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\S]+</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.FIS.Model.ListExperimentsResponse.NextToken</property>
-    <min>1</min>
-    <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentTargetAccountConfigurationsRequest.ExperimentId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentTargetAccountConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentTargetAccountConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentTemplatesRequest.MaxResults</property>
@@ -200,24 +193,48 @@
     <property>Amazon.FIS.Model.ListExperimentTemplatesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListExperimentTemplatesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListExperimentsRequest.ExperimentTemplateId</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListExperimentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListExperimentsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\S]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FIS.Model.ListExperimentsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListTargetAccountConfigurationsRequest.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListTargetAccountConfigurationsRequest.MaxResults</property>
@@ -228,13 +245,13 @@
     <property>Amazon.FIS.Model.ListTargetAccountConfigurationsRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListTargetAccountConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListTargetResourceTypesRequest.MaxResults</property>
@@ -245,189 +262,211 @@
     <property>Amazon.FIS.Model.ListTargetResourceTypesRequest.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ListTargetResourceTypesResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.StartExperimentRequest.ClientToken</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.StartExperimentRequest.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.StopExperimentRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UntagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateRequest.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateSafetyLeverStateRequest.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateTargetAccountConfigurationRequest.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateTargetAccountConfigurationRequest.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateTargetAccountConfigurationRequest.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateTargetAccountConfigurationRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Action.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Action.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Action.Id</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ActionParameter.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ActionSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ActionSummary.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ActionSummary.Id</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ActionTarget.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateActionInput.ActionId</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateActionInput.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateReportConfigurationInput.PostExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateReportConfigurationInput.PreExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateStopConditionInput.Source</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateStopConditionInput.Value</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateTargetInput.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.CreateExperimentTemplateTargetInput.SelectionMode</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Experiment.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Experiment.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Experiment.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Experiment.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.Experiment.TargetAccountConfigurationsCount</property>
@@ -435,188 +474,209 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentAction.ActionId</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentAction.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentActionState.Reason</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentCloudWatchLogsLogConfiguration.LogGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentError.Code</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportConfiguration.PostExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportConfiguration.PreExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportConfigurationCloudWatchDashboard.DashboardIdentifier</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportConfigurationOutputsS3Configuration.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportConfigurationOutputsS3Configuration.Prefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportError.Code</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportS3Report.Arn</property>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportS3Report.ReportType</property>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentReportState.Reason</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentS3LogConfiguration.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentS3LogConfiguration.Prefix</property>
     <min>1</min>
     <max>700</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentState.Reason</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentStopCondition.Source</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentStopCondition.Value</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentSummary.ExperimentTemplateId</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentSummary.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTarget.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTarget.SelectionMode</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetAccountConfiguration.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetAccountConfiguration.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetAccountConfiguration.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetAccountConfigurationSummary.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetAccountConfigurationSummary.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetAccountConfigurationSummary.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTargetFilter.Path</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplate.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplate.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplate.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplate.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplate.TargetAccountConfigurationsCount</property>
@@ -624,258 +684,290 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateAction.ActionId</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateAction.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateCloudWatchLogsLogConfiguration.LogGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateCloudWatchLogsLogConfigurationInput.LogGroupArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateReportConfiguration.PostExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateReportConfiguration.PreExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateReportConfigurationCloudWatchDashboard.DashboardIdentifier</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfiguration.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfiguration.Prefix</property>
     <min>1</min>
     <max>700</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfigurationInput.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateS3LogConfigurationInput.Prefix</property>
     <min>1</min>
     <max>700</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateStopCondition.Source</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateStopCondition.Value</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateSummary.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateSummary.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateSummary.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateTarget.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateTarget.SelectionMode</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateTargetFilter.Path</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ExperimentTemplateTargetInputFilter.Path</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationCloudWatchDashboardInput.DashboardIdentifier</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3Output.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3Output.Prefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3OutputInput.BucketName</property>
     <min>3</min>
     <max>63</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ReportConfigurationS3OutputInput.Prefix</property>
+    <min>0</min>
     <max>256</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ResolvedTarget.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.ResolvedTarget.TargetName</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.SafetyLever.Arn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.SafetyLever.Id</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetAccountConfiguration.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetAccountConfiguration.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetAccountConfiguration.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetAccountConfigurationSummary.AccountId</property>
     <min>12</min>
     <max>48</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetAccountConfigurationSummary.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]*</pattern>
+    <pattern>^[\s\S]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetAccountConfigurationSummary.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetResourceType.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetResourceType.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetResourceTypeParameter.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetResourceTypeSummary.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.TargetResourceTypeSummary.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateActionInputItem.ActionId</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateActionInputItem.Description</property>
+    <min>0</min>
     <max>512</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateReportConfigurationInput.PostExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateReportConfigurationInput.PreExperimentDuration</property>
+    <min>0</min>
     <max>32</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateStopConditionInput.Source</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateStopConditionInput.Value</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>[\s\S]+</pattern>
+    <pattern>^[\s\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateTargetInput.ResourceType</property>
+    <min>0</min>
     <max>128</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FIS.Model.UpdateExperimentTemplateTargetInput.SelectionMode</property>
+    <min>0</min>
     <max>64</max>
-    <pattern>[\S]+</pattern>
+    <pattern>^[\S]+$</pattern>
   </property-value-rule>
 </property-value-rules>

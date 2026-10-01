@@ -258,6 +258,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         IDescribeVerifiedDestinationNumbersPaginator DescribeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request);
 
         /// <summary>
+        /// Paginator for ListAvailablePhoneNumbers operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAvailablePhoneNumbersPaginator ListAvailablePhoneNumbers(ListAvailablePhoneNumbersRequest request);
+
+        /// <summary>
         /// Paginator for ListNotifyCountries operation
         ///</summary>
         [AWSPaginator(

@@ -2,5 +2,6 @@
   "active": true,
   "synopsis": "This is the first public release of CloudWatch RUM",
   "generate-client-constructors": true,
+  "base-name": "CloudWatchRUM",
   "legacy-service-id": "RUM"
 }

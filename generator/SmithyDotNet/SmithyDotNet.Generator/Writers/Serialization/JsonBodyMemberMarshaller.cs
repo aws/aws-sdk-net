@@ -7,8 +7,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// (<see cref="JsonStructureMarshallerWriter"/>) both call in here; the object variable name is the
 /// only thing that differs between them ("publicRequest" vs. "requestObject"). Handles scalars,
 /// nested structures, documents, blobs (base64 string on the wire), and collections (lists/maps of
-/// strings, structures, documents, or nested collections), so a structure recurses through those
-/// member kinds at any depth.
+/// strings, structures, documents, non-streaming blobs, or nested collections), so a structure recurses
+/// through those member kinds at any depth.
 /// </summary>
 public static class JsonBodyMemberMarshaller
 {
@@ -59,8 +59,7 @@ public static class JsonBodyMemberMarshaller
         else if (member.Type.IsBlob)
         {
             // A blob body member base64-encodes into the JSON string, matching C2J (see Textract's
-            // DocumentMarshaller). A blob list element or map value never reaches here - TypeMapper
-            // rejects it during member resolution.
+            // DocumentMarshaller).
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
@@ -86,7 +85,8 @@ public static class JsonBodyMemberMarshaller
     // are always strings - see TypeMapper.MapType). baseName seeds the loop-variable names so nested loops
     // don't collide. A scalar leaf is non-nullable (List<int>, not List<int?>); JsonScalarMarshaller keys
     // on that to skip the .Value unwrap and NaN guard. An enum leaf is already a string here (see
-    // TypeMapper) and marshals as one; only blob leaves are rejected in TypeMapper.
+    // TypeMapper) and marshals as one; a blob leaf base64-encodes; only @streaming blob leaves are
+    // rejected in TypeMapper (a streaming blob is @httpPayload-only).
     private static void WriteCollectionValue(CodeWriter writer, TypeDescriptor type, string valueExpr, string baseName)
     {
         if (type.IsScalar)
@@ -108,19 +108,33 @@ public static class JsonBodyMemberMarshaller
             // object wrapping (unlike a structure value), matching C2J's emitted collection elements.
             writer.WriteLine($"Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, {valueExpr});");
         }
+        else if (type.IsBlob)
+        {
+            // A blob list element / map value base64-encodes exactly like a blob body member. The sparse
+            // list/map paths null-guard first (WriteBase64StringValue dereferences its argument).
+            writer.WriteLine($"StringUtils.WriteBase64StringValue(context.Writer, {valueExpr});");
+        }
         else if (type.ListElement is { } element)
         {
             writer.WriteLine("context.Writer.WriteStartArray();");
             var loopVar = $"{baseName}ListValue";
             writer.OpenBlock($"foreach (var {loopVar} in {valueExpr})", () =>
             {
-                // A @sparse list null-guards only value-type elements: a null string already writes
-                // JSON null and a null structure writes {} (C2J parity).
-                if (element.IsSparse && IsValueTypeScalar(element))
+                // A @sparse list null-guards value-type and blob elements: a null string already writes
+                // JSON null and a null structure writes {} (C2J parity), but WriteNonNullScalar and
+                // WriteBase64StringValue both dereference their argument.
+                if (element.IsSparse && (IsValueTypeScalar(element) || element.IsBlob))
                 {
                     writer.OpenBlock($"if ({loopVar} != null)", () =>
                     {
-                        JsonScalarMarshaller.WriteNonNullScalar(writer, element, loopVar, BodyTimestampDefault);
+                        if (element.IsBlob)
+                        {
+                            WriteCollectionValue(writer, element, loopVar, loopVar);
+                        }
+                        else
+                        {
+                            JsonScalarMarshaller.WriteNonNullScalar(writer, element, loopVar, BodyTimestampDefault);
+                        }
                     });
                     writer.OpenBlock("else", () =>
                     {

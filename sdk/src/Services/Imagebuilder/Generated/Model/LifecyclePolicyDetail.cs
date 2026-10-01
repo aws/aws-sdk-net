@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// The configuration details for a lifecycle policy resource.
+    /// Defines one lifecycle policy rule: the action to take, the filter that determines
+    /// which resources the rule applies to, and optional exclusion rules.
     /// </summary>
     public partial class LifecyclePolicyDetail
     {

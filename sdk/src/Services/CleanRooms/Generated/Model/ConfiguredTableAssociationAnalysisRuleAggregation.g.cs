@@ -1,0 +1,84 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.CleanRooms.Model
+{
+    /// <summary>
+    /// The configured table association analysis rule applied to a configured table with
+    /// the aggregation analysis rule.
+    /// </summary>
+    public partial class ConfiguredTableAssociationAnalysisRuleAggregation
+    {
+        /// <summary>
+        /// Gets and sets the property AllowedAdditionalAnalyses. 
+        /// <para>
+        ///  The list of resources or wildcards (ARNs) that are allowed to perform additional
+        /// analysis on query output.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>allowedAdditionalAnalyses</c> parameter is currently supported for the list
+        /// analysis rule (<c>AnalysisRuleList</c>) and the custom analysis rule (<c>AnalysisRuleCustom</c>).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 25)]
+        public List<string> AllowedAdditionalAnalyses { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AllowedAdditionalAnalyses property is set.
+        /// </summary>
+        internal bool IsSetAllowedAdditionalAnalyses() => this.AllowedAdditionalAnalyses != null && (this.AllowedAdditionalAnalyses.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property AllowedResultReceivers. 
+        /// <para>
+        ///  The list of collaboration members who are allowed to receive results of queries run
+        /// with this configured table.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AllowedResultReceivers { get; set; } = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Checks to see if the AllowedResultReceivers property is set.
+        /// </summary>
+        internal bool IsSetAllowedResultReceivers() => this.AllowedResultReceivers != null && (this.AllowedResultReceivers.Count > 0 || !AWSConfigs.InitializeCollections);
+    }
+}

@@ -118,6 +118,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSendInAppNotificationAction())
+            {
+                context.Writer.WritePropertyName("SendInAppNotificationAction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SendInAppNotificationActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.SendInAppNotificationAction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSendNotificationAction())
             {
                 context.Writer.WritePropertyName("SendNotificationAction");

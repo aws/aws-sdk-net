@@ -2053,6 +2053,56 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type S3AnnotationDirective.
+    /// </summary>
+    public class S3AnnotationDirective : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPY for S3AnnotationDirective
+        /// </summary>
+        public static readonly S3AnnotationDirective COPY = new S3AnnotationDirective("COPY");
+        /// <summary>
+        /// Constant EXCLUDE for S3AnnotationDirective
+        /// </summary>
+        public static readonly S3AnnotationDirective EXCLUDE = new S3AnnotationDirective("EXCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3AnnotationDirective(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3AnnotationDirective FindValue(string value)
+        {
+            return FindValue<S3AnnotationDirective>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3AnnotationDirective(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3CannedAccessControlList.
     /// </summary>
     public class S3CannedAccessControlList : ConstantClass
@@ -2359,6 +2409,56 @@ namespace Amazon.S3Control
 
 
     /// <summary>
+    /// Constants used for properties of type S3ObjectLockEventHold.
+    /// </summary>
+    public class S3ObjectLockEventHold : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFF for S3ObjectLockEventHold
+        /// </summary>
+        public static readonly S3ObjectLockEventHold OFF = new S3ObjectLockEventHold("OFF");
+        /// <summary>
+        /// Constant ON for S3ObjectLockEventHold
+        /// </summary>
+        public static readonly S3ObjectLockEventHold ON = new S3ObjectLockEventHold("ON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3ObjectLockEventHold(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3ObjectLockEventHold FindValue(string value)
+        {
+            return FindValue<S3ObjectLockEventHold>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3ObjectLockEventHold(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3ObjectLockLegalHoldStatus.
     /// </summary>
     public class S3ObjectLockLegalHoldStatus : ConstantClass
@@ -2452,6 +2552,56 @@ namespace Amazon.S3Control
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator S3ObjectLockMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3ObjectLockRetentionEventHold.
+    /// </summary>
+    public class S3ObjectLockRetentionEventHold : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFF for S3ObjectLockRetentionEventHold
+        /// </summary>
+        public static readonly S3ObjectLockRetentionEventHold OFF = new S3ObjectLockRetentionEventHold("OFF");
+        /// <summary>
+        /// Constant ON for S3ObjectLockRetentionEventHold
+        /// </summary>
+        public static readonly S3ObjectLockRetentionEventHold ON = new S3ObjectLockRetentionEventHold("ON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3ObjectLockRetentionEventHold(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3ObjectLockRetentionEventHold FindValue(string value)
+        {
+            return FindValue<S3ObjectLockRetentionEventHold>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3ObjectLockRetentionEventHold(string value)
         {
             return FindValue(value);
         }

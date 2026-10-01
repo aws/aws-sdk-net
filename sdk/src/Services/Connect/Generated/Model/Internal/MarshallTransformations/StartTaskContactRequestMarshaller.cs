@@ -178,7 +178,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetScheduledTime())
             {
                 context.Writer.WritePropertyName("ScheduledTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ScheduledTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ScheduledTime.Value));
             }
 
             if(publicRequest.IsSetSegmentAttributes())

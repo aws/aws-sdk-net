@@ -54,7 +54,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OAM.Model.ListTagsForResourceRequest.ResourceArn</property>
-    <pattern>^arn:(\w|-)+:oam:.+:.+:.+</pattern>
+    <pattern>^arn:(\w|-)+:oam:.+:.+:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OAM.Model.PutSinkPolicyRequest.SinkIdentifier</property>
@@ -62,11 +62,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OAM.Model.TagResourceRequest.ResourceArn</property>
-    <pattern>^arn:(\w|-)+:oam:.+:.+:.+</pattern>
+    <pattern>^arn:(\w|-)+:oam:.+:.+:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OAM.Model.UntagResourceRequest.ResourceArn</property>
-    <pattern>^arn:(\w|-)+:oam:.+:.+:.+</pattern>
+    <pattern>^arn:(\w|-)+:oam:.+:.+:.+.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OAM.Model.UpdateLinkRequest.Identifier</property>

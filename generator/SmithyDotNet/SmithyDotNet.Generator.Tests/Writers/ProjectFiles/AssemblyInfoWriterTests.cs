@@ -1,5 +1,5 @@
 using Microsoft.CodeAnalysis.CSharp;
-using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.ProjectFiles;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
 using Xunit;
 

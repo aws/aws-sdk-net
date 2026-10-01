@@ -31,9 +31,30 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstancesHealth operation.
-    /// Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.
-    /// This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
+    /// Retrieves detailed information about the health of instances in your Elastic Beanstalk
+    /// environments. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced
     /// health reporting</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This action only returns information about environments that the calling principle
+    /// has IAM permissions to access. For example, consider a case where a user only has
+    /// permission to access one of three environments. When the user calls this action, the
+    /// response will only include the one environment that the user has permission to access
+    /// instead of all three environments. If the user doesn’t have access to any of the environments
+    /// an empty result is returned.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a>
+    /// managed policy allows operators to view information about resources related to Elastic
+    /// Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html">
+    /// Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer
+    /// Guide</i>. For detailed instructions to attach a policy to a user or group, see the
+    /// section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed">
+    /// Controlling access with managed policies</a> in the same topic.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeInstancesHealthRequest : AmazonElasticBeanstalkRequest
     {
@@ -69,7 +90,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
-        /// Specify the AWS Elastic Beanstalk environment by ID.
+        /// Specify the Elastic Beanstalk environment by ID.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -87,7 +108,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// Specify the AWS Elastic Beanstalk environment by name.
+        /// Specify the Elastic Beanstalk environment by name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]

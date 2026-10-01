@@ -1586,6 +1586,12 @@ namespace Amazon.SimpleSystemsManagement
         /// of parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
         /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Document</c> – Shares the document using Resource Access Manager (RAM). For more
+        /// information about sharing documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+        /// Systems Manager documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
@@ -5632,7 +5638,24 @@ namespace Amazon.SimpleSystemsManagement
         /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share">Sharing
         /// a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i> 
         /// </para>
-        ///  </important> </li> </ul>
+        ///  </important> </li> <li> 
+        /// <para>
+        ///  <c>Document</c> – Shares the document using Resource Access Manager (RAM). For more
+        /// information about sharing documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+        /// Systems Manager documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// While you can share a document using the Systems Manager <c>PutResourcePolicy</c>
+        /// operation, we recommend using Resource Access Manager (RAM) instead. Using <c>PutResourcePolicy</c>
+        /// requires an extra step. You must promote the document to a standard RAM Resource Share
+        /// using the RAM <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// API operation. Otherwise, the Systems Manager <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_ListDocuments.html">ListDocuments</a>
+        /// API operation won't return the document when filtering for shared documents. The Amazon
+        /// Web Services Config <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutRemediationConfigurations.html">PutRemediationConfigurations</a>
+        /// API operation also can't use the document.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// <param name="cancellationToken">

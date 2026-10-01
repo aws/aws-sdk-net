@@ -49,13 +49,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportFromTime())
             {
                 context.Writer.WritePropertyName("ExportFromTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ExportFromTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ExportFromTime.Value));
             }
 
             if(requestObject.IsSetExportToTime())
             {
                 context.Writer.WritePropertyName("ExportToTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ExportToTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.ExportToTime.Value));
             }
 
             if(requestObject.IsSetExportViewType())

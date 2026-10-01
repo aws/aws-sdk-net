@@ -31,7 +31,10 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the StartImagePipelineExecution operation.
-    /// Manually triggers a pipeline to create an image.
+    /// Manually triggers a pipeline to create an image. You can start a build this way whether
+    /// the pipeline is enabled or disabled. The response returns as soon as Image Builder
+    /// creates the new image resource and queues the build. Use the returned <c>imageBuildVersionArn</c>
+    /// with <a>GetImage</a> to track build progress.
     /// </summary>
     public partial class StartImagePipelineExecutionRequest : AmazonImagebuilderRequest
     {
@@ -42,8 +45,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>
@@ -82,8 +87,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specify tags for Image Builder to apply to the image resource that's created When
-        /// it starts pipeline execution.
+        /// The tags for Image Builder to apply to the image resource that's created when pipeline
+        /// execution starts.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

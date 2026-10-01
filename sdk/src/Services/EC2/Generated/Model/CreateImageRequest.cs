@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
     public partial class CreateImageRequest : AmazonEC2Request
     {
         private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
+        private BootModeOverrideValues _bootModeOverride;
         private string _description;
         private bool? _dryRun;
         private string _instanceId;
@@ -138,6 +139,43 @@ namespace Amazon.EC2.Model
         internal bool IsSetBlockDeviceMappings()
         {
             return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootModeOverride. 
+        /// <para>
+        /// The boot mode of the new image, which overrides the default boot mode. By default,
+        /// if you do not specify this parameter, the new image inherits the <c>boot-mode</c>
+        /// from the source instance.
+        /// </para>
+        ///  
+        /// <para>
+        /// A value of <c>uefi</c> indicates that the image only supports UEFI boot mode. You
+        /// can specify this parameter only if the <c>current-instance-boot-mode</c> of the source
+        /// instance is <c>uefi</c>. To find the <c>boot-mode</c> or <c>current-instance-boot-mode</c>
+        /// of an instance, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The operating system contained in the AMI must be configured to support the specified
+        /// boot mode.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Instance
+        /// launch behavior with Amazon EC2 boot modes</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        /// </summary>
+        public BootModeOverrideValues BootModeOverride
+        {
+            get { return this._bootModeOverride; }
+            set { this._bootModeOverride = value; }
+        }
+
+        // Check to see if BootModeOverride property is set
+        internal bool IsSetBootModeOverride()
+        {
+            return this._bootModeOverride != null;
         }
 
         /// <summary>

@@ -63,6 +63,10 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
                 }
+                if(publicRequest.IsSetMinimumSessionTokenSize())
+                {
+                    request.Parameters.Add("MinimumSessionTokenSize", StringUtils.FromInt(publicRequest.MinimumSessionTokenSize));
+                }
                 if(publicRequest.IsSetName())
                 {
                     request.Parameters.Add("Name", StringUtils.FromString(publicRequest.Name));

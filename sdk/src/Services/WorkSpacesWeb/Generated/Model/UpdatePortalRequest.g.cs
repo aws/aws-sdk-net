@@ -1,0 +1,134 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.WorkSpacesWeb.Model
+{
+    /// <summary>
+    /// Container for the parameters to the UpdatePortal operation. Updates a web portal.
+    /// </summary>
+    public partial class UpdatePortalRequest : AmazonWorkSpacesWebRequest
+    {
+        /// <summary>
+        /// Gets and sets the property AuthenticationType. 
+        /// <para>
+        /// The type of authentication integration points used when signing into the web portal.
+        /// Defaults to <c>Standard</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Standard</c> web portals are authenticated directly through your identity provider.
+        /// You need to call <c>CreateIdentityProvider</c> to integrate your identity provider
+        /// with your web portal. User and group access to your web portal is controlled through
+        /// your identity provider.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>IAM Identity Center</c> web portals are authenticated through IAM Identity Center.
+        /// Identity sources (including external identity provider integration), plus user and
+        /// group access to your web portal, can be configured in the IAM Identity Center.
+        /// </para>
+        /// </summary>
+        public AuthenticationType AuthenticationType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the AuthenticationType property is set.
+        /// </summary>
+        internal bool IsSetAuthenticationType() => this.AuthenticationType != null;
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        /// The name of the web portal. This is not visible to users who log into the web portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive = true, Min = 1, Max = 64)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the DisplayName property is set.
+        /// </summary>
+        internal bool IsSetDisplayName() => this.DisplayName != null;
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The type and resources of the underlying instance.
+        /// </para>
+        /// </summary>
+        public InstanceType InstanceType { get; set; }
+
+        /// <summary>
+        /// Checks to see if the InstanceType property is set.
+        /// </summary>
+        internal bool IsSetInstanceType() => this.InstanceType != null;
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentSessions. 
+        /// <para>
+        /// The maximum number of concurrent sessions for the portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 5000)]
+        public int? MaxConcurrentSessions { get; set; }
+
+        /// <summary>
+        /// Checks to see if the MaxConcurrentSessions property is set.
+        /// </summary>
+        internal bool IsSetMaxConcurrentSessions() => this.MaxConcurrentSessions.HasValue;
+
+        /// <summary>
+        /// Gets and sets the property PortalArn. 
+        /// <para>
+        /// The ARN of the web portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true, Min = 20, Max = 2048)]
+        public string PortalArn { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PortalArn property is set.
+        /// </summary>
+        internal bool IsSetPortalArn() => this.PortalArn != null;
+
+        /// <summary>
+        /// Gets and sets the property PortalCustomDomain. 
+        /// <para>
+        /// The custom domain of the web portal that users access in order to start streaming
+        /// sessions. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 0, Max = 128)]
+        public string PortalCustomDomain { get; set; }
+
+        /// <summary>
+        /// Checks to see if the PortalCustomDomain property is set.
+        /// </summary>
+        internal bool IsSetPortalCustomDomain() => this.PortalCustomDomain != null;
+    }
+}

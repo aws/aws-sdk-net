@@ -1,0 +1,82 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.GeoRoutes.Model
+{
+    /// <summary>
+    /// Controls how points are matched to specific sides of streets. This is important when
+    /// the side of the street matters for accessibility - for example, when building entrances
+    /// or parking lot access points can only be reached from one side of a divided road.
+    /// </summary>
+    public partial class IsolineSideOfStreetOptions
+    {
+        /// <summary>
+        /// Gets and sets the property Position. 
+        /// <para>
+        /// The <c>[longitude, latitude]</c> coordinates of the point that should be matched to
+        /// a specific side of the street.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Required = true, Sensitive = true, Min = 2, Max = 2)]
+        public List<double> Position { get; set; } = AWSConfigs.InitializeCollections ? new List<double>() : null;
+
+        /// <summary>
+        /// Checks to see if the Position property is set.
+        /// </summary>
+        internal bool IsSetPosition() => this.Position != null && (this.Position.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property UseWith. 
+        /// <para>
+        /// Controls whether side-of-street matching is applied to any street (<c>AnyStreet</c>)
+        /// or only to divided roads (<c>DividedStreetOnly</c>). This is important when the exact
+        /// side of the street matters - for example, if a building entrance is only accessible
+        /// from one side of a divided highway, or if a parking lot can only be entered from northbound
+        /// lanes. Without correct side-of-street matching, travel time estimates may be inaccurate
+        /// because they don't account for necessary U-turns or detours to reach the correct side.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>DividedStreetOnly</c> 
+        /// </para>
+        /// </summary>
+        public SideOfStreetMatchingStrategy UseWith { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UseWith property is set.
+        /// </summary>
+        internal bool IsSetUseWith() => this.UseWith != null;
+    }
+}

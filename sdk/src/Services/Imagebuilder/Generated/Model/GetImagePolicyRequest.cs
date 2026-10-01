@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the GetImagePolicy operation.
-    /// Gets an image policy.
+    /// Retrieves an image policy.
     /// </summary>
     public partial class GetImagePolicyRequest : AmazonImagebuilderRequest
     {

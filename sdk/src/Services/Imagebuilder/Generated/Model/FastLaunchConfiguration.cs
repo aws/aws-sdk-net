@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// Define and configure faster launching for output Windows AMIs.
+    /// Defines and configures EC2 Fast Launch for output Windows AMIs.
     /// </summary>
     public partial class FastLaunchConfiguration
     {
@@ -61,9 +61,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// A Boolean that represents the current state of faster launching for the Windows AMI.
-        /// Set to <c>true</c> to start using Windows faster launching, or <c>false</c> to stop
-        /// using it.
+        /// Specifies whether to enable Windows fast launch on the output AMI during distribution.
+        /// A value of <c>false</c> means Image Builder takes no fast-launch action for this configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,7 +120,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property SnapshotConfiguration. 
         /// <para>
         /// Configuration settings for managing the number of snapshots that are created from
-        /// pre-provisioned instances for the Windows AMI when faster launching is enabled.
+        /// pre-provisioned instances for the Windows AMI when Windows fast launch is enabled.
         /// </para>
         /// </summary>
         public FastLaunchSnapshotConfiguration SnapshotConfiguration

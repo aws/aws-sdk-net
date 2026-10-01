@@ -68,6 +68,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeletionProtectionEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MessagingLimits", targetDepth, ref reader))
+                {
+                    var unmarshaller = MessagingLimitsUnmarshaller.Instance;
+                    unmarshalledObject.MessagingLimits = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("OptOutListName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

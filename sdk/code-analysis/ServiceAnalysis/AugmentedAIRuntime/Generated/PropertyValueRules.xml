@@ -14,13 +14,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.DescribeHumanLoopResponse.FlowDefinitionArn</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.DescribeHumanLoopResponse.HumanLoopArn</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.DescribeHumanLoopResponse.HumanLoopName</property>
@@ -30,8 +32,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.ListHumanLoopsRequest.FlowDefinitionArn</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.ListHumanLoopsRequest.MaxResults</property>
@@ -40,18 +43,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.ListHumanLoopsRequest.NextToken</property>
+    <min>0</min>
     <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.ListHumanLoopsResponse.NextToken</property>
+    <min>0</min>
     <max>8192</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.StartHumanLoopRequest.FlowDefinitionArn</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.StartHumanLoopRequest.HumanLoopName</property>
@@ -61,8 +67,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.StartHumanLoopResponse.HumanLoopArn</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:human-loop/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.StopHumanLoopRequest.HumanLoopName</property>
@@ -72,16 +79,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopInput.InputContent</property>
+    <min>0</min>
     <max>3145728</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopSummary.FailureReason</property>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopSummary.FlowDefinitionArn</property>
+    <min>0</min>
     <max>1024</max>
-    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
+    <pattern>^arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:flow-definition/.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AugmentedAIRuntime.Model.HumanLoopSummary.HumanLoopName</property>

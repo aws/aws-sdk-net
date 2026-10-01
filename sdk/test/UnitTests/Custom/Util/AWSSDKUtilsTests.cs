@@ -17,6 +17,7 @@ using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -417,6 +418,116 @@ namespace AWSSDK.UnitTests
             var expectedResult = "POST\nexample.com\n/\nparam1%26=value1%3D";
             var actualResult = AWSSDKUtils.CalculateStringToSignV2(parameters, serviceUrl);
             Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        private static readonly DateTime Epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_PreservesMilliseconds()
+        {
+            Assert.AreEqual(1756149554.123m, AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(
+                new DateTime(2025, 8, 25, 19, 19, 14, 123, DateTimeKind.Utc)));
+            Assert.AreEqual(1756149554.456m, AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(
+                new DateTime(2025, 8, 25, 19, 19, 14, 456, DateTimeKind.Utc)));
+        }
+
+        /// <summary>
+        /// Whole seconds must carry no fractional digits, so the JSON body written for the many
+        /// services that only ever send whole seconds stays byte-identical.
+        /// </summary>
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_WholeSecondsHaveNoFraction()
+        {
+            var actual = AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(
+                new DateTime(2025, 8, 25, 19, 19, 14, 0, DateTimeKind.Utc));
+
+            Assert.AreEqual(1756149554m, actual);
+            Assert.AreEqual("1756149554", actual.ToString(CultureInfo.InvariantCulture));
+        }
+
+        /// <summary>
+        /// Sub-millisecond ticks round to the nearest millisecond, matching the Java v2 SDK's
+        /// DateUtils.formatUnixTimestampInstant, which builds from Instant#toEpochMilli.
+        /// </summary>
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_RoundsSubMillisecondTicks()
+        {
+            // .1234567 -> .123
+            Assert.AreEqual(1756149554.123m, AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(
+                new DateTime(2025, 8, 25, 19, 19, 14, DateTimeKind.Utc).AddTicks(1234567)));
+
+            // .1235000 -> .124 (rounds up, not truncates)
+            Assert.AreEqual(1756149554.124m, AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(
+                new DateTime(2025, 8, 25, 19, 19, 14, DateTimeKind.Utc).AddTicks(1235000)));
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_HandlesEpochAndPreEpoch()
+        {
+            Assert.AreEqual(0m, AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(Epoch));
+            Assert.AreEqual(-0.123m, AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(
+                new DateTime(1969, 12, 31, 23, 59, 59, 877, DateTimeKind.Utc)));
+        }
+
+        /// <summary>
+        /// A non-UTC DateTime is normalized to UTC first, so the same instant expressed in local
+        /// time produces the same epoch value.
+        /// </summary>
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_NormalizesNonUtcKind()
+        {
+            var utc = new DateTime(2025, 8, 25, 19, 19, 14, 123, DateTimeKind.Utc);
+
+            Assert.AreEqual(
+                AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(utc),
+                AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(utc.ToLocalTime()));
+        }
+
+        /// <summary>
+        /// The reason this returns decimal rather than reusing ConvertToUnixEpochSecondsDouble:
+        /// System.Text.Json formats a double shortest-round-trippable only on inbox builds, and with
+        /// "G17" on the netstandard2.0 package build used by net472 - so the double would serialize
+        /// as 1756149554.1229999 there. decimal represents the value exactly on every target.
+        /// </summary>
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_IsExactWhereDoubleIsNot()
+        {
+            var timestamp = new DateTime(2025, 8, 25, 19, 19, 14, 123, DateTimeKind.Utc);
+
+            Assert.AreEqual("1756149554.123",
+                AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(timestamp).ToString(CultureInfo.InvariantCulture));
+
+            // The double form cannot represent the same value exactly.
+            Assert.AreNotEqual("1756149554.123",
+                AWSSDKUtils.ConvertToUnixEpochSecondsDouble(timestamp).ToString("G17", CultureInfo.InvariantCulture));
+        }
+
+        /// <summary>
+        /// The whole-second value must agree with the pre-existing whole-second helper, so services
+        /// that were already correct stay correct.
+        /// </summary>
+        [TestCategory("UnitTest")]
+        [TestCategory("Util")]
+        [TestMethod]
+        public void ConvertToUnixEpochSecondsDecimal_AgreesWithSecondsStringOnWholeSeconds()
+        {
+            var timestamp = new DateTime(2025, 8, 25, 19, 19, 14, 0, DateTimeKind.Utc);
+
+            Assert.AreEqual(
+                AWSSDKUtils.ConvertToUnixEpochSecondsString(timestamp),
+                AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(timestamp).ToString(CultureInfo.InvariantCulture));
         }
     }
 }

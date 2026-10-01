@@ -33,6 +33,32 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Event-stream-specific usings for the response event-stream class, appended to
+    /// <see cref="ModelUsings"/>. The caller also emits the service's <c>.Model.Internal.MarshallTransformations</c>
+    /// namespace (dynamic, so not a constant here).
+    /// </summary>
+    public static IReadOnlyList<string> EventStreamOutputUsings { get; } =
+    [
+        "Amazon.Runtime.EventStreams",
+        "Amazon.Runtime.EventStreams.Internal",
+        "Amazon.Runtime.EventStreams.Utils",
+        "Amazon.Runtime.Internal.Util",
+    ];
+
+    /// <summary>
+    /// Usings for the request event-stream publisher marshaller. Order matches C2J's
+    /// <c>EventStreamPublisherMarshaller</c> so the emitted <c>using</c> block is identical.
+    /// </summary>
+    public static IReadOnlyList<string> EventStreamPublisherUsings { get; } =
+    [
+        "System",
+        "System.IO",
+        "System.Threading.Tasks",
+        "Amazon.Runtime.EventStreams",
+        "System.Collections.Generic",
+    ];
+
+    /// <summary>
     /// Usings for paginator files (class, interface, and factory).
     /// </summary>
     public static IReadOnlyList<string> PaginatorUsings { get; } =

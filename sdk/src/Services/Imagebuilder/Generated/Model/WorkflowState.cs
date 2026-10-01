@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// A group of fields that describe the current status of workflow.
+    /// A group of fields that describe the current status of the workflow.
     /// </summary>
     public partial class WorkflowState
     {

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
 using Xunit;
 

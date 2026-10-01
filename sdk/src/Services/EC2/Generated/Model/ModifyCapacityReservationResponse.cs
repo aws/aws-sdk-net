@@ -34,7 +34,47 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyCapacityReservationResponse : AmazonWebServiceResponse
     {
+        private CapacityReservationAdjustmentDetails _adjustmentDetails;
+        private CapacityReservationAdjustmentStatus _adjustmentStatus;
         private bool? _return;
+
+        /// <summary>
+        /// Gets and sets the property AdjustmentDetails. 
+        /// <para>
+        /// The configuration that the Capacity Reservation will have after the adjustment is
+        /// applied.
+        /// </para>
+        /// </summary>
+        public CapacityReservationAdjustmentDetails AdjustmentDetails
+        {
+            get { return this._adjustmentDetails; }
+            set { this._adjustmentDetails = value; }
+        }
+
+        // Check to see if AdjustmentDetails property is set
+        internal bool IsSetAdjustmentDetails()
+        {
+            return this._adjustmentDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdjustmentStatus. 
+        /// <para>
+        /// The status of the requested modification. For a description of each possible value,
+        /// see the <c>adjustmentStatus</c> field of the <c>CapacityReservation</c> data type.
+        /// </para>
+        /// </summary>
+        public CapacityReservationAdjustmentStatus AdjustmentStatus
+        {
+            get { return this._adjustmentStatus; }
+            set { this._adjustmentStatus = value; }
+        }
+
+        // Check to see if AdjustmentStatus property is set
+        internal bool IsSetAdjustmentStatus()
+        {
+            return this._adjustmentStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Return. 

@@ -71,8 +71,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallAdvancedContentCategory. 
         /// <para>
-        /// Configures the rule to match an AWS-managed content category (for example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
-        /// See <a>FirewallAdvancedContentCategoryConfig</a>.
+        /// Configures the rule to match an Amazon Web Services-managed content category (for
+        /// example, <c>VIOLENCE_AND_HATE_SPEECH</c>). See <a>FirewallAdvancedContentCategoryConfig</a>.
         /// </para>
         /// </summary>
         public FirewallAdvancedContentCategoryConfig FirewallAdvancedContentCategory
@@ -90,8 +90,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallAdvancedThreatCategory. 
         /// <para>
-        /// Configures the rule to match an AWS-managed advanced threat category (for example,
-        /// <c>PHISHING</c>). See <a>FirewallAdvancedThreatCategoryConfig</a>.
+        /// Configures the rule to match an Amazon Web Services-managed advanced threat category
+        /// (for example, <c>PHISHING</c>). See <a>FirewallAdvancedThreatCategoryConfig</a>.
         /// </para>
         /// </summary>
         public FirewallAdvancedThreatCategoryConfig FirewallAdvancedThreatCategory
@@ -109,11 +109,11 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property PartnerThreatProtection. 
         /// <para>
-        /// Configures the rule to match a third-party threat feed delivered through AWS Marketplace.
-        /// The calling account must hold an active subscription to the partner product named
-        /// in <c>Partner</c>; if the subscription is missing or revoked, the rule is created
-        /// with <c>Status</c> <c>CREATION_FAILED</c> and cannot be modified — only deleted. See
-        /// <a>PartnerThreatProtectionConfig</a>.
+        /// Configures the rule to match a third-party threat feed delivered through Amazon Web
+        /// Services Marketplace. The calling account must hold an active subscription to the
+        /// partner product named in <c>Partner</c>; if the subscription is missing or revoked,
+        /// the rule is created with <c>Status</c> <c>CREATION_FAILED</c> and cannot be modified
+        /// — only deleted. See <a>PartnerThreatProtectionConfig</a>.
         /// </para>
         /// </summary>
         public PartnerThreatProtectionConfig PartnerThreatProtection

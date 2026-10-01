@@ -76,7 +76,22 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DisplayName</c> – The display name to use for a topic with SMS subscriptions.
+        ///  <c>DisplayName</c> – The display name to use for a topic with SMS, <c>email</c>,
+        /// and <c>email-json</c> subscriptions. For <c>email</c> and <c>email-json</c> subscriptions,
+        /// the display name is used as the sender name for regular notification messages. Subscription
+        /// confirmation and unsubscribe confirmation emails always use "Amazon Web Services Notifications"
+        /// as the sender name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>MaximumMessageSize</c> – The maximum size, in bytes, of a message that can be
+        /// published to the topic. Valid values are <c>1024</c> to <c>1048576</c> (1 MiB). The
+        /// default is <c>262144</c> (256 KiB).
+        /// </para>
+        ///  
+        /// <para>
+        /// A topic with a <c>MaximumMessageSize</c> above 256 KiB must have 100 or fewer subscriptions,
+        /// and each subscription must be an Amazon SQS, Amazon Data Firehose, or Lambda subscription.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -290,7 +305,13 @@ namespace Amazon.SimpleNotificationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataProtectionPolicy. 
+        /// Gets and sets the property DataProtectionPolicy. <important> 
+        /// <para>
+        /// Amazon SNS message data protection is no longer available to new customers. For more
+        /// information and guidance on alternatives, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-data-protection-availability-change.html">Amazon
+        /// SNS message data protection availability change</a>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The body of the policy document you want to use for this topic.
         /// </para>

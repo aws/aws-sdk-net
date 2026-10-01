@@ -87,6 +87,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Cpu);
             }
 
+            if(publicRequest.IsSetCpuArchitecture())
+            {
+                context.Writer.WritePropertyName("cpuArchitecture");
+                context.Writer.WriteStringValue(publicRequest.CpuArchitecture);
+            }
+
             if(publicRequest.IsSetExecutionRoleArn())
             {
                 context.Writer.WritePropertyName("executionRoleArn");

@@ -51,7 +51,7 @@ namespace Amazon.AppStream.Model
         /// Use escaped file path strings like "C:\\\\Windows\\\\System32\\\\notepad.exe".
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Max=32767)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=32767)]
         public string AbsoluteAppPath
         {
             get { return this._absoluteAppPath; }
@@ -72,7 +72,7 @@ namespace Amazon.AppStream.Model
         /// Use PNG images with proper transparency for the best user experience.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=32767)]
+        [AWSProperty(Sensitive=true, Min=0, Max=32767)]
         public string AbsoluteIconPath
         {
             get { return this._absoluteIconPath; }
@@ -93,7 +93,7 @@ namespace Amazon.AppStream.Model
         /// be 1-32767 characters and should point to a text file containing file paths to prewarm.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=32767)]
+        [AWSProperty(Sensitive=true, Min=0, Max=32767)]
         public string AbsoluteManifestPath
         {
             get { return this._absoluteManifestPath; }
@@ -113,7 +113,7 @@ namespace Amazon.AppStream.Model
         /// be 0-100 characters, matching the pattern ^[a-zA-Z0-9][a-zA-Z0-9_. -]{0,99}$.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -134,7 +134,7 @@ namespace Amazon.AppStream.Model
         /// such as PowerShell script paths or command-line arguments.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string LaunchParameters
         {
             get { return this._launchParameters; }
@@ -154,7 +154,7 @@ namespace Amazon.AppStream.Model
         /// application catalog and between 1-100 characters, matching the pattern ^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,99}$.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=100)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public string Name
         {
             get { return this._name; }
@@ -174,7 +174,7 @@ namespace Amazon.AppStream.Model
         /// and can be 0-32767 characters. Use escaped file path strings like "C:\\\\Path\\\\To\\\\Working\\\\Directory".
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=32767)]
+        [AWSProperty(Sensitive=true, Min=0, Max=32767)]
         public string WorkingDirectory
         {
             get { return this._workingDirectory; }

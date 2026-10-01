@@ -14,9 +14,8 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the managedblockchain-query-2023-05-04.normal.json service model.
+ * Do not modify this file. This file is generated from the smithy.json service model.
  */
-
 using System;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
@@ -33,22 +32,18 @@ namespace Amazon.ManagedBlockchainQuery
     public partial class AmazonManagedBlockchainQueryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "4.0.100.11");
+            InternalSDKUtils.BuildUserAgentString("ManagedBlockchain Query", "4.0.100.16");
 
         private static readonly AmazonManagedBlockchainQueryEndpointResolver EndpointResolver =
             new AmazonManagedBlockchainQueryEndpointResolver();
 
         private string _userAgent = UserAgentString;
-        ///<summary>
+
+        /// <summary>
         /// The ServiceId, which is the unique identifier for a service.
-        ///</summary>
-        public static new string ServiceId
-        {
-            get
-            {
-                return "ManagedBlockchain Query";
-            }
-        }
+        /// </summary>
+        public static new string ServiceId => "ManagedBlockchain Query";
+
         /// <summary>
         /// Default constructor
         /// </summary>
@@ -63,35 +58,17 @@ namespace Amazon.ManagedBlockchainQuery
         /// <summary>
         /// The constant used to lookup in the region hash the endpoint.
         /// </summary>
-        public override string RegionEndpointServiceName
-        {
-            get
-            {
-                return "managedblockchain-query";
-            }
-        }
+        public override string RegionEndpointServiceName => "managedblockchain-query";
 
         /// <summary>
         /// Gets the ServiceVersion property.
         /// </summary>
-        public override string ServiceVersion
-        {
-            get
-            {
-                return "2023-05-04";
-            }
-        }
+        public override string ServiceVersion => "2023-05-04";
 
         /// <summary>
         /// Gets the value of UserAgent property.
         /// </summary>
-        public override string UserAgent
-        {
-            get
-            {
-                return _userAgent;
-            }
-        }
+        public override string UserAgent => _userAgent;
 
         /// <summary>
         /// Returns the endpoint that will be used for a particular request.
@@ -113,7 +90,5 @@ namespace Amazon.ManagedBlockchainQuery
             var executionContext = new Amazon.Runtime.Internal.ExecutionContext(requestContext, null);
             return EndpointResolver.GetEndpoint(executionContext);
         }
-
-
     }
 }

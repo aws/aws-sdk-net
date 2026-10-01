@@ -91,6 +91,24 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ImageBuildConfiguration", targetDepth))
+                    {
+                        var unmarshaller = ImageBuildConfigurationUnmarshaller.Instance;
+                        unmarshalledObject.ImageBuildConfiguration = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("ImageSource", targetDepth))
+                    {
+                        var unmarshaller = ImageSourceUnmarshaller.Instance;
+                        unmarshalledObject.ImageSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Process", targetDepth))
+                    {
+                        var unmarshaller = NullableBoolUnmarshaller.Instance;
+                        unmarshalledObject.Process = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("SourceBuildInformation", targetDepth))
                     {
                         var unmarshaller = SourceBuildInformationUnmarshaller.Instance;

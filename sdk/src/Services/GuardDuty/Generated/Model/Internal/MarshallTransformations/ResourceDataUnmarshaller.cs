@@ -68,6 +68,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.AutoscalingAutoScalingGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("bedrockGuardrail", targetDepth, ref reader))
+                {
+                    var unmarshaller = BedrockGuardrailResourceUnmarshaller.Instance;
+                    unmarshalledObject.BedrockGuardrail = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cloudformationStack", targetDepth, ref reader))
                 {
                     var unmarshaller = CloudformationStackUnmarshaller.Instance;

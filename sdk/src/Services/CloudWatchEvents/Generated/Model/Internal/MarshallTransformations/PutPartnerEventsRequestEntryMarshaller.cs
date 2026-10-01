@@ -78,7 +78,7 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Time.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.Time.Value));
             }
 
         }

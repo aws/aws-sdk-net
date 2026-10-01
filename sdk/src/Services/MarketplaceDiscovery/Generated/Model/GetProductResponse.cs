@@ -39,6 +39,8 @@ namespace Amazon.MarketplaceDiscovery.Model
         private DeployedOnAwsStatus _deployedOnAws;
         private List<FulfillmentOptionSummary> _fulfillmentOptionSummaries = AWSConfigs.InitializeCollections ? new List<FulfillmentOptionSummary>() : null;
         private List<string> _highlights = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _listingId;
+        private string _locale;
         private string _logoThumbnailUrl;
         private string _longDescription;
         private SellerInformation _manufacturer;
@@ -158,6 +160,46 @@ namespace Amazon.MarketplaceDiscovery.Model
         internal bool IsSetHighlights()
         {
             return this._highlights != null && (this._highlights.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ListingId. 
+        /// <para>
+        /// The default listing identifier associated with the product.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=255)]
+        public string ListingId
+        {
+            get { return this._listingId; }
+            set { this._listingId = value; }
+        }
+
+        // Check to see if ListingId property is set
+        internal bool IsSetListingId()
+        {
+            return this._listingId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Locale. 
+        /// <para>
+        /// The locale of the returned content. Indicates whether the response contains content
+        /// in the requested locale, or fell back to the default locale. See <c>Locale</c> for
+        /// details.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string Locale
+        {
+            get { return this._locale; }
+            set { this._locale = value; }
+        }
+
+        // Check to see if Locale property is set
+        internal bool IsSetLocale()
+        {
+            return this._locale != null;
         }
 
         /// <summary>

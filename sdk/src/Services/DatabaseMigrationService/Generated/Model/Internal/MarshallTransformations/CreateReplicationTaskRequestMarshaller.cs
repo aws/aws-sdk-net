@@ -84,7 +84,7 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetCdcStartTime())
             {
                 context.Writer.WritePropertyName("CdcStartTime");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CdcStartTime.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.CdcStartTime.Value));
             }
 
             if(publicRequest.IsSetCdcStopPosition())

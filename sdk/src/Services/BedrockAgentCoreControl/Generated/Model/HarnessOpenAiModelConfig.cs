@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class HarnessOpenAiModelConfig
     {
         private Amazon.Runtime.Documents.Document _additionalParams;
+        private string _apiBase;
         private HarnessOpenAiApiFormat _apiFormat;
         private string _apiKeyArn;
         private int? _maxTokens;
@@ -59,6 +60,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAdditionalParams()
         {
             return !this._additionalParams.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property ApiBase. 
+        /// <para>
+        /// Optional custom endpoint URL for an OpenAI-compatible endpoint.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=1, Max=16383)]
+        public string ApiBase
+        {
+            get { return this._apiBase; }
+            set { this._apiBase = value; }
+        }
+
+        // Check to see if ApiBase property is set
+        internal bool IsSetApiBase()
+        {
+            return this._apiBase != null;
         }
 
         /// <summary>

@@ -56,6 +56,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("availableBillingModes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AvailableBillingMode, AvailableBillingModeUnmarshaller>(AvailableBillingModeUnmarshaller.Instance);
+                    unmarshalledObject.AvailableBillingModes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("availableMacSecPortSpeeds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Deadline.Model
 {
     /// <summary>
-    /// The time stamp in date-time format.
+    /// The timestamp in date-time format.
     /// </summary>
     public partial class DateTimeFilterExpression
     {

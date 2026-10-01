@@ -84,7 +84,7 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetSnapshotCreationTimestamp())
             {
                 context.Writer.WritePropertyName("SnapshotCreationTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.SnapshotCreationTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.SnapshotCreationTimestamp.Value));
             }
 
             if(publicRequest.IsSetSnapshotName())

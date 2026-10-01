@@ -37,10 +37,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _authorizationUrl;
         private DateTime? _createdAt;
         private List<CredentialsProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialsProviderConfiguration>() : null;
+        private DateTime? _credentialsUpdatedAt;
         private string _description;
         private DateTime? _lastUpdatedAt;
         private string _name;
         private string _paymentConnectorId;
+        private PaymentConnectorProvisionMode _provisionMode;
         private PaymentConnectorStatus _status;
         private PaymentConnectorType _type;
 
@@ -105,6 +107,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCredentialProviderConfigurations()
         {
             return this._credentialProviderConfigurations != null && (this._credentialProviderConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CredentialsUpdatedAt. 
+        /// <para>
+        /// The timestamp when the payment connector's current service-managed credentials took
+        /// effect. It is first set when the credentials are provisioned and is updated by each
+        /// rotation. This field is present only for payment connectors with a <c>provisionMode</c>
+        /// of <c>QUICK_CREATE</c>.
+        /// </para>
+        /// </summary>
+        public DateTime? CredentialsUpdatedAt
+        {
+            get { return this._credentialsUpdatedAt; }
+            set { this._credentialsUpdatedAt = value; }
+        }
+
+        // Check to see if CredentialsUpdatedAt property is set
+        internal bool IsSetCredentialsUpdatedAt()
+        {
+            return this._credentialsUpdatedAt.HasValue; 
         }
 
         /// <summary>
@@ -181,6 +204,36 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPaymentConnectorId()
         {
             return this._paymentConnectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionMode. 
+        /// <para>
+        /// Specifies how the payment connector was provisioned. Payment connectors that were
+        /// created before this field was available return <c>MANUAL</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MANUAL</c> - You provided the credential provider configurations, so you own the
+        /// credentials. Rotate them with the payment provider, then call <c>UpdatePaymentCredentialProvider</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>QUICK_CREATE</c> - AgentCore provisioned the credential provider for you, so the
+        /// credentials are service-managed. You can rotate them with <c>RotatePaymentConnectorCredentials</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PaymentConnectorProvisionMode ProvisionMode
+        {
+            get { return this._provisionMode; }
+            set { this._provisionMode = value; }
+        }
+
+        // Check to see if ProvisionMode property is set
+        internal bool IsSetProvisionMode()
+        {
+            return this._provisionMode != null;
         }
 
         /// <summary>

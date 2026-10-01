@@ -1,0 +1,138 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MediaConvert.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// MpdSettings Marshaller
+    /// </summary>
+    public partial class MpdSettingsMarshaller : IRequestMarshaller<MpdSettings, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(MpdSettings requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAccessibilityCaptionHints())
+            {
+                context.Writer.WritePropertyName("accessibilityCaptionHints");
+                context.Writer.WriteStringValue(requestObject.AccessibilityCaptionHints);
+            }
+
+            if (requestObject.IsSetAudioDuration())
+            {
+                context.Writer.WritePropertyName("audioDuration");
+                context.Writer.WriteStringValue(requestObject.AudioDuration);
+            }
+
+            if (requestObject.IsSetC2paManifest())
+            {
+                context.Writer.WritePropertyName("c2paManifest");
+                context.Writer.WriteStringValue(requestObject.C2paManifest);
+            }
+
+            if (requestObject.IsSetCaptionContainerType())
+            {
+                context.Writer.WritePropertyName("captionContainerType");
+                context.Writer.WriteStringValue(requestObject.CaptionContainerType);
+            }
+
+            if (requestObject.IsSetCertificateSecret())
+            {
+                context.Writer.WritePropertyName("certificateSecret");
+                context.Writer.WriteStringValue(requestObject.CertificateSecret);
+            }
+
+            if (requestObject.IsSetKlvMetadata())
+            {
+                context.Writer.WritePropertyName("klvMetadata");
+                context.Writer.WriteStringValue(requestObject.KlvMetadata);
+            }
+
+            if (requestObject.IsSetManifestMetadataSignaling())
+            {
+                context.Writer.WritePropertyName("manifestMetadataSignaling");
+                context.Writer.WriteStringValue(requestObject.ManifestMetadataSignaling);
+            }
+
+            if (requestObject.IsSetScte35Esam())
+            {
+                context.Writer.WritePropertyName("scte35Esam");
+                context.Writer.WriteStringValue(requestObject.Scte35Esam);
+            }
+
+            if (requestObject.IsSetScte35Source())
+            {
+                context.Writer.WritePropertyName("scte35Source");
+                context.Writer.WriteStringValue(requestObject.Scte35Source);
+            }
+
+            if (requestObject.IsSetSigningKmsKey())
+            {
+                context.Writer.WritePropertyName("signingKmsKey");
+                context.Writer.WriteStringValue(requestObject.SigningKmsKey);
+            }
+
+            if (requestObject.IsSetTimedMetadata())
+            {
+                context.Writer.WritePropertyName("timedMetadata");
+                context.Writer.WriteStringValue(requestObject.TimedMetadata);
+            }
+
+            if (requestObject.IsSetTimedMetadataBoxVersion())
+            {
+                context.Writer.WritePropertyName("timedMetadataBoxVersion");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataBoxVersion);
+            }
+
+            if (requestObject.IsSetTimedMetadataSchemeIdUri())
+            {
+                context.Writer.WritePropertyName("timedMetadataSchemeIdUri");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataSchemeIdUri);
+            }
+
+            if (requestObject.IsSetTimedMetadataValue())
+            {
+                context.Writer.WritePropertyName("timedMetadataValue");
+                context.Writer.WriteStringValue(requestObject.TimedMetadataValue);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static MpdSettingsMarshaller Instance = new MpdSettingsMarshaller();
+    }
+}

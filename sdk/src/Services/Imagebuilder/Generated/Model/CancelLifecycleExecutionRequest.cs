@@ -31,7 +31,10 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelLifecycleExecution operation.
-    /// Cancel a specific image lifecycle policy runtime instance.
+    /// Cancels a lifecycle execution – a single run of lifecycle actions that a lifecycle
+    /// policy or a <a>StartResourceStateUpdate</a> request started. You can only cancel an
+    /// execution that hasn't reached a terminal state. Cancellation is asynchronous and doesn't
+    /// undo completed lifecycle actions.
     /// </summary>
     public partial class CancelLifecycleExecutionRequest : AmazonImagebuilderRequest
     {
@@ -41,8 +44,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure idempotency of the request.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier you provide to ensure that the operation runs
+        /// no more than one time. If you retry a request with the same client token, Image Builder
+        /// returns the original response without running the operation again. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a> in the <i>Amazon EC2 API Reference</i>.
         /// </para>
         /// </summary>

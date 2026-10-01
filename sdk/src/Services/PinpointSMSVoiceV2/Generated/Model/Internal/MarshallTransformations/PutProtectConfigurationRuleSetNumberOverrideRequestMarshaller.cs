@@ -101,7 +101,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetExpirationTimestamp())
             {
                 context.Writer.WritePropertyName("ExpirationTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.ExpirationTimestamp.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.ExpirationTimestamp.Value));
             }
 
             if(publicRequest.IsSetProtectConfigurationId())

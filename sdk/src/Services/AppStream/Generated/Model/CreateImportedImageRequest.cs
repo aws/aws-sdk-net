@@ -102,7 +102,7 @@ namespace Amazon.AppStream.Model
         /// regex patterns and can be up to 256 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -122,7 +122,7 @@ namespace Amazon.AppStream.Model
         /// regex patterns and can be up to 100 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string DisplayName
         {
             get { return this._displayName; }

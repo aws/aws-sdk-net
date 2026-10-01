@@ -127,5 +127,23 @@ namespace AWSSDK.UnitTests
         {
             Assert.AreEqual(expectedHeader, StringUtils.FromList(values));
         }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void FromMemoryStreamEncodesEntireStreamRegardlessOfPosition()
+        {
+            // Repro for https://github.com/aws/aws-sdk-net/issues/4502: MemoryStream(byte[]) does not
+            // expose its buffer, forcing the ArrayPool fallback path, which read from the current
+            // Position and returned stale pooled bytes on a second conversion of the same stream.
+            var payloadA = Encoding.UTF8.GetBytes("REAL-PAYLOAD-AAAAAAAAAAAAAAAAAA");
+            var payloadB = Encoding.UTF8.GetBytes("DECOY-FROM-UNRELATED-CALL-BBBBB");
+            var streamA = new MemoryStream(payloadA, writable: false);
+            var streamB = new MemoryStream(payloadB, writable: false);
+
+            Assert.AreEqual(Convert.ToBase64String(payloadA), StringUtils.FromMemoryStream(streamA));
+            Assert.AreEqual(Convert.ToBase64String(payloadB), StringUtils.FromMemoryStream(streamB));
+            Assert.AreEqual(Convert.ToBase64String(payloadA), StringUtils.FromMemoryStream(streamA));
+        }
     }
 }

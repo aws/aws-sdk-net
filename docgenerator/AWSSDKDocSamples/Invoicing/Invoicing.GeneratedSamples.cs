@@ -477,6 +477,35 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
+        public void InvoicingListProcurementPortals()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListProcurementPortals(new ListProcurementPortalsRequest 
+            {
+            });
+
+            List<ProcurementPortal> procurementPortals = response.ProcurementPortals;
+
+            #endregion
+        }
+
+        public void InvoicingListProcurementPortalSuppliers()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.ListProcurementPortalSuppliers(new ListProcurementPortalSuppliersRequest 
+            {
+                PortalIdentifier = "KXMJQWBRNP"
+            });
+
+            List<ProcurementPortalSupplier> procurementPortalSuppliers = response.ProcurementPortalSuppliers;
+
+            #endregion
+        }
+
         public void InvoicingListTagsForResource()
         {
             #region example-1
