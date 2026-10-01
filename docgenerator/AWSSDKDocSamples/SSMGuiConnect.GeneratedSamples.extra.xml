@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.SSMGuiConnect.IAmazonSSMGuiConnect.DeleteConnectionRecordingPreferences(Amazon.SSMGuiConnect.Model.DeleteConnectionRecordingPreferencesRequest)" />
+      <member name="M:Amazon.SSMGuiConnect.AmazonSSMGuiConnectClient.DeleteConnectionRecordingPreferences(Amazon.SSMGuiConnect.Model.DeleteConnectionRecordingPreferencesRequest)" />
+      <member name="T:Amazon.SSMGuiConnect.Model.DeleteConnectionRecordingPreferencesRequest" />
+      <member name="T:Amazon.SSMGuiConnect.Model.DeleteConnectionRecordingPreferencesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Delete the connection recording preferences for the account" source=".\AWSSDKDocSamples\SSMGuiConnect\SSMGuiConnect.GeneratedSamples.cs" region="DeleteConnectionRecordingPreferences-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SSMGuiConnect.IAmazonSSMGuiConnect.GetConnectionRecordingPreferences(Amazon.SSMGuiConnect.Model.GetConnectionRecordingPreferencesRequest)" />
+      <member name="M:Amazon.SSMGuiConnect.AmazonSSMGuiConnectClient.GetConnectionRecordingPreferences(Amazon.SSMGuiConnect.Model.GetConnectionRecordingPreferencesRequest)" />
+      <member name="T:Amazon.SSMGuiConnect.Model.GetConnectionRecordingPreferencesRequest" />
+      <member name="T:Amazon.SSMGuiConnect.Model.GetConnectionRecordingPreferencesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Retrieves the connection recording preferences for the account" source=".\AWSSDKDocSamples\SSMGuiConnect\SSMGuiConnect.GeneratedSamples.cs" region="GetConnectionRecordingPreferences-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SSMGuiConnect.IAmazonSSMGuiConnect.UpdateConnectionRecordingPreferences(Amazon.SSMGuiConnect.Model.UpdateConnectionRecordingPreferencesRequest)" />
+      <member name="M:Amazon.SSMGuiConnect.AmazonSSMGuiConnectClient.UpdateConnectionRecordingPreferences(Amazon.SSMGuiConnect.Model.UpdateConnectionRecordingPreferencesRequest)" />
+      <member name="T:Amazon.SSMGuiConnect.Model.UpdateConnectionRecordingPreferencesRequest" />
+      <member name="T:Amazon.SSMGuiConnect.Model.UpdateConnectionRecordingPreferencesResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Updates the connection recording preferences for the account" source=".\AWSSDKDocSamples\SSMGuiConnect\SSMGuiConnect.GeneratedSamples.cs" region="UpdateConnectionRecordingPreferences-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
     {
         public void RTBFabricAcceptLink()
         {
-            #region example-1
+            #region AcceptLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.AcceptLink(new AcceptLinkRequest 
+            var response = client.AcceptLink(new AcceptLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321",
@@ -26,22 +27,22 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
                 } } }
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
             string peerGatewayId = response.PeerGatewayId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            LinkStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricAssociateCertificate()
         {
-            #region example-1
+            #region AssociateCertificate-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.AssociateCertificate(new AssociateCertificateRequest 
+            var response = client.AssociateCertificate(new AssociateCertificateRequest
             {
                 AcmCertificateArn = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012",
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
@@ -50,17 +51,17 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string acmCertificateArn = response.AcmCertificateArn;
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            CertificateAssociationStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricCreateInboundExternalLink()
         {
-            #region example-1
+            #region CreateInboundExternalLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.CreateInboundExternalLink(new CreateInboundExternalLinkRequest 
+            var response = client.CreateInboundExternalLink(new CreateInboundExternalLinkRequest
             {
                 ClientToken = "randomClientToken",
                 GatewayId = "rtb-gw-12345678",
@@ -73,17 +74,17 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             string domainName = response.DomainName;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricCreateLink()
         {
-            #region example-1
+            #region CreateLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.CreateLink(new CreateLinkRequest 
+            var response = client.CreateLink(new CreateLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LogSettings = new LinkLogSettings { ApplicationLogs = new LinkApplicationLogConfiguration { Sampling = new LinkApplicationLogSampling {
@@ -93,22 +94,22 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
                 PeerGatewayId = "rtb-gw-87654321"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
             string peerGatewayId = response.PeerGatewayId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            LinkStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricCreateLinkRoutingRule()
         {
-            #region example-1
+            #region CreateLinkRoutingRule-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.CreateLinkRoutingRule(new CreateLinkRoutingRuleRequest 
+            var response = client.CreateLinkRoutingRule(new CreateLinkRoutingRuleRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
                 Conditions = new RuleCondition {
@@ -120,19 +121,19 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
                 Priority = 10
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string ruleId = response.RuleId;
-            string status = response.Status;
+            RuleStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricCreateOutboundExternalLink()
         {
-            #region example-1
+            #region CreateOutboundExternalLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.CreateOutboundExternalLink(new CreateOutboundExternalLinkRequest 
+            var response = client.CreateOutboundExternalLink(new CreateOutboundExternalLinkRequest
             {
                 ClientToken = "12345678-1234-1234-1234-123456789012",
                 GatewayId = "rtb-gw-12345678",
@@ -145,17 +146,17 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricCreateRequesterGateway()
         {
-            #region example-1
+            #region CreateRequesterGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.CreateRequesterGateway(new CreateRequesterGatewayRequest 
+            var response = client.CreateRequesterGateway(new CreateRequesterGatewayRequest
             {
                 ClientToken = "12345678-1234-1234-1234-123456789012",
                 Description = "My requester gateway",
@@ -171,17 +172,17 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string domainName = response.DomainName;
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            RequesterGatewayStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricCreateResponderGateway()
         {
-            #region example-1
+            #region CreateResponderGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.CreateResponderGateway(new CreateResponderGatewayRequest 
+            var response = client.CreateResponderGateway(new CreateResponderGatewayRequest
             {
                 ClientToken = "12345678-1234-1234-1234-123456789012",
                 Description = "My responder gateway",
@@ -198,51 +199,51 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            ResponderGatewayStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDeleteInboundExternalLink()
         {
-            #region example-1
+            #region DeleteInboundExternalLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DeleteInboundExternalLink(new DeleteInboundExternalLinkRequest 
+            var response = client.DeleteInboundExternalLink(new DeleteInboundExternalLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDeleteLink()
         {
-            #region example-1
+            #region DeleteLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DeleteLink(new DeleteLinkRequest 
+            var response = client.DeleteLink(new DeleteLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDeleteLinkRoutingRule()
         {
-            #region example-1
+            #region DeleteLinkRoutingRule-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DeleteLinkRoutingRule(new DeleteLinkRoutingRuleRequest 
+            var response = client.DeleteLinkRoutingRule(new DeleteLinkRoutingRuleRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321",
@@ -250,66 +251,66 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             string ruleId = response.RuleId;
-            string status = response.Status;
+            RuleStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDeleteOutboundExternalLink()
         {
-            #region example-1
+            #region DeleteOutboundExternalLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DeleteOutboundExternalLink(new DeleteOutboundExternalLinkRequest 
+            var response = client.DeleteOutboundExternalLink(new DeleteOutboundExternalLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDeleteRequesterGateway()
         {
-            #region example-1
+            #region DeleteRequesterGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DeleteRequesterGateway(new DeleteRequesterGatewayRequest 
+            var response = client.DeleteRequesterGateway(new DeleteRequesterGatewayRequest
             {
                 GatewayId = "rtb-gw-12345678"
             });
 
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            RequesterGatewayStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDeleteResponderGateway()
         {
-            #region example-1
+            #region DeleteResponderGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DeleteResponderGateway(new DeleteResponderGatewayRequest 
+            var response = client.DeleteResponderGateway(new DeleteResponderGatewayRequest
             {
                 GatewayId = "rtb-gw-12345678"
             });
 
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            ResponderGatewayStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricDisassociateCertificate()
         {
-            #region example-1
+            #region DisassociateCertificate-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.DisassociateCertificate(new DisassociateCertificateRequest 
+            var response = client.DisassociateCertificate(new DisassociateCertificateRequest
             {
                 AcmCertificateArn = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012",
                 GatewayId = "rtb-gw-12345678"
@@ -317,79 +318,79 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
             string acmCertificateArn = response.AcmCertificateArn;
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            CertificateAssociationStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricGetCertificateAssociation()
         {
-            #region example-1
+            #region GetCertificateAssociation-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetCertificateAssociation(new GetCertificateAssociationRequest 
+            var response = client.GetCertificateAssociation(new GetCertificateAssociationRequest
             {
                 AcmCertificateArn = "arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012",
                 GatewayId = "rtb-gw-12345678"
             });
 
             string acmCertificateArn = response.AcmCertificateArn;
-            DateTime associatedAt = response.AssociatedAt;
+            DateTime? associatedAt = response.AssociatedAt;
             string gatewayId = response.GatewayId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            CertificateAssociationStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricGetInboundExternalLink()
         {
-            #region example-1
+            #region GetInboundExternalLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetInboundExternalLink(new GetInboundExternalLinkRequest 
+            var response = client.GetInboundExternalLink(new GetInboundExternalLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string domainName = response.DomainName;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            LinkStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricGetLink()
         {
-            #region example-1
+            #region GetLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetLink(new GetLinkRequest 
+            var response = client.GetLink(new GetLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
             string peerGatewayId = response.PeerGatewayId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            LinkStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricGetLinkRoutingRule()
         {
-            #region example-1
+            #region GetLinkRoutingRule-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetLinkRoutingRule(new GetLinkRoutingRuleRequest 
+            var response = client.GetLinkRoutingRule(new GetLinkRoutingRuleRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321",
@@ -397,58 +398,58 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             RuleCondition conditions = response.Conditions;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
-            int priority = response.Priority;
+            int? priority = response.Priority;
             string ruleId = response.RuleId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            RuleStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricGetOutboundExternalLink()
         {
-            #region example-1
+            #region GetOutboundExternalLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetOutboundExternalLink(new GetOutboundExternalLinkRequest 
+            var response = client.GetOutboundExternalLink(new GetOutboundExternalLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
             string publicEndpoint = response.PublicEndpoint;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            LinkStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricGetRequesterGateway()
         {
-            #region example-1
+            #region GetRequesterGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetRequesterGateway(new GetRequesterGatewayRequest 
+            var response = client.GetRequesterGateway(new GetRequesterGatewayRequest
             {
                 GatewayId = "rtb-gw-12345678"
             });
 
-            int activeLinksCount = response.ActiveLinksCount;
-            DateTime createdAt = response.CreatedAt;
+            int? activeLinksCount = response.ActiveLinksCount;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string domainName = response.DomainName;
             string gatewayId = response.GatewayId;
             List<string> securityGroupIds = response.SecurityGroupIds;
-            string status = response.Status;
+            RequesterGatewayStatus status = response.Status;
             List<string> subnetIds = response.SubnetIds;
-            int totalLinksCount = response.TotalLinksCount;
-            DateTime updatedAt = response.UpdatedAt;
+            int? totalLinksCount = response.TotalLinksCount;
+            DateTime? updatedAt = response.UpdatedAt;
             string vpcId = response.VpcId;
 
             #endregion
@@ -456,26 +457,26 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricGetResponderGateway()
         {
-            #region example-1
+            #region GetResponderGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.GetResponderGateway(new GetResponderGatewayRequest 
+            var response = client.GetResponderGateway(new GetResponderGatewayRequest
             {
                 GatewayId = "rtb-gw-12345678"
             });
 
-            int activeLinksCount = response.ActiveLinksCount;
-            DateTime createdAt = response.CreatedAt;
+            int? activeLinksCount = response.ActiveLinksCount;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string gatewayId = response.GatewayId;
-            int linksRequestedCount = response.LinksRequestedCount;
-            int port = response.Port;
-            string protocol = response.Protocol;
+            int? linksRequestedCount = response.LinksRequestedCount;
+            int? port = response.Port;
+            Protocol protocol = response.Protocol;
             List<string> securityGroupIds = response.SecurityGroupIds;
-            string status = response.Status;
+            ResponderGatewayStatus status = response.Status;
             List<string> subnetIds = response.SubnetIds;
-            int totalLinksCount = response.TotalLinksCount;
-            DateTime updatedAt = response.UpdatedAt;
+            int? totalLinksCount = response.TotalLinksCount;
+            DateTime? updatedAt = response.UpdatedAt;
             string vpcId = response.VpcId;
 
             #endregion
@@ -483,10 +484,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListCertificateAssociations()
         {
-            #region example-1
+            #region ListCertificateAssociations-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListCertificateAssociations(new ListCertificateAssociationsRequest 
+            var response = client.ListCertificateAssociations(new ListCertificateAssociationsRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 MaxResults = 5
@@ -500,10 +501,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListLinkRoutingRules()
         {
-            #region example-1
+            #region ListLinkRoutingRules-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListLinkRoutingRules(new ListLinkRoutingRulesRequest 
+            var response = client.ListLinkRoutingRules(new ListLinkRoutingRulesRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321",
@@ -518,10 +519,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListLinks()
         {
-            #region example-1
+            #region ListLinks-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListLinks(new ListLinksRequest 
+            var response = client.ListLinks(new ListLinksRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 MaxResults = 10
@@ -534,10 +535,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListRequesterGateways()
         {
-            #region example-1
+            #region ListRequesterGateways-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListRequesterGateways(new ListRequesterGatewaysRequest 
+            var response = client.ListRequesterGateways(new ListRequesterGatewaysRequest
             {
                 MaxResults = 10
             });
@@ -549,10 +550,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListRequesterGateways()
         {
-            #region example-2
+            #region ListRequesterGateways-2
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListRequesterGateways(new ListRequesterGatewaysRequest 
+            var response = client.ListRequesterGateways(new ListRequesterGatewaysRequest
             {
                 MaxResults = 5,
                 NextToken = "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7ImlkIjp7IlMiOiJydGJhcHAtcmVxLTEyMzQ1In19fQ=="
@@ -566,10 +567,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListResponderGateways()
         {
-            #region example-1
+            #region ListResponderGateways-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListResponderGateways(new ListResponderGatewaysRequest 
+            var response = client.ListResponderGateways(new ListResponderGatewaysRequest
             {
                 MaxResults = 10
             });
@@ -581,10 +582,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListResponderGateways()
         {
-            #region example-2
+            #region ListResponderGateways-2
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListResponderGateways(new ListResponderGatewaysRequest 
+            var response = client.ListResponderGateways(new ListResponderGatewaysRequest
             {
                 MaxResults = 3,
                 NextToken = "eyJsYXN0RXZhbHVhdGVkS2V5Ijp7ImlkIjp7IlMiOiJydGJhcHAtcmVzcC01NDMyMSJ9fX0="
@@ -598,10 +599,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:rtbfabric:us-east-1:123456789012:gateway/rtb-gw-12345678"
             });
@@ -613,31 +614,31 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricRejectLink()
         {
-            #region example-1
+            #region RejectLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.RejectLink(new RejectLinkRequest 
+            var response = client.RejectLink(new RejectLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321"
             });
 
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
             string peerGatewayId = response.PeerGatewayId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            LinkStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:rtbfabric:us-east-1:123456789012:gateway/rtb-gw-12345678",
                 Tags = new Dictionary<string, string> {
@@ -652,10 +653,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:rtbfabric:us-east-1:123456789012:gateway/rtb-gw-12345678",
                 TagKeys = new List<string> {
@@ -670,10 +671,10 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
 
         public void RTBFabricUpdateLink()
         {
-            #region example-1
+            #region UpdateLink-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.UpdateLink(new UpdateLinkRequest 
+            var response = client.UpdateLink(new UpdateLinkRequest
             {
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321",
@@ -684,50 +685,49 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricUpdateLinkModuleFlow()
         {
-            #region example-1
+            #region UpdateLinkModuleFlow-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.UpdateLinkModuleFlow(new UpdateLinkModuleFlowRequest 
+            var response = client.UpdateLinkModuleFlow(new UpdateLinkModuleFlowRequest
             {
                 ClientToken = "randomClientToken",
                 GatewayId = "rtb-gw-12345678",
                 LinkId = "link-87654321",
                 Modules = new List<ModuleConfiguration> {
                     new ModuleConfiguration {
-                        Version = "1dot0dot0",
-                        Name = "noBidModule",
                         DependsOn = new List<string> {
-                            
                         },
                         ModuleParameters = new ModuleParameters { NoBid = new NoBidModuleParameters {
                             PassThroughPercentage = 50,
                             Reason = "test",
                             ReasonCode = 1
-                        } }
+                        } },
+                        Name = "noBidModule",
+                        Version = "1dot0dot0"
                     }
                 }
             });
 
             string gatewayId = response.GatewayId;
             string linkId = response.LinkId;
-            string status = response.Status;
+            LinkStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricUpdateLinkRoutingRule()
         {
-            #region example-1
+            #region UpdateLinkRoutingRule-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.UpdateLinkRoutingRule(new UpdateLinkRoutingRuleRequest 
+            var response = client.UpdateLinkRoutingRule(new UpdateLinkRoutingRuleRequest
             {
                 Conditions = new RuleCondition {
                     HostHeader = "api.customer.com",
@@ -740,18 +740,18 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             string ruleId = response.RuleId;
-            string status = response.Status;
-            DateTime updatedAt = response.UpdatedAt;
+            RuleStatus status = response.Status;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void RTBFabricUpdateRequesterGateway()
         {
-            #region example-1
+            #region UpdateRequesterGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.UpdateRequesterGateway(new UpdateRequesterGatewayRequest 
+            var response = client.UpdateRequesterGateway(new UpdateRequesterGatewayRequest
             {
                 ClientToken = "12345678-1234-1234-1234-123456789012",
                 Description = "Updated requester gateway description",
@@ -759,17 +759,17 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            RequesterGatewayStatus status = response.Status;
 
             #endregion
         }
 
         public void RTBFabricUpdateResponderGateway()
         {
-            #region example-1
+            #region UpdateResponderGateway-1
 
             var client = new AmazonRTBFabricClient();
-            var response = client.UpdateResponderGateway(new UpdateResponderGatewayRequest 
+            var response = client.UpdateResponderGateway(new UpdateResponderGatewayRequest
             {
                 ClientToken = "12345678-1234-1234-1234-123456789012",
                 Description = "Updated responder gateway description",
@@ -779,18 +779,15 @@ namespace AWSSDKDocSamples.Amazon.RTBFabric.Generated
             });
 
             string gatewayId = response.GatewayId;
-            string status = response.Status;
+            ResponderGatewayStatus status = response.Status;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
     {
         public void SecurityIRBatchGetMemberAccountDetails()
         {
-            #region example-1
+            #region BatchGetMemberAccountDetails-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.BatchGetMemberAccountDetails(new BatchGetMemberAccountDetailsRequest 
+            var response = client.BatchGetMemberAccountDetails(new BatchGetMemberAccountDetailsRequest
             {
                 AccountIds = new List<string> {
                     "123412341234"
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRCancelMembership()
         {
-            #region example-1
+            #region CancelMembership-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.CancelMembership(new CancelMembershipRequest 
+            var response = client.CancelMembership(new CancelMembershipRequest
             {
                 MembershipId = "m-abcd1234efgh"
             });
@@ -46,26 +47,26 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRCloseCase()
         {
-            #region example-1
+            #region CloseCase-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.CloseCase(new CloseCaseRequest 
+            var response = client.CloseCase(new CloseCaseRequest
             {
                 CaseId = "8403556009"
             });
 
-            string caseStatus = response.CaseStatus;
-            DateTime closedDate = response.ClosedDate;
+            CaseStatus caseStatus = response.CaseStatus;
+            DateTime? closedDate = response.ClosedDate;
 
             #endregion
         }
 
         public void SecurityIRCreateCase()
         {
-            #region example-1
+            #region CreateCase-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.CreateCase(new CreateCaseRequest 
+            var response = client.CreateCase(new CreateCaseRequest
             {
                 Description = "Case description",
                 EngagementType = "Investigation",
@@ -80,7 +81,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
                     "Amazon EC2",
                     "Amazon EKS"
                 },
-                ReportedIncidentStartDate = new DateTime(2023, 3, 27, 3, 32, 1, DateTimeKind.Utc),
+                ReportedIncidentStartDate = new DateTime(2023, 3, 27, 15, 32, 1, 789, DateTimeKind.Utc),
                 ResolverType = "Self",
                 ThreatActorIpAddresses = new List<ThreatActorIp> {
                     new ThreatActorIp {
@@ -91,14 +92,14 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
                 Title = "My sample case",
                 Watchers = new List<Watcher> {
                     new Watcher {
-                        Name = "Alice",
                         Email = "alice@example.com",
-                        JobTitle = "CEO"
+                        JobTitle = "CEO",
+                        Name = "Alice"
                     },
                     new Watcher {
-                        Name = "Bob",
                         Email = "bob@example.com",
-                        JobTitle = "CFO"
+                        JobTitle = "CFO",
+                        Name = "Bob"
                     }
                 }
             });
@@ -109,10 +110,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRCreateCaseComment()
         {
-            #region example-1
+            #region CreateCaseComment-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.CreateCaseComment(new CreateCaseCommentRequest 
+            var response = client.CreateCaseComment(new CreateCaseCommentRequest
             {
                 Body = "Case comment body.",
                 CaseId = "8403556009"
@@ -125,21 +126,21 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRCreateMembership()
         {
-            #region example-1
+            #region CreateMembership-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.CreateMembership(new CreateMembershipRequest 
+            var response = client.CreateMembership(new CreateMembershipRequest
             {
                 IncidentResponseTeam = new List<IncidentResponder> {
                     new IncidentResponder {
-                        Name = "Bob Jones",
                         Email = "bob.jones@gmail.com",
-                        JobTitle = "Security Responder"
+                        JobTitle = "Security Responder",
+                        Name = "Bob Jones"
                     },
                     new IncidentResponder {
-                        Name = "Alice",
                         Email = "alice@example.com",
-                        JobTitle = "CEO"
+                        JobTitle = "CEO",
+                        Name = "Alice"
                     }
                 },
                 MembershipName = "Example Membership Name.",
@@ -158,27 +159,27 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRGetCase()
         {
-            #region example-1
+            #region GetCase-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.GetCase(new GetCaseRequest 
+            var response = client.GetCase(new GetCaseRequest
             {
                 CaseId = "8403556009"
             });
 
-            DateTime actualIncidentStartDate = response.ActualIncidentStartDate;
+            DateTime? actualIncidentStartDate = response.ActualIncidentStartDate;
             string caseArn = response.CaseArn;
-            string caseStatus = response.CaseStatus;
-            DateTime createdDate = response.CreatedDate;
+            CaseStatus caseStatus = response.CaseStatus;
+            DateTime? createdDate = response.CreatedDate;
             string description = response.Description;
-            string engagementType = response.EngagementType;
+            EngagementType engagementType = response.EngagementType;
             List<string> impactedAccounts = response.ImpactedAccounts;
             List<ImpactedAwsRegion> impactedAwsRegions = response.ImpactedAwsRegions;
             List<string> impactedServices = response.ImpactedServices;
-            DateTime lastUpdatedDate = response.LastUpdatedDate;
-            string pendingAction = response.PendingAction;
-            DateTime reportedIncidentStartDate = response.ReportedIncidentStartDate;
-            string resolverType = response.ResolverType;
+            DateTime? lastUpdatedDate = response.LastUpdatedDate;
+            PendingAction pendingAction = response.PendingAction;
+            DateTime? reportedIncidentStartDate = response.ReportedIncidentStartDate;
+            ResolverType resolverType = response.ResolverType;
             List<ThreatActorIp> threatActorIpAddresses = response.ThreatActorIpAddresses;
             string title = response.Title;
             List<Watcher> watchers = response.Watchers;
@@ -188,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRGetCaseAttachmentDownloadUrl()
         {
-            #region example-1
+            #region GetCaseAttachmentDownloadUrl-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.GetCaseAttachmentDownloadUrl(new GetCaseAttachmentDownloadUrlRequest 
+            var response = client.GetCaseAttachmentDownloadUrl(new GetCaseAttachmentDownloadUrlRequest
             {
                 AttachmentId = "3C5A6B89-1DEF-4C2D-A5B6-123456789ABC",
                 CaseId = "8403556009"
@@ -204,10 +205,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRGetCaseAttachmentUploadUrl()
         {
-            #region example-1
+            #region GetCaseAttachmentUploadUrl-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.GetCaseAttachmentUploadUrl(new GetCaseAttachmentUploadUrlRequest 
+            var response = client.GetCaseAttachmentUploadUrl(new GetCaseAttachmentUploadUrlRequest
             {
                 CaseId = "8403556009",
                 ContentLength = 1500,
@@ -221,84 +222,84 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRGetMembership()
         {
-            #region example-1
+            #region GetMembership-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.GetMembership(new GetMembershipRequest 
+            var response = client.GetMembership(new GetMembershipRequest
             {
                 MembershipId = "m-abcd1234efgh"
             });
 
             string accountId = response.AccountId;
-            string customerType = response.CustomerType;
+            CustomerType customerType = response.CustomerType;
             List<IncidentResponder> incidentResponseTeam = response.IncidentResponseTeam;
-            DateTime membershipActivationTimestamp = response.MembershipActivationTimestamp;
+            DateTime? membershipActivationTimestamp = response.MembershipActivationTimestamp;
             string membershipArn = response.MembershipArn;
-            DateTime membershipDeactivationTimestamp = response.MembershipDeactivationTimestamp;
+            DateTime? membershipDeactivationTimestamp = response.MembershipDeactivationTimestamp;
             string membershipId = response.MembershipId;
             string membershipName = response.MembershipName;
-            string membershipStatus = response.MembershipStatus;
-            long numberOfAccountsCovered = response.NumberOfAccountsCovered;
+            MembershipStatus membershipStatus = response.MembershipStatus;
+            long? numberOfAccountsCovered = response.NumberOfAccountsCovered;
             List<OptInFeature> optInFeatures = response.OptInFeatures;
-            string region = response.Region;
+            AwsRegion region = response.Region;
 
             #endregion
         }
 
         public void SecurityIRListCaseEdits()
         {
-            #region example-1
+            #region ListCaseEdits-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.ListCaseEdits(new ListCaseEditsRequest 
+            var response = client.ListCaseEdits(new ListCaseEditsRequest
             {
                 CaseId = "8403556009"
             });
 
             List<CaseEditItem> items = response.Items;
-            int total = response.Total;
+            int? total = response.Total;
 
             #endregion
         }
 
         public void SecurityIRListCases()
         {
-            #region example-1
+            #region ListCases-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.ListCases(new ListCasesRequest 
+            var response = client.ListCases(new ListCasesRequest
             {
                 MaxResults = 10
             });
 
             List<ListCasesItem> items = response.Items;
-            long total = response.Total;
+            long? total = response.Total;
 
             #endregion
         }
 
         public void SecurityIRListComments()
         {
-            #region example-1
+            #region ListComments-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.ListComments(new ListCommentsRequest 
+            var response = client.ListComments(new ListCommentsRequest
             {
                 CaseId = "8403556009"
             });
 
             List<ListCommentsItem> items = response.Items;
-            int total = response.Total;
+            int? total = response.Total;
 
             #endregion
         }
 
         public void SecurityIRListInvestigations()
         {
-            #region example-1
+            #region ListInvestigations-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.ListInvestigations(new ListInvestigationsRequest 
+            var response = client.ListInvestigations(new ListInvestigationsRequest
             {
                 CaseId = "8403556009",
                 MaxResults = 10
@@ -312,10 +313,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRListMemberships()
         {
-            #region example-1
+            #region ListMemberships-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.ListMemberships(new ListMembershipsRequest 
+            var response = client.ListMemberships(new ListMembershipsRequest
             {
                 MaxResults = 10
             });
@@ -327,10 +328,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:security-ir:us-west-1:123456789012:membership/m-abcd1234efgh"
             });
@@ -342,10 +343,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRSendFeedback()
         {
-            #region example-1
+            #region SendFeedback-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.SendFeedback(new SendFeedbackRequest 
+            var response = client.SendFeedback(new SendFeedbackRequest
             {
                 CaseId = "8403556009",
                 Comment = "The CloudTrail analysis was very helpful in identifying the root cause of the security incident.",
@@ -359,10 +360,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRSendFeedback()
         {
-            #region example-2
+            #region SendFeedback-2
 
             var client = new AmazonSecurityIRClient();
-            var response = client.SendFeedback(new SendFeedbackRequest 
+            var response = client.SendFeedback(new SendFeedbackRequest
             {
                 CaseId = "8403556009",
                 Comment = "The investigation results were too generic and didn't provide actionable insights for our specific incident.",
@@ -376,10 +377,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:security-ir:us-west-1:123456789012:membership/m-abcd1234efgh",
                 Tags = new Dictionary<string, string> {
@@ -394,10 +395,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:security-ir:us-west-1:123456789012:membership/m-abcd1234efgh",
                 TagKeys = new List<string> {
@@ -411,12 +412,12 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRUpdateCase()
         {
-            #region example-1
+            #region UpdateCase-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.UpdateCase(new UpdateCaseRequest 
+            var response = client.UpdateCase(new UpdateCaseRequest
             {
-                ActualIncidentStartDate = new DateTime(2023, 3, 25, 3, 32, 1, DateTimeKind.Utc),
+                ActualIncidentStartDate = new DateTime(2023, 3, 25, 15, 32, 1, 789, DateTimeKind.Utc),
                 CaseId = "8403556009",
                 Description = "Case description",
                 EngagementType = "Investigation",
@@ -438,7 +439,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
                 ImpactedServicesToDelete = new List<string> {
                     "Amazon EKS"
                 },
-                ReportedIncidentStartDate = new DateTime(2023, 3, 27, 3, 32, 1, DateTimeKind.Utc),
+                ReportedIncidentStartDate = new DateTime(2023, 3, 27, 15, 32, 1, 789, DateTimeKind.Utc),
                 ThreatActorIpAddressesToAdd = new List<ThreatActorIp> {
                     new ThreatActorIp {
                         IpAddress = "190.160.190.160",
@@ -454,16 +455,16 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
                 Title = "My sample case",
                 WatchersToAdd = new List<Watcher> {
                     new Watcher {
-                        Name = "Same",
                         Email = "Sam@example.com",
-                        JobTitle = "CEO"
+                        JobTitle = "CEO",
+                        Name = "Same"
                     }
                 },
                 WatchersToDelete = new List<Watcher> {
                     new Watcher {
-                        Name = "Bob",
                         Email = "bob@example.com",
-                        JobTitle = "CFO"
+                        JobTitle = "CFO",
+                        Name = "Bob"
                     }
                 }
             });
@@ -474,10 +475,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRUpdateCaseComment()
         {
-            #region example-1
+            #region UpdateCaseComment-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.UpdateCaseComment(new UpdateCaseCommentRequest 
+            var response = client.UpdateCaseComment(new UpdateCaseCommentRequest
             {
                 Body = "Updated case comment.",
                 CaseId = "8403556009",
@@ -492,37 +493,37 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRUpdateCaseStatus()
         {
-            #region example-1
+            #region UpdateCaseStatus-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.UpdateCaseStatus(new UpdateCaseStatusRequest 
+            var response = client.UpdateCaseStatus(new UpdateCaseStatusRequest
             {
                 CaseId = "8403556009",
                 CaseStatus = "Post-incident Activities"
             });
 
-            string caseStatus = response.CaseStatus;
+            SelfManagedCaseStatus caseStatus = response.CaseStatus;
 
             #endregion
         }
 
         public void SecurityIRUpdateMembership()
         {
-            #region example-1
+            #region UpdateMembership-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.UpdateMembership(new UpdateMembershipRequest 
+            var response = client.UpdateMembership(new UpdateMembershipRequest
             {
                 IncidentResponseTeam = new List<IncidentResponder> {
                     new IncidentResponder {
-                        Name = "Bob Jones",
                         Email = "bob.jones@gmail.com",
-                        JobTitle = "Security Responder"
+                        JobTitle = "Security Responder",
+                        Name = "Bob Jones"
                     },
                     new IncidentResponder {
-                        Name = "Alice",
                         Email = "alice@example.com",
-                        JobTitle = "CEO"
+                        JobTitle = "CEO",
+                        Name = "Alice"
                     }
                 },
                 MembershipId = "m-abcd1234efgh",
@@ -541,29 +542,26 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
 
         public void SecurityIRUpdateResolverType()
         {
-            #region example-1
+            #region UpdateResolverType-1
 
             var client = new AmazonSecurityIRClient();
-            var response = client.UpdateResolverType(new UpdateResolverTypeRequest 
+            var response = client.UpdateResolverType(new UpdateResolverTypeRequest
             {
                 CaseId = "8403556009",
                 ResolverType = "AWS"
             });
 
             string caseId = response.CaseId;
-            string caseStatus = response.CaseStatus;
-            string resolverType = response.ResolverType;
+            CaseStatus caseStatus = response.CaseStatus;
+            ResolverType resolverType = response.ResolverType;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

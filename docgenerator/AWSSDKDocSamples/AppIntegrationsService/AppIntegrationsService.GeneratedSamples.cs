@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
     {
         public void AppIntegrationsServiceCreateApplication()
         {
-            #region create-an-application
+            #region CreateApplication-1
 
             var client = new AmazonAppIntegrationsServiceClient();
-            var response = client.CreateApplication(new CreateApplicationRequest 
+            var response = client.CreateApplication(new CreateApplicationRequest
             {
                 ApplicationSourceConfig = new ApplicationSourceConfig { ExternalUrlConfig = new ExternalUrlConfig { AccessUrl = "https://example.com" } },
                 Description = "My first application.",
@@ -32,10 +33,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
 
         public void AppIntegrationsServiceDeleteApplication()
         {
-            #region delete-an-application
+            #region DeleteApplication-1
 
             var client = new AmazonAppIntegrationsServiceClient();
-            var response = client.DeleteApplication(new DeleteApplicationRequest 
+            var response = client.DeleteApplication(new DeleteApplicationRequest
             {
                 Arn = "arn:aws:app-integrations:us-west-2:0123456789012:application/98542c53-e8ac-4570-9c85-c6552c8d9c5e"
             });
@@ -46,10 +47,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
 
         public void AppIntegrationsServiceGetApplication()
         {
-            #region get-an-application
+            #region GetApplication-1
 
             var client = new AmazonAppIntegrationsServiceClient();
-            var response = client.GetApplication(new GetApplicationRequest 
+            var response = client.GetApplication(new GetApplicationRequest
             {
                 Arn = "arn:aws:app-integrations:us-west-2:0123456789012:application/98542c53-e8ac-4570-9c85-c6552c8d9c5e"
             });
@@ -64,10 +65,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
 
         public void AppIntegrationsServiceListApplicationAssociations()
         {
-            #region list-application-associations
+            #region ListApplicationAssociations-1
 
             var client = new AmazonAppIntegrationsServiceClient();
-            var response = client.ListApplicationAssociations(new ListApplicationAssociationsRequest 
+            var response = client.ListApplicationAssociations(new ListApplicationAssociationsRequest
             {
                 ApplicationId = "98542c53-e8ac-4570-9c85-c6552c8d9c5e"
             });
@@ -80,10 +81,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
 
         public void AppIntegrationsServiceListApplications()
         {
-            #region list-applications
+            #region ListApplications-1
 
             var client = new AmazonAppIntegrationsServiceClient();
-            var response = client.ListApplications(new ListApplicationsRequest 
+            var response = client.ListApplications(new ListApplicationsRequest
             {
                 MaxResults = 1
             });
@@ -96,10 +97,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
 
         public void AppIntegrationsServiceUpdateApplication()
         {
-            #region update-an-application
+            #region UpdateApplication-1
 
             var client = new AmazonAppIntegrationsServiceClient();
-            var response = client.UpdateApplication(new UpdateApplicationRequest 
+            var response = client.UpdateApplication(new UpdateApplicationRequest
             {
                 Arn = "arn:aws:app-integrations:us-west-2:0123456789012:application/98542c53-e8ac-4570-9c85-c6552c8d9c5e",
                 Name = "My New Application Name"
@@ -109,13 +110,10 @@ namespace AWSSDKDocSamples.Amazon.AppIntegrationsService.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

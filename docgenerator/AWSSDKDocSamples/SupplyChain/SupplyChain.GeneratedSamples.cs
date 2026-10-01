@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
     {
         public void SupplyChainCreateBillOfMaterialsImportJob()
         {
-            #region example-1
+            #region CreateBillOfMaterialsImportJob-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateBillOfMaterialsImportJob(new CreateBillOfMaterialsImportJobRequest 
+            var response = client.CreateBillOfMaterialsImportJob(new CreateBillOfMaterialsImportJobRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
                 InstanceId = "60f82bbd-71f7-4fcd-a941-472f574c5243",
@@ -30,13 +31,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainCreateDataIntegrationFlow()
         {
-            #region example-1
+            #region CreateDataIntegrationFlow-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateDataIntegrationFlow(new CreateDataIntegrationFlowRequest 
+            var response = client.CreateDataIntegrationFlow(new CreateDataIntegrationFlowRequest
             {
-                Name = "testStagingFlow",
                 InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d",
+                Name = "testStagingFlow",
                 Sources = new List<DataIntegrationFlowSource> {
                     new DataIntegrationFlowSource {
                         S3Source = new DataIntegrationFlowS3SourceConfiguration {
@@ -60,21 +61,21 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                 }
             });
 
-            string name = response.Name;
             string instanceId = response.InstanceId;
+            string name = response.Name;
 
             #endregion
         }
 
         public void SupplyChainCreateDataIntegrationFlow()
         {
-            #region example-2
+            #region CreateDataIntegrationFlow-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateDataIntegrationFlow(new CreateDataIntegrationFlowRequest 
+            var response = client.CreateDataIntegrationFlow(new CreateDataIntegrationFlowRequest
             {
-                Name = "trading-partner",
                 InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d",
+                Name = "trading-partner",
                 Sources = new List<DataIntegrationFlowSource> {
                     new DataIntegrationFlowSource {
                         DatasetSource = new DataIntegrationFlowDatasetSourceConfiguration { DatasetIdentifier = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/namespaces/default/datasets/my_staging_dataset1" },
@@ -96,13 +97,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                         Options = new DataIntegrationFlowDatasetOptions {
                             DedupeRecords = true,
                             DedupeStrategy = new DataIntegrationFlowDedupeStrategy {
-                                Type = "FIELD_PRIORITY",
                                 FieldPriority = new DataIntegrationFlowFieldPriorityDedupeStrategyConfiguration { Fields = new List<DataIntegrationFlowFieldPriorityDedupeField> {
                                     new DataIntegrationFlowFieldPriorityDedupeField {
                                         Name = "eff_start_date",
                                         SortOrder = "DESC"
                                     }
-                                } }
+                                } },
+                                Type = "FIELD_PRIORITY"
                             },
                             LoadType = "REPLACE"
                         }
@@ -115,22 +116,22 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                 }
             });
 
-            string name = response.Name;
             string instanceId = response.InstanceId;
+            string name = response.Name;
 
             #endregion
         }
 
         public void SupplyChainCreateDataLakeDataset()
         {
-            #region example-1
+            #region CreateDataLakeDataset-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateDataLakeDataset(new CreateDataLakeDatasetRequest 
+            var response = client.CreateDataLakeDataset(new CreateDataLakeDatasetRequest
             {
-                Name = "inbound_order",
                 Description = "This is an AWS Supply Chain inbound order dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "inbound_order",
                 Namespace = "asc",
                 Tags = new Dictionary<string, string> {
                     { "tagKey1", "tagValue1" },
@@ -145,14 +146,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainCreateDataLakeDataset()
         {
-            #region example-2
+            #region CreateDataLakeDataset-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateDataLakeDataset(new CreateDataLakeDatasetRequest 
+            var response = client.CreateDataLakeDataset(new CreateDataLakeDatasetRequest
             {
-                Name = "my_dataset",
                 Description = "This is a custom dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_dataset",
                 Namespace = "default",
                 PartitionSpec = new DataLakeDatasetPartitionSpec { Fields = new List<DataLakeDatasetPartitionField> {
                     new DataLakeDatasetPartitionField {
@@ -165,34 +166,34 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                     }
                 } },
                 Schema = new DataLakeDatasetSchema {
-                    Name = "MyDataset",
                     Fields = new List<DataLakeDatasetSchemaField> {
                         new DataLakeDatasetSchemaField {
+                            IsRequired = true,
                             Name = "id",
-                            Type = "INT",
-                            IsRequired = true
+                            Type = "INT"
                         },
                         new DataLakeDatasetSchemaField {
+                            IsRequired = true,
                             Name = "description",
-                            Type = "STRING",
-                            IsRequired = true
+                            Type = "STRING"
                         },
                         new DataLakeDatasetSchemaField {
+                            IsRequired = false,
                             Name = "price",
-                            Type = "DOUBLE",
-                            IsRequired = false
+                            Type = "DOUBLE"
                         },
                         new DataLakeDatasetSchemaField {
+                            IsRequired = false,
                             Name = "creation_time",
-                            Type = "TIMESTAMP",
-                            IsRequired = false
+                            Type = "TIMESTAMP"
                         },
                         new DataLakeDatasetSchemaField {
+                            IsRequired = false,
                             Name = "quantity",
-                            Type = "LONG",
-                            IsRequired = false
+                            Type = "LONG"
                         }
                     },
+                    Name = "MyDataset",
                     PrimaryKeys = new List<DataLakeDatasetPrimaryKeyField> {
                         new DataLakeDatasetPrimaryKeyField { Name = "id" }
                     }
@@ -210,14 +211,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainCreateDataLakeNamespace()
         {
-            #region example-1
+            #region CreateDataLakeNamespace-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateDataLakeNamespace(new CreateDataLakeNamespaceRequest 
+            var response = client.CreateDataLakeNamespace(new CreateDataLakeNamespaceRequest
             {
-                Name = "my_namespace",
                 Description = "This is my AWS Supply Chain namespace",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_namespace",
                 Tags = new Dictionary<string, string> {
                     { "tagKey1", "tagValue1" },
                     { "tagKey2", "tagValue2" }
@@ -231,10 +232,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainCreateInstance()
         {
-            #region example-1
+            #region CreateInstance-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateInstance(new CreateInstanceRequest 
+            var response = client.CreateInstance(new CreateInstanceRequest
             {
                 InstanceDescription = "example instance description",
                 InstanceName = "example instance name",
@@ -251,10 +252,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainCreateInstance()
         {
-            #region example-2
+            #region CreateInstance-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.CreateInstance(new CreateInstanceRequest 
+            var response = client.CreateInstance(new CreateInstanceRequest
             {
             });
 
@@ -265,35 +266,35 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainDeleteDataIntegrationFlow()
         {
-            #region example-1
+            #region DeleteDataIntegrationFlow-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.DeleteDataIntegrationFlow(new DeleteDataIntegrationFlowRequest 
+            var response = client.DeleteDataIntegrationFlow(new DeleteDataIntegrationFlowRequest
             {
-                Name = "testStagingFlow",
-                InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d"
+                InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d",
+                Name = "testStagingFlow"
             });
 
-            string name = response.Name;
             string instanceId = response.InstanceId;
+            string name = response.Name;
 
             #endregion
         }
 
         public void SupplyChainDeleteDataLakeDataset()
         {
-            #region example-1
+            #region DeleteDataLakeDataset-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.DeleteDataLakeDataset(new DeleteDataLakeDatasetRequest 
+            var response = client.DeleteDataLakeDataset(new DeleteDataLakeDatasetRequest
             {
-                Name = "inbound_order",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "inbound_order",
                 Namespace = "asc"
             });
 
-            string name = response.Name;
             string instanceId = response.InstanceId;
+            string name = response.Name;
             string awsNamespace = response.Namespace;
 
             #endregion
@@ -301,18 +302,18 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainDeleteDataLakeDataset()
         {
-            #region example-2
+            #region DeleteDataLakeDataset-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.DeleteDataLakeDataset(new DeleteDataLakeDatasetRequest 
+            var response = client.DeleteDataLakeDataset(new DeleteDataLakeDatasetRequest
             {
-                Name = "my_dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_dataset",
                 Namespace = "default"
             });
 
-            string name = response.Name;
             string instanceId = response.InstanceId;
+            string name = response.Name;
             string awsNamespace = response.Namespace;
 
             #endregion
@@ -320,27 +321,27 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainDeleteDataLakeNamespace()
         {
-            #region example-1
+            #region DeleteDataLakeNamespace-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.DeleteDataLakeNamespace(new DeleteDataLakeNamespaceRequest 
+            var response = client.DeleteDataLakeNamespace(new DeleteDataLakeNamespaceRequest
             {
-                Name = "my_namespace",
-                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_namespace"
             });
 
-            string name = response.Name;
             string instanceId = response.InstanceId;
+            string name = response.Name;
 
             #endregion
         }
 
         public void SupplyChainDeleteInstance()
         {
-            #region example-1
+            #region DeleteInstance-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.DeleteInstance(new DeleteInstanceRequest 
+            var response = client.DeleteInstance(new DeleteInstanceRequest
             {
                 InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793"
             });
@@ -352,10 +353,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetBillOfMaterialsImportJob()
         {
-            #region example-1
+            #region GetBillOfMaterialsImportJob-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetBillOfMaterialsImportJob(new GetBillOfMaterialsImportJobRequest 
+            var response = client.GetBillOfMaterialsImportJob(new GetBillOfMaterialsImportJobRequest
             {
                 InstanceId = "60f82bbd-71f7-4fcd-a941-472f574c5243",
                 JobId = "f79b359b-1515-4436-a3bf-bae7b33e47b4"
@@ -368,10 +369,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetBillOfMaterialsImportJob()
         {
-            #region example-2
+            #region GetBillOfMaterialsImportJob-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetBillOfMaterialsImportJob(new GetBillOfMaterialsImportJobRequest 
+            var response = client.GetBillOfMaterialsImportJob(new GetBillOfMaterialsImportJobRequest
             {
                 InstanceId = "60f82bbd-71f7-4fcd-a941-472f574c5243",
                 JobId = "f79b359b-1515-4436-a3bf-bae7b33e47b4"
@@ -384,29 +385,29 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataIntegrationEvent()
         {
-            #region example-1
+            #region GetDataIntegrationEvent-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataIntegrationEvent(new GetDataIntegrationEventRequest 
+            var response = client.GetDataIntegrationEvent(new GetDataIntegrationEventRequest
             {
                 EventId = "19739c8e-cd2e-4cbc-a2f7-0dc43239f042",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
 
-            DataIntegrationEvent event = response.Event;
+            DataIntegrationEvent @event = response.Event;
 
             #endregion
         }
 
         public void SupplyChainGetDataIntegrationFlow()
         {
-            #region example-1
+            #region GetDataIntegrationFlow-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataIntegrationFlow(new GetDataIntegrationFlowRequest 
+            var response = client.GetDataIntegrationFlow(new GetDataIntegrationFlowRequest
             {
-                Name = "testStagingFlow",
-                InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d"
+                InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d",
+                Name = "testStagingFlow"
             });
 
             DataIntegrationFlow flow = response.Flow;
@@ -416,10 +417,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataIntegrationFlowExecution()
         {
-            #region example-1
+            #region GetDataIntegrationFlowExecution-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataIntegrationFlowExecution(new GetDataIntegrationFlowExecutionRequest 
+            var response = client.GetDataIntegrationFlowExecution(new GetDataIntegrationFlowExecutionRequest
             {
                 ExecutionId = "edbbdd3f-c0f9-49d9-ab01-f64542f803b7",
                 FlowName = "source-product",
@@ -433,10 +434,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataIntegrationFlowExecution()
         {
-            #region example-2
+            #region GetDataIntegrationFlowExecution-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataIntegrationFlowExecution(new GetDataIntegrationFlowExecutionRequest 
+            var response = client.GetDataIntegrationFlowExecution(new GetDataIntegrationFlowExecutionRequest
             {
                 ExecutionId = "9daf6071-d12c-4eef-864c-73cea2557825",
                 FlowName = "target-product",
@@ -450,13 +451,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataLakeDataset()
         {
-            #region example-1
+            #region GetDataLakeDataset-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataLakeDataset(new GetDataLakeDatasetRequest 
+            var response = client.GetDataLakeDataset(new GetDataLakeDatasetRequest
             {
-                Name = "inbound_order",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "inbound_order",
                 Namespace = "asc"
             });
 
@@ -467,13 +468,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataLakeDataset()
         {
-            #region example-2
+            #region GetDataLakeDataset-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataLakeDataset(new GetDataLakeDatasetRequest 
+            var response = client.GetDataLakeDataset(new GetDataLakeDatasetRequest
             {
-                Name = "my_dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_dataset",
                 Namespace = "default"
             });
 
@@ -484,13 +485,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataLakeNamespace()
         {
-            #region example-1
+            #region GetDataLakeNamespace-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataLakeNamespace(new GetDataLakeNamespaceRequest 
+            var response = client.GetDataLakeNamespace(new GetDataLakeNamespaceRequest
             {
-                Name = "my_namespace",
-                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_namespace"
             });
 
             DataLakeNamespace awsNamespace = response.Namespace;
@@ -500,13 +501,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetDataLakeNamespace()
         {
-            #region example-2
+            #region GetDataLakeNamespace-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetDataLakeNamespace(new GetDataLakeNamespaceRequest 
+            var response = client.GetDataLakeNamespace(new GetDataLakeNamespaceRequest
             {
-                Name = "asc",
-                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "asc"
             });
 
             DataLakeNamespace awsNamespace = response.Namespace;
@@ -516,10 +517,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetInstance()
         {
-            #region example-1
+            #region GetInstance-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetInstance(new GetInstanceRequest 
+            var response = client.GetInstance(new GetInstanceRequest
             {
                 InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793"
             });
@@ -531,10 +532,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainGetInstance()
         {
-            #region example-2
+            #region GetInstance-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.GetInstance(new GetInstanceRequest 
+            var response = client.GetInstance(new GetInstanceRequest
             {
                 InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793"
             });
@@ -546,10 +547,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataIntegrationEvents()
         {
-            #region example-1
+            #region ListDataIntegrationEvents-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataIntegrationEvents(new ListDataIntegrationEventsRequest 
+            var response = client.ListDataIntegrationEvents(new ListDataIntegrationEventsRequest
             {
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -561,10 +562,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataIntegrationFlowExecutions()
         {
-            #region example-1
+            #region ListDataIntegrationFlowExecutions-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataIntegrationFlowExecutions(new ListDataIntegrationFlowExecutionsRequest 
+            var response = client.ListDataIntegrationFlowExecutions(new ListDataIntegrationFlowExecutionsRequest
             {
                 FlowName = "source-product",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
@@ -577,10 +578,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataIntegrationFlows()
         {
-            #region example-1
+            #region ListDataIntegrationFlows-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataIntegrationFlows(new ListDataIntegrationFlowsRequest 
+            var response = client.ListDataIntegrationFlows(new ListDataIntegrationFlowsRequest
             {
                 InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d"
             });
@@ -592,10 +593,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataLakeDatasets()
         {
-            #region example-1
+            #region ListDataLakeDatasets-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataLakeDatasets(new ListDataLakeDatasetsRequest 
+            var response = client.ListDataLakeDatasets(new ListDataLakeDatasetsRequest
             {
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
                 Namespace = "asc"
@@ -608,10 +609,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataLakeDatasets()
         {
-            #region example-2
+            #region ListDataLakeDatasets-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataLakeDatasets(new ListDataLakeDatasetsRequest 
+            var response = client.ListDataLakeDatasets(new ListDataLakeDatasetsRequest
             {
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
                 MaxResults = 2,
@@ -627,10 +628,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataLakeNamespaces()
         {
-            #region example-1
+            #region ListDataLakeNamespaces-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataLakeNamespaces(new ListDataLakeNamespacesRequest 
+            var response = client.ListDataLakeNamespaces(new ListDataLakeNamespacesRequest
             {
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
             });
@@ -642,10 +643,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListDataLakeNamespaces()
         {
-            #region example-2
+            #region ListDataLakeNamespaces-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListDataLakeNamespaces(new ListDataLakeNamespacesRequest 
+            var response = client.ListDataLakeNamespaces(new ListDataLakeNamespacesRequest
             {
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
                 MaxResults = 1,
@@ -660,10 +661,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListInstances()
         {
-            #region example-1
+            #region ListInstances-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListInstances(new ListInstancesRequest 
+            var response = client.ListInstances(new ListInstancesRequest
             {
             });
 
@@ -674,10 +675,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListInstances()
         {
-            #region example-2
+            #region ListInstances-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListInstances(new ListInstancesRequest 
+            var response = client.ListInstances(new ListInstancesRequest
             {
                 InstanceNameFilter = new List<string> {
                     "example instance name"
@@ -694,10 +695,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListInstances()
         {
-            #region example-3
+            #region ListInstances-3
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListInstances(new ListInstancesRequest 
+            var response = client.ListInstances(new ListInstancesRequest
             {
                 MaxResults = 1
             });
@@ -710,10 +711,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListInstances()
         {
-            #region example-4
+            #region ListInstances-4
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListInstances(new ListInstancesRequest 
+            var response = client.ListInstances(new ListInstancesRequest
             {
                 MaxResults = 1,
                 NextToken = "AAQA-EFRSURBSGhtcng0c0dxbENwUHdnckVIbkFYNU1QVjRTZWN2ak5iMFVicC8zemlHOVF3SEpjSC9WTWJVVXBMV2Z1N3ZvZlQ0WEFBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTTJibW9LemgrSWZTY0RaZEdBZ0VRZ0R2dDhsQnVGbGJ0dnFTZityWmNSWEVPbG93emJoSjhxOGNMbGQ1UGMvY0VRbWlTR3pQUFd4N2RraXY5Y0ovcS9vSmFYZVBGdWVHaU0zWmd0dz09n-rC1ejA5--7ltJxpDT2xP_i8xGqDPMOZfjpp8q6l5NuP9_bnBURvwwYhdqDriMK5_f96LuPEnPbuML-ItfgEiCcUy0p2tApvpZkZqOG5fbqP-4C5aDYPTffHLyq-MMqvfrGVJzL1nvkpZcnTkVR9VJsu5b8I0qqDW0H8EMKGgTo78U9lr4sj3Usi9VMwZxgKCBmr03HhFLYXOW--XMbIx0CTZF0fYIcRxmA_sVS6J7gpaB9yMcnzs5VUKokoA5JTcAPY5d1Y1VyE8KKxv51cfPgXw8OYCDbFQncw8mZPmE-VqxjFbksmk_FmghpPn9j2Ppoe-zr0LQ%3D"
@@ -726,10 +727,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/data-integration-flows/my_flow1"
             });
@@ -741,14 +742,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-1
+            #region SendDataIntegrationEvent-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"id\": \"inbound-order-id-test-123\", \"tpartner_id\": \"partner-id-test-123\" }",
                 EventGroupId = "inboundOrderId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.inboundorder",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -760,14 +761,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-2
+            #region SendDataIntegrationEvent-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"id\": \"inbound-order-line-id-test-123\", \"order_id\": \"order-id-test-123\", \"tpartner_id\": \"partner-id-test-123\", \"product_id\": \"product-id-test-123\", \"quantity_submitted\": \"100.0\" }",
                 EventGroupId = "inboundOrderLineId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.inboundorderline",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -779,14 +780,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-3
+            #region SendDataIntegrationEvent-3
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"id\": \"inbound-order-line-schedule-id-test-123\", \"order_id\": \"order-id-test-123\", \"order_line_id\": \"order-line-id-test-123\", \"product_id\": \"product-id-test-123\"}",
                 EventGroupId = "inboundOrderLineScheduleId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.inboundorderlineschedule",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -798,14 +799,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-4
+            #region SendDataIntegrationEvent-4
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"snapshot_date\": \"1672470400000\", \"product_id\": \"product-id-test-123\", \"site_id\": \"site-id-test-123\", \"region_id\": \"region-id-test-123\", \"product_group_id\": \"product-group-id-test-123\", \"forecast_start_dttm\": \"1672470400000\", \"forecast_end_dttm\": \"1672470400000\" }",
                 EventGroupId = "forecastId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.forecast",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -817,14 +818,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-5
+            #region SendDataIntegrationEvent-5
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"snapshot_date\": \"1672470400000\", \"site_id\": \"site-id-test-123\", \"product_id\": \"product-id-test-123\", \"on_hand_inventory\": \"100.0\", \"inv_condition\": \"good\", \"lot_number\": \"lot-number-test-123\"}",
                 EventGroupId = "inventoryLevelId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.inventorylevel",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -836,14 +837,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-6
+            #region SendDataIntegrationEvent-6
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"id\": \"outbound-orderline-id-test-123\", \"cust_order_id\": \"cust-order-id-test-123\", \"product_id\": \"product-id-test-123\" }",
                 EventGroupId = "outboundOrderLineId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.outboundorderline",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -855,14 +856,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-7
+            #region SendDataIntegrationEvent-7
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"id\": \"outbound-shipment-id-test-123\", \"cust_order_id\": \"cust-order-id-test-123\", \"cust_order_line_id\": \"cust-order-line-id-test-123\", \"product_id\": \"product-id-test-123\" }",
                 EventGroupId = "outboundShipmentId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.outboundshipment",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -874,14 +875,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-8
+            #region SendDataIntegrationEvent-8
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"process_id\": \"process-id-test-123\" }",
                 EventGroupId = "processHeaderId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.processheader",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -893,14 +894,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-9
+            #region SendDataIntegrationEvent-9
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"process_operation_id\": \"process-operation-id-test-123\", \"process_id\": \"process-id-test-123\" }",
                 EventGroupId = "processOperationId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.processoperation",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -912,14 +913,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-10
+            #region SendDataIntegrationEvent-10
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"process_product_id\": \"process-product-id-test-123\", \"process_id\": \"process-id-test-123\" }",
                 EventGroupId = "processProductId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.processproduct",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -931,14 +932,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-11
+            #region SendDataIntegrationEvent-11
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"reservation_id\": \"reservation-id-test-123\", \"reservation_detail_id\": \"reservation-detail-id-test-123\" }",
                 EventGroupId = "reservationId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.reservation",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -950,14 +951,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-12
+            #region SendDataIntegrationEvent-12
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"id\": \"shipment-id-test-123\", \"supplier_tpartner_id\": \"supplier-tpartner-id-test-123\", \"product_id\": \"product-id-test-123\", \"order_id\": \"order-id-test-123\", \"order_line_id\": \"order-line-id-test-123\", \"package_id\": \"package-id-test-123\" }",
                 EventGroupId = "shipmentId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.shipment",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -969,14 +970,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-13
+            #region SendDataIntegrationEvent-13
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"shipment_stop_id\": \"shipment-stop-id-test-123\", \"shipment_id\": \"shipment-id-test-123\" }",
                 EventGroupId = "shipmentStopId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.shipmentstop",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -988,14 +989,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-14
+            #region SendDataIntegrationEvent-14
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"shipment_stop_order_id\": \"shipment-stop-order-id-test-123\", \"shipment_stop_id\": \"shipment-stop-id-test-123\", \"shipment_id\": \"shipment-id-test-123\" }",
                 EventGroupId = "shipmentStopOrderId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.shipmentstoporder",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -1007,14 +1008,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-15
+            #region SendDataIntegrationEvent-15
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"supply_plan_id\": \"supply-plan-id-test-123\" }",
                 EventGroupId = "supplyPlanId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.supplyplan",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -1026,10 +1027,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainSendDataIntegrationEvent()
         {
-            #region example-16
+            #region SendDataIntegrationEvent-16
 
             var client = new AmazonSupplyChainClient();
-            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest 
+            var response = client.SendDataIntegrationEvent(new SendDataIntegrationEventRequest
             {
                 Data = "{\"dataset_id\": \"datset-id-test-123\" }",
                 DatasetTarget = new DataIntegrationEventDatasetTargetConfiguration {
@@ -1037,7 +1038,7 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                     OperationType = "APPEND"
                 },
                 EventGroupId = "datasetId",
-                EventTimestamp = DateTime.UtcNow,
+                EventTimestamp = new DateTime(2018, 1, 9, 20, 51, 21, 123, DateTimeKind.Utc),
                 EventType = "scn.data.dataset",
                 InstanceId = "8928ae12-15e5-4441-825d-ec2184f0a43a"
             });
@@ -1049,10 +1050,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/data-integration-flows/my_flow1",
                 Tags = new Dictionary<string, string> {
@@ -1066,10 +1067,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/data-integration-flows/my_flow1",
                 TagKeys = new List<string> {
@@ -1083,13 +1084,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUpdateDataIntegrationFlow()
         {
-            #region example-1
+            #region UpdateDataIntegrationFlow-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UpdateDataIntegrationFlow(new UpdateDataIntegrationFlowRequest 
+            var response = client.UpdateDataIntegrationFlow(new UpdateDataIntegrationFlowRequest
             {
-                Name = "testStagingFlow",
                 InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d",
+                Name = "testStagingFlow",
                 Sources = new List<DataIntegrationFlowSource> {
                     new DataIntegrationFlowSource {
                         S3Source = new DataIntegrationFlowS3SourceConfiguration {
@@ -1117,13 +1118,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUpdateDataIntegrationFlow()
         {
-            #region example-2
+            #region UpdateDataIntegrationFlow-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UpdateDataIntegrationFlow(new UpdateDataIntegrationFlowRequest 
+            var response = client.UpdateDataIntegrationFlow(new UpdateDataIntegrationFlowRequest
             {
-                Name = "trading-partner",
                 InstanceId = "8850c54e-e187-4fa7-89d4-6370f165174d",
+                Name = "trading-partner",
                 Sources = new List<DataIntegrationFlowSource> {
                     new DataIntegrationFlowSource {
                         DatasetSource = new DataIntegrationFlowDatasetSourceConfiguration { DatasetIdentifier = "arn:aws:scn:us-east-1:123456789012:instance/8850c54e-e187-4fa7-89d4-6370f165174d/namespaces/default/datasets/my_staging_dataset1" },
@@ -1142,13 +1143,13 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
                         Options = new DataIntegrationFlowDatasetOptions {
                             DedupeRecords = true,
                             DedupeStrategy = new DataIntegrationFlowDedupeStrategy {
-                                Type = "FIELD_PRIORITY",
                                 FieldPriority = new DataIntegrationFlowFieldPriorityDedupeStrategyConfiguration { Fields = new List<DataIntegrationFlowFieldPriorityDedupeField> {
                                     new DataIntegrationFlowFieldPriorityDedupeField {
                                         Name = "eff_start_date",
                                         SortOrder = "ASC"
                                     }
-                                } }
+                                } },
+                                Type = "FIELD_PRIORITY"
                             },
                             LoadType = "REPLACE"
                         }
@@ -1168,14 +1169,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUpdateDataLakeDataset()
         {
-            #region example-1
+            #region UpdateDataLakeDataset-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UpdateDataLakeDataset(new UpdateDataLakeDatasetRequest 
+            var response = client.UpdateDataLakeDataset(new UpdateDataLakeDatasetRequest
             {
-                Name = "inbound_order",
                 Description = "This is an updated AWS Supply Chain inbound order dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "inbound_order",
                 Namespace = "asc"
             });
 
@@ -1186,14 +1187,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUpdateDataLakeDataset()
         {
-            #region example-2
+            #region UpdateDataLakeDataset-2
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UpdateDataLakeDataset(new UpdateDataLakeDatasetRequest 
+            var response = client.UpdateDataLakeDataset(new UpdateDataLakeDatasetRequest
             {
-                Name = "my_dataset",
                 Description = "This is an updated custom dataset",
                 InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_dataset",
                 Namespace = "default"
             });
 
@@ -1204,14 +1205,14 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUpdateDataLakeNamespace()
         {
-            #region example-1
+            #region UpdateDataLakeNamespace-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UpdateDataLakeNamespace(new UpdateDataLakeNamespaceRequest 
+            var response = client.UpdateDataLakeNamespace(new UpdateDataLakeNamespaceRequest
             {
-                Name = "my_namespace",
                 Description = "This is an updated AWS Supply Chain namespace",
-                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5"
+                InstanceId = "1877dd20-dee9-4639-8e99-cb67acf21fe5",
+                Name = "my_namespace"
             });
 
             DataLakeNamespace awsNamespace = response.Namespace;
@@ -1221,10 +1222,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
 
         public void SupplyChainUpdateInstance()
         {
-            #region example-1
+            #region UpdateInstance-1
 
             var client = new AmazonSupplyChainClient();
-            var response = client.UpdateInstance(new UpdateInstanceRequest 
+            var response = client.UpdateInstance(new UpdateInstanceRequest
             {
                 InstanceDescription = "updated example instance description",
                 InstanceId = "9e193580-7cc5-45f7-9609-c43ba0ada793",
@@ -1236,13 +1237,10 @@ namespace AWSSDKDocSamples.Amazon.SupplyChain.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

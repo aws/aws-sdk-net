@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
     {
         public void PollyDeleteLexicon()
         {
-            #region to-delete-a-lexicon-1481922498332
+            #region DeleteLexicon-1
 
             var client = new AmazonPollyClient();
-            var response = client.DeleteLexicon(new DeleteLexiconRequest 
+            var response = client.DeleteLexicon(new DeleteLexiconRequest
             {
                 Name = "example"
             });
@@ -27,10 +28,10 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
 
         public void PollyDescribeVoices()
         {
-            #region to-describe-available-voices-1482180557753
+            #region DescribeVoices-1
 
             var client = new AmazonPollyClient();
-            var response = client.DescribeVoices(new DescribeVoicesRequest 
+            var response = client.DescribeVoices(new DescribeVoicesRequest
             {
                 LanguageCode = "en-GB"
             });
@@ -40,28 +41,12 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
             #endregion
         }
 
-        public void PollyGetLexicon()
-        {
-            #region to-retrieve-a-lexicon-1481912870836
-
-            var client = new AmazonPollyClient();
-            var response = client.GetLexicon(new GetLexiconRequest 
-            {
-                Name = ""
-            });
-
-            Lexicon lexicon = response.Lexicon;
-            LexiconAttributes lexiconAttributes = response.LexiconAttributes;
-
-            #endregion
-        }
-
         public void PollyListLexicons()
         {
-            #region to-list-all-lexicons-in-a-region-1481842106487
+            #region ListLexicons-1
 
             var client = new AmazonPollyClient();
-            var response = client.ListLexicons(new ListLexiconsRequest 
+            var response = client.ListLexicons(new ListLexiconsRequest
             {
             });
 
@@ -72,10 +57,10 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
 
         public void PollyPutLexicon()
         {
-            #region to-save-a-lexicon-1482272584088
+            #region PutLexicon-1
 
             var client = new AmazonPollyClient();
-            var response = client.PutLexicon(new PutLexiconRequest 
+            var response = client.PutLexicon(new PutLexiconRequest
             {
                 Content = "<Lexicon Content>",
                 Name = "W3C"
@@ -85,38 +70,12 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
             #endregion
         }
 
-        public void PollyStartSpeechSynthesisStream()
-        {
-            #region to-start-speech-synthesis-stream-1741791835844
-
-            var client = new AmazonPollyClient();
-            var response = client.StartSpeechSynthesisStream(new StartSpeechSynthesisStreamRequest 
-            {
-                ActionStreamPublisher = new StartSpeechSynthesisStreamActionStream {
-                    CloseStreamEvent = new CloseStreamEvent {  },
-                    TextEvent = new TextEvent {
-                        Text = "Hello, this is a test of bidirectional streaming synthesis.",
-                        TextType = "text"
-                    }
-                }, // The input event stream. Send TextEvent messages with text to synthesize, and a CloseStreamEvent to signal the end of input.
-                Engine = "generative", // The engine to use for synthesis.
-                LanguageCode = "en-US",
-                OutputFormat = "pcm", // The audio format.
-                SampleRate = "16000",
-                VoiceId = "Joanna"
-            });
-
-            StartSpeechSynthesisStreamEventStream eventStream = response.EventStream; // The output event stream. AudioEvent messages contain synthesized audio chunks, and StreamClosedEvent signals completion with the total character count.
-
-            #endregion
-        }
-
         public void PollySynthesizeSpeech()
         {
-            #region to-synthesize-speech-1482186064046
+            #region SynthesizeSpeech-1
 
             var client = new AmazonPollyClient();
-            var response = client.SynthesizeSpeech(new SynthesizeSpeechRequest 
+            var response = client.SynthesizeSpeech(new SynthesizeSpeechRequest
             {
                 LexiconNames = new List<string> {
                     "example"
@@ -128,20 +87,17 @@ namespace AWSSDKDocSamples.Amazon.Polly.Generated
                 VoiceId = "Joanna"
             });
 
-            MemoryStream audioStream = response.AudioStream;
+            Stream audioStream = response.AudioStream;
             string contentType = response.ContentType;
-            int requestCharacters = response.RequestCharacters;
+            int? requestCharacters = response.RequestCharacters;
 
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

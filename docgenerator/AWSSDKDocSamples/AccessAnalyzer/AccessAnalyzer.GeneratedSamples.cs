@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
     {
         public void AccessAnalyzerCheckAccessNotGranted()
         {
-            #region example-1
+            #region CheckAccessNotGranted-1
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.CheckAccessNotGranted(new CheckAccessNotGrantedRequest 
+            var response = client.CheckAccessNotGranted(new CheckAccessNotGrantedRequest
             {
                 Access = new List<Access> {
                     new Access { Actions = new List<string> {
@@ -28,17 +29,17 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
             });
 
             string message = response.Message;
-            string result = response.Result;
+            CheckAccessNotGrantedResult result = response.Result;
 
             #endregion
         }
 
         public void AccessAnalyzerCheckAccessNotGranted()
         {
-            #region example-2
+            #region CheckAccessNotGranted-2
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.CheckAccessNotGranted(new CheckAccessNotGrantedRequest 
+            var response = client.CheckAccessNotGranted(new CheckAccessNotGrantedRequest
             {
                 Access = new List<Access> {
                     new Access { Resources = new List<string> {
@@ -50,17 +51,17 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
             });
 
             string message = response.Message;
-            string result = response.Result;
+            CheckAccessNotGrantedResult result = response.Result;
 
             #endregion
         }
 
         public void AccessAnalyzerCheckAccessNotGranted()
         {
-            #region example-3
+            #region CheckAccessNotGranted-3
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.CheckAccessNotGranted(new CheckAccessNotGrantedRequest 
+            var response = client.CheckAccessNotGranted(new CheckAccessNotGrantedRequest
             {
                 Access = new List<Access> {
                     new Access { Resources = new List<string> {
@@ -73,34 +74,34 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
 
             string message = response.Message;
             List<ReasonSummary> reasons = response.Reasons;
-            string result = response.Result;
+            CheckAccessNotGrantedResult result = response.Result;
 
             #endregion
         }
 
         public void AccessAnalyzerCheckNoPublicAccess()
         {
-            #region example-1
+            #region CheckNoPublicAccess-1
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.CheckNoPublicAccess(new CheckNoPublicAccessRequest 
+            var response = client.CheckNoPublicAccess(new CheckNoPublicAccessRequest
             {
                 PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Bob\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::111122223333:user/JohnDoe\"},\"Action\":[\"s3:GetObject\"]}]}",
                 ResourceType = "AWS::S3::Bucket"
             });
 
             string message = response.Message;
-            string result = response.Result;
+            CheckNoPublicAccessResult result = response.Result;
 
             #endregion
         }
 
         public void AccessAnalyzerCheckNoPublicAccess()
         {
-            #region example-2
+            #region CheckNoPublicAccess-2
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.CheckNoPublicAccess(new CheckNoPublicAccessRequest 
+            var response = client.CheckNoPublicAccess(new CheckNoPublicAccessRequest
             {
                 PolicyDocument = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"Bob\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":[\"s3:GetObject\"]}]}",
                 ResourceType = "AWS::S3::Bucket"
@@ -108,17 +109,17 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
 
             string message = response.Message;
             List<ReasonSummary> reasons = response.Reasons;
-            string result = response.Result;
+            CheckNoPublicAccessResult result = response.Result;
 
             #endregion
         }
 
         public void AccessAnalyzerGenerateFindingRecommendation()
         {
-            #region example-1
+            #region GenerateFindingRecommendation-1
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.GenerateFindingRecommendation(new GenerateFindingRecommendationRequest 
+            var response = client.GenerateFindingRecommendation(new GenerateFindingRecommendationRequest
             {
                 AnalyzerArn = "arn:aws:access-analyzer:us-east-1:111122223333:analyzer/a",
                 Id = "finding-id"
@@ -130,10 +131,10 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
 
         public void AccessAnalyzerGenerateFindingRecommendation()
         {
-            #region example-2
+            #region GenerateFindingRecommendation-2
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.GenerateFindingRecommendation(new GenerateFindingRecommendationRequest 
+            var response = client.GenerateFindingRecommendation(new GenerateFindingRecommendationRequest
             {
                 AnalyzerArn = "arn:aws:access-analyzer:us-east-1:111122223333:analyzer/a",
                 Id = "!"
@@ -145,10 +146,10 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
 
         public void AccessAnalyzerGetFindingRecommendation()
         {
-            #region example-1
+            #region GetFindingRecommendation-1
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest 
+            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest
             {
                 AnalyzerArn = "arn:aws:access-analyzer:us-east-1:111122223333:analyzer/a",
                 Id = "finding-id",
@@ -156,64 +157,64 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
                 NextToken = "token"
             });
 
-            DateTime completedAt = response.CompletedAt;
-            string recommendationType = response.RecommendationType;
+            DateTime? completedAt = response.CompletedAt;
+            RecommendationType recommendationType = response.RecommendationType;
             List<RecommendedStep> recommendedSteps = response.RecommendedSteps;
             string resourceArn = response.ResourceArn;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
+            DateTime? startedAt = response.StartedAt;
+            Status status = response.Status;
 
             #endregion
         }
 
         public void AccessAnalyzerGetFindingRecommendation()
         {
-            #region example-2
+            #region GetFindingRecommendation-2
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest 
+            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest
             {
                 AnalyzerArn = "arn:aws:access-analyzer:us-east-1:111122223333:analyzer/a",
                 Id = "finding-id",
                 MaxResults = 3
             });
 
-            string recommendationType = response.RecommendationType;
+            RecommendationType recommendationType = response.RecommendationType;
             string resourceArn = response.ResourceArn;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
+            DateTime? startedAt = response.StartedAt;
+            Status status = response.Status;
 
             #endregion
         }
 
         public void AccessAnalyzerGetFindingRecommendation()
         {
-            #region example-3
+            #region GetFindingRecommendation-3
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest 
+            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest
             {
                 AnalyzerArn = "arn:aws:access-analyzer:us-east-1:111122223333:analyzer/a",
                 Id = "finding-id",
                 MaxResults = 3
             });
 
-            DateTime completedAt = response.CompletedAt;
+            DateTime? completedAt = response.CompletedAt;
             RecommendationError error = response.Error;
-            string recommendationType = response.RecommendationType;
+            RecommendationType recommendationType = response.RecommendationType;
             string resourceArn = response.ResourceArn;
-            DateTime startedAt = response.StartedAt;
-            string status = response.Status;
+            DateTime? startedAt = response.StartedAt;
+            Status status = response.Status;
 
             #endregion
         }
 
         public void AccessAnalyzerGetFindingRecommendation()
         {
-            #region example-4
+            #region GetFindingRecommendation-4
 
             var client = new AmazonAccessAnalyzerClient();
-            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest 
+            var response = client.GetFindingRecommendation(new GetFindingRecommendationRequest
             {
                 AnalyzerArn = "arn:aws:access-analyzer:us-east-1:111122223333:analyzer/a",
                 Id = "!"
@@ -223,13 +224,10 @@ namespace AWSSDKDocSamples.Amazon.AccessAnalyzer.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

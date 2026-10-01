@@ -1,782 +1,659 @@
 <?xml version="1.0" encoding="utf-8"?>
 <docs>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CancelHarvestJob(Amazon.MediaPackageV2.Model.CancelHarvestJobRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CancelHarvestJob(Amazon.MediaPackageV2.Model.CancelHarvestJobRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CancelHarvestJobRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CancelHarvestJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Cancel a Harvest Job"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating a Channel"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating a CMAF Channel with non-epoch-locked output locking mode"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannelGroup(Amazon.MediaPackageV2.Model.CreateChannelGroupRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannelGroup(Amazon.MediaPackageV2.Model.CreateChannelGroupRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelGroupRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating a Channel Group"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateHarvestJob(Amazon.MediaPackageV2.Model.CreateHarvestJobRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateHarvestJob(Amazon.MediaPackageV2.Model.CreateHarvestJobRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateHarvestJobRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateHarvestJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating a Harvest Job"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating an OriginEndpoint with container type TS, and encryption enabled"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating an OriginEndpoint with container type CMAF, and encryption enabled"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating an OriginEndpoint with container type ISM, and encryption enabled"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-3" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannel(Amazon.MediaPackageV2.Model.DeleteChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannel(Amazon.MediaPackageV2.Model.DeleteChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Deleting a Channel"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannelGroup(Amazon.MediaPackageV2.Model.DeleteChannelGroupRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannelGroup(Amazon.MediaPackageV2.Model.DeleteChannelGroupRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelGroupRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Deleting a Channel Group"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannelPolicy(Amazon.MediaPackageV2.Model.DeleteChannelPolicyRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannelPolicy(Amazon.MediaPackageV2.Model.DeleteChannelPolicyRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelPolicyRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Deleting a Channel Policy"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteOriginEndpoint(Amazon.MediaPackageV2.Model.DeleteOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteOriginEndpoint(Amazon.MediaPackageV2.Model.DeleteOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Deleting an OriginEndpoint"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteOriginEndpointPolicy(Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteOriginEndpointPolicy(Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Deleting an Origin Endpoint Policy"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting a Channel"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting a CMAF Channel with non-epoch-locked output locking mode"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannelGroup(Amazon.MediaPackageV2.Model.GetChannelGroupRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannelGroup(Amazon.MediaPackageV2.Model.GetChannelGroupRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelGroupRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting a Channel Group"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannelPolicy(Amazon.MediaPackageV2.Model.GetChannelPolicyRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannelPolicy(Amazon.MediaPackageV2.Model.GetChannelPolicyRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelPolicyRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetChannelPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting a Channel Policy"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetHarvestJob(Amazon.MediaPackageV2.Model.GetHarvestJobRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetHarvestJob(Amazon.MediaPackageV2.Model.GetHarvestJobRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetHarvestJobRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetHarvestJobResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting a Harvest Job"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting an OriginEndpoint"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting an OriginEndpoint with ISM container"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpointPolicy(Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpointPolicy(Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Getting an Origin Endpoint Policy"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListChannelGroups(Amazon.MediaPackageV2.Model.ListChannelGroupsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListChannelGroups(Amazon.MediaPackageV2.Model.ListChannelGroupsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListChannelGroupsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListChannelGroupsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Listing all Channel Groups"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListChannels(Amazon.MediaPackageV2.Model.ListChannelsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListChannels(Amazon.MediaPackageV2.Model.ListChannelsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListChannelsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListChannelsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Listing all Channels"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListHarvestJobs: Specify ChannelGroup only"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListHarvestJobs: Specify ChannelGroup, Channel only"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListHarvestJobs: Specify ChannelGroup, Channel, OriginEndpoint"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-3" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListHarvestJobs: Specify ChannelGroup, Channel, OriginEndpoint + Status filter"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-4" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="ListHarvestJobs: Empty response"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-5" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListOriginEndpoints(Amazon.MediaPackageV2.Model.ListOriginEndpointsRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListOriginEndpoints(Amazon.MediaPackageV2.Model.ListOriginEndpointsRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListOriginEndpointsRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListOriginEndpointsResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Listing all OriginEndpoints"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListTagsForResource(Amazon.MediaPackageV2.Model.ListTagsForResourceRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListTagsForResource(Amazon.MediaPackageV2.Model.ListTagsForResourceRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListTagsForResourceRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ListTagsForResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="List all tags for a resource"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.PutChannelPolicy(Amazon.MediaPackageV2.Model.PutChannelPolicyRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.PutChannelPolicy(Amazon.MediaPackageV2.Model.PutChannelPolicyRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.PutChannelPolicyRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.PutChannelPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating a Channel Policy"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.PutOriginEndpointPolicy(Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.PutOriginEndpointPolicy(Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Creating an Origin Endpoint Policy"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ResetChannelState(Amazon.MediaPackageV2.Model.ResetChannelStateRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ResetChannelState(Amazon.MediaPackageV2.Model.ResetChannelStateRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ResetChannelStateRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ResetChannelStateResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Reset a Channel"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ResetOriginEndpointState(Amazon.MediaPackageV2.Model.ResetOriginEndpointStateRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ResetOriginEndpointState(Amazon.MediaPackageV2.Model.ResetOriginEndpointStateRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.ResetOriginEndpointStateRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.ResetOriginEndpointStateResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Reset an OriginEndpoint"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.TagResource(Amazon.MediaPackageV2.Model.TagResourceRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.TagResource(Amazon.MediaPackageV2.Model.TagResourceRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.TagResourceRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.TagResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Add tags to a resource"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UntagResource(Amazon.MediaPackageV2.Model.UntagResourceRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UntagResource(Amazon.MediaPackageV2.Model.UntagResourceRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.UntagResourceRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.UntagResourceResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Remove tags from a resource"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Updating a Channel"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Updating a CMAF Channel with non-epoch-locked output locking mode"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannelGroup(Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannelGroup(Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelGroupResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Updating a Channel Group"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Updating an OriginEndpoint"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-1" />
-            </example>
-        </value>
-    </doc>
-    <doc>
-        <members>
-            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
-            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest" />
-            <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointResponse" />
-        </members>
-        <value>
-            <example>
-                <para>
-                    
-                </para>
-                <code
-                    title="Updating an OriginEndpoint with ISM container"
-                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
-                    region="example-2" />
-            </example>
-        </value>
-    </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CancelHarvestJob(Amazon.MediaPackageV2.Model.CancelHarvestJobRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CancelHarvestJob(Amazon.MediaPackageV2.Model.CancelHarvestJobRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CancelHarvestJobRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CancelHarvestJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Cancel a Harvest Job" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CancelHarvestJob-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating a Channel" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateChannel-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating a CMAF Channel with non-epoch-locked output locking mode" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateChannel-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannelGroup(Amazon.MediaPackageV2.Model.CreateChannelGroupRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannelGroup(Amazon.MediaPackageV2.Model.CreateChannelGroupRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateChannelGroupRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateChannelGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating a Channel Group" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateChannelGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateHarvestJob(Amazon.MediaPackageV2.Model.CreateHarvestJobRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateHarvestJob(Amazon.MediaPackageV2.Model.CreateHarvestJobRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateHarvestJobRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateHarvestJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating a Harvest Job" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateHarvestJob-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating an OriginEndpoint with container type TS, and encryption enabled" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateOriginEndpoint-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating an OriginEndpoint with container type CMAF, and encryption enabled" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateOriginEndpoint-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateOriginEndpoint(Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.CreateOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating an OriginEndpoint with container type ISM, and encryption enabled" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="CreateOriginEndpoint-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannel(Amazon.MediaPackageV2.Model.DeleteChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannel(Amazon.MediaPackageV2.Model.DeleteChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Deleting a Channel" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="DeleteChannel-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannelGroup(Amazon.MediaPackageV2.Model.DeleteChannelGroupRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannelGroup(Amazon.MediaPackageV2.Model.DeleteChannelGroupRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelGroupRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Deleting a Channel Group" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="DeleteChannelGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteChannelPolicy(Amazon.MediaPackageV2.Model.DeleteChannelPolicyRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteChannelPolicy(Amazon.MediaPackageV2.Model.DeleteChannelPolicyRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelPolicyRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteChannelPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Deleting a Channel Policy" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="DeleteChannelPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteOriginEndpoint(Amazon.MediaPackageV2.Model.DeleteOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteOriginEndpoint(Amazon.MediaPackageV2.Model.DeleteOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Deleting an OriginEndpoint" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="DeleteOriginEndpoint-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.DeleteOriginEndpointPolicy(Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.DeleteOriginEndpointPolicy(Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.DeleteOriginEndpointPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Deleting an Origin Endpoint Policy" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="DeleteOriginEndpointPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting a Channel" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetChannel-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting a CMAF Channel with non-epoch-locked output locking mode" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetChannel-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannelGroup(Amazon.MediaPackageV2.Model.GetChannelGroupRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannelGroup(Amazon.MediaPackageV2.Model.GetChannelGroupRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelGroupRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting a Channel Group" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetChannelGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannelPolicy(Amazon.MediaPackageV2.Model.GetChannelPolicyRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannelPolicy(Amazon.MediaPackageV2.Model.GetChannelPolicyRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelPolicyRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetChannelPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting a Channel Policy" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetChannelPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetHarvestJob(Amazon.MediaPackageV2.Model.GetHarvestJobRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetHarvestJob(Amazon.MediaPackageV2.Model.GetHarvestJobRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetHarvestJobRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetHarvestJobResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting a Harvest Job" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetHarvestJob-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting an OriginEndpoint" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetOriginEndpoint-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpoint(Amazon.MediaPackageV2.Model.GetOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting an OriginEndpoint with ISM container" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetOriginEndpoint-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetOriginEndpointPolicy(Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetOriginEndpointPolicy(Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.GetOriginEndpointPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Getting an Origin Endpoint Policy" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="GetOriginEndpointPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListChannelGroups(Amazon.MediaPackageV2.Model.ListChannelGroupsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListChannelGroups(Amazon.MediaPackageV2.Model.ListChannelGroupsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListChannelGroupsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListChannelGroupsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Listing all Channel Groups" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListChannelGroups-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListChannels(Amazon.MediaPackageV2.Model.ListChannelsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListChannels(Amazon.MediaPackageV2.Model.ListChannelsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListChannelsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListChannelsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Listing all Channels" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListChannels-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListHarvestJobs: Specify ChannelGroup only" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListHarvestJobs-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListHarvestJobs: Specify ChannelGroup, Channel only" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListHarvestJobs-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListHarvestJobs: Specify ChannelGroup, Channel, OriginEndpoint" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListHarvestJobs-3" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListHarvestJobs: Specify ChannelGroup, Channel, OriginEndpoint + Status filter" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListHarvestJobs-4" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListHarvestJobs(Amazon.MediaPackageV2.Model.ListHarvestJobsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListHarvestJobsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="ListHarvestJobs: Empty response" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListHarvestJobs-5" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListOriginEndpoints(Amazon.MediaPackageV2.Model.ListOriginEndpointsRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListOriginEndpoints(Amazon.MediaPackageV2.Model.ListOriginEndpointsRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListOriginEndpointsRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListOriginEndpointsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Listing all OriginEndpoints" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListOriginEndpoints-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ListTagsForResource(Amazon.MediaPackageV2.Model.ListTagsForResourceRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ListTagsForResource(Amazon.MediaPackageV2.Model.ListTagsForResourceRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListTagsForResourceRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ListTagsForResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="List all tags for a resource" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.PutChannelPolicy(Amazon.MediaPackageV2.Model.PutChannelPolicyRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.PutChannelPolicy(Amazon.MediaPackageV2.Model.PutChannelPolicyRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.PutChannelPolicyRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.PutChannelPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating a Channel Policy" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="PutChannelPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.PutOriginEndpointPolicy(Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.PutOriginEndpointPolicy(Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.PutOriginEndpointPolicyResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Creating an Origin Endpoint Policy" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="PutOriginEndpointPolicy-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ResetChannelState(Amazon.MediaPackageV2.Model.ResetChannelStateRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ResetChannelState(Amazon.MediaPackageV2.Model.ResetChannelStateRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ResetChannelStateRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ResetChannelStateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Reset a Channel" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ResetChannelState-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.ResetOriginEndpointState(Amazon.MediaPackageV2.Model.ResetOriginEndpointStateRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.ResetOriginEndpointState(Amazon.MediaPackageV2.Model.ResetOriginEndpointStateRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.ResetOriginEndpointStateRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.ResetOriginEndpointStateResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Reset an OriginEndpoint" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="ResetOriginEndpointState-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.TagResource(Amazon.MediaPackageV2.Model.TagResourceRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.TagResource(Amazon.MediaPackageV2.Model.TagResourceRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.TagResourceRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Add tags to a resource" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UntagResource(Amazon.MediaPackageV2.Model.UntagResourceRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UntagResource(Amazon.MediaPackageV2.Model.UntagResourceRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.UntagResourceRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.UntagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Remove tags from a resource" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="UntagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Updating a Channel" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="UpdateChannel-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Updating a CMAF Channel with non-epoch-locked output locking mode" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="UpdateChannel-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannelGroup(Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannelGroup(Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelGroupRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelGroupResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Updating a Channel Group" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="UpdateChannelGroup-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Updating an OriginEndpoint" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="UpdateOriginEndpoint-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
+      <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateOriginEndpoint(Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest)" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointRequest" />
+      <member name="T:Amazon.MediaPackageV2.Model.UpdateOriginEndpointResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Updating an OriginEndpoint with ISM container" source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs" region="UpdateOriginEndpoint-2" />
+      </example>
+    </value>
+  </doc>
 </docs>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
     {
         public void IoTManagedIntegrationsCreateCloudConnector()
         {
-            #region example-1
+            #region CreateCloudConnector-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.CreateCloudConnector(new CreateCloudConnectorRequest 
+            var response = client.CreateCloudConnector(new CreateCloudConnectorRequest
             {
                 ClientToken = "1234567890",
                 EndpointConfig = new EndpointConfig { Lambda = new LambdaConfig { Arn = "arn:aws:lambda:us-east-1:111122223333:function:my-function:myVersion" } },
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsCreateCloudConnector()
         {
-            #region example-2
+            #region CreateCloudConnector-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.CreateCloudConnector(new CreateCloudConnectorRequest 
+            var response = client.CreateCloudConnector(new CreateCloudConnectorRequest
             {
                 ClientToken = "12312321",
                 EndpointConfig = new EndpointConfig { Lambda = new LambdaConfig { Arn = "arn:aws:lambda:us-east-1:111122223333:function:my-function:myVersion" } },
@@ -49,10 +50,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsCreateCloudConnector()
         {
-            #region example-3
+            #region CreateCloudConnector-3
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.CreateCloudConnector(new CreateCloudConnectorRequest 
+            var response = client.CreateCloudConnector(new CreateCloudConnectorRequest
             {
                 ClientToken = "1213123123",
                 EndpointConfig = new EndpointConfig { Lambda = new LambdaConfig { Arn = "arn:aws:lambda:us-east-1:111122223333:function:my-function:myVersion2" } },
@@ -66,16 +67,16 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsGetCloudConnector()
         {
-            #region example-1
+            #region GetCloudConnector-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetCloudConnector(new GetCloudConnectorRequest 
+            var response = client.GetCloudConnector(new GetCloudConnectorRequest
             {
                 Identifier = "123456789012"
             });
 
             EndpointConfig endpointConfig = response.EndpointConfig;
-            string endpointType = response.EndpointType;
+            EndpointType endpointType = response.EndpointType;
             string id = response.Id;
             string name = response.Name;
 
@@ -84,10 +85,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsGetCloudConnector()
         {
-            #region example-2
+            #region GetCloudConnector-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetCloudConnector(new GetCloudConnectorRequest 
+            var response = client.GetCloudConnector(new GetCloudConnectorRequest
             {
                 Identifier = "123456789012"
             });
@@ -100,10 +101,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsGetCloudConnector()
         {
-            #region example-3
+            #region GetCloudConnector-3
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetCloudConnector(new GetCloudConnectorRequest 
+            var response = client.GetCloudConnector(new GetCloudConnectorRequest
             {
                 Identifier = "123456789012"
             });
@@ -114,10 +115,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsGetManagedThingCertificate()
         {
-            #region example-1
+            #region GetManagedThingCertificate-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetManagedThingCertificate(new GetManagedThingCertificateRequest 
+            var response = client.GetManagedThingCertificate(new GetManagedThingCertificateRequest
             {
                 Identifier = "example-managed-thing-id"
             });
@@ -130,10 +131,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsGetSchemaVersion()
         {
-            #region example-1
+            #region GetSchemaVersion-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetSchemaVersion(new GetSchemaVersionRequest 
+            var response = client.GetSchemaVersion(new GetSchemaVersionRequest
             {
                 SchemaVersionedId = "matter.ColorControl@1.4",
                 Type = "capability"
@@ -141,20 +142,20 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
             string description = response.Description;
             string awsNamespace = response.Namespace;
-            SchemaVersionSchema schema = response.Schema;
+            global::Amazon.Runtime.Documents.Document schema = response.Schema;
             string schemaId = response.SchemaId;
             string semanticVersion = response.SemanticVersion;
-            string type = response.Type;
+            SchemaVersionType type = response.Type;
 
             #endregion
         }
 
         public void IoTManagedIntegrationsGetSchemaVersion()
         {
-            #region example-2
+            #region GetSchemaVersion-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetSchemaVersion(new GetSchemaVersionRequest 
+            var response = client.GetSchemaVersion(new GetSchemaVersionRequest
             {
                 Format = "ZCL",
                 SchemaVersionedId = "matter.ColorControl@1.4",
@@ -163,20 +164,20 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
             string description = response.Description;
             string awsNamespace = response.Namespace;
-            SchemaVersionSchema schema = response.Schema;
+            global::Amazon.Runtime.Documents.Document schema = response.Schema;
             string schemaId = response.SchemaId;
             string semanticVersion = response.SemanticVersion;
-            string type = response.Type;
+            SchemaVersionType type = response.Type;
 
             #endregion
         }
 
         public void IoTManagedIntegrationsGetSchemaVersion()
         {
-            #region example-3
+            #region GetSchemaVersion-3
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.GetSchemaVersion(new GetSchemaVersionRequest 
+            var response = client.GetSchemaVersion(new GetSchemaVersionRequest
             {
                 SchemaVersionedId = "matter.ColorControl@$latest",
                 Type = "capability"
@@ -188,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsListCloudConnectors()
         {
-            #region example-1
+            #region ListCloudConnectors-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.ListCloudConnectors(new ListCloudConnectorsRequest 
+            var response = client.ListCloudConnectors(new ListCloudConnectorsRequest
             {
                 MaxResults = 5
             });
@@ -203,10 +204,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsListCloudConnectors()
         {
-            #region example-2
+            #region ListCloudConnectors-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.ListCloudConnectors(new ListCloudConnectorsRequest 
+            var response = client.ListCloudConnectors(new ListCloudConnectorsRequest
             {
                 MaxResults = 5
             });
@@ -217,10 +218,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsListSchemaVersions()
         {
-            #region example-1
+            #region ListSchemaVersions-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.ListSchemaVersions(new ListSchemaVersionsRequest 
+            var response = client.ListSchemaVersions(new ListSchemaVersionsRequest
             {
                 SchemaId = "example.ColorControl",
                 Type = "capability"
@@ -233,10 +234,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsListSchemaVersions()
         {
-            #region example-2
+            #region ListSchemaVersions-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.ListSchemaVersions(new ListSchemaVersionsRequest 
+            var response = client.ListSchemaVersions(new ListSchemaVersionsRequest
             {
                 SemanticVersion = "34.56",
                 Type = "capability"
@@ -249,10 +250,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsListSchemaVersions()
         {
-            #region example-3
+            #region ListSchemaVersions-3
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.ListSchemaVersions(new ListSchemaVersionsRequest 
+            var response = client.ListSchemaVersions(new ListSchemaVersionsRequest
             {
                 Namespace = "matter",
                 SchemaId = "example.ColorControl",
@@ -265,25 +266,24 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsSendConnectorEvent()
         {
-            #region example-1
+            #region SendConnectorEvent-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.SendConnectorEvent(new SendConnectorEventRequest 
+            var response = client.SendConnectorEvent(new SendConnectorEventRequest
             {
                 ConnectorId = "MockConnectorId",
                 DeviceDiscoveryId = "358275hbk3qr",
                 Devices = new List<Device> {
                     new Device {
                         CapabilityReport = new MatterCapabilityReport {
-                            Version = "1.0.0",
                             Endpoints = new List<MatterCapabilityReportEndpoint> {
                                 new MatterCapabilityReportEndpoint {
                                     Clusters = new List<MatterCapabilityReportCluster> {
                                         new MatterCapabilityReportCluster {
                                             Attributes = new List<MatterCapabilityReportAttribute> {
                                                 new MatterCapabilityReportAttribute {
-                                                    Value = <data>,
-                                                    Id = "0x0000"
+                                                    Id = "0x0000",
+                                                    Value = "exampleString"
                                                 },
                                                 new MatterCapabilityReportAttribute { Id = "0x0001" },
                                                 new MatterCapabilityReportAttribute { Id = "0x0002" }
@@ -293,7 +293,6 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
                                                 "0x01"
                                             },
                                             Events = new List<string> {
-                                                
                                             },
                                             Id = "0x0201",
                                             Revision = 1
@@ -305,7 +304,8 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
                                     Id = "EP1"
                                 }
                             },
-                            NodeId = "1"
+                            NodeId = "1",
+                            Version = "1.0.0"
                         },
                         ConnectorDeviceId = "Mock-Connector-DeviceId-1",
                         ConnectorDeviceName = "Sample-User-device-1"
@@ -325,20 +325,23 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsSendConnectorEvent()
         {
-            #region example-2
+            #region SendConnectorEvent-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.SendConnectorEvent(new SendConnectorEventRequest 
+            var response = client.SendConnectorEvent(new SendConnectorEventRequest
             {
                 ConnectorId = "MockConnectorId",
                 MatterEndpoint = new MatterEndpoint {
                     Clusters = new List<MatterCluster> {
                         new MatterCluster {
-                            Attributes = new MatterAttributes {
-                                
+                            Attributes = new global::Amazon.Runtime.Documents.Document {
+                                { "0x0000", new global::Amazon.Runtime.Documents.Document {
+                                    73
+                                } },
+                                { "0x15570003", "exampleString" }
                             },
-                            Commands = new Dictionary<string, MatterFields> {
-                                { "0x03", new MatterFields {  } }
+                            Commands = new Dictionary<string, global::Amazon.Runtime.Documents.Document> {
+                                { "0x03", new global::Amazon.Runtime.Documents.Document(new Dictionary<string, global::Amazon.Runtime.Documents.Document>()) }
                             },
                             Id = "0x1003"
                         }
@@ -360,16 +363,18 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsSendConnectorEvent()
         {
-            #region example-3
+            #region SendConnectorEvent-3
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.SendConnectorEvent(new SendConnectorEventRequest 
+            var response = client.SendConnectorEvent(new SendConnectorEventRequest
             {
                 ConnectorId = "MockConnectorId",
                 MatterEndpoint = new MatterEndpoint {
                     Clusters = new List<MatterCluster> {
                         new MatterCluster {
-                            Attributes = new MatterAttributes {  },
+                            Attributes = new global::Amazon.Runtime.Documents.Document {
+                                { "0x0000", 73 }
+                            },
                             Id = "0x1003"
                         }
                     },
@@ -390,10 +395,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsUpdateCloudConnector()
         {
-            #region example-1
+            #region UpdateCloudConnector-1
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.UpdateCloudConnector(new UpdateCloudConnectorRequest 
+            var response = client.UpdateCloudConnector(new UpdateCloudConnectorRequest
             {
                 Identifier = "123456789012",
                 Name = "Connector for TP Link Cloud V2"
@@ -405,10 +410,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
 
         public void IoTManagedIntegrationsUpdateCloudConnector()
         {
-            #region example-2
+            #region UpdateCloudConnector-2
 
             var client = new AmazonIoTManagedIntegrationsClient();
-            var response = client.UpdateCloudConnector(new UpdateCloudConnectorRequest 
+            var response = client.UpdateCloudConnector(new UpdateCloudConnectorRequest
             {
                 Identifier = "123456789012",
                 Name = "Connector for Ring Cloud"
@@ -418,13 +423,10 @@ namespace AWSSDKDocSamples.Amazon.IoTManagedIntegrations.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

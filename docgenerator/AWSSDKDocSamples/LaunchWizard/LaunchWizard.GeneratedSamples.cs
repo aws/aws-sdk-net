@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,14 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
     {
         public void LaunchWizardCreateDeployment()
         {
-            #region example-1
+            #region CreateDeployment-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.CreateDeployment(new CreateDeploymentRequest 
+            var response = client.CreateDeployment(new CreateDeploymentRequest
             {
-                Name = "TestDeployment1",
                 DeploymentPatternName = "SapHanaSingle",
                 DryRun = false,
+                Name = "TestDeployment1",
                 Specifications = new Dictionary<string, string> {
                     { "CreateSecurityGroup", "No" },
                     { "DisableDeploymentRollback", "Yes" },
@@ -44,14 +45,14 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardCreateDeployment()
         {
-            #region example-2
+            #region CreateDeployment-2
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.CreateDeployment(new CreateDeploymentRequest 
+            var response = client.CreateDeployment(new CreateDeploymentRequest
             {
-                Name = "TestDeployment2",
                 DeploymentPatternName = "SapHanaSingle",
                 DryRun = false,
+                Name = "TestDeployment2",
                 Specifications = new Dictionary<string, string> {
                     { "CreateSecurityGroup", "No" },
                     { "DisableDeploymentRollback", "Yes" },
@@ -79,15 +80,15 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardDeleteDeployment()
         {
-            #region example-1
+            #region DeleteDeployment-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.DeleteDeployment(new DeleteDeploymentRequest 
+            var response = client.DeleteDeployment(new DeleteDeploymentRequest
             {
                 DeploymentId = "4c1b59c1-659c-467f-b6e9-6ef6f9d28e1d"
             });
 
-            string status = response.Status;
+            DeploymentStatus status = response.Status;
             string statusReason = response.StatusReason;
 
             #endregion
@@ -95,10 +96,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardGetDeployment()
         {
-            #region example-1
+            #region GetDeployment-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.GetDeployment(new GetDeploymentRequest 
+            var response = client.GetDeployment(new GetDeploymentRequest
             {
                 DeploymentId = "1111111-1111-1111-1111-111111111111"
             });
@@ -110,10 +111,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardGetWorkload()
         {
-            #region example-1
+            #region GetWorkload-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.GetWorkload(new GetWorkloadRequest 
+            var response = client.GetWorkload(new GetWorkloadRequest
             {
                 WorkloadName = "SAP"
             });
@@ -125,10 +126,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardGetWorkloadDeploymentPattern()
         {
-            #region example-1
+            #region GetWorkloadDeploymentPattern-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.GetWorkloadDeploymentPattern(new GetWorkloadDeploymentPatternRequest 
+            var response = client.GetWorkloadDeploymentPattern(new GetWorkloadDeploymentPatternRequest
             {
                 DeploymentPatternName = "adSelfManagedNewVpc",
                 WorkloadName = "MicrosoftActiveDirectory"
@@ -141,10 +142,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListDeploymentEvents()
         {
-            #region example-1
+            #region ListDeploymentEvents-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListDeploymentEvents(new ListDeploymentEventsRequest 
+            var response = client.ListDeploymentEvents(new ListDeploymentEventsRequest
             {
                 DeploymentId = "4c1b59c1-659c-467f-b6e9-6ef6f9d28e1d"
             });
@@ -156,10 +157,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListDeploymentPatternVersions()
         {
-            #region example-1
+            #region ListDeploymentPatternVersions-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListDeploymentPatternVersions(new ListDeploymentPatternVersionsRequest 
+            var response = client.ListDeploymentPatternVersions(new ListDeploymentPatternVersionsRequest
             {
                 DeploymentPatternName = "default",
                 WorkloadName = "security-automations-for-aws-waf"
@@ -172,10 +173,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListDeploymentPatternVersions()
         {
-            #region example-2
+            #region ListDeploymentPatternVersions-2
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListDeploymentPatternVersions(new ListDeploymentPatternVersionsRequest 
+            var response = client.ListDeploymentPatternVersions(new ListDeploymentPatternVersionsRequest
             {
                 DeploymentPatternName = "default",
                 Filters = new List<DeploymentPatternVersionFilter> {
@@ -196,10 +197,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListDeployments()
         {
-            #region example-1
+            #region ListDeployments-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListDeployments(new ListDeploymentsRequest 
+            var response = client.ListDeployments(new ListDeploymentsRequest
             {
                 Filters = new List<DeploymentFilter> {
                     new DeploymentFilter {
@@ -218,10 +219,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListTagsForResource()
         {
-            #region example-1
+            #region ListTagsForResource-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:launchwizard:us-east-1:123456789012:deployment/11111111-1111-1111-1111-111111111111"
             });
@@ -233,10 +234,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListWorkloadDeploymentPatterns()
         {
-            #region example-1
+            #region ListWorkloadDeploymentPatterns-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListWorkloadDeploymentPatterns(new ListWorkloadDeploymentPatternsRequest 
+            var response = client.ListWorkloadDeploymentPatterns(new ListWorkloadDeploymentPatternsRequest
             {
                 WorkloadName = "SAP"
             });
@@ -248,10 +249,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardListWorkloads()
         {
-            #region example-1
+            #region ListWorkloads-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.ListWorkloads(new ListWorkloadsRequest 
+            var response = client.ListWorkloads(new ListWorkloadsRequest
             {
             });
 
@@ -262,10 +263,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardTagResource()
         {
-            #region example-1
+            #region TagResource-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:launchwizard:us-east-1:123456789012:deployment/11111111-1111-1111-1111-111111111111",
                 Tags = new Dictionary<string, string> {
@@ -280,10 +281,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardUntagResource()
         {
-            #region example-1
+            #region UntagResource-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:launchwizard:us-east-1:123456789012:deployment/11111111-1111-1111-1111-111111111111",
                 TagKeys = new List<string> {
@@ -298,10 +299,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardUpdateDeployment()
         {
-            #region example-1
+            #region UpdateDeployment-1
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.UpdateDeployment(new UpdateDeploymentRequest 
+            var response = client.UpdateDeployment(new UpdateDeploymentRequest
             {
                 DeploymentId = "4c1b59c1-659c-467f-b6e9-6ef6f9d28e1d",
                 DryRun = false,
@@ -328,10 +329,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
 
         public void LaunchWizardUpdateDeployment()
         {
-            #region example-2
+            #region UpdateDeployment-2
 
             var client = new AmazonLaunchWizardClient();
-            var response = client.UpdateDeployment(new UpdateDeploymentRequest 
+            var response = client.UpdateDeployment(new UpdateDeploymentRequest
             {
                 DeploymentId = "4c1b59c1-659c-467f-b6e9-6ef6f9d28e1d",
                 DeploymentPatternVersionName = "2.0.0",
@@ -358,13 +359,10 @@ namespace AWSSDKDocSamples.Amazon.LaunchWizard.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

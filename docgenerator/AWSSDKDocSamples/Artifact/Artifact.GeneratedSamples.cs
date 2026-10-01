@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,14 +14,14 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
     {
         public void ArtifactCreateComplianceInquiry()
         {
-            #region example-1
+            #region CreateComplianceInquiry-1
 
             var client = new AmazonArtifactClient();
-            var response = client.CreateComplianceInquiry(new CreateComplianceInquiryRequest 
+            var response = client.CreateComplianceInquiry(new CreateComplianceInquiryRequest
             {
-                Name = "My Compliance Inquiry",
                 ClientToken = "unique-client-token-1234",
                 InquiryContent = new InquiryContent { Query = "Is my workload compliant with SOC 2?" },
+                Name = "My Compliance Inquiry",
                 SupportMode = "AI_ONLY"
             });
 
@@ -31,10 +32,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactExportComplianceInquiry()
         {
-            #region example-1
+            #region ExportComplianceInquiry-1
 
             var client = new AmazonArtifactClient();
-            var response = client.ExportComplianceInquiry(new ExportComplianceInquiryRequest 
+            var response = client.ExportComplianceInquiry(new ExportComplianceInquiryRequest
             {
                 ComplianceInquiryId = "compliance-inquiry-abcdef0123456789",
                 IncludeCitations = true,
@@ -51,10 +52,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactGetAccountSettings()
         {
-            #region example-1
+            #region GetAccountSettings-1
 
             var client = new AmazonArtifactClient();
-            var response = client.GetAccountSettings(new GetAccountSettingsRequest 
+            var response = client.GetAccountSettings(new GetAccountSettingsRequest
             {
             });
 
@@ -65,10 +66,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactGetComplianceInquiryMetadata()
         {
-            #region example-1
+            #region GetComplianceInquiryMetadata-1
 
             var client = new AmazonArtifactClient();
-            var response = client.GetComplianceInquiryMetadata(new GetComplianceInquiryMetadataRequest 
+            var response = client.GetComplianceInquiryMetadata(new GetComplianceInquiryMetadataRequest
             {
                 ComplianceInquiryId = "compliance-inquiry-abcdef0123456789"
             });
@@ -80,10 +81,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactGetReport()
         {
-            #region example-1
+            #region GetReport-1
 
             var client = new AmazonArtifactClient();
-            var response = client.GetReport(new GetReportRequest 
+            var response = client.GetReport(new GetReportRequest
             {
                 ReportId = "report-abcdef0123456789",
                 TermToken = "term-token-abcdefghijklm01234567890"
@@ -96,10 +97,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactGetReportMetadata()
         {
-            #region example-1
+            #region GetReportMetadata-1
 
             var client = new AmazonArtifactClient();
-            var response = client.GetReportMetadata(new GetReportMetadataRequest 
+            var response = client.GetReportMetadata(new GetReportMetadataRequest
             {
                 ReportId = "report-bqhUJF3FrQZsMJpb"
             });
@@ -111,10 +112,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactGetTermForReport()
         {
-            #region example-1
+            #region GetTermForReport-1
 
             var client = new AmazonArtifactClient();
-            var response = client.GetTermForReport(new GetTermForReportRequest 
+            var response = client.GetTermForReport(new GetTermForReportRequest
             {
                 ReportId = "report-abcdef0123456789"
             });
@@ -127,10 +128,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactListComplianceInquiries()
         {
-            #region example-1
+            #region ListComplianceInquiries-1
 
             var client = new AmazonArtifactClient();
-            var response = client.ListComplianceInquiries(new ListComplianceInquiriesRequest 
+            var response = client.ListComplianceInquiries(new ListComplianceInquiriesRequest
             {
                 MaxResults = 10
             });
@@ -142,10 +143,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactListComplianceInquiryQueries()
         {
-            #region example-1
+            #region ListComplianceInquiryQueries-1
 
             var client = new AmazonArtifactClient();
-            var response = client.ListComplianceInquiryQueries(new ListComplianceInquiryQueriesRequest 
+            var response = client.ListComplianceInquiryQueries(new ListComplianceInquiryQueriesRequest
             {
                 ComplianceInquiryId = "compliance-inquiry-abcdef0123456789",
                 MaxResults = 10
@@ -158,10 +159,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactListCustomerAgreements()
         {
-            #region example-1
+            #region ListCustomerAgreements-1
 
             var client = new AmazonArtifactClient();
-            var response = client.ListCustomerAgreements(new ListCustomerAgreementsRequest 
+            var response = client.ListCustomerAgreements(new ListCustomerAgreementsRequest
             {
             });
 
@@ -173,10 +174,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactListReports()
         {
-            #region example-1
+            #region ListReports-1
 
             var client = new AmazonArtifactClient();
-            var response = client.ListReports(new ListReportsRequest 
+            var response = client.ListReports(new ListReportsRequest
             {
             });
 
@@ -188,10 +189,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactListReportVersions()
         {
-            #region example-1
+            #region ListReportVersions-1
 
             var client = new AmazonArtifactClient();
-            var response = client.ListReportVersions(new ListReportVersionsRequest 
+            var response = client.ListReportVersions(new ListReportVersionsRequest
             {
                 ReportId = "report-abcdef0123456789"
             });
@@ -204,10 +205,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
         public void ArtifactPutAccountSettings()
         {
-            #region example-1
+            #region PutAccountSettings-1
 
             var client = new AmazonArtifactClient();
-            var response = client.PutAccountSettings(new PutAccountSettingsRequest 
+            var response = client.PutAccountSettings(new PutAccountSettingsRequest
             {
                 NotificationSubscriptionStatus = "SUBSCRIBED"
             });
@@ -217,13 +218,10 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

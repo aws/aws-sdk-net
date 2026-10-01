@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SagemakerJobRuntime.Generated
     {
         public void SagemakerJobRuntimeCompleteRollout()
         {
-            #region example-1
+            #region CompleteRollout-1
 
             var client = new AmazonSagemakerJobRuntimeClient();
-            var response = client.CompleteRollout(new CompleteRolloutRequest 
+            var response = client.CompleteRollout(new CompleteRolloutRequest
             {
                 JobArn = "arn:aws:sagemaker:us-east-1:123456789012:job/AgentRFT/my-training-job",
                 Status = "ready",
@@ -29,10 +30,10 @@ namespace AWSSDKDocSamples.Amazon.SagemakerJobRuntime.Generated
 
         public void SagemakerJobRuntimeSample()
         {
-            #region example-1
+            #region Sample-1
 
             var client = new AmazonSagemakerJobRuntimeClient();
-            var response = client.Sample(new SampleRequest 
+            var response = client.Sample(new SampleRequest
             {
                 Body = new MemoryStream(eyJtb2RlbCI6Im15LW1vZGVsIiwibWVzc2FnZXMiOlt7InJvbGUiOiJ1c2VyIiwiY29udGVudCI6IkhlbGxvIn1dfQ==),
                 JobArn = "arn:aws:sagemaker:us-east-1:123456789012:job/AgentRFT/my-training-job",
@@ -45,10 +46,10 @@ namespace AWSSDKDocSamples.Amazon.SagemakerJobRuntime.Generated
 
         public void SagemakerJobRuntimeSampleWithResponseStream()
         {
-            #region example-1
+            #region SampleWithResponseStream-1
 
             var client = new AmazonSagemakerJobRuntimeClient();
-            var response = client.SampleWithResponseStream(new SampleWithResponseStreamRequest 
+            var response = client.SampleWithResponseStream(new SampleWithResponseStreamRequest
             {
                 Body = new MemoryStream(eyJtb2RlbCI6Im15LW1vZGVsIiwibWVzc2FnZXMiOlt7InJvbGUiOiJ1c2VyIiwiY29udGVudCI6IkhlbGxvIn1dfQ==),
                 JobArn = "arn:aws:sagemaker:us-east-1:123456789012:job/AgentRFT/my-training-job",
@@ -61,10 +62,10 @@ namespace AWSSDKDocSamples.Amazon.SagemakerJobRuntime.Generated
 
         public void SagemakerJobRuntimeUpdateReward()
         {
-            #region example-1
+            #region UpdateReward-1
 
             var client = new AmazonSagemakerJobRuntimeClient();
-            var response = client.UpdateReward(new UpdateRewardRequest 
+            var response = client.UpdateReward(new UpdateRewardRequest
             {
                 JobArn = "arn:aws:sagemaker:us-east-1:123456789012:job/AgentRFT/my-training-job",
                 Rewards = new List<double> {
@@ -79,13 +80,10 @@ namespace AWSSDKDocSamples.Amazon.SagemakerJobRuntime.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

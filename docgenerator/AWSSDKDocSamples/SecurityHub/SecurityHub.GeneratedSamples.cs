@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
     {
         public void SecurityHubAcceptAdministratorInvitation()
         {
-            #region to-accept-an-invitation-be-a-member-account-1674849870467
+            #region AcceptAdministratorInvitation-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.AcceptAdministratorInvitation(new AcceptAdministratorInvitationRequest 
+            var response = client.AcceptAdministratorInvitation(new AcceptAdministratorInvitationRequest
             {
                 AdministratorId = "123456789012",
                 InvitationId = "7ab938c5d52d7904ad09f9e7c20cc4eb"
@@ -28,10 +29,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchDeleteAutomationRules()
         {
-            #region to-delete-one-or-more-automation-rules-1684769550318
+            #region BatchDeleteAutomationRules-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchDeleteAutomationRules(new BatchDeleteAutomationRulesRequest 
+            var response = client.BatchDeleteAutomationRules(new BatchDeleteAutomationRulesRequest
             {
                 AutomationRulesArns = new List<string> {
                     "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
@@ -47,10 +48,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchDisableStandards()
         {
-            #region to-disable-one-or-more-security-standards-1674851507200
+            #region BatchDisableStandards-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchDisableStandards(new BatchDisableStandardsRequest 
+            var response = client.BatchDisableStandards(new BatchDisableStandardsRequest
             {
                 StandardsSubscriptionArns = new List<string> {
                     "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1"
@@ -64,10 +65,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchEnableStandards()
         {
-            #region to-enable-security-standards-1683233792239
+            #region BatchEnableStandards-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchEnableStandards(new BatchEnableStandardsRequest 
+            var response = client.BatchEnableStandards(new BatchEnableStandardsRequest
             {
                 StandardsSubscriptionRequests = new List<StandardsSubscriptionRequest> {
                     new StandardsSubscriptionRequest { StandardsArn = "arn:aws:securityhub:us-west-1::standards/pci-dss/v/3.2.1" }
@@ -81,10 +82,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchGetAutomationRules()
         {
-            #region to-update-one-ore-more-automation-rules-1684771025347
+            #region BatchGetAutomationRules-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchGetAutomationRules(new BatchGetAutomationRulesRequest 
+            var response = client.BatchGetAutomationRules(new BatchGetAutomationRulesRequest
             {
                 AutomationRulesArns = new List<string> {
                     "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
@@ -99,10 +100,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchGetConfigurationPolicyAssociations()
         {
-            #region to-get-configuration-associations-for-a-batch-of-targets-1695178953302
+            #region BatchGetConfigurationPolicyAssociations-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchGetConfigurationPolicyAssociations(new BatchGetConfigurationPolicyAssociationsRequest 
+            var response = client.BatchGetConfigurationPolicyAssociations(new BatchGetConfigurationPolicyAssociationsRequest
             {
                 ConfigurationPolicyAssociationIdentifiers = new List<ConfigurationPolicyAssociation> {
                     new ConfigurationPolicyAssociation { Target = new Target { AccountId = "111122223333" } },
@@ -118,10 +119,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchGetSecurityControls()
         {
-            #region to-get-security-control-details--1683234478355
+            #region BatchGetSecurityControls-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchGetSecurityControls(new BatchGetSecurityControlsRequest 
+            var response = client.BatchGetSecurityControls(new BatchGetSecurityControlsRequest
             {
                 SecurityControlIds = new List<string> {
                     "ACM.1",
@@ -134,36 +135,12 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        public void SecurityHubBatchGetStandardsControlAssociations()
-        {
-            #region to-get-enablement-status-of-a-batch-of-controls-1683301618357
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.BatchGetStandardsControlAssociations(new BatchGetStandardsControlAssociationsRequest 
-            {
-                StandardsControlAssociationIds = new List<StandardsControlAssociationId> {
-                    new StandardsControlAssociationId {
-                        SecurityControlId = "CloudTrail.1",
-                        StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
-                    },
-                    new StandardsControlAssociationId {
-                        SecurityControlId = "CloudWatch.12",
-                        StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
-                    }
-                }
-            });
-
-            List<StandardsControlAssociationDetail> standardsControlAssociationDetails = response.StandardsControlAssociationDetails;
-
-            #endregion
-        }
-
         public void SecurityHubBatchImportFindings()
         {
-            #region to-import-security-findings-from-a-third-party-provider-to-security-hub-1675090935260
+            #region BatchImportFindings-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchImportFindings(new BatchImportFindingsRequest 
+            var response = client.BatchImportFindings(new BatchImportFindingsRequest
             {
                 Findings = new List<AwsSecurityFinding> {
                     new AwsSecurityFinding {
@@ -197,19 +174,19 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                 }
             });
 
-            int failedCount = response.FailedCount;
+            int? failedCount = response.FailedCount;
             List<ImportFindingsError> failedFindings = response.FailedFindings;
-            int successCount = response.SuccessCount;
+            int? successCount = response.SuccessCount;
 
             #endregion
         }
 
         public void SecurityHubBatchUpdateAutomationRules()
         {
-            #region to-update-one-ore-more-automation-rules-1684771025347
+            #region BatchUpdateAutomationRules-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchUpdateAutomationRules(new BatchUpdateAutomationRulesRequest 
+            var response = client.BatchUpdateAutomationRules(new BatchUpdateAutomationRulesRequest
             {
                 UpdateAutomationRulesRequestItems = new List<UpdateAutomationRulesRequestItem> {
                     new UpdateAutomationRulesRequestItem {
@@ -231,10 +208,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchUpdateFindings()
         {
-            #region to-update-security-hub-findings-1675183938248
+            #region BatchUpdateFindings-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchUpdateFindings(new BatchUpdateFindingsRequest 
+            var response = client.BatchUpdateFindings(new BatchUpdateFindingsRequest
             {
                 Confidence = 80,
                 Criticality = 80,
@@ -277,10 +254,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchUpdateStandardsControlAssociations()
         {
-            #region to-update-enablement-status-of-a-batch-of-controls-1683300378416
+            #region BatchUpdateStandardsControlAssociations-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.BatchUpdateStandardsControlAssociations(new BatchUpdateStandardsControlAssociationsRequest 
+            var response = client.BatchUpdateStandardsControlAssociations(new BatchUpdateStandardsControlAssociationsRequest
             {
                 StandardsControlAssociationUpdates = new List<StandardsControlAssociationUpdate> {
                     new StandardsControlAssociationUpdate {
@@ -305,10 +282,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubCreateActionTarget()
         {
-            #region to-create-a-custom-action-target-1675184966299
+            #region CreateActionTarget-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateActionTarget(new CreateActionTargetRequest 
+            var response = client.CreateActionTarget(new CreateActionTargetRequest
             {
                 Description = "Action to send the finding for remediation tracking",
                 Id = "Remediation",
@@ -322,10 +299,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubCreateAutomationRule()
         {
-            #region to-create-an-automation-rule-1684768393507
+            #region CreateAutomationRule-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateAutomationRule(new CreateAutomationRuleRequest 
+            var response = client.CreateAutomationRule(new CreateAutomationRuleRequest
             {
                 Actions = new List<AutomationRulesAction> {
                     new AutomationRulesAction {
@@ -388,10 +365,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubCreateConfigurationPolicy()
         {
-            #region to-create-a-configuration-policy-1695172470099
+            #region CreateConfigurationPolicy-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateConfigurationPolicy(new CreateConfigurationPolicyRequest 
+            var response = client.CreateConfigurationPolicy(new CreateConfigurationPolicyRequest
             {
                 ConfigurationPolicy = new Policy { SecurityHub = new SecurityHubPolicy {
                     EnabledStandardIdentifiers = new List<string> {
@@ -422,21 +399,21 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
             string arn = response.Arn;
             Policy configurationPolicy = response.ConfigurationPolicy;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string id = response.Id;
             string name = response.Name;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void SecurityHubCreateConnector()
         {
-            #region to-create-a-cspm-connector-1716000000000
+            #region CreateConnector-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateConnector(new CreateConnectorRequest 
+            var response = client.CreateConnector(new CreateConnectorRequest
             {
                 Description = "Connector for Azure tenant monitoring",
                 Name = "MyAzureConnector",
@@ -452,17 +429,17 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
             string connectorArn = response.ConnectorArn;
             string connectorId = response.ConnectorId;
-            string enablementStatus = response.EnablementStatus;
+            CspmEnablementStatus enablementStatus = response.EnablementStatus;
 
             #endregion
         }
 
         public void SecurityHubCreateFindingAggregator()
         {
-            #region to-enable-cross-region-aggregation-1674766716226
+            #region CreateFindingAggregator-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateFindingAggregator(new CreateFindingAggregatorRequest 
+            var response = client.CreateFindingAggregator(new CreateFindingAggregatorRequest
             {
                 RegionLinkingMode = "SPECIFIED_REGIONS",
                 Regions = new List<string> {
@@ -481,10 +458,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubCreateInsight()
         {
-            #region to-create-a-custom-insight-1675354046628
+            #region CreateInsight-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateInsight(new CreateInsightRequest 
+            var response = client.CreateInsight(new CreateInsightRequest
             {
                 Filters = new AwsSecurityFindingFilters {
                     ResourceType = new List<StringFilter> {
@@ -511,10 +488,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubCreateMembers()
         {
-            #region to-add-a-member-account-1675354709996
+            #region CreateMembers-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.CreateMembers(new CreateMembersRequest 
+            var response = client.CreateMembers(new CreateMembersRequest
             {
                 AccountDetails = new List<AccountDetails> {
                     new AccountDetails { AccountId = "123456789012" },
@@ -529,10 +506,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeclineInvitations()
         {
-            #region to-decline-invitation-to-become-a-member-account-1675448487605
+            #region DeclineInvitations-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeclineInvitations(new DeclineInvitationsRequest 
+            var response = client.DeclineInvitations(new DeclineInvitationsRequest
             {
                 AccountIds = new List<string> {
                     "123456789012",
@@ -547,10 +524,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeleteActionTarget()
         {
-            #region to-delete-a-custom-action-target-1675449272793
+            #region DeleteActionTarget-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteActionTarget(new DeleteActionTargetRequest 
+            var response = client.DeleteActionTarget(new DeleteActionTargetRequest
             {
                 ActionTargetArn = "arn:aws:securityhub:us-west-1:123456789012:action/custom/Remediation"
             });
@@ -562,10 +539,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeleteConfigurationPolicy()
         {
-            #region to-delete-a-configuration-policy-1695174614062
+            #region DeleteConfigurationPolicy-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteConfigurationPolicy(new DeleteConfigurationPolicyRequest 
+            var response = client.DeleteConfigurationPolicy(new DeleteConfigurationPolicyRequest
             {
                 Identifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
@@ -576,25 +553,25 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeleteConnector()
         {
-            #region to-delete-a-cspm-connector-1716000000000
+            #region DeleteConnector-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteConnector(new DeleteConnectorRequest 
+            var response = client.DeleteConnector(new DeleteConnectorRequest
             {
                 ConnectorId = "cspm-a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
 
-            string enablementStatus = response.EnablementStatus;
+            CspmEnablementStatus enablementStatus = response.EnablementStatus;
 
             #endregion
         }
 
         public void SecurityHubDeleteFindingAggregator()
         {
-            #region to-delete-a-finding-aggregator-1675701750629
+            #region DeleteFindingAggregator-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteFindingAggregator(new DeleteFindingAggregatorRequest 
+            var response = client.DeleteFindingAggregator(new DeleteFindingAggregatorRequest
             {
                 FindingAggregatorArn = "arn:aws:securityhub:us-east-1:123456789012:finding-aggregator/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
@@ -605,10 +582,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeleteInsight()
         {
-            #region to-delete-a-custom-insight-1675702697204
+            #region DeleteInsight-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteInsight(new DeleteInsightRequest 
+            var response = client.DeleteInsight(new DeleteInsightRequest
             {
                 InsightArn = "arn:aws:securityhub:us-west-1:123456789012:insight/123456789012/custom/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
@@ -620,10 +597,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeleteInvitations()
         {
-            #region to-delete-a-custom-insight-1675702697204
+            #region DeleteInvitations-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteInvitations(new DeleteInvitationsRequest 
+            var response = client.DeleteInvitations(new DeleteInvitationsRequest
             {
                 AccountIds = new List<string> {
                     "123456789012"
@@ -637,10 +614,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDeleteMembers()
         {
-            #region to-delete-a-member-account-1675883040513
+            #region DeleteMembers-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DeleteMembers(new DeleteMembersRequest 
+            var response = client.DeleteMembers(new DeleteMembersRequest
             {
                 AccountIds = new List<string> {
                     "123456789111",
@@ -655,10 +632,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDescribeActionTargets()
         {
-            #region to-return-custom-action-targets-1675883682038
+            #region DescribeActionTargets-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DescribeActionTargets(new DescribeActionTargetsRequest 
+            var response = client.DescribeActionTargets(new DescribeActionTargetsRequest
             {
                 ActionTargetArns = new List<string> {
                     "arn:aws:securityhub:us-west-1:123456789012:action/custom/Remediation"
@@ -672,16 +649,16 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDescribeHub()
         {
-            #region to-return-details-about-hub-resource-1675884542597
+            #region DescribeHub-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DescribeHub(new DescribeHubRequest 
+            var response = client.DescribeHub(new DescribeHubRequest
             {
                 HubArn = "arn:aws:securityhub:us-west-1:123456789012:hub/default"
             });
 
-            bool autoEnableControls = response.AutoEnableControls;
-            string controlFindingGenerator = response.ControlFindingGenerator;
+            bool? autoEnableControls = response.AutoEnableControls;
+            ControlFindingGenerator controlFindingGenerator = response.ControlFindingGenerator;
             string hubArn = response.HubArn;
             string subscribedAt = response.SubscribedAt;
 
@@ -690,16 +667,16 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDescribeOrganizationConfiguration()
         {
-            #region to-get-information-about-organization-configuration-1676059786304
+            #region DescribeOrganizationConfiguration-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DescribeOrganizationConfiguration(new DescribeOrganizationConfigurationRequest 
+            var response = client.DescribeOrganizationConfiguration(new DescribeOrganizationConfigurationRequest
             {
             });
 
-            bool autoEnable = response.AutoEnable;
-            string autoEnableStandards = response.AutoEnableStandards;
-            bool memberAccountLimitReached = response.MemberAccountLimitReached;
+            bool? autoEnable = response.AutoEnable;
+            AutoEnableStandards autoEnableStandards = response.AutoEnableStandards;
+            bool? memberAccountLimitReached = response.MemberAccountLimitReached;
             OrganizationConfiguration organizationConfiguration = response.OrganizationConfiguration;
 
             #endregion
@@ -707,10 +684,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDescribeProducts()
         {
-            #region to-get-information-about-security-hub-integrations-1676061228533
+            #region DescribeProducts-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DescribeProducts(new DescribeProductsRequest 
+            var response = client.DescribeProducts(new DescribeProductsRequest
             {
                 MaxResults = 1,
                 NextToken = "NULL",
@@ -725,24 +702,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDescribeStandards()
         {
-            #region to-get-available-security-hub-standards-1676307464661
+            #region DescribeStandards-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DescribeStandards(new DescribeStandardsRequest 
-            {
-            });
-
-            List<Standard> standards = response.Standards;
-
-            #endregion
-        }
-
-        public void SecurityHubDescribeStandards()
-        {
-            #region to-get-available-azure-standards-1719014400000
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.DescribeStandards(new DescribeStandardsRequest 
+            var response = client.DescribeStandards(new DescribeStandardsRequest
             {
                 Providers = new List<string> {
                     "Azure"
@@ -754,30 +717,26 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        public void SecurityHubDescribeStandardsControls()
+        public void SecurityHubDescribeStandards()
         {
-            #region to-get-a-list-of-controls-for-a-security-standard-1676308027759
+            #region DescribeStandards-2
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DescribeStandardsControls(new DescribeStandardsControlsRequest 
+            var response = client.DescribeStandards(new DescribeStandardsRequest
             {
-                MaxResults = 2,
-                NextToken = "NULL",
-                StandardsSubscriptionArn = "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1"
             });
 
-            List<StandardsControl> controls = response.Controls;
-            string nextToken = response.NextToken;
+            List<Standard> standards = response.Standards;
 
             #endregion
         }
 
         public void SecurityHubDisableImportFindingsForProduct()
         {
-            #region to-end-a-security-hub-integration-1676480035650
+            #region DisableImportFindingsForProduct-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DisableImportFindingsForProduct(new DisableImportFindingsForProductRequest 
+            var response = client.DisableImportFindingsForProduct(new DisableImportFindingsForProductRequest
             {
                 ProductSubscriptionArn = "arn:aws:securityhub:us-east-1:517716713836:product/crowdstrike/crowdstrike-falcon"
             });
@@ -788,10 +747,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDisableOrganizationAdminAccount()
         {
-            #region to-remove-a-security-hub-administrator-account-1676480521876
+            #region DisableOrganizationAdminAccount-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DisableOrganizationAdminAccount(new DisableOrganizationAdminAccountRequest 
+            var response = client.DisableOrganizationAdminAccount(new DisableOrganizationAdminAccountRequest
             {
                 AdminAccountId = "123456789012"
             });
@@ -802,10 +761,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDisableSecurityHub()
         {
-            #region to-deactivate-security-hub-1676583894245
+            #region DisableSecurityHub-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DisableSecurityHub(new DisableSecurityHubRequest 
+            var response = client.DisableSecurityHub(new DisableSecurityHubRequest
             {
             });
 
@@ -815,10 +774,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDisassociateFromAdministratorAccount()
         {
-            #region to-disassociate-requesting-account-from-administrator-account-1676584168509
+            #region DisassociateFromAdministratorAccount-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DisassociateFromAdministratorAccount(new DisassociateFromAdministratorAccountRequest 
+            var response = client.DisassociateFromAdministratorAccount(new DisassociateFromAdministratorAccountRequest
             {
             });
 
@@ -828,10 +787,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubDisassociateMembers()
         {
-            #region to-disassociate-member-accounts-from-administrator-account-1676918349164
+            #region DisassociateMembers-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.DisassociateMembers(new DisassociateMembersRequest 
+            var response = client.DisassociateMembers(new DisassociateMembersRequest
             {
                 AccountIds = new List<string> {
                     "123456789012",
@@ -845,10 +804,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubEnableImportFindingsForProduct()
         {
-            #region to-activate-an-integration-1676918918114
+            #region EnableImportFindingsForProduct-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.EnableImportFindingsForProduct(new EnableImportFindingsForProductRequest 
+            var response = client.EnableImportFindingsForProduct(new EnableImportFindingsForProductRequest
             {
                 ProductArn = "arn:aws:securityhub:us-east-1:517716713836:product/crowdstrike/crowdstrike-falcon"
             });
@@ -860,10 +819,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubEnableOrganizationAdminAccount()
         {
-            #region to-designate-a-security-hub-administrator-1676998319851
+            #region EnableOrganizationAdminAccount-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.EnableOrganizationAdminAccount(new EnableOrganizationAdminAccountRequest 
+            var response = client.EnableOrganizationAdminAccount(new EnableOrganizationAdminAccountRequest
             {
                 AdminAccountId = "123456789012"
             });
@@ -874,10 +833,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubEnableSecurityHub()
         {
-            #region to-activate-security-hub-1676998538599
+            #region EnableSecurityHub-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.EnableSecurityHub(new EnableSecurityHubRequest 
+            var response = client.EnableSecurityHub(new EnableSecurityHubRequest
             {
                 EnableDefaultStandards = true,
                 Tags = new Dictionary<string, string> {
@@ -889,79 +848,65 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        public void SecurityHubGetAdministratorAccount()
-        {
-            #region to-get-details-about-the-security-hub-administrator-account-1676998997182
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.GetAdministratorAccount(new GetAdministratorAccountRequest 
-            {
-            });
-
-            Invitation administrator = response.Administrator;
-
-            #endregion
-        }
-
         public void SecurityHubGetConfigurationPolicy()
         {
-            #region to-get-details-about-a-configuration-policy-1695173701103
+            #region GetConfigurationPolicy-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetConfigurationPolicy(new GetConfigurationPolicyRequest 
+            var response = client.GetConfigurationPolicy(new GetConfigurationPolicyRequest
             {
                 Identifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
 
             string arn = response.Arn;
             Policy configurationPolicy = response.ConfigurationPolicy;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string id = response.Id;
             string name = response.Name;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void SecurityHubGetConfigurationPolicyAssociation()
         {
-            #region to-get-details-about-a-configuration-association-1695177816371
+            #region GetConfigurationPolicyAssociation-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetConfigurationPolicyAssociation(new GetConfigurationPolicyAssociationRequest 
+            var response = client.GetConfigurationPolicyAssociation(new GetConfigurationPolicyAssociationRequest
             {
                 Target = new Target { AccountId = "111122223333" }
             });
 
-            string associationStatus = response.AssociationStatus;
+            ConfigurationPolicyAssociationStatus associationStatus = response.AssociationStatus;
             string associationStatusMessage = response.AssociationStatusMessage;
-            string associationType = response.AssociationType;
+            AssociationType associationType = response.AssociationType;
             string configurationPolicyId = response.ConfigurationPolicyId;
             string targetId = response.TargetId;
-            string targetType = response.TargetType;
-            DateTime updatedAt = response.UpdatedAt;
+            TargetType targetType = response.TargetType;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void SecurityHubGetConnector()
         {
-            #region to-get-a-cspm-connector-1716000000000
+            #region GetConnector-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetConnector(new GetConnectorRequest 
+            var response = client.GetConnector(new GetConnectorRequest
             {
                 ConnectorId = "cspm-a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
 
             string connectorArn = response.ConnectorArn;
             string connectorId = response.ConnectorId;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string createdBy = response.CreatedBy;
             string description = response.Description;
             CspmHealthCheck health = response.Health;
-            DateTime lastUpdatedAt = response.LastUpdatedAt;
+            DateTime? lastUpdatedAt = response.LastUpdatedAt;
             string name = response.Name;
             CspmProviderDetail providerDetail = response.ProviderDetail;
 
@@ -970,10 +915,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubGetEnabledStandards()
         {
-            #region to-return-a-list-of-enabled-standards-1677090731129
+            #region GetEnabledStandards-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetEnabledStandards(new GetEnabledStandardsRequest 
+            var response = client.GetEnabledStandards(new GetEnabledStandardsRequest
             {
                 StandardsSubscriptionArns = new List<string> {
                     "arn:aws:securityhub:us-west-1:123456789012:subscription/pci-dss/v/3.2.1"
@@ -987,10 +932,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubGetFindingAggregator()
         {
-            #region to-get-cross-region-aggregation-details-1677091474868
+            #region GetFindingAggregator-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetFindingAggregator(new GetFindingAggregatorRequest 
+            var response = client.GetFindingAggregator(new GetFindingAggregatorRequest
             {
                 FindingAggregatorArn = "arn:aws:securityhub:us-east-1:123456789012:finding-aggregator/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
@@ -1003,33 +948,12 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        public void SecurityHubGetFindingHistory()
-        {
-            #region to-get-finding-history-1680270012186
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.GetFindingHistory(new GetFindingHistoryRequest 
-            {
-                EndTime = DateTime.UtcNow,
-                FindingIdentifier = new AwsSecurityFindingIdentifier {
-                    Id = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
-                    ProductArn = "arn:aws:securityhub:us-west-2:123456789012:product/123456789012/default"
-                },
-                MaxResults = 2,
-                StartTime = new DateTime(2021, 9, 30, 3, 53, 35, DateTimeKind.Utc)
-            });
-
-            List<FindingHistoryRecord> records = response.Records;
-
-            #endregion
-        }
-
         public void SecurityHubGetFindings()
         {
-            #region to-get-a-list-of-findings-1677181069931
+            #region GetFindings-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetFindings(new GetFindingsRequest 
+            var response = client.GetFindings(new GetFindingsRequest
             {
                 Filters = new AwsSecurityFindingFilters { AwsAccountId = new List<StringFilter> {
                     new StringFilter {
@@ -1047,10 +971,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubGetInsightResults()
         {
-            #region to-get-the-results-of-a-security-hub-insight-1677182822019
+            #region GetInsightResults-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetInsightResults(new GetInsightResultsRequest 
+            var response = client.GetInsightResults(new GetInsightResultsRequest
             {
                 InsightArn = "arn:aws:securityhub:us-west-1:123456789012:insight/123456789012/custom/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
             });
@@ -1062,10 +986,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubGetInsights()
         {
-            #region to-get-details-of-a-security-hub-insight-1677774127203
+            #region GetInsights-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetInsights(new GetInsightsRequest 
+            var response = client.GetInsights(new GetInsightsRequest
             {
                 InsightArns = new List<string> {
                     "arn:aws:securityhub:us-west-1:123456789012:insight/123456789012/custom/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
@@ -1079,43 +1003,24 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubGetInvitationsCount()
         {
-            #region to-get-a-count-of-membership-invitations-1677774568793
+            #region GetInvitationsCount-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetInvitationsCount(new GetInvitationsCountRequest 
+            var response = client.GetInvitationsCount(new GetInvitationsCountRequest
             {
             });
 
-            int invitationsCount = response.InvitationsCount;
-
-            #endregion
-        }
-
-        public void SecurityHubGetMembers()
-        {
-            #region to-get-member-account-details-1677774956489
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.GetMembers(new GetMembersRequest 
-            {
-                AccountIds = new List<string> {
-                    "444455556666",
-                    "777788889999"
-                }
-            });
-
-            List<Member> members = response.Members;
-            List<Result> unprocessedAccounts = response.UnprocessedAccounts;
+            int? invitationsCount = response.InvitationsCount;
 
             #endregion
         }
 
         public void SecurityHubGetSecurityControlDefinition()
         {
-            #region to-get-the-definition-of-a-security-control-1699283789356
+            #region GetSecurityControlDefinition-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.GetSecurityControlDefinition(new GetSecurityControlDefinitionRequest 
+            var response = client.GetSecurityControlDefinition(new GetSecurityControlDefinitionRequest
             {
                 SecurityControlId = "EC2.4"
             });
@@ -1127,10 +1032,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubInviteMembers()
         {
-            #region to-invite-accounts-to-become-members-1677775500860
+            #region InviteMembers-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.InviteMembers(new InviteMembersRequest 
+            var response = client.InviteMembers(new InviteMembersRequest
             {
                 AccountIds = new List<string> {
                     "111122223333",
@@ -1145,10 +1050,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListAutomationRules()
         {
-            #region to-list-automation-rules-1684770582059
+            #region ListAutomationRules-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListAutomationRules(new ListAutomationRulesRequest 
+            var response = client.ListAutomationRules(new ListAutomationRulesRequest
             {
                 MaxResults = 2,
                 NextToken = "example-token"
@@ -1162,10 +1067,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListConfigurationPolicies()
         {
-            #region to-view-a-list-of-configuration-policies-1695173268602
+            #region ListConfigurationPolicies-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListConfigurationPolicies(new ListConfigurationPoliciesRequest 
+            var response = client.ListConfigurationPolicies(new ListConfigurationPoliciesRequest
             {
                 MaxResults = 1,
                 NextToken = "U1FsdGVkX19nBV2zoh+Gou9NgnulLJHWpn9xnG4hqSOhvw3o2JqjI86QDxdf"
@@ -1179,10 +1084,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListConfigurationPolicyAssociations()
         {
-            #region to-list-configuration-associations-1695177309791
+            #region ListConfigurationPolicyAssociations-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListConfigurationPolicyAssociations(new ListConfigurationPolicyAssociationsRequest 
+            var response = client.ListConfigurationPolicyAssociations(new ListConfigurationPolicyAssociationsRequest
             {
                 Filters = new AssociationFilters { AssociationType = "APPLIED" },
                 MaxResults = 1,
@@ -1197,10 +1102,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListConnectors()
         {
-            #region to-list-cspm-connectors-1716000000000
+            #region ListConnectors-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListConnectors(new ListConnectorsRequest 
+            var response = client.ListConnectors(new ListConnectorsRequest
             {
                 MaxResults = 10
             });
@@ -1212,10 +1117,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListEnabledProductsForImport()
         {
-            #region to-list-arns-for-enabled-integrations-1678294870020
+            #region ListEnabledProductsForImport-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListEnabledProductsForImport(new ListEnabledProductsForImportRequest 
+            var response = client.ListEnabledProductsForImport(new ListEnabledProductsForImportRequest
             {
             });
 
@@ -1226,10 +1131,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListFindingAggregators()
         {
-            #region to-update-the-enablement-status-of-a-standard-control-1678912506444
+            #region ListFindingAggregators-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListFindingAggregators(new ListFindingAggregatorsRequest 
+            var response = client.ListFindingAggregators(new ListFindingAggregatorsRequest
             {
             });
 
@@ -1238,40 +1143,12 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        public void SecurityHubListInvitations()
-        {
-            #region to-list-membership-invitations-to-calling-account-1678295758285
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.ListInvitations(new ListInvitationsRequest 
-            {
-            });
-
-            List<Invitation> invitations = response.Invitations;
-
-            #endregion
-        }
-
-        public void SecurityHubListMembers()
-        {
-            #region to-list-member-account-details-1678385639113
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.ListMembers(new ListMembersRequest 
-            {
-            });
-
-            List<Member> members = response.Members;
-
-            #endregion
-        }
-
         public void SecurityHubListOrganizationAdminAccounts()
         {
-            #region to-list-administrator-acccounts-for-an-organization-1678386548110
+            #region ListOrganizationAdminAccounts-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListOrganizationAdminAccounts(new ListOrganizationAdminAccountsRequest 
+            var response = client.ListOrganizationAdminAccounts(new ListOrganizationAdminAccountsRequest
             {
             });
 
@@ -1282,28 +1159,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubListSecurityControlDefinitions()
         {
-            #region to-list-security-controls-that-apply-to-a-standard-1678386912894
+            #region ListSecurityControlDefinitions-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest 
-            {
-                MaxResults = 3,
-                NextToken = "NULL",
-                StandardsArn = "arn:aws:securityhub:::standards/aws-foundational-security-best-practices/v/1.0.0"
-            });
-
-            string nextToken = response.NextToken;
-            List<SecurityControlDefinition> securityControlDefinitions = response.SecurityControlDefinitions;
-
-            #endregion
-        }
-
-        public void SecurityHubListSecurityControlDefinitions()
-        {
-            #region to-list-azure-security-control-definitions-1719014400000
-
-            var client = new AmazonSecurityHubClient();
-            var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest 
+            var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest
             {
                 MaxResults = 3,
                 Providers = new List<string> {
@@ -1317,27 +1176,30 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        public void SecurityHubListStandardsControlAssociations()
+        public void SecurityHubListSecurityControlDefinitions()
         {
-            #region to-say-whether-standard-1678389297986
+            #region ListSecurityControlDefinitions-2
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListStandardsControlAssociations(new ListStandardsControlAssociationsRequest 
+            var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest
             {
-                SecurityControlId = "S3.1"
+                MaxResults = 3,
+                NextToken = "NULL",
+                StandardsArn = "arn:aws:securityhub:::standards/aws-foundational-security-best-practices/v/1.0.0"
             });
 
-            List<StandardsControlAssociationSummary> standardsControlAssociationSummaries = response.StandardsControlAssociationSummaries;
+            string nextToken = response.NextToken;
+            List<SecurityControlDefinition> securityControlDefinitions = response.SecurityControlDefinitions;
 
             #endregion
         }
 
         public void SecurityHubListTagsForResource()
         {
-            #region to-get-a-list-of-tags-for-a-resource-1678477883796
+            #region ListTagsForResource-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:securityhub:us-west-1:123456789012:hub/default"
             });
@@ -1349,32 +1211,32 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubStartConfigurationPolicyAssociation()
         {
-            #region to-associate-a-configuration-with-a-target-1695176455638
+            #region StartConfigurationPolicyAssociation-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.StartConfigurationPolicyAssociation(new StartConfigurationPolicyAssociationRequest 
+            var response = client.StartConfigurationPolicyAssociation(new StartConfigurationPolicyAssociationRequest
             {
                 ConfigurationPolicyIdentifier = "arn:aws:securityhub:us-east-1:123456789012:configuration-policy/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
                 Target = new Target { AccountId = "111122223333" }
             });
 
-            string associationStatus = response.AssociationStatus;
+            ConfigurationPolicyAssociationStatus associationStatus = response.AssociationStatus;
             string associationStatusMessage = response.AssociationStatusMessage;
-            string associationType = response.AssociationType;
+            AssociationType associationType = response.AssociationType;
             string configurationPolicyId = response.ConfigurationPolicyId;
             string targetId = response.TargetId;
-            string targetType = response.TargetType;
-            DateTime updatedAt = response.UpdatedAt;
+            TargetType targetType = response.TargetType;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void SecurityHubStartConfigurationPolicyDisassociation()
         {
-            #region to-disassociate-a-configuration-from-a-target-1695177176748
+            #region StartConfigurationPolicyDisassociation-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.StartConfigurationPolicyDisassociation(new StartConfigurationPolicyDisassociationRequest 
+            var response = client.StartConfigurationPolicyDisassociation(new StartConfigurationPolicyDisassociationRequest
             {
                 ConfigurationPolicyIdentifier = "SELF_MANAGED_SECURITY_HUB",
                 Target = new Target { RootId = "r-f6g7h8i9j0example" }
@@ -1386,10 +1248,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubTagResource()
         {
-            #region to-tag-a-resource-1678478687320
+            #region TagResource-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:securityhub:us-west-1:123456789012:hub/default",
                 Tags = new Dictionary<string, string> {
@@ -1404,10 +1266,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUntagResource()
         {
-            #region to-remove-tags-from-a-resource-1678478903748
+            #region UntagResource-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:securityhub:us-west-1:123456789012:hub/default",
                 TagKeys = new List<string> {
@@ -1421,10 +1283,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateActionTarget()
         {
-            #region to-update-the-name-and-description-of-a-custom-action-target-1678814873015
+            #region UpdateActionTarget-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateActionTarget(new UpdateActionTargetRequest 
+            var response = client.UpdateActionTarget(new UpdateActionTargetRequest
             {
                 ActionTargetArn = "arn:aws:securityhub:us-west-1:123456789012:action/custom/Remediation",
                 Description = "Sends specified findings to customer service chat",
@@ -1437,10 +1299,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateConfigurationPolicy()
         {
-            #region to-update-a-configuration-policy-1695174120555
+            #region UpdateConfigurationPolicy-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateConfigurationPolicy(new UpdateConfigurationPolicyRequest 
+            var response = client.UpdateConfigurationPolicy(new UpdateConfigurationPolicyRequest
             {
                 ConfigurationPolicy = new Policy { SecurityHub = new SecurityHubPolicy {
                     EnabledStandardIdentifiers = new List<string> {
@@ -1474,21 +1336,21 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
             string arn = response.Arn;
             Policy configurationPolicy = response.ConfigurationPolicy;
-            DateTime createdAt = response.CreatedAt;
+            DateTime? createdAt = response.CreatedAt;
             string description = response.Description;
             string id = response.Id;
             string name = response.Name;
-            DateTime updatedAt = response.UpdatedAt;
+            DateTime? updatedAt = response.UpdatedAt;
 
             #endregion
         }
 
         public void SecurityHubUpdateConnector()
         {
-            #region to-update-a-cspm-connector-1716000000000
+            #region UpdateConnector-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateConnector(new UpdateConnectorRequest 
+            var response = client.UpdateConnector(new UpdateConnectorRequest
             {
                 ConnectorId = "cspm-a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
                 Description = "Updated connector description",
@@ -1508,18 +1370,18 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                 } }
             });
 
-            string connectorStatus = response.ConnectorStatus;
-            string enablementStatus = response.EnablementStatus;
+            CspmConnectorStatus connectorStatus = response.ConnectorStatus;
+            CspmEnablementStatus enablementStatus = response.EnablementStatus;
 
             #endregion
         }
 
         public void SecurityHubUpdateFindingAggregator()
         {
-            #region to-update-cross-region-aggregation-settings-1678815536396
+            #region UpdateFindingAggregator-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateFindingAggregator(new UpdateFindingAggregatorRequest 
+            var response = client.UpdateFindingAggregator(new UpdateFindingAggregatorRequest
             {
                 FindingAggregatorArn = "arn:aws:securityhub:us-east-1:123456789012:finding-aggregator/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
                 RegionLinkingMode = "SPECIFIED_REGIONS",
@@ -1539,10 +1401,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateInsight()
         {
-            #region to-update-an-insight-1678816280498
+            #region UpdateInsight-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateInsight(new UpdateInsightRequest 
+            var response = client.UpdateInsight(new UpdateInsightRequest
             {
                 Filters = new AwsSecurityFindingFilters {
                     ResourceType = new List<StringFilter> {
@@ -1568,10 +1430,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateOrganizationConfiguration()
         {
-            #region to-update-organization-configuration-1678911630846
+            #region UpdateOrganizationConfiguration-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateOrganizationConfiguration(new UpdateOrganizationConfigurationRequest 
+            var response = client.UpdateOrganizationConfiguration(new UpdateOrganizationConfigurationRequest
             {
                 AutoEnable = false,
                 AutoEnableStandards = "NONE",
@@ -1584,10 +1446,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateSecurityControl()
         {
-            #region to-update-security-control-properties-1699282942434
+            #region UpdateSecurityControl-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateSecurityControl(new UpdateSecurityControlRequest 
+            var response = client.UpdateSecurityControl(new UpdateSecurityControlRequest
             {
                 LastUpdateReason = "Comply with internal requirements",
                 Parameters = new Dictionary<string, ParameterConfiguration> {
@@ -1605,10 +1467,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateSecurityHubConfiguration()
         {
-            #region to-update-security-hub-settings-1678912194496
+            #region UpdateSecurityHubConfiguration-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateSecurityHubConfiguration(new UpdateSecurityHubConfigurationRequest 
+            var response = client.UpdateSecurityHubConfiguration(new UpdateSecurityHubConfigurationRequest
             {
                 AutoEnableControls = true,
                 ControlFindingGenerator = "SECURITY_CONTROL"
@@ -1620,10 +1482,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubUpdateStandardsControl()
         {
-            #region to-update-the-enablement-status-of-a-standard-control-1678912506444
+            #region UpdateStandardsControl-1
 
             var client = new AmazonSecurityHubClient();
-            var response = client.UpdateStandardsControl(new UpdateStandardsControlRequest 
+            var response = client.UpdateStandardsControl(new UpdateStandardsControlRequest
             {
                 ControlStatus = "DISABLED",
                 DisabledReason = "Not applicable to my service",
@@ -1634,13 +1496,10 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
     {
         public void WickrBatchCreateUser()
         {
-            #region example-1
+            #region BatchCreateUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.BatchCreateUser(new BatchCreateUserRequest 
+            var response = client.BatchCreateUser(new BatchCreateUserRequest
             {
                 ClientToken = "550e8400-e29b-41d4-a716-446655440000",
                 NetworkId = "12345678",
@@ -51,10 +52,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchCreateUser()
         {
-            #region example-2
+            #region BatchCreateUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.BatchCreateUser(new BatchCreateUserRequest 
+            var response = client.BatchCreateUser(new BatchCreateUserRequest
             {
                 NetworkId = "12345678",
                 Users = new List<BatchCreateUserRequestItem> {
@@ -85,10 +86,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchDeleteUser()
         {
-            #region example-1
+            #region BatchDeleteUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.BatchDeleteUser(new BatchDeleteUserRequest 
+            var response = client.BatchDeleteUser(new BatchDeleteUserRequest
             {
                 ClientToken = "6ba7b814-9dad-11d1-80b4-00c04fd430c8",
                 NetworkId = "12345678",
@@ -107,10 +108,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchDeleteUser()
         {
-            #region example-2
+            #region BatchDeleteUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.BatchDeleteUser(new BatchDeleteUserRequest 
+            var response = client.BatchDeleteUser(new BatchDeleteUserRequest
             {
                 NetworkId = "12345678",
                 UserIds = new List<string> {
@@ -128,10 +129,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchLookupUserUname()
         {
-            #region example-1
+            #region BatchLookupUserUname-1
 
             var client = new AmazonWickrClient();
-            var response = client.BatchLookupUserUname(new BatchLookupUserUnameRequest 
+            var response = client.BatchLookupUserUname(new BatchLookupUserUnameRequest
             {
                 ClientToken = "f47ac10b-58cc-4372-a567-0e02b2c3d479",
                 NetworkId = "12345678",
@@ -150,10 +151,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchLookupUserUname()
         {
-            #region example-2
+            #region BatchLookupUserUname-2
 
             var client = new AmazonWickrClient();
-            var response = client.BatchLookupUserUname(new BatchLookupUserUnameRequest 
+            var response = client.BatchLookupUserUname(new BatchLookupUserUnameRequest
             {
                 NetworkId = "12345678",
                 Unames = new List<string> {
@@ -171,10 +172,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchReinviteUser()
         {
-            #region example-1
+            #region BatchReinviteUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.BatchReinviteUser(new BatchReinviteUserRequest 
+            var response = client.BatchReinviteUser(new BatchReinviteUserRequest
             {
                 NetworkId = "12345678",
                 UserIds = new List<string> {
@@ -191,10 +192,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchReinviteUser()
         {
-            #region example-2
+            #region BatchReinviteUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.BatchReinviteUser(new BatchReinviteUserRequest 
+            var response = client.BatchReinviteUser(new BatchReinviteUserRequest
             {
                 NetworkId = "12345678",
                 UserIds = new List<string> {
@@ -211,10 +212,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchReinviteUser()
         {
-            #region example-3
+            #region BatchReinviteUser-3
 
             var client = new AmazonWickrClient();
-            var response = client.BatchReinviteUser(new BatchReinviteUserRequest 
+            var response = client.BatchReinviteUser(new BatchReinviteUserRequest
             {
                 NetworkId = "12345678",
                 UserIds = new List<string> {
@@ -230,10 +231,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchResetDevicesForUser()
         {
-            #region example-1
+            #region BatchResetDevicesForUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.BatchResetDevicesForUser(new BatchResetDevicesForUserRequest 
+            var response = client.BatchResetDevicesForUser(new BatchResetDevicesForUserRequest
             {
                 AppIds = new List<string> {
                     "d3135a42dcb6437780b16c3ca9581fe64e6822773cd6b965d25fc9929c89aca6",
@@ -252,10 +253,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchResetDevicesForUser()
         {
-            #region example-2
+            #region BatchResetDevicesForUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.BatchResetDevicesForUser(new BatchResetDevicesForUserRequest 
+            var response = client.BatchResetDevicesForUser(new BatchResetDevicesForUserRequest
             {
                 AppIds = new List<string> {
                     "d3135a42dcb6437780b16c3ca9581fe64e6822773cd6b965d25fc9929c89aca6",
@@ -274,10 +275,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchResetDevicesForUser()
         {
-            #region example-3
+            #region BatchResetDevicesForUser-3
 
             var client = new AmazonWickrClient();
-            var response = client.BatchResetDevicesForUser(new BatchResetDevicesForUserRequest 
+            var response = client.BatchResetDevicesForUser(new BatchResetDevicesForUserRequest
             {
                 AppIds = new List<string> {
                     "d3135a42dcb6437780b16c3ca9581fe64e6822773cd6b965d25fc9929c89aca6"
@@ -292,10 +293,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchToggleUserSuspendStatus()
         {
-            #region example-1
+            #region BatchToggleUserSuspendStatus-1
 
             var client = new AmazonWickrClient();
-            var response = client.BatchToggleUserSuspendStatus(new BatchToggleUserSuspendStatusRequest 
+            var response = client.BatchToggleUserSuspendStatus(new BatchToggleUserSuspendStatusRequest
             {
                 ClientToken = "6ba7b815-9dad-11d1-80b4-00c04fd430c8",
                 NetworkId = "12345678",
@@ -315,10 +316,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrBatchToggleUserSuspendStatus()
         {
-            #region example-2
+            #region BatchToggleUserSuspendStatus-2
 
             var client = new AmazonWickrClient();
-            var response = client.BatchToggleUserSuspendStatus(new BatchToggleUserSuspendStatusRequest 
+            var response = client.BatchToggleUserSuspendStatus(new BatchToggleUserSuspendStatusRequest
             {
                 NetworkId = "12345678",
                 Suspend = false,
@@ -337,10 +338,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateBot()
         {
-            #region example-1
+            #region CreateBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.CreateBot(new CreateBotRequest 
+            var response = client.CreateBot(new CreateBotRequest
             {
                 Challenge = "SecureP@ssw0rd123",
                 DisplayName = "Analytics Bot",
@@ -360,10 +361,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateBot()
         {
-            #region example-2
+            #region CreateBot-2
 
             var client = new AmazonWickrClient();
-            var response = client.CreateBot(new CreateBotRequest 
+            var response = client.CreateBot(new CreateBotRequest
             {
                 Challenge = "SecureP@ssw0rd123",
                 DisplayName = "Support Bot",
@@ -378,10 +379,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateBot()
         {
-            #region example-3
+            #region CreateBot-3
 
             var client = new AmazonWickrClient();
-            var response = client.CreateBot(new CreateBotRequest 
+            var response = client.CreateBot(new CreateBotRequest
             {
                 Challenge = "SecureP@ssw0rd123",
                 DisplayName = "Test Bot",
@@ -396,10 +397,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateDataRetentionBot()
         {
-            #region example-1
+            #region CreateDataRetentionBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.CreateDataRetentionBot(new CreateDataRetentionBotRequest 
+            var response = client.CreateDataRetentionBot(new CreateDataRetentionBotRequest
             {
                 NetworkId = "12345678"
             });
@@ -411,10 +412,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateDataRetentionBot()
         {
-            #region example-2
+            #region CreateDataRetentionBot-2
 
             var client = new AmazonWickrClient();
-            var response = client.CreateDataRetentionBot(new CreateDataRetentionBotRequest 
+            var response = client.CreateDataRetentionBot(new CreateDataRetentionBotRequest
             {
                 NetworkId = "12345678"
             });
@@ -425,10 +426,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateDataRetentionBotChallenge()
         {
-            #region example-1
+            #region CreateDataRetentionBotChallenge-1
 
             var client = new AmazonWickrClient();
-            var response = client.CreateDataRetentionBotChallenge(new CreateDataRetentionBotChallengeRequest 
+            var response = client.CreateDataRetentionBotChallenge(new CreateDataRetentionBotChallengeRequest
             {
                 NetworkId = "12345678"
             });
@@ -440,10 +441,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateNetwork()
         {
-            #region example-1
+            #region CreateNetwork-1
 
             var client = new AmazonWickrClient();
-            var response = client.CreateNetwork(new CreateNetworkRequest 
+            var response = client.CreateNetwork(new CreateNetworkRequest
             {
                 AccessLevel = "PREMIUM",
                 EnablePremiumFreeTrial = false,
@@ -458,10 +459,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateNetwork()
         {
-            #region example-2
+            #region CreateNetwork-2
 
             var client = new AmazonWickrClient();
-            var response = client.CreateNetwork(new CreateNetworkRequest 
+            var response = client.CreateNetwork(new CreateNetworkRequest
             {
                 AccessLevel = "PREMIUM",
                 EnablePremiumFreeTrial = true,
@@ -476,10 +477,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateNetwork()
         {
-            #region example-3
+            #region CreateNetwork-3
 
             var client = new AmazonWickrClient();
-            var response = client.CreateNetwork(new CreateNetworkRequest 
+            var response = client.CreateNetwork(new CreateNetworkRequest
             {
                 AccessLevel = "STANDARD",
                 NetworkName = "This network name is way too long"
@@ -491,10 +492,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateSecurityGroup()
         {
-            #region example-1
+            #region CreateSecurityGroup-1
 
             var client = new AmazonWickrClient();
-            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest 
+            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest
             {
                 Name = "engineering",
                 NetworkId = "12345678",
@@ -511,10 +512,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrCreateSecurityGroup()
         {
-            #region example-2
+            #region CreateSecurityGroup-2
 
             var client = new AmazonWickrClient();
-            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest 
+            var response = client.CreateSecurityGroup(new CreateSecurityGroupRequest
             {
                 Name = "",
                 NetworkId = "12345678",
@@ -527,10 +528,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteBot()
         {
-            #region example-1
+            #region DeleteBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteBot(new DeleteBotRequest 
+            var response = client.DeleteBot(new DeleteBotRequest
             {
                 BotId = "98765",
                 NetworkId = "12345678"
@@ -543,10 +544,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteBot()
         {
-            #region example-2
+            #region DeleteBot-2
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteBot(new DeleteBotRequest 
+            var response = client.DeleteBot(new DeleteBotRequest
             {
                 BotId = "99999",
                 NetworkId = "12345678"
@@ -558,10 +559,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteDataRetentionBot()
         {
-            #region example-1
+            #region DeleteDataRetentionBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteDataRetentionBot(new DeleteDataRetentionBotRequest 
+            var response = client.DeleteDataRetentionBot(new DeleteDataRetentionBotRequest
             {
                 NetworkId = "12345678"
             });
@@ -573,10 +574,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteNetwork()
         {
-            #region example-1
+            #region DeleteNetwork-1
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteNetwork(new DeleteNetworkRequest 
+            var response = client.DeleteNetwork(new DeleteNetworkRequest
             {
                 NetworkId = "12345678"
             });
@@ -588,10 +589,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteNetwork()
         {
-            #region example-2
+            #region DeleteNetwork-2
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteNetwork(new DeleteNetworkRequest 
+            var response = client.DeleteNetwork(new DeleteNetworkRequest
             {
                 NetworkId = "99999999"
             });
@@ -602,10 +603,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteSecurityGroup()
         {
-            #region example-1
+            #region DeleteSecurityGroup-1
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest 
+            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
             {
                 GroupId = "def67890",
                 NetworkId = "12345678"
@@ -620,10 +621,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrDeleteSecurityGroup()
         {
-            #region example-2
+            #region DeleteSecurityGroup-2
 
             var client = new AmazonWickrClient();
-            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest 
+            var response = client.DeleteSecurityGroup(new DeleteSecurityGroupRequest
             {
                 GroupId = "invalid99",
                 NetworkId = "12345678"
@@ -635,10 +636,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetBot()
         {
-            #region example-1
+            #region GetBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetBot(new GetBotRequest 
+            var response = client.GetBot(new GetBotRequest
             {
                 BotId = "98765",
                 NetworkId = "12345678"
@@ -647,11 +648,11 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
             string botId = response.BotId;
             string displayName = response.DisplayName;
             string groupId = response.GroupId;
-            bool hasChallenge = response.HasChallenge;
+            bool? hasChallenge = response.HasChallenge;
             string lastLogin = response.LastLogin;
             string pubkey = response.Pubkey;
-            int status = response.Status;
-            bool suspended = response.Suspended;
+            int? status = response.Status;
+            bool? suspended = response.Suspended;
             string uname = response.Uname;
             string username = response.Username;
 
@@ -660,10 +661,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetBot()
         {
-            #region example-2
+            #region GetBot-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetBot(new GetBotRequest 
+            var response = client.GetBot(new GetBotRequest
             {
                 BotId = "99999",
                 NetworkId = "12345678"
@@ -675,84 +676,84 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetBotsCount()
         {
-            #region example-1
+            #region GetBotsCount-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetBotsCount(new GetBotsCountRequest 
+            var response = client.GetBotsCount(new GetBotsCountRequest
             {
                 NetworkId = "12345678"
             });
 
-            int active = response.Active;
-            int pending = response.Pending;
-            int total = response.Total;
+            int? active = response.Active;
+            int? pending = response.Pending;
+            int? total = response.Total;
 
             #endregion
         }
 
         public void WickrGetBotsCount()
         {
-            #region example-2
+            #region GetBotsCount-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetBotsCount(new GetBotsCountRequest 
+            var response = client.GetBotsCount(new GetBotsCountRequest
             {
                 NetworkId = "12345678"
             });
 
-            int active = response.Active;
-            int pending = response.Pending;
-            int total = response.Total;
+            int? active = response.Active;
+            int? pending = response.Pending;
+            int? total = response.Total;
 
             #endregion
         }
 
         public void WickrGetDataRetentionBot()
         {
-            #region example-1
+            #region GetDataRetentionBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetDataRetentionBot(new GetDataRetentionBotRequest 
+            var response = client.GetDataRetentionBot(new GetDataRetentionBotRequest
             {
                 NetworkId = "12345678"
             });
 
-            bool botExists = response.BotExists;
+            bool? botExists = response.BotExists;
             string botName = response.BotName;
-            bool isBotActive = response.IsBotActive;
-            bool isDataRetentionBotRegistered = response.IsDataRetentionBotRegistered;
-            bool isDataRetentionServiceEnabled = response.IsDataRetentionServiceEnabled;
-            bool isPubkeyMsgAcked = response.IsPubkeyMsgAcked;
+            bool? isBotActive = response.IsBotActive;
+            bool? isDataRetentionBotRegistered = response.IsDataRetentionBotRegistered;
+            bool? isDataRetentionServiceEnabled = response.IsDataRetentionServiceEnabled;
+            bool? isPubkeyMsgAcked = response.IsPubkeyMsgAcked;
 
             #endregion
         }
 
         public void WickrGetDataRetentionBot()
         {
-            #region example-2
+            #region GetDataRetentionBot-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetDataRetentionBot(new GetDataRetentionBotRequest 
+            var response = client.GetDataRetentionBot(new GetDataRetentionBotRequest
             {
                 NetworkId = "12345678"
             });
 
-            bool botExists = response.BotExists;
+            bool? botExists = response.BotExists;
             string botName = response.BotName;
-            bool isBotActive = response.IsBotActive;
-            bool isDataRetentionBotRegistered = response.IsDataRetentionBotRegistered;
-            bool isDataRetentionServiceEnabled = response.IsDataRetentionServiceEnabled;
-            bool isPubkeyMsgAcked = response.IsPubkeyMsgAcked;
+            bool? isBotActive = response.IsBotActive;
+            bool? isDataRetentionBotRegistered = response.IsDataRetentionBotRegistered;
+            bool? isDataRetentionServiceEnabled = response.IsDataRetentionServiceEnabled;
+            bool? isPubkeyMsgAcked = response.IsPubkeyMsgAcked;
 
             #endregion
         }
 
         public void WickrGetGuestUserHistoryCount()
         {
-            #region example-1
+            #region GetGuestUserHistoryCount-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetGuestUserHistoryCount(new GetGuestUserHistoryCountRequest 
+            var response = client.GetGuestUserHistoryCount(new GetGuestUserHistoryCountRequest
             {
                 NetworkId = "12345678"
             });
@@ -764,10 +765,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetGuestUserHistoryCount()
         {
-            #region example-2
+            #region GetGuestUserHistoryCount-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetGuestUserHistoryCount(new GetGuestUserHistoryCountRequest 
+            var response = client.GetGuestUserHistoryCount(new GetGuestUserHistoryCountRequest
             {
                 NetworkId = "87654321"
             });
@@ -779,31 +780,31 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetNetwork()
         {
-            #region example-1
+            #region GetNetwork-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetNetwork(new GetNetworkRequest 
+            var response = client.GetNetwork(new GetNetworkRequest
             {
                 NetworkId = "12345678"
             });
 
-            string accessLevel = response.AccessLevel;
+            AccessLevel accessLevel = response.AccessLevel;
             string awsAccountId = response.AwsAccountId;
-            int migrationState = response.MigrationState;
+            int? migrationState = response.MigrationState;
             string networkArn = response.NetworkArn;
             string networkId = response.NetworkId;
             string networkName = response.NetworkName;
-            int standing = response.Standing;
+            int? standing = response.Standing;
 
             #endregion
         }
 
         public void WickrGetNetwork()
         {
-            #region example-2
+            #region GetNetwork-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetNetwork(new GetNetworkRequest 
+            var response = client.GetNetwork(new GetNetworkRequest
             {
                 NetworkId = "99999999"
             });
@@ -814,10 +815,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetNetworkSettings()
         {
-            #region example-1
+            #region GetNetworkSettings-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetNetworkSettings(new GetNetworkSettingsRequest 
+            var response = client.GetNetworkSettings(new GetNetworkSettingsRequest
             {
                 NetworkId = "12345678"
             });
@@ -829,10 +830,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetNetworkSettings()
         {
-            #region example-2
+            #region GetNetworkSettings-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetNetworkSettings(new GetNetworkSettingsRequest 
+            var response = client.GetNetworkSettings(new GetNetworkSettingsRequest
             {
                 NetworkId = "87654321"
             });
@@ -844,10 +845,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetNetworkSettings()
         {
-            #region example-3
+            #region GetNetworkSettings-3
 
             var client = new AmazonWickrClient();
-            var response = client.GetNetworkSettings(new GetNetworkSettingsRequest 
+            var response = client.GetNetworkSettings(new GetNetworkSettingsRequest
             {
                 NetworkId = "99999999"
             });
@@ -858,10 +859,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetOidcInfo()
         {
-            #region example-1
+            #region GetOidcInfo-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetOidcInfo(new GetOidcInfoRequest 
+            var response = client.GetOidcInfo(new GetOidcInfoRequest
             {
                 NetworkId = "12345678"
             });
@@ -873,10 +874,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetOidcInfo()
         {
-            #region example-2
+            #region GetOidcInfo-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetOidcInfo(new GetOidcInfoRequest 
+            var response = client.GetOidcInfo(new GetOidcInfoRequest
             {
                 NetworkId = "12345678"
             });
@@ -888,10 +889,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetOpentdfConfig()
         {
-            #region example-1
+            #region GetOpentdfConfig-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetOpentdfConfig(new GetOpentdfConfigRequest 
+            var response = client.GetOpentdfConfig(new GetOpentdfConfigRequest
             {
                 NetworkId = "12345678"
             });
@@ -906,10 +907,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetOpentdfConfig()
         {
-            #region example-2
+            #region GetOpentdfConfig-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetOpentdfConfig(new GetOpentdfConfigRequest 
+            var response = client.GetOpentdfConfig(new GetOpentdfConfigRequest
             {
                 NetworkId = "12345678"
             });
@@ -924,10 +925,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetSecurityGroup()
         {
-            #region example-1
+            #region GetSecurityGroup-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetSecurityGroup(new GetSecurityGroupRequest 
+            var response = client.GetSecurityGroup(new GetSecurityGroupRequest
             {
                 GroupId = "abc12345",
                 NetworkId = "12345678"
@@ -940,10 +941,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetSecurityGroup()
         {
-            #region example-2
+            #region GetSecurityGroup-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetSecurityGroup(new GetSecurityGroupRequest 
+            var response = client.GetSecurityGroup(new GetSecurityGroupRequest
             {
                 GroupId = "invalid99",
                 NetworkId = "12345678"
@@ -955,23 +956,23 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetUser()
         {
-            #region example-1
+            #region GetUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetUser(new GetUserRequest 
+            var response = client.GetUser(new GetUserRequest
             {
                 NetworkId = "12345678",
                 UserId = "12345"
             });
 
             string firstName = response.FirstName;
-            bool isAdmin = response.IsAdmin;
-            int lastActivity = response.LastActivity;
-            int lastLogin = response.LastLogin;
+            bool? isAdmin = response.IsAdmin;
+            int? lastActivity = response.LastActivity;
+            int? lastLogin = response.LastLogin;
             string lastName = response.LastName;
             List<string> securityGroupIds = response.SecurityGroupIds;
-            int status = response.Status;
-            bool suspended = response.Suspended;
+            int? status = response.Status;
+            bool? suspended = response.Suspended;
             string userId = response.UserId;
             string username = response.Username;
 
@@ -980,25 +981,25 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetUser()
         {
-            #region example-2
+            #region GetUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetUser(new GetUserRequest 
+            var response = client.GetUser(new GetUserRequest
             {
-                EndTime = DateTime.UtcNow,
+                EndTime = new DateTime(2024, 1, 17, 14, 0, 0, DateTimeKind.Utc),
                 NetworkId = "12345678",
-                StartTime = DateTime.UtcNow,
+                StartTime = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc),
                 UserId = "12345"
             });
 
             string firstName = response.FirstName;
-            bool isAdmin = response.IsAdmin;
-            int lastActivity = response.LastActivity;
-            int lastLogin = response.LastLogin;
+            bool? isAdmin = response.IsAdmin;
+            int? lastActivity = response.LastActivity;
+            int? lastLogin = response.LastLogin;
             string lastName = response.LastName;
             List<string> securityGroupIds = response.SecurityGroupIds;
-            int status = response.Status;
-            bool suspended = response.Suspended;
+            int? status = response.Status;
+            bool? suspended = response.Suspended;
             string userId = response.UserId;
             string username = response.Username;
 
@@ -1007,10 +1008,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetUser()
         {
-            #region example-3
+            #region GetUser-3
 
             var client = new AmazonWickrClient();
-            var response = client.GetUser(new GetUserRequest 
+            var response = client.GetUser(new GetUserRequest
             {
                 NetworkId = "12345678",
                 UserId = "99999"
@@ -1022,10 +1023,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetUser()
         {
-            #region example-4
+            #region GetUser-4
 
             var client = new AmazonWickrClient();
-            var response = client.GetUser(new GetUserRequest 
+            var response = client.GetUser(new GetUserRequest
             {
                 NetworkId = "12345678",
                 UserId = "99999"
@@ -1037,48 +1038,48 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrGetUsersCount()
         {
-            #region example-1
+            #region GetUsersCount-1
 
             var client = new AmazonWickrClient();
-            var response = client.GetUsersCount(new GetUsersCountRequest 
+            var response = client.GetUsersCount(new GetUsersCountRequest
             {
                 NetworkId = "12345678"
             });
 
-            int active = response.Active;
-            int pending = response.Pending;
-            int rejected = response.Rejected;
-            int remaining = response.Remaining;
-            int total = response.Total;
+            int? active = response.Active;
+            int? pending = response.Pending;
+            int? rejected = response.Rejected;
+            int? remaining = response.Remaining;
+            int? total = response.Total;
 
             #endregion
         }
 
         public void WickrGetUsersCount()
         {
-            #region example-2
+            #region GetUsersCount-2
 
             var client = new AmazonWickrClient();
-            var response = client.GetUsersCount(new GetUsersCountRequest 
+            var response = client.GetUsersCount(new GetUsersCountRequest
             {
                 NetworkId = "87654321"
             });
 
-            int active = response.Active;
-            int pending = response.Pending;
-            int rejected = response.Rejected;
-            int remaining = response.Remaining;
-            int total = response.Total;
+            int? active = response.Active;
+            int? pending = response.Pending;
+            int? rejected = response.Rejected;
+            int? remaining = response.Remaining;
+            int? total = response.Total;
 
             #endregion
         }
 
         public void WickrListBlockedGuestUsers()
         {
-            #region example-1
+            #region ListBlockedGuestUsers-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListBlockedGuestUsers(new ListBlockedGuestUsersRequest 
+            var response = client.ListBlockedGuestUsers(new ListBlockedGuestUsersRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678",
@@ -1094,10 +1095,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListBlockedGuestUsers()
         {
-            #region example-2
+            #region ListBlockedGuestUsers-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListBlockedGuestUsers(new ListBlockedGuestUsersRequest 
+            var response = client.ListBlockedGuestUsers(new ListBlockedGuestUsersRequest
             {
                 NetworkId = "12345678",
                 Username = "john.doe@example.com"
@@ -1110,10 +1111,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListBlockedGuestUsers()
         {
-            #region example-3
+            #region ListBlockedGuestUsers-3
 
             var client = new AmazonWickrClient();
-            var response = client.ListBlockedGuestUsers(new ListBlockedGuestUsersRequest 
+            var response = client.ListBlockedGuestUsers(new ListBlockedGuestUsersRequest
             {
                 NetworkId = "12345678"
             });
@@ -1125,10 +1126,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListBots()
         {
-            #region example-1
+            #region ListBots-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListBots(new ListBotsRequest 
+            var response = client.ListBots(new ListBotsRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678",
@@ -1144,10 +1145,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListBots()
         {
-            #region example-2
+            #region ListBots-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListBots(new ListBotsRequest 
+            var response = client.ListBots(new ListBotsRequest
             {
                 DisplayName = "Support",
                 MaxResults = 10,
@@ -1162,10 +1163,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListDevicesForUser()
         {
-            #region example-1
+            #region ListDevicesForUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListDevicesForUser(new ListDevicesForUserRequest 
+            var response = client.ListDevicesForUser(new ListDevicesForUserRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678",
@@ -1181,10 +1182,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListDevicesForUser()
         {
-            #region example-2
+            #region ListDevicesForUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListDevicesForUser(new ListDevicesForUserRequest 
+            var response = client.ListDevicesForUser(new ListDevicesForUserRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678",
@@ -1200,10 +1201,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListDevicesForUser()
         {
-            #region example-3
+            #region ListDevicesForUser-3
 
             var client = new AmazonWickrClient();
-            var response = client.ListDevicesForUser(new ListDevicesForUserRequest 
+            var response = client.ListDevicesForUser(new ListDevicesForUserRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678",
@@ -1216,10 +1217,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListGuestUsers()
         {
-            #region example-1
+            #region ListGuestUsers-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListGuestUsers(new ListGuestUsersRequest 
+            var response = client.ListGuestUsers(new ListGuestUsersRequest
             {
                 MaxResults = 20,
                 NetworkId = "12345678",
@@ -1235,10 +1236,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListGuestUsers()
         {
-            #region example-2
+            #region ListGuestUsers-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListGuestUsers(new ListGuestUsersRequest 
+            var response = client.ListGuestUsers(new ListGuestUsersRequest
             {
                 BillingPeriod = "2024-01",
                 MaxResults = 10,
@@ -1253,10 +1254,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListGuestUsers()
         {
-            #region example-3
+            #region ListGuestUsers-3
 
             var client = new AmazonWickrClient();
-            var response = client.ListGuestUsers(new ListGuestUsersRequest 
+            var response = client.ListGuestUsers(new ListGuestUsersRequest
             {
                 NetworkId = "87654321"
             });
@@ -1268,10 +1269,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListNetworks()
         {
-            #region example-1
+            #region ListNetworks-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListNetworks(new ListNetworksRequest 
+            var response = client.ListNetworks(new ListNetworksRequest
             {
                 MaxResults = 10,
                 SortDirection = "ASC",
@@ -1286,10 +1287,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListNetworks()
         {
-            #region example-2
+            #region ListNetworks-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListNetworks(new ListNetworksRequest 
+            var response = client.ListNetworks(new ListNetworksRequest
             {
                 MaxResults = 10
             });
@@ -1301,10 +1302,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListSecurityGroups()
         {
-            #region example-1
+            #region ListSecurityGroups-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListSecurityGroups(new ListSecurityGroupsRequest 
+            var response = client.ListSecurityGroups(new ListSecurityGroupsRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678",
@@ -1320,10 +1321,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListSecurityGroups()
         {
-            #region example-2
+            #region ListSecurityGroups-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListSecurityGroups(new ListSecurityGroupsRequest 
+            var response = client.ListSecurityGroups(new ListSecurityGroupsRequest
             {
                 MaxResults = 10,
                 NetworkId = "12345678"
@@ -1336,10 +1337,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListSecurityGroupUsers()
         {
-            #region example-1
+            #region ListSecurityGroupUsers-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListSecurityGroupUsers(new ListSecurityGroupUsersRequest 
+            var response = client.ListSecurityGroupUsers(new ListSecurityGroupUsersRequest
             {
                 GroupId = "abc12345",
                 MaxResults = 10,
@@ -1356,10 +1357,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListUsers()
         {
-            #region example-1
+            #region ListUsers-1
 
             var client = new AmazonWickrClient();
-            var response = client.ListUsers(new ListUsersRequest 
+            var response = client.ListUsers(new ListUsersRequest
             {
                 MaxResults = 20,
                 NetworkId = "12345678",
@@ -1375,10 +1376,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListUsers()
         {
-            #region example-2
+            #region ListUsers-2
 
             var client = new AmazonWickrClient();
-            var response = client.ListUsers(new ListUsersRequest 
+            var response = client.ListUsers(new ListUsersRequest
             {
                 GroupId = "BCTY8Qhe",
                 MaxResults = 10,
@@ -1393,10 +1394,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrListUsers()
         {
-            #region example-3
+            #region ListUsers-3
 
             var client = new AmazonWickrClient();
-            var response = client.ListUsers(new ListUsersRequest 
+            var response = client.ListUsers(new ListUsersRequest
             {
                 NetworkId = "12345678"
             });
@@ -1408,10 +1409,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOidcConfig()
         {
-            #region example-1
+            #region RegisterOidcConfig-1
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOidcConfig(new RegisterOidcConfigRequest 
+            var response = client.RegisterOidcConfig(new RegisterOidcConfigRequest
             {
                 CompanyId = "us-east-1-company123",
                 Issuer = "https://login.example.com",
@@ -1426,7 +1427,7 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
             string issuer = response.Issuer;
             string redirectUrl = response.RedirectUrl;
             string scopes = response.Scopes;
-            int ssoTokenBufferMinutes = response.SsoTokenBufferMinutes;
+            int? ssoTokenBufferMinutes = response.SsoTokenBufferMinutes;
             string userId = response.UserId;
 
             #endregion
@@ -1434,10 +1435,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOidcConfig()
         {
-            #region example-2
+            #region RegisterOidcConfig-2
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOidcConfig(new RegisterOidcConfigRequest 
+            var response = client.RegisterOidcConfig(new RegisterOidcConfigRequest
             {
                 CompanyId = "",
                 Issuer = "https://login.example.com",
@@ -1451,10 +1452,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOidcConfig()
         {
-            #region example-3
+            #region RegisterOidcConfig-3
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOidcConfig(new RegisterOidcConfigRequest 
+            var response = client.RegisterOidcConfig(new RegisterOidcConfigRequest
             {
                 CompanyId = "invalid-company123",
                 Issuer = "https://login.example.com",
@@ -1468,10 +1469,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOidcConfigTest()
         {
-            #region example-1
+            #region RegisterOidcConfigTest-1
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOidcConfigTest(new RegisterOidcConfigTestRequest 
+            var response = client.RegisterOidcConfigTest(new RegisterOidcConfigTestRequest
             {
                 Issuer = "https://login.example.com",
                 NetworkId = "12345678",
@@ -1488,10 +1489,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOidcConfigTest()
         {
-            #region example-2
+            #region RegisterOidcConfigTest-2
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOidcConfigTest(new RegisterOidcConfigTestRequest 
+            var response = client.RegisterOidcConfigTest(new RegisterOidcConfigTestRequest
             {
                 Issuer = "",
                 NetworkId = "12345678",
@@ -1504,10 +1505,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOidcConfigTest()
         {
-            #region example-3
+            #region RegisterOidcConfigTest-3
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOidcConfigTest(new RegisterOidcConfigTestRequest 
+            var response = client.RegisterOidcConfigTest(new RegisterOidcConfigTestRequest
             {
                 Issuer = "https://blocked-endpoint.com",
                 NetworkId = "12345678",
@@ -1520,10 +1521,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOpentdfConfig()
         {
-            #region example-1
+            #region RegisterOpentdfConfig-1
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest
             {
                 ClientId = "client123",
                 ClientSecret = "secret456",
@@ -1542,10 +1543,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOpentdfConfig()
         {
-            #region example-2
+            #region RegisterOpentdfConfig-2
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest
             {
                 ClientId = "client123",
                 ClientSecret = "secret456",
@@ -1565,10 +1566,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOpentdfConfig()
         {
-            #region example-3
+            #region RegisterOpentdfConfig-3
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest
             {
                 ClientId = "client123",
                 ClientSecret = "secret456",
@@ -1584,10 +1585,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOpentdfConfig()
         {
-            #region example-4
+            #region RegisterOpentdfConfig-4
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest
             {
                 ClientId = "client123",
                 ClientSecret = "secret456",
@@ -1602,10 +1603,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrRegisterOpentdfConfig()
         {
-            #region example-5
+            #region RegisterOpentdfConfig-5
 
             var client = new AmazonWickrClient();
-            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest 
+            var response = client.RegisterOpentdfConfig(new RegisterOpentdfConfigRequest
             {
                 ClientId = "client123",
                 ClientSecret = "secret456",
@@ -1620,10 +1621,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateBot()
         {
-            #region example-1
+            #region UpdateBot-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateBot(new UpdateBotRequest 
+            var response = client.UpdateBot(new UpdateBotRequest
             {
                 BotId = "98765",
                 DisplayName = "Updated Support Bot",
@@ -1638,10 +1639,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateBot()
         {
-            #region example-2
+            #region UpdateBot-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateBot(new UpdateBotRequest 
+            var response = client.UpdateBot(new UpdateBotRequest
             {
                 BotId = "99999",
                 DisplayName = "Updated Bot",
@@ -1654,10 +1655,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateDataRetention()
         {
-            #region example-1
+            #region UpdateDataRetention-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateDataRetention(new UpdateDataRetentionRequest 
+            var response = client.UpdateDataRetention(new UpdateDataRetentionRequest
             {
                 ActionType = "ENABLE",
                 NetworkId = "12345678"
@@ -1670,10 +1671,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateDataRetention()
         {
-            #region example-2
+            #region UpdateDataRetention-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateDataRetention(new UpdateDataRetentionRequest 
+            var response = client.UpdateDataRetention(new UpdateDataRetentionRequest
             {
                 ActionType = "DISABLE",
                 NetworkId = "12345678"
@@ -1686,10 +1687,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateDataRetention()
         {
-            #region example-3
+            #region UpdateDataRetention-3
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateDataRetention(new UpdateDataRetentionRequest 
+            var response = client.UpdateDataRetention(new UpdateDataRetentionRequest
             {
                 ActionType = "PUBKEY_MSG_ACK",
                 NetworkId = "12345678"
@@ -1702,10 +1703,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateGuestUser()
         {
-            #region example-1
+            #region UpdateGuestUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateGuestUser(new UpdateGuestUserRequest 
+            var response = client.UpdateGuestUser(new UpdateGuestUserRequest
             {
                 Block = true,
                 NetworkId = "12345678",
@@ -1719,10 +1720,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateGuestUser()
         {
-            #region example-2
+            #region UpdateGuestUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateGuestUser(new UpdateGuestUserRequest 
+            var response = client.UpdateGuestUser(new UpdateGuestUserRequest
             {
                 Block = false,
                 NetworkId = "12345678",
@@ -1736,10 +1737,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateGuestUser()
         {
-            #region example-3
+            #region UpdateGuestUser-3
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateGuestUser(new UpdateGuestUserRequest 
+            var response = client.UpdateGuestUser(new UpdateGuestUserRequest
             {
                 Block = true,
                 NetworkId = "12345678",
@@ -1752,10 +1753,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetwork()
         {
-            #region example-1
+            #region UpdateNetwork-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetwork(new UpdateNetworkRequest 
+            var response = client.UpdateNetwork(new UpdateNetworkRequest
             {
                 NetworkId = "12345678",
                 NetworkName = "Updated Network Name"
@@ -1768,10 +1769,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetwork()
         {
-            #region example-2
+            #region UpdateNetwork-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetwork(new UpdateNetworkRequest 
+            var response = client.UpdateNetwork(new UpdateNetworkRequest
             {
                 NetworkId = "12345678",
                 NetworkName = "This name is way too long for a network"
@@ -1783,10 +1784,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetwork()
         {
-            #region example-3
+            #region UpdateNetwork-3
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetwork(new UpdateNetworkRequest 
+            var response = client.UpdateNetwork(new UpdateNetworkRequest
             {
                 NetworkId = "99999999",
                 NetworkName = "New Name"
@@ -1798,10 +1799,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetworkSettings()
         {
-            #region example-1
+            #region UpdateNetworkSettings-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest 
+            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest
             {
                 NetworkId = "12345678",
                 Settings = new NetworkSettings {
@@ -1817,10 +1818,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetworkSettings()
         {
-            #region example-2
+            #region UpdateNetworkSettings-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest 
+            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest
             {
                 NetworkId = "12345678",
                 Settings = new NetworkSettings { EnableClientMetrics = false }
@@ -1833,10 +1834,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetworkSettings()
         {
-            #region example-3
+            #region UpdateNetworkSettings-3
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest 
+            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest
             {
                 NetworkId = "12345678",
                 Settings = new NetworkSettings { EnableClientMetrics = true }
@@ -1849,10 +1850,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetworkSettings()
         {
-            #region example-4
+            #region UpdateNetworkSettings-4
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest 
+            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest
             {
                 NetworkId = "12345678",
                 Settings = new NetworkSettings { EnableClientMetrics = false }
@@ -1864,10 +1865,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetworkSettings()
         {
-            #region example-5
+            #region UpdateNetworkSettings-5
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest 
+            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest
             {
                 NetworkId = "99999999",
                 Settings = new NetworkSettings { EnableClientMetrics = true }
@@ -1879,10 +1880,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateNetworkSettings()
         {
-            #region example-6
+            #region UpdateNetworkSettings-6
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest 
+            var response = client.UpdateNetworkSettings(new UpdateNetworkSettingsRequest
             {
                 NetworkId = "12345678",
                 Settings = new NetworkSettings { DataRetention = true }
@@ -1894,13 +1895,13 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateSecurityGroup()
         {
-            #region example-1
+            #region UpdateSecurityGroup-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateSecurityGroup(new UpdateSecurityGroupRequest 
+            var response = client.UpdateSecurityGroup(new UpdateSecurityGroupRequest
             {
-                Name = "Updated Group Name",
                 GroupId = "abc12345",
+                Name = "Updated Group Name",
                 NetworkId = "12345678",
                 SecurityGroupSettings = new SecurityGroupSettings { LockoutThreshold = 15 }
             });
@@ -1912,13 +1913,13 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateSecurityGroup()
         {
-            #region example-2
+            #region UpdateSecurityGroup-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateSecurityGroup(new UpdateSecurityGroupRequest 
+            var response = client.UpdateSecurityGroup(new UpdateSecurityGroupRequest
             {
-                Name = "New Name",
                 GroupId = "invalid99",
+                Name = "New Name",
                 NetworkId = "12345678"
             });
 
@@ -1928,10 +1929,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateUser()
         {
-            #region example-1
+            #region UpdateUser-1
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateUser(new UpdateUserRequest 
+            var response = client.UpdateUser(new UpdateUserRequest
             {
                 NetworkId = "12345678",
                 UserDetails = new UpdateUserDetails {
@@ -1948,11 +1949,11 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
             string firstName = response.FirstName;
             string lastName = response.LastName;
-            int modified = response.Modified;
+            int? modified = response.Modified;
             string networkId = response.NetworkId;
             List<string> securityGroupIds = response.SecurityGroupIds;
-            int status = response.Status;
-            bool suspended = response.Suspended;
+            int? status = response.Status;
+            bool? suspended = response.Suspended;
             string userId = response.UserId;
 
             #endregion
@@ -1960,10 +1961,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateUser()
         {
-            #region example-2
+            #region UpdateUser-2
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateUser(new UpdateUserRequest 
+            var response = client.UpdateUser(new UpdateUserRequest
             {
                 NetworkId = "12345678",
                 UserDetails = new UpdateUserDetails {
@@ -1977,15 +1978,15 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
                 UserId = "12345"
             });
 
-            bool codeValidation = response.CodeValidation;
+            bool? codeValidation = response.CodeValidation;
             string firstName = response.FirstName;
             string inviteCode = response.InviteCode;
-            int inviteExpiration = response.InviteExpiration;
+            int? inviteExpiration = response.InviteExpiration;
             string lastName = response.LastName;
-            int modified = response.Modified;
+            int? modified = response.Modified;
             string networkId = response.NetworkId;
-            int status = response.Status;
-            bool suspended = response.Suspended;
+            int? status = response.Status;
+            bool? suspended = response.Suspended;
             string userId = response.UserId;
 
             #endregion
@@ -1993,10 +1994,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateUser()
         {
-            #region example-3
+            #region UpdateUser-3
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateUser(new UpdateUserRequest 
+            var response = client.UpdateUser(new UpdateUserRequest
             {
                 NetworkId = "12345678",
                 UserDetails = new UpdateUserDetails {
@@ -2013,10 +2014,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
 
         public void WickrUpdateUser()
         {
-            #region example-4
+            #region UpdateUser-4
 
             var client = new AmazonWickrClient();
-            var response = client.UpdateUser(new UpdateUserRequest 
+            var response = client.UpdateUser(new UpdateUserRequest
             {
                 NetworkId = "12345678",
                 UserDetails = new UpdateUserDetails {
@@ -2034,13 +2035,10 @@ namespace AWSSDKDocSamples.Amazon.Wickr.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

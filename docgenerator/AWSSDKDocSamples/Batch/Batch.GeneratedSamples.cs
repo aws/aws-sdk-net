@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
     {
         public void BatchCancelJob()
         {
-            #region to-cancel-a-job-1481152314733
+            #region CancelJob-1
 
             var client = new AmazonBatchClient();
-            var response = client.CancelJob(new CancelJobRequest 
+            var response = client.CancelJob(new CancelJobRequest
             {
                 JobId = "1d828f65-7a4d-42e8-996d-3b900ed59dc4",
                 Reason = "Cancelling job."
@@ -26,17 +27,35 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
-        public void BatchCreateComputeEnvironment()
+        public void BatchCancelJobs()
         {
-            #region to-create-a-managed-ec2-compute-environment-1481152600017
+            #region CancelJobs-1
 
             var client = new AmazonBatchClient();
-            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
+            var response = client.CancelJobs(new CancelJobsRequest
             {
-                Type = "MANAGED",
+                Jobs = new List<string> {
+                    "1d828f65-7a4d-42e8-996d-3b900ed59dc4",
+                    "b3d0f26e-6d3a-4a5b-9c2e-7f4a1b2c3d4e"
+                },
+                Reason = "Cancelling jobs."
+            });
+
+            List<CancelJobsErrorDetail> errors = response.Errors;
+            List<string> successful = response.Successful;
+
+            #endregion
+        }
+
+        public void BatchCreateComputeEnvironment()
+        {
+            #region CreateComputeEnvironment-1
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest
+            {
                 ComputeEnvironmentName = "C4OnDemand",
                 ComputeResources = new ComputeResource {
-                    Type = "EC2",
                     DesiredvCpus = 48,
                     Ec2KeyPair = "id_rsa",
                     InstanceRole = "ecsInstanceRole",
@@ -59,10 +78,12 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                     },
                     Tags = new Dictionary<string, string> {
                         { "Name", "Batch Instance - C4OnDemand" }
-                    }
+                    },
+                    Type = "EC2"
                 },
                 ServiceRole = "arn:aws:iam::012345678910:role/AWSBatchServiceRole",
-                State = "ENABLED"
+                State = "ENABLED",
+                Type = "MANAGED"
             });
 
             string computeEnvironmentArn = response.ComputeEnvironmentArn;
@@ -73,15 +94,13 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchCreateComputeEnvironment()
         {
-            #region to-create-a-managed-ec2-spot-compute-environment-1481152844190
+            #region CreateComputeEnvironment-2
 
             var client = new AmazonBatchClient();
-            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest
             {
-                Type = "MANAGED",
                 ComputeEnvironmentName = "M4Spot",
                 ComputeResources = new ComputeResource {
-                    Type = "SPOT",
                     BidPercentage = 20,
                     DesiredvCpus = 4,
                     Ec2KeyPair = "id_rsa",
@@ -102,10 +121,12 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                     },
                     Tags = new Dictionary<string, string> {
                         { "Name", "Batch Instance - M4Spot" }
-                    }
+                    },
+                    Type = "SPOT"
                 },
                 ServiceRole = "arn:aws:iam::012345678910:role/AWSBatchServiceRole",
-                State = "ENABLED"
+                State = "ENABLED",
+                Type = "MANAGED"
             });
 
             string computeEnvironmentArn = response.ComputeEnvironmentArn;
@@ -116,96 +137,13 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchCreateComputeEnvironment()
         {
-            #region to-create-an-ecs-managed-instances-compute-environment-1722800000000
+            #region CreateComputeEnvironment-3
 
             var client = new AmazonBatchClient();
-            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest
             {
-                Type = "MANAGED",
-                ComputeEnvironmentName = "my-managed-instances-ce",
-                ComputeResources = new ComputeResource {
-                    Type = "ECS_MANAGED_INSTANCES",
-                    ManagedInstancesProvider = new ManagedInstancesProvider {
-                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
-                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
-                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
-                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
-                                SecurityGroups = new List<string> {
-                                    "sg-abcde012"
-                                },
-                                Subnets = new List<string> {
-                                    "subnet-abcde012",
-                                    "subnet-bcde012a"
-                                }
-                            }
-                        }
-                    },
-                    MaxvCpus = 256
-                },
-                State = "ENABLED"
-            });
-
-            string computeEnvironmentArn = response.ComputeEnvironmentArn;
-            string computeEnvironmentName = response.ComputeEnvironmentName;
-
-            #endregion
-        }
-
-        public void BatchCreateComputeEnvironment()
-        {
-            #region to-create-an-ecs-managed-instances-spot-compute-environment-1722800000001
-
-            var client = new AmazonBatchClient();
-            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
-            {
-                Type = "MANAGED",
-                ComputeEnvironmentName = "my-spot-managed-instances-ce",
-                ComputeResources = new ComputeResource {
-                    Type = "ECS_MANAGED_INSTANCES",
-                    ManagedInstancesProvider = new ManagedInstancesProvider {
-                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
-                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
-                            CapacityOptionType = "SPOT",
-                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
-                            InstanceRequirements = new InstanceRequirementsRequest { AllowedInstanceTypes = new List<string> {
-                                "m5.large",
-                                "m5.xlarge",
-                                "m6i.large",
-                                "m6i.xlarge"
-                            } },
-                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
-                                SecurityGroups = new List<string> {
-                                    "sg-abcde012"
-                                },
-                                Subnets = new List<string> {
-                                    "subnet-abcde012",
-                                    "subnet-bcde012a"
-                                }
-                            }
-                        }
-                    },
-                    MaxvCpus = 1000
-                },
-                State = "ENABLED"
-            });
-
-            string computeEnvironmentArn = response.ComputeEnvironmentArn;
-            string computeEnvironmentName = response.ComputeEnvironmentName;
-
-            #endregion
-        }
-
-        public void BatchCreateComputeEnvironment()
-        {
-            #region to-create-an-ecs-managed-instances-ce-with-capacity-reservations-1722800000002
-
-            var client = new AmazonBatchClient();
-            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
-            {
-                Type = "MANAGED",
                 ComputeEnvironmentName = "my-reserved-managed-instances-ce",
                 ComputeResources = new ComputeResource {
-                    Type = "ECS_MANAGED_INSTANCES",
                     ManagedInstancesProvider = new ManagedInstancesProvider {
                         InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
                         InstanceLaunchTemplate = new InstanceLaunchTemplate {
@@ -229,9 +167,92 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                             }
                         }
                     },
-                    MaxvCpus = 512
+                    MaxvCpus = 512,
+                    Type = "ECS_MANAGED_INSTANCES"
                 },
-                State = "ENABLED"
+                State = "ENABLED",
+                Type = "MANAGED"
+            });
+
+            string computeEnvironmentArn = response.ComputeEnvironmentArn;
+            string computeEnvironmentName = response.ComputeEnvironmentName;
+
+            #endregion
+        }
+
+        public void BatchCreateComputeEnvironment()
+        {
+            #region CreateComputeEnvironment-4
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest
+            {
+                ComputeEnvironmentName = "my-managed-instances-ce",
+                ComputeResources = new ComputeResource {
+                    ManagedInstancesProvider = new ManagedInstancesProvider {
+                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
+                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
+                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
+                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
+                                SecurityGroups = new List<string> {
+                                    "sg-abcde012"
+                                },
+                                Subnets = new List<string> {
+                                    "subnet-abcde012",
+                                    "subnet-bcde012a"
+                                }
+                            }
+                        }
+                    },
+                    MaxvCpus = 256,
+                    Type = "ECS_MANAGED_INSTANCES"
+                },
+                State = "ENABLED",
+                Type = "MANAGED"
+            });
+
+            string computeEnvironmentArn = response.ComputeEnvironmentArn;
+            string computeEnvironmentName = response.ComputeEnvironmentName;
+
+            #endregion
+        }
+
+        public void BatchCreateComputeEnvironment()
+        {
+            #region CreateComputeEnvironment-5
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest
+            {
+                ComputeEnvironmentName = "my-spot-managed-instances-ce",
+                ComputeResources = new ComputeResource {
+                    ManagedInstancesProvider = new ManagedInstancesProvider {
+                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
+                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
+                            CapacityOptionType = "SPOT",
+                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
+                            InstanceRequirements = new InstanceRequirementsRequest { AllowedInstanceTypes = new List<string> {
+                                "m5.large",
+                                "m5.xlarge",
+                                "m6i.large",
+                                "m6i.xlarge"
+                            } },
+                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
+                                SecurityGroups = new List<string> {
+                                    "sg-abcde012"
+                                },
+                                Subnets = new List<string> {
+                                    "subnet-abcde012",
+                                    "subnet-bcde012a"
+                                }
+                            }
+                        }
+                    },
+                    MaxvCpus = 1000,
+                    Type = "ECS_MANAGED_INSTANCES"
+                },
+                State = "ENABLED",
+                Type = "MANAGED"
             });
 
             string computeEnvironmentArn = response.ComputeEnvironmentArn;
@@ -242,10 +263,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchCreateConsumableResource()
         {
-            #region to-create-a-consumable-resource-1739494856623
+            #region CreateConsumableResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.CreateConsumableResource(new CreateConsumableResourceRequest 
+            var response = client.CreateConsumableResource(new CreateConsumableResourceRequest
             {
                 ConsumableResourceName = "myConsumableResource",
                 ResourceType = "REPLENISHABLE",
@@ -264,10 +285,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchCreateJobQueue()
         {
-            #region to-create-a-job-queue-with-a-single-compute-environment-1481152967946
+            #region CreateJobQueue-1
 
             var client = new AmazonBatchClient();
-            var response = client.CreateJobQueue(new CreateJobQueueRequest 
+            var response = client.CreateJobQueue(new CreateJobQueueRequest
             {
                 ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
                     new ComputeEnvironmentOrder {
@@ -288,10 +309,34 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchCreateJobQueue()
         {
-            #region to-create-a-job-queue-with-multiple-compute-environments-1481153027051
+            #region CreateJobQueue-2
 
             var client = new AmazonBatchClient();
-            var response = client.CreateJobQueue(new CreateJobQueueRequest 
+            var response = client.CreateJobQueue(new CreateJobQueueRequest
+            {
+                ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
+                    new ComputeEnvironmentOrder {
+                        ComputeEnvironment = "my-managed-instances-ce",
+                        Order = 1
+                    }
+                },
+                JobQueueName = "ManagedInstancesQueue",
+                Priority = 10,
+                State = "ENABLED"
+            });
+
+            string jobQueueArn = response.JobQueueArn;
+            string jobQueueName = response.JobQueueName;
+
+            #endregion
+        }
+
+        public void BatchCreateJobQueue()
+        {
+            #region CreateJobQueue-3
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateJobQueue(new CreateJobQueueRequest
             {
                 ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
                     new ComputeEnvironmentOrder {
@@ -316,34 +361,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchCreateJobQueue()
         {
-            #region to-create-a-job-queue-with-ecs-managed-instances-1722800000003
+            #region CreateJobQueue-4
 
             var client = new AmazonBatchClient();
-            var response = client.CreateJobQueue(new CreateJobQueueRequest 
-            {
-                ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
-                    new ComputeEnvironmentOrder {
-                        ComputeEnvironment = "my-managed-instances-ce",
-                        Order = 1
-                    }
-                },
-                JobQueueName = "ManagedInstancesQueue",
-                Priority = 10,
-                State = "ENABLED"
-            });
-
-            string jobQueueArn = response.JobQueueArn;
-            string jobQueueName = response.JobQueueName;
-
-            #endregion
-        }
-
-        public void BatchCreateJobQueue()
-        {
-            #region to-create-a-job-queue-with-on-demand-and-spot-ecs-managed-instances-1722800000004
-
-            var client = new AmazonBatchClient();
-            var response = client.CreateJobQueue(new CreateJobQueueRequest 
+            var response = client.CreateJobQueue(new CreateJobQueueRequest
             {
                 ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
                     new ComputeEnvironmentOrder {
@@ -368,10 +389,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDeleteComputeEnvironment()
         {
-            #region to-delete-a-compute-environment-1481153105644
+            #region DeleteComputeEnvironment-1
 
             var client = new AmazonBatchClient();
-            var response = client.DeleteComputeEnvironment(new DeleteComputeEnvironmentRequest 
+            var response = client.DeleteComputeEnvironment(new DeleteComputeEnvironmentRequest
             {
                 ComputeEnvironment = "P2OnDemand"
             });
@@ -382,10 +403,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDeleteConsumableResource()
         {
-            #region to-delete-a-consumable-resource-1739495667751
+            #region DeleteConsumableResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.DeleteConsumableResource(new DeleteConsumableResourceRequest 
+            var response = client.DeleteConsumableResource(new DeleteConsumableResourceRequest
             {
                 ConsumableResource = "myConsumableResource"
             });
@@ -396,10 +417,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDeleteJobQueue()
         {
-            #region to-delete-a-job-queue-1481153508134
+            #region DeleteJobQueue-1
 
             var client = new AmazonBatchClient();
-            var response = client.DeleteJobQueue(new DeleteJobQueueRequest 
+            var response = client.DeleteJobQueue(new DeleteJobQueueRequest
             {
                 JobQueue = "GPGPU"
             });
@@ -410,10 +431,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDeregisterJobDefinition()
         {
-            #region to-deregister-a-job-definition-1481153579565
+            #region DeregisterJobDefinition-1
 
             var client = new AmazonBatchClient();
-            var response = client.DeregisterJobDefinition(new DeregisterJobDefinitionRequest 
+            var response = client.DeregisterJobDefinition(new DeregisterJobDefinitionRequest
             {
                 JobDefinition = "sleep10"
             });
@@ -424,10 +445,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDescribeComputeEnvironments()
         {
-            #region to-describe-a-compute-environment-1481153713334
+            #region DescribeComputeEnvironments-1
 
             var client = new AmazonBatchClient();
-            var response = client.DescribeComputeEnvironments(new DescribeComputeEnvironmentsRequest 
+            var response = client.DescribeComputeEnvironments(new DescribeComputeEnvironmentsRequest
             {
                 ComputeEnvironments = new List<string> {
                     "P2OnDemand"
@@ -441,32 +462,32 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDescribeConsumableResource()
         {
-            #region to-get-a-description-of-a-consumable-resource-1739495864808
+            #region DescribeConsumableResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.DescribeConsumableResource(new DescribeConsumableResourceRequest 
+            var response = client.DescribeConsumableResource(new DescribeConsumableResourceRequest
             {
                 ConsumableResource = "myConsumableResource"
             });
 
-            long availableQuantity = response.AvailableQuantity;
+            long? availableQuantity = response.AvailableQuantity;
             string consumableResourceArn = response.ConsumableResourceArn;
             string consumableResourceName = response.ConsumableResourceName;
-            long createdAt = response.CreatedAt;
-            long inUseQuantity = response.InUseQuantity;
+            long? createdAt = response.CreatedAt;
+            long? inUseQuantity = response.InUseQuantity;
             string resourceType = response.ResourceType;
             Dictionary<string, string> tags = response.Tags;
-            long totalQuantity = response.TotalQuantity;
+            long? totalQuantity = response.TotalQuantity;
 
             #endregion
         }
 
         public void BatchDescribeJobDefinitions()
         {
-            #region to-describe-active-job-definitions-1481153895831
+            #region DescribeJobDefinitions-1
 
             var client = new AmazonBatchClient();
-            var response = client.DescribeJobDefinitions(new DescribeJobDefinitionsRequest 
+            var response = client.DescribeJobDefinitions(new DescribeJobDefinitionsRequest
             {
                 Status = "ACTIVE"
             });
@@ -478,10 +499,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDescribeJobQueues()
         {
-            #region to-describe-a-job-queue-1481153995804
+            #region DescribeJobQueues-1
 
             var client = new AmazonBatchClient();
-            var response = client.DescribeJobQueues(new DescribeJobQueuesRequest 
+            var response = client.DescribeJobQueues(new DescribeJobQueuesRequest
             {
                 JobQueues = new List<string> {
                     "HighPriority"
@@ -495,10 +516,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchDescribeJobs()
         {
-            #region to-describe-a-specific-job-1481154090490
+            #region DescribeJobs-1
 
             var client = new AmazonBatchClient();
-            var response = client.DescribeJobs(new DescribeJobsRequest 
+            var response = client.DescribeJobs(new DescribeJobsRequest
             {
                 Jobs = new List<string> {
                     "24fa2d7a-64c4-49d2-8b47-f8da4fbde8e9"
@@ -512,10 +533,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchListConsumableResources()
         {
-            #region to-get-a-list-of-a-consumable-resources-1739496071960
+            #region ListConsumableResources-1
 
             var client = new AmazonBatchClient();
-            var response = client.ListConsumableResources(new ListConsumableResourcesRequest 
+            var response = client.ListConsumableResources(new ListConsumableResourcesRequest
             {
                 Filters = new List<KeyValuesPair> {
                     new KeyValuesPair {
@@ -535,10 +556,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchListJobs()
         {
-            #region to-list-running-jobs-1481154202164
+            #region ListJobs-1
 
             var client = new AmazonBatchClient();
-            var response = client.ListJobs(new ListJobsRequest 
+            var response = client.ListJobs(new ListJobsRequest
             {
                 JobQueue = "HighPriority"
             });
@@ -550,10 +571,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchListJobs()
         {
-            #region to-list-submitted-jobs-1481154251623
+            #region ListJobs-2
 
             var client = new AmazonBatchClient();
-            var response = client.ListJobs(new ListJobsRequest 
+            var response = client.ListJobs(new ListJobsRequest
             {
                 JobQueue = "HighPriority",
                 JobStatus = "SUBMITTED"
@@ -566,10 +587,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchListJobsByConsumableResource()
         {
-            #region to-get-a-list-of-batch-jobs-by-consumable-resource-1739496640347
+            #region ListJobsByConsumableResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.ListJobsByConsumableResource(new ListJobsByConsumableResourceRequest 
+            var response = client.ListJobsByConsumableResource(new ListJobsByConsumableResourceRequest
             {
                 ConsumableResource = "myConsumableResource",
                 Filters = new List<KeyValuesPair> {
@@ -590,10 +611,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchListTagsForResource()
         {
-            #region listtagsforresource-example-1591293003710
+            #region ListTagsForResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.ListTagsForResource(new ListTagsForResourceRequest 
+            var response = client.ListTagsForResource(new ListTagsForResourceRequest
             {
                 ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1"
             });
@@ -605,47 +626,11 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchRegisterJobDefinition()
         {
-            #region to-register-a-job-definition-1481154325325
+            #region RegisterJobDefinition-1
 
             var client = new AmazonBatchClient();
-            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest
             {
-                Type = "container",
-                ContainerProperties = new ContainerProperties {
-                    Command = new List<string> {
-                        "sleep",
-                        "10"
-                    },
-                    Image = "busybox",
-                    ResourceRequirements = new List<ResourceRequirement> {
-                        new ResourceRequirement {
-                            Type = "MEMORY",
-                            Value = "128"
-                        },
-                        new ResourceRequirement {
-                            Type = "VCPU",
-                            Value = "1"
-                        }
-                    }
-                },
-                JobDefinitionName = "sleep10"
-            });
-
-            string jobDefinitionArn = response.JobDefinitionArn;
-            string jobDefinitionName = response.JobDefinitionName;
-            int revision = response.Revision;
-
-            #endregion
-        }
-
-        public void BatchRegisterJobDefinition()
-        {
-            #region registerjobdefinition-with-tags-1591290509028
-
-            var client = new AmazonBatchClient();
-            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
-            {
-                Type = "container",
                 ContainerProperties = new ContainerProperties {
                     Command = new List<string> {
                         "sleep",
@@ -667,79 +652,33 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                 Tags = new Dictionary<string, string> {
                     { "Department", "Engineering" },
                     { "User", "JaneDoe" }
-                }
+                },
+                Type = "container"
             });
 
             string jobDefinitionArn = response.JobDefinitionArn;
             string jobDefinitionName = response.JobDefinitionName;
-            int revision = response.Revision;
+            int? revision = response.Revision;
 
             #endregion
         }
 
         public void BatchRegisterJobDefinition()
         {
-            #region to-register-a-job-definition-on-ecs-managed-instances-1722800000005
+            #region RegisterJobDefinition-2
 
             var client = new AmazonBatchClient();
-            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest
             {
-                Type = "container",
                 EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
                     new EcsTaskProperties {
                         Containers = new List<TaskContainerProperties> {
                             new TaskContainerProperties {
-                                Name = "main",
-                                Command = new List<string> {
-                                    "echo",
-                                    "hello managed instances"
-                                },
-                                Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
-                                ResourceRequirements = new List<ResourceRequirement> {
-                                    new ResourceRequirement {
-                                        Type = "VCPU",
-                                        Value = "1"
-                                    },
-                                    new ResourceRequirement {
-                                        Type = "MEMORY",
-                                        Value = "1024"
-                                    }
-                                }
-                            }
-                        },
-                        ExecutionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
-                    }
-                } },
-                JobDefinitionName = "my-managed-instances-job-def",
-                PlatformCapabilities = new List<string> {
-                    "MANAGED_INSTANCES"
-                }
-            });
-
-            string jobDefinitionArn = response.JobDefinitionArn;
-            string jobDefinitionName = response.JobDefinitionName;
-            int revision = response.Revision;
-
-            #endregion
-        }
-
-        public void BatchRegisterJobDefinition()
-        {
-            #region to-register-a-gpu-job-definition-on-ecs-managed-instances-1722800000006
-
-            var client = new AmazonBatchClient();
-            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
-            {
-                Type = "container",
-                EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
-                    new EcsTaskProperties {
-                        Containers = new List<TaskContainerProperties> {
-                            new TaskContainerProperties {
-                                Name = "main",
                                 Command = new List<string> {
                                     "nvidia-smi"
                                 },
                                 Image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/my-gpu-image:latest",
+                                Name = "main",
                                 ResourceRequirements = new List<ResourceRequirement> {
                                     new ResourceRequirement {
                                         Type = "VCPU",
@@ -762,35 +701,116 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                 JobDefinitionName = "my-gpu-managed-instances-job-def",
                 PlatformCapabilities = new List<string> {
                     "MANAGED_INSTANCES"
-                }
+                },
+                Type = "container"
             });
 
             string jobDefinitionArn = response.JobDefinitionArn;
             string jobDefinitionName = response.JobDefinitionName;
-            int revision = response.Revision;
+            int? revision = response.Revision;
 
             #endregion
         }
 
         public void BatchRegisterJobDefinition()
         {
-            #region to-register-a-multi-container-job-definition-on-ecs-managed-instances-1722800000007
+            #region RegisterJobDefinition-3
 
             var client = new AmazonBatchClient();
-            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest
             {
-                Type = "container",
+                ContainerProperties = new ContainerProperties {
+                    Command = new List<string> {
+                        "sleep",
+                        "10"
+                    },
+                    Image = "busybox",
+                    ResourceRequirements = new List<ResourceRequirement> {
+                        new ResourceRequirement {
+                            Type = "MEMORY",
+                            Value = "128"
+                        },
+                        new ResourceRequirement {
+                            Type = "VCPU",
+                            Value = "1"
+                        }
+                    }
+                },
+                JobDefinitionName = "sleep10",
+                Type = "container"
+            });
+
+            string jobDefinitionArn = response.JobDefinitionArn;
+            string jobDefinitionName = response.JobDefinitionName;
+            int? revision = response.Revision;
+
+            #endregion
+        }
+
+        public void BatchRegisterJobDefinition()
+        {
+            #region RegisterJobDefinition-4
+
+            var client = new AmazonBatchClient();
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest
+            {
                 EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
                     new EcsTaskProperties {
                         Containers = new List<TaskContainerProperties> {
                             new TaskContainerProperties {
+                                Command = new List<string> {
+                                    "echo",
+                                    "hello managed instances"
+                                },
+                                Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
                                 Name = "main",
+                                ResourceRequirements = new List<ResourceRequirement> {
+                                    new ResourceRequirement {
+                                        Type = "VCPU",
+                                        Value = "1"
+                                    },
+                                    new ResourceRequirement {
+                                        Type = "MEMORY",
+                                        Value = "1024"
+                                    }
+                                }
+                            }
+                        },
+                        ExecutionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+                    }
+                } },
+                JobDefinitionName = "my-managed-instances-job-def",
+                PlatformCapabilities = new List<string> {
+                    "MANAGED_INSTANCES"
+                },
+                Type = "container"
+            });
+
+            string jobDefinitionArn = response.JobDefinitionArn;
+            string jobDefinitionName = response.JobDefinitionName;
+            int? revision = response.Revision;
+
+            #endregion
+        }
+
+        public void BatchRegisterJobDefinition()
+        {
+            #region RegisterJobDefinition-5
+
+            var client = new AmazonBatchClient();
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest
+            {
+                EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
+                    new EcsTaskProperties {
+                        Containers = new List<TaskContainerProperties> {
+                            new TaskContainerProperties {
                                 Command = new List<string> {
                                     "echo",
                                     "processing data"
                                 },
                                 Essential = true,
                                 Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
+                                Name = "main",
                                 ResourceRequirements = new List<ResourceRequirement> {
                                     new ResourceRequirement {
                                         Type = "VCPU",
@@ -803,13 +823,13 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                                 }
                             },
                             new TaskContainerProperties {
-                                Name = "sidecar",
                                 Command = new List<string> {
                                     "echo",
                                     "logging sidecar"
                                 },
                                 Essential = false,
                                 Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
+                                Name = "sidecar",
                                 ResourceRequirements = new List<ResourceRequirement> {
                                     new ResourceRequirement {
                                         Type = "VCPU",
@@ -828,22 +848,23 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                 JobDefinitionName = "my-sidecar-managed-instances-job-def",
                 PlatformCapabilities = new List<string> {
                     "MANAGED_INSTANCES"
-                }
+                },
+                Type = "container"
             });
 
             string jobDefinitionArn = response.JobDefinitionArn;
             string jobDefinitionName = response.JobDefinitionName;
-            int revision = response.Revision;
+            int? revision = response.Revision;
 
             #endregion
         }
 
         public void BatchSubmitJob()
         {
-            #region to-submit-a-job-to-a-queue-1481154481673
+            #region SubmitJob-1
 
             var client = new AmazonBatchClient();
-            var response = client.SubmitJob(new SubmitJobRequest 
+            var response = client.SubmitJob(new SubmitJobRequest
             {
                 JobDefinition = "sleep60",
                 JobName = "example",
@@ -858,10 +879,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchTagResource()
         {
-            #region tagresource-example-1591291959952
+            #region TagResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.TagResource(new TagResourceRequest 
+            var response = client.TagResource(new TagResourceRequest
             {
                 ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1",
                 Tags = new Dictionary<string, string> {
@@ -875,10 +896,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchTerminateJob()
         {
-            #region to-terminate-a-job-1481154558276
+            #region TerminateJob-1
 
             var client = new AmazonBatchClient();
-            var response = client.TerminateJob(new TerminateJobRequest 
+            var response = client.TerminateJob(new TerminateJobRequest
             {
                 JobId = "61e743ed-35e4-48da-b2de-5c8333821c84",
                 Reason = "Terminating job."
@@ -888,12 +909,52 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
-        public void BatchUntagResource()
+        public void BatchTerminateJobs()
         {
-            #region untagresource-example-1591292811042
+            #region TerminateJobs-1
 
             var client = new AmazonBatchClient();
-            var response = client.UntagResource(new UntagResourceRequest 
+            var response = client.TerminateJobs(new TerminateJobsRequest
+            {
+                Jobs = new List<string> {
+                    "61e743ed-35e4-48da-b2de-5c8333821c84",
+                    "b3d0f26e-6d3a-4a5b-9c2e-7f4a1b2c3d4e"
+                },
+                Reason = "Terminating jobs."
+            });
+
+            List<TerminateJobsErrorDetail> errors = response.Errors;
+            List<string> successful = response.Successful;
+
+            #endregion
+        }
+
+        public void BatchTerminateServiceJobs()
+        {
+            #region TerminateServiceJobs-1
+
+            var client = new AmazonBatchClient();
+            var response = client.TerminateServiceJobs(new TerminateServiceJobsRequest
+            {
+                Jobs = new List<string> {
+                    "a4d6c728-8ee8-4c65-8e2a-9a5e8f4b7c3d",
+                    "b3d0f26e-6d3a-4a5b-9c2e-7f4a1b2c3d4e"
+                },
+                Reason = "Job terminated by user request"
+            });
+
+            List<TerminateServiceJobsErrorDetail> errors = response.Errors;
+            List<string> successful = response.Successful;
+
+            #endregion
+        }
+
+        public void BatchUntagResource()
+        {
+            #region UntagResource-1
+
+            var client = new AmazonBatchClient();
+            var response = client.UntagResource(new UntagResourceRequest
             {
                 ResourceArn = "arn:aws:batch:us-east-1:123456789012:job-definition/sleep30:1",
                 TagKeys = new List<string> {
@@ -907,10 +968,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchUpdateComputeEnvironment()
         {
-            #region to-update-a-compute-environment-1481154702731
+            #region UpdateComputeEnvironment-1
 
             var client = new AmazonBatchClient();
-            var response = client.UpdateComputeEnvironment(new UpdateComputeEnvironmentRequest 
+            var response = client.UpdateComputeEnvironment(new UpdateComputeEnvironmentRequest
             {
                 ComputeEnvironment = "P2OnDemand",
                 State = "DISABLED"
@@ -924,10 +985,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
         public void BatchUpdateConsumableResource()
         {
-            #region to-update-a-consumable-resource-1739497761692
+            #region UpdateConsumableResource-1
 
             var client = new AmazonBatchClient();
-            var response = client.UpdateConsumableResource(new UpdateConsumableResourceRequest 
+            var response = client.UpdateConsumableResource(new UpdateConsumableResourceRequest
             {
                 ConsumableResource = "myConsumableResource",
                 Operation = "ADD",
@@ -936,17 +997,17 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
 
             string consumableResourceArn = response.ConsumableResourceArn;
             string consumableResourceName = response.ConsumableResourceName;
-            long totalQuantity = response.TotalQuantity;
+            long? totalQuantity = response.TotalQuantity;
 
             #endregion
         }
 
         public void BatchUpdateJobQueue()
         {
-            #region to-update-a-job-queue-1481154806981
+            #region UpdateJobQueue-1
 
             var client = new AmazonBatchClient();
-            var response = client.UpdateJobQueue(new UpdateJobQueueRequest 
+            var response = client.UpdateJobQueue(new UpdateJobQueueRequest
             {
                 JobQueue = "GPGPU",
                 State = "DISABLED"
@@ -958,13 +1019,10 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
     {
         public void SustainabilityGetEstimatedCarbonEmissions()
         {
-            #region example-1
+            #region GetEstimatedCarbonEmissions-1
 
             var client = new AmazonSustainabilityClient();
-            var response = client.GetEstimatedCarbonEmissions(new GetEstimatedCarbonEmissionsRequest 
+            var response = client.GetEstimatedCarbonEmissions(new GetEstimatedCarbonEmissionsRequest
             {
                 EmissionsTypes = new List<string> {
                     "TOTAL_LBM_CARBON_EMISSIONS",
@@ -32,8 +33,8 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
                     "SERVICE"
                 },
                 TimePeriod = new TimePeriod {
-                    End = new DateTime(2025, 12, 31, 11, 59, 59, DateTimeKind.Utc),
-                    Start = new DateTime(2025, 1, 1, 12, 0, 0, DateTimeKind.Utc)
+                    End = new DateTime(2025, 12, 31, 23, 59, 59, 999, DateTimeKind.Utc),
+                    Start = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -44,10 +45,10 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
 
         public void SustainabilityGetEstimatedCarbonEmissionsDimensionValues()
         {
-            #region example-1
+            #region GetEstimatedCarbonEmissionsDimensionValues-1
 
             var client = new AmazonSustainabilityClient();
-            var response = client.GetEstimatedCarbonEmissionsDimensionValues(new GetEstimatedCarbonEmissionsDimensionValuesRequest 
+            var response = client.GetEstimatedCarbonEmissionsDimensionValues(new GetEstimatedCarbonEmissionsDimensionValuesRequest
             {
                 Dimensions = new List<string> {
                     "REGION",
@@ -55,8 +56,8 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
                     "USAGE_ACCOUNT_ID"
                 },
                 TimePeriod = new TimePeriod {
-                    End = new DateTime(2025, 12, 31, 11, 59, 59, DateTimeKind.Utc),
-                    Start = new DateTime(2025, 1, 1, 12, 0, 0, DateTimeKind.Utc)
+                    End = new DateTime(2025, 12, 31, 23, 59, 59, 999, DateTimeKind.Utc),
+                    Start = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -67,10 +68,10 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
 
         public void SustainabilityGetEstimatedWaterAllocation()
         {
-            #region example-1
+            #region GetEstimatedWaterAllocation-1
 
             var client = new AmazonSustainabilityClient();
-            var response = client.GetEstimatedWaterAllocation(new GetEstimatedWaterAllocationRequest 
+            var response = client.GetEstimatedWaterAllocation(new GetEstimatedWaterAllocationRequest
             {
                 AllocationTypes = new List<string> {
                     "TOTAL_WATER_WITHDRAWALS"
@@ -80,8 +81,8 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
                     "SERVICE"
                 },
                 TimePeriod = new TimePeriod {
-                    End = new DateTime(2026, 1, 1, 12, 0, 0, DateTimeKind.Utc),
-                    Start = new DateTime(2025, 1, 1, 12, 0, 0, DateTimeKind.Utc)
+                    End = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc),
+                    Start = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -92,10 +93,10 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
 
         public void SustainabilityGetEstimatedWaterAllocationDimensionValues()
         {
-            #region example-1
+            #region GetEstimatedWaterAllocationDimensionValues-1
 
             var client = new AmazonSustainabilityClient();
-            var response = client.GetEstimatedWaterAllocationDimensionValues(new GetEstimatedWaterAllocationDimensionValuesRequest 
+            var response = client.GetEstimatedWaterAllocationDimensionValues(new GetEstimatedWaterAllocationDimensionValuesRequest
             {
                 Dimensions = new List<string> {
                     "REGION",
@@ -103,8 +104,8 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
                     "USAGE_ACCOUNT_ID"
                 },
                 TimePeriod = new TimePeriod {
-                    End = new DateTime(2026, 1, 1, 12, 0, 0, DateTimeKind.Utc),
-                    Start = new DateTime(2025, 1, 1, 12, 0, 0, DateTimeKind.Utc)
+                    End = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc),
+                    Start = new DateTime(2025, 1, 1, 0, 0, 0, DateTimeKind.Utc)
                 }
             });
 
@@ -113,13 +114,10 @@ namespace AWSSDKDocSamples.Amazon.Sustainability.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

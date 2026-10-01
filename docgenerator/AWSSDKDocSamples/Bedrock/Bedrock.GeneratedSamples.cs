@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Bedrock.Generated
     {
         public void BedrockBatchDeleteEvaluationJob()
         {
-            #region example-1
+            #region BatchDeleteEvaluationJob-1
 
             var client = new AmazonBedrockClient();
-            var response = client.BatchDeleteEvaluationJob(new BatchDeleteEvaluationJobRequest 
+            var response = client.BatchDeleteEvaluationJob(new BatchDeleteEvaluationJobRequest
             {
                 JobIdentifiers = new List<string> {
                     "arn:aws:bedrock:us-east-2:123456789012:evaluation-job/12rnxmplqv0v",
@@ -32,10 +33,10 @@ namespace AWSSDKDocSamples.Amazon.Bedrock.Generated
 
         public void BedrockCreateCustomModel()
         {
-            #region example-1
+            #region CreateCustomModel-1
 
             var client = new AmazonBedrockClient();
-            var response = client.CreateCustomModel(new CreateCustomModelRequest 
+            var response = client.CreateCustomModel(new CreateCustomModelRequest
             {
                 ClientRequestToken = "foo",
                 ModelKmsKeyArn = "arn:aws:kms:us-east-1:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
@@ -59,13 +60,10 @@ namespace AWSSDKDocSamples.Amazon.Bedrock.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

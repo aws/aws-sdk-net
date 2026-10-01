@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
     {
         public void ChatbotAssociateToConfiguration()
         {
-            #region example-1
+            #region AssociateToConfiguration-1
 
             var client = new AmazonChatbotClient();
-            var response = client.AssociateToConfiguration(new AssociateToConfigurationRequest 
+            var response = client.AssociateToConfiguration(new AssociateToConfigurationRequest
             {
                 ChatConfiguration = "arn:aws:chatbot::1234567890:chat-configuration/slack-channel/my-channel",
                 Resource = "arn:aws:chatbot::1234567890:custom-action/my-custom-action"
@@ -28,10 +29,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotCreateCustomAction()
         {
-            #region example-1
+            #region CreateCustomAction-1
 
             var client = new AmazonChatbotClient();
-            var response = client.CreateCustomAction(new CreateCustomActionRequest 
+            var response = client.CreateCustomAction(new CreateCustomActionRequest
             {
                 ActionName = "my-custom-action",
                 AliasName = "invoke",
@@ -45,10 +46,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotCreateCustomAction()
         {
-            #region example-2
+            #region CreateCustomAction-2
 
             var client = new AmazonChatbotClient();
-            var response = client.CreateCustomAction(new CreateCustomActionRequest 
+            var response = client.CreateCustomAction(new CreateCustomActionRequest
             {
                 ActionName = "describe-alarms",
                 Attachments = new List<CustomActionAttachment> {
@@ -67,10 +68,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotDeleteCustomAction()
         {
-            #region example-1
+            #region DeleteCustomAction-1
 
             var client = new AmazonChatbotClient();
-            var response = client.DeleteCustomAction(new DeleteCustomActionRequest 
+            var response = client.DeleteCustomAction(new DeleteCustomActionRequest
             {
                 CustomActionArn = "arn:aws:chatbot::1234567890:custom-action/my-custom-action"
             });
@@ -81,10 +82,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotDisassociateFromConfiguration()
         {
-            #region example-1
+            #region DisassociateFromConfiguration-1
 
             var client = new AmazonChatbotClient();
-            var response = client.DisassociateFromConfiguration(new DisassociateFromConfigurationRequest 
+            var response = client.DisassociateFromConfiguration(new DisassociateFromConfigurationRequest
             {
                 ChatConfiguration = "arn:aws:chatbot::1234567890:chat-configuration/slack-channel/my-channel",
                 Resource = "arn:aws:chatbot::1234567890:custom-action/my-custom-action"
@@ -96,10 +97,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotGetCustomAction()
         {
-            #region example-1
+            #region GetCustomAction-1
 
             var client = new AmazonChatbotClient();
-            var response = client.GetCustomAction(new GetCustomActionRequest 
+            var response = client.GetCustomAction(new GetCustomActionRequest
             {
                 CustomActionArn = "arn:aws:chatbot::1234567890:custom-action/my-custom-action"
             });
@@ -111,10 +112,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotListAssociations()
         {
-            #region example-1
+            #region ListAssociations-1
 
             var client = new AmazonChatbotClient();
-            var response = client.ListAssociations(new ListAssociationsRequest 
+            var response = client.ListAssociations(new ListAssociationsRequest
             {
                 ChatConfiguration = "arn:aws:chatbot::1234567890:chat-configuration/slack-channel/my-channel"
             });
@@ -126,10 +127,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotListCustomActions()
         {
-            #region example-1
+            #region ListCustomActions-1
 
             var client = new AmazonChatbotClient();
-            var response = client.ListCustomActions(new ListCustomActionsRequest 
+            var response = client.ListCustomActions(new ListCustomActionsRequest
             {
             });
 
@@ -140,10 +141,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
 
         public void ChatbotUpdateCustomAction()
         {
-            #region example-1
+            #region UpdateCustomAction-1
 
             var client = new AmazonChatbotClient();
-            var response = client.UpdateCustomAction(new UpdateCustomActionRequest 
+            var response = client.UpdateCustomAction(new UpdateCustomActionRequest
             {
                 CustomActionArn = "arn:aws:chatbot::1234567890:custom-action/my-custom-action",
                 Definition = new CustomActionDefinition { CommandText = "lambda invoke MyNewFunction" }
@@ -154,13 +155,10 @@ namespace AWSSDKDocSamples.Amazon.Chatbot.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

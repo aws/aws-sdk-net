@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
     {
         public void PricingPlanManagerApprovePaidSubscription()
         {
-            #region example-1
+            #region ApprovePaidSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.ApprovePaidSubscription(new ApprovePaidSubscriptionRequest 
+            var response = client.ApprovePaidSubscription(new ApprovePaidSubscriptionRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890",
                 IfMatch = "1"
@@ -30,10 +31,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerAssociateResourcesToSubscription()
         {
-            #region example-1
+            #region AssociateResourcesToSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.AssociateResourcesToSubscription(new AssociateResourcesToSubscriptionRequest 
+            var response = client.AssociateResourcesToSubscription(new AssociateResourcesToSubscriptionRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890",
                 IfMatch = "1",
@@ -50,10 +51,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerCancelSubscription()
         {
-            #region example-1
+            #region CancelSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.CancelSubscription(new CancelSubscriptionRequest 
+            var response = client.CancelSubscription(new CancelSubscriptionRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890",
                 IfMatch = "2"
@@ -67,10 +68,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerCancelSubscriptionChange()
         {
-            #region example-1
+            #region CancelSubscriptionChange-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.CancelSubscriptionChange(new CancelSubscriptionChangeRequest 
+            var response = client.CancelSubscriptionChange(new CancelSubscriptionChangeRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890",
                 IfMatch = "3"
@@ -84,10 +85,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerCreateSubscription()
         {
-            #region example-1
+            #region CreateSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.CreateSubscription(new CreateSubscriptionRequest 
+            var response = client.CreateSubscription(new CreateSubscriptionRequest
             {
                 ApprovalMode = "MANUAL",
                 PlanFamily = "CloudFront",
@@ -106,10 +107,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerCreateSubscription()
         {
-            #region example-2
+            #region CreateSubscription-2
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.CreateSubscription(new CreateSubscriptionRequest 
+            var response = client.CreateSubscription(new CreateSubscriptionRequest
             {
                 ApprovalMode = "IMMEDIATE",
                 PlanFamily = "CloudFront",
@@ -128,10 +129,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerDisassociateResourcesFromSubscription()
         {
-            #region example-1
+            #region DisassociateResourcesFromSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.DisassociateResourcesFromSubscription(new DisassociateResourcesFromSubscriptionRequest 
+            var response = client.DisassociateResourcesFromSubscription(new DisassociateResourcesFromSubscriptionRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890",
                 IfMatch = "2",
@@ -148,10 +149,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerGetSubscription()
         {
-            #region example-1
+            #region GetSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.GetSubscription(new GetSubscriptionRequest 
+            var response = client.GetSubscription(new GetSubscriptionRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890"
             });
@@ -164,10 +165,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerListSubscriptions()
         {
-            #region example-1
+            #region ListSubscriptions-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.ListSubscriptions(new ListSubscriptionsRequest 
+            var response = client.ListSubscriptions(new ListSubscriptionsRequest
             {
             });
 
@@ -178,10 +179,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
 
         public void PricingPlanManagerUpdateSubscription()
         {
-            #region example-1
+            #region UpdateSubscription-1
 
             var client = new AmazonPricingPlanManagerClient();
-            var response = client.UpdateSubscription(new UpdateSubscriptionRequest 
+            var response = client.UpdateSubscription(new UpdateSubscriptionRequest
             {
                 Arn = "arn:aws:pricingplanmanager::123456789012:subscription/sub-1234567890",
                 IfMatch = "1",
@@ -194,13 +195,10 @@ namespace AWSSDKDocSamples.Amazon.PricingPlanManager.Generated
             #endregion
         }
 
-        
-        # region ISample Members
+        #region ISample Members
         public virtual void Run()
         {
-
         }
-        # endregion
-
+        #endregion
     }
 }

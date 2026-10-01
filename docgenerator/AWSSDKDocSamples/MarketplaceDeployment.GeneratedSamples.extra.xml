@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.ListTagsForResource(Amazon.MarketplaceDeployment.Model.ListTagsForResourceRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.ListTagsForResource(Amazon.MarketplaceDeployment.Model.ListTagsForResourceRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListTagsForResourceRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.ListTagsForResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example demonstrates listing the tags for a deployment parameter. If no tags are present, the API will return an empty map.
+        </para>
+        <code title="Listing tags for a deployment parameter" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="ListTagsForResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.PutDeploymentParameter(Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.PutDeploymentParameter(Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.PutDeploymentParameterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example demonstrates creating or updating a deployment parameter named "ExampleDeploymentParameterName". The secret will be saved in the Buyer account associated with the passed `agreementId`, with the value set to the provided `secretString`. Note that the deployment parameter `secretString` can be passed in JSON string format, allowing [json-key specific CloudFormation dynamic references](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/dynamic-references.html) from a single deployment parameter.
+        </para>
+        <code title="Creating or updating a deployment parameter" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="PutDeploymentParameter-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.PutDeploymentParameter(Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.PutDeploymentParameter(Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.PutDeploymentParameterRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.PutDeploymentParameterResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example demonstrates creating a simple deployment parameter named "ExampleSimpleDeploymentParameterName". If multiple secrets are not required, the `secretString` may be provided in String format. The provided tags are only applied on resource creation and will be ignored if the operation results in an update. The API response includes the tags present on the resource after completion of the operation.
+        </para>
+        <code title="Creating a simple deployment parameter, with tags and expiration." source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="PutDeploymentParameter-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.TagResource(Amazon.MarketplaceDeployment.Model.TagResourceRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.TagResource(Amazon.MarketplaceDeployment.Model.TagResourceRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.TagResourceRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.TagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example demonstrates adding two tags to a deployment parameter. There is no output from this API.
+        </para>
+        <code title="Adding tags to a deployment parameter" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="TagResource-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.MarketplaceDeployment.IAmazonMarketplaceDeployment.UntagResource(Amazon.MarketplaceDeployment.Model.UntagResourceRequest)" />
+      <member name="M:Amazon.MarketplaceDeployment.AmazonMarketplaceDeploymentClient.UntagResource(Amazon.MarketplaceDeployment.Model.UntagResourceRequest)" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.UntagResourceRequest" />
+      <member name="T:Amazon.MarketplaceDeployment.Model.UntagResourceResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example demonstrates removing two tags from a deployment parameter. For each, both the tag and the associated value are removed. There is no output from this API.
+        </para>
+        <code title="Removing tags from a deployment parameter" source=".\AWSSDKDocSamples\MarketplaceDeployment\MarketplaceDeployment.GeneratedSamples.cs" region="UntagResource-1" />
+      </example>
+    </value>
+  </doc>
+</docs>

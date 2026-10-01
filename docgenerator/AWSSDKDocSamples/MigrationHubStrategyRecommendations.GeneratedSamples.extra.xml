@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+  <doc>
+    <members>
+      <member name="M:Amazon.MigrationHubStrategyRecommendations.IAmazonMigrationHubStrategyRecommendations.ListAnalyzableServers(Amazon.MigrationHubStrategyRecommendations.Model.ListAnalyzableServersRequest)" />
+      <member name="M:Amazon.MigrationHubStrategyRecommendations.AmazonMigrationHubStrategyRecommendationsClient.ListAnalyzableServers(Amazon.MigrationHubStrategyRecommendations.Model.ListAnalyzableServersRequest)" />
+      <member name="T:Amazon.MigrationHubStrategyRecommendations.Model.ListAnalyzableServersRequest" />
+      <member name="T:Amazon.MigrationHubStrategyRecommendations.Model.ListAnalyzableServersResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Invoke ListAnalyzableServers" source=".\AWSSDKDocSamples\MigrationHubStrategyRecommendations\MigrationHubStrategyRecommendations.GeneratedSamples.cs" region="ListAnalyzableServers-1" />
+      </example>
+    </value>
+  </doc>
+</docs>
