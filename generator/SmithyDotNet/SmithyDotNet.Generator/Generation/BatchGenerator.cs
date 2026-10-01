@@ -231,10 +231,7 @@ public sealed class BatchGenerator(string repoRoot)
             var context = new GenerationContext(index, versionManifest, service.Metadata, customizations);
             UnsupportedTraitValidator.Validate(index, context.Protocol);
 
-            // Test services have no _sdk-versions.json entry; they get the default assembly version, matching C2J.
-            var serviceFileVersion = service.IsTestService
-                ? versionManifest.DefaultAssemblyVersion ?? throw new GeneratorException($"'{versionManifest.SourcePath}' has no 'DefaultAssemblyVersion' for test service '{context.ServiceName}'.")
-                : versionManifest.GetServiceVersion(context.ServiceName);
+            var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);
             var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
 
             // Built before the wipe, so a bad example fails the service before anything is deleted, but written only

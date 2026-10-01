@@ -63,15 +63,16 @@ public sealed class SdkVersionManifest
     }
 
     /// <summary>
-    /// Returns the <c>Version</c> for <paramref name="serviceName"/>. Throws when the service has no
-    /// entry or the entry carries no version.
+    /// Returns the <c>Version</c> for <paramref name="serviceName"/>, or <see cref="DefaultAssemblyVersion"/>
+    /// when the service has no entry. Throws when the entry carries no version.
     /// </summary>
     public string GetServiceVersion(string serviceName)
     {
         // Keyed by GenerationContext.ServiceName, which honors the metadata.json overrides.
         if (!ServiceVersions.TryGetValue(serviceName, out var entry))
         {
-            throw new GeneratorException($"'{SourcePath}' has no version entry for service '{serviceName}'.");
+            // Test services and not-yet-resolved new services have no entry, as in C2J.
+            return DefaultAssemblyVersion ?? throw new GeneratorException($"'{SourcePath}' has no version entry for service '{serviceName}' and no 'DefaultAssemblyVersion'.");
         }
 
         if (entry.Version is not string version)
@@ -102,13 +103,14 @@ public sealed class SdkVersionManifest
     /// <summary>
     /// Returns the assembly version for <paramref name="serviceName"/>: the entry's
     /// <c>AssemblyVersionOverride</c> when present, otherwise <c>major.minor</c> of the file version
-    /// (matching the C2J generator's <c>Utils.GetVersion</c> fallback).
+    /// (matching the C2J generator's <c>Utils.GetVersion</c> fallback), or <see cref="DefaultAssemblyVersion"/>
+    /// when the service has no entry.
     /// </summary>
     public string GetServiceAssemblyVersion(string serviceName)
     {
         if (!ServiceVersions.TryGetValue(serviceName, out var entry))
         {
-            throw new GeneratorException($"'{SourcePath}' has no version entry for service '{serviceName}'.");
+            return DefaultAssemblyVersion ?? throw new GeneratorException($"'{SourcePath}' has no version entry for service '{serviceName}' and no 'DefaultAssemblyVersion'.");
         }
 
         if (!string.IsNullOrEmpty(entry.AssemblyVersionOverride))
