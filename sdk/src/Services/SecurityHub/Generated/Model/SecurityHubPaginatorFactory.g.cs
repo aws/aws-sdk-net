@@ -129,6 +129,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for GetRemediationsV2 operation
+        /// </summary>
+        public IGetRemediationsV2Paginator GetRemediationsV2(GetRemediationsV2Request request)
+        {
+            return new GetRemediationsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetResourcesTrendsV2 operation
         /// </summary>
         public IGetResourcesTrendsV2Paginator GetResourcesTrendsV2(GetResourcesTrendsV2Request request)
@@ -174,6 +182,14 @@ namespace Amazon.SecurityHub.Model
         public IListEnabledProductsForImportPaginator ListEnabledProductsForImport(ListEnabledProductsForImportRequest request)
         {
             return new ListEnabledProductsForImportPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExposuresByRemediationV2 operation
+        /// </summary>
+        public IListExposuresByRemediationV2Paginator ListExposuresByRemediationV2(ListExposuresByRemediationV2Request request)
+        {
+            return new ListExposuresByRemediationV2Paginator(this.client, request);
         }
 
         /// <summary>

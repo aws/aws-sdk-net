@@ -1209,6 +1209,108 @@ namespace Amazon.SecurityHub
     }
 
     /// <summary>
+    /// Constants used for properties of type ExposureImpact.
+    /// </summary>
+    public class ExposureImpact : ConstantClass
+    {
+        /// <summary>
+        /// Constant Reduces for ExposureImpact
+        /// </summary>
+        public static readonly ExposureImpact Reduces = new ExposureImpact("Reduces");
+
+        /// <summary>
+        /// Constant Resolves for ExposureImpact
+        /// </summary>
+        public static readonly ExposureImpact Resolves = new ExposureImpact("Resolves");
+
+        /// <summary>
+        /// Constant Unchanged for ExposureImpact
+        /// </summary>
+        public static readonly ExposureImpact Unchanged = new ExposureImpact("Unchanged");
+
+        /// <summary>
+        /// Constructs a custom ExposureImpact for a value not among the defined constants.
+        /// </summary>
+        public ExposureImpact(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExposureImpact FindValue(string value)
+        {
+            return FindValue<ExposureImpact>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExposureImpact(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type ExposureSeverity.
+    /// </summary>
+    public class ExposureSeverity : ConstantClass
+    {
+        /// <summary>
+        /// Constant Critical for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Critical = new ExposureSeverity("Critical");
+
+        /// <summary>
+        /// Constant High for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity High = new ExposureSeverity("High");
+
+        /// <summary>
+        /// Constant Informational for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Informational = new ExposureSeverity("Informational");
+
+        /// <summary>
+        /// Constant Low for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Low = new ExposureSeverity("Low");
+
+        /// <summary>
+        /// Constant Medium for ExposureSeverity
+        /// </summary>
+        public static readonly ExposureSeverity Medium = new ExposureSeverity("Medium");
+
+        /// <summary>
+        /// Constructs a custom ExposureSeverity for a value not among the defined constants.
+        /// </summary>
+        public ExposureSeverity(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExposureSeverity FindValue(string value)
+        {
+            return FindValue<ExposureSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExposureSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type FeatureName.
     /// </summary>
     public class FeatureName : ConstantClass
@@ -1736,6 +1838,82 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GroupByField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type GuidanceFormat.
+    /// </summary>
+    public class GuidanceFormat : ConstantClass
+    {
+        /// <summary>
+        /// Constant All for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat All = new GuidanceFormat("All");
+
+        /// <summary>
+        /// Constant AwsCli for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat AwsCli = new GuidanceFormat("AwsCli");
+
+        /// <summary>
+        /// Constant Cdk for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Cdk = new GuidanceFormat("Cdk");
+
+        /// <summary>
+        /// Constant Cli for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Cli = new GuidanceFormat("Cli");
+
+        /// <summary>
+        /// Constant CloudFormation for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat CloudFormation = new GuidanceFormat("CloudFormation");
+
+        /// <summary>
+        /// Constant IaC for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat IaC = new GuidanceFormat("IaC");
+
+        /// <summary>
+        /// Constant Python for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Python = new GuidanceFormat("Python");
+
+        /// <summary>
+        /// Constant Template for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Template = new GuidanceFormat("Template");
+
+        /// <summary>
+        /// Constant Terraform for GuidanceFormat
+        /// </summary>
+        public static readonly GuidanceFormat Terraform = new GuidanceFormat("Terraform");
+
+        /// <summary>
+        /// Constructs a custom GuidanceFormat for a value not among the defined constants.
+        /// </summary>
+        public GuidanceFormat(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GuidanceFormat FindValue(string value)
+        {
+            return FindValue<GuidanceFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GuidanceFormat(string value)
         {
             return FindValue(value);
         }
@@ -3212,6 +3390,164 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RegionAvailabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemediationPriority.
+    /// </summary>
+    public class RemediationPriority : ConstantClass
+    {
+        /// <summary>
+        /// Constant Critical for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority Critical = new RemediationPriority("Critical");
+
+        /// <summary>
+        /// Constant High for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority High = new RemediationPriority("High");
+
+        /// <summary>
+        /// Constant Low for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority Low = new RemediationPriority("Low");
+
+        /// <summary>
+        /// Constant Medium for RemediationPriority
+        /// </summary>
+        public static readonly RemediationPriority Medium = new RemediationPriority("Medium");
+
+        /// <summary>
+        /// Constructs a custom RemediationPriority for a value not among the defined constants.
+        /// </summary>
+        public RemediationPriority(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationPriority FindValue(string value)
+        {
+            return FindValue<RemediationPriority>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationPriority(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemediationStatus.
+    /// </summary>
+    public class RemediationStatus : ConstantClass
+    {
+        /// <summary>
+        /// Constant New for RemediationStatus
+        /// </summary>
+        public static readonly RemediationStatus New = new RemediationStatus("New");
+
+        /// <summary>
+        /// Constant Resolved for RemediationStatus
+        /// </summary>
+        public static readonly RemediationStatus Resolved = new RemediationStatus("Resolved");
+
+        /// <summary>
+        /// Constant Updated for RemediationStatus
+        /// </summary>
+        public static readonly RemediationStatus Updated = new RemediationStatus("Updated");
+
+        /// <summary>
+        /// Constructs a custom RemediationStatus for a value not among the defined constants.
+        /// </summary>
+        public RemediationStatus(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationStatus FindValue(string value)
+        {
+            return FindValue<RemediationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type RemediationStringField.
+    /// </summary>
+    public class RemediationStringField : ConstantClass
+    {
+        /// <summary>
+        /// Constant Priority for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField Priority = new RemediationStringField("Priority");
+
+        /// <summary>
+        /// Constant ResourceCloudProvider for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceCloudProvider = new RemediationStringField("Resource.CloudProvider");
+
+        /// <summary>
+        /// Constant ResourceId for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceId = new RemediationStringField("Resource.Id");
+
+        /// <summary>
+        /// Constant ResourceResourceOwnerAccountId for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceResourceOwnerAccountId = new RemediationStringField("Resource.ResourceOwnerAccountId");
+
+        /// <summary>
+        /// Constant ResourceType for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField ResourceType = new RemediationStringField("Resource.Type");
+
+        /// <summary>
+        /// Constant Status for RemediationStringField
+        /// </summary>
+        public static readonly RemediationStringField Status = new RemediationStringField("Status");
+
+        /// <summary>
+        /// Constructs a custom RemediationStringField for a value not among the defined constants.
+        /// </summary>
+        public RemediationStringField(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RemediationStringField FindValue(string value)
+        {
+            return FindValue<RemediationStringField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RemediationStringField(string value)
         {
             return FindValue(value);
         }

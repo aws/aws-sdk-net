@@ -7910,6 +7910,88 @@ namespace Amazon.SecurityHub
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Retrieves remediation targets for the account, or for all member accounts if the caller
+        /// is the delegated administrator. Results are sorted by priority, highest first, and
+        /// are paginated. Use <c>TargetUid</c> or <c>MetadataUid</c> to scope the request to
+        /// a single target or finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRemediationsV2 service method.</param>
+        /// <returns>The response from the GetRemediationsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetRemediationsV2">REST API Reference for GetRemediationsV2 Operation</seealso>
+        public virtual GetRemediationsV2Response GetRemediationsV2(GetRemediationsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRemediationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRemediationsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetRemediationsV2Response>(request, options);
+        }
+#else
+        internal virtual GetRemediationsV2Response GetRemediationsV2(GetRemediationsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRemediationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRemediationsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetRemediationsV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves remediation targets for the account, or for all member accounts if the caller
+        /// is the delegated administrator. Results are sorted by priority, highest first, and
+        /// are paginated. Use <c>TargetUid</c> or <c>MetadataUid</c> to scope the request to
+        /// a single target or finding.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRemediationsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetRemediationsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetRemediationsV2">REST API Reference for GetRemediationsV2 Operation</seealso>
+        public virtual Task<GetRemediationsV2Response> GetRemediationsV2Async(GetRemediationsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRemediationsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRemediationsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRemediationsV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves statistical information about Amazon Web Services resources and their associated
         /// security findings.
         /// 
@@ -9126,6 +9208,84 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = ListEnabledProductsForImportResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEnabledProductsForImportResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Retrieves the exposure findings tied to a specific remediation target. Results are
+        /// sorted by previous severity, highest first, and are paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExposuresByRemediationV2 service method.</param>
+        /// <returns>The response from the ListExposuresByRemediationV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListExposuresByRemediationV2">REST API Reference for ListExposuresByRemediationV2 Operation</seealso>
+        public virtual ListExposuresByRemediationV2Response ListExposuresByRemediationV2(ListExposuresByRemediationV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExposuresByRemediationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExposuresByRemediationV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListExposuresByRemediationV2Response>(request, options);
+        }
+#else
+        internal virtual ListExposuresByRemediationV2Response ListExposuresByRemediationV2(ListExposuresByRemediationV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExposuresByRemediationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExposuresByRemediationV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListExposuresByRemediationV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Retrieves the exposure findings tied to a specific remediation target. Results are
+        /// sorted by previous severity, highest first, and are paginated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExposuresByRemediationV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListExposuresByRemediationV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListExposuresByRemediationV2">REST API Reference for ListExposuresByRemediationV2 Operation</seealso>
+        public virtual Task<ListExposuresByRemediationV2Response> ListExposuresByRemediationV2Async(ListExposuresByRemediationV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExposuresByRemediationV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExposuresByRemediationV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExposuresByRemediationV2Response>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

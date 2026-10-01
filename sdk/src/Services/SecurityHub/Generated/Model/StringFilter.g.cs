@@ -48,7 +48,15 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// To search for values that include the filter value, use <c>CONTAINS</c>. For example,
         /// the filter <c>Title CONTAINS CloudFront</c> matches findings that have a <c>Title</c>
-        /// that includes the string CloudFront.
+        /// that includes the string <c>CloudFront</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To search for values that contain a word matching the filter value, regardless of
+        /// case, use <c>CONTAINS_WORD</c>. For example, the filter <c>Title CONTAINS_WORD lambda</c>
+        /// matches a finding whose <c>Title</c> is <c>GuardDuty Lambda Protection</c>, because
+        /// the <c>Title</c> contains the word Lambda. Including special characters in the filter
+        /// value might produce unexpected search results.
         /// </para>
         ///  </li> <li> 
         /// <para>

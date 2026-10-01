@@ -90,7 +90,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Whether the free trial period is currently active. Valid values:
+        /// Specifies whether the free trial period is currently active. Valid values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

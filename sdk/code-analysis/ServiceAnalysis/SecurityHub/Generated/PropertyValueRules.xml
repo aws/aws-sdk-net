@@ -553,6 +553,21 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetRemediationsV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetRemediationsV2Request.MetadataUid</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.GetRemediationsV2Request.TargetUid</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.GetResourcesStatisticsV2Request.MaxStatisticResults</property>
     <min>1</min>
     <max>400</max>
@@ -610,6 +625,20 @@
     <property>Amazon.SecurityHub.Model.ListEnabledProductsForImportRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListExposuresByRemediationV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListExposuresByRemediationV2Request.TargetUid</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListExposuresByRemediationV2Response.TargetUid</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListFindingAggregatorsRequest.MaxResults</property>
@@ -6489,6 +6518,14 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ExposureFinding.MetadataUid</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ExposureFinding.Title</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ExternalIntegrationConfiguration.ConnectorArn</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -6700,6 +6737,14 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.JiraCloudUpdateConfiguration.ProjectKey</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.KbArticle.Title</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.KbArticle.Url</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -7000,6 +7045,194 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.RelatedFinding.ProductArn</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidance.Pattern</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidance.TargetTypeName</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidance.Version</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceContext.AffectedScope</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceContext.ProblemStatement</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceContext.RiskAssessment</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.AwsCli</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.Cdk</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.Cli</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.CloudFormation</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.IaC</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.Python</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.Template</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceExamples.Terraform</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.AutomationLevel</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.ExposureType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.FixEffect</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.ResourceType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.Reversibility</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.RiskLevel</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceMetadata.VerificationStatus</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationGuidanceSpecification.ExpectedEndState</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationParameter.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationParameter.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationParameter.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.AccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.Id</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.Region</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.ResourceGuid</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.ResourceOwnerAccountId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.ResourceOwnerOrgId</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.ResourceRegion</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationResource.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.Action</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.Inverse</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.Logic</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.Phase</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.Service</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStep.VerifyAfter</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationStringFilterCondition.Value</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationSummaryDetail.Action</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationSummaryDetail.Description</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationTrait.Title</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationTrait.Type</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.RemediationV2Item.TargetUid</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

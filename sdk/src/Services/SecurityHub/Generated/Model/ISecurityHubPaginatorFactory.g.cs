@@ -105,6 +105,12 @@ namespace Amazon.SecurityHub.Model
         IGetRecommendedPolicyV2Paginator GetRecommendedPolicyV2(GetRecommendedPolicyV2Request request);
 
         /// <summary>
+        /// Paginator for GetRemediationsV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IGetRemediationsV2Paginator GetRemediationsV2(GetRemediationsV2Request request);
+
+        /// <summary>
         /// Paginator for GetResourcesTrendsV2 operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
@@ -139,6 +145,12 @@ namespace Amazon.SecurityHub.Model
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
         IListEnabledProductsForImportPaginator ListEnabledProductsForImport(ListEnabledProductsForImportRequest request);
+
+        /// <summary>
+        /// Paginator for ListExposuresByRemediationV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListExposuresByRemediationV2Paginator ListExposuresByRemediationV2(ListExposuresByRemediationV2Request request);
 
         /// <summary>
         /// Paginator for ListFindingAggregators operation
