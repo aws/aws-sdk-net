@@ -1599,6 +1599,10 @@ namespace Amazon.CloudFront
         /// </summary>
         public static readonly OriginAccessControlSigningBehaviors Always = new OriginAccessControlSigningBehaviors("always");
         /// <summary>
+        /// Constant AlwaysAmzAuth for OriginAccessControlSigningBehaviors
+        /// </summary>
+        public static readonly OriginAccessControlSigningBehaviors AlwaysAmzAuth = new OriginAccessControlSigningBehaviors("always-amz-auth");
+        /// <summary>
         /// Constant Never for OriginAccessControlSigningBehaviors
         /// </summary>
         public static readonly OriginAccessControlSigningBehaviors Never = new OriginAccessControlSigningBehaviors("never");
