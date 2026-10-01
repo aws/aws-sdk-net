@@ -179,6 +179,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetStatus() => this.Status != null;
 
         /// <summary>
+        /// Gets and sets the property TextReadyAt. 
+        /// <para>
+        /// The time at which all text content in the data ingestion job finished extraction and
+        /// became available to query.
+        /// </para>
+        ///  
+        /// <para>
+        /// This time isn't returned until text extraction is complete for all the documents in
+        /// the job.
+        /// </para>
+        /// </summary>
+        public DateTime? TextReadyAt { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TextReadyAt property is set.
+        /// </summary>
+        internal bool IsSetTextReadyAt() => this.TextReadyAt.HasValue;
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
         /// The time the data ingestion job was last updated.
