@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.AWSHealth.IAmazonAWSHealth.DescribeServiceLifecycle(Amazon.AWSHealth.Model.DescribeServiceLifecycleRequest)" />
+            <member name="M:Amazon.AWSHealth.AmazonAWSHealthClient.DescribeServiceLifecycle(Amazon.AWSHealth.Model.DescribeServiceLifecycleRequest)" />
+            <member name="T:Amazon.AWSHealth.Model.DescribeServiceLifecycleRequest" />
+            <member name="T:Amazon.AWSHealth.Model.DescribeServiceLifecycleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns service lifecycle information, including support milestones and lifecycle events for each service version.
+                </para>
+                <code
+                    title="To retrieve service lifecycle information"
+                    source=".\AWSSDKDocSamples\AWSHealth\AWSHealth.GeneratedSamples.cs"
+                    region="describeservicelifecycle-1727539200000" />
+            </example>
+        </value>
+    </doc>
+</docs>
