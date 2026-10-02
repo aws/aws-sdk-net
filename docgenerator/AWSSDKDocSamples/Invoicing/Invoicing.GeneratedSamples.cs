@@ -90,6 +90,8 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
                         }
                     }
                 },
+                MarketplacePunchOutEnabled = true,
+                MarketplacePunchOutPreference = new MarketplacePunchOutPreference { ApprovalRequestRedirectUrl = "https://www.placeholder-domain.test/approvals" },
                 ProcurementPortalInstanceEndpoint = "https://www.placeholder-domain.test",
                 ProcurementPortalName = "COUPA",
                 ProcurementPortalSharedSecret = "Coupa_Secret",
@@ -553,6 +555,7 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
                         }
                     }
                 },
+                MarketplacePunchOutEnabled = true,
                 ProcurementPortalInstanceEndpoint = "https://www.placeholder-domain.test",
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd",
                 ProcurementPortalSharedSecret = "Coupa_Secret_2",
