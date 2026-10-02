@@ -145,9 +145,9 @@ route by trait:
 ### `@httpPayload` (request)
 
 A `@httpPayload` member IS the entire body: no wrapping object/property name, no other member in the body
-(Smithy: all others are header/query/label). No `IsSet` guard (matches C2J).
+(Smithy: all others are header/query/label). No `IsSet` guard (matches C2J), except string/enum.
 
-- **String** → `text/plain` (or the target's `@mediaType` value when present), no writer scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
+- **String** (enum too) → `text/plain` (or the target's `@mediaType` value when present), no writer scaffold: `if (publicRequest.IsSet{Prop}()) { request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop}); }`. The guard diverges from C2J, whose unguarded `GetBytes` throws on an unset optional payload (DOTNET-8852).
 - **Structure** (a union too) → `application/json`; the scaffold, then the target's marshaller as the body object (`WriteStartObject` → `{Type}Marshaller.Instance.Marshall(publicRequest.{Prop}, context)` → `WriteEndObject`).
 - **Document** → `application/json`; the scaffold, then `Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(writer, publicRequest.{Prop});` with NO `WriteStartObject`/`WriteEndObject` wrapping (the document is the whole JSON value). No C2J precedent.
 - **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (or the target's `@mediaType` value; overrides the top `application/json`). Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override, except when the input also has an `@httpHeader("Content-Type")` member: that header is emitted before the blob block and must win, so the blob's type moves to the top `Content-Type` line and the trailing override is dropped (restJson1 `TestPayloadBlob`). The Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the blob's `@requiresLength` (C2J parity):

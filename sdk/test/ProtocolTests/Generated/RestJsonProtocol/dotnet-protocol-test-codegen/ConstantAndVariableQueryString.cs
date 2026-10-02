@@ -33,6 +33,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AWSSDK.ProtocolTests.RestJson
 {
@@ -46,7 +47,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonConstantAndVariableQueryStringMissingOneValueRequest()
+        public async Task RestJsonConstantAndVariableQueryStringMissingOneValueRequest()
         {
             // Arrange
             var request = new ConstantAndVariableQueryStringRequest
@@ -55,18 +56,25 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new ConstantAndVariableQueryStringRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.ConstantAndVariableQueryStringAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("GET", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/ConstantAndVariableQueryString", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualUri);
+            Assert.AreEqual("GET", actualRequest.Method);
+            Assert.AreEqual("/ConstantAndVariableQueryString", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualRequest.RequestUri);
             Assert.IsTrue(actualQuerySegments.Contains("foo=bar"));
             Assert.IsTrue(actualQuerySegments.Contains("baz=bam"));
             Assert.IsFalse(actualQuerySegments.Contains("maybeSet"));
@@ -79,7 +87,7 @@ namespace AWSSDK.ProtocolTests.RestJson
         [TestCategory("ProtocolTest")]
         [TestCategory("RequestTest")]
         [TestCategory("RestJson")]
-        public void RestJsonConstantAndVariableQueryStringAllValuesRequest()
+        public async Task RestJsonConstantAndVariableQueryStringAllValuesRequest()
         {
             // Arrange
             var request = new ConstantAndVariableQueryStringRequest
@@ -89,18 +97,25 @@ namespace AWSSDK.ProtocolTests.RestJson
             };
             var config = new AmazonRestJsonProtocolConfig
             {
-              ServiceURL = "https://test.com/"
+              ServiceURL = MockHttpClientUtils.TestServiceUrl,
+              MaxErrorRetry = 0,
             };
 
-            var marshaller = new ConstantAndVariableQueryStringRequestMarshaller();
+            using var client = new AmazonRestJsonProtocolClient(MockHttpClientUtils.TestCredentials, config);
+            var mockHttp = MockHttpClientUtils.InjectMockHttp(client, new MockHttpResponse
+            {
+                ContentType = "application/json",
+                Body = Encoding.UTF8.GetBytes("{}"),
+            });
+
             // Act
-            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+            await client.ConstantAndVariableQueryStringAsync(request).ConfigureAwait(false);
+            var actualRequest = mockHttp.LastCreatedRequest;
 
             // Assert
-            Assert.AreEqual("GET", marshalledRequest.HttpMethod);
-            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
-            Assert.AreEqual("/ConstantAndVariableQueryString", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
-            var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualUri);
+            Assert.AreEqual("GET", actualRequest.Method);
+            Assert.AreEqual("/ConstantAndVariableQueryString", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualRequest.RequestUri));
+            var actualQuerySegments = ProtocolTestUtils.GetQuerySegmentsFromOriginalString(actualRequest.RequestUri);
             Assert.IsTrue(actualQuerySegments.Contains("foo=bar"));
             Assert.IsTrue(actualQuerySegments.Contains("baz=bam"));
             Assert.IsTrue(actualQuerySegments.Contains("maybeSet=yes"));
