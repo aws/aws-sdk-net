@@ -141,6 +141,17 @@ namespace Amazon.Extensions.CborProtocol.Internal
         private int _currentChunkSize;
 
         /// <summary>
+        /// Set once a read from the underlying stream returns no data, so the reader stops
+        /// trying to refill ahead of reads at the end of the stream.
+        /// </summary>
+        private bool _streamExhausted;
+
+        /// <summary>
+        /// The longest CBOR data item header: the initial byte followed by up to 8 bytes of argument.
+        /// </summary>
+        private const int MaxCborHeaderLength = 1 + 8;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CborStreamReader"/> class that reads CBOR data
         /// from the specified stream.
         /// </summary>
@@ -157,6 +168,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
             _buffer = ArrayPool<byte>.Shared.Rent(AWSConfigs.CborReaderInitialBufferSize);
 
             _currentChunkSize = _stream.Read(_buffer, 0, _buffer.Length);
+            _streamExhausted = _currentChunkSize == 0;
             var memorySlice = new ReadOnlyMemory<byte>(_buffer, 0, _currentChunkSize);
 
             // We must allow multiple root values because when refilling the new chunk is just a fragment of the whole stream.
@@ -197,6 +209,8 @@ namespace Amazon.Extensions.CborProtocol.Internal
 
             // Read from stream into buffer after leftovers
             int bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
+            if (bytesReadFromStream == 0)
+                _streamExhausted = true;
 
             // Update the total size of valid data in our buffer.
             _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
@@ -222,6 +236,14 @@ namespace Amazon.Extensions.CborProtocol.Internal
         {
             int maxRetries = 64;
             int retryCount = 0;
+
+            // Refill before the read when fewer bytes remain than the longest CBOR header, so a value that
+            // straddles the end of the chunk is read whole instead of failing and being retried. Each such
+            // failure throws, and exceptions cost far more than a refill.
+            if (_internalCborReader.BytesRemaining < MaxCborHeaderLength && !_streamExhausted)
+            {
+                RefillBuffer();
+            }
 
             while (true)
             {
@@ -388,6 +410,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
 
         public int? ReadStartMap() => ExecuteRead(static (self, reader) =>
         {
+            self.EnsureDefiniteLengthItemIsBuffered(2);
             var count = reader.ReadStartMap();
             self._nestingStack.Push(new ContainerFrame(CborContainerType.Map, count));
             return count;
@@ -395,6 +418,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
 
         public int? ReadStartArray() => ExecuteRead(static (self, reader) =>
         {
+            self.EnsureDefiniteLengthItemIsBuffered(1);
             var count = reader.ReadStartArray();
             self._nestingStack.Push(new ContainerFrame(CborContainerType.Array, count));
             return count;
@@ -475,27 +499,42 @@ namespace Amazon.Extensions.CborProtocol.Internal
         }
 
         /// <summary>
-        /// Preemptively expands the buffer if the upcoming CBOR string declares a length
-        /// larger than the current buffer capacity.
+        /// Makes sure the buffer holds enough of an upcoming definite-length CBOR item for <see cref="CborReader"/>
+        /// to accept it: the whole payload of a string, or for a map or array at least one byte per element,
+        /// since <see cref="CborReader"/> rejects a declared length that can't fit in the bytes it holds.
+        /// If the item runs past the end of the current chunk, the buffer is refilled, and expanded first
+        /// when the item is larger than the buffer's capacity.
         ///
-        /// This reduces multiple incremental refills when reading large definite-length
-        /// CBOR strings by allocating enough space for the entire value in one step.
+        /// This reads large items in one step instead of through multiple incremental refills, and avoids
+        /// the exception the read would otherwise throw when an item straddles the end of a chunk.
         /// </summary>
-        private void ExpandBufferSizeForLargeStrings()
+        /// <param name="minBytesPerElement">The minimum encoded size of one element of the declared length:
+        /// 1 for strings (bytes) and arrays (items), 2 for maps (a key and a value per entry).</param>
+        private void EnsureDefiniteLengthItemIsBuffered(int minBytesPerElement)
         {
-            const int MaxCborHeaderLength = 1 + 8; // initial byte + max 64-bit length
             const int AdditionalInfoMask = 0b0001_1111;
 
             var leftoverBytesCount = _internalCborReader.BytesRemaining;
             var unreadOffset = _currentChunkSize - leftoverBytesCount;
 
-            // Ensure we have enough bytes to read the declared length header
-            if (leftoverBytesCount < MaxCborHeaderLength)
+            if (leftoverBytesCount == 0)
                 return;
 
             // Extract the additional information field which determines how the length is encoded.
             var additionalInfo = _buffer[unreadOffset] & AdditionalInfoMask;
 
+            int headerLength =
+                additionalInfo < 24 ? 1 :
+                additionalInfo == 24 ? 2 :
+                additionalInfo == 25 ? 3 :
+                additionalInfo == 26 ? 5 :
+                additionalInfo == 27 ? 9 :
+                0;
+
+            // Indefinite-length item (31) or unsupported additional info: the total size can't be precomputed.
+            // Also skip when the header itself isn't fully buffered; the read's retry handles that case.
+            if (headerLength == 0 || leftoverBytesCount < headerLength)
+                return;
 
             // The bytes following the initial type/length header.
             var valueSpan = _buffer.AsSpan(unreadOffset + 1);
@@ -519,16 +558,18 @@ namespace Amazon.Extensions.CborProtocol.Internal
             {
                 len64 = BinaryPrimitives.ReadUInt32BigEndian(valueSpan);
             }
-            else if (additionalInfo == 27)
+            else
             {
                 len64 = BinaryPrimitives.ReadUInt64BigEndian(valueSpan);
             }
-            else
-            {
-                // Indefinite-length item (31) or unsupported additional info.
-                // We cant precompute its total size, so skip expansion.
+
+            // Guard the multiplication below; lengths this large fall through to the size check after it.
+            if (len64 <= int.MaxValue)
+                len64 *= (ulong)minBytesPerElement;
+
+            // The whole item (header + payload) is already in the buffer.
+            if (len64 <= (ulong)(leftoverBytesCount - headerLength))
                 return;
-            }
 
             // Add header length margin to ensure we can read the full header + payload contiguously.
             len64 += MaxCborHeaderLength;
@@ -548,9 +589,14 @@ namespace Amazon.Extensions.CborProtocol.Internal
             // Safe cast since len64 <= int.MaxValue at this point.
             int declaredLength = (int)len64;
 
-            // If the declared value fits within the current buffer capacity, no expansion is needed.
+            // If the declared value fits within the current buffer capacity, moving the leftover bytes
+            // to the start of the buffer and reading more is enough.
             if (declaredLength <= _buffer.Length)
+            {
+                if (!_streamExhausted)
+                    RefillBuffer();
                 return;
+            }
 
             var newBuffer = ArrayPool<byte>.Shared.Rent(declaredLength);
 
@@ -560,6 +606,8 @@ namespace Amazon.Extensions.CborProtocol.Internal
 
             // Read from stream into buffer after leftovers
             var bytesReadFromStream = _stream.Read(_buffer, leftoverBytesCount, _buffer.Length - leftoverBytesCount);
+            if (bytesReadFromStream == 0)
+                _streamExhausted = true;
 
             // Update the total size of valid data in our buffer.
             _currentChunkSize = leftoverBytesCount + bytesReadFromStream;
@@ -572,8 +620,8 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 declaredLength, _buffer.Length);
         }
 
-        public string ReadTextString() => ExecuteValueRead(static (self, r) => { self.ExpandBufferSizeForLargeStrings(); return r.ReadTextString(); });
-        public byte[] ReadByteString() => ExecuteValueRead(static (self, r) => { self.ExpandBufferSizeForLargeStrings(); return r.ReadByteString(); });
+        public string ReadTextString() => ExecuteValueRead(static (self, r) => { self.EnsureDefiniteLengthItemIsBuffered(1); return r.ReadTextString(); });
+        public byte[] ReadByteString() => ExecuteValueRead(static (self, r) => { self.EnsureDefiniteLengthItemIsBuffered(1); return r.ReadByteString(); });
         public int ReadInt32() => ExecuteValueRead(static (_, r) => r.ReadInt32());
         public long ReadInt64() => ExecuteValueRead(static (_, r) => r.ReadInt64());
         public ulong ReadUInt64() => ExecuteValueRead(static (_, r) => r.ReadUInt64());
