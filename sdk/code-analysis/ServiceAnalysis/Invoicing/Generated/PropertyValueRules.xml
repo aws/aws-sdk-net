@@ -607,6 +607,12 @@
     <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.MarketplacePunchOutPreference.ApprovalRequestRedirectUrl</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.ProcurementPortal.PortalDisplayName</property>
     <min>0</min>
     <max>1024</max>

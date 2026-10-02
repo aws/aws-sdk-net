@@ -45,6 +45,8 @@ namespace Amazon.Invoicing.Model
         private ProcurementPortalPreferenceStatus _einvoiceDeliveryPreferenceStatus;
         private string _einvoiceDeliveryPreferenceStatusReason;
         private DateTime? _lastUpdateDate;
+        private bool? _marketplacePunchOutEnabled;
+        private MarketplacePunchOutPreference _marketplacePunchOutPreference;
         private string _procurementPortalInstanceEndpoint;
         private ProcurementPortalName _procurementPortalName;
         private string _procurementPortalPreferenceArn;
@@ -181,8 +183,8 @@ namespace Amazon.Invoicing.Model
         /// <summary>
         /// Gets and sets the property EinvoiceDeliveryPreference. 
         /// <para>
-        /// The configuration settings that specify how e-invoices are delivered to the procurement
-        /// portal.
+        /// The e-invoice delivery configuration including document types, attachment types, and
+        /// customization settings.
         /// </para>
         /// </summary>
         public EinvoiceDeliveryPreference EinvoiceDeliveryPreference
@@ -251,6 +253,44 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetLastUpdateDate()
         {
             return this._lastUpdateDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplacePunchOutEnabled. 
+        /// <para>
+        /// Indicates whether Marketplace PunchOut is enabled for this procurement portal preference.
+        /// Defaults to <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? MarketplacePunchOutEnabled
+        {
+            get { return this._marketplacePunchOutEnabled; }
+            set { this._marketplacePunchOutEnabled = value; }
+        }
+
+        // Check to see if MarketplacePunchOutEnabled property is set
+        internal bool IsSetMarketplacePunchOutEnabled()
+        {
+            return this._marketplacePunchOutEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplacePunchOutPreference. 
+        /// <para>
+        /// The Marketplace PunchOut configuration for this procurement portal preference. This
+        /// is present when <c>MarketplacePunchOutEnabled</c> is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public MarketplacePunchOutPreference MarketplacePunchOutPreference
+        {
+            get { return this._marketplacePunchOutPreference; }
+            set { this._marketplacePunchOutPreference = value; }
+        }
+
+        // Check to see if MarketplacePunchOutPreference property is set
+        internal bool IsSetMarketplacePunchOutPreference()
+        {
+            return this._marketplacePunchOutPreference != null;
         }
 
         /// <summary>

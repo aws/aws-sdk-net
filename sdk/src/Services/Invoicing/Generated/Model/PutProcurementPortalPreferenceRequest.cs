@@ -47,6 +47,8 @@ namespace Amazon.Invoicing.Model
         private List<Contact> _contacts = AWSConfigs.InitializeCollections ? new List<Contact>() : null;
         private bool? _einvoiceDeliveryEnabled;
         private EinvoiceDeliveryPreference _einvoiceDeliveryPreference;
+        private bool? _marketplacePunchOutEnabled;
+        private MarketplacePunchOutPreference _marketplacePunchOutPreference;
         private string _procurementPortalInstanceEndpoint;
         private string _procurementPortalPreferenceArn;
         private string _procurementPortalSharedSecret;
@@ -135,6 +137,44 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetEinvoiceDeliveryPreference()
         {
             return this._einvoiceDeliveryPreference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplacePunchOutEnabled. 
+        /// <para>
+        /// Whether Marketplace PunchOut is enabled for this connection. Defaults to false if
+        /// not provided.
+        /// </para>
+        /// </summary>
+        public bool? MarketplacePunchOutEnabled
+        {
+            get { return this._marketplacePunchOutEnabled; }
+            set { this._marketplacePunchOutEnabled = value; }
+        }
+
+        // Check to see if MarketplacePunchOutEnabled property is set
+        internal bool IsSetMarketplacePunchOutEnabled()
+        {
+            return this._marketplacePunchOutEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplacePunchOutPreference. 
+        /// <para>
+        /// Configuration for Marketplace PunchOut. Required when MarketplacePunchOutEnabled is
+        /// true.
+        /// </para>
+        /// </summary>
+        public MarketplacePunchOutPreference MarketplacePunchOutPreference
+        {
+            get { return this._marketplacePunchOutPreference; }
+            set { this._marketplacePunchOutPreference = value; }
+        }
+
+        // Check to see if MarketplacePunchOutPreference property is set
+        internal bool IsSetMarketplacePunchOutPreference()
+        {
+            return this._marketplacePunchOutPreference != null;
         }
 
         /// <summary>

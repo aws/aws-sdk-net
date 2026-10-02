@@ -43,6 +43,7 @@ namespace Amazon.Invoicing.Model
         private ProcurementPortalPreferenceStatus _einvoiceDeliveryPreferenceStatus;
         private string _einvoiceDeliveryPreferenceStatusReason;
         private DateTime? _lastUpdateDate;
+        private bool? _marketplacePunchOutEnabled;
         private ProcurementPortalName _procurementPortalName;
         private string _procurementPortalPreferenceArn;
         private bool? _purchaseOrderRetrievalEnabled;
@@ -203,6 +204,25 @@ namespace Amazon.Invoicing.Model
         internal bool IsSetLastUpdateDate()
         {
             return this._lastUpdateDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MarketplacePunchOutEnabled. 
+        /// <para>
+        /// Indicates whether Marketplace PunchOut is enabled for this procurement portal preference.
+        /// Defaults to <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? MarketplacePunchOutEnabled
+        {
+            get { return this._marketplacePunchOutEnabled; }
+            set { this._marketplacePunchOutEnabled = value; }
+        }
+
+        // Check to see if MarketplacePunchOutEnabled property is set
+        internal bool IsSetMarketplacePunchOutEnabled()
+        {
+            return this._marketplacePunchOutEnabled.HasValue; 
         }
 
         /// <summary>

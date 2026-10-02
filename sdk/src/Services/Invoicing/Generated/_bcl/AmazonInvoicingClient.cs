@@ -678,6 +678,11 @@ namespace Amazon.Invoicing
         /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
+        /// </exception>
         /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
         /// The processing request failed because of an unknown error, exception, or failure.
         /// </exception>
@@ -724,6 +729,11 @@ namespace Amazon.Invoicing
         /// <returns>The response from the DeleteProcurementPortalPreference service method, as returned by Invoicing.</returns>
         /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This exception occurs when a concurrent modification is detected during
+        /// an update operation, or when attempting to create a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
         /// The processing request failed because of an unknown error, exception, or failure.

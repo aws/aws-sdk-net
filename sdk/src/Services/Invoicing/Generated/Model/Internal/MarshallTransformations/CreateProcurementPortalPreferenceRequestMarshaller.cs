@@ -131,6 +131,23 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMarketplacePunchOutEnabled())
+            {
+                context.Writer.WritePropertyName("MarketplacePunchOutEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.MarketplacePunchOutEnabled.Value);
+            }
+
+            if(publicRequest.IsSetMarketplacePunchOutPreference())
+            {
+                context.Writer.WritePropertyName("MarketplacePunchOutPreference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MarketplacePunchOutPreferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MarketplacePunchOutPreference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetProcurementPortalInstanceEndpoint())
             {
                 context.Writer.WritePropertyName("ProcurementPortalInstanceEndpoint");

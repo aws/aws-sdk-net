@@ -116,6 +116,18 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MarketplacePunchOutEnabled", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.MarketplacePunchOutEnabled = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("MarketplacePunchOutPreference", targetDepth, ref reader))
+                {
+                    var unmarshaller = MarketplacePunchOutPreferenceUnmarshaller.Instance;
+                    unmarshalledObject.MarketplacePunchOutPreference = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ProcurementPortalInstanceEndpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
