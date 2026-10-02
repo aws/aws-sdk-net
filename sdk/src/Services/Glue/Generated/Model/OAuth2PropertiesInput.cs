@@ -101,7 +101,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property OAuth2GrantType. 
         /// <para>
         /// The OAuth2 grant type in the CreateConnection request. For example, <c>AUTHORIZATION_CODE</c>,
-        /// <c>JWT_BEARER</c>, or <c>CLIENT_CREDENTIALS</c>.
+        /// <c>JWT_BEARER</c>, <c>REFRESH_TOKEN</c>, or <c>CLIENT_CREDENTIALS</c>.
         /// </para>
         /// </summary>
         public OAuth2GrantType OAuth2GrantType

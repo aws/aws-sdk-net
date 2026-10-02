@@ -5680,6 +5680,10 @@ namespace Amazon.Glue
         /// Constant JWT_BEARER for OAuth2GrantType
         /// </summary>
         public static readonly OAuth2GrantType JWT_BEARER = new OAuth2GrantType("JWT_BEARER");
+        /// <summary>
+        /// Constant REFRESH_TOKEN for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType REFRESH_TOKEN = new OAuth2GrantType("REFRESH_TOKEN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
