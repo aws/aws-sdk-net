@@ -2190,6 +2190,134 @@ namespace Amazon.SecurityAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type TriggerEvent.
+    /// </summary>
+    public class TriggerEvent : ConstantClass
+    {
+        /// <summary>
+        /// Constant PULL_REQUEST_DRAFT for TriggerEvent
+        /// </summary>
+        public static readonly TriggerEvent PULL_REQUEST_DRAFT = new TriggerEvent("PULL_REQUEST_DRAFT");
+
+        /// <summary>
+        /// Constant PULL_REQUEST_LABEL_ADDED for TriggerEvent
+        /// </summary>
+        public static readonly TriggerEvent PULL_REQUEST_LABEL_ADDED = new TriggerEvent("PULL_REQUEST_LABEL_ADDED");
+
+        /// <summary>
+        /// Constant PULL_REQUEST_READY_FOR_REVIEW for TriggerEvent
+        /// </summary>
+        public static readonly TriggerEvent PULL_REQUEST_READY_FOR_REVIEW = new TriggerEvent("PULL_REQUEST_READY_FOR_REVIEW");
+
+        /// <summary>
+        /// Constructs a custom TriggerEvent for a value not among the defined constants.
+        /// </summary>
+        public TriggerEvent(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerEvent FindValue(string value)
+        {
+            return FindValue<TriggerEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TriggerFilterMatchMode.
+    /// </summary>
+    public class TriggerFilterMatchMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant EXCLUDE for TriggerFilterMatchMode
+        /// </summary>
+        public static readonly TriggerFilterMatchMode EXCLUDE = new TriggerFilterMatchMode("EXCLUDE");
+
+        /// <summary>
+        /// Constant INCLUDE for TriggerFilterMatchMode
+        /// </summary>
+        public static readonly TriggerFilterMatchMode INCLUDE = new TriggerFilterMatchMode("INCLUDE");
+
+        /// <summary>
+        /// Constructs a custom TriggerFilterMatchMode for a value not among the defined constants.
+        /// </summary>
+        public TriggerFilterMatchMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerFilterMatchMode FindValue(string value)
+        {
+            return FindValue<TriggerFilterMatchMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerFilterMatchMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
+    /// Constants used for properties of type TriggerFilterType.
+    /// </summary>
+    public class TriggerFilterType : ConstantClass
+    {
+        /// <summary>
+        /// Constant LABEL for TriggerFilterType
+        /// </summary>
+        public static readonly TriggerFilterType LABEL = new TriggerFilterType("LABEL");
+
+        /// <summary>
+        /// Constant TARGET_BRANCH for TriggerFilterType
+        /// </summary>
+        public static readonly TriggerFilterType TARGET_BRANCH = new TriggerFilterType("TARGET_BRANCH");
+
+        /// <summary>
+        /// Constructs a custom TriggerFilterType for a value not among the defined constants.
+        /// </summary>
+        public TriggerFilterType(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TriggerFilterType FindValue(string value)
+        {
+            return FindValue<TriggerFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TriggerFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type UserRole.
     /// </summary>
     public class UserRole : ConstantClass

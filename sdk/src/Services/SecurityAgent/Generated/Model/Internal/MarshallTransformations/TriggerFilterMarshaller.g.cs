@@ -34,49 +34,44 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitLabResourceCapabilities Marshaller
+    /// TriggerFilter Marshaller
     /// </summary>
-    public partial class GitLabResourceCapabilitiesMarshaller : IRequestMarshaller<GitLabResourceCapabilities, JsonMarshallerContext>
+    public partial class TriggerFilterMarshaller : IRequestMarshaller<TriggerFilter, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitLabResourceCapabilities requestObject, JsonMarshallerContext context)
+        public void Marshall(TriggerFilter requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetLeaveComments())
+            if (requestObject.IsSetMatchMode())
             {
-                context.Writer.WritePropertyName("leaveComments");
-                context.Writer.WriteBooleanValue(requestObject.LeaveComments.Value);
+                context.Writer.WritePropertyName("matchMode");
+                context.Writer.WriteStringValue(requestObject.MatchMode);
             }
 
-            if (requestObject.IsSetRemediateCode())
+            if (requestObject.IsSetPatterns())
             {
-                context.Writer.WritePropertyName("remediateCode");
-                context.Writer.WriteBooleanValue(requestObject.RemediateCode.Value);
-            }
-
-            if (requestObject.IsSetTriggerFilterGroups())
-            {
-                context.Writer.WritePropertyName("triggerFilterGroups");
+                context.Writer.WritePropertyName("patterns");
                 context.Writer.WriteStartArray();
-                foreach (var requestObjectTriggerFilterGroupsListValue in requestObject.TriggerFilterGroups)
+                foreach (var requestObjectPatternsListValue in requestObject.Patterns)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TriggerFilterGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTriggerFilterGroupsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteStringValue(requestObjectPatternsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(requestObject.Type);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static GitLabResourceCapabilitiesMarshaller Instance = new GitLabResourceCapabilitiesMarshaller();
+        public readonly static TriggerFilterMarshaller Instance = new TriggerFilterMarshaller();
     }
 }

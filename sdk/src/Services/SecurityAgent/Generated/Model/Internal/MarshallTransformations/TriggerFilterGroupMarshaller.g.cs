@@ -34,39 +34,38 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitLabResourceCapabilities Marshaller
+    /// TriggerFilterGroup Marshaller
     /// </summary>
-    public partial class GitLabResourceCapabilitiesMarshaller : IRequestMarshaller<GitLabResourceCapabilities, JsonMarshallerContext>
+    public partial class TriggerFilterGroupMarshaller : IRequestMarshaller<TriggerFilterGroup, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitLabResourceCapabilities requestObject, JsonMarshallerContext context)
+        public void Marshall(TriggerFilterGroup requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetLeaveComments())
+            if (requestObject.IsSetEvents())
             {
-                context.Writer.WritePropertyName("leaveComments");
-                context.Writer.WriteBooleanValue(requestObject.LeaveComments.Value);
-            }
-
-            if (requestObject.IsSetRemediateCode())
-            {
-                context.Writer.WritePropertyName("remediateCode");
-                context.Writer.WriteBooleanValue(requestObject.RemediateCode.Value);
-            }
-
-            if (requestObject.IsSetTriggerFilterGroups())
-            {
-                context.Writer.WritePropertyName("triggerFilterGroups");
+                context.Writer.WritePropertyName("events");
                 context.Writer.WriteStartArray();
-                foreach (var requestObjectTriggerFilterGroupsListValue in requestObject.TriggerFilterGroups)
+                foreach (var requestObjectEventsListValue in requestObject.Events)
+                {
+                    context.Writer.WriteStringValue(requestObjectEventsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if (requestObject.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("filters");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectFiltersListValue in requestObject.Filters)
                 {
                     context.Writer.WriteStartObject();
 
-                    var marshaller = TriggerFilterGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTriggerFilterGroupsListValue, context);
+                    var marshaller = TriggerFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFiltersListValue, context);
 
                     context.Writer.WriteEndObject();
                 }
@@ -77,6 +76,6 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static GitLabResourceCapabilitiesMarshaller Instance = new GitLabResourceCapabilitiesMarshaller();
+        public readonly static TriggerFilterGroupMarshaller Instance = new TriggerFilterGroupMarshaller();
     }
 }

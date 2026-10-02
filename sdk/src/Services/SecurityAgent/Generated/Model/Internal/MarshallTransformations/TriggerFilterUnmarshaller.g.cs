@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AzureDevOpsResourceCapabilities Object
+    /// Response Unmarshaller for TriggerFilter Object
     /// </summary>
-    public partial class AzureDevOpsResourceCapabilitiesUnmarshaller : IJsonUnmarshaller<AzureDevOpsResourceCapabilities, JsonUnmarshallerContext>
+    public partial class TriggerFilterUnmarshaller : IJsonUnmarshaller<TriggerFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public AzureDevOpsResourceCapabilities Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TriggerFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new AzureDevOpsResourceCapabilities();
+            var unmarshalledObject = new TriggerFilter();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,35 +53,35 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("leaveComments", targetDepth, ref reader))
+                if (context.TestExpression("matchMode", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.LeaveComments = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MatchMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("remediateCode", targetDepth, ref reader))
+                if (context.TestExpression("patterns", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RemediateCode = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Patterns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("triggerFilterGroups", targetDepth, ref reader))
+                if (context.TestExpression("type", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<TriggerFilterGroup, TriggerFilterGroupUnmarshaller>(TriggerFilterGroupUnmarshaller.Instance);
-                    unmarshalledObject.TriggerFilterGroups = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static AzureDevOpsResourceCapabilitiesUnmarshaller _instance = new AzureDevOpsResourceCapabilitiesUnmarshaller();
+        private static TriggerFilterUnmarshaller _instance = new TriggerFilterUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static AzureDevOpsResourceCapabilitiesUnmarshaller Instance => _instance;
+        public static TriggerFilterUnmarshaller Instance => _instance;
     }
 }
