@@ -2092,6 +2092,26 @@ namespace Amazon.MediaPackageV2
         public static readonly ValidationExceptionType MULTIVIEW_DUPLICATE_SOURCE = new ValidationExceptionType("MULTIVIEW_DUPLICATE_SOURCE");
 
         /// <summary>
+        /// Constant MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_FILTER_CONFIGURATION_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE = new ValidationExceptionType("MULTIVIEW_FILTER_LAYOUT_NOT_AVAILABLE");
+
+        /// <summary>
+        /// Constant MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH = new ValidationExceptionType("MULTIVIEW_FILTER_SOURCE_COUNT_MISMATCH");
+
+        /// <summary>
+        /// Constant MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE = new ValidationExceptionType("MULTIVIEW_FILTER_SOURCE_NOT_AVAILABLE");
+
+        /// <summary>
         /// Constant MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_INPUT_SWITCH_NOT_ALLOWED");
@@ -2167,6 +2187,11 @@ namespace Amazon.MediaPackageV2
         public static readonly ValidationExceptionType MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER = new ValidationExceptionType("MULTIVIEW_SCTE_REQUIRES_AVAILS_PERIOD_TRIGGER");
 
         /// <summary>
+        /// Constant MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED = new ValidationExceptionType("MULTIVIEW_SOURCE_CHANNEL_LIMIT_EXCEEDED");
+
+        /// <summary>
         /// Constant MULTIVIEW_SOURCE_INVALID_INPUT_TYPE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType MULTIVIEW_SOURCE_INVALID_INPUT_TYPE = new ValidationExceptionType("MULTIVIEW_SOURCE_INVALID_INPUT_TYPE");
@@ -2185,6 +2210,11 @@ namespace Amazon.MediaPackageV2
         /// Constant MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED = new ValidationExceptionType("MULTIVIEW_STARTOVER_WINDOW_NOT_ALLOWED");
+
+        /// <summary>
+        /// Constant MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED = new ValidationExceptionType("MULTIVIEW_TS_USE_AUDIO_RENDITION_GROUP_DISABLED");
 
         /// <summary>
         /// Constant NONE_MODE_WITH_TIMING_SOURCE for ValidationExceptionType

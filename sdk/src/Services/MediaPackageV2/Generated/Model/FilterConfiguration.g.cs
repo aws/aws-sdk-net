@@ -98,6 +98,27 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetManifestFilter() => this.ManifestFilter != null;
 
         /// <summary>
+        /// Gets and sets the property Multiview. 
+        /// <para>
+        /// Optionally pin this manifest to a single multiview combination, so that players request
+        /// it without an <c>aws.multiview</c> query parameter. When you pin a combination, note
+        /// that you cannot use the <c>aws.multiview</c> query parameter for this manifest's endpoint
+        /// URL, even when that parameter requests the same combination.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is valid only on an origin endpoint whose channel has an <c>InputType</c>
+        /// of <c>MULTIVIEW</c>.
+        /// </para>
+        /// </summary>
+        public MultiviewFilterConfiguration Multiview { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Multiview property is set.
+        /// </summary>
+        internal bool IsSetMultiview() => this.Multiview != null;
+
+        /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
         /// Optionally specify the start time for all of your manifest egress requests. When you
