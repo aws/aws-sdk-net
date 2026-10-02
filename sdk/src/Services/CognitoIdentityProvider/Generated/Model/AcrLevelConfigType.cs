@@ -30,29 +30,35 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This is the response object from the DescribeTermsByClient operation.
+    /// The configuration for a single authentication context class reference (ACR) level
+    /// in a user pool. Each entry in an <c>AcrConfiguration</c> map associates a level (<c>Level1</c>
+    /// through <c>Level4</c>) with this configuration, which provides the custom name that
+    /// Amazon Cognito reports for that level in the <c>acr</c> token claim.
     /// </summary>
-    public partial class DescribeTermsByClientResponse : AmazonWebServiceResponse
+    public partial class AcrLevelConfigType
     {
-        private TermsType _terms;
+        private string _acrValue;
 
         /// <summary>
-        /// Gets and sets the property Terms. 
+        /// Gets and sets the property AcrValue. 
         /// <para>
-        /// A summary of the requested terms documents, including a unique identifier for later
-        /// changes to the terms documents.
+        /// The custom name for this authentication context class reference (ACR) level. This
+        /// value is the URI that Amazon Cognito reports in the <c>acr</c> token claim when a
+        /// user meets this level. The name must be unique across all levels in the user pool,
+        /// including default names.
         /// </para>
         /// </summary>
-        public TermsType Terms
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string AcrValue
         {
-            get { return this._terms; }
-            set { this._terms = value; }
+            get { return this._acrValue; }
+            set { this._acrValue = value; }
         }
 
-        // Check to see if Terms property is set
-        internal bool IsSetTerms()
+        // Check to see if AcrValue property is set
+        internal bool IsSetAcrValue()
         {
-            return this._terms != null;
+            return this._acrValue != null;
         }
 
     }

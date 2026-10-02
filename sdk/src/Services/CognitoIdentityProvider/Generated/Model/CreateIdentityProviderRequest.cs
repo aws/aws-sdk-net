@@ -61,12 +61,49 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class CreateIdentityProviderRequest : AmazonCognitoIdentityProviderRequest
     {
+        private Dictionary<string, string> _acrMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Dictionary<string, string> _attributeMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _idpIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Dictionary<string, string> _providerDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _providerName;
         private IdentityProviderTypeType _providerType;
         private string _userPoolId;
+
+        /// <summary>
+        /// Gets and sets the property AcrMapping. 
+        /// <para>
+        /// A mapping between the authentication context class reference (ACR) levels of your
+        /// user pool and the ACR values of the external OpenID Connect (OIDC) identity provider
+        /// (IdP). The map is keyed by level, from <c>Level1</c> through <c>Level4</c>, and each
+        /// value is the ACR value that the IdP uses for the corresponding level. Amazon Cognito
+        /// uses this mapping to translate a requested user pool ACR level to the value that the
+        /// IdP expects, and to map an ACR value that the IdP returns back to a user pool level.
+        /// When the IdP returns an ACR value that isn't mapped, Amazon Cognito resolves it to
+        /// the lowest level. Only OIDC IdPs support ACR mapping.
+        /// </para>
+        ///  
+        /// <para>
+        /// Setting <c>AcrMapping</c> is available in all feature plans. It isn't restricted to
+        /// the Essentials or Plus feature plan.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=4)]
+        public Dictionary<string, string> AcrMapping
+        {
+            get { return this._acrMapping; }
+            set { this._acrMapping = value; }
+        }
+
+        // Check to see if AcrMapping property is set
+        internal bool IsSetAcrMapping()
+        {
+            return this._acrMapping != null && (this._acrMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AttributeMapping. 

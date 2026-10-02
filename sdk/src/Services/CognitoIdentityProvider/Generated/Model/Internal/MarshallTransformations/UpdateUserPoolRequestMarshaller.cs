@@ -86,6 +86,25 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAcrConfiguration())
+            {
+                context.Writer.WritePropertyName("AcrConfiguration");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAcrConfigurationKvp in publicRequest.AcrConfiguration)
+                {
+                    context.Writer.WritePropertyName(publicRequestAcrConfigurationKvp.Key);
+                    var publicRequestAcrConfigurationValue = publicRequestAcrConfigurationKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AcrLevelConfigTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAcrConfigurationValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetAdminCreateUserConfig())
             {
                 context.Writer.WritePropertyName("AdminCreateUserConfig");

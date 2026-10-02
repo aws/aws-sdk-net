@@ -30,8 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This exception is thrown when a feature you attempted to configure isn't available
-    /// in your current feature plan.
+    /// This exception is thrown when a feature that you attempted to use or configure isn't
+    /// included in your user pool's current feature plan. This can occur when:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// You configure a feature that your feature plan doesn't support.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You make a request that uses a feature that requires a higher feature plan.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+    /// feature.
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

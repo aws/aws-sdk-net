@@ -35,6 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class RespondToAuthChallengeResponse : AmazonWebServiceResponse
     {
         private AuthenticationResultType _authenticationResult;
+        private List<string> _availableChallenges = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ChallengeNameType _challengeName;
         private Dictionary<string, string> _challengeParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _session;
@@ -57,6 +58,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAuthenticationResult()
         {
             return this._authenticationResult != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailableChallenges. 
+        /// <para>
+        /// This response parameter lists the available authentication challenges that users can
+        /// select from in <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice">choice-based
+        /// authentication</a>. For example, they might be able to choose between passkey authentication,
+        /// a one-time password from an SMS message, and a traditional password.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AvailableChallenges
+        {
+            get { return this._availableChallenges; }
+            set { this._availableChallenges = value; }
+        }
+
+        // Check to see if AvailableChallenges property is set
+        internal bool IsSetAvailableChallenges()
+        {
+            return this._availableChallenges != null && (this._availableChallenges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +254,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// unmodified, to the next <c>RespondToAuthChallenge</c> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=4096)]
         public string Session
         {
             get { return this._session; }

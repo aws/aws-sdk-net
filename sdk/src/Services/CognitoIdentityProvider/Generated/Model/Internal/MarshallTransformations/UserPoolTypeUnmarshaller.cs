@@ -62,6 +62,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountRecoverySetting = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AcrConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, AcrLevelConfigType, StringUnmarshaller, AcrLevelConfigTypeUnmarshaller>(StringUnmarshaller.Instance, AcrLevelConfigTypeUnmarshaller.Instance);
+                    unmarshalledObject.AcrConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AdminCreateUserConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = AdminCreateUserConfigTypeUnmarshaller.Instance;

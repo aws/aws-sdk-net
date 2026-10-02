@@ -552,7 +552,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// identifier, unmodified, to the next <c>AdminRespondToAuthChallenge</c> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=4096)]
         public string Session
         {
             get { return this._session; }

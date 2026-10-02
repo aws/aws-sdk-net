@@ -2701,6 +2701,24 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the AdminInitiateAuth service method.</param>
         /// 
         /// <returns>The response from the AdminInitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -2834,6 +2852,24 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the AdminInitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -7541,8 +7577,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the CreateUserPool service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -7651,8 +7701,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the CreateUserPool service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -7748,8 +7812,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the CreateUserPoolClient service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -7838,8 +7916,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the CreateUserPoolClient service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -7935,8 +8027,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -8022,8 +8128,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -8094,8 +8214,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the CreateUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -8171,8 +8305,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the CreateUserPoolReplica service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -10392,10 +10540,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// To call <c>DescribeTermsByClient</c>, you must have the <c>cognito-idp:DescribeTermsByClient</c>
-        /// Identity and Access Management (IAM) permission. This operation additionally validates
-        /// your permission for <c>cognito-idp:DescribeTerms</c>, the action for . As a result,
-        /// an IAM policy that denies <c>cognito-idp:DescribeTerms</c> also denies requests to
-        /// <c>DescribeTermsByClient</c>.
+        /// Identity and Access Management (IAM) permission. An IAM policy that denies <c>cognito-idp:DescribeTerms</c>
+        /// also denies requests to <c>DescribeTermsByClient</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -10462,10 +10608,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// To call <c>DescribeTermsByClient</c>, you must have the <c>cognito-idp:DescribeTermsByClient</c>
-        /// Identity and Access Management (IAM) permission. This operation additionally validates
-        /// your permission for <c>cognito-idp:DescribeTerms</c>, the action for . As a result,
-        /// an IAM policy that denies <c>cognito-idp:DescribeTerms</c> also denies requests to
-        /// <c>DescribeTermsByClient</c>.
+        /// Identity and Access Management (IAM) permission. An IAM policy that denies <c>cognito-idp:DescribeTerms</c>
+        /// also denies requests to <c>DescribeTermsByClient</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11424,8 +11568,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Issues an access token for machine-to-machine (M2M) authorization. Your app client
         /// provides its client ID and secret, and receives an access token that authorizes requests
-        /// to your resource servers. <c>GetClientToken</c> provides the same functionality as
-        /// the OAuth2 client-credentials grant; both authorize an application rather than a user.
+        /// to your resource servers.
         /// 
         ///  
         /// <para>
@@ -11487,8 +11630,7 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Issues an access token for machine-to-machine (M2M) authorization. Your app client
         /// provides its client ID and secret, and receives an access token that authorizes requests
-        /// to your resource servers. <c>GetClientToken</c> provides the same functionality as
-        /// the OAuth2 client-credentials grant; both authorize an application rather than a user.
+        /// to your resource servers.
         /// 
         ///  
         /// <para>
@@ -13594,6 +13736,24 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the InitiateAuth service method.</param>
         /// 
         /// <returns>The response from the InitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
         /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
         /// associated with your user pool.
@@ -13714,6 +13874,24 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the InitiateAuth service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
         /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
         /// associated with your user pool.
@@ -16186,8 +16364,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the SetLogDeliveryConfiguration service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -16229,8 +16421,22 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         /// <returns>The response from the SetLogDeliveryConfiguration service method, as returned by CognitoIdentityProvider.</returns>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -16762,8 +16968,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -16846,8 +17066,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -19340,8 +19574,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -19470,8 +19718,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -19580,8 +19842,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -19670,8 +19946,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -19778,8 +20068,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
@@ -19879,8 +20183,22 @@ namespace Amazon.CognitoIdentityProvider
         /// This exception is thrown if two or more modifications are happening concurrently.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.FeatureUnavailableInTierException">
-        /// This exception is thrown when a feature you attempted to configure isn't available
-        /// in your current feature plan.
+        /// This exception is thrown when a feature that you attempted to use or configure isn't
+        /// included in your user pool's current feature plan. This can occur when:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You configure a feature that your feature plan doesn't support.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You make a request that uses a feature that requires a higher feature plan.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To resolve this issue, upgrade your user pool to a feature plan that includes the
+        /// feature.
+        /// </para>
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.

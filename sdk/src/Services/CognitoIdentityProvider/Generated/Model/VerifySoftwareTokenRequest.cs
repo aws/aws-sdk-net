@@ -98,7 +98,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The session ID from an <c>AssociateSoftwareToken</c> request.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=4096)]
         public string Session
         {
             get { return this._session; }

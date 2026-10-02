@@ -35,6 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class UserPoolType
     {
         private AccountRecoverySettingType _accountRecoverySetting;
+        private Dictionary<string, AcrLevelConfigType> _acrConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, AcrLevelConfigType>() : null;
         private AdminCreateUserConfigType _adminCreateUserConfig;
         private List<string> _aliasAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
@@ -92,6 +93,38 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetAccountRecoverySetting()
         {
             return this._accountRecoverySetting != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AcrConfiguration. 
+        /// <para>
+        /// The names of the authentication context class reference (ACR) levels for the user
+        /// pool. Amazon Cognito always returns the effective configuration, with default names
+        /// merged in for any level that you haven't customized.
+        /// </para>
+        ///  
+        /// <para>
+        /// Configuring custom ACR level names requires the Essentials or Plus feature plan. To
+        /// activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
+        /// Essentials tier</a> or higher.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=4)]
+        public Dictionary<string, AcrLevelConfigType> AcrConfiguration
+        {
+            get { return this._acrConfiguration; }
+            set { this._acrConfiguration = value; }
+        }
+
+        // Check to see if AcrConfiguration property is set
+        internal bool IsSetAcrConfiguration()
+        {
+            return this._acrConfiguration != null && (this._acrConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -38,10 +38,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// To call <c>DescribeTermsByClient</c>, you must have the <c>cognito-idp:DescribeTermsByClient</c>
-    /// Identity and Access Management (IAM) permission. This operation additionally validates
-    /// your permission for <c>cognito-idp:DescribeTerms</c>, the action for . As a result,
-    /// an IAM policy that denies <c>cognito-idp:DescribeTerms</c> also denies requests to
-    /// <c>DescribeTermsByClient</c>.
+    /// Identity and Access Management (IAM) permission. An IAM policy that denies <c>cognito-idp:DescribeTerms</c>
+    /// also denies requests to <c>DescribeTermsByClient</c>.
     /// </para>
     ///  <note> 
     /// <para>

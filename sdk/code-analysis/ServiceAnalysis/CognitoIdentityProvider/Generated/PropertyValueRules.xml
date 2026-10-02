@@ -227,7 +227,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminInitiateAuthRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminInitiateAuthRequest.UserPoolId</property>
@@ -238,7 +238,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminInitiateAuthResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminLinkProviderForUserRequest.UserPoolId</property>
@@ -369,7 +369,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminRespondToAuthChallengeRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminRespondToAuthChallengeRequest.UserPoolId</property>
@@ -380,7 +380,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminRespondToAuthChallengeResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminSetUserMFAPreferenceRequest.Username</property>
@@ -490,7 +490,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AssociateSoftwareTokenRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AssociateSoftwareTokenResponse.SecretCode</property>
@@ -500,7 +500,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AssociateSoftwareTokenResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ChangePasswordRequest.AccessToken</property>
@@ -585,7 +585,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ConfirmSignUpRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ConfirmSignUpRequest.Username</property>
@@ -596,7 +596,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ConfirmSignUpResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.CreateGroupRequest.Description</property>
@@ -1250,12 +1250,12 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.InitiateAuthRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.InitiateAuthResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.ListDevicesRequest.AccessToken</property>
@@ -1569,12 +1569,12 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.RespondToAuthChallengeRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.RespondToAuthChallengeResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.RevokeTokenRequest.ClientId</property>
@@ -1672,7 +1672,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SignUpResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.SignUpResponse.UserSub</property>
@@ -1956,7 +1956,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.VerifySoftwareTokenRequest.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.VerifySoftwareTokenRequest.UserCode</property>
@@ -1967,7 +1967,7 @@
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.VerifySoftwareTokenResponse.Session</property>
     <min>20</min>
-    <max>2048</max>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.VerifyUserAttributeRequest.AccessToken</property>
@@ -1984,6 +1984,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.AcrLevelConfigType.AcrValue</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\x21\x23-\x5B\x5D-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AdminCreateUserConfigType.UnusedAccountValidityDays</property>

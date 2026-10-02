@@ -33,8 +33,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the GetClientToken operation.
     /// Issues an access token for machine-to-machine (M2M) authorization. Your app client
     /// provides its client ID and secret, and receives an access token that authorizes requests
-    /// to your resource servers. <c>GetClientToken</c> provides the same functionality as
-    /// the OAuth2 client-credentials grant; both authorize an application rather than a user.
+    /// to your resource servers.
     /// 
     ///  
     /// <para>

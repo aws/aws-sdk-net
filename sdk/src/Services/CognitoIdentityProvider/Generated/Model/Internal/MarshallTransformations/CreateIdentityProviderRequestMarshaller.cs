@@ -75,6 +75,20 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcrMapping())
+            {
+                context.Writer.WritePropertyName("AcrMapping");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAcrMappingKvp in publicRequest.AcrMapping)
+                {
+                    context.Writer.WritePropertyName(publicRequestAcrMappingKvp.Key);
+                    var publicRequestAcrMappingValue = publicRequestAcrMappingKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestAcrMappingValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetAttributeMapping())
             {
                 context.Writer.WritePropertyName("AttributeMapping");

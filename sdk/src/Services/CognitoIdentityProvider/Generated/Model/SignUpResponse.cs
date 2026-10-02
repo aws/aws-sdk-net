@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// sign in your user with the <c>USER_AUTH</c> flow after they complete sign-up.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=4096)]
         public string Session
         {
             get { return this._session; }

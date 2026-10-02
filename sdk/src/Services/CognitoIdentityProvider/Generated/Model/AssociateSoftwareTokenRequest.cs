@@ -88,7 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// sign-in. You can provide either an access token or a session ID in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=4096)]
         public string Session
         {
             get { return this._session; }
