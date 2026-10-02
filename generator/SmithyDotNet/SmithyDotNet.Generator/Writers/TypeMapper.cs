@@ -499,23 +499,23 @@ public static class TypeMapper
         // Required even when the model marks it @required.
         if (member.IsRequired() && !member.IsIdempotencyToken())
         {
-            parts.Add("Required=true");
+            parts.Add("Required = true");
         }
 
         if (target.IsSensitive())
         {
-            parts.Add("Sensitive=true");
+            parts.Add("Sensitive = true");
         }
 
         var (min, max) = ResolveBounds(member, target);
         if (min is not null)
         {
-            parts.Add($"Min={min}");
+            parts.Add($"Min = {min}");
         }
 
         if (max is not null)
         {
-            parts.Add($"Max={max}");
+            parts.Add($"Max = {max}");
         }
 
         if (parts.Count == 0)

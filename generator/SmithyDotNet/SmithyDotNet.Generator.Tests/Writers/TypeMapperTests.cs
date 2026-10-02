@@ -67,13 +67,13 @@ public class TypeMapperTests
     [Fact]
     public void Sensitive_TargetTrait_EmitsSensitive()
     {
-        Assert.Equal("[AWSProperty(Sensitive=true)]", AwsProperty("secret"));
+        Assert.Equal("[AWSProperty(Sensitive = true)]", AwsProperty("secret"));
     }
 
     [Fact]
     public void Range_EmitsMinAndMax()
     {
-        Assert.Equal("[AWSProperty(Min=1, Max=1000)]", AwsProperty("count"));
+        Assert.Equal("[AWSProperty(Min = 1, Max = 1000)]", AwsProperty("count"));
     }
 
     [Fact]
@@ -87,8 +87,8 @@ public class TypeMapperTests
     public void IntegralLiteralRange_EmitsMinAndMax()
     {
         // Bounds written as decimal literals (0.0 / 100.0) but integral in value still emit, matching
-        // the c2j  generator's output (e.g. ECS DrainPercent -> [AWSProperty(Min=0, Max=100)]).
-        Assert.Equal("[AWSProperty(Min=0, Max=100)]", AwsProperty("percent"));
+        // the c2j  generator's output (e.g. ECS DrainPercent -> [AWSProperty(Min = 0, Max = 100)]).
+        Assert.Equal("[AWSProperty(Min = 0, Max = 100)]", AwsProperty("percent"));
     }
 
     [Fact]
@@ -96,19 +96,19 @@ public class TypeMapperTests
     {
         // min 0.01 can't be represented (skipped); max 100 is integral (emitted). Bounds are resolved
         // independently, so a single unrepresentable bound doesn't drop the other.
-        Assert.Equal("[AWSProperty(Max=100)]", AwsProperty("mixed"));
+        Assert.Equal("[AWSProperty(Max = 100)]", AwsProperty("mixed"));
     }
 
     [Fact]
     public void ScientificNotationBound_SkipsToMatchC2j()
     {
-        Assert.Equal("[AWSProperty(Min=0)]", AwsProperty("scientific"));
+        Assert.Equal("[AWSProperty(Min = 0)]", AwsProperty("scientific"));
     }
 
     [Fact]
     public void Length_EmitsMinAndMax()
     {
-        Assert.Equal("[AWSProperty(Required=true, Min=1, Max=64)]", AwsProperty("name"));
+        Assert.Equal("[AWSProperty(Required = true, Min = 1, Max = 64)]", AwsProperty("name"));
     }
 
     [Fact]
@@ -152,10 +152,10 @@ public class TypeMapperTests
         var result = TypeMapper.BuildAwsProperty(member, sensitiveBounded);
         Assert.NotNull(result);
         Assert.StartsWith("[AWSProperty(", result);
-        Assert.Contains("Required=true", result);
-        Assert.Contains("Sensitive=true", result);
-        Assert.Contains("Min=2", result);
-        Assert.Contains("Max=8", result);
+        Assert.Contains("Required = true", result);
+        Assert.Contains("Sensitive = true", result);
+        Assert.Contains("Min = 2", result);
+        Assert.Contains("Max = 8", result);
     }
 
     [Theory]

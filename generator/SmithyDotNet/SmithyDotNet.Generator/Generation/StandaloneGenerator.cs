@@ -38,7 +38,7 @@ public sealed class StandaloneGenerator(StandaloneOptions options)
             }
         }
 
-        // Same reason as BatchGenerator.WipeStaleOutput: leftover files from an earlier model would
+        // Same reason BatchGenerator removes stale output: leftover files from an earlier model would
         // compile as duplicate types. Only the generated tree is touched.
         var generated = Path.Combine(options.OutputDirectory, "Generated");
         if (Directory.Exists(generated))

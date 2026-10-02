@@ -204,15 +204,15 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Construct an instance");
         writer.WriteLine("/// </summary>");
-        writer.OpenBlock($"public {className}(Stream stream) : this (stream, null)", () => { });
+        writer.OpenBlock($"public {className}(Stream stream) : this(stream, null)", () => { });
         writer.WriteLine();
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Construct an instance");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {className}(Stream stream, IEventStreamDecoder eventStreamDecoder) : base(stream, eventStreamDecoder)", () =>
         {
-            writer.WriteLine("base.EventReceived += (sender,args) => EventReceived?.Invoke(this, args);");
-            writer.WriteLine("base.ExceptionReceived += (sender,args) => ExceptionReceived?.Invoke(this, args);");
+            writer.WriteLine("base.EventReceived += (sender, args) => EventReceived?.Invoke(this, args);");
+            writer.WriteLine("base.ExceptionReceived += (sender, args) => ExceptionReceived?.Invoke(this, args);");
             writer.WriteLine();
             writer.WriteLine("//Mapping the generic Event to more specific Events");
             writer.OpenBlock("Decoder.MessageReceived += (sender, args) =>", "};", () =>
@@ -233,7 +233,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
 
                 // The chain always starts with the initial response, then each event in model order.
                 var chain = new List<string> { "RaiseEvent(InitialResponseReceived, ev)" };
-                chain.AddRange(events.Select(ev => $"RaiseEvent({ev.HandlerName}Received,ev)"));
+                chain.AddRange(events.Select(ev => $"RaiseEvent({ev.HandlerName}Received, ev)"));
                 writer.WriteLine("var _ =");
                 for (var i = 0; i < chain.Count; i++)
                 {

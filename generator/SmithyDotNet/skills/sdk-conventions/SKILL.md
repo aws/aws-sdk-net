@@ -31,7 +31,8 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 
 ## What Can Differ
 
-- Whitespace, indentation, blank lines (Roslyn formatter handles this)
+- Whitespace, indentation, blank lines (the Roslyn formatter runs on every C# file whose raw output differs
+  from the file on disk; emitting exact spacing lets a run skip it)
 - File names — prefer `{TypeName}.g.cs` to distinguish generated files
 - Backing fields and other private helpers (the generator omits them — see Property Pattern below)
 - `using` directive order
@@ -117,13 +118,13 @@ drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not).
 `docgenerator/AWSSDKDocSamples/{ServiceName}/{ServiceName}.GeneratedSamples.cs` and
 `{ServiceName}.GeneratedSamples.extra.xml` from `smithy.api#examples`, rendering values as C2J's
 `Example.cs` does but with the SDK's types, so a copied sample compiles once placeholders like `<data>` are
-filled in. Both are written with
-`CodeWriter.ToRawString()`: the samples file is never compiled and can hold placeholders like
+filled in. Both are written unformatted
+(`BatchGenerator` passes `format: false`): the samples file is never compiled and can hold placeholders like
 `<binary data>` that the Roslyn formatter would mangle. A service with no examples, or S3 (its samples are
 hand-written), gets no files, so an existing sample file stays as it is; examples the model lacks but C2J
 had are a model gap. Example keys are matched to members (`TypeMapper.ResolveMembers`) ignoring case after
 `CustomizationTransform`, so, as in C2J, a member renamed by `emitPropertyName` (beyond case) drops out of
-the sample. The samples are built before the service's trees are wiped, so a bad example fails the
+the sample. The samples are built before anything is written, so a bad example fails the
 service before anything is deleted, and written only once its code has generated.
 
 Differences from C2J:

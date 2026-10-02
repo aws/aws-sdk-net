@@ -244,11 +244,13 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"protected {className}(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)");
         writer.WriteLine("    : base(info, context)");
         writer.WriteLine("{");
-        foreach (var member in members)
+        writer.Indent(() =>
         {
-            writer.WriteLine($"""this.{member.PropertyName} = ({member.Type.DotNetType})info.GetValue("{member.PropertyName}", typeof({member.Type.DotNetType}));""");
-        }
-
+            foreach (var member in members)
+            {
+                writer.WriteLine($"""this.{member.PropertyName} = ({member.Type.DotNetType})info.GetValue("{member.PropertyName}", typeof({member.Type.DotNetType}));""");
+            }
+        });
         writer.WriteLine("}");
 
         if (includeGetObjectData)

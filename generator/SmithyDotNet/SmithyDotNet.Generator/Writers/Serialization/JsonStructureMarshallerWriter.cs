@@ -51,7 +51,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         WriteMarshallMethodDocumentation(writer);
         writer.OpenBlock($"public void Marshall({className} requestObject, JsonMarshallerContext context)", () =>
         {
-            writer.WriteLine($"if (requestObject== null) return;");
+            writer.WriteLine("if (requestObject == null) return;");
             writer.WriteLine("");
             WriteMemberMarshallers(writer, structure, members);
         });

@@ -14,7 +14,7 @@ namespace SmithyDotNet.Generator.Generation.Endpoints;
 ///   <item><c>a[*].b</c> -> <c>A?.Select(element =&gt; element?.B)</c></item>
 ///   <item><c>a.*.b</c> -> <c>A?.Values.Select(element =&gt; element?.B)</c></item>
 ///   <item><c>a[]</c> -> <c>A?.SelectMany(element =&gt; element).Where(element =&gt; element != null)</c></item>
-///   <item><c>a[*].[b, c][]</c> -> <c>A?.Select(element =&gt; new [] { element?.B, element?.C })?.SelectMany(...)</c></item>
+///   <item><c>a[*].[b, c][]</c> -> <c>A?.Select(element =&gt; new[] { element?.B, element?.C })?.SelectMany(...)</c></item>
 /// </list>
 /// Ports the algorithm of C2J's <c>Utils.JMESPathToNativeValue</c>, so the output matches by
 /// construction rather than by special-casing the expressions models happen to use today.
@@ -131,7 +131,7 @@ public static partial class JmesPathCompiler
             .Split(',')
             .Select(selection => $"{ElementPrefix}{Compile(selection.Trim(), current, index, context)}");
 
-        accessor.Append("new [] { ").AppendJoin(", ", selections).Append(" }").Append(closing);
+        accessor.Append("new[] { ").AppendJoin(", ", selections).Append(" }").Append(closing);
         closing.Clear();
     }
 

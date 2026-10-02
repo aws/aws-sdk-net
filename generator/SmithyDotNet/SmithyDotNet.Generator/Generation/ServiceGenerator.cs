@@ -27,6 +27,14 @@ namespace SmithyDotNet.Generator.Generation;
 /// </summary>
 public sealed class ServiceGenerator(GenerationContext context, string modelFileName, string serviceFileVersion, IReadOnlyList<ResolvedDefaultConfigurationMode> defaultConfigurationModes, StandaloneOptions? standalone = null)
 {
+    private readonly ConcurrentBag<string> _writtenFiles = [];
+
+    /// <summary>
+    /// The full path of every file <see cref="Generate"/> produced under all three roots, whether or not it had
+    /// to be rewritten. <see cref="BatchGenerator"/> removes anything else left in the generated trees.
+    /// </summary>
+    public IReadOnlyCollection<string> WrittenFiles => _writtenFiles;
+
     /// <summary>
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
     /// Returns the relative paths written under <paramref name="outputPath"/>, for logging and tests.
@@ -66,7 +74,11 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 throw new GeneratorException($"Two writers produced the same output path: '{relativePath}'.");
             }
 
-            WriteFile(root, relativePath, contents);
+            // Only C# goes through the Roslyn formatter; the csproj, nuspec, slnx, xml and readme output is written
+            // as the writer produced it. (The writers return raw text either way, see CodeWriter.ToFormattedString.)
+            var fullPath = Path.Combine(root, relativePath);
+            _writtenFiles.Add(fullPath);
+            WriteFile(fullPath, contents, format: relativePath.EndsWith(".cs", StringComparison.Ordinal), cancellationToken);
         }
 
         void Emit(string relativePath, string contents) => EmitUnder(outputPath, written, relativePath, contents);
@@ -516,10 +528,35 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         _ => id,
     };
 
-    internal static void WriteFile(string outputPath, string relativePath, string contents)
+    /// <summary>
+    /// Writes <paramref name="contents"/> to <paramref name="fullPath"/> unless the file already holds it, running
+    /// C# through the Roslyn formatter first. The formatter is most of a generator run, so it is skipped when
+    /// the raw output already matches the file: that file came out of the formatter (it is idempotent), so
+    /// formatting again would change nothing. An unchanged file is also left untouched on disk.
+    /// </summary>
+    internal static void WriteFile(string fullPath, string contents, bool format, CancellationToken cancellationToken = default)
     {
-        var fullPath = Path.Combine(outputPath, relativePath);
-        Directory.CreateDirectory(Path.GetDirectoryName(fullPath) ?? outputPath);
+        // Line endings differ between a CRLF checkout and the LF the writers emit; git
+        // normalizes them, so they are not a content difference.
+        // TODO: remove once .gitattributes fixes the line ending of generated files.
+        static bool SameContent(string a, string b) => a.Replace("\r\n", "\n") == b.Replace("\r\n", "\n");
+
+        var existing = File.Exists(fullPath) ? File.ReadAllText(fullPath) : null;
+        if (existing is not null && SameContent(existing, contents))
+        {
+            return;
+        }
+
+        if (format)
+        {
+            contents = CodeWriter.Format(contents, cancellationToken);
+            if (existing is not null && SameContent(existing, contents))
+            {
+                return;
+            }
+        }
+
+        Directory.CreateDirectory(Path.GetDirectoryName(fullPath) ?? throw new GeneratorException($"'{fullPath}' has no parent directory."));
         File.WriteAllText(fullPath, contents);
     }
 }

@@ -80,7 +80,7 @@ public class EndpointContextParamsCodegenTests
         Assert.Contains("result.TerminalList = request.Aliases?.Select(element => element);", block);
         Assert.Contains("result.TerminalMap = request.RequestItems?.Values.Select(element => element);", block);
         Assert.Contains("result.Flattened = request.AliasGroups?.SelectMany(element => element).Where(element => element != null);", block);
-        // C2J emits "new [] {"; the Roslyn formatter normalizes it to "new[] {".
+        // C2J emits "new[] {"; the SDK files have the formatted "new[] {".
         Assert.Contains(
             "result.FlatNames = request.TransactItems?.Select(element => new[] { element?.ConditionCheck?.TableName, element?.Put?.TableName })?.SelectMany(element => element).Where(element => element != null);",
             block);
