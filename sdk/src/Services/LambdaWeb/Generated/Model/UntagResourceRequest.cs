@@ -32,6 +32,13 @@ namespace Amazon.LambdaWeb.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes tags from a web function.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UntagResourceRequest : AmazonLambdaWebRequest
     {

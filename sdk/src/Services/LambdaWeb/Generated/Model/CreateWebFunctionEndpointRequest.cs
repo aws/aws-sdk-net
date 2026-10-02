@@ -39,6 +39,12 @@ namespace Amazon.LambdaWeb.Model
     /// To use this operation, you must have the <c>CreateWebFunctionEndpoint</c> permission
     /// on the web function, not on the endpoint being created.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateWebFunctionEndpointRequest : AmazonLambdaWebRequest
     {

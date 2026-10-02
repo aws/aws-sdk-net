@@ -32,6 +32,13 @@ namespace Amazon.LambdaWeb.Model
     /// <summary>
     /// Container for the parameters to the DeleteResourcePolicy operation.
     /// Removes the resource-based policy from a web function.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteResourcePolicyRequest : AmazonLambdaWebRequest
     {

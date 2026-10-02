@@ -34,6 +34,13 @@ namespace Amazon.LambdaWeb.Model
     /// Adds or updates a resource-based policy on a web function. A resource-based policy
     /// grants permissions to other AWS accounts or services to perform actions on the web
     /// function.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonLambdaWebRequest
     {

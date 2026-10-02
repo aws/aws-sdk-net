@@ -33,6 +33,13 @@ namespace Amazon.LambdaWeb.Model
     /// Container for the parameters to the DeleteWebFunctionRevision operation.
     /// Deletes a web function revision. You cannot delete a revision that is currently serving
     /// traffic on an endpoint.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteWebFunctionRevisionRequest : AmazonLambdaWebRequest
     {

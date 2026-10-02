@@ -33,6 +33,13 @@ namespace Amazon.LambdaWeb.Model
     /// Container for the parameters to the TagResource operation.
     /// Adds tags to a web function. If a tag key already exists, the existing value is overwritten
     /// with the new value.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class TagResourceRequest : AmazonLambdaWebRequest
     {

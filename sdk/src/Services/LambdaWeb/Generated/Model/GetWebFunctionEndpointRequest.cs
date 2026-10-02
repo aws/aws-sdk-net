@@ -33,6 +33,13 @@ namespace Amazon.LambdaWeb.Model
     /// Container for the parameters to the GetWebFunctionEndpoint operation.
     /// Retrieves details about a web function endpoint, including its current state, configuration,
     /// and domain name.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class GetWebFunctionEndpointRequest : AmazonLambdaWebRequest
     {

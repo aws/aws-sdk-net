@@ -33,6 +33,13 @@ namespace Amazon.LambdaWeb.Model
     /// Container for the parameters to the UpdateWebFunctionEndpoint operation.
     /// Updates the configuration of a web function endpoint. You can modify the authorization
     /// type, auto-deployment mode, revision weights, scaling, and throttling settings.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateWebFunctionEndpointRequest : AmazonLambdaWebRequest
     {

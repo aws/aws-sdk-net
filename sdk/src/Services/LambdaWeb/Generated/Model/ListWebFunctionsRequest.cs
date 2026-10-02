@@ -33,6 +33,13 @@ namespace Amazon.LambdaWeb.Model
     /// Container for the parameters to the ListWebFunctions operation.
     /// Lists web functions in your account. We recommend using pagination to ensure that
     /// the operation returns quickly and successfully.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListWebFunctionsRequest : AmazonLambdaWebRequest
     {

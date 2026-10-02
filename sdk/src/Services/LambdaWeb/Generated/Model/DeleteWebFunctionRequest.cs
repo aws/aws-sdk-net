@@ -39,6 +39,12 @@ namespace Amazon.LambdaWeb.Model
     /// web function. You don't need the <c>DeleteWebFunctionRevision</c> or <c>DeleteWebFunctionEndpoint</c>
     /// permission.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This API is experimental and for internal AWS use only. It is not yet available to
+    /// external customers.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteWebFunctionRequest : AmazonLambdaWebRequest
     {
