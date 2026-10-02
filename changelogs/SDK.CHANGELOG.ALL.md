@@ -1,3 +1,21 @@
+### 4.0.347.0 (2026-10-02 18:22 UTC)
+* CognitoIdentityProvider (4.0.106.0)
+	* Amazon Cognito User Pools now supports the OIDC-standard authentication context class reference (ACR) and authentication methods reference (AMR) claims on issued access and Id tokens. Amazon Cognito User Pools also now supports step-up authentication via our existing authentication APIs.
+* DataExchange (4.0.100.17)
+	* Check if string / enum payload is set before calling GetBytes to avoid ArgumentNullException
+* Glue (4.0.112.0)
+	* Added refresh token grant type to Glue Connection supported OAuth 2.0 grant types
+* Invoicing (4.0.103.0)
+	* API and doc updates related to adding MarketplacePunchOutEnabled and MarketplacePunchOutPreference fields to ProcurementPortalPreferences related APIs
+* LambdaWeb (4.0.100.1)
+	* Documentation update for AWS Lambda Web Functions, clarifies that the LambdaWeb APIs are experimental and not yet available to external customers.
+* MediaPackageV2 (4.0.105.0)
+	* Dynamic Multiview enables viewers to watch multiple live video streams in a single combined output. Static filter configuration allows users to configure endpoints with layouts and sources without using query parameters. The number of sources per multiview channel has been increased to 50.
+* PinpointSMSVoiceV2 (4.0.103.0)
+	* AWS End User Messaging SMS CarrierLookup API now supports phone number cleansing on customer opt-in. when selected, the response includes the additional field "OriginalPhoneNumber". It can also return additional PhoneNumberType enums, VOIP and PREPAID.
+* SecurityAgent (4.0.110.0)
+	* Adds trigger filters that control which pull request events, target branches, and labels start an automatic code review.
+
 ### 4.0.346.0 (2026-10-01 18:20 UTC)
 * AWSHealth (4.0.101.0)
 	* Adds DescribeServiceLifecycle operation returning lifecycle information for AWS services, including end-of-support dates, version recommendations, and lifecycle events.
