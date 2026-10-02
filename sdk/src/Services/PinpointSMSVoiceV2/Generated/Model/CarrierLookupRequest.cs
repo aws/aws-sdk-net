@@ -36,7 +36,30 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class CarrierLookupRequest : AmazonPinpointSMSVoiceV2Request
     {
+        private bool? _enableCleansing;
         private string _phoneNumber;
+
+        /// <summary>
+        /// Gets and sets the property EnableCleansing. 
+        /// <para>
+        /// Specifies whether the service cleanses the phone number that you provide. When set
+        /// to <c>true</c>, the service normalizes the phone number according to the destination
+        /// country's national numbering plan and dialing rules. The service returns the cleansed
+        /// number in E.164 format in the <c>E164PhoneNumber</c> field and returns the number
+        /// that you provided in the <c>OriginalPhoneNumber</c> field.
+        /// </para>
+        /// </summary>
+        public bool? EnableCleansing
+        {
+            get { return this._enableCleansing; }
+            set { this._enableCleansing = value; }
+        }
+
+        // Check to see if EnableCleansing property is set
+        internal bool IsSetEnableCleansing()
+        {
+            return this._enableCleansing.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property PhoneNumber. 

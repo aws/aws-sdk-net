@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
-    /// A single number preference — specifies a pattern type and filter value.
+    /// A single number preference that specifies how to match available phone numbers. Each
+    /// preference pairs a match type with one or more filter values.
     /// </summary>
     public partial class NumberPreferenceItem
     {

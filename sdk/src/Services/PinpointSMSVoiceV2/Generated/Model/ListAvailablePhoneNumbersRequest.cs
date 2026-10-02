@@ -31,10 +31,16 @@ namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAvailablePhoneNumbers operation.
-    /// Search available phone numbers from aggregator inventory, optionally filtered by pattern.
-    /// If NumberPreference is omitted, returns unfiltered available numbers. Returns empty
-    /// list (not an exception) when no numbers match. ResourceNotFoundException is thrown
-    /// only for invalid RegistrationId (campaign not found).
+    /// Retrieves a list of phone numbers that are available to request, based on the country,
+    /// capabilities, and number type that you specify. You can optionally provide a number
+    /// preference to return only numbers that match a specific digit pattern.
+    /// 
+    ///  
+    /// <para>
+    /// If no numbers match your search, this operation returns an empty list rather than
+    /// an error. This operation currently supports only <c>TEN_DLC</c> number types in the
+    /// <c>US</c>.
+    /// </para>
     /// </summary>
     public partial class ListAvailablePhoneNumbersRequest : AmazonPinpointSMSVoiceV2Request
     {
@@ -134,8 +140,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property NumberPreference. 
         /// <para>
-        /// Optional. If omitted, returns unfiltered available numbers. Max 1 element for List
-        /// API.
+        /// An optional selection preference used to return only phone numbers that match a specific
+        /// digit pattern, such as numbers that start with, end with, or contain a particular
+        /// sequence. You can specify at most one preference. Number preferences apply only to
+        /// <c>TEN_DLC</c> numbers in the <c>US</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

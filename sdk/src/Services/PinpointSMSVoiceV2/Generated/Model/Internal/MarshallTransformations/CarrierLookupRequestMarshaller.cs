@@ -75,6 +75,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEnableCleansing())
+            {
+                context.Writer.WritePropertyName("EnableCleansing");
+                context.Writer.WriteBooleanValue(publicRequest.EnableCleansing.Value);
+            }
+
             if(publicRequest.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");

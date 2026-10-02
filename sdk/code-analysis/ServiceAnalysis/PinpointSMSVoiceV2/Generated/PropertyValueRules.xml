@@ -97,6 +97,12 @@
     <pattern>[\d]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CarrierLookupResponse.OriginalPhoneNumber</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>\+[({\s\[]?[1-9][0-9(){}\s\[\],.-]{1,38}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateConfigurationSetRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>

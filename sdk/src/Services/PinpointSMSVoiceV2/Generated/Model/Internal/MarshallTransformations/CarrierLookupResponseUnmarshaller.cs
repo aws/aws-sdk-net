@@ -94,6 +94,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                     response.MNC = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("OriginalPhoneNumber", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OriginalPhoneNumber = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PhoneNumberType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

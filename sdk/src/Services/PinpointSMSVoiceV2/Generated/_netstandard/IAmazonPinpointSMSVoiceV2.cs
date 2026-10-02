@@ -2970,10 +2970,16 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
         /// <summary>
-        /// Search available phone numbers from aggregator inventory, optionally filtered by pattern.
-        /// If NumberPreference is omitted, returns unfiltered available numbers. Returns empty
-        /// list (not an exception) when no numbers match. ResourceNotFoundException is thrown
-        /// only for invalid RegistrationId (campaign not found).
+        /// Retrieves a list of phone numbers that are available to request, based on the country,
+        /// capabilities, and number type that you specify. You can optionally provide a number
+        /// preference to return only numbers that match a specific digit pattern.
+        /// 
+        ///  
+        /// <para>
+        /// If no numbers match your search, this operation returns an empty list rather than
+        /// an error. This operation currently supports only <c>TEN_DLC</c> number types in the
+        /// <c>US</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailablePhoneNumbers service method.</param>
         /// <param name="cancellationToken">

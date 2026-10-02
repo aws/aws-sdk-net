@@ -41,6 +41,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _isoCountryCode;
         private string _mcc;
         private string _mnc;
+        private string _originalPhoneNumber;
         private PhoneNumberType _phoneNumberType;
 
         /// <summary>
@@ -179,11 +180,32 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginalPhoneNumber. 
+        /// <para>
+        /// The phone number exactly as you supplied it in the request. This field is returned
+        /// only when you set <c>EnableCleansing</c> to <c>true</c>, the phone number was cleansed,
+        /// and a normalized E.164 phone number was returned in the <c>E164PhoneNumber</c> field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=40)]
+        public string OriginalPhoneNumber
+        {
+            get { return this._originalPhoneNumber; }
+            set { this._originalPhoneNumber = value; }
+        }
+
+        // Check to see if OriginalPhoneNumber property is set
+        internal bool IsSetOriginalPhoneNumber()
+        {
+            return this._originalPhoneNumber != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PhoneNumberType. 
         /// <para>
-        /// Describes the type of phone number. Valid values are: MOBILE, LANDLINE, OTHER, and
-        /// INVALID. Avoid sending SMS or voice messages to INVALID phone numbers, as these numbers
-        /// are unlikely to belong to actual recipients.
+        /// Describes the type of phone number. Valid values are: MOBILE, LANDLINE, VOIP, PREPAID,
+        /// OTHER, and INVALID. Avoid sending SMS or voice messages to INVALID phone numbers,
+        /// as these numbers are unlikely to belong to actual recipients.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

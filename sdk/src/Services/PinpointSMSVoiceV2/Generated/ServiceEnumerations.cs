@@ -2214,6 +2214,14 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant OTHER for PhoneNumberType
         /// </summary>
         public static readonly PhoneNumberType OTHER = new PhoneNumberType("OTHER");
+        /// <summary>
+        /// Constant PREPAID for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType PREPAID = new PhoneNumberType("PREPAID");
+        /// <summary>
+        /// Constant VOIP for PhoneNumberType
+        /// </summary>
+        public static readonly PhoneNumberType VOIP = new PhoneNumberType("VOIP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
