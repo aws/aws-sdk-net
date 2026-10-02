@@ -1197,5 +1197,61 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
 
         reader.ReadEndArray();
     }
-}
 
+    [Fact]
+    public void ValuesStraddlingChunkBoundaries_AreReadWithoutThrowing()
+    {
+        // With a 100-byte buffer, many of these strings, integers, doubles and map headers straddle the end
+        // of a chunk. The reader should refill ahead of them rather than fail the read and retry it.
+        var writer = new CborWriter();
+        writer.WriteStartMap(200);
+        for (int i = 0; i < 200; i++)
+        {
+            writer.WriteTextString("key-" + i);
+            writer.WriteStartMap(3);
+            writer.WriteTextString("s");
+            writer.WriteTextString(new string((char)('a' + i % 26), i % 40));
+            writer.WriteTextString("n");
+            writer.WriteInt64(1L << (i % 60));
+            writer.WriteTextString("d");
+            writer.WriteDouble(i + 0.25);
+            writer.WriteEndMap();
+        }
+        writer.WriteEndMap();
+
+        int thrownOnThisThread = 0;
+        int testThreadId = Environment.CurrentManagedThreadId;
+        EventHandler<System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs> handler = (_, _) =>
+        {
+            if (Environment.CurrentManagedThreadId == testThreadId)
+                thrownOnThisThread++;
+        };
+
+        AppDomain.CurrentDomain.FirstChanceException += handler;
+        try
+        {
+            using var reader = new CborStreamReader(new MemoryStream(writer.Encode()));
+            reader.ReadStartMap();
+            for (int i = 0; i < 200; i++)
+            {
+                Assert.Equal("key-" + i, reader.ReadTextString());
+                reader.ReadStartMap();
+                Assert.Equal("s", reader.ReadTextString());
+                Assert.Equal(new string((char)('a' + i % 26), i % 40), reader.ReadTextString());
+                Assert.Equal("n", reader.ReadTextString());
+                Assert.Equal(1L << (i % 60), reader.ReadInt64());
+                Assert.Equal("d", reader.ReadTextString());
+                Assert.Equal(i + 0.25, reader.ReadDouble());
+                reader.ReadEndMap();
+            }
+            reader.ReadEndMap();
+            Assert.Equal(CborReaderState.Finished, reader.PeekState());
+        }
+        finally
+        {
+            AppDomain.CurrentDomain.FirstChanceException -= handler;
+        }
+
+        Assert.Equal(0, thrownOnThisThread);
+    }
+}
