@@ -27,10 +27,12 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
 {
     static class CborSimpleTypeUnmarshaller<T>
     {
+        // Each branch returns through (T)(object) on a value of exactly type T. The JIT specializes this
+        // method per value type and removes that box/unbox pair, so reading a number or bool doesn't
+        // allocate. Assigning the value to an object local first (as this method used to) boxes it.
         public static T Unmarshall(CborUnmarshallerContext context)
         {
             var reader = context.Reader;
-            object value;
 
             if (
                 (
@@ -46,69 +48,86 @@ namespace Amazon.Extensions.CborProtocol.Internal.Transform
             )
             {
                 reader.ReadNull();
-                value = default(T);
+                return default(T);
             }
-            else if (typeof(T) == typeof(string))
-                value = reader.ReadTextString();
-            else if (typeof(T) == typeof(int) || typeof(T) == typeof(int?))
-                value = reader.ReadInt32();
-            else if (typeof(T) == typeof(long) || typeof(T) == typeof(long?))
-                value = reader.ReadInt64();
-            else if (typeof(T) == typeof(decimal) || typeof(T) == typeof(decimal?))
-                value = reader.ReadDecimal();
-            else if (typeof(T) == typeof(bool) || typeof(T) == typeof(bool?))
-                value = reader.ReadBoolean();
-            else if (typeof(T) == typeof(double) || typeof(T) == typeof(double?))
-            {
-                var state = reader.PeekState();
-                // CBOR values for doubles may sometimes be encoded as integers to save space
-                // (e.g., when the original value was a whole number).
-                if (state == CborReaderState.UnsignedInteger)
-                {
-                    value = (double)reader.ReadUInt64();
-                }
-                else if (state == CborReaderState.NegativeInteger)
-                {
-                    value = (double)reader.ReadInt64();
-                }
-                else
-                {
-                    value = reader.ReadDouble();
-                }
-            }
-            else if (typeof(T) == typeof(float) || typeof(T) == typeof(float?))
-            {
-                var state = reader.PeekState();
-                // CBOR values for floats may sometimes be encoded as integers to save space
-                // (e.g., when the original value was a whole number).
-                if (state == CborReaderState.UnsignedInteger)
-                {
-                    value = (float)reader.ReadUInt64();
-                }
-                else if (state == CborReaderState.NegativeInteger)
-                {
-                    value = (float)reader.ReadInt64();
-                }
-                else
-                {
-                    value = reader.ReadSingle();
-                }
-            }
-            else if (typeof(T) == typeof(byte))
+
+            if (typeof(T) == typeof(string))
+                return (T)(object)reader.ReadTextString();
+            if (typeof(T) == typeof(int))
+                return (T)(object)reader.ReadInt32();
+            if (typeof(T) == typeof(int?))
+                return (T)(object)(int?)reader.ReadInt32();
+            if (typeof(T) == typeof(long))
+                return (T)(object)reader.ReadInt64();
+            if (typeof(T) == typeof(long?))
+                return (T)(object)(long?)reader.ReadInt64();
+            if (typeof(T) == typeof(decimal))
+                return (T)(object)reader.ReadDecimal();
+            if (typeof(T) == typeof(decimal?))
+                return (T)(object)(decimal?)reader.ReadDecimal();
+            if (typeof(T) == typeof(bool))
+                return (T)(object)reader.ReadBoolean();
+            if (typeof(T) == typeof(bool?))
+                return (T)(object)(bool?)reader.ReadBoolean();
+            if (typeof(T) == typeof(double))
+                return (T)(object)ReadDouble(reader);
+            if (typeof(T) == typeof(double?))
+                return (T)(object)(double?)ReadDouble(reader);
+            if (typeof(T) == typeof(float))
+                return (T)(object)ReadSingle(reader);
+            if (typeof(T) == typeof(float?))
+                return (T)(object)(float?)ReadSingle(reader);
+            if (typeof(T) == typeof(byte))
             {
                 int result = reader.ReadInt32();
                 if (result > byte.MaxValue)
                 {
                     throw new OverflowException($"{result} value exceeds byte range.");
                 }
-                value = (byte)result;
+                return (T)(object)(byte)result;
+            }
+
+            throw new NotSupportedException(
+                $"CBOR deserialization for type {typeof(T)} is not supported."
+            );
+        }
+
+        private static double ReadDouble(CborStreamReader reader)
+        {
+            var state = reader.PeekState();
+            // CBOR values for doubles may sometimes be encoded as integers to save space
+            // (e.g., when the original value was a whole number).
+            if (state == CborReaderState.UnsignedInteger)
+            {
+                return (double)reader.ReadUInt64();
+            }
+            else if (state == CborReaderState.NegativeInteger)
+            {
+                return (double)reader.ReadInt64();
             }
             else
-                throw new NotSupportedException(
-                    $"CBOR deserialization for type {typeof(T)} is not supported."
-                );
+            {
+                return reader.ReadDouble();
+            }
+        }
 
-            return (T)value;
+        private static float ReadSingle(CborStreamReader reader)
+        {
+            var state = reader.PeekState();
+            // CBOR values for floats may sometimes be encoded as integers to save space
+            // (e.g., when the original value was a whole number).
+            if (state == CborReaderState.UnsignedInteger)
+            {
+                return (float)reader.ReadUInt64();
+            }
+            else if (state == CborReaderState.NegativeInteger)
+            {
+                return (float)reader.ReadInt64();
+            }
+            else
+            {
+                return reader.ReadSingle();
+            }
         }
     }
 
