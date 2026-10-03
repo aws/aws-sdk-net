@@ -1,0 +1,12 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.CborProtocol",
+      "type": "patch",
+      "changeLogMessages": [
+        "Reduce CPU and memory used to unmarshall CBOR responses: avoid per-read allocations in CborStreamReader, stop boxing numbers and booleans, and refill the read buffer ahead of values that cross a buffer boundary instead of catching an exception.",
+        "Avoid copying binary values when marshalling a MemoryStream whose buffer isn't publicly visible."
+      ]
+    }
+  ]
+}
