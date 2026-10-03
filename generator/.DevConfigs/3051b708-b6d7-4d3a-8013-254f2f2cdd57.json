@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Reduce CPU and memory used by request and response checksums and chunked uploads: compute CRC32 16 bytes at a time, stop allocating per 64-byte block in the managed MD5 used to validate GetObject responses, size aws-chunked upload buffers to small payloads, and stop allocating a temporary buffer per read when sending trailing checksums."
+    ],
+    "type": "patch",
+    "updateMinimum": false
+  }
+}
