@@ -15,7 +15,6 @@
 
 using System;
 using System.Security.Cryptography;
-using ThirdParty.Ionic.Zlib;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -23,30 +22,31 @@ namespace Amazon.Runtime.Internal.Util
     /// Implementation of CRC32 as a <see cref="HashAlgorithm"/> (without using the CRT dependency).
     /// </summary>
     /// <remarks>
-    /// This classes uses the components included in the <see cref="ThirdParty.Ionic.Zlib.CRC32"/> class.
+    /// Produces the same values as <see cref="ThirdParty.Ionic.Zlib.CRC32"/> (IEEE polynomial), computed with
+    /// the slicing-by-16 algorithm in <see cref="Crc32Slicing"/>, which processes 16 bytes per step instead of one.
     /// </remarks>
     public class Crc32Managed : HashAlgorithm
     {
-        private readonly CRC32 _crc32;
+        // Running (pre-conditioned) register, same convention as Ionic's _RunningCrc32Result.
+        private uint _runningCrc32 = 0xFFFFFFFF;
 
         public Crc32Managed()
         {
-            _crc32 = new CRC32();
         }
 
-        public override void Initialize() 
+        public override void Initialize()
         {
-            // Each instance of CRC32 contains its own Crc32Result property, so we don't need to reset it here.
+            // Kept as a no-op to preserve the previous behavior exactly: the running value was never reset here.
         }
 
         protected override void HashCore(byte[] array, int ibStart, int cbSize)
         {
-            _crc32.SlurpBlock(array, ibStart, cbSize);
+            _runningCrc32 = Crc32Slicing.Update(_runningCrc32, new ReadOnlySpan<byte>(array, ibStart, cbSize));
         }
 
         protected override byte[] HashFinal()
         {
-            var result = BitConverter.GetBytes(_crc32.Crc32Result);
+            var result = BitConverter.GetBytes(unchecked((int)~_runningCrc32));
 
             if (BitConverter.IsLittleEndian)
             {

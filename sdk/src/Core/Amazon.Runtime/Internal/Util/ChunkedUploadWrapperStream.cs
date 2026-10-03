@@ -102,8 +102,6 @@ namespace Amazon.Runtime.Internal.Util
             PreviousChunkSignature = headerSigningResult?.Signature;
 
             _wrappedStreamBufferSize = wrappedStreamBufferSize;
-            _inputBuffer = new byte[DefaultChunkSize];
-            _outputBuffer = new byte[CalculateChunkHeaderLength(DefaultChunkSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
 
             // if the wrapped stream implements encryption, switch to a read-and-copy
             // strategy for filling the chunk buffer
@@ -119,6 +117,31 @@ namespace Amazon.Runtime.Internal.Util
 
             if (encryptionStream != null)
                 _readStrategy = ReadStrategy.ReadAndCopy;
+
+            // A payload smaller than one chunk is sent as a single chunk either way, so the chunk buffers only need
+            // to hold that payload. This avoids ~160KB of per-request allocations for small uploads. The chunk
+            // boundaries, and therefore the signatures and the precomputed Content-Length, are unchanged.
+            int chunkBufferSize = GetChunkBufferSize(stream, _readStrategy);
+            _inputBuffer = new byte[chunkBufferSize];
+            _outputBuffer = new byte[CalculateChunkHeaderLength(chunkBufferSize, HeaderSigningResult is AWS4aSigningResult ? V4A_SIGNATURE_LENGTH : V4_SIGNATURE_LENGTH)]; // header+data
+        }
+
+        private static int GetChunkBufferSize(Stream stream, ReadStrategy readStrategy)
+        {
+            // Encryption streams may change the payload length, so only plain streams of known length are sized down.
+            if (readStrategy != ReadStrategy.ReadDirect || stream == null)
+                return DefaultChunkSize;
+            try
+            {
+                long length = stream.Length;
+                if (length >= 0 && length < DefaultChunkSize)
+                    return (int)Math.Max(length, 1);
+            }
+            catch (NotSupportedException)
+            {
+                // Unknown length: use full-size chunks.
+            }
+            return DefaultChunkSize;
         }
 
         /// <summary>
