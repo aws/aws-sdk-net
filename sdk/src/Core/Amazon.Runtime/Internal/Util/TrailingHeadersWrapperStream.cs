@@ -173,26 +173,24 @@ namespace Amazon.Runtime.Internal.Util
 
             if (countRemainingForThisRead > 0 && !_haveFinishedStream)
             {
-                // First read from the stream into a buffer here
-                byte[] thisBuffer = new byte[countRemainingForThisRead];
-
+                // Read straight into the caller's buffer (previously a temporary array was allocated per read and
+                // copied; the bytes delivered and the checksum input are identical).
                 if (!useAsyncRead)
                 {
-                    countFromStream = base.Read(thisBuffer, 0, countRemainingForThisRead);
+                    countFromStream = base.Read(buffer, offset, countRemainingForThisRead);
                 }
                 else
                 {
-                    countFromStream = await base.ReadAsync(thisBuffer, 0, countRemainingForThisRead, cancellationToken).ConfigureAwait(false);
+                    countFromStream = await base.ReadAsync(buffer, offset, countRemainingForThisRead, cancellationToken).ConfigureAwait(false);
                 }
 
-                // Update rolling checksum for that content, and copy it to the output buffer
+                // Update rolling checksum for that content
                 if (countFromStream != 0)
                 {
                     if (_hashAlgorithm != null)
                     {
-                        _hashAlgorithm.TransformBlock(thisBuffer, 0, countFromStream, thisBuffer, 0);
+                        _hashAlgorithm.TransformBlock(buffer, offset, countFromStream, null, 0);
                     }
-                    Buffer.BlockCopy(thisBuffer, 0, buffer, offset, countFromStream);
                 }
                 else // finished the stream, so finalize checksum
                 {
