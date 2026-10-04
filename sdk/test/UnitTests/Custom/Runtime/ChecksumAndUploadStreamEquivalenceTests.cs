@@ -99,6 +99,20 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
+        public void Crc32SlicingMatchesReference()
+        {
+            var rng = new Random(7);
+            for (int i = 0; i < 2000; i++)
+            {
+                var data = RandomBytes(rng, rng.Next(0, 3000));
+                Assert.AreEqual(ReferenceCrc32(data), ~Crc32Slicing.Update(0xFFFFFFFF, data));
+                Assert.AreEqual(Crc32Slicing.UpdateSafe(0x12345678, data), Crc32Slicing.Update(0x12345678, data));
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public void Crc32KnownVector()
         {
             using (var crc = new Crc32Managed())
