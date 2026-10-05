@@ -1254,4 +1254,22 @@ public class CborStreamReaderTests : IClassFixture<BufferSizeConfigFixture>
 
         Assert.Equal(0, thrownOnThisThread);
     }
+
+    [Fact]
+    public void IndefiniteLengthMap_ReaderKeepsTrackingContainerAtEndOfStream()
+    {
+        var writer = new CborWriter();
+        writer.WriteStartMap(null); // indefinite length: closed by a 0xFF break byte
+        writer.WriteTextString("key");
+        writer.WriteTextString("twelve chars");
+        writer.WriteEndMap();
+
+        using var reader = new CborStreamReader(new MemoryStream(writer.Encode()));
+        reader.ReadStartMap();
+        reader.ReadTextString();
+        reader.ReadTextString();
+
+        Assert.Equal(CborReaderState.EndMap, reader.PeekState());
+        Assert.Equal(1, reader.CurrentDepth);
+    }
 }
