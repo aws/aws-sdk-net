@@ -1,20 +1,41 @@
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
-/// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent is applied to the model
-/// (a rename pins <c>@jsonName</c>); the rest are checked by <see cref="Validate"/> and read from
-/// <see cref="GenerationContext.Customizations"/> by shape and member name where the member is resolved.
+/// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (a rename pins <c>@jsonName</c>,
+/// <c>renameShape</c> adds a service <c>rename</c> entry) or a structural edit (a member-keyed
+/// <c>renameShape</c> copies the member's target) is applied to the model; the rest are checked by
+/// <see cref="Validate"/> and read from <see cref="GenerationContext.Customizations"/> by shape and member name
+/// where the member is resolved.
 /// A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
 public static class CustomizationTransform
 {
     public static void Apply(SmithyModel model, CustomizationsModel customizations)
     {
+        // First, so a member-keyed copy exists for the hooks below. Every hook keys a shape by its modeled name,
+        // unlike C2J, which keys a renamed structure by its new name (S3's customizations need rekeying).
+        foreach (var (key, substitution) in customizations.ShapeSubstitutions)
+        {
+            if (string.IsNullOrWhiteSpace(substitution.RenamedShapeName))
+            {
+                throw new GeneratorException($"shapeSubstitutions['{key}'] must specify a non-empty 'renameShape'.");
+            }
+            if (key.Split('$') is [var structureName, var memberName])
+            {
+                RenameMemberTarget(model, structureName, memberName, substitution.RenamedShapeName);
+            }
+            else
+            {
+                ApplyRename(model, key, substitution.RenamedShapeName);
+            }
+        }
+
         foreach (var (shapeName, modifier) in customizations.ShapeModifiers)
         {
             var shape = FindSingleShape(model, shapeName, $"shapeModifiers['{shapeName}']");
@@ -101,8 +122,99 @@ public static class CustomizationTransform
         }
     }
 
+    // A C# rename is exactly what Smithy's service `rename` expresses, and ServiceIndex.ToDotNetName already
+    // applies it to every emitted symbol; the shape ID stays put, so member targets still resolve.
+    private static void ApplyRename(SmithyModel model, string shapeName, string newName)
+    {
+        var context = $"shapeSubstitutions['{shapeName}']";
+        var service = model.Shapes.Values.OfType<ServiceShape>().SingleOrDefault()
+            ?? throw new GeneratorException($"{context} needs a single service shape to record the rename on.");
+        var id = FindSingleShapeId(model, shapeName, context);
+        var shape = model.Shapes[id.AbsoluteName];
+
+        // Even an identical rename means the customization is stale and should be removed.
+        if (service.Rename.TryGetValue(id.AbsoluteName, out var existing))
+        {
+            throw new GeneratorException($"{context} renames '{id}' to '{newName}', but the model already renames it to '{existing}'.");
+        }
+
+        ThrowIfEmitted(model, service.Rename, shape, newName, $"{context} renames '{id}' to '{newName}'");
+        service.Rename[id.AbsoluteName] = newName;
+    }
+
+    // Smithy-only form, keyed "Structure$member": one Smithy shape can stand for several C2J shapes (QApps'
+    // Action is C2J's PermissionInputActionEnum and PermissionOutputActionEnum), so the member gets its own
+    // copy under the C2J name. The original is dropped once nothing targets it, or it would still be emitted.
+    private static void RenameMemberTarget(SmithyModel model, string structureName, string memberName, string newName)
+    {
+        var context = $"shapeSubstitutions['{structureName}${memberName}']";
+        var structureId = FindSingleShapeId(model, structureName, context);
+        if (model.Shapes[structureId.AbsoluteName] is not StructureShape structure || !structure.Members.TryGetValue(memberName, out var member))
+        {
+            throw new GeneratorException($"{context} does not name a structure member in the model.");
+        }
+
+        var original = model.Shapes.GetValueOrDefault(member.Target.AbsoluteName)
+            ?? throw new GeneratorException($"{context} targets '{member.Target}', which is not a shape in the model.");
+
+        // TODO: a structure copy would share its Members with the original, so a member rename would hit both.
+        if (original is StructureShape)
+        {
+            throw new GeneratorException($"{context} targets structure '{member.Target}'; duplicating a structure is not supported yet.");
+        }
+
+        var renames = model.Shapes.Values.OfType<ServiceShape>().SingleOrDefault()?.Rename ?? [];
+        ThrowIfEmitted(model, renames, original, newName, $"{context} copies '{member.Target}' as '{newName}'");
+
+        // ThrowIfEmitted compares emitted names, so it misses a shape at this ID that the service renames away.
+        var id = new ShapeId(member.Target.Namespace, newName);
+        if (model.Shapes.ContainsKey(id.AbsoluteName))
+        {
+            throw new GeneratorException($"{context} copies '{member.Target}' as '{newName}', but '{id}' is already a shape in the model.");
+        }
+
+        model.Shapes[id.AbsoluteName] = original with { Id = id, Traits = new(original.Traits) };
+        structure.Members[memberName] = member with { Target = id };
+
+        if (!IsTargeted(model, member.Target))
+        {
+            model.Shapes.Remove(member.Target.AbsoluteName);
+        }
+    }
+
+    // TODO: C2J merges shapes renamed to one name (S3's Grant and TargetGrant both become S3Grant). This also
+    // scans unreachable shapes: S3 renames Rule, used only by operations it excludes, to its existing LifecycleRule.
+    // Exceptions share the model namespace, so compare the generated type names (error Foo emits FooException).
+    private static void ThrowIfEmitted(SmithyModel model, Dictionary<string, string> renames, Shape? renamed, string newName, string context)
+    {
+        var typeName = TypeName(renamed, newName);
+        var clash = model.Shapes.FirstOrDefault(kvp => TypeName(kvp.Value, EmittedName(renames, ShapeId.Parse(kvp.Key))) == typeName).Key;
+        if (clash is not null)
+        {
+            throw new GeneratorException($"{context}, which '{clash}' is already emitted as.");
+        }
+    }
+
+    private static string TypeName(Shape? shape, string name) => shape?.IsError() == true ? ExceptionWriter.ToExceptionName(name) : name;
+
+    private static bool IsTargeted(SmithyModel model, ShapeId id) => model.Shapes.Values.Any(shape => shape switch
+    {
+        StructureShape structure => structure.Members.Values.Any(member => member.Target == id),
+        ListShape list => list.Member.Target == id,
+        MapShape map => map.Key.Target == id || map.Value.Target == id,
+        _ => false,
+    });
+
+    private static string EmittedName(Dictionary<string, string> renames, ShapeId id) => renames.GetValueOrDefault(id.AbsoluteName, id.Name);
+
     // Customizations key shapes by bare name (C2J has no namespaces).
     private static Shape FindSingleShape(SmithyModel model, string bareName, string context)
+    {
+        var id = FindSingleShapeId(model, bareName, context);
+        return model.Shapes[id.AbsoluteName] ?? throw new GeneratorException($"{context} matched a null shape entry '{id}'.");
+    }
+
+    private static ShapeId FindSingleShapeId(SmithyModel model, string bareName, string context)
     {
         var matches = model.Shapes.Keys.Where(k => ShapeId.Parse(k).Name == bareName).ToList();
         if (matches.Count != 1)
@@ -112,7 +224,7 @@ public static class CustomizationTransform
                 : $"{context} matches more than one shape: {string.Join(", ", matches)}.");
         }
 
-        return model.Shapes[matches[0]] ?? throw new GeneratorException($"{context} matched a null shape entry '{matches[0]}'.");
+        return ShapeId.Parse(matches[0]);
     }
 
     private static void ValidateDataTypeSwap(SmithyModel model, StructureShape structure, string memberName, DataTypeSwap swap, string shapeName)

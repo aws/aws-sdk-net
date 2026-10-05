@@ -59,6 +59,20 @@ public class CustomizationTransformTests
     }
 
     [Fact]
+    public void Load_ShapeSubstitutions_ReadsRenameShape()
+    {
+        var model = LoadFiles("""{ "shapeSubstitutions": { "VpcConfigResponse": { "renameShape": "VpcConfigDetail" } } }""");
+        Assert.Equal("VpcConfigDetail", model.ShapeSubstitutions["VpcConfigResponse"].RenamedShapeName);
+    }
+
+    [Fact]
+    public void Load_ShapeSubstitutions_EmitAsShape_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "shapeSubstitutions": { "Thing": { "emitAsShape": "String" } } }"""));
+        Assert.Contains("emitAsShape", ex.Message);
+    }
+
+    [Fact]
     public void Load_EmitIsSetProperties_MergesAcrossFiles()
     {
         var model = LoadFiles(
@@ -362,6 +376,155 @@ public class CustomizationTransformTests
         var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, customizations));
         Assert.Contains("isFlattened", ex.Message);
     }
+
+    [Fact]
+    public void Apply_ShapeSubstitution_RenamesViaServiceRename()
+    {
+        var model = SubstitutionsModel();
+        CustomizationTransform.Apply(model, Substitute("Bucket", "S3Bucket"));
+
+        var index = new ServiceIndex(model);
+        Assert.Equal("S3Bucket", index.ToDotNetName(ShapeId.Parse("com.example#Bucket")));
+        Assert.NotNull(model.Shapes["com.example#Bucket"]);
+    }
+
+    [Fact]
+    public void Apply_ShapeSubstitution_StructureHooksUseModeledName()
+    {
+        var model = SubstitutionsModel();
+        var customizations = Substitute("Bucket", "S3Bucket") with { ShapeModifiers = Rename("Bucket", "name", "BucketName").ShapeModifiers };
+
+        CustomizationTransform.Apply(model, customizations);
+
+        Assert.Contains("BucketName", Assert.IsType<StructureShape>(model.Shapes["com.example#Bucket"]).Members.Keys);
+    }
+
+    [Fact]
+    public void Apply_ShapeSubstitution_StructureHookUnderRenamedName_Throws()
+    {
+        var customizations = Substitute("Bucket", "S3Bucket") with { ShapeModifiers = Rename("S3Bucket", "name", "BucketName").ShapeModifiers };
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(SubstitutionsModel(), customizations));
+        Assert.Contains("does not match any shape", ex.Message);
+    }
+
+    [Fact]
+    public void Apply_ShapeSubstitution_EnumHooksUseModeledName()
+    {
+        var model = SubstitutionsModel();
+        var customizations = Substitute("StorageClass", "S3StorageClass");
+        customizations.ShapeModifiers["StorageClass"] = new ShapeModifier { DeprecatedMessage = "Old." };
+
+        CustomizationTransform.Apply(model, customizations);
+
+        Assert.Equal("Old.", model.Shapes["com.example#StorageClass"]?.GetDeprecated()?.Message);
+    }
+
+    // Even an identical rename means the customization is stale.
+    [Theory]
+    [InlineData("Other")]
+    [InlineData("S3Bucket")]
+    public void Apply_ShapeSubstitution_ModelAlreadyRenames_Throws(string existing)
+    {
+        var model = SubstitutionsModel();
+        Assert.IsType<ServiceShape>(model.Shapes["com.example#Service"]).Rename["com.example#Bucket"] = existing;
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Substitute("Bucket", "S3Bucket")));
+        Assert.Contains($"already renames it to '{existing}'", ex.Message);
+    }
+
+    // `required` only checks the key is present, so an explicit null or blank renameShape reaches Apply.
+    [Theory]
+    [InlineData("Bucket", "null")]
+    [InlineData("Bucket", "\" \"")]
+    [InlineData("Holder$bucket", "\" \"")]
+    public void Apply_ShapeSubstitutionWithoutName_Throws(string key, string newName)
+    {
+        var customizations = LoadFiles($$"""{ "shapeSubstitutions": { "{{key}}": { "renameShape": {{newName}} } } }""");
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(SubstitutionsModel(), customizations));
+        Assert.Contains($"shapeSubstitutions['{key}'] must specify a non-empty 'renameShape'", ex.Message);
+    }
+
+    // The error Throttled emits ThrottledException, so the clash check compares generated type names.
+    [Theory]
+    [InlineData("Grant", "S3Grant", "com.example#S3Grant")]
+    [InlineData("Bucket", "ThrottledException", "com.example#Throttled")]
+    public void Apply_ShapeSubstitution_ClashesWithEmittedName_Throws(string shape, string newName, string clash)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(SubstitutionsModel(), Substitute(shape, newName)));
+        Assert.Contains($"which '{clash}' is already emitted as", ex.Message);
+    }
+
+    // The error emits GrantException, not Grant, so it doesn't clash with the Grant structure.
+    [Fact]
+    public void Apply_ShapeSubstitution_ErrorRenamedToStructureName_Applies()
+    {
+        var model = SubstitutionsModel();
+
+        CustomizationTransform.Apply(model, Substitute("AccessDenied", "Grant"));
+
+        Assert.Equal("Grant", new ServiceIndex(model).ToDotNetName(ShapeId.Parse("com.example#AccessDenied")));
+    }
+
+    [Fact]
+    public void Apply_MemberSubstitution_SplitsSharedTargetAndDropsOriginal()
+    {
+        var model = SubstitutionsModel();
+        var customizations = new CustomizationsModel
+        {
+            ShapeSubstitutions =
+            {
+                ["PermissionInput$action"] = new ShapeSubstitution { RenamedShapeName = "PermissionInputActionEnum" },
+                ["PermissionOutput$action"] = new ShapeSubstitution { RenamedShapeName = "PermissionOutputActionEnum" },
+            },
+        };
+
+        CustomizationTransform.Apply(model, customizations);
+
+        Assert.Equal(ShapeId.Parse("com.example#PermissionInputActionEnum"), Assert.IsType<StructureShape>(model.Shapes["com.example#PermissionInput"]).Members["action"].Target);
+        Assert.Equal(ShapeId.Parse("com.example#PermissionOutputActionEnum"), Assert.IsType<StructureShape>(model.Shapes["com.example#PermissionOutput"]).Members["action"].Target);
+        Assert.Equal(ShapeId.Parse("com.example#PermissionInputActionEnum"), Assert.IsType<EnumShape>(model.Shapes["com.example#PermissionInputActionEnum"]).Id);
+        Assert.False(model.Shapes.ContainsKey("com.example#Action"));
+    }
+
+    [Fact]
+    public void Apply_MemberSubstitution_KeepsOriginalStillTargeted()
+    {
+        var model = SubstitutionsModel();
+
+        CustomizationTransform.Apply(model, Substitute("PermissionInput$action", "PermissionInputActionEnum"));
+
+        Assert.True(model.Shapes.ContainsKey("com.example#Action"));
+        Assert.True(model.Shapes.ContainsKey("com.example#PermissionInputActionEnum"));
+    }
+
+    [Theory]
+    [InlineData("PermissionInput$missing", "Copy", "does not name a structure member")]
+    [InlineData("PermissionInput$principal", "Copy", "duplicating a structure is not supported")]
+    [InlineData("PermissionInput$action", "Taken", "already emitted as")]
+    public void Apply_MemberSubstitution_Invalid_Throws(string key, string newName, string expected)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(SubstitutionsModel(), Substitute(key, newName)));
+        Assert.Contains(expected, ex.Message);
+    }
+
+    [Fact]
+    public void Apply_MemberSubstitution_ExistingIdRenamedAway_Throws()
+    {
+        var model = SubstitutionsModel();
+        Assert.IsType<ServiceShape>(model.Shapes["com.example#Service"]).Rename["com.example#Taken"] = "Other";
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Substitute("PermissionInput$action", "Taken")));
+        Assert.Contains("'com.example#Taken' is already a shape in the model", ex.Message);
+    }
+
+    private static CustomizationsModel Substitute(string shape, string newName) => new()
+    {
+        ShapeSubstitutions = { [shape] = new ShapeSubstitution { RenamedShapeName = newName } },
+    };
+
+    private static SmithyModel SubstitutionsModel() => TestModels.Load("Customizations/substitutions-model.json");
 
     private static void ApplyAndValidate(SmithyModel model, CustomizationsModel customizations)
     {

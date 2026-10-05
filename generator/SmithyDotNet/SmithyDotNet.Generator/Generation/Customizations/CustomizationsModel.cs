@@ -48,6 +48,14 @@ public sealed record CustomizationsModel
     public DataTypeSwap? DataTypeSwapFor(string shapeName, string memberName) => DataTypeSwaps.TryGetValue(shapeName, out var members) && members.TryGetValue(memberName, out var swap) ? swap : null;
 
     /// <summary>
+    /// Emitted-name overrides keyed by modeled shape name, e.g.
+    /// <c>"shapeSubstitutions": { "VpcConfigResponse": { "renameShape": "VpcConfigDetail" } }</c>.
+    /// A Smithy-only <c>"Structure$member"</c> key gives that member's target its own copy under the new name.
+    /// </summary>
+    [JsonPropertyName("shapeSubstitutions")]
+    public Dictionary<string, ShapeSubstitution> ShapeSubstitutions { get; init; } = [];
+
+    /// <summary>
     /// Loads a service's customizations files into one model, as C2J's CustomizationCompiler combines them, except
     /// that a shape repeated across files throws instead of merging.
     /// </summary>
@@ -57,6 +65,7 @@ public sealed record CustomizationsModel
         var operationModifiers = new Dictionary<string, OperationModifier>();
         var emitIsSetProperties = new Dictionary<string, List<string>>();
         var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
+        var shapeSubstitutions = new Dictionary<string, ShapeSubstitution>();
         foreach (var path in paths)
         {
             CustomizationsModel file;
@@ -87,6 +96,13 @@ public sealed record CustomizationsModel
                 }
             }
 
+            foreach (var (shapeName, modifier) in file.ShapeSubstitutions)
+            {
+                if (!shapeSubstitutions.TryAdd(shapeName, modifier))
+                {
+                    throw new GeneratorException($"'{path}': shapeSubstitutions['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
 
             foreach (var (shapeName, members) in file.EmitIsSetProperties)
             {
@@ -105,7 +121,7 @@ public sealed record CustomizationsModel
             }
         }
 
-        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps, EmitIsSetProperties = emitIsSetProperties };
+        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps, EmitIsSetProperties = emitIsSetProperties, ShapeSubstitutions = shapeSubstitutions };
     }
 }
 
@@ -162,4 +178,11 @@ public sealed record DataTypeSwap
     /// <summary>XML-only: overrides the member's XML element name. Rejected until an XML protocol is supported.</summary>
     [JsonPropertyName("alternateLocationName")]
     public string? AlternateLocationName { get; init; }
+}
+
+public sealed record ShapeSubstitution
+{
+    // TODO: C2J also has emitAsShape and emitFromMember; the loader rejects them as unknown keys.
+    [JsonPropertyName("renameShape")]
+    public required string RenamedShapeName { get; init; }
 }

@@ -1,0 +1,75 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Service": {
+      "type": "service",
+      "version": "2023-01-01"
+    },
+    "com.example#Bucket": {
+      "type": "structure",
+      "members": {
+        "name": { "target": "smithy.api#String" }
+      }
+    },
+    "com.example#Holder": {
+      "type": "structure",
+      "members": {
+        "bucket": { "target": "com.example#Bucket" }
+      }
+    },
+    "com.example#StorageClass": {
+      "type": "enum",
+      "members": {
+        "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } }
+      },
+      "traits": { "smithy.api#deprecated": {} }
+    },
+    "com.example#Grant": {
+      "type": "structure",
+      "members": {}
+    },
+    "com.example#S3Grant": {
+      "type": "structure",
+      "members": {}
+    },
+    "com.example#Throttled": {
+      "type": "structure",
+      "members": {},
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#AccessDenied": {
+      "type": "structure",
+      "members": {},
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#PermissionInput": {
+      "type": "structure",
+      "members": {
+        "action": { "target": "com.example#Action" },
+        "principal": { "target": "com.example#Principal" }
+      }
+    },
+    "com.example#PermissionOutput": {
+      "type": "structure",
+      "members": {
+        "action": { "target": "com.example#Action" }
+      }
+    },
+    "com.example#Action": {
+      "type": "enum",
+      "members": {
+        "READ": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "read" } }
+      }
+    },
+    "com.example#Principal": {
+      "type": "structure",
+      "members": {}
+    },
+    "com.example#Taken": {
+      "type": "enum",
+      "members": {
+        "YES": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "yes" } }
+      }
+    }
+  }
+}

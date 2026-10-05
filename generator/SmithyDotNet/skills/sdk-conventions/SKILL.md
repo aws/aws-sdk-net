@@ -258,11 +258,19 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 ## Customizations (`*.customizations.json`)
 
 The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
-trait equivalent (a rename pins `@jsonName`) is folded into the model in-memory by
+trait equivalent (a rename pins `@jsonName`), or a structural edit (a member-keyed `renameShape`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
 `CustomizationTransform.Validate` and read from `GenerationContext.Customizations` by shape and member
 name where the member is resolved (`TypeMapper.ResolveMembers`), never stored on a shape. An unknown
 hook key fails deserialization (fail-closed) rather than silently diverging from C2J.
+
+`shapeSubstitutions.renameShape` is applied first, as an entry in the service's `rename` map (the shape ID
+is unchanged, so targets still resolve). Every hook keys a renamed shape by its modeled name. C2J keys a renamed
+structure by its new name, so S3's entries for its renamed structures must be rekeyed on migration. Wire error codes
+keep the modeled name. A model that already renames the shape fails.
+A Smithy-only `"Structure$member"` key instead copies that member's target under the new name (QApps: one
+`Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
+nothing targets it.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.

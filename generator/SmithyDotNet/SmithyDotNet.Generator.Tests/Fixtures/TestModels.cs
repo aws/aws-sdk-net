@@ -9,7 +9,8 @@ namespace SmithyDotNet.Generator.Tests;
 /// <summary>
 /// Loads test models from <c>TestData</c>. Every model lives in its own file there: real service
 /// extracts at the root, auth-scenario models under <c>Auth/</c>, models driving codegen tests
-/// under <c>Codegen/</c>, and models driving model-loading/resolution tests under <c>Model/</c>.
+/// under <c>Codegen/</c>, customization-transform models under <c>Customizations/</c>, and models driving
+/// model-loading/resolution tests under <c>Model/</c>.
 /// </summary>
 internal static class TestModels
 {
