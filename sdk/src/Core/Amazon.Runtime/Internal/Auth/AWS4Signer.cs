@@ -14,6 +14,7 @@
  */
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -68,6 +69,13 @@ namespace Amazon.Runtime.Internal.Auth
             HeaderKeys.UserAgentHeader,
             HeaderKeys.XAmzUserAgentHeader
         };
+
+        // Derived signing keys are deterministic for a given secret, region, date and service,
+        // so they are reused across requests. Oldest entries are evicted first once the limit
+        // is reached; the date stamp in the key handles UTC day rollover.
+        private const int SigningKeyCacheLimit = 100;
+        private static readonly ConcurrentDictionary<string, byte[]> _signingKeyCache = new ConcurrentDictionary<string, byte[]>();
+        private static readonly ConcurrentQueue<string> _signingKeyCacheOrder = new ConcurrentQueue<string>();
 
         public AWS4Signer()
             : this(true)
@@ -444,14 +452,36 @@ namespace Amazon.Runtime.Internal.Auth
             if (metrics != null)
                 metrics.AddProperty(Metric.StringToSign, stringToSignBuilder);
 
-            var key = ComposeSigningKey(awsSecretAccessKey,
-                                        region,
-                                        dateStamp,
-                                        service);
+            var key = GetSigningKey(awsSecretAccessKey,
+                                    region,
+                                    dateStamp,
+                                    service);
 
             var stringToSign = stringToSignBuilder.ToString();
             var signature = ComputeKeyedHash(SignerAlgorithm, key, stringToSign);
             return new AWS4SigningResult(awsAccessKey, awsSecretAccessKey, signedAt, signedHeaders, scope, key, signature);
+        }
+
+        /// <summary>
+        /// Returns the signing key for the supplied scope, deriving and caching it on first use.
+        /// The returned array is shared and must not be modified by callers.
+        /// </summary>
+        private static byte[] GetSigningKey(string awsSecretAccessKey, string region, string dateStamp, string service)
+        {
+            var cacheKey = string.Concat(awsSecretAccessKey, "/", region, "/", dateStamp, "/", service);
+            if (_signingKeyCache.TryGetValue(cacheKey, out var key))
+                return key;
+
+            key = ComposeSigningKey(awsSecretAccessKey, region, dateStamp, service);
+
+            if (_signingKeyCache.TryAdd(cacheKey, key))
+            {
+                _signingKeyCacheOrder.Enqueue(cacheKey);
+                while (_signingKeyCacheOrder.Count > SigningKeyCacheLimit && _signingKeyCacheOrder.TryDequeue(out var oldest))
+                    _signingKeyCache.TryRemove(oldest, out _);
+            }
+
+            return key;
         }
 
         /// <summary>
