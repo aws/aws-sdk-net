@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Reduce CPU and memory used by checksums and chunked uploads: stop allocating per 64-byte block in the managed MD5 used to validate GetObject responses, size aws-chunked upload buffers to small payloads, stop allocating a temporary buffer per read when sending trailing checksums, and compute CRC32 with a faster slicing-by-16 implementation on targets where System.IO.Hashing is not vectorized (.NET 8, .NET Standard and .NET Framework)."
+    ]
+  }
+}
