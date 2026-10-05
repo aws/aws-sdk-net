@@ -188,6 +188,22 @@ namespace Amazon.Extensions.CborProtocol.Internal
             // Determine where the leftover bytes start
             int leftoverStartIndex = _currentChunkSize - leftoverBytesCount;
 
+            // Read into any free space after the current chunk first. If the stream has no more data and there is
+            // nothing to skip, return without resetting the internal reader: resetting forgets the containers it
+            // has open, so at the end of the stream it would see a closing break byte (0xFF) at root level and throw.
+            if (bytesToSkip == 0 && _currentChunkSize < _buffer.Length)
+            {
+                int bytesAppended = _stream.Read(_buffer, _currentChunkSize, _buffer.Length - _currentChunkSize);
+                if (bytesAppended == 0)
+                {
+                    _streamExhausted = true;
+                    return;
+                }
+
+                _currentChunkSize += bytesAppended;
+                leftoverBytesCount += bytesAppended;
+            }
+
             // If we are skipping bytes, we need to move the start forward
             leftoverStartIndex += bytesToSkip;
             leftoverBytesCount = leftoverBytesCount - bytesToSkip;
