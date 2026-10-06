@@ -11,6 +11,7 @@ public sealed class CborStructureUnmarshallerWriter(GenerationContext context, s
     public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
         var className = context.ToDotNetName(structure.Id);
+        var unmarshallerClassName = context.StructureUnmarshallerName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
         var writer = new CodeWriter();
 
@@ -23,7 +24,7 @@ public sealed class CborStructureUnmarshallerWriter(GenerationContext context, s
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// Response Unmarshaller for {className} Object");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public partial class {className}Unmarshaller : ICborUnmarshaller<{className}, CborUnmarshallerContext>", () =>
+            writer.OpenBlock($"public partial class {unmarshallerClassName} : ICborUnmarshaller<{className}, CborUnmarshallerContext>", () =>
             {
                 writer.WriteLine("/// <summary>");
                 writer.WriteLine("/// Unmarshall the response from the service to the response class.");
@@ -47,7 +48,7 @@ public sealed class CborStructureUnmarshallerWriter(GenerationContext context, s
                     writer.WriteLine("return unmarshalledObject;");
                 });
                 writer.WriteLine("");
-                MarshallerCommon.WriteUnmarshallerSingleton(writer, $"{className}Unmarshaller");
+                MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);

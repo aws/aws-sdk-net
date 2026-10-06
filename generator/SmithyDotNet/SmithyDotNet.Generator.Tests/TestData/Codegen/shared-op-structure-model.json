@@ -16,6 +16,9 @@
         },
         {
           "target": "com.example#PurgeItems"
+        },
+        {
+          "target": "com.example#GetSummary"
         }
       ],
       "traits": {
@@ -127,6 +130,9 @@
       "members": {
         "item": {
           "target": "com.example#Item"
+        },
+        "summary": {
+          "target": "com.example#GetSummaryResponse"
         }
       },
       "traits": {
@@ -137,6 +143,29 @@
       "type": "structure",
       "members": {
         "purgedCount": {
+          "target": "smithy.api#Integer"
+        }
+      }
+    },
+    "com.example#GetSummary": {
+      "type": "operation",
+      "input": {
+        "target": "smithy.api#Unit"
+      },
+      "output": {
+        "target": "com.example#GetSummaryResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/summary",
+          "method": "GET"
+        }
+      }
+    },
+    "com.example#GetSummaryResponse": {
+      "type": "structure",
+      "members": {
+        "total": {
           "target": "smithy.api#Integer"
         }
       }

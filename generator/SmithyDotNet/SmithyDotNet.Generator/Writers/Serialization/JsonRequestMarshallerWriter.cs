@@ -582,7 +582,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
                 writer.WriteLine("context.Writer.WriteStartObject();");
                 writer.WriteLine("");
-                writer.WriteLine($"var marshaller = {payload.Type.DotNetType}Marshaller.Instance;");
+                writer.WriteLine($"var marshaller = {payload.Type.MarshallerName}.Instance;");
                 writer.WriteLine($"marshaller.Marshall(publicRequest.{payload.PropertyName}, context);");
                 writer.WriteLine("");
                 writer.WriteLine("context.Writer.WriteEndObject();");

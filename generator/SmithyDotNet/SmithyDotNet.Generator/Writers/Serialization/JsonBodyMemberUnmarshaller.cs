@@ -110,10 +110,9 @@ public static class JsonBodyMemberUnmarshaller
             const string unmarshaller = "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller";
             return (unmarshaller, $"{unmarshaller}.Instance");
         }
-        if (type.IsStructure)
+        if (type.UnmarshallerName is { } structureUnmarshaller)
         {
-            var unmarshaller = $"{type.DotNetType}Unmarshaller";
-            return (unmarshaller, $"{unmarshaller}.Instance");
+            return (structureUnmarshaller, $"{structureUnmarshaller}.Instance");
         }
         if (type.ListElement is { } element)
         {

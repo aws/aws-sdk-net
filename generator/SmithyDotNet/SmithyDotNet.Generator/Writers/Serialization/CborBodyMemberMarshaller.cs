@@ -54,7 +54,7 @@ public static class CborBodyMemberMarshaller
         {
             writer.WriteLine("context.Writer.WriteStartMap(null);");
             writer.WriteLine("");
-            writer.WriteLine($"var marshaller = {type.DotNetType}Marshaller.Instance;");
+            writer.WriteLine($"var marshaller = {type.MarshallerName}.Instance;");
             writer.WriteLine($"marshaller.Marshall({value}, context);");
             writer.WriteLine("");
             writer.WriteLine("context.Writer.WriteEndMap();");

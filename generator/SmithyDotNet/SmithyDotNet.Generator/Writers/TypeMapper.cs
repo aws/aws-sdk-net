@@ -60,6 +60,12 @@ namespace SmithyDotNet.Generator.Writers;
 /// modeled conversion, or null.</param>
 /// <param name="UnmarshallerOverride">The <c>dataTypeSwap</c> unmarshaller the writers use instead of the
 /// modeled one, or null.</param>
+/// <param name="MarshallerName">The generated marshaller class for a structure target (see
+/// <see cref="GenerationContext.StructureMarshallerName"/>); null for any other target. Non-null whenever
+/// <see cref="IsStructure"/> is.</param>
+/// <param name="UnmarshallerName">The generated unmarshaller class for a structure target (see
+/// <see cref="GenerationContext.StructureUnmarshallerName"/>); null for any other target. Non-null whenever
+/// <see cref="IsStructure"/> is.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     Shape Target,
@@ -80,7 +86,9 @@ public sealed record TypeDescriptor(
     bool IsSparse = false,
     string? MediaType = null,
     string? MarshallerOverride = null,
-    string? UnmarshallerOverride = null)
+    string? UnmarshallerOverride = null,
+    string? MarshallerName = null,
+    string? UnmarshallerName = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -269,7 +277,9 @@ public static class TypeMapper
             IsSparse: isSparse,
             MediaType: target.GetMediaType(),
             MarshallerOverride: swap?.Marshaller,
-            UnmarshallerOverride: swap?.Unmarshaller);
+            UnmarshallerOverride: swap?.Unmarshaller,
+            MarshallerName: target is StructureShape ? context.StructureMarshallerName(target.Id) : null,
+            UnmarshallerName: target is StructureShape ? context.StructureUnmarshallerName(target.Id) : null);
     }
 
     /// <summary>

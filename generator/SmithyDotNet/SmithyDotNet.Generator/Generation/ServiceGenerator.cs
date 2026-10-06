@@ -295,7 +295,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                         _ => new JsonStructureMarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
                     };
 
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Marshaller.g.cs"), structureMarshallerCode);
+                    Emit(Path.Combine(marshalling, $"{context.StructureMarshallerName(structure.Id)}.g.cs"), structureMarshallerCode);
                 }
             }
 
@@ -318,7 +318,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                         _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
                     };
 
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshallerCode);
+                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
                 }
             }
         }
@@ -352,7 +352,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                         _ => new JsonStructureUnmarshallerWriter(context, modelFileName).Write(structure, cancellationToken),
                     };
 
-                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(structure.Id)}Unmarshaller.g.cs"), structureUnmarshallerCode);
+                    Emit(Path.Combine(marshalling, $"{context.StructureUnmarshallerName(structure.Id)}.g.cs"), structureUnmarshallerCode);
                 }
             }
         }
@@ -421,6 +421,12 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         foreach (var structure in context.Structures.Values)
         {
             if (operationShapes.Contains(structure.Id) && !memberReferencedOperationShapes.Contains(structure.Id))
+            {
+                continue;
+            }
+
+            // Already emitted: the {Op}Response wrapper is this shape's class.
+            if (context.ResponseNamedOutputs.Contains(structure.Id))
             {
                 continue;
             }

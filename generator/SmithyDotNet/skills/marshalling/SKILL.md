@@ -20,6 +20,17 @@ Under `Generated/Model/Internal/MarshallTransformations/`, all `partial`:
 | `{Exception}Unmarshaller.cs` | `IJsonErrorResponseUnmarshaller<{Exception}, JsonUnmarshallerContext>` (or protocol equivalent) | |
 | `{Operation}EndpointDiscoveryMarshaller.cs` | `IMarshaller<EndpointDiscoveryDataBase, {Operation}Request>` | Endpoint discovery only; see `sdk-conventions` |
 
+An operation output already named `{Operation}Response` that a member also targets is typed with the
+`{Operation}Response` class itself (no separate model class); its structure unmarshaller is
+`{Shape}StructureUnmarshaller`, since `{Shape}Unmarshaller` is the operation's response unmarshaller.
+No C2J service has this shape, so there is no parity target.
+
+Structure (un)marshaller class names come only from `GenerationContext.StructureMarshallerName` /
+`StructureUnmarshallerName`. `TypeDescriptor.MarshallerName` / `UnmarshallerName` carry them for a
+structure target; writers read those (or the context, when declaring the class or naming the file)
+and never compose `{Shape}Marshaller` / `{Shape}Unmarshaller` themselves, so a naming rule needs no
+per-protocol code.
+
 Structure marshallers expose `public readonly static {Shape}Marshaller Instance = new {Shape}Marshaller();`.
 Operation marshallers/unmarshallers expose a `private static` instance behind a public `Instance` property.
 

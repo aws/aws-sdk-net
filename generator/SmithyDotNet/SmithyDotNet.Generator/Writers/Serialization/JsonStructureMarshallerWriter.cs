@@ -24,6 +24,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
     public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
         var className = context.ToDotNetName(structure.Id);
+        var marshallerClassName = context.StructureMarshallerName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
         var writer = new CodeWriter();
 
@@ -36,11 +37,11 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         writer.OpenNamespace($"{context.Namespace}.Model.Internal.MarshallTransformations", () =>
         {
             WriteMarshallerDocumentation(writer, className);
-            writer.OpenBlock($"public partial class {className}Marshaller : IRequestMarshaller<{className}, JsonMarshallerContext>", () =>
+            writer.OpenBlock($"public partial class {marshallerClassName} : IRequestMarshaller<{className}, JsonMarshallerContext>", () =>
             {
                 WriteMarshallMethod(structure, members, writer, className);
                 writer.WriteLine("");
-                MarshallerCommon.WriteStructureMarshallerSingleton(writer, className);
+                MarshallerCommon.WriteStructureMarshallerSingleton(writer, marshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);
@@ -100,7 +101,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
             }
             else if (member.Type.IsStructure)
             {
-                writer.WriteLine($"{member.Type.DotNetType}Marshaller.Instance.Marshall(requestObject.{member.PropertyName}, context);");
+                writer.WriteLine($"{member.Type.MarshallerName}.Instance.Marshall(requestObject.{member.PropertyName}, context);");
             }
             else
             {

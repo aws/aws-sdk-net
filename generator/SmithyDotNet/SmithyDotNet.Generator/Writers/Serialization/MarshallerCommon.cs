@@ -74,12 +74,12 @@ public static class MarshallerCommon
         writer.WriteLine($"public static {className}Marshaller Instance => _instance;");
     }
 
-    internal static void WriteStructureMarshallerSingleton(CodeWriter writer, string className)
+    internal static void WriteStructureMarshallerSingleton(CodeWriter writer, string marshallerClassName)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Singleton Marshaller");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public readonly static {className}Marshaller Instance = new {className}Marshaller();");
+        writer.WriteLine($"public readonly static {marshallerClassName} Instance = new {marshallerClassName}();");
     }
 
     internal static void WriteResponseUnmarshallerSingleton(CodeWriter writer, string unmarshallerClassName)

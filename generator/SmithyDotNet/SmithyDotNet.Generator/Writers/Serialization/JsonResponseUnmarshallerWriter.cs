@@ -140,7 +140,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             // resolve to (see JsonBodyMemberUnmarshaller); a structure uses its generated unmarshaller.
             var unmarshaller = payload.Type.IsDocument
                 ? "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller"
-                : $"{payload.Type.DotNetType}Unmarshaller";
+                : payload.Type.UnmarshallerName;
             writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
             writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
             writer.WriteLine($"var unmarshaller = {unmarshaller}.Instance;");

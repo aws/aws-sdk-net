@@ -11,6 +11,7 @@ public sealed class CborStructureMarshallerWriter(GenerationContext context, str
     public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
         var className = context.ToDotNetName(structure.Id);
+        var marshallerClassName = context.StructureMarshallerName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
         var writer = new CodeWriter();
 
@@ -26,7 +27,7 @@ public sealed class CborStructureMarshallerWriter(GenerationContext context, str
             writer.WriteLine("/// <summary>");
             writer.WriteLine($"/// {className} Marshaller");
             writer.WriteLine("/// </summary>");
-            writer.OpenBlock($"public partial class {className}Marshaller : IRequestMarshaller<{className}, CborMarshallerContext>", () =>
+            writer.OpenBlock($"public partial class {marshallerClassName} : IRequestMarshaller<{className}, CborMarshallerContext>", () =>
             {
                 writer.WriteLine("/// <summary>");
                 writer.WriteLine("/// Marshall the structure from the request object to the service");
@@ -45,7 +46,7 @@ public sealed class CborStructureMarshallerWriter(GenerationContext context, str
                     }
                 });
                 writer.WriteLine("");
-                MarshallerCommon.WriteStructureMarshallerSingleton(writer, className);
+                MarshallerCommon.WriteStructureMarshallerSingleton(writer, marshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);

@@ -16,9 +16,9 @@ namespace SmithyDotNet.Generator.Writers.EventStreams;
 public sealed class EventStreamPublisherMarshallerWriter(GenerationContext context, string modelFileName)
 {
     // A union member that isn't an @error is an event: its wire name (the :event-type header) is the
-    // member name verbatim, its marshaller is {EventClass}Marshaller, and its payload kind picks the
-    // wire :content-type.
-    private readonly record struct Event(string WireName, string EventClass, PayloadKind Payload);
+    // member name verbatim, its marshaller is the event structure's (GenerationContext.StructureMarshallerName),
+    // and its payload kind picks the wire :content-type.
+    private readonly record struct Event(string WireName, string EventClass, string Marshaller, PayloadKind Payload);
 
     // The event's wire :content-type and payload source. A blob/string @eventPayload is the raw body the
     // event marshaller wrote to context.Request.Content; anything else (a structure payload or an implicit
@@ -36,7 +36,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
         var events = union.Members
             .Where(member => !context.Resolve(member.Value.Target).IsError())
             .OrderBy(member => member.Key, StringComparer.Ordinal)
-            .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), PayloadOf(member.Value.Target)))
+            .Select(member => new Event(member.Key, context.ToDotNetName(member.Value.Target), context.StructureMarshallerName(member.Value.Target), PayloadOf(member.Value.Target)))
             .ToList();
 
         // Without this the loop below emits no branch and the trailing `else` doesn't compile.
@@ -123,7 +123,7 @@ public sealed class EventStreamPublisherMarshallerWriter(GenerationContext conte
             // TODO: rpcv2Cbor request event streams need a CBOR marshaller context here (rejected by UnsupportedTraitValidator for now).
             writer.WriteLine("var context = CreateJsonMarshallerContext(memoryStream);");
             writer.WriteLine("context.Writer.WriteStartObject();");
-            writer.WriteLine($"{evnt.EventClass}Marshaller.Instance.Marshall(({evnt.EventClass})evnt, context);");
+            writer.WriteLine($"{evnt.Marshaller}.Instance.Marshall(({evnt.EventClass})evnt, context);");
             writer.WriteLine("eventHeaders = context.Request.EventHeaders;");
             writer.WriteLine("context.Writer.WriteEndObject();");
             writer.WriteLine("context.Writer.Flush();");

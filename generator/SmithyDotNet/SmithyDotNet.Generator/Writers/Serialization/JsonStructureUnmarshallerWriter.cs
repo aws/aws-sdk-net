@@ -23,6 +23,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
     public string Write(StructureShape structure, CancellationToken cancellationToken = default)
     {
         var className = context.ToDotNetName(structure.Id);
+        var unmarshallerClassName = context.StructureUnmarshallerName(structure.Id);
         var members = TypeMapper.ResolveMembers(structure, context);
         var writer = new CodeWriter();
 
@@ -33,11 +34,11 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         writer.OpenNamespace($"{context.Namespace}.Model.Internal.MarshallTransformations", () =>
         {
             WriteClassDocumentation(writer, className);
-            writer.OpenBlock($"public partial class {className}Unmarshaller : IJsonUnmarshaller<{className}, JsonUnmarshallerContext>", () =>
+            writer.OpenBlock($"public partial class {unmarshallerClassName} : IJsonUnmarshaller<{className}, JsonUnmarshallerContext>", () =>
             {
                 WriteUnmarshallMethod(writer, className, structure, members);
                 writer.WriteLine("");
-                MarshallerCommon.WriteUnmarshallerSingleton(writer, $"{className}Unmarshaller");
+                MarshallerCommon.WriteUnmarshallerSingleton(writer, unmarshallerClassName);
             });
         });
         return writer.ToFormattedString(cancellationToken);
@@ -124,9 +125,9 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
                 writer.WriteLine($"unmarshalledObject.{member.PropertyName} = sr.ReadToEnd();");
             });
         }
-        else if (member.Type.IsStructure)
+        else if (member.Type.UnmarshallerName is { } unmarshaller)
         {
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {member.Type.DotNetType}Unmarshaller.Instance.Unmarshall(context, ref reader);");
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {unmarshaller}.Instance.Unmarshall(context, ref reader);");
         }
         else if (member.Type.IsBlob)
         {

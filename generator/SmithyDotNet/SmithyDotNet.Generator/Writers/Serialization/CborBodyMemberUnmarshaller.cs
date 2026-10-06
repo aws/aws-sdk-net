@@ -44,9 +44,9 @@ public static class CborBodyMemberUnmarshaller
     // nullable position (member, @sparse element) takes the CborNullable* variant. Map keys are strings.
     private static (string Type, string Instance) Unmarshaller(TypeDescriptor type)
     {
-        if (type.IsStructure)
+        if (type.UnmarshallerName is { } unmarshaller)
         {
-            return ($"{type.DotNetType}Unmarshaller", $"{type.DotNetType}Unmarshaller.Instance");
+            return (unmarshaller, $"{unmarshaller}.Instance");
         }
 
         if (type.IsBlob)

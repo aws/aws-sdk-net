@@ -51,7 +51,7 @@ public sealed class EventStreamOutputWriter(GenerationContext context, string mo
             else
             {
                 var eventType = context.ToDotNetName(member.Target);
-                events.Add(new Entry(memberName, handlerName, eventType, $"{eventType}Unmarshaller"));
+                events.Add(new Entry(memberName, handlerName, eventType, context.StructureUnmarshallerName(member.Target)));
             }
         }
 

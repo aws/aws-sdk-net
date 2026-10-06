@@ -174,6 +174,15 @@ public class GenerationContext
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
 
     /// <summary>
+    /// Operation outputs already named <c>{Op}Response</c>. The <c>{Op}Response</c> class is then also the
+    /// shape's model class, so a member targeting the shape is typed with it and its structure unmarshaller needs a name
+    /// distinct from the operation's response unmarshaller (see <see cref="StructureUnmarshallerName"/>).
+    /// </summary>
+    /// <remarks>TODO: an input named <c>{Op}Request</c> that a member targets collides the same way (model class and marshaller); no model has one yet.
+    /// Its marshaller rule goes in <see cref="StructureMarshallerName"/>.</remarks>
+    public IReadOnlySet<ShapeId> ResponseNamedOutputs { get; }
+
+    /// <summary>
     /// The service's <c>enum</c> shapes (<see cref="ServiceIndex.AllEnums"/>: reachable ones plus
     /// same-namespace orphans), ordered by name for stable output (the API does not depend on declaration order). <c>intEnum</c> shapes are excluded:
     /// C2J emits a <c>ConstantClass</c> only for string enums, so an <c>intEnum</c>-typed member maps to
@@ -308,6 +317,10 @@ public class GenerationContext
 
         Structures = structures;
         Errors = errors;
+        ResponseNamedOutputs = Operations
+            .Where(o => ToDotNetName(o.Shape.Output) == $"{o.Name}Response")
+            .Select(o => o.Shape.Output)
+            .ToHashSet();
 
         // Ordered by shape name for stable output. AllEnums already scopes the set: reachable
         // enums plus same-namespace orphans, matching C2J's *ExceptionReason enums.
@@ -370,4 +383,19 @@ public class GenerationContext
     /// into the model.
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => _index.ToDotNetName(shapeId);
+
+    /// <summary>
+    /// The generated unmarshaller class for a structure: <c>{Name}Unmarshaller</c>, or
+    /// <c>{Name}StructureUnmarshaller</c> for a <see cref="ResponseNamedOutputs"/> shape, whose
+    /// <c>{Name}Unmarshaller</c> is the operation's response unmarshaller.
+    /// </summary>
+    public string StructureUnmarshallerName(ShapeId shapeId) =>
+        ResponseNamedOutputs.Contains(shapeId) ? $"{ToDotNetName(shapeId)}StructureUnmarshaller" : $"{ToDotNetName(shapeId)}Unmarshaller";
+
+    /// <summary>
+    /// The generated marshaller class for a structure: <c>{Name}Marshaller</c>. The single source for
+    /// the name; writers read it from here or <see cref="Writers.TypeDescriptor.MarshallerName"/>.
+    /// </summary>
+    public string StructureMarshallerName(ShapeId shapeId) => $"{ToDotNetName(shapeId)}Marshaller";
+
 }
