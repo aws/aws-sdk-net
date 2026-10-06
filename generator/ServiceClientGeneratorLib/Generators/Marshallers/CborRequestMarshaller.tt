@@ -178,6 +178,17 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 		}
 <#				
 		this.AddRequestSingletonMethod();
+
+		// When the request body is marshalled inline (no dedicated payload shape), ProcessMembers
+		// emits WriteEncodedValue references to cached key fields that must be declared on THIS class.
+		var payloadForKeys = this.Operation.RequestPayloadMember;
+		bool inlineBodyMarshalling = requestStructure != null
+			&& !(payloadForKeys?.Shape.IsString == true)
+			&& !(payloadForKeys != null && !payloadForKeys.Shape.IsEventStream);
+		if (inlineBodyMarshalling)
+		{
+			EmitPreEncodedKeyFields(this.Operation.RequestBodyMembers);
+		}
 #>
 	}
 }

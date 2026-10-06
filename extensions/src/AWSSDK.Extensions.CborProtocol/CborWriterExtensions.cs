@@ -66,8 +66,10 @@ namespace Amazon.Extensions.CborProtocol
                 return;
             }
 
-            // If the value is an integer (without fractional part), write it as Int64 or UInt64.
-            if (value % 1 == 0)
+            // Fast path: if the value has no fractional part, write it as the smallest integer form.
+            // Math.Truncate(value) == value is equivalent to the "value % 1 == 0" integral test but
+            // avoids the more expensive floating-point remainder operation on the hot path.
+            if (Math.Truncate(value) == value)
             {
                 if (value >= long.MinValue && value <= long.MaxValue)
                 {
@@ -87,11 +89,15 @@ namespace Amazon.Extensions.CborProtocol
                 }
             }
 
-            // Check if value can safely be represented as float32
+            // Check if value can safely be represented as float32.
             float floatCandidate = (float)value;
             if ((double)floatCandidate == value)
             {
-                WriteOptimizedNumber(writer, floatCandidate);
+                // At this point we already know the value is not an integer that fits Int64/UInt64
+                // (the integral fast path above returned for those), so encode the float32 form
+                // directly instead of calling WriteOptimizedNumber(float), which would redundantly
+                // re-run the integral checks.
+                WriteFloat32(writer, floatCandidate);
                 return;
             }
 
@@ -108,7 +114,9 @@ namespace Amazon.Extensions.CborProtocol
         public static void WriteOptimizedNumber(this CborWriter writer, float value)
         {
             // If the value is an integer (without fractional part), write it as Int64 or UInt64.
-            if (value % 1 == 0)
+            // Math.Truncate(value) == value is equivalent to "value % 1 == 0" but avoids the more
+            // expensive floating-point remainder operation on the hot path.
+            if (Math.Truncate(value) == value)
             {
                 if (value >= long.MinValue && value <= long.MaxValue)
                 {
@@ -128,14 +136,32 @@ namespace Amazon.Extensions.CborProtocol
                 }
             }
 
-            // Manual encoding to avoid half-precision floats
-#if NET8_0_OR_GREATER
-            // Encode straight into a stack buffer: no byte[] allocation and no separate endian reversal
+            WriteFloat32(writer, value);
+        }
+
+        /// <summary>
+        /// Writes the CBOR float32 (0xFA) encoding of <paramref name="value"/> without allocating.
+        /// This is manual encoding to avoid the writer emitting a half-precision (float16) form.
+        /// </summary>
+        private static void WriteFloat32(CborWriter writer, float value)
+        {
+#if NETCOREAPP3_1_OR_GREATER
+            // Span-based encoding: no byte[] allocation.
             Span<byte> encoded = stackalloc byte[5];
             encoded[0] = 0xFA; // CBOR float32 marker
+#if NET8_0_OR_GREATER
+            // Single big-endian write available on .NET 8+.
             System.Buffers.Binary.BinaryPrimitives.WriteSingleBigEndian(encoded.Slice(1), value);
+#else
+            // netcoreapp3.1: no WriteSingleBigEndian overload, but Span, SingleToInt32Bits and the
+            // Int32 big-endian writer are all available, so reinterpret the bits and write them.
+            System.Buffers.Binary.BinaryPrimitives.WriteInt32BigEndian(
+                encoded.Slice(1), BitConverter.SingleToInt32Bits(value));
+#endif
             writer.WriteEncodedValue(encoded);
 #else
+            // netstandard2.0 / net472: Span<byte> stackalloc + WriteEncodedValue(ReadOnlySpan) are
+            // not available, so fall back to the byte[] form.
             var bytes = new byte[5];
             bytes[0] = 0xFA; // CBOR float32 marker
             BitConverter.GetBytes(value).CopyTo(bytes, 1);

@@ -40,6 +40,9 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
         /// </summary>
 		public readonly static <#=this.Structure.Name #>Marshaller Instance = new <#=this.Structure.Name #>Marshaller();
 
+<#
+    EmitPreEncodedKeyFields(this.Structure.Members);
+#>
 	}
 }
 
@@ -54,7 +57,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 <#=new string(' ', level * 4)#>            if (<#=variableName#>.IsSet<#=member.PropertyName#>())
 <#=new string(' ', level * 4)#>            {
-<#=new string(' ', level * 4)#>                context.Writer.WriteTextString("<#=member.MarshallName#>");
+<#=new string(' ', level * 4)#>                context.Writer.WriteEncodedValue(<#=KeyFieldName(member.MarshallName)#>);
 <#+
 			string memberProperty = variableName + "." + member.PropertyName;
 			// Only append .Value for nullable types that aren't already complex types
@@ -90,7 +93,7 @@ namespace <#=        this.Config.Namespace #>.Model.Internal.MarshallTransformat
 #>
 <#=new string(' ', level * 4)#> 		   else if (!(<#=variableName#>.IsSet<#=member.PropertyName#>()))
 <#=new string(' ', level * 4)#> 		   {
-<#=new string(' ', level * 4)#>                context.Writer.WriteTextString("<#=member.MarshallName#>");
+<#=new string(' ', level * 4)#>                context.Writer.WriteEncodedValue(<#=KeyFieldName(member.MarshallName)#>);
 <#=new string(' ', level * 4)#>                context.Writer.WriteTextString(Guid.NewGuid().ToString());
 <#=new string(' ', level * 4)#> 		   }
 <#+					
@@ -312,5 +315,41 @@ protected void DetermineNormalCborWriteMethod(Shape shape, string memberProperty
 		{
 			throw new Exception ("Unknown primitive type encountered");
 		}
+	}
+
+	// Emits one `static readonly byte[]` field per distinct constant member key, holding the
+	// pre-encoded CBOR text-string bytes. These are written at runtime via WriteEncodedValue,
+	// avoiding the per-request UTF-8 transcoding + CBOR framing that WriteTextString(string) does.
+	// Only applies to structure member names (compile-time constants); dynamic map/dictionary keys
+	// still use WriteTextString since their values are only known at runtime.
+	protected void EmitPreEncodedKeyFields(IEnumerable<Member> members)
+	{
+		var emitted = new HashSet<string>();
+		foreach (var member in members)
+		{
+			if (member.ModelShape.IsEventStream)
+				continue;
+			if (!emitted.Add(member.MarshallName))
+				continue;
+#>
+		private static readonly byte[] <#=KeyFieldName(member.MarshallName)#> = Amazon.Extensions.CborProtocol.CborKey.Encode("<#=member.MarshallName#>");
+<#+
+		}
+	}
+
+	// Produces a stable, valid C# identifier for a member key's cached-bytes field.
+	// Non-identifier characters in the marshall name are replaced; a hash suffix guards
+	// against collisions after sanitization.
+	protected string KeyFieldName(string marshallName)
+	{
+		var sb = new StringBuilder("_cborKey_");
+		foreach (var c in marshallName)
+		{
+			sb.Append(char.IsLetterOrDigit(c) ? c : '_');
+		}
+		// Disambiguate names that collapse to the same sanitized form.
+		sb.Append('_');
+		sb.Append((marshallName.GetHashCode() & 0x7fffffff).ToString());
+		return sb.ToString();
 	}
 #>
