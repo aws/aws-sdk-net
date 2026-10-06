@@ -1,3 +1,7 @@
+### 4.0.348.0 (2026-10-06 22:23 UTC)
+* LambdaWeb (4.0.101.0)
+	* Removes operations that are not yet generally available from the Lambda Web.
+
 ### 4.0.347.0 (2026-10-02 18:22 UTC)
 * CognitoIdentityProvider (4.0.106.0)
 	* Amazon Cognito User Pools now supports the OIDC-standard authentication context class reference (ACR) and authentication methods reference (AMR) claims on issued access and Id tokens. Amazon Cognito User Pools also now supports step-up authentication via our existing authentication APIs.
