@@ -382,6 +382,17 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void ComputeSignature_NextDaySameScope_UsesNewDateKey()
+        {
+            Sign("secret-a", SigningTestDate);
+            var nextDay = SigningTestDate.AddDays(1);
+            var cached = Sign("secret-a", nextDay).GetSigningKey();
+
+            var dateStamp = AWS4Signer.FormatDateTime(nextDay, AWSSDKUtils.ISO8601BasicDateFormat);
+            CollectionAssert.AreEqual(AWS4Signer.ComposeSigningKey("secret-a", "us-east-1", dateStamp, "s3"), cached);
+        }
+
+        [TestMethod]
         public void ComputeSignature_AfterCacheEviction_ReturnsSameSignature()
         {
             var before = Sign("secret-a", SigningTestDate).Signature;

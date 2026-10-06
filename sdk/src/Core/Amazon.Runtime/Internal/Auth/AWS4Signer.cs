@@ -71,11 +71,24 @@ namespace Amazon.Runtime.Internal.Auth
         };
 
         // Derived signing keys are deterministic for a given secret, region, date and service,
-        // so they are reused across requests. Oldest entries are evicted first once the limit
-        // is reached; the date stamp in the key handles UTC day rollover.
+        // so they are reused across requests. One entry is kept per secret, region and service;
+        // it is replaced in place when the UTC date changes, so stale keys never accumulate.
+        // Oldest entries are evicted first once the limit is reached.
         private const int SigningKeyCacheLimit = 100;
-        private static readonly ConcurrentDictionary<string, byte[]> _signingKeyCache = new ConcurrentDictionary<string, byte[]>();
-        private static readonly ConcurrentQueue<string> _signingKeyCacheOrder = new ConcurrentQueue<string>();
+        private static readonly ConcurrentDictionary<string, SigningKeyCacheEntry> _signingKeyCache = new();
+        private static readonly ConcurrentQueue<string> _signingKeyCacheOrder = new();
+
+        private sealed class SigningKeyCacheEntry
+        {
+            public SigningKeyCacheEntry(string dateStamp, byte[] key)
+            {
+                DateStamp = dateStamp;
+                Key = key;
+            }
+
+            public string DateStamp { get; }
+            public byte[] Key { get; }
+        }
 
         public AWS4Signer()
             : this(true)
@@ -468,17 +481,26 @@ namespace Amazon.Runtime.Internal.Auth
         /// </summary>
         private static byte[] GetSigningKey(string awsSecretAccessKey, string region, string dateStamp, string service)
         {
-            var cacheKey = string.Concat(awsSecretAccessKey, "/", region, "/", dateStamp, "/", service);
-            if (_signingKeyCache.TryGetValue(cacheKey, out var key))
-                return key;
+            var cacheKey = string.Concat(awsSecretAccessKey, "/", region, "/", service);
+            if (_signingKeyCache.TryGetValue(cacheKey, out var entry) && entry.DateStamp == dateStamp)
+            {
+                return entry.Key;
+            }
 
-            key = ComposeSigningKey(awsSecretAccessKey, region, dateStamp, service);
-
-            if (_signingKeyCache.TryAdd(cacheKey, key))
+            var key = ComposeSigningKey(awsSecretAccessKey, region, dateStamp, service);
+            var newEntry = new SigningKeyCacheEntry(dateStamp, key);
+            if (entry != null)
+            {
+                // Same scope, new UTC date: replace the stale key; the queue already tracks this cache key.
+                _signingKeyCache[cacheKey] = newEntry;
+            }
+            else if (_signingKeyCache.TryAdd(cacheKey, newEntry))
             {
                 _signingKeyCacheOrder.Enqueue(cacheKey);
                 while (_signingKeyCacheOrder.Count > SigningKeyCacheLimit && _signingKeyCacheOrder.TryDequeue(out var oldest))
+                {
                     _signingKeyCache.TryRemove(oldest, out _);
+                }
             }
 
             return key;
