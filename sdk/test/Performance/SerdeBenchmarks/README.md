@@ -57,13 +57,18 @@ dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchm
 dotnet run -c Release --project sdk/test/Performance/SerdeBenchmarks/SerdeBenchmarksRunner/SerdeBenchmarksRunner.csproj -- --suite serde --filter '*AwsQuery*'
 ```
 
-## Regenerating the ops/CPU-sec cases
+## Regenerating the benchmark payloads
 
-`SerdeBenchmarksRunner/CpuTimeBenchmarks.cs` (the `--cpu-time` cases) is generated from the `serde-benchmark` tagged `@httpRequestTests` / `@httpResponseTests` in the AwsSdkPerformanceBenchmarkModels models. Don't edit it by hand. To regenerate it after the models change, run this (Python 3.8+, no extra packages):
+All three suites take their payloads from the `serde-benchmark` tagged `@httpRequestTests` / `@httpResponseTests` in the AwsSdkPerformanceBenchmarkModels models. Two files are generated from them; don't edit either by hand:
+
+- `SerdeBenchmarksRunner/ModelFixtures.cs`: a request factory or response body (plus headers) for every model case, used by the `serde` and `e2e` suites. The `e2e` suite's CloudWatch cases on restJson1/restXml use the models' awsQuery params, re-targeted or re-encoded, because the models define CloudWatch only for awsQuery.
+- `SerdeBenchmarksRunner/CpuTimeBenchmarks.cs`: the `--cpu-time` cases.
+
+To regenerate them after the models change, run this (Python 3.8+, no extra packages):
 
 ```bash
 cd sdk/test/Performance/SerdeBenchmarks
-python generate_cpu_time_benchmarks.py --model <path-to-AwsSdkPerformanceBenchmarkModels>/model
+python generate_serde_benchmarks.py --model <path-to-AwsSdkPerformanceBenchmarkModels>/model
 ```
 
 The script is not part of the build.

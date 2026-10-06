@@ -18,12 +18,16 @@ using Amazon.RestJsonDataPlane;
 using Amazon.RestJsonDataPlane.Model;
 using Amazon.Runtime;
 using BenchmarkDotNet.Attributes;
+using Fixtures = AWSSDK.Benchmarks.Serde.ModelFixtures.RestJson1;
 
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
 /// E2E benchmarks for RestJson1 protocol exercising the full SDK client pipeline:
 /// credentials → signing → marshalling → HTTP dispatch (mocked) → unmarshalling → response.
+/// Payloads come from the shared benchmark models. The models define CloudWatch operations only
+/// for awsQuery, so the PutMetricData/GetMetricData cases use those requests re-targeted to
+/// RestJson1 and those responses re-encoded as JSON.
 /// </summary>
 [MemoryDiagnoser]
 [Config(typeof(E2EBenchmarkConfig))]
@@ -55,37 +59,11 @@ public class RestJson1E2EBenchmarks
     internal GetMetricDataRequest _getMetricDataM = null!;
     internal GetMetricDataRequest _getMetricDataL = null!;
 
-    private static readonly byte[] CopyOutputBaseline = Encoding.UTF8.GetBytes("{}");
-    private static readonly byte[] CopyOutputM = Encoding.UTF8.GetBytes(
-        "{\"ETag\":\"\\\"d41d8cd98f00b204e9800998ecf8427e\\\"\",\"LastModified\":1704067200," +
-        "\"ChecksumCRC32\":\"abc123\",\"ServerSideEncryption\":\"aws:kms\",\"VersionId\":\"v1.0\"}");
-    // S3 object body sizes match the shared benchmark model (payloads/ObjectBody_{S,M,L}): 1 / 1000 / 256000 bytes.
-    private static readonly byte[] GetObjectS = new byte[1];
-    private static readonly byte[] GetObjectM = new byte[1000];
-    private static readonly byte[] GetObjectL = new byte[256000];
     private static readonly byte[] EmptyJson = Encoding.UTF8.GetBytes("{}");
-    private static readonly byte[] GetMetricResponseS = Encoding.UTF8.GetBytes(BuildGetMetricJson(5));
-    private static readonly byte[] GetMetricResponseM = Encoding.UTF8.GetBytes(BuildGetMetricJson(50));
-    private static readonly byte[] GetMetricResponseL = Encoding.UTF8.GetBytes(BuildGetMetricJson(500));
 
-    private static string BuildGetMetricJson(int datapoints)
+    internal AmazonRestJsonDataPlaneClient CreateClient(byte[] responseBody, IReadOnlyDictionary<string, string>? headers = null, string contentType = "application/json")
     {
-        var sb = new StringBuilder("{\"MetricDataResults\":[{\"Id\":\"m1\",\"Label\":\"CPUUtilization\",\"Values\":[");
-        for (int i = 0; i < datapoints; i++) { if (i > 0) sb.Append(','); sb.Append($"{42.0 + i * 0.1}"); }
-        sb.Append("],\"Timestamps\":[");
-        var baseTime = new DateTimeOffset(2024, 1, 1, 0, 0, 0, TimeSpan.Zero);
-        for (int i = 0; i < datapoints; i++)
-        {
-            if (i > 0) sb.Append(',');
-            sb.Append($"{baseTime.AddMinutes(i * 5).ToUnixTimeSeconds()}");
-        }
-        sb.Append("]}]}");
-        return sb.ToString();
-    }
-
-    internal AmazonRestJsonDataPlaneClient CreateClient(byte[] responseBody)
-    {
-        var handler = new MockHttpHandler(responseBody, "application/json");
+        var handler = new MockHttpHandler(responseBody, contentType, responseHeaders: headers?.ToDictionary(kv => kv.Key, kv => kv.Value));
         var config = new AmazonRestJsonDataPlaneConfig
         {
             RegionEndpoint = Amazon.RegionEndpoint.USWest2,
@@ -97,59 +75,31 @@ public class RestJson1E2EBenchmarks
     [GlobalSetup]
     public void Setup()
     {
-        Random.Shared.NextBytes(GetObjectS);
-        Random.Shared.NextBytes(GetObjectM);
-        Random.Shared.NextBytes(GetObjectL);
-
-        _copyClientBaseline = CreateClient(CopyOutputBaseline);
-        _copyClientM = CreateClient(CopyOutputM);
+        _copyClientBaseline = CreateClient(Fixtures.CopyObjectOutput_Baseline, Fixtures.CopyObjectOutput_Baseline_Headers);
+        _copyClientM = CreateClient(Fixtures.CopyObjectOutput_M, Fixtures.CopyObjectOutput_M_Headers);
         _putClient = CreateClient(Array.Empty<byte>());
-        _getClientS = CreateClient(GetObjectS);
-        _getClientM = CreateClient(GetObjectM);
-        _getClientL = CreateClient(GetObjectL);
+        _getClientS = CreateClient(Fixtures.GetObject_S, Fixtures.GetObject_S_Headers, "application/octet-stream");
+        _getClientM = CreateClient(Fixtures.GetObject_M, Fixtures.GetObject_M_Headers, "application/octet-stream");
+        _getClientL = CreateClient(Fixtures.GetObject_L, Fixtures.GetObject_L_Headers, "application/octet-stream");
         _putMetricClientS = CreateClient(EmptyJson);
         _putMetricClientM = CreateClient(EmptyJson);
         _putMetricClientL = CreateClient(EmptyJson);
-        _getMetricClientS = CreateClient(GetMetricResponseS);
-        _getMetricClientM = CreateClient(GetMetricResponseM);
-        _getMetricClientL = CreateClient(GetMetricResponseL);
+        _getMetricClientS = CreateClient(Fixtures.GetMetricDataResponse_S);
+        _getMetricClientM = CreateClient(Fixtures.GetMetricDataResponse_M);
+        _getMetricClientL = CreateClient(Fixtures.GetMetricDataResponse_L);
 
-        _copyObjectBaseline = new CopyObjectRequest { Bucket = "bucket", Key = "key", CopySource = "src/key" };
-        _copyObjectMedium = new CopyObjectRequest
-        {
-            Bucket = "my-destination-bucket", Key = "destination/path/to/my-object.dat",
-            CopySource = "my-source-bucket/source/path/to/original-object.dat",
-            ACL = "bucket-owner-full-control", CacheControl = "max-age=86400",
-            ContentType = "application/octet-stream", MetadataDirective = "REPLACE",
-            ServerSideEncryption = "aws:kms", StorageClass = "STANDARD_IA",
-            SSEKMSKeyId = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
-        };
-        _putObjectS = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1]) };
-        _putObjectM = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[1000]) };
-        _putObjectL = new PutObjectRequest { Bucket = "bucket", Key = "key", Body = new MemoryStream(new byte[256000]) };
-        _getObjectRequest = new GetObjectRequest { Bucket = "bucket", Key = "key" };
-        _putMetricDataS = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(5) };
-        _putMetricDataM = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(50) };
-        _putMetricDataL = new PutMetricDataRequest { Namespace = "Test", MetricData = CreateMetricData(500) };
-        _getMetricDataS = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(1) };
-        _getMetricDataM = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(5) };
-        _getMetricDataL = new GetMetricDataRequest { StartTime = DateTime.UtcNow.AddHours(-1), EndTime = DateTime.UtcNow, MetricDataQueries = CreateQueries(25) };
-    }
-
-    private static List<MetricDatum> CreateMetricData(int count)
-    {
-        var data = new List<MetricDatum>();
-        for (int i = 0; i < count; i++)
-            data.Add(new MetricDatum { MetricName = $"Metric{i}", Value = 42.0 + i, Unit = "Count" });
-        return data;
-    }
-
-    private static List<MetricDataQuery> CreateQueries(int count)
-    {
-        var queries = new List<MetricDataQuery>();
-        for (int i = 0; i < count; i++)
-            queries.Add(new MetricDataQuery { Id = $"m{i}", MetricStat = new MetricStat { Metric = new Amazon.RestJsonDataPlane.Model.Metric { MetricName = $"CPU{i}", Namespace = "AWS/EC2" }, Period = 300, Stat = "Average" } });
-        return queries;
+        _copyObjectBaseline = Fixtures.CopyObjectRequest_Baseline();
+        _copyObjectMedium = Fixtures.CopyObjectRequest_M();
+        _putObjectS = Fixtures.PutObject_S();
+        _putObjectM = Fixtures.PutObject_M();
+        _putObjectL = Fixtures.PutObject_L();
+        _getObjectRequest = new GetObjectRequest { Bucket = "test-bucket", Key = "test-key" };
+        _putMetricDataS = Fixtures.PutMetricDataRequest_S();
+        _putMetricDataM = Fixtures.PutMetricDataRequest_M();
+        _putMetricDataL = Fixtures.PutMetricDataRequest_L();
+        _getMetricDataS = Fixtures.GetMetricDataRequest_S();
+        _getMetricDataM = Fixtures.GetMetricDataRequest_M();
+        _getMetricDataL = Fixtures.GetMetricDataRequest_L();
     }
 
     [Benchmark] public async Task restJson1_e2e_CopyObject_Baseline() => await _copyClientBaseline.CopyObjectAsync(_copyObjectBaseline);
