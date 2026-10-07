@@ -28,13 +28,13 @@ public sealed class PaginatorInterfaceWriter(GenerationContext context, string m
                 writer.WriteLine("/// </summary>");
                 writer.WriteLine($"IPaginatedEnumerable<{opName}Response> Responses {{ get; }}");
 
-                if (paginatedOp.ItemsProperty is not null)
+                foreach (var resultKey in paginatedOp.ResultKeys)
                 {
                     writer.WriteLine();
                     writer.WriteLine("/// <summary>");
-                    writer.WriteLine($"/// Enumerable containing all of the {paginatedOp.ItemsProperty}");
+                    writer.WriteLine($"/// Enumerable containing all of the {resultKey.Property}");
                     writer.WriteLine("/// </summary>");
-                    writer.WriteLine($"IPaginatedEnumerable<{paginatedOp.ItemsElementType}> {paginatedOp.ItemsProperty} {{ get; }}");
+                    writer.WriteLine($"IPaginatedEnumerable<{resultKey.ElementType}> {resultKey.Property} {{ get; }}");
                 }
             });
         });

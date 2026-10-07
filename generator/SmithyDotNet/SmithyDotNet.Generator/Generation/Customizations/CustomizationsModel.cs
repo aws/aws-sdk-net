@@ -59,6 +59,10 @@ public sealed record CustomizationsModel
     [JsonPropertyName("shapeSubstitutions")]
     public Dictionary<string, ShapeSubstitution> ShapeSubstitutions { get; init; } = [];
 
+    /// <summary>Per-operation <c>@paginated</c> fields the model lacks, keyed by operation name; read by <c>PaginationResolver</c>.</summary>
+    [JsonPropertyName("paginators")]
+    public Dictionary<string, PaginatorCustomization> Paginators { get; init; } = [];
+
     /// <summary>
     /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
     /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
@@ -88,6 +92,9 @@ public sealed record CustomizationsModel
         var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
         var shapeSubstitutions = new Dictionary<string, ShapeSubstitution>();
         RuntimePipelineOverride? runtimePipelineOverride = null;
+        var paginators = new Dictionary<string, PaginatorCustomization>();
+        string? overrideContentType = null;
+
         foreach (var path in paths)
         {
             CustomizationsModel file;
@@ -155,6 +162,14 @@ public sealed record CustomizationsModel
                 }
             }
 
+            foreach (var (operationName, paginator) in file.Paginators)
+            {
+                if (!paginators.TryAdd(operationName, paginator))
+                {
+                    throw new GeneratorException($"'{path}': paginators['{operationName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+            }
+
             foreach (var (shapeName, members) in file.EmitIsSetProperties)
             {
                 if (!emitIsSetProperties.TryAdd(shapeName, members))
@@ -162,7 +177,7 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': emitIsSetProperties['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
-        
+
             foreach (var (shapeName, swaps) in file.DataTypeSwaps)
             {
                 if (!dataTypeSwaps.TryAdd(shapeName, swaps))
@@ -170,9 +185,29 @@ public sealed record CustomizationsModel
                     throw new GeneratorException($"'{path}': dataTypeSwap['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
                 }
             }
+
+            if (file.OverrideContentType != null)
+            {
+                if (overrideContentType != null)
+                {
+                    throw new GeneratorException($"'{path}': overrideContentType appears in more than one customizations file.");
+                }
+
+                overrideContentType = file.OverrideContentType;
+            }
         }
 
-        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps, EmitIsSetProperties = emitIsSetProperties, ShapeSubstitutions = shapeSubstitutions, RuntimePipelineOverride = runtimePipelineOverride };
+        return new CustomizationsModel
+        {
+            ShapeModifiers = shapeModifiers,
+            OperationModifiers = operationModifiers,
+            DataTypeSwaps = dataTypeSwaps,
+            EmitIsSetProperties = emitIsSetProperties,
+            ShapeSubstitutions = shapeSubstitutions,
+            RuntimePipelineOverride = runtimePipelineOverride,
+            Paginators = paginators,
+            OverrideContentType = overrideContentType
+        };
     }
 }
 
@@ -205,6 +240,13 @@ public sealed record OperationModifier
     /// <summary>The <c>[Obsolete]</c> message for the operation's client methods; applied only when the operation is already <c>@deprecated</c>.</summary>
     [JsonPropertyName("deprecatedMessage")]
     public string? DeprecatedMessage { get; init; }
+
+    /// <summary>
+    /// Stop paginating when the response's token equals the token sent, instead of when it is empty. CloudWatch Logs
+    /// GetLogEvents never returns an empty <c>nextForwardToken</c>: at the end of the stream it repeats the one sent.
+    /// </summary>
+    [JsonPropertyName("stopPaginationOnSameToken")]
+    public bool StopPaginationOnSameToken { get; init; }
 }
 
 /// <summary>
@@ -272,3 +314,24 @@ public sealed record PipelineOverride
     [JsonPropertyName("condition")]
     public string? Condition { get; init; }
 }
+
+/// <summary>
+/// A <c>paginators</c> entry, spelled like <c>@paginated</c>. It supplies what the model lacks: <c>items</c> (dotted paths
+/// allowed, one enumerable each) are added to the modeled one, and a field the trait already has fails generation.
+/// The tokens are arrays because some operations page on several members at once (Route 53 ListResourceRecordSets).
+/// </summary>
+public sealed record PaginatorCustomization
+{
+    [JsonPropertyName("inputToken")]
+    public List<string>? InputToken { get; init; }
+
+    [JsonPropertyName("outputToken")]
+    public List<string>? OutputToken { get; init; }
+
+    [JsonPropertyName("pageSize")]
+    public string? PageSize { get; init; }
+
+    [JsonPropertyName("items")]
+    public List<string>? Items { get; init; }
+}
+

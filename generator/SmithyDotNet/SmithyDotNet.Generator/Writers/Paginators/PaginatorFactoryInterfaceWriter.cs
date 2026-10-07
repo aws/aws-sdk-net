@@ -45,13 +45,15 @@ public sealed class PaginatorFactoryInterfaceWriter(GenerationContext context, s
         writer.WriteLine($"/// Paginator for {opName} operation");
         writer.WriteLine("/// </summary>");
 
+        var inputTokens = string.Join(", ", paginatedOp.InputTokenProperties.Select(CodeWriter.Literal));
+        var outputTokens = string.Join(", ", paginatedOp.OutputTokenProperties.Select(CodeWriter.Literal));
         if (paginatedOp.PageSizeProperty is not null)
         {
-            writer.WriteLine($"""[AWSPaginator(InputToken = ["{paginatedOp.InputTokenProperty}"], LimitKey = "{paginatedOp.PageSizeProperty}", OutputToken = ["{paginatedOp.OutputTokenProperty}"])]""");
+            writer.WriteLine($"""[AWSPaginator(InputToken = [{inputTokens}], LimitKey = "{paginatedOp.PageSizeProperty}", OutputToken = [{outputTokens}])]""");
         }
         else
         {
-            writer.WriteLine($"""[AWSPaginator(InputToken = ["{paginatedOp.InputTokenProperty}"], OutputToken = ["{paginatedOp.OutputTokenProperty}"])]""");
+            writer.WriteLine($"""[AWSPaginator(InputToken = [{inputTokens}], OutputToken = [{outputTokens}])]""");
         }
         writer.WriteLine($"I{opName}Paginator {opName}({opName}Request request);");
     }

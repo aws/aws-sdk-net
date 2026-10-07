@@ -276,6 +276,13 @@ nothing targets it.
 name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
 As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
 `emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
+`paginators.{Operation}` supplies what `@paginated` lacks but the shipped paginator has: `pageSize` (PowerShell reads
+`LimitKey`); `inputToken`/`outputToken` arrays, which make a trait-less operation paginated — map tokens loop while entries
+remain (DynamoDB `BatchGetItem`), several tokens page together (Route 53 `ListResourceRecordSets`); `items` (dotted paths)
+added to the modeled one. A field the trait already has fails generation.
+`operationModifiers.{Operation}.stopPaginationOnSameToken` stops on a repeated token (CloudWatch Logs `GetLogEvents`).
+Unlike the C2J-inherited hooks above, `paginators` names members as the model does (like `@paginated`), not by their
+emitted name.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.

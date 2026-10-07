@@ -8,28 +8,31 @@ using SmithyDotNet.Generator.Writers;
 namespace SmithyDotNet.Generator.Generation.Paginators;
 
 /// <summary>
-/// A paginated operation with its trait resolved and token/items members mapped to .NET property names.
-/// <see cref="ItemsProperty"/> is the leaf member name (the generated enumerable's name), while
-/// <see cref="ItemsPath"/> and <see cref="OutputTokenProperty"/> are full accessor paths off the
-/// response — they contain dots when the trait uses a dotted path (e.g. "DistributionList.NextMarker").
+/// A list member flattened into an <c>IPaginatedEnumerable&lt;T&gt;</c>: <see cref="Property"/> is the leaf member name
+/// (the enumerable's name), <see cref="Path"/> the full accessor off the response, dotted when nested.
+/// </summary>
+public record PaginatedResultKey(string Property, string Path, string ElementType);
+
+/// <summary>
+/// A paginated operation with its token/pageSize/items members mapped to .NET property names. Token properties are
+/// full accessor paths (dotted for a nested member such as "DistributionList.NextMarker"), one per token; most operations
+/// have one, Route 53 ListResourceRecordSets pages on three. <see cref="TokensAreMaps"/> marks map-typed tokens
+/// (DynamoDB BatchGetItem resends <c>UnprocessedKeys</c>), which paginate while the map has entries.
 /// </summary>
 public record PaginatedOperation(
     Operation Operation,
-    PaginatedTrait Trait,
-    string InputTokenProperty,
-    string OutputTokenProperty,
+    IReadOnlyList<string> InputTokenProperties,
+    IReadOnlyList<string> OutputTokenProperties,
+    bool TokensAreMaps,
+    bool StopOnSameToken,
     string? PageSizeProperty,
-    string? ItemsProperty,
-    string? ItemsPath,
-    string? ItemsElementType
+    IReadOnlyList<PaginatedResultKey> ResultKeys
 );
 
 /// <summary>
-/// Resolves <c>@paginated</c> operations into <see cref="PaginatedOperation"/> records,
-/// applying service-level trait defaults and validating token/items members against the model.
+/// Resolves paginated operations into <see cref="PaginatedOperation"/> records, applying service-level trait defaults
+/// and the <c>paginators</c> customization, and validating token/items members against the model.
 /// </summary>
-// TODO: C2J paginators also support MoreResults, multi-token result keys, and
-// stopPaginationOnSameToken; none exist in Smithy — they'll land as customizations.
 public static class PaginationResolver
 {
     public static List<PaginatedOperation> Resolve(IReadOnlyList<Operation> operations, ServiceIndex index, CustomizationsModel customizations)
@@ -40,7 +43,8 @@ public static class PaginationResolver
         foreach (var operation in operations)
         {
             var trait = operation.Shape.GetPaginated();
-            if (trait is null)
+            customizations.Paginators.TryGetValue(operation.Name, out var customization);
+            if (trait is null && customization is null)
             {
                 continue;
             }
@@ -52,26 +56,57 @@ public static class PaginationResolver
                 throw new GeneratorException($"Paginated operation '{operation.Name}' requires HTTP/2, which paginators don't support yet.");
             }
 
-            trait = MergeServiceDefaults(trait, serviceDefaults);
-            if (trait.InputToken is null || trait.OutputToken is null)
+            // An operation without the trait is not paginated, so the service defaults don't reach it.
+            trait = trait is null ? new PaginatedTrait() : MergeServiceDefaults(trait, serviceDefaults);
+            var items = trait.Items is null ? new List<string>() : [trait.Items];
+            if (customization is not null)
+            {
+                ThrowIfCustomizationConflicts(operation, trait, customization);
+                items.AddRange(customization.Items ?? []);
+            }
+
+            List<string>? inputTokens = trait.InputToken is null ? customization?.InputToken : [trait.InputToken];
+            List<string>? outputTokens = trait.OutputToken is null ? customization?.OutputToken : [trait.OutputToken];
+            var pageSize = trait.PageSize ?? customization?.PageSize;
+            if (inputTokens is null || outputTokens is null)
             {
                 throw new GeneratorException($"Paginated operation '{operation.Name}': inputToken and outputToken are required.");
             }
-
-            var inputTokenProperty = ResolveStringToken(operation, operation.Input, trait.InputToken, "inputToken", index, customizations);
-            var outputTokenProperty = ResolveStringToken(operation, operation.Output, trait.OutputToken, "outputToken", index, customizations);
-            string? pageSizeProperty = null;
-            if (trait.PageSize is not null)
+            if (inputTokens.Count != outputTokens.Count)
             {
-                pageSizeProperty = ResolveMemberPath(operation, operation.Input, trait.PageSize, "pageSize", index, customizations).Path;
+                throw new GeneratorException($"Paginated operation '{operation.Name}': inputToken and outputToken must have the same number of entries.");
             }
 
-            string? itemsProperty = null;
-            string? itemsPath = null;
-            string? itemsElementType = null;
-            if (trait.Items is not null)
+            var inputTokenProperties = new List<string>();
+            var outputTokenProperties = new List<string>();
+            var tokensAreMaps = false;
+
+            for (var i = 0; i < inputTokens.Count; i++)
             {
-                var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, trait.Items, "items", index, customizations);
+                var inputToken = ResolveMemberPath(operation, operation.Input, inputTokens[i], "inputToken", index, customizations);
+                var outputToken = ResolveMemberPath(operation, operation.Output, outputTokens[i], "outputToken", index, customizations);
+
+                tokensAreMaps = inputToken.Target is MapShape && outputToken.Target is MapShape;
+                var tokensAreStrings = IsStringToken(inputToken.Target) && IsStringToken(outputToken.Target);
+                if (!tokensAreMaps && !tokensAreStrings)
+                {
+                    throw new GeneratorException($"Paginated operation '{operation.Name}': inputToken and outputToken must both be strings or both be maps.");
+                }
+
+                inputTokenProperties.Add(inputToken.Path);
+                outputTokenProperties.Add(outputToken.Path);
+            }
+
+            string? pageSizeProperty = null;
+            if (pageSize is not null)
+            {
+                pageSizeProperty = ResolveMemberPath(operation, operation.Input, pageSize, "pageSize", index, customizations).Path;
+            }
+
+            var resultKeys = new List<PaginatedResultKey>();
+            foreach (var item in items)
+            {
+                var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, item, "items", index, customizations);
                 if (itemsTarget is ListShape list)
                 {
                     // Derive the element type exactly the way TypeMapper types the List<T> property
@@ -86,9 +121,7 @@ public static class PaginationResolver
                     if (elementType is not null)
                     {
                         // The enumerable is named after the leaf member ("DistributionList.Items" -> "Items").
-                        itemsProperty = leaf;
-                        itemsPath = path;
-                        itemsElementType = elementType;
+                        resultKeys.Add(new PaginatedResultKey(leaf, path, elementType));
                     }
                 }
                 else if (itemsTarget is MapShape)
@@ -100,15 +133,19 @@ public static class PaginationResolver
                 }
                 else
                 {
-                    throw new GeneratorException($"Paginated operation '{operation.Name}': items member '{trait.Items}' targets '{itemsTarget.Type}', expected list or map.");
+                    throw new GeneratorException($"Paginated operation '{operation.Name}': items member '{item}' targets '{itemsTarget.Type}', expected list or map.");
                 }
             }
 
-            result.Add(new PaginatedOperation(operation, trait, inputTokenProperty, outputTokenProperty, pageSizeProperty, itemsProperty, itemsPath, itemsElementType));
+            var stopOnSameToken = customizations.OperationModifiers.TryGetValue(operation.Name, out var modifier) && modifier.StopPaginationOnSameToken;
+            result.Add(new PaginatedOperation(operation, inputTokenProperties, outputTokenProperties, tokensAreMaps, stopOnSameToken, pageSizeProperty, resultKeys));
         }
 
         return result;
     }
+
+    // Route 53 ListResourceRecordSets pages on an enum (RRType) alongside its string tokens.
+    private static bool IsStringToken(Shape shape) => shape is StringShape or EnumShape;
 
     // A @paginated trait on the service shape supplies defaults for every paginated operation;
     // operation-level values win (https://smithy.io/2.0/spec/behavior-traits.html#paginated-trait).
@@ -128,15 +165,19 @@ public static class PaginationResolver
         };
     }
 
-    private static string ResolveStringToken(Operation operation, StructureShape structure, string memberName, string traitField, ServiceIndex index, CustomizationsModel customizations)
+    // The customization exists because the model lacks the field; once the model has it the entry is stale or
+    // conflicting either way, so it fails rather than silently winning.
+    private static void ThrowIfCustomizationConflicts(Operation operation, PaginatedTrait trait, PaginatorCustomization customization)
     {
-        var (path, _, target) = ResolveMemberPath(operation, structure, memberName, traitField, index, customizations);
-        if (target is not StringShape)
-        {
-            throw new GeneratorException($"Paginated operation '{operation.Name}': {traitField} '{memberName}' targets '{target.Type}', only string is supported.");
-        }
+        var inputTokenModeled = trait.InputToken is not null && customization.InputToken is not null;
+        var outputTokenModeled = trait.OutputToken is not null && customization.OutputToken is not null;
+        var pageSizeModeled = trait.PageSize is not null && customization.PageSize is not null;
+        var itemsModeled = trait.Items is not null && customization.Items is not null && customization.Items.Contains(trait.Items);
 
-        return path;
+        if (inputTokenModeled || outputTokenModeled || pageSizeModeled || itemsModeled)
+        {
+            throw new GeneratorException($"paginators['{operation.Name}'] sets a field that @paginated now models; remove it.");
+        }
     }
 
     private static (string Path, string Leaf, Shape Target) ResolveMemberPath(Operation operation, StructureShape structure, string path, string traitField, ServiceIndex index, CustomizationsModel customizations)

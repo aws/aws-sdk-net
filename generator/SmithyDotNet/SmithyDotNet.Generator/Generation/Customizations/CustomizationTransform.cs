@@ -105,6 +105,16 @@ public static class CustomizationTransform
             }
         }
 
+        // Members are checked by PaginationResolver, which knows the effective trait.
+        foreach (var operationName in customizations.Paginators.Keys)
+        {
+            var shape = FindSingleShape(model, operationName, $"paginators['{operationName}']");
+            if (shape is not OperationShape)
+            {
+                throw new GeneratorException($"paginators['{operationName}'] targets a '{shape.Type}' shape, not an operation.");
+            }
+        }
+
         foreach (var (shapeName, swaps) in customizations.DataTypeSwaps)
         {
             if (FindSingleShape(model, shapeName, $"dataTypeSwap['{shapeName}']") is not StructureShape structure)

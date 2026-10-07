@@ -1,6 +1,7 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Generation.Customizations;
+using SmithyDotNet.Generator.Generation.Paginators;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
@@ -15,6 +16,7 @@ namespace SmithyDotNet.Generator.Tests.Generation.Customizations;
 /// <summary>
 /// Covers the customizations loader (unknown hooks fail loudly) and <see cref="CustomizationTransform"/> (renames keep the wire name, stale entries throw).
 /// </summary>
+// TODO: Load/Validate/Apply tests are interleaved and build models through several ad-hoc helpers; group by hook and simplify.
 public class CustomizationTransformTests
 {
     private static CustomizationsModel Rename(string shape, string member, string newName) => new()
@@ -204,6 +206,24 @@ public class CustomizationTransformTests
     }
 
     [Fact]
+    public void Load_OverrideContentType_ReadsValue()
+    {
+        var model = LoadFiles(
+            """{ "shapeModifiers": { } }""",
+            """{ "overrideContentType": "application/x-amz-json-1.1" }""");
+        Assert.Equal("application/x-amz-json-1.1", model.OverrideContentType);
+    }
+
+    [Fact]
+    public void Load_OverrideContentType_InTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "overrideContentType": "application/x-amz-json-1.1" }""",
+            """{ "overrideContentType": "application/json" }"""));
+        Assert.Contains("overrideContentType appears in more than one customizations file", ex.Message);
+    }
+
+    [Fact]
     public void Apply_UnsupportedShapeType_Throws()
     {
         var model = new SmithyModel
@@ -352,6 +372,16 @@ public class CustomizationTransformTests
         };
 
         var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, customizations));
+        Assert.Contains("not an operation", ex.Message);
+    }
+
+    [Fact]
+    public void Validate_Paginators_NonOperation_Throws()
+    {
+        var model = ModelWith("Thing", new StringShape());
+        var customizations = new CustomizationsModel { Paginators = { ["Thing"] = new() } };
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Validate(model, customizations));
         Assert.Contains("not an operation", ex.Message);
     }
 
@@ -689,8 +719,7 @@ public class CustomizationTransformTests
         var context = TestModels.Context(TestModels.Load("Model/paginated-model.json"), Rename("ListThingsResponse", "things", "aggregations"));
 
         var paginated = context.PaginatedOperations.Single(p => p.Operation.Name == "ListThings");
-        Assert.Equal("Aggregations", paginated.ItemsProperty);
-        Assert.Equal("Aggregations", paginated.ItemsPath);
+        Assert.Equal([new PaginatedResultKey("Aggregations", "Aggregations", "Thing")], paginated.ResultKeys);
     }
 
     [Theory]

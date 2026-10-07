@@ -155,7 +155,7 @@ public class GenerationContext
     /// </summary>
     public IReadOnlyDictionary<ShapeId, bool> DiscoveredOperations { get; }
 
-    /// <summary>Operations carrying <c>@paginated</c>, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
+    /// <summary>Operations carrying <c>@paginated</c> or a <c>paginators</c> customization, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
     public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
 
     /// <summary>Whether the service has any paginated operations.</summary>
