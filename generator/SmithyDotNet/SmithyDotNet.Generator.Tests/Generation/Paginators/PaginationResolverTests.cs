@@ -149,6 +149,16 @@ public class PaginationResolverTests
         Assert.Contains("'TestOp' requires HTTP/2", ex.Message);
     }
 
+    // Paginator traits name modeled members; imagebuilder and inspector2 rename their items member "responses".
+    [Fact]
+    public void Resolves_RenamedItemsMember_ToNewProperty()
+    {
+        var context = TestModels.Context(TestModels.Load("Model/paginated-model.json"), TestCustomizations.Rename("ListThingsResponse", "things", "aggregations"));
+
+        var paginated = context.PaginatedOperations.Single(p => p.Operation.Name == "ListThings");
+        Assert.Equal([new PaginatedResultKey("Aggregations", "Aggregations", "Thing")], paginated.ResultKeys);
+    }
+
     [Fact]
     public void GetPaginated_ReturnsNull_WhenAbsent()
     {

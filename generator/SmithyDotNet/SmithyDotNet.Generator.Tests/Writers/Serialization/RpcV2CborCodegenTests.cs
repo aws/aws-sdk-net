@@ -102,4 +102,21 @@ public class RpcV2CborCodegenTests
         Assert.Contains("""case "reason":""", source);
         Assert.DoesNotContain("""case "message":""", source);
     }
+
+    [Fact]
+    public void RenamedMember_KeepsModeledWireName()
+    {
+        var customizations = TestCustomizations.Rename("PutRequest", "name", "Label");
+        customizations.ShapeModifiers["PutResponse"] = TestCustomizations.RenameMember("count", "Total");
+        var context = TestModels.Context(TestModels.Load("Codegen/rpcv2cbor-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "Put");
+
+        var marshaller = new CborRequestMarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("if (publicRequest.IsSetLabel())", marshaller);
+        Assert.Contains("""context.Writer.WriteTextString("name");""", marshaller);
+
+        var unmarshaller = new CborResponseUnmarshallerWriter(context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("""case "count":""", unmarshaller);
+        Assert.Contains("unmarshalledObject.Total = CborNullableIntUnmarshaller.Instance.Unmarshall(context);", unmarshaller);
+    }
 }

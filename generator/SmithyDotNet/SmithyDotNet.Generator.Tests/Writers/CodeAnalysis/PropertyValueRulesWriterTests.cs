@@ -97,4 +97,14 @@ public class PropertyValueRulesWriterTests
     {
         Assert.Contains(expected, _propertyValueRules);
     }
+
+    [Fact]
+    public void RenamedMember_RulesUseNewProperty()
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), TestCustomizations.Rename("DoEnumsRequest", "category", "group"));
+
+        var rules = new PropertyValueRulesWriter(context).Write(TestContext.Current.CancellationToken);
+        Assert.Contains("<property>Amazon.Example.Model.DoEnumsRequest.Group</property>", rules);
+        Assert.DoesNotContain("DoEnumsRequest.Category<", rules);
+    }
 }

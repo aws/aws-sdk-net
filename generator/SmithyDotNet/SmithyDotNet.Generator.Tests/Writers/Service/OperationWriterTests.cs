@@ -214,4 +214,13 @@ public class OperationWriterTests
         Assert.Contains("internal bool IsSetFailed() => this.Failed != null && (this.Failed.Count > 0 || !AWSConfigs.InitializeCollections);", _response);
         Assert.Contains("internal bool IsSetSuccessful() => this.Successful != null && (this.Successful.Count > 0 || !AWSConfigs.InitializeCollections);", _response);
     }
+
+    [Fact]
+    public void Request_RenamedEventStreamMember_NamesThePublisherAfterIt()
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/EventStreams/event-stream-input-model.json"), TestCustomizations.Rename("SendRequest", "stream", "Input"));
+
+        var request = new OperationWriter(context, "send.json").WriteRequest(context.Operations.Single(o => o.Name == "Send"), TestContext.Current.CancellationToken);
+        Assert.Contains("public Func<System.Threading.Tasks.Task<IInputStreamEvent>> InputPublisher { get; set; }", request);
+    }
 }

@@ -1,6 +1,8 @@
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
+using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
 
@@ -125,5 +127,36 @@ public class StructureWriterTests
 
         var beforeClass = widget[..widget.IndexOf("public partial class Widget", StringComparison.Ordinal)];
         Assert.Contains("/// <summary>", beforeClass);
+    }
+
+    // emitPropertyName changes only the C# name, so every protocol keeps the modeled wire name. A lowercase
+    // name is upper-cased, as C2J emits iot's "marker" as Marker.
+    [Fact]
+    public void RenamedMember_EmitsNewPropertyAndOriginalWireName()
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), TestCustomizations.Rename("DoScalarsRequest", "created", "createdAt"));
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+        Assert.Contains("public DateTime? CreatedAt", structure);
+
+        var marshaller = new JsonRequestMarshallerWriter(context, "scalars.json").Write(context.Operations.Single(o => o.Name == "DoScalars"), TestContext.Current.CancellationToken);
+        Assert.Contains("if (publicRequest.IsSetCreatedAt())", marshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("created");""", marshaller);
+    }
+
+    // C2J keys dataTypeSwap and emitIsSetProperties by the emitted name, so both reach a renamed member by its new one.
+    [Fact]
+    public void RenamedMember_HooksListedByNewName_Apply()
+    {
+        var customizations = TestCustomizations.Rename("DoScalarsRequest", "count", "Total");
+        customizations.EmitIsSetProperties["DoScalarsRequest"] = ["Total"];
+        customizations.DataTypeSwaps["DoScalarsRequest"] = new Dictionary<string, DataTypeSwap> { ["Total"] = new DataTypeSwap { Type = "long?" } };
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+        Assert.Contains("public long? Total", structure);
+        Assert.Contains("public bool IsTotalSet", structure);
     }
 }

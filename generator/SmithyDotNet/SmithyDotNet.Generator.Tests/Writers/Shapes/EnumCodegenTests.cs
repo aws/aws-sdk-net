@@ -56,6 +56,18 @@ public class EnumCodegenTests
         Assert.Contains("""public static readonly InstanceType AB = new InstanceType("a.b");""", _enums);
     }
 
+    // Mirrors the restjson protocol-test customization: the "0" wire value derives a constant name that is
+    // not a valid identifier, so the customization names it (entries are keyed by wire value).
+    [Fact]
+    public void Emission_RenamedEnumValue_EmitsCustomizedConstantName()
+    {
+        var customizations = TestCustomizations.Rename("InstanceType", "0", "Num_0");
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var enums = new ServiceEnumerationsWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+        Assert.Contains("""public static readonly InstanceType Num_0 = new InstanceType("0");""", enums);
+    }
+
     [Fact]
     public void Emission_EqualsMemberGetsNewKeyword()
     {

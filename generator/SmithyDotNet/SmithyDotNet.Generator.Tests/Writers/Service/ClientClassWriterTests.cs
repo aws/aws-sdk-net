@@ -32,6 +32,20 @@ public class ClientClassWriterTests
         Assert.Equal(3, System.Text.RegularExpressions.Regex.Count(output, """\[Obsolete\("This operation is deprecated\."\)\]"""));
     }
 
+    // End-to-end: the customized message replaces the model's in the emitted [Obsolete]. The
+    // @deprecated -> [Obsolete] wire is the same BuildObsolete call at every level, so one proves it.
+    [Fact]
+    public void DeprecatedOperation_CustomizedMessage_ReplacesObsoleteText()
+    {
+        var customizations = new CustomizationsModel();
+        customizations.OperationModifiers["DoHeaderOnly"] = new OperationModifier { DeprecatedMessage = "Use DoHeaderOnlyV2." };
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var output = new ClientClassWriter(context, "example-2023-01-01.normal.json").Write(TestContext.Current.CancellationToken);
+        Assert.Contains("""[Obsolete("Use DoHeaderOnlyV2.")]""", output);
+        Assert.DoesNotContain("This operation is deprecated.", output);
+    }
+
     [Fact]
     public void EmitsClassDeclarationInServiceNamespace()
     {
