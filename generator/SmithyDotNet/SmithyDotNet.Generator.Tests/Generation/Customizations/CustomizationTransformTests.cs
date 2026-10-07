@@ -48,8 +48,50 @@ public class CustomizationTransformTests
     [Fact]
     public void Load_UnsupportedHook_Throws()
     {
-        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "runtimePipelineOverride": {} }"""));
-        Assert.Contains("runtimePipelineOverride", ex.Message);
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles("""{ "unsupportedHook": {} }"""));
+        Assert.Contains("unsupportedHook", ex.Message);
+    }
+
+    [Fact]
+    public void Load_RuntimePipelineOverride_ReadsOverridesInOrder()
+    {
+        var model = LoadFiles("""
+            { "runtimePipelineOverride": { "overrides": [
+                { "operation": "addBefore", "targetType": "T", "newType": "First" },
+                { "operation": "addAfter", "targetType": "T", "newType": "Second" },
+                { "operation": "replace", "targetType": "T", "newType": "Third", "constructorInput": "this.Config", "condition": "true" }
+            ] } }
+            """);
+
+        Assert.Equal(
+        [
+            new PipelineOverride { Operation = PipelineOverride.AddBefore, TargetType = "T", NewType = "First" },
+            new PipelineOverride { Operation = PipelineOverride.AddAfter, TargetType = "T", NewType = "Second" },
+            new PipelineOverride { Operation = PipelineOverride.Replace, TargetType = "T", NewType = "Third", ConstructorInput = "this.Config", Condition = "true" },
+        ], model.RuntimePipelineOverride?.Overrides ?? []);
+    }
+
+    [Theory]
+    [InlineData("""[{ "operation": "remove", "targetType": "T", "newType": "N" }]""", "overrides[0] needs")]
+    [InlineData("""[{ "operation": "addbefore", "targetType": "T", "newType": "N" }]""", "overrides[0] needs")]
+    [InlineData("""[{ "operation": "addBefore", "targetType": "", "newType": "N" }]""", "overrides[0] needs")]
+    [InlineData("""[{ "operation": "addBefore", "targetType": "T", "newType": null }]""", "overrides[0] needs")]
+    [InlineData("""[null]""", "overrides[0] needs")]
+    [InlineData("""null""", "needs an 'overrides' list")]
+    [InlineData("""[{ "operation": "addBefore", "targetType": "T" }]""", "newType")]
+    public void Load_RuntimePipelineOverride_MalformedOrUnsupported_Throws(string overrides, string expectedInMessage)
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles($$"""{ "runtimePipelineOverride": { "overrides": {{overrides}} } }"""));
+        Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Fact]
+    public void Load_RuntimePipelineOverride_InTwoFiles_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "runtimePipelineOverride": { "overrides": [] } }""",
+            """{ "runtimePipelineOverride": { "overrides": [] } }"""));
+        Assert.Contains("runtimePipelineOverride appears in more than one customizations file", ex.Message);
     }
 
     [Fact]

@@ -5,8 +5,8 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
 /// A service's merged <c>*.customizations*.json</c> files. Model-shaped hooks are folded into the
-/// Smithy model by <see cref="CustomizationTransform"/>; behavior hooks (code injection, pipeline
-/// overrides) will be read via <see cref="GenerationContext.Customizations"/>.
+/// Smithy model by <see cref="CustomizationTransform"/>; behavior hooks (the runtime pipeline
+/// overrides, and later code injection) are read via <see cref="GenerationContext.Customizations"/>.
 /// </summary>
 public sealed record CustomizationsModel
 {
@@ -24,6 +24,10 @@ public sealed record CustomizationsModel
 
     [JsonPropertyName("operationModifiers")]
     public Dictionary<string, OperationModifier> OperationModifiers { get; init; } = [];
+
+    /// <summary>Handlers the client adds to its runtime pipeline in <c>CustomizeRuntimePipeline</c>.</summary>
+    [JsonPropertyName("runtimePipelineOverride")]
+    public RuntimePipelineOverride? RuntimePipelineOverride { get; init; }
 
     [JsonPropertyName("overrideContentType")]
     public string? OverrideContentType { get; init; }
@@ -83,6 +87,7 @@ public sealed record CustomizationsModel
         var emitIsSetProperties = new Dictionary<string, List<string>>();
         var dataTypeSwaps = new Dictionary<string, Dictionary<string, DataTypeSwap>>();
         var shapeSubstitutions = new Dictionary<string, ShapeSubstitution>();
+        RuntimePipelineOverride? runtimePipelineOverride = null;
         foreach (var path in paths)
         {
             CustomizationsModel file;
@@ -109,6 +114,29 @@ public sealed record CustomizationsModel
                 {
                     throw new GeneratorException($"'{path}': shapeModifiers['{shapeName}'] modifies '{repeated.Key}' more than once.");
                 }
+            }
+
+            if (file.RuntimePipelineOverride is { } pipelineOverride)
+            {
+                if (runtimePipelineOverride is not null)
+                {
+                    throw new GeneratorException($"'{path}': runtimePipelineOverride appears in more than one customizations file; merging is not supported yet.");
+                }
+
+                // System.Text.Json lets null through a non-nullable member, and a typo'd operation would fall through
+                // to AddHandlerAfter (C2J's switch throws), so a malformed entry fails here, not in the generated code.
+                var overrides = pipelineOverride.Overrides ?? throw new GeneratorException($"'{path}': runtimePipelineOverride needs an 'overrides' list.");
+                for (var i = 0; i < overrides.Count; i++)
+                {
+                    if (overrides[i] is not { Operation: PipelineOverride.AddBefore or PipelineOverride.AddAfter or PipelineOverride.Replace } entry
+                        || string.IsNullOrWhiteSpace(entry.TargetType)
+                        || string.IsNullOrWhiteSpace(entry.NewType))
+                    {
+                        throw new GeneratorException($"'{path}': runtimePipelineOverride overrides[{i}] needs operation '{PipelineOverride.AddBefore}', '{PipelineOverride.AddAfter}' or '{PipelineOverride.Replace}' and a non-empty targetType and newType.");
+                    }
+                }
+
+                runtimePipelineOverride = pipelineOverride;
             }
 
             foreach (var (operationName, modifier) in file.OperationModifiers)
@@ -144,7 +172,7 @@ public sealed record CustomizationsModel
             }
         }
 
-        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps, EmitIsSetProperties = emitIsSetProperties, ShapeSubstitutions = shapeSubstitutions };
+        return new CustomizationsModel { ShapeModifiers = shapeModifiers, OperationModifiers = operationModifiers, DataTypeSwaps = dataTypeSwaps, EmitIsSetProperties = emitIsSetProperties, ShapeSubstitutions = shapeSubstitutions, RuntimePipelineOverride = runtimePipelineOverride };
     }
 }
 
@@ -208,4 +236,39 @@ public sealed record ShapeSubstitution
     // TODO: C2J also has emitAsShape and emitFromMember; the loader rejects them as unknown keys.
     [JsonPropertyName("renameShape")]
     public required string RenamedShapeName { get; init; }
+}
+
+/// <summary>A <c>runtimePipelineOverride</c> entry: its <c>overrides</c> are applied in order.</summary>
+public sealed record RuntimePipelineOverride
+{
+    // Nullable because "overrides": null deserializes fine; the loader rejects it.
+    [JsonPropertyName("overrides")]
+    public List<PipelineOverride>? Overrides { get; init; }
+}
+
+/// <summary>Adds a <see cref="NewType"/> handler before or after the pipeline's <see cref="TargetType"/> handler, or replaces it.</summary>
+public sealed record PipelineOverride
+{
+    public const string AddBefore = "addBefore";
+    public const string AddAfter = "addAfter";
+    public const string Replace = "replace";
+
+    /// <summary><see cref="AddBefore"/>, <see cref="AddAfter"/> or <see cref="Replace"/>; the loader rejects anything else.</summary>
+    // TODO: C2J also has add and remove; no service uses them, so the loader rejects them.
+    [JsonPropertyName("operation")]
+    public required string Operation { get; init; }
+
+    [JsonPropertyName("targetType")]
+    public required string TargetType { get; init; }
+
+    [JsonPropertyName("newType")]
+    public required string NewType { get; init; }
+
+    /// <summary>C# arguments for the <see cref="NewType"/> constructor, emitted verbatim (e.g. <c>this.Config</c>).</summary>
+    [JsonPropertyName("constructorInput")]
+    public string? ConstructorInput { get; init; }
+
+    /// <summary>A C# condition the override runs under, emitted verbatim (e.g. <c>this.Config.RetryMode == RequestRetryMode.Standard</c>).</summary>
+    [JsonPropertyName("condition")]
+    public string? Condition { get; init; }
 }

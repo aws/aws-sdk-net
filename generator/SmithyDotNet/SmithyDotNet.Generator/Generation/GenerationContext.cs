@@ -212,7 +212,7 @@ public class GenerationContext
 
     /// <summary>
     /// The service's customizations, for hooks applied at generation time (enum constant names, member
-    /// renames, and later code injection / pipeline overrides). Hooks with a Smithy trait equivalent never
+    /// renames, runtime pipeline overrides, and later code injection). Hooks with a Smithy trait equivalent never
     /// surface here — <see cref="CustomizationTransform"/> merges them into the model before the index is built.
     /// </summary>
     public CustomizationsModel Customizations { get; }

@@ -1,4 +1,5 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model.Shapes;
 
@@ -15,9 +16,7 @@ namespace SmithyDotNet.Generator.Writers.Service;
 /// <c>Amazon{Service}Metadata</c>, and the <c>Amazon{Service}EndpointResolver</c> /
 /// <c>Amazon{Service}AuthSchemeHandler</c>. This writer emits only the client class.
 /// <para />
-/// <c>CustomizeRuntimePipeline</c> emits the base handler set. Per-service pipeline handlers
-/// (e.g. S3, EC2, SQS) come from <c>{service}.customizations.json</c>
-/// (<c>runtimePipelineOverride.overrides</c>), which the Smithy model does not carry.
+/// <c>CustomizeRuntimePipeline</c> emits the service's <c>runtimePipelineOverride</c> handlers, then the base handler set.
 /// </summary>
 public sealed class ClientClassWriter(GenerationContext context, string modelFileName)
 {
@@ -229,10 +228,30 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine("/// <param name=\"pipeline\">Runtime pipeline for the current client.</param>");
         writer.OpenBlock("protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)", () =>
         {
-            // Base handler set, emitted for every service. Per-service extra handlers (e.g. S3,
-            // EC2, SQS) come from {service}.customizations.json (runtimePipelineOverride.overrides),
-            // which the Smithy model does not carry. The endpoint-resolver swap exists only for
-            // services with an endpoint rule set (test services have none), matching C2J.
+            foreach (var entry in context.Customizations.RuntimePipelineOverride?.Overrides ?? [])
+            {
+                var method = entry.Operation switch
+                {
+                    PipelineOverride.AddBefore => "AddHandlerBefore",
+                    PipelineOverride.AddAfter => "AddHandlerAfter",
+                    PipelineOverride.Replace => "ReplaceHandler",
+                    _ => throw new GeneratorException($"Pipeline override operation '{entry.Operation}' is not supported."),
+                };
+                var call = $"pipeline.{method}<{entry.TargetType}>(new {entry.NewType}({entry.ConstructorInput}));";
+
+                // As in C2J, an empty condition means none.
+                if (string.IsNullOrEmpty(entry.Condition))
+                {
+                    writer.WriteLine(call);
+                }
+                else
+                {
+                    writer.OpenBlock($"if ({entry.Condition})", () => writer.WriteLine(call));
+                }
+            }
+
+            // The endpoint-resolver swap exists only for services with an endpoint rule set (test
+            // services have none), matching C2J.
             if (context.HasEndpointRuleSet)
             {
                 writer.WriteLine("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();");

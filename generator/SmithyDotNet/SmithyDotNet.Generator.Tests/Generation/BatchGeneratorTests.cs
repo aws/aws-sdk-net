@@ -173,7 +173,7 @@ public class BatchGeneratorTests : IDisposable
     public void BadCustomizationsFileFailsTheBatch()
     {
         WriteControlFile("CloudTrailData");
-        SeedFile(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data", "cloudtrail-data.customizations.json"), """{ "runtimePipelineOverride": {} }""");
+        SeedFile(Path.Combine(SdkTreeLayout.ModelsRoot(_repoRoot), "cloudtrail-data", "cloudtrail-data.customizations.json"), """{ "unsupportedHook": {} }""");
 
         var ex = Assert.Throws<GeneratorException>(() => new BatchGenerator(_repoRoot).Run(TestContext.Current.CancellationToken));
         Assert.Contains("[CloudTrailData]", ex.Message);

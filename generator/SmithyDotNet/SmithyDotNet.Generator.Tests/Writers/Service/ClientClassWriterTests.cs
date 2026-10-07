@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Manifests;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
@@ -154,6 +155,40 @@ public class ClientClassWriterTests
     }
 
     [Fact]
+    public void EmitsRuntimePipelineOverridesInOrderBeforeBaseHandlers()
+    {
+        var customizations = new CustomizationsModel
+        {
+            RuntimePipelineOverride = new()
+            {
+                Overrides =
+                [
+                    new() { Operation = PipelineOverride.AddBefore, TargetType = "Amazon.Runtime.Internal.Marshaller", NewType = "Amazon.CloudTrailData.Internal.IdempotencyHandler", Condition = "" },
+                    new() { Operation = PipelineOverride.AddAfter, TargetType = "Amazon.Runtime.Internal.Marshaller", NewType = "Amazon.CloudTrailData.Internal.ProcessRequestHandler" },
+                    new()
+                    {
+                        Operation = PipelineOverride.Replace,
+                        TargetType = "Amazon.Runtime.Internal.RetryHandler",
+                        NewType = "Amazon.Runtime.Internal.RetryHandler",
+                        ConstructorInput = "new Amazon.CloudTrailData.Internal.StandardRetryPolicy(this.Config)",
+                        Condition = "this.Config.RetryMode == RequestRetryMode.Standard",
+                    },
+                ],
+            },
+        };
+        var output = WriteWith(customizations: customizations);
+
+        var before = output.IndexOf("pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudTrailData.Internal.IdempotencyHandler());", StringComparison.Ordinal);
+        var after = output.IndexOf("pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.CloudTrailData.Internal.ProcessRequestHandler());", StringComparison.Ordinal);
+        var condition = output.IndexOf("if (this.Config.RetryMode == RequestRetryMode.Standard)", StringComparison.Ordinal);
+        var replace = output.IndexOf("pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new Amazon.CloudTrailData.Internal.StandardRetryPolicy(this.Config)));", StringComparison.Ordinal);
+        var conditionEnd = output.IndexOf('}', condition);
+        var remove = output.IndexOf("pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();", StringComparison.Ordinal);
+        Assert.True(0 <= before && before < after && after < condition && condition < replace && replace < conditionEnd && conditionEnd < remove);
+        Assert.DoesNotContain("if ()", output);
+    }
+
+    [Fact]
     public void EmitsSingleCustomizeRuntimePipelineDocForAllTargetFrameworks()
     {
         // The CustomizeRuntimePipeline doc text differs by TFM in the hand-written SDK (_bcl:
@@ -291,9 +326,9 @@ public class ClientClassWriterTests
         Assert.DoesNotContain("#endregion", _output);
     }
 
-    private string WriteWith(ServiceMetadata? metadata)
+    private string WriteWith(ServiceMetadata? metadata = null, CustomizationsModel? customizations = null)
     {
-        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata);
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata, customizations);
         return new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
     }
 

@@ -379,7 +379,8 @@ Must expose:
 - **Async method** (all targets): `public virtual Task<{Op}Response> {Op}Async(...)` per operation
 - **HTTP/2 operations** are the exception: the whole operation is wrapped in `#if NET8_0_OR_GREATER`, since C2J omits h2 operations on .NET Framework and pre-net8 netstandard.
 - `DetermineServiceOperationEndpoint` implementation
-- `CustomizeRuntimePipeline` override
+- `CustomizeRuntimePipeline` override: first the `runtimePipelineOverride` customization's handlers, in file order (each
+  under its `condition`, if any), then the endpoint-resolver swap and auth scheme handler. The handler classes are hand-written under the service's `Custom/`.
 - `ServiceMetadata` property override
 
 Use `#if NETFRAMEWORK` directives to include sync methods only for .NET Framework targets. Both sync and async methods are `public virtual` on the client class.
