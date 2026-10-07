@@ -57,4 +57,13 @@ change will find them, not in a skill that would go stale.
   the solution space is genuinely open.
 
 ## Testing
-To ensure the code you output is correct always run `dotnet test SmithyDotNet.Generator.sln`
+
+Run `dotnet test SmithyDotNet.Generator.sln` before reporting a change as done.
+
+- A test class covers one subject and is named after it. A test asserting on a writer's output
+  goes in that writer's test class, whatever feature motivated it.
+- One fixture model per subject under `TestData/`; grow it rather than build shapes in code.
+- A subject's throws are one `[Theory]` of scalar inputs plus the expected message.
+- Build inputs as a local plus indexer assignments, never nested `new() { [k] = ... }`.
+- No inline JSON in tests except in loader tests.
+- Don't add a case that proves what an existing one already does.
