@@ -102,7 +102,7 @@ public static class MemberWriter
         // SetIsSet only has Nullable<T>/List/Dictionary overloads; anything else would not compile.
         if (!member.Type.IsNullableValueType && !member.Type.IsCollection)
         {
-            throw new GeneratorException($"emitIsSetProperties lists member '{member.ModeledName}', whose type {member.Type.DotNetType} has no InternalSDKUtils.SetIsSet overload.");
+            throw new GeneratorException($"emitIsSetProperties lists member '{member.PropertyName}', whose type {member.Type.DotNetType} has no InternalSDKUtils.SetIsSet overload.");
         }
 
         var field = $"_{member.PropertyName}";

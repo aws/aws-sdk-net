@@ -1,3 +1,4 @@
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -31,7 +32,7 @@ public record PaginatedOperation(
 // stopPaginationOnSameToken; none exist in Smithy — they'll land as customizations.
 public static class PaginationResolver
 {
-    public static List<PaginatedOperation> Resolve(IReadOnlyList<Operation> operations, ServiceIndex index)
+    public static List<PaginatedOperation> Resolve(IReadOnlyList<Operation> operations, ServiceIndex index, CustomizationsModel customizations)
     {
         var result = new List<PaginatedOperation>();
         var serviceDefaults = index.Service.GetPaginated();
@@ -44,18 +45,25 @@ public static class PaginationResolver
                 continue;
             }
 
+            // TODO: give the paginator its operation's net8 guard if a service ever paginates an h2-only operation;
+            // none does, and C2J's paginators have no guard, so today it would generate code that fails below net8.
+            if (operation.RequiresHttp2)
+            {
+                throw new GeneratorException($"Paginated operation '{operation.Name}' requires HTTP/2, which paginators don't support yet.");
+            }
+
             trait = MergeServiceDefaults(trait, serviceDefaults);
             if (trait.InputToken is null || trait.OutputToken is null)
             {
                 throw new GeneratorException($"Paginated operation '{operation.Name}': inputToken and outputToken are required.");
             }
 
-            var inputTokenProperty = ResolveStringToken(operation, operation.Input, trait.InputToken, "inputToken", index);
-            var outputTokenProperty = ResolveStringToken(operation, operation.Output, trait.OutputToken, "outputToken", index);
+            var inputTokenProperty = ResolveStringToken(operation, operation.Input, trait.InputToken, "inputToken", index, customizations);
+            var outputTokenProperty = ResolveStringToken(operation, operation.Output, trait.OutputToken, "outputToken", index, customizations);
             string? pageSizeProperty = null;
             if (trait.PageSize is not null)
             {
-                pageSizeProperty = ResolveMemberPath(operation, operation.Input, trait.PageSize, "pageSize", index).Path;
+                pageSizeProperty = ResolveMemberPath(operation, operation.Input, trait.PageSize, "pageSize", index, customizations).Path;
             }
 
             string? itemsProperty = null;
@@ -63,7 +71,7 @@ public static class PaginationResolver
             string? itemsElementType = null;
             if (trait.Items is not null)
             {
-                var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, trait.Items, "items", index);
+                var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, trait.Items, "items", index, customizations);
                 if (itemsTarget is ListShape list)
                 {
                     // Derive the element type exactly the way TypeMapper types the List<T> property
@@ -120,9 +128,9 @@ public static class PaginationResolver
         };
     }
 
-    private static string ResolveStringToken(Operation operation, StructureShape structure, string memberName, string traitField, ServiceIndex index)
+    private static string ResolveStringToken(Operation operation, StructureShape structure, string memberName, string traitField, ServiceIndex index, CustomizationsModel customizations)
     {
-        var (path, _, target) = ResolveMemberPath(operation, structure, memberName, traitField, index);
+        var (path, _, target) = ResolveMemberPath(operation, structure, memberName, traitField, index, customizations);
         if (target is not StringShape)
         {
             throw new GeneratorException($"Paginated operation '{operation.Name}': {traitField} '{memberName}' targets '{target.Type}', only string is supported.");
@@ -131,7 +139,7 @@ public static class PaginationResolver
         return path;
     }
 
-    private static (string Path, string Leaf, Shape Target) ResolveMemberPath(Operation operation, StructureShape structure, string path, string traitField, ServiceIndex index)
+    private static (string Path, string Leaf, Shape Target) ResolveMemberPath(Operation operation, StructureShape structure, string path, string traitField, ServiceIndex index, CustomizationsModel customizations)
     {
         // outputToken and items may be dotted paths (e.g. CloudFront's "DistributionList.NextMarker").
         var segments = path.Split('.');
@@ -145,7 +153,8 @@ public static class PaginationResolver
                 throw new GeneratorException($"Paginated operation '{operation.Name}': {traitField} member '{segments[i]}' not found on structure.");
             }
 
-            properties[i] = SdkNaming.ToUpperFirstCharacter(segments[i]);
+            // The trait names the modeled member; the accessor needs its C# name, which a rename changes.
+            properties[i] = customizations.PropertyName(current.Id.Name, segments[i]);
             target = ResolveShape(index, member.Target);
         }
 

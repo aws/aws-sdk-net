@@ -74,7 +74,7 @@ name to a writer, check the shipping SDK for which of the two it follows.
 - **Shape names** → PascalCase class names (Smithy shape names are already PascalCase). The service
   `rename` map wins when it has an entry for the shape; error codes still use the shape name
 - **Member names** → PascalCase property names. Smithy uses camelCase (`eventData`), .NET uses PascalCase (`EventData`)
-- The conversion: capitalize the first letter of the Smithy member name
+- The conversion: capitalize the first letter of the Smithy member name, or of its `emitPropertyName` (see Customizations)
 - **Acronyms** are preserved as-is from the Smithy model. Example: `eventID` → `EventID` (not `EventId`)
 - A response member named `ContentLength` is **omitted** from the response class —
   `AmazonWebServiceResponse` already declares it — but the response unmarshaller still assigns the
@@ -122,10 +122,10 @@ filled in. Both are written unformatted
 (`BatchGenerator` passes `format: false`): the samples file is never compiled and can hold placeholders like
 `<binary data>` that the Roslyn formatter would mangle. A service with no examples, or S3 (its samples are
 hand-written), gets no files, so an existing sample file stays as it is; examples the model lacks but C2J
-had are a model gap. Example keys are matched to members (`TypeMapper.ResolveMembers`) ignoring case after
-`CustomizationTransform`, so, as in C2J, a member renamed by `emitPropertyName` (beyond case) drops out of
-the sample. The samples are built before anything is written, so a bad example fails the
-service before anything is deleted, and written only once its code has generated.
+had are a model gap. Example keys are matched to member property names ignoring case, so, as in C2J, a
+member renamed by `emitPropertyName` (beyond case) drops out of the sample. The samples are built before
+anything is written, so a bad example fails the service before anything is deleted, and written only once
+its code has generated.
 
 Differences from C2J:
 
@@ -258,9 +258,9 @@ internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvent
 ## Customizations (`*.customizations.json`)
 
 The .NET-owned override layer (not part of the shared, upstream Smithy model). A hook with a Smithy
-trait equivalent (a rename pins `@jsonName`), or a structural edit (a member-keyed `renameShape`), is folded into the model in-memory by
+trait equivalent (`deprecatedMessage`, `renameShape`), or a structural edit (a member-keyed `renameShape`), is folded into the model in-memory by
 `CustomizationTransform.Apply` before the `ServiceIndex` is built; every other hook is checked by
-`CustomizationTransform.Validate` and read from `GenerationContext.Customizations` by shape and member
+`CustomizationTransform` and read from `GenerationContext.Customizations` by shape and member
 name where the member is resolved (`TypeMapper.ResolveMembers`), never stored on a shape. An unknown
 hook key fails deserialization (fail-closed) rather than silently diverging from C2J.
 
@@ -271,6 +271,11 @@ keep the modeled name. A model that already renames the shape fails.
 A Smithy-only `"Structure$member"` key instead copies that member's target under the new name (QApps: one
 `Action` enum is C2J's `PermissionInputActionEnum` and `PermissionOutputActionEnum`); the original is dropped once
 nothing targets it.
+
+`emitPropertyName` renames only the C# property, so the member keeps its modeled name and with it its wire
+name on every protocol. `CustomizationsModel.PropertyName` is used wherever a member's C# name is derived.
+As in C2J, the name's first letter is upper-cased (iot's `marker` is `Marker`) and
+`emitIsSetProperties`/`dataTypeSwap` list a renamed member under its new name.
 
 - What Smithy supports today is whatever `Generation/Customizations/CustomizationsModel.cs` parses;
   each hook's per-level behavior lives on that record, its `Apply`/`Validate` step, and its lookup.
@@ -387,7 +392,7 @@ services use endpoint rule sets (Endpoints 2.0) instead. Matching C2J, each oper
 `{Op}EndpointDiscoveryMarshaller.g.cs` and sets `options.EndpointDiscoveryMarshaller` and `options.EndpointOperation`;
 the client overrides `EndpointOperation` to call the discovery operation.
 
-Anything those three services don't model fails generation (discovery ids, discovery input, renamed or swapped
+Anything those three services don't model fails generation (discovery ids, discovery input, swapped
 endpoint members, ...); see `EndpointDiscoveryResolver` and `ClientClassWriter.WriteEndpointOperation`.
 
 C2J's `{BaseName}EndpointDiscoveryMarshallingTests.cs` is not generated: with no discovery ids it only checks the

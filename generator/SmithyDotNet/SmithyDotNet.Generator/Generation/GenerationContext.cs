@@ -211,9 +211,9 @@ public class GenerationContext
     public SdkVersionManifest Manifest { get; }
 
     /// <summary>
-    /// The service's customizations, for hooks applied at generation time (enum constant names,
-    /// and later code injection / pipeline overrides). Structure-shaped hooks never surface here —
-    /// <see cref="CustomizationTransform"/> merges them into the model before the index is built.
+    /// The service's customizations, for hooks applied at generation time (enum constant names, member
+    /// renames, and later code injection / pipeline overrides). Hooks with a Smithy trait equivalent never
+    /// surface here — <see cref="CustomizationTransform"/> merges them into the model before the index is built.
     /// </summary>
     public CustomizationsModel Customizations { get; }
 
@@ -280,10 +280,10 @@ public class GenerationContext
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
-        PaginatedOperations = PaginationResolver.Resolve(Operations, index);
+        PaginatedOperations = PaginationResolver.Resolve(Operations, index, Customizations);
         RequestEventStreams = EventStreamResolver.ResolveRequestStreams(Operations, index);
         ResponseEventStreams = EventStreamResolver.ResolveResponseStreams(Operations, index);
-        OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index);
+        OperationEndpointContexts = EndpointContextResolver.ResolveOperations(Operations, index, Customizations);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();

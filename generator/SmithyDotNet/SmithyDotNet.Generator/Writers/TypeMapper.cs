@@ -197,12 +197,13 @@ public static class TypeMapper
         foreach (var (memberName, member) in structure.Members)
         {
             var target = context.Resolve(member.Target);
-            var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
 
-            // Keyed by the structure's modeled name (even if renameShape renamed it), then the member's name after
-            // emitPropertyName, as in C2J; CustomizationTransform has already validated the entries.
+            // Keyed by the structure's modeled name (even if renameShape renamed it), then the member's emitted name,
+            // as in C2J; CustomizationTransform has already validated the entries.
             var shapeName = structure.Id.Name;
-            var swap = context.Customizations.DataTypeSwapFor(shapeName, memberName);
+            var propertyName = context.Customizations.PropertyName(shapeName, memberName);
+            var emittedName = context.Customizations.EmittedName(shapeName, memberName);
+            var swap = context.Customizations.DataTypeSwapFor(shapeName, emittedName);
 
             resolved.Add(new Member(
                 PropertyName: propertyName,
@@ -213,7 +214,7 @@ public static class TypeMapper
                 Obsolete: BuildObsolete(member),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                EmitIsSetProperties: context.Customizations.EmitIsSet(shapeName, memberName),
+                EmitIsSetProperties: context.Customizations.EmitIsSet(shapeName, emittedName),
                 // awsJson1.x ignores @jsonName (not in its supported traits); the wire name is the member name.
                 JsonName: context.UsesHttpBindings ? member.GetJsonName() : null,
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).

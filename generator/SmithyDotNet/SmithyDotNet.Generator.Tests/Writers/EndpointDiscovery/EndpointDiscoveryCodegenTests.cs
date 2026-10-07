@@ -115,10 +115,10 @@ public class EndpointDiscoveryCodegenTests
     private static string ClientSource(GenerationContext context) =>
         new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken).ReplaceLineEndings("\n");
 
-    // The members are looked up by the names the Smithy spec fixes, so a customization renaming one fails generation
-    // instead of emitting a client that reads a property the response never fills.
+    // The members are looked up by the names the Smithy spec fixes; a renamed one keeps that name, so the client
+    // reads its renamed property.
     [Fact]
-    public void Client_RenamedDiscoveryMember_Throws()
+    public void Client_RenamedDiscoveryMember_ReadsNewProperty()
     {
         var customizations = new CustomizationsModel
         {
@@ -126,8 +126,9 @@ public class EndpointDiscoveryCodegenTests
         };
         var context = CustomizedContext(TestModels.Load(ModelPath), customizations);
 
-        var ex = Assert.Throws<GeneratorException>(() => ClientSource(context));
-        Assert.Contains("'DescribeEndpointsResponse' has no 'Endpoints' member", ex.Message, StringComparison.Ordinal);
+        var source = ClientSource(context);
+        Assert.Contains("foreach (var endpoint in response.EndpointList)", source, StringComparison.Ordinal);
+        Assert.DoesNotContain("response.Endpoints", source, StringComparison.Ordinal);
     }
 
     // DiscoveryEndpoint takes (string, long), so a swapped Address or CachePeriodInMinutes would not compile.

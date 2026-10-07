@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Generation.Operations;
 using SmithyDotNet.Generator.Generation.Paginators;
 using SmithyDotNet.Generator.Model;
@@ -82,7 +83,7 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "choices" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
 
         Assert.Equal("Choices", result.ItemsProperty);
         Assert.Equal("TestUnion", result.ItemsElementType);
@@ -96,7 +97,7 @@ public class PaginationResolverTests
         // "matrix" is a list of lists, which has no flattened enumerable
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "matrix" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
 
         Assert.Null(result.ItemsProperty);
         Assert.Null(result.ItemsElementType);
@@ -112,7 +113,7 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "statuses" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
 
         Assert.Equal("Statuses", result.ItemsProperty);
         Assert.Equal("string", result.ItemsElementType);
@@ -127,7 +128,7 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "counts" }""");
 
-        var result = PaginationResolver.Resolve([op], index).Single();
+        var result = PaginationResolver.Resolve([op], index, new CustomizationsModel()).Single();
         Assert.Equal("Counts", result.ItemsProperty);
         Assert.Equal("int", result.ItemsElementType);
     }
@@ -145,8 +146,18 @@ public class PaginationResolverTests
         var (index, _) = LoadPaginatedModel();
         var op = MakeOperation(traitJson);
 
-        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index));
+        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index, new CustomizationsModel()));
         Assert.Contains(expectedError, ex.Message);
+    }
+
+    [Fact]
+    public void Throws_OnHttp2OnlyPaginatedOperation()
+    {
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken" }""") with { RequiresHttp2 = true };
+
+        var ex = Assert.Throws<GeneratorException>(() => PaginationResolver.Resolve([op], index, new CustomizationsModel()));
+        Assert.Contains("'TestOp' requires HTTP/2", ex.Message);
     }
 
     [Fact]
@@ -204,7 +215,7 @@ public class PaginationResolverTests
     private static PaginatedOperation Resolve(string operationName)
     {
         var (index, ops) = LoadPaginatedModel();
-        return PaginationResolver.Resolve(ops, index).Single(p => p.Operation.Name == operationName);
+        return PaginationResolver.Resolve(ops, index, new CustomizationsModel()).Single(p => p.Operation.Name == operationName);
     }
 
     private static (ServiceIndex Index, List<Operation> Operations) LoadPaginatedModel()
@@ -235,7 +246,7 @@ public class PaginationResolverTests
             ["statuses"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "StatusList") },
             ["counts"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "CountList") },
         };
-        var structure = new StructureShape { Members = members };
+        var structure = new StructureShape { Id = new ShapeId("com.amazonaws.testpaginated", "TestOpIO"), Members = members };
 
         var opShape = new OperationShape
         {

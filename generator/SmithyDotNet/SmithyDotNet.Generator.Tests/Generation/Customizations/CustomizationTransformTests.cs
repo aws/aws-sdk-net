@@ -4,6 +4,7 @@ using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
 using SmithyDotNet.Generator.Writers.Shapes;
@@ -12,17 +13,17 @@ using Xunit;
 namespace SmithyDotNet.Generator.Tests.Generation.Customizations;
 
 /// <summary>
-/// Covers the customizations loader (unknown hooks fail loudly) and <see cref="CustomizationTransform"/> (renames pin the wire name, stale entries throw).
+/// Covers the customizations loader (unknown hooks fail loudly) and <see cref="CustomizationTransform"/> (renames keep the wire name, stale entries throw).
 /// </summary>
 public class CustomizationTransformTests
 {
     private static CustomizationsModel Rename(string shape, string member, string newName) => new()
     {
-        ShapeModifiers =
-        {
-            [shape] = new ShapeModifier { Modify = [new() { [member] = new PropertyModifier { EmitPropertyName = newName } }] },
-        },
+        ShapeModifiers = { [shape] = RenameMember(member, newName) },
     };
+
+    private static ShapeModifier RenameMember(string member, string newName) =>
+        new() { Modify = [new() { [member] = new PropertyModifier { EmitPropertyName = newName } }] };
 
     private static CustomizationsModel LoadFiles(params string[] contents)
     {
@@ -96,12 +97,6 @@ public class CustomizationTransformTests
         new() { Members = { ["limit"] = new MemberShape { Target = ShapeId.Parse("smithy.api#Integer") } } };
 
     [Fact]
-    public void Validate_EmitIsSetProperties_RenamedMember_ListedByNewName_Passes()
-    {
-        ApplyAndValidate(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("MaxItems"));
-    }
-
-    [Fact]
     public void Validate_EmitIsSetProperties_RenamedMember_ListedByModeledName_Throws()
     {
         var ex = Assert.Throws<GeneratorException>(() => ApplyAndValidate(ModelWith("QueryInput", LimitInput()), RenameAndEmitIsSet("limit")));
@@ -148,6 +143,15 @@ public class CustomizationTransformTests
         Assert.Equal(["Other", "Thing"], merged.ShapeModifiers.Keys.Order());
     }
 
+    // A later entry's rename would otherwise be lost: EmittedName reads only the first.
+    [Fact]
+    public void Load_MemberModifiedTwice_Throws()
+    {
+        var ex = Assert.Throws<GeneratorException>(() => LoadFiles(
+            """{ "shapeModifiers": { "Thing": { "modify": [{ "m": { "deprecatedMessage": "x" } }, { "m": { "emitPropertyName": "M2" } }] } } }"""));
+        Assert.Contains("shapeModifiers['Thing'] modifies 'm' more than once", ex.Message);
+    }
+
     [Fact]
     public void Load_SameShapeInTwoFiles_Throws()
     {
@@ -174,11 +178,29 @@ public class CustomizationTransformTests
     [InlineData("NoSuchShape", "created", "CreatedAt", "NoSuchShape")]
     [InlineData("DoScalarsRequest", "noSuchMember", "X", "noSuchMember")]
     [InlineData("DoScalarsRequest", "created", "Expiry", "already has")]
-    [InlineData("DoScalarsRequest", "created", "createdAt", "verbatim")]
+    [InlineData("DoScalarsRequest", "created", "expiry", "already has")]
     public void Apply_StaleReference_Throws(string shape, string member, string newName, string expectedInMessage)
     {
         var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(TestModels.Load("Codegen/codegen-model.json"), Rename(shape, member, newName)));
         Assert.Contains(expectedInMessage, ex.Message);
+    }
+
+    [Fact]
+    public void Apply_TwoMembersRenamedToOneName_Throws()
+    {
+        var customizations = new CustomizationsModel
+        {
+            ShapeModifiers =
+            {
+                ["DoScalarsRequest"] = new ShapeModifier
+                {
+                    Modify = [new() { ["created"] = new PropertyModifier { EmitPropertyName = "Stamp2" }, ["expiry"] = new PropertyModifier { EmitPropertyName = "Stamp2" } }],
+                },
+            },
+        };
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(TestModels.Load("Codegen/codegen-model.json"), customizations));
+        Assert.Contains("which the shape already has", ex.Message);
     }
 
     [Fact]
@@ -196,23 +218,6 @@ public class CustomizationTransformTests
 
         var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Rename("Thing", "payload", "Payload")));
         Assert.Contains("com.a#Thing, com.b#Thing", ex.Message);
-    }
-
-    [Fact]
-    public void Apply_KeepsExistingJsonName()
-    {
-        var member = new MemberShape { Target = ShapeId.Parse("smithy.api#String") };
-        member.SetJsonName("wireName");
-
-        var model = new SmithyModel
-        {
-            Version = "2.0",
-            Shapes = new() { ["com.example#Thing"] = new StructureShape { Members = { ["payload"] = member } } },
-        };
-
-        CustomizationTransform.Apply(model, Rename("Thing", "payload", "PayloadStream"));
-        var thing = Assert.IsType<StructureShape>(model.Shapes["com.example#Thing"]);
-        Assert.Equal("wireName", thing.Members["PayloadStream"].GetJsonName());
     }
 
     // Mirrors the restjson protocol-test customization: "0"/"1" wire values derive constant names
@@ -356,17 +361,6 @@ public class CustomizationTransformTests
         Assert.Contains("Type", ex.Message);
     }
 
-    // C2J keys a swap by the emitted property name, so a renamed member is named by its new name.
-    [Fact]
-    public void Validate_DataTypeSwapOnRenamedMember_UsesEmittedName()
-    {
-        var model = ModelWith("Thing", new StructureShape { Members = { ["payload"] = new MemberShape { Target = ShapeId.Parse("smithy.api#String") } } });
-        var customizations = Swap("Thing", "PayloadV2");
-        customizations.ShapeModifiers["Thing"] = new ShapeModifier { Modify = [new() { ["payload"] = new PropertyModifier { EmitPropertyName = "PayloadV2" } }] };
-
-        ApplyAndValidate(model, customizations);
-    }
-
     [Fact]
     public void Validate_DataTypeSwapXmlOnlyField_Throws()
     {
@@ -396,7 +390,9 @@ public class CustomizationTransformTests
 
         CustomizationTransform.Apply(model, customizations);
 
-        Assert.Contains("BucketName", Assert.IsType<StructureShape>(model.Shapes["com.example#Bucket"]).Members.Keys);
+        // The member keeps its modeled (wire) name; the rename is looked up under the modeled shape name.
+        Assert.Contains("name", Assert.IsType<StructureShape>(model.Shapes["com.example#Bucket"]).Members.Keys);
+        Assert.Equal("BucketName", customizations.PropertyName("Bucket", "name"));
     }
 
     [Fact]
@@ -563,12 +559,12 @@ public class CustomizationTransformTests
         ShapeModifiers = { [shape] = new ShapeModifier { Modify = [new() { [member] = new PropertyModifier { DeprecatedMessage = message } }] } },
     };
 
+    // emitPropertyName changes only the C# name, so every protocol keeps the modeled wire name. A lowercase
+    // name is upper-cased, as C2J emits iot's "marker" as Marker.
     [Fact]
     public void Codegen_RenamedMember_EmitsNewPropertyAndOriginalWireName()
     {
-        var model = TestModels.Load("Codegen/codegen-model.json");
-        CustomizationTransform.Apply(model, Rename("DoScalarsRequest", "created", "CreatedAt"));
-        var context = TestModels.Context(model);
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), Rename("DoScalarsRequest", "created", "createdAt"));
 
         var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
         var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
@@ -577,5 +573,120 @@ public class CustomizationTransformTests
         var marshaller = new JsonRequestMarshallerWriter(context, "scalars.json").Write(context.Operations.Single(o => o.Name == "DoScalars"), TestContext.Current.CancellationToken);
         Assert.Contains("if (publicRequest.IsSetCreatedAt())", marshaller);
         Assert.Contains("""context.Writer.WritePropertyName("created");""", marshaller);
+    }
+
+    // awsJson ignores @jsonName, so the wire name must come from the member itself (swf's renamed domainInfos).
+    [Fact]
+    public void Codegen_RenamedMember_AwsJson_KeepsModeledWireName()
+    {
+        var customizations = new CustomizationsModel
+        {
+            ShapeModifiers =
+            {
+                ["DoScalarsRequest"] = RenameMember("note", "Remark"),
+                ["DoScalarsResponse"] = RenameMember("name", "Title"),
+            },
+        };
+        var context = TestModels.Context(TestModels.Load("Codegen/awsjson11-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "DoScalars");
+
+        var marshaller = new JsonRequestMarshallerWriter(context, "scalars.json").Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("if (publicRequest.IsSetRemark())", marshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("note");""", marshaller);
+
+        var unmarshaller = new JsonResponseUnmarshallerWriter(context, "scalars.json").Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("""context.TestExpression("name", targetDepth, ref reader)""", unmarshaller);
+        Assert.Contains("unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);", unmarshaller);
+    }
+
+    [Fact]
+    public void Codegen_RenamedMember_RpcV2Cbor_KeepsModeledWireName()
+    {
+        var customizations = new CustomizationsModel
+        {
+            ShapeModifiers =
+            {
+                ["PutRequest"] = RenameMember("name", "Label"),
+                ["PutResponse"] = RenameMember("count", "Total"),
+            },
+        };
+        var context = TestModels.Context(TestModels.Load("Codegen/rpcv2cbor-model.json"), customizations);
+        var operation = context.Operations.Single(o => o.Name == "Put");
+
+        var marshaller = new CborRequestMarshallerWriter(context, "put.json").Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("if (publicRequest.IsSetLabel())", marshaller);
+        Assert.Contains("""context.Writer.WriteTextString("name");""", marshaller);
+
+        var unmarshaller = new CborResponseUnmarshallerWriter(context, "put.json").Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("""case "count":""", unmarshaller);
+        Assert.Contains("unmarshalledObject.Total = CborNullableIntUnmarshaller.Instance.Unmarshall(context);", unmarshaller);
+    }
+
+    // C2J keys dataTypeSwap and emitIsSetProperties by the emitted name, so both reach a renamed member by its new one.
+    [Fact]
+    public void Codegen_RenamedMember_HooksListedByNewName_Apply()
+    {
+        var customizations = new CustomizationsModel
+        {
+            ShapeModifiers = { ["DoScalarsRequest"] = RenameMember("count", "Total") },
+            EmitIsSetProperties = { ["DoScalarsRequest"] = ["Total"] },
+            DataTypeSwaps = { ["DoScalarsRequest"] = new() { ["Total"] = new DataTypeSwap { Type = "long?" } } },
+        };
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), customizations);
+
+        var requestId = ShapeId.Parse("com.example#DoScalarsRequest");
+        var structure = new StructureWriter(context, "scalars.json").Write(context.Structures[requestId], TestContext.Current.CancellationToken);
+        Assert.Contains("public long? Total", structure);
+        Assert.Contains("public bool IsTotalSet", structure);
+    }
+
+    // Paginator traits name modeled members; imagebuilder and inspector2 rename their items member "responses".
+    [Fact]
+    public void Codegen_RenamedPaginatorMember_ResolvesToNewProperty()
+    {
+        var context = TestModels.Context(TestModels.Load("Model/paginated-model.json"), Rename("ListThingsResponse", "things", "aggregations"));
+
+        var paginated = context.PaginatedOperations.Single(p => p.Operation.Name == "ListThings");
+        Assert.Equal("Aggregations", paginated.ItemsProperty);
+        Assert.Equal("Aggregations", paginated.ItemsPath);
+    }
+
+    [Theory]
+    [InlineData("DoContextParamRequest", "endpointId", "Target", "DoContextParam", "request.Target")]
+    [InlineData("CreationParameters", "tableName", "TableId", "DoOperationPath", "request.CreationParameters?.TableId")]
+    public void Codegen_RenamedEndpointContextMember_ReadsNewProperty(string shape, string member, string newName, string operation, string expected)
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/endpoint-context-params-model.json"), Rename(shape, member, newName));
+
+        var assignments = context.OperationEndpointContexts.Single(o => o.OperationName == operation).RequestAssignments;
+        Assert.Contains(assignments, assignment => assignment.Expression == expected);
+    }
+
+    [Fact]
+    public void Codegen_RenamedMember_PropertyValueRulesUseNewProperty()
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/codegen-model.json"), Rename("DoEnumsRequest", "category", "group"));
+
+        var rules = new PropertyValueRulesWriter(context).Write(TestContext.Current.CancellationToken);
+        Assert.Contains("<property>Amazon.Example.Model.DoEnumsRequest.Group</property>", rules);
+        Assert.DoesNotContain("DoEnumsRequest.Category<", rules);
+    }
+
+    [Fact]
+    public void Codegen_RenamedEventStreamMember_NamesThePublisherAfterIt()
+    {
+        var context = TestModels.Context(TestModels.Load("Codegen/EventStreams/event-stream-input-model.json"), Rename("SendRequest", "stream", "Input"));
+
+        var request = new OperationWriter(context, "send.json").WriteRequest(context.Operations.Single(o => o.Name == "Send"), TestContext.Current.CancellationToken);
+        Assert.Contains("public Func<System.Threading.Tasks.Task<IInputStreamEvent>> InputPublisher { get; set; }", request);
+    }
+
+    [Fact]
+    public void Apply_RenamedEventStreamEvent_Throws()
+    {
+        var model = TestModels.Load("Codegen/EventStreams/event-stream-input-model.json");
+
+        var ex = Assert.Throws<GeneratorException>(() => CustomizationTransform.Apply(model, Rename("InputStream", "chunk", "Piece")));
+        Assert.Contains("renames event 'chunk' of an event stream", ex.Message);
     }
 }

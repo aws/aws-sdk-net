@@ -1,5 +1,6 @@
 using System.Text;
 using System.Text.RegularExpressions;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 
@@ -33,7 +34,7 @@ public static partial class JmesPathCompiler
     /// Compiles <paramref name="path"/> against <paramref name="start"/>, the shape the path is
     /// relative to. <paramref name="context"/> prefixes any error (e.g. the operation and parameter).
     /// </summary>
-    public static string Compile(string path, Shape start, ServiceIndex index, string context)
+    public static string Compile(string path, Shape start, ServiceIndex index, CustomizationsModel customizations, string context)
     {
         if (string.IsNullOrWhiteSpace(path))
         {
@@ -81,11 +82,11 @@ public static partial class JmesPathCompiler
 
             if (token.StartsWith('[') && token.EndsWith(']'))
             {
-                AppendMultiSelect(accessor, closing, token, current, index, context);
+                AppendMultiSelect(accessor, closing, token, current, index, customizations, context);
                 continue;
             }
 
-            AppendMember(accessor, token, path, ref current, index, context);
+            AppendMember(accessor, token, path, ref current, index, customizations, context);
         }
 
         return accessor.Append(closing).ToString();
@@ -107,7 +108,7 @@ public static partial class JmesPathCompiler
 
     // The enclosing projection has already emitted "element?.", which the array replaces rather than
     // extends, and its closing paren is pulled forward so the array sits inside the lambda.
-    private static void AppendMultiSelect(StringBuilder accessor, StringBuilder closing, string token, Shape current, ServiceIndex index, string context)
+    private static void AppendMultiSelect(StringBuilder accessor, StringBuilder closing, string token, Shape current, ServiceIndex index, CustomizationsModel customizations, string context)
     {
         var inner = token[1..^1];
         if (int.TryParse(inner, out _))
@@ -129,13 +130,13 @@ public static partial class JmesPathCompiler
 
         var selections = inner
             .Split(',')
-            .Select(selection => $"{ElementPrefix}{Compile(selection.Trim(), current, index, context)}");
+            .Select(selection => $"{ElementPrefix}{Compile(selection.Trim(), current, index, customizations, context)}");
 
         accessor.Append("new[] { ").AppendJoin(", ", selections).Append(" }").Append(closing);
         closing.Clear();
     }
 
-    private static void AppendMember(StringBuilder accessor, string token, string path, ref Shape current, ServiceIndex index, string context)
+    private static void AppendMember(StringBuilder accessor, string token, string path, ref Shape current, ServiceIndex index, CustomizationsModel customizations, string context)
     {
         var keys = KeysCall().Match(token);
         var memberName = keys.Success ? keys.Groups[1].Value.Trim() : token;
@@ -156,7 +157,7 @@ public static partial class JmesPathCompiler
             throw new GeneratorException($"{context}: keys() needs a map member, but '{memberName}' targets a {target.Type}.");
         }
 
-        accessor.Append(SdkNaming.ToUpperFirstCharacter(memberName));
+        accessor.Append(customizations.PropertyName(structure.Id.Name, memberName));
         if (keys.Success)
         {
             accessor.Append("?.Keys.ToList()");

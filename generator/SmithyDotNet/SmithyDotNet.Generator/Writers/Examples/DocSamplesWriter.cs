@@ -117,7 +117,10 @@ public sealed class DocSamplesWriter(GenerationContext context)
         {
             if (FindMember(members, property.Name) is { } member)
             {
-                writer.WriteLine($"{QualifyDocument(member.Type.DotNetType)} {SdkNaming.ToParameterName(member.ModeledName)} = response.{member.PropertyName};");
+                // C2J camel-cases the emitted name as written (Member.ArgumentName); the property name would
+                // differ for an unrenamed lowercase member (jobID is jobid, not jobID).
+                var local = SdkNaming.ToParameterName(context.Customizations.EmittedName(output.Id.Name, member.ModeledName));
+                writer.WriteLine($"{QualifyDocument(member.Type.DotNetType)} {local} = response.{member.PropertyName};");
             }
         }
     }
@@ -127,9 +130,10 @@ public sealed class DocSamplesWriter(GenerationContext context)
     private static List<JsonProperty> SortedProperties(JsonElement data) =>
         data.EnumerateObject().OrderBy(property => property.Name, StringComparer.Ordinal).ToList();
 
-    // C2J matches an example key to a member ignoring case (Utils.GetMemberByName).
+    // C2J matches an example key to a member's emitted name ignoring case (Utils.GetMemberByName), which the
+    // property name equals up to case.
     private static Member? FindMember(IReadOnlyList<Member> members, string key) =>
-        members.FirstOrDefault(member => string.Equals(member.ModeledName, key, StringComparison.OrdinalIgnoreCase));
+        members.FirstOrDefault(member => string.Equals(member.PropertyName, key, StringComparison.OrdinalIgnoreCase));
 
     // Writes "{prefix}{value}{suffix}". A collection opens "{" at the end of its first line, as C2J lays it out.
     private void WriteValue(CodeWriter writer, string prefix, Shape shape, JsonElement data, string suffix)

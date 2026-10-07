@@ -316,7 +316,7 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         writer.WriteLine();
     }
 
-    // The Smithy spec fixes these member names; a customization renaming one fails here.
+    // The Smithy spec fixes these member names, which a rename doesn't change.
     private static Member DiscoveryMember(List<Member> members, StructureShape shape, string name, string? requiredType = null)
     {
         var member = members.FirstOrDefault(m => m.ModeledName == name)

@@ -27,7 +27,7 @@ public class EmitIsSetPropertiesTests
         ["ScanInput"] = ["Limit", "Segment", "TotalSegments"],
     };
 
-    // Same order as BatchGenerator: renames land before the index is built.
+    // Same order as BatchGenerator.
     private static GenerationContext Context(Dictionary<string, List<string>> emitIsSet)
     {
         var model = TestModels.Load(ModelPath);

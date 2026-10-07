@@ -68,7 +68,7 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
         // Sort by property name so output is stable and matches the SDK's generated ordering.
         // current SDK sorts at the Members accessor level.
         var members = structure.Members
-            .Select(kvp => (Property: SdkNaming.ToUpperFirstCharacter(kvp.Key), Member: kvp.Value))
+            .Select(kvp => (Property: context.Customizations.PropertyName(structure.Id.Name, kvp.Key), Member: kvp.Value))
             .OrderBy(m => m.Property, StringComparer.Ordinal);
 
         foreach (var (property, member) in members)

@@ -40,7 +40,7 @@ public sealed record CustomizationsModel
     /// <summary>True when <c>emitIsSetProperties</c> lists <paramref name="memberName"/> under <paramref name="shapeName"/>.</summary>
     public bool EmitIsSet(string shapeName, string memberName) => EmitIsSetProperties.TryGetValue(shapeName, out var members) && members.Contains(memberName);
 
-    /// <summary>Type overrides keyed by modeled shape name, then emitted member name (C2J's <c>dataTypeSwap</c>).</summary>
+    /// <summary>Type overrides keyed by modeled shape name, then <see cref="EmittedName"/> (C2J's <c>dataTypeSwap</c>).</summary>
     [JsonPropertyName("dataTypeSwap")]
     public Dictionary<string, Dictionary<string, DataTypeSwap>> DataTypeSwaps { get; init; } = [];
 
@@ -54,6 +54,23 @@ public sealed record CustomizationsModel
     /// </summary>
     [JsonPropertyName("shapeSubstitutions")]
     public Dictionary<string, ShapeSubstitution> ShapeSubstitutions { get; init; } = [];
+
+    /// <summary>
+    /// The <c>emitPropertyName</c> of modeled member <paramref name="memberName"/>, or the modeled name when it isn't
+    /// renamed. C2J keys <c>emitIsSetProperties</c> and <c>dataTypeSwap</c> by this name.
+    /// </summary>
+    public string EmittedName(string shapeName, string memberName) =>
+        ShapeModifiers.TryGetValue(shapeName, out var modifier)
+        && modifier.Modify.SelectMany(entry => entry).FirstOrDefault(entry => entry.Key == memberName).Value?.EmitPropertyName is { } name
+            ? name
+            : memberName;
+
+    /// <summary>
+    /// The C# property name of modeled member <paramref name="memberName"/>: its <see cref="EmittedName"/> with the
+    /// first character upper-cased, as C2J emits it (iot's <c>"emitPropertyName": "marker"</c> is <c>Marker</c>).
+    /// The rename never reaches the model, so the member's wire name stays the modeled one on every protocol.
+    /// </summary>
+    public string PropertyName(string shapeName, string memberName) => SdkNaming.ToUpperFirstCharacter(EmittedName(shapeName, memberName));
 
     /// <summary>
     /// Loads a service's customizations files into one model, as C2J's CustomizationCompiler combines them, except
@@ -85,6 +102,12 @@ public sealed record CustomizationsModel
                 if (!shapeModifiers.TryAdd(shapeName, modifier))
                 {
                     throw new GeneratorException($"'{path}': shapeModifiers['{shapeName}'] appears in more than one customizations file; merging is not supported yet.");
+                }
+
+                // The lookups read one entry per member, and C2J fails on a repeat too (ParseModifiers' ToDictionary).
+                if (modifier.Modify.SelectMany(entry => entry.Keys).GroupBy(name => name).FirstOrDefault(group => group.Count() > 1) is { } repeated)
+                {
+                    throw new GeneratorException($"'{path}': shapeModifiers['{shapeName}'] modifies '{repeated.Key}' more than once.");
                 }
             }
 

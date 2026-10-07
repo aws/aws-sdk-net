@@ -129,8 +129,7 @@ public class DocSamplesWriterTests
     [Fact]
     public void Write_MatchesKeysToRenamedMembers_AsC2JDoes()
     {
-        var model = TestModels.Load(ModelPath);
-        CustomizationTransform.Apply(model, new CustomizationsModel
+        var context = TestModels.Context(TestModels.Load(ModelPath), new CustomizationsModel
         {
             ShapeModifiers =
             {
@@ -140,13 +139,25 @@ public class DocSamplesWriterTests
                 },
             },
         });
-
-        var context = TestModels.Context(model);
         var samples = new DocSamplesWriter(context).Write(DocSamplesWriter.Collect(context));
 
         Assert.DoesNotContain("Name = ", samples, StringComparison.Ordinal);
         Assert.DoesNotContain("Label = ", samples, StringComparison.Ordinal);
         Assert.Contains("Count = 3,", samples, StringComparison.Ordinal);
+    }
+
+    // C2J names the response local after the emitted name as written: "itemID" is itemid, where the modeled
+    // name would give itemId and the property name itemID.
+    [Fact]
+    public void Write_NamesResponseLocalAfterEmittedName()
+    {
+        var context = TestModels.Context(TestModels.Load(ModelPath), new CustomizationsModel
+        {
+            ShapeModifiers = { ["PutItemResponse"] = new ShapeModifier { Modify = [new() { ["itemId"] = new PropertyModifier { EmitPropertyName = "itemID" } }] } },
+        });
+        var samples = new DocSamplesWriter(context).Write(DocSamplesWriter.Collect(context));
+
+        Assert.Contains("string itemid = response.ItemID;", samples, StringComparison.Ordinal);
     }
 
     [Fact]

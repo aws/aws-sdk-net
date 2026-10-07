@@ -7,11 +7,10 @@ namespace SmithyDotNet.Generator.Generation.Customizations;
 
 /// <summary>
 /// Applies model-shaped customization hooks to the Smithy model in place, before the
-/// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (a rename pins <c>@jsonName</c>,
-/// <c>renameShape</c> adds a service <c>rename</c> entry) or a structural edit (a member-keyed
-/// <c>renameShape</c> copies the member's target) is applied to the model; the rest are checked by
-/// <see cref="Validate"/> and read from <see cref="GenerationContext.Customizations"/> by shape and member name
-/// where the member is resolved.
+/// <see cref="ServiceIndex"/> is built. Only a hook with a Smithy trait equivalent (<c>deprecatedMessage</c>;
+/// <c>renameShape</c> adds a service <c>rename</c> entry) or a structural edit (a member-keyed <c>renameShape</c>
+/// copies the member's target) is applied to the model; the rest, member renames included, are checked here and
+/// read from <see cref="GenerationContext.Customizations"/> by shape and member name where the member is resolved.
 /// A stale shape/member reference throws — it must fail the build, not silently stop applying.
 /// </summary>
 public static class CustomizationTransform
@@ -57,7 +56,7 @@ public static class CustomizationTransform
                 case StructureShape structure:
                     foreach (var (memberName, property) in modifier.Modify.SelectMany(entry => entry))
                     {
-                        ApplyMember(structure, memberName, property, shapeName);
+                        ApplyMember(structure, memberName, property, shapeName, customizations);
                     }
                     break;
                 case EnumShape:
@@ -85,12 +84,11 @@ public static class CustomizationTransform
     }
 
     /// <summary>
-    /// Checks the hooks TypeMapper.ResolveMembers looks up by name against the model. Runs after
-    /// <see cref="Apply"/>: C2J keys these by the emitted property name, so renames must have landed.
+    /// Checks the hooks TypeMapper.ResolveMembers looks up by name against the model. C2J keys these by
+    /// <see cref="CustomizationsModel.EmittedName"/>, so a renamed member is listed under its new name.
     /// </summary>
     public static void Validate(SmithyModel model, CustomizationsModel customizations)
     {
-        // C2J's Member name is already the emitPropertyName, so a renamed member is listed under its new name.
         foreach (var (shapeName, memberNames) in customizations.EmitIsSetProperties)
         {
             if (FindSingleShape(model, shapeName, $"emitIsSetProperties['{shapeName}']") is not StructureShape structure)
@@ -100,14 +98,13 @@ public static class CustomizationTransform
 
             foreach (var memberName in memberNames)
             {
-                if (!structure.Members.ContainsKey(memberName))
+                if (FindByEmittedName(structure, shapeName, memberName, customizations) is null)
                 {
                     throw new GeneratorException($"emitIsSetProperties['{shapeName}'] lists member '{memberName}', which the shape does not have.");
                 }
             }
         }
 
-        // Likewise keyed by the emitted property name.
         foreach (var (shapeName, swaps) in customizations.DataTypeSwaps)
         {
             if (FindSingleShape(model, shapeName, $"dataTypeSwap['{shapeName}']") is not StructureShape structure)
@@ -117,7 +114,9 @@ public static class CustomizationTransform
 
             foreach (var (memberName, swap) in swaps)
             {
-                ValidateDataTypeSwap(model, structure, memberName, swap, shapeName);
+                var member = FindByEmittedName(structure, shapeName, memberName, customizations)
+                    ?? throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which the shape does not have.");
+                ValidateDataTypeSwap(model, member, memberName, swap, shapeName);
             }
         }
     }
@@ -227,13 +226,8 @@ public static class CustomizationTransform
         return ShapeId.Parse(matches[0]);
     }
 
-    private static void ValidateDataTypeSwap(SmithyModel model, StructureShape structure, string memberName, DataTypeSwap swap, string shapeName)
+    private static void ValidateDataTypeSwap(SmithyModel model, MemberShape member, string memberName, DataTypeSwap swap, string shapeName)
     {
-        if (!structure.Members.TryGetValue(memberName, out var member))
-        {
-            throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}', which the shape does not have.");
-        }
-
         if (string.IsNullOrWhiteSpace(swap.Type))
         {
             throw new GeneratorException($"dataTypeSwap['{shapeName}'] swaps member '{memberName}' without a 'Type'.");
@@ -264,7 +258,7 @@ public static class CustomizationTransform
         && !member.IsEventHeader() && !member.IsEventPayload()
         && !swappedType.StartsWith("List<", StringComparison.Ordinal) && !swappedType.StartsWith("Dictionary<", StringComparison.Ordinal);
 
-    private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName)
+    private static void ApplyMember(StructureShape structure, string memberName, PropertyModifier property, string shapeName, CustomizationsModel customizations)
     {
         if (!structure.Members.TryGetValue(memberName, out var member))
         {
@@ -276,30 +270,25 @@ public static class CustomizationTransform
             member.SetDeprecatedMessage(message);
         }
 
+        // The rename stays out of the model (CustomizationsModel.PropertyName applies it), so these only check it.
         if (property.EmitPropertyName is { } newName && newName != memberName)
         {
-            // C2J uses emitPropertyName verbatim, but the property name derives from the member key
-            // via ToUpperFirstCharacter — a name that call would alter can't be honored.
-            if (SdkNaming.ToUpperFirstCharacter(newName) != newName)
+            // TODO: C2J sends a renamed event under its new name, which the service wouldn't recognize; no
+            // service renames one, so neither behavior is picked until one does.
+            if (structure is UnionShape && structure.IsStreaming())
             {
-                throw new GeneratorException($"shapeModifiers['{shapeName}'] renames '{memberName}' to '{newName}', which would not be emitted verbatim.");
+                throw new GeneratorException($"shapeModifiers['{shapeName}'] renames event '{memberName}' of an event stream, which is not supported.");
             }
 
             // Compare property names, not keys: 'expiry' and a rename to 'Expiry' both emit 'Expiry'.
-            if (structure.Members.Keys.Any(k => k != memberName && SdkNaming.ToUpperFirstCharacter(k) == newName))
+            var propertyName = customizations.PropertyName(shapeName, memberName);
+            if (structure.Members.Keys.Any(k => k != memberName && customizations.PropertyName(shapeName, k) == propertyName))
             {
                 throw new GeneratorException($"shapeModifiers['{shapeName}'] renames '{memberName}' to '{newName}', which the shape already has.");
             }
-
-            structure.Members[newName] = member;
-
-            // The JSON body wire name falls back to the member name; pin the original before the rename changes it.
-            if (member.GetJsonName() is null)
-            {
-                member.SetJsonName(memberName);
-            }
-
-            structure.Members.Remove(memberName);
         }
     }
+
+    private static MemberShape? FindByEmittedName(StructureShape structure, string shapeName, string emittedName, CustomizationsModel customizations) =>
+        structure.Members.FirstOrDefault(entry => customizations.EmittedName(shapeName, entry.Key) == emittedName).Value;
 }

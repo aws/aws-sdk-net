@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Generation.Customizations;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -30,6 +31,14 @@ internal static class TestModels
 
     public static GenerationContext Context(SmithyModel model) =>
         new(new ServiceIndex(model), TestManifests.Example());
+
+    /// <summary>Applies <paramref name="customizations"/> to <paramref name="model"/> in BatchGenerator's order, then builds the context.</summary>
+    public static GenerationContext Context(SmithyModel model, CustomizationsModel customizations)
+    {
+        CustomizationTransform.Apply(model, customizations);
+        CustomizationTransform.Validate(model, customizations);
+        return new(new ServiceIndex(model), TestManifests.Example(), customizations: customizations);
+    }
 
     // A shape read on its own has no dictionary key to take its id from.
     public static Shape DeserializeShape(string json) =>
