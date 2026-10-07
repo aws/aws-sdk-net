@@ -101,6 +101,22 @@ namespace Amazon.RuntimeDependencies
             }
         }
 
+        internal bool IsRegistered(string assemblyName, string className)
+        {
+            try
+            {
+                _rwlock.EnterReadLock();
+                return _runtimeDependency.ContainsKey(FormatKey(assemblyName, className));
+            }
+            finally
+            {
+                if (_rwlock.IsReadLockHeld)
+                {
+                    _rwlock.ExitReadLock();
+                }
+            }
+        }
+
         private static string FormatKey(string assemblyName, string className) => $"{assemblyName}_{className}";
 
         protected virtual void Dispose(bool disposing)

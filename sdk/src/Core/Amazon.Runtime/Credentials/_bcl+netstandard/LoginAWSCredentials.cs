@@ -18,6 +18,7 @@ using Amazon.Runtime.Credentials.Internal;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.UserAgent;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util;
 using Amazon.Util.Internal;
 using System;
@@ -60,20 +61,6 @@ namespace Amazon.Runtime
             if (string.IsNullOrEmpty(options.LoginSession))
                 throw new ArgumentNullException(nameof(options.LoginSession));
 
-            if (string.IsNullOrEmpty(options.Region))
-            {
-                var defaultRegionEndpoint = FallbackRegionFactory.GetRegionEndpoint();
-                if (defaultRegionEndpoint != null)
-                {
-                    _logger.DebugFormat("LoginAWSCredentials: {0} determined from default profile chain as {1}.", nameof(options.Region), defaultRegionEndpoint.SystemName);
-                    options.Region = defaultRegionEndpoint.SystemName;
-                }
-                else
-                {
-                    throw new ArgumentNullException(nameof(options.Region));
-                }
-            }
-
             if (string.IsNullOrEmpty(options.ProfileName))
             {
                 options.ProfileName = DefaultAWSCredentialsIdentityResolver.GetProfileName();
@@ -83,13 +70,20 @@ namespace Amazon.Runtime
 
             FeatureIdSources.Add(UserAgentFeatureId.CREDENTIALS_LOGIN);
 
-            _loginTokenManager = new LoginTokenManager(
-                SigninServiceClientHelpers.BuildSigninClient(
-                    RegionEndpoint.GetBySystemName(options.Region),
-                    options.ProfileName,
-                    options.ProxySettings),
-                _loginFileCache
-            );
+            // Report a missing AWSSDK.Signin now, but create the client only to refresh, which is when a region is needed.
+            SigninServiceClientHelpers.EnsureSigninClientAvailable();
+            _loginTokenManager = new LoginTokenManager(CreateSigninClient, _loginFileCache);
+        }
+
+        private ICoreAmazonSignin CreateSigninClient()
+        {
+            var region = string.IsNullOrEmpty(Options.Region)
+                ? FallbackRegionFactory.GetRegionEndpoint()
+                : RegionEndpoint.GetBySystemName(Options.Region);
+            if (region == null)
+                throw new AmazonClientException("No AWS region could be resolved to refresh login credentials. Configure a region for the profile or set the AWS_REGION environment variable.");
+
+            return SigninServiceClientHelpers.BuildSigninClient(region, Options.ProfileName, Options.ProxySettings);
         }
 
 #if BCL

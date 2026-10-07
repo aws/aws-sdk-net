@@ -1,0 +1,10 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Fixed `LoginAWSCredentials` failing at construction when no AWS region could be resolved. Valid cached login credentials are now returned without a region, and the region is resolved only when the credentials need to be refreshed. `LoginAWSCredentialsOptions.Region` is no longer filled from the default region chain at construction.",
+      "Fixed login credentials not retrying a failed token refresh after the 30-second cooldown."
+    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

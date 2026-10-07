@@ -69,7 +69,7 @@ namespace Amazon.Runtime.Credentials.Internal
     public class LoginTokenManager : ILoginTokenManager
     {
         private readonly ILogger _logger = Logger.GetLogger(typeof(LoginTokenManager));
-        private readonly ICoreAmazonSignin _amazonSigninClient;
+        private readonly Lazy<ICoreAmazonSignin> _amazonSigninClient;
         private readonly ILoginTokenFileCache _loginTokenFileCache;
         private readonly ConcurrentDictionary<string, LoginTokenManager.CacheState> _inMemoryCache =
                 new ConcurrentDictionary<string, CacheState>();
@@ -77,8 +77,19 @@ namespace Amazon.Runtime.Credentials.Internal
         public LoginTokenManager(
             ICoreAmazonSignin amazonSigninClient,
             ILoginTokenFileCache loginTokenFileCache)
+            : this(() => amazonSigninClient, loginTokenFileCache)
         {
-            _amazonSigninClient = amazonSigninClient;
+        }
+
+        /// <summary>
+        /// Creates the Signin client only when a token needs to be refreshed.
+        /// </summary>
+        internal LoginTokenManager(
+            Func<ICoreAmazonSignin> amazonSigninClientFactory,
+            ILoginTokenFileCache loginTokenFileCache)
+        {
+            // PublicationOnly does not cache a factory failure, so a later refresh can retry.
+            _amazonSigninClient = new Lazy<ICoreAmazonSignin>(amazonSigninClientFactory, LazyThreadSafetyMode.PublicationOnly);
             _loginTokenFileCache = loginTokenFileCache;
         }
 
@@ -91,7 +102,7 @@ namespace Amazon.Runtime.Credentials.Internal
                 if (!BlockRefreshUntil.HasValue)
                     return false;
 
-                return BlockRefreshUntil.Value < AWSSDKUtils.CorrectedUtcNow;
+                return AWSSDKUtils.CorrectedUtcNow < BlockRefreshUntil.Value;
             }
         }
 
@@ -370,7 +381,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 };
 
                                 // Token is now saved (cached) in AmazonSigninPostMarshallerHandler pipeline handler where it calculates DPoP proof as well.
-                                _amazonSigninClient.CreateOAuth2Token(coreCreateOAuth2TokenRequest, false);
+                                _amazonSigninClient.Value.CreateOAuth2Token(coreCreateOAuth2TokenRequest, false);
                             },
                             loginToken);
 
@@ -426,7 +437,7 @@ namespace Amazon.Runtime.Credentials.Internal
                         }
                         else
                         {
-                            throw new AmazonClientException("Login Token has expired and failed to refresh.", ex);
+                            throw new AmazonClientException($"Login Token has expired and failed to refresh. {ex.Message}", ex);
                         }
                     }
                 }
@@ -591,7 +602,7 @@ namespace Amazon.Runtime.Credentials.Internal
                                 };
 
                                 // Token is now saved (cached) in AmazonSigninPostMarshallerHandler pipeline handler where it calculates DPoP proof as well.
-                                await _amazonSigninClient.CreateOAuth2TokenAsync(coreCreateOAuth2TokenRequest, false, cancellationToken).ConfigureAwait(false);
+                                await _amazonSigninClient.Value.CreateOAuth2TokenAsync(coreCreateOAuth2TokenRequest, false, cancellationToken).ConfigureAwait(false);
                             },
                             loginToken).ConfigureAwait(false);
 
@@ -649,7 +660,7 @@ namespace Amazon.Runtime.Credentials.Internal
                         }
                         else
                         {
-                            throw new AmazonClientException("Login Token has expired and failed to refresh.", ex);
+                            throw new AmazonClientException($"Login Token has expired and failed to refresh. {ex.Message}", ex);
                         }
                     }
                 }

@@ -98,20 +98,51 @@ namespace Amazon.Runtime.Internal
             }
             catch (Exception e)
             {
-                if (InternalSDKUtils.IsRunningNativeAot())
-                {
-                    throw new MissingRuntimeDependencyException(parentAssemblyName, serviceClassName, runtimeDependencyRegistryMethod);
-                }
-
-                var msg = string.Format(CultureInfo.CurrentCulture,
-                    "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use {1}.",
-                    parentAssemblyName,
-                    typeof(SigninServiceClientHelpers).AssemblyQualifiedName);
-
-                var exception = new InvalidOperationException(msg, e);
-                Logger.GetLogger(typeof(SigninServiceClientHelpers)).Error(exception, exception.Message);
-                throw exception;
+                throw CreateMissingDependencyException(e, parentAssemblyName, serviceClassName, runtimeDependencyRegistryMethod);
             }
+        }
+
+        /// <summary>
+        /// Throws if the Signin client cannot be resolved, without creating a client or requiring a region.
+        /// </summary>
+        internal static void EnsureSigninClientAvailable()
+        {
+            EnsureClientAvailable(ServiceClientHelpers.SIGNIN_ASSEMBLY_NAME, ServiceClientHelpers.SIGNIN_SERVICE_CLASS_NAME,
+                ServiceClientHelpers.SIGNIN_SERVICE_CONFIG_NAME, nameof(GlobalRuntimeDependencyRegistry.RegisterSigninClient));
+        }
+
+        internal static void EnsureClientAvailable(string assemblyName, string serviceClassName,
+            string serviceConfigName, string runtimeDependencyRegistryMethod)
+        {
+            if (GlobalRuntimeDependencyRegistry.Instance.IsRegistered(assemblyName, serviceClassName))
+                return;
+
+            try
+            {
+                ServiceClientHelpers.CreateServiceConfig(assemblyName, serviceConfigName);
+            }
+            catch (Exception e)
+            {
+                throw CreateMissingDependencyException(e, assemblyName, serviceClassName, runtimeDependencyRegistryMethod);
+            }
+        }
+
+        private static Exception CreateMissingDependencyException(Exception e, string parentAssemblyName,
+            string serviceClassName, string runtimeDependencyRegistryMethod)
+        {
+            if (InternalSDKUtils.IsRunningNativeAot())
+            {
+                return new MissingRuntimeDependencyException(parentAssemblyName, serviceClassName, runtimeDependencyRegistryMethod);
+            }
+
+            var msg = string.Format(CultureInfo.CurrentCulture,
+                "Assembly {0} could not be found or loaded. This assembly must be available at runtime to use {1}.",
+                parentAssemblyName,
+                typeof(SigninServiceClientHelpers).AssemblyQualifiedName);
+
+            var exception = new InvalidOperationException(msg, e);
+            Logger.GetLogger(typeof(SigninServiceClientHelpers)).Error(exception, exception.Message);
+            return exception;
         }
     }
 }
