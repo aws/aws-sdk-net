@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use operation in the following ways: 
+    /// You can use this operation in the following ways: 
     /// </para>
     ///  <ul> <li> 
     /// <para>

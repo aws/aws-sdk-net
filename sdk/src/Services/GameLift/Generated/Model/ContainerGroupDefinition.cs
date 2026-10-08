@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// The properties that describe a container group resource. You can update all properties
-    /// of a container group definition properties. Updates to a container group definition
-    /// are saved as new versions. 
+    /// of a container group definition. Updates to a container group definition are saved
+    /// as new versions. 
     /// 
     ///  
     /// <para>
@@ -239,13 +239,13 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         /// An internal issue prevented Amazon GameLift Servers from creating the container group
-        /// definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>again.
-        /// 
+        /// definition resource. Delete the failed resource and call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateContainerGroupDefinition.html">CreateContainerGroupDefinition</a>
+        /// again. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// An access-denied message means that you don't have permissions to access the container
-        /// image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html.html">
+        /// image on ECR. See <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-examples.html">
         /// IAM permission examples</a> for help setting up required IAM permissions for Amazon
         /// GameLift Servers.
         /// </para>
@@ -284,7 +284,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property SupportContainerDefinitions. 
         /// <para>
         /// The set of definitions for support containers in this group. A container group definition
-        /// might have zero support container definitions. Support container can be used in any
+        /// might have zero support container definitions. Support containers can be used in any
         /// type of container group.
         /// </para>
         /// <para />
@@ -337,9 +337,17 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The amount of vCPU units on a fleet instance to allocate for the container group (1
         /// vCPU is equal to 1024 CPU units). All containers in the group share these resources.
-        /// You can set a limit for each container definition in the group. If individual containers
-        /// have limits, this total value must be equal to or greater than the sum of the limits
-        /// for each container in the group.
+        /// You can set a vCPU reservation for each container definition in the group. If individual
+        /// containers have reservations, this total value must be equal to or greater than the
+        /// sum of the reservations for each container in the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a game server container group, if this property is set, Amazon GameLift Servers
+        /// uses this value to calculate how many game server container groups fit on an instance.
+        /// If this property isn't set, the group's containers can use up to the instance's available
+        /// vCPU, and Amazon GameLift Servers uses the sum of the containers' <c>Vcpu</c> values
+        /// to calculate how many game server container groups fit on an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

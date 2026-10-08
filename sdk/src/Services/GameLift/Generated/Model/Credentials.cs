@@ -51,7 +51,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To remotely connect to an active Amazon GameLift Servers fleet instances. To get remote
+    /// To remotely connect to an active Amazon GameLift Servers fleet instance. To get remote
     /// access, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetComputeAccess.html</a>.
     /// </para>
     ///  </li> </ul>

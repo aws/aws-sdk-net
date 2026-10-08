@@ -121,7 +121,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         /// FLEET_CREATION_EXTRACTING_BUILD -- The game server build was successfully downloaded
-        /// to an instance, and Amazon GameLift Serversis now extracting the build files from
+        /// to an instance, and Amazon GameLift Servers is now extracting the build files from
         /// the uploaded build. Failure at this stage prevents a fleet from moving to ACTIVE status.
         /// Logs for this stage display a list of the files that are extracted and saved on the
         /// instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
@@ -141,15 +141,15 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_CREATION_FAILED_INSTALLER -- The installed failed while attempting to install
+        /// FLEET_CREATION_FAILED_INSTALLER -- The installer failed while attempting to install
         /// the build files. This event indicates that the failure occurred before Amazon GameLift
         /// Servers could start validation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and
-        /// the GameLift is now verifying that the game server launch paths, which are specified
-        /// in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon
+        /// GameLift is now verifying that the game server launch paths, which are specified in
+        /// the fleet's runtime configuration, exist. If any listed launch path exists, Amazon
         /// GameLift Servers tries to launch a game server process and waits for the process to
         /// report ready. Failures in this stage prevent a fleet from moving to <c>ACTIVE</c>
         /// status. Logs for this stage list the launch paths in the runtime configuration and

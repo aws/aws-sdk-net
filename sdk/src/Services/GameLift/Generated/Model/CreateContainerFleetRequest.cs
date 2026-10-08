@@ -283,9 +283,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// By default, Amazon GameLift Servers calculates the maximum number of game server container
         /// groups that can fit on each instance. This calculation is based on the CPU and memory
-        /// resources of the fleet's instance type). To use the calculated maximum, don't set
-        /// this parameter. If you set this number manually, Amazon GameLift Servers uses your
-        /// value as long as it's less than the calculated maximum.
+        /// resources of the fleet's instance type. To use the calculated maximum, don't set this
+        /// parameter. If you set this number manually, Amazon GameLift Servers uses your value
+        /// as long as it's less than the calculated maximum.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
@@ -435,8 +435,8 @@ namespace Amazon.GameLift.Model
         /// The Amazon EC2 instance type to use for all instances in the fleet. For multi-location
         /// fleets, the instance type must be available in the home region and all remote locations.
         /// Instance type determines the computing resources and processing power that's available
-        /// to host your game servers. This includes including CPU, memory, storage, and networking
-        /// capacity. 
+        /// to host your game servers. This includes CPU, memory, storage, and networking capacity.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -520,9 +520,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift Servers requires permissions to send logs other Amazon Web Services
+        /// Amazon GameLift Servers requires permissions to send logs to other Amazon Web Services
         /// services in your account. These permissions are included in the IAM fleet role for
-        /// this container fleet (see <c>FleetRoleArn)</c>.
+        /// this container fleet (see <c>FleetRoleArn</c>).
         /// </para>
         /// </summary>
         public LogConfiguration LogConfiguration
@@ -600,7 +600,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PerInstanceContainerGroupDefinitionName. 
         /// <para>
-        /// The name of a container group definition resource that describes a set of axillary
+        /// The name of a container group definition resource that describes a set of auxiliary
         /// software. A fleet instance has one process for executables in this container group.
         /// A per-instance container group is optional. You can update the fleet to add or remove
         /// a per-instance container group at any time. You can specify the container group definition's
@@ -631,7 +631,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property PlayerGatewayMode. 
         /// <para>
         /// Configures player gateway for your fleet. Player gateway provides benefits such as
-        /// DDoS protection by rate limiting and validating traﬃc before it reaches game servers,
+        /// DDoS protection by rate limiting and validating traffic before it reaches game servers,
         /// hiding game server IP addresses from players, and providing updated endpoints when
         /// relay endpoints become unhealthy.
         /// </para>
@@ -684,7 +684,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new fleet resource. Tags are developer-defined key-value
-        /// pairs. Tagging Amazon Web Services resources are useful for resource management, access
+        /// pairs. Tagging Amazon Web Services resources is useful for resource management, access
         /// management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>

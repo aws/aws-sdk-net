@@ -32,7 +32,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Additional properties, including status, that describe an EC2 instance in a game
     /// server group. Instance configurations are set with game server group properties (see
-    /// <c>DescribeGameServerGroup</c> and with the EC2 launch template that was used when
+    /// <c>DescribeGameServerGroup</c>) and with the EC2 launch template that was used when
     /// creating the game server group. 
     /// 
     ///  

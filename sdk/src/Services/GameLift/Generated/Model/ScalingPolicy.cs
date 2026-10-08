@@ -169,8 +169,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>AvailableGameSessions</b> -- Additional game sessions that fleet could host simultaneously,
-        /// given current capacity.
+        ///  <b>AvailableGameSessions</b> -- Additional game sessions that a fleet could host
+        /// simultaneously, given current capacity.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -130,6 +130,11 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.WriteTextString("ServerSdkVersion");
                 context.Writer.WriteTextString(requestObject.ServerSdkVersion);
             }
+            if (requestObject.IsSetVcpu())
+            {
+                context.Writer.WriteTextString("Vcpu");
+                context.Writer.WriteOptimizedNumber(requestObject.Vcpu.Value);
+            }
         }
 
         /// <summary>

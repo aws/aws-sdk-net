@@ -49,7 +49,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation results in an <c>InvalidRequestExecption</c> (400) error if a game
+    /// This operation results in an <c>InvalidRequestException</c> (400) error if a game
     /// session has already been created for this placement. You can clean up an unneeded
     /// game session by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession">TerminateGameSession</a>.
     /// </para>

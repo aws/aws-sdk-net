@@ -322,7 +322,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the new game session queue resource. Tags are developer-defined
-        /// key-value pairs. Tagging Amazon Web Services resources are useful for resource management,
+        /// key-value pairs. Tagging Amazon Web Services resources is useful for resource management,
         /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>

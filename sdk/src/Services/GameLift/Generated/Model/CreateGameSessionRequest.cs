@@ -78,8 +78,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon GameLift Servers retains logs for active for 14 days. To access the logs, call
-    /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
+    /// Amazon GameLift Servers retains logs for active game sessions for 14 days. To access
+    /// the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
     /// to download the log files.
     /// </para>
     ///  
@@ -149,9 +149,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// If you your fleet doesn't have a resource creation limit policy and you provide a
-        /// <c>CreatorId</c> in your <c>CreateGameSession</c> requests, Amazon GameLift Servers
-        /// limits requests to one request per <c>CreatorId</c> per second.
+        /// If your fleet doesn't have a resource creation limit policy and you provide a <c>CreatorId</c>
+        /// in your <c>CreateGameSession</c> requests, Amazon GameLift Servers limits requests
+        /// to one request per <c>CreatorId</c> per second.
         /// </para>
         ///  
         /// <para>

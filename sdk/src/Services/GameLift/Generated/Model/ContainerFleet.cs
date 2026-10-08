@@ -327,8 +327,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The Amazon EC2 instance type to use for all instances in the fleet. Instance type
         /// determines the computing resources and processing power that's available to host your
-        /// game servers. This includes including CPU, memory, storage, and networking capacity.
-        /// You can't update this fleet property.
+        /// game servers. This includes CPU, memory, storage, and networking capacity. You can't
+        /// update this fleet property.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -405,7 +405,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaximumGameServerContainerGroupsPerInstance. 
         /// <para>
-        /// The calculated maximum number of game server container group that can be deployed
+        /// The calculated maximum number of game server container groups that can be deployed
         /// on each fleet instance. The calculation depends on the resource needs of the container
         /// group and the CPU and memory resources of the fleet's instance type.
         /// </para>
@@ -572,8 +572,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UPDATING</c> -- Updates to the container fleet is being updated. A deployment
-        /// is in progress.
+        ///  <c>UPDATING</c> -- The container fleet is being updated. A deployment is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -77,6 +77,13 @@ namespace Amazon.GameLift.Model
     /// excluding the definition to remove. If the container group has only one support container
     /// definition, provide an empty set.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Remove the total vCPU limit from a game server container group so that its containers
+    /// can use up to the instance's available vCPU. Set <c>RemoveAttributes</c> to <c>TOTAL_VCPU_LIMIT</c>.
+    /// The game server container must have a <c>Vcpu</c> value, because a game server container
+    /// group needs either a total vCPU limit or a game server <c>Vcpu</c> value.
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Results:</b> 
@@ -88,9 +95,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If the container group definition version is used in an active fleets, the update
-    /// automatically initiates a new fleet deployment of the new version. You can track a
-    /// fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
+    /// If the container group definition version is used in an active fleet, the update automatically
+    /// initiates a new fleet deployment of the new version. You can track a fleet's deployments
+    /// using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
     /// </para>
     /// </summary>
     public partial class UpdateContainerGroupDefinitionRequest : AmazonGameLiftRequest
@@ -98,6 +105,7 @@ namespace Amazon.GameLift.Model
         private GameServerContainerDefinitionInput _gameServerContainerDefinition;
         private string _name;
         private ContainerOperatingSystem _operatingSystem;
+        private List<string> _removeAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _sourceVersionNumber;
         private List<SupportContainerDefinitionInput> _supportContainerDefinitions = AWSConfigs.InitializeCollections ? new List<SupportContainerDefinitionInput>() : null;
         private int? _totalMemoryLimitMebibytes;
@@ -174,6 +182,34 @@ namespace Amazon.GameLift.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RemoveAttributes. 
+        /// <para>
+        /// If set, this update removes the container group's total vCPU limit, and the group's
+        /// containers can use up to the instance's available vCPU. You can't remove the total
+        /// vCPU limit from a per-instance container group. A game server container group needs
+        /// either a total vCPU limit or a <c>Vcpu</c> value for the game server container. You
+        /// can't set <c>TotalVcpuLimit</c> in the same request.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> RemoveAttributes
+        {
+            get { return this._removeAttributes; }
+            set { this._removeAttributes = value; }
+        }
+
+        // Check to see if RemoveAttributes property is set
+        internal bool IsSetRemoveAttributes()
+        {
+            return this._removeAttributes != null && (this._removeAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceVersionNumber. 
         /// <para>
         /// The container group definition version to update. The new version starts with values
@@ -244,9 +280,20 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TotalVcpuLimit. 
         /// <para>
         /// The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal
-        /// to 1024 CPU units). All containers in the group share this memory. If you specify
-        /// vCPU limits for individual containers, the total value must be equal to or greater
-        /// than the sum of the CPU limits for all containers in the group.
+        /// to 1024 CPU units). All containers in the group share these resources. If you set
+        /// vCPU reservations for individual containers, the total value must be equal to or greater
+        /// than the sum of the <c>Vcpu</c> values for all containers in the group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a game server container group, Amazon GameLift Servers requires either a total
+        /// vCPU limit or a <c>Vcpu</c> value for the game server container. If the container
+        /// group has a total vCPU limit, Amazon GameLift Servers uses this value to calculate
+        /// how many game server container groups fit on an instance. If the container group doesn't
+        /// have a total vCPU limit, its containers can use up to the instance's available vCPU,
+        /// and Amazon GameLift Servers uses the sum of the containers' <c>Vcpu</c> values to
+        /// calculate how many game server container groups fit on an instance. To remove the
+        /// total vCPU limit, omit this parameter and set <c>RemoveAttributes</c> to <c>TOTAL_VCPU_LIMIT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

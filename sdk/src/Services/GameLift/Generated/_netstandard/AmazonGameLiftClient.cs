@@ -383,7 +383,7 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// If the ticket has one or more players who rejected the match or failed to respond,
-        /// the ticket status is set <c>CANCELLED</c> and processing is terminated.
+        /// the ticket status is set to <c>CANCELLED</c> and processing is terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1032,7 +1032,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalVcpuLimit</c> 
+        /// Either <c>TotalVcpuLimit</c> or a <c>Vcpu</c> value for the game server container
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1358,9 +1358,9 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Adds remote locations to an EC2 and begins populating the new locations with instances.
-        /// The new instances conform to the fleet's instance type, auto-scaling, and other configuration
-        /// settings.
+        /// Adds remote locations to an EC2 fleet and begins populating the new locations with
+        /// instances. The new instances conform to the fleet's instance type, auto-scaling, and
+        /// other configuration settings.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1622,8 +1622,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Amazon GameLift Servers retains logs for active for 14 days. To access the logs, call
-        /// <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
+        /// Amazon GameLift Servers retains logs for active game sessions for 14 days. To access
+        /// the logs, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html">GetGameSessionLogUrl</a>
         /// to download the log files.
         /// </para>
         ///  
@@ -1963,7 +1963,7 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Defines a new matchmaking configuration for use with FlexMatch. Whether your are using
+        /// Defines a new matchmaking configuration for use with FlexMatch. Whether you are using
         /// FlexMatch with Amazon GameLift Servers hosting or as a standalone matchmaking service,
         /// the matchmaking configuration sets out rules for matching players and forming teams.
         /// If you're also using Amazon GameLift Servers hosting, it defines how to start game
@@ -2768,9 +2768,9 @@ namespace Amazon.GameLift
         /// <para>
         /// To establish the connection, call this operation from the Amazon Web Services account
         /// that is used to manage the Amazon GameLift Servers fleets. Identify the following
-        /// values: (1) The ID of the fleet you want to be enable a VPC peering connection for;
-        /// (2) The Amazon Web Services account with the VPC that you want to peer with; and (3)
-        /// The ID of the VPC you want to peer with. This operation is asynchronous. If successful,
+        /// values: (1) The ID of the fleet you want to enable a VPC peering connection for; (2)
+        /// The Amazon Web Services account with the VPC that you want to peer with; and (3) The
+        /// ID of the VPC you want to peer with. This operation is asynchronous. If successful,
         /// a connection request is created. You can use continuous polling to track the request's
         /// status using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html">DescribeVpcPeeringConnections</a>
         /// , or by monitoring fleet events for success or failure using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>
@@ -3458,8 +3458,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Removes locations from a multi-location fleet. When deleting a location, all game
-        /// server process and all instances that are still active in the location are shut down.
-        /// 
+        /// server processes and all instances that are still active in the location are shut
+        /// down. 
         /// </para>
         ///  
         /// <para>
@@ -4082,7 +4082,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Removes a VPC peering connection. To delete the connection, you must have a valid
-        /// authorization for the VPC peering connection that you want to delete.. 
+        /// authorization for the VPC peering connection that you want to delete. 
         /// </para>
         ///  
         /// <para>
@@ -4152,7 +4152,7 @@ namespace Amazon.GameLift
         /// <para>
         /// Removes a compute resource from an Anywhere fleet. Deregistered computes can no longer
         /// host game sessions through Amazon GameLift Servers. Use this operation with an Anywhere
-        /// fleet that doesn't use the Amazon GameLift Servers Agent For Anywhere fleets with
+        /// fleet that doesn't use the Amazon GameLift Servers Agent. For Anywhere fleets with
         /// the Agent, the Agent handles all compute registry tasks for you. 
         /// </para>
         ///  
@@ -4645,9 +4645,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  <note> 
         /// <para>
-        /// Some API operations limit the number of fleet IDs that allowed in one request. If
-        /// a request exceeds this limit, the request fails and the error message contains the
-        /// maximum allowed number.
+        /// Some API operations limit the number of fleet IDs that are allowed in one request.
+        /// If a request exceeds this limit, the request fails and the error message contains
+        /// the maximum allowed number.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5152,9 +5152,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  <note> 
         /// <para>
-        /// Some API operations limit the number of fleet IDs that allowed in one request. If
-        /// a request exceeds this limit, the request fails and the error message contains the
-        /// maximum allowed number.
+        /// Some API operations limit the number of fleet IDs that are allowed in one request.
+        /// If a request exceeds this limit, the request fails and the error message contains
+        /// the maximum allowed number.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6222,7 +6222,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// Retrieves additional game session properties, including the game session protection
-        /// policy in force, a set of one or more game sessions in a specific fleet location.
+        /// policy in force, for a set of one or more game sessions in a specific fleet location.
         /// You can optionally filter the results by current game session status.
         /// </para>
         ///  
@@ -6575,7 +6575,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b>EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Container
         /// 
         ///  
         /// <para>
@@ -8417,7 +8417,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// You can use operation in the following ways: 
+        /// You can use this operation in the following ways: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -8497,7 +8497,7 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// Lists a game server groups.
+        /// Lists game server groups.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGameServerGroups service method.</param>
@@ -9564,7 +9564,7 @@ namespace Amazon.GameLift
         /// <para>
         ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
         /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
-        /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
+        /// filter expression must specify the <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty.html">GameProperty</a>
         /// -- a <c>Key</c> and a string <c>Value</c> to search for the game sessions.
         /// </para>
         ///  
@@ -9815,7 +9815,7 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <c>PlayerLatencies</c>. Include a set of latency values for destinations in the queue.
-        /// When a request includes latency data, Amazon GameLift Servers automatically reorder
+        /// When a request includes latency data, Amazon GameLift Servers automatically reorders
         /// the queue's locations priority list based on lowest available latency values. If a
         /// request includes latency data for multiple players, Amazon GameLift Servers calculates
         /// each location's average latency for all players and reorders to find the lowest latency
@@ -9838,7 +9838,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Request a placement and prioritized based on a custom list of locations. 
+        /// Request a placement and prioritize based on a custom list of locations. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9938,8 +9938,8 @@ namespace Amazon.GameLift
         /// match process is essentially identical to the process of forming new matches. Backfill
         /// requests use the same matchmaker that was used to make the original match, and they
         /// provide matchmaking data for all players currently in the game session. FlexMatch
-        /// uses this information to select new players so that backfilled match continues to
-        /// meet the original match requirements. 
+        /// uses this information to select new players so that the backfilled match continues
+        /// to meet the original match requirements. 
         /// </para>
         ///  
         /// <para>
@@ -10239,7 +10239,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// This operation results in an <c>InvalidRequestExecption</c> (400) error if a game
+        /// This operation results in an <c>InvalidRequestException</c> (400) error if a game
         /// session has already been created for this placement. You can clean up an unneeded
         /// game session by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TerminateGameSession">TerminateGameSession</a>.
         /// </para>
@@ -10892,7 +10892,7 @@ namespace Amazon.GameLift
         ///  <note> 
         /// <para>
         /// A managed fleet's runtime environment, which depends on the fleet's Amazon Machine
-        /// Image {AMI} version, can't be updated. You must create a new fleet. As a best practice,
+        /// Image (AMI) version, can't be updated. You must create a new fleet. As a best practice,
         /// we recommend replacing your managed fleets every 30 days to maintain a secure and
         /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
         /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
@@ -10955,7 +10955,7 @@ namespace Amazon.GameLift
         /// a new deployment of fleet resources using the deployment configuration provided. A
         /// deployment replaces existing fleet instances with new instances that are deployed
         /// with the updated fleet properties. The fleet is placed in <c>UPDATING</c> status until
-        /// the deployment is complete, then return to <c>ACTIVE</c>. 
+        /// the deployment is complete, then returns to <c>ACTIVE</c>. 
         /// </para>
         ///  
         /// <para>
@@ -11068,6 +11068,13 @@ namespace Amazon.GameLift
         /// excluding the definition to remove. If the container group has only one support container
         /// definition, provide an empty set.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove the total vCPU limit from a game server container group so that its containers
+        /// can use up to the instance's available vCPU. Set <c>RemoveAttributes</c> to <c>TOTAL_VCPU_LIMIT</c>.
+        /// The game server container must have a <c>Vcpu</c> value, because a game server container
+        /// group needs either a total vCPU limit or a game server <c>Vcpu</c> value.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Results:</b> 
@@ -11079,9 +11086,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If the container group definition version is used in an active fleets, the update
-        /// automatically initiates a new fleet deployment of the new version. You can track a
-        /// fleet's deployments using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
+        /// If the container group definition version is used in an active fleet, the update automatically
+        /// initiates a new fleet deployment of the new version. You can track a fleet's deployments
+        /// using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleetDeployments.html">ListFleetDeployments</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerGroupDefinition service method.</param>
@@ -11152,7 +11159,7 @@ namespace Amazon.GameLift
         ///  <note> 
         /// <para>
         /// A managed fleet's runtime environment, which depends on the fleet's Amazon Machine
-        /// Image {AMI} version, can't be updated. You must create a new fleet. As a best practice,
+        /// Image (AMI) version, can't be updated. You must create a new fleet. As a best practice,
         /// we recommend replacing your managed fleets every 30 days to maintain a secure and
         /// up-to-date runtime environment for your hosted game servers. For guidance, see <a
         /// href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/security-best-practices.html">
@@ -11465,7 +11472,7 @@ namespace Amazon.GameLift
         /// To update the game server's utilization status from <c>AVAILABLE</c> (when the game
         /// server is available to be claimed) to <c>UTILIZED</c> (when the game server is currently
         /// hosting games). Identify the game server and game server group and specify the new
-        /// utilization status. You can't change the status from to <c>UTILIZED</c> to <c>AVAILABLE</c>
+        /// utilization status. You can't change the status from <c>UTILIZED</c> to <c>AVAILABLE</c>
         /// .
         /// </para>
         ///  </li> <li> 

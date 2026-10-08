@@ -751,6 +751,52 @@ namespace Amazon.GameLift
 
 
     /// <summary>
+    /// Constants used for properties of type ContainerGroupDefinitionRemoveAttribute.
+    /// </summary>
+    public class ContainerGroupDefinitionRemoveAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TOTAL_VCPU_LIMIT for ContainerGroupDefinitionRemoveAttribute
+        /// </summary>
+        public static readonly ContainerGroupDefinitionRemoveAttribute TOTAL_VCPU_LIMIT = new ContainerGroupDefinitionRemoveAttribute("TOTAL_VCPU_LIMIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContainerGroupDefinitionRemoveAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContainerGroupDefinitionRemoveAttribute FindValue(string value)
+        {
+            return FindValue<ContainerGroupDefinitionRemoveAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContainerGroupDefinitionRemoveAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContainerGroupDefinitionStatus.
     /// </summary>
     public class ContainerGroupDefinitionStatus : ConstantClass

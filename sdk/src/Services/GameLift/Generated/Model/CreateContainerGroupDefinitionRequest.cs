@@ -126,7 +126,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>TotalVcpuLimit</c> 
+    /// Either <c>TotalVcpuLimit</c> or a <c>Vcpu</c> value for the game server container
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -337,7 +337,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of labels to assign to the container group definition resource. Tags are developer-defined
-        /// key-value pairs. Tagging Amazon Web Services resources are useful for resource management,
+        /// key-value pairs. Tagging Amazon Web Services resources is useful for resource management,
         /// access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
         /// Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
         /// 
@@ -390,16 +390,26 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TotalVcpuLimit. 
         /// <para>
         /// The maximum amount of vCPU units to allocate to the container group (1 vCPU is equal
-        /// to 1024 CPU units). All containers in the group share this memory. If you specify
-        /// vCPU limits for individual containers, the total value must be equal to or greater
-        /// than the sum of the CPU limits for all containers in the group.
+        /// to 1024 CPU units). All containers in the group share these resources. If you set
+        /// vCPU reservations for individual containers, the total value must be equal to or greater
+        /// than the sum of the <c>Vcpu</c> values for all containers in the group.
         /// </para>
         ///  
         /// <para>
-        /// Default value: 1
+        /// This property is required for a per-instance container group.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a game server container group, Amazon GameLift Servers requires either a total
+        /// vCPU limit or a <c>Vcpu</c> value for the game server container. If you set a total
+        /// vCPU limit for a game server container group, Amazon GameLift Servers uses this value
+        /// to calculate how many game server container groups fit on an instance. If you don't
+        /// set a total vCPU limit, the group's containers can use up to the instance's available
+        /// vCPU, and Amazon GameLift Servers uses the sum of the containers' <c>Vcpu</c> values
+        /// to calculate how many game server container groups fit on an instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10)]
+        [AWSProperty(Max=10)]
         public double? TotalVcpuLimit
         {
             get { return this._totalVcpuLimit; }

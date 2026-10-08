@@ -32,11 +32,11 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Represents a player session. Player sessions are created either for a specific game
     /// session, or as part of a game session placement or matchmaking request. A player session
-    /// can represents a reserved player slot in a game session (when status is <c>RESERVED</c>)
+    /// can represent a reserved player slot in a game session (when status is <c>RESERVED</c>)
     /// or actual player activity in a game session (when status is <c>ACTIVE</c>). A player
     /// session object, including player data, is automatically passed to a game session when
     /// the player connects to the game session and is validated. After the game session ends,
-    /// player sessions information is retained for 30 days and then removed.
+    /// player session information is retained for 30 days and then removed.
     /// 
     ///  
     /// <para>

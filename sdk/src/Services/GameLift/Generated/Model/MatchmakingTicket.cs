@@ -134,7 +134,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Connection information for a new game session. Once a match is made, the FlexMatch
         /// engine creates a new game session for it. This information is added to the matchmaking
-        /// ticket, which you can be retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a>
+        /// ticket, which you can retrieve by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a>
         /// .
         /// </para>
         /// </summary>

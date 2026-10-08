@@ -36,8 +36,8 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// Removes locations from a multi-location fleet. When deleting a location, all game
-    /// server process and all instances that are still active in the location are shut down.
-    /// 
+    /// server processes and all instances that are still active in the location are shut
+    /// down. 
     /// </para>
     ///  
     /// <para>

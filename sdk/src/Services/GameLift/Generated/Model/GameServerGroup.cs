@@ -183,9 +183,9 @@ namespace Amazon.GameLift.Model
         /// early termination. Unprotected instances that have active game servers running might
         /// be terminated during a scale-down event, causing players to be dropped from the game.
         /// Protected instances cannot be terminated while there are active game servers running
-        /// except in the event of a forced game server group deletion (see ). An exception to
-        /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
-        /// of protection status. 
+        /// except in the event of a forced game server group deletion. An exception to this is
+        /// with Spot Instances, which can be terminated by Amazon Web Services regardless of
+        /// protection status. 
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy

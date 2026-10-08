@@ -35,7 +35,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// Lists a game server groups.
+    /// Lists game server groups.
     /// </para>
     /// </summary>
     public partial class ListGameServerGroupsRequest : AmazonGameLiftRequest

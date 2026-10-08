@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// A priority configuration override list does not override a queue's FilterConfiguration
     /// setting, if the queue has one. Filter configurations are used to limit placements
     /// to a subset of the locations in a queue's destinations. If the override list includes
-    /// a location that's not on in the <c>FilterConfiguration</c> allowed list, Amazon GameLift
+    /// a location that's not in the <c>FilterConfiguration</c> allowed list, Amazon GameLift
     /// Servers won't attempt to place a game session there.
     /// </para>
     ///  </note>
