@@ -147,6 +147,12 @@ namespace Amazon.SecurityHub.Model
         IListEnabledProductsForImportPaginator ListEnabledProductsForImport(ListEnabledProductsForImportRequest request);
 
         /// <summary>
+        /// Paginator for ListExportJobsV2 operation
+        /// </summary>
+        [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]
+        IListExportJobsV2Paginator ListExportJobsV2(ListExportJobsV2Request request);
+
+        /// <summary>
         /// Paginator for ListExposuresByRemediationV2 operation
         /// </summary>
         [AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]

@@ -1926,6 +1926,120 @@ namespace Amazon.SecurityHub
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Cancels a findings export job that is in progress. Security Hub transitions a running
+        /// job to the <c>CANCELLED</c> state and returns the <c>ExportJobId</c> and its new <c>Status</c>.
+        /// Canceling a job that is already in the <c>CANCELLED</c> state succeeds and returns
+        /// the same result, so you can safely retry a cancel request.
+        /// 
+        ///  
+        /// <para>
+        /// You can't cancel an export job that has already reached a terminal <c>SUCCEEDED</c>
+        /// or <c>FAILED</c> state; in that case, this operation returns a <c>ConflictException</c>.
+        /// If no export job matches the <c>ExportJobId</c> that you provide, this operation returns
+        /// a <c>ResourceNotFoundException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>Status</c> value returned by this operation reflects the cancellation immediately,
+        /// even though the job can take a short time to stop completely.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportJobV2 service method.</param>
+        /// <returns>The response from the CancelExportJobV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CancelExportJobV2">REST API Reference for CancelExportJobV2 Operation</seealso>
+        public virtual CancelExportJobV2Response CancelExportJobV2(CancelExportJobV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CancelExportJobV2Response>(request, options);
+        }
+#else
+        internal virtual CancelExportJobV2Response CancelExportJobV2(CancelExportJobV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CancelExportJobV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Cancels a findings export job that is in progress. Security Hub transitions a running
+        /// job to the <c>CANCELLED</c> state and returns the <c>ExportJobId</c> and its new <c>Status</c>.
+        /// Canceling a job that is already in the <c>CANCELLED</c> state succeeds and returns
+        /// the same result, so you can safely retry a cancel request.
+        /// 
+        ///  
+        /// <para>
+        /// You can't cancel an export job that has already reached a terminal <c>SUCCEEDED</c>
+        /// or <c>FAILED</c> state; in that case, this operation returns a <c>ConflictException</c>.
+        /// If no export job matches the <c>ExportJobId</c> that you provide, this operation returns
+        /// a <c>ResourceNotFoundException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>Status</c> value returned by this operation reflects the cancellation immediately,
+        /// even though the job can take a short time to stop completely.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelExportJobV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the CancelExportJobV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CancelExportJobV2">REST API Reference for CancelExportJobV2 Operation</seealso>
+        public virtual Task<CancelExportJobV2Response> CancelExportJobV2Async(CancelExportJobV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CancelExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CancelExportJobV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CancelExportJobV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Creates a custom action target in Security Hub CSPM.
         /// 
         ///  
@@ -6721,6 +6835,108 @@ namespace Amazon.SecurityHub
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the details of a single findings export job, including its current <c>Status</c>,
+        /// the <c>Destination</c> it writes to, the <c>OutputConfiguration</c> it was started
+        /// with, and its <c>StartedAt</c> and <c>EndedAt</c> timestamps. Use this operation to
+        /// poll an export job that you started with <c>StartExportJobV2</c> until it reaches
+        /// a terminal state (<c>SUCCEEDED</c>, <c>FAILED</c>, or <c>CANCELLED</c>).
+        /// 
+        ///  
+        /// <para>
+        /// If the job failed, the response includes a <c>FailureCode</c> and <c>FailureMessage</c>
+        /// that describe the reason. Input values such as <c>Scopes</c> and <c>Filters</c> are
+        /// echoed back as they were submitted, with relative date ranges returned unresolved.
+        /// If no export job matches the <c>ExportJobId</c> that you provide, this operation returns
+        /// a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobV2 service method.</param>
+        /// <returns>The response from the GetExportJobV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetExportJobV2">REST API Reference for GetExportJobV2 Operation</seealso>
+        public virtual GetExportJobV2Response GetExportJobV2(GetExportJobV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobV2Response>(request, options);
+        }
+#else
+        internal virtual GetExportJobV2Response GetExportJobV2(GetExportJobV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<GetExportJobV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the details of a single findings export job, including its current <c>Status</c>,
+        /// the <c>Destination</c> it writes to, the <c>OutputConfiguration</c> it was started
+        /// with, and its <c>StartedAt</c> and <c>EndedAt</c> timestamps. Use this operation to
+        /// poll an export job that you started with <c>StartExportJobV2</c> until it reaches
+        /// a terminal state (<c>SUCCEEDED</c>, <c>FAILED</c>, or <c>CANCELLED</c>).
+        /// 
+        ///  
+        /// <para>
+        /// If the job failed, the response includes a <c>FailureCode</c> and <c>FailureMessage</c>
+        /// that describe the reason. Input values such as <c>Scopes</c> and <c>Filters</c> are
+        /// echoed back as they were submitted, with relative date ranges returned unresolved.
+        /// If no export job matches the <c>ExportJobId</c> that you provide, this operation returns
+        /// a <c>ResourceNotFoundException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExportJobV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetExportJobV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetExportJobV2">REST API Reference for GetExportJobV2 Operation</seealso>
+        public virtual Task<GetExportJobV2Response> GetExportJobV2Async(GetExportJobV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExportJobV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExportJobV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// <note> 
         /// <para>
         /// The <i>aggregation Region</i> is now called the <i>home Region</i>.
@@ -9212,6 +9428,104 @@ namespace Amazon.SecurityHub
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns the findings export jobs in your account as a paginated list of <c>ExportSummary</c>
+        /// objects. You can filter the results by job <c>Status</c> or <c>DataType</c>.
+        /// 
+        ///  
+        /// <para>
+        /// To page through the results, use the <c>MaxResults</c> and <c>NextToken</c> parameters.
+        /// If the response includes a <c>NextToken</c> value, pass it in a subsequent request
+        /// to retrieve the next page of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each <c>ExportSummary</c> reports the output <c>Format</c> of the job but not its
+        /// full <c>OutputConfiguration</c>. To retrieve the filters and selected fields that
+        /// a job was started with, call <c>GetExportJobV2</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportJobsV2 service method.</param>
+        /// <returns>The response from the ListExportJobsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListExportJobsV2">REST API Reference for ListExportJobsV2 Operation</seealso>
+        public virtual ListExportJobsV2Response ListExportJobsV2(ListExportJobsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExportJobsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportJobsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportJobsV2Response>(request, options);
+        }
+#else
+        internal virtual ListExportJobsV2Response ListExportJobsV2(ListExportJobsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExportJobsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportJobsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportJobsV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Returns the findings export jobs in your account as a paginated list of <c>ExportSummary</c>
+        /// objects. You can filter the results by job <c>Status</c> or <c>DataType</c>.
+        /// 
+        ///  
+        /// <para>
+        /// To page through the results, use the <c>MaxResults</c> and <c>NextToken</c> parameters.
+        /// If the response includes a <c>NextToken</c> value, pass it in a subsequent request
+        /// to retrieve the next page of results.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each <c>ExportSummary</c> reports the output <c>Format</c> of the job but not its
+        /// full <c>OutputConfiguration</c>. To retrieve the filters and selected fields that
+        /// a job was started with, call <c>GetExportJobV2</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportJobsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the ListExportJobsV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListExportJobsV2">REST API Reference for ListExportJobsV2 Operation</seealso>
+        public virtual Task<ListExportJobsV2Response> ListExportJobsV2Async(ListExportJobsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExportJobsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportJobsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExportJobsV2Response>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Retrieves the exposure findings tied to a specific remediation target. Results are
         /// sorted by previous severity, highest first, and are paginated.
         /// </summary>
@@ -10214,6 +10528,186 @@ namespace Amazon.SecurityHub
             options.ResponseUnmarshaller = StartConfigurationPolicyDisassociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartConfigurationPolicyDisassociationResponse>(request, options, cancellationToken);
+        }
+
+#if NETFRAMEWORK
+        /// <summary>
+        /// Starts an ad hoc export job that writes Security Hub findings to an Amazon Simple
+        /// Storage Service (Amazon S3) bucket that you own. Because the export runs asynchronously,
+        /// this operation returns only the <c>ExportJobId</c> of the new job; it doesn't wait
+        /// for the export to finish. Use <c>GetExportJobV2</c> to poll the job, and <c>ListExportJobsV2</c>
+        /// to view the export jobs in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Security Hub allows only one export job in the <c>RUNNING</c> state per account at
+        /// a time. If an export job is already running, this operation returns a <c>ServiceQuotaExceededException</c>.
+        /// Wait for the running job to finish, or cancel it with <c>CancelExportJobV2</c>, before
+        /// you start a new one.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the destination bucket and Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) key in the <c>Destination</c> parameter, and the output format (<c>CSV</c>
+        /// or <c>OCSF_JSON</c>), optional filters, and field selection in the <c>OutputConfiguration</c>
+        /// parameter. Before you call this operation, you must grant Security Hub permission
+        /// to write to your bucket and use your Amazon Web Services KMS key by adding the bucket
+        /// policy and key policy statements shown in the Examples section.
+        /// </para>
+        ///  
+        /// <para>
+        /// Two identities use your Amazon Web Services KMS key, and each needs its own permission.
+        /// Security Hub uses the key when it writes the export objects to your bucket. The IAM
+        /// principal that calls <c>StartExportJobV2</c> must also have <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions on the key. The Examples section shows both grants.
+        /// </para>
+        ///  
+        /// <para>
+        /// A delegated administrator can use the optional <c>Scopes</c> parameter to export findings
+        /// for specific organizations or organizational units (OUs).
+        /// </para>
+        ///  
+        /// <para>
+        /// To make the request idempotent, provide a <c>ClientToken</c>. If you retry a <c>StartExportJobV2</c>
+        /// request with the same <c>ClientToken</c> and the same request parameters, Security
+        /// Hub returns the <c>ExportJobId</c> of the original job instead of starting a new one.
+        /// If you reuse a <c>ClientToken</c> with different request parameters, this operation
+        /// returns a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportJobV2 service method.</param>
+        /// <returns>The response from the StartExportJobV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartExportJobV2">REST API Reference for StartExportJobV2 Operation</seealso>
+        public virtual StartExportJobV2Response StartExportJobV2(StartExportJobV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportJobV2Response>(request, options);
+        }
+#else
+        internal virtual StartExportJobV2Response StartExportJobV2(StartExportJobV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportJobV2Response>(request, options);
+        }
+#endif
+
+        /// <summary>
+        /// Starts an ad hoc export job that writes Security Hub findings to an Amazon Simple
+        /// Storage Service (Amazon S3) bucket that you own. Because the export runs asynchronously,
+        /// this operation returns only the <c>ExportJobId</c> of the new job; it doesn't wait
+        /// for the export to finish. Use <c>GetExportJobV2</c> to poll the job, and <c>ListExportJobsV2</c>
+        /// to view the export jobs in your account.
+        /// 
+        ///  
+        /// <para>
+        /// Security Hub allows only one export job in the <c>RUNNING</c> state per account at
+        /// a time. If an export job is already running, this operation returns a <c>ServiceQuotaExceededException</c>.
+        /// Wait for the running job to finish, or cancel it with <c>CancelExportJobV2</c>, before
+        /// you start a new one.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify the destination bucket and Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) key in the <c>Destination</c> parameter, and the output format (<c>CSV</c>
+        /// or <c>OCSF_JSON</c>), optional filters, and field selection in the <c>OutputConfiguration</c>
+        /// parameter. Before you call this operation, you must grant Security Hub permission
+        /// to write to your bucket and use your Amazon Web Services KMS key by adding the bucket
+        /// policy and key policy statements shown in the Examples section.
+        /// </para>
+        ///  
+        /// <para>
+        /// Two identities use your Amazon Web Services KMS key, and each needs its own permission.
+        /// Security Hub uses the key when it writes the export objects to your bucket. The IAM
+        /// principal that calls <c>StartExportJobV2</c> must also have <c>kms:GenerateDataKey</c>
+        /// and <c>kms:Decrypt</c> permissions on the key. The Examples section shows both grants.
+        /// </para>
+        ///  
+        /// <para>
+        /// A delegated administrator can use the optional <c>Scopes</c> parameter to export findings
+        /// for specific organizations or organizational units (OUs).
+        /// </para>
+        ///  
+        /// <para>
+        /// To make the request idempotent, provide a <c>ClientToken</c>. If you retry a <c>StartExportJobV2</c>
+        /// request with the same <c>ClientToken</c> and the same request parameters, Security
+        /// Hub returns the <c>ExportJobId</c> of the original job instead of starting a new one.
+        /// If you reuse a <c>ClientToken</c> with different request parameters, this operation
+        /// returns a <c>ConflictException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExportJobV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the StartExportJobV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ConflictException">
+        /// The request causes conflict with the current state of the service resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationNotFoundException">
+        /// The request failed because one or more organizations specified in the request don't
+        /// exist or don't belong to the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.OrganizationalUnitNotFoundException">
+        /// The request failed because one or more organizational units specified in the request
+        /// don't exist within the caller's organization.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ServiceQuotaExceededException">
+        /// The request was rejected because it would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartExportJobV2">REST API Reference for StartExportJobV2 Operation</seealso>
+        public virtual Task<StartExportJobV2Response> StartExportJobV2Async(StartExportJobV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartExportJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportJobV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartExportJobV2Response>(request, options, cancellationToken);
         }
 
 #if NETFRAMEWORK

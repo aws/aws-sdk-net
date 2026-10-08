@@ -185,6 +185,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListExportJobsV2 operation
+        /// </summary>
+        public IListExportJobsV2Paginator ListExportJobsV2(ListExportJobsV2Request request)
+        {
+            return new ListExportJobsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListExposuresByRemediationV2 operation
         /// </summary>
         public IListExposuresByRemediationV2Paginator ListExposuresByRemediationV2(ListExposuresByRemediationV2Request request)

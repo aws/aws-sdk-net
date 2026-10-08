@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsCli. 
         /// <para>
-        /// An AWS CLI snippet version of the example.
+        /// An CLI snippet version of the example.
         /// </para>
         /// </summary>
         public string AwsCli { get; set; }
