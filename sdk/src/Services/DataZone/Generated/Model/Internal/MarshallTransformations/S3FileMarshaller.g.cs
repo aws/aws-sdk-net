@@ -34,38 +34,27 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SourceLocation Marshaller
+    /// S3File Marshaller
     /// </summary>
-    public partial class SourceLocationMarshaller : IRequestMarshaller<SourceLocation, JsonMarshallerContext>
+    public partial class S3FileMarshaller : IRequestMarshaller<S3File, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SourceLocation requestObject, JsonMarshallerContext context)
+        public void Marshall(S3File requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetS3())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("s3");
-                context.Writer.WriteStringValue(requestObject.S3);
-            }
-
-            if (requestObject.IsSetS3Files())
-            {
-                context.Writer.WritePropertyName("s3Files");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3FilesLocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Files, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("key");
+                context.Writer.WriteStringValue(requestObject.Key);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static SourceLocationMarshaller Instance = new SourceLocationMarshaller();
+        public readonly static S3FileMarshaller Instance = new S3FileMarshaller();
     }
 }

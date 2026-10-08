@@ -30,36 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The source location for a notebook import in Amazon SageMaker Unified Studio.
+    /// A single Amazon Simple Storage Service object to import as a notebook cell.
     /// </summary>
-    public partial class SourceLocation
+    public partial class S3File
     {
         /// <summary>
-        /// Gets and sets the property S3. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The Amazon Simple Storage Service URI of the notebook source file.
+        /// The key of the Amazon Simple Storage Service object to import.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive = true, Min = 1, Max = 1024)]
-        public string S3 { get; set; }
+        [AWSProperty(Required = true, Sensitive = true, Min = 1, Max = 1024)]
+        public string Key { get; set; }
 
         /// <summary>
-        /// Checks to see if the S3 property is set.
+        /// Checks to see if the Key property is set.
         /// </summary>
-        internal bool IsSetS3() => this.S3 != null;
-
-        /// <summary>
-        /// Gets and sets the property S3Files. 
-        /// <para>
-        /// The Amazon Simple Storage Service objects to import as the notebook's cells. One cell
-        /// is created for each object, in the order in which you list them.
-        /// </para>
-        /// </summary>
-        public S3FilesLocation S3Files { get; set; }
-
-        /// <summary>
-        /// Checks to see if the S3Files property is set.
-        /// </summary>
-        internal bool IsSetS3Files() => this.S3Files != null;
+        internal bool IsSetKey() => this.Key != null;
     }
 }

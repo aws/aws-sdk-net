@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceLocation Object
+    /// Response Unmarshaller for S3FilesLocation Object
     /// </summary>
-    public partial class SourceLocationUnmarshaller : IJsonUnmarshaller<SourceLocation, JsonUnmarshallerContext>
+    public partial class S3FilesLocationUnmarshaller : IJsonUnmarshaller<S3FilesLocation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public SourceLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3FilesLocation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new SourceLocation();
+            var unmarshalledObject = new S3FilesLocation();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,28 +53,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("s3", targetDepth, ref reader))
+                if (context.TestExpression("bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3 = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("s3Files", targetDepth, ref reader))
+                if (context.TestExpression("fileList", targetDepth, ref reader))
                 {
-                    var unmarshaller = S3FilesLocationUnmarshaller.Instance;
-                    unmarshalledObject.S3Files = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<S3File, S3FileUnmarshaller>(S3FileUnmarshaller.Instance);
+                    unmarshalledObject.FileList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static SourceLocationUnmarshaller _instance = new SourceLocationUnmarshaller();
+        private static S3FilesLocationUnmarshaller _instance = new S3FilesLocationUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static SourceLocationUnmarshaller Instance => _instance;
+        public static S3FilesLocationUnmarshaller Instance => _instance;
     }
 }

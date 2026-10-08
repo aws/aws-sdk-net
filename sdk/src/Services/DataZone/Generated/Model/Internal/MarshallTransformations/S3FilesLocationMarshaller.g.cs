@@ -34,38 +34,43 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SourceLocation Marshaller
+    /// S3FilesLocation Marshaller
     /// </summary>
-    public partial class SourceLocationMarshaller : IRequestMarshaller<SourceLocation, JsonMarshallerContext>
+    public partial class S3FilesLocationMarshaller : IRequestMarshaller<S3FilesLocation, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(SourceLocation requestObject, JsonMarshallerContext context)
+        public void Marshall(S3FilesLocation requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetS3())
+            if (requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("s3");
-                context.Writer.WriteStringValue(requestObject.S3);
+                context.Writer.WritePropertyName("bucket");
+                context.Writer.WriteStringValue(requestObject.Bucket);
             }
 
-            if (requestObject.IsSetS3Files())
+            if (requestObject.IsSetFileList())
             {
-                context.Writer.WritePropertyName("s3Files");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("fileList");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectFileListListValue in requestObject.FileList)
+                {
+                    context.Writer.WriteStartObject();
 
-                var marshaller = S3FilesLocationMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3Files, context);
+                    var marshaller = S3FileMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFileListListValue, context);
 
-                context.Writer.WriteEndObject();
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static SourceLocationMarshaller Instance = new SourceLocationMarshaller();
+        public readonly static S3FilesLocationMarshaller Instance = new S3FilesLocationMarshaller();
     }
 }
