@@ -985,6 +985,15 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
+        /// Export jobs run asynchronously. This operation returns a <c>JobId</c>. Call <c>GetExportJob</c>
+        /// with that ID until <c>JobStatus</c> is <c>COMPLETED</c>, <c>FAILED</c>, or <c>CANCELLED</c>.
+        /// When the status is <c>COMPLETED</c>, download the export file from the pre-signed
+        /// URL in <c>ExportDestination.S3Url</c>. When the status is <c>FAILED</c>, see <c>FailureInfo</c>.
+        /// To store a copy in your own bucket, upload the downloaded file to your bucket. Do
+        /// not include <c>S3Url</c> in the request.
+        /// </para>
+        ///  
+        /// <para>
         /// You can execute this operation no more than once per second.
         /// </para>
         /// </summary>
@@ -1009,6 +1018,15 @@ namespace Amazon.SimpleEmailV2
         /// <summary>
         /// Creates an export job for a data source and destination.
         /// 
+        ///  
+        /// <para>
+        /// Export jobs run asynchronously. This operation returns a <c>JobId</c>. Call <c>GetExportJob</c>
+        /// with that ID until <c>JobStatus</c> is <c>COMPLETED</c>, <c>FAILED</c>, or <c>CANCELLED</c>.
+        /// When the status is <c>COMPLETED</c>, download the export file from the pre-signed
+        /// URL in <c>ExportDestination.S3Url</c>. When the status is <c>FAILED</c>, see <c>FailureInfo</c>.
+        /// To store a copy in your own bucket, upload the downloaded file to your bucket. Do
+        /// not include <c>S3Url</c> in the request.
+        /// </para>
         ///  
         /// <para>
         /// You can execute this operation no more than once per second.
@@ -2877,6 +2895,12 @@ namespace Amazon.SimpleEmailV2
 #if NETFRAMEWORK
         /// <summary>
         /// Provides information about an export job.
+        /// 
+        ///  
+        /// <para>
+        /// When the job status is <c>COMPLETED</c>, the response includes a pre-signed URL in
+        /// <c>ExportDestination.S3Url</c> that you use to download the export file.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
         /// <returns>The response from the GetExportJob service method, as returned by SimpleEmailServiceV2.</returns>
@@ -2895,6 +2919,12 @@ namespace Amazon.SimpleEmailV2
 
         /// <summary>
         /// Provides information about an export job.
+        /// 
+        ///  
+        /// <para>
+        /// When the job status is <c>COMPLETED</c>, the response includes a pre-signed URL in
+        /// <c>ExportDestination.S3Url</c> that you use to download the export file.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetExportJob service method.</param>
         /// <param name="cancellationToken">

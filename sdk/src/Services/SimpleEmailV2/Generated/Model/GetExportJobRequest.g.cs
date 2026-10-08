@@ -31,7 +31,9 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExportJob operation. Provides information about
-    /// an export job.
+    /// an export job. <para> When the job status is <c>COMPLETED</c>, the response includes
+    /// a pre-signed URL in <c>ExportDestination.S3Url</c> that you use to download the export
+    /// file. </para>
     /// </summary>
     public partial class GetExportJobRequest : AmazonSimpleEmailServiceV2Request
     {

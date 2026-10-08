@@ -31,6 +31,15 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains details about the destination of the export job.
+    /// 
+    ///  
+    /// <para>
+    /// When you create an export job, specify only <c>DataFormat</c>. SES writes the export
+    /// file to a location that it manages. After the job completes, call <c>GetExportJob</c>
+    /// and use the <c>S3Url</c> that's returned to download the file. To store a copy in
+    /// your own Amazon S3 bucket, upload the downloaded file to your bucket. Do not include
+    /// <c>S3Url</c> in the <c>CreateExportJob</c> request.
+    /// </para>
     /// </summary>
     public partial class ExportDestination
     {
@@ -61,6 +70,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property S3Url. 
         /// <para>
         /// An Amazon S3 pre-signed URL that points to the generated export file.
+        /// </para>
+        ///  
+        /// <para>
+        /// SES sets this value. It's returned only in the <c>GetExportJob</c> response, after
+        /// the export job status is <c>COMPLETED</c>. The URL expires five minutes after <c>GetExportJob</c>
+        /// returns it. Call <c>GetExportJob</c> again to get a new URL. If you include this field
+        /// in a <c>CreateExportJob</c> request, the request fails with a <c>BadRequestException</c>.
         /// </para>
         /// </summary>
         public string S3Url { get; set; }

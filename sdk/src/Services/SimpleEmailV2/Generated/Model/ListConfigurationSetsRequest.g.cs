@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// An object that contains filters to apply when listing configuration sets. You can
-        /// filter by configuration set name.
+        /// filter by a substring of the configuration set name.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data
