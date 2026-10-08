@@ -93,6 +93,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Dimension);
             }
 
+            if(publicRequest.IsSetDimensionKey())
+            {
+                context.Writer.WritePropertyName("DimensionKey");
+                context.Writer.WriteStringValue(publicRequest.DimensionKey);
+            }
+
             if(publicRequest.IsSetFilter())
             {
                 context.Writer.WritePropertyName("Filter");

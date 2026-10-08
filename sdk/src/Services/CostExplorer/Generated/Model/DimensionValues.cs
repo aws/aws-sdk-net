@@ -59,6 +59,12 @@ namespace Amazon.CostExplorer.Model
         ///  <c>ANOMALY_TOTAL_IMPACT_ABSOLUTE</c> and <c>ANOMALY_TOTAL_IMPACT_PERCENTAGE</c> can
         /// only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Use <c>PRODUCT_ATTRIBUTE</c> only as the <c>Dimension</c> in <c>GetDimensionValues</c>.
+        /// To filter or group by product attributes, use the <c>ProductAttributes</c> field of
+        /// <c>Expression</c> or the <c>PRODUCT_ATTRIBUTE</c> group type.
+        /// </para>
         /// </summary>
         public Dimension Key
         {

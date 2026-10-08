@@ -39,6 +39,7 @@ namespace Amazon.CostExplorer.Model
         private string _billingViewArn;
         private Context _context;
         private Dimension _dimension;
+        private string _dimensionKey;
         private Expression _filter;
         private int? _maxResults;
         private string _nextPageToken;
@@ -158,6 +159,11 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PRODUCT_ATTRIBUTE - The product attributes of supported services, such as the model
+        /// provider or the model for Amazon Bedrock.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -312,6 +318,12 @@ namespace Amazon.CostExplorer.Model
         /// can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>PRODUCT_ATTRIBUTE</c> returns the product attribute keys that are available for
+        /// your costs of supported services, or the values of the key that you specify in <c>DimensionKey</c>.
+        /// <c>PRODUCT_ATTRIBUTE</c> is supported only in the <c>COST_AND_USAGE</c> context.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dimension Dimension
@@ -324,6 +336,40 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetDimension()
         {
             return this._dimension != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DimensionKey. 
+        /// <para>
+        /// The product attribute key to return values for, such as <c>model</c>. If you omit
+        /// <c>DimensionKey</c> or set it to an empty string, the response lists the product attribute
+        /// keys that are available for your costs of supported services instead. For the supported
+        /// services, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a key, the response lists the values of that key. If some of your costs
+        /// have no value for the key, the response includes an empty-string value. Keys are case-sensitive,
+        /// and a key that doesn't exist returns no values other than an empty string.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <c>DimensionKey</c> only when <c>Dimension</c> is <c>PRODUCT_ATTRIBUTE</c>.
+        /// If you also specify <c>SortBy</c>, <c>DimensionKey</c> is required. As a result, you
+        /// can't list product attribute keys when you use <c>SortBy</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string DimensionKey
+        {
+            get { return this._dimensionKey; }
+            set { this._dimensionKey = value; }
+        }
+
+        // Check to see if DimensionKey property is set
+        internal bool IsSetDimensionKey()
+        {
+            return this._dimensionKey != null;
         }
 
         /// <summary>

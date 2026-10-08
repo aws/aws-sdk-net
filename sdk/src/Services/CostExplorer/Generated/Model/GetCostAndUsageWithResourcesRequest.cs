@@ -106,9 +106,14 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <c>MatchOptions</c> for <c>CostCategories</c> and <c>Tags</c> are
-        /// <c>EQUALS</c>, <c>ABSENT</c>, and <c>CASE_SENSITIVE</c>. Default values are <c>EQUALS</c>
+        /// Valid values for <c>MatchOptions</c> for <c>CostCategories</c>, <c>Tags</c>, and <c>ProductAttributes</c>
+        /// are <c>EQUALS</c>, <c>ABSENT</c>, and <c>CASE_SENSITIVE</c>. Default values are <c>EQUALS</c>
         /// and <c>CASE_SENSITIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you filter or group by product attributes, the <c>SERVICE</c> filter rules are
+        /// the same as for <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html">GetCostAndUsage</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,7 +154,13 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property GroupBy. 
         /// <para>
         /// You can group Amazon Web Services costs using up to two different groups: <c>DIMENSION</c>,
-        /// <c>TAG</c>, <c>COST_CATEGORY</c>.
+        /// <c>TAG</c>, <c>COST_CATEGORY</c>, and <c>PRODUCT_ATTRIBUTE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>PRODUCT_ATTRIBUTE</c> groups work the same way as in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html">GetCostAndUsage</a>.
+        /// A <c>PRODUCT_ATTRIBUTE</c> group or a <c>ProductAttributes</c> filter doesn't meet
+        /// the requirement to group by or filter by a <c>ResourceId</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

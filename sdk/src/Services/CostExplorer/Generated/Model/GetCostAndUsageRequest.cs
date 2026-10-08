@@ -93,9 +93,22 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <c>MatchOptions</c> for <c>CostCategories</c> and <c>Tags</c> are
-        /// <c>EQUALS</c>, <c>ABSENT</c>, and <c>CASE_SENSITIVE</c>. Default values are <c>EQUALS</c>
+        /// Valid values for <c>MatchOptions</c> for <c>CostCategories</c>, <c>Tags</c>, and <c>ProductAttributes</c>
+        /// are <c>EQUALS</c>, <c>ABSENT</c>, and <c>CASE_SENSITIVE</c>. Default values are <c>EQUALS</c>
         /// and <c>CASE_SENSITIVE</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can filter by product attributes with or without grouping by them. If you filter
+        /// or group by product attributes, the results include only the costs of supported services,
+        /// and a <c>SERVICE</c> filter is optional. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you include a <c>SERVICE</c> filter, it must apply to the whole request: combine
+        /// it with other filters by using <c>And</c>, and include it in every branch of an <c>Or</c>.
+        /// A <c>SERVICE</c> filter inside <c>Not</c> doesn't meet this requirement, and the request
+        /// fails with a <c>ValidationException</c>.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -135,7 +148,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property GroupBy. 
         /// <para>
         /// You can group Amazon Web Services costs using up to two different groups, either dimensions,
-        /// tag keys, cost categories, or any two group by types.
+        /// tag keys, cost categories, product attributes, or any two group by types.
         /// </para>
         ///  
         /// <para>
@@ -147,6 +160,22 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// When you group by the <c>TAG</c> type and include a valid tag key, you get all tag
         /// values, including empty strings.
+        /// </para>
+        ///  
+        /// <para>
+        /// To group by the <c>PRODUCT_ATTRIBUTE</c> type, set <c>Key</c> to a product attribute
+        /// key, such as <c>model</c>. For the keys of each supported service, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">ProductAttributeValues</a>.
+        /// The results include only the costs of supported services, and if you have no such
+        /// costs, the response contains no groups.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the response, each group key has the format <c>key$value</c>, for example, <c>model$Claude
+        /// Sonnet 5</c>. Costs that have no value for the key are in the group <c>key$</c>, for
+        /// example, <c>model$</c>. Remove the <c>key$</c> prefix before you use a value in a
+        /// <c>ProductAttributes</c> filter. Keys are case-sensitive: if you group by a key that
+        /// doesn't exist, such as <c>Model</c>, all of your costs of supported services are in
+        /// the group <c>Model$</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

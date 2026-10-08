@@ -111,6 +111,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetProductAttributes())
+            {
+                context.Writer.WritePropertyName("ProductAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProductAttributeValuesMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProductAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

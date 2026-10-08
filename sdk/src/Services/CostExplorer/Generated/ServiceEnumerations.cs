@@ -977,6 +977,10 @@ namespace Amazon.CostExplorer
         /// </summary>
         public static readonly Dimension PLATFORM = new Dimension("PLATFORM");
         /// <summary>
+        /// Constant PRODUCT_ATTRIBUTE for Dimension
+        /// </summary>
+        public static readonly Dimension PRODUCT_ATTRIBUTE = new Dimension("PRODUCT_ATTRIBUTE");
+        /// <summary>
         /// Constant PURCHASE_TYPE for Dimension
         /// </summary>
         public static readonly Dimension PURCHASE_TYPE = new Dimension("PURCHASE_TYPE");
@@ -1362,6 +1366,10 @@ namespace Amazon.CostExplorer
         /// Constant DIMENSION for GroupDefinitionType
         /// </summary>
         public static readonly GroupDefinitionType DIMENSION = new GroupDefinitionType("DIMENSION");
+        /// <summary>
+        /// Constant PRODUCT_ATTRIBUTE for GroupDefinitionType
+        /// </summary>
+        public static readonly GroupDefinitionType PRODUCT_ATTRIBUTE = new GroupDefinitionType("PRODUCT_ATTRIBUTE");
         /// <summary>
         /// Constant TAG for GroupDefinitionType
         /// </summary>

@@ -47,8 +47,8 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// There are three types of simple dimension values: <c>CostCategories</c>, <c>Tags</c>,
-    /// and <c>Dimensions</c>.
+    /// There are four types of simple dimension values: <c>CostCategories</c>, <c>Tags</c>,
+    /// <c>Dimensions</c>, and <c>ProductAttributes</c>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -62,6 +62,15 @@ namespace Amazon.CostExplorer.Model
     /// <para>
     /// Specify the <c>Dimensions</c> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html">
     /// <c>DimensionValues</c> </a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Specify the <c>ProductAttributes</c> field to define a filter that acts on the product
+    /// attributes of supported services, such as Amazon Bedrock. Only <c>GetCostAndUsage</c>,
+    /// <c>GetCostAndUsageWithResources</c>, <c>GetDimensionValues</c> (in the <c>COST_AND_USAGE</c>
+    /// context), <c>GetTags</c>, and <c>GetCostCategories</c> support <c>ProductAttributes</c>.
+    /// For the supported services, keys and <c>SERVICE</c> filter rules, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">
+    /// <c>ProductAttributeValues</c> </a>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -156,6 +165,7 @@ namespace Amazon.CostExplorer.Model
         private DimensionValues _dimensions;
         private Expression _not;
         private List<Expression> _or = AWSConfigs.InitializeCollections ? new List<Expression>() : null;
+        private ProductAttributeValues _productAttributes;
         private TagValues _tags;
 
         /// <summary>
@@ -256,6 +266,29 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetOr()
         {
             return this._or != null && (this._or.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProductAttributes. 
+        /// <para>
+        /// The filter that's based on <c>ProductAttributeValues</c>. Use it to filter the costs
+        /// of supported services, such as Amazon Bedrock, by product attributes. The following
+        /// operations support this filter: <c>GetCostAndUsage</c>, <c>GetCostAndUsageWithResources</c>,
+        /// <c>GetDimensionValues</c> (in the <c>COST_AND_USAGE</c> context), <c>GetTags</c>,
+        /// and <c>GetCostCategories</c>. For the supported services and keys, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ProductAttributeValues.html">
+        /// <c>ProductAttributeValues</c> </a>.
+        /// </para>
+        /// </summary>
+        public ProductAttributeValues ProductAttributes
+        {
+            get { return this._productAttributes; }
+            set { this._productAttributes = value; }
+        }
+
+        // Check to see if ProductAttributes property is set
+        internal bool IsSetProductAttributes()
+        {
+            return this._productAttributes != null;
         }
 
         /// <summary>

@@ -86,6 +86,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     unmarshalledObject.Or = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ProductAttributes", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProductAttributeValuesUnmarshaller.Instance;
+                    unmarshalledObject.ProductAttributes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Tags", targetDepth, ref reader))
                 {
                     var unmarshaller = TagValuesUnmarshaller.Instance;
