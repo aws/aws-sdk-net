@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "serviceName": "ARCRegionswitch",
+      "type": "patch",
+      "changeLogMessages": [
+        "ARCRegionswitch is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Athena",
+      "type": "patch",
+      "changeLogMessages": [
+        "Athena is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "CloudWatchOmni",
+      "type": "patch",
+      "changeLogMessages": [
+        "CloudWatchOmni is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Snowball",
+      "type": "patch",
+      "changeLogMessages": [
+        "Snowball is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}
