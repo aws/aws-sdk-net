@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CapabilityConfigurationResponse Object
+    /// Response Unmarshaller for AckConfigResponse Object
     /// </summary>
-    public partial class CapabilityConfigurationResponseUnmarshaller : IJsonUnmarshaller<CapabilityConfigurationResponse, JsonUnmarshallerContext>
+    public partial class AckConfigResponseUnmarshaller : IJsonUnmarshaller<AckConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public CapabilityConfigurationResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AckConfigResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new CapabilityConfigurationResponse();
+            var unmarshalledObject = new AckConfigResponse();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,28 +53,28 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ack", targetDepth, ref reader))
+                if (context.TestExpression("disabledServices", targetDepth, ref reader))
                 {
-                    var unmarshaller = AckConfigResponseUnmarshaller.Instance;
-                    unmarshalledObject.Ack = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DisabledServices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
-                if (context.TestExpression("argoCd", targetDepth, ref reader))
+                if (context.TestExpression("enableCrossNamespace", targetDepth, ref reader))
                 {
-                    var unmarshaller = ArgoCdConfigResponseUnmarshaller.Instance;
-                    unmarshalledObject.ArgoCd = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableCrossNamespace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static CapabilityConfigurationResponseUnmarshaller _instance = new CapabilityConfigurationResponseUnmarshaller();
+        private static AckConfigResponseUnmarshaller _instance = new AckConfigResponseUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static CapabilityConfigurationResponseUnmarshaller Instance => _instance;
+        public static AckConfigResponseUnmarshaller Instance => _instance;
     }
 }

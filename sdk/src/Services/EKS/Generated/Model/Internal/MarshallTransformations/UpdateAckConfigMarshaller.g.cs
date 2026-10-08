@@ -34,43 +34,38 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CapabilityConfigurationRequest Marshaller
+    /// UpdateAckConfig Marshaller
     /// </summary>
-    public partial class CapabilityConfigurationRequestMarshaller : IRequestMarshaller<CapabilityConfigurationRequest, JsonMarshallerContext>
+    public partial class UpdateAckConfigMarshaller : IRequestMarshaller<UpdateAckConfig, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(CapabilityConfigurationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(UpdateAckConfig requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetAck())
+            if (requestObject.IsSetDisabledServices())
             {
-                context.Writer.WritePropertyName("ack");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AckConfigRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.Ack, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("disabledServices");
+                context.Writer.WriteStartArray();
+                foreach (var requestObjectDisabledServicesListValue in requestObject.DisabledServices)
+                {
+                    context.Writer.WriteStringValue(requestObjectDisabledServicesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
-            if (requestObject.IsSetArgoCd())
+            if (requestObject.IsSetEnableCrossNamespace())
             {
-                context.Writer.WritePropertyName("argoCd");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ArgoCdConfigRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.ArgoCd, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("enableCrossNamespace");
+                context.Writer.WriteBooleanValue(requestObject.EnableCrossNamespace.Value);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static CapabilityConfigurationRequestMarshaller Instance = new CapabilityConfigurationRequestMarshaller();
+        public readonly static UpdateAckConfigMarshaller Instance = new UpdateAckConfigMarshaller();
     }
 }
