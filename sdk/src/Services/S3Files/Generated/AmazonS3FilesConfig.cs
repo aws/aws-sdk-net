@@ -32,7 +32,7 @@ namespace Amazon.S3Files
     public partial class AmazonS3FilesConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("S3Files", "4.0.100.15");
+            InternalSDKUtils.BuildUserAgentString("S3Files", "4.0.100.16");
 
         private static readonly AmazonS3FilesEndpointResolver EndpointResolver =
             new AmazonS3FilesEndpointResolver();

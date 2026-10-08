@@ -32,7 +32,7 @@ namespace Amazon.CloudFrontKeyValueStore
     public partial class AmazonCloudFrontKeyValueStoreConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("CloudFront KeyValueStore", "4.0.100.16");
+            InternalSDKUtils.BuildUserAgentString("CloudFront KeyValueStore", "4.0.100.17");
 
         private static readonly AmazonCloudFrontKeyValueStoreEndpointResolver EndpointResolver =
             new AmazonCloudFrontKeyValueStoreEndpointResolver();

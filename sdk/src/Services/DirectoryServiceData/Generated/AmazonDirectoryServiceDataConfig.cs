@@ -32,7 +32,7 @@ namespace Amazon.DirectoryServiceData
     public partial class AmazonDirectoryServiceDataConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Directory Service Data", "4.0.100.16");
+            InternalSDKUtils.BuildUserAgentString("Directory Service Data", "4.0.100.17");
 
         private static readonly AmazonDirectoryServiceDataEndpointResolver EndpointResolver =
             new AmazonDirectoryServiceDataEndpointResolver();

@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed an issue where a cancelled CancellationToken was ignored while reading the response body, causing async calls to hang indefinitely if the connection stalled after headers were received (https://github.com/aws/aws-sdk-net/issues/4534)"
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}

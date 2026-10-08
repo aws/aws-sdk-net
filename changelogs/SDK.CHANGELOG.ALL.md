@@ -1,3 +1,58 @@
+### 4.0.349.0 (2026-10-08 18:18 UTC)
+* AWSHealth (4.0.102.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* Budgets (4.0.101.0)
+	* Adds a product attribute dimension to CreateBudget and UpdateBudget, letting customers filter AWS Budgets costs by structured attributes such as Amazon Bedrock model, provider, inference type, and feature.
+* CloudFormation (4.0.103.0)
+	* CloudFormation introduces force rollback, a new opt-in capability that lets your stacks complete a rollback even when an individual resource cannot be reverted. Set ForceRollback on ContinueUpdateRollback and CloudFormation records each resource that fails as skipped, completing the rollback.
+* CodeConnections (4.0.101.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.0. The SDK will prioritize its most performant protocol.
+* CostExplorer (4.0.101.0)
+	* Adds a product attribute dimension to GetCostAndUsage, GetCostAndUsageWithResources, and GetDimensionValues, letting customers group, filter, and discover Cost Explorer costs by structured attributes such as Amazon Bedrock model, provider, inference type, and feature.
+* DataZone (4.0.109.0)
+	* Adds support for multi-file notebook import. StartNotebookImport now accepts an s3Files source location with an ordered list of Amazon S3 objects, creating one notebook cell per file, plus a type field to create either a DATA or SQL notebook.
+* DevOpsAgent (4.0.104.0)
+	* Adds release management associations with private network access to AWS DevOps Agent, and a releaseManagementAssociationId field on GitHub and GitLab associations. This helps release management agents (Release-readiness review and Release Testing) access customer resources that are behind a VPC.
+* EKS (4.0.107.0)
+	* Configurations support for EKS ACK Capabilities, including EnableCrossNamespace and DisableServices configuration.
+* EMRServerless (4.0.101.0)
+	* This release adds support for system profile logs for lakeformation enabled Spark connect sessions .
+* FMS (4.0.101.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* GameLift (4.0.103.0)
+	* Amazon GameLift Servers container fleets now support CPU bursting for game server container groups. The TotalVcpuLimit property of a game server container group definition is now optional. When you omit it, the group has no CPU cap and its containers can burst into unused CPU on the instance.
+* Glue (4.0.113.0)
+	* Introduced GetSystemLogsForJobRun and GetSystemLogsForSession APIs, enabling account admins to retrieve system-space logs for FGAC-enabled Glue jobs and sessions.
+* GuardDuty (4.0.109.0)
+	* Added support for GuardDuty RDS Data Activity Monitoring
+* Keyspaces (4.0.101.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.0. The SDK will prioritize its most performant protocol.
+* Lambda (4.0.109.0)
+	* AWS Lambda now supports OAuth 2.0 (OAUTHBEARER), IAM, and IAM with OAUTHBEARER authentication for self-managed Apache Kafka event source mappings, including optional OAuth scope, audience, logical cluster, and identity pool parameters. OAuth 2.0 is also available for Confluent Schema Registry.
+* MarketplaceAgreement (4.0.103.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.0. The SDK will prioritize its most performant protocol.
+* MediaLive (4.0.106.0)
+	* AWS Elemental MediaLive Workflow Monitor now supports AWS Elemental Inference feeds as a target resource type for CloudWatch alarm templates.
+* OpenSearchService (4.0.104.0)
+	* This release adds a new EncryptionMode option (DISK or NATIVE) to EncryptionAtRestOptions for the CreateDomain and UpdateDomainConfig operations, enabling selection of engine-native index-level encryption on supported Amazon OpenSearch Service domains.
+* PI (4.0.101.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* SecurityAgent (4.0.111.0)
+	* Include model field for suggested remediation steps as part of findings
+* SecurityHub (4.0.105.0)
+	* Release findings export APIs - StartExportJobV2, GetExportJobV2, ListExportJobsV2, and CancelExportJobV2. This supports exporting findings from AWS Security Hub to Amazon S3 bucket.
+* SecurityIR (4.0.101.0)
+	* Adds support for retrieving finding-lifecycle metrics for an AWS Security Incident Response membership.
+* SimpleEmailV2 (4.0.106.2)
+	* SESV2 DEED - Documentation Update
+* Translate (4.0.101.0)
+	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
+* Core 4.0.102.9
+	* Cache derived SigV4 signing keys per secret, region, service and UTC date instead of re-deriving them (4 HMAC-SHA256 operations) on every request.
+	* Fixed an issue where a cancelled CancellationToken was ignored while reading the response body, causing async calls to hang indefinitely if the connection stalled after headers were received (https://github.com/aws/aws-sdk-net/issues/4534)
+	* Skip telemetry metric bookkeeping (attribute and histogram allocations) when no MeterProvider is registered.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.348.0 (2026-10-06 22:23 UTC)
 * LambdaWeb (4.0.101.0)
 	* Removes operations that are not yet generally available from the Lambda Web.

@@ -32,7 +32,7 @@ namespace Amazon.Signer
     public partial class AmazonSignerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("signer", "4.0.100.16");
+            InternalSDKUtils.BuildUserAgentString("signer", "4.0.100.17");
 
         private static readonly AmazonSignerEndpointResolver EndpointResolver =
             new AmazonSignerEndpointResolver();
