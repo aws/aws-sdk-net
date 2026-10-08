@@ -179,6 +179,13 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("remediationCode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RemediationCode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("revalidationJobIds", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

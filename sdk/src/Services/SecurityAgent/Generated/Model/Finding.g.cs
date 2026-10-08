@@ -282,6 +282,20 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetReasoning() => this.Reasoning != null;
 
         /// <summary>
+        /// Gets and sets the property RemediationCode. 
+        /// <para>
+        /// The suggested fix for the finding, describing the changes recommended to remediate
+        /// the vulnerability, with example code or configuration.
+        /// </para>
+        /// </summary>
+        public string RemediationCode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the RemediationCode property is set.
+        /// </summary>
+        internal bool IsSetRemediationCode() => this.RemediationCode != null;
+
+        /// <summary>
         /// Gets and sets the property RevalidationJobIds. 
         /// <para>
         /// The list of pentest job identifiers for revalidation jobs that retested this finding.
