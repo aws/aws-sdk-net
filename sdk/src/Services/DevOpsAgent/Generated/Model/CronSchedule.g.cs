@@ -30,41 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Expression-based schedule condition. CreateTrigger callers using this condition supply
-    /// expression and omit spec. Trigger responses always use this condition, include the
-    /// persisted or derived expression, and also include spec when the trigger was created
-    /// from a structured schedule.
+    /// Cron or rate schedule. Trigger-created custom-agent schedules use an EventBridge flexible
+    /// window of up to 30 minutes for load distribution.
     /// </summary>
-    public partial class ScheduleCondition
+    public partial class CronSchedule
     {
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// EventBridge cron or rate expression. Required for existing request and response compatibility.
-        /// For a structured schedule response, this is the expression derived by Backlog.
+        /// EventBridge cron or rate expression that anchors the flexible window
         /// </para>
         /// </summary>
-        [AWSProperty(Min = 1, Max = 256)]
+        [AWSProperty(Required = true, Min = 1, Max = 256)]
         public string Expression { get; set; }
 
         /// <summary>
         /// Checks to see if the Expression property is set.
         /// </summary>
         internal bool IsSetExpression() => this.Expression != null;
-
-        /// <summary>
-        /// Gets and sets the property Spec. 
-        /// <para>
-        /// Structured schedule source of truth (cron | timeRange). On CreateTrigger supply exactly
-        /// one of spec or expression. Present in responses together with the derived expression
-        /// for structured triggers.
-        /// </para>
-        /// </summary>
-        public ScheduleSpec Spec { get; set; }
-
-        /// <summary>
-        /// Checks to see if the Spec property is set.
-        /// </summary>
-        internal bool IsSetSpec() => this.Spec != null;
     }
 }

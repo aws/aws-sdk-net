@@ -34,51 +34,44 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitLabConfiguration Marshaller
+    /// TimeRangeSchedule Marshaller
     /// </summary>
-    public partial class GitLabConfigurationMarshaller : IRequestMarshaller<GitLabConfiguration, JsonMarshallerContext>
+    public partial class TimeRangeScheduleMarshaller : IRequestMarshaller<TimeRangeSchedule, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitLabConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TimeRangeSchedule requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetInstanceIdentifier())
+            if (requestObject.IsSetRecurrence())
             {
-                context.Writer.WritePropertyName("instanceIdentifier");
-                context.Writer.WriteStringValue(requestObject.InstanceIdentifier);
+                context.Writer.WritePropertyName("recurrence");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecurrenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Recurrence, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if (requestObject.IsSetProjectId())
+            if (requestObject.IsSetStartAfter())
             {
-                context.Writer.WritePropertyName("projectId");
-                context.Writer.WriteStringValue(requestObject.ProjectId);
+                context.Writer.WritePropertyName("startAfter");
+                context.Writer.WriteStringValue(requestObject.StartAfter);
             }
 
-            if (requestObject.IsSetProjectPath())
+            if (requestObject.IsSetStartBefore())
             {
-                context.Writer.WritePropertyName("projectPath");
-                context.Writer.WriteStringValue(requestObject.ProjectPath);
-            }
-
-            if (requestObject.IsSetReleaseManagementAssociationId())
-            {
-                context.Writer.WritePropertyName("releaseManagementAssociationId");
-                context.Writer.WriteStringValue(requestObject.ReleaseManagementAssociationId);
-            }
-
-            if (requestObject.IsSetRuntimeRoleArn())
-            {
-                context.Writer.WritePropertyName("runtimeRoleArn");
-                context.Writer.WriteStringValue(requestObject.RuntimeRoleArn);
+                context.Writer.WritePropertyName("startBefore");
+                context.Writer.WriteStringValue(requestObject.StartBefore);
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static GitLabConfigurationMarshaller Instance = new GitLabConfigurationMarshaller();
+        public readonly static TimeRangeScheduleMarshaller Instance = new TimeRangeScheduleMarshaller();
     }
 }

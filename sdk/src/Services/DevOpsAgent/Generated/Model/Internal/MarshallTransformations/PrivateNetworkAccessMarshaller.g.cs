@@ -34,39 +34,21 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitLabConfiguration Marshaller
+    /// PrivateNetworkAccess Marshaller
     /// </summary>
-    public partial class GitLabConfigurationMarshaller : IRequestMarshaller<GitLabConfiguration, JsonMarshallerContext>
+    public partial class PrivateNetworkAccessMarshaller : IRequestMarshaller<PrivateNetworkAccess, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitLabConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PrivateNetworkAccess requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetInstanceIdentifier())
+            if (requestObject.IsSetPrivateConnectionName())
             {
-                context.Writer.WritePropertyName("instanceIdentifier");
-                context.Writer.WriteStringValue(requestObject.InstanceIdentifier);
-            }
-
-            if (requestObject.IsSetProjectId())
-            {
-                context.Writer.WritePropertyName("projectId");
-                context.Writer.WriteStringValue(requestObject.ProjectId);
-            }
-
-            if (requestObject.IsSetProjectPath())
-            {
-                context.Writer.WritePropertyName("projectPath");
-                context.Writer.WriteStringValue(requestObject.ProjectPath);
-            }
-
-            if (requestObject.IsSetReleaseManagementAssociationId())
-            {
-                context.Writer.WritePropertyName("releaseManagementAssociationId");
-                context.Writer.WriteStringValue(requestObject.ReleaseManagementAssociationId);
+                context.Writer.WritePropertyName("privateConnectionName");
+                context.Writer.WriteStringValue(requestObject.PrivateConnectionName);
             }
 
             if (requestObject.IsSetRuntimeRoleArn())
@@ -79,6 +61,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static GitLabConfigurationMarshaller Instance = new GitLabConfigurationMarshaller();
+        public readonly static PrivateNetworkAccessMarshaller Instance = new PrivateNetworkAccessMarshaller();
     }
 }

@@ -30,22 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// Daily recurrence
     /// </summary>
-    public partial class TriggerCondition
+    public partial class DailyRecurrence
     {
-        /// <summary>
-        /// Gets and sets the property Schedule. 
-        /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
-        /// </para>
-        /// </summary>
-        public ScheduleCondition Schedule { get; set; }
-
-        /// <summary>
-        /// Checks to see if the Schedule property is set.
-        /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
     }
 }

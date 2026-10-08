@@ -34,30 +34,30 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleCondition Marshaller
+    /// ReleaseManagementConfiguration Marshaller
     /// </summary>
-    public partial class ScheduleConditionMarshaller : IRequestMarshaller<ScheduleCondition, JsonMarshallerContext>
+    public partial class ReleaseManagementConfigurationMarshaller : IRequestMarshaller<ReleaseManagementConfiguration, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ScheduleCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(ReleaseManagementConfiguration requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetExpression())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("expression");
-                context.Writer.WriteStringValue(requestObject.Expression);
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
-            if (requestObject.IsSetSpec())
+            if (requestObject.IsSetNetworkAccess())
             {
-                context.Writer.WritePropertyName("spec");
+                context.Writer.WritePropertyName("networkAccess");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ScheduleSpecMarshaller.Instance;
-                marshaller.Marshall(requestObject.Spec, context);
+                var marshaller = NetworkAccessConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkAccess, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -66,6 +66,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static ScheduleConditionMarshaller Instance = new ScheduleConditionMarshaller();
+        public readonly static ReleaseManagementConfigurationMarshaller Instance = new ReleaseManagementConfigurationMarshaller();
     }
 }

@@ -242,6 +242,72 @@ namespace Amazon.DevOpsAgent
     }
 
     /// <summary>
+    /// Constants used for properties of type DayOfWeek.
+    /// </summary>
+    public class DayOfWeek : ConstantClass
+    {
+        /// <summary>
+        /// Constant FRIDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek FRIDAY = new DayOfWeek("FRIDAY");
+
+        /// <summary>
+        /// Constant MONDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek MONDAY = new DayOfWeek("MONDAY");
+
+        /// <summary>
+        /// Constant SATURDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SATURDAY = new DayOfWeek("SATURDAY");
+
+        /// <summary>
+        /// Constant SUNDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SUNDAY = new DayOfWeek("SUNDAY");
+
+        /// <summary>
+        /// Constant THURSDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek THURSDAY = new DayOfWeek("THURSDAY");
+
+        /// <summary>
+        /// Constant TUESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek TUESDAY = new DayOfWeek("TUESDAY");
+
+        /// <summary>
+        /// Constant WEDNESDAY for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek WEDNESDAY = new DayOfWeek("WEDNESDAY");
+
+        /// <summary>
+        /// Constructs a custom DayOfWeek for a value not among the defined constants.
+        /// </summary>
+        public DayOfWeek(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfWeek FindValue(string value)
+        {
+            return FindValue<DayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfWeek(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EventChannelType.
     /// </summary>
     public class EventChannelType : ConstantClass

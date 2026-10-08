@@ -199,6 +199,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if (requestObject.IsSetReleaseManagement())
+            {
+                context.Writer.WritePropertyName("releaseManagement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReleaseManagementConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ReleaseManagement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if (requestObject.IsSetRemoteagent())
             {
                 context.Writer.WritePropertyName("remoteagent");

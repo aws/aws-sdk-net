@@ -34,30 +34,35 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleCondition Marshaller
+    /// ScheduleSpec Marshaller
     /// </summary>
-    public partial class ScheduleConditionMarshaller : IRequestMarshaller<ScheduleCondition, JsonMarshallerContext>
+    public partial class ScheduleSpecMarshaller : IRequestMarshaller<ScheduleSpec, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ScheduleCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(ScheduleSpec requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetExpression())
+            if (requestObject.IsSetCron())
             {
-                context.Writer.WritePropertyName("expression");
-                context.Writer.WriteStringValue(requestObject.Expression);
-            }
-
-            if (requestObject.IsSetSpec())
-            {
-                context.Writer.WritePropertyName("spec");
+                context.Writer.WritePropertyName("cron");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ScheduleSpecMarshaller.Instance;
-                marshaller.Marshall(requestObject.Spec, context);
+                var marshaller = CronScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Cron, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetTimeRange())
+            {
+                context.Writer.WritePropertyName("timeRange");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeRangeScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimeRange, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -66,6 +71,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static ScheduleConditionMarshaller Instance = new ScheduleConditionMarshaller();
+        public readonly static ScheduleSpecMarshaller Instance = new ScheduleSpecMarshaller();
     }
 }

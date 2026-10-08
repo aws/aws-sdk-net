@@ -30,22 +30,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// Configuration for a release management environment.
     /// </summary>
-    public partial class TriggerCondition
+    public partial class ReleaseManagementConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Schedule. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
+        /// The name for this release management environment.
         /// </para>
         /// </summary>
-        public ScheduleCondition Schedule { get; set; }
+        [AWSProperty(Required = true, Min = 1, Max = 128)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Checks to see if the Schedule property is set.
+        /// Checks to see if the Name property is set.
         /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
+        internal bool IsSetName() => this.Name != null;
+
+        /// <summary>
+        /// Gets and sets the property NetworkAccess. 
+        /// <para>
+        /// Specifies how AWS DevOps Agent reaches your application using a Release Management
+        /// Environment
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public NetworkAccessConfiguration NetworkAccess { get; set; }
+
+        /// <summary>
+        /// Checks to see if the NetworkAccess property is set.
+        /// </summary>
+        internal bool IsSetNetworkAccess() => this.NetworkAccess != null;
     }
 }

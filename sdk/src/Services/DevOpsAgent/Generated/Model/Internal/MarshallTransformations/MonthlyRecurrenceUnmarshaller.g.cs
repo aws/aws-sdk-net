@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduleCondition Object
+    /// Response Unmarshaller for MonthlyRecurrence Object
     /// </summary>
-    public partial class ScheduleConditionUnmarshaller : IJsonUnmarshaller<ScheduleCondition, JsonUnmarshallerContext>
+    public partial class MonthlyRecurrenceUnmarshaller : IJsonUnmarshaller<MonthlyRecurrence, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ScheduleCondition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MonthlyRecurrence Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new ScheduleCondition();
+            var unmarshalledObject = new MonthlyRecurrence();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,28 +53,21 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("expression", targetDepth, ref reader))
+                if (context.TestExpression("dayOfMonth", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("spec", targetDepth, ref reader))
-                {
-                    var unmarshaller = ScheduleSpecUnmarshaller.Instance;
-                    unmarshalledObject.Spec = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.DayOfMonth = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static ScheduleConditionUnmarshaller _instance = new ScheduleConditionUnmarshaller();
+        private static MonthlyRecurrenceUnmarshaller _instance = new MonthlyRecurrenceUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static ScheduleConditionUnmarshaller Instance => _instance;
+        public static MonthlyRecurrenceUnmarshaller Instance => _instance;
     }
 }

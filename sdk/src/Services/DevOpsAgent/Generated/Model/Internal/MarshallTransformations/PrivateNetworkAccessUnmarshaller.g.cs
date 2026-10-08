@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GitLabConfiguration Object
+    /// Response Unmarshaller for PrivateNetworkAccess Object
     /// </summary>
-    public partial class GitLabConfigurationUnmarshaller : IJsonUnmarshaller<GitLabConfiguration, JsonUnmarshallerContext>
+    public partial class PrivateNetworkAccessUnmarshaller : IJsonUnmarshaller<PrivateNetworkAccess, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public GitLabConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PrivateNetworkAccess Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new GitLabConfiguration();
+            var unmarshalledObject = new PrivateNetworkAccess();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,31 +53,10 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("instanceIdentifier", targetDepth, ref reader))
+                if (context.TestExpression("privateConnectionName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceIdentifier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("projectId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("projectPath", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProjectPath = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("releaseManagementAssociationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReleaseManagementAssociationId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PrivateConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
@@ -91,11 +70,11 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static GitLabConfigurationUnmarshaller _instance = new GitLabConfigurationUnmarshaller();
+        private static PrivateNetworkAccessUnmarshaller _instance = new PrivateNetworkAccessUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static GitLabConfigurationUnmarshaller Instance => _instance;
+        public static PrivateNetworkAccessUnmarshaller Instance => _instance;
     }
 }

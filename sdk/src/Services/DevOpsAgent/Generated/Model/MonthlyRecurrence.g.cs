@@ -30,22 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// Monthly recurrence
     /// </summary>
-    public partial class TriggerCondition
+    public partial class MonthlyRecurrence
     {
         /// <summary>
-        /// Gets and sets the property Schedule. 
+        /// Gets and sets the property DayOfMonth. 
         /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
+        /// Day of month the window recurs on
         /// </para>
         /// </summary>
-        public ScheduleCondition Schedule { get; set; }
+        [AWSProperty(Required = true, Min = 1, Max = 31)]
+        public int? DayOfMonth { get; set; }
 
         /// <summary>
-        /// Checks to see if the Schedule property is set.
+        /// Checks to see if the DayOfMonth property is set.
         /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
+        internal bool IsSetDayOfMonth() => this.DayOfMonth.HasValue;
     }
 }

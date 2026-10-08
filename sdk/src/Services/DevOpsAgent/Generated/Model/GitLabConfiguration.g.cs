@@ -76,6 +76,21 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetProjectPath() => this.ProjectPath != null;
 
         /// <summary>
+        /// Gets and sets the property ReleaseManagementAssociationId. 
+        /// <para>
+        /// The identifier of the release management association that this project maps to for
+        /// automatic verification testing.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 255)]
+        public string ReleaseManagementAssociationId { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ReleaseManagementAssociationId property is set.
+        /// </summary>
+        internal bool IsSetReleaseManagementAssociationId() => this.ReleaseManagementAssociationId != null;
+
+        /// <summary>
         /// Gets and sets the property RuntimeRoleArn. 
         /// <para>
         /// Optional role ARN that AIDevOps assumes at runtime for automatic verification testing

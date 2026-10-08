@@ -30,22 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// Specifies how AWS DevOps Agent reaches your application using a Release Management
+    /// Environment
     /// </summary>
-    public partial class TriggerCondition
+    public partial class NetworkAccessConfiguration
     {
         /// <summary>
-        /// Gets and sets the property Schedule. 
+        /// Gets and sets the property PrivateAccess. 
         /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
+        /// Private network access to the resource inside a VPC, using a private connection.
         /// </para>
         /// </summary>
-        public ScheduleCondition Schedule { get; set; }
+        public PrivateNetworkAccess PrivateAccess { get; set; }
 
         /// <summary>
-        /// Checks to see if the Schedule property is set.
+        /// Checks to see if the PrivateAccess property is set.
         /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
+        internal bool IsSetPrivateAccess() => this.PrivateAccess != null;
     }
 }

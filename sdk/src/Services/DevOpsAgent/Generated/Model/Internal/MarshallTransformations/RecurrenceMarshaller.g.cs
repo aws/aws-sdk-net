@@ -34,51 +34,54 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GitLabConfiguration Marshaller
+    /// Recurrence Marshaller
     /// </summary>
-    public partial class GitLabConfigurationMarshaller : IRequestMarshaller<GitLabConfiguration, JsonMarshallerContext>
+    public partial class RecurrenceMarshaller : IRequestMarshaller<Recurrence, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(GitLabConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(Recurrence requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetInstanceIdentifier())
+            if (requestObject.IsSetDaily())
             {
-                context.Writer.WritePropertyName("instanceIdentifier");
-                context.Writer.WriteStringValue(requestObject.InstanceIdentifier);
+                context.Writer.WritePropertyName("daily");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DailyRecurrenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Daily, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if (requestObject.IsSetProjectId())
+            if (requestObject.IsSetMonthly())
             {
-                context.Writer.WritePropertyName("projectId");
-                context.Writer.WriteStringValue(requestObject.ProjectId);
+                context.Writer.WritePropertyName("monthly");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonthlyRecurrenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Monthly, context);
+
+                context.Writer.WriteEndObject();
             }
 
-            if (requestObject.IsSetProjectPath())
+            if (requestObject.IsSetWeekly())
             {
-                context.Writer.WritePropertyName("projectPath");
-                context.Writer.WriteStringValue(requestObject.ProjectPath);
-            }
+                context.Writer.WritePropertyName("weekly");
+                context.Writer.WriteStartObject();
 
-            if (requestObject.IsSetReleaseManagementAssociationId())
-            {
-                context.Writer.WritePropertyName("releaseManagementAssociationId");
-                context.Writer.WriteStringValue(requestObject.ReleaseManagementAssociationId);
-            }
+                var marshaller = WeeklyRecurrenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Weekly, context);
 
-            if (requestObject.IsSetRuntimeRoleArn())
-            {
-                context.Writer.WritePropertyName("runtimeRoleArn");
-                context.Writer.WriteStringValue(requestObject.RuntimeRoleArn);
+                context.Writer.WriteEndObject();
             }
         }
 
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static GitLabConfigurationMarshaller Instance = new GitLabConfigurationMarshaller();
+        public readonly static RecurrenceMarshaller Instance = new RecurrenceMarshaller();
     }
 }

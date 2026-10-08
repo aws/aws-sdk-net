@@ -151,6 +151,13 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     continue;
                 }
 
+                if (context.TestExpression("releaseManagement", targetDepth, ref reader))
+                {
+                    var unmarshaller = ReleaseManagementConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ReleaseManagement = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+
                 if (context.TestExpression("remoteagent", targetDepth, ref reader))
                 {
                     var unmarshaller = RemoteAgentConfigurationUnmarshaller.Instance;

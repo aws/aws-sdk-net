@@ -34,30 +34,24 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ScheduleCondition Marshaller
+    /// NetworkAccessConfiguration Marshaller
     /// </summary>
-    public partial class ScheduleConditionMarshaller : IRequestMarshaller<ScheduleCondition, JsonMarshallerContext>
+    public partial class NetworkAccessConfigurationMarshaller : IRequestMarshaller<NetworkAccessConfiguration, JsonMarshallerContext>
     {
         /// <summary>
         /// Marshall the structure from the request object to the service
         /// </summary>
-        public void Marshall(ScheduleCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(NetworkAccessConfiguration requestObject, JsonMarshallerContext context)
         {
             if (requestObject == null) return;
 
-            if (requestObject.IsSetExpression())
+            if (requestObject.IsSetPrivateAccess())
             {
-                context.Writer.WritePropertyName("expression");
-                context.Writer.WriteStringValue(requestObject.Expression);
-            }
-
-            if (requestObject.IsSetSpec())
-            {
-                context.Writer.WritePropertyName("spec");
+                context.Writer.WritePropertyName("privateAccess");
                 context.Writer.WriteStartObject();
 
-                var marshaller = ScheduleSpecMarshaller.Instance;
-                marshaller.Marshall(requestObject.Spec, context);
+                var marshaller = PrivateNetworkAccessMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrivateAccess, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -66,6 +60,6 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller
         /// </summary>
-        public readonly static ScheduleConditionMarshaller Instance = new ScheduleConditionMarshaller();
+        public readonly static NetworkAccessConfigurationMarshaller Instance = new NetworkAccessConfigurationMarshaller();
     }
 }

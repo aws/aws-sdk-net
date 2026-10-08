@@ -34,17 +34,17 @@ using System.Text.Json;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ScheduleCondition Object
+    /// Response Unmarshaller for WeeklyRecurrence Object
     /// </summary>
-    public partial class ScheduleConditionUnmarshaller : IJsonUnmarshaller<ScheduleCondition, JsonUnmarshallerContext>
+    public partial class WeeklyRecurrenceUnmarshaller : IJsonUnmarshaller<WeeklyRecurrence, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshall the response from the service to the response class.
         /// </summary>
         /// <returns>The unmarshalled object</returns>
-        public ScheduleCondition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WeeklyRecurrence Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            var unmarshalledObject = new ScheduleCondition();
+            var unmarshalledObject = new WeeklyRecurrence();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);
@@ -53,28 +53,21 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("expression", targetDepth, ref reader))
+                if (context.TestExpression("dayOfWeek", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Expression = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-
-                if (context.TestExpression("spec", targetDepth, ref reader))
-                {
-                    var unmarshaller = ScheduleSpecUnmarshaller.Instance;
-                    unmarshalledObject.Spec = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DayOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
             return unmarshalledObject;
         }
 
-        private static ScheduleConditionUnmarshaller _instance = new ScheduleConditionUnmarshaller();
+        private static WeeklyRecurrenceUnmarshaller _instance = new WeeklyRecurrenceUnmarshaller();
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>
-        public static ScheduleConditionUnmarshaller Instance => _instance;
+        public static WeeklyRecurrenceUnmarshaller Instance => _instance;
     }
 }

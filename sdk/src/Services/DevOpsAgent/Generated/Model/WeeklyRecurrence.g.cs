@@ -30,22 +30,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// Weekly recurrence
     /// </summary>
-    public partial class TriggerCondition
+    public partial class WeeklyRecurrence
     {
         /// <summary>
-        /// Gets and sets the property Schedule. 
+        /// Gets and sets the property DayOfWeek. 
         /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
+        /// Day of week the window recurs on
         /// </para>
         /// </summary>
-        public ScheduleCondition Schedule { get; set; }
+        [AWSProperty(Required = true)]
+        public DayOfWeek DayOfWeek { get; set; }
 
         /// <summary>
-        /// Checks to see if the Schedule property is set.
+        /// Checks to see if the DayOfWeek property is set.
         /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
+        internal bool IsSetDayOfWeek() => this.DayOfWeek != null;
     }
 }

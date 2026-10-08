@@ -30,22 +30,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// Structured schedule specification. Select exactly one schedule form.
     /// </summary>
-    public partial class TriggerCondition
+    public partial class ScheduleSpec
     {
         /// <summary>
-        /// Gets and sets the property Schedule. 
+        /// Gets and sets the property Cron. 
         /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
+        /// Runs on an EventBridge cron or rate cadence
         /// </para>
         /// </summary>
-        public ScheduleCondition Schedule { get; set; }
+        public CronSchedule Cron { get; set; }
 
         /// <summary>
-        /// Checks to see if the Schedule property is set.
+        /// Checks to see if the Cron property is set.
         /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
+        internal bool IsSetCron() => this.Cron != null;
+
+        /// <summary>
+        /// Gets and sets the property TimeRange. 
+        /// <para>
+        /// Runs within a recurring time-of-day window
+        /// </para>
+        /// </summary>
+        public TimeRangeSchedule TimeRange { get; set; }
+
+        /// <summary>
+        /// Checks to see if the TimeRange property is set.
+        /// </summary>
+        internal bool IsSetTimeRange() => this.TimeRange != null;
     }
 }

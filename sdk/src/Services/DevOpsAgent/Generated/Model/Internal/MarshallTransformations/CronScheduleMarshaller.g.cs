@@ -25,27 +25,36 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
-#pragma warning disable CS0612,CS0618,CS1570
+using Amazon.DevOpsAgent.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 
-namespace Amazon.DevOpsAgent.Model
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Defines how a Trigger fires.
+    /// CronSchedule Marshaller
     /// </summary>
-    public partial class TriggerCondition
+    public partial class CronScheduleMarshaller : IRequestMarshaller<CronSchedule, JsonMarshallerContext>
     {
         /// <summary>
-        /// Gets and sets the property Schedule. 
-        /// <para>
-        /// Schedule-based firing condition. On CreateTrigger supply exactly one of the schedule
-        /// condition's expression or spec.
-        /// </para>
+        /// Marshall the structure from the request object to the service
         /// </summary>
-        public ScheduleCondition Schedule { get; set; }
+        public void Marshall(CronSchedule requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetExpression())
+            {
+                context.Writer.WritePropertyName("expression");
+                context.Writer.WriteStringValue(requestObject.Expression);
+            }
+        }
 
         /// <summary>
-        /// Checks to see if the Schedule property is set.
+        /// Singleton Marshaller
         /// </summary>
-        internal bool IsSetSchedule() => this.Schedule != null;
+        public readonly static CronScheduleMarshaller Instance = new CronScheduleMarshaller();
     }
 }
