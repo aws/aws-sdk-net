@@ -220,6 +220,33 @@ namespace AWSSDKDocSamples.Amazon.SecurityIR.Generated
             #endregion
         }
 
+        public void SecurityIRGetFindingMetrics()
+        {
+            #region GetFindingMetrics-1
+
+            var client = new AmazonSecurityIRClient();
+            var response = client.GetFindingMetrics(new GetFindingMetricsRequest
+            {
+                EndDate = new DateTime(2026, 8, 18, 0, 0, 0, DateTimeKind.Utc),
+                MembershipId = "m-a1b2c3d4e5f",
+                StartDate = new DateTime(2026, 8, 1, 0, 0, 0, DateTimeKind.Utc)
+            });
+
+            long? findingsEscalated = response.FindingsEscalated;
+            long? findingsEscalatedFalsePositive = response.FindingsEscalatedFalsePositive;
+            long? findingsEscalatedInProgress = response.FindingsEscalatedInProgress;
+            long? findingsIngestedGuardDuty = response.FindingsIngestedGuardDuty;
+            long? findingsIngestedSecurityHub = response.FindingsIngestedSecurityHub;
+            long? findingsInvestigated = response.FindingsInvestigated;
+            long? findingsInvestigatedFalsePositive = response.FindingsInvestigatedFalsePositive;
+            long? findingsInvestigatedInProgress = response.FindingsInvestigatedInProgress;
+            long? findingsTriaged = response.FindingsTriaged;
+            long? findingsTriagedFalsePositive = response.FindingsTriagedFalsePositive;
+            long? findingsTruePositive = response.FindingsTruePositive;
+
+            #endregion
+        }
+
         public void SecurityIRGetMembership()
         {
             #region GetMembership-1

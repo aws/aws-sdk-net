@@ -280,6 +280,22 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubCancelExportJobV2()
+        {
+            #region CancelExportJobV2-1
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.CancelExportJobV2(new CancelExportJobV2Request
+            {
+                ExportJobId = "a1b2c3d4e5f6"
+            });
+
+            string exportJobId = response.ExportJobId;
+            ExportStatus status = response.Status;
+
+            #endregion
+        }
+
         public void SecurityHubCreateActionTarget()
         {
             #region CreateActionTarget-1
@@ -930,6 +946,52 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubGetExportJobV2()
+        {
+            #region GetExportJobV2-1
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetExportJobV2(new GetExportJobV2Request
+            {
+                ExportJobId = "f6e5d4c3b2a1"
+            });
+
+            ExportDataType dataType = response.DataType;
+            ExportDestination destination = response.Destination;
+            DateTime? endedAt = response.EndedAt;
+            string exportJobId = response.ExportJobId;
+            ExportFailureCode failureCode = response.FailureCode;
+            string failureMessage = response.FailureMessage;
+            ExportOutput outputConfiguration = response.OutputConfiguration;
+            ExportScopes scopes = response.Scopes;
+            DateTime? startedAt = response.StartedAt;
+            ExportStatus status = response.Status;
+
+            #endregion
+        }
+
+        public void SecurityHubGetExportJobV2()
+        {
+            #region GetExportJobV2-2
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetExportJobV2(new GetExportJobV2Request
+            {
+                ExportJobId = "a1b2c3d4e5f6"
+            });
+
+            ExportDataType dataType = response.DataType;
+            ExportDestination destination = response.Destination;
+            DateTime? endedAt = response.EndedAt;
+            string exportJobId = response.ExportJobId;
+            string name = response.Name;
+            ExportOutput outputConfiguration = response.OutputConfiguration;
+            DateTime? startedAt = response.StartedAt;
+            ExportStatus status = response.Status;
+
+            #endregion
+        }
+
         public void SecurityHubGetFindingAggregator()
         {
             #region GetFindingAggregator-1
@@ -1129,6 +1191,24 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubListExportJobsV2()
+        {
+            #region ListExportJobsV2-1
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListExportJobsV2(new ListExportJobsV2Request
+            {
+                DataType = "FINDINGS",
+                MaxResults = 10,
+                Status = "SUCCEEDED"
+            });
+
+            List<ExportSummary> items = response.Items;
+            string nextToken = response.NextToken;
+
+            #endregion
+        }
+
         public void SecurityHubListFindingAggregators()
         {
             #region ListFindingAggregators-1
@@ -1242,6 +1322,103 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                 Target = new Target { RootId = "r-f6g7h8i9j0example" }
             });
 
+
+            #endregion
+        }
+
+        public void SecurityHubStartExportJobV2()
+        {
+            #region StartExportJobV2-1
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.StartExportJobV2(new StartExportJobV2Request
+            {
+                ClientToken = "b3d1f9a2-1c4e-4b9a-9f2e-EXAMPLE11111",
+                Destination = new ExportDestination { S3 = new S3ExportDestination {
+                    BucketArn = "arn:aws:s3:::amzn-s3-demo-bucket",
+                    KmsKeyArn = "arn:aws:kms:aa-example-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+                    ObjectPrefix = "security-hub-exports/2026-Q1"
+                } },
+                Name = "quarterly-critical-findings",
+                OutputConfiguration = new ExportOutput { Findings = new FindingsOutput {
+                    Filters = new OcsfFindingFilters {
+                        CompositeFilters = new List<CompositeFilter> {
+                            new CompositeFilter {
+                                Operator = "AND",
+                                StringFilters = new List<OcsfStringFilter> {
+                                    new OcsfStringFilter {
+                                        FieldName = "severity",
+                                        Filter = new StringFilter {
+                                            Comparison = "EQUALS",
+                                            Value = "Critical"
+                                        }
+                                    },
+                                    new OcsfStringFilter {
+                                        FieldName = "status",
+                                        Filter = new StringFilter {
+                                            Comparison = "EQUALS",
+                                            Value = "New"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        CompositeOperator = "AND"
+                    },
+                    Format = "CSV",
+                    SelectedFields = new List<string> {
+                        "finding_info.title",
+                        "severity",
+                        "status",
+                        "cloud.account.uid",
+                        "resources.uid"
+                    }
+                } }
+            });
+
+            string exportJobId = response.ExportJobId;
+
+            #endregion
+        }
+
+        public void SecurityHubStartExportJobV2()
+        {
+            #region StartExportJobV2-2
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.StartExportJobV2(new StartExportJobV2Request
+            {
+                Destination = new ExportDestination { S3 = new S3ExportDestination {
+                    BucketArn = "arn:aws:s3:::amzn-s3-demo-bucket",
+                    KmsKeyArn = "arn:aws:kms:aa-example-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"
+                } },
+                OutputConfiguration = new ExportOutput { Findings = new FindingsOutput {
+                    Filters = new OcsfFindingFilters {
+                        CompositeFilters = new List<CompositeFilter> {
+                            new CompositeFilter {
+                                DateFilters = new List<OcsfDateFilter> {
+                                    new OcsfDateFilter {
+                                        FieldName = "finding_info.last_seen_time_dt",
+                                        Filter = new DateFilter { DateRange = new DateRange {
+                                            Comparison = "WITHIN",
+                                            Unit = "DAYS",
+                                            Value = 30
+                                        } }
+                                    }
+                                },
+                                Operator = "AND"
+                            }
+                        },
+                        CompositeOperator = "AND"
+                    },
+                    Format = "OCSF_JSON"
+                } },
+                Scopes = new ExportScopes { AwsOrganizations = new List<AwsOrganizationScope> {
+                    new AwsOrganizationScope { OrganizationalUnitId = "ou-1234-a1b2c3d4" }
+                } }
+            });
+
+            string exportJobId = response.ExportJobId;
 
             #endregion
         }

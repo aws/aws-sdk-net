@@ -178,6 +178,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CancelExportJobV2(Amazon.SecurityHub.Model.CancelExportJobV2Request)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CancelExportJobV2(Amazon.SecurityHub.Model.CancelExportJobV2Request)" />
+      <member name="T:Amazon.SecurityHub.Model.CancelExportJobV2Request" />
+      <member name="T:Amazon.SecurityHub.Model.CancelExportJobV2Response" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example cancels an export job that is in progress. Security Hub transitions the job to the CANCELLED state and returns its new status.
+        </para>
+        <code title="Example – Canceling a running export job" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="CancelExportJobV2-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateActionTarget(Amazon.SecurityHub.Model.CreateActionTargetRequest)" />
       <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateActionTarget(Amazon.SecurityHub.Model.CreateActionTargetRequest)" />
       <member name="T:Amazon.SecurityHub.Model.CreateActionTargetRequest" />
@@ -706,6 +722,38 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetExportJobV2(Amazon.SecurityHub.Model.GetExportJobV2Request)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetExportJobV2(Amazon.SecurityHub.Model.GetExportJobV2Request)" />
+      <member name="T:Amazon.SecurityHub.Model.GetExportJobV2Request" />
+      <member name="T:Amazon.SecurityHub.Model.GetExportJobV2Response" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example retrieves an export job that failed because Security Hub couldn't write to the destination. The FailureCode and FailureMessage explain the cause.
+        </para>
+        <code title="Example – Getting the details of a failed export job" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="GetExportJobV2-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetExportJobV2(Amazon.SecurityHub.Model.GetExportJobV2Request)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetExportJobV2(Amazon.SecurityHub.Model.GetExportJobV2Request)" />
+      <member name="T:Amazon.SecurityHub.Model.GetExportJobV2Request" />
+      <member name="T:Amazon.SecurityHub.Model.GetExportJobV2Response" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example retrieves an export job that has finished successfully. The output is available in the destination bucket.
+        </para>
+        <code title="Example – Getting the details of a completed export job" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="GetExportJobV2-2" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetFindingAggregator(Amazon.SecurityHub.Model.GetFindingAggregatorRequest)" />
       <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetFindingAggregator(Amazon.SecurityHub.Model.GetFindingAggregatorRequest)" />
       <member name="T:Amazon.SecurityHub.Model.GetFindingAggregatorRequest" />
@@ -900,6 +948,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListExportJobsV2(Amazon.SecurityHub.Model.ListExportJobsV2Request)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListExportJobsV2(Amazon.SecurityHub.Model.ListExportJobsV2Request)" />
+      <member name="T:Amazon.SecurityHub.Model.ListExportJobsV2Request" />
+      <member name="T:Amazon.SecurityHub.Model.ListExportJobsV2Response" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example lists the findings export jobs in the account that have succeeded, returning up to 10 results per page.
+        </para>
+        <code title="Example – Listing successful findings export jobs" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="ListExportJobsV2-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListFindingAggregators(Amazon.SecurityHub.Model.ListFindingAggregatorsRequest)" />
       <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListFindingAggregators(Amazon.SecurityHub.Model.ListFindingAggregatorsRequest)" />
       <member name="T:Amazon.SecurityHub.Model.ListFindingAggregatorsRequest" />
@@ -1007,6 +1071,38 @@
           This operation disassociates a configuration policy or self-managed behavior from the target account, organizational unit, or the root.
         </para>
         <code title="To disassociate a configuration from a target" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="StartConfigurationPolicyDisassociation-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.StartExportJobV2(Amazon.SecurityHub.Model.StartExportJobV2Request)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.StartExportJobV2(Amazon.SecurityHub.Model.StartExportJobV2Request)" />
+      <member name="T:Amazon.SecurityHub.Model.StartExportJobV2Request" />
+      <member name="T:Amazon.SecurityHub.Model.StartExportJobV2Response" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example starts an export that writes selected fields of new, critical findings to an Amazon S3 bucket in CSV format.
+        </para>
+        <code title="Example – Starting a CSV export of critical findings" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="StartExportJobV2-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
+      <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.StartExportJobV2(Amazon.SecurityHub.Model.StartExportJobV2Request)" />
+      <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.StartExportJobV2(Amazon.SecurityHub.Model.StartExportJobV2Request)" />
+      <member name="T:Amazon.SecurityHub.Model.StartExportJobV2Request" />
+      <member name="T:Amazon.SecurityHub.Model.StartExportJobV2Response" />
+    </members>
+    <value>
+      <example>
+        <para>
+          The following example, run by a delegated administrator, starts an export of the last 30 days of findings for a specific organizational unit (OU) in OCSF JSON format.
+        </para>
+        <code title="Example – Starting an OCSF JSON export scoped to an organizational unit" source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs" region="StartExportJobV2-2" />
       </example>
     </value>
   </doc>

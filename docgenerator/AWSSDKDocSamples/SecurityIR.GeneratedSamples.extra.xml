@@ -146,6 +146,22 @@
   </doc>
   <doc>
     <members>
+      <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.GetFindingMetrics(Amazon.SecurityIR.Model.GetFindingMetricsRequest)" />
+      <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.GetFindingMetrics(Amazon.SecurityIR.Model.GetFindingMetricsRequest)" />
+      <member name="T:Amazon.SecurityIR.Model.GetFindingMetricsRequest" />
+      <member name="T:Amazon.SecurityIR.Model.GetFindingMetricsResponse" />
+    </members>
+    <value>
+      <example>
+        <para>
+
+        </para>
+        <code title="Retrieve finding-lifecycle metrics for a membership" source=".\AWSSDKDocSamples\SecurityIR\SecurityIR.GeneratedSamples.cs" region="GetFindingMetrics-1" />
+      </example>
+    </value>
+  </doc>
+  <doc>
+    <members>
       <member name="M:Amazon.SecurityIR.IAmazonSecurityIR.GetMembership(Amazon.SecurityIR.Model.GetMembershipRequest)" />
       <member name="M:Amazon.SecurityIR.AmazonSecurityIRClient.GetMembership(Amazon.SecurityIR.Model.GetMembershipRequest)" />
       <member name="T:Amazon.SecurityIR.Model.GetMembershipRequest" />
