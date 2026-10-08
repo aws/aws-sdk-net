@@ -570,6 +570,63 @@ namespace Amazon.SecurityIR
 
 #if NETFRAMEWORK
         /// <summary>
+        /// Returns finding-lifecycle metrics for a membership over a date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingMetrics service method.</param>
+        /// <returns>The response from the GetFindingMetrics service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetFindingMetrics">REST API Reference for GetFindingMetrics Operation</seealso>
+        GetFindingMetricsResponse GetFindingMetrics(GetFindingMetricsRequest request);
+#endif
+
+        /// <summary>
+        /// Returns finding-lifecycle metrics for a membership over a date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The response from the GetFindingMetrics service method, as returned by SecurityIR.</returns>
+        /// <exception cref="Amazon.SecurityIR.Model.AccessDeniedException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ConflictException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InternalServerException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.InvalidTokenException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ResourceNotFoundException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.SecurityIncidentResponseNotActiveException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ServiceQuotaExceededException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ThrottlingException">
+        /// </exception>
+        /// <exception cref="Amazon.SecurityIR.Model.ValidationException">
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/security-ir-2018-05-10/GetFindingMetrics">REST API Reference for GetFindingMetrics Operation</seealso>
+        Task<GetFindingMetricsResponse> GetFindingMetricsAsync(GetFindingMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+#if NETFRAMEWORK
+        /// <summary>
         /// Returns the attributes of a membership.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMembership service method.</param>
