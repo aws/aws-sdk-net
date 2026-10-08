@@ -51,6 +51,23 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEnabled() => this.Enabled.HasValue;
 
         /// <summary>
+        /// Gets and sets the property EncryptionMode. 
+        /// <para>
+        /// The type of encryption at rest applied to the domain's data. Valid values are <c>DISK</c>
+        /// and <c>NATIVE</c>. <c>DISK</c> is the default and uses volume-level encryption. <c>NATIVE</c>
+        /// uses engine-native, index-level encryption and requires encryption at rest to be enabled
+        /// and OpenSearch version 3.3 or later. After the mode is set to <c>NATIVE</c>, it can't
+        /// be changed back to <c>DISK</c>.
+        /// </para>
+        /// </summary>
+        public EncryptionMode EncryptionMode { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EncryptionMode property is set.
+        /// </summary>
+        internal bool IsSetEncryptionMode() => this.EncryptionMode != null;
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The KMS key ID. Takes the form <c>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</c>.

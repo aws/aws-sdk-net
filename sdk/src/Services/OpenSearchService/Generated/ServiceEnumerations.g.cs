@@ -1231,6 +1231,47 @@ namespace Amazon.OpenSearchService
     }
 
     /// <summary>
+    /// Constants used for properties of type EncryptionMode.
+    /// </summary>
+    public class EncryptionMode : ConstantClass
+    {
+        /// <summary>
+        /// Constant DISK for EncryptionMode
+        /// </summary>
+        public static readonly EncryptionMode DISK = new EncryptionMode("DISK");
+
+        /// <summary>
+        /// Constant NATIVE for EncryptionMode
+        /// </summary>
+        public static readonly EncryptionMode NATIVE = new EncryptionMode("NATIVE");
+
+        /// <summary>
+        /// Constructs a custom EncryptionMode for a value not among the defined constants.
+        /// </summary>
+        public EncryptionMode(string value) : base(value) { }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionMode FindValue(string value)
+        {
+            return FindValue<EncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+    /// <summary>
     /// Constants used for properties of type EngineMode.
     /// </summary>
     public class EngineMode : ConstantClass
