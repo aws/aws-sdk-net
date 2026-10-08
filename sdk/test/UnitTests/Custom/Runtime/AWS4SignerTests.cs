@@ -360,6 +360,49 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual("param=", result);
         }
 
+        private static readonly DateTime SigningTestDate = new DateTime(2024, 1, 15, 12, 30, 0, DateTimeKind.Utc);
+
+        private static AWS4SigningResult Sign(string secret, DateTime signedAt)
+            => AWS4Signer.ComputeSignature("AKIAEXAMPLE", secret, "us-east-1", signedAt, "s3", "host", "canonical-request");
+
+        [TestMethod]
+        public void ComputeSignature_CachedKey_MatchesComposeSigningKey()
+        {
+            Sign("secret-a", SigningTestDate);
+            var cached = Sign("secret-a", SigningTestDate).GetSigningKey();
+
+            var dateStamp = AWS4Signer.FormatDateTime(SigningTestDate, AWSSDKUtils.ISO8601BasicDateFormat);
+            CollectionAssert.AreEqual(AWS4Signer.ComposeSigningKey("secret-a", "us-east-1", dateStamp, "s3"), cached);
+        }
+
+        [TestMethod]
+        public void ComputeSignature_DifferentSecretSameScope_ReturnsDifferentSignature()
+        {
+            Assert.AreNotEqual(Sign("secret-a", SigningTestDate).Signature, Sign("secret-b", SigningTestDate).Signature);
+        }
+
+        [TestMethod]
+        public void ComputeSignature_NextDaySameScope_UsesNewDateKey()
+        {
+            Sign("secret-a", SigningTestDate);
+            var nextDay = SigningTestDate.AddDays(1);
+            var cached = Sign("secret-a", nextDay).GetSigningKey();
+
+            var dateStamp = AWS4Signer.FormatDateTime(nextDay, AWSSDKUtils.ISO8601BasicDateFormat);
+            CollectionAssert.AreEqual(AWS4Signer.ComposeSigningKey("secret-a", "us-east-1", dateStamp, "s3"), cached);
+        }
+
+        [TestMethod]
+        public void ComputeSignature_AfterCacheEviction_ReturnsSameSignature()
+        {
+            var before = Sign("secret-a", SigningTestDate).Signature;
+            // More distinct scopes than the cache holds, so secret-a is evicted and re-derived.
+            for (var i = 0; i < 250; i++)
+                Sign("secret-" + i, SigningTestDate);
+
+            Assert.AreEqual(before, Sign("secret-a", SigningTestDate).Signature);
+        }
+
         // -----------------------------------------------------------------------
         // Testee shim
         // -----------------------------------------------------------------------
