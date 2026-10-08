@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConfigurableUpfrontPricingTermConfiguration Marshaller
     /// </summary>
-    public class ConfigurableUpfrontPricingTermConfigurationMarshaller : IRequestMarshaller<ConfigurableUpfrontPricingTermConfiguration, JsonMarshallerContext> 
+    public class ConfigurableUpfrontPricingTermConfigurationMarshaller : IRequestMarshaller<ConfigurableUpfrontPricingTermConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ConfigurableUpfrontPricingTermConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ConfigurableUpfrontPricingTermConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDimensions())
+
+            if (requestObject.IsSetDimensions())
             {
-                context.Writer.WritePropertyName("dimensions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("dimensions");
+                context.Writer.WriteStartArray(requestObject.Dimensions.Count);
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = DimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSelectorValue())
+            if (requestObject.IsSetSelectorValue())
             {
-                context.Writer.WritePropertyName("selectorValue");
-                context.Writer.WriteStringValue(requestObject.SelectorValue);
+                context.Writer.WriteTextString("selectorValue");
+                context.Writer.WriteTextString(requestObject.SelectorValue);
             }
-
         }
 
         /// <summary>

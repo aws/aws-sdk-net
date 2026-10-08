@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Dimension Marshaller
     /// </summary>
-    public class DimensionMarshaller : IRequestMarshaller<Dimension, JsonMarshallerContext> 
+    public class DimensionMarshaller : IRequestMarshaller<Dimension, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Dimension requestObject, JsonMarshallerContext context)
+        public void Marshall(Dimension requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDimensionKey())
-            {
-                context.Writer.WritePropertyName("dimensionKey");
-                context.Writer.WriteStringValue(requestObject.DimensionKey);
-            }
 
-            if(requestObject.IsSetDimensionValue())
+            if (requestObject.IsSetDimensionKey())
             {
-                context.Writer.WritePropertyName("dimensionValue");
-                context.Writer.WriteNumberValue(requestObject.DimensionValue.Value);
+                context.Writer.WriteTextString("dimensionKey");
+                context.Writer.WriteTextString(requestObject.DimensionKey);
             }
-
+            if (requestObject.IsSetDimensionValue())
+            {
+                context.Writer.WriteTextString("dimensionValue");
+                context.Writer.WriteInt32(requestObject.DimensionValue.Value);
+            }
         }
 
         /// <summary>

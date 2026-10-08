@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TargetTrackingScalingPolicyConfiguration Object
     /// </summary>  
-    public class TargetTrackingScalingPolicyConfigurationUnmarshaller : IJsonUnmarshaller<TargetTrackingScalingPolicyConfiguration, JsonUnmarshallerContext>
+    public class TargetTrackingScalingPolicyConfigurationUnmarshaller : ICborUnmarshaller<TargetTrackingScalingPolicyConfiguration, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TargetTrackingScalingPolicyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public TargetTrackingScalingPolicyConfiguration Unmarshall(CborUnmarshallerContext context)
         {
             TargetTrackingScalingPolicyConfiguration unmarshalledObject = new TargetTrackingScalingPolicyConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("disableScaleIn", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("scaleInCooldown", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("scaleOutCooldown", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("targetValue", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "disableScaleIn":
+                        {
+                            context.AddPathSegment("DisableScaleIn");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.DisableScaleIn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "scaleInCooldown":
+                        {
+                            context.AddPathSegment("ScaleInCooldown");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.ScaleInCooldown = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "scaleOutCooldown":
+                        {
+                            context.AddPathSegment("ScaleOutCooldown");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.ScaleOutCooldown = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "targetValue":
+                        {
+                            context.AddPathSegment("TargetValue");
+                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
+                            unmarshalledObject.TargetValue = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

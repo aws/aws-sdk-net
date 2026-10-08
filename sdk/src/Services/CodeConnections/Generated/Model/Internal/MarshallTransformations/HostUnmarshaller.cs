@@ -29,76 +29,101 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Host Object
     /// </summary>  
-    public class HostUnmarshaller : IJsonUnmarshaller<Host, JsonUnmarshallerContext>
+    public class HostUnmarshaller : ICborUnmarshaller<Host, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Host Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Host Unmarshall(CborUnmarshallerContext context)
         {
             Host unmarshalledObject = new Host();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("HostArn", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProviderEndpoint", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderEndpoint = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProviderType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StatusMessage", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VpcConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = VpcConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "HostArn":
+                        {
+                            context.AddPathSegment("HostArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.HostArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Name":
+                        {
+                            context.AddPathSegment("Name");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ProviderEndpoint":
+                        {
+                            context.AddPathSegment("ProviderEndpoint");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ProviderEndpoint = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ProviderType":
+                        {
+                            context.AddPathSegment("ProviderType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StatusMessage":
+                        {
+                            context.AddPathSegment("StatusMessage");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VpcConfiguration":
+                        {
+                            context.AddPathSegment("VpcConfiguration");
+                            var unmarshaller = VpcConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.VpcConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

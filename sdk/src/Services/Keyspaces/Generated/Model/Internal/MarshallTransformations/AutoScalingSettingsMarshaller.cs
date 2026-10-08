@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingSettings Marshaller
     /// </summary>
-    public class AutoScalingSettingsMarshaller : IRequestMarshaller<AutoScalingSettings, JsonMarshallerContext> 
+    public class AutoScalingSettingsMarshaller : IRequestMarshaller<AutoScalingSettings, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +45,36 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutoScalingSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoScalingSettings requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAutoScalingDisabled())
-            {
-                context.Writer.WritePropertyName("autoScalingDisabled");
-                context.Writer.WriteBooleanValue(requestObject.AutoScalingDisabled.Value);
-            }
 
-            if(requestObject.IsSetMaximumUnits())
+            if (requestObject.IsSetAutoScalingDisabled())
             {
-                context.Writer.WritePropertyName("maximumUnits");
-                context.Writer.WriteNumberValue(requestObject.MaximumUnits.Value);
+                context.Writer.WriteTextString("autoScalingDisabled");
+                context.Writer.WriteBoolean(requestObject.AutoScalingDisabled.Value);
             }
-
-            if(requestObject.IsSetMinimumUnits())
+            if (requestObject.IsSetMaximumUnits())
             {
-                context.Writer.WritePropertyName("minimumUnits");
-                context.Writer.WriteNumberValue(requestObject.MinimumUnits.Value);
+                context.Writer.WriteTextString("maximumUnits");
+                context.Writer.WriteInt64(requestObject.MaximumUnits.Value);
             }
-
-            if(requestObject.IsSetScalingPolicy())
+            if (requestObject.IsSetMinimumUnits())
             {
-                context.Writer.WritePropertyName("scalingPolicy");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("minimumUnits");
+                context.Writer.WriteInt64(requestObject.MinimumUnits.Value);
+            }
+            if (requestObject.IsSetScalingPolicy())
+            {
+                context.Writer.WriteTextString("scalingPolicy");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AutoScalingPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScalingPolicy, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

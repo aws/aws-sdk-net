@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WarmThroughputSpecification Marshaller
     /// </summary>
-    public class WarmThroughputSpecificationMarshaller : IRequestMarshaller<WarmThroughputSpecification, JsonMarshallerContext> 
+    public class WarmThroughputSpecificationMarshaller : IRequestMarshaller<WarmThroughputSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WarmThroughputSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(WarmThroughputSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetReadUnitsPerSecond())
-            {
-                context.Writer.WritePropertyName("readUnitsPerSecond");
-                context.Writer.WriteNumberValue(requestObject.ReadUnitsPerSecond.Value);
-            }
 
-            if(requestObject.IsSetWriteUnitsPerSecond())
+            if (requestObject.IsSetReadUnitsPerSecond())
             {
-                context.Writer.WritePropertyName("writeUnitsPerSecond");
-                context.Writer.WriteNumberValue(requestObject.WriteUnitsPerSecond.Value);
+                context.Writer.WriteTextString("readUnitsPerSecond");
+                context.Writer.WriteInt64(requestObject.ReadUnitsPerSecond.Value);
             }
-
+            if (requestObject.IsSetWriteUnitsPerSecond())
+            {
+                context.Writer.WriteTextString("writeUnitsPerSecond");
+                context.Writer.WriteInt64(requestObject.WriteUnitsPerSecond.Value);
+            }
         }
 
         /// <summary>

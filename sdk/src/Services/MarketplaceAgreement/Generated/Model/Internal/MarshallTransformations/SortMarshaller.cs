@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Sort Marshaller
     /// </summary>
-    public class SortMarshaller : IRequestMarshaller<Sort, JsonMarshallerContext> 
+    public class SortMarshaller : IRequestMarshaller<Sort, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Sort requestObject, JsonMarshallerContext context)
+        public void Marshall(Sort requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSortBy())
-            {
-                context.Writer.WritePropertyName("sortBy");
-                context.Writer.WriteStringValue(requestObject.SortBy);
-            }
 
-            if(requestObject.IsSetSortOrder())
+            if (requestObject.IsSetSortBy())
             {
-                context.Writer.WritePropertyName("sortOrder");
-                context.Writer.WriteStringValue(requestObject.SortOrder);
+                context.Writer.WriteTextString("sortBy");
+                context.Writer.WriteTextString(requestObject.SortBy);
             }
-
+            if (requestObject.IsSetSortOrder())
+            {
+                context.Writer.WriteTextString("sortOrder");
+                context.Writer.WriteTextString(requestObject.SortOrder);
+            }
         }
 
         /// <summary>

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
@@ -59,168 +58,163 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateTableRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Keyspaces");
-            string target = "KeyspacesService.UpdateTable";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/KeyspacesService/operation/UpdateTable";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-02-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAddColumns())
+                {
+                    context.Writer.WriteTextString("addColumns");
+                    context.Writer.WriteStartArray(publicRequest.AddColumns.Count);
+                    foreach(var publicRequestAddColumnsListValue in publicRequest.AddColumns)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ColumnDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAddColumnsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetAutoScalingSpecification())
+                {
+                    context.Writer.WriteTextString("autoScalingSpecification");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = AutoScalingSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetCapacitySpecification())
+                {
+                    context.Writer.WriteTextString("capacitySpecification");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CapacitySpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CapacitySpecification, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetCdcSpecification())
+                {
+                    context.Writer.WriteTextString("cdcSpecification");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CdcSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CdcSpecification, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetClientSideTimestamps())
+                {
+                    context.Writer.WriteTextString("clientSideTimestamps");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = ClientSideTimestampsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDefaultTimeToLive())
+                {
+                    context.Writer.WriteTextString("defaultTimeToLive");
+                    context.Writer.WriteInt32(publicRequest.DefaultTimeToLive.Value);
+                }
+                if (publicRequest.IsSetEncryptionSpecification())
+                {
+                    context.Writer.WriteTextString("encryptionSpecification");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = EncryptionSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionSpecification, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetKeyspaceName())
+                {
+                    context.Writer.WriteTextString("keyspaceName");
+                    context.Writer.WriteTextString(publicRequest.KeyspaceName);
+                }
+                if (publicRequest.IsSetPointInTimeRecovery())
+                {
+                    context.Writer.WriteTextString("pointInTimeRecovery");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = PointInTimeRecoveryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PointInTimeRecovery, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetReplicaSpecifications())
+                {
+                    context.Writer.WriteTextString("replicaSpecifications");
+                    context.Writer.WriteStartArray(publicRequest.ReplicaSpecifications.Count);
+                    foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = ReplicaSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTableName())
+                {
+                    context.Writer.WriteTextString("tableName");
+                    context.Writer.WriteTextString(publicRequest.TableName);
+                }
+                if (publicRequest.IsSetTtl())
+                {
+                    context.Writer.WriteTextString("ttl");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TimeToLiveMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Ttl, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetWarmThroughputSpecification())
+                {
+                    context.Writer.WriteTextString("warmThroughputSpecification");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = WarmThroughputSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmThroughputSpecification, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAddColumns())
-            {
-                context.Writer.WritePropertyName("addColumns");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestAddColumnsListValue in publicRequest.AddColumns)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ColumnDefinitionMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAddColumnsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
             }
-
-            if(publicRequest.IsSetAutoScalingSpecification())
+            finally
             {
-                context.Writer.WritePropertyName("autoScalingSpecification");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AutoScalingSpecificationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
-
-                context.Writer.WriteEndObject();
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetCapacitySpecification())
-            {
-                context.Writer.WritePropertyName("capacitySpecification");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CapacitySpecificationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CapacitySpecification, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetCdcSpecification())
-            {
-                context.Writer.WritePropertyName("cdcSpecification");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CdcSpecificationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CdcSpecification, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetClientSideTimestamps())
-            {
-                context.Writer.WritePropertyName("clientSideTimestamps");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ClientSideTimestampsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetDefaultTimeToLive())
-            {
-                context.Writer.WritePropertyName("defaultTimeToLive");
-                context.Writer.WriteNumberValue(publicRequest.DefaultTimeToLive.Value);
-            }
-
-            if(publicRequest.IsSetEncryptionSpecification())
-            {
-                context.Writer.WritePropertyName("encryptionSpecification");
-                context.Writer.WriteStartObject();
-
-                var marshaller = EncryptionSpecificationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.EncryptionSpecification, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetKeyspaceName())
-            {
-                context.Writer.WritePropertyName("keyspaceName");
-                context.Writer.WriteStringValue(publicRequest.KeyspaceName);
-            }
-
-            if(publicRequest.IsSetPointInTimeRecovery())
-            {
-                context.Writer.WritePropertyName("pointInTimeRecovery");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PointInTimeRecoveryMarshaller.Instance;
-                marshaller.Marshall(publicRequest.PointInTimeRecovery, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetReplicaSpecifications())
-            {
-                context.Writer.WritePropertyName("replicaSpecifications");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = ReplicaSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTableName())
-            {
-                context.Writer.WritePropertyName("tableName");
-                context.Writer.WriteStringValue(publicRequest.TableName);
-            }
-
-            if(publicRequest.IsSetTtl())
-            {
-                context.Writer.WritePropertyName("ttl");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TimeToLiveMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Ttl, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetWarmThroughputSpecification())
-            {
-                context.Writer.WritePropertyName("warmThroughputSpecification");
-                context.Writer.WriteStartObject();
-
-                var marshaller = WarmThroughputSpecificationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.WarmThroughputSpecification, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateTableRequestMarshaller _instance = new UpdateTableRequestMarshaller();        

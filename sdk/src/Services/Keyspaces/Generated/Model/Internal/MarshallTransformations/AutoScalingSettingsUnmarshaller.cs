@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoScalingSettings Object
     /// </summary>  
-    public class AutoScalingSettingsUnmarshaller : IJsonUnmarshaller<AutoScalingSettings, JsonUnmarshallerContext>
+    public class AutoScalingSettingsUnmarshaller : ICborUnmarshaller<AutoScalingSettings, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoScalingSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AutoScalingSettings Unmarshall(CborUnmarshallerContext context)
         {
             AutoScalingSettings unmarshalledObject = new AutoScalingSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("autoScalingDisabled", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("maximumUnits", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("minimumUnits", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("scalingPolicy", targetDepth, ref reader))
-                {
-                    var unmarshaller = AutoScalingPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ScalingPolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "autoScalingDisabled":
+                        {
+                            context.AddPathSegment("AutoScalingDisabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.AutoScalingDisabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "maximumUnits":
+                        {
+                            context.AddPathSegment("MaximumUnits");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.MaximumUnits = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "minimumUnits":
+                        {
+                            context.AddPathSegment("MinimumUnits");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.MinimumUnits = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "scalingPolicy":
+                        {
+                            context.AddPathSegment("ScalingPolicy");
+                            var unmarshaller = AutoScalingPolicyUnmarshaller.Instance;
+                            unmarshalledObject.ScalingPolicy = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

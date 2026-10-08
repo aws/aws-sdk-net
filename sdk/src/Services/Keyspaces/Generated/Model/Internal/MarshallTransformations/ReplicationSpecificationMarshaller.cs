@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicationSpecification Marshaller
     /// </summary>
-    public class ReplicationSpecificationMarshaller : IRequestMarshaller<ReplicationSpecification, JsonMarshallerContext> 
+    public class ReplicationSpecificationMarshaller : IRequestMarshaller<ReplicationSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ReplicationSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(ReplicationSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetRegionList())
+
+            if (requestObject.IsSetRegionList())
             {
-                context.Writer.WritePropertyName("regionList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("regionList");
+                context.Writer.WriteStartArray(requestObject.RegionList.Count);
                 foreach(var requestObjectRegionListListValue in requestObject.RegionList)
                 {
-                        context.Writer.WriteStringValue(requestObjectRegionListListValue);
+                        context.Writer.WriteTextString(requestObjectRegionListListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetReplicationStrategy())
+            if (requestObject.IsSetReplicationStrategy())
             {
-                context.Writer.WritePropertyName("replicationStrategy");
-                context.Writer.WriteStringValue(requestObject.ReplicationStrategy);
+                context.Writer.WriteTextString("replicationStrategy");
+                context.Writer.WriteTextString(requestObject.ReplicationStrategy);
             }
-
         }
 
         /// <summary>

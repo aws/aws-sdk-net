@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ReplicaSpecification Marshaller
     /// </summary>
-    public class ReplicaSpecificationMarshaller : IRequestMarshaller<ReplicaSpecification, JsonMarshallerContext> 
+    public class ReplicaSpecificationMarshaller : IRequestMarshaller<ReplicaSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ReplicaSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(ReplicaSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetReadCapacityAutoScaling())
+
+            if (requestObject.IsSetReadCapacityAutoScaling())
             {
-                context.Writer.WritePropertyName("readCapacityAutoScaling");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("readCapacityAutoScaling");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AutoScalingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReadCapacityAutoScaling, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetReadCapacityUnits())
+            if (requestObject.IsSetReadCapacityUnits())
             {
-                context.Writer.WritePropertyName("readCapacityUnits");
-                context.Writer.WriteNumberValue(requestObject.ReadCapacityUnits.Value);
+                context.Writer.WriteTextString("readCapacityUnits");
+                context.Writer.WriteInt64(requestObject.ReadCapacityUnits.Value);
             }
-
-            if(requestObject.IsSetRegion())
+            if (requestObject.IsSetRegion())
             {
-                context.Writer.WritePropertyName("region");
-                context.Writer.WriteStringValue(requestObject.Region);
+                context.Writer.WriteTextString("region");
+                context.Writer.WriteTextString(requestObject.Region);
             }
-
         }
 
         /// <summary>

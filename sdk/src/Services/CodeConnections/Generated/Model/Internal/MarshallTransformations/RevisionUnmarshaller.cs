@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Revision Object
     /// </summary>  
-    public class RevisionUnmarshaller : IJsonUnmarshaller<Revision, JsonUnmarshallerContext>
+    public class RevisionUnmarshaller : ICborUnmarshaller<Revision, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Revision Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Revision Unmarshall(CborUnmarshallerContext context)
         {
             Revision unmarshalledObject = new Revision();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Branch", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Branch = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Directory", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Directory = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OwnerId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProviderType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RepositoryName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Sha", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Sha = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Branch":
+                        {
+                            context.AddPathSegment("Branch");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Branch = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Directory":
+                        {
+                            context.AddPathSegment("Directory");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Directory = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OwnerId":
+                        {
+                            context.AddPathSegment("OwnerId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ProviderType":
+                        {
+                            context.AddPathSegment("ProviderType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RepositoryName":
+                        {
+                            context.AddPathSegment("RepositoryName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RepositoryName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Sha":
+                        {
+                            context.AddPathSegment("Sha");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Sha = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

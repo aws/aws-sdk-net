@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingSpecification Marshaller
     /// </summary>
-    public class AutoScalingSpecificationMarshaller : IRequestMarshaller<AutoScalingSpecification, JsonMarshallerContext> 
+    public class AutoScalingSpecificationMarshaller : IRequestMarshaller<AutoScalingSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutoScalingSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoScalingSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetReadCapacityAutoScaling())
+
+            if (requestObject.IsSetReadCapacityAutoScaling())
             {
-                context.Writer.WritePropertyName("readCapacityAutoScaling");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("readCapacityAutoScaling");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AutoScalingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReadCapacityAutoScaling, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetWriteCapacityAutoScaling())
+            if (requestObject.IsSetWriteCapacityAutoScaling())
             {
-                context.Writer.WritePropertyName("writeCapacityAutoScaling");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("writeCapacityAutoScaling");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AutoScalingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.WriteCapacityAutoScaling, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

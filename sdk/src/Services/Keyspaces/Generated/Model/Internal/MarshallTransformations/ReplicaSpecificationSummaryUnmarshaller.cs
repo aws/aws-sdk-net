@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicaSpecificationSummary Object
     /// </summary>  
-    public class ReplicaSpecificationSummaryUnmarshaller : IJsonUnmarshaller<ReplicaSpecificationSummary, JsonUnmarshallerContext>
+    public class ReplicaSpecificationSummaryUnmarshaller : ICborUnmarshaller<ReplicaSpecificationSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicaSpecificationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ReplicaSpecificationSummary Unmarshall(CborUnmarshallerContext context)
         {
             ReplicaSpecificationSummary unmarshalledObject = new ReplicaSpecificationSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("capacitySpecification", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CapacitySpecification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("region", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("warmThroughputSpecification", targetDepth, ref reader))
-                {
-                    var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.WarmThroughputSpecification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "capacitySpecification":
+                        {
+                            context.AddPathSegment("CapacitySpecification");
+                            var unmarshaller = CapacitySpecificationSummaryUnmarshaller.Instance;
+                            unmarshalledObject.CapacitySpecification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "region":
+                        {
+                            context.AddPathSegment("Region");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "warmThroughputSpecification":
+                        {
+                            context.AddPathSegment("WarmThroughputSpecification");
+                            var unmarshaller = WarmThroughputSpecificationSummaryUnmarshaller.Instance;
+                            unmarshalledObject.WarmThroughputSpecification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

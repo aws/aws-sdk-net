@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CdcSpecification Marshaller
     /// </summary>
-    public class CdcSpecificationMarshaller : IRequestMarshaller<CdcSpecification, JsonMarshallerContext> 
+    public class CdcSpecificationMarshaller : IRequestMarshaller<CdcSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,44 +45,41 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CdcSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(CdcSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetPropagateTags())
-            {
-                context.Writer.WritePropertyName("propagateTags");
-                context.Writer.WriteStringValue(requestObject.PropagateTags);
-            }
 
-            if(requestObject.IsSetStatus())
+            if (requestObject.IsSetPropagateTags())
             {
-                context.Writer.WritePropertyName("status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("propagateTags");
+                context.Writer.WriteTextString(requestObject.PropagateTags);
             }
-
-            if(requestObject.IsSetTags())
+            if (requestObject.IsSetStatus())
             {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("status");
+                context.Writer.WriteTextString(requestObject.Status);
+            }
+            if (requestObject.IsSetTags())
+            {
+                context.Writer.WriteTextString("tags");
+                context.Writer.WriteStartArray(requestObject.Tags.Count);
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetViewType())
+            if (requestObject.IsSetViewType())
             {
-                context.Writer.WritePropertyName("viewType");
-                context.Writer.WriteStringValue(requestObject.ViewType);
+                context.Writer.WriteTextString("viewType");
+                context.Writer.WriteTextString(requestObject.ViewType);
             }
-
         }
 
         /// <summary>

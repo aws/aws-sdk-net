@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 {
@@ -59,75 +58,78 @@ namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateHostRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.CodeConnections");
-            string target = "com.amazonaws.codeconnections.CodeConnections_20231201.CreateHost";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/com.amazonaws.codeconnections.CodeConnections_20231201/operation/CreateHost";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetName())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetProviderEndpoint())
-            {
-                context.Writer.WritePropertyName("ProviderEndpoint");
-                context.Writer.WriteStringValue(publicRequest.ProviderEndpoint);
-            }
-
-            if(publicRequest.IsSetProviderType())
-            {
-                context.Writer.WritePropertyName("ProviderType");
-                context.Writer.WriteStringValue(publicRequest.ProviderType);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetName())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetProviderEndpoint())
+                {
+                    context.Writer.WriteTextString("ProviderEndpoint");
+                    context.Writer.WriteTextString(publicRequest.ProviderEndpoint);
+                }
+                if (publicRequest.IsSetProviderType())
+                {
+                    context.Writer.WriteTextString("ProviderType");
+                    context.Writer.WriteTextString(publicRequest.ProviderType);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetVpcConfiguration())
-            {
-                context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteStartObject();
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
 
-                var marshaller = VpcConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VpcConfiguration, context);
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetVpcConfiguration())
+                {
+                    context.Writer.WriteTextString("VpcConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-                context.Writer.WriteEndObject();
-            }
+                    var marshaller = VpcConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfiguration, context);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateHostRequestMarshaller _instance = new CreateHostRequestMarshaller();        

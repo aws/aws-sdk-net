@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchCreateBillingAdjustmentRequestEntry Marshaller
     /// </summary>
-    public class BatchCreateBillingAdjustmentRequestEntryMarshaller : IRequestMarshaller<BatchCreateBillingAdjustmentRequestEntry, JsonMarshallerContext> 
+    public class BatchCreateBillingAdjustmentRequestEntryMarshaller : IRequestMarshaller<BatchCreateBillingAdjustmentRequestEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,52 +45,46 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchCreateBillingAdjustmentRequestEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(BatchCreateBillingAdjustmentRequestEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAdjustmentAmount())
-            {
-                context.Writer.WritePropertyName("adjustmentAmount");
-                context.Writer.WriteStringValue(requestObject.AdjustmentAmount);
-            }
 
-            if(requestObject.IsSetAdjustmentReasonCode())
+            if (requestObject.IsSetAdjustmentAmount())
             {
-                context.Writer.WritePropertyName("adjustmentReasonCode");
-                context.Writer.WriteStringValue(requestObject.AdjustmentReasonCode);
+                context.Writer.WriteTextString("adjustmentAmount");
+                context.Writer.WriteTextString(requestObject.AdjustmentAmount);
             }
-
-            if(requestObject.IsSetAgreementId())
+            if (requestObject.IsSetAdjustmentReasonCode())
             {
-                context.Writer.WritePropertyName("agreementId");
-                context.Writer.WriteStringValue(requestObject.AgreementId);
+                context.Writer.WriteTextString("adjustmentReasonCode");
+                context.Writer.WriteTextString(requestObject.AdjustmentReasonCode);
             }
-
-            if(requestObject.IsSetClientToken())
+            if (requestObject.IsSetAgreementId())
             {
-                context.Writer.WritePropertyName("clientToken");
-                context.Writer.WriteStringValue(requestObject.ClientToken);
+                context.Writer.WriteTextString("agreementId");
+                context.Writer.WriteTextString(requestObject.AgreementId);
             }
-
-            if(requestObject.IsSetCurrencyCode())
+            if (requestObject.IsSetClientToken())
             {
-                context.Writer.WritePropertyName("currencyCode");
-                context.Writer.WriteStringValue(requestObject.CurrencyCode);
+                context.Writer.WriteTextString("clientToken");
+                context.Writer.WriteTextString(requestObject.ClientToken);
             }
-
-            if(requestObject.IsSetDescription())
+            if (requestObject.IsSetCurrencyCode())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("currencyCode");
+                context.Writer.WriteTextString(requestObject.CurrencyCode);
             }
-
-            if(requestObject.IsSetOriginalInvoiceId())
+            if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("originalInvoiceId");
-                context.Writer.WriteStringValue(requestObject.OriginalInvoiceId);
+                context.Writer.WriteTextString("description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
-
+            if (requestObject.IsSetOriginalInvoiceId())
+            {
+                context.Writer.WriteTextString("originalInvoiceId");
+                context.Writer.WriteTextString(requestObject.OriginalInvoiceId);
+            }
         }
 
         /// <summary>

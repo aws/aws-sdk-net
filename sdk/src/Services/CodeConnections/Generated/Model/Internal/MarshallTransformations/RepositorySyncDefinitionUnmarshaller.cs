@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RepositorySyncDefinition Object
     /// </summary>  
-    public class RepositorySyncDefinitionUnmarshaller : IJsonUnmarshaller<RepositorySyncDefinition, JsonUnmarshallerContext>
+    public class RepositorySyncDefinitionUnmarshaller : ICborUnmarshaller<RepositorySyncDefinition, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RepositorySyncDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RepositorySyncDefinition Unmarshall(CborUnmarshallerContext context)
         {
             RepositorySyncDefinition unmarshalledObject = new RepositorySyncDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Branch", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Branch = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Directory", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Directory = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Parent", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Parent = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Target", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Target = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Branch":
+                        {
+                            context.AddPathSegment("Branch");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Branch = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Directory":
+                        {
+                            context.AddPathSegment("Directory");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Directory = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Parent":
+                        {
+                            context.AddPathSegment("Parent");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Parent = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Target":
+                        {
+                            context.AddPathSegment("Target");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Target = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeConnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RepositorySyncEvent Object
     /// </summary>  
-    public class RepositorySyncEventUnmarshaller : IJsonUnmarshaller<RepositorySyncEvent, JsonUnmarshallerContext>
+    public class RepositorySyncEventUnmarshaller : ICborUnmarshaller<RepositorySyncEvent, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RepositorySyncEvent Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RepositorySyncEvent Unmarshall(CborUnmarshallerContext context)
         {
             RepositorySyncEvent unmarshalledObject = new RepositorySyncEvent();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Event", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Event = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExternalId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Time", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.Time = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Event":
+                        {
+                            context.AddPathSegment("Event");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Event = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExternalId":
+                        {
+                            context.AddPathSegment("ExternalId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Time":
+                        {
+                            context.AddPathSegment("Time");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.Time = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Type":
+                        {
+                            context.AddPathSegment("Type");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

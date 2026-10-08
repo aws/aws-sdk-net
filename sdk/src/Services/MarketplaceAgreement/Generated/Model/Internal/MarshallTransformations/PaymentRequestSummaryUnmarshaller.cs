@@ -29,88 +29,117 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PaymentRequestSummary Object
     /// </summary>  
-    public class PaymentRequestSummaryUnmarshaller : IJsonUnmarshaller<PaymentRequestSummary, JsonUnmarshallerContext>
+    public class PaymentRequestSummaryUnmarshaller : ICborUnmarshaller<PaymentRequestSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PaymentRequestSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PaymentRequestSummary Unmarshall(CborUnmarshallerContext context)
         {
             PaymentRequestSummary unmarshalledObject = new PaymentRequestSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("agreementId", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgreementId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("chargeAmount", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChargeAmount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("chargeId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChargeId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("createdAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currencyCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("paymentRequestId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PaymentRequestId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "agreementId":
+                        {
+                            context.AddPathSegment("AgreementId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AgreementId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "chargeAmount":
+                        {
+                            context.AddPathSegment("ChargeAmount");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ChargeAmount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "chargeId":
+                        {
+                            context.AddPathSegment("ChargeId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ChargeId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "createdAt":
+                        {
+                            context.AddPathSegment("CreatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currencyCode":
+                        {
+                            context.AddPathSegment("CurrencyCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "name":
+                        {
+                            context.AddPathSegment("Name");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "paymentRequestId":
+                        {
+                            context.AddPathSegment("PaymentRequestId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PaymentRequestId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "updatedAt":
+                        {
+                            context.AddPathSegment("UpdatedAt");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

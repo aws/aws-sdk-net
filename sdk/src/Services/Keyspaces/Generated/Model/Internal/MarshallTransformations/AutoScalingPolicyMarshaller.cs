@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AutoScalingPolicy Marshaller
     /// </summary>
-    public class AutoScalingPolicyMarshaller : IRequestMarshaller<AutoScalingPolicy, JsonMarshallerContext> 
+    public class AutoScalingPolicyMarshaller : IRequestMarshaller<AutoScalingPolicy, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AutoScalingPolicy requestObject, JsonMarshallerContext context)
+        public void Marshall(AutoScalingPolicy requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetTargetTrackingScalingPolicyConfiguration())
+
+            if (requestObject.IsSetTargetTrackingScalingPolicyConfiguration())
             {
-                context.Writer.WritePropertyName("targetTrackingScalingPolicyConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("targetTrackingScalingPolicyConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = TargetTrackingScalingPolicyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetTrackingScalingPolicyConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

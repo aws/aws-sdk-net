@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InvoiceBillingPeriod Marshaller
     /// </summary>
-    public class InvoiceBillingPeriodMarshaller : IRequestMarshaller<InvoiceBillingPeriod, JsonMarshallerContext> 
+    public class InvoiceBillingPeriodMarshaller : IRequestMarshaller<InvoiceBillingPeriod, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InvoiceBillingPeriod requestObject, JsonMarshallerContext context)
+        public void Marshall(InvoiceBillingPeriod requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetMonth())
-            {
-                context.Writer.WritePropertyName("month");
-                context.Writer.WriteNumberValue(requestObject.Month.Value);
-            }
 
-            if(requestObject.IsSetYear())
+            if (requestObject.IsSetMonth())
             {
-                context.Writer.WritePropertyName("year");
-                context.Writer.WriteNumberValue(requestObject.Year.Value);
+                context.Writer.WriteTextString("month");
+                context.Writer.WriteInt32(requestObject.Month.Value);
             }
-
+            if (requestObject.IsSetYear())
+            {
+                context.Writer.WriteTextString("year");
+                context.Writer.WriteInt32(requestObject.Year.Value);
+            }
         }
 
         /// <summary>

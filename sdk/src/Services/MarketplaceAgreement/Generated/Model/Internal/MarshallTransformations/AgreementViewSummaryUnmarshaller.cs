@@ -29,118 +29,157 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AgreementViewSummary Object
     /// </summary>  
-    public class AgreementViewSummaryUnmarshaller : IJsonUnmarshaller<AgreementViewSummary, JsonUnmarshallerContext>
+    public class AgreementViewSummaryUnmarshaller : ICborUnmarshaller<AgreementViewSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgreementViewSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AgreementViewSummary Unmarshall(CborUnmarshallerContext context)
         {
             AgreementViewSummary unmarshalledObject = new AgreementViewSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("acceptanceTime", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.AcceptanceTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("acceptor", targetDepth, ref reader))
-                {
-                    var unmarshaller = AcceptorUnmarshaller.Instance;
-                    unmarshalledObject.Acceptor = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("agreementId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgreementId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("agreementType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgreementType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("endTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("endTimeBehaviorReasonCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTimeBehaviorReasonCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("endTimeBehaviorType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTimeBehaviorType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("entitlements", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Entitlement, EntitlementUnmarshaller>(EntitlementUnmarshaller.Instance);
-                    unmarshalledObject.Entitlements = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("initialAgreementId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InitialAgreementId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdateTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("proposalSummary", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProposalSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ProposalSummary = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("proposer", targetDepth, ref reader))
-                {
-                    var unmarshaller = ProposerUnmarshaller.Instance;
-                    unmarshalledObject.Proposer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("startTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "acceptanceTime":
+                        {
+                            context.AddPathSegment("AcceptanceTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.AcceptanceTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "acceptor":
+                        {
+                            context.AddPathSegment("Acceptor");
+                            var unmarshaller = AcceptorUnmarshaller.Instance;
+                            unmarshalledObject.Acceptor = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "agreementId":
+                        {
+                            context.AddPathSegment("AgreementId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AgreementId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "agreementType":
+                        {
+                            context.AddPathSegment("AgreementType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AgreementType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "endTime":
+                        {
+                            context.AddPathSegment("EndTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "endTimeBehaviorReasonCode":
+                        {
+                            context.AddPathSegment("EndTimeBehaviorReasonCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EndTimeBehaviorReasonCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "endTimeBehaviorType":
+                        {
+                            context.AddPathSegment("EndTimeBehaviorType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.EndTimeBehaviorType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "entitlements":
+                        {
+                            context.AddPathSegment("Entitlements");
+                            var unmarshaller = new CborListUnmarshaller<Entitlement, EntitlementUnmarshaller>(EntitlementUnmarshaller.Instance);
+                            unmarshalledObject.Entitlements = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "initialAgreementId":
+                        {
+                            context.AddPathSegment("InitialAgreementId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InitialAgreementId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lastUpdateTime":
+                        {
+                            context.AddPathSegment("LastUpdateTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "proposalSummary":
+                        {
+                            context.AddPathSegment("ProposalSummary");
+                            var unmarshaller = ProposalSummaryUnmarshaller.Instance;
+                            unmarshalledObject.ProposalSummary = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "proposer":
+                        {
+                            context.AddPathSegment("Proposer");
+                            var unmarshaller = ProposerUnmarshaller.Instance;
+                            unmarshalledObject.Proposer = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "startTime":
+                        {
+                            context.AddPathSegment("StartTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "status":
+                        {
+                            context.AddPathSegment("Status");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ItemizedCharge Object
     /// </summary>  
-    public class ItemizedChargeUnmarshaller : IJsonUnmarshaller<ItemizedCharge, JsonUnmarshallerContext>
+    public class ItemizedChargeUnmarshaller : ICborUnmarshaller<ItemizedCharge, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ItemizedCharge Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ItemizedCharge Unmarshall(CborUnmarshallerContext context)
         {
             ItemizedCharge unmarshalledObject = new ItemizedCharge();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("chargeReference", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChargeReference = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dimensionKey", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DimensionKey = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("incrementalChargeAmount", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IncrementalChargeAmount = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("newQuantity", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NewQuantity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("oldQuantity", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.OldQuantity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "chargeReference":
+                        {
+                            context.AddPathSegment("ChargeReference");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ChargeReference = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "dimensionKey":
+                        {
+                            context.AddPathSegment("DimensionKey");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DimensionKey = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "incrementalChargeAmount":
+                        {
+                            context.AddPathSegment("IncrementalChargeAmount");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IncrementalChargeAmount = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "newQuantity":
+                        {
+                            context.AddPathSegment("NewQuantity");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.NewQuantity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "oldQuantity":
+                        {
+                            context.AddPathSegment("OldQuantity");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.OldQuantity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

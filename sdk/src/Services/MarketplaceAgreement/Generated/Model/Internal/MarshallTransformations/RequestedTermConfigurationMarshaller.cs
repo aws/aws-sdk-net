@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RequestedTermConfiguration Marshaller
     /// </summary>
-    public class RequestedTermConfigurationMarshaller : IRequestMarshaller<RequestedTermConfiguration, JsonMarshallerContext> 
+    public class RequestedTermConfigurationMarshaller : IRequestMarshaller<RequestedTermConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,43 +45,41 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RequestedTermConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestedTermConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetConfigurableUpfrontPricingTermConfiguration())
+
+            if (requestObject.IsSetConfigurableUpfrontPricingTermConfiguration())
             {
-                context.Writer.WritePropertyName("configurableUpfrontPricingTermConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("configurableUpfrontPricingTermConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ConfigurableUpfrontPricingTermConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfigurableUpfrontPricingTermConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetRenewalTermConfiguration())
+            if (requestObject.IsSetRenewalTermConfiguration())
             {
-                context.Writer.WritePropertyName("renewalTermConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("renewalTermConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RenewalTermConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RenewalTermConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetVariablePaymentTermConfiguration())
+            if (requestObject.IsSetVariablePaymentTermConfiguration())
             {
-                context.Writer.WritePropertyName("variablePaymentTermConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("variablePaymentTermConfiguration");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = VariablePaymentTermConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VariablePaymentTermConfiguration, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

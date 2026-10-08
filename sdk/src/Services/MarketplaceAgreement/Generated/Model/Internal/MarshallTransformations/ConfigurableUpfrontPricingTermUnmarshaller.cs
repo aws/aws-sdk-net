@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurableUpfrontPricingTerm Object
     /// </summary>  
-    public class ConfigurableUpfrontPricingTermUnmarshaller : IJsonUnmarshaller<ConfigurableUpfrontPricingTerm, JsonUnmarshallerContext>
+    public class ConfigurableUpfrontPricingTermUnmarshaller : ICborUnmarshaller<ConfigurableUpfrontPricingTerm, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurableUpfrontPricingTerm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConfigurableUpfrontPricingTerm Unmarshall(CborUnmarshallerContext context)
         {
             ConfigurableUpfrontPricingTerm unmarshalledObject = new ConfigurableUpfrontPricingTerm();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("configuration", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = ConfigurableUpfrontPricingTermConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("currencyCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("rateCards", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ConfigurableUpfrontRateCardItem, ConfigurableUpfrontRateCardItemUnmarshaller>(ConfigurableUpfrontRateCardItemUnmarshaller.Instance);
-                    unmarshalledObject.RateCards = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "configuration":
+                        {
+                            context.AddPathSegment("Configuration");
+                            var unmarshaller = ConfigurableUpfrontPricingTermConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "currencyCode":
+                        {
+                            context.AddPathSegment("CurrencyCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrencyCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "id":
+                        {
+                            context.AddPathSegment("Id");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "rateCards":
+                        {
+                            context.AddPathSegment("RateCards");
+                            var unmarshaller = new CborListUnmarshaller<ConfigurableUpfrontRateCardItem, ConfigurableUpfrontRateCardItemUnmarshaller>(ConfigurableUpfrontRateCardItemUnmarshaller.Instance);
+                            unmarshalledObject.RateCards = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "type":
+                        {
+                            context.AddPathSegment("Type");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 
