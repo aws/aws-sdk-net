@@ -8842,6 +8842,99 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  GetSystemLogsForJobRun
+
+        internal virtual GetSystemLogsForJobRunResponse GetSystemLogsForJobRun(GetSystemLogsForJobRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemLogsForJobRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemLogsForJobRunResponseUnmarshaller.Instance;
+
+            return Invoke<GetSystemLogsForJobRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the system logs for a job run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSystemLogsForJobRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSystemLogsForJobRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSystemLogsForJobRun">REST API Reference for GetSystemLogsForJobRun Operation</seealso>
+        public virtual Task<GetSystemLogsForJobRunResponse> GetSystemLogsForJobRunAsync(GetSystemLogsForJobRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemLogsForJobRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemLogsForJobRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSystemLogsForJobRunResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetSystemLogsForSession
+
+        internal virtual GetSystemLogsForSessionResponse GetSystemLogsForSession(GetSystemLogsForSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemLogsForSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemLogsForSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetSystemLogsForSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the system logs for an interactive session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSystemLogsForSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSystemLogsForSession service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetSystemLogsForSession">REST API Reference for GetSystemLogsForSession Operation</seealso>
+        public virtual Task<GetSystemLogsForSessionResponse> GetSystemLogsForSessionAsync(GetSystemLogsForSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSystemLogsForSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSystemLogsForSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSystemLogsForSessionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetTable
 
         internal virtual GetTableResponse GetTable(GetTableRequest request)
