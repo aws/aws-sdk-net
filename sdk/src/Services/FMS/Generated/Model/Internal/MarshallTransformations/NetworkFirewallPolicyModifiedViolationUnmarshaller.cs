@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NetworkFirewallPolicyModifiedViolation Object
     /// </summary>  
-    public class NetworkFirewallPolicyModifiedViolationUnmarshaller : IJsonUnmarshaller<NetworkFirewallPolicyModifiedViolation, JsonUnmarshallerContext>
+    public class NetworkFirewallPolicyModifiedViolationUnmarshaller : ICborUnmarshaller<NetworkFirewallPolicyModifiedViolation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkFirewallPolicyModifiedViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public NetworkFirewallPolicyModifiedViolation Unmarshall(CborUnmarshallerContext context)
         {
             NetworkFirewallPolicyModifiedViolation unmarshalledObject = new NetworkFirewallPolicyModifiedViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CurrentPolicyDescription", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NetworkFirewallPolicyDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPolicyDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExpectedPolicyDescription", targetDepth, ref reader))
-                {
-                    var unmarshaller = NetworkFirewallPolicyDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedPolicyDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ViolationTarget", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CurrentPolicyDescription":
+                        {
+                            context.AddPathSegment("CurrentPolicyDescription");
+                            var unmarshaller = NetworkFirewallPolicyDescriptionUnmarshaller.Instance;
+                            unmarshalledObject.CurrentPolicyDescription = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExpectedPolicyDescription":
+                        {
+                            context.AddPathSegment("ExpectedPolicyDescription");
+                            var unmarshaller = NetworkFirewallPolicyDescriptionUnmarshaller.Instance;
+                            unmarshalledObject.ExpectedPolicyDescription = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ViolationTarget":
+                        {
+                            context.AddPathSegment("ViolationTarget");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

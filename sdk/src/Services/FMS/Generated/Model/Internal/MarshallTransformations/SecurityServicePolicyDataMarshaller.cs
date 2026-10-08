@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SecurityServicePolicyData Marshaller
     /// </summary>
-    public class SecurityServicePolicyDataMarshaller : IRequestMarshaller<SecurityServicePolicyData, JsonMarshallerContext> 
+    public class SecurityServicePolicyDataMarshaller : IRequestMarshaller<SecurityServicePolicyData, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SecurityServicePolicyData requestObject, JsonMarshallerContext context)
+        public void Marshall(SecurityServicePolicyData requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetManagedServiceData())
-            {
-                context.Writer.WritePropertyName("ManagedServiceData");
-                context.Writer.WriteStringValue(requestObject.ManagedServiceData);
-            }
 
-            if(requestObject.IsSetPolicyOption())
+            if (requestObject.IsSetManagedServiceData())
             {
-                context.Writer.WritePropertyName("PolicyOption");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ManagedServiceData");
+                context.Writer.WriteTextString(requestObject.ManagedServiceData);
+            }
+            if (requestObject.IsSetPolicyOption())
+            {
+                context.Writer.WriteTextString("PolicyOption");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PolicyOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolicyOption, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetType())
+            if (requestObject.IsSetType())
             {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.WriteStringValue(requestObject.Type);
+                context.Writer.WriteTextString("Type");
+                context.Writer.WriteTextString(requestObject.Type);
             }
-
         }
 
         /// <summary>

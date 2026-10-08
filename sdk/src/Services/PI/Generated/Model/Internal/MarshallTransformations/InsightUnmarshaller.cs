@@ -29,100 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Insight Object
     /// </summary>  
-    public class InsightUnmarshaller : IJsonUnmarshaller<Insight, JsonUnmarshallerContext>
+    public class InsightUnmarshaller : ICborUnmarshaller<Insight, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Insight Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Insight Unmarshall(CborUnmarshallerContext context)
         {
             Insight unmarshalledObject = new Insight();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BaselineData", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Data, DataUnmarshaller>(DataUnmarshaller.Instance);
-                    unmarshalledObject.BaselineData = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Context", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Context = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InsightData", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Data, DataUnmarshaller>(DataUnmarshaller.Instance);
-                    unmarshalledObject.InsightData = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InsightId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InsightId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InsightType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InsightType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Recommendations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Recommendation, RecommendationUnmarshaller>(RecommendationUnmarshaller.Instance);
-                    unmarshalledObject.Recommendations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Severity", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Severity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SupportingInsights", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Insight, InsightUnmarshaller>(InsightUnmarshaller.Instance);
-                    unmarshalledObject.SupportingInsights = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "BaselineData":
+                        {
+                            context.AddPathSegment("BaselineData");
+                            var unmarshaller = new CborListUnmarshaller<Data, DataUnmarshaller>(DataUnmarshaller.Instance);
+                            unmarshalledObject.BaselineData = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Context":
+                        {
+                            context.AddPathSegment("Context");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Context = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EndTime":
+                        {
+                            context.AddPathSegment("EndTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InsightData":
+                        {
+                            context.AddPathSegment("InsightData");
+                            var unmarshaller = new CborListUnmarshaller<Data, DataUnmarshaller>(DataUnmarshaller.Instance);
+                            unmarshalledObject.InsightData = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InsightId":
+                        {
+                            context.AddPathSegment("InsightId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InsightId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InsightType":
+                        {
+                            context.AddPathSegment("InsightType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InsightType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Recommendations":
+                        {
+                            context.AddPathSegment("Recommendations");
+                            var unmarshaller = new CborListUnmarshaller<Recommendation, RecommendationUnmarshaller>(RecommendationUnmarshaller.Instance);
+                            unmarshalledObject.Recommendations = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Severity":
+                        {
+                            context.AddPathSegment("Severity");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Severity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StartTime":
+                        {
+                            context.AddPathSegment("StartTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SupportingInsights":
+                        {
+                            context.AddPathSegment("SupportingInsights");
+                            var unmarshaller = new CborListUnmarshaller<Insight, InsightUnmarshaller>(InsightUnmarshaller.Instance);
+                            unmarshalledObject.SupportingInsights = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

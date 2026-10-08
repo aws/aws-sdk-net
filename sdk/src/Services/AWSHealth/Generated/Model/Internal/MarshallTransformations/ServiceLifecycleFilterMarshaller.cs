@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceLifecycleFilter Marshaller
     /// </summary>
-    public class ServiceLifecycleFilterMarshaller : IRequestMarshaller<ServiceLifecycleFilter, JsonMarshallerContext> 
+    public class ServiceLifecycleFilterMarshaller : IRequestMarshaller<ServiceLifecycleFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServiceLifecycleFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceLifecycleFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetService())
-            {
-                context.Writer.WritePropertyName("service");
-                context.Writer.WriteStringValue(requestObject.Service);
-            }
 
+            if (requestObject.IsSetService())
+            {
+                context.Writer.WriteTextString("service");
+                context.Writer.WriteTextString(requestObject.Service);
+            }
         }
 
         /// <summary>

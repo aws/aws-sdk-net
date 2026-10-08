@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SecurityGroupRuleDescription Object
     /// </summary>  
-    public class SecurityGroupRuleDescriptionUnmarshaller : IJsonUnmarshaller<SecurityGroupRuleDescription, JsonUnmarshallerContext>
+    public class SecurityGroupRuleDescriptionUnmarshaller : ICborUnmarshaller<SecurityGroupRuleDescription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SecurityGroupRuleDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SecurityGroupRuleDescription Unmarshall(CborUnmarshallerContext context)
         {
             SecurityGroupRuleDescription unmarshalledObject = new SecurityGroupRuleDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("FromPort", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.FromPort = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IPV4Range", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IPV4Range = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IPV6Range", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IPV6Range = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PrefixListId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Protocol", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ToPort", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ToPort = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "FromPort":
+                        {
+                            context.AddPathSegment("FromPort");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.FromPort = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IPV4Range":
+                        {
+                            context.AddPathSegment("IPV4Range");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IPV4Range = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IPV6Range":
+                        {
+                            context.AddPathSegment("IPV6Range");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IPV6Range = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PrefixListId":
+                        {
+                            context.AddPathSegment("PrefixListId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Protocol":
+                        {
+                            context.AddPathSegment("Protocol");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ToPort":
+                        {
+                            context.AddPathSegment("ToPort");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.ToPort = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TerminologyData Marshaller
     /// </summary>
-    public class TerminologyDataMarshaller : IRequestMarshaller<TerminologyData, JsonMarshallerContext> 
+    public class TerminologyDataMarshaller : IRequestMarshaller<TerminologyData, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TerminologyData requestObject, JsonMarshallerContext context)
+        public void Marshall(TerminologyData requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDirectionality())
-            {
-                context.Writer.WritePropertyName("Directionality");
-                context.Writer.WriteStringValue(requestObject.Directionality);
-            }
 
-            if(requestObject.IsSetFile())
+            if (requestObject.IsSetDirectionality())
             {
-                context.Writer.WritePropertyName("File");
-                StringUtils.WriteBase64StringValue(context.Writer, requestObject.File);
+                context.Writer.WriteTextString("Directionality");
+                context.Writer.WriteTextString(requestObject.Directionality);
             }
-
-            if(requestObject.IsSetFormat())
+            if (requestObject.IsSetFile())
             {
-                context.Writer.WritePropertyName("Format");
-                context.Writer.WriteStringValue(requestObject.Format);
+                context.Writer.WriteTextString("File");
+                context.Writer.WriteByteString(requestObject.File);
             }
-
+            if (requestObject.IsSetFormat())
+            {
+                context.Writer.WriteTextString("Format");
+                context.Writer.WriteTextString(requestObject.Format);
+            }
         }
 
         /// <summary>

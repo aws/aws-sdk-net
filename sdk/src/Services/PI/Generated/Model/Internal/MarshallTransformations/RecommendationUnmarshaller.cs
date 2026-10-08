@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Recommendation Object
     /// </summary>  
-    public class RecommendationUnmarshaller : IJsonUnmarshaller<Recommendation, JsonUnmarshallerContext>
+    public class RecommendationUnmarshaller : ICborUnmarshaller<Recommendation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Recommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Recommendation Unmarshall(CborUnmarshallerContext context)
         {
             Recommendation unmarshalledObject = new Recommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("RecommendationDescription", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommendationDetails", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationDetails = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RecommendationId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "RecommendationDescription":
+                        {
+                            context.AddPathSegment("RecommendationDescription");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RecommendationDescription = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RecommendationDetails":
+                        {
+                            context.AddPathSegment("RecommendationDetails");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RecommendationDetails = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RecommendationId":
+                        {
+                            context.AddPathSegment("RecommendationId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RecommendationId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

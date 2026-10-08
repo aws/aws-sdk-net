@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InvalidNetworkAclEntriesViolation Object
     /// </summary>  
-    public class InvalidNetworkAclEntriesViolationUnmarshaller : IJsonUnmarshaller<InvalidNetworkAclEntriesViolation, JsonUnmarshallerContext>
+    public class InvalidNetworkAclEntriesViolationUnmarshaller : ICborUnmarshaller<InvalidNetworkAclEntriesViolation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InvalidNetworkAclEntriesViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InvalidNetworkAclEntriesViolation Unmarshall(CborUnmarshallerContext context)
         {
             InvalidNetworkAclEntriesViolation unmarshalledObject = new InvalidNetworkAclEntriesViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CurrentAssociatedNetworkAcl", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentAssociatedNetworkAcl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EntryViolations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<EntryViolation, EntryViolationUnmarshaller>(EntryViolationUnmarshaller.Instance);
-                    unmarshalledObject.EntryViolations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Subnet", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Subnet = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubnetAvailabilityZone", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Vpc", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CurrentAssociatedNetworkAcl":
+                        {
+                            context.AddPathSegment("CurrentAssociatedNetworkAcl");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentAssociatedNetworkAcl = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EntryViolations":
+                        {
+                            context.AddPathSegment("EntryViolations");
+                            var unmarshaller = new CborListUnmarshaller<EntryViolation, EntryViolationUnmarshaller>(EntryViolationUnmarshaller.Instance);
+                            unmarshalledObject.EntryViolations = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Subnet":
+                        {
+                            context.AddPathSegment("Subnet");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Subnet = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubnetAvailabilityZone":
+                        {
+                            context.AddPathSegment("SubnetAvailabilityZone");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Vpc":
+                        {
+                            context.AddPathSegment("Vpc");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

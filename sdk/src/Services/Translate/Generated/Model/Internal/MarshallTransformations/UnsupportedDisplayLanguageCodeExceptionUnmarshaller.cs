@@ -29,25 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
 using Amazon.Util;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UnsupportedDisplayLanguageCodeException Object
     /// </summary>  
-    public class UnsupportedDisplayLanguageCodeExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<UnsupportedDisplayLanguageCodeException, JsonUnmarshallerContext>
+    public class UnsupportedDisplayLanguageCodeExceptionUnmarshaller : ICborErrorResponseUnmarshaller<UnsupportedDisplayLanguageCodeException, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns></returns>
-        public UnsupportedDisplayLanguageCodeException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public UnsupportedDisplayLanguageCodeException Unmarshall(CborUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
@@ -55,31 +55,34 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
-        /// <param name="reader"></param>
         /// <returns></returns>
-        public UnsupportedDisplayLanguageCodeException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        public UnsupportedDisplayLanguageCodeException Unmarshall(CborUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            if (context.Stream.Length > 0)
-            {
-                context.Read(ref reader);
-            }
-
             UnsupportedDisplayLanguageCodeException unmarshalledObject = new UnsupportedDisplayLanguageCodeException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
-            int targetDepth = context.CurrentDepth;
-            if (context.Stream.Length > 0)
+            var reader = context.Reader;
+            context.AddPathSegment("UnsupportedDisplayLanguageCodeException");
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
             {
-                while (context.ReadAtDepth(targetDepth, ref reader))
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    if (context.TestExpression("DisplayLanguageCode", targetDepth, ref reader))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DisplayLanguageCode = unmarshaller.Unmarshall(context, ref reader);
-                        continue;
-                    }
+                    case "DisplayLanguageCode":
+                        {
+                            context.AddPathSegment("DisplayLanguageCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DisplayLanguageCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
+            context.PopPathSegment();
           
             return unmarshalledObject;
         }

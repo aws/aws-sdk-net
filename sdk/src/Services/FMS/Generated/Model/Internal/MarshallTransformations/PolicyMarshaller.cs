@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Policy Marshaller
     /// </summary>
-    public class PolicyMarshaller : IRequestMarshaller<Policy, JsonMarshallerContext> 
+    public class PolicyMarshaller : IRequestMarshaller<Policy, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,157 +45,142 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Policy requestObject, JsonMarshallerContext context)
+        public void Marshall(Policy requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDeleteUnusedFMManagedResources())
-            {
-                context.Writer.WritePropertyName("DeleteUnusedFMManagedResources");
-                context.Writer.WriteBooleanValue(requestObject.DeleteUnusedFMManagedResources.Value);
-            }
 
-            if(requestObject.IsSetExcludeMap())
+            if (requestObject.IsSetDeleteUnusedFMManagedResources())
             {
-                context.Writer.WritePropertyName("ExcludeMap");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DeleteUnusedFMManagedResources");
+                context.Writer.WriteBoolean(requestObject.DeleteUnusedFMManagedResources.Value);
+            }
+            if (requestObject.IsSetExcludeMap())
+            {
+                context.Writer.WriteTextString("ExcludeMap");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectExcludeMapKvp in requestObject.ExcludeMap)
                 {
-                    context.Writer.WritePropertyName(requestObjectExcludeMapKvp.Key);
+                    context.Writer.WriteTextString(requestObjectExcludeMapKvp.Key);
                     var requestObjectExcludeMapValue = requestObjectExcludeMapKvp.Value;
 
-                    context.Writer.WriteStartArray();
+                    context.Writer.WriteStartArray(requestObjectExcludeMapValue.Count);
                     foreach(var requestObjectExcludeMapValueListValue in requestObjectExcludeMapValue)
                     {
-                            context.Writer.WriteStringValue(requestObjectExcludeMapValueListValue);
+                            context.Writer.WriteTextString(requestObjectExcludeMapValueListValue);
                     }
                     context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetExcludeResourceTags())
+            if (requestObject.IsSetExcludeResourceTags())
             {
-                context.Writer.WritePropertyName("ExcludeResourceTags");
-                context.Writer.WriteBooleanValue(requestObject.ExcludeResourceTags.Value);
+                context.Writer.WriteTextString("ExcludeResourceTags");
+                context.Writer.WriteBoolean(requestObject.ExcludeResourceTags.Value);
             }
-
-            if(requestObject.IsSetIncludeMap())
+            if (requestObject.IsSetIncludeMap())
             {
-                context.Writer.WritePropertyName("IncludeMap");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("IncludeMap");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectIncludeMapKvp in requestObject.IncludeMap)
                 {
-                    context.Writer.WritePropertyName(requestObjectIncludeMapKvp.Key);
+                    context.Writer.WriteTextString(requestObjectIncludeMapKvp.Key);
                     var requestObjectIncludeMapValue = requestObjectIncludeMapKvp.Value;
 
-                    context.Writer.WriteStartArray();
+                    context.Writer.WriteStartArray(requestObjectIncludeMapValue.Count);
                     foreach(var requestObjectIncludeMapValueListValue in requestObjectIncludeMapValue)
                     {
-                            context.Writer.WriteStringValue(requestObjectIncludeMapValueListValue);
+                            context.Writer.WriteTextString(requestObjectIncludeMapValueListValue);
                     }
                     context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPolicyDescription())
+            if (requestObject.IsSetPolicyDescription())
             {
-                context.Writer.WritePropertyName("PolicyDescription");
-                context.Writer.WriteStringValue(requestObject.PolicyDescription);
+                context.Writer.WriteTextString("PolicyDescription");
+                context.Writer.WriteTextString(requestObject.PolicyDescription);
             }
-
-            if(requestObject.IsSetPolicyId())
+            if (requestObject.IsSetPolicyId())
             {
-                context.Writer.WritePropertyName("PolicyId");
-                context.Writer.WriteStringValue(requestObject.PolicyId);
+                context.Writer.WriteTextString("PolicyId");
+                context.Writer.WriteTextString(requestObject.PolicyId);
             }
-
-            if(requestObject.IsSetPolicyName())
+            if (requestObject.IsSetPolicyName())
             {
-                context.Writer.WritePropertyName("PolicyName");
-                context.Writer.WriteStringValue(requestObject.PolicyName);
+                context.Writer.WriteTextString("PolicyName");
+                context.Writer.WriteTextString(requestObject.PolicyName);
             }
-
-            if(requestObject.IsSetPolicyStatus())
+            if (requestObject.IsSetPolicyStatus())
             {
-                context.Writer.WritePropertyName("PolicyStatus");
-                context.Writer.WriteStringValue(requestObject.PolicyStatus);
+                context.Writer.WriteTextString("PolicyStatus");
+                context.Writer.WriteTextString(requestObject.PolicyStatus);
             }
-
-            if(requestObject.IsSetPolicyUpdateToken())
+            if (requestObject.IsSetPolicyUpdateToken())
             {
-                context.Writer.WritePropertyName("PolicyUpdateToken");
-                context.Writer.WriteStringValue(requestObject.PolicyUpdateToken);
+                context.Writer.WriteTextString("PolicyUpdateToken");
+                context.Writer.WriteTextString(requestObject.PolicyUpdateToken);
             }
-
-            if(requestObject.IsSetRemediationEnabled())
+            if (requestObject.IsSetRemediationEnabled())
             {
-                context.Writer.WritePropertyName("RemediationEnabled");
-                context.Writer.WriteBooleanValue(requestObject.RemediationEnabled.Value);
+                context.Writer.WriteTextString("RemediationEnabled");
+                context.Writer.WriteBoolean(requestObject.RemediationEnabled.Value);
             }
-
-            if(requestObject.IsSetResourceSetIds())
+            if (requestObject.IsSetResourceSetIds())
             {
-                context.Writer.WritePropertyName("ResourceSetIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceSetIds");
+                context.Writer.WriteStartArray(requestObject.ResourceSetIds.Count);
                 foreach(var requestObjectResourceSetIdsListValue in requestObject.ResourceSetIds)
                 {
-                        context.Writer.WriteStringValue(requestObjectResourceSetIdsListValue);
+                        context.Writer.WriteTextString(requestObjectResourceSetIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetResourceTagLogicalOperator())
+            if (requestObject.IsSetResourceTagLogicalOperator())
             {
-                context.Writer.WritePropertyName("ResourceTagLogicalOperator");
-                context.Writer.WriteStringValue(requestObject.ResourceTagLogicalOperator);
+                context.Writer.WriteTextString("ResourceTagLogicalOperator");
+                context.Writer.WriteTextString(requestObject.ResourceTagLogicalOperator);
             }
-
-            if(requestObject.IsSetResourceTags())
+            if (requestObject.IsSetResourceTags())
             {
-                context.Writer.WritePropertyName("ResourceTags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceTags");
+                context.Writer.WriteStartArray(requestObject.ResourceTags.Count);
                 foreach(var requestObjectResourceTagsListValue in requestObject.ResourceTags)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = ResourceTagMarshaller.Instance;
                     marshaller.Marshall(requestObjectResourceTagsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetResourceType())
+            if (requestObject.IsSetResourceType())
             {
-                context.Writer.WritePropertyName("ResourceType");
-                context.Writer.WriteStringValue(requestObject.ResourceType);
+                context.Writer.WriteTextString("ResourceType");
+                context.Writer.WriteTextString(requestObject.ResourceType);
             }
-
-            if(requestObject.IsSetResourceTypeList())
+            if (requestObject.IsSetResourceTypeList())
             {
-                context.Writer.WritePropertyName("ResourceTypeList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceTypeList");
+                context.Writer.WriteStartArray(requestObject.ResourceTypeList.Count);
                 foreach(var requestObjectResourceTypeListListValue in requestObject.ResourceTypeList)
                 {
-                        context.Writer.WriteStringValue(requestObjectResourceTypeListListValue);
+                        context.Writer.WriteTextString(requestObjectResourceTypeListListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSecurityServicePolicyData())
+            if (requestObject.IsSetSecurityServicePolicyData())
             {
-                context.Writer.WritePropertyName("SecurityServicePolicyData");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("SecurityServicePolicyData");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SecurityServicePolicyDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecurityServicePolicyData, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

@@ -29,106 +29,141 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteHasOutOfScopeEndpointViolation Object
     /// </summary>  
-    public class RouteHasOutOfScopeEndpointViolationUnmarshaller : IJsonUnmarshaller<RouteHasOutOfScopeEndpointViolation, JsonUnmarshallerContext>
+    public class RouteHasOutOfScopeEndpointViolationUnmarshaller : ICborUnmarshaller<RouteHasOutOfScopeEndpointViolation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteHasOutOfScopeEndpointViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RouteHasOutOfScopeEndpointViolation Unmarshall(CborUnmarshallerContext context)
         {
             RouteHasOutOfScopeEndpointViolation unmarshalledObject = new RouteHasOutOfScopeEndpointViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CurrentFirewallSubnetRouteTable", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentFirewallSubnetRouteTable = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CurrentInternetGatewayRouteTable", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInternetGatewayRouteTable = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FirewallSubnetId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallSubnetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FirewallSubnetRoutes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
-                    unmarshalledObject.FirewallSubnetRoutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InternetGatewayId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InternetGatewayId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InternetGatewayRoutes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
-                    unmarshalledObject.InternetGatewayRoutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RouteTableId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubnetAvailabilityZone", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubnetAvailabilityZoneId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetAvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubnetId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ViolatingRoutes", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
-                    unmarshalledObject.ViolatingRoutes = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VpcId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CurrentFirewallSubnetRouteTable":
+                        {
+                            context.AddPathSegment("CurrentFirewallSubnetRouteTable");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentFirewallSubnetRouteTable = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CurrentInternetGatewayRouteTable":
+                        {
+                            context.AddPathSegment("CurrentInternetGatewayRouteTable");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CurrentInternetGatewayRouteTable = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FirewallSubnetId":
+                        {
+                            context.AddPathSegment("FirewallSubnetId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FirewallSubnetId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FirewallSubnetRoutes":
+                        {
+                            context.AddPathSegment("FirewallSubnetRoutes");
+                            var unmarshaller = new CborListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
+                            unmarshalledObject.FirewallSubnetRoutes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InternetGatewayId":
+                        {
+                            context.AddPathSegment("InternetGatewayId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InternetGatewayId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InternetGatewayRoutes":
+                        {
+                            context.AddPathSegment("InternetGatewayRoutes");
+                            var unmarshaller = new CborListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
+                            unmarshalledObject.InternetGatewayRoutes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RouteTableId":
+                        {
+                            context.AddPathSegment("RouteTableId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubnetAvailabilityZone":
+                        {
+                            context.AddPathSegment("SubnetAvailabilityZone");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubnetAvailabilityZoneId":
+                        {
+                            context.AddPathSegment("SubnetAvailabilityZoneId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SubnetAvailabilityZoneId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubnetId":
+                        {
+                            context.AddPathSegment("SubnetId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ViolatingRoutes":
+                        {
+                            context.AddPathSegment("ViolatingRoutes");
+                            var unmarshaller = new CborListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
+                            unmarshalledObject.ViolatingRoutes = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VpcId":
+                        {
+                            context.AddPathSegment("VpcId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

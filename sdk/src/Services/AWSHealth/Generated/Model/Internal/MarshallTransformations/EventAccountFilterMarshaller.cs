@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventAccountFilter Marshaller
     /// </summary>
-    public class EventAccountFilterMarshaller : IRequestMarshaller<EventAccountFilter, JsonMarshallerContext> 
+    public class EventAccountFilterMarshaller : IRequestMarshaller<EventAccountFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EventAccountFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(EventAccountFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAwsAccountId())
-            {
-                context.Writer.WritePropertyName("awsAccountId");
-                context.Writer.WriteStringValue(requestObject.AwsAccountId);
-            }
 
-            if(requestObject.IsSetEventArn())
+            if (requestObject.IsSetAwsAccountId())
             {
-                context.Writer.WritePropertyName("eventArn");
-                context.Writer.WriteStringValue(requestObject.EventArn);
+                context.Writer.WriteTextString("awsAccountId");
+                context.Writer.WriteTextString(requestObject.AwsAccountId);
             }
-
+            if (requestObject.IsSetEventArn())
+            {
+                context.Writer.WriteTextString("eventArn");
+                context.Writer.WriteTextString(requestObject.EventArn);
+            }
         }
 
         /// <summary>

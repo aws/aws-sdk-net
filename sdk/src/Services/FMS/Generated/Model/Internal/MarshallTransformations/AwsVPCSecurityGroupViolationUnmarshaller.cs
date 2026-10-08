@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsVPCSecurityGroupViolation Object
     /// </summary>  
-    public class AwsVPCSecurityGroupViolationUnmarshaller : IJsonUnmarshaller<AwsVPCSecurityGroupViolation, JsonUnmarshallerContext>
+    public class AwsVPCSecurityGroupViolationUnmarshaller : ICborUnmarshaller<AwsVPCSecurityGroupViolation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsVPCSecurityGroupViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AwsVPCSecurityGroupViolation Unmarshall(CborUnmarshallerContext context)
         {
             AwsVPCSecurityGroupViolation unmarshalledObject = new AwsVPCSecurityGroupViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("PartialMatches", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<PartialMatch, PartialMatchUnmarshaller>(PartialMatchUnmarshaller.Instance);
-                    unmarshalledObject.PartialMatches = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PossibleSecurityGroupRemediationActions", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<SecurityGroupRemediationAction, SecurityGroupRemediationActionUnmarshaller>(SecurityGroupRemediationActionUnmarshaller.Instance);
-                    unmarshalledObject.PossibleSecurityGroupRemediationActions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ViolationTarget", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ViolationTargetDescription", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ViolationTargetDescription = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "PartialMatches":
+                        {
+                            context.AddPathSegment("PartialMatches");
+                            var unmarshaller = new CborListUnmarshaller<PartialMatch, PartialMatchUnmarshaller>(PartialMatchUnmarshaller.Instance);
+                            unmarshalledObject.PartialMatches = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PossibleSecurityGroupRemediationActions":
+                        {
+                            context.AddPathSegment("PossibleSecurityGroupRemediationActions");
+                            var unmarshaller = new CborListUnmarshaller<SecurityGroupRemediationAction, SecurityGroupRemediationActionUnmarshaller>(SecurityGroupRemediationActionUnmarshaller.Instance);
+                            unmarshalledObject.PossibleSecurityGroupRemediationActions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ViolationTarget":
+                        {
+                            context.AddPathSegment("ViolationTarget");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ViolationTargetDescription":
+                        {
+                            context.AddPathSegment("ViolationTargetDescription");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ViolationTargetDescription = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

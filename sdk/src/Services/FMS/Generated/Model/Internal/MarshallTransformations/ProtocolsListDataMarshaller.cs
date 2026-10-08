@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ProtocolsListData Marshaller
     /// </summary>
-    public class ProtocolsListDataMarshaller : IRequestMarshaller<ProtocolsListData, JsonMarshallerContext> 
+    public class ProtocolsListDataMarshaller : IRequestMarshaller<ProtocolsListData, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,70 +45,64 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProtocolsListData requestObject, JsonMarshallerContext context)
+        public void Marshall(ProtocolsListData requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCreateTime())
-            {
-                context.Writer.WritePropertyName("CreateTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreateTime.Value));
-            }
 
-            if(requestObject.IsSetLastUpdateTime())
+            if (requestObject.IsSetCreateTime())
             {
-                context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastUpdateTime.Value));
+                context.Writer.WriteTextString("CreateTime");
+                context.Writer.WriteDateTime(requestObject.CreateTime.Value);
             }
-
-            if(requestObject.IsSetListId())
+            if (requestObject.IsSetLastUpdateTime())
             {
-                context.Writer.WritePropertyName("ListId");
-                context.Writer.WriteStringValue(requestObject.ListId);
+                context.Writer.WriteTextString("LastUpdateTime");
+                context.Writer.WriteDateTime(requestObject.LastUpdateTime.Value);
             }
-
-            if(requestObject.IsSetListName())
+            if (requestObject.IsSetListId())
             {
-                context.Writer.WritePropertyName("ListName");
-                context.Writer.WriteStringValue(requestObject.ListName);
+                context.Writer.WriteTextString("ListId");
+                context.Writer.WriteTextString(requestObject.ListId);
             }
-
-            if(requestObject.IsSetListUpdateToken())
+            if (requestObject.IsSetListName())
             {
-                context.Writer.WritePropertyName("ListUpdateToken");
-                context.Writer.WriteStringValue(requestObject.ListUpdateToken);
+                context.Writer.WriteTextString("ListName");
+                context.Writer.WriteTextString(requestObject.ListName);
             }
-
-            if(requestObject.IsSetPreviousProtocolsList())
+            if (requestObject.IsSetListUpdateToken())
             {
-                context.Writer.WritePropertyName("PreviousProtocolsList");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ListUpdateToken");
+                context.Writer.WriteTextString(requestObject.ListUpdateToken);
+            }
+            if (requestObject.IsSetPreviousProtocolsList())
+            {
+                context.Writer.WriteTextString("PreviousProtocolsList");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectPreviousProtocolsListKvp in requestObject.PreviousProtocolsList)
                 {
-                    context.Writer.WritePropertyName(requestObjectPreviousProtocolsListKvp.Key);
+                    context.Writer.WriteTextString(requestObjectPreviousProtocolsListKvp.Key);
                     var requestObjectPreviousProtocolsListValue = requestObjectPreviousProtocolsListKvp.Value;
 
-                    context.Writer.WriteStartArray();
+                    context.Writer.WriteStartArray(requestObjectPreviousProtocolsListValue.Count);
                     foreach(var requestObjectPreviousProtocolsListValueListValue in requestObjectPreviousProtocolsListValue)
                     {
-                            context.Writer.WriteStringValue(requestObjectPreviousProtocolsListValueListValue);
+                            context.Writer.WriteTextString(requestObjectPreviousProtocolsListValueListValue);
                     }
                     context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetProtocolsList())
+            if (requestObject.IsSetProtocolsList())
             {
-                context.Writer.WritePropertyName("ProtocolsList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ProtocolsList");
+                context.Writer.WriteStartArray(requestObject.ProtocolsList.Count);
                 foreach(var requestObjectProtocolsListListValue in requestObject.ProtocolsList)
                 {
-                        context.Writer.WriteStringValue(requestObjectProtocolsListListValue);
+                        context.Writer.WriteTextString(requestObjectProtocolsListListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

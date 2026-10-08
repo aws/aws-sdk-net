@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
@@ -59,125 +58,121 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeDimensionKeysRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PI");
-            string target = "PerformanceInsightsv20180227.DescribeDimensionKeys";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PerformanceInsightsv20180227/operation/DescribeDimensionKeys";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAdditionalMetrics())
+                {
+                    context.Writer.WriteTextString("AdditionalMetrics");
+                    context.Writer.WriteStartArray(publicRequest.AdditionalMetrics.Count);
+                    foreach(var publicRequestAdditionalMetricsListValue in publicRequest.AdditionalMetrics)
+                    {
+                            context.Writer.WriteTextString(publicRequestAdditionalMetricsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetEndTime())
+                {
+                    context.Writer.WriteTextString("EndTime");
+                    context.Writer.WriteDateTime(publicRequest.EndTime.Value);
+                }
+                if (publicRequest.IsSetFilter())
+                {
+                    context.Writer.WriteTextString("Filter");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestFilterKvp in publicRequest.Filter)
+                    {
+                        context.Writer.WriteTextString(publicRequestFilterKvp.Key);
+                        var publicRequestFilterValue = publicRequestFilterKvp.Value;
+
+                            context.Writer.WriteTextString(publicRequestFilterValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetGroupBy())
+                {
+                    context.Writer.WriteTextString("GroupBy");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DimensionGroupMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.GroupBy, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetIdentifier())
+                {
+                    context.Writer.WriteTextString("Identifier");
+                    context.Writer.WriteTextString(publicRequest.Identifier);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetMetric())
+                {
+                    context.Writer.WriteTextString("Metric");
+                    context.Writer.WriteTextString(publicRequest.Metric);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetPartitionBy())
+                {
+                    context.Writer.WriteTextString("PartitionBy");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = DimensionGroupMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PartitionBy, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetPeriodInSeconds())
+                {
+                    context.Writer.WriteTextString("PeriodInSeconds");
+                    context.Writer.WriteInt32(publicRequest.PeriodInSeconds.Value);
+                }
+                if (publicRequest.IsSetServiceType())
+                {
+                    context.Writer.WriteTextString("ServiceType");
+                    context.Writer.WriteTextString(publicRequest.ServiceType);
+                }
+                if (publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WriteTextString("StartTime");
+                    context.Writer.WriteDateTime(publicRequest.StartTime.Value);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAdditionalMetrics())
-            {
-                context.Writer.WritePropertyName("AdditionalMetrics");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestAdditionalMetricsListValue in publicRequest.AdditionalMetrics)
-                {
-                        context.Writer.WriteStringValue(publicRequestAdditionalMetricsListValue);
-                }
-                context.Writer.WriteEndArray();
             }
-
-            if(publicRequest.IsSetEndTime())
+            finally
             {
-                context.Writer.WritePropertyName("EndTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTime.Value));
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetFilter())
-            {
-                context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestFilterKvp in publicRequest.Filter)
-                {
-                    context.Writer.WritePropertyName(publicRequestFilterKvp.Key);
-                    var publicRequestFilterValue = publicRequestFilterKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestFilterValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetGroupBy())
-            {
-                context.Writer.WritePropertyName("GroupBy");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DimensionGroupMarshaller.Instance;
-                marshaller.Marshall(publicRequest.GroupBy, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetIdentifier())
-            {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.WriteStringValue(publicRequest.Identifier);
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetMetric())
-            {
-                context.Writer.WritePropertyName("Metric");
-                context.Writer.WriteStringValue(publicRequest.Metric);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetPartitionBy())
-            {
-                context.Writer.WritePropertyName("PartitionBy");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DimensionGroupMarshaller.Instance;
-                marshaller.Marshall(publicRequest.PartitionBy, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetPeriodInSeconds())
-            {
-                context.Writer.WritePropertyName("PeriodInSeconds");
-                context.Writer.WriteNumberValue(publicRequest.PeriodInSeconds.Value);
-            }
-
-            if(publicRequest.IsSetServiceType())
-            {
-                context.Writer.WritePropertyName("ServiceType");
-                context.Writer.WriteStringValue(publicRequest.ServiceType);
-            }
-
-            if(publicRequest.IsSetStartTime())
-            {
-                context.Writer.WritePropertyName("StartTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static DescribeDimensionKeysRequestMarshaller _instance = new DescribeDimensionKeysRequestMarshaller();        

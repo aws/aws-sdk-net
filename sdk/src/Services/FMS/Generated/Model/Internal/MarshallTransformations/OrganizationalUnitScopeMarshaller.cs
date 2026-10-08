@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// OrganizationalUnitScope Marshaller
     /// </summary>
-    public class OrganizationalUnitScopeMarshaller : IRequestMarshaller<OrganizationalUnitScope, JsonMarshallerContext> 
+    public class OrganizationalUnitScopeMarshaller : IRequestMarshaller<OrganizationalUnitScope, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OrganizationalUnitScope requestObject, JsonMarshallerContext context)
+        public void Marshall(OrganizationalUnitScope requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAllOrganizationalUnitsEnabled())
-            {
-                context.Writer.WritePropertyName("AllOrganizationalUnitsEnabled");
-                context.Writer.WriteBooleanValue(requestObject.AllOrganizationalUnitsEnabled.Value);
-            }
 
-            if(requestObject.IsSetExcludeSpecifiedOrganizationalUnits())
+            if (requestObject.IsSetAllOrganizationalUnitsEnabled())
             {
-                context.Writer.WritePropertyName("ExcludeSpecifiedOrganizationalUnits");
-                context.Writer.WriteBooleanValue(requestObject.ExcludeSpecifiedOrganizationalUnits.Value);
+                context.Writer.WriteTextString("AllOrganizationalUnitsEnabled");
+                context.Writer.WriteBoolean(requestObject.AllOrganizationalUnitsEnabled.Value);
             }
-
-            if(requestObject.IsSetOrganizationalUnits())
+            if (requestObject.IsSetExcludeSpecifiedOrganizationalUnits())
             {
-                context.Writer.WritePropertyName("OrganizationalUnits");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ExcludeSpecifiedOrganizationalUnits");
+                context.Writer.WriteBoolean(requestObject.ExcludeSpecifiedOrganizationalUnits.Value);
+            }
+            if (requestObject.IsSetOrganizationalUnits())
+            {
+                context.Writer.WriteTextString("OrganizationalUnits");
+                context.Writer.WriteStartArray(requestObject.OrganizationalUnits.Count);
                 foreach(var requestObjectOrganizationalUnitsListValue in requestObject.OrganizationalUnits)
                 {
-                        context.Writer.WriteStringValue(requestObjectOrganizationalUnitsListValue);
+                        context.Writer.WriteTextString(requestObjectOrganizationalUnitsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

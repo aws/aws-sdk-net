@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
@@ -59,94 +58,93 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetResourceMetricsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.PI");
-            string target = "PerformanceInsightsv20180227.GetResourceMetrics";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PerformanceInsightsv20180227/operation/GetResourceMetrics";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-02-27";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetEndTime())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("EndTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EndTime.Value));
-            }
-
-            if(publicRequest.IsSetIdentifier())
-            {
-                context.Writer.WritePropertyName("Identifier");
-                context.Writer.WriteStringValue(publicRequest.Identifier);
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetMetricQueries())
-            {
-                context.Writer.WritePropertyName("MetricQueries");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestMetricQueriesListValue in publicRequest.MetricQueries)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetEndTime())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = MetricQueryMarshaller.Instance;
-                    marshaller.Marshall(publicRequestMetricQueriesListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("EndTime");
+                    context.Writer.WriteDateTime(publicRequest.EndTime.Value);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetIdentifier())
+                {
+                    context.Writer.WriteTextString("Identifier");
+                    context.Writer.WriteTextString(publicRequest.Identifier);
+                }
+                if (publicRequest.IsSetMaxResults())
+                {
+                    context.Writer.WriteTextString("MaxResults");
+                    context.Writer.WriteInt32(publicRequest.MaxResults.Value);
+                }
+                if (publicRequest.IsSetMetricQueries())
+                {
+                    context.Writer.WriteTextString("MetricQueries");
+                    context.Writer.WriteStartArray(publicRequest.MetricQueries.Count);
+                    foreach(var publicRequestMetricQueriesListValue in publicRequest.MetricQueries)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
+                        var marshaller = MetricQueryMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMetricQueriesListValue, context);
 
-            if(publicRequest.IsSetPeriodAlignment())
-            {
-                context.Writer.WritePropertyName("PeriodAlignment");
-                context.Writer.WriteStringValue(publicRequest.PeriodAlignment);
-            }
-
-            if(publicRequest.IsSetPeriodInSeconds())
-            {
-                context.Writer.WritePropertyName("PeriodInSeconds");
-                context.Writer.WriteNumberValue(publicRequest.PeriodInSeconds.Value);
-            }
-
-            if(publicRequest.IsSetServiceType())
-            {
-                context.Writer.WritePropertyName("ServiceType");
-                context.Writer.WriteStringValue(publicRequest.ServiceType);
-            }
-
-            if(publicRequest.IsSetStartTime())
-            {
-                context.Writer.WritePropertyName("StartTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.StartTime.Value));
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetPeriodAlignment())
+                {
+                    context.Writer.WriteTextString("PeriodAlignment");
+                    context.Writer.WriteTextString(publicRequest.PeriodAlignment);
+                }
+                if (publicRequest.IsSetPeriodInSeconds())
+                {
+                    context.Writer.WriteTextString("PeriodInSeconds");
+                    context.Writer.WriteInt32(publicRequest.PeriodInSeconds.Value);
+                }
+                if (publicRequest.IsSetServiceType())
+                {
+                    context.Writer.WriteTextString("ServiceType");
+                    context.Writer.WriteTextString(publicRequest.ServiceType);
+                }
+                if (publicRequest.IsSetStartTime())
+                {
+                    context.Writer.WriteTextString("StartTime");
+                    context.Writer.WriteDateTime(publicRequest.StartTime.Value);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static GetResourceMetricsRequestMarshaller _instance = new GetResourceMetricsRequestMarshaller();        

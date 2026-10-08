@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ServiceLifecycle Object
     /// </summary>  
-    public class ServiceLifecycleUnmarshaller : IJsonUnmarshaller<ServiceLifecycle, JsonUnmarshallerContext>
+    public class ServiceLifecycleUnmarshaller : ICborUnmarshaller<ServiceLifecycle, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ServiceLifecycle Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ServiceLifecycle Unmarshall(CborUnmarshallerContext context)
         {
             ServiceLifecycle unmarshalledObject = new ServiceLifecycle();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("lifecycleEvents", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<LifecycleEvent, LifecycleEventUnmarshaller>(LifecycleEventUnmarshaller.Instance);
-                    unmarshalledObject.LifecycleEvents = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("recommendedVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendedVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("service", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("title", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("version", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "lifecycleEvents":
+                        {
+                            context.AddPathSegment("LifecycleEvents");
+                            var unmarshaller = new CborListUnmarshaller<LifecycleEvent, LifecycleEventUnmarshaller>(LifecycleEventUnmarshaller.Instance);
+                            unmarshalledObject.LifecycleEvents = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "recommendedVersion":
+                        {
+                            context.AddPathSegment("RecommendedVersion");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RecommendedVersion = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "service":
+                        {
+                            context.AddPathSegment("Service");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Service = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "title":
+                        {
+                            context.AddPathSegment("Title");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "version":
+                        {
+                            context.AddPathSegment("Version");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Version = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

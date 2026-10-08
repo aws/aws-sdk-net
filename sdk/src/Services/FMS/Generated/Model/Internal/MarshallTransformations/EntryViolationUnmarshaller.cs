@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EntryViolation Object
     /// </summary>  
-    public class EntryViolationUnmarshaller : IJsonUnmarshaller<EntryViolation, JsonUnmarshallerContext>
+    public class EntryViolationUnmarshaller : ICborUnmarshaller<EntryViolation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EntryViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EntryViolation Unmarshall(CborUnmarshallerContext context)
         {
             EntryViolation unmarshalledObject = new EntryViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ActualEvaluationOrder", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActualEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EntriesWithConflicts", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
-                    unmarshalledObject.EntriesWithConflicts = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EntryAtExpectedEvaluationOrder", targetDepth, ref reader))
-                {
-                    var unmarshaller = EntryDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.EntryAtExpectedEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EntryViolationReasons", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EntryViolationReasons = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExpectedEntry", targetDepth, ref reader))
-                {
-                    var unmarshaller = EntryDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedEntry = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ExpectedEvaluationOrder", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedEvaluationOrder = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ActualEvaluationOrder":
+                        {
+                            context.AddPathSegment("ActualEvaluationOrder");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ActualEvaluationOrder = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EntriesWithConflicts":
+                        {
+                            context.AddPathSegment("EntriesWithConflicts");
+                            var unmarshaller = new CborListUnmarshaller<EntryDescription, EntryDescriptionUnmarshaller>(EntryDescriptionUnmarshaller.Instance);
+                            unmarshalledObject.EntriesWithConflicts = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EntryAtExpectedEvaluationOrder":
+                        {
+                            context.AddPathSegment("EntryAtExpectedEvaluationOrder");
+                            var unmarshaller = EntryDescriptionUnmarshaller.Instance;
+                            unmarshalledObject.EntryAtExpectedEvaluationOrder = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EntryViolationReasons":
+                        {
+                            context.AddPathSegment("EntryViolationReasons");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.EntryViolationReasons = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExpectedEntry":
+                        {
+                            context.AddPathSegment("ExpectedEntry");
+                            var unmarshaller = EntryDescriptionUnmarshaller.Instance;
+                            unmarshalledObject.ExpectedEntry = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ExpectedEvaluationOrder":
+                        {
+                            context.AddPathSegment("ExpectedEvaluationOrder");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ExpectedEvaluationOrder = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

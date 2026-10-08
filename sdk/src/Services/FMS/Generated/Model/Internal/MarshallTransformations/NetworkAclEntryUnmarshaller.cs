@@ -29,76 +29,101 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NetworkAclEntry Object
     /// </summary>  
-    public class NetworkAclEntryUnmarshaller : IJsonUnmarshaller<NetworkAclEntry, JsonUnmarshallerContext>
+    public class NetworkAclEntryUnmarshaller : ICborUnmarshaller<NetworkAclEntry, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkAclEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public NetworkAclEntry Unmarshall(CborUnmarshallerContext context)
         {
             NetworkAclEntry unmarshalledObject = new NetworkAclEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CidrBlock", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Egress", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Egress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IcmpTypeCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = NetworkAclIcmpTypeCodeUnmarshaller.Instance;
-                    unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Ipv6CidrBlock", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PortRange", targetDepth, ref reader))
-                {
-                    var unmarshaller = NetworkAclPortRangeUnmarshaller.Instance;
-                    unmarshalledObject.PortRange = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Protocol", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RuleAction", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CidrBlock":
+                        {
+                            context.AddPathSegment("CidrBlock");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Egress":
+                        {
+                            context.AddPathSegment("Egress");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.Egress = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IcmpTypeCode":
+                        {
+                            context.AddPathSegment("IcmpTypeCode");
+                            var unmarshaller = NetworkAclIcmpTypeCodeUnmarshaller.Instance;
+                            unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Ipv6CidrBlock":
+                        {
+                            context.AddPathSegment("Ipv6CidrBlock");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "PortRange":
+                        {
+                            context.AddPathSegment("PortRange");
+                            var unmarshaller = NetworkAclPortRangeUnmarshaller.Instance;
+                            unmarshalledObject.PortRange = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Protocol":
+                        {
+                            context.AddPathSegment("Protocol");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RuleAction":
+                        {
+                            context.AddPathSegment("RuleAction");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EventTypeFilter Marshaller
     /// </summary>
-    public class EventTypeFilterMarshaller : IRequestMarshaller<EventTypeFilter, JsonMarshallerContext> 
+    public class EventTypeFilterMarshaller : IRequestMarshaller<EventTypeFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,65 +45,61 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EventTypeFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(EventTypeFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActionabilities())
+
+            if (requestObject.IsSetActionabilities())
             {
-                context.Writer.WritePropertyName("actionabilities");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("actionabilities");
+                context.Writer.WriteStartArray(requestObject.Actionabilities.Count);
                 foreach(var requestObjectActionabilitiesListValue in requestObject.Actionabilities)
                 {
-                        context.Writer.WriteStringValue(requestObjectActionabilitiesListValue);
+                        context.Writer.WriteTextString(requestObjectActionabilitiesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetEventTypeCategories())
+            if (requestObject.IsSetEventTypeCategories())
             {
-                context.Writer.WritePropertyName("eventTypeCategories");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("eventTypeCategories");
+                context.Writer.WriteStartArray(requestObject.EventTypeCategories.Count);
                 foreach(var requestObjectEventTypeCategoriesListValue in requestObject.EventTypeCategories)
                 {
-                        context.Writer.WriteStringValue(requestObjectEventTypeCategoriesListValue);
+                        context.Writer.WriteTextString(requestObjectEventTypeCategoriesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetEventTypeCodes())
+            if (requestObject.IsSetEventTypeCodes())
             {
-                context.Writer.WritePropertyName("eventTypeCodes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("eventTypeCodes");
+                context.Writer.WriteStartArray(requestObject.EventTypeCodes.Count);
                 foreach(var requestObjectEventTypeCodesListValue in requestObject.EventTypeCodes)
                 {
-                        context.Writer.WriteStringValue(requestObjectEventTypeCodesListValue);
+                        context.Writer.WriteTextString(requestObjectEventTypeCodesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetPersonas())
+            if (requestObject.IsSetPersonas())
             {
-                context.Writer.WritePropertyName("personas");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("personas");
+                context.Writer.WriteStartArray(requestObject.Personas.Count);
                 foreach(var requestObjectPersonasListValue in requestObject.Personas)
                 {
-                        context.Writer.WriteStringValue(requestObjectPersonasListValue);
+                        context.Writer.WriteTextString(requestObjectPersonasListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetServices())
+            if (requestObject.IsSetServices())
             {
-                context.Writer.WritePropertyName("services");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("services");
+                context.Writer.WriteStartArray(requestObject.Services.Count);
                 foreach(var requestObjectServicesListValue in requestObject.Services)
                 {
-                        context.Writer.WriteStringValue(requestObjectServicesListValue);
+                        context.Writer.WriteTextString(requestObjectServicesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// DimensionGroup Marshaller
     /// </summary>
-    public class DimensionGroupMarshaller : IRequestMarshaller<DimensionGroup, JsonMarshallerContext> 
+    public class DimensionGroupMarshaller : IRequestMarshaller<DimensionGroup, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DimensionGroup requestObject, JsonMarshallerContext context)
+        public void Marshall(DimensionGroup requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDimensions())
+
+            if (requestObject.IsSetDimensions())
             {
-                context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Dimensions");
+                context.Writer.WriteStartArray(requestObject.Dimensions.Count);
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                        context.Writer.WriteStringValue(requestObjectDimensionsListValue);
+                        context.Writer.WriteTextString(requestObjectDimensionsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetGroup())
+            if (requestObject.IsSetGroup())
             {
-                context.Writer.WritePropertyName("Group");
-                context.Writer.WriteStringValue(requestObject.Group);
+                context.Writer.WriteTextString("Group");
+                context.Writer.WriteTextString(requestObject.Group);
             }
-
-            if(requestObject.IsSetLimit())
+            if (requestObject.IsSetLimit())
             {
-                context.Writer.WritePropertyName("Limit");
-                context.Writer.WriteNumberValue(requestObject.Limit.Value);
+                context.Writer.WriteTextString("Limit");
+                context.Writer.WriteInt32(requestObject.Limit.Value);
             }
-
         }
 
         /// <summary>

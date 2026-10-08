@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
@@ -59,125 +58,123 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public IRequest Marshall(StartTextTranslationJobRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Translate");
-            string target = "AWSShineFrontendService_20170701.StartTextTranslationJob";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSShineFrontendService_20170701/operation/StartTextTranslationJob";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
+                }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetDataAccessRoleArn())
+                {
+                    context.Writer.WriteTextString("DataAccessRoleArn");
+                    context.Writer.WriteTextString(publicRequest.DataAccessRoleArn);
+                }
+                if (publicRequest.IsSetInputDataConfig())
+                {
+                    context.Writer.WriteTextString("InputDataConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = InputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InputDataConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetJobName())
+                {
+                    context.Writer.WriteTextString("JobName");
+                    context.Writer.WriteTextString(publicRequest.JobName);
+                }
+                if (publicRequest.IsSetOutputDataConfig())
+                {
+                    context.Writer.WriteTextString("OutputDataConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = OutputDataConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetParallelDataNames())
+                {
+                    context.Writer.WriteTextString("ParallelDataNames");
+                    context.Writer.WriteStartArray(publicRequest.ParallelDataNames.Count);
+                    foreach(var publicRequestParallelDataNamesListValue in publicRequest.ParallelDataNames)
+                    {
+                            context.Writer.WriteTextString(publicRequestParallelDataNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetSettings())
+                {
+                    context.Writer.WriteTextString("Settings");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = TranslationSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Settings, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetSourceLanguageCode())
+                {
+                    context.Writer.WriteTextString("SourceLanguageCode");
+                    context.Writer.WriteTextString(publicRequest.SourceLanguageCode);
+                }
+                if (publicRequest.IsSetTargetLanguageCodes())
+                {
+                    context.Writer.WriteTextString("TargetLanguageCodes");
+                    context.Writer.WriteStartArray(publicRequest.TargetLanguageCodes.Count);
+                    foreach(var publicRequestTargetLanguageCodesListValue in publicRequest.TargetLanguageCodes)
+                    {
+                            context.Writer.WriteTextString(publicRequestTargetLanguageCodesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTerminologyNames())
+                {
+                    context.Writer.WriteTextString("TerminologyNames");
+                    context.Writer.WriteStartArray(publicRequest.TerminologyNames.Count);
+                    foreach(var publicRequestTerminologyNamesListValue in publicRequest.TerminologyNames)
+                    {
+                            context.Writer.WriteTextString(publicRequestTerminologyNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
-
-            else if(!(publicRequest.IsSetClientToken()))
+            finally
             {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+                CborWriterPool.Return(writer);
             }
-            if(publicRequest.IsSetDataAccessRoleArn())
-            {
-                context.Writer.WritePropertyName("DataAccessRoleArn");
-                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
-            }
-
-            if(publicRequest.IsSetInputDataConfig())
-            {
-                context.Writer.WritePropertyName("InputDataConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InputDataConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetJobName())
-            {
-                context.Writer.WritePropertyName("JobName");
-                context.Writer.WriteStringValue(publicRequest.JobName);
-            }
-
-            if(publicRequest.IsSetOutputDataConfig())
-            {
-                context.Writer.WritePropertyName("OutputDataConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OutputDataConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetParallelDataNames())
-            {
-                context.Writer.WritePropertyName("ParallelDataNames");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestParallelDataNamesListValue in publicRequest.ParallelDataNames)
-                {
-                        context.Writer.WriteStringValue(publicRequestParallelDataNamesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetSettings())
-            {
-                context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteStartObject();
-
-                var marshaller = TranslationSettingsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Settings, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetSourceLanguageCode())
-            {
-                context.Writer.WritePropertyName("SourceLanguageCode");
-                context.Writer.WriteStringValue(publicRequest.SourceLanguageCode);
-            }
-
-            if(publicRequest.IsSetTargetLanguageCodes())
-            {
-                context.Writer.WritePropertyName("TargetLanguageCodes");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTargetLanguageCodesListValue in publicRequest.TargetLanguageCodes)
-                {
-                        context.Writer.WriteStringValue(publicRequestTargetLanguageCodesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTerminologyNames())
-            {
-                context.Writer.WritePropertyName("TerminologyNames");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTerminologyNamesListValue in publicRequest.TerminologyNames)
-                {
-                        context.Writer.WriteStringValue(publicRequestTerminologyNamesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static StartTextTranslationJobRequestMarshaller _instance = new StartTextTranslationJobRequestMarshaller();        

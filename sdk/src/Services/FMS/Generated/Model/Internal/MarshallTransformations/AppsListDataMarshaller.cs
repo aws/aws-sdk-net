@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AppsListData Marshaller
     /// </summary>
-    public class AppsListDataMarshaller : IRequestMarshaller<AppsListData, JsonMarshallerContext> 
+    public class AppsListDataMarshaller : IRequestMarshaller<AppsListData, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,80 +45,74 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AppsListData requestObject, JsonMarshallerContext context)
+        public void Marshall(AppsListData requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAppsList())
+
+            if (requestObject.IsSetAppsList())
             {
-                context.Writer.WritePropertyName("AppsList");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AppsList");
+                context.Writer.WriteStartArray(requestObject.AppsList.Count);
                 foreach(var requestObjectAppsListListValue in requestObject.AppsList)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AppMarshaller.Instance;
                     marshaller.Marshall(requestObjectAppsListListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetCreateTime())
+            if (requestObject.IsSetCreateTime())
             {
-                context.Writer.WritePropertyName("CreateTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.CreateTime.Value));
+                context.Writer.WriteTextString("CreateTime");
+                context.Writer.WriteDateTime(requestObject.CreateTime.Value);
             }
-
-            if(requestObject.IsSetLastUpdateTime())
+            if (requestObject.IsSetLastUpdateTime())
             {
-                context.Writer.WritePropertyName("LastUpdateTime");
-                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.LastUpdateTime.Value));
+                context.Writer.WriteTextString("LastUpdateTime");
+                context.Writer.WriteDateTime(requestObject.LastUpdateTime.Value);
             }
-
-            if(requestObject.IsSetListId())
+            if (requestObject.IsSetListId())
             {
-                context.Writer.WritePropertyName("ListId");
-                context.Writer.WriteStringValue(requestObject.ListId);
+                context.Writer.WriteTextString("ListId");
+                context.Writer.WriteTextString(requestObject.ListId);
             }
-
-            if(requestObject.IsSetListName())
+            if (requestObject.IsSetListName())
             {
-                context.Writer.WritePropertyName("ListName");
-                context.Writer.WriteStringValue(requestObject.ListName);
+                context.Writer.WriteTextString("ListName");
+                context.Writer.WriteTextString(requestObject.ListName);
             }
-
-            if(requestObject.IsSetListUpdateToken())
+            if (requestObject.IsSetListUpdateToken())
             {
-                context.Writer.WritePropertyName("ListUpdateToken");
-                context.Writer.WriteStringValue(requestObject.ListUpdateToken);
+                context.Writer.WriteTextString("ListUpdateToken");
+                context.Writer.WriteTextString(requestObject.ListUpdateToken);
             }
-
-            if(requestObject.IsSetPreviousAppsList())
+            if (requestObject.IsSetPreviousAppsList())
             {
-                context.Writer.WritePropertyName("PreviousAppsList");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PreviousAppsList");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectPreviousAppsListKvp in requestObject.PreviousAppsList)
                 {
-                    context.Writer.WritePropertyName(requestObjectPreviousAppsListKvp.Key);
+                    context.Writer.WriteTextString(requestObjectPreviousAppsListKvp.Key);
                     var requestObjectPreviousAppsListValue = requestObjectPreviousAppsListKvp.Value;
 
-                    context.Writer.WriteStartArray();
+                    context.Writer.WriteStartArray(requestObjectPreviousAppsListValue.Count);
                     foreach(var requestObjectPreviousAppsListValueListValue in requestObjectPreviousAppsListValue)
                     {
-                        context.Writer.WriteStartObject();
+                        context.Writer.WriteStartMap(null);
 
                         var marshaller = AppMarshaller.Instance;
                         marshaller.Marshall(requestObjectPreviousAppsListValueListValue, context);
 
-                        context.Writer.WriteEndObject();
+                        context.Writer.WriteEndMap();
                     }
                     context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// MetricQuery Marshaller
     /// </summary>
-    public class MetricQueryMarshaller : IRequestMarshaller<MetricQuery, JsonMarshallerContext> 
+    public class MetricQueryMarshaller : IRequestMarshaller<MetricQuery, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +45,39 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MetricQuery requestObject, JsonMarshallerContext context)
+        public void Marshall(MetricQuery requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFilter())
+
+            if (requestObject.IsSetFilter())
             {
-                context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Filter");
+                context.Writer.WriteStartMap(null);
                 foreach (var requestObjectFilterKvp in requestObject.Filter)
                 {
-                    context.Writer.WritePropertyName(requestObjectFilterKvp.Key);
+                    context.Writer.WriteTextString(requestObjectFilterKvp.Key);
                     var requestObjectFilterValue = requestObjectFilterKvp.Value;
 
-                        context.Writer.WriteStringValue(requestObjectFilterValue);
+                        context.Writer.WriteTextString(requestObjectFilterValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetGroupBy())
+            if (requestObject.IsSetGroupBy())
             {
-                context.Writer.WritePropertyName("GroupBy");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("GroupBy");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = DimensionGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroupBy, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetMetric())
+            if (requestObject.IsSetMetric())
             {
-                context.Writer.WritePropertyName("Metric");
-                context.Writer.WriteStringValue(requestObject.Metric);
+                context.Writer.WriteTextString("Metric");
+                context.Writer.WriteTextString(requestObject.Metric);
             }
-
         }
 
         /// <summary>

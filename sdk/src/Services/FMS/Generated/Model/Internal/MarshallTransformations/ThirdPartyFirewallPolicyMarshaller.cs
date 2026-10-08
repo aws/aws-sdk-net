@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThirdPartyFirewallPolicy Marshaller
     /// </summary>
-    public class ThirdPartyFirewallPolicyMarshaller : IRequestMarshaller<ThirdPartyFirewallPolicy, JsonMarshallerContext> 
+    public class ThirdPartyFirewallPolicyMarshaller : IRequestMarshaller<ThirdPartyFirewallPolicy, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ThirdPartyFirewallPolicy requestObject, JsonMarshallerContext context)
+        public void Marshall(ThirdPartyFirewallPolicy requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetFirewallDeploymentModel())
-            {
-                context.Writer.WritePropertyName("FirewallDeploymentModel");
-                context.Writer.WriteStringValue(requestObject.FirewallDeploymentModel);
-            }
 
+            if (requestObject.IsSetFirewallDeploymentModel())
+            {
+                context.Writer.WriteTextString("FirewallDeploymentModel");
+                context.Writer.WriteTextString(requestObject.FirewallDeploymentModel);
+            }
         }
 
         /// <summary>

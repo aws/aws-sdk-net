@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccountScope Marshaller
     /// </summary>
-    public class AccountScopeMarshaller : IRequestMarshaller<AccountScope, JsonMarshallerContext> 
+    public class AccountScopeMarshaller : IRequestMarshaller<AccountScope, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccountScope requestObject, JsonMarshallerContext context)
+        public void Marshall(AccountScope requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccounts())
+
+            if (requestObject.IsSetAccounts())
             {
-                context.Writer.WritePropertyName("Accounts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Accounts");
+                context.Writer.WriteStartArray(requestObject.Accounts.Count);
                 foreach(var requestObjectAccountsListValue in requestObject.Accounts)
                 {
-                        context.Writer.WriteStringValue(requestObjectAccountsListValue);
+                        context.Writer.WriteTextString(requestObjectAccountsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetAllAccountsEnabled())
+            if (requestObject.IsSetAllAccountsEnabled())
             {
-                context.Writer.WritePropertyName("AllAccountsEnabled");
-                context.Writer.WriteBooleanValue(requestObject.AllAccountsEnabled.Value);
+                context.Writer.WriteTextString("AllAccountsEnabled");
+                context.Writer.WriteBoolean(requestObject.AllAccountsEnabled.Value);
             }
-
-            if(requestObject.IsSetExcludeSpecifiedAccounts())
+            if (requestObject.IsSetExcludeSpecifiedAccounts())
             {
-                context.Writer.WritePropertyName("ExcludeSpecifiedAccounts");
-                context.Writer.WriteBooleanValue(requestObject.ExcludeSpecifiedAccounts.Value);
+                context.Writer.WriteTextString("ExcludeSpecifiedAccounts");
+                context.Writer.WriteBoolean(requestObject.ExcludeSpecifiedAccounts.Value);
             }
-
         }
 
         /// <summary>
