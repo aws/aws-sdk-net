@@ -57,6 +57,11 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-07-13";
             request.HttpMethod = "GET";
 
+            if (publicRequest.IsSetAccessSystemProfileLogs())
+            {
+                request.Parameters.Add("accessSystemProfileLogs", StringUtils.FromBool(publicRequest.AccessSystemProfileLogs.Value));
+            }
+
             if (string.IsNullOrEmpty(publicRequest.ResourceId))
             {
                 throw new AmazonEMRServerlessException("Request object does not have required field ResourceId set");

@@ -273,7 +273,7 @@
     <property>Amazon.EMRServerless.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>60</min>
     <max>1024</max>
-    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+)?$</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+|\/sessions\/[0-9a-zA-Z]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.StartApplicationRequest.ApplicationId</property>
@@ -385,7 +385,7 @@
     <property>Amazon.EMRServerless.Model.TagResourceRequest.ResourceArn</property>
     <min>60</min>
     <max>1024</max>
-    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+)?$</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+|\/sessions\/[0-9a-zA-Z]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.TerminateSessionRequest.ApplicationId</property>
@@ -415,7 +415,7 @@
     <property>Amazon.EMRServerless.Model.UntagResourceRequest.ResourceArn</property>
     <min>60</min>
     <max>1024</max>
-    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+)?$</pattern>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-serverless:.+:(\d{12}):\/applications\/[0-9a-zA-Z]+(\/jobruns\/[0-9a-zA-Z]+|\/sessions\/[0-9a-zA-Z]+)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRServerless.Model.UpdateApplicationRequest.ApplicationId</property>
