@@ -70,6 +70,12 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
                     response.LicenseArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Metadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = MetadataUnmarshaller.Instance;
+                    response.Metadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ProductCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

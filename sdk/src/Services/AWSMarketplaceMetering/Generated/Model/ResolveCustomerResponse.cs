@@ -31,13 +31,15 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// The result of the <c>ResolveCustomer</c> operation. Contains the <c>CustomerIdentifier</c>
-    /// along with the <c>CustomerAWSAccountId</c>, <c>ProductCode</c>, and <c>LicenseArn</c>.
+    /// along with the <c>CustomerAWSAccountId</c>, <c>ProductCode</c>, <c>LicenseArn</c>,
+    /// and <c>Metadata</c>.
     /// </summary>
     public partial class ResolveCustomerResponse : AmazonWebServiceResponse
     {
         private string _customerAWSAccountId;
         private string _customerIdentifier;
         private string _licenseArn;
+        private Metadata _metadata;
         private string _productCode;
 
         /// <summary>
@@ -110,6 +112,25 @@ namespace Amazon.AWSMarketplaceMetering.Model
         internal bool IsSetLicenseArn()
         {
             return this._licenseArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The metadata associated with the resolved customer, including the <c>AgreementId</c>
+        /// of the Amazon Web Services Marketplace agreement the customer accepted.
+        /// </para>
+        /// </summary>
+        public Metadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>
