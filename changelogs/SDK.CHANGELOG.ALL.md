@@ -1,3 +1,23 @@
+### 4.0.350.0 (2026-10-09 18:13 UTC)
+* ARCRegionswitch (4.0.103.3)
+	* ARCRegionswitch is now generated from its Smithy model. There are no changes to the public API.
+* Athena (4.0.100.17)
+	* Athena is now generated from its Smithy model. There are no changes to the public API.
+* AWSMarketplaceMetering (4.0.101.0)
+	* AWS Marketplace Metering Service adds AgreementId to ResolveCustomer API response.
+* CloudWatchOmni (4.0.100.3)
+	* CloudWatchOmni is now generated from its Smithy model. There are no changes to the public API.
+* Deadline (4.0.103.0)
+	* The new ListMemberships API enables users to discover their memberships across Deadline Cloud resources, enabling scoped users of Deadline resources to discover and interact with the resources they have been provided scoped access to.
+* MediaTailor (4.0.108.0)
+	* Add caching settings to http functions
+* QuickSight (4.0.111.0)
+	* Adds granular custom permissions for the Gong action connector (GongAction, CreateAndUpdateGongAction, ShareGongAction, UseGongAction) and for create, update, and share operations on 45 data source connectors, such as Amazon S3 and Snowflake, through the Custom Permissions APIs.
+* SecurityAgent (4.0.112.0)
+	* Adds a test scope field to specify whether a pentest targets a web application or a generative AI application.
+* Snowball (4.0.100.17)
+	* Snowball is now generated from its Smithy model. There are no changes to the public API.
+
 ### 4.0.349.0 (2026-10-08 18:18 UTC)
 * AWSHealth (4.0.102.0)
 	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
